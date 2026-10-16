@@ -202,7 +202,7 @@
 ## 7. 原型验证结果
 
 > 日期：2026-10-15  
-> 代码：[`spikes/option-b/`](./spikes/option-b/)，一次性原型，不是正式脚手架；重新运行见其 README。  
+> 代码：[`spikes/option-b/`](../spikes/option-b/)，一次性原型，不是正式脚手架；重新运行见其 README。  
 > 环境：Next.js 16.4.2（Turbopack）、React 19.3.1；`output: 'export'`、`basePath: '/prompt-seen'`、`trailingSlash: true`，所有动态段 `dynamicParams = false` 加 `generateStaticParams`；两种语言（`en`、`zh-hans`）× 30 条测试 Prompt。参考 nginx 为 Docker `nginx:stable`（1.30.6），未使用 Homebrew。Playwright 1.64.1，浏览器为 Google Chrome 155 和 WebKit 27.2（Safari 引擎），系统 macOS 27.0.1。所有测试都针对导出产物，经 nginx 在 `http://127.0.0.1:8090/prompt-seen/` 提供。
 
 ### 7.1 结论

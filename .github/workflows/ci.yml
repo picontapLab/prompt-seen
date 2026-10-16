@@ -1,0 +1,118 @@
+# PR and main-branch checks (design doc §15.1, §17.3 step 1a).
+# - check: lint, format, types, content validation, unit tests.
+# - build-and-test: the same code built at the root and under /prompt-seen, each served by the
+#   reference nginx and tested with Playwright in Chromium, Firefox and WebKit.
+# - preview: uploads the tested /prompt-seen preview build to Cloudflare Pages (noindex). It is
+#   skipped until the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: 24
+  BUILD_ID: ${{ github.sha }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npm run content:validate
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Production build at the root of a host.
+          - name: root
+            base_path: ''
+            build_mode: production
+          # Preview build under the subpath, as PR previews and the host site use it.
+          - name: subpath
+            base_path: /prompt-seen
+            build_mode: preview
+    name: build-and-test (${{ matrix.name }})
+    env:
+      BASE_PATH: ${{ matrix.base_path }}
+      BUILD_MODE: ${{ matrix.build_mode }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: End-to-end tests through the reference nginx
+        run: npm run test:e2e
+        env:
+          PW_BROWSERS: chromium,firefox,webkit
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-${{ matrix.name }}
+          path: test-results/
+          retention-days: 7
+      - name: Keep the tested preview build for deployment
+        if: matrix.name == 'subpath'
+        run: npm run deploy:cloudflare:prepare
+      - uses: actions/upload-artifact@v7
+        if: matrix.name == 'subpath'
+        with:
+          name: cloudflare-preview
+          path: .deploy/cloudflare/
+          include-hidden-files: true
+          retention-days: 7
+
+  preview:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: [check, build-and-test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+    steps:
+      - name: Cloudflare secrets missing
+        if: env.HAS_CLOUDFLARE != 'true'
+        run: echo "::notice::PR preview skipped. Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets to enable it."
+      - uses: actions/download-artifact@v8
+        if: env.HAS_CLOUDFLARE == 'true'
+        with:
+          name: cloudflare-preview
+          path: .deploy/cloudflare
+      - name: Deploy preview to Cloudflare Pages
+        if: env.HAS_CLOUDFLARE == 'true'
+        id: deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .deploy/cloudflare --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'prompt-seen' }} --branch=${{ github.head_ref }} --commit-hash=${{ github.event.pull_request.head.sha }}
+      - name: Preview address
+        if: env.HAS_CLOUDFLARE == 'true'
+        run: echo "Preview (noindex) at ${{ steps.deploy.outputs.deployment-url }}/prompt-seen/" >> "$GITHUB_STEP_SUMMARY"
