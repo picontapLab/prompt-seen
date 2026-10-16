@@ -1,0 +1,79 @@
+@layer components {
+  .marks {
+    position: absolute;
+    inset: calc(-1 * var(--_offset));
+    pointer-events: none;
+    filter: drop-shadow(0 0 1px var(--overlay-outline)) drop-shadow(0 0 0.5px var(--overlay-outline));
+  }
+
+  /* --_x / --_y: how far a corner sits outside its final place; inline direction mirrors in RTL. */
+  .corner {
+    position: absolute;
+    inline-size: var(--_size);
+    block-size: var(--_size);
+    border: 0 solid var(--film-mark);
+    translate: var(--_x, 0px) var(--_y, 0px);
+    transition:
+      opacity var(--duration-content) var(--ease-enter),
+      translate var(--duration-content) var(--ease-enter);
+  }
+  :global([dir='rtl']) .corner {
+    translate: calc(-1 * var(--_x, 0px)) var(--_y, 0px);
+  }
+  .corner[data-corner='start-start'] {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    border-block-start-width: 2px;
+    border-inline-start-width: 2px;
+  }
+  .corner[data-corner='end-start'] {
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    border-block-start-width: 2px;
+    border-inline-end-width: 2px;
+  }
+  .corner[data-corner='start-end'] {
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    border-block-end-width: 2px;
+    border-inline-start-width: 2px;
+  }
+  .corner[data-corner='end-end'] {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    border-block-end-width: 2px;
+    border-inline-end-width: 2px;
+  }
+
+  /* Interactive: hidden slightly outside, drawn in on hover (fine pointers) or keyboard focus
+     (§12.1 "标注框": the marks close in from the corners). */
+  .marks[data-mode='interactive'] .corner {
+    opacity: 0;
+  }
+  .marks[data-mode='interactive'] .corner[data-corner^='start'] {
+    --_x: calc(-1 * var(--distance-reveal) / 2);
+  }
+  .marks[data-mode='interactive'] .corner[data-corner^='end'] {
+    --_x: calc(var(--distance-reveal) / 2);
+  }
+  .marks[data-mode='interactive'] .corner[data-corner$='-start'] {
+    --_y: calc(-1 * var(--distance-reveal) / 2);
+  }
+  .marks[data-mode='interactive'] .corner[data-corner$='-end'] {
+    --_y: calc(var(--distance-reveal) / 2);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    :global([data-crop-target]:hover) .marks[data-mode='interactive'] .corner {
+      opacity: 1;
+      --_x: 0px;
+      --_y: 0px;
+    }
+  }
+  :global([data-crop-target]:focus-visible) .marks[data-mode='interactive'] .corner,
+  :global([data-crop-target]:has(:focus-visible)) .marks[data-mode='interactive'] .corner,
+  :global([data-crop-target][data-crop-active]) .marks[data-mode='interactive'] .corner {
+    opacity: 1;
+    --_x: 0px;
+    --_y: 0px;
+  }
+}

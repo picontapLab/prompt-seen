@@ -18,15 +18,15 @@ test('no request leaves the base path (browser view and nginx access log)', asyn
   await page.goto(`${BASE}/`);
   for (const locale of BUILD.locales) {
     // Soft navigation through next/link from the language entry to each locale and back.
-    await page.locator(`a[hreflang="${locale.htmlLang}"]`).click();
-    await expect(page.locator(`main[data-locale="${locale.code}"]`)).toBeVisible();
+    await page.locator(`[data-page="language-entry"] a[hreflang="${locale.htmlLang}"]`).click();
+    await expect(page.locator(`main [data-locale="${locale.code}"]`)).toBeVisible();
     await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
     await page.goBack();
-    await expect(page.locator('main[data-page="language-entry"]')).toBeVisible();
+    await expect(page.locator('main [data-page="language-entry"]')).toBeVisible();
   }
   await page.goto(`${BASE}/${BUILD.locales[0]!.pathPrefix}/missing/`);
-  await expect(page.locator('main[data-error="404"]')).toBeVisible();
-  await page.getByRole('link').first().click();
+  await expect(page.locator('main [data-error="404"]')).toBeVisible();
+  await page.locator('main [data-error="404"] a').first().click();
   await page.waitForLoadState('networkidle');
 
   const origin = new URL(page.url()).origin;

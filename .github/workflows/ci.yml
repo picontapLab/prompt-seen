@@ -1,5 +1,6 @@
 # PR and main-branch checks (design doc §15.1, §17.3 step 1a).
-# - check: lint, format, types, content validation, unit tests.
+# - check: lint, format, types, content validation, colour contrast of the tokens, unit tests,
+#   and the Storybook build.
 # - build-and-test: the same code built at the root and under /prompt-seen, each served by the
 #   reference nginx and tested with Playwright in Chromium, Firefox and WebKit.
 # - preview: uploads the tested /prompt-seen preview build to Cloudflare Pages (noindex). It is
@@ -33,10 +34,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run content:validate
+      - run: npm run tokens:check
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run format:check
       - run: npm test
+      - name: Storybook builds (component state samples, §11.1.7)
+        run: npm run storybook:build
 
   build-and-test:
     runs-on: ubuntu-latest

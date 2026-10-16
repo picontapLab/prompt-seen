@@ -29,9 +29,14 @@ export default async function LocaleHome({ params }: Props) {
   const entry = enterLocale(locale);
   const t = await getTranslations('common.placeholder');
   return (
-    <main data-page="placeholder-home" data-locale={entry.code}>
+    <div
+      className="container"
+      style={{ paddingBlock: 'var(--space-40)' }}
+      data-page="placeholder-home"
+      data-locale={entry.code}
+    >
       <h1>{t('title', { siteName: config.siteName })}</h1>
       <p>{t('body', { language: entry.nativeName })}</p>
-    </main>
+    </div>
   );
 }

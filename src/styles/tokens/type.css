@@ -1,0 +1,105 @@
+/*
+ * Type tokens (design doc §11.1.2; families, display sizes and leading from §11.1.9).
+ *
+ * Families are declared by src/styles/fonts/index.ts (self-hosted subsets via next/font/local).
+ * The "… Fallback" faces are size-adjusted local fonts generated from the same files, so swapping
+ * in the web font barely moves text (§11.1.2).
+ *
+ * Stacks and rhythm change by script, keyed on the nearest lang attribute: a Chinese page that
+ * quotes an English prompt in lang="en" gets the Latin stack inside that block (§8.6).
+ * CJK pages use "… for CJK" faces, the same files with curly quotes, the em dash and the ellipsis
+ * left out of their unicode-range, so those characters take full-width CJK glyphs (§11.1.2).
+ */
+
+@layer tokens {
+  :root {
+    /* Sizes / line heights for Latin text. rem keeps the user's default font size. */
+    --text-xs: 0.75rem; /* 12px / 16px: mono metadata, badges; never body text */
+    --leading-xs: 1rem;
+    --text-sm: 0.875rem; /* 14px / 20px: captions, labels, help */
+    --leading-sm: 1.25rem;
+    --text-base: 1rem; /* 16px / 26px: body, prompts, forms */
+    --leading-base: 1.625rem;
+    --text-lg: 1.125rem; /* 18px / 28px: summaries, lead paragraphs */
+    --leading-lg: 1.75rem;
+    --text-xl: 1.25rem; /* 20px / 28px: card group and dialog titles */
+    --leading-xl: 1.75rem;
+    --text-2xl: 1.5rem; /* 24px / 32px: section titles */
+    --leading-2xl: 2rem;
+    --text-page-title: clamp(2.5rem, 2.4vw + 1.625rem, 4rem); /* 40–64px */
+    --leading-page-title: 0.95;
+    --text-display: clamp(2.75rem, 4.6vw + 1.375rem, 5.5rem); /* 44–88px */
+    --leading-display: 0.92;
+
+    --weight-regular: 400; /* body */
+    --weight-medium: 500; /* labels, buttons */
+    --weight-semibold: 600; /* headings */
+    --weight-display: 700; /* display face only */
+
+    /* Uppercase is written in the copy, never produced by text-transform (§11.1.2). */
+    --tracking-display: -0.02em;
+    --tracking-label: 0.12em; /* mono section labels such as "MORE FROM THIS ROLL" */
+    --tracking-wordmark: 0.04em;
+
+    --measure: 68ch; /* Latin body: 60–72 characters */
+    --measure-prompt: 72ch; /* Prompt sheet */
+  }
+
+  :where([lang]) {
+    --font-display:
+      'Fira Sans Extra Condensed', 'Fira Sans Extra Condensed Fallback', 'IBM Plex Sans', system-ui, sans-serif;
+    --font-text: 'IBM Plex Sans', 'IBM Plex Sans Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --leading-body: var(--leading-base);
+    --leading-heading: 1.2;
+  }
+
+  /* Chinese, Japanese, Korean: system body fonts (never downloaded); the display face is bold
+     Noto Sans, subset at build time by step 2. Looser leading, no negative tracking. */
+  :where([lang]:lang(zh-Hans)) {
+    --font-display:
+      'Fira Sans Extra Condensed for CJK', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+      sans-serif;
+    --font-text:
+      'IBM Plex Sans for CJK', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  }
+  :where([lang]:lang(zh-Hant)) {
+    --font-display:
+      'Fira Sans Extra Condensed for CJK', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    --font-text: 'IBM Plex Sans for CJK', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', sans-serif;
+  }
+  :where([lang]:lang(ja)) {
+    --font-display: 'Fira Sans Extra Condensed for CJK', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+    --font-text:
+      'IBM Plex Sans for CJK', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', Meiryo, 'Noto Sans CJK JP',
+      sans-serif;
+  }
+  :where([lang]:lang(ko)) {
+    --font-display:
+      'Fira Sans Extra Condensed for CJK', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --font-text: 'IBM Plex Sans for CJK', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans CJK KR', sans-serif;
+  }
+  :where([lang]:lang(zh-Hans), [lang]:lang(zh-Hant), [lang]:lang(ja), [lang]:lang(ko)) {
+    --leading-body: 1.75;
+    --leading-heading: 1.35;
+    --leading-page-title: 1.35;
+    --leading-display: 1.35;
+    --tracking-display: 0;
+    --measure: 40em; /* about 35–42 characters per line */
+  }
+
+  /* Arabic: Plex Sans Arabic for Arabic script, Plex Sans for Latin runs. Letter spacing breaks
+     joining, so it is zero at every size. Noto Kufi Arabic (display) is still a candidate. */
+  :where([lang]:lang(ar)) {
+    --font-display: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+    --font-text:
+      'IBM Plex Sans Arabic', 'IBM Plex Sans', 'IBM Plex Sans Fallback', 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+    --leading-body: 1.8;
+    --leading-heading: 1.35;
+    --leading-page-title: 1.35;
+    --leading-display: 1.35;
+    --tracking-display: 0;
+    --tracking-label: 0;
+    --tracking-wordmark: 0;
+  }
+}
