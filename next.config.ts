@@ -1,10 +1,12 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { loadConfig } from './src/config/load';
+import { writeGeneratedConfig } from './src/config/generate';
 
 // Static export with a build-time base path (design doc §3.2, §15.4). Changing the base
 // path requires a rebuild; `npm run build` packages out/ into dist/{basePath}/.
-const site = loadConfig();
+// Regenerating here keeps the app's constants (`@/config`) identical to this configuration,
+// even when `next dev` or `next build` is started without `npm run gen`.
+const site = writeGeneratedConfig();
 
 const nextConfig: NextConfig = {
   output: 'export',

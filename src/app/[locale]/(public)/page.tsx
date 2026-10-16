@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, localeByPrefix } from '@/config';
+import { enterLocale } from '@/i18n/locale';
 import { absoluteUrl, paths } from '@/modules/url';
 
 // Placeholder home per locale (step 1a). Step 4b replaces it with the first screen (§11.8.1);
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LocaleHome({ params }: Props) {
   const { locale } = await params;
-  const entry = localeByPrefix(locale)!;
+  const entry = enterLocale(locale);
   const t = await getTranslations('common.placeholder');
   return (
     <main data-page="placeholder-home" data-locale={entry.code}>

@@ -7,7 +7,7 @@ import { paths } from '@/modules/url';
 // use-case entries and recent works (§11.8.7).
 export async function ErrorPage({ locale, kind }: { locale: string; kind: 'notFound' | 'gone' }) {
   const entry = localeByPrefix(locale)!;
-  const t = await getTranslations('common.errors');
+  const t = await getTranslations({ locale: entry.code, namespace: 'common.errors' });
   return (
     <main data-error={kind === 'notFound' ? '404' : '410'} data-locale={entry.code}>
       <h1>{t(`${kind}.title`)}</h1>
