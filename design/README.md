@@ -2,12 +2,12 @@
 
 本目录保存 Prompt Seen 已选定的视觉方向资产：暗房方向（A），提示词标注采用校样方向（C）的字母与高亮。规格以 [设计文档](../docs/prompt-library-website-design.md) 第 11.1.9 节为准，本目录中的文件是它的可视化参考。
 
+token 原稿 `tokens/darkroom.css` 已在步骤 1c 迁入 [`src/styles/tokens/`](../src/styles/tokens/color.css)，那里是唯一来源；本目录不再保存 token。
+
 ## 目录
 
 | 路径 | 内容 |
 | --- | --- |
-| `tokens/darkroom.css` | 功能层与品牌层 token（CSS 自定义属性），默认跟随系统主题，`data-theme` 可覆盖；第 1 阶段迁入 `src/styles/tokens/` |
-| `tokens/darkroom.tokens.json` | 同一组 token 的 JSON 版本，由 `darkroom.css` 生成 |
 | `visual-direction/darkroom/home.html` | 首页首屏：展出作品、片边与帧号、字母标注、更多展出 |
 | `visual-direction/darkroom/feed.html` | 连续列表：等高行、悬停与收藏状态、21:9 特写行、加载占位与状态行 |
 | `visual-direction/darkroom/detail.html` | 详情：片边舞台、字母标注、Prompt 纸张、测试记录 |

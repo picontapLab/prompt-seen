@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.9  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9 修订：2026-10-16）  
+> 文档版本：1.10  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.10 修订：2026-10-16）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -13,6 +13,7 @@
 > 1.7 修订：采用方案 B（静态导出、预生成详情页加 pushState 弹层），依据《子路径部署决策》第 7 节的原型验证结果；按该备忘第 6 节修改第 3–5、7–9、11、14–18、20、21 章的相关内容，并把原型发现的实现细节写入第 4.1、9.5、11.3.1、14.2、15.4.3、15.4.4 与 16.3 节。  
 > 1.8 修订：步骤 1a 的决定——工程位于仓库根目录，文档移入 `docs/`；预览与生产托管选用 Cloudflare Pages；代码 MIT、内容 CC BY 4.0；国际化消息库选用 next-intl；语言注册表增加 `preview` 字段与 `BUILD_MODE` 构建模式；补充第 4 章的实际目录、配置生成与输出注册机制，以及《工程约定》（第 4.1、8.2、15.4.2、17.1、17.3、20 章）。  
 > 1.9 修订：步骤 1b 的决定——内容文件格式与维护说明 `content/README.md`；专题页说明的位置及其发布条件（该语言至少 3 条可见 Prompt）；`redirects.yaml` 与已删除清单的格式；译文 `sourceHash` 的计算方式；受限 MDX 组件（`Figure`、`Callout`）与按 ID 书写的站内链接；图片 `credit.copyrightNotice`、展示规格格式与本地媒体驱动的存放位置；`.generated/content/` 的内容模型与读取模块；样例内容的性质（第 4、4.1、5.2–5.5、6.2、8.4、9.1、9.5、10.2、14.1、14.3、17.3、17.6 章）。  
+> 1.10 修订：步骤 1c 的决定——token 以 `src/styles/tokens/` 中的 CSS 文件为唯一来源，`design/tokens/` 移除；`tokens-check` 的 44 组组合逐项列出，并增加补充组合；字体子集、按文字的 `unicode-range` 与中日韩引号处理；主题首绘脚本、根元素属性与 `theme-color` 的所有权；页眉主题按钮与页脚、菜单中的三选一；语言选择显示母语名称；外壳与区块注册表；交互专用代码按需加载、`src/ui/` 按文件导入（第 4、4.1、11.1.2、11.1.3、11.1.9、11.6.3、15.5.2、17.3 章）。版本号跳过 1.9：1.9 是并行进行的步骤 1b 的修订，两者合并时保留各自条目。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -321,6 +322,7 @@ prompt-library/
 │   │   └── geo/
 │   ├── ui/
 │   │   ├── primitives/
+│   │   ├── brand/
 │   │   ├── gallery/
 │   │   ├── prompt-detail/
 │   │   ├── detail-popup/
@@ -336,6 +338,7 @@ prompt-library/
 │   │   └── messages/{locale}/{namespace}.json
 │   └── styles/
 │       ├── tokens/
+│       ├── fonts/
 │       └── base/
 ├── scripts/
 │   ├── config-gen.ts
@@ -381,9 +384,12 @@ prompt-library/
 - `src/app/layout.tsx` 只透传子节点；`<html lang dir>` 由 `[locale]/layout.tsx` 与语言入口的 `(entry)/layout.tsx` 输出，使每个页面带有自己的语言与方向（第 8.6 节）。`[locale]` 下的页面调用 `notFound()` 时，需要不输出 `<html>` 的 `[locale]/not-found.tsx`。
 - `src/modules/` 封装内容读取、模板渲染、资源选择、搜索与 SEO 规则。`url/` 是生成所有对外地址的唯一模块；`geo/` 负责 Markdown 版本、`llms.txt` 与 AI 爬虫规则输出。
 - `src/ui/primitives/` 封装 React Aria 组件基元与项目样式，业务组件只使用这一层，不直接拼装 ARIA 属性。
+- `src/ui/brand/` 是品牌层元素（片边、帧号、裁切标记、占位字标）；`src/ui/motion/` 是动效 Provider 与预设；`src/ui/navigation/` 是根文档与可替换外壳（第 15.5.2 节）。
+- 实施细节（1.10）：`src/ui/` 与 `src/state/` 不设汇总导出文件（barrel），按文件导入（如 `@/ui/primitives/Button`）。服务端组件从汇总文件导入时，其中每个 `'use client'` 模块都会成为客户端入口，整组基元会进入每个页面的首次加载。只在交互时需要的部分按需加载：页眉语言列表在首次使用时加载，窄屏菜单在首次打开时加载，Toast 区域在页面空闲后加载。外壳使首次必要 JavaScript 增加约 36 KiB（gzip，1a 的空站点为 183.5 KiB，1c 为 219.5 KiB），其中约 12 KiB 是客户端消息格式化，步骤 2 的客户端模块本来也需要。
 - `src/ui/` 负责画廊和编辑器等用户界面。
-- `design/` 保存已选定视觉方向的参考页面、截图与 token 原稿（第 11.1.9 节）。步骤 1c（第 17 章）把 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，之后以后者为唯一来源，`design/` 只作视觉参考。
+- `design/` 保存已选定视觉方向的参考页面与截图（第 11.1.9 节），只作视觉参考。步骤 1c 已把 token 原稿 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，`design/tokens/` 随之移除。
 - `src/styles/tokens/` 是视觉与动效 token 的唯一来源，生成 CSS 自定义属性；`scripts/tokens-check.ts` 在 CI 中校验第 11.1.9 节列出的颜色组合对比度。
+- 实施细节（1.10）：token 直接写成 CSS 文件——`color.css`（功能层与品牌层颜色，浅色、跟随系统的深色、用户选择的深色三块，以及 `prefers-contrast: more`）、`type.css`（字号、字重、按 `lang` 切换的字体栈与行高）、`layout.css`（间距、断点相关值、容器宽度、圆角、层级、焦点环、触控目标）、`motion.css`（动效 token 与减少动效）。全局样式按 `@layer reset, tokens, base, components, utilities` 排序，组件样式为 CSS Modules 并放在 `components` 层。代码需要的少量数值（动效、断点、`theme-color`）有 TypeScript 镜像，单元测试保证与 CSS 一致；`src/` 中媒体查询与容器查询只允许第 11.1.3 节的断点。字体在 `src/styles/fonts/`（第 11.1.2 节）。`.storybook/` 展示各组件状态，工具栏切换浅色、深色、并排两种主题、语言与方向、减少动效。
 - `.generated/` 保存构建阶段需要的完整索引、MDX 导入映射和反向关联，不直接对外公开。
 - `.generated/content/` 是内容模型：`manifest.json`（构建、语言、重定向与 410 清单）、`{locale}/index.json`（该语言可见内容的摘要）与 `{locale}/{kind}/{key}.json`（详情模型）。类型定义在 `src/modules/content/types.ts`，页面通过服务端模块 `@/modules/content` 读取；构建期代码（读取 `content/`、MDX 编译、校验）位于 `scripts/lib/content/`。
 - `public/media/` 是本地媒体驱动的存储，随仓库提交，使全新克隆无需云端凭据即可显示全部图片（第 10.1、15.5.3 节）；文件只由 `media:import` 写入。
@@ -1240,6 +1246,7 @@ flowchart LR
 - 中日韩展示字体只用于构建期已知的文字（页面标题、首屏引述、专题标题）。构建时收集这些字符生成子集，单页字体文件可控制在几十 KB；卡片标题、搜索结果和用户输入等动态文字使用正文字体，不依赖子集。
 - 中日韩页面为西文正文字体声明的 `@font-face` 通过 `unicode-range` 排除 U+2018–U+201F 等引号，使中文引号使用全角字形，不被渲染成窄的西文引号。
 - 字体加载使用 `font-display: swap` 与尺寸匹配的回退字体（`size-adjust` 等），切换时不产生明显位移。
+- 实施细节（1.10）：字体文件取自 Fontsource 5.3.0（SIL OFL 1.1），以 `next/font/local` 自托管在 `src/styles/fonts/`：Fira Sans Extra Condensed 600/700、IBM Plex Sans 400/500/600、IBM Plex Mono 400/500 各含 latin、latin-ext、cyrillic 子集，IBM Plex Sans Arabic 400/500/600 只含阿拉伯文字子集（拉丁字符落到 IBM Plex Sans）。每个子集是带 `unicode-range` 的独立 `@font-face`，页面只下载用到的子集；只预加载正文 400 与展示 700 的 latin 文件。正文与展示字体各有一个由 `next/font` 按字体度量生成的 `size-adjust` 回退字体（本地 Arial），等宽字体不生成（只能模拟 Arial 或 Times New Roman）。中日韩页面使用同一批文件声明的 “… for CJK” 字体族，其 `unicode-range` 去掉 U+2014、U+2018–U+201F 与 U+2026，破折号、引号与省略号使用全角的中日韩字形。
 
 | token | 字号 / 行高（拉丁文字） | 用途 |
 | --- | --- | --- |
@@ -1278,7 +1285,7 @@ flowchart LR
 - 页面布局使用 12 列栅格；卡片、详情侧栏等组件内部使用容器查询，根据组件自身宽度而不是视口调整。
 - 间距 token 以 4 px 为单位：4、8、12、16、20、24、32、40、48、64、80、96。区块之间 64–96，组件之间 24–32，组件内部 8–16。
 - 边距与间距使用逻辑属性（`margin-inline`、`padding-block`），RTL 自动镜像。
-- 固定导航高度 56 px，页面设置相同的 `scroll-padding-top`，锚点跳转与键盘聚焦的元素不被导航遮挡。
+- 固定导航高度 56 px，页面设置相同的 `scroll-padding-top`，锚点跳转与键盘聚焦的元素不被导航遮挡。暗房方向稿的桌面页眉为 64 px，实现以本条为准。
 - 底部操作栏与全屏层使用 `env(safe-area-inset-*)`，不被刘海和系统手势条遮挡。
 
 #### 11.1.4 画廊布局：等高行
@@ -1437,7 +1444,7 @@ flowchart LR
 | `film-print` | `#A8A196` | `#A8A196` | 片边印字 |
 | `overlay-outline` | `rgb(26 18 6 / 0.85)` | 同左 | 图片上标注元素的 1 px 深色描边 |
 
-以上组合按 WCAG 2.2 公式计算，深浅两套与片边共 44 组全部通过。关键结果（深色 / 浅色）：`text-secondary` 最低 6.78 / 5.68；`border-control` 最低 3.70 / 3.26；`mark` 作为文字最低 9.88 / 4.55；字母标签 10.55 / 6.11；高亮短语文字 9.80 / 13.25；片边上的琥珀与印字不低于 6.86。琥珀直接叠在作品的白色区域上只有 1.76:1，因此图片上的标注元素一律带 `overlay-outline` 描边（深色描边对白色 18.5:1）。
+以上组合按 WCAG 2.2 公式计算，深浅两套与片边共 44 组全部通过（实施细节（1.10）：每套主题 22 组——`text-primary`、`text-secondary`、`accent`（链接与焦点环）、`border-control`、`mark` 各自在 `canvas`、`surface-raised`、`surface-sunken` 上，`on-accent` / `accent`，`danger` / `danger-subtle`，`success` / `success-subtle`，`mark-text` / `mark`，`text-primary` / `mark-soft`，`film-mark` / `film`，`film-print` / `film`；文字与印字按 4.5:1，`border-control` 按 3:1。`tokens-check` 另外校验补充组合：悬停的主按钮、已选标签上的两级文字、三种背景上的字段错误、6 组变量色，以及白色作品区域上的标注描边与琥珀线；补充组合未通过同样阻止合并。两块深色 token 不一致时也失败）。关键结果（深色 / 浅色）：`text-secondary` 最低 6.78 / 5.68；`border-control` 最低 3.70 / 3.26；`mark` 作为文字最低 9.88 / 4.55；字母标签 10.55 / 6.11；高亮短语文字 9.80 / 13.25；片边上的琥珀与印字不低于 6.86。琥珀直接叠在作品的白色区域上只有 1.76:1，因此图片上的标注元素一律带 `overlay-outline` 描边（深色描边对白色 18.5:1）。
 
 **字体**（取代第 11.1.2 节的候选）：
 
@@ -1617,6 +1624,15 @@ flowchart LR
 普通首次输出采用确定的默认快照，接管后恢复收藏与参数。主题是受控首绘例外：若需恢复手动主题，使用小型首绘前初始化只设置根元素主题属性，再由 ThemeProvider 接管；脚本与根属性的所有权、初始值和 CSP 配置在实现时明确验证，不靠页面级隐藏或广泛抑制 hydration 警告掩盖问题。
 
 主题切换保留焦点和当前编辑内容。只对颜色做短过渡，避免整页遮罩或同时重放图片入场。减少动效模式直接切换主题。
+
+实施细节（1.10）：
+
+- 偏好保存在 `prompt-library:preferences:v1`（JSON，`theme` 为 `system`、`light` 或 `dark`），未知字段原样保留；存储被禁用或数据损坏时退回本次会话。
+- 只有明确选择浅色或深色时，`<html>` 才带 `data-theme`。`<head>` 中的首绘脚本在任何样式绘制前写入该属性，ThemeProvider 在接管后与每次变化时用同一规则写入；React 从不渲染这个属性。`<html>` 上的 `suppressHydrationWarning` 只覆盖该元素自身的属性；首绘脚本由一个客户端组件输出，客户端渲染为不执行的 `text/plain`，另一处豁免只是该 `<script>` 自身的 `type`。
+- `theme-color` 默认由视口元数据按系统输出两条（带 `media`）；明确选择时，首绘脚本在 `<head>` 最前插入一条不带 `media` 的覆盖项。覆盖项的颜色写成 `rgb()`：React 按 `content` 认领 `<head>` 中的 `<meta>`，与视口元数据同为 `#edece8` 时会把覆盖项当作自己的节点，之后移除它会使下一次客户端导航出错。
+- 首次输出与主题有关的界面差异全部由 CSS 决定（`.when-dark`、`.when-light`），如页眉按钮的图标与名称，因此不受存储内容影响、不产生 hydration 差异。显示当前偏好的控件在接管后再显示存储值。
+- 页眉为单个主题按钮，在浅色与深色之间切换（以当前显示的主题为准）；“跟随系统、浅色、深色”三选一位于页脚与窄屏菜单。
+- 静态导出无法使用 CSP nonce；Next.js 本身也输出内联数据脚本，首绘脚本不增加新的 CSP 要求（第 15.4.3 节）。
 
 #### 11.6.4 异步与连续操作
 
@@ -2248,6 +2264,8 @@ feed:
 
 外壳组件（页眉、页脚、Logo 区域）通过配置选择默认实现或宿主风格实现；业务页面不直接引用品牌资源。
 
+实施细节（1.10）：外壳在 `src/ui/navigation/Shell.tsx`，输出跳到正文链接、页眉、唯一的 `<main>` 与页脚；页面只渲染 `<main>` 中的内容。`shell.header: default` 为暗房页眉与页脚；`host` 用于由宿主在外层提供页眉页脚的部署，只保留本站必须提供的语言与主题控件，不显示本站字标。宿主页眉页脚的具体接入方式在步骤 5 与主站一起确定。页眉区块来自 `src/ui/navigation/sections.ts` 的注册表，页面存在后才显示，避免链接到 404；建立该页面的步骤在同一 PR 中把对应项设为可用。语言选择显示当前语言的母语名称（方向稿为 “EN · 中文”，按第 11.11 节不在主要文案中出现语言代码），可按母语名称、界面语言中的名称、英文名称或代码检索；页面有该语言版本（hreflang）时保持同一资源，否则进入该语言首页。
+
 #### 15.5.3 降低自托管门槛
 
 - 媒体存储提供本地文件驱动（第 10.1 节），无需云端凭据即可运行完整示例。
@@ -2448,6 +2466,7 @@ feed:
 
 - 范围：把 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，此后以后者为唯一来源（第 4.1 节）；`tokens-check` 校验第 11.1.9 节的 44 组组合并接入 CI；Fira Sans Extra Condensed 与 IBM Plex 字体的子集、回退与 `size-adjust`（第 11.1.2、11.1.9 节）；主题首绘、ThemeProvider 与 `color-scheme`（第 11.6.3、11.9 节）；栅格、断点与间距（第 11.1.3 节）；React Aria 基元，即第 11.1.7 节中的 Button、Dialog、Select、Combobox、SegmentedControl、TextField、Tooltip、Toast 与 Chip；Storybook，以及各状态在浅色、深色、RTL 与减少动效下的样本；动效 token 与 `src/ui/motion/` 基础（第 12.2、12.4 节）；可替换的页眉与页脚外壳（第 15.5.2 节）；片边、帧号与裁切标记等品牌元素（第 11.1.9 节）。其余业务组件由使用它的步骤实现。
 - 通过条件：44 组组合全部通过，人为改坏一个数值时 CI 失败；Storybook 展示所列组件的全部状态；切换主题无闪烁，控制台没有 hydration 警告；外壳与品牌元素对照 `design/visual-direction/darkroom/` 的页面；第 11.12 节“不得带入最终实现”的做法没有出现。
+- 结果（2026-10-16）：44 组组合与 28 组补充组合全部通过，`tokens-check` 在 CI 的 `check` 任务中运行，单元测试改坏一个数值时确认失败；Storybook 在 CI 中构建，展示 9 个基元、品牌元素与动效预设的各状态，工具栏切换浅色、深色、并排主题、语言与 RTL、减少动效；根路径生产构建与 `/prompt-seen` 预览构建经参考 nginx 通过端到端测试，其中包括禁用应用脚本后首绘即为已保存的主题、切换主题后无控制台错误、浅色与深色下的 axe 检查；开发模式下各主题组合无 hydration 警告。决定写入第 4.1、11.1.2、11.1.3、11.1.9、11.6.3 与 15.5.2 节（1.10）。
 
 **2 纵向样例：Prompt 详情与模板详情**
 

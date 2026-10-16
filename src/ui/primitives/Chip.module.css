@@ -1,0 +1,120 @@
+@layer components {
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    min-block-size: 36px;
+    padding-inline: var(--space-12);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-control);
+    background: transparent;
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+    white-space: nowrap;
+    outline: none;
+    transition:
+      background-color var(--duration-feedback) linear,
+      border-color var(--duration-feedback) linear;
+  }
+  .count {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-regular);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Filter */
+  .filter {
+    cursor: pointer;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .filter[data-hovered] {
+      border-color: var(--border-control);
+    }
+  }
+  .filter[data-pressed] {
+    transform: scale(var(--scale-press));
+  }
+  .filter[data-selected] {
+    border-color: var(--text-primary);
+    background: var(--accent-subtle);
+    box-shadow: inset 0 -2px 0 var(--mark);
+  }
+  .filter[data-disabled] {
+    color: var(--text-secondary);
+    border-style: dashed;
+    cursor: not-allowed;
+  }
+  .filter[data-focus-visible],
+  .removable[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Static tag */
+  .tag {
+    min-block-size: var(--target-dense);
+    padding-inline: var(--space-8);
+    background: var(--surface-sunken);
+    border-color: transparent;
+    font-weight: var(--weight-regular);
+  }
+
+  /* Removable */
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .groupLabel {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+  .removable {
+    padding-inline-end: 0;
+    background: var(--accent-subtle);
+    border-color: transparent;
+  }
+  .removable[data-focused] {
+    border-color: var(--text-primary);
+  }
+  .remove {
+    display: grid;
+    place-items: center;
+    inline-size: 32px;
+    align-self: stretch;
+    color: var(--text-secondary);
+    outline: none;
+    border-radius: var(--radius-control);
+  }
+  .remove :global(svg) {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    stroke-width: var(--icon-stroke);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .remove[data-hovered] {
+      color: var(--text-primary);
+    }
+  }
+  .remove[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: -4px;
+  }
+
+  /* Touch: chips are primary targets there (§11.7). */
+  @media (pointer: coarse) {
+    .filter,
+    .removable {
+      min-block-size: var(--target-min);
+    }
+  }
+}

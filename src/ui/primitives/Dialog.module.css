@@ -1,0 +1,121 @@
+@layer components {
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-scrim);
+    display: grid;
+    place-items: center;
+    padding: var(--page-margin);
+    background: var(--scrim);
+  }
+  .sheetOverlay {
+    place-items: stretch end;
+    padding: 0;
+  }
+  .overlay[data-entering] {
+    animation: fade var(--duration-content) var(--ease-enter);
+  }
+  .overlay[data-exiting] {
+    animation: fade var(--duration-exit) var(--ease-exit) reverse;
+  }
+
+  .modal {
+    z-index: var(--z-detail);
+    inline-size: min(100%, 32rem);
+    max-block-size: calc(100dvh - 2 * var(--page-margin));
+    display: flex;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-panel);
+    background: var(--surface-raised);
+    box-shadow: var(--elevation-2);
+    outline: none;
+  }
+  .modal[data-entering] {
+    animation: rise var(--duration-expand) var(--ease-enter);
+  }
+  .modal[data-exiting] {
+    animation: rise var(--duration-exit) var(--ease-exit) reverse;
+  }
+
+  .sheet {
+    inline-size: min(100%, 24rem);
+    block-size: 100dvh;
+    max-block-size: none;
+    border-block: 0;
+    border-inline-end: 0;
+    border-radius: 0;
+    padding-block-end: env(safe-area-inset-bottom);
+  }
+  .sheet[data-entering] {
+    animation: slide var(--duration-expand) var(--ease-enter);
+  }
+  .sheet[data-exiting] {
+    animation: slide var(--duration-exit) var(--ease-exit) reverse;
+  }
+
+  .dialog {
+    flex: 1;
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+    padding: var(--space-12) var(--space-12) var(--space-12) var(--space-24);
+    border-block-end: 1px solid var(--border-subtle);
+  }
+  .title {
+    font-size: var(--text-xl);
+    line-height: var(--leading-xl);
+  }
+  .close {
+    margin-inline-start: auto;
+  }
+  .body {
+    flex: 1;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: var(--space-24);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-12);
+    padding: var(--space-16) var(--space-24);
+    border-block-start: 1px solid var(--border-subtle);
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(var(--distance-reveal));
+    }
+  }
+  /* From the inline end: right in LTR, left in RTL; reduced motion keeps only the fade. */
+  @keyframes slide {
+    from {
+      opacity: 0;
+      transform: translateX(calc(var(--distance-reveal) * 4));
+    }
+  }
+  :global([dir='rtl']) .sheet[data-entering],
+  :global([dir='rtl']) .sheet[data-exiting] {
+    animation-name: slide-rtl;
+  }
+  @keyframes slide-rtl {
+    from {
+      opacity: 0;
+      transform: translateX(calc(var(--distance-reveal) * -4));
+    }
+  }
+}
