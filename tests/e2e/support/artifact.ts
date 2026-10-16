@@ -10,12 +10,13 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 
 export type BuildInfo = {
   buildId: string;
+  siteName: string;
   buildMode: 'production' | 'preview';
   origin: string;
   basePath: string;
   urlPattern: string;
   defaultLocale: string;
-  locales: { code: string; pathPrefix: string; htmlLang: string; direction: 'ltr' | 'rtl' }[];
+  locales: { code: string; pathPrefix: string; nativeName: string; htmlLang: string; direction: 'ltr' | 'rtl' }[];
 };
 
 function findBuildInfo(dir: string, depth = 0): string | null {
@@ -43,3 +44,16 @@ export const NGINX_CONTAINER = `prompt-seen-nginx-${PORT}`;
 
 /** Public URL on the canonical host for an internal path (default urlPattern). */
 export const publicUrl = (internal: string) => `${BUILD.origin}${BASE}${internal}`;
+
+/**
+ * A UI message from the repository catalogs, with simple {name} arguments filled in. Lets tests
+ * check that each locale's page shows that locale's text, not the default language.
+ */
+export function message(code: string, key: string, values: Record<string, string> = {}): string {
+  const [namespace, ...rest] = key.split('.');
+  const file = path.join(ROOT, 'src/i18n/messages', code, `${namespace}.json`);
+  let node: unknown = JSON.parse(fs.readFileSync(file, 'utf8'));
+  for (const part of rest) node = (node as Record<string, unknown>)[part];
+  if (typeof node !== 'string') throw new Error(`no message ${key} in ${code}`);
+  return node.replace(/\{(\w+)\}/g, (_, name: string) => values[name] ?? `{${name}}`);
+}

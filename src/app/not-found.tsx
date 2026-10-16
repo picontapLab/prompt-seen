@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { builtLocales, defaultLocale } from '@/config';
 import { absoluteUrl, paths } from '@/modules/url';
 
@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RootNotFound() {
-  setRequestLocale(defaultLocale.code);
-  const t = await getTranslations('common.errors');
+  // Explicit locale, never setRequestLocale: React renders this not-found element inside every
+  // page's tree, where setting the request locale would switch those pages to English.
+  const t = await getTranslations({ locale: defaultLocale.code, namespace: 'common.errors' });
   return (
     <html lang={defaultLocale.htmlLang} dir={defaultLocale.direction}>
       <body>

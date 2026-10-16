@@ -10,12 +10,19 @@ export default defineEmitter({
   run({ config, locales, write }) {
     const info = {
       buildId: config.buildId,
+      siteName: config.siteName,
       buildMode: config.buildMode,
       origin: config.origin,
       basePath: config.basePath,
       urlPattern: config.urlPattern,
       defaultLocale: config.defaultLocale,
-      locales: locales.map(({ code, pathPrefix, htmlLang, direction }) => ({ code, pathPrefix, htmlLang, direction })),
+      locales: locales.map(({ code, pathPrefix, nativeName, htmlLang, direction }) => ({
+        code,
+        pathPrefix,
+        nativeName,
+        htmlLang,
+        direction,
+      })),
     };
     write('public', 'build.json', `${JSON.stringify(info, null, 2)}\n`);
   },

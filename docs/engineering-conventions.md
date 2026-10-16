@@ -54,6 +54,10 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
   document.
 - Per-locale error pages live at `/{locale}/404/` and `/{locale}/410/`. Hosts serve them through
   error rules and keep the pages themselves internal.
+- In `next dev`, an address outside `generateStaticParams` (an unknown or unbuilt locale) logs
+  "missing param … required with output: export" and answers 404. That is expected.
+- `next.config.ts` regenerates `src/config/generated/`, so starting `next dev` or `next build`
+  directly uses the same configuration as `npm run dev` and `npm run build`.
 
 ## Messages (i18n)
 
@@ -61,8 +65,20 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
   prefixes and hreflang come from the locale registry and the url module.
 - Catalogs are split per feature: `src/i18n/messages/{locale code}/{namespace}.json`. A session
   adds its own namespace file in every buildable locale and never edits another feature's file.
-- Server components: `getTranslations('namespace')`. Client islands: wrap them in
-  `<ClientMessages namespaces={['namespace']}>`, which sends only those namespaces plus `common`.
+- Every layout and page under `[locale]` calls `enterLocale(params.locale)` (`@/i18n/locale`)
+  first. Under static rendering, layouts and pages render separately and a page does not inherit
+  its layout's locale; without the call, next-intl falls back to English without any error.
+- `generateMetadata` and shared server components pass the locale explicitly:
+  `getTranslations({ locale: entry.code, namespace })`.
+- Never call `setRequestLocale` in `not-found.tsx`, error boundaries or other components that
+  can render inside another page's tree: React renders the root not-found element in every page,
+  so setting the locale there switches every page to that language. Pass the locale explicitly
+  instead.
+- Server components: `getTranslations('namespace')` after `enterLocale`. Client islands: wrap
+  them in `<ClientMessages namespaces={['namespace']}>`, which sends only those namespaces plus
+  `common`.
+- End-to-end tests check that each locale's visible text comes from that locale's catalog
+  (`message()` in `tests/e2e/support/artifact.ts`); add the same check for new pages.
 - `content:validate` fails on invalid ICU syntax, missing keys and arguments that differ from
   English. Translations written by machine are drafts until a reviewer signs them off (§8.4, §17.6).
 

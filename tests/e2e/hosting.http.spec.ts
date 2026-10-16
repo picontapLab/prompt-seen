@@ -1,6 +1,15 @@
 import { expect, test } from '@playwright/test';
-import { BASE, BUILD, publicUrl } from './support/artifact';
-import { alternates, canonical, dataAttr, htmlElement, localReferences, robots } from './support/html';
+import { BASE, BUILD, message, publicUrl } from './support/artifact';
+import {
+  alternates,
+  canonical,
+  dataAttr,
+  elementText,
+  htmlElement,
+  localReferences,
+  robots,
+  title,
+} from './support/html';
 
 // Raw HTTP through the reference nginx: status codes, headers and the HTML crawlers receive.
 // Step 1a pass conditions (design doc §17.3): every built locale has a page whose canonical is
@@ -41,6 +50,13 @@ for (const locale of BUILD.locales) {
     const html = await res.text();
     expect(htmlElement(html)).toEqual({ lang: locale.htmlLang, dir: locale.direction });
     expect(dataAttr(html, 'locale')).toBe(locale.code);
+    // Text comes from this locale's catalog, not the default language (§8.3).
+    const heading = message(locale.code, 'common.placeholder.title', { siteName: BUILD.siteName });
+    expect(elementText(html, 'h1')).toBe(heading);
+    expect(elementText(html, 'p')).toBe(
+      message(locale.code, 'common.placeholder.body', { language: locale.nativeName }),
+    );
+    expect(title(html)).toBe(heading);
     expect(canonical(html)).toBe(publicUrl(`/${locale.pathPrefix}/`));
     expect(canonical(html)).toMatch(new RegExp(`^${BUILD.origin}${BASE}/`));
     expect(alternates(html)).toEqual(expectedAlternates);
@@ -55,6 +71,8 @@ for (const locale of BUILD.locales) {
     expect(dataAttr(html, 'error')).toBe('404');
     expect(dataAttr(html, 'locale')).toBe(locale.code);
     expect(htmlElement(html)).toEqual({ lang: locale.htmlLang, dir: locale.direction });
+    expect(elementText(html, 'h1')).toBe(message(locale.code, 'common.errors.notFound.title'));
+    expect(title(html)).toBe(message(locale.code, 'common.errors.notFound.title'));
     expect(robots(html).some((r) => r.includes('noindex'))).toBe(true);
   });
 

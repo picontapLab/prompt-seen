@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
-import { builtLocales, config } from '@/config';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { builtLocales, config, defaultLocale } from '@/config';
 import { absoluteUrl, paths } from '@/modules/url';
 
 // Language entry at the base path, also the x-default (design doc §8.2). Placeholder until
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function LanguageEntry() {
+  setRequestLocale(defaultLocale.code); // pages do not inherit the layout's locale
   const t = await getTranslations('common.languageEntry');
   return (
     <main data-page="language-entry">

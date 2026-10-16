@@ -2365,7 +2365,7 @@ feed:
 | --- | --- | --- |
 | 代码根目录 | 工程位于仓库根目录；本文、《子路径部署决策》与《语言覆盖评估》移入 `docs/`，相对链接已修正 | 根目录保留 README、LICENSE 与工程文件 |
 | Git 托管、仓库名与公开时间 | GitHub 私有仓库；公开时间待定 | 公开前需核对第 15.5 节的许可与示例内容 |
-| 预览与生产托管 | Cloudflare Pages：CI 把测试过的 `dist/` 上传为预览，生产部署在步骤 5 接入 | 生成 `_headers` 与 `_redirects`；Pages 不支持 410，退化为 404（第 9.5 节） |
+| 预览与生产托管 | Cloudflare Pages，在步骤 5 部署时接入，PR 预览随之启用。此前的要求是开源项目在本地完整运行：克隆、安装、开发、构建，以及经参考 nginx 的端到端测试（2026-10-16 维护者决定） | 生成 `_headers` 与 `_redirects`；Pages 不支持 410，退化为 404（第 9.5 节）。CI 的预览任务已就绪，配置密钥前自动跳过 |
 | 代码许可与内容许可 | 代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注，品牌不授权 | 根目录 `LICENSE` 与 `content/LICENSE` |
 | 国际化消息库 | next-intl，只用于 ICU 消息格式化 | 见第 4.1 节；语言路由仍由注册表与 `url` 模块负责 |
 
@@ -2404,7 +2404,7 @@ feed:
 
 - 范围：Next.js App Router 与 TypeScript 工程，提交锁文件（第 3.1 节）；按第 3.2 节配置 `next.config`（`output: 'export'`、`basePath`、`trailingSlash: true`），并加入打包到 `dist/{basePath}/` 的步骤；声明站点图标（第 15.4.3 节）；lint、格式化、单元测试、Playwright 与 axe-core；CI 执行第 15.1 节的安装、类型检查、内容校验、构建与核心路由检查，并分别以根路径和 `/prompt-seen` 构建；经参考 nginx 运行 Playwright，浏览器包括 Chrome、WebKit 与 Firefox；PR 预览部署（`noindex`）。`src/config/` 与 `site.yaml` Schema（第 4.1、15.4.2 节），为首页展出、列表编排、robots、外壳与品牌预留键；`url` 模块与 `withBasePath()`（第 9.3、15.4.3 节）；`locales.yaml` 注册表与生成的 locale 类型（第 8.2 节）；国际化消息库与按功能拆分的消息文件；`content-build` 的输出注册机制（第 17.4 节）；第 4 章目录骨架与生成目录的 `.gitignore`。
 - 通过条件：CI 在空站点上通过；两种构建下每个已启用 locale 都输出占位页，原始 HTML 中的 canonical 是带基础路径的绝对地址；经参考 nginx 访问时，访问日志中没有基础路径以外的请求；新增一种构建输出只需新增一个文件。
-- 结果（2026-10-15，分支 `step-1a-scaffold`）：工程约定见 `docs/engineering-conventions.md`。站点配置与语言注册表的 Schema 已在本步骤完成（`src/config/schema.ts`），1b 在 `content:validate` 中沿用并补充内容模型、重定向与发布规则。国际化消息库选定 next-intl，只用于 ICU 消息格式化。CI 的根路径构建为生产模式、`/prompt-seen` 构建为预览模式，后者即 PR 预览上传到 Cloudflare Pages 的产物；仓库配置 `CLOUDFLARE_API_TOKEN` 与 `CLOUDFLARE_ACCOUNT_ID` 前，预览任务只提示并跳过。
+- 结果（2026-10-15 合并，PR #1；2026-10-16 修正）：工程约定见 `docs/engineering-conventions.md`。站点配置与语言注册表的 Schema 已在本步骤完成（`src/config/schema.ts`），1b 在 `content:validate` 中沿用并补充内容模型、重定向与发布规则。国际化消息库选定 next-intl，只用于 ICU 消息格式化。CI 的根路径构建为生产模式、`/prompt-seen` 构建为预览模式，后者即日后 PR 预览上传到 Cloudflare Pages 的产物；按第 17.1 节，PR 预览推迟到步骤 5，配置密钥前预览任务只提示并跳过。2026-10-16 修正：在全新克隆中验证本地运行时，发现非默认语言页面的正文仍是英语——根 `not-found.tsx` 调用 `setRequestLocale` 覆盖了页面的语言（React 会在每个页面的树中渲染该 not-found 元素）；改为每个 `[locale]` 布局与页面先调用 `enterLocale()`，not-found 与共享组件显式传入 locale，并在端到端测试中逐个 locale 核对标题与正文来自对应的消息文件。`next.config.ts` 同时重新生成 `src/config/generated/`，直接运行 `next dev` 或 `next build` 也不会与应用常量不一致。
 
 **1b 内容模型与构建管线**
 
@@ -2588,7 +2588,7 @@ feed:
 - AI 训练类爬虫的允许策略（第 9.10.2 节）。
 - 访问分析工具，以及 Search Console、Bing Webmaster Tools、IndexNow 密钥。
 - 图片存储提供方、CDN 域名和导入凭据配置。
-- Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。已确定：GitHub 私有仓库、`main` 分支、Cloudflare Pages；Pages 项目与 CI 密钥由维护者创建。
+- Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。已确定：GitHub 私有仓库、`main` 分支、Cloudflare Pages；Pages 项目与 CI 密钥在步骤 5 由维护者创建，此前不需要。
 - 国际化消息库（须支持 ICU MessageFormat，第 11.11 节）。
 - 第一批自有或已明确可使用的 Prompt、图片和模板。
 - 初始分类词汇、专题与精选顺序。
