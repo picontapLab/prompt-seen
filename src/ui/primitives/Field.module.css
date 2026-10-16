@@ -1,0 +1,225 @@
+/* Shared parts of form fields: label outside the control, help, error next to the field
+   (§11.7), and the control box used by TextField, Select and Combobox. */
+@layer components {
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    min-inline-size: 0;
+  }
+
+  .labelRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-12);
+  }
+  .label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+  }
+  .necessity,
+  .counter {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    font-variant-numeric: tabular-nums;
+  }
+  .counter[data-over] {
+    color: var(--danger);
+  }
+
+  .description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .error {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    color: var(--danger);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .error :global(svg) {
+    flex: none;
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    margin-block-start: 2px;
+    stroke-width: var(--icon-stroke);
+  }
+
+  /* The control box: 2px corners, a border-control edge that passes 3:1 on every surface. */
+  .control {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--target-min);
+    inline-size: 100%;
+    border: 1px solid var(--border-control);
+    border-radius: var(--radius-control);
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    transition: border-color var(--duration-feedback) linear;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .control[data-hovered] {
+      border-color: var(--text-secondary);
+    }
+  }
+  .control[data-focus-within],
+  .control[data-focused] {
+    border-color: var(--accent);
+  }
+  .control[data-focus-visible],
+  .control[data-focus-within][data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+  .control[data-invalid] {
+    border-color: var(--danger);
+    box-shadow: inset 0 0 0 1px var(--danger);
+  }
+  .control[data-disabled] {
+    border-color: var(--border-subtle);
+    background: var(--surface-sunken);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+  }
+
+  .input {
+    flex: 1;
+    min-inline-size: 0;
+    align-self: stretch;
+    padding: var(--space-8) var(--space-12);
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: var(--text-base);
+    line-height: var(--leading-base);
+    outline: none;
+    overflow-wrap: anywhere;
+  }
+  .input::placeholder {
+    color: var(--text-secondary);
+    opacity: 1;
+  }
+  textarea.input {
+    resize: vertical;
+    min-block-size: calc(var(--leading-base) * 4 + var(--space-16));
+  }
+
+  /* Trailing button inside a control (Select, Combobox). */
+  .trigger {
+    display: grid;
+    place-items: center;
+    inline-size: var(--target-min);
+    align-self: stretch;
+    color: var(--text-secondary);
+    outline: none;
+  }
+  .trigger :global(svg) {
+    inline-size: var(--icon-ui);
+    block-size: var(--icon-ui);
+    stroke-width: var(--icon-stroke);
+    transition: transform var(--duration-feedback) var(--ease-enter);
+  }
+  .trigger[data-pressed] :global(svg),
+  .control[data-open] .trigger :global(svg) {
+    transform: rotate(180deg);
+  }
+
+  /* Popover with a list of options. */
+  .popover {
+    min-inline-size: var(--trigger-width);
+    max-block-size: min(22rem, var(--visual-viewport-height, 100vh));
+    overflow: auto;
+    padding: var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-panel);
+    background: var(--surface-raised);
+    box-shadow: var(--elevation-1);
+    z-index: var(--z-menu);
+    outline: none;
+  }
+  .popover[data-entering] {
+    animation: pop var(--duration-feedback) var(--ease-enter);
+  }
+  .popover[data-exiting] {
+    animation: pop var(--duration-instant) var(--ease-exit) reverse;
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: translateY(calc(-1 * var(--distance-reveal) / 2));
+    }
+  }
+  .listbox {
+    outline: none;
+  }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    min-block-size: var(--target-min);
+    padding: var(--space-8) var(--space-12);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+    outline: none;
+  }
+  .option[data-focused] {
+    background: var(--accent-subtle);
+  }
+  .option[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+  .option[data-selected] {
+    font-weight: var(--weight-semibold);
+  }
+  .option[data-disabled] {
+    color: var(--text-secondary);
+    cursor: not-allowed;
+  }
+  .check {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    flex: none;
+    margin-inline-start: auto;
+    stroke-width: var(--icon-stroke);
+  }
+  .optionDetail {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+  .empty {
+    padding: var(--space-8) var(--space-12);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  /* Quiet: no box, monospaced, sized to its value; for the header (§11.1.9 darkroom header). */
+  .quiet .control {
+    border-color: transparent;
+    background: transparent;
+    min-block-size: var(--target-min);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .quiet .control[data-hovered] {
+      border-color: var(--border-subtle);
+    }
+  }
+  .quiet .input {
+    field-sizing: content;
+    min-inline-size: 6ch;
+    max-inline-size: 16ch;
+    padding-inline: var(--space-8) 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+  .quiet .trigger {
+    inline-size: calc(var(--target-min) - var(--space-12));
+  }
+}

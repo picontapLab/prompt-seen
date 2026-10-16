@@ -21,11 +21,11 @@ export default async function LanguageEntry() {
   setRequestLocale(defaultLocale.code); // pages do not inherit the layout's locale
   const t = await getTranslations('common.languageEntry');
   return (
-    <main data-page="language-entry">
+    <div className="container" data-page="language-entry">
       <h1>{config.siteName}</h1>
       <p>{t('description')}</p>
       <h2>{t('title')}</h2>
-      {/* Unstyled until step 1c: rows tall enough for 24 px targets (WCAG 2.5.8). */}
+      {/* Styled by step 3e; rows tall enough for 24 px targets (WCAG 2.5.8). */}
       <ul style={{ lineHeight: 2 }}>
         {builtLocales.map((l) => (
           <li key={l.code}>
@@ -35,6 +35,6 @@ export default async function LanguageEntry() {
           </li>
         ))}
       </ul>
-    </main>
+    </div>
   );
 }

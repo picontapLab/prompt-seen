@@ -1,0 +1,160 @@
+/* States come from React Aria data attributes, so Storybook can show each one (§11.1.7). */
+@layer components {
+  .button {
+    --_bg: transparent;
+    --_fg: var(--text-primary);
+    --_border: transparent;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-20);
+    border: 1px solid var(--_border);
+    border-radius: var(--radius-control);
+    background: var(--_bg);
+    color: var(--_fg);
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    transition:
+      background-color var(--duration-feedback) linear,
+      border-color var(--duration-feedback) linear,
+      color var(--duration-feedback) linear,
+      transform var(--duration-feedback) var(--ease-enter);
+  }
+
+  .content {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+  .content :global(svg) {
+    inline-size: var(--icon-ui);
+    block-size: var(--icon-ui);
+    stroke-width: var(--icon-stroke);
+    flex: none;
+  }
+
+  .primary {
+    --_bg: var(--accent);
+    --_fg: var(--on-accent);
+    font-weight: var(--weight-semibold);
+  }
+  .secondary {
+    --_border: var(--border-subtle);
+  }
+  .ghost {
+    padding-inline: var(--space-12);
+  }
+  .lg {
+    min-block-size: calc(var(--target-min) + var(--space-8));
+    padding-inline: calc(var(--space-24) + 2px);
+  }
+  .iconOnly {
+    inline-size: var(--target-min);
+    padding: 0;
+  }
+
+  /* Hover only for fine pointers: touch never keeps a stuck hover state (§11.9). */
+  @media (hover: hover) and (pointer: fine) {
+    .primary[data-hovered] {
+      --_bg: var(--accent-hover);
+    }
+    .secondary[data-hovered] {
+      --_border: var(--border-control);
+    }
+    .ghost[data-hovered] {
+      --_bg: var(--accent-subtle);
+    }
+  }
+  .button[data-pressed] {
+    transform: scale(var(--scale-press));
+  }
+  .primary[data-pressed] {
+    --_bg: var(--accent-hover);
+  }
+  .secondary[data-pressed],
+  .ghost[data-pressed] {
+    --_bg: var(--accent-subtle);
+  }
+
+  .button[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Disabled stays legible (§11.1.7): quieter colours, not a faded ghost. */
+  .button[data-disabled] {
+    --_fg: var(--text-secondary);
+    --_border: var(--border-subtle);
+    cursor: not-allowed;
+  }
+  .primary[data-disabled] {
+    --_bg: var(--accent-subtle);
+    --_border: transparent;
+  }
+
+  /* Pending: same width, progress in place of the label (§11.1.7). */
+  .button[data-pending] {
+    cursor: progress;
+  }
+  .button[data-pending] .content {
+    visibility: hidden;
+  }
+  .progress {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+  }
+  .dots {
+    display: inline-flex;
+    gap: var(--space-4);
+  }
+  .dots span {
+    inline-size: 5px;
+    block-size: 5px;
+    border-radius: 1px;
+    background: currentColor;
+    animation: pulse calc(var(--duration-expand) * 3) var(--ease-enter) infinite;
+  }
+  .dots span:nth-child(2) {
+    animation-delay: calc(var(--duration-expand) / 2);
+  }
+  .dots span:nth-child(3) {
+    animation-delay: var(--duration-expand);
+  }
+  @keyframes pulse {
+    50% {
+      opacity: 0.25;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dots span {
+      animation: none;
+    }
+  }
+  :global([data-motion='reduce']) .dots span {
+    animation: none;
+  }
+
+  .withReason {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8) var(--space-12);
+  }
+  .reason {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+}

@@ -1,0 +1,15 @@
+@layer components {
+  .frame {
+    color: var(--mark);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    unicode-bidi: isolate;
+    direction: ltr;
+  }
+  .onFilm {
+    color: var(--film-mark);
+  }
+}

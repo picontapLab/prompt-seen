@@ -94,4 +94,23 @@
     transition-timing-function: linear !important;
     transition-delay: 0s !important;
   }
+
+  /* Toast entry and exit through view transitions (§12.1: short fades, no large moves). */
+  ::view-transition-new(*.toast):only-child {
+    animation: toast-in var(--duration-content) var(--ease-enter);
+  }
+  ::view-transition-old(*.toast):only-child {
+    animation: toast-out var(--duration-exit) var(--ease-exit) forwards;
+  }
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(var(--distance-reveal));
+    }
+  }
+  @keyframes toast-out {
+    to {
+      opacity: 0;
+    }
+  }
 }

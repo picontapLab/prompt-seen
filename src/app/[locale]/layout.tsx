@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { builtLocales, config, isPreviewBuild } from '@/config';
 import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { enterLocale } from '@/i18n/locale';
 import { absoluteUrl } from '@/modules/url';
+import { RootDocument } from '@/ui/navigation';
 
 // Static export: every locale segment is generated up front (§3.2).
 export const dynamicParams = false;
@@ -32,12 +32,8 @@ export default async function LocaleLayout({
   const entry = enterLocale(locale);
   const messages = pickNamespaces(await getMessages({ locale: entry.code }), CLIENT_COMMON_NAMESPACES);
   return (
-    <html lang={entry.htmlLang} dir={entry.direction}>
-      <body>
-        <NextIntlClientProvider locale={entry.code} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <RootDocument locale={entry} messages={messages}>
+      {children}
+    </RootDocument>
   );
 }

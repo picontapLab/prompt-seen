@@ -9,12 +9,12 @@ export async function ErrorPage({ locale, kind }: { locale: string; kind: 'notFo
   const entry = localeByPrefix(locale)!;
   const t = await getTranslations({ locale: entry.code, namespace: 'common.errors' });
   return (
-    <main data-error={kind === 'notFound' ? '404' : '410'} data-locale={entry.code}>
+    <div className="container" data-error={kind === 'notFound' ? '404' : '410'} data-locale={entry.code}>
       <h1>{t(`${kind}.title`)}</h1>
       <p>{t(`${kind}.body`)}</p>
       <p>
         <Link href={paths.home(locale)}>{t('home', { language: entry.nativeName })}</Link>
       </p>
-    </main>
+    </div>
   );
 }

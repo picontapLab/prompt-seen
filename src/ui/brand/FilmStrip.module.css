@@ -1,0 +1,70 @@
+@layer components {
+  .strip {
+    display: flex;
+    flex-direction: column;
+    background: var(--film);
+  }
+
+  /* One mask tile = a 14 × 9 hole with room around it; `space` repeats whole tiles and spreads
+     the remainder evenly, so the holes stay even at every width (§11.1.9). */
+  .holes {
+    --_tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='9'%3E%3Crect x='6' width='14' height='9' rx='2'/%3E%3C/svg%3E");
+    block-size: 9px;
+    margin: var(--space-8) var(--space-8);
+    background: var(--film-hole);
+    -webkit-mask: var(--_tile) 0 0 / 26px 9px space no-repeat;
+    mask: var(--_tile) 0 0 / 26px 9px space no-repeat;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-4) var(--space-12);
+  }
+  .frame {
+    min-inline-size: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Edge print: monospace, written in capitals in the copy, never text-transform (§11.1.9). */
+  .print {
+    display: none;
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .start {
+    color: var(--film-mark);
+    transform: rotate(180deg);
+  }
+  .end {
+    color: var(--film-print);
+  }
+  @media (min-width: 768px) {
+    .print {
+      display: block;
+    }
+    .row {
+      justify-content: space-between;
+      padding-inline: var(--space-20);
+    }
+  }
+
+  /* Phones: smaller holes, as in the phone reference (12 × 8). */
+  @media (max-width: 479.98px) {
+    .holes {
+      --_tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='8'%3E%3Crect x='5' width='12' height='8' rx='2'/%3E%3C/svg%3E");
+      block-size: 8px;
+      margin: 6px var(--space-4);
+      -webkit-mask-size: 22px 8px;
+      mask-size: 22px 8px;
+    }
+  }
+}

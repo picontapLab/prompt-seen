@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { builtLocales, defaultLocale } from '@/config';
+import { pickNamespaces } from '@/i18n/catalog';
+import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { absoluteUrl, paths } from '@/modules/url';
+import { RootDocument, Shell } from '@/ui/navigation';
 
 // Exported as 404.html: used for addresses outside any built locale. Renders a full document
 // because the root layout is a pass-through (see layout.tsx).
@@ -15,14 +18,15 @@ export default async function RootNotFound() {
   // Explicit locale, never setRequestLocale: React renders this not-found element inside every
   // page's tree, where setting the request locale would switch those pages to English.
   const t = await getTranslations({ locale: defaultLocale.code, namespace: 'common.errors' });
+  const messages = pickNamespaces(await getMessages({ locale: defaultLocale.code }), CLIENT_COMMON_NAMESPACES);
   return (
-    <html lang={defaultLocale.htmlLang} dir={defaultLocale.direction}>
-      <body>
-        <main data-error="404" data-locale="root">
+    <RootDocument locale={defaultLocale} messages={messages}>
+      <Shell locale={defaultLocale} minimal>
+        <div className="container" data-error="404" data-locale="root">
           <h1>{t('notFound.title')}</h1>
           <p>{t('notFound.body')}</p>
           <h2>{t('chooseLanguage')}</h2>
-          {/* Unstyled until step 1c: rows tall enough for 24 px targets (WCAG 2.5.8). */}
+          {/* Styled by step 3e; rows tall enough for 24 px targets (WCAG 2.5.8). */}
           <ul style={{ lineHeight: 2 }}>
             {builtLocales.map((l) => (
               <li key={l.code}>
@@ -32,8 +36,8 @@ export default async function RootNotFound() {
               </li>
             ))}
           </ul>
-        </main>
-      </body>
-    </html>
+        </div>
+      </Shell>
+    </RootDocument>
   );
 }
