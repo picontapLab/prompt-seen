@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Darkroom · Home</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+.t-dark{--bg:#121110;--surface:#1C1A17;--film:#0B0A09;--hole:#2A2724;--text:#EEEAE3;--text2:#A8A196;--line:#2E2B27;--mark:#FFB547;--markText:#1A1206;--markSoft:#46351C;--btn:#EEEAE3;--btnText:#121110}
+.t-light{--bg:#EDECE8;--surface:#FFFFFF;--film:#1A1917;--hole:#EDECE8;--text:#151413;--text2:#57534D;--line:#CBC8C2;--mark:#9A4D00;--markText:#FFFFFF;--markSoft:#F5D7A1;--btn:#151413;--btnText:#F6F5F2}
+</style>
+</head>
+<body>
+<div class="t-dark" style="min-height: 1000px; background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', system-ui, sans-serif">
+  <header style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 0 48px; min-height: 64px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; border-bottom: 1px solid var(--line)">
+    <a href="home.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+      <span aria-hidden="true" style="width: 26px; height: 18px; background: var(--text); border-radius: 2px; position: relative; display: inline-block"><span style="position: absolute; left: 5px; top: 4px; width: 16px; height: 10px; background: var(--bg)"></span></span>
+      <span style="font-family: 'Fira Sans Extra Condensed', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.04em">PROMPT SEEN</span>
+    </a>
+    <nav aria-label="Main" style="display: flex; gap: 24px; font-size: 14px; font-weight: 500">
+      <a href="feed.html" style="text-decoration: none">Prompts</a>
+      <a href="feed.html" style="text-decoration: none; color: var(--text2)">Templates</a>
+      <a href="feed.html" style="text-decoration: none; color: var(--text2)">Collections</a>
+    </nav>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 16px">
+      <label for="a-home-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search prompts</label>
+      <div style="display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--text2); padding: 6px 2px; width: 240px">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: var(--text2)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+        <input id="a-home-q" type="search" placeholder="Search 120 frames" style="border: 0; background: transparent; color: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 13px; width: 100%; outline-offset: 4px">
+      </div>
+      <a href="home.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-decoration: none">EN <span style="color: var(--text2)">· 中文</span></a>
+      <button type="button" aria-label="Switch theme" style="width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 2px; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" style="stroke: var(--text)" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 40px 48px 0">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: start">
+      <figure style="grid-column: span 7; margin: 0; display: flex; flex-direction: column; gap: 12px">
+        <div style="background: var(--film); display: flex; flex-direction: column">
+          <div aria-hidden="true" style="display: flex; justify-content: space-between; padding: 8px 14px">
+            <span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 22px">
+            <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #FFB547; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.08em">27 ▸ 27A</span>
+            <div style="position: relative; width: 400px; height: 500px">
+              <img src="../images/neon-portrait.jpg" alt="Silhouette in profile with cyan and magenta rim light against city bokeh" style="width: 400px; height: 500px; display: block">
+              <div style="position: absolute; left: 14%; top: 24%; width: 34%; height: 72%; border: 1.5px dashed #FFB547; box-shadow: 0 0 0 1px rgba(26,18,6,0.6)"></div><span style="position: absolute; right: 86%; top: 52%; width: calc(14% + 18px); border-top: 1.5px dashed #FFB547; box-shadow: 0 1px 0 rgba(26,18,6,0.85)"></span><span style="position: absolute; right: calc(100% + 20px); top: calc(52% - 12px); width: 24px; height: 24px; box-sizing: border-box; background: rgba(26,18,6,0.85); color: #FFB547; border: 1px solid #FFB547; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center">A</span><div style="position: absolute; left: 51%; top: 27%; width: 23%; height: 66%; outline: 2px solid #FFB547; box-shadow: 0 0 0 3px rgba(26,18,6,0.85)"><span style="position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-left: 2px solid #FFB547; border-top: 2px solid #FFB547"></span><span style="position: absolute; right: -8px; top: -8px; width: 16px; height: 16px; border-right: 2px solid #FFB547; border-top: 2px solid #FFB547"></span><span style="position: absolute; left: -8px; bottom: -8px; width: 16px; height: 16px; border-left: 2px solid #FFB547; border-bottom: 2px solid #FFB547"></span><span style="position: absolute; right: -8px; bottom: -8px; width: 16px; height: 16px; border-right: 2px solid #FFB547; border-bottom: 2px solid #FFB547"></span></div><span style="position: absolute; left: 74%; top: 45%; width: calc(26% + 18px); border-top: 2px solid #FFB547; box-shadow: 0 1px 0 rgba(26,18,6,0.85)"></span><span style="position: absolute; left: calc(100% + 20px); top: calc(45% - 12px); width: 24px; height: 24px; box-sizing: border-box; background: #FFB547; color: #1A1206; box-shadow: 0 0 0 1px rgba(26,18,6,0.85); font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center">B</span><div style="position: absolute; left: 4%; top: 3%; width: 92%; height: 18%; border: 1.5px dashed #FFB547; box-shadow: 0 0 0 1px rgba(26,18,6,0.6)"></div><span style="position: absolute; right: 96%; top: 12%; width: calc(4% + 18px); border-top: 1.5px dashed #FFB547; box-shadow: 0 1px 0 rgba(26,18,6,0.85)"></span><span style="position: absolute; right: calc(100% + 20px); top: calc(12% - 12px); width: 24px; height: 24px; box-sizing: border-box; background: rgba(26,18,6,0.85); color: #FFB547; border: 1px solid #FFB547; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center">C</span>
+            </div>
+            <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A8A196; writing-mode: vertical-rl; letter-spacing: 0.08em">PROMPT SEEN 400 · ROLL 14</span>
+          </div>
+          <div aria-hidden="true" style="display: flex; justify-content: space-between; padding: 8px 14px">
+            <span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span><span style="width: 14px; height: 9px; border-radius: 2px; background: var(--hole)"></span>
+          </div>
+        </div>
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text2); display: flex; flex-wrap: wrap; gap: 6px 18px">
+          <span style="color: var(--mark)">FRAME 0127</span><span style="color: var(--text)">Neon profile portrait</span><span>Model A</span><span>Tested 1 Oct 2026</span><span>4:5 · 1024 × 1280</span>
+        </figcaption>
+      </figure>
+
+      <section style="grid-column: span 5; display: flex; flex-direction: column; gap: 24px; padding-top: 8px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--mark)">FEATURED FRAME · THIS WEEK</span>
+        <h1 style="margin: 0; font-family: 'Fira Sans Extra Condensed', sans-serif; font-weight: 700; font-size: 88px; line-height: 0.92; letter-spacing: -0.01em">See what every phrase does.</h1>
+        <p style="margin: 0; font-size: 21px; line-height: 1.6">Portrait of a person in dark silhouette against a night background, head and shoulders in profile. <span style="border-bottom: 2px dashed var(--mark)">Cyan rim light on the left edge</span><sup style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; color: var(--mark); border: 1px solid var(--mark); padding: 0 4px; margin-left: 3px">A</sup> and <span style="background: var(--markSoft); padding: 1px 3px">magenta rim light on the right edge</span><sup style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; background: var(--mark); color: var(--markText); padding: 1px 5px; margin-left: 3px">B</sup>. <span style="border-bottom: 2px dashed var(--mark)">Blurred city bokeh in purple and blue</span><sup style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; color: var(--mark); border: 1px solid var(--mark); padding: 0 4px; margin-left: 3px">C</sup> behind.</p>
+        <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text2)">Point at or tab through a lettered phrase. Its box and leader line appear on the frame.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+          <button type="button" style="height: 52px; padding: 0 26px; border: 0; border-radius: 2px; background: var(--btn); color: var(--btnText); font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 10px; cursor: pointer">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" style="stroke: var(--btnText)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="1"></rect><path d="M5 15V4a1 1 0 0 1 1-1h11"></path></svg>
+            Copy prompt
+          </button>
+          <a href="detail.html" style="font-size: 16px; font-weight: 500; text-underline-offset: 5px">Open frame 0127 →</a>
+        </div>
+        <nav aria-label="Browse by use" style="display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; color: var(--text2)">
+          <span>Browse by use</span>
+          <a href="feed.html" style="color: var(--text)">Portraits</a>
+          <a href="feed.html" style="color: var(--text)">Posters</a>
+          <a href="feed.html" style="color: var(--text)">Product</a>
+          <a href="feed.html" style="color: var(--text)">Wallpapers</a>
+        </nav>
+      </section>
+    </div>
+
+    <section aria-label="More from this roll" style="margin-top: 40px; padding-bottom: 40px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--text2)">MORE FROM THIS ROLL</span>
+        <a href="feed.html" style="font-size: 14px; font-weight: 500">All 120 frames →</a>
+      </div>
+      <div style="display: flex; gap: 20px; align-items: flex-end; overflow: hidden; padding: 16px 0 0 16px; margin-left: -16px">
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/neon-portrait.jpg" alt="Neon profile portrait" style="height: 132px; width: 106px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0127</span>
+            
+              <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; left: -14px; top: -14px; width: calc(100% + 28px); height: 166px; overflow: visible"><ellipse cx="50" cy="50" rx="48" ry="47" fill="none" vector-effect="non-scaling-stroke" stroke-width="3" stroke-linecap="round" style="stroke: var(--mark)" transform="rotate(-4 50 50)"></ellipse><ellipse cx="51" cy="49" rx="46" ry="48" fill="none" vector-effect="non-scaling-stroke" stroke-width="2" style="stroke: var(--mark); opacity: 0.6" transform="rotate(5 50 50)"></ellipse></svg>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/neon-alley.jpg" alt="Neon alley after rain" style="height: 132px; width: 88px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0128</span>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/rainy-crossing.jpg" alt="Rainy crossing at night" style="height: 132px; width: 198px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0129</span>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/jazz-poster.jpg" alt="Jazz night poster" style="height: 132px; width: 99px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0130</span>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/misty-ridges.jpg" alt="Misty ridges at dawn" style="height: 132px; width: 235px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0131</span>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/monstera.jpg" alt="Monstera leaf study" style="height: 132px; width: 132px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0132</span>
+            
+          </a>
+        
+          <a href="detail.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; flex: none; position: relative">
+            <img src="../images/ramen.jpg" alt="Ramen from above" style="height: 132px; width: 106px; display: block">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text2)">0133</span>
+            
+          </a>
+        
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+/* Theme for review: ?theme=light|dark, or the theme button. */
+(function () {
+  var root = document.querySelector('.t-dark, .t-light');
+  if (!root) return;
+  var p = new URLSearchParams(location.search).get('theme');
+  if (p === 'light' || p === 'dark') { root.classList.remove('t-dark', 't-light'); root.classList.add('t-' + p); }
+  document.querySelectorAll('[aria-label="Switch theme"]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var dark = root.classList.contains('t-dark');
+      root.classList.toggle('t-dark', !dark); root.classList.toggle('t-light', dark);
+    });
+  });
+})();
+</script>
+</body>
+</html>

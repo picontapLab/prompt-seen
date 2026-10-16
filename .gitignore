@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Spike build and test output (spikes/*/ also keep their own .gitignore)
+spikes/*/.next/
+spikes/*/out/
+spikes/*/dist/
+spikes/*/public/generated/
+spikes/*/test-results/
+spikes/*/playwright-report/
+*.tsbuildinfo

@@ -1,0 +1,10 @@
+# Paths are internal (no basePath). content:build prefixes BASE_PATH and emits
+# both the trailing-slash and the bare form of every source.
+- from: /zh/prompts/neon-alley/          # legacy /zh/ prefix (design doc §8.2)
+  to: /zh-hans/prompts/neon-alley/
+- from: /en/prompts/neon-street/         # slug rename (§9.5)
+  to: /en/prompts/neon-alley/
+- from: /en/prompts/page/1/              # first-page duplicate (§9.4)
+  to: /en/prompts/
+- from: /EN/Prompts/Neon-Alley/          # known case variant (§8.2)
+  to: /en/prompts/neon-alley/

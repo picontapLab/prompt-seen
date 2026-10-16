@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C · Proof · Detail</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Schibsted+Grotesk:wght@400..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+.t-light{--bg:#EAEBE7;--sheet:#F7F7F4;--text:#111213;--text2:#4F5356;--line:#C4C6C1;--mag:#B8005F;--onMag:#FFFFFF;--cyan:#006E9E;--hl:#F5D000;--hlText:#111213;--reg:#111213}
+.t-dark{--bg:#0F1114;--sheet:#181B1F;--text:#ECEEF0;--text2:#A0A6AD;--line:#2B3036;--mag:#FF5AA8;--onMag:#0F1114;--cyan:#45C6F2;--hl:#FFE14D;--hlText:#111213;--reg:#ECEEF0}
+</style>
+</head>
+<body>
+<div class="t-light" style="min-height: 1000px; background: var(--bg); color: var(--text); font-family: 'Schibsted Grotesk', system-ui, sans-serif">
+  <header style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 0 48px; min-height: 64px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; border-bottom: 1px solid var(--line)">
+    <a href="proof-home.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+      <span aria-hidden="true" style="position: relative; width: 22px; height: 22px; display: inline-block">
+        <span style="position: absolute; inset: 4px; border: 1.5px solid var(--reg); border-radius: 50%"></span>
+        <span style="position: absolute; left: 0; right: 0; top: 10px; border-top: 1.5px solid var(--reg)"></span>
+        <span style="position: absolute; top: 0; bottom: 0; left: 10px; border-left: 1.5px solid var(--reg)"></span>
+      </span>
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-stretch: 75%; font-size: 26px">PROMPT/SEEN</span>
+    </a>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text2)">xxx.com/prompt-seen/en/prompts/<span style="color: var(--text)">misty-ridges</span></span>
+    <div style="margin-left: auto; display: flex; gap: 8px">
+      <a href="proof-home.html" aria-label="Previous proof" style="width: 44px; height: 44px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px">‹</a>
+      <a href="proof-home.html" aria-label="Next proof" style="width: 44px; height: 44px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px">›</a>
+      <a href="proof-home.html" aria-label="Close" style="width: 44px; height: 44px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px">×</a>
+    </div>
+  </header>
+
+  <main style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 28px 48px 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: start">
+    <figure style="grid-column: span 7; margin: 0; background: var(--sheet); padding: 40px 40px 20px; display: flex; flex-direction: column; gap: 18px; position: relative">
+      <span aria-hidden="true" style="position: absolute; top: 12px; left: calc(50% - 9px); width: 18px; height: 18px">
+        <span style="position: absolute; inset: 3px; border: 1px solid var(--reg); border-radius: 50%"></span>
+        <span style="position: absolute; left: 0; right: 0; top: 8.5px; border-top: 1px solid var(--reg)"></span>
+        <span style="position: absolute; top: 0; bottom: 0; left: 8.5px; border-left: 1px solid var(--reg)"></span>
+      </span>
+      <div style="position: relative; width: 100%">
+        <img src="../images/misty-ridges.jpg" alt="Layered blue-grey mountain ridges fading into mist under a low sun" style="width: 100%; aspect-ratio: 16 / 9; display: block">
+        <span style="position: absolute; left: -22px; top: -1px; width: 14px; border-top: 1px solid var(--reg)"></span>
+        <span style="position: absolute; left: -1px; top: -22px; height: 14px; border-left: 1px solid var(--reg)"></span>
+        <span style="position: absolute; right: -22px; top: -1px; width: 14px; border-top: 1px solid var(--reg)"></span>
+        <span style="position: absolute; right: -1px; top: -22px; height: 14px; border-left: 1px solid var(--reg)"></span>
+        <span style="position: absolute; left: -22px; bottom: -1px; width: 14px; border-top: 1px solid var(--reg)"></span>
+        <span style="position: absolute; left: -1px; bottom: -22px; height: 14px; border-left: 1px solid var(--reg)"></span>
+        <span style="position: absolute; right: -22px; bottom: -1px; width: 14px; border-top: 1px solid var(--reg)"></span>
+        <span style="position: absolute; right: -1px; bottom: -22px; height: 14px; border-left: 1px solid var(--reg)"></span>
+        <span style="position: absolute; left: 63%; top: 12%; width: 18%; height: 36%; border: 2.5px solid var(--mag)"></span>
+        <span style="position: absolute; left: 81%; top: 22%; width: calc(19% + 12px); border-top: 2.5px solid var(--mag)"></span>
+        <span style="position: absolute; left: calc(100% + 14px); top: calc(22% - 13px); width: 26px; height: 26px; background: var(--mag); color: var(--onMag); font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center">A</span>
+        <span style="position: absolute; left: 2%; top: 42%; width: 96%; height: 34%; border: 1.5px dashed var(--mag)"></span>
+        <span style="position: absolute; right: calc(100% + 14px); top: calc(56% - 12px); width: 24px; height: 24px; border: 1.5px solid var(--mag); color: var(--mag); font-family: 'JetBrains Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center; box-sizing: border-box">B</span>
+        <span style="position: absolute; right: 100%; top: 56%; width: 14px; border-top: 1.5px dashed var(--mag)"></span>
+        <span style="position: absolute; left: 2%; top: 80%; width: 96%; height: 18%; border: 1.5px dashed var(--mag)"></span>
+        <span style="position: absolute; right: calc(100% + 14px); top: calc(89% - 12px); width: 24px; height: 24px; border: 1.5px solid var(--mag); color: var(--mag); font-family: 'JetBrains Mono', monospace; font-size: 12px; display: flex; align-items: center; justify-content: center; box-sizing: border-box">C</span>
+        <span style="position: absolute; right: 100%; top: 89%; width: 14px; border-top: 1.5px dashed var(--mag)"></span>
+      </div>
+      <div aria-hidden="true" style="display: flex; justify-content: center">
+        <span style="width: 22px; height: 12px; background: #00A0DC"></span><span style="width: 22px; height: 12px; background: #7FCFEE"></span>
+        <span style="width: 22px; height: 12px; background: #E6007E"></span><span style="width: 22px; height: 12px; background: #F27FBE"></span>
+        <span style="width: 22px; height: 12px; background: #FFE600"></span><span style="width: 22px; height: 12px; background: #FFF27F"></span>
+        <span style="width: 22px; height: 12px; background: #111213"></span><span style="width: 22px; height: 12px; background: #88898A"></span>
+      </div>
+      <figcaption style="display: flex; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text2)">
+        <span>PROOF P-0137 · 1600 × 900 · SHOWN IN FULL</span><span>CLICK TO ZOOM · ← → NEXT PROOF</span>
+      </figcaption>
+    </figure>
+
+    <section style="grid-column: span 5; display: flex; flex-direction: column; gap: 20px">
+      <nav aria-label="Breadcrumb" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text2); display: flex; gap: 8px"><a href="proof-home.html">ALL PROOFS</a><span aria-hidden="true">/</span><span>LANDSCAPE</span><span aria-hidden="true">/</span><span>WALLPAPER</span></nav>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--cyan)">P-0137</span>
+        <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-stretch: 75%; font-size: 66px; line-height: 0.9">Misty ridges at dawn</h1>
+      </div>
+      <p style="margin: 0; font-size: 18px; line-height: 1.5">Five ranges fading into mist under a low sun. A calm desktop wallpaper.</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text2)">
+        <span style="border: 1px solid var(--cyan); color: var(--cyan); padding: 2px 8px">✓ MODEL B</span>
+        <span>1600 × 900 · 16:9 · checked 21.09.2026</span>
+      </div>
+      <div style="background: var(--sheet); border-top: 2px solid var(--text)">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 10px 2px 18px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text2)">PROMPT · ENGLISH · 316 CHARACTERS</span>
+          <button type="button" style="height: 44px; padding: 0 20px; border: 0; background: var(--mag); color: var(--onMag); font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer">Copy prompt</button>
+        </div>
+        <p style="margin: 0; padding: 10px 18px 18px; font-size: 17px; line-height: 1.7">Layered mountain ridges at dawn seen from a high viewpoint,
+          <span style="border-bottom: 2px dashed var(--mag)">five overlapping ranges fading into mist</span><sup style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mag); border: 1px solid var(--mag); padding: 0 3px; margin-left: 2px">B</sup>.
+          Pale blue-grey sky,
+          <span style="background: var(--hl); color: var(--hlText); padding: 1px 3px">low sun on the right with a soft warm halo</span><sup style="font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--mag); color: var(--onMag); padding: 1px 4px; margin-left: 2px">A</sup>.
+          <span style="border-bottom: 2px dashed var(--mag)">Nearest ridge in deep slate</span><sup style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mag); border: 1px solid var(--mag); padding: 0 3px; margin-left: 2px">C</sup>, each farther ridge lighter and lower in contrast. Calm, quiet mood. No people, no buildings.</p>
+      </div>
+      <div style="display: flex; gap: 10px">
+        <button type="button" aria-pressed="false" style="height: 44px; padding: 0 16px; border: 1px solid var(--line); background: transparent; color: var(--text); font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">Save</button>
+        <button type="button" style="height: 44px; padding: 0 16px; border: 1px solid var(--line); background: transparent; color: var(--text); font-family: 'Schibsted Grotesk', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">Share link</button>
+      </div>
+      <section style="display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--text2)">PRESS CHECKS</h2>
+        <div style="overflow-x: auto">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px">
+            <tbody>
+              <tr><td style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); padding: 8px 12px 8px 0; border-top: 1px solid var(--line)">21.09</td><td style="padding: 8px 12px 8px 0; border-top: 1px solid var(--line)">Model B</td><td style="padding: 8px 0; border-top: 1px solid var(--line)">Layer order and haze stayed consistent.</td></tr>
+              <tr><td style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); padding: 8px 12px 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)">12.09</td><td style="padding: 8px 12px 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)">Model A</td><td style="padding: 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)">Without “on the right” the sun drifted to the centre.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+<script>
+/* Theme for review: ?theme=light|dark, or the theme button. */
+(function () {
+  var root = document.querySelector('.t-dark, .t-light');
+  if (!root) return;
+  var p = new URLSearchParams(location.search).get('theme');
+  if (p === 'light' || p === 'dark') { root.classList.remove('t-dark', 't-light'); root.classList.add('t-' + p); }
+  document.querySelectorAll('[aria-label="Switch theme"]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var dark = root.classList.contains('t-dark');
+      root.classList.toggle('t-dark', !dark); root.classList.toggle('t-light', dark);
+    });
+  });
+})();
+</script>
+</body>
+</html>
