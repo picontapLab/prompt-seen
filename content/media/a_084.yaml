@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_084
+contentHash: sha256:d24866417c7683477e507c8a2b0ab1ffbc046b4f4d8b842eabd9a9f3f1023008
+mimeType: image/webp
+width: 1200
+height: 1200
+original:
+  key: media/a_084/blue-rim-avatar-original-d24866417c76.webp
+variants:
+  thumbnail:
+    key: media/a_084/blue-rim-avatar-thumbnail-bdfcb68c513d.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_084/blue-rim-avatar-card-909d670982ef.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_084/blue-rim-avatar-detail-0d7b4a421047.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_084/blue-rim-avatar-og-0a75bb372e0d.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#082838"
+alt:
+  en: A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.
+  zh-Hans: 深色的半身剪影，两侧以两种轮廓光勾勒，背后是虚化的光点。
+  ja: ぼけた光を背景に、二色のリムライトで縁取られた暗い胸像のシルエット。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

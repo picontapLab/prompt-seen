@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_043
+contentHash: sha256:b31da4940069ebba4d0517b520a23dcbf831bf37828d4fc18c0193559645894a
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_043/honey-jar-label-original-b31da4940069.jpg
+variants:
+  thumbnail:
+    key: media/a_043/honey-jar-label-thumbnail-df46b4076112.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_043/honey-jar-label-card-fd5c97bbf453.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_043/honey-jar-label-detail-2a7d02f41b93.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_043/honey-jar-label-og-c5b413326ee6.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.875
+placeholder:
+  color: "#F8F8D8"
+alt:
+  en: A single product on a pale plinth in front of a soft circular backdrop.
+  zh-Hans: 浅色台面上的单件产品，背后是柔和的圆形背景。
+  ja: 淡い台に置かれた一つの商品と、背後のやわらかな円形の背景。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

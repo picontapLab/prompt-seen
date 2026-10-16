@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_080
+contentHash: sha256:d51e77826aefce481b3d97737c50dde28acca6a4a7f35e6079a1938db9200016
+mimeType: image/png
+width: 1200
+height: 1200
+original:
+  key: media/a_080/monochrome-arches-original-d51e77826aef.png
+variants:
+  thumbnail:
+    key: media/a_080/monochrome-arches-thumbnail-ed5438100507.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_080/monochrome-arches-card-e6ac6f67e5ab.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_080/monochrome-arches-detail-abddbc9beabb.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_080/monochrome-arches-og-262584c57982.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#282828"
+alt:
+  en: A row of tall rounded arches casting diagonal shadows.
+  zh-Hans: 一排高大的圆拱，投下斜向的阴影。
+  ja: 斜めの影を落とす、高い半円アーチの列。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

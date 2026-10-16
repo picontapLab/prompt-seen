@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_021
+contentHash: sha256:28960ff4fadcd8cab69096210c37b24d55fd9095cbc7eda9ebaa01553868cc61
+mimeType: image/jpeg
+width: 720
+height: 480
+original:
+  key: media/a_021/citrus-slices-on-mint-original-28960ff4fadc.jpg
+variants:
+  thumbnail:
+    key: media/a_021/citrus-slices-on-mint-thumbnail-2f2966d4025e.webp
+    width: 480
+    height: 320
+    mimeType: image/webp
+  card:
+    key: media/a_021/citrus-slices-on-mint-card-905fb4f959ec.webp
+    width: 720
+    height: 480
+    mimeType: image/webp
+  detail:
+    key: media/a_021/citrus-slices-on-mint-detail-cb596bc38967.webp
+    width: 720
+    height: 480
+    mimeType: image/webp
+  og:
+    key: media/a_021/citrus-slices-on-mint-og-a27c2dd94fe6.jpg
+    width: 720
+    height: 378
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.313
+  y: 0.313
+placeholder:
+  color: "#D8E8E8"
+alt:
+  en: Orange, lemon and lime slices with a few green leaves on pale mint.
+  zh-Hans: 淡薄荷色背景上的橙子、柠檬和青柠切片，点缀几片绿叶。
+  ja: 淡いミント地に散らばるオレンジ、レモン、ライムの輪切りと緑の葉。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

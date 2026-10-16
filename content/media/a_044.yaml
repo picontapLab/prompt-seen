@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_044
+contentHash: sha256:bb9c43047d68f4a23eb20fb8b9dda54e18f11cb79b4794206a115d952a663411
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_044/monochrome-blocks-original-bb9c43047d68.jpg
+variants:
+  thumbnail:
+    key: media/a_044/monochrome-blocks-thumbnail-1c7693d684be.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_044/monochrome-blocks-card-95153fb5b47a.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_044/monochrome-blocks-detail-ad506fb9be7c.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_044/monochrome-blocks-og-db5081b5c1a3.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#E8E8E8"
+alt:
+  en: A flat skyline of block buildings with rows of small windows.
+  zh-Hans: 由方块楼房和成排小窗组成的平涂天际线。
+  ja: 小さな窓が並ぶ箱型のビルによる、平面的なスカイライン。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

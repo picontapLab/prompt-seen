@@ -1,0 +1,18 @@
+# Example run x_037 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_037
+promptId: p_076
+template: null
+promptSha256: 24415ca5e03209458d1e1cf47053419b04ae5c6dfcc6ed8aa6fb465229c31fa2
+referenceAssetIds: []
+outputAssetIds:
+  - a_076
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-09-18
+parameters:
+  aspectRatio: 2:3
+  seed: 1844
+  quality: standard

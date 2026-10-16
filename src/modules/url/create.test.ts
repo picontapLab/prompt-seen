@@ -57,6 +57,17 @@ describe('url module', () => {
     expect(absoluteUrl('/generated/build.json')).toBe('https://example.com/prompt-seen/generated/build.json');
   });
 
+  it('builds content and media addresses (step 1b)', () => {
+    const { absoluteUrl, withBasePath, paths } = createUrlModule(base);
+    expect(paths.collection('en', 'quiet-landscapes')).toBe('/en/collections/quiet-landscapes/');
+    expect(paths.topic('zh-hans', 'use-cases', 'portrait')).toBe('/zh-hans/use-cases/portrait/');
+    expect(paths.page('en', 'about')).toBe('/en/about/');
+    expect(withBasePath(paths.media('media/a_001/ink-detail-0123abcd.webp'))).toBe(
+      '/prompt-seen/media/a_001/ink-detail-0123abcd.webp',
+    );
+    expect(absoluteUrl(paths.media('media/a_001/x.webp'))).toBe('https://example.com/prompt-seen/media/a_001/x.webp');
+  });
+
   it('maps page 1 of the list to the list itself (§9.4)', () => {
     const { paths } = createUrlModule(base);
     expect(paths.promptsPage('en', 1)).toBe('/en/prompts/');

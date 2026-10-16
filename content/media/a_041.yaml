@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_041
+contentHash: sha256:345f59f4a5af4a1ca58f59be2ebf0045f6b76d72c10d5dceffd8f84593928f2c
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_041/lavender-evening-sail-original-345f59f4a5af.jpg
+variants:
+  thumbnail:
+    key: media/a_041/lavender-evening-sail-thumbnail-ef4d1fda73e5.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_041/lavender-evening-sail-card-94f17749b513.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_041/lavender-evening-sail-detail-6e40ac869b63.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_041/lavender-evening-sail-og-ef6570aaedb3.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#9878C8"
+alt:
+  en: A flat sun on the horizon above calm water with horizontal reflections.
+  zh-Hans: 平静水面上方，地平线上有一轮平涂的太阳，水面有水平倒影。
+  ja: 穏やかな水面と水平な映り込み、水平線に沈む平面的な太陽。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

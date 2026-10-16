@@ -1,0 +1,56 @@
+# Prompt p_050 (design doc §5.2). Part of the sample set (§17.6).
+id: p_050
+slug: neon-silhouette-portrait
+createdAt: 2026-08-25
+updatedAt: 2026-08-25
+promptSource:
+  type: template
+  templateId: t_003
+  version: v1
+  values:
+    character: a young musician
+    rimLight: cyan and magenta
+    background: soft bokeh lights
+    mood: quiet focus
+    aspectRatio: 4:5
+categoryId: portrait
+styleIds:
+  - neon
+useCaseIds:
+  - avatar
+  - book-cover
+coverAssetId: a_050
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: none
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: rim-lit in cyan and magenta
+    region:
+      x: 0.11
+      y: 0.25
+      w: 0.78
+      h: 0.75
+    note:
+      en: Two named colours split the outline left and right; one colour reads as a glow, not a likeness.
+      zh-Hans: 两种颜色把轮廓分成左右两半；只写一种颜色会变成光晕，看不出人像。
+      ja: 二色を指定すると輪郭が左右に分かれます。一色だと人物ではなく光のにじみに見えます。
+      ar: لونان يقسمان الحافة يمينًا ويسارًا؛ لون واحد يبدو توهجًا لا صورة شخص.
+  - phrase: soft bokeh lights
+    region:
+      x: 0.02
+      y: 0.02
+      w: 0.96
+      h: 0.65
+    note:
+      en: Blurred lights give depth behind a flat silhouette.
+      zh-Hans: 虚化的光点让平面的剪影背后有了纵深。
+      ja: ぼけた光が、平面的なシルエットの後ろに奥行きを与えます。
+      ar: الأضواء الضبابية تمنح عمقًا خلف الظل المسطح.

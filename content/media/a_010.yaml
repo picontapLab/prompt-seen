@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_010
+contentHash: sha256:b64022deaf685f90c6425f7f4a5e12d6e2ff672846f0e9be2af3c47ed436c258
+mimeType: image/jpeg
+width: 576
+height: 720
+original:
+  key: media/a_010/ceramic-mug-poster-original-b64022deaf68.jpg
+variants:
+  thumbnail:
+    key: media/a_010/ceramic-mug-poster-thumbnail-015243b4fcbe.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_010/ceramic-mug-poster-card-e49419e4001f.webp
+    width: 576
+    height: 720
+    mimeType: image/webp
+  detail:
+    key: media/a_010/ceramic-mug-poster-detail-e04059af5295.webp
+    width: 576
+    height: 720
+    mimeType: image/webp
+  og:
+    key: media/a_010/ceramic-mug-poster-og-bc5a9d994aff.jpg
+    width: 576
+    height: 302
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.375
+  y: 0.063
+placeholder:
+  color: "#E8D8C8"
+alt:
+  en: A speckled ceramic mug on a circular backdrop under two dark headline bars.
+  zh-Hans: 圆形背景前的斑点陶瓷马克杯，上方有两条深色标题条。
+  ja: 円形の背景の前に置かれた斑点模様の陶器のマグカップと、上部の二本の見出し帯。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

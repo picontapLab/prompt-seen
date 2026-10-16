@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_011
+contentHash: sha256:aa61e25ba0eca4b8c11a92a4f0d09f91638317e8f5903069ba96de89ad907eb4
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_011/mid-century-tiles-original-aa61e25ba0ec.jpg
+variants:
+  thumbnail:
+    key: media/a_011/mid-century-tiles-thumbnail-f661a26e5e5d.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_011/mid-century-tiles-card-c30130b79dae.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_011/mid-century-tiles-detail-7a330a032fda.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_011/mid-century-tiles-og-3a7e1d156692.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#E85828"
+alt:
+  en: A grid of square tiles with quarter circles, triangles and half circles.
+  zh-Hans: 由四分之一圆、三角形和半圆构成的方形瓷砖网格。
+  ja: 四分円、三角形、半円を組み合わせた正方形タイルの格子。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

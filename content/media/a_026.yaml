@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_026
+contentHash: sha256:a950606d94c64ea8dd771d19053900ed21526b93fc04e80ac5d56b6164882c7b
+mimeType: image/jpeg
+width: 1200
+height: 675
+original:
+  key: media/a_026/quiet-harbor-noon-original-a950606d94c6.jpg
+variants:
+  thumbnail:
+    key: media/a_026/quiet-harbor-noon-thumbnail-79ec598e0b38.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_026/quiet-harbor-noon-card-aa962a9aff59.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_026/quiet-harbor-noon-detail-603fdcabe899.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_026/quiet-harbor-noon-og-6c6e4991bd9b.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.53
+  y: 0.406
+placeholder:
+  color: "#286888"
+alt:
+  en: A flat sun on the horizon above calm water with horizontal reflections.
+  zh-Hans: 平静水面上方，地平线上有一轮平涂的太阳，水面有水平倒影。
+  ja: 穏やかな水面と水平な映り込み、水平線に沈む平面的な太陽。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

@@ -66,6 +66,14 @@ export function createUrlModule(cfg: UrlConfig) {
     templates: (locale: string) => `/${locale}/templates/`,
     template: (locale: string, slug: string) => `/${locale}/templates/${slug}/`,
     templateMarkdown: (locale: string, slug: string) => `/${locale}/templates/${slug}/index.md`,
+    collection: (locale: string, slug: string) => `/${locale}/collections/${slug}/`,
+    /** Category, style and use-case topic pages (§9.1); `segment` is categories, styles or use-cases. */
+    topic: (locale: string, segment: 'categories' | 'styles' | 'use-cases', slug: string) =>
+      `/${locale}/${segment}/${slug}/`,
+    /** Content pages such as about and license (§9.1). */
+    page: (locale: string, slug: string) => `/${locale}/${slug}/`,
+    /** Images kept by the local media driver under public/ (§10.1); keys start with "media/". */
+    media: (key: string) => `/${key.replace(/^\/+/, '')}`,
     /** Per-locale error pages, referenced by host error_page rules (§4.1). */
     notFound: (locale: string) => `/${locale}/404/`,
     gone: (locale: string) => `/${locale}/410/`,

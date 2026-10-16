@@ -1,0 +1,117 @@
+fields:
+  - name: character
+    type: string
+    required: true
+    group: subject
+    maxLength: 60
+    labels:
+      en: Character
+      zh-Hans: 人物
+      ja: 人物
+    help:
+      en: Who it is and one pose, e.g. “a dancer mid-turn”.
+      zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
+      ja: 人物と一つの動き。例：「回転中のダンサー」
+  - name: rimLight
+    type: enum
+    required: true
+    group: style
+    default: cyan and magenta
+    labels:
+      en: Rim light
+      zh-Hans: 轮廓光
+      ja: リムライト
+    options:
+      - value: cyan and magenta
+        swatch:
+          - "#22D3EE"
+          - "#F472B6"
+        labels:
+          en: Cyan and magenta
+          zh-Hans: 青与洋红
+          ja: シアンとマゼンタ
+      - value: amber and teal
+        swatch:
+          - "#F59E0B"
+          - "#14B8A6"
+        labels:
+          en: Amber and teal
+          zh-Hans: 琥珀与青绿
+          ja: 琥珀とティール
+      - value: violet and cyan
+        swatch:
+          - "#A78BFA"
+          - "#22D3EE"
+        labels:
+          en: Violet and cyan
+          zh-Hans: 紫与青
+          ja: バイオレットとシアン
+  - name: background
+    type: enum
+    required: true
+    group: composition
+    default: soft bokeh lights
+    labels:
+      en: Background
+      zh-Hans: 背景
+      ja: 背景
+    options:
+      - value: soft bokeh lights
+        labels:
+          en: Soft bokeh lights
+          zh-Hans: 柔和的虚化光点
+          ja: やわらかな玉ぼけ
+      - value: a blurred night city
+        labels:
+          en: Blurred night city
+          zh-Hans: 虚化的夜城
+          ja: ぼけた夜の街
+      - value: a flat dark gradient
+        labels:
+          en: Flat dark gradient
+          zh-Hans: 平涂暗色渐变
+          ja: 暗いグラデーション
+  - name: mood
+    type: string
+    required: false
+    group: style
+    maxLength: 40
+    labels:
+      en: Mood
+      zh-Hans: 情绪
+      ja: ムード
+  - name: aspectRatio
+    type: enum
+    required: true
+    group: composition
+    default: 4:5
+    labels:
+      en: Aspect ratio
+      zh-Hans: 画面比例
+      ja: アスペクト比
+      ar: نسبة الأبعاد
+    options:
+      - value: 4:5
+        labels:
+          en: 4:5
+          zh-Hans: 4:5
+          ja: 4:5
+          ar: 4:5
+      - value: 1:1
+        labels:
+          en: 1:1
+          zh-Hans: 1:1
+          ja: 1:1
+          ar: 1:1
+      - value: 2:3
+        labels:
+          en: 2:3
+          zh-Hans: 2:3
+          ja: 2:3
+          ar: 2:3
+      - value: 9:16
+        labels:
+          en: 9:16
+          zh-Hans: 9:16
+          ja: 9:16
+          ar: 9:16
