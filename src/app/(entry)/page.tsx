@@ -21,7 +21,7 @@ export default async function LanguageEntry() {
   setRequestLocale(defaultLocale.code); // pages do not inherit the layout's locale
   const t = await getTranslations('common.languageEntry');
   return (
-    <div className="container" data-page="language-entry">
+    <div className="container" style={{ paddingBlock: 'var(--space-40)' }} data-page="language-entry">
       <h1>{config.siteName}</h1>
       <p>{t('description')}</p>
       <h2>{t('title')}</h2>

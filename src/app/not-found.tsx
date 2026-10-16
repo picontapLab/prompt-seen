@@ -23,7 +23,7 @@ export default async function RootNotFound() {
   return (
     <RootDocument locale={defaultLocale} messages={messages}>
       <Shell locale={defaultLocale} minimal>
-        <div className="container" data-error="404" data-locale="root">
+        <div className="container" style={{ paddingBlock: 'var(--space-40)' }} data-error="404" data-locale="root">
           <h1>{t('notFound.title')}</h1>
           <p>{t('notFound.body')}</p>
           <h2>{t('chooseLanguage')}</h2>
