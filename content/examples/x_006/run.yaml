@@ -1,0 +1,31 @@
+# Example run x_006 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_006
+promptId: p_050
+template:
+  id: t_003
+  version: v1
+  sample: default
+  values:
+    character: a young musician
+    rimLight: cyan and magenta
+    background: soft bokeh lights
+    mood: quiet focus
+    aspectRatio: 4:5
+promptSha256: 42ea32e19faf800a02c77720d8028082423f8426b95e48785a6a445dc6b122c0
+referenceAssetIds: []
+outputAssetIds:
+  - a_050
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-08-23
+parameters:
+  aspectRatio: 4:5
+  seed: 95950
+  quality: standard
+notes:
+  en: "Two rim colours were needed: with one, the outline blurred into the background lights."
+  zh-Hans: 需要两种轮廓光：只有一种时，轮廓会融进背景光点里。
+  ja: 二色が必要でした。一色だけだと輪郭が背景の光に溶けました。

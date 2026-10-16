@@ -1,0 +1,22 @@
+# Example run x_010 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_010
+promptId: p_001
+template: null
+promptSha256: 6a0aa8a2db4fd0897ff7b45b9ffa89740d5b015fd5da932024151963214c785a
+referenceAssetIds: []
+outputAssetIds:
+  - a_001
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-07-05
+parameters:
+  aspectRatio: 4:5
+  seed: 7919
+  quality: standard
+notes:
+  en: Edges stayed crisp at every size; the sun drifted slightly left of where the prompt placed it.
+  zh-Hans: 各尺寸下边缘都很干净；太阳比提示词指定的位置略偏左。
+  ja: どのサイズでも輪郭はくっきりしていました。太陽は指定より少し左に寄りました。

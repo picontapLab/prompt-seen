@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_099
+contentHash: sha256:0781223ca91bcb85c408590a654d4b87e4bcb7aa302c5c7aefb7f226d9002385
+mimeType: image/webp
+width: 1200
+height: 675
+original:
+  key: media/a_099/sage-tile-banner-original-0781223ca91b.webp
+variants:
+  thumbnail:
+    key: media/a_099/sage-tile-banner-thumbnail-171d492fc7f3.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_099/sage-tile-banner-card-98eb26175c4e.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_099/sage-tile-banner-detail-1180cca9c39b.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_099/sage-tile-banner-og-7adcd99ddbc2.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.903
+  y: 1
+placeholder:
+  color: "#E8D8C8"
+alt:
+  en: A grid of square tiles with quarter circles, triangles and half circles.
+  zh-Hans: 由四分之一圆、三角形和半圆构成的方形瓷砖网格。
+  ja: 四分円、三角形、半円を組み合わせた正方形タイルの格子。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

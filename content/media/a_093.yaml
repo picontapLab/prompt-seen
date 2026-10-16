@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_093
+contentHash: sha256:5d3c1fc477a5fac4f7eff400cad509b13439185d778e86f1812f7573e471cc49
+mimeType: image/webp
+width: 514
+height: 1200
+original:
+  key: media/a_093/tall-tower-at-night-original-5d3c1fc477a5.webp
+variants:
+  thumbnail:
+    key: media/a_093/tall-tower-at-night-thumbnail-af1c37511657.webp
+    width: 206
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_093/tall-tower-at-night-card-8b84fd2ea6e8.webp
+    width: 411
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_093/tall-tower-at-night-detail-b1b47e1649c9.webp
+    width: 514
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_093/tall-tower-at-night-og-6d79f0a6912b.jpg
+    width: 514
+    height: 270
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.311
+placeholder:
+  color: "#182848"
+alt:
+  en: A flat skyline of block buildings with rows of small windows.
+  zh-Hans: 由方块楼房和成排小窗组成的平涂天际线。
+  ja: 小さな窓が並ぶ箱型のビルによる、平面的なスカイライン。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

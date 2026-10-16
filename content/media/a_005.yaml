@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_005
+contentHash: sha256:c16053fd18fb0cef941e71b3f5df1e13952c7021dfa9486dd1662e624f9f4a6e
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_005/neon-rim-profile-original-c16053fd18fb.jpg
+variants:
+  thumbnail:
+    key: media/a_005/neon-rim-profile-thumbnail-f7040379b2e4.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_005/neon-rim-profile-card-92bd9ac38d8a.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_005/neon-rim-profile-detail-162f7b2151b7.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_005/neon-rim-profile-og-c7cc6c36e10e.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.688
+  y: 0.188
+placeholder:
+  color: "#080808"
+alt:
+  en: A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.
+  zh-Hans: 深色的半身剪影，两侧以两种轮廓光勾勒，背后是虚化的光点。
+  ja: ぼけた光を背景に、二色のリムライトで縁取られた暗い胸像のシルエット。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

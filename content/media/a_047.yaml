@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_047
+contentHash: sha256:f5a70964a5f9910914ebaa3f8a1e52fee814eab7abe0a4b17fa2b5a93bb95604
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_047/lemon-tree-in-a-pot-original-f5a70964a5f9.jpg
+variants:
+  thumbnail:
+    key: media/a_047/lemon-tree-in-a-pot-thumbnail-e55304c80566.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_047/lemon-tree-in-a-pot-card-edf5ab0b82f5.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_047/lemon-tree-in-a-pot-detail-5bc8581a4303.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_047/lemon-tree-in-a-pot-og-d1cefd3a1dc7.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#F8F8D8"
+alt:
+  en: Broad flat leaves fanning out from a single stem.
+  zh-Hans: 从同一根茎上展开的宽大平涂叶片。
+  ja: 一本の茎から広がる、平塗りの大きな葉。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

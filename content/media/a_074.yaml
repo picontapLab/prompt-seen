@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_074
+contentHash: sha256:93e6c159626a608a5f971fdb574e57a2e4941acd45ca8b75f0314f893710aae5
+mimeType: image/jpeg
+width: 1200
+height: 675
+original:
+  key: media/a_074/peach-slices-banner-original-93e6c159626a.jpg
+variants:
+  thumbnail:
+    key: media/a_074/peach-slices-banner-thumbnail-c19cecfbef31.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_074/peach-slices-banner-card-884506ece129.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_074/peach-slices-banner-detail-c75e096effca.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_074/peach-slices-banner-og-e003ec094126.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.343
+  y: 0.719
+placeholder:
+  color: "#F8E8D8"
+alt:
+  en: Citrus slices scattered on a plain background, segments visible.
+  zh-Hans: 散落在素色背景上的柑橘切片，果瓣清晰。
+  ja: 無地の背景に散らばる、房の見える柑橘の輪切り。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_082
+contentHash: sha256:9e4a8dffd2ef0cb40957d0af2df271ec2ff1ebb5607afb4b2647d17b43daa4cc
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_082/herbal-jar-original-9e4a8dffd2ef.jpg
+variants:
+  thumbnail:
+    key: media/a_082/herbal-jar-thumbnail-1f3147e9746c.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_082/herbal-jar-card-96a01005284a.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_082/herbal-jar-detail-8e5dbc3972b4.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_082/herbal-jar-og-3db22e730ee2.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#D8E8D8"
+alt:
+  en: A single product on a pale plinth in front of a soft circular backdrop.
+  zh-Hans: 浅色台面上的单件产品，背后是柔和的圆形背景。
+  ja: 淡い台に置かれた一つの商品と、背後のやわらかな円形の背景。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

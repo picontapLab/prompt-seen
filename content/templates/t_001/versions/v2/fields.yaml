@@ -1,0 +1,151 @@
+fields:
+  - name: product
+    type: string
+    required: true
+    group: subject
+    maxLength: 80
+    labels:
+      en: Product
+      zh-Hans: 产品
+      ja: 商品
+      ar: المنتج
+    help:
+      en: Name the object and its material, e.g. “a speckled ceramic mug”.
+      zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
+      ja: 物と素材を書きます。例：「斑点のある陶器のマグカップ」
+      ar: اذكر الشيء ومادته، مثل “كوب خزفي منقّط”.
+  - name: sellingPoints
+    type: string-list
+    required: true
+    group: subject
+    minItems: 1
+    maxItems: 3
+    itemMaxLength: 40
+    separator: "; "
+    labels:
+      en: Selling points
+      zh-Hans: 核心卖点
+      ja: セールスポイント
+      ar: نقاط البيع
+    help:
+      en: Concrete details become visible; vague claims are ignored.
+      zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
+      ja: 具体的な点は絵になり、あいまいな言葉は無視されます。
+      ar: التفاصيل الملموسة تظهر في الصورة، والعبارات العامة تُهمل.
+  - name: palette
+    type: enum
+    required: true
+    group: style
+    default: warm neutral
+    labels:
+      en: Palette
+      zh-Hans: 配色
+      ja: 配色
+      ar: الألوان
+    options:
+      - value: warm neutral
+        swatch:
+          - "#E8DCC8"
+          - "#B9A58E"
+          - "#3E3129"
+        labels:
+          en: Warm neutral
+          zh-Hans: 暖色中性
+          ja: ウォームニュートラル
+          ar: محايد دافئ
+      - value: sage green
+        swatch:
+          - "#DCE6DD"
+          - "#6E9C88"
+          - "#2F5D50"
+        labels:
+          en: Sage green
+          zh-Hans: 鼠尾草绿
+          ja: セージグリーン
+          ar: أخضر مريمي
+      - value: midnight blue
+        swatch:
+          - "#1F2A44"
+          - "#76C3B7"
+          - "#F3ECE2"
+        labels:
+          en: Midnight blue
+          zh-Hans: 午夜蓝
+          ja: ミッドナイトブルー
+          ar: أزرق ليلي
+      - value: soft grey
+        swatch:
+          - "#E2E2E0"
+          - "#555555"
+          - "#1A1A1A"
+        labels:
+          en: Soft grey
+          zh-Hans: 柔和灰
+          ja: ソフトグレー
+          ar: رمادي ناعم
+      - value: coral pop
+        swatch:
+          - "#EE6C4D"
+          - "#F7F1E5"
+          - "#2B2D42"
+        labels:
+          en: Coral pop
+          zh-Hans: 珊瑚亮色
+          ja: コーラルポップ
+          ar: مرجاني
+  - name: aspectRatio
+    type: enum
+    required: true
+    group: composition
+    default: 4:5
+    labels:
+      en: Aspect ratio
+      zh-Hans: 画面比例
+      ja: アスペクト比
+      ar: نسبة الأبعاد
+    options:
+      - value: 4:5
+        labels:
+          en: 4:5
+          zh-Hans: 4:5
+          ja: 4:5
+          ar: 4:5
+      - value: 5:4
+        labels:
+          en: 5:4
+          zh-Hans: 5:4
+          ja: 5:4
+          ar: 5:4
+      - value: 1:1
+        labels:
+          en: 1:1
+          zh-Hans: 1:1
+          ja: 1:1
+          ar: 1:1
+      - value: 3:4
+        labels:
+          en: 3:4
+          zh-Hans: 3:4
+          ja: 3:4
+          ar: 3:4
+      - value: 16:9
+        labels:
+          en: 16:9
+          zh-Hans: 16:9
+          ja: 16:9
+          ar: 16:9
+  - name: headline
+    type: string
+    required: false
+    group: text
+    maxLength: 32
+    labels:
+      en: Headline
+      zh-Hans: 标题文字
+      ja: 見出し
+      ar: العنوان
+    help:
+      en: Optional. Short words render more reliably.
+      zh-Hans: 可选。字越少越容易正确生成。
+      ja: 任意。短い言葉ほど正しく描かれます。
+      ar: اختياري. الكلمات القصيرة تظهر بدقة أكبر.

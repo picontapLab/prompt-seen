@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_008
+contentHash: sha256:9c51b142b0eb02e4db29f07a1666f21bf52ffba6b857912a28b8681b35b79029
+mimeType: image/jpeg
+width: 1200
+height: 675
+original:
+  key: media/a_008/night-city-neon-sign-original-9c51b142b0eb.jpg
+variants:
+  thumbnail:
+    key: media/a_008/night-city-neon-sign-thumbnail-68a78d8d753a.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_008/night-city-neon-sign-card-6661a305fd4b.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_008/night-city-neon-sign-detail-16e9e3d32a9f.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_008/night-city-neon-sign-og-24033163794b.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.78
+  y: 0.156
+placeholder:
+  color: "#182848"
+alt:
+  en: A flat skyline of block buildings with rows of small windows.
+  zh-Hans: 由方块楼房和成排小窗组成的平涂天际线。
+  ja: 小さな窓が並ぶ箱型のビルによる、平面的なスカイライン。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

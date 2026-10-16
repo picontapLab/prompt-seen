@@ -1,14 +1,20 @@
 import type { LocaleEntry, ResolvedConfig } from '../../src/config/schema';
+import type { BuiltContent } from '../lib/content/build-index';
 import type { OutputDir } from '../lib/paths';
 
 /**
- * Everything an emitter may read. Step 1b adds the validated content index here; emitters
- * never read content files themselves.
+ * Everything an emitter may read. Emitters never read content files themselves: they use the
+ * validated content model in `content`.
  */
 export type EmitContext = {
   config: ResolvedConfig;
   /** Locales generated in this build (config.builtLocales). */
   locales: readonly LocaleEntry[];
+  /**
+   * What this build shows (src/modules/content/types.ts): the manifest with redirects and
+   * removed addresses, a summary index per locale and every detail model.
+   */
+  content: BuiltContent;
   /** Same url module as the app, bound to this build's configuration. */
   url: ReturnType<typeof import('../../src/modules/url/create').createUrlModule>;
   /**

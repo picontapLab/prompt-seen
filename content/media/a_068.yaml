@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_068
+contentHash: sha256:006f2774c474309f3f3a83b182f91b3984ed45a5822e793bca1647687229074b
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_068/green-rolling-hills-original-006f2774c474.jpg
+variants:
+  thumbnail:
+    key: media/a_068/green-rolling-hills-thumbnail-ea9373b0a52e.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_068/green-rolling-hills-card-81e0faad16b2.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_068/green-rolling-hills-detail-a3fc05446d22.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_068/green-rolling-hills-og-e9576d061dc4.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#689888"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

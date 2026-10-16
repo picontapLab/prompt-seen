@@ -1,0 +1,33 @@
+# Example run x_002 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_002
+promptId: p_015
+template:
+  id: t_002
+  version: v1
+  sample: default
+  values:
+    subject: a bamboo grove
+    season: summer
+    brushwork: soft grey washes with crisp dark nodes
+    elements:
+      - five tall stalks
+      - drifting leaves
+    aspectRatio: 21:9
+promptSha256: a0bf80ced08cbf310035b4e2992345aba03a1ad01b60c6b3b7b38f0ce516a526
+referenceAssetIds: []
+outputAssetIds:
+  - a_015
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-07-19
+parameters:
+  aspectRatio: 21:9
+  seed: 18785
+  quality: standard
+notes:
+  en: Five stalks came out exactly; the seal sat in the upper right without being placed.
+  zh-Hans: 竹竿正好五根；没有指定位置时，印章出现在右上角。
+  ja: 竹はちょうど五本でした。位置を指定しなくても印は右上に押されました。

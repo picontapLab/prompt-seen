@@ -1,0 +1,32 @@
+# Example run x_001 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_001
+promptId: p_010
+template:
+  id: t_001
+  version: v1
+  sample: default
+  values:
+    product: a speckled handmade ceramic mug
+    sellingPoints:
+      - glazed by hand
+      - keeps coffee warm
+    palette: warm neutral
+    aspectRatio: 4:5
+promptSha256: 85b2ca67e5abd5c364cd0a4e9d46fb2d6d44fbd07e7afd1c214a591e8b9c04fe
+referenceAssetIds: []
+outputAssetIds:
+  - a_010
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-07-14
+parameters:
+  aspectRatio: 4:5
+  seed: 79190
+  quality: standard
+notes:
+  en: The two selling points became the speckles and the dark rim of coffee.
+  zh-Hans: 两个卖点分别变成了杯身的斑点和深色的咖啡液面。
+  ja: 二つのセールスポイントが、斑点とコーヒーの黒い液面になりました。

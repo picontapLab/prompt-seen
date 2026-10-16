@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_036
+contentHash: sha256:4374f0e798fb726ac6b1c5e6e76420a284bdcdbe25cfe26af568a9e5412da59d
+mimeType: image/webp
+width: 675
+height: 1200
+original:
+  key: media/a_036/neon-phone-portrait-original-4374f0e798fb.webp
+variants:
+  thumbnail:
+    key: media/a_036/neon-phone-portrait-thumbnail-871c33908a2f.webp
+    width: 270
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_036/neon-phone-portrait-card-b7908cad54cd.webp
+    width: 540
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_036/neon-phone-portrait-detail-cc8420dc1e15.webp
+    width: 675
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_036/neon-phone-portrait-og-f05d7b3ef903.jpg
+    width: 675
+    height: 354
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.16
+placeholder:
+  color: "#080808"
+alt:
+  en: A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.
+  zh-Hans: 深色的半身剪影，两侧以两种轮廓光勾勒，背后是虚化的光点。
+  ja: ぼけた光を背景に、二色のリムライトで縁取られた暗い胸像のシルエット。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

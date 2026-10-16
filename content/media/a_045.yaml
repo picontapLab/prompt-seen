@@ -1,0 +1,53 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_045
+contentHash: sha256:49400cd44477eecb9be362154b3aca355300290da85f061e6e9268953f761dd4
+mimeType: image/jpeg
+width: 900
+height: 1200
+original:
+  key: media/a_045/jazz-club-poster-original-49400cd44477.jpg
+variants:
+  thumbnail:
+    key: media/a_045/jazz-club-poster-thumbnail-75d13377f6cf.webp
+    width: 360
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_045/jazz-club-poster-card-129d7d8b9efc.webp
+    width: 720
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_045/jazz-club-poster-detail-8e96bcb79866.webp
+    width: 900
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_045/jazz-club-poster-og-a78b94e77ab2.jpg
+    width: 900
+    height: 473
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.625
+  y: 1
+placeholder:
+  color: "#182848"
+alt:
+  en: Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.
+  zh-Hans: 深蓝海报：芥末黄圆盘、青绿弧线、红色半圆、灰色点阵和两条奶油色色条。
+  ja: 紺地に辛子色の円、ティールの弧、赤い半円、灰色のドット、クリーム色の二本の帯。
+  ar: ملصق كحلي بقرص أصفر كبير وقوس فيروزي ونصف دائرة حمراء وشبكة نقاط وشريطين للعنوان.
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

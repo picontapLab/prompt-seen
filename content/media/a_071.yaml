@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_071
+contentHash: sha256:b229b58aa3339ae84e8838c6e56d9992dbf6346fe6d14c380f3c6e836f0def91
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_071/amber-lit-dancer-original-b229b58aa333.jpg
+variants:
+  thumbnail:
+    key: media/a_071/amber-lit-dancer-thumbnail-d2a203185c4f.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_071/amber-lit-dancer-card-c63fdb909104.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_071/amber-lit-dancer-detail-a1492cbf8f4e.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_071/amber-lit-dancer-og-fa42b5b5af3b.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.563
+  y: 0.938
+placeholder:
+  color: "#281808"
+alt:
+  en: A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.
+  zh-Hans: 深色的半身剪影，两侧以两种轮廓光勾勒，背后是虚化的光点。
+  ja: ぼけた光を背景に、二色のリムライトで縁取られた暗い胸像のシルエット。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

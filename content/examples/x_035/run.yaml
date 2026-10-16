@@ -1,0 +1,22 @@
+# Example run x_035 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_035
+promptId: p_067
+template: null
+promptSha256: 4952d5d594944071f55a99ca64437c6d74c2060aded34fca7dc2e8f09a1a34ce
+referenceAssetIds: []
+outputAssetIds:
+  - a_067
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-09-09
+parameters:
+  aspectRatio: 4:5
+  seed: 30573
+  quality: standard
+notes:
+  en: Toppings stayed where they were placed; the scallions spread wider than asked.
+  zh-Hans: 配料都在指定位置；葱花比要求的铺得更开。
+  ja: 具材は指定どおりの位置に収まりました。ねぎは指示より広がりました。
