@@ -6,15 +6,17 @@ import { PREFERENCES_KEY } from '@/state/preferences/store';
 import { themeInitScript } from '@/state/preferences/theme';
 import { ThemeProvider } from '@/state/preferences/theme-provider';
 import { PrimitivesProvider } from '@/ui/primitives/PrimitivesProvider';
+import { InlineScript } from './InlineScript';
 import { IntlProvider } from './IntlProvider';
 
 /**
  * The document for every page (design doc §8.6, §11.6.3): <html lang dir>, global styles and
  * fonts, the first-paint theme script, and the client context every page shares.
  *
- * suppressHydrationWarning covers this element's own attributes only, not its children: the
- * first-paint script may add data-theme here before React hydrates, and React does not render
- * that attribute. Nothing else on the page is exempt from hydration checks.
+ * suppressHydrationWarning on <html> covers that element's own attributes only, not its
+ * children: the first-paint script may add data-theme there before React hydrates, and React
+ * does not render that attribute. The only other exemption is the script element's own type
+ * (InlineScript). Nothing else on the page is exempt from hydration checks.
  */
 export function RootDocument({
   locale,
@@ -31,7 +33,7 @@ export function RootDocument({
       {/* App Router layouts render <head> directly; next/head is a Pages Router API. */}
       {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript(PREFERENCES_KEY) }} />
+        <InlineScript html={themeInitScript(PREFERENCES_KEY)} />
       </head>
       <body>
         <IntlProvider locale={locale.code} messages={messages}>

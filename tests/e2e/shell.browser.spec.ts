@@ -112,7 +112,10 @@ test('the language switch finds a language by its English name and keeps the pag
   const englishName = new Intl.DisplayNames(['en'], { type: 'language' }).of(target!.htmlLang)!;
   const label = message(first!.code, 'shell.language.label');
   // A plain button until first use; pressing it loads the searchable list, focused and open.
-  await page.getByRole('banner').getByRole('button', { name: `${label}: ${first!.nativeName}` }).click();
+  await page
+    .getByRole('banner')
+    .getByRole('button', { name: `${label}: ${first!.nativeName}` })
+    .click();
   const combobox = page.getByRole('combobox', { name: label });
   await expect(combobox).toBeFocused();
   await expect(page.getByRole('listbox')).toBeVisible();
