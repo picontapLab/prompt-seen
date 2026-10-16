@@ -39,6 +39,8 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
       - run: npm test
+      - name: Storybook builds (component state samples, §11.1.7)
+        run: npm run storybook:build
 
   build-and-test:
     runs-on: ubuntu-latest
