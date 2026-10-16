@@ -1,6 +1,6 @@
 # 方案 B 原型：静态导出 + pushState 弹层
 
-一次性验证代码，不是正式项目脚手架。结论写在 [`../../subpath-hosting-decision.md`](../../subpath-hosting-decision.md) 的 §7。
+一次性验证代码，不是正式项目脚手架。结论写在 [`../../subpath-hosting-decision.md`](../../docs/subpath-hosting-decision.md) 的 §7。
 
 - Next.js 16.4.2 App Router，`output: 'export'`、`basePath: '/prompt-seen'`、`trailingSlash: true`，动态段全部 `dynamicParams = false` + `generateStaticParams`。
 - 两种语言（`en`、`zh-hans`）× 30 条测试 Prompt。

@@ -4,6 +4,28 @@
 # Dependencies
 node_modules/
 
+# Generated: never edited by hand, rebuilt locally and in CI (design doc §4.1)
+src/config/generated/
+public/generated/
+.generated/
+deploy/generated/
+
+# Next.js and packaging output
+.next/
+out/
+dist/
+.deploy/
+next-env.d.ts
+*.tsbuildinfo
+
+# Tests
+test-results/
+playwright-report/
+blob-report/
+
+# Local environment
+.env*.local
+
 # Spike build and test output (spikes/*/ also keep their own .gitignore)
 spikes/*/.next/
 spikes/*/out/
@@ -11,4 +33,3 @@ spikes/*/dist/
 spikes/*/public/generated/
 spikes/*/test-results/
 spikes/*/playwright-report/
-*.tsbuildinfo
