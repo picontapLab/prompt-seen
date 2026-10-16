@@ -56,7 +56,7 @@ export function Combobox({
   // The query the user typed; null while the list should show every option (opened by focus or
   // the button, or showing the selected value). React Aria's filter sees only textValue, which
   // must stay the label, so filtering happens here.
-  const [query, setQuery] = useState<string | null>(null);
+  const [query, setQuery] = useState<string | null>(props.defaultInputValue || null);
   const items = query ? options.filter((o) => matches(searchText(o), query)) : options;
   return (
     <AriaComboBox

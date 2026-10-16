@@ -51,7 +51,7 @@ export function Dialog({
   const t = useTranslations('primitives.dialog');
   const dialog = (
     <ModalOverlay
-      {...overlay}
+      {...(trigger ? {} : overlay)}
       isDismissable={variant !== 'alert'}
       className={cx(styles.overlay, styles[`${variant}Overlay`])}
     >
@@ -83,7 +83,7 @@ export function Dialog({
     </ModalOverlay>
   );
   return trigger ? (
-    <DialogTrigger>
+    <DialogTrigger {...overlay}>
       {trigger}
       {dialog}
     </DialogTrigger>

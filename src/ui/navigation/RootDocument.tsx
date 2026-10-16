@@ -1,10 +1,10 @@
 import '@/styles/global.css';
 import '@/styles/fonts';
-import { NextIntlClientProvider } from 'next-intl';
 import type { LocaleEntry } from '@/config';
 import type { Messages } from '@/i18n/catalog';
 import { PREFERENCES_KEY, ThemeProvider, themeInitScript } from '@/state/preferences';
 import { PrimitivesProvider } from '@/ui/primitives';
+import { IntlProvider } from './IntlProvider';
 
 /**
  * The document for every page (design doc §8.6, §11.6.3): <html lang dir>, global styles and
@@ -32,11 +32,11 @@ export function RootDocument({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript(PREFERENCES_KEY) }} />
       </head>
       <body>
-        <NextIntlClientProvider locale={locale.code} messages={messages}>
+        <IntlProvider locale={locale.code} messages={messages}>
           <ThemeProvider>
             <PrimitivesProvider locale={locale.htmlLang}>{children}</PrimitivesProvider>
           </ThemeProvider>
-        </NextIntlClientProvider>
+        </IntlProvider>
       </body>
     </html>
   );

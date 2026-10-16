@@ -18,6 +18,19 @@ export const THEME_ATTRIBUTE = 'data-theme';
 export const THEME_COLOR_OVERRIDE = 'data-theme-override';
 const SWITCHING_ATTRIBUTE = 'data-theme-switching';
 
+/**
+ * The override's colour, written as rgb() on purpose. React hydrates the <meta> elements of
+ * <head> by their content: with the same "#edece8" as the viewport's light theme-color, React
+ * would adopt the script-inserted override as its own node, and removing the override later
+ * breaks the next client navigation ("removeChild" of null).
+ */
+export const themeColorOverride = Object.fromEntries(
+  Object.entries(themeColor).map(([theme, hex]) => {
+    const n = parseInt(hex.slice(1), 16);
+    return [theme, `rgb(${n >> 16} ${(n >> 8) & 255} ${n & 255})`];
+  }),
+) as Record<ResolvedTheme, string>;
+
 export const isThemePreference = (value: unknown): value is ThemePreference =>
   typeof value === 'string' && (THEME_PREFERENCES as readonly string[]).includes(value);
 
@@ -42,7 +55,7 @@ export function applyTheme(preference: ThemePreference, doc: Document = document
     meta.setAttribute(THEME_COLOR_OVERRIDE, '');
     doc.head.insertBefore(meta, doc.head.firstChild);
   }
-  meta.content = themeColor[preference];
+  meta.content = themeColorOverride[preference];
 }
 
 let switchingTimer: ReturnType<typeof setTimeout> | undefined;
@@ -72,8 +85,8 @@ export function switchTheme(preference: ThemePreference, doc: Document = documen
  */
 export function themeInitScript(storageKey: string): string {
   const key = JSON.stringify(storageKey);
-  const dark = JSON.stringify(themeColor.dark);
-  const light = JSON.stringify(themeColor.light);
+  const dark = JSON.stringify(themeColorOverride.dark);
+  const light = JSON.stringify(themeColorOverride.light);
   return (
     `(function(){try{var d=document,r=d.documentElement,t;` +
     `try{t=JSON.parse(localStorage.getItem(${key})||'{}').theme}catch(e){}` +

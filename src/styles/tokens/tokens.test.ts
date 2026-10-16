@@ -56,7 +56,7 @@ describe('breakpoints', () => {
         e.isDirectory() ? cssFiles(path.join(d, e.name)) : e.name.endsWith('.css') ? [path.join(d, e.name)] : [],
       );
 
-  it('are the only widths used in media queries under src/', () => {
+  it('are the only widths used in media and container queries under src/', () => {
     const allowed = new Set(
       Object.values(breakpoints).flatMap((px) => [`min-width: ${px}px`, `max-width: ${px - 0.02}px`]),
     );

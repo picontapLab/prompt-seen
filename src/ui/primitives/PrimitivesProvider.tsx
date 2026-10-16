@@ -1,22 +1,19 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { I18nProvider, RouterProvider } from 'react-aria-components';
+import { I18nProvider } from 'react-aria-components';
 import { Toaster } from './Toast';
 
 /**
  * Context for every primitive, mounted once by the root document: the page language for React
  * Aria's built-in strings, number formats and direction (set explicitly, so server and client
- * render the same text), Next.js navigation for React Aria links, and the toast region.
+ * render the same text), and the toast region. A React Aria RouterProvider joins here when a
+ * primitive first renders links.
  */
 export function PrimitivesProvider({ locale, children }: { locale: string; children: React.ReactNode }) {
-  const router = useRouter();
   return (
     <I18nProvider locale={locale}>
-      <RouterProvider navigate={(href) => router.push(href)}>
-        {children}
-        <Toaster />
-      </RouterProvider>
+      {children}
+      <Toaster />
     </I18nProvider>
   );
 }

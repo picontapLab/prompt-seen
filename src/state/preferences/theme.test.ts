@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { themeColor } from '@/styles/tokens/theme-color';
 import { createPreferencesStore, parsePreferences, PREFERENCES_KEY } from './store';
-import { applyTheme, themeInitScript, type ThemePreference } from './theme';
+import { applyTheme, themeColorOverride, themeInitScript, type ThemePreference } from './theme';
 
 // A minimal document: just what the first-paint script and applyTheme touch.
 class FakeElement {
@@ -90,7 +89,7 @@ describe('first-paint theme script', () => {
   it('marks an explicit choice and puts its theme colour first in <head>', () => {
     expect(state(runInitScript('{"theme":"dark"}'))).toEqual({
       theme: 'dark',
-      themeColor: [themeColor.dark],
+      themeColor: [themeColorOverride.dark],
       firstInHead: true,
     });
   });
@@ -104,12 +103,18 @@ describe('first-paint theme script', () => {
   });
 });
 
+describe('theme colour override', () => {
+  it('is the canvas colour, written differently from the viewport metadata', () => {
+    expect(themeColorOverride).toEqual({ light: 'rgb(237 236 232)', dark: 'rgb(18 17 16)' });
+  });
+});
+
 describe('applyTheme', () => {
   it('replaces and removes the theme-colour override', () => {
     const doc = fakeDocument() as unknown as Document;
     applyTheme('dark', doc);
     applyTheme('light', doc);
-    expect(state(doc as never)).toEqual({ theme: 'light', themeColor: [themeColor.light], firstInHead: true });
+    expect(state(doc as never)).toEqual({ theme: 'light', themeColor: [themeColorOverride.light], firstInHead: true });
     applyTheme('system', doc);
     expect(state(doc as never)).toEqual({ theme: null, themeColor: [], firstInHead: false });
   });
