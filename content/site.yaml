@@ -1,0 +1,24 @@
+# Instance configuration (design doc §15.4.2). Environment variables win:
+# SITE_ORIGIN, BASE_PATH, URL_PATTERN, BUILD_MODE (production | preview), BUILD_ID, CONTENT_DIR.
+siteName: Prompt Seen
+origin: https://example.com # canonical host; placeholder until step 5
+basePath: /prompt-seen # empty string for a root deployment
+urlPattern: '{basePath}/{locale}/{path}' # or "/{locale}{basePath}/{path}" when the host prefixes languages
+
+robots:
+  mode: snippet # standalone: emit robots.txt; snippet: emit robots-snippet.txt for the host
+  aiTraining: disallow # training crawlers (§9.10.2); placeholder until decided
+
+shell:
+  header: default # default | host
+  themeSource: system
+
+brand:
+  tokens: null # path to brand-layer token overrides (§11.1.9)
+
+# Reserved for later steps; schemas are tightened by the owning step (§17.4).
+home:
+  featured: [] # step 4b: editorially chosen works for the home first screen (§11.8.1)
+feed:
+  showcase: [] # step 3a: list first-screen showcase band (§11.8.2)
+  interludes: [] # step 3a: editorial interludes in the continuous list (§11.8.2)

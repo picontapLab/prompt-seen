@@ -1,0 +1,55 @@
+# Prompt Seen
+
+A browsable, searchable library of tested image prompts and templates. Every work shows its
+prompt and what each phrase does. The site is a static export of a Next.js app that deploys at
+the root of a domain or under a subpath of another site, such as `example.com/prompt-seen`.
+
+Status: under construction. Step 1a of the implementation plan (design doc §17) is in place:
+the project scaffold, configuration, build pipeline and CI. Pages are placeholders.
+
+## Quick start
+
+Requires Node.js 24 (see `.nvmrc`). The end-to-end tests also need Docker.
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+Open <http://localhost:3000/prompt-seen/>. To work without the base path, start with `BASE_PATH= npm run dev`.
+
+## Commands
+
+| Command                                       | What it does                                                                                               |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `npm run dev`                                 | Generates configuration and data, then starts the dev server                                               |
+| `npm run build`                               | Static export into `out/`, packaged into `dist/{basePath}/`                                                |
+| `npm run content:validate`                    | Checks `content/` configuration and UI message catalogs                                                    |
+| `npm run content:build`                       | Runs every emitter in `scripts/emitters/` (generated data and host configuration)                          |
+| `npm run typecheck` / `lint` / `format:check` | Static checks                                                                                              |
+| `npm test`                                    | Unit tests (Vitest)                                                                                        |
+| `npm run test:e2e`                            | Builds must exist; serves `dist/` with the reference nginx in Docker and runs Playwright                   |
+| `npm run serve`                               | Serves `dist/` with the reference nginx at <http://127.0.0.1:8090/> for manual checks                      |
+| `npm run deploy:cloudflare:prepare`           | Assembles `.deploy/cloudflare/` (`dist/` plus `_headers`, `_redirects` and 404 pages) for Cloudflare Pages |
+
+Build-time settings come from `content/site.yaml`, overridden by environment variables:
+`SITE_ORIGIN`, `BASE_PATH` (empty for a root deployment), `URL_PATTERN`, `BUILD_MODE`
+(`preview`, the default, marks every page noindex; `production` is for the live site),
+`BUILD_ID` and `CONTENT_DIR`. Changing the base path needs a new build.
+
+## Documentation
+
+- [Design document](docs/prompt-library-website-design.md) (Chinese): the source of truth.
+  §17 is the implementation plan and session map.
+- [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
+- [Subpath hosting decision](docs/subpath-hosting-decision.md): why the site is a static export, with prototype results.
+- [Language coverage assessment](docs/language-coverage-assessment.md).
+- [`design/`](design/README.md): the chosen visual direction, tokens and reference pages.
+
+## Licenses
+
+Code: [MIT](LICENSE). Prompt text and descriptions: [CC BY 4.0](content/LICENSE). Images are
+licensed per file. The name and brand are not licensed for reuse.

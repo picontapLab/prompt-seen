@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.7  
-> 设计日期：2026-10-14（1.3–1.7 修订：2026-10-15）  
+> 文档版本：1.8  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -11,6 +11,7 @@
 > 1.5 增补：选定视觉方向——暗房（A）加校样（C）的字母标注；功能层与品牌层 token、字体、形状与品牌元素规格（11.1.9），对应资产保存在 `design/` 目录。  
 > 1.6 修订：第 17 章改为实施步骤与会话图（开工前提、各步骤范围与通过条件、共享文件约定、会话简报清单、样例内容与检查点）；`tokens-check` 与“未验证”徽标的引用统一到第 11.1.9 节；补入配套的《语言覆盖评估》文件。部署方案 A 与 B 仍待原型验证（第 17.1 节）。  
 > 1.7 修订：采用方案 B（静态导出、预生成详情页加 pushState 弹层），依据《子路径部署决策》第 7 节的原型验证结果；按该备忘第 6 节修改第 3–5、7–9、11、14–18、20、21 章的相关内容，并把原型发现的实现细节写入第 4.1、9.5、11.3.1、14.2、15.4.3、15.4.4 与 16.3 节。  
+> 1.8 修订：步骤 1a 的决定——工程位于仓库根目录，文档移入 `docs/`；预览与生产托管选用 Cloudflare Pages；代码 MIT、内容 CC BY 4.0；国际化消息库选用 next-intl；语言注册表增加 `preview` 字段与 `BUILD_MODE` 构建模式；补充第 4 章的实际目录、配置生成与输出注册机制，以及《工程约定》（第 4.1、8.2、15.4.2、17.1、17.3、20 章）。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -116,6 +117,7 @@ flowchart LR
 | Prompt 正文 | UTF-8 TXT | 保持换行、符号和完整正文，便于复制 |
 | 说明文章 | Markdown / MDX | 支持长文与受控的展示模块 |
 | 数据校验 | Zod | 统一字段规则，提供明确错误 |
+| 界面消息 | next-intl（只用于 ICU 消息格式化） | 支持复数与选择消息，服务端与客户端共用；语言路由仍由注册表与 `url` 模块负责，见第 4.1 节 |
 | 图片处理 | Sharp | 导入时获取尺寸并生成展示规格 |
 | 图片存储 | Cloudflare R2，或团队已有的 S3 兼容存储 | 图片独立管理，通过 CDN 分发 |
 | 搜索 | MiniSearch | 构建时生成索引，浏览器按需查询 |
@@ -126,7 +128,7 @@ flowchart LR
 | 组件状态样本 | Storybook | 维护 loading、empty、error、success 与明暗、RTL、减少动效样本 |
 | 无障碍检查 | axe-core（集成到 Playwright） | 自动发现对比度、标签与角色问题，人工走查补充 |
 | 访问分析 | 不使用 Cookie 的隐私友好分析，如 Plausible 或 Vercel Web Analytics | 避免同意横幅，可统计搜索与 AI 引荐来源 |
-| CI 与发布 | GitHub Actions + 静态托管（平台见第 17.1 节） | 内容校验、PR 预览、参考 nginx 状态码测试与静态产物部署 |
+| CI 与发布 | GitHub Actions + Cloudflare Pages（第 17.1 节），参考 nginx 用于测试 | 内容校验、PR 预览、参考 nginx 状态码测试与静态产物部署 |
 | 质量验证 | 单元测试 + Playwright + Lighthouse | 验证模板、路由、交互与性能 |
 
 项目初始化时选择相互兼容的稳定版本，并提交锁文件。具体依赖版本在实施阶段确定，不以本文中的技术名称推断版本兼容性。
@@ -265,7 +267,12 @@ prompt-library/
 │   └── LICENSE
 ├── src/
 │   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── (entry)/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
 │   │   ├── [locale]/
+│   │   │   ├── layout.tsx
 │   │   │   └── (public)/
 │   │   │       ├── layout.tsx
 │   │   │       ├── page.tsx
@@ -291,13 +298,16 @@ prompt-library/
 │   │   │       ├── favorites/page.tsx
 │   │   │       ├── about/page.tsx
 │   │   │       └── license/page.tsx
-│   │   ├── page.tsx
 │   │   ├── not-found.tsx
 │   │   ├── icon.svg
 │   │   ├── llms.txt/route.ts
 │   │   ├── sitemap.ts
 │   │   └── robots.ts
 │   ├── config/
+│   │   ├── schema.ts
+│   │   ├── load.ts
+│   │   ├── index.ts
+│   │   └── generated/
 │   ├── modules/
 │   │   ├── content/
 │   │   ├── template/
@@ -319,13 +329,19 @@ prompt-library/
 │   │   ├── favorites/
 │   │   └── preferences/
 │   ├── i18n/
+│   │   ├── request.ts
+│   │   └── messages/{locale}/{namespace}.json
 │   └── styles/
 │       ├── tokens/
 │       └── base/
 ├── scripts/
+│   ├── config-gen.ts
 │   ├── content-new.ts
 │   ├── content-validate.ts
 │   ├── content-build.ts
+│   ├── emitters/
+│   ├── package.ts
+│   ├── deploy-cloudflare.ts
 │   ├── media-import.ts
 │   ├── content-export.ts
 │   ├── tokens-check.ts
@@ -333,8 +349,11 @@ prompt-library/
 ├── design/
 │   ├── tokens/
 │   └── visual-direction/
+├── docs/
 ├── deploy/
-├── tests/
+│   ├── nginx/host-server.conf
+│   └── generated/
+├── tests/e2e/
 ├── public/generated/
 ├── .generated/
 ├── dist/
@@ -349,7 +368,10 @@ prompt-library/
 ### 4.1 目录职责
 
 - `content/` 是人工编辑的内容源，提交到 Git。内容使用独立许可文件，与代码许可分开，见第 15.5 节。
-- `src/config/` 读取 `content/site.yaml` 与环境变量，输出站点源、基础路径、URL 模式、品牌与功能开关。代码其他位置不直接读取环境变量。
+- `src/config/` 读取 `content/site.yaml` 与环境变量，输出站点源、基础路径、URL 模式、品牌与功能开关。代码其他位置不直接读取环境变量。`load.ts` 只在 Node 中运行（脚本与 `next.config.ts`）；`npm run gen` 把校验后的配置与 locale 字面量类型写入 `generated/`，应用代码只通过 `@/config` 使用这些常量。lint 禁止 `src/` 中直接读取 `process.env`，以及在 `url` 模块以外使用 `origin`、`basePath` 与 `urlPattern`。
+- 可覆盖 `site.yaml` 的环境变量：`SITE_ORIGIN`、`BASE_PATH`（根部署时为空）、`URL_PATTERN`、`BUILD_MODE`、`BUILD_ID` 与 `CONTENT_DIR`。`BUILD_MODE` 为 `production` 或 `preview`，默认 `preview`：预览构建的全部页面带 `noindex`，并额外生成注册表中标记 `preview: true` 的 locale（第 8.2 节）；生产构建只生成已启用的 locale。
+- `src/i18n/` 使用 next-intl，只负责 ICU 消息格式化（第 11.11 节）；locale 前缀、路由与 hreflang 来自语言注册表与 `url` 模块，不使用 next-intl 的中间件（静态导出不能运行）。消息按功能拆分为 `messages/{locale code}/{namespace}.json`，文件名即命名空间；客户端模块只接收所需的命名空间。`content:validate` 检查 ICU 语法、缺失的键，以及各语言与英语的参数是否一致。
+- `src/app/layout.tsx` 只透传子节点；`<html lang dir>` 由 `[locale]/layout.tsx` 与语言入口的 `(entry)/layout.tsx` 输出，使每个页面带有自己的语言与方向（第 8.6 节）。`[locale]` 下的页面调用 `notFound()` 时，需要不输出 `<html>` 的 `[locale]/not-found.tsx`。
 - `src/modules/` 封装内容读取、模板渲染、资源选择、搜索与 SEO 规则。`url/` 是生成所有对外地址的唯一模块；`geo/` 负责 Markdown 版本、`llms.txt` 与 AI 爬虫规则输出。
 - `src/ui/primitives/` 封装 React Aria 组件基元与项目样式，业务组件只使用这一层，不直接拼装 ARIA 属性。
 - `src/ui/` 负责画廊和编辑器等用户界面。
@@ -360,7 +382,10 @@ prompt-library/
 - 生成目录不手工修改，加入 `.gitignore`，在本地开发和 CI 中重新生成。
 - `next.config.ts` 设置 `output: 'export'`、`trailingSlash: true` 与来自 `src/config/` 的 `basePath`。
 - 导出的 `out/` 不含 basePath 目录层级，构建后打包到 `dist/{basePath}/`（如 `dist/prompt-seen/`），使文件路径与对外地址一致；`dist/` 是交给宿主的产物。
-- `deploy/` 保存宿主接入模板（如 nginx server 块示例）与构建生成的宿主配置（nginx include、`_redirects`、`vercel.json`、`robots-snippet.txt`），生成部分不手工修改，见第 15.4 节。
+- `deploy/` 保存宿主接入模板（如 nginx server 块示例）与构建生成的宿主配置（nginx include、`_redirects`、`vercel.json`、`robots-snippet.txt`），生成部分不手工修改，见第 15.4 节。手写模板在 `deploy/nginx/`，生成部分在 `deploy/generated/`。
+- `content:build` 的每种输出是 `scripts/emitters/` 下的一个文件，默认导出 `defineEmitter({ name, description, run })`，由注册表自动发现；输出只经 `ctx.write` 写入 `public/generated/`、`.generated/` 或 `deploy/generated/`（第 17.4 节）。`_` 开头的文件是辅助模块。
+- `scripts/package.ts` 把 `out/` 打包到 `dist/{basePath}/`，并检查每个已生成 locale 的首页与错误页都存在；`scripts/deploy-cloudflare.ts` 在此基础上组装 Cloudflare Pages 的上传目录。
+- `docs/` 保存本文、《子路径部署决策》《语言覆盖评估》与《工程约定》（`engineering-conventions.md`）。
 - 每种语言的错误页预生成在 `/{locale}/404/` 与 `/{locale}/410/`，由宿主的错误页规则引用；根 `not-found.tsx` 生成未知语言使用的 `404.html`；根 `page.tsx` 是语言入口（第 8.2 节）；`icon.svg` 使站点图标带基础路径（第 15.4.3 节）。
 - `index.md` 等 Route Handler 不在 `[locale]` layout 之下，拿不到父级参数，其 `generateStaticParams` 必须同时返回 `locale` 与 `slug`，否则导出报错。
 
@@ -736,10 +761,11 @@ locales:
     htmlLang: ar
     direction: rtl
     enabled: false
+    preview: true   # 只在预览构建中生成，用于 RTL 测试
     phase: 2
 ```
 
-上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。
+上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。`preview: true` 的 locale 只在预览构建（`BUILD_MODE=preview`，第 4.1 节）中生成，用于尚未启用语言的版式与方向测试，如步骤 2 的阿拉伯语草稿；生产构建只生成 `enabled` 的 locale。步骤 1a 时注册表已填写全部 13 项：英语与简体中文已启用，日语与阿拉伯语为预览，其余待内容与审核就绪后启用。
 
 URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/ink-portrait`、`locales/zh-Hans.mdx`、`hreflang="zh-Hans"`。本文 1.0 的 `/zh/` 示例改为 `/zh-hans/`；项目尚未实施。如实施时已有 `/zh/` 链接，再配置永久重定向。非规范大小写的已知地址重定向到唯一小写地址；重定向由构建生成的宿主配置逐条列出，只覆盖已知地址，不对任意大小写做通配处理。
 
@@ -1336,11 +1362,11 @@ flowchart LR
 
 > 决定日期：2026-10-15。依据：视觉方向稿 [Prompt Seen Visual Directions](https://claude.ai/artifact/EiDg5dKjQdvb8dZQPp21UE) 中的 A 暗房方向；提示词标注改用 C 校样方向的字母标签与高亮。B、C 的其余元素不采用。本节取值取代第 11.1.1 节的基线数值，`tokens-check` 以本节为准。
 >
-> 资产：[`design/`](design/README.md) 目录保存本方向的 token 原稿（[`darkroom.css`](design/tokens/darkroom.css)、[`darkroom.tokens.json`](design/tokens/darkroom.tokens.json)）、可在浏览器打开的首页、列表、详情与手机页面（[`design/visual-direction/darkroom/`](design/visual-direction/darkroom/home.html)，已改用本节的字母标注），以及深浅两种主题的截图。
+> 资产：[`design/`](../design/README.md) 目录保存本方向的 token 原稿（[`darkroom.css`](../design/tokens/darkroom.css)、[`darkroom.tokens.json`](../design/tokens/darkroom.tokens.json)）、可在浏览器打开的首页、列表、详情与手机页面（[`design/visual-direction/darkroom/`](../design/visual-direction/darkroom/home.html)，已改用本节的字母标注），以及深浅两种主题的截图。
 
-![暗房方向首页首屏（深色）](design/visual-direction/screenshots/darkroom-home-dark.png)
+![暗房方向首页首屏（深色）](../design/visual-direction/screenshots/darkroom-home-dark.png)
 
-![暗房方向详情（浅色“相纸”主题）](design/visual-direction/screenshots/darkroom-detail-light.png)
+![暗房方向详情（浅色“相纸”主题）](../design/visual-direction/screenshots/darkroom-detail-light.png)
 
 选择理由：
 
@@ -2126,9 +2152,14 @@ shell:
   themeSource: system                   # system，或读取主站主题偏好的存储键、根属性
 brand:
   tokens: ./brand/tokens.json           # 覆盖第 11.1 节的品牌相关 token，需重新通过对比度校验
+home:
+  featured: []                          # 步骤 4b：首页展出（第 11.8.1 节）
+feed:
+  showcase: []                          # 步骤 3a：列表首屏展示带（第 11.8.2 节）
+  interludes: []                        # 步骤 3a：连续列表中的编辑段落
 ```
 
-`src/config/` 校验并输出这些值；`url` 模块是唯一使用 `origin`、`basePath` 与 `urlPattern` 拼接对外地址的位置。
+`src/config/` 校验并输出这些值；`url` 模块是唯一使用 `origin`、`basePath` 与 `urlPattern` 拼接对外地址的位置。Schema 拒绝未知键；`home` 与 `feed` 是步骤 1a 为后续步骤预留的键，由负责的步骤收紧其结构（第 17.4 节）。环境变量 `SITE_ORIGIN`、`BASE_PATH`、`URL_PATTERN` 覆盖对应字段，`BUILD_MODE`、`BUILD_ID` 与 `CONTENT_DIR` 见第 4.1 节。
 
 #### 15.4.3 子路径下需要处理的事项
 
@@ -2327,16 +2358,16 @@ brand:
 
 - **部署方案（步骤 0a′，已完成）**：2026-10-15 采用方案 B，即静态导出、预生成详情页加 pushState 弹层。《子路径部署决策》第 5 节要求的两项原型验证全部通过（该备忘第 7 节）：弹层的 12 项测试在 Chrome 与 WebKit 上各重复 5 次，没有失败；参考 nginx 的 28 项测试全部通过。Firefox 尚未运行，在步骤 1a 的 CI 中补上。本文已按该备忘第 6 节修改，并写入其第 7.4 节的实现细节（1.7 版）。
 - **原型代码**：`spikes/option-b/` 是一次性实现，正式工程不直接沿用；其 Playwright 测试可作为步骤 1a 的宿主测试与步骤 4a 弹层回归测试的起点。
-- **Git**：项目目录尚未初始化仓库。步骤 1a 之前建立仓库与远程；每个会话使用独立分支，以 PR 交付。
-- **需要维护者确定的事项**：
+- **Git**：仓库托管在 GitHub（私有），主分支 `main`；每个会话使用独立分支，以 PR 交付。
+- **维护者已确定的事项**（2026-10-15）：
 
-| 事项 | 影响 | 最晚 |
+| 事项 | 决定 | 影响 |
 | --- | --- | --- |
-| 代码根目录 | 是否在本目录直接建立工程；设计文档是否移入 `docs/`（移动时同步修正相对链接） | 1a |
-| Git 托管、仓库名与公开时间 | 远程、CI 与 PR 流程 | 1a |
-| 预览与生产托管 | 方案 B 下生成哪些宿主配置；PR 预览部署 | 1a；PR 预览最迟在步骤 2 可用 |
-| 代码许可与内容许可 | 仓库根目录与 `content/` 下的 `LICENSE`；仓库公开前可用占位 | 1a |
-| 国际化消息库 | 本文尚未指定；须支持 ICU MessageFormat（第 11.11 节）并兼容所选方案的预生成方式 | 在 1a 内评估选定 |
+| 代码根目录 | 工程位于仓库根目录；本文、《子路径部署决策》与《语言覆盖评估》移入 `docs/`，相对链接已修正 | 根目录保留 README、LICENSE 与工程文件 |
+| Git 托管、仓库名与公开时间 | GitHub 私有仓库；公开时间待定 | 公开前需核对第 15.5 节的许可与示例内容 |
+| 预览与生产托管 | Cloudflare Pages：CI 把测试过的 `dist/` 上传为预览，生产部署在步骤 5 接入 | 生成 `_headers` 与 `_redirects`；Pages 不支持 410，退化为 404（第 9.5 节） |
+| 代码许可与内容许可 | 代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注，品牌不授权 | 根目录 `LICENSE` 与 `content/LICENSE` |
+| 国际化消息库 | next-intl，只用于 ICU 消息格式化 | 见第 4.1 节；语言路由仍由注册表与 `url` 模块负责 |
 
 以下事项可先用占位值，最迟在步骤 5 确定：正式域名与规范主机、Logo（此前用文字标识）、对象存储与 CDN（此前用本地文件驱动）、访问分析、AI 训练类爬虫策略。
 
@@ -2373,6 +2404,7 @@ brand:
 
 - 范围：Next.js App Router 与 TypeScript 工程，提交锁文件（第 3.1 节）；按第 3.2 节配置 `next.config`（`output: 'export'`、`basePath`、`trailingSlash: true`），并加入打包到 `dist/{basePath}/` 的步骤；声明站点图标（第 15.4.3 节）；lint、格式化、单元测试、Playwright 与 axe-core；CI 执行第 15.1 节的安装、类型检查、内容校验、构建与核心路由检查，并分别以根路径和 `/prompt-seen` 构建；经参考 nginx 运行 Playwright，浏览器包括 Chrome、WebKit 与 Firefox；PR 预览部署（`noindex`）。`src/config/` 与 `site.yaml` Schema（第 4.1、15.4.2 节），为首页展出、列表编排、robots、外壳与品牌预留键；`url` 模块与 `withBasePath()`（第 9.3、15.4.3 节）；`locales.yaml` 注册表与生成的 locale 类型（第 8.2 节）；国际化消息库与按功能拆分的消息文件；`content-build` 的输出注册机制（第 17.4 节）；第 4 章目录骨架与生成目录的 `.gitignore`。
 - 通过条件：CI 在空站点上通过；两种构建下每个已启用 locale 都输出占位页，原始 HTML 中的 canonical 是带基础路径的绝对地址；经参考 nginx 访问时，访问日志中没有基础路径以外的请求；新增一种构建输出只需新增一个文件。
+- 结果（2026-10-15，分支 `step-1a-scaffold`）：工程约定见 `docs/engineering-conventions.md`。站点配置与语言注册表的 Schema 已在本步骤完成（`src/config/schema.ts`），1b 在 `content:validate` 中沿用并补充内容模型、重定向与发布规则。国际化消息库选定 next-intl，只用于 ICU 消息格式化。CI 的根路径构建为生产模式、`/prompt-seen` 构建为预览模式，后者即 PR 预览上传到 Cloudflare Pages 的产物；仓库配置 `CLOUDFLARE_API_TOKEN` 与 `CLOUDFLARE_ACCOUNT_ID` 前，预览任务只提示并跳过。
 
 **1b 内容模型与构建管线**
 
@@ -2497,7 +2529,7 @@ brand:
 ### 17.7 检查点
 
 - 0a′：已完成，方案 B 已写入本文（1.7 版）。
-- 1a 合并前：审查工程约定（目录、命名、测试与 CI），后续会话都会沿用。
+- 1a 合并前：审查工程约定（目录、命名、测试与 CI，见 `docs/engineering-conventions.md`），后续会话都会沿用。
 - 步骤 2 合并前：重点审查，见第 17.3 节。
 - 每一轮并行结束后：确认共享契约没有分叉，必要时更新本文。
 - 步骤 5 之前：核对第 20 章的配置清单已经填写。
@@ -2550,13 +2582,13 @@ brand:
 
 - 网站名称、域名与品牌素材（Logo 需与第 11.1.9 节的暗房方向一致）；字体与品牌记号色已在第 11.1.9 节选定，实施前核对字符覆盖。
 - 首页展出作品、列表展示带与编辑段落的编排负责人，以及提示词标注的审核人。
-- 部署形态：独立域名、主站子路径或子域名；规范主机、`basePath` 与 `urlPattern`；目标宿主类型（nginx、Netlify、Cloudflare Pages、Vercel 或其他静态托管），决定生成哪些宿主配置。
+- 部署形态：独立域名、主站子路径或子域名；规范主机、`basePath` 与 `urlPattern`；目标宿主类型（nginx、Netlify、Cloudflare Pages、Vercel 或其他静态托管），决定生成哪些宿主配置。已确定：预览与生产托管使用 Cloudflare Pages，参考 nginx 用于测试与主站接入（第 17.1 节）；规范主机仍为占位。
 - 主站侧的配合：静态映射或转发规则、`absolute_redirect off` 等宿主配置、robots.txt 合并、CDN 与 WAF 的 AI 爬虫设置、CSP 约定。
-- 代码许可、Prompt 文本许可与图片授权策略。
+- 代码许可、Prompt 文本许可与图片授权策略。已确定：代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注。
 - AI 训练类爬虫的允许策略（第 9.10.2 节）。
 - 访问分析工具，以及 Search Console、Bing Webmaster Tools、IndexNow 密钥。
 - 图片存储提供方、CDN 域名和导入凭据配置。
-- Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。
+- Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。已确定：GitHub 私有仓库、`main` 分支、Cloudflare Pages；Pages 项目与 CI 密钥由维护者创建。
 - 国际化消息库（须支持 ICU MessageFormat，第 11.11 节）。
 - 第一批自有或已明确可使用的 Prompt、图片和模板。
 - 初始分类词汇、专题与精选顺序。
@@ -2616,6 +2648,6 @@ brand:
 47. [WAI-ARIA：Feed 模式](https://www.w3.org/WAI/ARIA/apg/patterns/feed/)
 48. [可点击样稿：Prompt Seen Mockup](https://claude.ai/artifact/UDAb5p94tJaFCEP9kYxZ6Q)（仅验证交互流程，视觉与加载方式以第 11.12 节为准）
 49. [视觉方向稿：Prompt Seen Visual Directions](https://claude.ai/artifact/EiDg5dKjQdvb8dZQPp21UE)（三个方向；选定 A 暗房，标注采用 C，见第 11.1.9 节）
-50. [本地设计资产：`design/`](design/README.md)（选定方向的页面、截图与 token 原稿）
+50. [本地设计资产：`design/`](../design/README.md)（选定方向的页面、截图与 token 原稿）
 51. [Next.js：原生 History API](https://nextjs.org/docs/app/getting-started/linking-and-navigating#native-history-api)
-52. [方案 B 原型：`spikes/option-b/`](spikes/option-b/README.md)（一次性实现，测试可复用）
+52. [方案 B 原型：`spikes/option-b/`](../spikes/option-b/README.md)（一次性实现，测试可复用）
