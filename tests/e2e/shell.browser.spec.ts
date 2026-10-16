@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
+import { settle } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 
 // The page shell and theme of step 1c (design doc §11.6.3, §11.9, §15.5.2), in a real browser
@@ -137,6 +138,8 @@ test.describe('narrow screens', () => {
     await expect(dialog).toBeVisible();
     await expect(dialog.getByRole('combobox')).toBeVisible();
     await expect(dialog.getByRole('radiogroup')).toBeVisible();
+    // The sheet slides and fades in; contrast is measured once it has arrived.
+    await settle(page);
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
       .analyze();
