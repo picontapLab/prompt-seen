@@ -1,0 +1,63 @@
+/* Layout and helper classes (design doc §11.1.3). Usable from server components. */
+
+@layer utilities {
+  /* Page container: content width plus the page margin of the current breakpoint. */
+  .container {
+    inline-size: 100%;
+    max-inline-size: calc(var(--container-wide) + 2 * var(--page-margin));
+    margin-inline: auto;
+    padding-inline: var(--page-margin);
+  }
+  .container[data-width='detail'] {
+    max-inline-size: calc(var(--container-detail) + 2 * var(--page-margin));
+  }
+  .container[data-width='reading'] {
+    max-inline-size: calc(var(--container-reading) + 2 * var(--page-margin));
+  }
+
+  /* 12-column page grid. Components inside use container queries, not the viewport (§11.1.3). */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+  }
+
+  .visually-hidden:not(:focus-within, :active) {
+    position: absolute !important;
+    inline-size: 1px !important;
+    block-size: 1px !important;
+    overflow: hidden !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Content for one resolved theme. CSS decides, so server HTML and hydration always agree
+     whatever the stored preference (§11.6.3); hidden content leaves the accessibility tree. */
+  .when-dark {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .when-dark {
+      display: contents;
+    }
+    :root:not([data-theme='light']) .when-light {
+      display: none;
+    }
+  }
+  [data-theme='dark'] .when-dark {
+    display: contents;
+  }
+  [data-theme='dark'] .when-light {
+    display: none;
+  }
+  [data-theme='light'] .when-light {
+    display: contents;
+  }
+  [data-theme='light'] .when-dark {
+    display: none;
+  }
+}

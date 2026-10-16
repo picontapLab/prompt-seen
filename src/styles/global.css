@@ -1,0 +1,14 @@
+/*
+ * Global stylesheet, imported once by the root document (design doc §3.1: custom properties,
+ * CSS Modules and @layer). Layer order: reset < tokens < base < components < utilities.
+ * Component CSS Modules put their rules in @layer components.
+ */
+@layer reset, tokens, base, components, utilities;
+
+@import './base/reset.css';
+@import './tokens/color.css';
+@import './tokens/type.css';
+@import './tokens/layout.css';
+@import './tokens/motion.css';
+@import './base/base.css';
+@import './base/utilities.css';

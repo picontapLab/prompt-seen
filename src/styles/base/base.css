@@ -1,0 +1,97 @@
+/* Element defaults built only from tokens (design doc §11.1.2, §11.1.7, §11.9). */
+
+@layer base {
+  html {
+    background: var(--canvas);
+    color: var(--text-primary);
+    font-family: var(--font-text);
+    line-height: var(--leading-body);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Anchors and keyboard focus stay clear of the fixed navigation (§11.1.3). */
+    scroll-padding-block-start: calc(var(--nav-height) + var(--space-16));
+  }
+
+  body {
+    min-block-size: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-heading);
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  /* CJK: strict line breaking, punctuation trimming as an enhancement (§11.1.2). */
+  :lang(zh),
+  :lang(ja),
+  :lang(ko) {
+    line-break: strict;
+    text-spacing-trim: trim-start;
+  }
+
+  /* Long compounds wrap with hyphens; relies on the correct lang (§11.1.2). */
+  :lang(de) :where(p, li, dd) {
+    hyphens: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-mono);
+    font-size: 0.9375em;
+  }
+
+  /* Italic is not used for emphasis: CJK and Arabic have no true italic (§11.1.2). */
+  em {
+    font-style: normal;
+    font-weight: var(--weight-semibold);
+  }
+
+  /* Focus ring only for keyboard focus (§11.1.7). */
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background: var(--accent-subtle);
+    color: var(--text-primary);
+  }
+
+  /* While the theme changes, only colours move, briefly (§11.6.3). Set by the theme store,
+     never under reduced motion. !important in this layer outranks the component layer. */
+  :root[data-theme-switching] *,
+  :root[data-theme-switching] *::before,
+  :root[data-theme-switching] *::after {
+    transition-property:
+      background-color, border-color, color, fill, stroke, outline-color, text-decoration-color !important;
+    transition-duration: var(--duration-content) !important;
+    transition-timing-function: linear !important;
+    transition-delay: 0s !important;
+  }
+}

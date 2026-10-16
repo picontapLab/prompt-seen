@@ -1,0 +1,110 @@
+/*
+ * Space, grid, breakpoints, shape and layering (design doc §11.1.3, §11.1.5; radii from §11.1.9).
+ *
+ * Breakpoints (min-width): sm 480px, md 768px, lg 1024px, xl 1280px, 2xl 1600px. CSS cannot
+ * read custom properties in media queries, so these numbers are written literally;
+ * src/styles/tokens/breakpoints.ts holds them for code, and tokens.test.ts fails on any other
+ * min-width or max-width query under src/.
+ */
+
+@layer tokens {
+  :root {
+    /* Spacing: a 4px scale. Between sections 64–96, between components 24–32, inside 8–16. */
+    --space-4: 0.25rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --space-40: 2.5rem;
+    --space-48: 3rem;
+    --space-64: 4rem;
+    --space-80: 5rem;
+    --space-96: 6rem;
+
+    /* Per breakpoint: page margin, gallery gap and justified-row target height (xs values). */
+    --page-margin: 16px;
+    --gallery-gap: 6px;
+    --row-height: 160px;
+    --grid-columns: 12;
+    --grid-gap: var(--space-16);
+
+    /* Content widths */
+    --container-wide: 1520px; /* gallery and home */
+    --container-detail: 1280px; /* detail */
+    --container-reading: 720px; /* long-form reading */
+
+    /* Fixed navigation; the page keeps the same scroll padding so anchors and focus stay visible. */
+    --nav-height: 56px;
+
+    /* Shape (§11.1.9): 2px like photographs and film clips, 4px for panels, no pill shapes. */
+    --radius-control: 2px;
+    --radius-image: 2px;
+    --radius-panel: 4px;
+
+    /* Layers (§11.1.5) */
+    --z-page: 0;
+    --z-nav: 10;
+    --z-menu: 20;
+    --z-scrim: 40;
+    --z-detail: 50;
+    --z-feedback: 60;
+
+    /* Focus ring (§11.1.7): only on :focus-visible. */
+    --focus-ring-width: 2px;
+    --focus-ring-offset: 2px;
+
+    /* Targets (§11.1.7): primary targets 44px, dense secondary links at least 24px (WCAG 2.5.8). */
+    --target-min: 44px;
+    --target-dense: 24px;
+
+    /* Icons (§11.1.6): Lucide, 20px in controls, 16px in dense metadata, 1.75 stroke. */
+    --icon-ui: 20px;
+    --icon-dense: 16px;
+    --icon-stroke: 1.75;
+  }
+
+  @media (min-width: 480px) {
+    :root {
+      --page-margin: 20px;
+      --gallery-gap: 8px;
+      --row-height: 190px;
+    }
+  }
+  @media (min-width: 768px) {
+    :root {
+      --page-margin: 24px;
+      --gallery-gap: 12px;
+      --row-height: 220px;
+      --grid-gap: var(--space-24);
+    }
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --page-margin: 32px;
+      --gallery-gap: 14px;
+      --row-height: 250px;
+      --grid-gap: var(--space-32);
+    }
+  }
+  @media (min-width: 1280px) {
+    :root {
+      --page-margin: 40px;
+      --gallery-gap: 16px;
+      --row-height: 280px;
+    }
+  }
+  @media (min-width: 1600px) {
+    :root {
+      --page-margin: 48px;
+      --row-height: 300px;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --focus-ring-width: 3px;
+    }
+  }
+}
