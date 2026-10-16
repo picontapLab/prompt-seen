@@ -1,0 +1,83 @@
+@layer components {
+  .root {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+  }
+  .group {
+    display: inline-flex;
+    align-self: flex-start;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-control);
+  }
+  .segment {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-16);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    outline: none;
+    transition:
+      color var(--duration-feedback) linear,
+      background-color var(--duration-feedback) linear;
+  }
+  .segment + .segment {
+    border-inline-start: 1px solid var(--border-subtle);
+  }
+  .segment :global(svg) {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    stroke-width: var(--icon-stroke);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .segment[data-hovered] {
+      color: var(--text-primary);
+    }
+  }
+  .segment[data-pressed] {
+    background: var(--accent-subtle);
+  }
+  .segment[data-selected] {
+    color: var(--text-primary);
+    background: var(--accent-subtle);
+  }
+  .segment[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: calc(-1 * var(--focus-ring-width) - 2px);
+  }
+  .segment[data-disabled] {
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    text-decoration: line-through;
+    text-decoration-color: var(--border-control);
+  }
+
+  /* The current option: safelight underline, sliding between options (§11.1.9, §12.1). */
+  .indicator {
+    position: absolute;
+    inset-inline: var(--space-8);
+    inset-block-end: -1px;
+    block-size: 2px;
+    background: var(--mark);
+    transition-property: translate, width;
+    transition-duration: var(--duration-content);
+    transition-timing-function: var(--ease-enter);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .indicator {
+      transition: none;
+    }
+  }
+  :global([data-motion='reduce']) .indicator {
+    transition: none;
+  }
+}

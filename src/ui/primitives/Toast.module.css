@@ -1,0 +1,107 @@
+@layer components {
+  .region {
+    position: fixed;
+    inset-block-end: calc(var(--space-16) + env(safe-area-inset-bottom));
+    inset-inline-end: var(--page-margin);
+    z-index: var(--z-feedback);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--space-8);
+    inline-size: min(calc(100vw - 2 * var(--page-margin)), 24rem);
+    outline: none;
+  }
+  .region[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .toast {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-12);
+    padding: var(--space-12) var(--space-4) var(--space-12) var(--space-16);
+    border: 1px solid var(--border-subtle);
+    border-inline-start: 2px solid var(--text-secondary);
+    border-radius: var(--radius-panel);
+    background: var(--surface-raised);
+    box-shadow: var(--elevation-1);
+    outline: none;
+  }
+  .success {
+    border-inline-start-color: var(--success);
+  }
+  .toast[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Status colour always comes with an icon and words (§11.1.1). */
+  .icon {
+    flex: none;
+    inline-size: var(--icon-ui);
+    block-size: var(--icon-ui);
+    margin-block-start: 2px;
+    stroke-width: var(--icon-stroke);
+    color: var(--text-secondary);
+  }
+  .success .icon {
+    color: var(--success);
+  }
+  .content {
+    flex: 1;
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    padding-block: 1px;
+  }
+  .title {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+  }
+  .description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+
+  .action {
+    align-self: center;
+    min-block-size: 36px;
+    padding-inline: var(--space-12);
+    border-radius: var(--radius-control);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+    text-decoration-color: var(--mark);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+    outline: none;
+  }
+  .dismiss {
+    flex: none;
+    display: grid;
+    place-items: center;
+    inline-size: 36px;
+    block-size: 36px;
+    border-radius: var(--radius-control);
+    color: var(--text-secondary);
+    outline: none;
+  }
+  .dismiss :global(svg) {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .action[data-hovered],
+    .dismiss[data-hovered] {
+      background: var(--accent-subtle);
+      color: var(--text-primary);
+    }
+  }
+  .action[data-focus-visible],
+  .dismiss[data-focus-visible] {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: -2px;
+  }
+}

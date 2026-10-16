@@ -4,9 +4,11 @@ A browsable, searchable library of tested image prompts and templates. Every wor
 prompt and what each phrase does. The site is a static export of a Next.js app that deploys at
 the root of a domain or under a subpath of another site, such as `example.com/prompt-seen`.
 
-Status: under construction. Steps 1a and 1b of the implementation plan (design doc §17) are in
-place: the project scaffold, configuration and CI, and the content model with its build pipeline,
-validation, template rendering, image import and a sample content set. Pages are placeholders.
+Status: under construction. Steps 1a, 1b and 1c of the implementation plan (design doc §17) are
+in place: the project scaffold, configuration and CI; the content model with its build pipeline,
+validation, template rendering, image import and a sample content set; and the design system
+(tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Pages are
+placeholders.
 
 ## Quick start
 
@@ -34,6 +36,8 @@ Open <http://localhost:3000/prompt-seen/>. To work without the base path, start 
 | `npm run media:import -- <image> --slug <s>`  | Stores an image and its display sizes in `public/media/` and writes `content/media/<id>.yaml`              |
 | `npm run typecheck` / `lint` / `format:check` | Static checks                                                                                              |
 | `npm test`                                    | Unit tests (Vitest)                                                                                        |
+| `npm run tokens:check`                        | Checks the colour contrast pairs of the design tokens (WCAG 2.2, design doc §11.1.9)                       |
+| `npm run storybook` / `storybook:build`       | Component states in light, dark, RTL and reduced motion, at <http://localhost:6006/>                       |
 | `npm run test:e2e`                            | Builds must exist; serves `dist/` with the reference nginx in Docker and runs Playwright                   |
 | `npm run serve`                               | Serves `dist/` with the reference nginx at <http://127.0.0.1:8090/> for manual checks                      |
 | `npm run deploy:cloudflare:prepare`           | Assembles `.deploy/cloudflare/` (`dist/` plus `_headers`, `_redirects` and 404 pages) for Cloudflare Pages |
@@ -51,9 +55,10 @@ Build-time settings come from `content/site.yaml`, overridden by environment var
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
 - [Subpath hosting decision](docs/subpath-hosting-decision.md): why the site is a static export, with prototype results.
 - [Language coverage assessment](docs/language-coverage-assessment.md).
-- [`design/`](design/README.md): the chosen visual direction, tokens and reference pages.
+- [`design/`](design/README.md): the chosen visual direction and reference pages. Tokens live in `src/styles/tokens/`.
 
 ## Licenses
 
 Code: [MIT](LICENSE). Prompt text and descriptions: [CC BY 4.0](content/LICENSE). Images are
-licensed per file. The name and brand are not licensed for reuse.
+licensed per file. Bundled fonts: [SIL OFL 1.1](src/styles/fonts/OFL.txt). The name and brand are
+not licensed for reuse.

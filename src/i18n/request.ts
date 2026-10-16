@@ -5,8 +5,11 @@ import { readCatalog } from './catalog';
 // next-intl is used for ICU message formatting only (§11.11). Routing, locale prefixes and
 // hreflang come from the locale registry and the url module, not next-intl's middleware,
 // which static export cannot run. Layouts call setRequestLocale() with the registry code.
-export default getRequestConfig(async ({ requestLocale }) => {
-  const requested = await requestLocale;
+export default getRequestConfig(async ({ locale: explicit, requestLocale }) => {
+  // An explicit locale (getMessages({ locale }) in not-found and shared components) must not
+  // read the request locale: outside setRequestLocale that falls back to headers(), which static
+  // export forbids.
+  const requested = explicit ?? (await requestLocale);
   const locale = (requested && localeByCode(requested)?.code) || defaultLocale.code;
   return {
     locale,

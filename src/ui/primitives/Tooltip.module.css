@@ -1,0 +1,28 @@
+@layer components {
+  .tooltip {
+    max-inline-size: 18rem;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-control);
+    background: var(--text-primary);
+    color: var(--canvas);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    z-index: var(--z-feedback);
+    --_from: translateY(calc(-1 * var(--distance-reveal) / 2));
+  }
+  .tooltip[data-placement='top'] {
+    --_from: translateY(calc(var(--distance-reveal) / 2));
+  }
+  .tooltip[data-entering] {
+    animation: enter var(--duration-feedback) var(--ease-enter);
+  }
+  .tooltip[data-exiting] {
+    animation: enter var(--duration-instant) var(--ease-exit) reverse;
+  }
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: var(--_from);
+    }
+  }
+}

@@ -19,6 +19,7 @@ export default defineConfig([
     'design/**',
     'test-results/**',
     'playwright-report/**',
+    'storybook-static/**',
   ]),
   {
     // App code gets configuration from `@/config` and addresses from `@/modules/url` (§4.1).

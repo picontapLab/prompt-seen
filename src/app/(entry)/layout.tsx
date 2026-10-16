@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { config, defaultLocale, isPreviewBuild } from '@/config';
+import { pickNamespaces } from '@/i18n/catalog';
+import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { absoluteUrl } from '@/modules/url';
+import { RootDocument } from '@/ui/navigation/RootDocument';
+import { Shell } from '@/ui/navigation/Shell';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -10,11 +14,14 @@ export const metadata: Metadata = {
 };
 
 // The language entry lists every language in its own name; its chrome uses the default locale.
-export default function EntryLayout({ children }: { children: React.ReactNode }) {
+export default async function EntryLayout({ children }: { children: React.ReactNode }) {
   setRequestLocale(defaultLocale.code);
+  const messages = pickNamespaces(await getMessages({ locale: defaultLocale.code }), CLIENT_COMMON_NAMESPACES);
   return (
-    <html lang={defaultLocale.htmlLang} dir={defaultLocale.direction}>
-      <body>{children}</body>
-    </html>
+    <RootDocument locale={defaultLocale} messages={messages}>
+      <Shell locale={defaultLocale} minimal>
+        {children}
+      </Shell>
+    </RootDocument>
   );
 }

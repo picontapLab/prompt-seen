@@ -1,0 +1,52 @@
+/*
+ * Motion tokens (design doc §12.4; durations of §12.1). CSS transitions and the Motion presets in
+ * src/ui/motion/ read the same values: motion.ts mirrors this file and tokens.test.ts keeps them
+ * equal.
+ *
+ * Reduced motion (§12.7) is one switch: the OS setting, or data-motion="reduce" on any element
+ * (Storybook, tests). Movement, scaling and staggering stop; short fades stay; the darkroom
+ * "develop" and other reveals show their end state at once.
+ */
+
+@layer tokens {
+  :root {
+    --duration-instant: 80ms; /* drag feedback, tiny state changes */
+    --duration-feedback: 140ms; /* buttons, copy, save */
+    --duration-content: 220ms; /* result changes, short entrances, crop marks */
+    --duration-expand: 320ms; /* image expansion, detail entering */
+    --duration-exit: 160ms; /* explicit close */
+    --duration-image: 160ms; /* image fades in over its dominant colour */
+    --duration-develop: 500ms; /* first-screen develop: colour, blurred preview, sharp image */
+
+    --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+    --distance-reveal: 8px;
+    --distance-hover: 2px;
+    --scale-press: 0.98;
+    --stagger-step: 30ms;
+    --stagger-max-delay: 120ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-expand: var(--duration-content);
+      --duration-develop: 0ms;
+      --distance-reveal: 0px;
+      --distance-hover: 0px;
+      --scale-press: 1;
+      --stagger-step: 0ms;
+      --stagger-max-delay: 0ms;
+    }
+  }
+
+  :where([data-motion='reduce']) {
+    --duration-expand: var(--duration-content);
+    --duration-develop: 0ms;
+    --distance-reveal: 0px;
+    --distance-hover: 0px;
+    --scale-press: 1;
+    --stagger-step: 0ms;
+    --stagger-max-delay: 0ms;
+  }
+}

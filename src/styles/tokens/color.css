@@ -1,0 +1,180 @@
+/*
+ * Colour tokens: functional layer and brand layer of the darkroom direction (design doc §11.1.9,
+ * which supersedes the §11.1.1 values; structure and usage rules stay in §11.1.1).
+ *
+ * This file is the single source of colour values (§4.1). It was migrated from
+ * design/tokens/darkroom.css in step 1c. `npm run tokens:check` parses it and verifies the 44
+ * contrast pairs of §11.1.9 with the WCAG 2.2 formula, plus the supplementary pairs listed in
+ * scripts/tokens-check.ts; CI fails when one does not pass.
+ *
+ * Themes: the light theme ("photo paper") applies by default, the dark theme follows the system
+ * unless the user picked one. The first-paint script sets data-theme="light" | "dark" on <html>
+ * only for an explicit choice (§11.6.3). Any element can carry data-theme to scope a theme, which
+ * Storybook uses to show both themes side by side.
+ *
+ * Every selector is wrapped in :where() so that source order alone decides, and
+ * prefers-contrast can override any theme block below. tokens-check requires the two dark blocks
+ * to hold identical values.
+ */
+
+@layer tokens {
+  /* Light theme: "photo paper" */
+  :where(:root),
+  :where([data-theme='light']) {
+    color-scheme: light;
+
+    /* Functional layer */
+    --canvas: #edece8;
+    --surface-raised: #ffffff;
+    --surface-sunken: #e0deda;
+    --text-primary: #151413;
+    --text-secondary: #57534d;
+    --border-subtle: #cbc8c2;
+    --border-control: #7d7871;
+    --accent: #151413;
+    --accent-hover: #2b2926;
+    --on-accent: #f6f5f2;
+    --accent-subtle: #dedcd7;
+    --danger: #b3261e;
+    --danger-subtle: #fcebe9;
+    --success: #1b7340;
+    --success-subtle: #e5f3ea;
+    --scrim: rgb(20 19 17 / 0.56);
+    --image-hairline: rgb(0 0 0 / 0.06);
+
+    /* Template variable colours (unchanged from §11.1.1) */
+    --var-1-bg: #e7ebfc;
+    --var-1-fg: #2c3f9e;
+    --var-2-bg: #ddf2ef;
+    --var-2-fg: #0f5f57;
+    --var-3-bg: #fbeed5;
+    --var-3-fg: #7a4a00;
+    --var-4-bg: #fbe4ea;
+    --var-4-fg: #9a2346;
+    --var-5-bg: #efe6fb;
+    --var-5-fg: #5b2ea0;
+    --var-6-bg: #e9f0d9;
+    --var-6-fg: #4a5c12;
+
+    /* Brand layer: safelight amber marks and the film edge, which stays dark on paper */
+    --mark: #9a4d00;
+    --mark-text: #ffffff;
+    --mark-soft: #f5d7a1;
+    --film: #1a1917;
+    --film-hole: #edece8;
+    --film-mark: #ffb547;
+    --film-print: #a8a196;
+    --overlay-outline: rgb(26 18 6 / 0.85);
+
+    /* Elevation (§11.1.5): the light theme layers with shadows */
+    --elevation-1: 0 1px 2px rgb(0 0 0 / 0.06), 0 4px 12px rgb(0 0 0 / 0.08);
+    --elevation-2: 0 12px 40px rgb(0 0 0 / 0.18);
+  }
+
+  /* Dark theme, following the system (the design starting point) */
+  @media (prefers-color-scheme: dark) {
+    :where(:root:not([data-theme='light'])) {
+      color-scheme: dark;
+
+      --canvas: #121110;
+      --surface-raised: #1c1a17;
+      --surface-sunken: #0b0a09;
+      --text-primary: #eeeae3;
+      --text-secondary: #a8a196;
+      --border-subtle: #2e2b27;
+      --border-control: #7a7368;
+      --accent: #eeeae3;
+      --accent-hover: #ffffff;
+      --on-accent: #121110;
+      --accent-subtle: #2a2724;
+      --danger: #ff8a7e;
+      --danger-subtle: #3a1714;
+      --success: #6ccf95;
+      --success-subtle: #12301f;
+      --scrim: rgb(0 0 0 / 0.64);
+      --image-hairline: rgb(255 255 255 / 0.06);
+
+      --var-1-bg: #232b52;
+      --var-1-fg: #c3ceff;
+      --var-2-bg: #113532;
+      --var-2-fg: #9ee3d9;
+      --var-3-bg: #3a2a0c;
+      --var-3-fg: #f6cf8a;
+      --var-4-bg: #3f1a26;
+      --var-4-fg: #f7b3c6;
+      --var-5-bg: #2e1f4a;
+      --var-5-fg: #d5c0fa;
+      --var-6-bg: #273011;
+      --var-6-fg: #c9de96;
+
+      --mark: #ffb547;
+      --mark-text: #1a1206;
+      --mark-soft: #46351c;
+      --film: #0b0a09;
+      --film-hole: #2a2724;
+      --film-mark: #ffb547;
+      --film-print: #a8a196;
+      --overlay-outline: rgb(26 18 6 / 0.85);
+
+      /* No shadows in the dark theme: raised surfaces and border-subtle carry the layers (§11.1.9) */
+      --elevation-1: none;
+      --elevation-2: none;
+    }
+  }
+
+  /* Dark theme, chosen by the user */
+  :where([data-theme='dark']) {
+    color-scheme: dark;
+
+    --canvas: #121110;
+    --surface-raised: #1c1a17;
+    --surface-sunken: #0b0a09;
+    --text-primary: #eeeae3;
+    --text-secondary: #a8a196;
+    --border-subtle: #2e2b27;
+    --border-control: #7a7368;
+    --accent: #eeeae3;
+    --accent-hover: #ffffff;
+    --on-accent: #121110;
+    --accent-subtle: #2a2724;
+    --danger: #ff8a7e;
+    --danger-subtle: #3a1714;
+    --success: #6ccf95;
+    --success-subtle: #12301f;
+    --scrim: rgb(0 0 0 / 0.64);
+    --image-hairline: rgb(255 255 255 / 0.06);
+
+    --var-1-bg: #232b52;
+    --var-1-fg: #c3ceff;
+    --var-2-bg: #113532;
+    --var-2-fg: #9ee3d9;
+    --var-3-bg: #3a2a0c;
+    --var-3-fg: #f6cf8a;
+    --var-4-bg: #3f1a26;
+    --var-4-fg: #f7b3c6;
+    --var-5-bg: #2e1f4a;
+    --var-5-fg: #d5c0fa;
+    --var-6-bg: #273011;
+    --var-6-fg: #c9de96;
+
+    --mark: #ffb547;
+    --mark-text: #1a1206;
+    --mark-soft: #46351c;
+    --film: #0b0a09;
+    --film-hole: #2a2724;
+    --film-mark: #ffb547;
+    --film-print: #a8a196;
+    --overlay-outline: rgb(26 18 6 / 0.85);
+
+    --elevation-1: none;
+    --elevation-2: none;
+  }
+
+  /* More contrast (§11.1.1): dividers become control borders (the focus ring: layout.css). */
+  @media (prefers-contrast: more) {
+    :where(:root),
+    :where([data-theme]) {
+      --border-subtle: var(--border-control);
+    }
+  }
+}
