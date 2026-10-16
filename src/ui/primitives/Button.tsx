@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useId, type ReactNode } from 'react';
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from 'react-aria-components';
@@ -100,4 +101,44 @@ export function IconButton({
     </AriaButton>
   );
   return tooltip ? <Tooltip content={label}>{button}</Tooltip> : button;
+}
+
+export type ButtonLinkProps = {
+  /** Internal path (`paths.*`); next/link adds the base path. */
+  href: string;
+  variant?: ButtonVariant;
+  size?: 'md' | 'lg';
+  icon?: ReactNode;
+  children: ReactNode;
+  className?: string;
+  /** Off by default: links prefetch on intent only (§16.4). */
+  prefetch?: boolean;
+};
+
+/**
+ * A link styled as a button, for actions that go somewhere (§11.1.7), such as "Customize" on a
+ * prompt that comes from a template. Navigation stays a real link: it works before hydration,
+ * opens in a new tab and shows its address.
+ */
+export function ButtonLink({
+  href,
+  variant = 'secondary',
+  size = 'md',
+  icon,
+  children,
+  className,
+  prefetch = false,
+}: ButtonLinkProps) {
+  return (
+    <Link
+      href={href}
+      prefetch={prefetch}
+      className={cx(styles.button, styles[variant], styles.link, size === 'lg' && styles.lg, className)}
+    >
+      <span className={styles.content}>
+        {icon}
+        {children}
+      </span>
+    </Link>
+  );
 }

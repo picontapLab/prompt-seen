@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { Copy, Heart, Share2, X } from 'lucide-react';
+import { Copy, Heart, Share2, SlidersHorizontal, X } from 'lucide-react';
 import { Forced, StateCell, StateGrid, type ForcedState } from '../../../.storybook/states';
 import { useSample } from '../../../.storybook/samples';
-import { Button, IconButton, type ButtonVariant } from './Button';
+import { Button, ButtonLink, IconButton, type ButtonVariant } from './Button';
 
 const meta = {
   title: 'Primitives/Button',
@@ -86,3 +86,18 @@ export const IconOnly: Story = {
 };
 
 export const Large: Story = { args: { size: 'lg', icon: <Copy aria-hidden="true" /> } };
+
+/** A link that looks like a button, for actions that go to another page (§11.1.7). */
+export const AsLink: Story = {
+  render: () => (
+    <StateGrid>
+      {(['primary', 'secondary', 'ghost'] as const).map((variant) => (
+        <StateCell key={variant} label={`LINK · ${variant.toUpperCase()}`}>
+          <ButtonLink href="#" variant={variant} icon={<SlidersHorizontal aria-hidden="true" />}>
+            Customize
+          </ButtonLink>
+        </StateCell>
+      ))}
+    </StateGrid>
+  ),
+};
