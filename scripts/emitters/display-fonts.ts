@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { readCatalog } from '../../src/i18n/catalog';
-import { DISPLAY_CJK, displayFontCss } from '../../src/styles/fonts/display-cjk';
+import { DISPLAY_CJK, DISPLAY_MESSAGE_KEYS, displayFontCss } from '../../src/styles/fonts/display-cjk';
 import {
   contentHash,
   cjkCharacters,
@@ -16,22 +16,32 @@ import { ROOT } from '../lib/paths';
 import { defineEmitter } from './_types';
 
 // CJK display font subsets (design doc §11.1.2): for every built Chinese, Japanese or Korean
-// locale, the characters of its titles and interface text, cut from bold Noto Sans into small
-// per-slice files with a stylesheet at public/generated/fonts/{code}.css. Dynamic text (search
-// results, user input) is not covered and falls back to the system fonts in the stack.
+// locale, the characters of its entry titles and of the interface text set in the display face
+// (DISPLAY_MESSAGE_KEYS), cut from bold Noto Sans into small per-slice files with a stylesheet
+// at public/generated/fonts/{code}.css. Dynamic text (search results, user input) is not
+// covered and falls back to the system fonts in the stack.
 
 const require = createRequire(import.meta.url);
 
-/** Every string value in a message catalog. */
+/** Every string value under a message node. */
 function strings(value: unknown): string[] {
   if (typeof value === 'string') return [value];
   if (value && typeof value === 'object') return Object.values(value).flatMap(strings);
   return [];
 }
 
+/** The messages under "namespace.path" prefixes, e.g. "shell.nav". */
+function messagesAt(catalog: Record<string, unknown>, keys: readonly string[]): string[] {
+  return keys.flatMap((key) => {
+    let node: unknown = catalog;
+    for (const part of key.split('.')) node = (node as Record<string, unknown> | undefined)?.[part];
+    return strings(node);
+  });
+}
+
 export default defineEmitter({
   name: 'display-fonts',
-  description: 'public/generated/fonts/: CJK display font subsets of titles and interface text',
+  description: 'public/generated/fonts/: CJK display font subsets of titles and display-face interface text',
   async run({ locales, content, write }) {
     for (const locale of locales) {
       const face = DISPLAY_CJK[locale.code];
@@ -52,7 +62,7 @@ export default defineEmitter({
             (e) => e.title,
           )
         : [];
-      const chars = cjkCharacters([...titles, ...strings(readCatalog(ROOT, locale.code))]);
+      const chars = cjkCharacters([...titles, ...messagesAt(readCatalog(ROOT, locale.code), DISPLAY_MESSAGE_KEYS)]);
       const { bySlice } = planSlices(chars, slices);
 
       const files: FaceFile[] = [];
