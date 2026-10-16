@@ -2,8 +2,10 @@ import '@/styles/global.css';
 import '@/styles/fonts';
 import type { LocaleEntry } from '@/config';
 import type { Messages } from '@/i18n/catalog';
-import { PREFERENCES_KEY, ThemeProvider, themeInitScript } from '@/state/preferences';
-import { PrimitivesProvider } from '@/ui/primitives';
+import { PREFERENCES_KEY } from '@/state/preferences/store';
+import { themeInitScript } from '@/state/preferences/theme';
+import { ThemeProvider } from '@/state/preferences/theme-provider';
+import { PrimitivesProvider } from '@/ui/primitives/PrimitivesProvider';
 import { IntlProvider } from './IntlProvider';
 
 /**

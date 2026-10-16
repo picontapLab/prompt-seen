@@ -1,5 +1,5 @@
 import { enterLocale } from '@/i18n/locale';
-import { Shell } from '@/ui/navigation';
+import { Shell } from '@/ui/navigation/Shell';
 
 // Public pages get the shell: header, the <main> landmark and footer (§15.5.2). Pages render
 // their content only.

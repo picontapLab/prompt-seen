@@ -1,49 +1,44 @@
 'use client';
 
 import { Menu } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { Dialog, IconButton } from '@/ui/primitives';
-import { LanguageSwitch } from './LanguageSwitch';
-import styles from './Shell.module.css';
-import { ThemeChooser } from './ThemeSwitch';
+import { lazy, Suspense, useState } from 'react';
+import { IconButton } from '@/ui/primitives/Button';
+
+const load = () => import('./MenuSheet');
+const MenuSheet = lazy(load);
 
 export type MenuLink = { key: string; href: string; label: string };
 
 /**
  * Menu for narrow screens (§11.2, §11.8.2): the sections, language and theme in a side sheet.
- * Footer links are repeated here so they stay reachable above an endless list.
+ * Footer links are repeated here so they stay reachable above an endless list. The sheet loads
+ * on first open; it stays mounted afterwards so closing can animate.
  */
 export function MobileMenu({ links }: { links: readonly MenuLink[] }) {
-  const t = useTranslations('shell');
+  const t = useTranslations('shell.menu');
+  const [open, setOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   return (
-    <Dialog
-      variant="sheet"
-      title={t('menu.title')}
-      trigger={<IconButton variant="ghost" tooltip={false} icon={<Menu aria-hidden="true" />} label={t('menu.open')} />}
-    >
-      {(close) => (
-        <div className={styles.menuBody}>
-          {links.length > 0 && (
-            <nav aria-label={t('nav.label')}>
-              <ul className={styles.menuLinks}>
-                {links.map((l) => (
-                  <li key={l.key}>
-                    <Link href={l.href} onClick={close}>
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-          <div className={styles.menuGroup}>
-            <span className={styles.menuLabel}>{t('language.label')}</span>
-            <LanguageSwitch quiet={false} />
-          </div>
-          <ThemeChooser />
-        </div>
+    <>
+      <IconButton
+        variant="ghost"
+        tooltip={false}
+        icon={<Menu aria-hidden="true" />}
+        label={t('open')}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        onHoverStart={() => void load()}
+        onPress={() => {
+          setLoaded(true);
+          setOpen(true);
+        }}
+      />
+      {loaded && (
+        <Suspense>
+          <MenuSheet links={links} isOpen={open} onOpenChange={setOpen} />
+        </Suspense>
       )}
-    </Dialog>
+    </>
   );
 }

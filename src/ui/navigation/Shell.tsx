@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, type LocaleEntry } from '@/config';
 import { paths } from '@/modules/url';
-import { Wordmark } from '@/ui/brand';
+import { Wordmark } from '@/ui/brand/Wordmark';
 import { LanguageSwitch } from './LanguageSwitch';
 import { MobileMenu } from './MobileMenu';
 import { headerSections } from './sections';

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useEffect } from 'react';
 import { useSample } from '../../../.storybook/samples';
 import { Button } from './Button';
-import { showToast, toastQueue } from './Toast';
+import { showToast, toastQueue } from './toast-queue';
 
 const meta = { title: 'Primitives/Toast', parameters: { layout: 'fullscreen' } } satisfies Meta;
 export default meta;

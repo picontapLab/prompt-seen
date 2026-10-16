@@ -4,7 +4,8 @@ import { config, defaultLocale, isPreviewBuild } from '@/config';
 import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { absoluteUrl } from '@/modules/url';
-import { RootDocument, Shell } from '@/ui/navigation';
+import { RootDocument } from '@/ui/navigation/RootDocument';
+import { Shell } from '@/ui/navigation/Shell';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),

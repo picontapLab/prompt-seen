@@ -2,8 +2,10 @@
 
 import { Moon, Sun } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { resolveTheme, useThemePreference } from '@/state/preferences';
-import { IconButton, SegmentedControl } from '@/ui/primitives';
+import { resolveTheme } from '@/state/preferences/theme';
+import { useThemePreference } from '@/state/preferences/theme-provider';
+import { IconButton } from '@/ui/primitives/Button';
+import { SegmentedControl } from '@/ui/primitives/SegmentedControl';
 
 /**
  * Header theme button (§11.8): switches between light and dark from whatever is showing. Its

@@ -5,7 +5,7 @@ import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { enterLocale } from '@/i18n/locale';
 import { absoluteUrl } from '@/modules/url';
-import { RootDocument } from '@/ui/navigation';
+import { RootDocument } from '@/ui/navigation/RootDocument';
 
 // Static export: every locale segment is generated up front (§3.2).
 export const dynamicParams = false;

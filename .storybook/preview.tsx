@@ -3,8 +3,8 @@ import '../src/styles/fonts';
 import type { Decorator, Preview } from '@storybook/nextjs-vite';
 import { NextIntlClientProvider } from 'next-intl';
 import { useLayoutEffect, type ReactNode } from 'react';
-import { MotionProvider } from '../src/ui/motion';
-import { PrimitivesProvider } from '../src/ui/primitives';
+import { MotionProvider } from '../src/ui/motion/MotionProvider';
+import { PrimitivesProvider } from '../src/ui/primitives/PrimitivesProvider';
 import { catalogs, storyLocales, type StoryLocale } from './messages';
 import styles from './preview.module.css';
 

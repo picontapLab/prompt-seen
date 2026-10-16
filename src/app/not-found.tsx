@@ -5,7 +5,8 @@ import { builtLocales, defaultLocale } from '@/config';
 import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { absoluteUrl, paths } from '@/modules/url';
-import { RootDocument, Shell } from '@/ui/navigation';
+import { RootDocument } from '@/ui/navigation/RootDocument';
+import { Shell } from '@/ui/navigation/Shell';
 
 // Exported as 404.html: used for addresses outside any built locale. Renders a full document
 // because the root layout is a pass-through (see layout.tsx).
