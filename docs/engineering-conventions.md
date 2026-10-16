@@ -93,6 +93,44 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
 - `npm run build` packages `out/` into `dist/{basePath}/`, so file paths match public addresses,
   and fails if a built locale's pages or error pages are missing.
 
+## Design system and shell
+
+Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
+
+- **Tokens** are the CSS files in `src/styles/tokens/` (`color`, `type`, `layout`, `motion`), the
+  only source of visual and motion values. Components use custom properties, never literal
+  colours or durations, and token sizes wherever a token exists. Code that needs a value imports its TypeScript mirror
+  (`motion.ts`, `breakpoints.ts`, `theme-color.ts`); `tokens.test.ts` keeps mirrors equal.
+- `npm run tokens:check` verifies the 44 contrast pairs of §11.1.9 plus supplementary pairs
+  (`scripts/lib/tokens/check.ts`). A new colour token that text or controls sit on gets a pair.
+- **Cascade layers**: `reset < tokens < base < components < utilities`. Component styles are CSS
+  Modules wrapped in `@layer components`. States are styled from React Aria data attributes
+  (`[data-hovered]`, `[data-pressed]`, `[data-focus-visible]`, `[data-selected]`,
+  `[data-disabled]`, `[data-pending]`, `[data-invalid]`), hover only under
+  `@media (hover: hover) and (pointer: fine)`. Logical properties only.
+- **Breakpoints** (min-width): 480, 768, 1024, 1280, 1600 px, written literally in media and
+  container queries (CSS cannot use custom properties there); a test rejects other widths. Use
+  container queries inside components.
+- **Primitives** (`src/ui/primitives/`): Button, IconButton, Tooltip, Dialog, Select, Combobox,
+  SegmentedControl, TextField, Chip, Toast. Feature code uses these, not
+  `react-aria-components`. Brand elements: `src/ui/brand/`. Motion: `src/ui/motion/`
+  (`MotionProvider` around an animating area only, never the root; presets from the tokens).
+- **Import UI modules by file** (`@/ui/primitives/Button`), never through an index file: a server
+  component that imports an index re-exporting `'use client'` modules puts all of them in the
+  first-load bundle. Code needed only on interaction loads on demand (`React.lazy`), as the
+  language list, the menu sheet and the toast region do.
+- **Stories**: next to the component (`*.stories.tsx`), with a states story showing default,
+  hover, pressed, focus-visible, selected, disabled, loading and invalid where they apply
+  (`.storybook/states.tsx` forces a state). Sample copy per locale: `.storybook/samples.ts`.
+  Check light, dark, RTL and reduced motion from the toolbar.
+- **Theme**: `@/state/preferences/theme-provider` (`useThemePreference`). Visual differences that
+  must be right at first paint go in CSS (`.when-dark`, `.when-light`), never in rendered state.
+- **Fonts**: `src/styles/fonts/` declares every subset; text that carries its own `lang` sets
+  `font-family: var(--font-text)` (or display, mono) on the same element so the stack for that
+  script applies.
+- **Shell**: `src/ui/navigation/Shell.tsx` renders the skip link, header, the one `<main>` and the
+  footer; pages render content only. `shell.header` in `site.yaml` picks `default` or `host`.
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.
@@ -109,7 +147,7 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
 
 `.github/workflows/ci.yml` runs on every PR and on `main`:
 
-1. `check`: content validation, typecheck, lint, format, unit tests.
+1. `check`: content validation, token contrast, typecheck, lint, format, unit tests, Storybook build.
 2. `build-and-test`: a production build at the root and a preview build under `/prompt-seen`,
    each tested end to end in three browsers.
 3. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
@@ -133,3 +171,5 @@ the design document section they implement.
 | `@/modules/url`                     | a new function in `paths`                                           |
 | `content:validate`                  | step 1b adds content checks; later steps add checks next to theirs  |
 | Root layout, navigation, shell      | owned by step 1c; changes go in their own PR                        |
+| Header sections                     | set `available: true` in `src/ui/navigation/sections.ts` with the page |
+| Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |
