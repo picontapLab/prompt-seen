@@ -1,0 +1,274 @@
+/* Detail layout (design doc §11.2, §11.8.3): image stage 7 columns, text 5, related work full
+   width. One column on narrower screens, image first. Shared by Prompt and template details. */
+@layer components {
+  .detail {
+    display: grid;
+    gap: var(--space-48);
+    padding-block: var(--space-24) var(--space-64);
+  }
+  /* Stage and text share their own grid, so the sticky stage stops where the text ends and
+     never covers the related work below. */
+  .top {
+    display: grid;
+    gap: var(--space-24);
+  }
+  @media (min-width: 1024px) {
+    .detail {
+      padding-block-start: var(--space-32);
+    }
+    .top {
+      grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+      column-gap: var(--space-32);
+    }
+    .media {
+      grid-column: 1 / span 7;
+      /* The stage stays in view while the text column scrolls (§11.8.3). */
+      position: sticky;
+      inset-block-start: calc(var(--nav-height) + var(--space-16));
+      align-self: start;
+    }
+    .info {
+      grid-column: 8 / span 5;
+    }
+  }
+  /* Room for the mobile action bar at the end of the page. */
+  @media (max-width: 1023.98px) {
+    .detail {
+      padding-block-end: calc(var(--space-96) + env(safe-area-inset-bottom));
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    min-inline-size: 0;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-page-title);
+    font-weight: var(--weight-display);
+    line-height: var(--leading-page-title);
+    letter-spacing: var(--tracking-display);
+    overflow-wrap: anywhere;
+  }
+  .summary {
+    margin: 0;
+    max-inline-size: var(--measure);
+    font-size: var(--text-lg);
+    line-height: var(--leading-lg);
+  }
+
+  /* Test record (§9.2 item 3): monospaced facts, a badge for the tested model. */
+  .testInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4) var(--space-12);
+    margin-block-start: var(--space-4);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 2px var(--space-8);
+    border: 1px solid currentColor;
+    border-radius: var(--radius-control);
+  }
+  .badge svg {
+    inline-size: 14px;
+    block-size: 14px;
+  }
+  .badge[data-tone='verified'] {
+    color: var(--success);
+  }
+  /* "Not verified": neutral outline and an icon, never the amber brand mark (§11.1.9). */
+  .badge[data-tone='unverified'] {
+    color: var(--text-secondary);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-12);
+  }
+
+  .body {
+    margin-block-start: var(--space-8);
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-block-start: var(--space-20);
+    border-block-start: 1px solid var(--border-subtle);
+  }
+  .sectionHeading {
+    margin: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-xs);
+  }
+
+  /* Test prints (§5.5). */
+  .run {
+    display: grid;
+    gap: var(--space-12);
+  }
+  .run + .run {
+    padding-block-start: var(--space-16);
+    border-block-start: 1px dashed var(--border-subtle);
+  }
+  .printId {
+    margin: 0;
+    color: var(--mark);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+    unicode-bidi: isolate;
+    direction: ltr;
+    justify-self: start;
+  }
+  .runMeta,
+  .facts {
+    display: grid;
+    gap: var(--space-8);
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .runMeta {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
+  .runMeta dt,
+  .facts dt,
+  .runLabel {
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .runMeta dd,
+  .facts dd {
+    margin: 0;
+  }
+  .facts dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-12);
+  }
+  .facts > div {
+    display: grid;
+    gap: 2px;
+  }
+  .runNotes {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .runImagesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+  }
+  .runImages {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0;
+  }
+  .runImages figcaption {
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+  }
+  .runImages ul {
+    display: flex;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .runImages li {
+    block-size: 96px;
+    border-radius: var(--radius-image);
+    overflow: hidden;
+  }
+  .runImages img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  .runPrompt summary {
+    min-block-size: var(--target-dense);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    cursor: pointer;
+  }
+  .runPrompt p {
+    margin: var(--space-8) 0 0;
+    padding: var(--space-12);
+    border-radius: var(--radius-panel);
+    background: var(--surface-sunken);
+    font-size: var(--text-sm);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .tableWrap {
+    overflow-x: auto;
+  }
+  .table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .table :is(th, td) {
+    padding: var(--space-8) var(--space-12) var(--space-8) 0;
+    border-block-end: 1px solid var(--border-subtle);
+    text-align: start;
+    vertical-align: top;
+  }
+  .table thead th {
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+  }
+  .table tbody th {
+    font-weight: var(--weight-regular);
+  }
+  .table code {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+
+  .external {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: inherit;
+  }
+  .external svg {
+    inline-size: 14px;
+    block-size: 14px;
+  }
+
+  .related {
+    display: grid;
+    gap: var(--space-40);
+    min-inline-size: 0;
+  }
+}

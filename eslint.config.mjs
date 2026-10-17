@@ -20,7 +20,14 @@ export default defineConfig([
     'test-results/**',
     'playwright-report/**',
     'storybook-static/**',
+    '.claude/**',
   ]),
+  {
+    // Static export has no image optimizer: media:import generates the display sizes and
+    // `@/modules/media` builds srcset, so plain <img> is intended (design doc §10.2, §10.3).
+    files: ['src/**/*.tsx'],
+    rules: { '@next/next/no-img-element': 'off' },
+  },
   {
     // App code gets configuration from `@/config` and addresses from `@/modules/url` (§4.1).
     files: ['src/**/*.{ts,tsx}'],

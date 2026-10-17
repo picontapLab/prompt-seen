@@ -1,0 +1,35 @@
+@layer components {
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .crumbs li {
+    display: inline-flex;
+    gap: var(--space-8);
+  }
+  .crumbs li + li::before {
+    content: '/';
+    color: var(--border-control);
+  }
+  .crumbs a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--target-dense);
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .crumbs span {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--target-dense);
+  }
+}

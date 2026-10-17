@@ -18,3 +18,12 @@ export const headerSections: readonly Section[] = [
   { key: 'templates', href: paths.templates, available: false }, // step 3c
   { key: 'collections', href: (locale) => `/${locale}/collections/`, available: false }, // step 3e: paths.collections
 ];
+
+/**
+ * Pages that content links to but that are not header sections: breadcrumbs and taxonomy links
+ * point at them only once they exist. The step that builds them sets the flag in its PR.
+ */
+export const linkedPages = {
+  /** Category, style and use-case topic pages (§9.1). */
+  topics: false, // step 3e
+} as const;

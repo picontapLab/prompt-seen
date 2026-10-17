@@ -162,6 +162,27 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
 - **Shell**: `src/ui/navigation/Shell.tsx` renders the skip link, header, the one `<main>` and the
   footer; pages render content only. `shell.header` in `site.yaml` picks `default` or `host`.
 
+## Pages, metadata and details
+
+Set up in step 2 (design doc §9.3, §11.8.3, §17.3). Later pages follow the same pattern.
+
+- A page under `[locale]` loads its model with `@/modules/content`, wraps client islands in
+  `<ClientMessages namespaces={[…]}>` and renders a body component from `src/ui/`. Its
+  `generateMetadata` returns `promptMetadata`, `templateMetadata` or `pageMetadata` from
+  `@/modules/seo`; pages never set title, canonical, hreflang or Open Graph themselves.
+- Detail bodies (`PromptDetailBody`, `TemplateDetailBody`) take only the serializable model, the
+  locale entry and messages. No file reads, request state or server-only imports, so the popup
+  of step 4a renders the same component in the browser.
+- A `'use client'` file's plain function exports become client references in server
+  components and cannot be called there. Shared helpers live in files without the directive
+  (e.g. `src/ui/prompt-detail/language.ts`, `src/ui/annotation/layout.ts`).
+- Links point only at pages that exist in this build: header sections and `linkedPages` in
+  `src/ui/navigation/sections.ts` say which do; the step that adds a page flips its flag.
+- Interface text set in the display face (`var(--font-display)`) needs its message keys in
+  `DISPLAY_MESSAGE_KEYS` (`src/styles/fonts/display-cjk.ts`), so the CJK subsets include it.
+- Plain `<img>` is intended: static export has no image optimizer, `media:import` makes the
+  sizes and `@/modules/media` builds `srcset` (`@next/next/no-img-element` is off in `src/`).
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.
@@ -172,7 +193,13 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
   - Tests read the build's configuration from `generated/build.json`, so the same tests run against
     the root build and the `/prompt-seen` build.
 - Locally, `PW_BROWSERS` picks browsers (default: the installed Chrome).
-- Pages have no serious or critical axe-core violations (WCAG 2.2 AA tags).
+- Pages have no serious or critical axe-core violations (WCAG 2.2 AA tags). Check with
+  `seriousViolations(page)` from `tests/e2e/support/a11y.ts`: it waits for entry animations to
+  finish first (`settle()`), since axe measures contrast at the opacity of the moment.
+- `tests/e2e/support/content.ts` reads the build's content model, so tests pick real entries
+  (`samplePrompt`, `sampleTemplate`) and compare pages with their data.
+- Before clicking a client control, wait for hydration where the click must be handled
+  (`hydrated()` in `detail.browser.spec.ts`). WebKit on macOS tabs to buttons with Option held.
 
 ## CI
 

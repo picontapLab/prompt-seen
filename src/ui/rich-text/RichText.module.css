@@ -1,0 +1,108 @@
+/* Long-form text inside pages (design doc §11.1.2): measure, rhythm, no italics. */
+@layer components {
+  .rich {
+    max-inline-size: var(--measure);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+  }
+  .rich > * {
+    margin-block: 0;
+  }
+  .rich > * + * {
+    margin-block-start: var(--space-12);
+  }
+  .rich > :is(h2, h3, h4) {
+    margin-block-start: var(--space-32);
+  }
+  .rich > :is(h2, h3, h4) + * {
+    margin-block-start: var(--space-8);
+  }
+  .rich h2 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-xl);
+  }
+  .rich h3 {
+    font-size: var(--text-lg);
+    line-height: var(--leading-lg);
+  }
+  .rich h4 {
+    font-size: var(--text-base);
+  }
+  .rich :is(ul, ol) {
+    padding-inline-start: 1.25em;
+  }
+  .rich li + li {
+    margin-block-start: var(--space-4);
+  }
+  .rich a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .em {
+    font-weight: var(--weight-semibold);
+  }
+  .external {
+    display: inline;
+  }
+  .external svg {
+    display: inline;
+    inline-size: 0.9em;
+    block-size: 0.9em;
+    vertical-align: -0.05em;
+  }
+  .rich code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+  .rich pre {
+    overflow-x: auto;
+    padding: var(--space-12) var(--space-16);
+    border-radius: var(--radius-panel);
+    background: var(--surface-sunken);
+    font-size: var(--text-sm);
+  }
+  .rich blockquote {
+    padding-inline-start: var(--space-16);
+    border-inline-start: 2px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+  .tableWrap {
+    overflow-x: auto;
+  }
+  .rich table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+  .rich :is(th, td) {
+    padding: var(--space-8) var(--space-12) var(--space-8) 0;
+    border-block-end: 1px solid var(--border-subtle);
+    text-align: start;
+    vertical-align: top;
+  }
+  .rich th {
+    color: var(--text-secondary);
+    font-weight: var(--weight-medium);
+  }
+  .figure img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: var(--radius-image);
+  }
+  .figure figcaption {
+    margin-block-start: var(--space-8);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+  .callout {
+    padding: var(--space-12) var(--space-16);
+    border-inline-start: 2px solid var(--mark);
+    background: var(--surface-sunken);
+    border-radius: var(--radius-panel);
+  }
+  .callout > * + * {
+    margin-block-start: var(--space-8);
+  }
+}

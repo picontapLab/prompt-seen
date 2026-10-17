@@ -7,8 +7,9 @@ the root of a domain or under a subpath of another site, such as `example.com/pr
 Status: under construction. Steps 1a, 1b and 1c of the implementation plan (design doc §17) are
 in place: the project scaffold, configuration and CI; the content model with its build pipeline,
 validation, template rendering, image import and a sample content set; and the design system
-(tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Pages are
-placeholders.
+(tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Step 2 adds the
+Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; the home
+page and lists are still placeholders.
 
 ## Quick start
 
