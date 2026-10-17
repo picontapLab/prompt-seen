@@ -1,0 +1,83 @@
+# Prompt p_045 (design doc §5.2). Part of the sample set (§17.6).
+id: p_045
+slug: jazz-club-poster
+createdAt: 2026-08-20
+updatedAt: 2026-08-20
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: poster
+styleIds:
+  - bauhaus
+  - geometric
+useCaseIds:
+  - event-poster
+coverAssetId: a_045
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: none
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: a large mustard sun disc
+    region:
+      x: 0.32
+      y: 0.065
+      w: 0.68
+      h: 0.51
+    note:
+      en: The largest shape anchors the upper right and sets the warm accent.
+      zh-Hans: 最大的图形压住右上角，定下暖色重点。
+      ja: 最も大きな形が右上を支え、暖色のアクセントを決めます。
+      ar: أكبر شكل يثبّت الزاوية العلوية اليمنى ويحدد اللون الدافئ.
+  - phrase: a thin teal arc
+    region:
+      x: 0.23
+      y: 0
+      w: 0.5
+      h: 0.47
+    note:
+      en: “Thin” keeps the arc a line, so it adds motion without a second heavy shape.
+      zh-Hans: “细”让弧线保持为线条，增加动感而不多出一块重色。
+      ja: 「細い」の一語で弧が線にとどまり、重い形を増やさずに動きが出ます。
+      ar: كلمة “رفيع” تُبقي القوس خطًا يضيف حركة دون شكل ثقيل آخر.
+  - phrase: a red half circle
+    region:
+      x: 0.1
+      y: 0.45
+      w: 0.4
+      h: 0.15
+    note:
+      en: A half circle on the left balances the disc on the right.
+      zh-Hans: 左侧的半圆与右侧的圆盘形成平衡。
+      ja: 左の半円が右の円と釣り合います。
+      ar: نصف الدائرة على اليسار يوازن القرص على اليمين.
+  - phrase: a grid of small grey dots
+    region:
+      x: 0.615
+      y: 0.635
+      w: 0.255
+      h: 0.11
+    note:
+      en: A quiet texture that fills the lower right without competing.
+      zh-Hans: 安静的纹理填补右下角，又不抢戏。
+      ja: 右下を埋める控えめな質感で、主役と競いません。
+      ar: ملمس هادئ يملأ الزاوية السفلى اليمنى دون منافسة.
+  - phrase: two cream title bars
+    region:
+      x: 0.08
+      y: 0.74
+      w: 0.62
+      h: 0.12
+    note:
+      en: Bars reserve space for the event name; asking for real text often comes out garbled.
+      zh-Hans: 色条为活动名称预留位置；直接要求文字常常会生成乱码。
+      ja: 帯でイベント名の場所を確保します。文字そのものを求めると崩れがちです。
+      ar: الأشرطة تحجز مكان اسم الفعالية؛ طلب نص حقيقي يخرج مشوهًا غالبًا.

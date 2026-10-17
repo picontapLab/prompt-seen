@@ -1,0 +1,16 @@
+# Address changes (design doc §9.5). Host configuration is generated from this file (step 3e).
+# redirects: an old slug now served by an entry (by ID), or a fixed internal path.
+# gone: removed without a replacement; answers 410 (404 where the host cannot send 410).
+redirects:
+  - kind: prompt
+    from: neon-profile-study
+    to: p_005
+  - kind: prompt
+    from: bamboo-grove-wide
+    to: p_015
+  - from: /zh/
+    to: /zh-hans/
+gone:
+  - kind: prompt
+    slug: retired-sunset-poster
+    reason: license

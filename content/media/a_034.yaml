@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_034
+contentHash: sha256:2f6ed4c1ae4546f1c52f7a8d1d15aba3379a6b42f0d4554cee4aa1ab88a76cc7
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_034/lavender-colonnade-original-2f6ed4c1ae45.jpg
+variants:
+  thumbnail:
+    key: media/a_034/lavender-colonnade-thumbnail-26d28957512f.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_034/lavender-colonnade-card-bf1850a122d4.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_034/lavender-colonnade-detail-82d5ff8e0077.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_034/lavender-colonnade-og-fe57cdff6fb3.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.875
+placeholder:
+  color: "#9878C8"
+alt:
+  en: A row of tall rounded arches casting diagonal shadows.
+  zh-Hans: 一排高大的圆拱，投下斜向的阴影。
+  ja: 斜めの影を落とす、高い半円アーチの列。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_087
+contentHash: sha256:f17c88ec67e971c5f05190e6e638e06560a405ed57cf31b60304ed19a370cda0
+mimeType: image/webp
+width: 960
+height: 1200
+original:
+  key: media/a_087/autumn-quilt-pattern-original-f17c88ec67e9.webp
+variants:
+  thumbnail:
+    key: media/a_087/autumn-quilt-pattern-thumbnail-ca814e94cedb.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_087/autumn-quilt-pattern-card-952de7608b7b.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_087/autumn-quilt-pattern-detail-9dac4c896cbe.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_087/autumn-quilt-pattern-og-3394aebb9bb5.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#C86828"
+alt:
+  en: A grid of square tiles with quarter circles, triangles and half circles.
+  zh-Hans: 由四分之一圆、三角形和半圆构成的方形瓷砖网格。
+  ja: 四分円、三角形、半円を組み合わせた正方形タイルの格子。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

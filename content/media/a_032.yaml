@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_032
+contentHash: sha256:0b442e700d3329b6a1c2b49c6e064d38f6f6e835673aab03c3b5aa31d2e5de1f
+mimeType: image/jpeg
+width: 800
+height: 1200
+original:
+  key: media/a_032/neon-tower-block-original-0b442e700d33.jpg
+variants:
+  thumbnail:
+    key: media/a_032/neon-tower-block-thumbnail-dfce63b1d6c7.webp
+    width: 320
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_032/neon-tower-block-card-6f054f326560.webp
+    width: 640
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_032/neon-tower-block-detail-a49010c427ac.webp
+    width: 800
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_032/neon-tower-block-og-8beae5889c06.jpg
+    width: 800
+    height: 420
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.313
+placeholder:
+  color: "#181828"
+alt:
+  en: A flat skyline of block buildings with rows of small windows.
+  zh-Hans: 由方块楼房和成排小窗组成的平涂天际线。
+  ja: 小さな窓が並ぶ箱型のビルによる、平面的なスカイライン。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

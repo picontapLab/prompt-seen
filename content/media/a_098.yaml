@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_098
+contentHash: sha256:5af5be789871d37629ae44db74809398a60489356c1156c4fe7648eb1fbd612f
+mimeType: image/jpeg
+width: 1200
+height: 675
+original:
+  key: media/a_098/lavender-twilight-hills-original-5af5be789871.jpg
+variants:
+  thumbnail:
+    key: media/a_098/lavender-twilight-hills-thumbnail-03dab9988902.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_098/lavender-twilight-hills-card-d8c309b3bf39.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_098/lavender-twilight-hills-detail-bbd0a2c558e4.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_098/lavender-twilight-hills-og-f5ced3b17227.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.811
+  y: 0.281
+placeholder:
+  color: "#583878"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

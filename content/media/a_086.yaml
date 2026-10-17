@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_086
+contentHash: sha256:86a0ff0d1b0e428743d5a60cf1a41abd6fcd79647f5f6b86fd94c5ca9dbfcb0e
+mimeType: image/jpeg
+width: 900
+height: 1200
+original:
+  key: media/a_086/lavender-pot-original-86a0ff0d1b0e.jpg
+variants:
+  thumbnail:
+    key: media/a_086/lavender-pot-thumbnail-684dc83dc92d.webp
+    width: 360
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_086/lavender-pot-card-39d3217fcc61.webp
+    width: 720
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_086/lavender-pot-detail-3e175b050ffb.webp
+    width: 900
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_086/lavender-pot-og-156a697c96f6.jpg
+    width: 900
+    height: 473
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.438
+  y: 0.996
+placeholder:
+  color: "#E8E8F8"
+alt:
+  en: Broad flat leaves fanning out from a single stem.
+  zh-Hans: 从同一根茎上展开的宽大平涂叶片。
+  ja: 一本の茎から広がる、平塗りの大きな葉。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

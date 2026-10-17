@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_100
+contentHash: sha256:4e6e560bc81d57ef65d747f846ae285a8c24071d46846ae0f133085bb77cd08e
+mimeType: image/png
+width: 960
+height: 1200
+original:
+  key: media/a_100/monochrome-mug-launch-original-4e6e560bc81d.png
+variants:
+  thumbnail:
+    key: media/a_100/monochrome-mug-launch-thumbnail-0f2c99fc7b85.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_100/monochrome-mug-launch-card-8bf10dbe1fe1.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_100/monochrome-mug-launch-detail-4849524823cd.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_100/monochrome-mug-launch-og-54b5b3009a75.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.594
+  y: 0.531
+placeholder:
+  color: "#E8E8E8"
+alt:
+  en: A single product on a pale plinth in front of a soft circular backdrop.
+  zh-Hans: 浅色台面上的单件产品，背后是柔和的圆形背景。
+  ja: 淡い台に置かれた一つの商品と、背後のやわらかな円形の背景。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

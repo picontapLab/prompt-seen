@@ -1,0 +1,28 @@
+# Example run x_003 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_003
+promptId: p_024
+template:
+  id: t_001
+  version: v2
+  sample: tea-tin
+  values:
+    product: a loose-leaf green tea tin
+    sellingPoints:
+      - airtight lid
+      - single estate
+    palette: sage green
+    aspectRatio: 5:4
+promptSha256: 50fad199420825a3c1f280e2d33df60b30edcc451bd11ece23259604e698ff91
+referenceAssetIds: []
+outputAssetIds:
+  - a_024
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-07-28
+parameters:
+  aspectRatio: 5:4
+  seed: 90056
+  quality: standard

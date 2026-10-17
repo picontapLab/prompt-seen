@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_013
+contentHash: sha256:7e665d675c04dfdc77acb5635d2bdb629c636da6372cdb23ad98be36bf3d8890
+mimeType: image/jpeg
+width: 1200
+height: 800
+original:
+  key: media/a_013/sunlit-arcade-original-7e665d675c04.jpg
+variants:
+  thumbnail:
+    key: media/a_013/sunlit-arcade-thumbnail-4780b40f44b6.webp
+    width: 480
+    height: 320
+    mimeType: image/webp
+  card:
+    key: media/a_013/sunlit-arcade-card-5a395df7dc7e.webp
+    width: 960
+    height: 640
+    mimeType: image/webp
+  detail:
+    key: media/a_013/sunlit-arcade-detail-60d0e8a1e8b3.webp
+    width: 1200
+    height: 800
+    mimeType: image/webp
+  og:
+    key: media/a_013/sunlit-arcade-og-13c64830c795.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#785888"
+alt:
+  en: A row of tall rounded arches casting diagonal shadows.
+  zh-Hans: 一排高大的圆拱，投下斜向的阴影。
+  ja: 斜めの影を落とす、高い半円アーチの列。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

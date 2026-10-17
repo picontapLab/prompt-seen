@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_076
+contentHash: sha256:82695dd88ffbcbe01b8f0109d47912f74007aef005b67c7eac4c9f063ce95432
+mimeType: image/jpeg
+width: 480
+height: 720
+original:
+  key: media/a_076/sunset-travel-poster-original-82695dd88ffb.jpg
+variants:
+  thumbnail:
+    key: media/a_076/sunset-travel-poster-thumbnail-7ad75da0322f.webp
+    width: 320
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_076/sunset-travel-poster-card-b5a518fb9669.webp
+    width: 480
+    height: 720
+    mimeType: image/webp
+  detail:
+    key: media/a_076/sunset-travel-poster-detail-c7badcad9b78.webp
+    width: 480
+    height: 720
+    mimeType: image/webp
+  og:
+    key: media/a_076/sunset-travel-poster-og-0c6d1c4547f1.jpg
+    width: 480
+    height: 252
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.219
+  y: 0.063
+placeholder:
+  color: "#286888"
+alt:
+  en: A striped sunset sky, a pale sun between two violet mountains and a teal sea, with a title bar at the top.
+  zh-Hans: 条纹状的日落天空，淡色太阳落在两座紫色山峰之间，下方是青蓝色海面，顶部有标题条。
+  ja: 縞模様の夕焼け空、二つの紫の山の間に沈む淡い太陽、青緑の海と上部のタイトル帯。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

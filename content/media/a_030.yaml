@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_030
+contentHash: sha256:947fa7295e2d5e6ca033234e21aeee4465d8e833d5996524810bbc1fe4d21f57
+mimeType: image/png
+width: 960
+height: 1200
+original:
+  key: media/a_030/autumn-hills-original-947fa7295e2d.png
+variants:
+  thumbnail:
+    key: media/a_030/autumn-hills-thumbnail-d1a66a63d0d8.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_030/autumn-hills-card-5b9a9741db9d.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_030/autumn-hills-detail-9d76922c7c3f.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_030/autumn-hills-og-4c944a8b3fe3.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.375
+  y: 0.375
+placeholder:
+  color: "#683818"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

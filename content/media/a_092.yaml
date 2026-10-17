@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_092
+contentHash: sha256:651a545ec075009ff33a312f77ecbc391bc1a8c285dfea63dda6840a43f05063
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_092/plum-avatar-original-651a545ec075.jpg
+variants:
+  thumbnail:
+    key: media/a_092/plum-avatar-thumbnail-4f8ff440c88f.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_092/plum-avatar-card-018698715fea.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_092/plum-avatar-detail-090050823baa.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_092/plum-avatar-og-2a5379ecffbf.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: An ink branch rising from the lower left on warm paper, with a small red seal.
+  zh-Hans: 暖色纸面上从左下方伸出的墨色枝条，配一方小红印。
+  ja: 温かみのある紙に左下から伸びる墨の枝と、小さな赤い印。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

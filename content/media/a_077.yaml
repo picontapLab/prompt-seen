@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_077
+contentHash: sha256:ffb9be9b2ee77f2565297f7c150f62eade5040a096d77b5194cc43cd98319c43
+mimeType: image/jpeg
+width: 1200
+height: 675
+original:
+  key: media/a_077/branch-across-a-scroll-original-ffb9be9b2ee7.jpg
+variants:
+  thumbnail:
+    key: media/a_077/branch-across-a-scroll-thumbnail-a50f159eea50.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_077/branch-across-a-scroll-card-a946c27d5bc5.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_077/branch-across-a-scroll-detail-119de665162c.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_077/branch-across-a-scroll-og-8a7d6e1223c5.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.279
+  y: 0.688
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: An ink branch rising from the lower left on warm paper, with a small red seal.
+  zh-Hans: 暖色纸面上从左下方伸出的墨色枝条，配一方小红印。
+  ja: 温かみのある紙に左下から伸びる墨の枝と、小さな赤い印。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

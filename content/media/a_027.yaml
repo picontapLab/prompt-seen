@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_027
+contentHash: sha256:3ed19045c776c2d1e7c40d9fa108a4ae0c70a8f8695eaa101864da829154f296
+mimeType: image/webp
+width: 900
+height: 1200
+original:
+  key: media/a_027/tropical-leaves-original-3ed19045c776.webp
+variants:
+  thumbnail:
+    key: media/a_027/tropical-leaves-thumbnail-f7bd8161db19.webp
+    width: 360
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_027/tropical-leaves-card-198c861d088c.webp
+    width: 720
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_027/tropical-leaves-detail-8945dda6cbfd.webp
+    width: 900
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_027/tropical-leaves-og-abce780e8b9f.jpg
+    width: 900
+    height: 473
+    mimeType: image/jpeg
+focalPoint:
+  x: 0
+  y: 1
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: Broad flat leaves fanning out from a single stem.
+  zh-Hans: 从同一根茎上展开的宽大平涂叶片。
+  ja: 一本の茎から広がる、平塗りの大きな葉。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

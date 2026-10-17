@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_072
+contentHash: sha256:e93afc315971f05fb00776768ee28320827cb2c047650f194d15ade9cea04b17
+mimeType: image/webp
+width: 960
+height: 1200
+original:
+  key: media/a_072/perfume-bottle-original-e93afc315971.webp
+variants:
+  thumbnail:
+    key: media/a_072/perfume-bottle-thumbnail-23ab6726fb3a.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_072/perfume-bottle-card-9b931893ba51.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_072/perfume-bottle-detail-c2038cdfea83.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_072/perfume-bottle-og-a16ca7768389.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#F8E8D8"
+alt:
+  en: A single product on a pale plinth in front of a soft circular backdrop.
+  zh-Hans: 浅色台面上的单件产品，背后是柔和的圆形背景。
+  ja: 淡い台に置かれた一つの商品と、背後のやわらかな円形の背景。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

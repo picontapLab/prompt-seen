@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_097
+contentHash: sha256:f09f37cc9cb9ce78536cd2f34f72ac868c8c6516528165899ae058ffcf0497e7
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_097/blue-bauhaus-square-original-f09f37cc9cb9.jpg
+variants:
+  thumbnail:
+    key: media/a_097/blue-bauhaus-square-thumbnail-3dc9e077e891.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_097/blue-bauhaus-square-card-ddd4e8908904.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_097/blue-bauhaus-square-detail-8cb19d69ac27.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_097/blue-bauhaus-square-og-d998af316aa1.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#C8E8E8"
+alt:
+  en: Geometric poster with a large disc, a half circle, a dot grid and solid bars.
+  zh-Hans: 几何海报：大圆盘、半圆、点阵和色条。
+  ja: 大きな円、半円、ドットの格子、帯で構成された幾何学ポスター。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent
