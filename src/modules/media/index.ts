@@ -8,6 +8,9 @@ import { absoluteUrl, paths, withBasePath } from '@/modules/url';
 /** Responsive variants from small to large; `og` is a crop and `original` is not re-encoded. */
 const LADDER: ImageVariantName[] = ['thumbnail', 'card', 'detail'];
 
+/** What image helpers read from an image: full ImageRefs and the slim card images of lists both fit. */
+export type ImageSource = Pick<ImageRef, 'variants' | 'width' | 'height' | 'alt' | 'placeholder'>;
+
 /** Address for `<img src>` and fetches. */
 export const imageUrl = (variant: ImageVariant) => withBasePath(paths.media(variant.key));
 
@@ -15,7 +18,7 @@ export const imageUrl = (variant: ImageVariant) => withBasePath(paths.media(vari
 export const absoluteImageUrl = (variant: ImageVariant) => absoluteUrl(paths.media(variant.key));
 
 /** `srcset` with every ladder variant up to `largest`, one per distinct width. */
-export function srcSet(image: ImageRef, largest: ImageVariantName = 'detail'): string {
+export function srcSet(image: Pick<ImageRef, 'variants'>, largest: ImageVariantName = 'detail'): string {
   const top = LADDER.indexOf(largest);
   const seen = new Set<number>();
   return LADDER.slice(0, top < 0 ? LADDER.length : top + 1)
@@ -39,7 +42,7 @@ export type ImageProps = {
  * Everything an `<img>` needs for one use (§10.3): the preset's variant as `src`, smaller ones
  * in `srcset`, and the original's width and height so the browser reserves the space.
  */
-export function getImage(image: ImageRef, preset: Exclude<ImageVariantName, 'og'> = 'card'): ImageProps {
+export function getImage(image: ImageSource, preset: Exclude<ImageVariantName, 'og'> = 'card'): ImageProps {
   const variant =
     image.variants[preset] ??
     image.variants.detail ??

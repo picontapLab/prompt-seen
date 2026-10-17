@@ -217,6 +217,9 @@ describe('a valid content tree', () => {
       { from: '/en/prompts/old-portrait/', to: '/en/prompts/ink-portrait/' },
       { from: '/zh-hans/prompts/old-portrait/', to: '/zh-hans/prompts/ink-portrait/' },
       { from: '/zh/', to: '/zh-hans/' },
+      // Page 1 of the list is the list itself (§9.4).
+      { from: '/en/prompts/page/1/', to: '/en/prompts/' },
+      { from: '/zh-hans/prompts/page/1/', to: '/zh-hans/prompts/' },
     ]);
     expect(r.built!.manifest.gone).toContainEqual({ path: '/en/prompts/removed-one/', locale: 'en', reason: 'license' });
   });

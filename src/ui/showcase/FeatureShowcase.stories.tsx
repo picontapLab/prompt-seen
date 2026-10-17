@@ -10,6 +10,8 @@ const meta = {
   component: FeatureShowcase,
   args: { showcase: jazzShowcase },
   parameters: { layout: 'padded' },
+  // The showcase lays itself out by the width of its parent (a container query).
+  decorators: [(Story) => <div style={{ containerType: 'inline-size' }}>{Story()}</div>],
 } satisfies Meta<typeof FeatureShowcase>;
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -44,7 +46,7 @@ export const Hero: Story = { args: { size: 'hero', actions, priority: true, defa
 export const Narrow: Story = {
   args: { size: 'row', defaultAnnotation: 'C' },
   render: (args) => (
-    <div style={{ inlineSize: 360 }}>
+    <div style={{ inlineSize: 360, containerType: 'inline-size' }}>
       <FeatureShowcase {...args} />
     </div>
   ),

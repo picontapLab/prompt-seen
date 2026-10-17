@@ -20,5 +20,19 @@ brand:
 home:
   featured: [] # step 4b: editorially chosen works for the home first screen (§11.8.1)
 feed:
-  showcase: [] # step 3a: list first-screen showcase band (§11.8.2)
-  interludes: [] # step 3a: editorial interludes in the continuous list (§11.8.2)
+  # The list's showcase band (§11.8.2): the newest group whose `from` date has passed is shown.
+  # `lead` must be an annotated prompt; `works` are up to two more, shown beside it.
+  showcase:
+    - from: '2026-10-12'
+      lead: p_050
+      works: [p_098, p_024]
+  # Editorial interludes (§11.8.2), one per page of the list in this order, then repeated.
+  # Works wider than 2:1 or taller than 1:2 get feature rows of their own (§11.1.4).
+  interludes:
+    - type: feature
+      prompt: p_067
+    - type: templates
+    - type: collection
+      collection: c_001
+    - type: feature
+      prompt: p_012

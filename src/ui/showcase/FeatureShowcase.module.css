@@ -1,6 +1,8 @@
 /* A work on show (design doc §11.8.1, §11.8.2): image and label on one side, the prompt quote
-   on the other when the container is wide; stacked when it is narrow. Sized by its own width
-   (container queries, §11.1.3), so the same component fits a hero, a band or a feature row. */
+   on the other when the container is wide; stacked when it is narrow. Sized by the width of the
+   element that holds it (container queries, §11.1.3; a container cannot query itself), so the
+   same component fits a hero, a band or a feature row. Whoever places it sets
+   `container-type: inline-size` on the parent. */
 @layer components {
   .showcase {
     container-type: inline-size;
@@ -14,7 +16,13 @@
   }
   @container (min-width: 768px) {
     .showcase {
-      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      /* The image column is as wide as the work at its display height (plus the label lanes), up
+         to about 58 % (§11.8.1), so a tall work leaves no wide gap before its quote; never under
+         480 px, where .media switches to its narrow (phone) annotation layout. Written out
+         because .media is a size container and has no intrinsic width to measure. */
+      grid-template-columns:
+        minmax(0, min(58%, max(480px, calc(var(--_max-h) * var(--w) / var(--h) + 56px))))
+        minmax(0, 1fr);
       align-items: center;
       column-gap: var(--space-40);
     }
@@ -23,6 +31,8 @@
   .media {
     container-type: inline-size;
     display: grid;
+    /* The column is the container's width, never the image's: --_max-h may ask for more. */
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-12);
     justify-items: start;
     min-inline-size: 0;
