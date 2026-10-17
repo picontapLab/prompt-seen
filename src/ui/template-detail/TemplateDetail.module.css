@@ -1,0 +1,75 @@
+@layer components {
+  .meta {
+    margin: var(--space-4) 0 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .sampleNote {
+    margin: var(--space-8) 0 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+
+  /* A field's value in the prompt, in that field's variable colour with a dashed underline, so
+     colour is never the only cue (§11.1.1, §11.8.4). */
+  .variable {
+    padding-inline: 0.15em;
+    border-radius: var(--radius-control);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    text-decoration: underline dashed currentColor 1px;
+    text-underline-offset: 0.25em;
+  }
+  .variable[data-var='1'],
+  .fieldName[data-var='1'] {
+    --_bg: var(--var-1-bg);
+    --_fg: var(--var-1-fg);
+  }
+  .variable[data-var='2'],
+  .fieldName[data-var='2'] {
+    --_bg: var(--var-2-bg);
+    --_fg: var(--var-2-fg);
+  }
+  .variable[data-var='3'],
+  .fieldName[data-var='3'] {
+    --_bg: var(--var-3-bg);
+    --_fg: var(--var-3-fg);
+  }
+  .variable[data-var='4'],
+  .fieldName[data-var='4'] {
+    --_bg: var(--var-4-bg);
+    --_fg: var(--var-4-fg);
+  }
+  .variable[data-var='5'],
+  .fieldName[data-var='5'] {
+    --_bg: var(--var-5-bg);
+    --_fg: var(--var-5-fg);
+  }
+  .variable[data-var='6'],
+  .fieldName[data-var='6'] {
+    --_bg: var(--var-6-bg);
+    --_fg: var(--var-6-fg);
+  }
+  .variable {
+    background: var(--_bg);
+    color: var(--_fg);
+  }
+
+  /* Each field carries its colour as a bar at the start (§11.8.4). */
+  .fieldName {
+    display: grid;
+    gap: 2px;
+    padding-inline-start: var(--space-12);
+    border-inline-start: 4px solid var(--_fg);
+  }
+  .requirement,
+  .help {
+    display: block;
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+}

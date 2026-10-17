@@ -1,0 +1,110 @@
+{
+  "kinds": {
+    "prompt": "أمر",
+    "template": "قالب"
+  },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": {
+    "label": "مسار التنقل",
+    "home": "الرئيسية",
+    "prompts": "الأوامر",
+    "templates": "القوالب"
+  },
+  "test": {
+    "label": "سجل الاختبار",
+    "verifiedWith": "اختُبر باستخدام {model}",
+    "notVerified": "لم يُتحقق منه",
+    "lastTested": "اختُبر في {date}",
+    "neverTested": "لم يُختبر بعد",
+    "updated": "حُدّث في {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "لا حاجة إلى صورة مرجعية",
+      "optional": "الصورة المرجعية اختيارية",
+      "required": "تلزم صورة مرجعية"
+    }
+  },
+  "sheet": {
+    "label": "الأمر · {language}",
+    "languageNote": "تبقى الأوامر بلغتها الأصلية، وقد تختلف النتائج إذا تُرجم الأمر.",
+    "characters": "{count, plural, zero {لا أحرف} one {حرف واحد} two {حرفان} few {# أحرف} many {# حرفًا} other {# حرف}}",
+    "expand": "عرض الكل",
+    "expandLines": "عرض الكل ({lines, plural, zero {لا أسطر} one {سطر واحد} two {سطران} few {# أسطر} many {# سطرًا} other {# سطر}})",
+    "collapse": "عرض أقل"
+  },
+  "copy": {
+    "label": "نسخ الأمر",
+    "done": "نُسخ",
+    "failed": "تعذّر النسخ",
+    "failedHint": "حدّد نص الأمر وانسخه بلوحة المفاتيح أو من القائمة."
+  },
+  "share": {
+    "label": "مشاركة",
+    "copied": "نُسخ الرابط",
+    "failed": "تعذّر نسخ الرابط"
+  },
+  "customize": "التخصيص بقالب",
+  "annotations": {
+    "heading": "ما الذي تفعله كل عبارة"
+  },
+  "image": {
+    "original": "الأصل",
+    "dimensions": "{width} × {height}",
+    "show": "عرض الصورة {n} من {total}",
+    "failed": "لم تُحمَّل الصورة.",
+    "retry": "إعادة المحاولة"
+  },
+  "examples": {
+    "heading": "نسخ الاختبار",
+    "recorded": "تاريخ التسجيل",
+    "model": "النموذج",
+    "provider": "المزوّد",
+    "notes": "ما لاحظناه",
+    "parameters": "المعاملات",
+    "parameter": "المعامل",
+    "value": "القيمة",
+    "template": "القالب {version}",
+    "references": "الصور المرجعية",
+    "outputs": "النتيجة",
+    "promptUsed": "الأمر المستخدم في هذه النسخة",
+    "unknown": "غير مسجّل"
+  },
+  "source": {
+    "heading": "المصدر والترخيص",
+    "prompt": "الأمر",
+    "image": "الصورة",
+    "unknown": "المصدر غير معروف",
+    "author": "بقلم {author}",
+    "licence": "الترخيص: {licence}",
+    "creator": "المبدع: {creator}",
+    "aiGenerated": "صورة مولّدة",
+    "algorithmic": "مولّدة ببرنامج"
+  },
+  "related": {
+    "templates": "قوالب ذات صلة",
+    "similar": "أوامر مشابهة"
+  },
+  "actions": {
+    "label": "إجراءات الأمر"
+  },
+  "template": {
+    "fields": "الحقول",
+    "field": "الحقل",
+    "type": "النوع",
+    "value": "في المثال الافتراضي",
+    "optional": "اختياري",
+    "required": "مطلوب",
+    "types": {
+      "string": "نص",
+      "string-list": "قائمة",
+      "enum": "اختيار"
+    },
+    "listLimit": "{min}–{max} عناصر",
+    "maxLength": "حتى {max} حرف",
+    "choices": "{count, plural, zero {لا خيارات} one {خيار واحد} two {خياران} few {# خيارات} many {# خيارًا} other {# خيار}}",
+    "version": "الإصدار {version}",
+    "fieldCount": "{count, plural, zero {لا حقول} one {حقل واحد} two {حقلان} few {# حقول} many {# حقلًا} other {# حقل}}",
+    "sampleImage": "هذه الصورة من المثال الافتراضي، وتعطي القيم الأخرى نتائج مختلفة.",
+    "examples": "أعمال صُنعت بهذا القالب"
+  }
+}

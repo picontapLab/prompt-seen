@@ -1,0 +1,110 @@
+{
+  "kinds": {
+    "prompt": "プロンプト",
+    "template": "テンプレート"
+  },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": {
+    "label": "パンくずリスト",
+    "home": "ホーム",
+    "prompts": "プロンプト",
+    "templates": "テンプレート"
+  },
+  "test": {
+    "label": "テスト記録",
+    "verifiedWith": "{model} でテスト済み",
+    "notVerified": "未検証",
+    "lastTested": "{date} にテスト",
+    "neverTested": "未テスト",
+    "updated": "{date} に更新",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "参考画像は不要",
+      "optional": "参考画像は任意",
+      "required": "参考画像が必要"
+    }
+  },
+  "sheet": {
+    "label": "プロンプト · {language}",
+    "languageNote": "プロンプトは元の言語のままです。翻訳すると生成結果が変わることがあります。",
+    "characters": "{count} 文字",
+    "expand": "すべて表示",
+    "expandLines": "すべて表示（全 {lines} 行）",
+    "collapse": "折りたたむ"
+  },
+  "copy": {
+    "label": "プロンプトをコピー",
+    "done": "コピーしました",
+    "failed": "コピーできませんでした",
+    "failedHint": "プロンプトの文字を選択し、キーボードかメニューでコピーしてください。"
+  },
+  "share": {
+    "label": "共有",
+    "copied": "リンクをコピーしました",
+    "failed": "リンクをコピーできませんでした"
+  },
+  "customize": "テンプレートで書き換える",
+  "annotations": {
+    "heading": "各フレーズの効果"
+  },
+  "image": {
+    "original": "元画像",
+    "dimensions": "{width} × {height}",
+    "show": "画像 {n}/{total} を表示",
+    "failed": "画像を読み込めませんでした。",
+    "retry": "再試行"
+  },
+  "examples": {
+    "heading": "テストプリント",
+    "recorded": "記録日",
+    "model": "モデル",
+    "provider": "提供元",
+    "notes": "観察",
+    "parameters": "パラメーター",
+    "parameter": "パラメーター",
+    "value": "値",
+    "template": "テンプレート {version}",
+    "references": "参考画像",
+    "outputs": "生成結果",
+    "promptUsed": "このプリントに使ったプロンプト",
+    "unknown": "記録なし"
+  },
+  "source": {
+    "heading": "出典とライセンス",
+    "prompt": "プロンプト",
+    "image": "画像",
+    "unknown": "出典不明",
+    "author": "作者：{author}",
+    "licence": "ライセンス：{licence}",
+    "creator": "制作者：{creator}",
+    "aiGenerated": "AI で生成した画像",
+    "algorithmic": "プログラムで生成"
+  },
+  "related": {
+    "templates": "関連テンプレート",
+    "similar": "似たプロンプト"
+  },
+  "actions": {
+    "label": "プロンプトの操作"
+  },
+  "template": {
+    "fields": "フィールド",
+    "field": "フィールド",
+    "type": "種類",
+    "value": "デフォルト例の値",
+    "optional": "任意",
+    "required": "必須",
+    "types": {
+      "string": "テキスト",
+      "string-list": "リスト",
+      "enum": "選択肢"
+    },
+    "listLimit": "{min}〜{max} 項目",
+    "maxLength": "最大 {max} 文字",
+    "choices": "{count} 個の選択肢",
+    "version": "バージョン {version}",
+    "fieldCount": "{count} 個のフィールド",
+    "sampleImage": "この画像はデフォルト例のものです。別の値では結果が変わります。",
+    "examples": "このテンプレートで作った作品"
+  }
+}

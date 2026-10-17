@@ -1,0 +1,110 @@
+{
+  "kinds": {
+    "prompt": "提示词",
+    "template": "模板"
+  },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": {
+    "label": "面包屑导航",
+    "home": "首页",
+    "prompts": "提示词",
+    "templates": "模板"
+  },
+  "test": {
+    "label": "测试记录",
+    "verifiedWith": "已用 {model} 测试",
+    "notVerified": "未验证",
+    "lastTested": "测试于 {date}",
+    "neverTested": "尚未测试",
+    "updated": "更新于 {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "无需参考图",
+      "optional": "可选参考图",
+      "required": "需要参考图"
+    }
+  },
+  "sheet": {
+    "label": "提示词 · {language}",
+    "languageNote": "提示词保持原始语言；翻译后生成效果可能不同。",
+    "characters": "{count} 个字符",
+    "expand": "展开全文",
+    "expandLines": "展开全文（共 {lines} 行）",
+    "collapse": "收起"
+  },
+  "copy": {
+    "label": "复制提示词",
+    "done": "已复制",
+    "failed": "复制失败",
+    "failedHint": "请选中提示词文字，用键盘或右键菜单复制。"
+  },
+  "share": {
+    "label": "分享",
+    "copied": "链接已复制",
+    "failed": "链接复制失败"
+  },
+  "customize": "用模板改写",
+  "annotations": {
+    "heading": "每句话的作用"
+  },
+  "image": {
+    "original": "原图",
+    "dimensions": "{width} × {height}",
+    "show": "显示第 {n} 张图（共 {total} 张）",
+    "failed": "图片没有加载出来。",
+    "retry": "重试"
+  },
+  "examples": {
+    "heading": "测试样张",
+    "recorded": "记录日期",
+    "model": "模型",
+    "provider": "提供方",
+    "notes": "观察",
+    "parameters": "参数",
+    "parameter": "参数",
+    "value": "值",
+    "template": "模板 {version}",
+    "references": "参考图",
+    "outputs": "生成结果",
+    "promptUsed": "这张样张使用的提示词",
+    "unknown": "未记录"
+  },
+  "source": {
+    "heading": "来源与许可",
+    "prompt": "提示词",
+    "image": "图片",
+    "unknown": "来源未知",
+    "author": "作者：{author}",
+    "licence": "许可：{licence}",
+    "creator": "创作者：{creator}",
+    "aiGenerated": "AI 生成的图片",
+    "algorithmic": "由程序生成"
+  },
+  "related": {
+    "templates": "相关模板",
+    "similar": "相近提示词"
+  },
+  "actions": {
+    "label": "提示词操作"
+  },
+  "template": {
+    "fields": "字段",
+    "field": "字段",
+    "type": "类型",
+    "value": "默认示例中的值",
+    "optional": "可选",
+    "required": "必填",
+    "types": {
+      "string": "文字",
+      "string-list": "列表",
+      "enum": "选项"
+    },
+    "listLimit": "{min}–{max} 项",
+    "maxLength": "最多 {max} 个字符",
+    "choices": "{count} 个选项",
+    "version": "版本 {version}",
+    "fieldCount": "{count} 个字段",
+    "sampleImage": "此图对应默认示例；填写其他内容会得到不同的结果。",
+    "examples": "用这个模板生成的作品"
+  }
+}

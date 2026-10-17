@@ -86,9 +86,26 @@
     --_bg: var(--accent-subtle);
   }
 
-  .button[data-focus-visible] {
+  .button[data-focus-visible],
+  .link:focus-visible {
     outline: var(--focus-ring-width) solid var(--accent);
     outline-offset: var(--focus-ring-offset);
+  }
+
+  /* ButtonLink: a real link that looks like a button; plain CSS states, no React Aria. */
+  @media (hover: hover) and (pointer: fine) {
+    .primary.link:hover {
+      --_bg: var(--accent-hover);
+    }
+    .secondary.link:hover {
+      --_border: var(--border-control);
+    }
+    .ghost.link:hover {
+      --_bg: var(--accent-subtle);
+    }
+  }
+  .link:active {
+    transform: scale(var(--scale-press));
   }
 
   /* Disabled stays legible (§11.1.7): quieter colours, not a faded ghost. */
