@@ -476,16 +476,20 @@ export function Feed({ initial, end }: FeedProps) {
       <a href={`#${statusId}`} className={`visually-hidden ${styles.skip}`}>
         {t('feed.skip')}
       </a>
-      <div ref={topRef} className={styles.sentinel} aria-hidden="true" />
-      {prev === 'loading' && <p className={styles.edge}>{t('status.developingEarlier')}</p>}
-      {prev === 'error' && (
-        <p className={styles.edge}>
-          {t('status.failedEarlier')}{' '}
-          <Button variant="secondary" onPress={() => void loadPrev()}>
-            {t('status.retry')}
-          </Button>
-        </p>
-      )}
+      {/* Earlier pages: the notice floats over the top of the list instead of taking space, so
+          it never pushes the works in view down (browsers without scroll anchoring would jump). */}
+      <div className={styles.edgeSlot}>
+        <div ref={topRef} className={styles.sentinel} aria-hidden="true" />
+        {prev === 'loading' && <p className={styles.edge}>{t('status.developingEarlier')}</p>}
+        {prev === 'error' && (
+          <p className={styles.edge}>
+            {t('status.failedEarlier')}{' '}
+            <Button variant="secondary" onPress={() => void loadPrev()}>
+              {t('status.retry')}
+            </Button>
+          </p>
+        )}
+      </div>
       {empty ? (
         <div className={styles.empty}>
           <h2 className={styles.emptyTitle}>{t('filters.empty.title')}</h2>
