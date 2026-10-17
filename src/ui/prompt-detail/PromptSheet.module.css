@@ -1,0 +1,103 @@
+@layer components {
+  /* The paper sheet (§11.1 "Prompt 纸张"): raised surface, the prompt language at the top left,
+     copy at the top right, length at the bottom. */
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-panel);
+    background: var(--surface-raised);
+  }
+  .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-12);
+    padding: var(--space-8) var(--space-8) 0 var(--space-16);
+  }
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-block-size: var(--target-min);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-xs);
+  }
+  .info {
+    color: var(--text-secondary);
+  }
+
+  /* Prompt text: body font, not monospace (§11.1.2), kept to the prompt measure. Line breaks
+     in the prompt are kept; long words, URLs and model names wrap anywhere. */
+  .text {
+    position: relative;
+    max-inline-size: var(--measure-prompt);
+    padding: var(--space-8) var(--space-16) var(--space-4);
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  /* Folding is CSS only: the full prompt stays in the HTML for readers and crawlers (§11.8.3). */
+  .text[data-folded] {
+    max-block-size: calc(12 * 1.7em);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  }
+
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-16) var(--space-12);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .fold {
+    min-block-size: var(--target-dense);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text-primary);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+
+  /* Copy success: the sheet flashes success-subtle once (§11.8.3, §12.1: 220 ms). Reduced motion
+     changes the button only. */
+  .sheet[data-flash='a'] {
+    animation: flash-a var(--duration-content) var(--ease-exit);
+  }
+  .sheet[data-flash='b'] {
+    animation: flash-b var(--duration-content) var(--ease-exit);
+  }
+  @keyframes flash-a {
+    from {
+      background: var(--success-subtle);
+    }
+  }
+  @keyframes flash-b {
+    from {
+      background: var(--success-subtle);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sheet[data-flash] {
+      animation: none;
+    }
+  }
+  :global([data-motion='reduce']) .sheet[data-flash] {
+    animation: none;
+  }
+}

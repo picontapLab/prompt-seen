@@ -1,0 +1,43 @@
+@layer components {
+  .bar {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: var(--z-nav);
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-8) var(--page-margin) calc(var(--space-8) + env(safe-area-inset-bottom));
+    border-block-start: 1px solid var(--border-subtle);
+    background: var(--canvas);
+    translate: 0 100%;
+    visibility: hidden;
+    transition:
+      translate var(--duration-content) var(--ease-enter),
+      visibility 0s linear var(--duration-content);
+  }
+  .bar[data-visible] {
+    translate: 0 0;
+    visibility: visible;
+    transition: translate var(--duration-content) var(--ease-enter);
+  }
+  .copy {
+    flex: 1;
+    align-items: stretch;
+  }
+  .copy > :first-child {
+    inline-size: 100%;
+  }
+  /* Wide screens keep the sheet's copy button in view (sticky columns): no bar. */
+  @media (min-width: 1024px) {
+    .bar {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bar,
+    .bar[data-visible] {
+      transition: none;
+    }
+  }
+}

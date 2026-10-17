@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.10  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.10 修订：2026-10-16）  
+> 文档版本：1.11  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.11 修订：2026-10-16）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -14,6 +14,7 @@
 > 1.8 修订：步骤 1a 的决定——工程位于仓库根目录，文档移入 `docs/`；预览与生产托管选用 Cloudflare Pages；代码 MIT、内容 CC BY 4.0；国际化消息库选用 next-intl；语言注册表增加 `preview` 字段与 `BUILD_MODE` 构建模式；补充第 4 章的实际目录、配置生成与输出注册机制，以及《工程约定》（第 4.1、8.2、15.4.2、17.1、17.3、20 章）。  
 > 1.9 修订：步骤 1b 的决定——内容文件格式与维护说明 `content/README.md`；专题页说明的位置及其发布条件（该语言至少 3 条可见 Prompt）；`redirects.yaml` 与已删除清单的格式；译文 `sourceHash` 的计算方式；受限 MDX 组件（`Figure`、`Callout`）与按 ID 书写的站内链接；图片 `credit.copyrightNotice`、展示规格格式与本地媒体驱动的存放位置；`.generated/content/` 的内容模型与读取模块；样例内容的性质（第 4、4.1、5.2–5.5、6.2、8.4、9.1、9.5、10.2、14.1、14.3、17.3、17.6 章）。  
 > 1.10 修订：步骤 1c 的决定——token 以 `src/styles/tokens/` 中的 CSS 文件为唯一来源，`design/tokens/` 移除；`tokens-check` 的 44 组组合逐项列出，并增加补充组合；字体子集、按文字的 `unicode-range` 与中日韩引号处理；主题首绘脚本、根元素属性与 `theme-color` 的所有权；页眉主题按钮与页脚、菜单中的三选一；语言选择显示母语名称；外壳与区块注册表；交互专用代码按需加载、`src/ui/` 按文件导入（第 4、4.1、11.1.2、11.1.3、11.1.9、11.6.3、15.5.2、17.3 章）。版本号跳过 1.9：1.9 是并行进行的步骤 1b 的修订，两者合并时保留各自条目。  
+> 1.11 修订：步骤 2 的决定——详情正文由可序列化详情模型渲染、服务端与弹层共用的写法；`seo` 模块与页面调用方式，条目页的 x-default 指向默认语言版本，Open Graph locale 映射；面包屑只链接本次构建已有的页面；提示词标注的实现（字母为生成内容、引线侧的选择、窄容器只显示当前框）；中日韩展示字体的构建期子集与 `DISPLAY_MESSAGE_KEYS`；首次必要 JavaScript、首屏图片与字体的实测（第 4.1、9.3、11.1.2、11.1.9、11.8.3、16.1、17.3 章）。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -387,6 +388,7 @@ prompt-library/
 - `src/ui/brand/` 是品牌层元素（片边、帧号、裁切标记、占位字标）；`src/ui/motion/` 是动效 Provider 与预设；`src/ui/navigation/` 是根文档与可替换外壳（第 15.5.2 节）。
 - 实施细节（1.10）：`src/ui/` 与 `src/state/` 不设汇总导出文件（barrel），按文件导入（如 `@/ui/primitives/Button`）。服务端组件从汇总文件导入时，其中每个 `'use client'` 模块都会成为客户端入口，整组基元会进入每个页面的首次加载。只在交互时需要的部分按需加载：页眉语言列表在首次使用时加载，窄屏菜单在首次打开时加载，Toast 区域在页面空闲后加载。外壳使首次必要 JavaScript 增加约 36 KiB（gzip，1a 的空站点为 183.5 KiB，1c 为 219.5 KiB），其中约 12 KiB 是客户端消息格式化，步骤 2 的客户端模块本来也需要。
 - `src/ui/` 负责画廊和编辑器等用户界面。
+- 实施细节（1.11）：步骤 2 新增 `src/ui/prompt-detail/`（`PromptDetailBody` 与图片舞台、Prompt 纸张、测试信息、生成示例、来源许可、相关作品行、移动端操作栏）、`src/ui/template-detail/`、`src/ui/annotation/`（标注状态、文本短语、图上标注框、说明列表与纯函数布局）、`src/ui/showcase/`（`FeatureShowcase` 与 `toShowcase`，供 3a、4b 复用）、`src/ui/rich-text/`（构建期 MDX 树的渲染）、`src/ui/feedback/`（`CopyButton`、`ShareButton`）、`src/ui/navigation/Breadcrumb.tsx`，以及 `src/modules/seo/`。详情正文组件不读文件、不用请求状态、不导入服务端模块，只接收详情模型、locale 与 `detail` 消息命名空间，因此完整页在服务端渲染，步骤 4a 的弹层可在浏览器中用同一份 JSON 渲染同一组件。`'use client'` 文件导出的普通函数在服务端组件中会变成客户端引用、无法调用，共用的纯函数因此放在不带该指令的文件中（如 `src/ui/prompt-detail/language.ts`）。
 - `design/` 保存已选定视觉方向的参考页面与截图（第 11.1.9 节），只作视觉参考。步骤 1c 已把 token 原稿 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，`design/tokens/` 随之移除。
 - `src/styles/tokens/` 是视觉与动效 token 的唯一来源，生成 CSS 自定义属性；`scripts/tokens-check.ts` 在 CI 中校验第 11.1.9 节列出的颜色组合对比度。
 - 实施细节（1.10）：token 直接写成 CSS 文件——`color.css`（功能层与品牌层颜色，浅色、跟随系统的深色、用户选择的深色三块，以及 `prefers-contrast: more`）、`type.css`（字号、字重、按 `lang` 切换的字体栈与行高）、`layout.css`（间距、断点相关值、容器宽度、圆角、层级、焦点环、触控目标）、`motion.css`（动效 token 与减少动效）。全局样式按 `@layer reset, tokens, base, components, utilities` 排序，组件样式为 CSS Modules 并放在 `components` 层。代码需要的少量数值（动效、断点、`theme-color`）有 TypeScript 镜像，单元测试保证与 CSS 一致；`src/` 中媒体查询与容器查询只允许第 11.1.3 节的断点。字体在 `src/styles/fonts/`（第 11.1.2 节）。`.storybook/` 展示各组件状态，工具栏切换浅色、深色、并排两种主题、语言与方向、减少动效。
@@ -921,6 +923,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - `lastmod` 使用内容实际修改时间；普通重新部署不改变全部页面的时间。
 - 不设置限制性的 `nosnippet`、`max-snippet` 或 `max-image-preview`；搜索结果摘要与 AI 摘要都依赖可用片段。
 - 结构化数据按第 9.6 节的映射生成，描述页面真实内容，不承诺特定富媒体搜索展示。
+- 实施细节（1.11）：页面的 `generateMetadata` 只调用 `@/modules/seo`（`promptMetadata`、`templateMetadata`、`pageMetadata`），不自行组装 title、canonical、hreflang 与 Open Graph；规则在纯函数 `buildPageMetadata` 中并有单元测试。文档标题为“{标题} · {类型} · {站名}”，类型名按 locale 来自消息文件。条目页的 hreflang 列出本次构建中该条目的全部版本（含自身），有多个版本时 x-default 指向默认语言版本；默认语言没有该条目时不输出 x-default。语言首页仍以语言入口为 x-default（第 8.2 节）。`og:locale` 使用 `language_TERRITORY`，如 zh-Hans → `zh_CN`、zh-Hant → `zh_TW`、ar → `ar_AR`。分享图使用 `og` 规格的实际尺寸：原图小于 1200 px 时不放大（样例中有 900 × 473），因此尺寸不一定是 1200 × 630。
 
 ### 9.4 分页、筛选与链接
 
@@ -1247,6 +1250,7 @@ flowchart LR
 - 中日韩页面为西文正文字体声明的 `@font-face` 通过 `unicode-range` 排除 U+2018–U+201F 等引号，使中文引号使用全角字形，不被渲染成窄的西文引号。
 - 字体加载使用 `font-display: swap` 与尺寸匹配的回退字体（`size-adjust` 等），切换时不产生明显位移。
 - 实施细节（1.10）：字体文件取自 Fontsource 5.3.0（SIL OFL 1.1），以 `next/font/local` 自托管在 `src/styles/fonts/`：Fira Sans Extra Condensed 600/700、IBM Plex Sans 400/500/600、IBM Plex Mono 400/500 各含 latin、latin-ext、cyrillic 子集，IBM Plex Sans Arabic 400/500/600 只含阿拉伯文字子集（拉丁字符落到 IBM Plex Sans）。每个子集是带 `unicode-range` 的独立 `@font-face`，页面只下载用到的子集；只预加载正文 400 与展示 700 的 latin 文件。正文与展示字体各有一个由 `next/font` 按字体度量生成的 `size-adjust` 回退字体（本地 Arial），等宽字体不生成（只能模拟 Arial 或 Times New Roman）。中日韩页面使用同一批文件声明的 “… for CJK” 字体族，其 `unicode-range` 去掉 U+2014、U+2018–U+201F 与 U+2026，破折号、引号与省略号使用全角的中日韩字形。
+- 实施细节（1.11）：中日韩展示字体由 `content:build` 的 `display-fonts` 输出生成。来源是 Fontsource 的可变字体包 `@fontsource-variable/noto-sans-{sc,tc,jp,kr}` 5.3.0（SIL OFL 1.1，开发依赖，不随产物分发全量字体）。每个已构建的中日韩 locale 收集条目标题与 `DISPLAY_MESSAGE_KEYS` 列出的界面消息（目前只有窄屏菜单的区块链接 `shell.nav`）中需要中日韩字形的字符，按 Fontsource 的切片分组，用 harfbuzz（`subset-font`）把每个切片裁到这些字符并固定在 700 字重，输出 `public/generated/fonts/{code}/` 与带精确 `unicode-range` 的 `{code}.css`；`[locale]/(public)/layout.tsx` 链接该样式表，页面只下载自己标题用到的切片。新增使用展示字体的界面文字时，在 `src/styles/fonts/display-cjk.ts` 中加入对应消息键。样例内容下，简体中文与日语详情页的展示字体约 64 KiB（3–6 个文件）；子集按 locale 生成，标题增多后每个切片文件会变大，届时可改为按页面生成子集。
 
 | token | 字号 / 行高（拉丁文字） | 用途 |
 | --- | --- | --- |
@@ -1484,6 +1488,7 @@ flowchart LR
 - 图上所有标注元素使用 `film-mark` 并带 `overlay-outline` 描边。
 - 与当前标注框重叠的其他标注框暂时隐藏，只在文本中保留描边字母，避免框线互相叠压。
 - 无障碍：每个标注短语可聚焦，`aria-describedby` 指向该标注的说明；图上的框只是视觉辅助，说明始终以文字可读。键盘按阅读顺序遍历短语，Esc 取消当前标注。
+- 实施细节（1.11）：短语是行内按钮，鼠标悬停、键盘聚焦或按下时成为当前标注，触屏点按切换，并在需要时把图片滚动到可见；字母由 CSS 生成内容显示，不属于文本，手动选择复制只得到提示词本身。引线所在一侧取离区域较近、且水平引线不穿过其他框的一侧（`src/ui/annotation/layout.ts`，有单元测试）。图片两侧的标签边距为 28 px，只在图片所在容器不窄于 480 px 时出现；更窄时只显示当前框，字母贴在框角。详情页在 Prompt 纸张下列出全部说明；`FeatureShowcase` 只显示当前说明的一行，完整说明列表对辅助技术保留。
 
 **方向稿中不带入实现的部分**：
 
@@ -1786,6 +1791,15 @@ Prompt 纸张的细节：
 - 纸张底部显示字符数，便于判断是否超出工具的长度限制。
 - 不在纸张上绑定“点击即复制”，用户可以正常拖选、双击选词和三击选段。
 - 复制成功后按钮变为“✓ 已复制”，纸张背景以 `success-subtle` 轻闪一次；减少动效模式只切换按钮。
+
+实施细节（1.11）：
+
+- 面包屑为“首页 / 提示词 / 分类”，只链接本次构建已有的页面：列表页在步骤 3a 把 `src/ui/navigation/sections.ts` 中的 `prompts` 设为可用后才链接，分类专题在步骤 3e 把 `linkedPages.topics` 设为可用后才链接；在此之前显示为文字。
+- “用模板改写”在 Prompt 由模板生成时出现，暂时链接到模板详情页；步骤 3c 改为带参数的编辑器地址。收藏按钮在步骤 4c 加入。
+- 图片舞台在有多张生成结果时显示缩略图条；图片加载失败显示重试，正文与复制不受影响。放大查看与生成示例的对比滑块不在本步骤实现，原图入口提供完整分辨率。
+- 生成示例逐条列出：帧号加字母的样张编号、模型、记录日期、提供方、观察、参考图与结果、参数表；当时的提示词与当前提示词不同时，以可展开区块显示。
+- 移动端底部操作栏在页面接管后才出现，纸张的复制按钮在视口内时隐藏；宽度不小于 1024 px 时不显示。
+- 测试信息条只在已验证且有模型名时显示模型徽标，否则显示中性的“未验证”徽标（第 11.1.9 节）。
 
 #### 11.8.4 模板编辑器
 
@@ -2295,6 +2309,17 @@ feed:
 
 初始工程预算建议：普通画廊和详情页首次必要 JavaScript 压缩后控制在 200 KiB 左右，首屏图片总量控制在 600 KiB 左右。搜索索引不进入普通页面首次加载。实际预算在首个可用页面完成后测量并记录。
 
+首个可用页面的实测（1.11，步骤 2，`/prompt-seen` 预览构建，参考 nginx，Chrome，冷缓存；JavaScript 为 HTML 引用的脚本按 gzip 计）：
+
+| 页面 | 首次必要 JavaScript | 首屏图片（桌面 1280 × 800 / 手机 390 × 844） | 字体 |
+| --- | --- | --- | --- |
+| 语言首页（占位，对照） | 220.8 KiB | — | 123.1 KiB |
+| Prompt 详情（英语） | 227.2 KiB | 17.5 / 12.8 KiB | 123.1 KiB |
+| 模板详情（英语） | 226.2 KiB | 5.1 / 5.1 KiB | 123.1 KiB |
+| Prompt 详情（简体中文） | 227.2 KiB | 21.9 / 8.1 KiB | 187.4 KiB |
+
+详情页只比外壳多约 6 KiB 的 JavaScript；超出 200 KiB 预算的部分来自 1a 与 1c 的共同基础（第 4.1 节）。样例图片是扁平矢量图，首屏图片远低于 600 KiB 预算，真实作品需要重新测量。
+
 ### 16.2 功能验收
 
 | 验收项 | 通过条件 |
@@ -2473,6 +2498,7 @@ feed:
 - 范围：Prompt 详情整页（第 9.2、11.8.3 节），使用英语、简体中文、日语，以及只用于预览的阿拉伯语草稿；从 1b 的可序列化详情模型渲染 `PromptDetailBody`，使步骤 4a 的弹层可以直接复用；片边图片舞台、测试信息条、Prompt 纸张与复制、分享（收藏功能在 4c）、移动端底部操作栏、`ExampleRun` 区块；`AnnotatedPrompt` 与 `FeatureShowcase` 基础组件（第 11.1.9 节“提示词标注”），供 3a 与 4b 复用；该资源的语言切换；模板详情页，初始 HTML 包含默认样本的渲染结果（第 6 章、第 9.1 节）；`seo` 模块的基本元数据（title、description、canonical、hreflang、Open Graph）及页面调用方式（第 9.3 节）；中日韩展示字体的构建期子集化（第 11.1.2 节）。
 - 通过条件：修改内容文件后可在本地生成页面；模板输出与复制一致；图片引用有效；根路径与 `/prompt-seen` 构建的原始 HTML 地址均正确；满足第 16.2 节“初始 HTML”与第 16.5 节“首屏信息”（1280 × 800 下图片、标题、摘要、Prompt 开头与复制按钮同屏）；标注可用键盘与触屏操作；阿拉伯语草稿页的方向与混合文本正确；视觉对照 `design/visual-direction/darkroom/detail.html`；记录首个可用页面的 JavaScript 与首屏图片体积（第 16.1 节）。
 - 检查点：后续会话都沿用本步骤建立的页面、数据与 SEO 写法，合并前由维护者重点审查。
+- 结果（2026-10-16）：Prompt 详情页与模板详情页按本节范围完成，实施细节写入第 4.1、9.3、11.1.2、11.1.9、11.8.3 与 16.1 节（1.11 版）。端到端测试新增 `detail.http.spec.ts`（原始 HTML：正文、完整提示词、主图、canonical、hreflang、Open Graph、页面上的链接全部可访问、中日韩字体子集、RTL 页面中的提示词方向）与 `detail.browser.spec.ts`（1280 × 800 首屏、复制、指针与键盘与触屏的标注操作、手动复制不含标注字母、移动端操作栏、语言切换保留资源、RTL 布局与图片坐标、浅色与深色下的 axe）；`tests/e2e/support/a11y.ts` 的 `settle()` 在 axe 检查前等待进入动画结束。根路径生产构建与 `/prompt-seen` 预览构建在 Chrome 与 WebKit 中全部通过；Firefox 由 CI 运行。
 
 **3a 列表与连续加载**
 

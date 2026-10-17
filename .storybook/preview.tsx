@@ -3,6 +3,7 @@ import '../src/styles/fonts';
 import type { Decorator, Preview } from '@storybook/nextjs-vite';
 import { NextIntlClientProvider } from 'next-intl';
 import { useLayoutEffect, type ReactNode } from 'react';
+import { formatLocale } from '../src/i18n/format-locale';
 import { MotionProvider } from '../src/ui/motion/MotionProvider';
 import { PrimitivesProvider } from '../src/ui/primitives/PrimitivesProvider';
 import { catalogs, storyLocales, type StoryLocale } from './messages';
@@ -29,7 +30,7 @@ function Modes({ theme, locale, motion, children }: Globals & { children: (schem
     </div>
   );
   return (
-    <NextIntlClientProvider locale={entry.code} messages={catalogs[locale]} timeZone="UTC">
+    <NextIntlClientProvider locale={formatLocale(entry.code)} messages={catalogs[locale]} timeZone="UTC">
       <PrimitivesProvider locale={entry.htmlLang}>
         <MotionProvider reducedMotion={motion === 'reduce' ? 'always' : 'user'}>
           {theme === 'both' ? (
