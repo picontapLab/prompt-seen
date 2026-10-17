@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import { registryCode } from '@/i18n/format-locale';
 import { lazy, Suspense, useState } from 'react';
 import { builtLocales } from '@/config';
 import fieldStyles from '@/ui/primitives/Field.module.css';
@@ -17,7 +18,7 @@ const LanguageCombobox = lazy(load);
  */
 export function LanguageSwitch({ quiet = true }: { quiet?: boolean }) {
   const t = useTranslations('shell.language');
-  const uiLocale = useLocale();
+  const uiLocale = registryCode(useLocale());
   const [active, setActive] = useState(false);
   const current = builtLocales.find((l) => l.code === uiLocale);
   const placeholder = (

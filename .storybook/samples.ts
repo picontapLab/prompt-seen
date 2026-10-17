@@ -1,4 +1,5 @@
 import { useLocale } from 'next-intl';
+import { registryCode } from '../src/i18n/format-locale';
 
 // Sample copy for stories, per toolbar locale, so RTL and CJK samples use real text (§16.5).
 const samples = {
@@ -111,6 +112,6 @@ const samples = {
 export type Sample = (typeof samples)['en'];
 
 export function useSample(): Sample {
-  const locale = useLocale() as keyof typeof samples;
+  const locale = registryCode(useLocale()) as keyof typeof samples;
   return samples[locale] ?? samples.en;
 }
