@@ -3,8 +3,9 @@ import { notFound } from 'next/navigation';
 import { builtLocales, localeByPrefix } from '@/config';
 import { enterLocale } from '@/i18n/locale';
 import { feedIndex } from '@/modules/feed';
+import { JsonLd } from '@/modules/seo';
 import { PromptList } from '@/ui/gallery/PromptList';
-import { listMetadata } from '@/ui/gallery/list-metadata';
+import { listMetadata, listStructuredData } from '@/ui/gallery/list-metadata';
 
 // Pages 2…n of the Prompt list (design doc §9.4): each has its own address, canonical, cards and
 // page links. /page/1/ is not generated; the host redirects it to the list (§9.4). A page number
@@ -41,5 +42,10 @@ export default async function PromptListPageN({ params }: Props) {
   const { locale, page } = await params;
   const entry = enterLocale(locale);
   if (Number(page) > feedIndex(entry.code).pageCount) notFound();
-  return <PromptList locale={entry} page={Number(page)} />;
+  return (
+    <>
+      <JsonLd data={await listStructuredData(entry, Number(page))} />
+      <PromptList locale={entry} page={Number(page)} />
+    </>
+  );
 }

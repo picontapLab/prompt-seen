@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { config, localeByPrefix } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
 import { enterLocale } from '@/i18n/locale';
 import { findBySlug, getDetailModel, listEntries } from '@/modules/content';
-import { promptMetadata } from '@/modules/seo';
+import { JsonLd, promptMetadata, promptStructuredData } from '@/modules/seo';
+import { promptCrumbs } from '@/ui/prompt-detail/crumbs';
 import { PromptDetailBody } from '@/ui/prompt-detail/PromptDetailBody';
 
 // Prompt detail, the full page (design doc §9.2, §11.8.3). Every prompt visible in a locale is
@@ -35,8 +37,11 @@ export default async function PromptPage({ params }: Props) {
   const { locale, slug } = await params;
   const entry = enterLocale(locale);
   const detail = load(entry.code, slug);
+  const t = await getTranslations({ locale: entry.code, namespace: 'detail.breadcrumb' });
+  const crumbs = promptCrumbs(detail, entry.pathPrefix, (key) => t(key));
   return (
     <div className="container" data-width="detail" data-page="prompt-detail">
+      <JsonLd data={promptStructuredData(detail, entry, crumbs)} />
       <ClientMessages namespaces={['detail']}>
         <PromptDetailBody detail={detail} locale={entry} siteName={config.siteName} />
       </ClientMessages>

@@ -16,7 +16,15 @@ export type BuildInfo = {
   basePath: string;
   urlPattern: string;
   defaultLocale: string;
-  locales: { code: string; pathPrefix: string; nativeName: string; htmlLang: string; direction: 'ltr' | 'rtl' }[];
+  locales: {
+    code: string;
+    pathPrefix: string;
+    nativeName: string;
+    htmlLang: string;
+    direction: 'ltr' | 'rtl';
+    /** Public; built locales that are not are preview-only drafts. */
+    enabled: boolean;
+  }[];
 };
 
 function findBuildInfo(dir: string, depth = 0): string | null {

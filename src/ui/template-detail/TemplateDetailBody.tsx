@@ -6,7 +6,7 @@ import { renderTemplate } from '@/modules/template';
 import { absoluteUrl, paths } from '@/modules/url';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
-import { headerSections } from '@/ui/navigation/sections';
+import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { ExampleRuns } from '@/ui/prompt-detail/ExampleRuns';
 import { ImageStage } from '@/ui/prompt-detail/ImageStage';
 import { languageName } from '@/ui/prompt-detail/language';
@@ -54,7 +54,6 @@ export function TemplateDetailBody({
         ? { ...s, text: s.text.trimEnd() }
         : s,
   );
-  const templatesSection = headerSections.find((s) => s.key === 'templates');
 
   return (
     <article className={detailStyles.detail} data-detail="template" data-entry={detail.id}>
@@ -69,13 +68,7 @@ export function TemplateDetailBody({
         </div>
 
         <div className={detailStyles.info}>
-          <Breadcrumb
-            label={t('breadcrumb.label')}
-            items={[
-              { label: t('breadcrumb.home'), href: paths.home(prefix) },
-              { label: t('breadcrumb.templates'), href: templatesSection?.available ? paths.templates(prefix) : null },
-            ]}
-          />
+          <Breadcrumb label={t('breadcrumb.label')} items={templateCrumbs(prefix, (key) => t(`breadcrumb.${key}`))} />
           <header className={detailStyles.header}>
             <h1 className={detailStyles.title}>{detail.title}</h1>
             <p className={detailStyles.summary}>{detail.description}</p>

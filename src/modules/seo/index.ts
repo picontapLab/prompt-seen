@@ -4,8 +4,23 @@ import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, type LocaleEntry } from '@/config';
 import type { Alternate, PromptDetail, TemplateDetail } from '@/modules/content/types';
 import { absoluteImageUrl } from '@/modules/media';
-import { absoluteUrl } from '@/modules/url';
+import { absoluteUrl, paths } from '@/modules/url';
 import { buildPageMetadata, type PageSeo, type SeoContext } from './build';
+import { isIndexable } from './indexing';
+import {
+  aboutPage,
+  breadcrumbList,
+  collectionPage,
+  graph,
+  organization,
+  promptWork,
+  templateWork,
+  website,
+  type JsonLdNode,
+  type LdContext,
+  type LdCrumb,
+  type ListItemInput,
+} from './structured-data';
 
 // How pages get their metadata (design doc §9.3, §17.3 step 2). Every page's generateMetadata
 // returns one of these; none sets title, canonical, hreflang or Open Graph itself:
@@ -16,10 +31,19 @@ import { buildPageMetadata, type PageSeo, type SeoContext } from './build';
 //     return promptMetadata(detail, entry);
 //   }
 //
-// Step 3b adds structured data and sitemaps next to these (§9.6, §9.7).
+// Structured data (§9.6) works the same way: the page renders <JsonLd data={…} /> with one of
+// the *StructuredData functions below, passing the breadcrumb items it shows:
+//
+//   const t = await getTranslations({ locale: entry.code, namespace: 'detail.breadcrumb' });
+//   const crumbs = promptCrumbs(detail, entry.pathPrefix, (key) => t(key));
+//   <JsonLd data={promptStructuredData(detail, entry, crumbs)} />
 
 export { buildPageMetadata, ogLocale } from './build';
 export type { PageSeo, SeoContext } from './build';
+export { JsonLd } from './JsonLd';
+export { isIndexable, type PageSections } from './indexing';
+export { indexableLocales } from './sitemaps';
+export type { JsonLdNode, LdCrumb, ListItemInput } from './structured-data';
 
 const context: SeoContext = {
   siteName: config.siteName,
@@ -27,6 +51,14 @@ const context: SeoContext = {
   locales: builtLocales,
   absoluteUrl,
   absoluteImageUrl,
+};
+
+const ld: LdContext = {
+  siteName: config.siteName,
+  absoluteUrl,
+  absoluteImageUrl,
+  entryPath: paths.languageEntry(),
+  logoPath: paths.siteIcon(),
 };
 
 async function documentTitle(locale: LocaleEntry, title: string, kind: 'prompt' | 'template') {
@@ -48,6 +80,9 @@ export async function promptMetadata(detail: PromptDetail, locale: LocaleEntry):
       type: 'article',
       publishedTime: detail.createdAt,
       modifiedTime: detail.updatedAt,
+      markdownPath: isIndexable(locale, detail.visibility)
+        ? paths.promptMarkdown(locale.pathPrefix, detail.slug)
+        : null,
     },
     context,
   );
@@ -67,6 +102,9 @@ export async function templateMetadata(detail: TemplateDetail, locale: LocaleEnt
       type: 'article',
       publishedTime: detail.createdAt,
       modifiedTime: detail.updatedAt,
+      markdownPath: isIndexable(locale, detail.visibility)
+        ? paths.templateMarkdown(locale.pathPrefix, detail.slug)
+        : null,
     },
     context,
   );
@@ -87,4 +125,56 @@ export function pageMetadata(page: {
     } satisfies PageSeo,
     context,
   );
+}
+
+// ---------------------------------------------------------------------------------------------
+// Structured data (§9.6). `crumbs` are the items of the breadcrumb the page shows, if any.
+
+/** A Prompt detail page: CreativeWork with its main image, and the breadcrumb. */
+export function promptStructuredData(
+  detail: PromptDetail,
+  locale: LocaleEntry,
+  crumbs: readonly LdCrumb[],
+): JsonLdNode {
+  return graph(promptWork(detail, locale, ld), breadcrumbList(crumbs, ld));
+}
+
+/** A template page: CreativeWork of the default sample's prompt, and the breadcrumb. */
+export function templateStructuredData(
+  detail: TemplateDetail,
+  locale: LocaleEntry,
+  crumbs: readonly LdCrumb[],
+): JsonLdNode {
+  return graph(templateWork(detail, locale, ld), breadcrumbList(crumbs, ld));
+}
+
+/** A locale's home page: the site in that language and the Organization behind it. */
+export function homeStructuredData(locale: LocaleEntry): JsonLdNode {
+  return graph(website({ path: paths.home(locale.pathPrefix), locale }, ld), organization(ld));
+}
+
+/**
+ * A list, topic or collection page (step 3a's list; steps 3c and 3e call it for theirs): the
+ * items this page shows, in visible order, and the breadcrumb when the page has one.
+ */
+export function collectionStructuredData(
+  page: {
+    path: string;
+    locale: LocaleEntry;
+    name: string;
+    description: string;
+    items: readonly ListItemInput[];
+    offset?: number;
+  },
+  crumbs: readonly LdCrumb[] = [],
+): JsonLdNode {
+  return graph(collectionPage(page, ld), breadcrumbList(crumbs, ld));
+}
+
+/** The about page (step 3e): AboutPage and the Organization it describes. */
+export function aboutStructuredData(
+  page: { path: string; locale: LocaleEntry; name: string; description: string },
+  crumbs: readonly LdCrumb[] = [],
+): JsonLdNode {
+  return graph(aboutPage(page, ld), organization(ld), breadcrumbList(crumbs, ld));
 }

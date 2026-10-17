@@ -54,6 +54,9 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
   document.
 - Per-locale error pages live at `/{locale}/404/` and `/{locale}/410/`. Hosts serve them through
   error rules and keep the pages themselves internal.
+- Next.js treats a route ending in `sitemap.xml` (below the root too), `robots.txt` or `icon.*` as a
+  metadata route; a dynamic one is prerendered with a placeholder param and fails. Name such files
+  otherwise (the per-locale sitemaps are `sitemap-pages.xml`).
 - In `next dev`, an address outside `generateStaticParams` (an unknown or unbuilt locale) logs
   "missing param … required with output: export" and answers 404. That is expected.
 - `next.config.ts` regenerates `src/config/generated/`, so starting `next dev` or `next build`
@@ -183,6 +186,27 @@ Set up in step 2 (design doc §9.3, §11.8.3, §17.3). Later pages follow the sa
 - Plain `<img>` is intended: static export has no image optimizer, `media:import` makes the
   sizes and `@/modules/media` builds `srcset` (`@next/next/no-img-element` is off in `src/`).
 
+## Search engines and AI tools
+
+Set up in step 3b (design doc §9.3, §9.6, §9.7, §9.10).
+
+- Every page renders its structured data with `<JsonLd data={…} />` and a `*StructuredData`
+  function from `@/modules/seo`. A page with a breadcrumb passes the same items it shows
+  (`promptCrumbs`, `templateCrumbs` in `src/ui/prompt-detail/crumbs.ts`); a new page with a
+  breadcrumb adds its builder there. Lists, topics and collections use `collectionStructuredData`
+  with the items in the order the page shows them.
+- Sitemaps, `index.md`, `llms.txt` and `content:export` include a version only when
+  `isIndexable(locale, visibility)`: the locale is enabled and the version published. Preview
+  builds show drafts and preview-only locales; machine-readable outputs never do.
+- They list a kind of page only when it exists in this build: `pageSections()` reads the flags in
+  `src/ui/navigation/sections.ts`. A step that adds a list, collection, topic, about or license
+  page flips the flag there, and the sitemap and `llms.txt` pick the page up.
+- Markdown versions use the page's own labels (`detail` messages; the `geo` namespace holds the
+  few Markdown-only ones), rendered by `src/modules/geo/markdown.ts`. Tests compare them with the
+  HTML (`tests/e2e/seo.http.spec.ts`).
+- Response headers the HTML cannot carry (the Markdown `Content-Type` and `Link: rel="canonical"`)
+  are host configuration: the `nginx` and `cloudflare` emitters.
+
 ## Lists
 
 Set up in step 3a (design doc §9.4, §11.8.2).
@@ -246,4 +270,6 @@ the design document section they implement.
 | `content:validate`                  | a check in `scripts/lib/content/validate.ts`, or a module it calls  |
 | Root layout, navigation, shell      | owned by step 1c; changes go in their own PR                        |
 | Header sections                     | set `available: true` in `src/ui/navigation/sections.ts` with the page |
+| Sitemaps, `llms.txt`                | the same flags (`pageSections()`); new kinds of page go in `@/modules/seo/sitemaps` |
+| Structured data                     | a function in `@/modules/seo` (mapping in `structured-data.ts`), rendered with `<JsonLd>` |
 | Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |

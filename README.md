@@ -9,8 +9,9 @@ in place: the project scaffold, configuration and CI; the content model with its
 validation, template rendering, image import and a sample content set; and the design system
 (tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Step 2 adds the
 Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; step 3a adds the
-Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`. The home page is still a
-placeholder.
+Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`; step 3b adds structured data,
+sitemaps (`/prompt-seen/sitemap.xml`), `robots.txt`, Markdown versions of every published page (`…/index.md`)
+and `/prompt-seen/llms.txt`. The home page is still a placeholder.
 
 ## Quick start
 
@@ -35,6 +36,7 @@ Open <http://localhost:3000/prompt-seen/>. To work without the base path, start 
 | `npm run content:validate`                    | Checks configuration, UI messages and every content file; lists errors, publish errors and warnings        |
 | `npm run content:build`                       | Builds the content model and runs every emitter in `scripts/emitters/`                                     |
 | `npm run content:new -- prompt <slug>`        | Creates a draft entry with the next ID (also `template`, `collection`, `page`, `example`)                  |
+| `npm run content:export`                      | Published content as JSON into `export/`; `-- --format markdown` writes the `index.md` documents           |
 | `npm run media:import -- <image> --slug <s>`  | Stores an image and its display sizes in `public/media/` and writes `content/media/<id>.yaml`              |
 | `npm run typecheck` / `lint` / `format:check` | Static checks                                                                                              |
 | `npm test`                                    | Unit tests (Vitest)                                                                                        |
