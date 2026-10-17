@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_089
+contentHash: sha256:e1ba4357b839dedce4a58a748bbfb073409acab754b0cfc71a7c98cb3c637f7d
+mimeType: image/jpeg
+width: 900
+height: 1200
+original:
+  key: media/a_089/forest-ridges-original-e1ba4357b839.jpg
+variants:
+  thumbnail:
+    key: media/a_089/forest-ridges-thumbnail-3b1386cb8aac.webp
+    width: 360
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_089/forest-ridges-card-ad44c1de57ca.webp
+    width: 720
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_089/forest-ridges-detail-4796bac3f4a7.webp
+    width: 900
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_089/forest-ridges-og-e456fdb17993.jpg
+    width: 900
+    height: 473
+    mimeType: image/jpeg
+focalPoint:
+  x: 0
+  y: 0.621
+placeholder:
+  color: "#183828"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

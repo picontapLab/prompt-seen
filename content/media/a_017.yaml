@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_017
+contentHash: sha256:3fbfe84060ed71484dbc83e5813829350eb1c39b93cbed18d1f371b1d00f0df0
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_017/coral-bottle-launch-original-3fbfe84060ed.jpg
+variants:
+  thumbnail:
+    key: media/a_017/coral-bottle-launch-thumbnail-a276ff7df62a.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_017/coral-bottle-launch-card-48fe51fa7643.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_017/coral-bottle-launch-detail-ce8407b23820.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_017/coral-bottle-launch-og-018af0c0b6d9.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#F8E8D8"
+alt:
+  en: A single product on a pale plinth in front of a soft circular backdrop.
+  zh-Hans: 浅色台面上的单件产品，背后是柔和的圆形背景。
+  ja: 淡い台に置かれた一つの商品と、背後のやわらかな円形の背景。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

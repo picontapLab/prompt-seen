@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_040
+contentHash: sha256:f586b726b30fcafdf66c977f3cb0e321636de2e8eeefdba321df3a23555f521a
+mimeType: image/png
+width: 1200
+height: 1200
+original:
+  key: media/a_040/blue-tile-pattern-original-f586b726b30f.png
+variants:
+  thumbnail:
+    key: media/a_040/blue-tile-pattern-thumbnail-0172c775f8f0.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_040/blue-tile-pattern-card-d59a95d4c1aa.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_040/blue-tile-pattern-detail-8f5b50232aa5.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_040/blue-tile-pattern-og-40d0425e351d.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#B8D8E8"
+alt:
+  en: A grid of square tiles with quarter circles, triangles and half circles.
+  zh-Hans: 由四分之一圆、三角形和半圆构成的方形瓷砖网格。
+  ja: 四分円、三角形、半円を組み合わせた正方形タイルの格子。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

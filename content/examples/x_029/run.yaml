@@ -1,0 +1,22 @@
+# Example run x_029 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_029
+promptId: p_045
+template: null
+promptSha256: 917a582ecd39cdc61646614501b05ecb15551df8c67ad8412536d3a7337f18b1
+referenceAssetIds: []
+outputAssetIds:
+  - a_045
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-08-18
+parameters:
+  aspectRatio: 3:4
+  seed: 56355
+  quality: standard
+notes:
+  en: Without “thin”, the teal arc came out as a second heavy disc.
+  zh-Hans: 去掉“thin”后，青绿弧线变成了第二个厚重的圆盘。
+  ja: 「thin」を外すと、ティールの弧が二つ目の重い円になりました。

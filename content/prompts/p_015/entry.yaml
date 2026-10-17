@@ -1,0 +1,70 @@
+# Prompt p_015 (design doc §5.2). Part of the sample set (§17.6).
+id: p_015
+slug: bamboo-grove-scroll
+createdAt: 2026-07-21
+updatedAt: 2026-07-21
+promptSource:
+  type: template
+  templateId: t_002
+  version: v1
+  values:
+    subject: a bamboo grove
+    season: summer
+    brushwork: soft grey washes with crisp dark nodes
+    elements:
+      - five tall stalks
+      - drifting leaves
+    aspectRatio: 21:9
+categoryId: illustration
+styleIds:
+  - ink
+  - minimal
+useCaseIds:
+  - art-print
+  - wallpaper
+coverAssetId: a_015
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: none
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: five tall stalks
+    region:
+      x: 0.15
+      y: 0
+      w: 0.6
+      h: 1
+    note:
+      en: The count sets the rhythm across the scroll; five stays open.
+      zh-Hans: 数量决定长卷的节奏，五根恰好留有空隙。
+      ja: 本数が絵巻のリズムを決めます。五本なら余白が残ります。
+      ar: العدد يحدد إيقاع اللوحة؛ خمس سيقان تترك مساحة مفتوحة.
+  - phrase: drifting leaves
+    region:
+      x: 0.05
+      y: 0.03
+      w: 0.8
+      h: 0.75
+    note:
+      en: “Drifting” turns stiff leaf clusters into loose, overlapping sprays.
+      zh-Hans: “飘落”让僵硬的叶簇变成松散交叠的枝叶。
+      ja: 「舞う」の一語で、硬い葉の塊がゆるく重なる葉に変わります。
+      ar: كلمة “متطايرة” تحوّل عناقيد الأوراق الجامدة إلى أوراق متداخلة.
+  - phrase: a small red artist's seal
+    region:
+      x: 0.925
+      y: 0.09
+      w: 0.04
+      h: 0.085
+    note:
+      en: The only colour in the image; it marks where the eye ends.
+      zh-Hans: 画面里唯一的颜色，标出视线的终点。
+      ja: 画面で唯一の色が、視線の終わる場所を示します。
+      ar: اللون الوحيد في الصورة، ويحدد أين تنتهي العين.

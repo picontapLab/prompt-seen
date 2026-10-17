@@ -1,0 +1,29 @@
+# Example run x_005 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_005
+promptId: p_042
+template:
+  id: t_002
+  version: v1
+  sample: misty
+  values:
+    subject: misty mountain ridges
+    season: autumn
+    brushwork: loose wet washes
+    elements:
+      - five receding ridges
+      - a pale sun behind the far range
+    aspectRatio: 16:9
+promptSha256: 4ce776f3c561a8e3f67ec2ae6c7e42174edac96489bd70d5755b3ddf371451b9
+referenceAssetIds: []
+outputAssetIds:
+  - a_042
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-08-15
+parameters:
+  aspectRatio: 16:9
+  seed: 32598
+  quality: standard

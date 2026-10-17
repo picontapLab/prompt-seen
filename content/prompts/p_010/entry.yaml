@@ -1,0 +1,34 @@
+# Prompt p_010 (design doc §5.2). Part of the sample set (§17.6).
+id: p_010
+slug: ceramic-mug-poster
+createdAt: 2026-07-16
+updatedAt: 2026-07-16
+promptSource:
+  type: template
+  templateId: t_001
+  version: v1
+  values:
+    product: a speckled handmade ceramic mug
+    sellingPoints:
+      - glazed by hand
+      - keeps coffee warm
+    palette: warm neutral
+    aspectRatio: 4:5
+categoryId: product
+styleIds:
+  - flat-vector
+  - minimal
+useCaseIds:
+  - packaging
+coverAssetId: a_010
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: optional
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0

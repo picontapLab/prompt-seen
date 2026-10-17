@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_031
+contentHash: sha256:e53234e2b6b854e53028d47565580a8ff82517bdd282a0ec703a47c48c44c754
+mimeType: image/jpeg
+width: 800
+height: 1200
+original:
+  key: media/a_031/bare-winter-branch-original-e53234e2b6b8.jpg
+variants:
+  thumbnail:
+    key: media/a_031/bare-winter-branch-thumbnail-c0dc56e70cb1.webp
+    width: 320
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_031/bare-winter-branch-card-725b9ca08e82.webp
+    width: 640
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_031/bare-winter-branch-detail-3a3d63080ebd.webp
+    width: 800
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_031/bare-winter-branch-og-39920ff6f7b0.jpg
+    width: 800
+    height: 420
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 1
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: An ink branch rising from the lower left on warm paper, with a small red seal.
+  zh-Hans: 暖色纸面上从左下方伸出的墨色枝条，配一方小红印。
+  ja: 温かみのある紙に左下から伸びる墨の枝と、小さな赤い印。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

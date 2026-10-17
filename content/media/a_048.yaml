@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_048
+contentHash: sha256:4bf4ee6b9a96f0a133c2a2d4e45265832553982033127e34ff2df70b8c41c155
+mimeType: image/webp
+width: 1200
+height: 675
+original:
+  key: media/a_048/sage-cloister-original-4bf4ee6b9a96.webp
+variants:
+  thumbnail:
+    key: media/a_048/sage-cloister-thumbnail-9c80c4c95e3a.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_048/sage-cloister-card-d98b0ee1b085.webp
+    width: 960
+    height: 540
+    mimeType: image/webp
+  detail:
+    key: media/a_048/sage-cloister-detail-2749b13027e0.webp
+    width: 1200
+    height: 675
+    mimeType: image/webp
+  og:
+    key: media/a_048/sage-cloister-og-c4b9a649a7b3.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#285848"
+alt:
+  en: A row of tall rounded arches casting diagonal shadows.
+  zh-Hans: 一排高大的圆拱，投下斜向的阴影。
+  ja: 斜めの影を落とす、高い半円アーチの列。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

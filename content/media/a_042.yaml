@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_042
+contentHash: sha256:4f1a94b5f0b7075a1047157e612cc6b3cedb013816e89de3e0dfa322713edbcd
+mimeType: image/jpeg
+width: 800
+height: 450
+original:
+  key: media/a_042/misty-ridges-first-light-original-4f1a94b5f0b7.jpg
+variants:
+  thumbnail:
+    key: media/a_042/misty-ridges-first-light-thumbnail-387e08ae23ce.webp
+    width: 480
+    height: 270
+    mimeType: image/webp
+  card:
+    key: media/a_042/misty-ridges-first-light-card-ec5ceb6400b6.webp
+    width: 800
+    height: 450
+    mimeType: image/webp
+  detail:
+    key: media/a_042/misty-ridges-first-light-detail-8c1109e43883.webp
+    width: 800
+    height: 450
+    mimeType: image/webp
+  og:
+    key: media/a_042/misty-ridges-first-light-og-bea31cbaf56d.jpg
+    width: 800
+    height: 420
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.624
+  y: 0.375
+placeholder:
+  color: "#284848"
+alt:
+  en: Grey-blue ridges fading into mist, with a pale sun behind the far range.
+  zh-Hans: 灰蓝色山脊渐隐于雾中，远山后有一轮淡淡的太阳。
+  ja: 霧に溶けていく灰青色の稜線と、遠い山の向こうの淡い太陽。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

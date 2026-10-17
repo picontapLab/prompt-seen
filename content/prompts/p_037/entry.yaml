@@ -1,0 +1,36 @@
+# Prompt p_037 (design doc §5.2). Part of the sample set (§17.6).
+id: p_037
+slug: knit-sneaker-poster
+createdAt: 2026-08-12
+updatedAt: 2026-08-12
+promptSource:
+  type: template
+  templateId: t_001
+  version: v2
+  values:
+    product: a dark knit running sneaker
+    sellingPoints:
+      - recycled knit upper
+      - cushioned white sole
+    palette: soft grey
+    aspectRatio: 1:1
+    headline: Run lighter
+categoryId: product
+styleIds:
+  - flat-vector
+  - minimal
+useCaseIds:
+  - social-post
+  - packaging
+coverAssetId: a_037
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: optional
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0

@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
 > 文档版本：1.10  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.10 修订：2026-10-16）  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.10 修订：2026-10-16）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -12,6 +12,7 @@
 > 1.6 修订：第 17 章改为实施步骤与会话图（开工前提、各步骤范围与通过条件、共享文件约定、会话简报清单、样例内容与检查点）；`tokens-check` 与“未验证”徽标的引用统一到第 11.1.9 节；补入配套的《语言覆盖评估》文件。部署方案 A 与 B 仍待原型验证（第 17.1 节）。  
 > 1.7 修订：采用方案 B（静态导出、预生成详情页加 pushState 弹层），依据《子路径部署决策》第 7 节的原型验证结果；按该备忘第 6 节修改第 3–5、7–9、11、14–18、20、21 章的相关内容，并把原型发现的实现细节写入第 4.1、9.5、11.3.1、14.2、15.4.3、15.4.4 与 16.3 节。  
 > 1.8 修订：步骤 1a 的决定——工程位于仓库根目录，文档移入 `docs/`；预览与生产托管选用 Cloudflare Pages；代码 MIT、内容 CC BY 4.0；国际化消息库选用 next-intl；语言注册表增加 `preview` 字段与 `BUILD_MODE` 构建模式；补充第 4 章的实际目录、配置生成与输出注册机制，以及《工程约定》（第 4.1、8.2、15.4.2、17.1、17.3、20 章）。  
+> 1.9 修订：步骤 1b 的决定——内容文件格式与维护说明 `content/README.md`；专题页说明的位置及其发布条件（该语言至少 3 条可见 Prompt）；`redirects.yaml` 与已删除清单的格式；译文 `sourceHash` 的计算方式；受限 MDX 组件（`Figure`、`Callout`）与按 ID 书写的站内链接；图片 `credit.copyrightNotice`、展示规格格式与本地媒体驱动的存放位置；`.generated/content/` 的内容模型与读取模块；样例内容的性质（第 4、4.1、5.2–5.5、6.2、8.4、9.1、9.5、10.2、14.1、14.3、17.3、17.6 章）。  
 > 1.10 修订：步骤 1c 的决定——token 以 `src/styles/tokens/` 中的 CSS 文件为唯一来源，`design/tokens/` 移除；`tokens-check` 的 44 组组合逐项列出，并增加补充组合；字体子集、按文字的 `unicode-range` 与中日韩引号处理；主题首绘脚本、根元素属性与 `theme-color` 的所有权；页眉主题按钮与页脚、菜单中的三选一；语言选择显示母语名称；外壳与区块注册表；交互专用代码按需加载、`src/ui/` 按文件导入（第 4、4.1、11.1.2、11.1.3、11.1.9、11.6.3、15.5.2、17.3 章）。版本号跳过 1.9：1.9 是并行进行的步骤 1b 的修订，两者合并时保留各自条目。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
@@ -258,13 +259,15 @@ prompt-library/
 │   │   ├── categories.yaml
 │   │   ├── styles.yaml
 │   │   ├── use-cases.yaml
-│   │   └── field-groups.yaml
+│   │   ├── field-groups.yaml
+│   │   └── categories/{id}/locales/*.mdx   # 专题页说明；styles/、use-cases/ 同理
 │   ├── pages/
 │   │   ├── about/locales/*.mdx
 │   │   └── license/locales/*.mdx
 │   ├── locales.yaml
 │   ├── redirects.yaml
 │   ├── site.yaml
+│   ├── README.md                 # 内容格式与维护命令
 │   └── LICENSE
 ├── src/
 │   ├── app/
@@ -343,6 +346,9 @@ prompt-library/
 │   ├── content-validate.ts
 │   ├── content-build.ts
 │   ├── emitters/
+│   ├── lib/content/              # 读取、校验、MDX 编译与内容模型
+│   ├── lib/media/                # 图片处理与存储驱动
+│   ├── dev.ts
 │   ├── package.ts
 │   ├── deploy-cloudflare.ts
 │   ├── media-import.ts
@@ -358,6 +364,7 @@ prompt-library/
 │   └── generated/
 ├── tests/e2e/
 ├── public/generated/
+├── public/media/                 # 本地媒体驱动的存储，提交到仓库
 ├── .generated/
 ├── dist/
 ├── .storybook/
@@ -384,6 +391,9 @@ prompt-library/
 - `src/styles/tokens/` 是视觉与动效 token 的唯一来源，生成 CSS 自定义属性；`scripts/tokens-check.ts` 在 CI 中校验第 11.1.9 节列出的颜色组合对比度。
 - 实施细节（1.10）：token 直接写成 CSS 文件——`color.css`（功能层与品牌层颜色，浅色、跟随系统的深色、用户选择的深色三块，以及 `prefers-contrast: more`）、`type.css`（字号、字重、按 `lang` 切换的字体栈与行高）、`layout.css`（间距、断点相关值、容器宽度、圆角、层级、焦点环、触控目标）、`motion.css`（动效 token 与减少动效）。全局样式按 `@layer reset, tokens, base, components, utilities` 排序，组件样式为 CSS Modules 并放在 `components` 层。代码需要的少量数值（动效、断点、`theme-color`）有 TypeScript 镜像，单元测试保证与 CSS 一致；`src/` 中媒体查询与容器查询只允许第 11.1.3 节的断点。字体在 `src/styles/fonts/`（第 11.1.2 节）。`.storybook/` 展示各组件状态，工具栏切换浅色、深色、并排两种主题、语言与方向、减少动效。
 - `.generated/` 保存构建阶段需要的完整索引、MDX 导入映射和反向关联，不直接对外公开。
+- `.generated/content/` 是内容模型：`manifest.json`（构建、语言、重定向与 410 清单）、`{locale}/index.json`（该语言可见内容的摘要）与 `{locale}/{kind}/{key}.json`（详情模型）。类型定义在 `src/modules/content/types.ts`，页面通过服务端模块 `@/modules/content` 读取；构建期代码（读取 `content/`、MDX 编译、校验）位于 `scripts/lib/content/`。
+- `public/media/` 是本地媒体驱动的存储，随仓库提交，使全新克隆无需云端凭据即可显示全部图片（第 10.1、15.5.3 节）；文件只由 `media:import` 写入。
+- `content/README.md` 是维护者的内容格式与命令说明，随 Schema 更新（第 14.1 节）。
 - `public/generated/` 只保存明确允许公开的精简搜索索引与导出资产。
 - 生成目录不手工修改，加入 `.gitignore`，在本地开发和 CI 中重新生成。
 - `next.config.ts` 设置 `output: 'export'`、`trailingSlash: true` 与来自 `src/config/` 的 `basePath`。
@@ -477,9 +487,12 @@ annotations:
 - 首页展出与特写行的编排在 `content/site.yaml` 中按资源 ID 配置，只能选择带标注的条目。
 
 - 上述模型名称为空是合法状态，不因仓库主题推断图片使用了某个模型。
+- `model.verification` 取 `verified`、`unverified` 或 `unknown`；标为 `verified` 时必须写明 `displayName`。
+- 标注短语不得互相重叠，最多 5 个，按在提示词中出现的顺序自动编为 A–E。
+- 源语言不另设字段：没有 `translation` 块的语言文件就是源文件，每个条目恰好一个。
 - 图片生成参数如果已确认，应在具体 `ExampleRun` 中记录。
 - 普通 Prompt 使用 `literal`，正文只从 `prompt.txt` 读取。
-- 由模板生成的 Prompt 可使用 `promptSource.type: template`，保存模板 ID、固定版本和参数。此时不再维护另一份可编辑 Prompt 正文。
+- 由模板生成的 Prompt 可使用 `promptSource.type: template`，保存模板 ID、固定版本和参数。此时不再维护另一份可编辑 Prompt 正文，条目目录中没有 `prompt.txt`。
 - 浏览器列表只获得标题、封面、分类、简述和地址等必要字段，完整正文按详情路由加载。
 
 ### 5.3 本地化说明示例
@@ -510,6 +523,8 @@ translation:
 `locales/en.mdx`、`locales/es.mdx` 等采用相同字段结构，各语言正文独立编辑。内容语言状态为 `draft`、`published` 或 `archived`。源语言可以是英语或简体中文；翻译文件记录来源和审核状态，源语言文件不需要声明自己是翻译。修改源语言时通过哈希识别待更新译文。
 
 说明正文在构建时编译为可序列化的详情模型（受限组件集输出的 HTML 或 AST），完整详情页与弹层使用同一份结果，浏览器不编译 MDX，见第 3.5 节。
+
+实施细节（1.9）：可序列化形式为受限节点树 `RichBlock`（`src/modules/content/types.ts`）。正文允许 Markdown（`##`–`####` 标题、列表、引用、代码、表格、强调与链接）以及两个组件 `<Figure asset="a_012" caption="…" />` 与 `<Callout>`；原始 HTML、import/export、`{表达式}` 与其他组件是构建错误，并指出行号。站内链接按 ID 书写，如 `prompt:p_001`、`template:t_001`、`collection:c_001`、`page:about`、`category:landscape`，构建时解析为同一语言的地址，不受 slug 变更与基础路径影响；链接到该语言未发布的条目时，发布错误。`sourceHash` 为 `sha256:` 加标题、描述与正文 SHA-256 的前 16 位十六进制；源文件变化时 `content:validate` 打印新值，审核后写入。合集的语言文件用 `reasons` 按条目 ID 写推荐理由（第 11.8.5 节）。
 
 SEO 标题、描述、图片说明默认使用该语言的正文信息；只有确有需要时，才额外设置 `seoTitle`、`seoDescription` 等覆盖字段。
 
@@ -565,6 +580,8 @@ provenance:
 
 资源清单保存对象键，资源模块根据环境中的 CDN 域名生成地址。图片域名不需要在每条内容中重复维护。
 
+实施细节（1.9）：`credit` 增加 `copyrightNotice`（第 9.7 节的 Copyright Notice）；可选的 `caption` 按 locale 提供图注。对象键形如 `media/a_001/{slug}-{规格}-{哈希前 12 位}.{扩展名}`，哈希取自该规格文件本身，因此修改焦点或署名后重新生成的规格得到新键，不覆盖已发布地址（第 10.4 节）。
+
 - 对象键中的可读词在导入时由当时的 slug 生成，之后 slug 变更不重命名已发布对象，避免破坏缓存与外部引用。
 - `focalPoint` 只用于站外分享图（`og` 规格）的裁切。站内所有展示位置（首页展出、列表、特写行、详情、相关推荐）都按原始比例完整显示，见第 11.12 节。
 - `placeholder.color` 是导入时提取的主色，用作卡片加载前的底色，见第 11.9 节。
@@ -585,6 +602,8 @@ provenance:
 - 人工观察，例如文字是否准确、主体是否保持一致。
 
 示例目录中的 `prompt.txt` 是不可随模板更新而改变的历史快照。它用于说明图片生成条件，不作为当前 Prompt 的第二份编辑源。
+
+实施细节（1.9）：`run.yaml` 的字段为 `promptId`、`template`（`id`、`version`、`sample`、`values`）、`promptSha256`、`referenceAssetIds`、`outputAssetIds`、`provider`、`model`、`recordedAt`、`parameters` 与按 locale 的 `notes`，`promptId` 与 `template` 至少有一个。构建校验 `prompt.txt` 的哈希；带模板的记录要求该版本以记录的参数重新渲染后与 `prompt.txt` 完全一致，所用样本也不得改变，以此落实第 6.4 节“已用于公开生成示例的版本保持固定”。最近一次记录的日期即“最后测试于”。
 
 ## 6. 模板系统
 
@@ -670,6 +689,8 @@ Keep the product silhouette clear and the visual hierarchy readable.
 ```
 
 样本参数存放于 `samples/default.yaml`，用于默认展示和渲染测试；同目录下的其他样本供编辑器“换个示例”按固定顺序循环。
+
+实施细节（1.9）：字段类型为 `string`（`default`、`minLength`、`maxLength`、`multiline`）、`string-list`（`default`、`minItems`、`maxItems`、`itemMaxLength`、`separator`）与 `enum`（`default`，`options` 含 `value`、`labels` 与可选 `swatch`）；`help` 可选。长度按用户可见字符（字素簇）计算。正文中的每个占位符都要有字段定义，每个字段都要在正文中使用，每个样本都必须能完整渲染，否则构建失败并指出位置。
 
 `group`、`help` 与 `swatch` 只影响编辑器呈现（分组、帮助文字与色块），不参与 Prompt 渲染，修改它们不需要创建新的模板版本。`group` 的取值与各语言名称在 `content/taxonomy/field-groups.yaml` 中维护。
 
@@ -808,6 +829,8 @@ Prompt 默认保留已验证的原始语言，网站覆盖 13 个 locale 并不�
 
 未经审核的机器翻译不发布，避免批量生成低价值页面。
 
+实施规则（1.9）：标为 `published` 的 `machine-draft` 译文是发布错误。源文件变化后，已审核的译文显示为 `outdated` 并给出警告，但保持发布（第 8.5 节）。预览构建（`BUILD_MODE=preview`）同时显示草稿与 `preview: true` 的语言，供维护者检查；生产构建只显示满足全部条件的版本。`archived` 的版本在两种构建中都不显示，其地址列入 410 清单（第 9.5 节）。
+
 仅翻译导航、或用英文说明填充其他语言路径，不生成该语言的资源详情页。缺失译文时提示可用语言，让用户明确跳转到原语言地址；不在目标语言路径静默输出 fallback 正文。
 
 每条内容的 hreflang 只包含实际发布的版本，并保持双向关联；不同语言页面使用自引用 canonical。缺少翻译不会阻止已有合法版本发布，也不会为缺失语言制造空页面。
@@ -867,6 +890,8 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 
 分类词汇不自动等同于可收录专题。只有配置完整说明、相关案例和发布状态的分类、风格或用途，才生成独立 SEO 页面。三类专题共用同一页面模板与发布规则；未达到发布条件的分类只作为列表筛选项存在。分类专题通常对应搜索量最大的类别词，如“Logo Prompt”“动漫风格 Prompt”，应优先编辑。
 
+发布条件（1.9）：专题页说明放在 `content/taxonomy/{categories|styles|use-cases}/{id}/locales/{locale}.mdx`；某语言的专题页在该说明已发布、且该语言至少有 3 条可见 Prompt 使用该词时生成。人工合集在某语言已发布、且至少 2 个条目在该语言可见时生成。
+
 ### 9.2 Prompt 详情结构
 
 采用“先给答案，再给细节”的顺序，使用户与 AI 摘录都能在开头获得完整信息：
@@ -912,6 +937,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 ### 9.5 地址变更与归档
 
 - 修改 slug 时，维护 `redirects.yaml`，旧地址永久重定向到新地址。
+- `redirects.yaml` 的格式（1.9）：`redirects` 中按 ID 写条目重定向 `{ kind: prompt, from: 旧 slug, to: p_005 }`，用于 slug 变更与合并，在该条目可见的每种语言中生效；或写固定内部路径 `{ from: /zh/, to: /zh-hans/ }`。`gone` 写 `{ kind, slug, reason: removed | license }`。重定向不得指向不存在的条目，也不得遮住现有 slug。构建把它们解析为每种语言的内部地址，写入 `.generated/content/manifest.json`，由步骤 3e 生成宿主配置；`archived` 的语言版本自动加入 410 清单。
 - 合并重复条目时重定向到对应替代内容。
 - 无替代内容的删除列入已删除清单，返回 410；宿主不支持 410 时退化为 404（Google 对二者的处理相同），不返回空的 200 页面。
 - 不存在的语言、条目和模板版本应显示清晰错误，而非跳回首页。
@@ -1059,6 +1085,8 @@ flowchart LR
 | original | 原始尺寸，不重新编码 | 原图查看或允许的下载 |
 
 上述尺寸是初始配置。保持原始比例，不放大低分辨率来源；按实际设备和质量测试调整。根据需要生成 WebP、AVIF 和兼容回退格式，通过 `srcset` 与 `sizes` 选择适合的规格。
+
+实施细节（1.9）：`thumbnail`、`card`、`detail` 输出 WebP，`og` 输出 JPEG，均不放大；`og` 是按焦点裁切的 1200:630 区域，原图不足时按裁切区域的实际尺寸输出。导入接受 JPEG、PNG、WebP 与 AVIF，拒绝动图与过小图片。工具同时给出主色与建议焦点（libvips 的 attention 策略），维护者可在 YAML 中修改后用 `media:import --refresh` 重新生成。
 
 ### 10.3 页面加载规则
 
@@ -2067,6 +2095,8 @@ Prompt 纸张的细节：
 
 新资源使用脚手架创建，ID 自动生成且不得重复。字段示例和 README 跟随 Schema 更新。
 
+实施细节（1.9）：`content:new` 生成的草稿本身通过校验，不阻塞其他内容；`npm run dev` 以 `content:build --watch` 随内容变化重建，失败时保留上一次的结果；`media:import --refresh <id>` 在修改焦点或署名后重新生成规格。格式与命令说明见 `content/README.md`。
+
 ### 14.2 构建阶段
 
 1. 读取内容文件并统一换行处理。
@@ -2093,6 +2123,8 @@ Prompt 纸张的细节：
 | 信息 | 图片可压缩、存在未使用草稿资源 | 输出维护报告 |
 
 合法草稿不因未填完发布字段而阻止其他内容发布，但草稿自身仍应满足基本格式规则。
+
+`content:validate` 与 `content:build` 在出现构建错误或发布错误时失败；警告与信息不阻塞。发布错误的例子还包括：已发布但为机器译文、缺少该语言的封面图片说明、标注说明或字段标签。同一根因只报告一次，例如分类文件无法解析时，不再逐条报告引用它的条目。
 
 ### 14.4 生成数据规则
 
@@ -2428,6 +2460,7 @@ feed:
 
 - 范围：第 5 章全部模型，以及分类、语言注册表、重定向与站点配置的 Zod Schema；`content:new`、`content:validate`（第 14.3 节的分级）与 `content:build` 主流程（第 14.2 节步骤 1–7）；发布判断与过期译文报告（第 8.4、8.5 节）；标注短语逐字校验与极端比例标记（第 5.2、11.1.4 节）；MDX 在构建时编译为可序列化的详情模型，供整页与弹层共用（第 3.5 节）；模板渲染纯函数与版本规则（第 6.3、6.4 节）；`media:import` 与本地文件存储驱动，生成展示规格、主色与建议焦点，写入 IPTC 字段（第 9.7、10.1、10.2 节）；第 17.6 节的样例内容。
 - 通过条件：修改内容文件后重新生成索引；模板渲染的单元测试覆盖第 16.3 节所列规则；错误报告包含文件路径、字段与修复方向；样例内容全部通过校验，图片引用有效；生产模式排除草稿。
+- 结果（2026-10-16）：内容 Schema、读取、校验与内容模型位于 `scripts/lib/content/`，页面读取模块为 `@/modules/content`，模板渲染纯函数为 `@/modules/template`，图片地址为 `@/modules/media`；`content:new`、`media:import`（含 `--refresh`）、`content:validate` 与 `content:build`（含 `--watch`）可用。内容格式见 `content/README.md`，实施细节写入第 5、6、8.4、9.1、9.5、10.2、14 章（1.9 版）。样例内容通过校验：100 条 Prompt、3 套模板（`t_001` 有两个版本）、44 条生成记录、101 张图片、2 个合集、4 个专题说明与关于、许可页；生产构建中英语 96 条、简体中文 80 条，预览构建另含日语与阿拉伯语草稿。根路径与 `/prompt-seen` 两种构建的端到端测试通过，并新增图片服务的检查。
 
 **1c 设计系统与页面外壳**
 
@@ -2536,6 +2569,8 @@ feed:
 | 语言 | en、zh-Hans、ja 与阿拉伯语草稿；包含缺少译文、`machine-draft`、`outdated`、`draft` 与 `archived` 状态 |
 | 地址变更 | slug 变更的重定向、合并后的重定向，以及无替代内容的删除 |
 | 分类与专题 | 一个达到发布条件的分类专题、一个未达到的分类，以及 2 个合集 |
+
+实施说明（1.9）：样例图片由程序绘制（扁平矢量，IPTC 来源类型 `algorithmicMedia`），不是模型输出；“Sample Renderer 1”是占位模型名。样例的简体中文与日语译文与英文同时写成，为测试发布路径标为 `reviewed`，并未经过人工审核；阿拉伯语为 `machine-draft` 草稿，只在预览构建中出现。关于页与 `content/README.md` 说明了这一点。真实内容到位后逐步替换。
 
 内容线由维护者负责，与代码会话同时进行，不阻塞代码会话：
 

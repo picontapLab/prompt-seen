@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_079
+contentHash: sha256:1483d68219f50a9f3e1798e574ca823bb0bfdb4f5ac353cc28d8678bb964310f
+mimeType: image/jpeg
+width: 675
+height: 1200
+original:
+  key: media/a_079/dusk-ridges-phone-original-1483d68219f5.jpg
+variants:
+  thumbnail:
+    key: media/a_079/dusk-ridges-phone-thumbnail-ff3bb7cd833b.webp
+    width: 270
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_079/dusk-ridges-phone-card-99e5f1176605.webp
+    width: 540
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_079/dusk-ridges-phone-detail-09373811a18f.webp
+    width: 675
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_079/dusk-ridges-phone-og-a97da5fb6278.jpg
+    width: 675
+    height: 354
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.531
+  y: 0.248
+placeholder:
+  color: "#383858"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

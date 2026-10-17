@@ -1,0 +1,61 @@
+# Prompt p_067 (design doc §5.2). Part of the sample set (§17.6).
+id: p_067
+slug: ramen-from-above
+createdAt: 2026-09-11
+updatedAt: 2026-09-11
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: food
+styleIds:
+  - flat-vector
+useCaseIds:
+  - social-post
+  - editorial
+coverAssetId: a_067
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: none
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: two slices of chashu pork
+    region:
+      x: 0.3
+      y: 0.34
+      w: 0.24
+      h: 0.12
+    note:
+      en: A count keeps toppings from multiplying across the bowl.
+      zh-Hans: 写明数量，配料就不会铺满整碗。
+      ja: 数を書くと、具材が器いっぱいに増えません。
+      ar: تحديد العدد يمنع تكاثر الإضافات في الوعاء.
+  - phrase: a soft-boiled egg with an orange yolk
+    region:
+      x: 0.55
+      y: 0.39
+      w: 0.18
+      h: 0.12
+    note:
+      en: Naming the yolk colour makes the egg the brightest point in the bowl.
+      zh-Hans: 写出蛋黄的颜色，溏心蛋就成了碗里最亮的地方。
+      ja: 黄身の色を書くと、卵が器の中で最も明るい点になります。
+      ar: ذكر لون الصفار يجعل البيضة أكثر نقطة سطوعًا.
+  - phrase: wooden chopsticks resting at the top right
+    region:
+      x: 0.7
+      y: 0.1
+      w: 0.3
+      h: 0.31
+    note:
+      en: A placed prop leads the eye into the bowl instead of crossing it.
+      zh-Hans: 放好位置的道具把视线引入碗中，而不是横穿画面。
+      ja: 位置を決めた小道具が、視線を器へ導きます。
+      ar: أداة في مكان محدد تقود العين إلى الوعاء بدل أن تقطعه.

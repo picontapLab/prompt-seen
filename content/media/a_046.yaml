@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_046
+contentHash: sha256:d0ce6f715a6806b2171f8051fdd3a4872042e4f54825e46c714a412e914fc94e
+mimeType: image/jpeg
+width: 1200
+height: 800
+original:
+  key: media/a_046/moonlit-ranges-original-d0ce6f715a68.jpg
+variants:
+  thumbnail:
+    key: media/a_046/moonlit-ranges-thumbnail-f192142cc4c1.webp
+    width: 480
+    height: 320
+    mimeType: image/webp
+  card:
+    key: media/a_046/moonlit-ranges-card-6e4fe11d3532.webp
+    width: 960
+    height: 640
+    mimeType: image/webp
+  detail:
+    key: media/a_046/moonlit-ranges-detail-d5c53fd9976e.webp
+    width: 1200
+    height: 800
+    mimeType: image/webp
+  og:
+    key: media/a_046/moonlit-ranges-og-927a0aa65978.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.5
+placeholder:
+  color: "#181838"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

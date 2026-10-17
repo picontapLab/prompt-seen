@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_028
+contentHash: sha256:bd75826eab228e69b920a40219d005a303dd15d5f8a67916ef9e8129713feb87
+mimeType: image/jpeg
+width: 640
+height: 640
+original:
+  key: media/a_028/monstera-leaves-original-bd75826eab22.jpg
+variants:
+  thumbnail:
+    key: media/a_028/monstera-leaves-thumbnail-842acb3bc746.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_028/monstera-leaves-card-a8eb1297a134.webp
+    width: 640
+    height: 640
+    mimeType: image/webp
+  detail:
+    key: media/a_028/monstera-leaves-detail-2d4abd10ae91.webp
+    width: 640
+    height: 640
+    mimeType: image/webp
+  og:
+    key: media/a_028/monstera-leaves-og-2002431c7232.jpg
+    width: 640
+    height: 336
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: Overlapping green leaves with pale veins and small holes, entering from the top left.
+  zh-Hans: 从左上角伸入的交叠绿叶，叶脉浅色，叶面有小孔。
+  ja: 左上から差し込む、淡い葉脈と小さな穴のある重なった緑の葉。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

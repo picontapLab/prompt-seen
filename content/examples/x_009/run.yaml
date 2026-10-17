@@ -1,0 +1,29 @@
+# Example run x_009 (design doc §5.5). prompt.txt is the exact text sent; it never changes.
+# Sample set: "Sample Renderer 1" is a placeholder and the images are procedural drawings.
+id: x_009
+promptId: null
+template:
+  id: t_001
+  version: v2
+  sample: default
+  values:
+    product: a speckled handmade ceramic mug
+    sellingPoints:
+      - glazed by hand
+      - keeps coffee warm
+    palette: warm neutral
+    aspectRatio: 4:5
+    headline: Made slowly
+promptSha256: 3b706e2d05cc6b55d29e479dc143b3276de63702e918415dd6a81fb6297bd2e3
+referenceAssetIds: []
+outputAssetIds:
+  - a_101
+provider: Prompt Seen sample set
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+recordedAt: 2026-09-01
+parameters:
+  aspectRatio: 4:5
+  seed: 99819
+  quality: standard

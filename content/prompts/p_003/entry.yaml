@@ -1,0 +1,28 @@
+# Prompt p_003 (design doc §5.2). Part of the sample set (§17.6).
+id: p_003
+slug: tea-can-on-sage
+createdAt: 2026-07-09
+updatedAt: 2026-07-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds:
+  - flat-vector
+  - minimal
+useCaseIds:
+  - packaging
+coverAssetId: a_003
+relatedTemplateIds:
+  - t_001
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: optional
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0

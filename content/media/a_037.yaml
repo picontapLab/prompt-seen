@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_037
+contentHash: sha256:0ca6852f0c90184cf32fbb50226df8bce090fab9a37b12a0e5de7b98c6856ff9
+mimeType: image/jpeg
+width: 640
+height: 640
+original:
+  key: media/a_037/knit-sneaker-poster-original-0ca6852f0c90.jpg
+variants:
+  thumbnail:
+    key: media/a_037/knit-sneaker-poster-thumbnail-e4cd7839cd90.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_037/knit-sneaker-poster-card-8f3555abc57c.webp
+    width: 640
+    height: 640
+    mimeType: image/webp
+  detail:
+    key: media/a_037/knit-sneaker-poster-detail-249dc64a4ca6.webp
+    width: 640
+    height: 640
+    mimeType: image/webp
+  og:
+    key: media/a_037/knit-sneaker-poster-og-d49a92ed9349.jpg
+    width: 640
+    height: 336
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#E8E8E8"
+alt:
+  en: A dark knit sneaker on a white sole in front of a circular backdrop, with headline bars above.
+  zh-Hans: 圆形背景前的深色针织运动鞋和白色鞋底，上方有标题条。
+  ja: 円形の背景の前の、白いソールの濃い色のニットスニーカーと上部の見出し帯。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

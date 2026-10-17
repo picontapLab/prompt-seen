@@ -1,0 +1,48 @@
+# Prompt p_098 (design doc §5.2). Part of the sample set (§17.6).
+id: p_098
+slug: lavender-twilight-hills
+createdAt: 2026-10-12
+updatedAt: 2026-10-12
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: landscape
+styleIds:
+  - gradient
+  - minimal
+useCaseIds:
+  - wallpaper
+coverAssetId: a_098
+relatedTemplateIds: []
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: none
+source:
+  author: null
+  url: null
+  license: null
+annotations:
+  - phrase: a pale moon high on the right
+    region:
+      x: 0.761
+      y: 0.13
+      w: 0.079
+      h: 0.14
+    note:
+      en: Placing the moon high keeps it clear of the ridges.
+      zh-Hans: 把月亮放高，它就不会被山脊遮住。
+      ja: 月を高く置くと、稜線に隠れません。
+  - phrase: the darkest ridge in the foreground
+    region:
+      x: 0
+      y: 0.636
+      w: 1
+      h: 0.364
+    note:
+      en: Ordering values from dark to light builds depth without perspective.
+      zh-Hans: 由深到浅排列明度，不用透视也能产生纵深。
+      ja: 手前から奥へ暗から明へと並べると、遠近法なしで奥行きが出ます。

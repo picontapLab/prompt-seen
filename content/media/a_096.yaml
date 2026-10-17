@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_096
+contentHash: sha256:f3153b4383c9fe9286feb5d2b8e905d984be12a811998da942b0aff263ce5f4b
+mimeType: image/webp
+width: 800
+height: 1200
+original:
+  key: media/a_096/sunset-profile-original-f3153b4383c9.webp
+variants:
+  thumbnail:
+    key: media/a_096/sunset-profile-thumbnail-9aea9e26f230.webp
+    width: 320
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_096/sunset-profile-card-a318c633237f.webp
+    width: 640
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_096/sunset-profile-detail-e0221da5f201.webp
+    width: 800
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_096/sunset-profile-og-c6d7efaa9803.jpg
+    width: 800
+    height: 420
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.487
+placeholder:
+  color: "#282838"
+alt:
+  en: A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.
+  zh-Hans: 深色的半身剪影，两侧以两种轮廓光勾勒，背后是虚化的光点。
+  ja: ぼけた光を背景に、二色のリムライトで縁取られた暗い胸像のシルエット。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

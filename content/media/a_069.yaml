@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_069
+contentHash: sha256:32d016db9d930c4a29bb7021f076007c464a2e735ce535a08e3f9d17a5a10abc
+mimeType: image/webp
+width: 800
+height: 1200
+original:
+  key: media/a_069/lilac-bauhaus-poster-original-32d016db9d93.webp
+variants:
+  thumbnail:
+    key: media/a_069/lilac-bauhaus-poster-thumbnail-fc4ccc886e74.webp
+    width: 320
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_069/lilac-bauhaus-poster-card-f0c97263ff59.webp
+    width: 640
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_069/lilac-bauhaus-poster-detail-2c5a133f7bb4.webp
+    width: 800
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_069/lilac-bauhaus-poster-og-2b9f85981bc6.jpg
+    width: 800
+    height: 420
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 1
+placeholder:
+  color: "#E8E8F8"
+alt:
+  en: Geometric poster with a large disc, a half circle, a dot grid and solid bars.
+  zh-Hans: 几何海报：大圆盘、半圆、点阵和色条。
+  ja: 大きな円、半円、ドットの格子、帯で構成された幾何学ポスター。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

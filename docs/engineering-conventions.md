@@ -93,6 +93,37 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
 - `npm run build` packages `out/` into `dist/{basePath}/`, so file paths match public addresses,
   and fails if a built locale's pages or error pages are missing.
 
+## Content pipeline
+
+Content is files under `content/` (format and maintainer commands: [`content/README.md`](../content/README.md)).
+Build-time code lives in `scripts/lib/content/`; the app reads only what the build produces.
+
+- `content:build` runs: read (`read.ts`: files, line endings, schemas) → validate (`validate.ts`:
+  references, templates, media files, redirects, publishing rules) → index (`build-index.ts`: what
+  this build shows) → emitters. Blocking findings stop it before any output is replaced.
+- The model is defined in `src/modules/content/types.ts`: per-locale summaries for lists and links,
+  and serializable detail models that the full page and the popup render alike. Rich text is a
+  `RichBlock[]` tree compiled from MDX at build time; the browser never compiles MDX.
+- Emitters read `ctx.content` (`manifest`, `locales`, `details`), never content files. The
+  `content` emitter writes the model to `.generated/content/`.
+- Pages read it through `@/modules/content` (server-only): `findBySlug`, `getDetailModel`,
+  `listEntries`, `entryParams(kind)` for `generateStaticParams`. Locale arguments are registry
+  codes (`zh-Hans`), not URL prefixes. Pass plain data to client components.
+- Links in rich text with `internal: true` hold internal paths (`next/link`, or `withBasePath` for
+  a plain `<a>`). Images go through `@/modules/media` (`getImage`, `srcSet`).
+- Template rendering is the pure `@/modules/template` (`renderTemplate`), shared by the build,
+  the template page and the editor, so the default prompt, preview, copy and download agree.
+- Production builds show a locale version only when the locale is enabled and the version meets
+  every publishing rule; preview builds also show drafts and `preview: true` locales.
+- Findings have four levels: `error` and `publish` block, `warning` and `info` do not (§14.3).
+  A new content check goes in `validate.ts` (or a module it calls) and names the file, the line
+  when known, the field and the fix.
+- Images are stored by the local media driver in `public/media/` and committed, so a fresh clone
+  runs without cloud credentials. `media:import` writes them; keys contain a content hash and
+  are never overwritten.
+- `npm run dev` rebuilds content on every change under `content/` (`content:build --watch`); a
+  failed rebuild keeps the previous output.
+
 ## Design system and shell
 
 Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
@@ -165,11 +196,11 @@ the design document section they implement.
 
 | Shared place                        | Extend by                                                           |
 | ----------------------------------- | ------------------------------------------------------------------- |
-| `scripts/content-build.ts`          | adding an emitter file in `scripts/emitters/`                       |
+| `scripts/content-build.ts`          | adding an emitter file in `scripts/emitters/` that reads `ctx.content` |
 | UI messages                         | adding a namespace file per locale in `src/i18n/messages/`          |
 | `site.yaml` schema, `src/config/`   | a small PR that adds or tightens a key, merged first                |
 | `@/modules/url`                     | a new function in `paths`                                           |
-| `content:validate`                  | step 1b adds content checks; later steps add checks next to theirs  |
+| `content:validate`                  | a check in `scripts/lib/content/validate.ts`, or a module it calls  |
 | Root layout, navigation, shell      | owned by step 1c; changes go in their own PR                        |
 | Header sections                     | set `available: true` in `src/ui/navigation/sections.ts` with the page |
 | Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |

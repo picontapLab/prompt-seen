@@ -1,0 +1,53 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_015
+contentHash: sha256:59b9bef083617de5026507308f5155acf621f45ef92a82092bc3631f5d6eed01
+mimeType: image/jpeg
+width: 2100
+height: 900
+original:
+  key: media/a_015/bamboo-grove-scroll-original-59b9bef08361.jpg
+variants:
+  thumbnail:
+    key: media/a_015/bamboo-grove-scroll-thumbnail-fa2a6af84da5.webp
+    width: 480
+    height: 206
+    mimeType: image/webp
+  card:
+    key: media/a_015/bamboo-grove-scroll-card-71843874491a.webp
+    width: 960
+    height: 411
+    mimeType: image/webp
+  detail:
+    key: media/a_015/bamboo-grove-scroll-detail-b2d59a4d60a8.webp
+    width: 1600
+    height: 686
+    mimeType: image/webp
+  og:
+    key: media/a_015/bamboo-grove-scroll-og-2028e0f6cfc2.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.934
+  y: 0.375
+placeholder:
+  color: "#E8E8D8"
+alt:
+  en: Five grey bamboo stalks with drifting leaves on cream paper and a small red seal at the top right.
+  zh-Hans: 米色纸面上五根灰色竹竿与飘落的竹叶，右上角有一方小红印。
+  ja: クリーム色の紙に灰色の竹が五本と舞う葉、右上に小さな赤い印。
+  ar: خمس سيقان خيزران رمادية وأوراق متطايرة على ورق كريمي مع ختم أحمر صغير في الأعلى.
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

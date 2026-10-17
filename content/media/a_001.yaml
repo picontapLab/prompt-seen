@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_001
+contentHash: sha256:66ea40b6c7167039d4ccc6e2d5cca861d3c6fa4db27e610197b2d3c4a4cda108
+mimeType: image/jpeg
+width: 960
+height: 1200
+original:
+  key: media/a_001/layered-ridges-at-dusk-original-66ea40b6c716.jpg
+variants:
+  thumbnail:
+    key: media/a_001/layered-ridges-at-dusk-thumbnail-3f34e8de9a3b.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_001/layered-ridges-at-dusk-card-36370e95fecd.webp
+    width: 768
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_001/layered-ridges-at-dusk-detail-377a8753aa85.webp
+    width: 960
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_001/layered-ridges-at-dusk-og-766ff279cdaf.jpg
+    width: 960
+    height: 504
+    mimeType: image/jpeg
+focalPoint:
+  x: 1
+  y: 0.5
+placeholder:
+  color: "#383858"
+alt:
+  en: Layered mountain ridges in flat colour under a soft gradient sky.
+  zh-Hans: 柔和渐变天空下平涂的层叠山脊。
+  ja: やわらかなグラデーションの空の下、平塗りで重なる山並み。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

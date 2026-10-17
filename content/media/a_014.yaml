@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_014
+contentHash: sha256:c1e6af12220135e415a7d5c46d4a8591ee310bbe845892a7f4c0603fc3770b9b
+mimeType: image/jpeg
+width: 1200
+height: 800
+original:
+  key: media/a_014/grapefruit-and-lime-original-c1e6af122201.jpg
+variants:
+  thumbnail:
+    key: media/a_014/grapefruit-and-lime-thumbnail-0ce9caf09bb7.webp
+    width: 480
+    height: 320
+    mimeType: image/webp
+  card:
+    key: media/a_014/grapefruit-and-lime-card-e0809e336aa0.webp
+    width: 960
+    height: 640
+    mimeType: image/webp
+  detail:
+    key: media/a_014/grapefruit-and-lime-detail-c2806bfc90ab.webp
+    width: 1200
+    height: 800
+    mimeType: image/webp
+  og:
+    key: media/a_014/grapefruit-and-lime-og-a8f8306b5d6d.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.875
+  y: 1
+placeholder:
+  color: "#F8F8D8"
+alt:
+  en: Citrus slices scattered on a plain background, segments visible.
+  zh-Hans: 散落在素色背景上的柑橘切片，果瓣清晰。
+  ja: 無地の背景に散らばる、房の見える柑橘の輪切り。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

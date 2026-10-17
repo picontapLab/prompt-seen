@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_059
+contentHash: sha256:05c8b6410de68a4ad3b3c2fff9367c7e2af64a4e59f4e63b1be27af838096f46
+mimeType: image/jpeg
+width: 1200
+height: 1200
+original:
+  key: media/a_059/breakfast-fruit-bowl-original-05c8b6410de6.jpg
+variants:
+  thumbnail:
+    key: media/a_059/breakfast-fruit-bowl-thumbnail-4743a75b5c7d.webp
+    width: 480
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_059/breakfast-fruit-bowl-card-f414b33d7edd.webp
+    width: 960
+    height: 960
+    mimeType: image/webp
+  detail:
+    key: media/a_059/breakfast-fruit-bowl-detail-88fa3c8f11d5.webp
+    width: 1200
+    height: 1200
+    mimeType: image/webp
+  og:
+    key: media/a_059/breakfast-fruit-bowl-og-88aea7f76719.jpg
+    width: 1200
+    height: 630
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.5
+  y: 0.5
+placeholder:
+  color: "#F8F8D8"
+alt:
+  en: A bowl seen from above on a dark wooden table, with chopsticks at the top right.
+  zh-Hans: 深色木桌上俯视的一只碗，右上角放着筷子。
+  ja: 暗い木のテーブルを真上から見た器と、右上の箸。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent

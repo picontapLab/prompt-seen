@@ -1,0 +1,28 @@
+# Prompt p_100 (design doc §5.2). Part of the sample set (§17.6).
+id: p_100
+slug: monochrome-mug-launch
+createdAt: 2026-10-14
+updatedAt: 2026-10-14
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds:
+  - minimal
+useCaseIds:
+  - social-post
+  - packaging
+coverAssetId: a_100
+relatedTemplateIds:
+  - t_001
+model:
+  displayName: Sample Renderer 1
+  providerModelId: sample-renderer-1
+  verification: verified
+inputRequirements:
+  referenceImage: optional
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0

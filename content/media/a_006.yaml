@@ -1,0 +1,52 @@
+# Written by `npm run media:import` (design doc §5.4). Edit alt, caption, credit, focalPoint
+# and provenance freely; after changing focalPoint or credit, run
+# `npm run media:import -- --refresh <id>` to regenerate the variants. Keys are never edited by hand.
+id: a_006
+contentHash: sha256:404d73e239e5c9f33c434e10e561dd8601e5a3dacebb763e9dd91f291377ccb6
+mimeType: image/jpeg
+width: 576
+height: 720
+original:
+  key: media/a_006/desert-dunes-warm-light-original-404d73e239e5.jpg
+variants:
+  thumbnail:
+    key: media/a_006/desert-dunes-warm-light-thumbnail-59d370000267.webp
+    width: 384
+    height: 480
+    mimeType: image/webp
+  card:
+    key: media/a_006/desert-dunes-warm-light-card-68134ca48f5a.webp
+    width: 576
+    height: 720
+    mimeType: image/webp
+  detail:
+    key: media/a_006/desert-dunes-warm-light-detail-c652071da652.webp
+    width: 576
+    height: 720
+    mimeType: image/webp
+  og:
+    key: media/a_006/desert-dunes-warm-light-og-e4f48701720b.jpg
+    width: 576
+    height: 302
+    mimeType: image/jpeg
+focalPoint:
+  x: 0.969
+  y: 0.625
+placeholder:
+  color: "#F8D8B8"
+alt:
+  en: Five rolling dunes in bands of sand and rust under a cream sun.
+  zh-Hans: 奶白色太阳下，五层起伏的沙丘由沙色渐变到铁锈色。
+  ja: クリーム色の太陽の下、砂色から錆色へと重なる五つの砂丘。
+caption: {}
+credit:
+  creator: Prompt Seen sample set
+  creditText: Prompt Seen
+  copyrightNotice: Sample image for Prompt Seen, CC BY 4.0
+  sourceUrl: null
+  license: CC BY 4.0
+  licenseUrl: https://creativecommons.org/licenses/by/4.0/
+  acquireLicenseUrl: null
+provenance:
+  digitalSourceType: algorithmicMedia
+  contentCredentials: absent
