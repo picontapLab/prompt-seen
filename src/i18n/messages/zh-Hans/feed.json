@@ -1,0 +1,79 @@
+{
+  "title": "胶卷",
+  "intro": "我们测试过的每一条提示词，按最新排列，每条都印着它生成的那一格画面。指向作品可以看提示词的开头；打开它可以看完整提示词、测试记录，以及每句话起的作用。",
+  "introMore": "展开",
+  "introLess": "收起",
+  "count": "{count, plural, other {# 格}}",
+  "pageOf": "第 {page} 页，共 {pages} 页",
+  "documentTitle": "图像提示词",
+  "documentTitlePage": "图像提示词（第 {page} 页）",
+  "description": "经过实测的图像提示词，按最新排列：每条都附生成的图片、测试所用的模型与日期，以及各句短语作用的说明。",
+  "band": {
+    "label": "本周精选"
+  },
+  "card": {
+    "notVerified": "未验证"
+  },
+  "interlude": {
+    "feature": "特写：{title}",
+    "open": "打开这一格",
+    "templates": "模板 · 填空即可生成",
+    "fields": "{count, plural, other {# 个字段}}",
+    "collection": "专题 · {count, plural, other {# 件作品}}",
+    "openCollection": "查看专题"
+  },
+  "feed": {
+    "label": "提示词",
+    "skip": "跳过列表"
+  },
+  "status": {
+    "shown": "已显示第 {from}–{to} 格，共 {total} 格",
+    "developing": "正在显影第 {from}–{to} 格…",
+    "developingEarlier": "正在显影前面的画面…",
+    "loaded": "{count, plural, other {又加载了 # 格}}",
+    "failed": "第 {from}–{to} 格没有加载成功。",
+    "failedEarlier": "前面的画面没有加载成功。",
+    "retry": "重试",
+    "stale": "页面打开后，列表已更新。",
+    "reload": "重新加载",
+    "end": "胶卷到头了 · 已显示全部 {total} 格",
+    "pages": "列表分页",
+    "page": "页码",
+    "pageLink": "第 {page} 页"
+  },
+  "filters": {
+    "style": "风格",
+    "all": "全部",
+    "panel": "用途 · 画幅",
+    "panelCount": "用途 · 画幅（{count}）",
+    "panelTitle": "用途、画幅与参考图",
+    "use": "用途",
+    "shape": "画幅",
+    "shapes": {
+      "portrait": "竖幅",
+      "square": "方形",
+      "landscape": "横幅",
+      "panorama": "全景"
+    },
+    "ref": "参考图",
+    "refs": {
+      "none": "纯文字",
+      "required": "需要参考图"
+    },
+    "open": "筛选",
+    "openCount": "筛选（{count}）",
+    "show": "{count, plural, =0 {没有结果} other {显示 # 个结果}}",
+    "results": "{count, plural, =0 {没有结果} other {# 个结果}}",
+    "active": "当前筛选条件",
+    "clear": "清除筛选",
+    "noMatch": "在其他条件下没有结果",
+    "sort": "排序",
+    "latest": "最新",
+    "featured": "精选",
+    "empty": {
+      "title": "没有符合这些条件的提示词",
+      "body": "去掉一个条件，或清除全部条件查看所有提示词。"
+    },
+    "failed": "筛选没有生效，请重试。"
+  }
+}

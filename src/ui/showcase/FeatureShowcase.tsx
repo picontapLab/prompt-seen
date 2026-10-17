@@ -54,7 +54,12 @@ export function FeatureShowcase({
 
   return (
     <AnnotationProvider annotations={s.annotations} defaultCurrent={defaultAnnotation}>
-      <figure className={styles.showcase} data-size={size} data-entry={s.id}>
+      <figure
+        className={styles.showcase}
+        data-size={size}
+        data-entry={s.id}
+        style={{ '--w': s.cover.width, '--h': s.cover.height } as CSSProperties}
+      >
         <div className={styles.media} data-annotated={s.annotations.length > 0 || undefined}>
           <div className={styles.picture} style={frame}>
             <img
