@@ -8,8 +8,9 @@ Status: under construction. Steps 1a, 1b and 1c of the implementation plan (desi
 in place: the project scaffold, configuration and CI; the content model with its build pipeline,
 validation, template rendering, image import and a sample content set; and the design system
 (tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Step 2 adds the
-Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; the home
-page and lists are still placeholders.
+Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; step 3a adds the
+Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`. The home page is still a
+placeholder.
 
 ## Quick start
 

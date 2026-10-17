@@ -22,6 +22,38 @@ const urlPattern = z
 /** Keys reserved by step 1a for later steps (design doc §17.4); the owning step tightens each schema. */
 const reserved = z.array(z.unknown()).default([]);
 
+// Entry IDs as content files write them; content:validate checks that they exist (§17.4).
+const entryId = (prefix: 'p' | 't' | 'c') =>
+  z.string().regex(new RegExp(`^${prefix}_\\d{3,}$`), `IDs look like "${prefix}_001"`);
+
+/**
+ * The list's showcase band (§11.8.2 "本周精选"): one annotated work shown large with its quote,
+ * and up to two more beside it. The newest group whose `from` date has passed at build time is
+ * shown; a group without a date is always eligible. Picks also lead the "featured" sort.
+ */
+const showcaseGroup = z
+  .object({
+    from: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, 'dates are written YYYY-MM-DD')
+      .optional(),
+    lead: entryId('p'),
+    works: z.array(entryId('p')).max(2).default([]),
+  })
+  .strict();
+
+/**
+ * Editorial interludes between justified rows (§11.8.2), placed one per page of the list in
+ * this order and repeated when the list is longer. Works wider than 2:1 or taller than 1:2 get
+ * feature rows of their own wherever they fall (§11.1.4).
+ */
+const interlude = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('feature'), prompt: entryId('p') }).strict(),
+  // Two or three templates; all templates (up to three) when omitted.
+  z.object({ type: z.literal('templates'), templates: z.array(entryId('t')).min(2).max(3).optional() }).strict(),
+  z.object({ type: z.literal('collection'), collection: entryId('c') }).strict(),
+]);
+
 export const siteSchema = z
   .object({
     siteName: z.string().min(1),
@@ -53,8 +85,11 @@ export const siteSchema = z
       .default({ tokens: null }),
     // Home first screen showcase (§11.8.1), owned by step 4b.
     home: z.object({ featured: reserved }).strict().default({ featured: [] }),
-    // List showcase band and editorial interludes (§11.8.2), owned by step 3a.
-    feed: z.object({ showcase: reserved, interludes: reserved }).strict().default({ showcase: [], interludes: [] }),
+    // List showcase band and editorial interludes (§11.8.2), step 3a.
+    feed: z
+      .object({ showcase: z.array(showcaseGroup).default([]), interludes: z.array(interlude).default([]) })
+      .strict()
+      .default({ showcase: [], interludes: [] }),
   })
   .strict();
 

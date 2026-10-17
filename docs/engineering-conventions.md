@@ -183,6 +183,22 @@ Set up in step 2 (design doc §9.3, §11.8.3, §17.3). Later pages follow the sa
 - Plain `<img>` is intended: static export has no image optimizer, `media:import` makes the
   sizes and `@/modules/media` builds `srcset` (`@next/next/no-img-element` is off in `src/`).
 
+## Lists
+
+Set up in step 3a (design doc §9.4, §11.8.2).
+
+- The `feed` emitter writes each locale's newest-first pages (`public/generated/{locale}/feed/latest/{n}.json`)
+  and the slim index (`feed/index.json`); list pages read the same files through `@/modules/feed`, so a
+  page's HTML and its JSON agree. Batch layout (`assemble.ts`) and filters (`query.ts`) are pure and
+  run both at build time and in the browser; reuse them rather than re-deriving lists.
+- Cards and interludes (`src/ui/gallery/`) carry no `'use client'`: the server renders the first page
+  and the client feed appends later batches with the same components.
+- Works link to their detail page with a plain `<a href>` carrying `data-prefetch` (the popup JSON);
+  step 4a turns the click into the popup.
+- Feed articles carry `data-entry` (the work's ID; an editorial feature row repeats its work's ID),
+  `data-key` (unique) and `data-feed-page`. Tests that want one card use
+  `article[data-entry="…"]:not([data-interlude])`.
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.

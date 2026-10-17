@@ -1,0 +1,146 @@
+/* A work in the justified rows (design doc §11.1.4, §11.8.2, §11.1.9). The parent sets the
+   width (Gallery.module.css); the frame keeps the image's own ratio, so nothing is cropped and
+   no blank bands appear (§10.3). The label has a fixed height of two lines, so cards in a row
+   end level. */
+@layer components {
+  .card {
+    --r: calc(var(--w) / var(--h));
+    --_caption: calc(var(--space-4) + var(--leading-sm) + var(--space-4) + var(--leading-xs));
+    position: relative;
+    min-inline-size: 0;
+  }
+
+  /* In a long feed, cards far from the viewport skip rendering (§11.8.2 性能). The size estimate
+     is the row height plus the label; `auto` keeps the real size once a card has rendered. A
+     rendered card can differ from its estimate (rows stretch to fill), which moves the view
+     unless the browser anchors scrolling, so only browsers with scroll anchoring skip work. */
+  @supports (overflow-anchor: auto) {
+    .card[aria-posinset] {
+      content-visibility: auto;
+      contain-intrinsic-size: auto calc(var(--row-height) * var(--r)) auto calc(var(--row-height) + var(--_caption));
+    }
+  }
+
+  .link {
+    display: grid;
+    color: inherit;
+    text-decoration: none;
+    transition: translate var(--duration-feedback) var(--ease-enter);
+  }
+  .link:focus-visible {
+    outline: none;
+  }
+  /* The focus ring surrounds the frame and leaves the label alone (§11.1.7). */
+  .link:focus-visible .frame {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .frame {
+    position: relative;
+    display: block;
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+  }
+  .frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--image-hairline);
+    pointer-events: none;
+  }
+  .frame img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: inherit;
+  }
+
+  .label {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-8);
+    min-inline-size: 0;
+    margin-block-start: var(--space-4);
+    line-height: var(--leading-sm);
+  }
+  .frameNumber {
+    flex: none;
+  }
+  /* One line; the full title stays in the DOM for screen readers (§11.9 标题截断). */
+  .title {
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-sm);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-underline-offset: 0.2em;
+  }
+
+  .lines {
+    display: grid;
+    margin-block-start: var(--space-4);
+    min-inline-size: 0;
+  }
+  .facts,
+  .opening {
+    grid-area: 1 / 1;
+    overflow: hidden;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .opening {
+    visibility: hidden;
+  }
+
+  /* Pointing at a card (§11.8.2 悬停): it lifts 2 px, crop marks close in, the title underlines
+     and the facts give way to the prompt's opening. The image is never dimmed or scaled. Touch
+     screens skip all of this; the opening is on the detail page. */
+  @media (hover: hover) and (pointer: fine) {
+    .link:hover {
+      translate: 0 calc(-1 * var(--distance-hover));
+    }
+    .link:hover .title {
+      text-decoration: underline;
+    }
+    .link:hover .facts {
+      visibility: hidden;
+    }
+    .link:hover .opening {
+      visibility: visible;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .link,
+    .link:hover {
+      transition: none;
+      translate: none;
+    }
+  }
+
+  /* The favourite button of step 4c, in the frame's top-end corner and outside the link:
+     always shown on touch screens, on hover or focus with a fine pointer, and always once the
+     work is saved (§11.8.2 卡片). */
+  .actions {
+    position: absolute;
+    inset-block-start: var(--space-8);
+    inset-inline-end: var(--space-8);
+    z-index: 1;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card:not([data-active]) .actions {
+      opacity: 0;
+      transition: opacity var(--duration-feedback) var(--ease-enter);
+    }
+    .card:hover .actions,
+    .card:focus-within .actions {
+      opacity: 1;
+    }
+  }
+}

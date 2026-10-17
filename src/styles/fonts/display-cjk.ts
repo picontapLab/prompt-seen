@@ -27,6 +27,8 @@ export const DISPLAY_CJK: Readonly<Record<string, DisplayFace>> = {
  */
 export const DISPLAY_MESSAGE_KEYS: readonly string[] = [
   'shell.nav', // section links in the narrow-screen menu
+  'feed.title', // the list's page title (step 3a)
+  'feed.filters.empty.title', // the list's no-results heading
 ];
 
 /** The generated stylesheet of a locale, relative to public/generated/. */
