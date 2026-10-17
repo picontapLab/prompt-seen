@@ -1,3 +1,4 @@
+import type { PageSections } from '@/modules/seo/indexing';
 import { paths } from '@/modules/url';
 
 // Top-level sections in the header and links in the footer (design doc §11.8, §15.5.2).
@@ -26,4 +27,18 @@ export const headerSections: readonly Section[] = [
 export const linkedPages = {
   /** Category, style and use-case topic pages (§9.1). */
   topics: false, // step 3e
+  /** About and license pages (§9.1, §9.8). */
+  pages: false, // step 3e
 } as const;
+
+/** The same flags for sitemaps, llms.txt and exports (§9.3, §9.10.4): they list only pages that exist. */
+export function pageSections(): PageSections {
+  const available = (key: Section['key']) => headerSections.some((s) => s.key === key && s.available);
+  return {
+    prompts: available('prompts'),
+    templates: available('templates'),
+    collections: available('collections'),
+    topics: linkedPages.topics,
+    pages: linkedPages.pages,
+  };
+}

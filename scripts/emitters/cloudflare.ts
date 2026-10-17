@@ -14,6 +14,12 @@ export default defineEmitter({
       `${url.withBasePath('/_next/static/')}*`,
       '  Cache-Control: public, max-age=31536000, immutable',
       '',
+      // Markdown versions (§9.10.4): served as Markdown, with the HTML page as canonical so the
+      // twin is never indexed as a duplicate. One splat rule covers every locale and kind.
+      `${url.withBasePath('/')}*/index.md`,
+      '  Content-Type: text/markdown; charset=utf-8',
+      `  Link: <${url.absoluteUrl('/')}:splat/>; rel="canonical"`,
+      '',
     ];
     write('deploy', 'cloudflare/_headers', headers.join('\n'));
 

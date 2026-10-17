@@ -1,9 +1,9 @@
 # seo
 
-Page metadata (design doc §9.3): title, description, self-referencing canonical, hreflang for the versions this build has (x-default: the default locale's version), Open Graph and Twitter cards. Set up in step 2.
+What search engines read (design doc §9.3, §9.6, §9.7). Set up in step 2 (metadata) and step 3b (structured data and sitemaps).
 
-- Pages call `promptMetadata(detail, locale)`, `templateMetadata(detail, locale)` or `pageMetadata({ … })` from `generateMetadata` (server-only, `index.ts`).
-- The rules are the pure `buildPageMetadata(page, context)` in `build.ts`, tested in `build.test.ts`.
+- **Metadata**: pages call `promptMetadata(detail, locale)`, `templateMetadata(detail, locale)` or `pageMetadata({ … })` from `generateMetadata` (server-only, `index.ts`): title, description, self-referencing canonical, hreflang for the versions this build has (x-default: the default locale's version), Open Graph and Twitter cards, and `<link rel="alternate" type="text/markdown">` when the page has an `index.md`. The rules are the pure `buildPageMetadata` in `build.ts`.
+- **Structured data**: pages render `<JsonLd data={…} />` with `promptStructuredData`, `templateStructuredData`, `collectionStructuredData` (lists, topics, collections), `aboutStructuredData` or `homeStructuredData`. Detail pages pass the items of the breadcrumb they show (`promptCrumbs`, `templateCrumbs` in `src/ui/prompt-detail/crumbs.ts`), so `BreadcrumbList` and the visible breadcrumb come from one function. The schema.org mapping is the pure `structured-data.ts`: unknown fields are left out, licence names map to their deeds, a prompt is a `CreativeWork` in the page's language.
+- **Sitemaps**: `/sitemap.xml` (index) lists `/{locale}/sitemap-pages.xml` for each public locale (`sitemaps.ts`, XML in `sitemap.ts`). They hold published versions only, with the content's own `lastmod` and the main image. A sitemap lists a kind of page only when the shell says it exists (`pageSections()` in `src/ui/navigation/sections.ts`): the step that adds a page flips its flag there.
+- **Indexable**: `isIndexable(locale, visibility)` in `indexing.ts` — the locale is enabled and the version published. Preview builds show drafts and preview-only locales; none of them reaches a sitemap, `index.md`, `llms.txt` or an export.
 - Addresses come from `@/modules/url` and `@/modules/media`, never assembled here.
-
-Step 3b adds structured data, sitemaps and the `ItemList` helpers (§9.6, §9.7).

@@ -79,6 +79,16 @@ export function createUrlModule(cfg: UrlConfig) {
     gone: (locale: string) => `/${locale}/410/`,
     /** Files written by content:build into public/generated/. */
     generated: (file: string) => `/generated/${file.replace(/^\/+/, '')}`,
+    /** Site icon (src/app/icon.svg), also the Organization logo in structured data (§9.6). */
+    siteIcon: () => '/icon.svg',
+    /** Sitemap index at the base path: one sitemap per indexable locale (§9.3). */
+    sitemapIndex: () => '/sitemap.xml',
+    /** A locale's sitemap. Not "sitemap.xml": Next.js reserves that name below the root for metadata routes. */
+    sitemap: (locale: string) => `/${locale}/sitemap-pages.xml`,
+    /** At the host root only when the site is deployed there; see robots.mode (§15.4.3). */
+    robots: () => '/robots.txt',
+    /** Site summary for AI tools (§9.10.4). */
+    llms: () => '/llms.txt',
   };
 
   return { withBasePath, stripBasePath, absoluteUrl, paths };
