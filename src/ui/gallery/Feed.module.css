@@ -1,0 +1,141 @@
+/* The continuous list's frame: sentinels, the status line and its page links (design doc
+   §11.8.2, §11.1.9 状态行). */
+@layer components {
+  .list {
+    display: grid;
+    gap: var(--space-24);
+    margin-block-start: var(--space-24);
+  }
+
+  /* While more batches are to come, the footer waits for the end of the list: reaching it would
+     mean racing the loader (§11.8.2 结束与页脚). Its links are also in the header menu. Without
+     JavaScript nothing loads, so the footer stays. */
+  :global(#main:has([data-feed-more]) + footer) {
+    display: none;
+  }
+
+  .skip:focus {
+    justify-self: start;
+    padding: var(--space-8) var(--space-12);
+    background: var(--surface-raised);
+  }
+  .sentinel {
+    block-size: 1px;
+    margin-block: -1px 0;
+  }
+  .edgeSlot {
+    position: relative;
+  }
+  .edge {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-panel);
+    background: var(--canvas);
+    margin: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+
+  .placeholder {
+    display: block;
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+    background: var(--surface-sunken);
+  }
+
+  .status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-12) var(--space-32);
+    padding-block: var(--space-16);
+    border-block-start: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    scroll-margin-block-start: calc(var(--nav-height) + var(--space-16));
+  }
+  .status:focus {
+    outline: none;
+  }
+  .progress {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .dot {
+    inline-size: 8px;
+    block-size: 8px;
+    border-radius: 50%;
+    background: var(--mark);
+    animation: developing 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes developing {
+    from {
+      opacity: 0.35;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dot {
+      animation: none;
+    }
+  }
+
+  .pages {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+  .pages ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pages a {
+    display: inline-grid;
+    place-items: center;
+    min-inline-size: var(--target-dense);
+    min-block-size: var(--target-dense);
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    text-underline-offset: 0.25em;
+  }
+  .pages a[aria-current='page'] {
+    color: var(--mark);
+    text-decoration-thickness: 2px;
+  }
+
+  .empty {
+    display: grid;
+    gap: var(--space-12);
+    justify-items: start;
+    padding-block: var(--space-48);
+  }
+  .empty p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+  .emptyTitle {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-display);
+    line-height: var(--leading-2xl);
+  }
+}

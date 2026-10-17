@@ -1,0 +1,79 @@
+{
+  "title": "フィルムロール",
+  "intro": "テストしたすべてのプロンプトを新しい順に並べ、それぞれが生んだ一コマを添えています。作品にポインタを合わせるとプロンプトの書き出しを、開くと全文とテスト記録、各フレーズの働きを確認できます。",
+  "introMore": "続きを表示",
+  "introLess": "閉じる",
+  "count": "{count, plural, other {# コマ}}",
+  "pageOf": "{page} / {pages} ページ",
+  "documentTitle": "画像プロンプト",
+  "documentTitlePage": "画像プロンプト（{page} ページ）",
+  "description": "実際にテストした画像プロンプトを新しい順に掲載。生成された画像、テストしたモデルと日付、各フレーズの働きの説明付きです。",
+  "band": {
+    "label": "今週のピックアップ"
+  },
+  "card": {
+    "notVerified": "未検証"
+  },
+  "interlude": {
+    "feature": "特集：{title}",
+    "open": "このコマを開く",
+    "templates": "テンプレート · 空欄を埋めるだけ",
+    "fields": "{count, plural, other {# 項目}}",
+    "collection": "コレクション · {count, plural, other {# 作品}}",
+    "openCollection": "コレクションを見る"
+  },
+  "feed": {
+    "label": "プロンプト",
+    "skip": "一覧をスキップ"
+  },
+  "status": {
+    "shown": "{total} コマ中 {from}–{to} コマを表示",
+    "developing": "{from}–{to} コマを現像中…",
+    "developingEarlier": "前のコマを現像中…",
+    "loaded": "{count, plural, other {さらに # コマ読み込みました}}",
+    "failed": "{from}–{to} コマを読み込めませんでした。",
+    "failedEarlier": "前のコマを読み込めませんでした。",
+    "retry": "再試行",
+    "stale": "ページを開いた後に一覧が更新されました。",
+    "reload": "再読み込み",
+    "end": "ロールの終わり · 全 {total} コマを表示",
+    "pages": "一覧のページ",
+    "page": "ページ",
+    "pageLink": "{page} ページ"
+  },
+  "filters": {
+    "style": "スタイル",
+    "all": "すべて",
+    "panel": "用途 · 画面比",
+    "panelCount": "用途 · 画面比（{count}）",
+    "panelTitle": "用途、画面比、参考画像",
+    "use": "用途",
+    "shape": "画面比",
+    "shapes": {
+      "portrait": "縦長",
+      "square": "正方形",
+      "landscape": "横長",
+      "panorama": "パノラマ"
+    },
+    "ref": "参考画像",
+    "refs": {
+      "none": "テキストのみ",
+      "required": "参考画像が必要"
+    },
+    "open": "絞り込み",
+    "openCount": "絞り込み（{count}）",
+    "show": "{count, plural, =0 {該当なし} other {# 件を表示}}",
+    "results": "{count, plural, =0 {該当なし} other {# 件}}",
+    "active": "適用中の条件",
+    "clear": "条件をクリア",
+    "noMatch": "ほかの条件では該当なし",
+    "sort": "並べ替え",
+    "latest": "新しい順",
+    "featured": "おすすめ順",
+    "empty": {
+      "title": "条件に合うプロンプトはありません",
+      "body": "条件を外すか、すべてクリアしてください。"
+    },
+    "failed": "絞り込みを適用できませんでした。"
+  }
+}

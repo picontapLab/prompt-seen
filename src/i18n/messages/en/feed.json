@@ -1,0 +1,79 @@
+{
+  "title": "The roll",
+  "intro": "Every prompt we have tested, newest first, each printed with the frame it produced. Point at a work to read how its prompt opens; open it for the whole prompt, the test record and what each phrase does.",
+  "introMore": "More",
+  "introLess": "Less",
+  "count": "{count, plural, one {# frame} other {# frames}}",
+  "pageOf": "Page {page} of {pages}",
+  "documentTitle": "Image prompts",
+  "documentTitlePage": "Image prompts, page {page}",
+  "description": "Tested image prompts, newest first: each with the image it produced, the model and date it was tested with, and notes on what its phrases do.",
+  "band": {
+    "label": "This week's picks"
+  },
+  "card": {
+    "notVerified": "Not verified"
+  },
+  "interlude": {
+    "feature": "Feature: {title}",
+    "open": "Open frame",
+    "templates": "Templates · fill in the blanks",
+    "fields": "{count, plural, one {# field} other {# fields}}",
+    "collection": "Collection · {count, plural, one {# work} other {# works}}",
+    "openCollection": "View collection"
+  },
+  "feed": {
+    "label": "Prompts",
+    "skip": "Skip the list"
+  },
+  "status": {
+    "shown": "Frames {from}–{to} of {total} shown",
+    "developing": "Developing frames {from}–{to}…",
+    "developingEarlier": "Developing earlier frames…",
+    "loaded": "{count, plural, one {Loaded # more frame} other {Loaded # more frames}}",
+    "failed": "Couldn't load frames {from}–{to}.",
+    "failedEarlier": "Couldn't load earlier frames.",
+    "retry": "Try again",
+    "stale": "This list changed since the page loaded.",
+    "reload": "Reload",
+    "end": "End of the roll · all {total} frames shown",
+    "pages": "Pages of the list",
+    "page": "Page",
+    "pageLink": "Page {page}"
+  },
+  "filters": {
+    "style": "Style",
+    "all": "All",
+    "panel": "Use · Shape",
+    "panelCount": "Use · Shape ({count})",
+    "panelTitle": "Use, shape and reference image",
+    "use": "Use",
+    "shape": "Shape",
+    "shapes": {
+      "portrait": "Portrait",
+      "square": "Square",
+      "landscape": "Landscape",
+      "panorama": "Panorama"
+    },
+    "ref": "Reference image",
+    "refs": {
+      "none": "Text only",
+      "required": "Needs a reference image"
+    },
+    "open": "Filters",
+    "openCount": "Filters ({count})",
+    "show": "{count, plural, =0 {No results} one {Show # result} other {Show # results}}",
+    "results": "{count, plural, =0 {No results} one {# result} other {# results}}",
+    "active": "Active filters",
+    "clear": "Clear filters",
+    "noMatch": "No results with the other filters",
+    "sort": "Sort",
+    "latest": "Newest first",
+    "featured": "Featured",
+    "empty": {
+      "title": "No prompts match these filters",
+      "body": "Remove a filter, or clear them all to see every prompt."
+    },
+    "failed": "Couldn't apply the filters."
+  }
+}

@@ -646,6 +646,8 @@ function manifest(
       if (!targetsLocale || builtHomes.has(firstSegment)) redirects.push({ from: item.from, to: item.to });
     }
   }
+  // Page 1 of a list is the list itself; its duplicate address redirects there (§9.4).
+  for (const l of built) redirects.push({ from: `${url.paths.prompts(l.pathPrefix)}page/1/`, to: url.paths.prompts(l.pathPrefix) });
   const redirected = new Set(redirects.map((r) => r.from));
   for (const item of content.redirects?.gone ?? [])
     for (const l of built) gone.push({ path: kindPath[item.kind](l.pathPrefix, item.slug), locale: l.code, reason: item.reason });

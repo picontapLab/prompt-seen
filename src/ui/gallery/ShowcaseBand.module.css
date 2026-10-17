@@ -1,0 +1,54 @@
+/* The showcase band (design doc §11.8.2): the lead work with its quote, two works beside it.
+   Short enough that the head, the band and the filter bar share the first screen. */
+@layer components {
+  .band {
+    container-type: inline-size;
+    display: grid;
+    gap: var(--space-16);
+    margin-block-start: var(--space-32);
+  }
+  .layout {
+    display: grid;
+    gap: var(--space-24) var(--space-40);
+    align-items: start;
+  }
+  .lead {
+    container-type: inline-size;
+    min-inline-size: 0;
+  }
+  /* The lead's image height, overriding FeatureShowcase's row size for this band. */
+  .lead > figure {
+    --_max-h: min(24svh, 26rem);
+  }
+  @media (min-width: 768px) {
+    .lead > figure {
+      --_max-h: min(48svh, 26rem);
+    }
+  }
+
+  /* Two works share one justified row at a medium height; beside the lead when wide. */
+  .works {
+    display: flex;
+    gap: var(--gallery-gap);
+    align-items: flex-start;
+    min-inline-size: 0;
+  }
+  .work {
+    flex: var(--r) 1 calc(var(--row-height) * var(--r));
+    min-inline-size: 0;
+  }
+  @container (min-width: 1024px) {
+    .layout[data-works='1'],
+    .layout[data-works='2'] {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+    .works {
+      flex-direction: column;
+      gap: var(--space-24);
+    }
+    .work {
+      flex: none;
+      inline-size: min(100%, calc(10.5rem * var(--r)));
+    }
+  }
+}
