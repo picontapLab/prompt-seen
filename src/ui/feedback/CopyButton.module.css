@@ -1,0 +1,30 @@
+@layer components {
+  .wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-4);
+  }
+
+  /* All labels share one grid cell, so the button keeps the width of the longest one in this
+     locale whatever the state (§11.1.7, §11.9 "按钮宽度稳定"). */
+  .labels {
+    display: inline-grid;
+  }
+  .labels > span {
+    grid-area: 1 / 1;
+    text-align: center;
+  }
+  .labels > span[data-active='false'] {
+    visibility: hidden;
+  }
+
+  .hint {
+    max-inline-size: 28ch;
+    color: var(--danger);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    text-align: end;
+    white-space: normal;
+  }
+}

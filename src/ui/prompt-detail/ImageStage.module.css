@@ -1,0 +1,143 @@
+@layer components {
+  .stage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    min-inline-size: 0;
+    /* The tallest the image may be: most of a phone screen (§11.8.3 mobile: up to 70vh), or the
+       viewport below the navigation, the film edges and the caption row on desktop. */
+    --_max-h: 70svh;
+  }
+  @media (min-width: 1024px) {
+    .stage {
+      --_max-h: calc(100svh - var(--nav-height) - 11rem);
+    }
+  }
+
+  /* The image box at the work's original ratio (§10.3): as wide as the stage allows, never
+     taller than --_max-h. The flex item around it (the film frame) shrinks, so `max-inline-size`
+     resolves against the space actually there. `--_lane` is the margin that holds the current
+     annotation's letter beside the image (§11.1.9). */
+  .picture {
+    --_lane: 0px;
+    position: relative;
+    inline-size: calc(var(--_max-h) * var(--w) / var(--h));
+    max-inline-size: calc(100% - 2 * var(--_lane));
+    margin-inline: var(--_lane);
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+  }
+  /* The film strip is a size container: lanes only where it has room (§11.1.3 breakpoints). */
+  @container (min-width: 480px) {
+    .picture[data-annotated] {
+      --_lane: 28px;
+    }
+  }
+  /* Hairline inside the frame so light artwork keeps an edge on light paper (§11.1.5). */
+  .picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--image-hairline);
+    pointer-events: none;
+  }
+
+  .image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: inherit;
+  }
+
+  .failed {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: var(--space-8);
+    padding: var(--space-16);
+    background: var(--surface-sunken);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    text-align: center;
+  }
+  .failed p {
+    margin: 0;
+  }
+  .retry {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    min-block-size: var(--target-min);
+    padding-inline: var(--space-16);
+    border: 1px solid var(--border-control);
+    border-radius: var(--radius-control);
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    font: inherit;
+    cursor: pointer;
+  }
+  .retry svg {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+  }
+
+  .captionRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-4) var(--space-16);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .caption {
+    font-family: var(--font-text);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .meta {
+    display: inline-flex;
+    gap: var(--space-12);
+    margin-inline-start: auto;
+  }
+  .original {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: inherit;
+  }
+  .original svg {
+    inline-size: 14px;
+    block-size: 14px;
+  }
+
+  .thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .thumbs button {
+    display: block;
+    block-size: 64px;
+    aspect-ratio: var(--w) / var(--h);
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: var(--radius-image);
+    cursor: pointer;
+  }
+  .thumbs button[aria-pressed='true'] {
+    border-color: var(--mark);
+  }
+  .thumbs img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}

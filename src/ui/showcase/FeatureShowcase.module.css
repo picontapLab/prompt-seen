@@ -1,0 +1,110 @@
+/* A work on show (design doc §11.8.1, §11.8.2): image and label on one side, the prompt quote
+   on the other when the container is wide; stacked when it is narrow. Sized by its own width
+   (container queries, §11.1.3), so the same component fits a hero, a band or a feature row. */
+@layer components {
+  .showcase {
+    container-type: inline-size;
+    display: grid;
+    gap: var(--space-24);
+    margin: 0;
+    --_max-h: min(60svh, 34rem);
+  }
+  .showcase[data-size='hero'] {
+    --_max-h: 72svh;
+  }
+  @container (min-width: 768px) {
+    .showcase {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: center;
+      column-gap: var(--space-40);
+    }
+  }
+
+  .media {
+    container-type: inline-size;
+    display: grid;
+    gap: var(--space-12);
+    justify-items: start;
+    min-inline-size: 0;
+  }
+
+  /* Original ratio, as large as the column allows and never taller than --_max-h (§10.3). */
+  .media > * {
+    --_lane: 0px;
+  }
+  .picture {
+    position: relative;
+    inline-size: calc(var(--_max-h) * var(--w) / var(--h));
+    max-inline-size: calc(100% - 2 * var(--_lane));
+    margin-inline: var(--_lane);
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+  }
+  /* Room beside the image for the current annotation's letter (§11.1.9), when there is room. */
+  @container (min-width: 480px) {
+    .media[data-annotated] > * {
+      --_lane: 28px;
+    }
+  }
+  .picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--image-hairline);
+    pointer-events: none;
+  }
+  .picture img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: inherit;
+  }
+
+  /* The label (§11.1.9 展签): frame number, title, tested model and date. */
+  .label {
+    display: grid;
+    gap: 2px;
+    margin-inline: var(--_lane);
+  }
+  .title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-display);
+    line-height: var(--leading-xl);
+    letter-spacing: var(--tracking-display);
+  }
+  .showcase[data-size='hero'] .title {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-2xl);
+  }
+  .facts {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+
+  .text {
+    display: grid;
+    gap: var(--space-16);
+    min-inline-size: 0;
+  }
+  .quote {
+    margin: 0;
+    max-inline-size: var(--measure-prompt);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .showcase[data-size='hero'] .quote {
+    font-size: var(--text-xl);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-12);
+  }
+}
