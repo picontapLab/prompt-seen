@@ -244,8 +244,7 @@ export function Feed({ initial, end }: FeedProps) {
     const anchor = holdAnchor.current;
     if (!anchor) return;
     holdAnchor.current = null;
-    const el = feedRef.current?.querySelector<HTMLElement>(`[data-key="${CSS.escape(anchor.key)}"]`);
-    if (el) window.scrollBy(0, el.getBoundingClientRect().top - anchor.top);
+    return holdInPlace(feedRef.current, anchor);
   }, [list]);
 
   // --- Switching between the page list and a custom order ------------------------------------
@@ -412,9 +411,7 @@ export function Feed({ initial, end }: FeedProps) {
     if (!snap || !custom || switching) return;
     if (batches.length < Math.min(snap.batches, custom.batchCount)) return;
     restoring.current = null;
-    const anchor = snap.anchor;
-    const el = anchor && feedRef.current?.querySelector<HTMLElement>(`[data-key="${CSS.escape(anchor.key)}"]`);
-    if (anchor && el) window.scrollBy(0, el.getBoundingClientRect().top - anchor.top);
+    if (snap.anchor) return holdInPlace(feedRef.current, snap.anchor);
   }, [batches, custom, switching]);
 
   // --- Render ----------------------------------------------------------------------------------
@@ -588,6 +585,38 @@ function Placeholders({ count }: { count: number }) {
       })}
     </>
   );
+}
+
+/** How long a work is held in place after content is added above it. */
+const HOLD_MS = 600;
+
+/**
+ * Keeps the work `anchor.key` at `anchor.top` in the view: at once (before paint), then on every
+ * frame for a short while, since layout can still settle after the batch is in (fonts, images,
+ * sizes of skipped content). Browsers with scroll anchoring need no correction; WebKit does.
+ * Stops as soon as the reader scrolls. Returns the cleanup.
+ */
+function holdInPlace(feed: HTMLElement | null, anchor: { key: string; top: number }): () => void {
+  const find = () => feed?.querySelector<HTMLElement>(`[data-key="${CSS.escape(anchor.key)}"]`) ?? null;
+  const correct = () => {
+    const el = find();
+    if (!el) return;
+    const delta = el.getBoundingClientRect().top - anchor.top;
+    if (Math.abs(delta) >= 1) window.scrollBy(0, delta);
+  };
+  correct();
+  const until = performance.now() + HOLD_MS;
+  let frame = requestAnimationFrame(function tick(now) {
+    correct();
+    if (now < until) frame = requestAnimationFrame(tick);
+  });
+  const stop = () => cancelAnimationFrame(frame);
+  const input = ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const;
+  input.forEach((type) => window.addEventListener(type, stop, { once: true, passive: true }));
+  return () => {
+    stop();
+    input.forEach((type) => window.removeEventListener(type, stop));
+  };
 }
 
 /** The article nearest the top of the view, with its position, to hold it in place. */
