@@ -2,12 +2,14 @@
 
 import { NextIntlClientProvider } from 'next-intl';
 import type { Messages } from '@/i18n/catalog';
+import { formatLocale } from '@/i18n/format-locale';
 
 /**
  * Messages for client components, from explicit props only. Rendering next-intl's provider from
  * a server component would look up formats, time zone and "now" from the request locale, which
  * pages outside a locale (the root 404) cannot provide under static export. Times are UTC
- * because pages are pre-rendered (src/i18n/request.ts).
+ * because pages are pre-rendered (src/i18n/request.ts); `locale` is a registry code, formatted
+ * with a fixed numbering system so the browser writes numbers like the build (format-locale.ts).
  */
 export function IntlProvider({
   locale,
@@ -19,7 +21,7 @@ export function IntlProvider({
   children: React.ReactNode;
 }) {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">
+    <NextIntlClientProvider locale={formatLocale(locale)} messages={messages} timeZone="UTC">
       {children}
     </NextIntlClientProvider>
   );

@@ -179,6 +179,8 @@ const rtl = BUILD.locales.find((l) => l.direction === 'rtl');
 test('right-to-left: the page mirrors, the prompt and the image coordinates do not', async ({ page }) => {
   test.skip(!rtl, 'no right-to-left locale in this build');
   const d = samplePrompt(rtl!.code);
+  // A hydration mismatch (React #418) re-renders the page under the test; report it as such.
+  const errors = watchErrors(page);
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto(`${BASE}${d.path}`);
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
@@ -195,4 +197,5 @@ test('right-to-left: the page mirrors, the prompt and the image coordinates do n
     expect(Math.abs(b.x - (img.x + a.region.x * img.width))).toBeLessThan(3);
   }
   expect(await seriousViolations(page)).toEqual([]);
+  expect(errors).toEqual([]);
 });

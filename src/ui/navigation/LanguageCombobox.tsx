@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import { registryCode } from '@/i18n/format-locale';
 import { useMemo } from 'react';
 import { builtLocales, type LocaleEntry } from '@/config';
 import { paths } from '@/modules/url';
@@ -15,7 +16,7 @@ import { Combobox, type ComboboxOption } from '@/ui/primitives/Combobox';
  */
 export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: boolean; autoFocus?: boolean }) {
   const t = useTranslations('shell.language');
-  const uiLocale = useLocale();
+  const uiLocale = registryCode(useLocale());
   const pathname = usePathname();
   const router = useRouter();
   const current = builtLocales.find((l) => l.code === uiLocale);
