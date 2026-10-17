@@ -23,7 +23,21 @@
     block-size: 1px;
     margin-block: -1px 0;
   }
+  .edgeSlot {
+    position: relative;
+  }
   .edge {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-panel);
+    background: var(--canvas);
     margin: 0;
     color: var(--text-secondary);
     font-family: var(--font-mono);
