@@ -1,0 +1,46 @@
+/* The header search button (§11.8.6): icon, label and the `/` key on wide screens; the icon alone
+   on narrow ones, where the label stays as its accessible name. */
+@layer components {
+  .launcher {
+    inline-size: var(--target-min);
+    padding: 0;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .label {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .key {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .launcher {
+      inline-size: auto;
+      padding-inline: var(--space-12);
+    }
+    .label {
+      position: static;
+      inline-size: auto;
+      block-size: auto;
+      overflow: visible;
+      clip-path: none;
+    }
+    .key {
+      display: inline-grid;
+      place-items: center;
+      min-inline-size: 1.25rem;
+      padding-inline: var(--space-4);
+      border: 1px solid var(--border-control);
+      border-radius: var(--radius-control);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      line-height: var(--leading-xs);
+    }
+  }
+}

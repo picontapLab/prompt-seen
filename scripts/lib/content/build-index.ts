@@ -258,6 +258,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     const labels = content.taxonomy[key].get(id)?.labels ?? {};
     return labels[code] ?? labels[config.defaultLocale] ?? id;
   };
+  /** This locale's aliases first, then the label and aliases of every other locale (§13.2). */
+  const termAliases = (term: { labels: Record<string, string>; aliases: Record<string, string[]> }, code: string) => {
+    const own = term.labels[code] ?? term.labels[config.defaultLocale] ?? '';
+    const words = [
+      ...(term.aliases[code] ?? []),
+      ...Object.entries(term.labels).filter(([c]) => c !== code).map(([, label]) => label),
+      ...Object.entries(term.aliases).filter(([c]) => c !== code).flatMap(([, list]) => list),
+    ];
+    return [...new Set(words)].filter((w) => w !== own);
+  };
   const termRef = (key: TaxonomyKey, id: string, code: string): TermRef => ({
     kind: TAXONOMY_KIND[key],
     id,
@@ -377,6 +387,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           kind: TAXONOMY_KIND[key],
           id: term.id,
           label: termLabel(key, term.id, code),
+          aliases: termAliases(term, code),
           count: promptsOfTerm(key, term.id, code).length,
           path: topicPath(key, term.id, code),
         });

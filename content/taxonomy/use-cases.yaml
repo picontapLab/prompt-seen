@@ -1,10 +1,15 @@
 # Use cases (design doc §5.1). IDs are also topic slugs; labels per locale code.
+# `aliases` (optional): other words that find a term in search, per locale (design doc §13.2).
 - id: wallpaper
   labels:
     en: Wallpaper
     zh-Hans: 壁纸
     ja: 壁紙
     ar: خلفيات
+  aliases:
+    en: [background, lock screen]
+    zh-Hans: [背景图, 锁屏]
+    ja: [待ち受け]
 - id: art-print
   labels:
     en: Art print
@@ -41,6 +46,10 @@
     zh-Hans: 头像
     ja: アバター
     ar: صور رمزية
+  aliases:
+    en: [profile picture, pfp]
+    zh-Hans: [头像图, 个人头像]
+    ja: [プロフィール画像, アイコン]
 - id: editorial
   labels:
     en: Editorial

@@ -87,8 +87,8 @@ function input(prompts: PromptSummary[], extra: Partial<ComposeInput> = {}): Com
     collections: [],
     collectionsLinked: false,
     terms: [
-      { kind: 'style', id: 'ink', label: 'Ink', count: 3, path: null },
-      { kind: 'useCase', id: 'poster', label: 'Poster', count: 3, path: null },
+      { kind: 'style', id: 'ink', label: 'Ink', aliases: [], count: 3, path: null },
+      { kind: 'useCase', id: 'poster', label: 'Poster', aliases: [], count: 3, path: null },
     ],
     settings: { showcase: [], interludes: [] },
     ratioLabel: (w, h) => `${w}:${h}`,

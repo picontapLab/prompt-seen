@@ -1,0 +1,84 @@
+/* Search results (design doc §11.8.6), shared by the quick panel and the search page. The
+   workbench register (§11.1): compact rows, a small picture at the work's own ratio, the title
+   with matched words marked on `accent-subtle`, and one monospaced line of facts. */
+@layer components {
+  .mark {
+    border-radius: var(--radius-control);
+    background: var(--accent-subtle);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 1px var(--accent-subtle);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: var(--_thumb, 4rem) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-12);
+    min-inline-size: 0;
+  }
+
+  /* The thumbnail sits in a fixed slot; the image keeps its ratio inside it (§10.3, no cropping). */
+  .thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--_thumb, 4rem);
+    block-size: var(--_thumb-h, 3rem);
+    overflow: hidden;
+  }
+  .thumb img {
+    display: block;
+    inline-size: auto;
+    block-size: auto;
+    max-inline-size: var(--_thumb, 4rem);
+    max-block-size: var(--_thumb-h, 3rem);
+    aspect-ratio: var(--ratio);
+    border-radius: var(--radius-image);
+    background: var(--placeholder);
+    box-shadow: 0 0 0 1px var(--image-hairline);
+  }
+
+  .text {
+    display: grid;
+    gap: var(--space-4);
+    min-inline-size: 0;
+  }
+  .title {
+    overflow: hidden;
+    font-size: var(--text-base);
+    line-height: var(--leading-sm);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .facts {
+    display: flex;
+    gap: var(--space-8);
+    min-inline-size: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    font-variant-numeric: tabular-nums;
+  }
+  .tags {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* The monospaced face has no Arabic: words in labels use the text face there, which joins
+     letters (§11.1.2); digits such as frame numbers stay monospaced. */
+  :global(:lang(ar)) .tags {
+    font-family: var(--font-text);
+  }
+}

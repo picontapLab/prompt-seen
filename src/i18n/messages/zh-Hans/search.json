@@ -1,0 +1,48 @@
+{
+  "open": "搜索",
+  "tooltip": "搜索（{key}）",
+  "panel": {
+    "label": "搜索",
+    "field": "搜索提示词与模板",
+    "placeholder": "搜索提示词、模板、风格…",
+    "close": "关闭搜索",
+    "recent": "最近搜索",
+    "clearRecent": "清除最近搜索",
+    "popular": "热门用途",
+    "seeAll": "{count, plural, other {查看全部 # 个结果}}",
+    "openSearchPage": "打开搜索页",
+    "loading": "正在加载搜索…",
+    "keys": "↑ ↓ 选择 · Enter 打开 · Esc 关闭"
+  },
+  "groups": {
+    "prompt": "提示词",
+    "template": "模板",
+    "collection": "合集",
+    "topic": "专题"
+  },
+  "count": "{count, plural, =0 {没有结果} other {# 个结果}}",
+  "error": {
+    "body": "搜索没能加载。列表和链接仍然可以使用。",
+    "stale": "打开本页期间网站已更新。重新加载后即可搜索新版本。",
+    "retry": "重试",
+    "reload": "重新加载"
+  },
+  "page": {
+    "documentTitle": "搜索提示词与模板",
+    "title": "搜索",
+    "description": "按标题、用途、风格和提示词正文搜索实测图像提示词与模板。",
+    "intro": "搜索范围包括标题、用途、风格、模型和提示词正文。",
+    "summary": "{count, plural, other {“{query}”共有 # 个结果}}",
+    "updating": "正在更新结果…",
+    "more": "已显示 {shown} / {total}"
+  },
+  "noResults": {
+    "title": "没有找到“{query}”",
+    "broader": "试试更少的词",
+    "terms": "相近的标签",
+    "otherLocales": "其他语言",
+    "otherLocale": "{count, plural, other {{language}内容中有 # 个结果}}",
+    "suggestion": "{label}（{count}）",
+    "browse": "浏览全部提示词"
+  }
+}
