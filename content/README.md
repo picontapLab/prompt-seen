@@ -170,7 +170,10 @@ are never overwritten; old files stay until a deliberate clean-up.
 
 ## Taxonomy, topics and collections
 
-`categories.yaml`, `styles.yaml` and `use-cases.yaml` list terms with labels per language. A
+`categories.yaml`, `styles.yaml` and `use-cases.yaml` list terms with labels per language and,
+optionally, `aliases`: other words per language that should find the term in search, such as
+synonyms and common queries (`poster: { en: [flyer], zh-Hans: [招贴] }`). A term's labels in other
+languages already count as aliases, so they need not be repeated. A
 term gets a topic page in a language only when `taxonomy/{categories|styles|use-cases}/{id}/locales/`
 has a published file for it and at least three published prompts in that language use the term.
 A collection is shown in a language when it is published there and at least two of its items

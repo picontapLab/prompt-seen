@@ -1,4 +1,5 @@
 # Categories (design doc §5.1). IDs are also topic slugs; labels per locale code.
+# `aliases` (optional): other words that find a term in search, per locale (design doc §13.2).
 - id: landscape
   labels:
     en: Landscape
@@ -11,6 +12,10 @@
     zh-Hans: 海报
     ja: ポスター
     ar: ملصقات
+  aliases:
+    en: [flyer, placard]
+    zh-Hans: [招贴, 宣传画]
+    ja: [チラシ]
 - id: product
   labels:
     en: Product
@@ -23,6 +28,10 @@
     zh-Hans: 肖像
     ja: ポートレート
     ar: بورتريه
+  aliases:
+    en: [headshot]
+    zh-Hans: [人像]
+    ja: [人物画]
 - id: illustration
   labels:
     en: Illustration

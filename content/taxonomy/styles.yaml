@@ -1,16 +1,24 @@
 # Styles (design doc §5.1). IDs are also topic slugs; labels per locale code.
+# `aliases` (optional): other words that find a term in search, per locale (design doc §13.2).
 - id: ink
   labels:
     en: Ink wash
     zh-Hans: 水墨
     ja: 水墨
     ar: حبر
+  aliases:
+    en: [sumi-e, ink painting, brush painting]
+    zh-Hans: [水墨画, 国画]
+    ja: [墨絵, 水墨画]
 - id: flat-vector
   labels:
     en: Flat vector
     zh-Hans: 扁平矢量
     ja: フラットベクター
     ar: متجهات مسطحة
+  aliases:
+    en: [flat design, vector art]
+    zh-Hans: [矢量插画]
 - id: bauhaus
   labels:
     en: Bauhaus

@@ -38,6 +38,8 @@ export type PageSeo = {
   modifiedTime?: string;
   /** Internal path of the page's Markdown version (index.md, §9.10.4), declared as an alternate. */
   markdownPath?: string | null;
+  /** Pages kept out of search results, such as the search page itself (§9.1); links are still followed. */
+  noindex?: boolean;
 };
 
 /**
@@ -90,6 +92,7 @@ export function buildPageMetadata(page: PageSeo, ctx: SeoContext): Metadata {
   return {
     title: { absolute: page.documentTitle },
     description: page.description,
+    ...(page.noindex && { robots: { index: false, follow: true } }),
     alternates: {
       canonical,
       languages,

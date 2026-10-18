@@ -92,7 +92,10 @@ test('switching the theme keeps focus, persists, and logs no errors', async ({ p
   await page.getByRole('radio', { name: t('system') }).click();
   await expect(page.locator('html')).not.toHaveAttribute('data-theme', /.*/);
   expect(await rootState(page)).toEqual({ theme: null, background: CANVAS.dark, override: null });
-  expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), KEY))!)).toEqual({ theme: 'system' });
+  expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), KEY))!)).toEqual({
+    theme: 'system',
+    singleKeyShortcuts: true,
+  });
 
   // Client navigation to another locale keeps the theme and stays error-free.
   if (BUILD.locales.length > 1) {
