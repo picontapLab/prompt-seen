@@ -65,6 +65,8 @@ export function createUrlModule(cfg: UrlConfig) {
     promptMarkdown: (locale: string, slug: string) => `/${locale}/prompts/${slug}/index.md`,
     templates: (locale: string) => `/${locale}/templates/`,
     template: (locale: string, slug: string) => `/${locale}/templates/${slug}/`,
+    /** The template's editor filled in with values; `fragment` comes from the editor's encodeShare (§11.8.4). */
+    templateFilled: (locale: string, slug: string, fragment: string) => `/${locale}/templates/${slug}/#${fragment}`,
     templateMarkdown: (locale: string, slug: string) => `/${locale}/templates/${slug}/index.md`,
     collection: (locale: string, slug: string) => `/${locale}/collections/${slug}/`,
     /** Category, style and use-case topic pages (§9.1); `segment` is categories, styles or use-cases. */

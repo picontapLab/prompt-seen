@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Copy, X } from 'lucide-react';
+import { Check, CircleAlert, Copy, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Button, type ButtonVariant } from '@/ui/primitives/Button';
 import { selectContents, writeClipboard } from './copy';
@@ -9,14 +9,24 @@ import styles from './CopyButton.module.css';
 export type CopyState = 'idle' | 'done' | 'failed';
 
 export type CopyButtonProps = {
-  /** The exact text to copy; normalized to LF and trimmed (§11.9). */
-  text: string;
+  /**
+   * The exact text to copy; normalized to LF and trimmed (§11.9). A function is read at the
+   * moment of the press, so an edit committed on the way to the button (a blur) is included.
+   */
+  text: string | (() => string);
   labels: { copy: string; done: string; failed: string; failedHint: string };
   variant?: ButtonVariant;
   size?: 'md' | 'lg';
   /** Element whose text is selected after a failed copy, so it can be copied by hand (§11.7). */
   selectOnFailId?: string;
   onResult?: (state: Exclude<CopyState, 'idle'>) => void;
+  /**
+   * Set while there is nothing valid to copy, e.g. a template with fields still to fill (§11.4
+   * 不可复制): the button names what is missing and runs `onPress` instead of copying, so it is
+   * never a disabled button that does nothing. The label shares the cell with the others while
+   * `active` is false too, so the width holds when fields become valid or invalid.
+   */
+  blocked?: { label: string; active: boolean; onPress: () => void };
   /** Starting state, for state samples in Storybook. */
   defaultState?: CopyState;
   className?: string;
@@ -42,6 +52,7 @@ export function CopyButton({
   onResult,
   className,
   defaultState = 'idle',
+  blocked,
   ...rest
 }: CopyButtonProps) {
   const [state, setState] = useState<CopyState>(defaultState);
@@ -50,7 +61,12 @@ export function CopyButton({
 
   async function copy() {
     clearTimeout(timer.current);
-    const ok = await writeClipboard(text);
+    if (blocked?.active) {
+      setState('idle');
+      blocked.onPress();
+      return;
+    }
+    const ok = await writeClipboard(typeof text === 'function' ? text() : text);
     const next = ok ? 'done' : 'failed';
     setState(next);
     onResult?.(next);
@@ -58,24 +74,31 @@ export function CopyButton({
     else if (selectOnFailId) selectContents(document.getElementById(selectOnFailId));
   }
 
-  const icon = state === 'done' ? <Check /> : state === 'failed' ? <X /> : <Copy />;
+  const shown = blocked?.active ? 'blocked' : state;
+  const icon =
+    shown === 'blocked' ? <CircleAlert /> : shown === 'done' ? <Check /> : shown === 'failed' ? <X /> : <Copy />;
   return (
     <span className={[styles.wrap, className].filter(Boolean).join(' ')}>
-      <Button variant={variant} size={size} icon={icon} onPress={copy} data-copy-state={state} {...rest}>
+      <Button variant={variant} size={size} icon={icon} onPress={copy} data-copy-state={shown} {...rest}>
         <span className={styles.labels}>
-          <span aria-hidden={state !== 'idle'} data-active={state === 'idle'}>
+          <span aria-hidden={shown !== 'idle'} data-active={shown === 'idle'}>
             {labels.copy}
           </span>
-          <span aria-hidden={state !== 'done'} data-active={state === 'done'}>
+          {blocked && (
+            <span aria-hidden={shown !== 'blocked'} data-active={shown === 'blocked'}>
+              {blocked.label}
+            </span>
+          )}
+          <span aria-hidden={shown !== 'done'} data-active={shown === 'done'}>
             {labels.done}
           </span>
-          <span aria-hidden={state !== 'failed'} data-active={state === 'failed'}>
+          <span aria-hidden={shown !== 'failed'} data-active={shown === 'failed'}>
             {labels.failed}
           </span>
         </span>
       </Button>
-      <span role="status" className={state === 'failed' ? styles.hint : 'visually-hidden'}>
-        {state === 'done' ? labels.done : state === 'failed' ? labels.failedHint : ''}
+      <span role="status" className={shown === 'failed' ? styles.hint : 'visually-hidden'}>
+        {shown === 'done' ? labels.done : shown === 'failed' ? labels.failedHint : ''}
       </span>
     </span>
   );

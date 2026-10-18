@@ -1,0 +1,132 @@
+/* BottomSheet (design doc §11.1.7): docked to the viewport's bottom edge, peeking by --peek
+   below its handle while collapsed, about 85% of the height when open. */
+@layer components {
+  .sheet {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: var(--z-nav);
+    display: flex;
+    flex-direction: column;
+    block-size: 85dvh;
+    border-block-start: 1px solid var(--border-subtle);
+    border-start-start-radius: var(--radius-panel);
+    border-start-end-radius: var(--radius-panel);
+    background: var(--surface-raised);
+    box-shadow: var(--elevation-2);
+    transform: translateY(calc(100% - var(--target-min) - var(--peek)));
+    transition: transform var(--duration-expand) var(--ease-enter);
+  }
+  .sheet[data-expanded] {
+    transform: none;
+  }
+  .sheet[data-dragging] {
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sheet {
+      transition: none;
+    }
+  }
+  :global([data-motion='reduce']) .sheet {
+    transition: none;
+  }
+
+  /* Measures --peek in pixels for dragging. */
+  .probe {
+    position: absolute;
+    inline-size: 0;
+    block-size: var(--peek);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* The handle: a full-width 44 px target with a grip, its action named, and a chevron. */
+  .handle {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    position: relative;
+    block-size: var(--target-min);
+    padding: 0 var(--page-margin);
+    border: 0;
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
+    background: none;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-xs);
+    cursor: grab;
+    touch-action: none;
+    outline: none;
+  }
+  .handle:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+  .grip {
+    position: absolute;
+    inset-block-start: 6px;
+    inset-inline-start: 50%;
+    inline-size: 36px;
+    block-size: 4px;
+    border-radius: 2px;
+    background: var(--border-control);
+    translate: -50% 0;
+  }
+  :global([dir='rtl']) .grip {
+    translate: 50% 0;
+  }
+  .handleLabel {
+    margin-block-start: 6px;
+  }
+  .chevron {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    margin-block-start: 6px;
+    stroke-width: var(--icon-stroke);
+    transition: rotate var(--duration-content) var(--ease-enter);
+  }
+  .sheet[data-expanded] .chevron {
+    rotate: 180deg;
+  }
+
+  .body {
+    flex: 1;
+    min-block-size: 0;
+    overflow: hidden;
+    padding-block-end: env(safe-area-inset-bottom);
+    overscroll-behavior: contain;
+  }
+  .sheet[data-expanded] .body {
+    overflow-y: auto;
+  }
+
+  /* From 1024 px the sheet is part of the page: no dock, no handle (§11.2). */
+  @media (min-width: 1024px) {
+    .sheet[data-static-from='lg'] {
+      position: static;
+      z-index: auto;
+      display: block;
+      block-size: auto;
+      border: 0;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      transform: none;
+      transition: none;
+    }
+    .sheet[data-static-from='lg'] .handle,
+    .sheet[data-static-from='lg'] .probe {
+      display: none;
+    }
+    .sheet[data-static-from='lg'] .body {
+      overflow: visible;
+      padding: 0;
+    }
+  }
+}

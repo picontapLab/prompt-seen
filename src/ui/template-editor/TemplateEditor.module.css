@@ -1,0 +1,259 @@
+/* Template editor (design doc §11.2, §11.8.4): fields 5 columns, the sticky preview 7. Below
+   1024 px the fields fill the page and the preview is a sheet docked to the bottom. */
+@layer components {
+  .editor {
+    display: grid;
+    gap: var(--space-16);
+  }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8) var(--space-16);
+    padding-block: var(--space-4);
+    border-block: 1px solid var(--border-subtle);
+  }
+  .meta {
+    margin: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .notice {
+    flex: 1 1 16rem;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .notice:empty {
+    flex-basis: 0;
+  }
+  .toolbar > :last-child {
+    margin-inline-start: auto;
+  }
+
+  .grid {
+    display: grid;
+    gap: var(--space-32);
+  }
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+      column-gap: var(--space-32);
+      align-items: start;
+    }
+    .fields {
+      grid-column: 1 / span 5;
+    }
+    .previewColumn {
+      grid-column: 6 / span 7;
+      /* The preview stays in view while the fields scroll (§11.2). */
+      position: sticky;
+      inset-block-start: calc(var(--nav-height) + var(--space-16));
+    }
+  }
+  /* Room below the last field for the collapsed sheet (handle and peek). */
+  @media (max-width: 1023.98px) {
+    .editor {
+      padding-block-end: calc(var(--target-min) + var(--space-8) + var(--target-min) + 3.4rem + var(--space-24));
+    }
+  }
+
+  .fields {
+    display: grid;
+    gap: var(--space-24);
+    min-inline-size: 0;
+  }
+  .group {
+    display: grid;
+    gap: var(--space-20);
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .legend {
+    margin-block-end: var(--space-12);
+    padding: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-xs);
+  }
+
+  /* Each field carries its variable colour as a bar at the start (§11.8.4 变量色对应); the bar
+     thickens while the field is focused, as its variables in the preview darken. */
+  .field[data-var='1'],
+  .variable[data-var='1'] {
+    --_bg: var(--var-1-bg);
+    --_fg: var(--var-1-fg);
+  }
+  .field[data-var='2'],
+  .variable[data-var='2'] {
+    --_bg: var(--var-2-bg);
+    --_fg: var(--var-2-fg);
+  }
+  .field[data-var='3'],
+  .variable[data-var='3'] {
+    --_bg: var(--var-3-bg);
+    --_fg: var(--var-3-fg);
+  }
+  .field[data-var='4'],
+  .variable[data-var='4'] {
+    --_bg: var(--var-4-bg);
+    --_fg: var(--var-4-fg);
+  }
+  .field[data-var='5'],
+  .variable[data-var='5'] {
+    --_bg: var(--var-5-bg);
+    --_fg: var(--var-5-fg);
+  }
+  .field[data-var='6'],
+  .variable[data-var='6'] {
+    --_bg: var(--var-6-bg);
+    --_fg: var(--var-6-fg);
+  }
+  .field {
+    min-inline-size: 0;
+    padding-inline-start: var(--space-12);
+    border-inline-start: 4px solid var(--_fg);
+    /* Focus scrolling keeps the field above the docked preview on phones. */
+    scroll-margin-block: calc(var(--nav-height) + var(--space-16))
+      calc(var(--target-min) + var(--space-8) + var(--target-min) + 3.4rem + var(--space-24));
+    transition: border-inline-start-width var(--duration-feedback) var(--ease-enter);
+  }
+  .field[data-active] {
+    border-inline-start-width: 6px;
+    padding-inline-start: 10px;
+  }
+
+  .previewColumn {
+    min-inline-size: 0;
+  }
+  .preview {
+    display: grid;
+    gap: var(--space-16);
+  }
+  /* In the docked sheet the paper sits on the sheet itself: no second frame. */
+  @media (max-width: 1023.98px) {
+    .preview {
+      padding-inline: var(--page-margin);
+      padding-block-end: var(--space-24);
+    }
+    .preview > section:first-child {
+      border: 0;
+      background: none;
+    }
+  }
+
+  /* A field's value in the preview: its variable colour with a dashed underline, so colour is
+     never the only cue (§11.1.1). Pointer presses focus the field (§11.8.4 双向定位). */
+  .variable {
+    padding-inline: 0.15em;
+    border-radius: var(--radius-control);
+    background: var(--_bg);
+    color: var(--_fg);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    text-decoration: underline dashed currentColor 1px;
+    text-underline-offset: 0.25em;
+    transition: box-shadow var(--duration-feedback) linear;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .variable {
+      cursor: pointer;
+    }
+  }
+  /* The focused field's variables darken (§11.8.4). */
+  .variable[data-active] {
+    box-shadow: inset 0 0 0 1.5px var(--_fg);
+    text-decoration-style: solid;
+  }
+  /* A field with nothing in it still shows where it goes, by name. Generated content is not
+     selected or copied with the text, so a prompt copied by hand never contains the label. */
+  .variable[data-empty]::before {
+    content: '\2009' attr(data-label) '\2009';
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    opacity: 0.85;
+  }
+  .variable[data-invalid] {
+    outline: 1.5px dashed var(--danger);
+    outline-offset: 1px;
+  }
+
+  /* Typing in a field flashes only its own variables (§11.8.4 局部反馈, §12.1: 150–220 ms). Two
+     animation names in turn restart the flash on every change without remounting the text. */
+  .variable[data-pulse='a'] {
+    animation: pulse-a var(--duration-content) var(--ease-exit);
+  }
+  .variable[data-pulse='b'] {
+    animation: pulse-b var(--duration-content) var(--ease-exit);
+  }
+  @keyframes pulse-a {
+    from {
+      box-shadow: 0 0 0 3px var(--_fg);
+    }
+  }
+  @keyframes pulse-b {
+    from {
+      box-shadow: 0 0 0 3px var(--_fg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .variable[data-pulse] {
+      animation: none;
+    }
+  }
+  :global([data-motion='reduce']) .variable[data-pulse] {
+    animation: none;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8) var(--space-12);
+  }
+
+  /* The default sample's image, small and at its own ratio, labelled as that sample's (§11.8.4). */
+  .sample {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-12);
+    margin: 0;
+  }
+  .sampleFrame {
+    position: relative;
+    display: block;
+    flex: none;
+    /* 160 px high, narrower when that would take more than 60% of the row; never cropped. */
+    inline-size: min(60%, calc(160px * var(--w) / var(--h)));
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+    overflow: hidden;
+  }
+  .sampleFrame img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  .sampleFrame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--image-hairline);
+    pointer-events: none;
+  }
+  .sampleNote {
+    max-inline-size: 28ch;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+}

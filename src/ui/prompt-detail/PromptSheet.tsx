@@ -3,7 +3,7 @@
 import { Info } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState, type ReactNode } from 'react';
-import { CopyButton } from '@/ui/feedback/CopyButton';
+import { CopyButton, type CopyButtonProps } from '@/ui/feedback/CopyButton';
 import { IconButton } from '@/ui/primitives/Button';
 import { textDirection } from './language';
 import styles from './PromptSheet.module.css';
@@ -14,7 +14,7 @@ const FOLD_CHARACTERS = 900;
 
 export type PromptSheetProps = {
   /** The text the copy button copies: the full prompt, whatever is folded (§11.1 "Prompt 纸张"). */
-  copyText: string;
+  copyText: string | (() => string);
   /** BCP 47 tag of the prompt text, which may differ from the page (§8.3). */
   language: string;
   /** The prompt language's name in the page language. */
@@ -27,6 +27,10 @@ export type PromptSheetProps = {
   textId: string;
   /** Id for the copy button, so the mobile action bar knows when it is on screen. */
   copyButtonId?: string;
+  /** Template preview (§11.1.7 PromptSheet 模板预览): copy says what is missing instead (§11.4). */
+  copyBlocked?: CopyButtonProps['blocked'];
+  /** Folds long prompts (§11.8.3). Off for the editor preview, where every edit must stay in view. */
+  fold?: boolean;
   /** The prompt text, plain or with annotated phrases or template variables. */
   children: ReactNode;
 };
@@ -45,10 +49,12 @@ export function PromptSheet({
   lines,
   textId,
   copyButtonId,
+  copyBlocked,
+  fold = true,
   children,
 }: PromptSheetProps) {
   const t = useTranslations('detail');
-  const foldable = lines > FOLD_LINES || characters > FOLD_CHARACTERS;
+  const foldable = fold && (lines > FOLD_LINES || characters > FOLD_CHARACTERS);
   const [expanded, setExpanded] = useState(false);
   const [flash, setFlash] = useState(0);
 
@@ -70,6 +76,7 @@ export function PromptSheet({
           id={copyButtonId}
           text={copyText}
           selectOnFailId={textId}
+          blocked={copyBlocked}
           labels={{
             copy: t('copy.label'),
             done: t('copy.done'),
