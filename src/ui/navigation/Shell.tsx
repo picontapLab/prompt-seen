@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, type LocaleEntry } from '@/config';
+import { ClientMessages } from '@/i18n/client-messages';
 import { paths } from '@/modules/url';
 import { Wordmark } from '@/ui/brand/Wordmark';
+import { SearchLauncher } from '@/ui/search/SearchLauncher';
 import { LanguageSwitch } from './LanguageSwitch';
 import { MobileMenu } from './MobileMenu';
 import { headerSections } from './sections';
@@ -61,6 +63,12 @@ export async function Shell({
             </nav>
           )}
           <div className={styles.tools}>
+            {!minimal && (
+              // Search on every page in a locale (§11.8.6); step 3d.
+              <ClientMessages namespaces={['search']} locale={locale.code}>
+                <SearchLauncher />
+              </ClientMessages>
+            )}
             {!minimal && (
               <div className={styles.wide}>
                 <LanguageSwitch />
