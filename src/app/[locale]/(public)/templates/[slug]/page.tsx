@@ -8,8 +8,8 @@ import { JsonLd, templateMetadata, templateStructuredData } from '@/modules/seo'
 import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { TemplateDetailBody } from '@/ui/template-detail/TemplateDetailBody';
 
-// Template detail (design doc §6, §9.1). The initial HTML carries the default sample's prompt;
-// the interactive editor is step 3c.
+// Template detail and editor (design doc §6, §9.1, §11.8.4). The initial HTML carries every field
+// with the default sample's values and the default prompt; the editor takes over in the browser.
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export const dynamicParams = false;
@@ -42,7 +42,7 @@ export default async function TemplatePage({ params }: Props) {
   return (
     <div className="container" data-width="detail" data-page="template-detail">
       <JsonLd data={templateStructuredData(detail, entry, crumbs)} />
-      <ClientMessages namespaces={['detail']}>
+      <ClientMessages namespaces={['detail', 'templates']}>
         <TemplateDetailBody detail={detail} locale={entry} />
       </ClientMessages>
     </div>

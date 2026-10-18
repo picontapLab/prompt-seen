@@ -29,6 +29,9 @@ export const States: Story = {
           <CopyButton {...args} defaultState={state} />
         </StateCell>
       ))}
+      <StateCell label="BLOCKED (TEMPLATE FIELDS MISSING)">
+        <CopyButton {...args} blocked={{ label: '2 fields to fill', active: true, onPress: () => {} }} />
+      </StateCell>
     </StateGrid>
   ),
 };

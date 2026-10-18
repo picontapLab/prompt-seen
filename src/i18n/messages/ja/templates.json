@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "テンプレート",
+    "documentTitle": "画像プロンプトのテンプレート",
+    "description": "空欄のある実証済み画像プロンプト。いくつかの項目を埋めると、テストした版と同じ言い回しの完全なプロンプトをコピーできます。",
+    "intro": "どのテンプレートも、いくつかの空欄を残した実証済みのプロンプトです。入力するとプロンプトがその場で更新され、コピーやテキストファイルでのダウンロードができます。",
+    "introMore": "続きを表示",
+    "introLess": "閉じる",
+    "count": "{count, plural, other {# 個のテンプレート}}",
+    "fields": "{count, plural, other {# 個のフィールド}}",
+    "version": "バージョン {version}",
+    "empty": "この言語のテンプレートはまだありません。"
+  },
+  "editor": {
+    "fields": "フィールド",
+    "other": "その他",
+    "preview": "プロンプトのプレビュー",
+    "expand": "プロンプト全体を表示",
+    "collapse": "プロンプトを閉じる",
+    "reset": "デフォルトに戻す",
+    "resetDone": "デフォルト例に戻しました",
+    "anotherSample": "別の例",
+    "sampleDone": "例 {n} / {total}",
+    "undo": "元に戻す",
+    "download": ".txt をダウンロード",
+    "downloaded": "プロンプトをテキストファイルとしてダウンロードしました",
+    "share": "入力内容を共有",
+    "shareCopied": "入力内容付きのリンクをコピーしました",
+    "shareFailed": "リンクをコピーできませんでした",
+    "missing": "{count, plural, other {あと # 項目}}",
+    "restored": "前回の入力内容を復元しました。",
+    "shared": "共有リンクの内容を入力しました。",
+    "mismatch": "このリンクはバージョン {version} 用です。代わりにバージョン {current} のデフォルト例を表示しています。",
+    "errors": {
+      "required": "{label}が空です。入力するとプロンプトが完成します。",
+      "too-short": "{label}は {limit} 文字以上必要です（現在 {actual} 文字）。",
+      "too-long": "{label}は {limit} 文字以内にしてください（現在 {actual} 文字）。",
+      "too-few": "{label}には {limit} 項目以上必要です（現在 {actual} 項目）。",
+      "too-many": "{label}は最大 {limit} 項目です（現在 {actual} 項目）。多い分を削除してください。",
+      "item-too-long": "{item} 番目の項目は {limit} 文字以内にしてください（現在 {actual} 文字）。",
+      "empty-item": "{item} 番目の項目が空です。削除するか入力してください。",
+      "invalid-option": "{label}の選択肢から一つ選んでください。",
+      "wrong-type": "この値は{label}に使えません。もう一度入力してください。"
+    }
+  },
+  "tokens": {
+    "items": "追加した項目",
+    "count": "{count} / {max}",
+    "placeholder": "入力して Enter",
+    "howTo": "Enter で項目を追加します。",
+    "remaining": "{count, plural, other {あと # 項目追加できます。}}",
+    "full": "{max, plural, other {このフィールドは最大 # 項目です。}}追加するには一つ削除してください。",
+    "pendingTooLong": "この項目は {count} 文字です。上限は {max} 文字です。",
+    "remove": "「{item}」を削除",
+    "added": "「{item}」を追加しました",
+    "removed": "「{item}」を削除しました"
+  }
+}

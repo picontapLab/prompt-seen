@@ -12,6 +12,7 @@ import { ShareButton } from '@/ui/feedback/ShareButton';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
 import { ButtonLink } from '@/ui/primitives/Button';
 import { RichText } from '@/ui/rich-text/RichText';
+import { encodeShare } from '@/ui/template-editor/share';
 import { promptCrumbs } from './crumbs';
 import { ExampleRuns } from './ExampleRuns';
 import { ImageStage } from './ImageStage';
@@ -93,7 +94,17 @@ export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyP
             <div className={styles.actions}>
               {template && (
                 <ButtonLink
-                  href={paths.template(prefix, template.slug)}
+                  href={
+                    // The editor opens filled in with this prompt's values while the template still
+                    // has their version; for an older version it opens on its default sample (§11.8.4).
+                    detail.template!.version === template.currentVersion
+                      ? paths.templateFilled(
+                          prefix,
+                          template.slug,
+                          encodeShare(detail.template!.version, detail.template!.values),
+                        )
+                      : paths.template(prefix, template.slug)
+                  }
                   icon={<SlidersHorizontal aria-hidden="true" />}
                 >
                   {t('customize')}

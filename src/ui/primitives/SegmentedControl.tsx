@@ -16,6 +16,10 @@ export type SegmentedControlProps<K extends Key> = {
   value: K;
   onChange: (value: K) => void;
   isDisabled?: boolean;
+  /** Help below the options, linked to the group. */
+  description?: ReactNode;
+  /** Lets options wrap onto more lines, for longer labels in narrow columns (template choices, §11.8.4). */
+  wrap?: boolean;
   className?: string;
 };
 
@@ -30,9 +34,12 @@ export function SegmentedControl<K extends Key>({
   value,
   onChange,
   isDisabled,
+  wrap,
+  description,
   className,
 }: SegmentedControlProps<K>) {
   const labelId = useId();
+  const descriptionId = `${labelId}-description`;
   return (
     <div className={cx(styles.root, className)}>
       <span id={labelId} className={labelHidden ? 'visually-hidden' : styles.label}>
@@ -40,7 +47,9 @@ export function SegmentedControl<K extends Key>({
       </span>
       <ToggleButtonGroup
         aria-labelledby={labelId}
+        aria-describedby={description ? descriptionId : undefined}
         className={styles.group}
+        data-wrap={wrap || undefined}
         selectionMode="single"
         disallowEmptySelection
         selectedKeys={[value]}
@@ -58,6 +67,11 @@ export function SegmentedControl<K extends Key>({
           </ToggleButton>
         ))}
       </ToggleButtonGroup>
+      {description && (
+        <span id={descriptionId} className={styles.description}>
+          {description}
+        </span>
+      )}
     </div>
   );
 }

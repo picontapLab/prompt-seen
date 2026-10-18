@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "模板",
+    "documentTitle": "图像提示词模板",
+    "description": "带空格的实测图像提示词：填几项内容，就能复制一条完整的提示词，措辞与我们测试的版本一致。",
+    "intro": "每个模板都是一条留了几处空格的实测提示词。填写时提示词随之更新，可以复制，也可以下载为文本文件。",
+    "introMore": "展开",
+    "introLess": "收起",
+    "count": "{count, plural, other {# 个模板}}",
+    "fields": "{count, plural, other {# 个字段}}",
+    "version": "版本 {version}",
+    "empty": "这种语言还没有模板。"
+  },
+  "editor": {
+    "fields": "字段",
+    "other": "其他",
+    "preview": "提示词预览",
+    "expand": "展开完整提示词",
+    "collapse": "收起提示词",
+    "reset": "恢复默认",
+    "resetDone": "已恢复默认示例",
+    "anotherSample": "换个示例",
+    "sampleDone": "示例 {n} / {total}",
+    "undo": "撤销",
+    "download": "下载 .txt",
+    "downloaded": "提示词已下载为文本文件",
+    "share": "分享填写结果",
+    "shareCopied": "带填写内容的链接已复制",
+    "shareFailed": "链接复制失败",
+    "missing": "{count, plural, other {还需填写 # 项}}",
+    "restored": "已恢复上次填写的内容。",
+    "shared": "已填入分享链接中的内容。",
+    "mismatch": "这个链接对应版本 {version}，已改用版本 {current} 的默认示例。",
+    "errors": {
+      "required": "{label}还没有填写，填好后才能得到完整的提示词。",
+      "too-short": "{label}至少需要 {limit} 个字符（当前 {actual}）。",
+      "too-long": "{label}不能超过 {limit} 个字符（当前 {actual}）。",
+      "too-few": "{label}至少需要 {limit} 项（当前 {actual}）。",
+      "too-many": "{label}最多 {limit} 项（当前 {actual}），请删除多出的项。",
+      "item-too-long": "第 {item} 项不能超过 {limit} 个字符（当前 {actual}）。",
+      "empty-item": "第 {item} 项是空的，请删除或填写。",
+      "invalid-option": "请为{label}选择一个选项。",
+      "wrong-type": "这个值不能用于{label}，请重新填写。"
+    }
+  },
+  "tokens": {
+    "items": "已添加的项",
+    "count": "{count} / {max}",
+    "placeholder": "输入后按回车",
+    "howTo": "按回车添加一项。",
+    "remaining": "{count, plural, other {还可以添加 # 项。}}",
+    "full": "{max, plural, other {这个字段最多 # 项。}}删除一项后才能再添加。",
+    "pendingTooLong": "这一项有 {count} 个字符，上限是 {max}。",
+    "remove": "删除“{item}”",
+    "added": "已添加“{item}”",
+    "removed": "已删除“{item}”"
+  }
+}
