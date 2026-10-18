@@ -14,6 +14,7 @@ export default defineConfig([
     '.generated/**',
     'deploy/generated/**',
     'src/config/generated/**',
+    'export/**',
     'next-env.d.ts',
     'spikes/**',
     'design/**',

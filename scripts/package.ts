@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
 import { feedIndexFile } from '../src/modules/feed/files';
+import { NO_MARKDOWN } from '../src/modules/geo/documents';
 import { createUrlModule } from '../src/modules/url/create';
 import { ROOT } from './lib/paths';
 
@@ -45,6 +46,12 @@ for (const l of config.builtLocales) {
     if (Number(n) > pageCount) fs.rmSync(path.join(pagesDir, n), { recursive: true });
   if (!fs.readdirSync(pagesDir).length) fs.rmSync(pagesDir, { recursive: true });
 }
+
+// A build without published prompts or templates exports a placeholder index.md for that kind
+// (static export rejects routes without params); it must not be served (§9.10.4).
+for (const l of config.builtLocales)
+  for (const kind of ['prompts', 'templates'])
+    fs.rmSync(path.join(target, l.pathPrefix, kind, NO_MARKDOWN), { recursive: true, force: true });
 
 // Every built locale has its pages, error pages and the shared files exist.
 const fileFor = (internal: string) => path.join(target, internal.endsWith('/') ? `${internal}index.html` : internal);

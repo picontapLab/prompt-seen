@@ -10,9 +10,9 @@ import { AnnotationProvider } from '@/ui/annotation/AnnotationProvider';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
-import { headerSections, linkedPages } from '@/ui/navigation/sections';
 import { ButtonLink } from '@/ui/primitives/Button';
 import { RichText } from '@/ui/rich-text/RichText';
+import { promptCrumbs } from './crumbs';
 import { ExampleRuns } from './ExampleRuns';
 import { ImageStage } from './ImageStage';
 import { languageName } from './language';
@@ -46,8 +46,6 @@ export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyP
   const textId = `${id}-prompt`;
   const copyId = `${id}-copy`;
   const prefix = locale.pathPrefix;
-  const promptsSection = headerSections.find((s) => s.key === 'prompts');
-  const category = detail.taxonomy.category;
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
 
   const images = [detail.cover, ...detail.examples.flatMap((r) => r.outputs)].filter(
@@ -70,11 +68,7 @@ export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyP
           <div className={styles.info}>
             <Breadcrumb
               label={t('breadcrumb.label')}
-              items={[
-                { label: t('breadcrumb.home'), href: paths.home(prefix) },
-                { label: t('breadcrumb.prompts'), href: promptsSection?.available ? paths.prompts(prefix) : null },
-                { label: category.label, href: linkedPages.topics ? category.path : null },
-              ]}
+              items={promptCrumbs(detail, prefix, (key) => t(`breadcrumb.${key}`))}
             />
             <header className={styles.header}>
               <FrameNumber n={Number(detail.frameNumber)} labelled />

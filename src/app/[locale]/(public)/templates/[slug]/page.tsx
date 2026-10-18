@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { localeByPrefix } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
 import { enterLocale } from '@/i18n/locale';
 import { findBySlug, getDetailModel, listEntries } from '@/modules/content';
-import { templateMetadata } from '@/modules/seo';
+import { JsonLd, templateMetadata, templateStructuredData } from '@/modules/seo';
+import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { TemplateDetailBody } from '@/ui/template-detail/TemplateDetailBody';
 
 // Template detail (design doc §6, §9.1). The initial HTML carries the default sample's prompt;
@@ -35,8 +37,11 @@ export default async function TemplatePage({ params }: Props) {
   const { locale, slug } = await params;
   const entry = enterLocale(locale);
   const detail = load(entry.code, slug);
+  const t = await getTranslations({ locale: entry.code, namespace: 'detail.breadcrumb' });
+  const crumbs = templateCrumbs(entry.pathPrefix, (key) => t(key));
   return (
     <div className="container" data-width="detail" data-page="template-detail">
+      <JsonLd data={templateStructuredData(detail, entry, crumbs)} />
       <ClientMessages namespaces={['detail']}>
         <TemplateDetailBody detail={detail} locale={entry} />
       </ClientMessages>
