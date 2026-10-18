@@ -29,6 +29,15 @@ export type TextFieldProps = Omit<AriaTextFieldProps, 'className' | 'children' |
    * ones, and the other way round (§11.8.4). Never a lone asterisk or colour.
    */
   necessity?: 'optional' | 'required';
+  /**
+   * A length limit that is counted and reported but not enforced, in user-visible characters.
+   * Use it instead of maxLength when going over is an error to explain (§11.11: "can't be longer
+   * than 120 characters (now 134)"): maxLength stops typing and counts UTF-16 code units.
+   */
+  countLimit?: number;
+  /** Language and direction of the value when it differs from the page, e.g. an English prompt (§8.6). */
+  inputLang?: string;
+  inputDir?: 'ltr' | 'rtl' | 'auto';
   className?: string;
 };
 
@@ -43,6 +52,9 @@ export function TextField({
   multiline,
   placeholder,
   necessity,
+  countLimit,
+  inputLang,
+  inputDir,
   className,
   ...props
 }: TextFieldProps) {
@@ -50,7 +62,7 @@ export function TextField({
   const [uncontrolled, setUncontrolled] = useState(props.defaultValue ?? '');
   const value = props.value ?? uncontrolled;
   const length = graphemes(value);
-  const max = props.maxLength;
+  const max = countLimit ?? props.maxLength;
   const showCount = max !== undefined && length >= max * 0.8;
   return (
     <AriaTextField
@@ -76,9 +88,9 @@ export function TextField({
           </div>
           <Group className={styles.control} role="presentation" isDisabled={isDisabled} isInvalid={isInvalid}>
             {multiline ? (
-              <TextArea className={styles.input} placeholder={placeholder} />
+              <TextArea className={styles.input} placeholder={placeholder} lang={inputLang} dir={inputDir} />
             ) : (
-              <Input className={styles.input} placeholder={placeholder} />
+              <Input className={styles.input} placeholder={placeholder} lang={inputLang} dir={inputDir} />
             )}
           </Group>
           {description && (

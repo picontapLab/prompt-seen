@@ -14,13 +14,15 @@ export type ShareButtonProps = {
   labels: { share: string; copied: string; failed: string };
   /** Icon only, for the mobile action bar (§11.8.3). */
   iconOnly?: boolean;
+  /** Replaces the share icon, e.g. a link icon for "share these values" (§11.8.4). */
+  icon?: React.ReactNode;
 };
 
 /**
  * Share (§11.7): on touch devices with a share sheet, the system sheet; elsewhere the link is
  * copied, with feedback in place. Dismissing the share sheet is not an error.
  */
-export function ShareButton({ url, title, labels, iconOnly }: ShareButtonProps) {
+export function ShareButton({ url, title, labels, iconOnly, icon: idleIcon }: ShareButtonProps) {
   const [state, setState] = useState<CopyState>('idle');
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
@@ -40,7 +42,7 @@ export function ShareButton({ url, title, labels, iconOnly }: ShareButtonProps) 
     timer.current = setTimeout(() => setState('idle'), COPY_FEEDBACK_MS);
   }
 
-  const icon = state === 'done' ? <Check /> : state === 'failed' ? <X /> : <Share2 />;
+  const icon = state === 'done' ? <Check /> : state === 'failed' ? <X /> : (idleIcon ?? <Share2 />);
   const status = (
     <span role="status" className="visually-hidden">
       {state === 'done' ? labels.copied : state === 'failed' ? labels.failed : ''}

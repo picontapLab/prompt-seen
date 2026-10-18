@@ -1,38 +1,23 @@
 import { useTranslations } from 'next-intl';
-import { useId } from 'react';
 import type { LocaleEntry } from '@/config';
-import type { LocalizedField, TemplateDetail } from '@/modules/content/types';
-import { renderTemplate } from '@/modules/template';
-import { absoluteUrl, paths } from '@/modules/url';
-import { ShareButton } from '@/ui/feedback/ShareButton';
+import type { TemplateDetail } from '@/modules/content/types';
+import { paths } from '@/modules/url';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
 import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { ExampleRuns } from '@/ui/prompt-detail/ExampleRuns';
-import { ImageStage } from '@/ui/prompt-detail/ImageStage';
 import { languageName } from '@/ui/prompt-detail/language';
-import { PromptSheet } from '@/ui/prompt-detail/PromptSheet';
 import { RelatedRow } from '@/ui/prompt-detail/RelatedRow';
 import { RichText } from '@/ui/rich-text/RichText';
+import { TemplateEditor, type EditorModel } from '@/ui/template-editor/TemplateEditor';
 import detailStyles from '@/ui/prompt-detail/Detail.module.css';
 import styles from './TemplateDetail.module.css';
 
-/** Variable colour of a field: the six var-* token pairs in field order (§11.1.1). */
-export const varColor = (fieldIndex: number) => (fieldIndex % 6) + 1;
-
-function Constraint({ field }: { field: LocalizedField }) {
-  const t = useTranslations('detail.template');
-  if (field.type === 'string-list')
-    return <>{t('listLimit', { min: field.minItems ?? (field.required ? 1 : 0), max: field.maxItems ?? '∞' })}</>;
-  if (field.type === 'enum') return <>{t('choices', { count: field.options.length })}</>;
-  return field.maxLength ? <>{t('maxLength', { max: field.maxLength })}</> : null;
-}
-
 /**
- * The template detail (design doc §6, §9.1, §11.8.4), rendered from the build's detail model. The
- * initial HTML holds the default sample's prompt, rendered by the same pure function the editor
- * of step 3c uses (§3.2, §6.3), with each field's value in that field's variable colour. The
- * field table names each variable with the same colour bar, so "fill here, changes there" reads
- * before any editing exists.
+ * The template detail (design doc §6, §9.1, §11.8.4), rendered from the build's detail model:
+ * title and summary, the editor, then the usage notes, test prints and work made with it. The
+ * editor renders on the server with the default sample, so the initial HTML holds every field
+ * with its label, help and default value, and the default prompt (§3.2, §3.3), produced by the
+ * same pure function the browser uses for every edit (§6.3).
  */
 export function TemplateDetailBody({
   detail,
@@ -42,122 +27,37 @@ export function TemplateDetailBody({
   locale: Pick<LocaleEntry, 'code' | 'pathPrefix' | 'htmlLang'>;
 }) {
   const t = useTranslations('detail');
-  const id = useId();
   const prefix = locale.pathPrefix;
   const { version } = detail;
-  const sample = version.samples[0];
-  const rendered = renderTemplate({ body: version.body, fields: version.fields }, sample?.values ?? {});
-  const segments = rendered.segments.map((s, i, all) =>
-    s.kind === 'text' && i === 0
-      ? { ...s, text: s.text.trimStart() }
-      : s.kind === 'text' && i === all.length - 1
-        ? { ...s, text: s.text.trimEnd() }
-        : s,
-  );
+  // Only what the editor uses crosses to the browser (§3.5): not the notes, prints or related work.
+  const model: EditorModel = {
+    templateId: detail.id,
+    slug: detail.slug,
+    path: detail.path,
+    title: detail.title,
+    promptLanguage: detail.promptLanguage,
+    version: { id: version.id, body: version.body, fields: version.fields, samples: version.samples },
+    cover: detail.cover,
+  };
 
   return (
     <article className={detailStyles.detail} data-detail="template" data-entry={detail.id}>
-      <div className={detailStyles.top}>
-        <div className={detailStyles.media}>
-          {detail.cover && (
-            <>
-              <ImageStage images={[detail.cover]} sizes="(min-width: 1024px) 58vw, 100vw" />
-              <p className={styles.sampleNote}>{t('template.sampleImage')}</p>
-            </>
-          )}
-        </div>
+      <div className={styles.top}>
+        <Breadcrumb label={t('breadcrumb.label')} items={templateCrumbs(prefix, (key) => t(`breadcrumb.${key}`))} />
+        <header className={detailStyles.header}>
+          <h1 className={detailStyles.title}>{detail.title}</h1>
+          <p className={detailStyles.summary}>{detail.description}</p>
+        </header>
+        <TemplateEditor
+          model={model}
+          languageName={languageName(detail.promptLanguage, locale.htmlLang)}
+          showLanguageNote={detail.promptLanguage.split('-')[0] !== locale.htmlLang.split('-')[0]}
+        />
+      </div>
 
-        <div className={detailStyles.info}>
-          <Breadcrumb label={t('breadcrumb.label')} items={templateCrumbs(prefix, (key) => t(`breadcrumb.${key}`))} />
-          <header className={detailStyles.header}>
-            <h1 className={detailStyles.title}>{detail.title}</h1>
-            <p className={detailStyles.summary}>{detail.description}</p>
-            <p className={styles.meta}>
-              {[
-                t('template.version', { version: version.id }),
-                t('template.fieldCount', { count: version.fields.length }),
-              ].join(' · ')}
-            </p>
-          </header>
-
-          <PromptSheet
-            copyText={version.defaultPrompt}
-            language={detail.promptLanguage}
-            languageName={languageName(detail.promptLanguage, locale.htmlLang)}
-            showLanguageNote={detail.promptLanguage.split('-')[0] !== locale.htmlLang.split('-')[0]}
-            characters={version.defaultPrompt.length}
-            lines={version.defaultPrompt.split('\n').length}
-            textId={`${id}-prompt`}
-          >
-            {segments.map((s, i) =>
-              s.kind === 'text' ? (
-                <span key={i}>{s.text}</span>
-              ) : (
-                <span key={i} className={styles.variable} data-var={varColor(s.fieldIndex)} data-field={s.name}>
-                  {s.text}
-                </span>
-              ),
-            )}
-          </PromptSheet>
-
-          <div className={detailStyles.actions}>
-            <ShareButton
-              url={absoluteUrl(detail.path)}
-              title={detail.title}
-              labels={{ share: t('share.label'), copied: t('share.copied'), failed: t('share.failed') }}
-            />
-          </div>
-
-          <section className={detailStyles.section} aria-labelledby={`${id}-fields`}>
-            <h2 id={`${id}-fields`} className={detailStyles.sectionHeading}>
-              {t('template.fields')}
-            </h2>
-            <div className={detailStyles.tableWrap}>
-              <table className={detailStyles.table}>
-                <thead>
-                  <tr>
-                    <th scope="col">{t('template.field')}</th>
-                    <th scope="col">{t('template.type')}</th>
-                    <th scope="col">{t('template.value')}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {version.fields.map((field, i) => {
-                    const value = rendered.values[field.name];
-                    const shown =
-                      field.type === 'enum' && typeof value === 'string'
-                        ? (field.optionLabels[value] ?? value)
-                        : Array.isArray(value)
-                          ? value.join(field.type === 'string-list' ? field.separator : ' ')
-                          : value;
-                    return (
-                      <tr key={field.name}>
-                        <th scope="row">
-                          <div className={styles.fieldName} data-var={varColor(i)}>
-                            <span>{field.label}</span>
-                            <span className={styles.requirement}>
-                              {field.required ? t('template.required') : t('template.optional')}
-                            </span>
-                            {field.help && <span className={styles.help}>{field.help}</span>}
-                          </div>
-                        </th>
-                        <td>
-                          {t(`template.types.${field.type}`)}
-                          <span className={styles.help}>
-                            <Constraint field={field} />
-                          </span>
-                        </td>
-                        <td lang={detail.promptLanguage}>{shown || '—'}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
+      {(detail.body.length > 0 || detail.examples.length > 0) && (
+        <div className={styles.reading}>
           {detail.body.length > 0 && <RichText blocks={detail.body} className={detailStyles.body} />}
-
           <ExampleRuns
             runs={detail.examples}
             frameNumber={detail.id.replace(/^t_/, 'T')}
@@ -167,7 +67,7 @@ export function TemplateDetailBody({
             locale={prefix}
           />
         </div>
-      </div>
+      )}
 
       <div className={detailStyles.related}>
         <RelatedRow

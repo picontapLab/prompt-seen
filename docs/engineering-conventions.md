@@ -223,6 +223,25 @@ Set up in step 3a (design doc §9.4, §11.8.2).
   `data-key` (unique) and `data-feed-page`. Tests that want one card use
   `article[data-entry="…"]:not([data-interlude])`.
 
+## Templates
+
+Set up in step 3c (design doc §11.4, §11.6.2, §11.8.4).
+
+- The editor (`src/ui/template-editor/TemplateEditor.tsx`) is the template page's client island. It
+  receives an `EditorModel` (the current version's body, fields and samples, and the cover), never
+  the whole detail. The prompt is computed with `renderTemplate` on every render; it is not state,
+  so the preview, copy (`copyText` read at press time) and download are always one string.
+- Pure parts live beside it without `'use client'`: `values.ts` (complete values, control choice,
+  grouping), `editor-state.ts` (reducer), `share.ts` (link fragments) and `draft.ts` (storage).
+  Server components may import them, as the Prompt detail does for its "Customize" link.
+- Filled-in links: `paths.templateFilled(locale, slug, encodeShare(version, values))`. The editor
+  reads the fragment after hydration, applies it only for the same version, then removes it from
+  the address.
+- Drafts: `prompt-library:template-draft:v1:{templateId}:{version}`, written 400 ms after a change;
+  the default sample is never stored.
+- `BottomSheet` (`src/ui/primitives/`) is a non-modal docked sheet; `staticFrom="lg"` makes the same
+  element a normal block from 1024 px, so the preview exists once in the HTML.
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.
