@@ -9,12 +9,31 @@
     font-weight: var(--weight-medium);
     line-height: var(--leading-sm);
   }
+  .description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
   .group {
     display: inline-flex;
     align-self: flex-start;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-control);
   }
+  /* Wrapping options keep their own edge, so a line that starts mid-group still reads as options. */
+  .group[data-wrap] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    border: 0;
+  }
+  .group[data-wrap] .segment,
+  .group[data-wrap] .segment + .segment {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-control);
+    text-align: start;
+  }
+
   .segment {
     position: relative;
     display: inline-flex;

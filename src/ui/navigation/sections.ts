@@ -16,7 +16,7 @@ export type Section = {
 
 export const headerSections: readonly Section[] = [
   { key: 'prompts', href: paths.prompts, available: true }, // step 3a
-  { key: 'templates', href: paths.templates, available: false }, // step 3c
+  { key: 'templates', href: paths.templates, available: true }, // step 3c
   { key: 'collections', href: (locale) => `/${locale}/collections/`, available: false }, // step 3e: paths.collections
 ];
 

@@ -1,0 +1,86 @@
+/* TokenInput (design doc §11.1.7): items and the input share one control box, which grows to as
+   many lines as the items need. */
+@layer components {
+  .control {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    cursor: text;
+  }
+  /* The plain box has no React Aria data attributes, so it follows :focus-within. */
+  .control:focus-within {
+    border-color: var(--accent);
+  }
+  .control:has(:focus-visible) {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .tokens {
+    display: contents;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .token {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    max-inline-size: 100%;
+    min-block-size: var(--target-dense);
+    padding-inline: var(--space-8) 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-control);
+    background: var(--surface-sunken);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    cursor: default;
+  }
+  .token[data-invalid] {
+    border-color: var(--danger);
+    box-shadow: inset 0 0 0 1px var(--danger);
+  }
+  .tokenText {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+  .remove {
+    display: grid;
+    flex: none;
+    place-items: center;
+    inline-size: var(--target-dense);
+    block-size: var(--target-dense);
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-control);
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .remove svg {
+    inline-size: var(--icon-dense);
+    block-size: var(--icon-dense);
+    stroke-width: var(--icon-stroke);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .remove:hover {
+      color: var(--text-primary);
+      background: var(--accent-subtle);
+    }
+  }
+  .remove:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+
+  .input {
+    flex: 1 1 8rem;
+    min-block-size: var(--target-dense);
+    padding: 0 var(--space-8);
+  }
+
+  .help,
+  .hint {
+    display: block;
+  }
+}

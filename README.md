@@ -11,7 +11,8 @@ validation, template rendering, image import and a sample content set; and the d
 Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; step 3a adds the
 Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`; step 3b adds structured data,
 sitemaps (`/prompt-seen/sitemap.xml`), `robots.txt`, Markdown versions of every published page (`…/index.md`)
-and `/prompt-seen/llms.txt`. The home page is still a placeholder.
+and `/prompt-seen/llms.txt`; step 3c adds the template editor on every template page and the template list,
+`/prompt-seen/en/templates/`. The home page is still a placeholder.
 
 ## Quick start
 

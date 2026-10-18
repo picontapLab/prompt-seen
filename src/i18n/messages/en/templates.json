@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Templates",
+    "documentTitle": "Image prompt templates",
+    "description": "Tested image prompts with blanks: fill in a few fields and copy a complete prompt, with the same wording as the version we tested.",
+    "intro": "Each template is a tested prompt with a few blanks. Fill them in and the prompt updates as you type; copy it or download it as a text file.",
+    "introMore": "More",
+    "introLess": "Less",
+    "count": "{count, plural, one {# template} other {# templates}}",
+    "fields": "{count, plural, one {# field} other {# fields}}",
+    "version": "Version {version}",
+    "empty": "There are no templates in this language yet."
+  },
+  "editor": {
+    "fields": "Fields",
+    "other": "Other",
+    "preview": "Prompt preview",
+    "expand": "SHOW THE FULL PROMPT",
+    "collapse": "HIDE THE PROMPT",
+    "reset": "Reset",
+    "resetDone": "Restored the default sample",
+    "anotherSample": "Another sample",
+    "sampleDone": "Sample {n} of {total}",
+    "undo": "Undo",
+    "download": "Download .txt",
+    "downloaded": "Prompt downloaded as a text file",
+    "share": "Share these values",
+    "shareCopied": "Link with your values copied",
+    "shareFailed": "Couldn't copy the link",
+    "missing": "{count, plural, one {# field to fill} other {# fields to fill}}",
+    "restored": "Restored what you entered last time.",
+    "shared": "Filled in from a shared link.",
+    "mismatch": "That link was made for version {version}. Showing the default sample of version {current} instead.",
+    "errors": {
+      "required": "{label} is empty. Fill it in to complete the prompt.",
+      "too-short": "{label} needs at least {limit} characters (now {actual}).",
+      "too-long": "{label} can't be longer than {limit} characters (now {actual}).",
+      "too-few": "Add at least {limit} items to {label} (now {actual}).",
+      "too-many": "{label} takes at most {limit} items (now {actual}). Remove the extra ones.",
+      "item-too-long": "Item {item} can't be longer than {limit} characters (now {actual}).",
+      "empty-item": "Item {item} is empty. Remove it or fill it in.",
+      "invalid-option": "Choose one of the options for {label}.",
+      "wrong-type": "This value can't be used for {label}. Enter it again."
+    }
+  },
+  "tokens": {
+    "items": "Items",
+    "count": "{count} / {max}",
+    "placeholder": "Type and press Enter",
+    "howTo": "Press Enter to add an item.",
+    "remaining": "{count, plural, one {# more can be added.} other {# more can be added.}}",
+    "full": "{max, plural, one {This field takes # item.} other {This field takes # items.}} Remove one to add another.",
+    "pendingTooLong": "This item has {count} characters; the limit is {max}.",
+    "remove": "Remove {item}",
+    "added": "Added {item}",
+    "removed": "Removed {item}"
+  }
+}
