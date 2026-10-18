@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, localeByPrefix } from '@/config';
 import { enterLocale } from '@/i18n/locale';
+import { homeStructuredData, JsonLd } from '@/modules/seo';
 import { absoluteUrl, paths } from '@/modules/url';
 
 // Placeholder home per locale (step 1a). Step 4b replaces it with the first screen (§11.8.1);
@@ -35,6 +36,8 @@ export default async function LocaleHome({ params }: Props) {
       data-page="placeholder-home"
       data-locale={entry.code}
     >
+      {/* WebSite and Organization (§9.6); step 4b keeps it on the real first screen. */}
+      <JsonLd data={homeStructuredData(entry)} />
       <h1>{t('title', { siteName: config.siteName })}</h1>
       <p>{t('body', { language: entry.nativeName })}</p>
     </div>

@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.12  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16）  
+> 文档版本：1.13  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16；1.13 修订：2026-10-17）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -16,6 +16,7 @@
 > 1.10 修订：步骤 1c 的决定——token 以 `src/styles/tokens/` 中的 CSS 文件为唯一来源，`design/tokens/` 移除；`tokens-check` 的 44 组组合逐项列出，并增加补充组合；字体子集、按文字的 `unicode-range` 与中日韩引号处理；主题首绘脚本、根元素属性与 `theme-color` 的所有权；页眉主题按钮与页脚、菜单中的三选一；语言选择显示母语名称；外壳与区块注册表；交互专用代码按需加载、`src/ui/` 按文件导入（第 4、4.1、11.1.2、11.1.3、11.1.9、11.6.3、15.5.2、17.3 章）。版本号跳过 1.9：1.9 是并行进行的步骤 1b 的修订，两者合并时保留各自条目。  
 > 1.11 修订：步骤 2 的决定——详情正文由可序列化详情模型渲染、服务端与弹层共用的写法；`seo` 模块与页面调用方式，条目页的 x-default 指向默认语言版本，Open Graph locale 映射；面包屑只链接本次构建已有的页面；提示词标注的实现（字母为生成内容、引线侧的选择、窄容器只显示当前框）；中日韩展示字体的构建期子集与 `DISPLAY_MESSAGE_KEYS`；首次必要 JavaScript、首屏图片与字体的实测（第 4.1、9.3、11.1.2、11.1.9、11.8.3、16.1、17.3 章）。  
 > 1.12 修订：步骤 3a 的决定——列表数据（`public/generated/{locale}/feed/` 的分页 JSON 与精简元数据索引）与列表页由同一份数据渲染；`site.yaml` 的 `feed.showcase` 与 `feed.interludes` 结构；编辑段落每页一个、按配置轮换，极端比例作品在所在位置成为特写行；“精选”排序的定义；比例筛选的分档与参考图筛选；等高行在窄屏的起始宽度；`content-visibility` 只在支持滚动锚定的浏览器启用；静态导出下单页列表的分页参数；返回恢复的快照与 `history.scrollRestoration`；排序不按设备记住；十批以上连续滚动的实测（第 3.5、4.1、9.4、11.1.4、11.8.2、11.9、15.4.2、16.4、17.3 章）。  
+> 1.13 修订：步骤 3b 的决定——sitemap index 与按 locale 的 `sitemap-pages.xml`（Next.js 保留 `…/sitemap.xml` 路由名）及其收录与 `lastmod` 规则；只为已启用 locale 中已发布的版本生成 sitemap 条目、`index.md`、`llms.txt` 与导出（`isIndexable`）；结构化数据的页面写法、面包屑与可见面包屑同源、作者与许可的映射、列表 `ItemList` 的编号；robots 规则只覆盖本站地址，根域部署时 `robots.txt` 即主机文件，子路径部署另生成合并片段；Markdown 版本的内容、措辞来源与宿主响应头；`llms.txt` 的结构；`content:export` 的 JSON 与 Markdown 格式（第 4、4.1、9.3、9.6、9.7、9.10.2、9.10.4、14.1、17.3、20 章）。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -304,12 +305,13 @@ prompt-library/
 │   │   │       ├── explore/page.tsx
 │   │   │       ├── favorites/page.tsx
 │   │   │       ├── about/page.tsx
-│   │   │       └── license/page.tsx
+│   │   │       ├── license/page.tsx
+│   │   │       └── sitemap-pages.xml/route.ts
 │   │   ├── not-found.tsx
 │   │   ├── icon.svg
 │   │   ├── llms.txt/route.ts
-│   │   ├── sitemap.ts
-│   │   └── robots.ts
+│   │   ├── sitemap.xml/route.ts
+│   │   └── robots.txt/route.ts
 │   ├── config/
 │   │   ├── schema.ts
 │   │   ├── load.ts
@@ -391,6 +393,7 @@ prompt-library/
 - 实施细节（1.10）：`src/ui/` 与 `src/state/` 不设汇总导出文件（barrel），按文件导入（如 `@/ui/primitives/Button`）。服务端组件从汇总文件导入时，其中每个 `'use client'` 模块都会成为客户端入口，整组基元会进入每个页面的首次加载。只在交互时需要的部分按需加载：页眉语言列表在首次使用时加载，窄屏菜单在首次打开时加载，Toast 区域在页面空闲后加载。外壳使首次必要 JavaScript 增加约 36 KiB（gzip，1a 的空站点为 183.5 KiB，1c 为 219.5 KiB），其中约 12 KiB 是客户端消息格式化，步骤 2 的客户端模块本来也需要。
 - `src/ui/` 负责画廊和编辑器等用户界面。
 - 实施细节（1.11）：步骤 2 新增 `src/ui/prompt-detail/`（`PromptDetailBody` 与图片舞台、Prompt 纸张、测试信息、生成示例、来源许可、相关作品行、移动端操作栏）、`src/ui/template-detail/`、`src/ui/annotation/`（标注状态、文本短语、图上标注框、说明列表与纯函数布局）、`src/ui/showcase/`（`FeatureShowcase` 与 `toShowcase`，供 3a、4b 复用）、`src/ui/rich-text/`（构建期 MDX 树的渲染）、`src/ui/feedback/`（`CopyButton`、`ShareButton`）、`src/ui/navigation/Breadcrumb.tsx`，以及 `src/modules/seo/`。详情正文组件不读文件、不用请求状态、不导入服务端模块，只接收详情模型、locale 与 `detail` 消息命名空间，因此完整页在服务端渲染，步骤 4a 的弹层可在浏览器中用同一份 JSON 渲染同一组件。`'use client'` 文件导出的普通函数在服务端组件中会变成客户端引用、无法调用，共用的纯函数因此放在不带该指令的文件中（如 `src/ui/prompt-detail/language.ts`）。
+- 实施细节（1.13）：步骤 3b 新增 `src/modules/seo/` 的结构化数据（`structured-data.ts`、`JsonLd.tsx`）、sitemap（`sitemap.ts` 生成 XML，`sitemaps.ts` 决定收录）与 `indexing.ts`（`isIndexable`、`PageSections`）；`src/modules/geo/`（`markdown.ts`、`llms.ts`、`robots.ts`，以及供 Route Handler 与脚本共用的 `documents.ts`）；`src/i18n/translator.ts`（React 渲染之外的消息格式化）；`src/ui/prompt-detail/crumbs.ts`（可见面包屑与 `BreadcrumbList` 共用）；Route Handler `sitemap.xml`、`[locale]/(public)/sitemap-pages.xml`、`robots.txt`、`llms.txt` 与两个 `index.md`；`scripts/emitters/robots.ts`、`scripts/content-export.ts` 与 `scripts/lib/export.ts`。`build.json` 的 locale 增加 `enabled`，端到端测试据此区分公开与仅预览的 locale。Next.js 把根以下任何以 `sitemap.xml` 结尾的路由当作元数据路由，动态段会以占位参数预渲染而失败，因此按 locale 的 sitemap 命名为 `sitemap-pages.xml`。
 - 实施细节（1.12）：步骤 3a 新增 `src/modules/feed/`（列表数据的类型、构建期编排 `compose.ts`、构建与浏览器共用的批次编排 `assemble.ts` 与筛选计数 `query.ts`、服务端读取模块）、`src/ui/gallery/`（Card、编辑段落、展示带、筛选栏、`Feed` 与 `ListProvider`）、`scripts/emitters/feed.ts` 与 `prompt-json.ts`，以及 `content:validate` 中的 `validate-feed.ts`。卡片与编辑段落不带 `'use client'`，服务端渲染第一页、浏览器追加后续批次时用同一组件。
 - `design/` 保存已选定视觉方向的参考页面与截图（第 11.1.9 节），只作视觉参考。步骤 1c 已把 token 原稿 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，`design/tokens/` 随之移除。
 - `src/styles/tokens/` 是视觉与动效 token 的唯一来源，生成 CSS 自定义属性；`scripts/tokens-check.ts` 在 CI 中校验第 11.1.9 节列出的颜色组合对比度。
@@ -927,6 +930,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - 不设置限制性的 `nosnippet`、`max-snippet` 或 `max-image-preview`；搜索结果摘要与 AI 摘要都依赖可用片段。
 - 结构化数据按第 9.6 节的映射生成，描述页面真实内容，不承诺特定富媒体搜索展示。
 - 实施细节（1.11）：页面的 `generateMetadata` 只调用 `@/modules/seo`（`promptMetadata`、`templateMetadata`、`pageMetadata`），不自行组装 title、canonical、hreflang 与 Open Graph；规则在纯函数 `buildPageMetadata` 中并有单元测试。文档标题为“{标题} · {类型} · {站名}”，类型名按 locale 来自消息文件。条目页的 hreflang 列出本次构建中该条目的全部版本（含自身），有多个版本时 x-default 指向默认语言版本；默认语言没有该条目时不输出 x-default。语言首页仍以语言入口为 x-default（第 8.2 节）。`og:locale` 使用 `language_TERRITORY`，如 zh-Hans → `zh_CN`、zh-Hant → `zh_TW`、ar → `ar_AR`。分享图使用 `og` 规格的实际尺寸：原图小于 1200 px 时不放大（样例中有 900 × 473），因此尺寸不一定是 1200 × 630。
+- 实施细节（1.13）：sitemap index 位于 `{basePath}/sitemap.xml`，列出每个已启用 locale 的 `/{locale}/sitemap-pages.xml`。只收录已启用 locale 中已发布的版本：预览构建中的草稿与仅预览的 locale（如日语、阿拉伯语草稿）不进入。语言入口随默认语言的 sitemap 列出（sitemap 经 robots.txt 或 Search Console 提交，不受文件所在目录的范围限制）。条目页的 `lastmod` 为该版本的 `updatedAt`；列表分页取该页作品中最新的 `updatedAt`；语言首页与语言入口没有内容日期，不输出 `lastmod`。sitemap 只列出本次构建已有的页面类型，由 `src/ui/navigation/sections.ts` 的标志决定（`pageSections()`）：新增列表、专题、合集、关于与许可页的步骤翻转对应标志即可。预览构建中条目页的 hreflang 也指向草稿版本（预览页全部 `noindex`），生产构建没有草稿，二者一致。页面有 Markdown 版本时输出 `<link rel="alternate" type="text/markdown">`。
 
 ### 9.4 分页、筛选与链接
 
@@ -969,13 +973,14 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - `license` 与 `acquireLicensePage` 同时具备时，Google 图片可显示“可授权”标记；字段未知时省略属性，不填占位值。
 - `inLanguage` 取页面语言。Prompt 正文语言不同时，通过可见的“Prompt 语言”标签说明，不在结构化数据中虚构译文。
 - 结构化数据由 `seo` 模块从同一内容索引生成；构建测试校验其中的标题、日期、作者和面包屑与可见内容一致。
+- 实施细节（1.13）：页面以 `<JsonLd>` 输出一个 `@graph`，函数在 `@/modules/seo`（`promptStructuredData`、`templateStructuredData`、`collectionStructuredData`、`homeStructuredData`、`aboutStructuredData`），映射是纯函数 `structured-data.ts`。面包屑与可见面包屑由同一函数生成（`src/ui/prompt-detail/crumbs.ts`）；Google 要求除最后一项外每项都有地址，中间项只显示文字时不输出 `BreadcrumbList`。内容文件只记录名字：`author`、`creator` 与站名相同时为站点 `Organization`，否则视为 `Person`。许可名称（如 `CC BY 4.0`，大小写与 SPDX 写法均可）映射到许可正文地址，其他名称输出带 `name` 的 `CreativeWork`；`ImageObject.license` 只用已知地址。主图使用 `detail` 规格及其尺寸。列表的 `ItemList` 只列当前页作品，按可见顺序跨页连续编号（第 2 页从 25 起），不含展示带与编辑段落中重复出现的作品。步骤 4b 之前，语言首页的占位页已输出 `WebSite` 与 `Organization`（`logo` 为站点图标）；`sameAs` 在仓库公开后加入（第 20 章）。Google 富媒体结果测试需要公开地址，在步骤 5 部署后运行；本步骤以单元测试与端到端测试校验结构及其与可见内容的一致性。
 
 ### 9.7 图片搜索
 
 - **内嵌元数据**：Sharp 生成展示规格时默认不保留 EXIF、IPTC、XMP 等元数据，原图的 C2PA 内容凭证也会在重新编码后失效。导入工具为 `detail`、`og` 规格写入 IPTC 字段：Creator、Credit Line、Copyright Notice、Web Statement of Rights（许可地址）、Licensor URL、Digital Source Type。缩略图可不带元数据，以控制体积。写入方式（Sharp 的元数据接口或 exiftool 等工具）在实施时按版本验证。
 - **原图保留**：`original` 规格不重新编码，保留原有元数据与内容凭证；允许下载时提供原图入口。
 - **文件名**：对象键包含 slug 可读词，见第 5.4 节。
-- **图片 sitemap**：图片位于独立 CDN 主机，在 sitemap 条目中列出主图（Next.js `sitemap.ts` 的 `images` 字段）。CDN 主机的 robots.txt 不得阻止图片抓取。
+- **图片 sitemap**：在 sitemap 条目中以 `<image:image>` 列出主图（`detail` 规格，只用 `image:loc`；Google 已停用图片标题与说明字段）。图片位于 CDN 主机时，该主机的 robots.txt 不得阻止图片抓取；本地媒体驱动时图片在本站 `/media/` 下。
 - **上下文**：主图紧邻标题与用途摘要；`alt` 描述画面而非堆砌关键词；图片说明可见。
 - **尺寸**：来源允许时，`detail` 规格最长边不低于 1200 px，便于大图预览与分享。
 - **分享图**：使用 `og` 规格（1200 × 630，按 `focalPoint` 裁切）；模板详情使用默认样本的效果图。
@@ -1024,6 +1029,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - user-agent 名称与行为以各提供方当前文档为准。robots 规则由 `geo` 模块根据 `site.yaml` 生成，不在代码中硬编码。
 - **边缘层检查**：CDN 与托管平台可能在 robots.txt 之外拦截 AI 爬虫，例如 Cloudflare 的 AI 爬虫控制、Vercel 防火墙的 AI 机器人规则集；子路径部署时还包括主站的 CDN 与 WAF。上线检查需确认这些设置与第一行和第二行的策略一致，并通过平台的机器人日志确认已验证爬虫获得 200 和完整 HTML，而不是 403 或挑战页。仅伪造 user-agent 请求不能代表经过 IP 验证的爬虫规则。
 - 子路径部署时 robots.txt 由主站控制，本项目输出需要合并的规则片段，见第 15.4 节。
+- 实施细节（1.13）：规则由 `src/modules/geo/robots.ts` 生成，只覆盖本站地址（`{basePath}/`）：`User-agent: *`、AI 搜索与用户触发读取为 `Allow`，训练类按 `robots.aiTraining` 为 `Allow` 或 `Disallow`，末尾 `Sitemap:` 指向 sitemap index。根域部署时导出的 `robots.txt` 就是主机的文件，不论 `robots.mode`；子路径部署且 `robots.mode: snippet` 时另外生成 `deploy/generated/robots-snippet.txt`，开头注释说明合并方法：主站已有同一 user-agent 的组时把规则并入该组，因为多数爬虫对同一 user-agent 只采用一组规则。
 
 #### 9.10.3 可引用的内容结构
 
@@ -1041,6 +1047,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - **`llms.txt`**：从内容索引生成，包含站点简介、各语言入口、模板与专题列表及其 Markdown 地址。该格式是社区提案，Google 已表示不使用，其他 AI 产品的采用情况未经确认；因成本很低而提供，不作为 GEO 的主要手段。
 - **导出数据**：第 19.1 节的 Agent 资源导出带许可字段与版本号，公开地址写入 `llms.txt`。
 - 以上文件只包含已发布内容，草稿与私有构建数据不进入。
+- 实施细节（1.13）：Markdown 版本由 `src/modules/geo/markdown.ts` 从详情模型生成，标题与标签使用页面相同的 `detail` 消息（少数 Markdown 专用文案在 `geo` 命名空间，含按 locale 的“标签：值”标点），措辞因此与 HTML 一致；日期使用 ISO 格式。依次为：标题、摘要、网页地址与其他已发布语言的 Markdown 地址、主图、测试记录、完整 Prompt、模板入口、标注、使用说明、生成示例（参数表、观察、与当前不同时的当时 Prompt）、来源与许可；模板页另有带占位符的模板正文与字段表。只为已启用 locale 中已发布的版本生成：仅预览 locale 的版本在预览构建中即使符合内容规则也不生成，页面也不声明 Markdown 版本。参考 nginx include 与 Cloudflare `_headers`（`{basePath}/*/index.md` 一条 splat 规则）提供 `Content-Type` 与 `Link`。`llms.txt` 使用默认语言：简介、各语言的列表入口、模板与 Prompt 的 Markdown 地址；专题与合集在其页面存在后列出；`Optional` 段为关于、许可页与 sitemap index。`content:export` 输出同一批内容：JSON（每个 locale 一个文件，含 `format: prompt-seen/content-export` 与 `version`，每条记录带页面与 Markdown 地址、许可与许可地址）或与 `index.md` 相同的 Markdown 文件；它自行读取并校验 `content/`，不依赖可能过期的生成文件。公开导出地址写入 `llms.txt` 留给第 19.1 节。
 
 #### 9.10.5 内容许可与引用
 
@@ -2119,7 +2126,7 @@ Prompt 纸张的细节：
 | `content:validate` | 内容目录 | 明确的错误与警告报告 |
 | `content:build` | 已校验内容 | 索引、关联映射、可序列化详情模型、列表与弹层 JSON、搜索数据和宿主配置 |
 | `build` | 内容构建结果、`BASE_PATH` 与 `SITE_ORIGIN` | 静态导出产物，打包到 `dist/{basePath}/` |
-| `content:export` | 输出格式与筛选条件 | JSON、Markdown 或后续 Agent 参考文件 |
+| `content:export` | `--format json\|markdown`、`--locale`、`--kind prompt\|template\|all`、`--out`（默认 `export/`） | 已启用 locale 中已发布内容的 JSON（带格式版本与许可）或与 `index.md` 相同的 Markdown；后续 Agent 参考文件（第 19.1 节） |
 
 新资源使用脚手架创建，ID 自动生成且不得重复。字段示例和 README 跟随 Schema 更新。
 
@@ -2532,6 +2539,7 @@ feed:
 
 - 范围：第 9.6 节的结构化数据，接入详情与模板页，并提供列表与专题页使用的 `CollectionPage`、`ItemList` 输出函数；按 locale 拆分的 sitemap、sitemap index 与图片 sitemap（第 9.3、9.7 节）；`robots.txt` 与 `robots-snippet.txt`（第 9.10.2、15.4.3 节）；`index.md` 与 `<link rel="alternate">`（第 9.10.4 节）；`llms.txt`；`content:export` 的 JSON 与 Markdown 输出（第 14.1 节）；结构化数据、Markdown 与可见内容一致的构建测试。
 - 通过条件：第 16.2 节“元数据”“结构化数据”，以及“图片搜索”“AI 可见性”中可以在仓库内验证的部分（边缘层检查在步骤 5）；草稿不进入 sitemap、`index.md` 与 `llms.txt`。
+- 结果（2026-10-17）：按本节范围完成，列表页同时接入 `ItemList`，语言首页的占位页接入 `WebSite` 与 `Organization`；实施细节写入第 4、4.1、9.3、9.6、9.7、9.10.2、9.10.4 与 14.1 节（1.13）。端到端测试新增 `seo.http.spec.ts`：sitemap index 只列公开 locale；每个公开 locale 的 sitemap 收录全部已发布条目与列表分页、日期与主图正确、不含草稿，其中每个地址返回 200 且 canonical 等于该地址，hreflang 指向的已发布版本也在 sitemap 中；robots 规则与合并片段一致；`index.md` 的类型、`Link` 头、标题、摘要与 Prompt 与 HTML 一致，草稿与仅预览 locale 没有 `index.md`；`llms.txt` 的链接全部可访问且不含草稿；结构化数据的标题、日期、作者、面包屑、模板正文与列表顺序与页面一致；分享图比例。单元测试覆盖结构化数据、sitemap XML、Markdown 转换、robots 与 `llms.txt`，并以样例内容检查文档与导出的发布规则。根路径生产构建与 `/prompt-seen` 预览构建在 Chrome 中全部通过；Firefox 与 WebKit 由 CI 运行。Google 富媒体结果测试与边缘层检查在步骤 5。
 
 **3c 模板编辑器与模板列表**
 
@@ -2689,6 +2697,7 @@ feed:
 - 主站侧的配合：静态映射或转发规则、`absolute_redirect off` 等宿主配置、robots.txt 合并、CDN 与 WAF 的 AI 爬虫设置、CSP 约定。
 - 代码许可、Prompt 文本许可与图片授权策略。已确定：代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注。
 - AI 训练类爬虫的允许策略（第 9.10.2 节）。
+- 站点在其他平台的资料（结构化数据的 `sameAs`，如公开后的 GitHub 仓库与官方账号，第 9.6 节）。
 - 访问分析工具，以及 Search Console、Bing Webmaster Tools、IndexNow 密钥。
 - 图片存储提供方、CDN 域名和导入凭据配置。
 - Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。已确定：GitHub 私有仓库、`main` 分支、Cloudflare Pages；Pages 项目与 CI 密钥在步骤 5 由维护者创建，此前不需要。

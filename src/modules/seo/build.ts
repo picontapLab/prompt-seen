@@ -36,6 +36,8 @@ export type PageSeo = {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  /** Internal path of the page's Markdown version (index.md, §9.10.4), declared as an alternate. */
+  markdownPath?: string | null;
 };
 
 /**
@@ -88,7 +90,11 @@ export function buildPageMetadata(page: PageSeo, ctx: SeoContext): Metadata {
   return {
     title: { absolute: page.documentTitle },
     description: page.description,
-    alternates: { canonical, languages },
+    alternates: {
+      canonical,
+      languages,
+      ...(page.markdownPath && { types: { 'text/markdown': ctx.absoluteUrl(page.markdownPath) } }),
+    },
     openGraph: {
       type,
       url: canonical,

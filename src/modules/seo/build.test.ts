@@ -87,6 +87,14 @@ describe('buildPageMetadata', () => {
   it('falls back to a summary card without an image', () => {
     expect(buildPageMetadata({ ...page, image: null }, ctx).twitter).toMatchObject({ card: 'summary' });
   });
+
+  it('declares the Markdown version as an alternate only when the page has one (§9.10.4)', () => {
+    const m = buildPageMetadata({ ...page, markdownPath: '/zh-hans/prompts/plum/index.md' }, ctx);
+    expect(m.alternates?.types).toEqual({
+      'text/markdown': 'https://example.com/prompt-seen/zh-hans/prompts/plum/index.md',
+    });
+    expect(buildPageMetadata({ ...page, markdownPath: null }, ctx).alternates).not.toHaveProperty('types');
+  });
 });
 
 describe('ogLocale', () => {

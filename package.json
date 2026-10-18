@@ -14,6 +14,7 @@
     "content:validate": "npm run gen && tsx scripts/content-validate.ts",
     "content:build": "tsx scripts/content-build.ts",
     "content:new": "tsx scripts/content-new.ts",
+    "content:export": "npm run gen && tsx scripts/content-export.ts",
     "media:import": "tsx scripts/media-import.ts",
     "build": "npm run gen && npm run content:build && next build && tsx scripts/package.ts",
     "typecheck": "npm run gen && tsc --noEmit",
