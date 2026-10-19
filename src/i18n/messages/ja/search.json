@@ -1,0 +1,48 @@
+{
+  "open": "検索",
+  "tooltip": "検索（{key}）",
+  "panel": {
+    "label": "検索",
+    "field": "プロンプトとテンプレートを検索",
+    "placeholder": "プロンプト、テンプレート、スタイルを検索…",
+    "close": "検索を閉じる",
+    "recent": "最近の検索",
+    "clearRecent": "最近の検索を消去",
+    "popular": "よく使われる用途",
+    "seeAll": "{count, plural, other {# 件の結果をすべて表示}}",
+    "openSearchPage": "検索ページを開く",
+    "loading": "検索を読み込んでいます…",
+    "keys": "↑ ↓ で選択 · Enter で開く · Esc で閉じる"
+  },
+  "groups": {
+    "prompt": "プロンプト",
+    "template": "テンプレート",
+    "collection": "コレクション",
+    "topic": "トピック"
+  },
+  "count": "{count, plural, =0 {結果はありません} other {# 件}}",
+  "error": {
+    "body": "検索を読み込めませんでした。一覧とリンクは引き続き使えます。",
+    "stale": "このページを開いている間にサイトが更新されました。再読み込みすると新しい版を検索できます。",
+    "retry": "再試行",
+    "reload": "再読み込み"
+  },
+  "page": {
+    "documentTitle": "プロンプトとテンプレートを検索",
+    "title": "検索",
+    "description": "検証済みの画像プロンプトとテンプレートを、タイトル、用途、スタイル、プロンプト本文で検索します。",
+    "intro": "タイトル、用途、スタイル、モデル、プロンプト本文が検索対象です。",
+    "summary": "{count, plural, other {「{query}」の検索結果 # 件}}",
+    "updating": "結果を更新しています…",
+    "more": "{total} 件中 {shown} 件を表示"
+  },
+  "noResults": {
+    "title": "「{query}」に一致する結果はありません",
+    "broader": "語を減らしてみてください",
+    "terms": "関連するラベル",
+    "otherLocales": "ほかの言語",
+    "otherLocale": "{count, plural, other {{language}のコンテンツに # 件}}",
+    "suggestion": "{label}（{count}）",
+    "browse": "すべてのプロンプトを見る"
+  }
+}

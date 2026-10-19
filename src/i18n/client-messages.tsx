@@ -13,11 +13,17 @@ export const CLIENT_COMMON_NAMESPACES = ['common', 'primitives', 'shell'] as con
  */
 export async function ClientMessages({
   namespaces = [],
+  locale,
   children,
 }: {
   namespaces?: readonly string[];
+  /** Registry code; pass it from shared components that do not call enterLocale themselves. */
+  locale?: string;
   children: React.ReactNode;
 }) {
-  const messages = pickNamespaces(await getMessages(), [...CLIENT_COMMON_NAMESPACES, ...namespaces]);
+  const messages = pickNamespaces(await getMessages(locale ? { locale } : undefined), [
+    ...CLIENT_COMMON_NAMESPACES,
+    ...namespaces,
+  ]);
   return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }

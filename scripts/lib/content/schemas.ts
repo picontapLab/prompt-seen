@@ -326,7 +326,9 @@ export const collectionEntrySchema = z
   .strict();
 export type CollectionEntrySource = z.infer<typeof collectionEntrySchema>;
 
-export const termSchema = z.object({ id: termId, labels: localeText }).strict();
+/** Other words that find a term in search, per locale: synonyms and common queries (§13.2). */
+const localeWords = z.record(z.string(), z.array(z.string().trim().min(1, 'aliases must not be empty')));
+export const termSchema = z.object({ id: termId, labels: localeText, aliases: localeWords.default({}) }).strict();
 export const taxonomyFileSchema = z.array(termSchema);
 export type TermSource = z.infer<typeof termSchema>;
 

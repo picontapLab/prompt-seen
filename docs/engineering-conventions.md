@@ -242,6 +242,28 @@ Set up in step 3c (design doc §11.4, §11.6.2, §11.8.4).
 - `BottomSheet` (`src/ui/primitives/`) is a non-modal docked sheet; `staticFrom="lg"` makes the same
   element a normal block from 1024 px, so the preview exists once in the HTML.
 
+## Search
+
+Set up in step 3d (design doc §11.8.6, §11.10, §13).
+
+- The `search` emitter writes one index per built locale (`public/generated/{locale}/search/index.json`)
+  from the same content model the pages render. Kinds join the index when their pages exist
+  (`pageSections()`): a step that adds collection or topic pages gets them into search by flipping
+  its flag.
+- Tokenising (`@/modules/search/tokenize`) and the engine options (`engine.ts`) are shared by the
+  build and the Worker; an index and its queries must use the same version of both. Change them
+  together and rebuild.
+- Pages never import the engine. Client code asks the Worker through `searchClient()` (or the
+  `useSearch` / `usePopular` hooks in `src/ui/search/use-search.ts`); every request carries the
+  build ID and a sequence number, and only the latest answer is applied.
+- The header's entry (`SearchLauncher`) is a plain link to `/{locale}/search/` until hydration.
+  `/` and ⌘K / Ctrl+K are handled there; a page with its own search field registers it with
+  `registerPageSearch` so the keys focus that field instead of opening the panel.
+- Single-key shortcuts read `singleKeyShortcuts` from the preferences store (step 4c adds the
+  switch). New ones follow the same rule: ignored in text fields and during IME composition.
+- Search terms for taxonomy: `aliases` in `content/taxonomy/*.yaml` (see `content/README.md`).
+  Labels in other languages are aliases automatically.
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.

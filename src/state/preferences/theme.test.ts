@@ -122,16 +122,22 @@ describe('applyTheme', () => {
 
 describe('preferences store', () => {
   it('reads defaults from corrupt or foreign records', () => {
-    expect(parsePreferences('[1,2]').known).toEqual({ theme: 'system' });
-    expect(parsePreferences('not json').known).toEqual({ theme: 'system' });
+    expect(parsePreferences('[1,2]').known).toEqual({ theme: 'system', singleKeyShortcuts: true });
+    expect(parsePreferences('not json').known).toEqual({ theme: 'system', singleKeyShortcuts: true });
+    expect(parsePreferences('{"singleKeyShortcuts":"no"}').known.singleKeyShortcuts).toBe(true);
+    expect(parsePreferences('{"singleKeyShortcuts":false}').known.singleKeyShortcuts).toBe(false);
   });
 
   it('writes a versioned record and keeps fields it does not know', () => {
     const storage = memoryStorage({ [PREFERENCES_KEY]: '{"theme":"dark","shortcuts":false}' });
     const store = createPreferencesStore(() => storage);
-    expect(store.get()).toEqual({ theme: 'dark' });
+    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true });
     store.set({ theme: 'light' });
-    expect(JSON.parse(storage.data.get(PREFERENCES_KEY)!)).toEqual({ theme: 'light', shortcuts: false });
+    expect(JSON.parse(storage.data.get(PREFERENCES_KEY)!)).toEqual({
+      theme: 'light',
+      singleKeyShortcuts: true,
+      shortcuts: false,
+    });
   });
 
   it('keeps working for the session when storage throws', () => {
@@ -146,9 +152,9 @@ describe('preferences store', () => {
     const store = createPreferencesStore(() => broken);
     let notified = 0;
     store.subscribe(() => notified++);
-    expect(store.get()).toEqual({ theme: 'system' });
+    expect(store.get()).toEqual({ theme: 'system', singleKeyShortcuts: true });
     store.set({ theme: 'dark' });
-    expect(store.get()).toEqual({ theme: 'dark' });
+    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true });
     expect(notified).toBe(1);
   });
 

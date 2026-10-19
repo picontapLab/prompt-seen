@@ -9,9 +9,14 @@ export const PREFERENCES_KEY = 'prompt-library:preferences:v1';
 
 export type Preferences = {
   theme: ThemePreference;
+  /**
+   * Single-character shortcuts such as `/` for search (§11.10). They can be turned off (WCAG
+   * 2.1.4); the switch itself is step 4c's, the shortcuts read this field.
+   */
+  singleKeyShortcuts: boolean;
 };
 
-export const DEFAULT_PREFERENCES: Preferences = Object.freeze({ theme: 'system' });
+export const DEFAULT_PREFERENCES: Preferences = Object.freeze({ theme: 'system', singleKeyShortcuts: true });
 
 /** Known fields are validated one by one; unknown fields are kept for other versions of the site. */
 export function parsePreferences(raw: string | null): { known: Preferences; rest: Record<string, unknown> } {
@@ -23,7 +28,13 @@ export function parsePreferences(raw: string | null): { known: Preferences; rest
   }
   const record = value && typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, unknown>) : {};
   return {
-    known: { theme: isThemePreference(record.theme) ? record.theme : DEFAULT_PREFERENCES.theme },
+    known: {
+      theme: isThemePreference(record.theme) ? record.theme : DEFAULT_PREFERENCES.theme,
+      singleKeyShortcuts:
+        typeof record.singleKeyShortcuts === 'boolean'
+          ? record.singleKeyShortcuts
+          : DEFAULT_PREFERENCES.singleKeyShortcuts,
+    },
     rest: record,
   };
 }
