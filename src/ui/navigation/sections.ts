@@ -17,7 +17,7 @@ export type Section = {
 export const headerSections: readonly Section[] = [
   { key: 'prompts', href: paths.prompts, available: true }, // step 3a
   { key: 'templates', href: paths.templates, available: true }, // step 3c
-  { key: 'collections', href: (locale) => `/${locale}/collections/`, available: false }, // step 3e: paths.collections
+  { key: 'collections', href: paths.collections, available: true }, // step 3e
 ];
 
 /**
@@ -26,9 +26,9 @@ export const headerSections: readonly Section[] = [
  */
 export const linkedPages = {
   /** Category, style and use-case topic pages (§9.1). */
-  topics: false, // step 3e
+  topics: true, // step 3e
   /** About and license pages (§9.1, §9.8). */
-  pages: false, // step 3e
+  pages: true, // step 3e
 } as const;
 
 /** The same flags for sitemaps, llms.txt and exports (§9.3, §9.10.4): they list only pages that exist. */

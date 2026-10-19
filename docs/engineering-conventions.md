@@ -264,6 +264,28 @@ Set up in step 3d (design doc §11.8.6, §11.10, §13).
 - Search terms for taxonomy: `aliases` in `content/taxonomy/*.yaml` (see `content/README.md`).
   Labels in other languages are aliases automatically.
 
+## Topics, collections, content and error pages
+
+Set up in step 3e (design doc §8.2, §9.1, §9.5, §11.8.5, §11.8.7).
+
+- Page bodies live in `src/ui/pages/` (server components, `server-only`); the routes only load the
+  model and render them. Shared parts: `PageHead`, `Cover` (a work complete at its ratio),
+  `Article` (rich text with the sticky `TableOfContents`) and `WorkRows` (the list's cards in
+  justified rows). Works shown outside the list take their card from the list's own pages
+  (`cardsFor` in `src/ui/pages/works.ts`), never from a second card model.
+- A dynamic route under `[locale]` whose list can be empty in some locale returns
+  `[{ slug: EMPTY_PARAM }]` (`@/modules/url`), renders `null` for it, and `scripts/package.ts`
+  removes the output. Static export rejects an empty param list.
+- Content pages are served at `/{locale}/{slug}/`; their slugs must avoid `RESERVED_PAGE_SEGMENTS`
+  (`@/modules/url`). A new top-level route under `[locale]` adds its segment there.
+- Client islands that read browser state (`location`, `navigator`, the preferences store) use
+  `useSyncExternalStore` with an empty server snapshot, so the first output is the same for every
+  visitor and the value appears right after hydration.
+- Host configuration for address changes comes from `scripts/lib/hosts.ts` (pure, unit-tested)
+  through one emitter per host: `nginx`, `cloudflare`, `netlify`, `vercel`, `static-redirects`.
+  `scripts/package.ts` fails when a redirect target is missing from the build or an old or removed
+  address still has a file.
+
 ## Tests
 
 - Unit tests sit next to the code: `*.test.ts`, run by Vitest.

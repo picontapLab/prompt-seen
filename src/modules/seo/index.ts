@@ -179,3 +179,8 @@ export function aboutStructuredData(
 ): JsonLdNode {
   return graph(aboutPage(page, ld), organization(ld), breadcrumbList(crumbs, ld));
 }
+
+/** A page whose only structured data is its breadcrumb, such as the license page (step 3e). */
+export function breadcrumbStructuredData(crumbs: readonly LdCrumb[]): JsonLdNode {
+  return graph(breadcrumbList(crumbs, ld));
+}

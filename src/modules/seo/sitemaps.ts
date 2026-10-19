@@ -61,9 +61,11 @@ export function localeSitemapUrls(locale: LocaleEntry, sections: PageSections): 
     urls.push({ loc: absoluteUrl(paths.templates(prefix)), lastmod: latest(templates.map((t) => t.updatedAt)) });
   for (const t of templates) urls.push({ loc: absoluteUrl(t.path), lastmod: t.updatedAt, images: mainImage(t.cover) });
 
-  // Step 3e adds the collection index page here when it adds paths.collections.
+  const collections = published(index.collections);
+  if (sections.collections && collections.length)
+    urls.push({ loc: absoluteUrl(paths.collections(prefix)), lastmod: latest(collections.map((c) => c.updatedAt)) });
   if (sections.collections)
-    for (const c of published(index.collections))
+    for (const c of collections)
       urls.push({ loc: absoluteUrl(c.path), lastmod: c.updatedAt, images: mainImage(c.cover) });
   if (sections.topics)
     for (const t of published(index.topics))

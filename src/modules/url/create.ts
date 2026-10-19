@@ -10,6 +10,34 @@
 //
 // Pages end with "/" (trailingSlash: true); files such as index.md or sitemap.xml do not.
 
+/**
+ * First path segments under a locale that the site's own routes use (src/app/[locale]/(public)/).
+ * Content pages (about, license) are served at /{locale}/{slug}/, so their slugs must avoid
+ * these; content:validate checks it.
+ */
+export const RESERVED_PAGE_SEGMENTS: readonly string[] = [
+  'prompts',
+  'templates',
+  'collections',
+  'categories',
+  'styles',
+  'use-cases',
+  'search',
+  'explore',
+  'favorites',
+  'translation-missing',
+  '404',
+  '410',
+  'sitemap-pages.xml',
+];
+
+/**
+ * The one param a page route exports for a locale with nothing to show there (e.g. a locale
+ * without collections): static export rejects an empty param list. The page renders nothing for
+ * it and scripts/package.ts removes its output, so the address answers 404.
+ */
+export const EMPTY_PARAM = '_none';
+
 export type UrlConfig = {
   origin: string;
   basePath: string;
@@ -58,6 +86,8 @@ export function createUrlModule(cfg: UrlConfig) {
     languageEntry: () => '/',
     home: (locale: string) => `/${locale}/`,
     prompts: (locale: string) => `/${locale}/prompts/`,
+    /** The list with filter conditions; `fragment` comes from the feed's formatQuery ("#use=poster"). */
+    promptsFiltered: (locale: string, fragment: string) => `/${locale}/prompts/${fragment}`,
     /** Page 1 is the list itself (§9.4). */
     promptsPage: (locale: string, page: number) =>
       page <= 1 ? `/${locale}/prompts/` : `/${locale}/prompts/page/${page}/`,
@@ -68,6 +98,8 @@ export function createUrlModule(cfg: UrlConfig) {
     /** The template's editor filled in with values; `fragment` comes from the editor's encodeShare (§11.8.4). */
     templateFilled: (locale: string, slug: string, fragment: string) => `/${locale}/templates/${slug}/#${fragment}`,
     templateMarkdown: (locale: string, slug: string) => `/${locale}/templates/${slug}/index.md`,
+    /** Index of the editorial collections (§9.1). */
+    collections: (locale: string) => `/${locale}/collections/`,
     collection: (locale: string, slug: string) => `/${locale}/collections/${slug}/`,
     /** Category, style and use-case topic pages (§9.1); `segment` is categories, styles or use-cases. */
     topic: (locale: string, segment: 'categories' | 'styles' | 'use-cases', slug: string) =>
@@ -82,6 +114,11 @@ export function createUrlModule(cfg: UrlConfig) {
     /** Per-locale error pages, referenced by host error_page rules (§4.1). */
     notFound: (locale: string) => `/${locale}/404/`,
     gone: (locale: string) => `/${locale}/410/`,
+    /**
+     * Shown when the language menu asks for a version that does not exist (§11.8.7). `fragment`
+     * names the page and the languages that have it; see `missingTranslationFragment`. noindex.
+     */
+    missingTranslation: (locale: string, fragment = '') => `/${locale}/translation-missing/${fragment}`,
     /** Files written by content:build into public/generated/. */
     generated: (file: string) => `/generated/${file.replace(/^\/+/, '')}`,
     /** Site icon (src/app/icon.svg), also the Organization logo in structured data (§9.6). */

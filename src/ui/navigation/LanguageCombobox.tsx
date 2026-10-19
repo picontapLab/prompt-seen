@@ -6,13 +6,17 @@ import { registryCode } from '@/i18n/format-locale';
 import { useMemo } from 'react';
 import { builtLocales, type LocaleEntry } from '@/config';
 import { paths } from '@/modules/url';
+import { missingTranslationFragment, parseMissingFragment, pathInLocale } from '@/ui/pages/missing';
 import { Combobox, type ComboboxOption } from '@/ui/primitives/Combobox';
+import { preferencesStore } from '@/state/preferences/store';
 
 /**
  * Language selection (§11.1.7, §11.7): a searchable list of native names, never flags. Finds a
  * language by its native name, its name in the current interface language or its code. Keeps
- * the same resource when the page has a version in that language (its hreflang alternates),
- * otherwise opens that language's home page. Loaded on first use (LanguageSwitch).
+ * the same resource when the page has a version in that language (its hreflang alternates). A
+ * page with versions but none in that language opens the missing-translation page, which lists
+ * the versions there are (§11.8.7); a page without versions opens that language's home. The
+ * choice is remembered for the language entry (§8.2). Loaded on first use (LanguageSwitch).
  */
 export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: boolean; autoFocus?: boolean }) {
   const t = useTranslations('shell.language');
@@ -51,19 +55,39 @@ export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: 
       autoFocus={autoFocus}
       onSelectionChange={(key) => {
         const target = builtLocales.find((l) => l.code === key);
-        if (target && target.code !== current?.code) router.push(targetPath(pathname, target));
+        if (!target || target.code === current?.code) return;
+        preferencesStore.set({ language: target.code });
+        router.push(targetPath(pathname, target));
       }}
     />
   );
 }
 
-/** The same page in another language when it exists, else that language's home. */
+/**
+ * The same page in another language when it exists; the missing-translation page when this page
+ * has versions but not that one; else that language's home.
+ */
 function targetPath(pathname: string, target: LocaleEntry): string {
   const [, first = '', ...rest] = pathname.split('/');
   const onLocalePage = builtLocales.some((l) => l.pathPrefix === first);
   const alternates = new Set(
-    [...document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]')].map((l) => l.hreflang),
+    [...document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]')]
+      .map((l) => l.hreflang)
+      .filter((h) => h !== 'x-default'),
   );
-  if (onLocalePage && alternates.has(target.htmlLang)) return `/${[target.pathPrefix, ...rest].join('/')}`;
+  if (!onLocalePage) return paths.home(target.pathPrefix);
+  // On the missing-translation page itself, carry on with the page the visitor came from.
+  if (rest[0] === 'translation-missing') {
+    const info = parseMissingFragment(location.hash, builtLocales);
+    if (!info) return paths.home(target.pathPrefix);
+    return info.have.includes(target.code)
+      ? pathInLocale(info.from, target.pathPrefix)
+      : paths.missingTranslation(target.pathPrefix, missingTranslationFragment(info));
+  }
+  if (alternates.has(target.htmlLang)) return `/${[target.pathPrefix, ...rest].join('/')}`;
+  if (alternates.size > 0) {
+    const have = builtLocales.filter((l) => alternates.has(l.htmlLang)).map((l) => l.code);
+    return paths.missingTranslation(target.pathPrefix, missingTranslationFragment({ from: pathname, have }));
+  }
   return paths.home(target.pathPrefix);
 }

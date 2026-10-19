@@ -14,9 +14,18 @@ export type Preferences = {
    * 2.1.4); the switch itself is step 4c's, the shortcuts read this field.
    */
   singleKeyShortcuts: boolean;
+  /**
+   * Registry code of the language the visitor last chose (§8.2). Only offered as "Continue in
+   * {language}" on the language entry; addresses with a language are never redirected.
+   */
+  language: string | null;
 };
 
-export const DEFAULT_PREFERENCES: Preferences = Object.freeze({ theme: 'system', singleKeyShortcuts: true });
+export const DEFAULT_PREFERENCES: Preferences = Object.freeze({
+  theme: 'system',
+  singleKeyShortcuts: true,
+  language: null,
+});
 
 /** Known fields are validated one by one; unknown fields are kept for other versions of the site. */
 export function parsePreferences(raw: string | null): { known: Preferences; rest: Record<string, unknown> } {
@@ -34,6 +43,10 @@ export function parsePreferences(raw: string | null): { known: Preferences; rest
         typeof record.singleKeyShortcuts === 'boolean'
           ? record.singleKeyShortcuts
           : DEFAULT_PREFERENCES.singleKeyShortcuts,
+      language:
+        typeof record.language === 'string' && /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(record.language)
+          ? record.language
+          : DEFAULT_PREFERENCES.language,
     },
     rest: record,
   };

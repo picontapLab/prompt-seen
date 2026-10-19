@@ -3,6 +3,7 @@ import path from 'node:path';
 import type { ResolvedConfig } from '../../../src/config/schema';
 import { placeholderNames } from '../../../src/modules/template/parse';
 import { renderTemplate, resolveValues } from '../../../src/modules/template/render';
+import { RESERVED_PAGE_SEGMENTS } from '../../../src/modules/url/create';
 import type { FieldError } from '../../../src/modules/template/types';
 import type { Findings } from './findings';
 import type { Content, LocaleFile, TaxonomyKey } from './read';
@@ -393,7 +394,14 @@ export function validateContent(content: Content, config: ResolvedConfig, findin
   }
   for (const rec of content.collections.values())
     checkLocales(rec.dir, 'collection', rec.locales, { coverAssetId: rec.data.coverAssetId, terms: [] });
-  for (const page of content.pages.values()) checkLocales(page.dir, 'page', page.locales, { coverAssetId: null, terms: [] });
+  for (const page of content.pages.values()) {
+    checkLocales(page.dir, 'page', page.locales, { coverAssetId: null, terms: [] });
+    // Pages are served at /{locale}/{slug}/, beside the site's own routes (§9.1).
+    if (RESERVED_PAGE_SEGMENTS.includes(page.slug))
+      findings.error(rel(page.dir), `page "${page.slug}" would take the address of the site's ${page.slug} route`, {
+        fix: `rename the directory; reserved: ${RESERVED_PAGE_SEGMENTS.join(', ')}`,
+      });
+  }
   for (const topic of content.topics)
     checkLocales(topic.dir, 'topic', topic.locales, { coverAssetId: null, terms: [{ key: topic.taxonomy, id: topic.termId }] });
 
