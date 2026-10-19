@@ -152,8 +152,24 @@ test.describe('desktop', () => {
     const prefetched = page.waitForResponse((r) => r.url().endsWith(`/prompts/${third.slug}.json`));
     await card(page, third.slug).hover();
     await prefetched;
+    // The flight starts from the card's loaded image (§11.3.2); a slow runner may still be loading it.
+    await card(page, third.slug)
+      .locator('img')
+      .evaluate(async (img: HTMLImageElement) => {
+        if (!img.complete) await img.decode().catch(() => {});
+      });
+    // Count flights as they start: a fast one can begin and end between two polls.
+    await page.evaluate(() => {
+      const w = window as unknown as { __flights: number };
+      w.__flights = 0;
+      new MutationObserver((records) => {
+        for (const r of records)
+          for (const n of r.addedNodes)
+            if (n instanceof HTMLElement && n.matches('img[data-popup-flight]')) w.__flights++;
+      }).observe(document.body, { childList: true, subtree: true });
+    });
     await card(page, third.slug).click();
-    await expect(popup(page).locator('img[data-popup-flight]')).toHaveCount(1);
+    await expect.poll(() => page.evaluate(() => (window as unknown as { __flights: number }).__flights)).toBe(1);
     const title = dialogTitle(page);
     const size = await title.evaluate((el) => getComputedStyle(el).fontSize);
     const transforms = await title.evaluate((el) => {
