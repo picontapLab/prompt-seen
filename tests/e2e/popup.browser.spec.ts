@@ -520,8 +520,14 @@ test.describe('phone', () => {
     await gotoList(page);
     await card(page, first.slug).tap();
     await expectOpen(page, first.slug);
-    const panel = await popup(page).locator('> div').first().boundingBox();
-    expect(panel!.width).toBeGreaterThanOrEqual(389);
+    // Full width of the dialog's content area: browsers with classic scrollbars (Chromium on
+    // Linux without mobile emulation) take the scrollbar's width off the viewport.
+    const { panel, inner } = await popup(page).evaluate((dlg) => ({
+      panel: (dlg.firstElementChild as HTMLElement).getBoundingClientRect().width,
+      inner: dlg.clientWidth,
+    }));
+    expect(inner).toBeGreaterThanOrEqual(390 - 20);
+    expect(Math.abs(panel - inner)).toBeLessThanOrEqual(1);
     await expect(popup(page).locator('[data-popup-step="next"]')).toBeVisible();
     await expect(popup(page).locator('[data-popup-close]')).toBeVisible();
     await popup(page).locator('[data-popup-step="next"]').tap();
