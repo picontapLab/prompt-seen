@@ -73,6 +73,9 @@ export function AnnotatedText({ text }: { text: string }) {
             }}
             onKeyDown={(e) => {
               if (e.key === 'Escape' && current) {
+                // Esc cancels the annotation first (§11.1.9); preventDefault keeps a surrounding
+                // native dialog (the detail popup) from also treating it as a close request.
+                e.preventDefault();
                 e.stopPropagation();
                 setCurrent(null);
               }

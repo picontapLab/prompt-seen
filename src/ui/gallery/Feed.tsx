@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import {
+  useCallback,
   useEffect,
   useEffectEvent,
   useId,
@@ -18,6 +19,9 @@ import { feedPageFile } from '@/modules/feed/files';
 import { editorialFor, EMPTY_QUERY, formatQuery, isCustomOrder, queryResults } from '@/modules/feed/query';
 import { FEED_PAGE_SIZE, type FeedBlock, type FeedFacts, type FeedPage, type Interlude } from '@/modules/feed/types';
 import { paths, withBasePath } from '@/modules/url';
+import { siteState } from '@/ui/detail-popup/history';
+import { uniqueBySlug } from '@/ui/detail-popup/logic';
+import { usePopupList } from '@/ui/detail-popup/PopupHost';
 import { Button } from '@/ui/primitives/Button';
 import { Card } from './Card';
 import styles from './Feed.module.css';
@@ -105,11 +109,16 @@ const isNear = (el: HTMLElement | null) => {
 /**
  * Replaces the current address without a history entry. Next.js keeps its router state in the
  * entry and syncs usePathname (it copies its own fields into the state given); the list's
- * snapshot (`feed`) is carried over.
+ * snapshot (`feed`) and the detail popup's mark (step 4a) are carried over.
  */
 function replaceAddress(url: string, feed: Snapshot | undefined = window.history.state?.feed) {
-  window.history.replaceState(feed ? { feed } : null, '', url);
+  const state = siteState();
+  delete state.feed;
+  window.history.replaceState({ ...state, ...(feed && { feed }) }, '', url);
 }
+
+/** The detail popup is open over the list: the address belongs to the popup (§11.3.1). */
+const popupOpen = () => 'popupOpen' in document.documentElement.dataset;
 
 const noSubscribe = () => () => {};
 
@@ -235,6 +244,29 @@ export function Feed({ initial, end }: FeedProps) {
     if (hasPrev && prev === 'idle' && wentUp.current && isNear(topRef.current)) void loadPrev();
   });
 
+  // The detail popup (step 4a, §11.3) steps through the works in reading order and asks for the
+  // next batch when it reaches the end of what is loaded. Editorial feature rows repeat a work
+  // that has its own card, so only extreme works count from feature rows (as in pagePromptIds).
+  const loadMoreNow = useRef<() => void>(() => {});
+  useLayoutEffect(() => {
+    loadMoreNow.current = () => {
+      if (!switching && hasNext && next !== 'loading' && next !== 'stale') void loadNext();
+    };
+  });
+  const loadMore = useCallback(() => loadMoreNow.current(), []);
+  const works = useMemo(
+    () =>
+      uniqueBySlug(
+        batches.flatMap((b) =>
+          b.blocks.flatMap((block) =>
+            block.t === 'cards' ? block.items : block.t === 'feature' && block.reason === 'extreme' ? [block.card] : [],
+          ),
+        ),
+      ),
+    [batches],
+  );
+  usePopupList({ items: works, hasMore: hasNext && !switching, loadMore });
+
   // After each change of the list the sentinel may still be near: load again if so.
   useEffect(() => {
     if (hydrated) tryLoad();
@@ -293,7 +325,7 @@ export function Feed({ initial, end }: FeedProps) {
 
   // --- The address of the page in view, the snapshot for returning, and the sentinels ---------
   const syncAddress = useEffectEvent(() => {
-    if (custom || switching) return;
+    if (custom || switching || popupOpen()) return;
     const feed = feedRef.current;
     if (!feed) return;
     const box = feed.getBoundingClientRect();
