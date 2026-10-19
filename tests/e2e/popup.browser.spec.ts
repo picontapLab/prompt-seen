@@ -464,7 +464,8 @@ test.describe('right-to-left', () => {
 });
 
 test.describe('phone', () => {
-  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  // As the other phone tests: no isMobile (unsupported in Firefox); buttons are tapped.
+  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true });
 
   /** A one-finger swipe on the popup, as touch events (Chromium builds Touch objects). */
   async function swipe(page: Page, from: [number, number], to: [number, number], ms = 160) {
@@ -517,14 +518,16 @@ test.describe('phone', () => {
 
   test('the popup fills the screen and keeps buttons for every gesture (WCAG 2.5.1)', async ({ page }) => {
     await gotoList(page);
-    await card(page, first.slug).click();
+    await card(page, first.slug).tap();
     await expectOpen(page, first.slug);
     const panel = await popup(page).locator('> div').first().boundingBox();
     expect(panel!.width).toBeGreaterThanOrEqual(389);
     await expect(popup(page).locator('[data-popup-step="next"]')).toBeVisible();
     await expect(popup(page).locator('[data-popup-close]')).toBeVisible();
-    await popup(page).locator('[data-popup-step="next"]').click();
+    await popup(page).locator('[data-popup-step="next"]').tap();
     await expectOpen(page, second.slug);
     expect(await seriousViolations(page, 'dialog[data-popup]')).toEqual([]);
+    await popup(page).locator('[data-popup-close]').tap();
+    await expectClosed(page, second.slug);
   });
 });
