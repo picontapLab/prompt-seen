@@ -31,3 +31,33 @@ export function templateCrumbs(prefix: string, label: Label): Crumb[] {
     { label: label('templates'), href: sectionPath('templates', prefix) },
   ];
 }
+
+// Pages of step 3e (design doc §9.1, §11.8.5). Labels come from the `pages.breadcrumb` messages.
+type PageLabel = (key: 'home' | 'prompts' | 'collections') => string;
+
+/** Home › Prompts › {topic}: a category, style or use-case topic sits under the list it filters. */
+export function topicCrumbs(topic: { title: string }, prefix: string, label: PageLabel): Crumb[] {
+  return [
+    { label: label('home'), href: paths.home(prefix) },
+    { label: label('prompts'), href: sectionPath('prompts', prefix) },
+    { label: topic.title, href: null },
+  ];
+}
+
+/** Home › Collections › {collection}, or Home › Collections on the index itself. */
+export function collectionCrumbs(collection: { title: string } | null, prefix: string, label: PageLabel): Crumb[] {
+  const index = headerSections.find((s) => s.key === 'collections')?.available ? paths.collections(prefix) : null;
+  return [
+    { label: label('home'), href: paths.home(prefix) },
+    { label: label('collections'), href: collection ? index : null },
+    ...(collection ? [{ label: collection.title, href: null }] : []),
+  ];
+}
+
+/** Home › {page}: about, license. */
+export function pageCrumbs(page: { title: string }, prefix: string, label: PageLabel): Crumb[] {
+  return [
+    { label: label('home'), href: paths.home(prefix) },
+    { label: page.title, href: null },
+  ];
+}

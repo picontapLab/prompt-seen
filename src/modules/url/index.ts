@@ -9,3 +9,4 @@ export const { withBasePath, stripBasePath, absoluteUrl, paths } = createUrlModu
   urlPattern: config.urlPattern,
   localePrefixes: config.locales.map((l) => l.pathPrefix),
 });
+export { EMPTY_PARAM, RESERVED_PAGE_SEGMENTS } from './create';

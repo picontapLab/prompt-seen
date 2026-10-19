@@ -95,6 +95,7 @@ test('switching the theme keeps focus, persists, and logs no errors', async ({ p
   expect(JSON.parse((await page.evaluate((key) => localStorage.getItem(key), KEY))!)).toEqual({
     theme: 'system',
     singleKeyShortcuts: true,
+    language: null,
   });
 
   // Client navigation to another locale keeps the theme and stays error-free.

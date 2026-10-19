@@ -38,11 +38,18 @@
       backdrop-filter: none;
     }
   }
+  /* Three sections, search, language and theme fit from 768 px with the tighter gaps; wider
+     screens get the full spacing. */
   .bar {
     display: flex;
     align-items: center;
-    gap: var(--space-12) var(--space-32);
+    gap: var(--space-12) var(--space-16);
     min-block-size: var(--nav-height);
+  }
+  @media (min-width: 1024px) {
+    .bar {
+      column-gap: var(--space-32);
+    }
   }
   .home {
     display: inline-flex;
@@ -54,10 +61,15 @@
 
   .nav ul {
     display: flex;
-    gap: var(--space-24);
+    gap: var(--space-16);
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  @media (min-width: 1024px) {
+    .nav ul {
+      gap: var(--space-24);
+    }
   }
   .nav a {
     display: inline-flex;
@@ -170,7 +182,8 @@
     .footerBlock:last-of-type {
       grid-column: span 4;
     }
-    .licence {
+    .licence,
+    .footerPages {
       grid-column: 1 / -1;
     }
   }

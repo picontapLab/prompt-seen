@@ -3,9 +3,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
+import type { ContentManifest } from '../src/modules/content/types';
 import { feedIndexFile } from '../src/modules/feed/files';
 import { NO_MARKDOWN } from '../src/modules/geo/documents';
-import { createUrlModule } from '../src/modules/url/create';
+import { createUrlModule, EMPTY_PARAM } from '../src/modules/url/create';
 import { ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -53,6 +54,12 @@ for (const l of config.builtLocales)
   for (const kind of ['prompts', 'templates'])
     fs.rmSync(path.join(target, l.pathPrefix, kind, NO_MARKDOWN), { recursive: true, force: true });
 
+// Placeholder pages of locales with no topics, collections or content pages (EMPTY_PARAM): static
+// export needs one param per route; the address must answer 404.
+for (const l of config.builtLocales)
+  for (const segment of ['categories', 'styles', 'use-cases', 'collections', ''])
+    fs.rmSync(path.join(target, l.pathPrefix, segment, EMPTY_PARAM), { recursive: true, force: true });
+
 // Every built locale has its pages, error pages and the shared files exist.
 const fileFor = (internal: string) => path.join(target, internal.endsWith('/') ? `${internal}index.html` : internal);
 const required = [
@@ -69,6 +76,19 @@ const required = [
 for (const internal of required) {
   if (!fs.existsSync(fileFor(internal))) errors.push(`missing ${path.relative(ROOT, fileFor(internal))}`);
 }
+// Address changes (§9.5): every redirect lands on a page of this build, and no old or removed
+// address is still a file, which a host serving files before its rules would answer with 200.
+const manifestFile = path.join(ROOT, '.generated/content/manifest.json');
+if (fs.existsSync(manifestFile)) {
+  const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8')) as ContentManifest;
+  for (const r of manifest.redirects) {
+    if (!fs.existsSync(fileFor(r.to))) errors.push(`redirect ${r.from} -> ${r.to}: the target is not in the build`);
+    if (fs.existsSync(fileFor(r.from))) errors.push(`redirect ${r.from}: a page still exists at the old address`);
+  }
+  for (const g of manifest.gone)
+    if (fs.existsSync(fileFor(g.path))) errors.push(`gone ${g.path}: a page still exists at the removed address`);
+} else errors.push('missing .generated/content/manifest.json: run `npm run content:build`');
+
 // Locales that are not built must not leak into the artifact.
 for (const l of config.locales.filter((l) => !config.builtLocales.includes(l))) {
   if (fs.existsSync(path.join(target, l.pathPrefix)))
