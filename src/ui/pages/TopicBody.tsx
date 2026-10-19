@@ -1,12 +1,15 @@
 import 'server-only';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
-import type { LocaleEntry } from '@/config';
+import { config, type LocaleEntry } from '@/config';
+import { ClientMessages } from '@/i18n/client-messages';
 import { localeIndex } from '@/modules/content';
 import type { TaxonomyKind, TopicDetail, TopicSummary } from '@/modules/content/types';
 import { EMPTY_QUERY, formatQuery } from '@/modules/feed/query';
 import { collectionStructuredData, pageMetadata } from '@/modules/seo';
 import { paths } from '@/modules/url';
+import { popupLocale } from '@/ui/detail-popup/logic';
+import { PopupHost, PopupWorks } from '@/ui/detail-popup/PopupHost';
 import { topicCrumbs } from '@/ui/prompt-detail/crumbs';
 import { RelatedRow } from '@/ui/prompt-detail/RelatedRow';
 import { Article, Cover, PageHead, WorkRows } from './PageParts';
@@ -89,7 +92,13 @@ export async function TopicBody({ detail, locale }: { detail: TopicDetail; local
             </Link>
           )}
         </div>
-        <WorkRows cards={cards} locale={locale.code} label={t('topic.works')} />
+        {/* The works open in the detail popup, as in the list (§11.3, step 4a). */}
+        <ClientMessages locale={locale.code} namespaces={['detail', 'popup']}>
+          <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+            <PopupWorks items={cards} />
+            <WorkRows cards={cards} locale={locale.code} label={t('topic.works')} />
+          </PopupHost>
+        </ClientMessages>
       </section>
       <div className={styles.section}>
         <RelatedRow

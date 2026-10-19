@@ -29,6 +29,13 @@ export type PromptDetailBodyProps = {
   /** The page's locale (registry entry). */
   locale: Pick<LocaleEntry, 'code' | 'pathPrefix' | 'htmlLang'>;
   siteName: string;
+  /**
+   * In the detail popup the title is a level-2 heading that names the dialog (the list's own
+   * title stays the page's h1). Omit on the full page.
+   */
+  heading?: { level: 2; id: string };
+  /** An already loaded file of the cover to show until the larger one paints (ImageStage). */
+  coverPreview?: string;
 };
 
 /**
@@ -41,7 +48,7 @@ export type PromptDetailBodyProps = {
  * Order follows §9.2, answer first: title, one-line summary and test record, the image, the
  * prompt to copy, then how to use it, test prints, source and related work.
  */
-export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyProps) {
+export function PromptDetailBody({ detail, locale, siteName, heading, coverPreview }: PromptDetailBodyProps) {
   const t = useTranslations('detail');
   const id = useId();
   const textId = `${id}-prompt`;
@@ -63,6 +70,7 @@ export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyP
               startPrint={`${detail.frameNumber} ▸ ${detail.frameNumber}A`}
               endPrint={`${siteName.toUpperCase()} 400`}
               sizes="(min-width: 1024px) 58vw, 100vw"
+              preview={coverPreview}
             />
           </div>
 
@@ -73,7 +81,13 @@ export function PromptDetailBody({ detail, locale, siteName }: PromptDetailBodyP
             />
             <header className={styles.header}>
               <FrameNumber n={Number(detail.frameNumber)} labelled />
-              <h1 className={styles.title}>{detail.title}</h1>
+              {heading ? (
+                <h2 id={heading.id} className={styles.title}>
+                  {detail.title}
+                </h2>
+              ) : (
+                <h1 className={styles.title}>{detail.title}</h1>
+              )}
               <p className={styles.summary}>{detail.description}</p>
               <TestInfo detail={detail} />
             </header>

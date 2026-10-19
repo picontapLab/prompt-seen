@@ -44,10 +44,16 @@
   }
 
   .image {
+    position: relative;
     display: block;
     inline-size: 100%;
     block-size: 100%;
     border-radius: inherit;
+  }
+  /* Under the cover until it paints: an image with no data yet is transparent (§11.3.2). */
+  .preview {
+    position: absolute;
+    inset: 0;
   }
 
   .failed {

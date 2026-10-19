@@ -1,8 +1,10 @@
 import { getFormatter, getTranslations } from 'next-intl/server';
-import type { LocaleEntry } from '@/config';
+import { config, type LocaleEntry } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
 import { feedBand, feedIndex, feedPage } from '@/modules/feed';
 import { EMPTY_QUERY, facetCounts } from '@/modules/feed/query';
+import { popupLocale } from '@/ui/detail-popup/logic';
+import { PopupHost } from '@/ui/detail-popup/PopupHost';
 import { ExpandableIntro } from './ExpandableIntro';
 import { Feed } from './Feed';
 import { FilterBar } from './FilterBar';
@@ -40,15 +42,22 @@ export async function PromptList({ locale, page }: { locale: LocaleEntry; page: 
           )}
         </p>
       </header>
-      <ClientMessages namespaces={['feed', 'detail']}>
+      <ClientMessages namespaces={['feed', 'detail', 'popup']}>
         <ListProvider locale={{ code: locale.code, pathPrefix: locale.pathPrefix }} buildId={data.buildId}>
-          {band && (
-            <HideWhenFiltered>
-              <ShowcaseBand band={band} locale={locale.code} />
-            </HideWhenFiltered>
-          )}
-          <FilterBar styles={index.styles} useCases={index.useCases} initialCounts={facetCounts(index, EMPTY_QUERY)} />
-          <Feed initial={data} />
+          {/* Works open in the detail popup over the list (§11.3, step 4a). */}
+          <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+            {band && (
+              <HideWhenFiltered>
+                <ShowcaseBand band={band} locale={locale.code} />
+              </HideWhenFiltered>
+            )}
+            <FilterBar
+              styles={index.styles}
+              useCases={index.useCases}
+              initialCounts={facetCounts(index, EMPTY_QUERY)}
+            />
+            <Feed initial={data} />
+          </PopupHost>
         </ListProvider>
       </ClientMessages>
     </div>

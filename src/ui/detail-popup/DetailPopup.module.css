@@ -1,0 +1,183 @@
+@layer components {
+  /* The page behind holds still while the popup is open (§11.3.1); the reserved gutter keeps it
+     from shifting sideways when its scrollbar goes. */
+  :global(html[data-popup-open]) {
+    overflow: hidden;
+    scrollbar-gutter: stable;
+  }
+
+  /* The native modal dialog covers the viewport and is the scroll container, so the panel
+     scrolls as one page and nothing nests a second scroll area (§11.3.2). */
+  .dialog {
+    position: fixed;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    max-inline-size: none;
+    max-block-size: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-primary);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .dialog::backdrop {
+    background: var(--scrim);
+  }
+  .dialog[open]::backdrop {
+    animation: fade var(--duration-content) var(--ease-enter);
+  }
+  .dialog[data-closing]::backdrop {
+    opacity: 0;
+    transition: opacity var(--duration-exit) var(--ease-exit);
+  }
+
+  /* Phones: the full screen (§11.2). */
+  .panel {
+    /* The popup's own bar replaces the site navigation for sticky offsets inside it. */
+    --nav-height: 56px;
+    position: relative;
+    min-block-size: 100%;
+    background: var(--canvas);
+    padding-block-end: calc(var(--space-48) + env(safe-area-inset-bottom));
+    animation: rise var(--duration-content) var(--ease-enter);
+  }
+
+  .bar {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    block-size: var(--nav-height);
+    padding-inline: var(--space-8);
+    border-block-end: 1px solid var(--border-subtle);
+    background: var(--canvas);
+  }
+  .steps {
+    display: flex;
+    gap: var(--space-4);
+  }
+  .close {
+    margin-inline-start: auto;
+  }
+
+  .body {
+    padding-inline: var(--page-margin);
+    padding-block-start: var(--space-16);
+  }
+  /* Content that arrives after the frame fades in; a prefetched one is there at once. */
+  .body[data-ready] {
+    animation: fade var(--duration-content) var(--ease-enter);
+  }
+
+  @media (min-width: 768px) {
+    .dialog {
+      padding: var(--space-24) var(--page-margin);
+    }
+    .panel {
+      min-block-size: 0;
+      max-inline-size: calc(var(--container-detail) + 2 * var(--page-margin));
+      margin-inline: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-panel);
+      box-shadow: var(--elevation-2);
+      /* Desktop opens by the shared image; the panel only fades, so the fixed side buttons keep
+         the viewport as their containing block (a transform would capture them). */
+      animation-name: fade;
+    }
+    .bar {
+      border-start-start-radius: var(--radius-panel);
+      border-start-end-radius: var(--radius-panel);
+      background: var(--canvas);
+    }
+    /* Previous and next sit at both sides, vertically centred (§11.8.3 弹层版). */
+    .step {
+      position: fixed;
+      inset-block-start: 50%;
+      translate: 0 -50%;
+      z-index: 3;
+    }
+    .step[data-side='start'] {
+      inset-inline-start: max(var(--space-8), calc((100vw - var(--container-detail)) / 2 - var(--page-margin) - 52px));
+    }
+    .step[data-side='end'] {
+      inset-inline-end: max(var(--space-8), calc((100vw - var(--container-detail)) / 2 - var(--page-margin) - 52px));
+    }
+  }
+
+  .pending {
+    display: grid;
+    gap: var(--space-24);
+    padding-block: var(--space-16);
+  }
+  @media (min-width: 1024px) {
+    .pending {
+      grid-template-columns: 7fr 5fr;
+      align-items: start;
+    }
+  }
+  .pendingFrame {
+    display: block;
+    inline-size: min(100%, calc(70svh * var(--w) / var(--h)));
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+    overflow: hidden;
+  }
+  .pendingFrame img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  .pendingText {
+    display: grid;
+    gap: var(--space-12);
+    align-content: start;
+  }
+  .pendingTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-page-title);
+    line-height: var(--leading-page-title);
+  }
+  .pendingStatus {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+  .pendingStatus p {
+    margin: 0;
+  }
+  .pendingActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-16);
+    margin-block-start: var(--space-12) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .panel,
+    .body[data-ready],
+    .dialog[open]::backdrop {
+      animation: none;
+    }
+    .dialog[data-closing]::backdrop {
+      transition: none;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(var(--distance-reveal));
+    }
+  }
+}

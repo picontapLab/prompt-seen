@@ -218,10 +218,32 @@ Set up in step 3a (design doc §9.4, §11.8.2).
 - Cards and interludes (`src/ui/gallery/`) carry no `'use client'`: the server renders the first page
   and the client feed appends later batches with the same components.
 - Works link to their detail page with a plain `<a href>` carrying `data-prefetch` (the popup JSON);
-  step 4a turns the click into the popup.
+  the detail popup (step 4a) takes over plain clicks on them.
 - Feed articles carry `data-entry` (the work's ID; an editorial feature row repeats its work's ID),
   `data-key` (unique) and `data-feed-page`. Tests that want one card use
   `article[data-entry="…"]:not([data-interlude])`.
+
+## Detail popup
+
+Set up in step 4a (design doc §11.3, §11.3.1, §11.3.2, §12.2).
+
+- A gallery whose works open in the popup is wrapped in `PopupHost` (`src/ui/detail-popup/`), inside a
+  `<ClientMessages>` with the `detail` and `popup` namespaces. The host takes over plain clicks on
+  links to Prompt detail addresses of its locale; modified clicks, other tabs and pages without
+  JavaScript reach the full page. Links stay real `<a href>` (or `next/link`) elements.
+- The list inside registers its works in reading order: `usePopupList({ items, hasMore, loadMore })`
+  for a growing list (the feed), `<PopupWorks items={…} />` for a fixed one (topic pages). Previous
+  / next follow that order and call `loadMore` at the end of what is loaded.
+- The address is the only state: the popup is open while the path is a detail address of the
+  locale and the host is mounted. Code that replaces history entries under a host keeps the site's
+  fields with `siteState()` from `history.ts` (the popup mark and the list's snapshot) and skips
+  address updates while `document.documentElement.dataset.popupOpen` is set.
+- The popup is a native modal `<dialog>` in the top layer. Overlays of the primitives inside it
+  render into the dialog through `PortalScope`; an icon button there passes `tooltip={false}` or
+  relies on that scope. An Esc that a control inside handles itself calls `preventDefault()`, so the
+  dialog does not also close (the annotation phrases do).
+- Next.js's patched `pushState` / `replaceState` are framework internals:
+  `tests/e2e/popup.browser.spec.ts` is their regression suite; run it on every Next.js upgrade.
 
 ## Templates
 
@@ -336,3 +358,4 @@ the design document section they implement.
 | Sitemaps, `llms.txt`                | the same flags (`pageSections()`); new kinds of page go in `@/modules/seo/sitemaps` |
 | Structured data                     | a function in `@/modules/seo` (mapping in `structured-data.ts`), rendered with `<JsonLd>` |
 | Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |
+| Detail popup                        | wrap the gallery in `PopupHost` and register its works with `usePopupList` or `<PopupWorks>` |
