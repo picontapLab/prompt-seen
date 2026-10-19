@@ -13,7 +13,10 @@ Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`; ste
 sitemaps (`/prompt-seen/sitemap.xml`), `robots.txt`, Markdown versions of every published page (`…/index.md`)
 and `/prompt-seen/llms.txt`; step 3c adds the template editor on every template page and the template list,
 `/prompt-seen/en/templates/`; step 3d adds search: the quick panel (`/` or ⌘K on any page) and
-`/prompt-seen/en/search/`. The home page is still a placeholder.
+`/prompt-seen/en/search/`; step 3e adds the language entry at the base path, topic pages
+(`/prompt-seen/en/categories/landscape/`), collections (`/prompt-seen/en/collections/`), the about and
+license pages, the 404, 410 and missing-translation pages, and host configuration for redirects and
+removed addresses. The home page is still a placeholder.
 
 ## Quick start
 
@@ -47,6 +50,11 @@ Open <http://localhost:3000/prompt-seen/>. To work without the base path, start 
 | `npm run test:e2e`                            | Builds must exist; serves `dist/` with the reference nginx in Docker and runs Playwright                   |
 | `npm run serve`                               | Serves `dist/` with the reference nginx at <http://127.0.0.1:8090/> for manual checks                      |
 | `npm run deploy:cloudflare:prepare`           | Assembles `.deploy/cloudflare/` (`dist/` plus `_headers`, `_redirects` and 404 pages) for Cloudflare Pages |
+
+Redirects and removed addresses (`content/redirects.yaml`) become host configuration in
+`deploy/generated/` on every `content:build`: the reference nginx include, `cloudflare/_redirects`,
+`netlify/_redirects`, `vercel/vercel.json`, and `static/`, meta refresh pages to copy over `dist/`
+for hosts without redirect rules (GitHub Pages, a bare bucket).
 
 Build-time settings come from `content/site.yaml`, overridden by environment variables:
 `SITE_ORIGIN`, `BASE_PATH` (empty for a root deployment), `URL_PATTERN`, `BUILD_MODE`

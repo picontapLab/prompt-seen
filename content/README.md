@@ -59,6 +59,9 @@ content/
 
 IDs (`p_001`, `t_001`, `x_001`, `a_001`, `c_001`) never change and never get reused; the
 directory name is the ID. Slugs may change, but then the old slug goes into `redirects.yaml`.
+A content page is served at `/{locale}/{directory name}/`, so its name cannot be one the site's own
+routes use (prompts, templates, collections, categories, styles, use-cases, search, explore,
+favorites, translation-missing, 404, 410); `content:validate` reports it.
 
 ## Locale files and publishing
 
