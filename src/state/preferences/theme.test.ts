@@ -122,20 +122,25 @@ describe('applyTheme', () => {
 
 describe('preferences store', () => {
   it('reads defaults from corrupt or foreign records', () => {
-    expect(parsePreferences('[1,2]').known).toEqual({ theme: 'system', singleKeyShortcuts: true });
-    expect(parsePreferences('not json').known).toEqual({ theme: 'system', singleKeyShortcuts: true });
+    expect(parsePreferences('[1,2]').known).toEqual({ theme: 'system', singleKeyShortcuts: true, language: null });
+    expect(parsePreferences('not json').known).toEqual({ theme: 'system', singleKeyShortcuts: true, language: null });
     expect(parsePreferences('{"singleKeyShortcuts":"no"}').known.singleKeyShortcuts).toBe(true);
     expect(parsePreferences('{"singleKeyShortcuts":false}').known.singleKeyShortcuts).toBe(false);
+    // The chosen language (§8.2): a registry code, anything else is dropped.
+    expect(parsePreferences('{"language":"zh-Hans"}').known.language).toBe('zh-Hans');
+    expect(parsePreferences('{"language":"<script>"}').known.language).toBe(null);
+    expect(parsePreferences('{"language":3}').known.language).toBe(null);
   });
 
   it('writes a versioned record and keeps fields it does not know', () => {
     const storage = memoryStorage({ [PREFERENCES_KEY]: '{"theme":"dark","shortcuts":false}' });
     const store = createPreferencesStore(() => storage);
-    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true });
+    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true, language: null });
     store.set({ theme: 'light' });
     expect(JSON.parse(storage.data.get(PREFERENCES_KEY)!)).toEqual({
       theme: 'light',
       singleKeyShortcuts: true,
+      language: null,
       shortcuts: false,
     });
   });
@@ -152,9 +157,9 @@ describe('preferences store', () => {
     const store = createPreferencesStore(() => broken);
     let notified = 0;
     store.subscribe(() => notified++);
-    expect(store.get()).toEqual({ theme: 'system', singleKeyShortcuts: true });
+    expect(store.get()).toEqual({ theme: 'system', singleKeyShortcuts: true, language: null });
     store.set({ theme: 'dark' });
-    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true });
+    expect(store.get()).toEqual({ theme: 'dark', singleKeyShortcuts: true, language: null });
     expect(notified).toBe(1);
   });
 

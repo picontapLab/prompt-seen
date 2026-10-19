@@ -7,6 +7,7 @@ import { Wordmark } from '@/ui/brand/Wordmark';
 import { SearchLauncher } from '@/ui/search/SearchLauncher';
 import { LanguageSwitch } from './LanguageSwitch';
 import { MobileMenu } from './MobileMenu';
+import { footerPages } from './footer-pages';
 import { headerSections } from './sections';
 import styles from './Shell.module.css';
 import { ThemeChooser, ThemeToggle } from './ThemeSwitch';
@@ -38,6 +39,7 @@ export async function Shell({
         .filter((s) => s.available)
         .map((s) => ({ key: s.key, href: s.href(locale.pathPrefix), label: t(`nav.${s.key}`) }));
   const homeHref = minimal ? paths.languageEntry() : paths.home(locale.pathPrefix);
+  const pages = minimal ? [] : footerPages(locale.code);
 
   return (
     <>
@@ -121,6 +123,20 @@ export async function Shell({
             </h2>
             <ThemeChooser labelHidden />
           </div>
+          {pages.length > 0 && (
+            // About and license (§9.8, §11.8.1 页脚), only those this locale has; a full-width row.
+            <nav aria-label={config.siteName} className={styles.footerPages}>
+              <ul className={styles.languages}>
+                {pages.map((p) => (
+                  <li key={p.path}>
+                    <Link href={p.path} prefetch={false}>
+                      {p.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
           <p className={styles.licence}>{t('footer.licence')}</p>
         </div>
       </footer>
