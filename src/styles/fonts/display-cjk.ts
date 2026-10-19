@@ -29,6 +29,7 @@ export const DISPLAY_MESSAGE_KEYS: readonly string[] = [
   'shell.nav', // section links in the narrow-screen menu
   'feed.title', // the list's page title (step 3a)
   'feed.filters.empty.title', // the list's no-results heading
+  'search.page.title', // the search page's title (step 3d)
 ];
 
 /** The generated stylesheet of a locale, relative to public/generated/. */

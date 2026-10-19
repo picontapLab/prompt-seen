@@ -74,6 +74,9 @@ export function createUrlModule(cfg: UrlConfig) {
       `/${locale}/${segment}/${slug}/`,
     /** Content pages such as about and license (§9.1). */
     page: (locale: string, slug: string) => `/${locale}/${slug}/`,
+    /** The search page (§11.8.6); `query` prefills it (`?q=`, §11.6.1). noindex. */
+    search: (locale: string, query?: string) =>
+      query?.trim() ? `/${locale}/search/?q=${encodeURIComponent(query.trim())}` : `/${locale}/search/`,
     /** Images kept by the local media driver under public/ (§10.1); keys start with "media/". */
     media: (key: string) => `/${key.replace(/^\/+/, '')}`,
     /** Per-locale error pages, referenced by host error_page rules (§4.1). */

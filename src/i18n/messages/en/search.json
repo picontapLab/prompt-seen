@@ -1,0 +1,48 @@
+{
+  "open": "Search",
+  "tooltip": "Search ({key})",
+  "panel": {
+    "label": "Search",
+    "field": "Search prompts and templates",
+    "placeholder": "Search prompts, templates, styles…",
+    "close": "Close search",
+    "recent": "Recent searches",
+    "clearRecent": "Clear recent searches",
+    "popular": "Popular uses",
+    "seeAll": "{count, plural, one {See # result} other {See all # results}}",
+    "openSearchPage": "Open the search page",
+    "loading": "Loading search…",
+    "keys": "↑ ↓ to choose · Enter to open · Esc to close"
+  },
+  "groups": {
+    "prompt": "Prompts",
+    "template": "Templates",
+    "collection": "Collections",
+    "topic": "Topics"
+  },
+  "count": "{count, plural, =0 {No results} one {# result} other {# results}}",
+  "error": {
+    "body": "Search could not load. Lists and links still work.",
+    "stale": "The site was updated while this page was open. Reload to search the new version.",
+    "retry": "Try again",
+    "reload": "Reload"
+  },
+  "page": {
+    "documentTitle": "Search prompts and templates",
+    "title": "Search",
+    "description": "Search tested image prompts and templates by title, use, style and prompt text.",
+    "intro": "Titles, uses, styles, models and prompt text are searched.",
+    "summary": "{count, plural, one {# result} other {# results}} for “{query}”",
+    "updating": "Updating results…",
+    "more": "Showing {shown} of {total}"
+  },
+  "noResults": {
+    "title": "No results for “{query}”",
+    "broader": "Try fewer words",
+    "terms": "Related labels",
+    "otherLocales": "In other languages",
+    "otherLocale": "{count, plural, one {# result} other {# results}} in {language} content",
+    "suggestion": "{label} ({count})",
+    "browse": "Browse all prompts"
+  }
+}

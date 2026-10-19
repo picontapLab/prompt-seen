@@ -154,6 +154,11 @@ export type Term = {
   kind: TaxonomyKind;
   id: string;
   label: string;
+  /**
+   * Other words that find this term in search (§13.2): its aliases in this locale, then its
+   * labels and aliases in every other locale, so "poster" also finds 海报.
+   */
+  aliases: string[];
   /** Visible prompts in this locale. */
   count: number;
   /** Topic page address when the topic is published in this locale (§9.1), else null. */

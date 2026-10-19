@@ -1,29 +1,33 @@
 // UI catalogs for stories: the namespaces client components receive on the site, plus the
 // feature namespaces their stories need (detail: Prompt detail, template detail, showcase;
-// feed: the list's cards and interludes; templates: the template editor).
+// feed: the list's cards and interludes; templates: the template editor; search: results).
 import arCommon from '../src/i18n/messages/ar/common.json';
 import arDetail from '../src/i18n/messages/ar/detail.json';
 import arFeed from '../src/i18n/messages/ar/feed.json';
 import arPrimitives from '../src/i18n/messages/ar/primitives.json';
 import arShell from '../src/i18n/messages/ar/shell.json';
+import arSearch from '../src/i18n/messages/ar/search.json';
 import arTemplates from '../src/i18n/messages/ar/templates.json';
 import enCommon from '../src/i18n/messages/en/common.json';
 import enDetail from '../src/i18n/messages/en/detail.json';
 import enFeed from '../src/i18n/messages/en/feed.json';
 import enPrimitives from '../src/i18n/messages/en/primitives.json';
 import enShell from '../src/i18n/messages/en/shell.json';
+import enSearch from '../src/i18n/messages/en/search.json';
 import enTemplates from '../src/i18n/messages/en/templates.json';
 import jaCommon from '../src/i18n/messages/ja/common.json';
 import jaDetail from '../src/i18n/messages/ja/detail.json';
 import jaFeed from '../src/i18n/messages/ja/feed.json';
 import jaPrimitives from '../src/i18n/messages/ja/primitives.json';
 import jaShell from '../src/i18n/messages/ja/shell.json';
+import jaSearch from '../src/i18n/messages/ja/search.json';
 import jaTemplates from '../src/i18n/messages/ja/templates.json';
 import zhCommon from '../src/i18n/messages/zh-Hans/common.json';
 import zhDetail from '../src/i18n/messages/zh-Hans/detail.json';
 import zhFeed from '../src/i18n/messages/zh-Hans/feed.json';
 import zhPrimitives from '../src/i18n/messages/zh-Hans/primitives.json';
 import zhShell from '../src/i18n/messages/zh-Hans/shell.json';
+import zhSearch from '../src/i18n/messages/zh-Hans/search.json';
 import zhTemplates from '../src/i18n/messages/zh-Hans/templates.json';
 import { config } from '../src/config';
 
@@ -37,6 +41,7 @@ export const catalogs: Record<StoryLocale, Record<string, unknown>> = {
     detail: enDetail,
     feed: enFeed,
     templates: enTemplates,
+    search: enSearch,
   },
   'zh-Hans': {
     common: zhCommon,
@@ -45,6 +50,7 @@ export const catalogs: Record<StoryLocale, Record<string, unknown>> = {
     detail: zhDetail,
     feed: zhFeed,
     templates: zhTemplates,
+    search: zhSearch,
   },
   ja: {
     common: jaCommon,
@@ -53,6 +59,7 @@ export const catalogs: Record<StoryLocale, Record<string, unknown>> = {
     detail: jaDetail,
     feed: jaFeed,
     templates: jaTemplates,
+    search: jaSearch,
   },
   ar: {
     common: arCommon,
@@ -61,6 +68,7 @@ export const catalogs: Record<StoryLocale, Record<string, unknown>> = {
     detail: arDetail,
     feed: arFeed,
     templates: arTemplates,
+    search: arSearch,
   },
 };
 

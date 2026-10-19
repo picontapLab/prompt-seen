@@ -1,0 +1,66 @@
+/* Nothing found (design doc §11.8.6, §11.8.7): the query, then ways on. */
+@layer components {
+  .help {
+    display: grid;
+    gap: var(--space-20);
+  }
+  .compact {
+    gap: var(--space-12);
+    padding: var(--space-16);
+  }
+  .title {
+    font-size: var(--text-xl);
+    line-height: var(--leading-xl);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .compact .title {
+    font-size: var(--text-base);
+    line-height: var(--leading-base);
+  }
+  .group {
+    display: grid;
+    gap: var(--space-4);
+  }
+  .label {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-16);
+  }
+  .suggestion {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--target-min);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+  .suggestion:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+  .browse a {
+    color: var(--accent);
+  }
+  .failure {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-12);
+    padding: var(--space-16);
+  }
+
+  :global(:lang(ar)) .label {
+    font-family: var(--font-text);
+  }
+}

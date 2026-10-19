@@ -117,6 +117,7 @@ export function pageMetadata(page: {
   title: string;
   description: string;
   alternates: readonly Alternate[];
+  noindex?: boolean;
 }): Metadata {
   return buildPageMetadata(
     {

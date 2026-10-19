@@ -26,7 +26,7 @@ export function validateContent(content: Content, config: ResolvedConfig, findin
   const rel = (file: string) => path.relative(path.dirname(content.dir), file);
 
   /** Locale keys of a text map must be registered codes. */
-  const checkKeys = (map: Record<string, string>, file: string, field: string, line?: number) => {
+  const checkKeys = (map: Record<string, unknown>, file: string, field: string, line?: number) => {
     for (const key of Object.keys(map))
       if (!codes.has(key))
         findings.error(file, `"${key}" is not a registered locale code`, {
@@ -78,7 +78,10 @@ export function validateContent(content: Content, config: ResolvedConfig, findin
 
   // --- Taxonomy and field groups ---------------------------------------------------------------
   for (const key of Object.keys(content.taxonomy) as TaxonomyKey[])
-    for (const term of content.taxonomy[key].values()) checkKeys(term.labels, term.file, `${term.id}.labels`, term.line);
+    for (const term of content.taxonomy[key].values()) {
+      checkKeys(term.labels, term.file, `${term.id}.labels`, term.line);
+      checkKeys(term.aliases, term.file, `${term.id}.aliases`, term.line);
+    }
   for (const group of content.fieldGroups.values()) checkKeys(group.labels, group.file, `${group.id}.labels`, group.line);
   for (const topic of content.topics)
     if (!content.taxonomy[topic.taxonomy].has(topic.termId))
