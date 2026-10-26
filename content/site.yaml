@@ -16,9 +16,19 @@ shell:
 brand:
   tokens: null # path to brand-layer token overrides (§11.1.9)
 
-# Reserved for later steps; schemas are tightened by the owning step (§17.4).
 home:
-  featured: [] # step 4b: editorially chosen works for the home first screen (§11.8.1)
+  # Works on show on the home first screen (§11.8.1). Annotated prompts only. The latest entry
+  # whose `from` date has passed is shown first; "Another frame" steps through the started ones,
+  # latest first, then those without a date.
+  featured:
+    - prompt: p_045
+      from: '2026-10-19'
+    - prompt: p_050
+      from: '2026-10-12'
+    - prompt: p_012
+      from: '2026-10-05'
+    - prompt: p_067
+    - prompt: p_015
 feed:
   # The list's showcase band (§11.8.2): the newest group whose `from` date has passed is shown.
   # `lead` must be an annotated prompt; `works` are up to two more, shown beside it.

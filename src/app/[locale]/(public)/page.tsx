@@ -1,45 +1,35 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { builtLocales, config, localeByPrefix } from '@/config';
+import { config, localeByPrefix } from '@/config';
 import { enterLocale } from '@/i18n/locale';
-import { homeStructuredData, JsonLd } from '@/modules/seo';
-import { absoluteUrl, paths } from '@/modules/url';
+import { homeMetadata, homeStructuredData, JsonLd } from '@/modules/seo';
+import { HomeBody, homeModel } from '@/ui/home/HomeBody';
 
-// Placeholder home per locale (step 1a). Step 4b replaces it with the first screen (§11.8.1);
-// step 2 moves metadata into the seo module.
+// The home page of a locale (design doc §11.8.1): the work on show, its annotated prompt and
+// the ways into the library.
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const entry = localeByPrefix(locale)!;
-  const t = await getTranslations({ locale: entry.code, namespace: 'common.placeholder' });
-  return {
-    title: t('title', { siteName: config.siteName }),
-    alternates: {
-      canonical: absoluteUrl(paths.home(locale)),
-      languages: {
-        ...Object.fromEntries(builtLocales.map((l) => [l.htmlLang, absoluteUrl(paths.home(l.pathPrefix))])),
-        'x-default': absoluteUrl(paths.languageEntry()),
-      },
-    },
-  };
+  const t = await getTranslations({ locale: entry.code, namespace: 'home' });
+  return homeMetadata(entry, {
+    documentTitle: t('documentTitle', { siteName: config.siteName }),
+    title: config.siteName,
+    description: t('description'),
+    // The share card shows the work on show (§9.7: the og variant, cropped at its focal point).
+    image: homeModel(entry).onShow[0]?.cover ?? null,
+  });
 }
 
 export default async function LocaleHome({ params }: Props) {
   const { locale } = await params;
   const entry = enterLocale(locale);
-  const t = await getTranslations('common.placeholder');
   return (
-    <div
-      className="container"
-      style={{ paddingBlock: 'var(--space-40)' }}
-      data-page="placeholder-home"
-      data-locale={entry.code}
-    >
-      {/* WebSite and Organization (§9.6); step 4b keeps it on the real first screen. */}
+    <>
+      {/* WebSite and Organization (§9.6). */}
       <JsonLd data={homeStructuredData(entry)} />
-      <h1>{t('title', { siteName: config.siteName })}</h1>
-      <p>{t('body', { language: entry.nativeName })}</p>
-    </div>
+      <HomeBody locale={entry} model={homeModel(entry)} />
+    </>
   );
 }

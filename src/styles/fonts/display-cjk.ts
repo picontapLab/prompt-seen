@@ -30,6 +30,7 @@ export const DISPLAY_MESSAGE_KEYS: readonly string[] = [
   'feed.title', // the list's page title (step 3a)
   'feed.filters.empty.title', // the list's no-results heading
   'search.page.title', // the search page's title (step 3d)
+  'home.hero.title', // the home page's title on the first screen (step 4b)
 ];
 
 /** The generated stylesheet of a locale, relative to public/generated/. */

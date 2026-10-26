@@ -1,0 +1,43 @@
+/* Develop (design doc §11.1.9, §12.1): colour (the frame's background), blurred preview, sharp
+   image. The frame is the positioned parent; both images fill it. */
+@layer components {
+  .preview {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+  /* Scaled a little so the blur has no pale rim at the edges. */
+  .preview img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    filter: blur(14px) saturate(0.7);
+    transform: scale(1.08);
+  }
+
+  .image {
+    position: relative;
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: inherit;
+  }
+  /* A file still loading when the page took over: wait until it is whole, then let it surface
+     over the blurred preview. Only opacity changes: the blur itself is drawn once, never animated
+     (§12.3: no large blur changing frame by frame). */
+  .image[data-develop='pending'] {
+    opacity: 0;
+  }
+  .image[data-develop='developing'] {
+    animation: develop var(--duration-develop) var(--ease-enter) both;
+  }
+  @keyframes develop {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
