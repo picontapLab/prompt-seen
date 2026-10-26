@@ -44,19 +44,15 @@ test('language entry at the base path is the x-default', async ({ request }) => 
 });
 
 for (const locale of BUILD.locales) {
-  test(`${locale.code}: placeholder home with lang, dir and an absolute canonical`, async ({ request }) => {
+  test(`${locale.code}: home with lang, dir and an absolute canonical`, async ({ request }) => {
     const res = await request.get(`${BASE}/${locale.pathPrefix}/`);
     expect(res.status()).toBe(200);
     const html = await res.text();
     expect(htmlElement(html)).toEqual({ lang: locale.htmlLang, dir: locale.direction });
-    expect(dataAttr(html, 'locale')).toBe(locale.code);
+    expect(dataAttr(html, 'page')).toBe('home');
     // Text comes from this locale's catalog, not the default language (§8.3).
-    const heading = message(locale.code, 'common.placeholder.title', { siteName: BUILD.siteName });
-    expect(elementText(html, 'h1')).toBe(heading);
-    expect(elementText(html, 'p')).toBe(
-      message(locale.code, 'common.placeholder.body', { language: locale.nativeName }),
-    );
-    expect(title(html)).toBe(heading);
+    expect(elementText(html, 'h1')).toBe(message(locale.code, 'home.hero.title'));
+    expect(title(html)).toBe(message(locale.code, 'home.documentTitle', { siteName: BUILD.siteName }));
     expect(canonical(html)).toBe(publicUrl(`/${locale.pathPrefix}/`));
     expect(canonical(html)).toMatch(new RegExp(`^${BUILD.origin}${BASE}/`));
     expect(alternates(html)).toEqual(expectedAlternates);
