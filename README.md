@@ -73,6 +73,7 @@ Build-time settings come from `content/site.yaml`, overridden by environment var
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
 - [Subpath hosting decision](docs/subpath-hosting-decision.md): why the site is a static export, with prototype results.
 - [Language coverage assessment](docs/language-coverage-assessment.md).
+- [First-load JavaScript](docs/first-load-js.md): what each page loads, by module, and what is left to cut.
 - [`design/`](design/README.md): the chosen visual direction and reference pages. Tokens live in `src/styles/tokens/`.
 
 ## Licenses

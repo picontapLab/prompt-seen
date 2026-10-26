@@ -246,6 +246,40 @@ test.describe('desktop', () => {
     await expect(page).toHaveURL(/#shape=square$/);
   });
 
+  // The sort list's code loads when the visitor reaches for it (§16.4): the control is a plain
+  // button until then, and the first press or ↑ ↓ opens the real list with focus in it.
+  const sortControl = (page: Page) => page.getByRole('button', { name: message(code, 'feed.filters.sort') });
+
+  test('the sort list opens on the first press and sorts by featured', async ({ page }) => {
+    const errors = watchErrors(page);
+    await page.goto(listUrl());
+    await hydrated(page);
+    await expect(page.getByRole('listbox')).toHaveCount(0);
+    await sortControl(page).click();
+    const list = page.getByRole('listbox');
+    await expect(list).toBeVisible();
+    await list.getByRole('option', { name: message(code, 'feed.filters.featured') }).click();
+    await expect(page).toHaveURL(/#sort=featured$/);
+    await expect(list).toBeHidden();
+    await expect(sortControl(page)).toContainText(message(code, 'feed.filters.featured'));
+    await expect(sortControl(page)).toBeFocused();
+    expect(errors).toEqual([]);
+  });
+
+  test('the sort list opens from the keyboard and Esc returns focus to it', async ({ page }) => {
+    await page.goto(listUrl());
+    await hydrated(page);
+    await sortControl(page).focus();
+    await page.keyboard.press('ArrowDown');
+    const list = page.getByRole('listbox');
+    await expect(list).toBeVisible();
+    await expect(list.getByRole('option', { name: message(code, 'feed.filters.latest') })).toBeFocused();
+    await page.keyboard.press('Escape');
+    await expect(list).toBeHidden();
+    await expect(sortControl(page)).toBeFocused();
+    await expect(page).toHaveURL(listUrl());
+  });
+
   test('resting on a card prefetches its popup data, not the page or large image', async ({ page }) => {
     await page.goto(listUrl());
     await hydrated(page);

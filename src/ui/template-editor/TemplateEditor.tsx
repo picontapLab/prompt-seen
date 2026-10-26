@@ -3,6 +3,8 @@
 import { Download, Link2, RotateCcw, Shuffle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import {
+  lazy,
+  Suspense,
   useEffect,
   useId,
   useLayoutEffect,
@@ -23,7 +25,6 @@ import { PromptSheet } from '@/ui/prompt-detail/PromptSheet';
 import { BottomSheet } from '@/ui/primitives/BottomSheet';
 import { Button } from '@/ui/primitives/Button';
 import { SegmentedControl } from '@/ui/primitives/SegmentedControl';
-import { Select } from '@/ui/primitives/Select';
 import { TextField } from '@/ui/primitives/TextField';
 import { showToast } from '@/ui/primitives/toast-queue';
 import { browserStorage, draftKey, readDraft, removeDraft, writeDraft } from './draft';
@@ -42,6 +43,11 @@ import {
   varColor,
 } from './values';
 import styles from './TemplateEditor.module.css';
+
+// Only fields with more than four plain options use a select (controlFor), and its React Aria list
+// box and popover code is the largest part of the editor. It loads with the first such field: the
+// server renders it into the page as usual, and it hydrates once its code is in (§16.4).
+const Select = lazy(() => import('@/ui/primitives/Select').then((m) => ({ default: m.Select })));
 
 /** What the editor needs from the template detail; plain data, so the page passes only this. */
 export type EditorModel = {
@@ -517,13 +523,15 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
     );
   if (kind === 'select')
     return (
-      <Select
-        label={field.label}
-        description={help}
-        options={options.map((o) => ({ id: o.value, label: o.label }))}
-        selectedKey={text}
-        onSelectionChange={(next) => next !== null && onChange(String(next))}
-      />
+      <Suspense>
+        <Select
+          label={field.label}
+          description={help}
+          options={options.map((o) => ({ id: o.value, label: o.label }))}
+          selectedKey={text}
+          onSelectionChange={(next) => next !== null && onChange(String(next))}
+        />
+      </Suspense>
     );
 
   return (

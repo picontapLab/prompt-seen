@@ -153,7 +153,9 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
 - **Import UI modules by file** (`@/ui/primitives/Button`), never through an index file: a server
   component that imports an index re-exporting `'use client'` modules puts all of them in the
   first-load bundle. Code needed only on interaction loads on demand (`React.lazy`), as the
-  language list, the menu sheet and the toast region do.
+  language list, the menu sheet, the toast region, the list's filter panel and sort list
+  (`SortSelect`) and the editor's select do. React Aria's collections and overlays (`Select`,
+  `Combobox`, `Dialog`, `TagGroup`) are the usual cost: one of them on a page can add ~40 KiB gzip.
 - **Stories**: next to the component (`*.stories.tsx`), with a states story showing default,
   hover, pressed, focus-visible, selected, disabled, loading and invalid where they apply
   (`.storybook/states.tsx` forces a state). Sample copy per locale: `.storybook/samples.ts`.
@@ -334,6 +336,10 @@ Set up in step 3e (design doc §8.2, §9.1, §9.5, §11.8.5, §11.8.7).
   - Tests read the build's configuration from `generated/build.json`, so the same tests run against
     the root build and the `/prompt-seen` build.
 - Locally, `PW_BROWSERS` picks browsers (default: the installed Chrome).
+- First-load JavaScript (design doc §16.1, [`first-load-js.md`](first-load-js.md)):
+  `npx tsx scripts/measure-first-load.ts [paths]` against the served build prints, per page, the
+  scripts the HTML references and everything fetched after 6 s idle (`--no-prefetch` leaves out
+  next/link prefetches). Record the numbers when a change moves them.
 - Pages have no serious or critical axe-core violations (WCAG 2.2 AA tags). Check with
   `seriousViolations(page)` from `tests/e2e/support/a11y.ts`: it waits for entry animations to
   finish first (`settle()`), since axe measures contrast at the opacity of the moment.
