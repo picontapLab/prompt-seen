@@ -36,6 +36,10 @@
 | `/en/templates/ink-scroll/` | **244.9** | **208.8** | 310.6 | 285.9 |
 | `/en/search/` | 191.5 | 191.6 | 300.8 | 283.2 |
 
+The real home page (step 4b, merged into this branch afterwards) measures **206.9 KiB** at first
+load and 280.2 KiB after idle on the merged tree: about 20 KiB over the placeholder for the first
+screen's client island (showcase, annotations, copy button, detail popup host).
+
 KiB, gzip. The root production build measures the same within 0.1 KiB. The +0.1 KiB elsewhere is
 Turbopack splitting shared code at different boundaries; for the same reason the idle-loaded
 search panel code is 2 KiB larger than before (53.6 instead of 51.6 KiB on `/en/`).
