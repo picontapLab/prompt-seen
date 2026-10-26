@@ -1,8 +1,10 @@
 'use client';
 
 import { Check, CircleAlert, Copy, X } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { preferencesStore } from '@/state/preferences/store';
 import { Button, type ButtonVariant } from '@/ui/primitives/Button';
+import { Tooltip } from '@/ui/primitives/Tooltip';
 import { selectContents, writeClipboard } from './copy';
 import styles from './CopyButton.module.css';
 
@@ -27,6 +29,11 @@ export type CopyButtonProps = {
    * `active` is false too, so the width holds when fields become valid or invalid.
    */
   blocked?: { label: string; active: boolean; onPress: () => void };
+  /**
+   * The button `C` presses on this page (§11.10): `key` for aria-keyshortcuts, `hint` for the
+   * tooltip ("Copy prompt (C)"), shown while single-key shortcuts are on.
+   */
+  shortcut?: { key: string; hint: string };
   /** Starting state, for state samples in Storybook. */
   defaultState?: CopyState;
   className?: string;
@@ -34,6 +41,8 @@ export type CopyButtonProps = {
   id?: string;
   'data-testid'?: string;
 };
+
+const noSubscription = () => () => {};
 
 /** How long the success state stays before the label returns (§11.1.7: about 1.6 s). */
 export const COPY_FEEDBACK_MS = 1600;
@@ -53,9 +62,15 @@ export function CopyButton({
   className,
   defaultState = 'idle',
   blocked,
+  shortcut,
   ...rest
 }: CopyButtonProps) {
   const [state, setState] = useState<CopyState>(defaultState);
+  const singleKey = useSyncExternalStore(
+    shortcut ? preferencesStore.subscribe : noSubscription,
+    () => !!shortcut && preferencesStore.get().singleKeyShortcuts,
+    () => false,
+  );
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
 
@@ -77,26 +92,44 @@ export function CopyButton({
   const shown = blocked?.active ? 'blocked' : state;
   const icon =
     shown === 'blocked' ? <CircleAlert /> : shown === 'done' ? <Check /> : shown === 'failed' ? <X /> : <Copy />;
+  const button = (
+    <Button
+      variant={variant}
+      size={size}
+      icon={icon}
+      onPress={copy}
+      data-copy-state={shown}
+      data-shortcut={shortcut ? 'copy' : undefined}
+      aria-keyshortcuts={shortcut?.key}
+      {...rest}
+    >
+      <span className={styles.labels}>
+        <span aria-hidden={shown !== 'idle'} data-active={shown === 'idle'}>
+          {labels.copy}
+        </span>
+        {blocked && (
+          <span aria-hidden={shown !== 'blocked'} data-active={shown === 'blocked'}>
+            {blocked.label}
+          </span>
+        )}
+        <span aria-hidden={shown !== 'done'} data-active={shown === 'done'}>
+          {labels.done}
+        </span>
+        <span aria-hidden={shown !== 'failed'} data-active={shown === 'failed'}>
+          {labels.failed}
+        </span>
+      </span>
+    </Button>
+  );
   return (
     <span className={[styles.wrap, className].filter(Boolean).join(' ')}>
-      <Button variant={variant} size={size} icon={icon} onPress={copy} data-copy-state={shown} {...rest}>
-        <span className={styles.labels}>
-          <span aria-hidden={shown !== 'idle'} data-active={shown === 'idle'}>
-            {labels.copy}
-          </span>
-          {blocked && (
-            <span aria-hidden={shown !== 'blocked'} data-active={shown === 'blocked'}>
-              {blocked.label}
-            </span>
-          )}
-          <span aria-hidden={shown !== 'done'} data-active={shown === 'done'}>
-            {labels.done}
-          </span>
-          <span aria-hidden={shown !== 'failed'} data-active={shown === 'failed'}>
-            {labels.failed}
-          </span>
-        </span>
-      </Button>
+      {shortcut ? (
+        <Tooltip content={shortcut.hint} isDisabled={!singleKey}>
+          {button}
+        </Tooltip>
+      ) : (
+        button
+      )}
       <span role="status" className={shown === 'failed' ? styles.hint : 'visually-hidden'}>
         {shown === 'done' ? labels.done : shown === 'failed' ? labels.failedHint : ''}
       </span>

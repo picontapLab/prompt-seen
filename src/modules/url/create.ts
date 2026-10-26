@@ -91,6 +91,10 @@ export function createUrlModule(cfg: UrlConfig) {
     /** Page 1 is the list itself (§9.4). */
     promptsPage: (locale: string, page: number) =>
       page <= 1 ? `/${locale}/prompts/` : `/${locale}/prompts/page/${page}/`,
+    /** Every filter at once (§9.4, §11.7); conditions in the fragment, as on the list ("#use=poster"). noindex. */
+    explore: (locale: string, fragment = '') => `/${locale}/explore/${fragment}`,
+    /** Works saved on this device (§11.5). noindex. */
+    favorites: (locale: string) => `/${locale}/favorites/`,
     prompt: (locale: string, slug: string) => `/${locale}/prompts/${slug}/`,
     promptMarkdown: (locale: string, slug: string) => `/${locale}/prompts/${slug}/index.md`,
     templates: (locale: string) => `/${locale}/templates/`,

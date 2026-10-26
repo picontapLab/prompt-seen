@@ -31,6 +31,9 @@ export const DISPLAY_MESSAGE_KEYS: readonly string[] = [
   'feed.filters.empty.title', // the list's no-results heading
   'search.page.title', // the search page's title (step 3d)
   'home.hero.title', // the home page's title on the first screen (step 4b)
+  'favorites.page.title', // the favourites page's title (step 4c)
+  'favorites.page.empty.title', // its heading when nothing is saved
+  'explore.title', // the explore page's title (step 4c)
 ];
 
 /** The generated stylesheet of a locale, relative to public/generated/. */

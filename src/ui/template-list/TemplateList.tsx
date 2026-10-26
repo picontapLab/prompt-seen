@@ -10,6 +10,7 @@ import { getImage } from '@/modules/media';
 import { collectionStructuredData, pageMetadata } from '@/modules/seo';
 import { paths } from '@/modules/url';
 import { ExpandableIntro } from '@/ui/gallery/ExpandableIntro';
+import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { textDirection } from '@/ui/prompt-detail/language';
 import styles from './TemplateList.module.css';
 
@@ -50,6 +51,7 @@ export async function templateListStructuredData(locale: LocaleEntry) {
 export async function TemplateList({ locale }: { locale: LocaleEntry }) {
   const t = await getTranslations({ locale: locale.code, namespace: 'templates.list' });
   const d = await getTranslations({ locale: locale.code, namespace: 'detail.template' });
+  const f = await getTranslations({ locale: locale.code, namespace: 'favorites' });
   const templates = templatesOf(locale.code);
 
   return (
@@ -118,6 +120,15 @@ export async function TemplateList({ locale }: { locale: LocaleEntry }) {
                       ),
                     )}
                   </p>
+                  {/* Above the stretched link, in the card's top-end corner (§11.5, §11.8.2). */}
+                  <div className={styles.actions}>
+                    <FavoriteButton
+                      id={template.id}
+                      kind="template"
+                      title={template.title}
+                      labels={{ save: f('save'), saved: f('saved') }}
+                    />
+                  </div>
                 </article>
               </li>
             );

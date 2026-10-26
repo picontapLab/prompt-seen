@@ -4,8 +4,10 @@ import { promptJsonFile } from '@/modules/feed/files';
 import type { FeedCard } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
 import { paths, withBasePath } from '@/modules/url';
+import { CircleMark } from '@/ui/brand/CircleMark';
 import { CropMarks } from '@/ui/brand/CropMarks';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
+import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import styles from './Card.module.css';
 
@@ -20,10 +22,11 @@ export type CardProps = {
   priority?: boolean;
   /** `sizes` for the image; justified rows by default. */
   sizes?: string;
-  /** Top-end corner of the frame, outside the link: the favourite button of step 4c (§11.8.2). */
+  /**
+   * Top-end corner of the frame, outside the link. Defaults to the save button (§11.5, §11.8.2);
+   * `null` leaves the corner empty.
+   */
   actions?: ReactNode;
-  /** Shown as a favourite: actions stay visible (§11.8.2). */
-  active?: boolean;
   /** Layout from the parent, e.g. a cell of the justified rows. */
   className?: string;
   /** Page of the newest-first list that holds the card, for the address of the page in view. */
@@ -63,13 +66,13 @@ export function Card({
   priority,
   sizes,
   actions,
-  active,
   className,
   page,
   dataKey,
 }: CardProps) {
   const id = useId();
   const facts = useCardFacts(card);
+  const f = useTranslations('favorites');
   const img = getImage(card.cover, 'card');
   const style = { '--w': card.cover.width, '--h': card.cover.height } as CSSProperties;
   const Tag = posinset ? 'article' : 'div';
@@ -85,7 +88,7 @@ export function Card({
       data-entry={card.id}
       data-feed-page={page}
       data-key={dataKey}
-      data-active={active || undefined}
+      data-save-scope=""
     >
       <a
         href={withBasePath(card.path)}
@@ -107,7 +110,10 @@ export function Card({
           <CropMarks mode="interactive" size={14} offset={7} />
         </span>
         <span className={styles.label}>
-          <FrameNumber n={Number(card.frameNumber)} className={styles.frameNumber} />
+          <span className={styles.frameMark}>
+            <FrameNumber n={Number(card.frameNumber)} />
+            <CircleMark />
+          </span>
           <span id={`${id}-title`} className={styles.title}>
             {card.title}
           </span>
@@ -122,7 +128,18 @@ export function Card({
           </span>
         </span>
       </a>
-      {actions && <div className={styles.actions}>{actions}</div>}
+      {actions !== null && (
+        <div className={styles.actions}>
+          {actions ?? (
+            <FavoriteButton
+              id={card.id}
+              kind="prompt"
+              title={card.title}
+              labels={{ save: f('save'), saved: f('saved') }}
+            />
+          )}
+        </div>
+      )}
     </Tag>
   );
 }

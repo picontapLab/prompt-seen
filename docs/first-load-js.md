@@ -95,3 +95,24 @@ popup and the showcase band (9.8). Template detail: the same shared chunk (34.9)
 
 With 1 and 3 the gallery and detail pages would sit at or under ~200 KiB; the shell-only pages
 would be ~177 KiB. Below that, the framework floor leaves ~67 KiB of the budget for everything else.
+
+## After step 4c (2026-10-26)
+
+Same method, preview build under `/prompt-seen`. The shell now carries the favourites link, the
+toasts for saving and the shortcut handler with its footer button, and every save button reads the
+favourites store: about +3 KiB of first load on every page in a locale. The shortcuts list and its
+dialog load on first use.
+
+| Page | First load | After idle |
+| --- | --- | --- |
+| `/en/` | 210.6 | 284.3 |
+| `/en/prompts/` | 217.6 | 284.3 |
+| `/en/styles/ink/` | 207.9 | 292.7 |
+| `/en/collections/` | 190.2 | 284.3 |
+| `/en/prompts/amber-harbor-sunset/` | 195.5 | 291.3 |
+| `/en/templates/ink-scroll/` | 211.6 | 307.4 |
+| `/en/explore/` (new) | 252.7 | 296.8 |
+| `/en/favorites/` (new) | 210.6 | 295.5 |
+
+Explore is over the ~200 KiB budget on purpose: its side panel of counted chips and the order
+control (React Aria toggle buttons and radio group) are on the first screen of a noindex tool page.

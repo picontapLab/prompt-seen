@@ -299,8 +299,9 @@ Set up in step 3d (design doc §11.8.6, §11.10, §13).
 - The header's entry (`SearchLauncher`) is a plain link to `/{locale}/search/` until hydration.
   `/` and ⌘K / Ctrl+K are handled there; a page with its own search field registers it with
   `registerPageSearch` so the keys focus that field instead of opening the panel.
-- Single-key shortcuts read `singleKeyShortcuts` from the preferences store (step 4c adds the
-  switch). New ones follow the same rule: ignored in text fields and during IME composition.
+- Single-key shortcuts read `singleKeyShortcuts` from the preferences store; the switch is in the
+  shortcuts list (step 4c). New ones follow the same rule: ignored in text fields and during IME
+  composition (`src/ui/shortcuts/keys.ts`).
 - Search terms for taxonomy: `aliases` in `content/taxonomy/*.yaml` (see `content/README.md`).
   Labels in other languages are aliases automatically.
 
@@ -325,6 +326,30 @@ Set up in step 3e (design doc §8.2, §9.1, §9.5, §11.8.5, §11.8.7).
   through one emitter per host: `nginx`, `cloudflare`, `netlify`, `vercel`, `static-redirects`.
   `scripts/package.ts` fails when a redirect target is missing from the build or an old or removed
   address still has a file.
+
+## Favourites, explore and shortcuts
+
+Set up in step 4c (design doc §9.4, §11.5, §11.10).
+
+- Favourites are `favoritesStore` (`src/state/favorites/store.ts`): IDs, kinds and times in
+  `prompt-library:favorites:v1`; corrupt or disabled storage falls back to the visit. Components
+  read it with `useSyncExternalStore` and an empty server snapshot, so the first output is unsaved.
+- A save button is `FavoriteButton` with labels passed in (`favorites` messages), so server
+  components render it without client messages. `Card` puts one in its corner by default
+  (`actions={null}` for none). Inside a `[data-save-scope]`, a `CircleMark` next to the frame
+  number circles it once saved, through CSS alone.
+- The note on the first save and the undo of a removal are toasts from `FavoritesFeedback` in the
+  shell, fed by `announceFavorite` (`src/ui/favorites/events.ts`). A page that shows removals in
+  place calls `handleRemovalsInline()` while mounted, as the favourites page does.
+- Client islands that render cards or detail bodies list `favorites` (and `shortcuts`, for the
+  detail's tooltip) in their `<ClientMessages>`.
+- `C` and `S` press the page's own button: give the one button per page or popup
+  `data-shortcut="copy"` (`CopyButton`'s `shortcut`, `PromptSheet`'s `copyShortcut`) or
+  `data-shortcut="save"` (`FavoriteButton`'s `shortcut`). The handler in the shell looks inside
+  an open modal first and skips hidden or inert buttons.
+- Explore is the list's parts with `ListProvider listPath={paths.explore(…)} pageAddresses={false}`:
+  same fragment, index, page files and feed; the address never becomes a page address. The
+  filter chips are `FilterGroups`, shared with the list's panel.
 
 ## Tests
 
@@ -381,3 +406,4 @@ the design document section they implement.
 | Structured data                     | a function in `@/modules/seo` (mapping in `structured-data.ts`), rendered with `<JsonLd>` |
 | Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |
 | Detail popup                        | wrap the gallery in `PopupHost` and register its works with `usePopupList` or `<PopupWorks>` |
+| Saving, `C` / `S` shortcuts         | `FavoriteButton` (or a `Card`) inside a `[data-save-scope]`; one `data-shortcut` button of each kind per page |

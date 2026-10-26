@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import type { LocaleEntry } from '@/config';
 import type { TemplateDetail } from '@/modules/content/types';
 import { paths } from '@/modules/url';
+import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
 import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { ExampleRuns } from '@/ui/prompt-detail/ExampleRuns';
@@ -27,6 +28,7 @@ export function TemplateDetailBody({
   locale: Pick<LocaleEntry, 'code' | 'pathPrefix' | 'htmlLang'>;
 }) {
   const t = useTranslations('detail');
+  const f = useTranslations('favorites');
   const prefix = locale.pathPrefix;
   const { version } = detail;
   // Only what the editor uses crosses to the browser (§3.5): not the notes, prints or related work.
@@ -47,6 +49,17 @@ export function TemplateDetailBody({
         <header className={detailStyles.header}>
           <h1 className={detailStyles.title}>{detail.title}</h1>
           <p className={detailStyles.summary}>{detail.description}</p>
+          <div className={detailStyles.actions}>
+            {/* Saving (§11.5) and `S` (§11.10). */}
+            <FavoriteButton
+              id={detail.id}
+              kind="template"
+              title={detail.title}
+              variant="labelled"
+              shortcut
+              labels={{ save: f('save'), saved: f('saved') }}
+            />
+          </div>
         </header>
         <TemplateEditor
           model={model}
