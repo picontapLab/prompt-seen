@@ -1,10 +1,14 @@
+import { Heart } from 'lucide-react';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, type LocaleEntry } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
 import { paths } from '@/modules/url';
 import { Wordmark } from '@/ui/brand/Wordmark';
+import { FavoritesFeedback } from '@/ui/favorites/FavoritesFeedback';
+import { FavoritesLink } from '@/ui/favorites/FavoritesLink';
 import { SearchLauncher } from '@/ui/search/SearchLauncher';
+import { KeyboardShortcuts } from '@/ui/shortcuts/KeyboardShortcuts';
 import { LanguageSwitch } from './LanguageSwitch';
 import { MobileMenu } from './MobileMenu';
 import { footerPages } from './footer-pages';
@@ -38,6 +42,10 @@ export async function Shell({
     : headerSections
         .filter((s) => s.available)
         .map((s) => ({ key: s.key, href: s.href(locale.pathPrefix), label: t(`nav.${s.key}`) }));
+  const f = await getTranslations({ locale: locale.code, namespace: 'favorites' });
+  // Saved works (§11.5, step 4c): in the header from 1024 px, in the menu below 768 px and in
+  // the footer at every width, so the header never overflows.
+  const saved = minimal ? null : { key: 'favorites', href: paths.favorites(locale.pathPrefix), label: f('link') };
   const homeHref = minimal ? paths.languageEntry() : paths.home(locale.pathPrefix);
   const pages = minimal ? [] : footerPages(locale.code);
 
@@ -72,6 +80,13 @@ export async function Shell({
               </ClientMessages>
             )}
             {!minimal && (
+              // Works saved on this device (§11.5), and the toasts saving shows; step 4c.
+              <ClientMessages namespaces={['favorites']} locale={locale.code}>
+                <FavoritesLink locale={locale.pathPrefix} />
+                <FavoritesFeedback locale={locale.pathPrefix} />
+              </ClientMessages>
+            )}
+            {!minimal && (
               <div className={styles.wide}>
                 <LanguageSwitch />
               </div>
@@ -79,7 +94,7 @@ export async function Shell({
             <ThemeToggle />
             {!minimal && (
               <div className={styles.narrow}>
-                <MobileMenu links={sections} />
+                <MobileMenu links={saved ? [...sections, saved] : sections} />
               </div>
             )}
           </div>
@@ -122,6 +137,19 @@ export async function Shell({
               {t('footer.theme')}
             </h2>
             <ThemeChooser labelHidden />
+            {saved && (
+              <Link href={saved.href} prefetch={false} className={styles.footerLink} data-footer-favorites="">
+                <Heart aria-hidden="true" />
+                {saved.label}
+              </Link>
+            )}
+            {!minimal && (
+              // The shortcut list and its single-key switch (§11.10, WCAG 2.1.4); step 4c. Not on
+              // pages outside a locale, which have no shortcuts to act on.
+              <ClientMessages namespaces={['shortcuts']} locale={locale.code}>
+                <KeyboardShortcuts />
+              </ClientMessages>
+            )}
           </div>
           {pages.length > 0 && (
             // About and license (§9.8, §11.8.1 页脚), only those this locale has; a full-width row.

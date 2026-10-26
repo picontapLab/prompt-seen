@@ -224,6 +224,30 @@
   .languages a:hover {
     text-decoration: underline;
   }
+  /* Saved works (step 4c): a plain link with its icon, a full touch target. */
+  .footerLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    align-self: flex-start;
+    min-block-size: var(--target-min);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .footerLink :global(svg) {
+    inline-size: var(--icon-ui);
+    block-size: var(--icon-ui);
+    stroke-width: var(--icon-stroke);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .footerLink:hover {
+      text-decoration: underline;
+    }
+  }
+  .footerLink:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
   .languages a[aria-current='page'] {
     text-decoration: underline;
     text-decoration-color: var(--mark);
