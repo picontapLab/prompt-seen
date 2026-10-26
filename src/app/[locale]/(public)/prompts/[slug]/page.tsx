@@ -42,7 +42,7 @@ export default async function PromptPage({ params }: Props) {
   return (
     <div className="container" data-width="detail" data-page="prompt-detail">
       <JsonLd data={promptStructuredData(detail, entry, crumbs)} />
-      <ClientMessages namespaces={['detail']}>
+      <ClientMessages namespaces={['detail', 'favorites', 'shortcuts']}>
         <PromptDetailBody detail={detail} locale={entry} siteName={config.siteName} />
       </ClientMessages>
     </div>

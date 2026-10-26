@@ -49,6 +49,11 @@
     flex-direction: column;
     gap: var(--space-8);
   }
+  /* The frame number, circled once the work is saved (CircleMark, §11.1.9 圈选记号). */
+  .frameMark {
+    position: relative;
+    align-self: flex-start;
+  }
   .title {
     margin: 0;
     font-family: var(--font-display);

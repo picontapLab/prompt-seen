@@ -80,6 +80,8 @@ export type IconButtonProps = Omit<AriaButtonProps, 'className' | 'children' | '
   label: ReactNode;
   variant?: 'secondary' | 'ghost';
   tooltip?: boolean;
+  /** Tooltip text when it differs from the name, e.g. with its keyboard shortcut: "Save (S)" (§11.10). */
+  hint?: ReactNode;
   className?: string;
 };
 
@@ -89,6 +91,7 @@ export function IconButton({
   label,
   variant = 'secondary',
   tooltip = true,
+  hint,
   className,
   ...props
 }: IconButtonProps) {
@@ -100,7 +103,7 @@ export function IconButton({
       </span>
     </AriaButton>
   );
-  return tooltip ? <Tooltip content={label}>{button}</Tooltip> : button;
+  return tooltip ? <Tooltip content={hint ?? label}>{button}</Tooltip> : button;
 }
 
 export type ButtonLinkProps = {

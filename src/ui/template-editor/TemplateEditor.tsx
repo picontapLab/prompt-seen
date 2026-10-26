@@ -107,6 +107,7 @@ function focusTarget(shell: HTMLElement): HTMLElement | null {
 export function TemplateEditor({ model, languageName, showLanguageNote }: TemplateEditorProps) {
   const t = useTranslations('templates.editor');
   const d = useTranslations('detail');
+  const k = useTranslations('shortcuts');
   const id = useId();
   const { version } = model;
   const fields = version.fields;
@@ -371,6 +372,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                   active: !result.ok,
                   onPress: onBlocked,
                 }}
+                copyShortcut={{ key: 'C', hint: k('withKey', { action: d('copy.label'), key: 'C' }) }}
                 fold={false}
                 language={model.promptLanguage}
                 languageName={languageName}

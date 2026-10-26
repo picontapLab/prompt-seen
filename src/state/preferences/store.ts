@@ -1,7 +1,7 @@
 // Device preferences (design doc §11.6.1, §11.6.2): one versioned local-storage record, read
 // through a small external store (useSyncExternalStore). Other tabs follow through the storage
 // event. When storage is disabled, full or corrupt, the store keeps working for this session.
-// Later steps add their own fields (sort order, single-key shortcuts) to Preferences.
+// Later steps add their own fields to Preferences (single-key shortcuts; the favourites note, step 4c).
 
 import { isThemePreference, type ThemePreference } from './theme';
 
@@ -19,12 +19,15 @@ export type Preferences = {
    * {language}" on the language entry; addresses with a language are never redirected.
    */
   language: string | null;
+  /** The one-time note that favourites stay on this device has been shown (§11.5, §11.9). */
+  favoritesNoteSeen: boolean;
 };
 
 export const DEFAULT_PREFERENCES: Preferences = Object.freeze({
   theme: 'system',
   singleKeyShortcuts: true,
   language: null,
+  favoritesNoteSeen: false,
 });
 
 /** Known fields are validated one by one; unknown fields are kept for other versions of the site. */
@@ -47,6 +50,10 @@ export function parsePreferences(raw: string | null): { known: Preferences; rest
         typeof record.language === 'string' && /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(record.language)
           ? record.language
           : DEFAULT_PREFERENCES.language,
+      favoritesNoteSeen:
+        typeof record.favoritesNoteSeen === 'boolean'
+          ? record.favoritesNoteSeen
+          : DEFAULT_PREFERENCES.favoritesNoteSeen,
     },
     rest: record,
   };

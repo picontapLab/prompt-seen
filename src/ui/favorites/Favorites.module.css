@@ -1,0 +1,208 @@
+/* The favourites page (design doc §11.5, §11.8.7). Head like the list's (§11.8.2 页面头). */
+@layer components {
+  .head {
+    display: grid;
+    gap: var(--space-8);
+    padding-block-start: var(--space-40);
+  }
+  .title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-page-title);
+    font-weight: var(--weight-display);
+    line-height: var(--leading-page-title);
+    letter-spacing: var(--tracking-display);
+    text-wrap: balance;
+  }
+  .device {
+    margin: 0;
+    max-inline-size: var(--measure);
+    color: var(--text-secondary);
+    text-wrap: pretty;
+  }
+
+  /* Until the page takes over: room for the list, so the footer does not jump. */
+  .pending {
+    min-block-size: 40vh;
+  }
+
+  .saved {
+    display: grid;
+    gap: var(--space-32);
+    padding-block: var(--space-24) var(--space-64);
+  }
+  .bar {
+    position: sticky;
+    inset-block-start: var(--nav-height);
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-12) var(--space-24);
+    padding-block: var(--space-12);
+    border-block-end: 1px solid var(--border-subtle);
+    background: var(--canvas);
+  }
+  .count {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-variant-numeric: tabular-nums;
+  }
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-16);
+  }
+  .sectionTitle {
+    margin: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-xs);
+  }
+  .status {
+    margin: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Removed a moment ago: in place, faded, with its undo (§11.5). The undo stays legible. */
+  .saved [data-removed] :is(img, [data-crop-target], a) {
+    opacity: 0.4;
+  }
+  .saved [data-removed] :is([data-crop-target], a) {
+    pointer-events: none;
+  }
+
+  /* A saved work the current content no longer has: an empty frame, what happened, Remove. */
+  .gone {
+    --r: 0.8;
+    display: grid;
+    gap: var(--space-8);
+    align-content: start;
+  }
+  .goneFrame {
+    display: grid;
+    align-content: center;
+    gap: var(--space-4);
+    aspect-ratio: 4 / 5;
+    padding: var(--space-16);
+    border: 1px dashed var(--border-control);
+    border-radius: var(--radius-image);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+  }
+  .goneFrame strong {
+    color: var(--text-primary);
+    font-weight: var(--weight-medium);
+  }
+
+  .templates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-24);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* As wide as its image, so the save button sits in the image's corner. */
+  .template {
+    position: relative;
+    display: grid;
+    gap: var(--space-8);
+    inline-size: fit-content;
+    max-inline-size: 100%;
+  }
+  .templateLink {
+    display: grid;
+    gap: var(--space-8);
+    color: inherit;
+    text-decoration: none;
+  }
+  .templateLink:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .templateLink:hover .templateTitle {
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+  .templateFrame {
+    position: relative;
+    display: block;
+    inline-size: min(100%, calc(220px * var(--w) / var(--h)));
+    aspect-ratio: var(--w) / var(--h);
+    border-radius: var(--radius-image);
+    overflow: hidden;
+  }
+  .templateFrame img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+  .templateFrame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--image-hairline);
+  }
+  .templateTitle {
+    font-weight: var(--weight-medium);
+  }
+  .templateMeta {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+  .templateActions {
+    position: absolute;
+    inset-block-start: var(--space-8);
+    inset-inline-end: var(--space-8);
+  }
+
+  /* Nothing saved (§11.8.7): an empty frame, what to do, where to start. */
+  .empty {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-12);
+    padding-block: var(--space-40) var(--space-24);
+    max-inline-size: var(--measure);
+  }
+  .emptyFrame {
+    inline-size: 8rem;
+    aspect-ratio: 4 / 5;
+    margin-block-end: var(--space-12);
+    border: 1px dashed var(--border-control);
+    border-radius: var(--radius-image);
+  }
+  .emptyTitle {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-display);
+    line-height: var(--leading-2xl);
+  }
+  .emptyBody {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+}

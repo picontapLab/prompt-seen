@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import type { CSSProperties } from 'react';
 import { slimImage } from '@/modules/feed/compose';
 import type { FeedCard } from '@/modules/feed/types';
+import { favoritesStore } from '@/state/favorites/store';
 import { jazzCover } from '@/ui/showcase/fixtures';
 import { StateCell, StateGrid } from '../../../.storybook/states';
 import { Card } from './Card';
@@ -36,6 +37,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// The "saved" sample is saved in this browser's favourites, so its button and circle show it.
+if (typeof window !== 'undefined' && !favoritesStore.has('p_story_saved'))
+  favoritesStore.add('p_story_saved', 'prompt');
+
 /** One card at a medium width. */
 export const Default: Story = {
   render: (args) => (
@@ -59,13 +64,14 @@ export const States: Story = {
           <Card {...args} card={card({ title: 'A very long title that cannot fit on one line of the label' })} />
         </div>
       </StateCell>
-      <StateCell label="ACTION SLOT (SAVED)">
+      <StateCell label="SAVED (CIRCLED FRAME NUMBER)">
         <div style={{ inlineSize: 200 }}>
-          <Card
-            {...args}
-            active
-            actions={<span style={{ padding: 4, background: 'var(--surface-raised)', fontSize: 12 }}>♥</span>}
-          />
+          <Card {...args} card={card({ id: 'p_story_saved', title: 'Saved in this browser' })} />
+        </div>
+      </StateCell>
+      <StateCell label="NO ACTIONS">
+        <div style={{ inlineSize: 200 }}>
+          <Card {...args} actions={null} />
         </div>
       </StateCell>
     </StateGrid>

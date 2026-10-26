@@ -131,7 +131,7 @@ export type FeedProps = {
 
 export function Feed({ initial, end }: FeedProps) {
   const t = useTranslations('feed');
-  const { locale, buildId, query, setQuery, index, loadIndex } = useList();
+  const { locale, buildId, pageAddresses, query, setQuery, index, loadIndex } = useList();
   const hydrated = useSyncExternalStore(
     noSubscribe,
     () => true,
@@ -325,7 +325,7 @@ export function Feed({ initial, end }: FeedProps) {
 
   // --- The address of the page in view, the snapshot for returning, and the sentinels ---------
   const syncAddress = useEffectEvent(() => {
-    if (custom || switching || popupOpen()) return;
+    if (!pageAddresses || custom || switching || popupOpen()) return;
     const feed = feedRef.current;
     if (!feed) return;
     const box = feed.getBoundingClientRect();
