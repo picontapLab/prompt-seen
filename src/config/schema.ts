@@ -19,9 +19,6 @@ const urlPattern = z
     'urlPattern must contain {basePath}, {locale} and {path}',
   );
 
-/** Keys reserved by step 1a for later steps (design doc §17.4); the owning step tightens each schema. */
-const reserved = z.array(z.unknown()).default([]);
-
 // Entry IDs as content files write them; content:validate checks that they exist (§17.4).
 const entryId = (prefix: 'p' | 't' | 'c') =>
   z.string().regex(new RegExp(`^${prefix}_\\d{3,}$`), `IDs look like "${prefix}_001"`);
@@ -39,6 +36,21 @@ const showcaseGroup = z
       .optional(),
     lead: entryId('p'),
     works: z.array(entryId('p')).max(2).default([]),
+  })
+  .strict();
+
+/**
+ * A work on show on the home first screen (§11.8.1): an annotated prompt, from a date on. The
+ * newest entry that has started at build time is shown first; "Another frame" steps through the
+ * started entries, newest first. An entry without a date is always eligible, after dated ones.
+ */
+const featuredWork = z
+  .object({
+    prompt: entryId('p'),
+    from: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, 'dates are written YYYY-MM-DD')
+      .optional(),
   })
   .strict();
 
@@ -83,8 +95,11 @@ export const siteSchema = z
       })
       .strict()
       .default({ tokens: null }),
-    // Home first screen showcase (§11.8.1), owned by step 4b.
-    home: z.object({ featured: reserved }).strict().default({ featured: [] }),
+    // Home first screen showcase (§11.8.1), step 4b.
+    home: z
+      .object({ featured: z.array(featuredWork).default([]) })
+      .strict()
+      .default({ featured: [] }),
     // List showcase band and editorial interludes (§11.8.2), step 3a.
     feed: z
       .object({ showcase: z.array(showcaseGroup).default([]), interludes: z.array(interlude).default([]) })
