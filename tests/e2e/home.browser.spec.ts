@@ -151,7 +151,9 @@ test.describe('desktop', () => {
       if (!route.request().url().includes('-thumbnail-')) await held;
       await route.continue();
     });
-    await page.goto(url);
+    // The work is also in the row below, and WebKit counts an image in view there toward `load`,
+    // which the held file would never fire: wait for the document and hydration instead.
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
     await hydrated(page);
     await another(page).click();
     await expect(heroImage(page)).toHaveAttribute('data-develop', 'pending');
