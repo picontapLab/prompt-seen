@@ -28,6 +28,21 @@
     }
   }
 
+  /* With film edges (the home first screen, §11.8.1, §11.1.9 片边): the strip spans the image
+     column, about 7/12 of the width (55–60 %), and the work sits centred on it. */
+  @container (min-width: 768px) {
+    .showcase:has(> [data-film]) {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      align-items: start;
+    }
+  }
+  .media[data-film] > :first-child {
+    justify-self: stretch;
+  }
+  .media[data-film] > .label {
+    margin-inline: 0;
+  }
+
   .media {
     container-type: inline-size;
     display: grid;
@@ -108,8 +123,14 @@
     line-height: 1.7;
     overflow-wrap: anywhere;
   }
+  /* A phone's first screen holds the work, the quote and its actions (§11.8.1): body size there. */
   .showcase[data-size='hero'] .quote {
-    font-size: var(--text-xl);
+    font-size: var(--text-base);
+  }
+  @container (min-width: 768px) {
+    .showcase[data-size='hero'] .quote {
+      font-size: var(--text-xl);
+    }
   }
   .actions {
     display: flex;
