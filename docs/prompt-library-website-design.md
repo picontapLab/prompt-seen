@@ -1,7 +1,7 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.17  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16；1.13–1.15 修订：2026-10-17；1.16–1.17 修订：2026-10-18）  
+> 文档版本：1.19  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16；1.13–1.15 修订：2026-10-17；1.16–1.17 修订：2026-10-18；1.19 修订：2026-10-25）  
 > 状态：开发设计方案，尚未实施  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
@@ -21,6 +21,7 @@
 > 1.15 修订：步骤 3d 的决定——每个构建 locale 一份 MiniSearch 索引及其字段与权重，Prompt 正文进入低权重字段；按文字的分词（拉丁等字母文字折叠大小写与重音、阿拉伯语字形归一，中日韩以字对检索，查询用不重叠字对）；术语别名写在分类词汇文件中，并以其他语言的标签互为别名；Worker 查询与主线程回退、带构建版本与序号的请求；快速搜索面板（↑ ↓ 之前不预选结果）、每个语言页面页眉中的搜索入口与 `/`、⌘K 快捷键（`/` 受单字符快捷键偏好控制）；搜索页的 `?q=`、按组逐步显示与无结果建议；最近搜索的存储（第 4.1、11.8.6、11.10、13、17.3 章）。  
 > 1.16 修订：步骤 3e 的决定——语言入口的版式、推荐语言与“继续使用”（偏好增加 `language` 字段）；分类、风格与用途专题页以等高行展示作品，人工合集的条目图文交替，新增合集索引页 `/{locale}/collections/`；关于与许可页位于 `/{locale}/{slug}/`，其 slug 不得与站点路由同名；页脚链接本语言已有的关于与许可页；404、410 与缺少译文页的内容与做法（缺少译文页 `/{locale}/translation-missing/` 由语言菜单以地址片段传入来源页与已有语言）；某语言没有专题、合集或内容页时的占位参数；宿主配置的生成（参考 nginx、Cloudflare Pages、Netlify、Vercel 与 meta refresh 页面）与打包检查；页眉在 768–1023 px 收紧间距（第 8.2、9.1、9.5、11.6.1、11.8.5、11.8.7、17.3 章）。  
 > 1.17 修订：步骤 4a 的决定——弹层用原生 `<dialog>` 的 `showModal()`，其中的提示框与弹出层经 `PortalScope` 渲染到对话框内；画廊以 `PopupHost` 包裹，列表按阅读顺序登记作品（`usePopupList`），上一条与下一条到达已加载内容末尾时请求下一批；共享图片以 Web Animations API 的替身图片实现，不用 Motion 的 `layoutId`；关闭不带本站标记的详情历史项时替换回画廊地址；手机端左右滑动与下滑关闭的阈值；专题页的作品同样在弹层中打开。
+> 1.19 修订：首次必要 JavaScript 的实测与归因——HTML 引用的脚本与空闲后的总量分开记录，后者包括空闲预载与页眉链接的路由预取；列表筛选栏的条件面板、已选条件与排序列表，以及模板编辑器的下拉，改为按需加载；测量脚本 `scripts/measure-first-load.ts`；其余可减项及其代价见《首次加载 JavaScript》（`docs/first-load-js.md`）（第 4.1、16.1 节）。版本号 1.18 是并行进行的步骤 4b 的修订。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -401,6 +402,7 @@ prompt-library/
 - 实施细节（1.15）：步骤 3d 新增 `src/modules/search/`（分词 `tokenize.ts`、构建与浏览器共用的引擎 `engine.ts`、构建期文档 `documents.ts`、Worker `search.worker.ts` 及其可在主线程运行的处理逻辑 `worker-core.ts`、页面端 `client.ts`）、`scripts/emitters/search.ts`、`src/ui/search/`（页眉入口 `SearchLauncher`、快速搜索面板、搜索页、结果行与无结果建议）与路由 `[locale]/(public)/search/`。偏好记录增加 `singleKeyShortcuts`（第 11.10 节），`ClientMessages` 可显式传入 locale，供外壳这类不调用 `enterLocale` 的共享组件使用。
 - 实施细节（1.12）：步骤 3a 新增 `src/modules/feed/`（列表数据的类型、构建期编排 `compose.ts`、构建与浏览器共用的批次编排 `assemble.ts` 与筛选计数 `query.ts`、服务端读取模块）、`src/ui/gallery/`（Card、编辑段落、展示带、筛选栏、`Feed` 与 `ListProvider`）、`scripts/emitters/feed.ts` 与 `prompt-json.ts`，以及 `content:validate` 中的 `validate-feed.ts`。卡片与编辑段落不带 `'use client'`，服务端渲染第一页、浏览器追加后续批次时用同一组件。
 - 实施细节（1.17）：步骤 4a 新增 `src/ui/detail-popup/`（`PopupHost` 与 `usePopupList`、`DetailPopup`、历史项与地址存储 `history.ts`、纯函数 `logic.ts`、共享图片 `flight.ts`、手机手势 `useSwipe.ts`）与基元 `src/ui/primitives/PortalScope.tsx`；`PromptDetailBody` 增加 `heading` 与 `coverPreview` 参数，`ImageStage` 增加 `preview`（已加载的小图垫在大图之下）；列表的 `src/ui/gallery/prefetch.ts` 增加同步读取已取得数据的 `peekJson`。
+- 实施细节（1.19）：列表筛选栏的条件面板（`FilterPanel`）、已选条件（`RemovableChips`）与排序列表在指针或焦点到达筛选栏时开始下载，首次使用时挂载；排序在此之前是外观与名称相同的按钮（`SortSelect`），按下或按 ↑ ↓ 时换成已获得焦点并展开的 `Select`，Esc 后焦点回到它。模板编辑器的 `Select` 以 `React.lazy` 引入：服务端照常输出，代码到达后水合；样例模板没有超过四个普通选项的字段，因此目前不加载。
 - `design/` 保存已选定视觉方向的参考页面与截图（第 11.1.9 节），只作视觉参考。步骤 1c 已把 token 原稿 `design/tokens/darkroom.css` 迁入 `src/styles/tokens/`，`design/tokens/` 随之移除。
 - `src/styles/tokens/` 是视觉与动效 token 的唯一来源，生成 CSS 自定义属性；`scripts/tokens-check.ts` 在 CI 中校验第 11.1.9 节列出的颜色组合对比度。
 - 实施细节（1.10）：token 直接写成 CSS 文件——`color.css`（功能层与品牌层颜色，浅色、跟随系统的深色、用户选择的深色三块，以及 `prefers-contrast: more`）、`type.css`（字号、字重、按 `lang` 切换的字体栈与行高）、`layout.css`（间距、断点相关值、容器宽度、圆角、层级、焦点环、触控目标）、`motion.css`（动效 token 与减少动效）。全局样式按 `@layer reset, tokens, base, components, utilities` 排序，组件样式为 CSS Modules 并放在 `components` 层。代码需要的少量数值（动效、断点、`theme-color`）有 TypeScript 镜像，单元测试保证与 CSS 一致；`src/` 中媒体查询与容器查询只允许第 11.1.3 节的断点。字体在 `src/styles/fonts/`（第 11.1.2 节）。`.storybook/` 展示各组件状态，工具栏切换浅色、深色、并排两种主题、语言与方向、减少动效。
@@ -2408,6 +2410,19 @@ feed:
 | Prompt 详情（简体中文） | 227.2 KiB | 21.9 / 8.1 KiB | 187.4 KiB |
 
 详情页只比外壳多约 6 KiB 的 JavaScript；超出 200 KiB 预算的部分来自 1a 与 1c 的共同基础（第 4.1 节）。样例图片是扁平矢量图，首屏图片远低于 600 KiB 预算，真实作品需要重新测量。
+
+再次实测（1.19，2026-10-25，`main` 85541a2 与本次修改；条件同上，gzip 按 6 级计）。每个页面空闲后都下载约 290 KiB，但这不是首次必要 JavaScript：其中约 52 KiB 是页面空闲后预载的快速搜索面板与 Toast 区域，约 49 KiB 是页眉四个栏目链接进入视口后，路由预取时一并下载的这些路由的客户端代码（主要是 Prompt 列表的筛选栏、Feed 与详情弹层）。HTML 引用的脚本：
+
+| 页面 | 修改前 | 修改后 | 空闲 6 秒后（修改前 → 后） |
+| --- | --- | --- | --- |
+| 语言首页（占位）、模板列表、合集、关于 | 186.3–187.4 KiB | 不变（±0.1） | 287.0 → 269.4 KiB |
+| Prompt 列表 | 268.7 KiB | 214.2 KiB | 287.0 → 269.4 KiB |
+| 风格专题 | 204.7 KiB | 204.8 KiB | 294.9 → 277.2 KiB |
+| Prompt 详情（英语） | 192.7 KiB | 192.8 KiB | 293.4 → 275.8 KiB |
+| 模板详情（英语） | 244.9 KiB | 208.8 KiB | 310.6 → 285.9 KiB |
+| 搜索页 | 191.5 KiB | 191.6 KiB | 300.8 → 283.2 KiB |
+
+React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 KiB。列表页与模板页超出预算的部分是只在交互时需要的 React Aria 列表框、弹出层与对话框代码（约 42 KiB），现已按需加载（第 4.1 节）；列表页剩余的约 14 KiB 超出主要来自常驻的详情弹层。按需加载弹层、页眉链接按意图预取、预编译消息等后续可减项及其代价见《首次加载 JavaScript》（`docs/first-load-js.md`）。之后的步骤用 `npx tsx scripts/measure-first-load.ts` 按同一方法测量。
 
 ### 16.2 功能验收
 
