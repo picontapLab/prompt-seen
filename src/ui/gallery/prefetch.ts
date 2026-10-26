@@ -3,6 +3,8 @@
 // prefetched file is never requested twice; step 4a's popup reads detail models with loadJson.
 
 const cache = new Map<string, Promise<unknown>>();
+/** Parsed data of requests that have succeeded, readable synchronously (`peekJson`). */
+const settled = new Map<string, unknown>();
 
 export class StaleBuildError extends Error {
   constructor(url: string) {
@@ -26,7 +28,9 @@ export function loadJson<T>(
     const init: RequestInit = { priority: opts.priority ?? 'auto', ...(opts.retry && { cache: 'reload' }) };
     pending = fetch(url, init).then(async (res) => {
       if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
-      return (await res.json()) as T;
+      const data = (await res.json()) as T;
+      settled.set(url, data);
+      return data;
     });
     cache.set(url, pending);
     pending.catch(() => cache.delete(url));
@@ -38,6 +42,14 @@ export function loadJson<T>(
         return data;
       })
     : pending;
+}
+
+/**
+ * Data already fetched for this address, or undefined. Lets the detail popup render a prefetched
+ * model in the same commit as the click, without a frame of its loading state (§11.3.2).
+ */
+export function peekJson<T>(url: string): T | undefined {
+  return settled.get(url) as T | undefined;
 }
 
 /** Warms the cache at low priority; errors are ignored until the data is really needed. */

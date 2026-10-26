@@ -18,6 +18,12 @@ export type ImageStageProps = {
   endPrint?: string;
   /** `sizes` for the responsive image: how wide the stage is at each breakpoint. */
   sizes: string;
+  /**
+   * An already loaded, smaller file of the cover (the card's), shown under the cover until the
+   * larger file paints: the detail popup opens on the thumbnail the visitor clicked and switches
+   * to the sharp image once it has decoded (§11.3.2).
+   */
+  preview?: string;
 };
 
 /**
@@ -27,7 +33,7 @@ export type ImageStageProps = {
  * (no fade that waits for JavaScript, §12.3). Below: caption, size and a link to the original;
  * with several results, a strip of thumbnails switches the image.
  */
-export function ImageStage({ images, startPrint, endPrint, sizes }: ImageStageProps) {
+export function ImageStage({ images, startPrint, endPrint, sizes, preview }: ImageStageProps) {
   const t = useTranslations('detail.image');
   const annotations = useAnnotations();
   const [index, setIndex] = useState(0);
@@ -49,7 +55,10 @@ export function ImageStage({ images, startPrint, endPrint, sizes }: ImageStagePr
   return (
     <div className={styles.stage} id={annotations?.stageId}>
       <FilmStrip startPrint={startPrint} endPrint={endPrint}>
-        <div className={styles.picture} style={frame} data-annotated={annotated || undefined}>
+        <div className={styles.picture} style={frame} data-annotated={annotated || undefined} data-stage-picture="">
+          {preview && index === 0 && !failed.has(0) && (
+            <img src={preview} alt="" aria-hidden="true" className={`${styles.image} ${styles.preview}`} />
+          )}
           {!failed.has(index) ? (
             <img
               key={`${index}-${retry}`}
