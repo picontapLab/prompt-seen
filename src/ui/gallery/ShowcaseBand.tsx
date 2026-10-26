@@ -12,8 +12,8 @@ import gallery from './Gallery.module.css';
 /**
  * The list's first-screen showcase band (design doc §11.8.2 首屏展示带): this week's lead work
  * large with its annotated quote, and up to two more at medium size, all at their original
- * ratio. The lead image is the page's main image (LCP), loaded first. It folds away while
- * filters apply (HideWhenFiltered).
+ * ratio. The lead image is the page's main image (LCP), loaded first, and develops (§11.1.8 显影)
+ * when it is still loading as the page takes over. It folds away while filters apply.
  */
 export function ShowcaseBand({ band, locale }: { band: FeedBand; locale: string }) {
   const t = useTranslations('feed');
@@ -30,6 +30,7 @@ export function ShowcaseBand({ band, locale }: { band: FeedBand; locale: string 
             showcase={lead}
             size="row"
             priority
+            develop
             headingLevel="h3"
             sizes="(min-width: 1024px) 44vw, 100vw"
             actions={
