@@ -2,29 +2,27 @@
 
 import { SlidersHorizontal } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
-import { useMemo, useState } from 'react';
-import {
-  conditionCount,
-  facetCounts,
-  isFiltered,
-  REF_OPTIONS,
-  type FacetCounts,
-  type FeedQuery,
-  type RefOption,
-} from '@/modules/feed/query';
-import { SHAPES, type Shape } from '@/modules/feed/types';
+import { lazy, Suspense, useMemo, useState } from 'react';
+import { conditionCount, facetCounts, isFiltered, type FacetCounts, type FeedQuery } from '@/modules/feed/query';
 import { Button } from '@/ui/primitives/Button';
-import { FilterChip, RemovableChips } from '@/ui/primitives/Chip';
-import { Dialog } from '@/ui/primitives/Dialog';
-import { Select } from '@/ui/primitives/Select';
 import styles from './FilterBar.module.css';
 import { useList } from './ListProvider';
+import { preloadSortSelect, SortSelect } from './SortSelect';
 
 // The list's filter bar (design doc §11.7, §11.8.2, §11.1.9): sticky under the header. Styles
 // are text tabs with monospaced counts and the current one underlined in safelight amber; use,
 // shape and reference image sit in a panel of chips; sort is newest first or featured. Every
 // option shows how many results it would give with the other conditions, and one that would
 // give none is disabled. Narrow screens get one "Filters (n)" button for everything.
+//
+// The panel, the active chips and the sort list are React Aria collections and overlays the
+// list's first load does not need (§16.4): their code loads when the pointer or focus reaches
+// the bar, and they mount when first used.
+
+const loadPanel = () => import('./FilterPanel');
+const FilterPanel = lazy(loadPanel);
+const loadChips = () => import('@/ui/primitives/Chip');
+const RemovableChips = lazy(() => loadChips().then((m) => ({ default: m.RemovableChips })));
 
 type Term = { id: string; label: string };
 
@@ -40,15 +38,22 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
   const format = useFormatter();
   const { query, setQuery, index, loadIndex } = useList();
   const [panel, setPanel] = useState<'panel' | 'all' | null>(null);
+  // Mounted on first open and kept, so closing animates (as the menu sheet does).
+  const [panelMounted, setPanelMounted] = useState(false);
   const counts = useMemo(() => (index ? facetCounts(index, query) : initialCounts), [index, query, initialCounts]);
-  const warm = () => void loadIndex().catch(() => {});
+  const warm = () => {
+    void loadIndex().catch(() => {});
+    void loadPanel();
+    void loadChips();
+    preloadSortSelect();
+  };
+  const openPanel = (which: 'panel' | 'all') => {
+    setPanelMounted(true);
+    setPanel(which);
+  };
 
   const set = (patch: Partial<FeedQuery>) => setQuery({ ...query, ...patch });
-  const toggle = <T extends string>(list: T[], value: T) =>
-    list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
   const noMatch = t('noMatch');
-  // A selected option stays pressable to clear it, even when the other conditions leave it no results.
-  const shown = (selected: boolean, count: number) => (selected && count === 0 ? undefined : count);
   const n = conditionCount(query);
   const panelCount = query.use.length + query.shape.length + query.ref.length;
 
@@ -72,77 +77,6 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
     setQuery(next);
   };
   const clear = () => setQuery({ ...query, style: null, use: [], shape: [], ref: [] });
-
-  const chips = (withStyles: boolean) => (
-    <div className={styles.groups}>
-      {withStyles && (
-        <fieldset className={styles.group}>
-          <legend>{t('style')}</legend>
-          <div className={styles.chips}>
-            {styleTerms.map((s) => (
-              <FilterChip
-                key={s.id}
-                isSelected={query.style === s.id}
-                onChange={(on) => set({ style: on ? s.id : null })}
-                count={shown(query.style === s.id, counts.style[s.id] ?? 0)}
-                disabledReason={noMatch}
-              >
-                {s.label}
-              </FilterChip>
-            ))}
-          </div>
-        </fieldset>
-      )}
-      <fieldset className={styles.group}>
-        <legend>{t('use')}</legend>
-        <div className={styles.chips}>
-          {useCases.map((u) => (
-            <FilterChip
-              key={u.id}
-              isSelected={query.use.includes(u.id)}
-              onChange={() => set({ use: toggle(query.use, u.id) })}
-              count={shown(query.use.includes(u.id), counts.use[u.id] ?? 0)}
-              disabledReason={noMatch}
-            >
-              {u.label}
-            </FilterChip>
-          ))}
-        </div>
-      </fieldset>
-      <fieldset className={styles.group}>
-        <legend>{t('shape')}</legend>
-        <div className={styles.chips}>
-          {SHAPES.map((s: Shape) => (
-            <FilterChip
-              key={s}
-              isSelected={query.shape.includes(s)}
-              onChange={() => set({ shape: toggle(query.shape, s) })}
-              count={shown(query.shape.includes(s), counts.shape[s])}
-              disabledReason={noMatch}
-            >
-              {t(`shapes.${s}`)}
-            </FilterChip>
-          ))}
-        </div>
-      </fieldset>
-      <fieldset className={styles.group}>
-        <legend>{t('ref')}</legend>
-        <div className={styles.chips}>
-          {REF_OPTIONS.map((r: RefOption) => (
-            <FilterChip
-              key={r}
-              isSelected={query.ref.includes(r)}
-              onChange={() => set({ ref: toggle(query.ref, r) })}
-              count={shown(query.ref.includes(r), counts.ref[r])}
-              disabledReason={noMatch}
-            >
-              {t(`refs.${r}`)}
-            </FilterChip>
-          ))}
-        </div>
-      </fieldset>
-    </div>
-  );
 
   return (
     <div className={styles.bar} onPointerEnter={warm} onFocus={warm} data-filtered={isFiltered(query) || undefined}>
@@ -174,7 +108,7 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
           <Button
             className={styles.wideOnly}
             variant="secondary"
-            onPress={() => setPanel('panel')}
+            onPress={() => openPanel('panel')}
             icon={<SlidersHorizontal aria-hidden="true" />}
           >
             {panelCount ? t('panelCount', { count: panelCount }) : t('panel')}
@@ -182,14 +116,14 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
           <Button
             className={styles.narrowOnly}
             variant="secondary"
-            onPress={() => setPanel('all')}
+            onPress={() => openPanel('all')}
             icon={<SlidersHorizontal aria-hidden="true" />}
           >
             {n ? t('openCount', { count: n }) : t('open')}
           </Button>
-          <Select
+          <SortSelect
             className={styles.sort}
-            label={<span className="visually-hidden">{t('sort')}</span>}
+            label={t('sort')}
             options={[
               { id: 'latest', label: t('latest') },
               { id: 'featured', label: t('featured') },
@@ -205,33 +139,29 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
           <span className={styles.results} aria-live="polite">
             {t('results', { count: counts.total })}
           </span>
-          <RemovableChips label={t('active')} labelHidden items={active} onRemove={remove} />
+          <Suspense>
+            <RemovableChips label={t('active')} labelHidden items={active} onRemove={remove} />
+          </Suspense>
           <Button variant="ghost" onPress={clear}>
             {t('clear')}
           </Button>
         </div>
       )}
 
-      <Dialog
-        title={panel === 'all' ? t('open') : t('panelTitle')}
-        variant={panel === 'all' ? 'sheet' : 'modal'}
-        isOpen={panel !== null}
-        onOpenChange={(open) => !open && setPanel(null)}
-        actions={(close) => (
-          <>
-            {n > 0 && (
-              <Button variant="ghost" onPress={clear}>
-                {t('clear')}
-              </Button>
-            )}
-            <Button variant="primary" onPress={close} isDisabled={counts.total === 0}>
-              {t('show', { count: counts.total })}
-            </Button>
-          </>
-        )}
-      >
-        {chips(panel === 'all')}
-      </Dialog>
+      {panelMounted && (
+        <Suspense>
+          <FilterPanel
+            panel={panel}
+            onClose={() => setPanel(null)}
+            styleTerms={styleTerms}
+            useCases={useCases}
+            query={query}
+            counts={counts}
+            onChange={set}
+            onClear={clear}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }
