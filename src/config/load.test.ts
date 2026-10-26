@@ -71,6 +71,19 @@ describe('loadConfig', () => {
     expect(issues(() => loadConfig(fixture(`${SITE}baseUrl: /x\n`)))).toMatch(/baseUrl/);
   });
 
+  it('reads the home showcase list (§11.8.1) and checks its entries', () => {
+    const site = `${SITE}home:\n  featured:\n    - { prompt: p_045, from: '2026-10-19' }\n    - prompt: p_012\n`;
+    expect(loadConfig(fixture(site)).home.featured).toEqual([
+      { prompt: 'p_045', from: '2026-10-19' },
+      { prompt: 'p_012' },
+    ]);
+    expect(issues(() => loadConfig(fixture(`${SITE}home:\n  featured: [p_045]\n`)))).toMatch(/^home\.featured\.0/);
+    expect(issues(() => loadConfig(fixture(`${SITE}home:\n  featured:\n    - { prompt: t_001 }\n`)))).toMatch(/p_001/);
+    expect(
+      issues(() => loadConfig(fixture(`${SITE}home:\n  featured:\n    - { prompt: p_045, from: 19 Oct }\n`))),
+    ).toMatch(/YYYY-MM-DD/);
+  });
+
   it('checks the locale registry', () => {
     const disabledDefault = LOCALES.replace('enabled: true', 'enabled: false');
     expect(issues(() => loadConfig(fixture(SITE, disabledDefault)))).toMatch(/defaultLocale must be enabled/);

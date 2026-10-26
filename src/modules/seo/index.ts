@@ -2,7 +2,7 @@ import 'server-only';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { builtLocales, config, type LocaleEntry } from '@/config';
-import type { Alternate, PromptDetail, TemplateDetail } from '@/modules/content/types';
+import type { Alternate, ImageRef, PromptDetail, TemplateDetail } from '@/modules/content/types';
 import { absoluteImageUrl } from '@/modules/media';
 import { absoluteUrl, paths } from '@/modules/url';
 import { buildPageMetadata, type PageSeo, type SeoContext } from './build';
@@ -126,6 +126,32 @@ export function pageMetadata(page: {
     } satisfies PageSeo,
     context,
   );
+}
+
+/**
+ * A locale's home page (§8.2, §9.3, step 4b): every built language's home in hreflang and the
+ * language entry at the base path as the x-default. The share image is the work on show.
+ */
+export function homeMetadata(
+  locale: LocaleEntry,
+  page: { documentTitle: string; title: string; description: string; image?: ImageRef | null },
+): Metadata {
+  const metadata = buildPageMetadata(
+    {
+      ...page,
+      path: paths.home(locale.pathPrefix),
+      locale,
+      alternates: builtLocales.map((l) => ({ locale: l.code, path: paths.home(l.pathPrefix) })),
+    },
+    context,
+  );
+  return {
+    ...metadata,
+    alternates: {
+      ...metadata.alternates,
+      languages: { ...metadata.alternates?.languages, 'x-default': absoluteUrl(paths.languageEntry()) },
+    },
+  };
 }
 
 // ---------------------------------------------------------------------------------------------

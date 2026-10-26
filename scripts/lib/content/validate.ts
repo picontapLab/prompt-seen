@@ -10,6 +10,7 @@ import type { Content, LocaleFile, TaxonomyKey } from './read';
 import { TAXONOMY_FILES, sha256 } from './read';
 import { linkTargetLocales, localeStates, promptTextOf, publishProblems, sameValues, versionSpec } from './rules';
 import { validateFeedSettings } from './validate-feed';
+import { validateHomeSettings } from './validate-home';
 
 // Cross-file rules (design doc §14.2 steps 3–5, §14.3). Mode-independent: the same content
 // gives the same findings in every build. What a build shows is decided in build-index.ts.
@@ -470,6 +471,9 @@ export function validateContent(content: Content, config: ResolvedConfig, findin
 
   // --- List settings in site.yaml (§11.8.2) -----------------------------------------------------
   validateFeedSettings(content, config, findings);
+
+  // --- Home settings in site.yaml (§11.8.1) -----------------------------------------------------
+  validateHomeSettings(content, config, findings);
 
   // --- Maintenance hints (§14.3 info) -----------------------------------------------------------
   const unused = [...content.media.keys()].filter((id) => !usedAssets.has(id));

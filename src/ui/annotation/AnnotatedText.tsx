@@ -25,7 +25,8 @@ export function AnnotatedText({ text }: { text: string }) {
     // After a tap the box may be off screen (the image sits above the text on phones): bring
     // the image into view, without moving when any part of the box is already visible.
     const box = document.getElementById(boxId(letter));
-    const stage = document.getElementById(stageId);
+    // The detail's image stage, or for a showcase (home, list) the overlay over its image.
+    const stage = document.getElementById(stageId) ?? box?.parentElement;
     if (!box || !stage) return;
     const r = box.getBoundingClientRect();
     if (r.bottom > 0 && r.top < window.innerHeight) return;

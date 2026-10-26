@@ -50,19 +50,21 @@ export function AnnotationNotes({
 }
 
 /** One line under a showcase image with the current note (§11.8.1); visual only. */
-export function AnnotationCaption() {
+export function AnnotationCaption({ hint }: { hint?: string }) {
   const state = useAnnotations();
   if (!state || state.annotations.length === 0) return null;
   const a = state.annotations.find((x) => x.letter === state.current);
   return (
     <p className={styles.caption} aria-hidden="true" data-empty={a ? undefined : ''}>
-      {a && (
+      {a ? (
         <>
           <span className={styles.letter} data-solid="">
             {a.letter}
           </span>
           <span>{a.note}</span>
         </>
+      ) : (
+        hint && <span className={styles.hint}>{hint}</span>
       )}
     </p>
   );

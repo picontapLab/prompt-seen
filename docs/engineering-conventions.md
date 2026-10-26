@@ -15,8 +15,9 @@ this page covers _how_ it fits together. A change to these conventions goes in i
 ## Configuration
 
 - `content/site.yaml` and `content/locales.yaml` are validated by `src/config/schema.ts`. Unknown
-  keys are errors. Keys reserved for later steps (`home.featured`, `feed.showcase`,
-  `feed.interludes`) are loose arrays until the owning step tightens their schema.
+  keys are errors. The editorial settings (`home.featured`, step 4b; `feed.showcase` and
+  `feed.interludes`, step 3a) name entries by ID; `content:validate` checks that they exist and
+  that works on show are annotated.
 - Environment variables override `site.yaml`: `SITE_ORIGIN`, `BASE_PATH`, `URL_PATTERN`,
   `BUILD_MODE`, `BUILD_ID`, `CONTENT_DIR`. Only `src/config/load.ts` reads them.
 - `npm run gen` writes `src/config/generated/config.ts` (git-ignored). App code imports `@/config`;
@@ -246,6 +247,21 @@ Set up in step 4a (design doc §11.3, §11.3.1, §11.3.2, §12.2).
   dialog does not also close (the annotation phrases do).
 - Next.js's patched `pushState` / `replaceState` are framework internals:
   `tests/e2e/popup.browser.spec.ts` is their regression suite; run it on every Next.js upgrade.
+
+## Home page
+
+Set up in step 4b (design doc §11.8.1, §11.1.9).
+
+- `src/modules/home/compose.ts` decides what the home page shows from the content model, the list's
+  featured order and `home.featured`; it is pure and returns works as IDs. `HomeBody` takes their
+  cards from the list's pages (`cardsFor`), so a work reads the same everywhere. The order of works
+  on show is `featuredOrder` in `featured.ts`, which has no imports so the end-to-end tests use it too.
+- The first screen is `FeatureShowcase` with `film`, `develop`, `intro`, `footer` and
+  `captionHint`; `HomeHero` is the client island that steps through the works on show. A showcase
+  elsewhere can use the same props.
+- `develop` (`src/ui/showcase/DevelopImage.tsx`) only acts on an image still loading when the page
+  takes over; images on the first screen load eagerly (`priority`), never with `loading="lazy"`.
+- The home page is wrapped in `PopupHost`; its works register in reading order with `<PopupWorks>`.
 
 ## Templates
 

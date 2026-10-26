@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useId, type CSSProperties } from 'react';
 import { promptJsonFile } from '@/modules/feed/files';
-import type { Interlude } from '@/modules/feed/types';
+import type { FeedTemplate, Interlude } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
 import { paths, withBasePath } from '@/modules/url';
 import { CopyButton } from '@/ui/feedback/CopyButton';
@@ -77,6 +77,43 @@ export function FeatureRow({ block, posinset, setsize, locale, ...rest }: { bloc
   );
 }
 
+/**
+ * Template cards (§11.8.1, §11.8.2): each template's opening with its placeholders in their
+ * variable colours, so "fill in the blanks" is clear before opening it. The list's template strip
+ * and the home page show the same cards.
+ */
+export function TemplateCards({ items }: { items: readonly FeedTemplate[] }) {
+  const t = useTranslations('feed');
+  return (
+    <ul className={styles.templates}>
+      {items.map((tpl) => (
+        <li key={tpl.id}>
+          <a href={withBasePath(tpl.path)} className={styles.template}>
+            <span className={styles.templateTitle}>{tpl.title}</span>
+            <span className={styles.templateMeta}>{t('interlude.fields', { count: tpl.fieldCount })}</span>
+            <span className={styles.excerpt} lang={tpl.promptLanguage} dir={textDirection(tpl.promptLanguage)}>
+              {tpl.excerpt.map((part, i) =>
+                typeof part === 'string' ? (
+                  part
+                ) : (
+                  <span
+                    key={i}
+                    className={styles.variable}
+                    style={{ '--_v': part.c } as CSSProperties}
+                    data-var={part.c}
+                  >
+                    {part.v}
+                  </span>
+                ),
+              )}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 /** Template strip: two or three templates with their opening and coloured variables (§11.8.1, §11.8.2). */
 export function TemplateStrip({ block, posinset, setsize, ...rest }: { block: Of<'templates'> } & Position) {
   const t = useTranslations('feed');
@@ -93,32 +130,7 @@ export function TemplateStrip({ block, posinset, setsize, ...rest }: { block: Of
       <h2 id={id} className={styles.eyebrow}>
         {t('interlude.templates')}
       </h2>
-      <ul className={styles.templates}>
-        {block.items.map((tpl) => (
-          <li key={tpl.id}>
-            <a href={withBasePath(tpl.path)} className={styles.template}>
-              <span className={styles.templateTitle}>{tpl.title}</span>
-              <span className={styles.templateMeta}>{t('interlude.fields', { count: tpl.fieldCount })}</span>
-              <span className={styles.excerpt} lang={tpl.promptLanguage} dir={textDirection(tpl.promptLanguage)}>
-                {tpl.excerpt.map((part, i) =>
-                  typeof part === 'string' ? (
-                    part
-                  ) : (
-                    <span
-                      key={i}
-                      className={styles.variable}
-                      style={{ '--_v': part.c } as CSSProperties}
-                      data-var={part.c}
-                    >
-                      {part.v}
-                    </span>
-                  ),
-                )}
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <TemplateCards items={block.items} />
     </article>
   );
 }

@@ -17,8 +17,10 @@ and `/prompt-seen/llms.txt`; step 3c adds the template editor on every template 
 (`/prompt-seen/en/categories/landscape/`), collections (`/prompt-seen/en/collections/`), the about and
 license pages, the 404, 410 and missing-translation pages, and host configuration for redirects and
 removed addresses; step 4a opens works from the list and topic pages in a detail popup at the work's
-own address, with previous / next, swipes on phones and the image expanding from its card. The home
-page is still a placeholder.
+own address, with previous / next, swipes on phones and the image expanding from its card; step 4b
+adds the home page, `/prompt-seen/en/`: a work on show with its lettered prompt phrases, "Another
+frame", search, and use cases, the newest works, templates and collections below. Works on show
+are set in `home.featured` in `content/site.yaml`.
 
 ## Quick start
 
