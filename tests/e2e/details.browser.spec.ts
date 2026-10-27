@@ -200,11 +200,13 @@ test('绝对日期: test and update dates are absolute and formatted for the lan
     const detail = samplePrompt(locale.code);
     if (!detail.lastTestedAt) continue;
     await page.goto(`${BASE}${detail.path}`);
-    const text = (await page.locator('main').innerText()).replace(/\s+/g, ' ');
+    // Bidi marks (U+200F in Arabic dates) are invisible, and Firefox's text of the page has none.
+    const bare = (s: string) => s.replace(/[‎‏؜]/g, '');
+    const text = bare(await page.locator('main').innerText()).replace(/\s+/g, ' ');
     const expected = new Intl.DateTimeFormat(locale.htmlLang, { dateStyle: 'medium', timeZone: 'UTC' }).format(
       new Date(`${detail.lastTestedAt}T00:00:00Z`),
     );
-    expect(text, locale.code).toContain(expected);
+    expect(text, locale.code).toContain(bare(expected));
     expect(text).not.toMatch(/\b(ago|yesterday|today)\b|前$|天前|日前/);
   }
 });
@@ -360,18 +362,25 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
   });
   await page.goto(list);
   await takenOver(page);
-  type Seen = { inserted: number | null; visible: number | null; ratios: number[] };
-  // When placeholder frames entered the feed, when they first showed, and their shapes.
+  type Seen = { frame: number; start: number | null; visible: number | null; ratios: number[] };
+  // Timed on the frame clock that runs the delay: `start` is the last frame before placeholder
+  // frames entered the feed (a mutation observer sees them at once), and the delay counts from the
+  // first frame that draws them, never earlier; `visible` is the first frame they show in. Timing
+  // from the insertion itself comes up to a frame short when it lands mid-frame (283 ms in CI).
   const watch = () =>
     page.evaluate(() => {
-      const seen: Seen = { inserted: null, visible: null, ratios: [] };
+      const seen: Seen = { frame: performance.now(), start: null, visible: null, ratios: [] };
       (window as unknown as { __seen: Seen }).__seen = seen;
-      const check = () => {
-        const frames = [...document.querySelectorAll('[role="feed"] > span[aria-hidden="true"][class*="placeholder"]')];
+      const selector = '[role="feed"] > span[aria-hidden="true"][class*="placeholder"]';
+      new MutationObserver(() => {
+        if (document.querySelector(selector)) seen.start ??= seen.frame;
+      }).observe(document.body, { childList: true, subtree: true });
+      const check = (now: number) => {
+        seen.frame = now;
+        const frames = [...document.querySelectorAll(selector)];
         if (frames.length) {
-          seen.inserted ??= performance.now();
           if (frames.some((el) => getComputedStyle(el).opacity !== '0')) {
-            seen.visible ??= performance.now();
+            seen.visible ??= now;
             seen.ratios = frames.map((el) => el.getBoundingClientRect().width / el.getBoundingClientRect().height);
           }
         }
@@ -385,11 +394,12 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
     delay = ms;
     await watch();
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await expect(state).toHaveAttribute('data-feed-state', 'loading');
+    // A 60 ms batch can be done before the state is read, so wait for its frames instead.
+    await expect.poll(async () => (await seen()).start).not.toBeNull();
     await expect(state).toHaveAttribute('data-feed-state', 'idle', { timeout: 10_000 });
     const s = await seen();
-    expect(s.inserted, `${ms} ms: frames take their place while loading`).not.toBeNull();
-    if (s.visible !== null) expect(s.visible - s.inserted!, `${ms} ms`).toBeGreaterThanOrEqual(284);
+    expect(s.start, `${ms} ms: frames take their place while loading`).not.toBeNull();
+    if (s.visible !== null) expect(s.visible - s.start!, `${ms} ms`).toBeGreaterThanOrEqual(300);
     if (ms > 300) {
       expect(s.visible, `${ms} ms`).not.toBeNull();
       for (const r of s.ratios) expect(r).toBeGreaterThan(0.5);
@@ -399,7 +409,7 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
 
 test('加载指示: the popup says it is loading only once loading has taken 300 ms', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  type Seen = { inserted: number | null; visible: number | null };
+  type Seen = { pressed: number | null; visible: number | null };
   for (const delay of [60, 1500]) {
     await page.unrouteAll();
     await page.route(/\/generated\/[^/]+\/prompts\/[^/]+\.json$/, async (route) => {
@@ -408,19 +418,17 @@ test('加载指示: the popup says it is loading only once loading has taken 300
     });
     await page.goto(list);
     await takenOver(page);
-    // When the "loading" status entered the page, and when it first became visible.
+    // When the work was pressed, and when the "loading" status first became visible.
     await page.evaluate(
       (text) => {
-        const seen: Seen = { inserted: null, visible: null };
+        const seen: Seen = { pressed: null, visible: null };
         (window as unknown as { __seen: Seen }).__seen = seen;
+        document.addEventListener('pointerdown', () => (seen.pressed ??= performance.now()), true);
         const check = () => {
           const el = [...document.querySelectorAll('dialog[data-popup] [role="status"]')].find(
             (s) => s.textContent === text,
           );
-          if (el) {
-            seen.inserted ??= performance.now();
-            if (getComputedStyle(el).opacity !== '0') seen.visible ??= performance.now();
-          }
+          if (el && getComputedStyle(el).opacity !== '0') seen.visible ??= performance.now();
           requestAnimationFrame(check);
         };
         requestAnimationFrame(check);
@@ -430,8 +438,9 @@ test('加载指示: the popup says it is loading only once loading has taken 300
     await cards(page).nth(4).locator('a').click();
     await expect(page.locator('dialog[data-popup] [id$="-prompt"]').first()).toBeVisible({ timeout: 5000 });
     const seen = await page.evaluate(() => (window as unknown as { __seen: Seen }).__seen);
-    // Never visible within the first 300 ms (one frame of tolerance for the sampling).
-    if (seen.visible !== null) expect(seen.visible - seen.inserted!, `${delay} ms`).toBeGreaterThanOrEqual(284);
+    // Never visible within 300 ms of the press. Timed from the press, not from when a frame first
+    // saw the status: a busy frame (WebKit) samples late and would shorten the wait it measures.
+    if (seen.visible !== null) expect(seen.visible - seen.pressed!, `${delay} ms`).toBeGreaterThanOrEqual(300);
     // A slow load does say so.
     if (delay > 300) expect(seen.visible, `${delay} ms`).not.toBeNull();
   }

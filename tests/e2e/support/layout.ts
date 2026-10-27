@@ -15,7 +15,6 @@ export function layoutProblems(page: Page, scope = 'body'): Promise<string[]> {
     const root = document.querySelector(scope);
     if (!root) return [`no ${scope}`];
     const doc = document.documentElement;
-    if (doc.scrollWidth > innerWidth + 1) problems.push(`page scrolls sideways: ${doc.scrollWidth} > ${innerWidth}`);
 
     const shown = (el: Element) => {
       if (el.closest('.visually-hidden, [aria-hidden="true"], [inert]')) return false;
@@ -24,6 +23,28 @@ export function layoutProblems(page: Page, scope = 'body'): Promise<string[]> {
       return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && Number(cs.opacity) > 0;
     };
     const name = (el: Element) => `${el.tagName.toLowerCase()} "${(el.textContent ?? '').trim().slice(0, 40)}"`;
+
+    // Sideways scroll, with what causes it: the outermost boxes past an edge that nothing clips.
+    if (doc.scrollWidth > innerWidth + 1) {
+      const past = (el: Element) => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && (r.right > innerWidth + 1 || r.left < -1);
+      };
+      const clipped = (el: Element) => {
+        for (let a = el.parentElement; a && a !== document.body; a = a.parentElement)
+          if (getComputedStyle(a).overflowX !== 'visible') return true;
+        return false;
+      };
+      const out = (el: Element | null) => !!el && el !== document.body && past(el) && !clipped(el);
+      const causes = [...document.body.querySelectorAll('*')].filter((el) => out(el) && !out(el.parentElement));
+      const at = (el: Element) => {
+        const r = el.getBoundingClientRect();
+        return `${name(el)}.${String(el.className).slice(0, 30)} ${Math.round(r.left)}–${Math.round(r.right)}`;
+      };
+      problems.push(
+        `page scrolls sideways: ${doc.scrollWidth} > ${innerWidth} (${causes.slice(0, 3).map(at).join('; ')})`,
+      );
+    }
 
     // Cut-off text: the text's own box leaves an ancestor that hides overflow (up to 4 levels).
     const controls = [...root.querySelectorAll('a, button, label, [role="tab"], h1, h2, h3, th, dt, legend')];
