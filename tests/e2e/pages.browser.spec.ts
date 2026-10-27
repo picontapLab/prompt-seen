@@ -11,9 +11,17 @@ const KEY = 'prompt-library:preferences:v1';
 const [first] = BUILD.locales;
 const second = BUILD.locales[1];
 
+/**
+ * WebKit reports route-data prefetches (`…txt?_rsc=`) that a navigation cancels as page errors;
+ * no reader meets them on the page being left (design doc §17.3 step 6).
+ */
+const cancelledPrefetch = (message: string) => /\.txt\?_rsc=\S* due to access control checks/.test(message);
+
 function watchErrors(page: Page) {
   const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  page.on('pageerror', (e) => {
+    if (!cancelledPrefetch(e.message)) errors.push(`pageerror: ${e.message}`);
+  });
   page.on('console', (m) => {
     if (m.type() === 'error' && !/status of 40[49]|status of 410/.test(m.text())) errors.push(`console: ${m.text()}`);
   });

@@ -22,9 +22,17 @@ const template = sampleTemplate(code);
 const firstCard = (page: Page) => page.locator('[role="feed"] > article[data-entry]:not([data-interlude])').first();
 const save = message(code, 'favorites.save');
 
+/**
+ * WebKit reports route-data prefetches (`…txt?_rsc=`) that a navigation cancels as page errors;
+ * no reader meets them on the page being left (design doc §17.3 step 6).
+ */
+const cancelledPrefetch = (message: string) => /\.txt\?_rsc=\S* due to access control checks/.test(message);
+
 function watchErrors(page: Page) {
   const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  page.on('pageerror', (e) => {
+    if (!cancelledPrefetch(e.message)) errors.push(`pageerror: ${e.message}`);
+  });
   page.on('console', (m) => {
     if (m.type() === 'error' && !m.text().includes('Failed to load resource')) errors.push(`console: ${m.text()}`);
   });

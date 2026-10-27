@@ -64,6 +64,9 @@ test.describe('every built language, both themes, four widths: nothing cut off o
             await takenOver(page);
             await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
             expect(await layoutProblems(page), `${name} ${path}`).toEqual([]);
+            // Leave only once the page's own requests are done: WebKit reports route prefetches
+            // that a navigation cancels as page errors, which no reader of the page can meet.
+            await page.waitForLoadState('networkidle');
           }
           expect(errors).toEqual([]);
         });
@@ -244,7 +247,12 @@ test.describe('text in another language keeps its own type (§8.6, §11.1.2)', (
             )
             .map((el) => {
               const cs = getComputedStyle(el);
-              const first = (v: string) => v.split(',')[0]!.trim();
+              // WebKit and Chromium quote family names differently.
+              const first = (v: string) =>
+                v
+                  .split(',')[0]!
+                  .trim()
+                  .replace(/^["']|["']$/g, '');
               const own = ['--font-text', '--font-display', '--font-mono'].map((v) => first(cs.getPropertyValue(v)));
               return own.includes(first(cs.fontFamily))
                 ? null
@@ -357,10 +365,17 @@ test.describe('a cold cache on a slow network (§16.5 冷缓存与慢网)', () =
     await takenOver(page);
     await slowColdVisit(page);
     const status = page.locator('[data-feed-state]');
+    // While it loads, the end of the list shows frames, not a blank area. Seen by a mutation
+    // observer: the loading state can come and go between two reads of it.
+    await page.evaluate(() => {
+      const w = window as unknown as { __frames: boolean };
+      w.__frames = false;
+      new MutationObserver(() => {
+        w.__frames ||= !!document.querySelector('[role="feed"] > span[aria-hidden="true"]');
+      }).observe(document.body, { childList: true, subtree: true });
+    });
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await expect(status).toHaveAttribute('data-feed-state', 'loading');
-    // While it loads, the end of the list shows frames, not a blank area.
-    await expect(page.locator('[role="feed"] > span[aria-hidden="true"]').first()).toBeAttached();
+    await expect.poll(() => page.evaluate(() => (window as unknown as { __frames: boolean }).__frames)).toBe(true);
     await expect(status).toHaveAttribute('data-feed-state', 'idle', { timeout: 30_000 });
     expect(await layoutProblems(page)).toEqual([]);
   });
