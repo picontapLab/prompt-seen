@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, manifest } from './support/content';
-import { cancelledPrefetch } from './support/errors';
+import { cancelledFetch } from './support/errors';
 
 // Step 3e in a real browser (design doc §8.2, §11.8.5, §11.8.7): the language entry suggests and
 // remembers without redirecting, the language menu explains a missing translation, the 410 page
@@ -15,10 +15,11 @@ const second = BUILD.locales[1];
 function watchErrors(page: Page) {
   const errors: string[] = [];
   page.on('pageerror', (e) => {
-    if (!cancelledPrefetch(e.message)) errors.push(`pageerror: ${e.message}`);
+    if (!cancelledFetch(e.message)) errors.push(`pageerror: ${e.message}`);
   });
   page.on('console', (m) => {
-    if (m.type() === 'error' && !/status of 40[49]|status of 410/.test(m.text())) errors.push(`console: ${m.text()}`);
+    if (m.type() === 'error' && !/status of 40[49]|status of 410/.test(m.text()) && !cancelledFetch(m.text()))
+      errors.push(`console: ${m.text()}`);
   });
   return errors;
 }

@@ -1,7 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, samplePrompt, sampleTemplate } from './support/content';
-import { cancelledPrefetch } from './support/errors';
+import { cancelledFetch } from './support/errors';
 import { layoutProblems, slowColdVisit, applyGermanLabels } from './support/layout';
 
 // The first complete front-end acceptance (design doc §16.5, §17.3 step 6): Chinese and English
@@ -21,10 +21,10 @@ const VIEWPORTS = [
 function watchErrors(page: Page) {
   const errors: string[] = [];
   page.on('pageerror', (e) => {
-    if (!cancelledPrefetch(e.message)) errors.push(`pageerror: ${e.message}`);
+    if (!cancelledFetch(e.message)) errors.push(`pageerror: ${e.message}`);
   });
   page.on('console', (m) => {
-    if (m.type() === 'error') errors.push(`console: ${m.text()}`);
+    if (m.type() === 'error' && !cancelledFetch(m.text())) errors.push(`console: ${m.text()}`);
   });
   return errors;
 }
@@ -67,10 +67,6 @@ test.describe('every built language, both themes, four widths: nothing cut off o
             await takenOver(page);
             await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
             expect(await layoutProblems(page), `${name} ${path}`).toEqual([]);
-            // Leave once the page's own requests (search index, images) are done: WebKit reports
-            // fetches a navigation cancels as page errors. Route prefetches that start after
-            // this are left to cancelledPrefetch().
-            await page.waitForLoadState('networkidle');
           }
           expect(errors).toEqual([]);
         });
@@ -100,6 +96,11 @@ test.describe('German long labels (§16.5 德语长标签)', () => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto(`${BASE}${samplePrompt('en').path}`);
     await takenOver(page);
+    // The copy button may hydrate after the header; hydration would put its English text back.
+    await page.waitForFunction(() => {
+      const el = document.querySelector('section button[id$="-copy"]');
+      return !!el && Object.keys(el).some((k) => k.startsWith('__react'));
+    });
     await applyGermanLabels(page);
     const copy = page.locator('section button[id$="-copy"]');
     const save = page.locator('main [data-shortcut="save"]');
