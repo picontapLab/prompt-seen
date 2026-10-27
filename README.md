@@ -73,7 +73,7 @@ SITE_ORIGIN=https://xxx.com BASE_PATH=/prompt-seen BUILD_MODE=production npm run
 Then pick one of three forms (design doc §15.4):
 
 1. **The host serves the files.** Copy `dist/` to the server, point nginx's `root` at it and
-   `include` `deploy/generated/nginx/prompt-seen.conf`, as
+   `include` `deploy/generated/nginx/prompt-seen.conf`, and turn on compression for text, as
    [`deploy/nginx/host-server.conf`](deploy/nginx/host-server.conf) shows. Merge
    `deploy/generated/robots-snippet.txt` into the host's `robots.txt`.
 2. **Static hosting.** Upload `dist/` with the host's file from `deploy/generated/`: Cloudflare

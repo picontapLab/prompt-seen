@@ -35,6 +35,18 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /* A loading indicator that shows only once loading has taken longer than --delay-indicator:
+     operations that finish sooner never flash one (§11.9 加载指示). Until then it is transparent
+     but in place and in the accessibility tree, so nothing moves when it appears. */
+  .after-delay {
+    animation: after-delay 0s var(--delay-indicator) both;
+  }
+  @keyframes after-delay {
+    from {
+      opacity: 0;
+    }
+  }
+
   /* Content for one resolved theme. CSS decides, so server HTML and hydration always agree
      whatever the stored preference (§11.6.3); hidden content leaves the accessibility tree. */
   .when-dark {

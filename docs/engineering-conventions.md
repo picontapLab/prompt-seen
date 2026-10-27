@@ -147,7 +147,7 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
   container queries (CSS cannot use custom properties there); a test rejects other widths. Use
   container queries inside components.
 - **Primitives** (`src/ui/primitives/`): Button, IconButton, Tooltip, Dialog, Select, Combobox,
-  SegmentedControl, TextField, Chip, Toast. Feature code uses these, not
+  SegmentedControl, TextField, Chip, Toast, ScrollRow. Feature code uses these, not
   `react-aria-components`. Brand elements: `src/ui/brand/`. Motion: `src/ui/motion/`
   (`MotionProvider` around an animating area only, never the root; presets from the tokens).
 - **Import UI modules by file** (`@/ui/primitives/Button`), never through an index file: a server
@@ -162,9 +162,19 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
   Check light, dark, RTL and reduced motion from the toolbar.
 - **Theme**: `@/state/preferences/theme-provider` (`useThemePreference`). Visual differences that
   must be right at first paint go in CSS (`.when-dark`, `.when-light`), never in rendered state.
+- **Rows that scroll sideways** use `ScrollRow` (step 6, design doc §11.9 横向滚动): snap, a faded
+  edge where there is more, and previous / next buttons (`primitives.scrollRow` labels), out of the
+  tab order because Tab already scrolls items into view.
+- **Loading indicators** show only after `--delay-indicator` (300 ms, §11.9 加载指示): give the
+  indicator the global `.after-delay` class, or, when the element has animations of its own, add
+  the same wait to its animation list (the feed's dot does). Button's pending state waits by
+  itself; dimming that marks results as stale uses `transition-delay: var(--delay-indicator)`.
 - **Fonts**: `src/styles/fonts/` declares every subset; text that carries its own `lang` sets
   `font-family: var(--font-text)` (or display, mono) on the same element so the stack for that
-  script applies.
+  script applies, with its size-adjusted fallback (without it, an English prompt on a Chinese page
+  reflows when the font arrives). Language names in links to other versions (`hreflang`) keep the
+  page's face, so a page never downloads another script's web font for one word.
+  `acceptance.browser.spec.ts` checks both on every built language.
 - **Shell**: `src/ui/navigation/Shell.tsx` renders the skip link, header, the one `<main>` and the
   footer; pages render content only. `shell.header` in `site.yaml` picks `default` or `host`.
 
@@ -188,6 +198,11 @@ Set up in step 2 (design doc §9.3, §11.8.3, §17.3). Later pages follow the sa
   `DISPLAY_MESSAGE_KEYS` (`src/styles/fonts/display-cjk.ts`), so the CJK subsets include it.
 - Plain `<img>` is intended: static export has no image optimizer, `media:import` makes the
   sizes and `@/modules/media` builds `srcset` (`@next/next/no-img-element` is off in `src/`).
+  Content images carry `width` and `height`; a frame shows the work's `placeholder` colour, and a
+  `loading="lazy"` image fades in over it once it arrives after takeover (`ImageFade` in the shell,
+  §11.9 主色占位). First-screen images load eagerly and never fade.
+- An `onError` attached by React misses an image that failed before hydration; components with a
+  failure state also check `complete && naturalWidth === 0` once mounted (`ImageStage`).
 
 ## Search engines and AI tools
 
@@ -304,6 +319,10 @@ Set up in step 3d (design doc §11.8.6, §11.10, §13).
   composition (`src/ui/shortcuts/keys.ts`).
 - Search terms for taxonomy: `aliases` in `content/taxonomy/*.yaml` (see `content/README.md`).
   Labels in other languages are aliases automatically.
+- A React Aria collection keeps sections and items in one key space: a section whose key equals
+  one of its items' points at itself and renders until the tab runs out of memory. The quick
+  search panel's sections come from `panel-sections.ts` with keys under `section:`; a unit test
+  holds every key unique.
 
 ## Topics, collections, content and error pages
 
@@ -372,6 +391,25 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
   (`samplePrompt`, `sampleTemplate`) and compare pages with their data.
 - Before clicking a client control, wait for hydration where the click must be handled
   (`hydrated()` in `detail.browser.spec.ts`). WebKit on macOS tabs to buttons with Option held.
+- Acceptance (step 6, design doc §16.5, §11.9, §12.8): `acceptance.browser.spec.ts` checks every
+  built language in both themes at four widths with `layoutProblems()` (sideways page scroll, text
+  cut off, overlapping controls) from `tests/e2e/support/layout.ts`, which also has
+  `applyGermanLabels()` (German interface text in place of English, `lang="de"`) and
+  `slowColdVisit()` (no cache, Slow 4G, 4× CPU; Chromium). `details.browser.spec.ts` covers §11.9
+  row by row and `motion.browser.spec.ts` the §12.8 scenarios the feature specs do not. A test
+  that watches page errors across navigations ignores `cancelledFetch()` from
+  `tests/e2e/support/errors.ts`: WebKit reports requests a navigation cancels as page or console
+  errors, and waiting for `networkidle` before leaving does not prevent them in CI.
+- Timing tests: a state that can come and go quickly (a batch loading, placeholders) is caught by
+  a `MutationObserver` installed before the action, not by polling an attribute, which reads at
+  widening intervals. A delay run by CSS (`.after-delay`) counts on the frame clock from the first
+  frame that draws the element, so time it from the last frame before the insertion (the
+  `requestAnimationFrame` timestamp), or from the press that started it. Text compared across
+  browsers drops bidi marks (U+200E, U+200F, U+061C): Firefox's page text has none.
+- Lab measurements (§16.1, §16.5): `npx tsx scripts/measure-lab.ts [paths]` against the served
+  build prints LCP, CLS, blocking time, transfer and input delays on a cold cache, for desktop and
+  for a phone on Slow 4G with a 4× slower CPU. The reference nginx compresses text as a host
+  should, so the numbers match what a compressing host sends.
 
 ## CI
 

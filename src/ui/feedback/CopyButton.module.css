@@ -4,16 +4,26 @@
     flex-direction: column;
     align-items: flex-end;
     gap: var(--space-4);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+  .wrap > * {
+    max-inline-size: 100%;
   }
 
   /* All labels share one grid cell, so the button keeps the width of the longest one in this
-     locale whatever the state (§11.1.7, §11.9 "按钮宽度稳定"). */
+     locale whatever the state (§11.1.7, §11.9 "按钮宽度稳定"). Where even that is too wide (long
+     German labels on a phone, §16.5), the labels wrap inside the same cell instead of pushing the
+     page sideways. */
   .labels {
     display: inline-grid;
+    min-inline-size: 0;
   }
   .labels > span {
     grid-area: 1 / 1;
     text-align: center;
+    white-space: normal;
+    line-height: var(--leading-sm);
   }
   .labels > span[data-active='false'] {
     visibility: hidden;
