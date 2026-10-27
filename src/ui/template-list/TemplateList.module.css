@@ -79,6 +79,14 @@
     }
   }
 
+  /* The save button sits above the stretched link (§11.5). */
+  .actions {
+    position: absolute;
+    inset-block-start: var(--space-8);
+    inset-inline-end: var(--space-8);
+    z-index: 1;
+  }
+
   /* The default sample's image at its own ratio, at most 200 px high; never cropped (§10.3). */
   .frame {
     position: relative;

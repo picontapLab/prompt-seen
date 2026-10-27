@@ -29,6 +29,8 @@ export type PromptSheetProps = {
   copyButtonId?: string;
   /** Template preview (§11.1.7 PromptSheet 模板预览): copy says what is missing instead (§11.4). */
   copyBlocked?: CopyButtonProps['blocked'];
+  /** Makes this sheet's copy button the one `C` presses (§11.10): the main prompt of the page. */
+  copyShortcut?: CopyButtonProps['shortcut'];
   /** Folds long prompts (§11.8.3). Off for the editor preview, where every edit must stay in view. */
   fold?: boolean;
   /** The prompt text, plain or with annotated phrases or template variables. */
@@ -50,6 +52,7 @@ export function PromptSheet({
   textId,
   copyButtonId,
   copyBlocked,
+  copyShortcut,
   fold = true,
   children,
 }: PromptSheetProps) {
@@ -77,6 +80,7 @@ export function PromptSheet({
           text={copyText}
           selectOnFailId={textId}
           blocked={copyBlocked}
+          shortcut={copyShortcut}
           labels={{
             copy: t('copy.label'),
             done: t('copy.done'),

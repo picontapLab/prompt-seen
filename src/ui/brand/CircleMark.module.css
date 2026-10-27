@@ -1,0 +1,51 @@
+@layer components {
+  /* Sized from the frame number it circles; the parent is position: relative. */
+  .mark {
+    position: absolute;
+    inset-block-start: -0.45em;
+    inset-inline-start: -0.6em;
+    inline-size: calc(100% + 1.2em);
+    block-size: calc(100% + 0.9em);
+    max-inline-size: none; /* the reset caps svg at 100% */
+    overflow: visible;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .mark ellipse {
+    fill: none;
+    stroke: var(--mark);
+    stroke-width: 2.25;
+    stroke-linecap: round;
+  }
+  .mark ellipse + ellipse {
+    stroke-width: 1.25;
+    opacity: 0.7;
+  }
+
+  :global([data-save-scope]):has([data-saved]) .mark {
+    visibility: visible;
+  }
+
+  /* Drawn in when saved now, not when a saved work loads (§12.1 复制与收藏). */
+  :global([data-save-scope]):has([data-saved='new']) .mark ellipse {
+    stroke-dasharray: 1;
+    animation: draw var(--duration-expand) var(--ease-enter) both;
+  }
+  :global([data-save-scope]):has([data-saved='new']) .mark ellipse + ellipse {
+    animation-delay: var(--duration-feedback);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global([data-save-scope]):has([data-saved='new']) .mark ellipse {
+      animation: none;
+    }
+  }
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

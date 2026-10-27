@@ -1,10 +1,20 @@
 'use client';
 
-import { SlidersHorizontal } from 'lucide-react';
+import { Compass, SlidersHorizontal } from 'lucide-react';
+import Link from 'next/link';
 import { useFormatter, useTranslations } from 'next-intl';
 import { lazy, Suspense, useMemo, useState } from 'react';
-import { conditionCount, facetCounts, isFiltered, type FacetCounts, type FeedQuery } from '@/modules/feed/query';
+import {
+  conditionCount,
+  facetCounts,
+  formatQuery,
+  isFiltered,
+  type FacetCounts,
+  type FeedQuery,
+} from '@/modules/feed/query';
+import { paths } from '@/modules/url';
 import { Button } from '@/ui/primitives/Button';
+import buttonStyles from '@/ui/primitives/Button.module.css';
 import styles from './FilterBar.module.css';
 import { useList } from './ListProvider';
 import { preloadSortSelect, SortSelect } from './SortSelect';
@@ -35,8 +45,9 @@ export type FilterBarProps = {
 
 export function FilterBar({ styles: styleTerms, useCases, initialCounts }: FilterBarProps) {
   const t = useTranslations('feed.filters');
+  const e = useTranslations('explore');
   const format = useFormatter();
-  const { query, setQuery, index, loadIndex } = useList();
+  const { locale, pageAddresses, query, setQuery, index, loadIndex } = useList();
   const [panel, setPanel] = useState<'panel' | 'all' | null>(null);
   // Mounted on first open and kept, so closing animates (as the menu sheet does).
   const [panelMounted, setPanelMounted] = useState(false);
@@ -121,6 +132,20 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
           >
             {n ? t('openCount', { count: n }) : t('open')}
           </Button>
+          {pageAddresses && (
+            // Every filter at once, with these conditions (step 4c, §9.4).
+            <Link
+              href={paths.explore(locale.pathPrefix, formatQuery(query))}
+              prefetch={false}
+              className={`${buttonStyles.button} ${buttonStyles.ghost} ${buttonStyles.link} ${styles.wideOnly}`}
+              data-explore-link=""
+            >
+              <span className={buttonStyles.content}>
+                <Compass aria-hidden="true" />
+                {e('open')}
+              </span>
+            </Link>
+          )}
           <SortSelect
             className={styles.sort}
             label={t('sort')}

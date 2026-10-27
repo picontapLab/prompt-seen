@@ -8,6 +8,7 @@ import { registryCode } from '@/i18n/format-locale';
 import { preloadIndex } from '@/modules/search/client';
 import { paths, withBasePath } from '@/modules/url';
 import { preferencesStore } from '@/state/preferences/store';
+import { isEditable } from '@/ui/shortcuts/keys';
 import buttonStyles from '@/ui/primitives/Button.module.css';
 import { focusPageSearch } from './page-focus';
 import styles from './SearchLauncher.module.css';
@@ -15,17 +16,6 @@ import { indexSource } from './use-search';
 
 const load = () => import('./QuickSearch');
 const QuickSearch = lazy(() => load().then((m) => ({ default: m.QuickSearch })));
-
-/** Text fields where `/` is typed, not a shortcut (§11.10). */
-function isEditable(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) return false;
-  if (target.isContentEditable) return true;
-  if (target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement) return true;
-  return (
-    target instanceof HTMLInputElement &&
-    !['button', 'checkbox', 'radio', 'range', 'reset', 'submit', 'color', 'file', 'image'].includes(target.type)
-  );
-}
 
 const noSubscription = () => () => {};
 /** The platform's modifier for the tooltip; the server and hydration use Ctrl+K. */

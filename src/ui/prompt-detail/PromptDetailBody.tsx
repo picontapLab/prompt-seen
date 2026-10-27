@@ -7,7 +7,9 @@ import { absoluteUrl, paths } from '@/modules/url';
 import { AnnotatedText } from '@/ui/annotation/AnnotatedText';
 import { AnnotationNotes } from '@/ui/annotation/AnnotationNotes';
 import { AnnotationProvider } from '@/ui/annotation/AnnotationProvider';
+import { CircleMark } from '@/ui/brand/CircleMark';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
+import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import { Breadcrumb } from '@/ui/navigation/Breadcrumb';
 import { ButtonLink } from '@/ui/primitives/Button';
@@ -50,6 +52,8 @@ export type PromptDetailBodyProps = {
  */
 export function PromptDetailBody({ detail, locale, siteName, heading, coverPreview }: PromptDetailBodyProps) {
   const t = useTranslations('detail');
+  const f = useTranslations('favorites');
+  const k = useTranslations('shortcuts');
   const id = useId();
   const textId = `${id}-prompt`;
   const copyId = `${id}-copy`;
@@ -62,7 +66,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
 
   return (
     <AnnotationProvider annotations={detail.annotations}>
-      <article className={styles.detail} data-detail="prompt" data-entry={detail.id}>
+      <article className={styles.detail} data-detail="prompt" data-entry={detail.id} data-save-scope="">
         <div className={styles.top}>
           <div className={styles.media}>
             <ImageStage
@@ -80,7 +84,10 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               items={promptCrumbs(detail, prefix, (key) => t(`breadcrumb.${key}`))}
             />
             <header className={styles.header}>
-              <FrameNumber n={Number(detail.frameNumber)} labelled />
+              <span className={styles.frameMark}>
+                <FrameNumber n={Number(detail.frameNumber)} labelled />
+                <CircleMark />
+              </span>
               {heading ? (
                 <h2 id={heading.id} className={styles.title}>
                   {detail.title}
@@ -101,11 +108,21 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               lines={detail.prompt.lines}
               textId={textId}
               copyButtonId={copyId}
+              copyShortcut={{ key: 'C', hint: k('withKey', { action: t('copy.label'), key: 'C' }) }}
             >
               <AnnotatedText text={detail.prompt.text} />
             </PromptSheet>
 
             <div className={styles.actions}>
+              {/* Saving (§11.5) and `S` (§11.10); the mobile bar repeats it as an icon. */}
+              <FavoriteButton
+                id={detail.id}
+                kind="prompt"
+                title={detail.title}
+                variant="labelled"
+                shortcut
+                labels={{ save: f('save'), saved: f('saved') }}
+              />
               {template && (
                 <ButtonLink
                   href={
@@ -174,6 +191,15 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
         sheetCopyId={copyId}
         shareUrl={absoluteUrl(detail.path)}
         title={detail.title}
+        favorite={
+          <FavoriteButton
+            id={detail.id}
+            kind="prompt"
+            title={detail.title}
+            variant="bar"
+            labels={{ save: f('save'), saved: f('saved'), saveKey: k('withKey', { action: f('save'), key: 'S' }) }}
+          />
+        }
       />
     </AnnotationProvider>
   );

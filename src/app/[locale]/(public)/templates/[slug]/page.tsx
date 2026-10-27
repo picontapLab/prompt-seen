@@ -42,7 +42,7 @@ export default async function TemplatePage({ params }: Props) {
   return (
     <div className="container" data-width="detail" data-page="template-detail">
       <JsonLd data={templateStructuredData(detail, entry, crumbs)} />
-      <ClientMessages namespaces={['detail', 'templates']}>
+      <ClientMessages namespaces={['detail', 'templates', 'favorites', 'shortcuts']}>
         <TemplateDetailBody detail={detail} locale={entry} />
       </ClientMessages>
     </div>

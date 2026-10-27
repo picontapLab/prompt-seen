@@ -101,7 +101,7 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
   );
 
   return (
-    <ClientMessages locale={locale.code} namespaces={['detail', 'popup', 'home']}>
+    <ClientMessages locale={locale.code} namespaces={['detail', 'popup', 'home', 'favorites', 'shortcuts']}>
       <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
         <PopupWorks items={works} />
         <div className={`container ${styles.home}`} data-page="home" data-locale={locale.code}>

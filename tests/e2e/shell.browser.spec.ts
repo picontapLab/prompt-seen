@@ -96,6 +96,7 @@ test('switching the theme keeps focus, persists, and logs no errors', async ({ p
     theme: 'system',
     singleKeyShortcuts: true,
     language: null,
+    favoritesNoteSeen: false,
   });
 
   // Client navigation to another locale keeps the theme and stays error-free.
