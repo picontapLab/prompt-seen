@@ -1,0 +1,122 @@
+# Production deploy to Cloudflare Pages (design doc §15.2, §17.3 step 5). Runs after CI passes on
+# main, or by hand for a chosen commit. Builds the commit in production mode with the instance's
+# settings, makes sure every image is on the CDN, deploys, checks the platform address and the
+# canonical site, then tells IndexNow what changed. Rolling back: the Rollback workflow.
+#
+# Skipped with a notice until the production settings exist (docs/operations.md):
+#   secrets  CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+#            INDEXNOW_KEY (optional), S3_ENDPOINT, S3_BUCKET, S3_ACCESS_KEY_ID, S3_SECRET_ACCESS_KEY (optional)
+#   vars     SITE_ORIGIN (the canonical host, e.g. https://xxx.com)
+#            BASE_PATH (optional; "/" for a root deployment; default: content/site.yaml)
+#            MEDIA_BASE_URL (optional; the CDN of the bucket), CLOUDFLARE_PAGES_PROJECT (default prompt-seen)
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Commit, tag or branch to deploy
+        required: true
+        default: main
+
+# One production change at a time, never cancelled half-way.
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+      deployments: write
+    env:
+      NODE_VERSION: 24
+      READY: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' && vars.SITE_ORIGIN != '' }}
+      PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'prompt-seen' }}
+      HAS_S3: ${{ secrets.S3_ACCESS_KEY_ID != '' && secrets.S3_SECRET_ACCESS_KEY != '' }}
+    steps:
+      - name: Production settings missing
+        if: env.READY != 'true'
+        run: echo "::notice::Production deploy skipped. Add the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets and the SITE_ORIGIN variable (docs/operations.md)."
+      - uses: actions/checkout@v7
+        if: env.READY == 'true'
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || inputs.ref }}
+      - uses: actions/setup-node@v7
+        if: env.READY == 'true'
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - if: env.READY == 'true'
+        run: npm ci
+      - name: Production configuration
+        if: env.READY == 'true'
+        env:
+          V_ORIGIN: ${{ vars.SITE_ORIGIN }}
+          V_BASE_PATH: ${{ vars.BASE_PATH }}
+          V_MEDIA: ${{ vars.MEDIA_BASE_URL }}
+        run: |
+          {
+            echo "BUILD_MODE=production"
+            echo "BUILD_ID=$(git rev-parse HEAD)"
+            echo "SITE_ORIGIN=$V_ORIGIN"
+            if [ "$V_BASE_PATH" = "/" ]; then echo "BASE_PATH="; elif [ -n "$V_BASE_PATH" ]; then echo "BASE_PATH=$V_BASE_PATH"; fi
+            if [ -n "$V_MEDIA" ]; then echo "MEDIA_BASE_URL=$V_MEDIA"; fi
+          } >> "$GITHUB_ENV"
+      - name: Upload images to object storage
+        if: env.READY == 'true' && vars.MEDIA_BASE_URL != '' && env.HAS_S3 == 'true'
+        run: npm run media:sync
+        env:
+          MEDIA_STORAGE: s3
+          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+      - name: Build
+        if: env.READY == 'true'
+        run: npm run build
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      - name: Every image the build references is on the CDN
+        if: env.READY == 'true'
+        run: npm run media:check
+      - name: Live addresses before the deploy (IndexNow)
+        if: env.READY == 'true'
+        run: npm run indexnow -- snapshot --out .deploy/urls-before.json
+      - if: env.READY == 'true'
+        run: npm run deploy:cloudflare:prepare
+      - name: Deploy to Cloudflare Pages
+        if: env.READY == 'true'
+        id: deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .deploy/cloudflare --project-name=${{ env.PROJECT }} --branch=main --commit-hash=${{ env.BUILD_ID }}
+      - name: Check the platform address (noindex, statuses, content)
+        if: env.READY == 'true'
+        run: npm run check:live -- --site "${{ steps.deploy.outputs.deployment-url }}" --platform --expect-build "$BUILD_ID"
+      - name: Check the canonical site
+        if: env.READY == 'true'
+        # The host may cache for a moment: wait up to three minutes for this build, then check.
+        run: npm run check:live -- --expect-build "$BUILD_ID" --wait 180
+      - name: Tell IndexNow what changed
+        if: env.READY == 'true'
+        run: npm run indexnow -- submit --before .deploy/urls-before.json
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      - name: Summary
+        if: env.READY == 'true'
+        run: |
+          echo "Deployed \`$BUILD_ID\` to $SITE_ORIGIN (this deployment on Pages: ${{ steps.deploy.outputs.deployment-url }})." >> "$GITHUB_STEP_SUMMARY"
+          echo "To undo it, run the Rollback workflow." >> "$GITHUB_STEP_SUMMARY"

@@ -68,6 +68,17 @@ describe('url module', () => {
     expect(absoluteUrl(paths.media('media/a_001/x.webp'))).toBe('https://example.com/prompt-seen/media/a_001/x.webp');
   });
 
+  it('serves images from the build, or from the CDN when one is configured (step 5, §10.1)', () => {
+    const local = createUrlModule(base);
+    expect(local.mediaUrl('media/a_001/x.webp')).toBe('/prompt-seen/media/a_001/x.webp');
+    expect(local.absoluteMediaUrl('media/a_001/x.webp')).toBe('https://example.com/prompt-seen/media/a_001/x.webp');
+    const cdn = createUrlModule({ ...base, mediaBaseUrl: 'https://media.example.org' });
+    expect(cdn.mediaUrl('media/a_001/x.webp')).toBe('https://media.example.org/media/a_001/x.webp');
+    expect(cdn.absoluteMediaUrl('/media/a_001/x.webp')).toBe('https://media.example.org/media/a_001/x.webp');
+    // Pages keep their own addresses.
+    expect(cdn.absoluteUrl('/en/')).toBe('https://example.com/prompt-seen/en/');
+  });
+
   it('maps page 1 of the list to the list itself (§9.4)', () => {
     const { paths } = createUrlModule(base);
     expect(paths.promptsPage('en', 1)).toBe('/en/prompts/');

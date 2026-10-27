@@ -11,7 +11,7 @@ import { parseArgs } from 'node:util';
 import { loadConfig } from '../src/config/load';
 import { catalogTranslator } from '../src/i18n/translator';
 import { createGeoDocuments, type GeoSources, type MarkdownKind } from '../src/modules/geo/documents';
-import { createUrlModule } from '../src/modules/url/create';
+import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { pageSections } from '../src/ui/navigation/sections';
 import { printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
@@ -41,12 +41,7 @@ const kinds: MarkdownKind[] =
       : fail('--kind is prompt, template or all');
 
 const config = loadConfig(ROOT);
-const url = createUrlModule({
-  origin: config.origin,
-  basePath: config.basePath,
-  urlPattern: config.urlPattern,
-  localePrefixes: config.locales.map((l) => l.pathPrefix),
-});
+const url = createUrlModule(urlConfigOf(config));
 const { findings, built } = loadContent({ root: ROOT, config, url });
 if (!built) {
   printFindings(
@@ -68,7 +63,7 @@ const sources: GeoSources = {
   locales: config.builtLocales,
   reader: builtReader(built),
   url,
-  absoluteImageUrl: (variant) => url.absoluteUrl(url.paths.media(variant.key)),
+  absoluteImageUrl: (variant) => url.absoluteMediaUrl(variant.key),
   translator: (code) => catalogTranslator(ROOT, code),
   sections: pageSections(),
 };

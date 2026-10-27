@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { expect, test } from '@playwright/test';
-import { BASE, ROOT } from './support/artifact';
+import { BASE, BUILD, ROOT } from './support/artifact';
 
 // Images from the local media driver (design doc §10.1, §15.5.3): imported variants are part of
 // the artifact and served under the base path with an image content type, so a fresh clone
@@ -12,6 +12,9 @@ const files = fs.existsSync(mediaDir)
   ? fs.readdirSync(mediaDir).flatMap((asset) => fs.readdirSync(path.join(mediaDir, asset)).map((f) => `${asset}/${f}`))
   : [];
 const TYPES: Record<string, string> = { webp: 'image/webp', jpg: 'image/jpeg', png: 'image/png' };
+
+// A build with a CDN (media.baseUrl) serves no images itself; `npm run media:check` covers the CDN.
+test.skip(!!BUILD.mediaBaseUrl, 'images come from the CDN in this build');
 
 test('the artifact contains the imported images', () => {
   expect(files.length, `no images under ${path.relative(ROOT, mediaDir)}`).toBeGreaterThan(0);
