@@ -4,6 +4,7 @@ import { builtLocales, config, isPreviewBuild } from '@/config';
 import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { enterLocale } from '@/i18n/locale';
+import { verificationMetadata } from '@/modules/seo';
 import { absoluteUrl } from '@/modules/url';
 import { RootDocument } from '@/ui/navigation/RootDocument';
 
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
   // Previews and other non-production builds are never indexable (§15.1).
   ...(isPreviewBuild && { robots: { index: false, follow: false } }),
   applicationName: config.siteName,
+  // Search Console, Bing, Yandex and Naver verify the site from its pages (§9.9).
+  ...verificationMetadata(),
 };
 
 export default async function LocaleLayout({

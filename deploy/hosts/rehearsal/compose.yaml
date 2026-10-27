@@ -1,0 +1,20 @@
+# A host site rehearsal on this machine (design doc §15.4.4, §17.3 step 5): a stand-in for the
+# Cloudflare Pages project serves dist/ and, like pages.dev, marks everything noindex; the
+# "host" proxies /prompt-seen/ to it as deploy/hosts/nginx-proxy.conf does, and serves its own
+# home page and a robots.txt with the generated snippet merged in. Run by scripts/host-rehearsal.sh.
+services:
+  pages:
+    image: nginx:stable
+    volumes:
+      - ../../../dist:/srv/dist:ro
+      - ./pages.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../../generated/nginx:/etc/nginx/prompt-seen:ro
+  host:
+    image: nginx:stable
+    container_name: prompt-seen-nginx-${PORT:-8091}
+    depends_on: [pages]
+    ports:
+      - 127.0.0.1:${PORT:-8091}:80
+    volumes:
+      - ./host.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./host-root:/srv/host:ro

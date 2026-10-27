@@ -19,6 +19,37 @@ const urlPattern = z
     'urlPattern must contain {basePath}, {locale} and {path}',
   );
 
+/** An https address with an optional path and no trailing slash, e.g. "https://media.example.com/prompt-seen". */
+const mediaBaseUrl = z.url({ protocol: /^https$/ }).refine((value) => {
+  const url = new URL(value);
+  return !value.endsWith('/') && !url.search && !url.hash;
+}, 'media.baseUrl is an https address without a trailing slash, query or fragment, e.g. "https://media.example.com"');
+
+const verificationToken = z
+  .string()
+  .regex(/^[A-Za-z0-9_-]+$/, 'the content value of the verification meta tag, without quotes')
+  .nullable()
+  .default(null);
+
+const analytics = z.discriminatedUnion('provider', [
+  z.object({ provider: z.literal('none') }).strict(),
+  // Cloudflare Web Analytics: visits, referrers and Core Web Vitals; `token` from its "Manage site".
+  z
+    .object({
+      provider: z.literal('cloudflare'),
+      token: z.string().regex(/^[0-9a-f]{32}$/, 'a 32-character site token'),
+    })
+    .strict(),
+  // Plausible: `domain` is the site as registered there; `src` for a self-hosted script.
+  z
+    .object({
+      provider: z.literal('plausible'),
+      domain: z.string().min(1),
+      src: z.url({ protocol: /^https$/ }).default('https://plausible.io/js/script.js'),
+    })
+    .strict(),
+]);
+
 // Entry IDs as content files write them; content:validate checks that they exist (§17.4).
 const entryId = (prefix: 'p' | 't' | 'c') =>
   z.string().regex(new RegExp(`^${prefix}_\\d{3,}$`), `IDs look like "${prefix}_001"`);
@@ -105,6 +136,31 @@ export const siteSchema = z
       .object({ showcase: z.array(showcaseGroup).default([]), interludes: z.array(interlude).default([]) })
       .strict()
       .default({ showcase: [], interludes: [] }),
+    // Images (§10.1), step 5. `baseUrl` is the CDN address of the object storage, e.g.
+    // "https://media.example.com"; keys are appended to it. null: images are files of the build
+    // (local driver, public/media/), as in a fresh clone.
+    media: z
+      .object({ baseUrl: mediaBaseUrl.nullable().default(null) })
+      .strict()
+      .default({ baseUrl: null }),
+    // Cookie-free visit statistics, AI referrals and real-user Core Web Vitals (§9.10.6, §16.1),
+    // step 5. Production builds only; loaded after the page is idle (§16.4).
+    analytics: analytics.default({ provider: 'none' }),
+    // Site verification tags of webmaster tools (§9.9), step 5. Public values; null leaves the tag out.
+    searchEngines: z
+      .object({
+        verification: z
+          .object({
+            google: verificationToken,
+            bing: verificationToken,
+            yandex: verificationToken,
+            naver: verificationToken,
+          })
+          .strict()
+          .default({ google: null, bing: null, yandex: null, naver: null }),
+      })
+      .strict()
+      .default({ verification: { google: null, bing: null, yandex: null, naver: null } }),
   })
   .strict();
 
