@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { feedIndex, localeIndex, samplePrompt, sampleTemplate } from './support/content';
+import { cancelledPrefetch } from './support/errors';
 
 // Favourites and keyboard shortcuts in real browsers (design doc §11.5, §11.6.2, §11.10, §17.3
 // step 4c): saving from cards, detail pages and the popup; the favourites page with undo,
@@ -21,12 +22,6 @@ const detailUrl = `${BASE}${detail.path}`;
 const template = sampleTemplate(code);
 const firstCard = (page: Page) => page.locator('[role="feed"] > article[data-entry]:not([data-interlude])').first();
 const save = message(code, 'favorites.save');
-
-/**
- * WebKit reports route-data prefetches (`…txt?_rsc=`) that a navigation cancels as page errors;
- * no reader meets them on the page being left (design doc §17.3 step 6).
- */
-const cancelledPrefetch = (message: string) => /\.txt\?_rsc=\S* due to access control checks/.test(message);
 
 function watchErrors(page: Page) {
   const errors: string[] = [];

@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, samplePrompt, sampleTemplate } from './support/content';
+import { cancelledPrefetch } from './support/errors';
 import { layoutProblems, slowColdVisit, applyGermanLabels } from './support/layout';
 
 // The first complete front-end acceptance (design doc §16.5, §17.3 step 6): Chinese and English
@@ -19,7 +20,9 @@ const VIEWPORTS = [
 
 function watchErrors(page: Page) {
   const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  page.on('pageerror', (e) => {
+    if (!cancelledPrefetch(e.message)) errors.push(`pageerror: ${e.message}`);
+  });
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(`console: ${m.text()}`);
   });
@@ -64,8 +67,9 @@ test.describe('every built language, both themes, four widths: nothing cut off o
             await takenOver(page);
             await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
             expect(await layoutProblems(page), `${name} ${path}`).toEqual([]);
-            // Leave only once the page's own requests are done: WebKit reports route prefetches
-            // that a navigation cancels as page errors, which no reader of the page can meet.
+            // Leave once the page's own requests (search index, images) are done: WebKit reports
+            // fetches a navigation cancels as page errors. Route prefetches that start after
+            // this are left to cancelledPrefetch().
             await page.waitForLoadState('networkidle');
           }
           expect(errors).toEqual([]);

@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, manifest } from './support/content';
+import { cancelledPrefetch } from './support/errors';
 
 // Step 3e in a real browser (design doc §8.2, §11.8.5, §11.8.7): the language entry suggests and
 // remembers without redirecting, the language menu explains a missing translation, the 410 page
@@ -10,12 +11,6 @@ import { localeIndex, manifest } from './support/content';
 const KEY = 'prompt-library:preferences:v1';
 const [first] = BUILD.locales;
 const second = BUILD.locales[1];
-
-/**
- * WebKit reports route-data prefetches (`…txt?_rsc=`) that a navigation cancels as page errors;
- * no reader meets them on the page being left (design doc §17.3 step 6).
- */
-const cancelledPrefetch = (message: string) => /\.txt\?_rsc=\S* due to access control checks/.test(message);
 
 function watchErrors(page: Page) {
   const errors: string[] = [];
