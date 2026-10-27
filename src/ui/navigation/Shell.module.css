@@ -80,9 +80,13 @@
     font-weight: var(--weight-medium);
     text-decoration: none;
   }
-  .nav a:hover,
   .nav a[aria-current='page'] {
     color: var(--text-primary);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav a:hover {
+      color: var(--text-primary);
+    }
   }
   /* Current section: the safelight underline (§11.1.9). */
   .nav a[aria-current='page'] {
@@ -168,11 +172,23 @@
     display: grid;
     gap: var(--space-32);
   }
+  /* 768–1023 px: the brand takes its own row and languages and theme share the next, so the
+     theme switch has room for longer labels (German "Systemeinstellung", §16.5). */
   @media (min-width: 768px) {
     .footerGrid {
       grid-template-columns: repeat(12, minmax(0, 1fr));
       column-gap: var(--grid-gap);
     }
+    .footerBrand,
+    .licence,
+    .footerPages {
+      grid-column: 1 / -1;
+    }
+    .footerBlock {
+      grid-column: span 6;
+    }
+  }
+  @media (min-width: 1024px) {
     .footerBrand {
       grid-column: span 5;
     }
@@ -181,10 +197,6 @@
     }
     .footerBlock:last-of-type {
       grid-column: span 4;
-    }
-    .licence,
-    .footerPages {
-      grid-column: 1 / -1;
     }
   }
   .footerBrand {
@@ -221,8 +233,10 @@
     color: var(--text-primary);
     text-decoration: none;
   }
-  .languages a:hover {
-    text-decoration: underline;
+  @media (hover: hover) and (pointer: fine) {
+    .languages a:hover {
+      text-decoration: underline;
+    }
   }
   /* Saved works (step 4c): a plain link with its icon, a full touch target. */
   .footerLink {

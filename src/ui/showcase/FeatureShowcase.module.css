@@ -122,6 +122,8 @@
     font-size: var(--text-lg);
     line-height: 1.7;
     overflow-wrap: anywhere;
+    /* Its own language's stack (and size-adjusted fallback), not the page's (§8.6, §11.1.2). */
+    font-family: var(--font-text);
   }
   /* A phone's first screen holds the work, the quote and its actions (§11.8.1): body size there. */
   .showcase[data-size='hero'] .quote {

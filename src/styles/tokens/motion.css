@@ -17,6 +17,7 @@
     --duration-exit: 160ms; /* explicit close */
     --duration-image: 160ms; /* image fades in over its dominant colour */
     --duration-develop: 500ms; /* first-screen develop: colour, blurred preview, sharp image */
+    --delay-indicator: 300ms; /* loading indicators wait this long, so quick operations never flash one (§11.9) */
 
     --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-exit: cubic-bezier(0.4, 0, 1, 1);

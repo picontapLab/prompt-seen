@@ -15,6 +15,7 @@ import {
 import { paths } from '@/modules/url';
 import { Button } from '@/ui/primitives/Button';
 import buttonStyles from '@/ui/primitives/Button.module.css';
+import { ScrollRow } from '@/ui/primitives/ScrollRow';
 import styles from './FilterBar.module.css';
 import { useList } from './ListProvider';
 import { preloadSortSelect, SortSelect } from './SortSelect';
@@ -46,6 +47,7 @@ export type FilterBarProps = {
 export function FilterBar({ styles: styleTerms, useCases, initialCounts }: FilterBarProps) {
   const t = useTranslations('feed.filters');
   const e = useTranslations('explore');
+  const r = useTranslations('primitives.scrollRow');
   const format = useFormatter();
   const { locale, pageAddresses, query, setQuery, index, loadIndex } = useList();
   const [panel, setPanel] = useState<'panel' | 'all' | null>(null);
@@ -93,7 +95,13 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
     <div className={styles.bar} onPointerEnter={warm} onFocus={warm} data-filtered={isFiltered(query) || undefined}>
       <div className={styles.row}>
         {/* Style tabs (wide screens): one style at a time, "All" clears it (§11.1.9). */}
-        <div role="group" aria-label={t('style')} className={styles.tabs}>
+        <ScrollRow
+          role="group"
+          aria-label={t('style')}
+          className={styles.tabsRow}
+          scrollerClassName={styles.tabs}
+          labels={{ previous: r('previous'), next: r('next') }}
+        >
           <button type="button" className={styles.tab} aria-pressed={!query.style} onClick={() => set({ style: null })}>
             {t('all')} <span className={styles.count}>{format.number(counts.styleAll)}</span>
           </button>
@@ -114,7 +122,7 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
               </button>
             );
           })}
-        </div>
+        </ScrollRow>
         <div className={styles.tools}>
           <Button
             className={styles.wideOnly}

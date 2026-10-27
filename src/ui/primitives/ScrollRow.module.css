@@ -1,0 +1,56 @@
+/* A row that scrolls sideways (design doc §11.9 横向滚动): snap, edge fades where there is more,
+   and previous / next buttons over the faded edges. */
+@layer components {
+  .root {
+    --_fade: var(--space-48);
+    position: relative;
+    min-inline-size: 0;
+  }
+
+  .scroller {
+    scroll-snap-type: inline proximity;
+    overscroll-behavior-inline: contain;
+  }
+  .scroller > * {
+    scroll-snap-align: start;
+  }
+
+  /* The edge with more content fades out. Gradients take physical directions, so right-to-left
+     rows swap them. */
+  .root[data-more-before] > .scroller,
+  .root[data-more-after] > .scroller {
+    --_start: 0px;
+    --_end: 0px;
+    mask-image: linear-gradient(to right, transparent, #000 var(--_start), #000 calc(100% - var(--_end)), transparent);
+  }
+  .root[data-more-before] > .scroller {
+    --_start: var(--_fade);
+  }
+  .root[data-more-after] > .scroller {
+    --_end: var(--_fade);
+  }
+  .root:dir(rtl)[data-more-before] > .scroller,
+  .root:dir(rtl)[data-more-after] > .scroller {
+    mask-image: linear-gradient(to left, transparent, #000 var(--_start), #000 calc(100% - var(--_end)), transparent);
+  }
+
+  /* The buttons sit over the faded edges, centred on the row, on the canvas so they read over
+     any content. */
+  .button {
+    position: absolute;
+    inset-block-start: 50%;
+    translate: 0 -50%;
+    z-index: 1;
+    --_bg: var(--surface-raised);
+    box-shadow: var(--elevation-1);
+  }
+  .before {
+    inset-inline-start: 0;
+  }
+  .after {
+    inset-inline-end: 0;
+  }
+  .icon:dir(rtl) {
+    scale: -1 1;
+  }
+}

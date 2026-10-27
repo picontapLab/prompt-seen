@@ -127,7 +127,9 @@ The host forwards `/prompt-seen` and `/prompt-seen/*` to the Pages project, unch
 - Cloudflare: [`deploy/hosts/cloudflare-worker.js`](../deploy/hosts/cloudflare-worker.js), on a
   route `xxx.com/prompt-seen*`
 - a host that serves files itself: [`deploy/nginx/host-server.conf`](../deploy/nginx/host-server.conf)
-  and the generated include (README, "Deploying")
+  and the generated include (README, "Deploying"). Keep its compression settings: stock nginx
+  sends text uncompressed, and on a slow phone network the pages then take about twice as long
+  to become usable (design doc §17.3, step 6)
 
 What the host must do (design doc §15.4.3):
 

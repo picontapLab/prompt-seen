@@ -215,6 +215,10 @@
     display: block;
     inline-size: 100%;
     block-size: 100%;
+    /* The 1 px inner hairline of every work (§11.1.5, §11.9 图片描边); outlines draw over the image. */
+    border-radius: inherit;
+    outline: 1px solid var(--image-hairline);
+    outline-offset: -1px;
   }
   .runPrompt summary {
     min-block-size: var(--target-dense);
@@ -230,6 +234,8 @@
     font-size: var(--text-sm);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+    /* Its own language's stack (and size-adjusted fallback), not the page's (§8.6, §11.1.2). */
+    font-family: var(--font-text);
   }
 
   .tableWrap {

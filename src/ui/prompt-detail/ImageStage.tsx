@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, RotateCw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { ImageRef } from '@/modules/content/types';
 import { getImage, imageUrl } from '@/modules/media';
 import { AnnotationOverlay } from '@/ui/annotation/AnnotationOverlay';
@@ -45,6 +45,14 @@ export function ImageStage({ images, startPrint, endPrint, sizes, preview }: Ima
   const original = image.variants.original;
   const annotated = index === 0 && !!annotations && annotations.annotations.length > 0;
   const retry = retries[index] ?? 0;
+  const shown = useRef<HTMLImageElement>(null);
+
+  // The cover usually fails, if at all, before the page takes over, and React attaches onError
+  // only then: look at the image once mounted, so the failure and its retry show (§12.8-7).
+  useEffect(() => {
+    const img = shown.current;
+    if (img?.complete && img.naturalWidth === 0) setFailed((f) => new Set(f).add(index));
+  }, [index, retry]);
 
   const frame: CSSProperties & Record<`--${string}`, string | number> = {
     '--w': image.width,
@@ -61,6 +69,7 @@ export function ImageStage({ images, startPrint, endPrint, sizes, preview }: Ima
           )}
           {!failed.has(index) ? (
             <img
+              ref={shown}
               key={`${index}-${retry}`}
               src={retry ? `${props.src}?retry=${retry}` : props.src}
               srcSet={retry ? undefined : props.srcSet}

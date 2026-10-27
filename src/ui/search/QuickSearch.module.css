@@ -106,9 +106,10 @@
     padding-block: var(--space-8);
     outline: none;
   }
+  /* Dims only when the answer takes longer than --delay-indicator (§11.9 加载指示). */
   .list[data-pending] {
     opacity: 0.72;
-    transition: opacity var(--duration-content) var(--ease-enter);
+    transition: opacity var(--duration-content) var(--ease-enter) var(--delay-indicator);
   }
   .section + .section {
     margin-block-start: var(--space-8);
