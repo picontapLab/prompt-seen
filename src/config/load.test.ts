@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
+import YAML from 'yaml';
 import { ConfigError, loadConfig } from './load';
+import { siteSchema } from './schema';
 
 const SITE = `siteName: Test
 origin: https://example.com
@@ -67,6 +69,36 @@ describe('loadConfig', () => {
     expect(issues(() => loadConfig(root, { BUILD_MODE: 'staging' }))).toMatch(/production|preview/);
   });
 
+  it('reads the CDN, analytics and verification settings, with MEDIA_BASE_URL winning (step 5)', () => {
+    const plain = loadConfig(fixture());
+    expect(plain.media).toEqual({ baseUrl: null });
+    expect(plain.analytics).toEqual({ provider: 'none' });
+    expect(plain.searchEngines.verification).toEqual({ google: null, bing: null, yandex: null, naver: null });
+
+    const site = `${SITE}media:\n  baseUrl: https://media.example.com\nanalytics:\n  provider: plausible\n  domain: example.com\nsearchEngines:\n  verification:\n    google: abc_DEF-123\n`;
+    const config = loadConfig(fixture(site));
+    expect(config.media.baseUrl).toBe('https://media.example.com');
+    expect(config.analytics).toEqual({
+      provider: 'plausible',
+      domain: 'example.com',
+      src: 'https://plausible.io/js/script.js',
+    });
+    expect(config.searchEngines.verification.google).toBe('abc_DEF-123');
+
+    expect(loadConfig(fixture(site), { MEDIA_BASE_URL: 'https://cdn.example.org/ps' }).media.baseUrl).toBe(
+      'https://cdn.example.org/ps',
+    );
+    expect(loadConfig(fixture(site), { MEDIA_BASE_URL: '' }).media.baseUrl).toBeNull();
+    expect(issues(() => loadConfig(fixture(), { MEDIA_BASE_URL: 'https://media.example.com/' }))).toMatch(/^baseUrl:/);
+    expect(issues(() => loadConfig(fixture(), { MEDIA_BASE_URL: 'http://media.example.com' }))).toMatch(/^baseUrl:/);
+    expect(issues(() => loadConfig(fixture(`${SITE}analytics:\n  provider: cloudflare\n  token: nope\n`)))).toMatch(
+      /^analytics\.token:/,
+    );
+    expect(
+      issues(() => loadConfig(fixture(`${SITE}searchEngines:\n  verification:\n    bing: '<meta content="x">'\n`))),
+    ).toMatch(/^searchEngines\.verification\.bing:/);
+  });
+
   it('rejects unknown keys so typos do not pass silently', () => {
     expect(issues(() => loadConfig(fixture(`${SITE}baseUrl: /x\n`)))).toMatch(/baseUrl/);
   });
@@ -97,5 +129,11 @@ describe('loadConfig', () => {
     const config = loadConfig(path.resolve(import.meta.dirname, '../..'), { BUILD_MODE: 'production' });
     expect(config.builtLocales.length).toBeGreaterThan(0);
     expect(config.locales).toHaveLength(13);
+  });
+
+  it('documents every site.yaml key in site.example.yaml, and the example is valid (§15.5.3)', () => {
+    const example = YAML.parse(fs.readFileSync(path.join(__dirname, '../../site.example.yaml'), 'utf8'));
+    expect(siteSchema.safeParse(example).success).toBe(true);
+    expect(Object.keys(example).sort()).toEqual(Object.keys(siteSchema.shape).sort());
   });
 });

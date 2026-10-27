@@ -1,0 +1,227 @@
+# Operations: production, rollback and outside services
+
+How the live site is set up, deployed, rolled back and watched (design doc §9.9, §9.10, §10,
+§15, §16.1; step 5 of §17). Everything here is optional for running the site locally: a fresh
+clone needs no account or credential (README, "Quick start").
+
+## The production setup
+
+The site is a static export. Production is a Cloudflare Pages project; the host site
+(`xxx.com`) forwards `/prompt-seen/` to it. Images can stay in the build (as in a fresh clone) or
+move to object storage (Cloudflare R2) behind a CDN address.
+
+```text
+browser ── xxx.com/prompt-seen/… ──▶ host site (nginx or a Cloudflare Worker)
+                                       │  forwards the path unchanged, drops X-Robots-Tag
+                                       ▼
+                                     prompt-seen.pages.dev/prompt-seen/…   (Cloudflare Pages)
+browser ── media.xxx.com/media/… ──▶ R2 bucket (optional; media.baseUrl)
+```
+
+### One-time setup (maintainer)
+
+These steps need accounts and credentials. Nothing in the repository creates them.
+
+1. **Cloudflare Pages project.** `npx wrangler pages project create prompt-seen --production-branch main`
+   (or in the dashboard, as a Direct Upload project). The production address becomes
+   `prompt-seen.pages.dev`.
+2. **API token.** A Cloudflare API token with _Account › Cloudflare Pages › Edit_. Add the
+   repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. From then on, CI also
+   uploads every PR's `/prompt-seen` preview build (noindex).
+3. **GitHub environment.** Create the environment `production` (Settings › Environments). Put
+   the production secrets and variables there, and add required reviewers if deploys should wait
+   for approval.
+4. **Canonical host.** Set the variable `SITE_ORIGIN`, e.g. `https://xxx.com`. `BASE_PATH`
+   defaults to `content/site.yaml` (`/prompt-seen`); set it to `/` for a root deployment.
+   `CLOUDFLARE_PAGES_PROJECT` if the project is not called `prompt-seen`.
+5. **The host site** forwards `/prompt-seen/` (see [The host site](#the-host-site)) and merges
+   `deploy/generated/robots-snippet.txt` into its root `robots.txt`.
+6. **Optional: images in R2.**
+   - Create a bucket and connect a custom domain to it (R2 › bucket › Settings › Custom
+     Domains), e.g. `media.xxx.com`. Public access through the custom domain is what pages use.
+   - Create an R2 API token with _Object Read & Write_ on that bucket. Add the secrets
+     `S3_ENDPOINT` (`https://<account id>.r2.cloudflarestorage.com`), `S3_BUCKET`,
+     `S3_ACCESS_KEY_ID` and `S3_SECRET_ACCESS_KEY`, and the variable `MEDIA_BASE_URL`
+     (`https://media.xxx.com`).
+   - The deploy then uploads new images (`media:sync`), checks every image the build uses
+     (`media:check`) and leaves images out of the Pages upload.
+7. **Optional: IndexNow.** Generate a key (`openssl rand -hex 16`) and add it as the secret
+   `INDEXNOW_KEY`. Each build then publishes `/prompt-seen/<key>.txt`, and each deploy submits
+   the addresses it added, changed or removed.
+8. **Webmaster tools.** See [Search engines](#search-engines).
+9. **Analytics.** See [Analytics and real-user performance](#analytics-and-real-user-performance).
+
+Until `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` and `SITE_ORIGIN` exist, the Deploy
+workflow reports a notice and does nothing.
+
+### Settings at a glance
+
+| Name | Kind | Where it is used |
+| --- | --- | --- |
+| `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | secret | PR previews, Deploy, Rollback |
+| `SITE_ORIGIN` | variable | Deploy, Rollback: the canonical host |
+| `BASE_PATH` | variable (optional) | default from `site.yaml`; `/` for the root |
+| `CLOUDFLARE_PAGES_PROJECT` | variable (optional) | default `prompt-seen` |
+| `MEDIA_BASE_URL` | variable (optional) | CDN address of the bucket |
+| `S3_ENDPOINT`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` | secret (optional) | `media:sync` in Deploy |
+| `INDEXNOW_KEY` | secret (optional) | key file in the build, submission after the deploy |
+
+Verification tags and analytics are public values and live in `content/site.yaml`
+(`searchEngines`, `analytics`). `site.example.yaml` documents every key.
+
+## Deploying
+
+Merging into `main` runs CI, then the **Deploy** workflow (`.github/workflows/deploy.yml`) on
+the same commit:
+
+1. production build with the instance's settings (`BUILD_MODE=production`);
+2. `media:sync` and `media:check` when images live in R2;
+3. `indexnow snapshot`: the live sitemaps before the change;
+4. upload to Pages as the production branch;
+5. `check:live --platform` on the new deployment's own `*.pages.dev` address: content, statuses
+   and `X-Robots-Tag: noindex`;
+6. `check:live --expect-build` on the canonical site, after waiting up to three minutes for the
+   host to serve the new build;
+7. `indexnow submit`: the difference of the sitemaps.
+
+Run it by hand from _Actions › Deploy › Run workflow_ to deploy a specific commit or tag. One
+production change runs at a time; a deploy is never cancelled half-way.
+
+The first deploy fails at step 6 until the host forwards `/prompt-seen/`: the files are live on
+`pages.dev`, the canonical site is not yet. Set up the host and run the workflow again.
+
+## Rolling back
+
+| Problem | What to do |
+| --- | --- |
+| A deploy broke pages or code | _Actions › Rollback › Run workflow_. Leave the field empty for the deployment before the live one, or give a deployment ID or commit. Pages switches back without a rebuild; `check:live` then confirms the canonical site serves it. Locally: `npm run deploy:rollback -- --list`, then `-- --yes [--to <id or commit>]`. |
+| Wrong content | `git revert` the content commit on `main`; the next deploy publishes the previous content. |
+| Wrong image | Revert the media YAML (or the entry's `coverAssetId`). Old image keys are never overwritten or deleted, so the previous files are still there (§10.4). |
+| Wrong template version | Set `currentVersion` back in the template's `entry.yaml`; examples keep their own version. |
+
+A Pages rollback only changes what is served. Revert the commit on `main` too, or the next deploy
+brings the change back.
+
+**nginx hosts** (way 1, the host serves `dist/`): keep each build in its own directory and point
+the server's `root` at a symlink, so a rollback is one `ln -sfn` and an `nginx -s reload`:
+
+```bash
+cp -R dist /srv/prompt-seen/releases/$(git rev-parse --short HEAD)
+```
+
+```bash
+ln -sfn /srv/prompt-seen/releases/<build> /srv/prompt-seen/current && nginx -s reload
+```
+
+Copy `deploy/generated/nginx/prompt-seen.conf` with each release: it holds that build's redirects.
+
+The rollback has been rehearsed locally on the reference nginx: a content and image update was
+undone both by serving the previous artifact again and by reverting the content and rebuilding
+(design doc §17.3, step 5 result).
+
+## The host site
+
+The host forwards `/prompt-seen` and `/prompt-seen/*` to the Pages project, unchanged:
+
+- nginx: [`deploy/hosts/nginx-proxy.conf`](../deploy/hosts/nginx-proxy.conf)
+- Cloudflare: [`deploy/hosts/cloudflare-worker.js`](../deploy/hosts/cloudflare-worker.js), on a
+  route `xxx.com/prompt-seen*`
+- a host that serves files itself: [`deploy/nginx/host-server.conf`](../deploy/nginx/host-server.conf)
+  and the generated include (README, "Deploying")
+
+What the host must do (design doc §15.4.3):
+
+- **Drop `X-Robots-Tag`** from the Pages responses. Production deploys mark every `*.pages.dev`
+  address noindex so only the canonical host is indexed; passed through, the header would
+  de-index the real site. `check:live` fails when it gets through.
+- **Pass status codes and headers through**: 301/308 with `Location`, 404 with the site's own
+  404 page (no host error page), `Content-Type`, `Link`, `Cache-Control`.
+- **Merge `deploy/generated/robots-snippet.txt` into the root `robots.txt`**, including its
+  `Sitemap:` line. Where the host already has a group for one of its user agents, add the rule
+  to that group.
+- **Content-Security-Policy**: allow the first-paint theme script (a hash or nonce, §11.6.3) and,
+  when analytics is on, its script and beacon origins.
+- **Edge rules**: CDN and firewall bot rules (Cloudflare AI crawler controls, WAF rules) must let
+  the crawlers that `robots.txt` allows reach the pages.
+
+Rehearse all of this locally with `sh scripts/host-rehearsal.sh` (Docker): it builds the site
+for `http://127.0.0.1:8091/prompt-seen/`, puts a Pages stand-in that sends noindex behind a
+proxying host with its own `robots.txt`, then runs `check:live` and the raw-HTTP end-to-end tests
+through the host.
+
+## Checking the live site
+
+`npm run check:live` reads the canonical site (`SITE_ORIGIN` and the base path) from outside:
+
+- the served build (`generated/build.json`), its mode, and with `--expect-build` its ID;
+- the language entry, every public locale's home, a Prompt, a template and list page 2 per
+  locale: 200, HTML, the canonical address, indexable (or noindex with `--platform`);
+- the sitemap index and every locale sitemap; `index.md` with its `Link` header; `llms.txt`;
+  the site icon;
+- a redirect, a removed address (410, or 404 on hosts that cannot answer 410), an unknown
+  address and an error page's own address;
+- the host's `robots.txt`: search engines and AI search allowed for the base path, training
+  crawlers as `robots.aiTraining` says, and the `Sitemap:` line;
+- the same Prompt requested with the user agents of Googlebot, Bingbot and the AI search and
+  user-triggered crawlers: each must get the full page;
+- with a CDN: an image and the CDN's `robots.txt`.
+
+A user agent alone does not make a verified crawler. Firewalls that verify bots by IP address
+can still treat the real ones differently, so also look at the platform's bot logs (Cloudflare:
+Security › Bots / AI Crawl Control; host logs elsewhere) for 200 answers to verified crawlers.
+
+## Search engines
+
+| Engine | Set up | Then |
+| --- | --- | --- |
+| Google Search Console | Add a **URL-prefix** property for `https://xxx.com/prompt-seen/`. Verify with the HTML tag: put its `content` value in `searchEngines.verification.google`, deploy, verify. | Submit `https://xxx.com/prompt-seen/sitemap.xml`. Check Page indexing and the Rich results test for a Prompt and a list page. |
+| Bing Webmaster Tools | Add the site; verify with the meta tag (`verification.bing`, the `msvalidate.01` value), or import from Search Console. | Submit the sitemap. IndexNow covers updates. |
+| Naver Search Advisor (`ko`) | Add the site; HTML tag → `verification.naver`. | Submit the sitemap when Korean is enabled. |
+| Yandex Webmaster (`ru`) | Add the site; meta tag → `verification.yandex`. | Submit the sitemap when Russian is enabled. |
+| Baidu (`zh-Hans`) | Not set up in the first version (design doc §9.9). | — |
+
+The tags are rendered on every page of production and preview builds; only the values in
+`site.yaml` decide which appear. IndexNow submissions reach Bing, Naver, Yandex and the other
+participating engines; Google does not use IndexNow and reads the sitemap.
+
+## Analytics and real-user performance
+
+Set `analytics` in `content/site.yaml`; production builds load the script once the page is idle,
+never in previews:
+
+```yaml
+analytics:
+  provider: cloudflare # Cloudflare Web Analytics: visits, referrers, Core Web Vitals
+  token: <32-character site token from "Manage site">
+```
+
+```yaml
+analytics:
+  provider: plausible # Plausible: visits, referrers, UTM sources; no Web Vitals
+  domain: xxx.com
+  src: https://plausible.io/js/script.js # or a self-hosted script
+```
+
+Neither sets cookies, so no consent banner is needed (design doc §3.1). Add a hostname
+`xxx.com` in Cloudflare Web Analytics (a site that is not proxied by Cloudflare works too) and
+filter by the path `/prompt-seen/`. Do not also enable the Pages project's automatic Web
+Analytics: it measures the `pages.dev` address.
+
+- **AI referrals** (§9.10.6): filter the referrer or source by `chatgpt.com` (links usually carry
+  `utm_source=chatgpt.com`), `perplexity.ai`, `claude.ai`, `gemini.google.com`,
+  `copilot.microsoft.com`. Some apps send no referrer, so watch the trend, not the absolute number.
+- **Real-user performance** (§16.1): Cloudflare Web Analytics › Core Web Vitals shows LCP, INP and
+  CLS by page; the targets are p75 LCP ≤ 2.5 s, INP ≤ 200 ms and CLS ≤ 0.1, mobile and desktop
+  separately. Plausible has no Web Vitals.
+- **AI crawlers**: the platform's bot logs, by user agent and status (above).
+- **Citations**: once a month, ask the main AI assistants a fixed list of questions per enabled
+  locale and record whether the site is cited (§9.10.6).
+
+## Security
+
+- Object storage and Cloudflare credentials exist only as GitHub secrets and in the maintainer's
+  shell. Builds never contain them; PR checks of other people's forks get no secrets.
+- CI runs gitleaks over the history of every branch. On GitHub, also turn on secret scanning and
+  push protection where the plan allows (Settings › Code security).
+- The site has no server process. Keep the build dependencies up to date; there is no runtime
+  to patch (design doc §15.5.4).

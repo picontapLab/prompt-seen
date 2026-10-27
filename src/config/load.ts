@@ -9,7 +9,15 @@ import { z } from 'zod';
 import { buildModeSchema, localesFileSchema, siteSchema, type ResolvedConfig } from './schema';
 
 /** Environment variables that override site.yaml (§15.4.2: environment wins). */
-export const ENV_KEYS = ['CONTENT_DIR', 'SITE_ORIGIN', 'BASE_PATH', 'URL_PATTERN', 'BUILD_MODE', 'BUILD_ID'] as const;
+export const ENV_KEYS = [
+  'CONTENT_DIR',
+  'SITE_ORIGIN',
+  'BASE_PATH',
+  'URL_PATTERN',
+  'MEDIA_BASE_URL',
+  'BUILD_MODE',
+  'BUILD_ID',
+] as const;
 type Env = Readonly<Record<string, string | undefined>>;
 
 export class ConfigError extends Error {
@@ -73,12 +81,19 @@ export function loadConfig(root: string = process.cwd(), env: Env = process.env)
     },
     'environment (SITE_ORIGIN, BASE_PATH, URL_PATTERN)',
   );
+  // The CDN of a deployment (§10.1): set per environment, so a fork never serves another
+  // instance's images. An empty value turns it off (images from the build).
+  const media =
+    env.MEDIA_BASE_URL === undefined
+      ? site.media
+      : parse(siteSchema.shape.media, { baseUrl: env.MEDIA_BASE_URL || null }, 'environment (MEDIA_BASE_URL)');
   // Default to preview so an unconfigured build is never indexable (§15.1).
   const buildMode = parse(buildModeSchema, env.BUILD_MODE || 'preview', 'environment (BUILD_MODE)');
 
   return {
     ...site,
     ...overrides,
+    media,
     buildMode,
     buildId: env.BUILD_ID || gitBuildId(root) || 'local',
     defaultLocale: registry.defaultLocale,

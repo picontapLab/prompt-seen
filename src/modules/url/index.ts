@@ -1,12 +1,9 @@
 import { config } from '@/config';
-import { createUrlModule } from './create';
+import { createUrlModule, urlConfigOf } from './create';
 
 export type { UrlConfig } from './create';
 
-export const { withBasePath, stripBasePath, absoluteUrl, paths } = createUrlModule({
-  origin: config.origin,
-  basePath: config.basePath,
-  urlPattern: config.urlPattern,
-  localePrefixes: config.locales.map((l) => l.pathPrefix),
-});
+export const { withBasePath, stripBasePath, absoluteUrl, mediaUrl, absoluteMediaUrl, paths } = createUrlModule(
+  urlConfigOf(config),
+);
 export { EMPTY_PARAM, RESERVED_PAGE_SEGMENTS } from './create';

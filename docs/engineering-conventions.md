@@ -378,12 +378,43 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
 `.github/workflows/ci.yml` runs on every PR and on `main`:
 
 1. `check`: content validation, token contrast, typecheck, lint, format, unit tests, Storybook build.
-2. `build-and-test`: a production build at the root and a preview build under `/prompt-seen`,
+2. `secrets`: gitleaks over the branch's history. A test that needs a token-like value uses one
+   that scanners ignore (a repeated character, or the documented `…EXAMPLE` keys).
+3. `build-and-test`: a production build at the root and a preview build under `/prompt-seen`,
    each tested end to end in three browsers.
-3. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
+4. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
    secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, and optionally the variable
    `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`). Without them the job reports a notice and
    skips.
+
+`.github/workflows/deploy.yml` runs after CI passes on `main`, and `rollback.yml` by hand; both
+are described in [`operations.md`](operations.md) and skip with a notice until the production
+settings exist.
+
+## Deployment and operations
+
+Set up in step 5 (design doc §9.9, §9.10, §10.1, §15, §16.1). The runbook is
+[`operations.md`](operations.md).
+
+- **Deploy-time variables** (object storage `MEDIA_STORAGE` and `S3_*`, `INDEXNOW_KEY`,
+  `CLOUDFLARE_*`) are read only by the scripts that use them, never by `src/config/load.ts`, so
+  they can never reach a build's configuration or the browser. `MEDIA_BASE_URL` is a build
+  setting and goes through the loader like `SITE_ORIGIN`.
+- **Images**: every image address comes from `mediaUrl` / `absoluteMediaUrl` in `@/modules/url`
+  (through `@/modules/media`). With `media.baseUrl` they point at the CDN and `scripts/package.ts`
+  leaves `media/` out of `dist/`. Storage drivers implement `MediaStorage`
+  (`scripts/lib/media/storage.ts`): `put` never replaces an object with different bytes.
+- **Production `_headers`** mark `*.pages.dev` noindex. Any host in front of Pages drops
+  `X-Robots-Tag` (`deploy/hosts/`); `check:live` fails on the canonical host when it does not.
+- **Outside checks** go in `scripts/check-live.ts`, one `report()` per check, with pure helpers
+  in `scripts/lib/live/` and unit tests. It reads the served `build.json` to learn the deployed
+  configuration, so it checks what was deployed, not the local settings.
+- **Analytics and verification** are site.yaml settings rendered by the shell: the loader in
+  `@/modules/analytics/loader.ts` (production builds, after idle) and `verificationMetadata()` in
+  `@/modules/seo`. A new provider is a new branch of the `analytics` schema and of the loader,
+  with its CSP origins in `analyticsOrigins`.
+- `site.example.yaml` lists every key of the site schema; a unit test fails when a key is
+  missing there. `.env.example` lists every environment variable.
 
 ## Style
 
@@ -407,3 +438,5 @@ the design document section they implement.
 | Primitives, tokens                  | a new variant or token in the owning file, with its story and contrast pair |
 | Detail popup                        | wrap the gallery in `PopupHost` and register its works with `usePopupList` or `<PopupWorks>` |
 | Saving, `C` / `S` shortcuts         | `FavoriteButton` (or a `Card`) inside a `[data-save-scope]`; one `data-shortcut` button of each kind per page |
+| Live checks                         | a `report()` in `scripts/check-live.ts`, helpers in `scripts/lib/live/` |
+| Image storage                       | a driver implementing `MediaStorage` in `scripts/lib/media/`        |

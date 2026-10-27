@@ -27,7 +27,12 @@
     "storybook": "npm run gen && storybook dev -p 6006",
     "storybook:build": "npm run gen && storybook build --quiet -o storybook-static",
     "serve": "sh scripts/nginx.sh",
-    "deploy:cloudflare:prepare": "tsx scripts/deploy-cloudflare.ts"
+    "deploy:cloudflare:prepare": "tsx scripts/deploy-cloudflare.ts",
+    "deploy:rollback": "tsx scripts/deploy-rollback.ts",
+    "media:sync": "tsx scripts/media-sync.ts",
+    "media:check": "tsx scripts/media-check.ts",
+    "check:live": "npm run gen && tsx scripts/check-live.ts",
+    "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
     "lucide-react": "1.49.0",

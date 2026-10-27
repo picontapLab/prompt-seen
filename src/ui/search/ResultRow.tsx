@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { SearchHit } from '@/modules/search/types';
-import { paths, withBasePath } from '@/modules/url';
+import { mediaUrl } from '@/modules/url';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { Highlight } from './Highlight';
 import styles from './Search.module.css';
@@ -25,7 +25,7 @@ export function ResultRow({ hit, locale, description }: { hit: SearchHit; locale
       >
         {thumb && (
           <img
-            src={withBasePath(paths.media(thumb.key))}
+            src={mediaUrl(thumb.key)}
             alt=""
             width={thumb.width}
             height={thumb.height}

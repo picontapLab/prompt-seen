@@ -8,6 +8,8 @@
 //   npm run media:import -- --refresh a_001
 //        regenerate the variants after editing focalPoint or credit in the YAML; new keys are
 //        written and the old files are kept for rollback (§10.4).
+// With MEDIA_STORAGE=s3 (and the S3_* variables, scripts/lib/media/storage.ts) files go to object
+// storage instead of public/media/.
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
@@ -15,7 +17,7 @@ import YAML from 'yaml';
 import { contentDir } from '../src/config/load';
 import { DIGITAL_SOURCE_TYPES, mediaSchema, SLUG_PATTERN, type MediaSource } from './lib/content/schemas';
 import { analyze, ImportError, originalKey, renderVariants, variantKey } from './lib/media/process';
-import { localStorage, type MediaStorage } from './lib/media/storage';
+import { localStorage, s3StorageFromEnv, type MediaStorage } from './lib/media/storage';
 import { ROOT } from './lib/paths';
 
 const usage = `Usage:
@@ -117,7 +119,9 @@ async function main() {
   }
 
   const dir = contentDir(ROOT);
-  const storage = localStorage(path.join(ROOT, 'public'));
+  // MEDIA_STORAGE=s3 stores straight into object storage (§10.1); the default keeps files in
+  // public/media/, committed with the content, and `media:sync` uploads them later.
+  const storage = s3StorageFromEnv(process.env) ?? localStorage(path.join(ROOT, 'public'));
   if (values.refresh) return refresh(dir, storage, values.refresh);
 
   const source = positionals[0];

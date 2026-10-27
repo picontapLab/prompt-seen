@@ -1,9 +1,9 @@
 import type { ImageRef, ImageVariant, ImageVariantName } from '@/modules/content/types';
-import { absoluteUrl, paths, withBasePath } from '@/modules/url';
+import { absoluteMediaUrl, mediaUrl } from '@/modules/url';
 
 // Image addresses and responsive attributes (design doc §7, §10.2, §10.3). Works on the server
-// and in the browser. Images come from the local media driver under public/ until step 5 adds
-// object storage and a CDN; only this module and `paths.media` change then.
+// and in the browser. Images come from the CDN when site.yaml `media.baseUrl` (or MEDIA_BASE_URL)
+// is set, otherwise from the local media driver's files under public/ (§10.1).
 
 /** Responsive variants from small to large; `og` is a crop and `original` is not re-encoded. */
 const LADDER: ImageVariantName[] = ['thumbnail', 'card', 'detail'];
@@ -12,10 +12,10 @@ const LADDER: ImageVariantName[] = ['thumbnail', 'card', 'detail'];
 export type ImageSource = Pick<ImageRef, 'variants' | 'width' | 'height' | 'alt' | 'placeholder'>;
 
 /** Address for `<img src>` and fetches. */
-export const imageUrl = (variant: ImageVariant) => withBasePath(paths.media(variant.key));
+export const imageUrl = (variant: ImageVariant) => mediaUrl(variant.key);
 
 /** Address on the canonical host, for Open Graph, sitemaps and structured data. */
-export const absoluteImageUrl = (variant: ImageVariant) => absoluteUrl(paths.media(variant.key));
+export const absoluteImageUrl = (variant: ImageVariant) => absoluteMediaUrl(variant.key);
 
 /** `srcset` with every ladder variant up to `largest`, one per distinct width. */
 export function srcSet(image: Pick<ImageRef, 'variants'>, largest: ImageVariantName = 'detail'): string {

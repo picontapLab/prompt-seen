@@ -4,23 +4,11 @@ A browsable, searchable library of tested image prompts and templates. Every wor
 prompt and what each phrase does. The site is a static export of a Next.js app that deploys at
 the root of a domain or under a subpath of another site, such as `example.com/prompt-seen`.
 
-Status: under construction. Steps 1a, 1b and 1c of the implementation plan (design doc §17) are
-in place: the project scaffold, configuration and CI; the content model with its build pipeline,
-validation, template rendering, image import and a sample content set; and the design system
-(tokens, fonts, theme, React Aria primitives, Storybook) with the page shell. Step 2 adds the
-Prompt and template detail pages, e.g. `/prompt-seen/en/prompts/jazz-club-poster/`; step 3a adds the
-Prompt list with continuous loading and filters, `/prompt-seen/en/prompts/`; step 3b adds structured data,
-sitemaps (`/prompt-seen/sitemap.xml`), `robots.txt`, Markdown versions of every published page (`…/index.md`)
-and `/prompt-seen/llms.txt`; step 3c adds the template editor on every template page and the template list,
-`/prompt-seen/en/templates/`; step 3d adds search: the quick panel (`/` or ⌘K on any page) and
-`/prompt-seen/en/search/`; step 3e adds the language entry at the base path, topic pages
-(`/prompt-seen/en/categories/landscape/`), collections (`/prompt-seen/en/collections/`), the about and
-license pages, the 404, 410 and missing-translation pages, and host configuration for redirects and
-removed addresses; step 4a opens works from the list and topic pages in a detail popup at the work's
-own address, with previous / next, swipes on phones and the image expanding from its card; step 4b
-adds the home page, `/prompt-seen/en/`: a work on show with its lettered prompt phrases, "Another
-frame", search, and use cases, the newest works, templates and collections below. Works on show
-are set in `home.featured` in `content/site.yaml`.
+Status: the first version is built (design doc §17, steps 1a–5): Prompt and template pages,
+the list with continuous loading and filters, the template editor, search, topics and collections,
+the detail popup, the home page, favourites, structured data, sitemaps and Markdown versions for AI
+tools, and the production deploy with rollback. The content is a sample set (`content/README.md`)
+until tested prompts replace it. Step 6, the full acceptance pass, is next.
 
 ## Quick start
 
@@ -54,16 +42,51 @@ Open <http://localhost:3000/prompt-seen/>. To work without the base path, start 
 | `npm run test:e2e`                            | Builds must exist; serves `dist/` with the reference nginx in Docker and runs Playwright                   |
 | `npm run serve`                               | Serves `dist/` with the reference nginx at <http://127.0.0.1:8090/> for manual checks                      |
 | `npm run deploy:cloudflare:prepare`           | Assembles `.deploy/cloudflare/` (`dist/` plus `_headers`, `_redirects` and 404 pages) for Cloudflare Pages |
+| `npm run media:sync`                          | Uploads the images in `public/media/` to object storage (`MEDIA_STORAGE=s3`); never replaces an object     |
+| `npm run media:check`                         | After a build with a CDN: every image address the site uses answers with an image                          |
+| `npm run check:live`                          | Checks the deployed site from outside: pages, statuses, sitemaps, the host's robots.txt, crawler access    |
+| `npm run deploy:rollback -- --list`           | Production deployments on Cloudflare Pages; `-- --yes [--to <id or commit>]` rolls back                    |
+| `npm run indexnow -- snapshot` / `submit`     | Before and after a deploy: submits new, changed and removed addresses to IndexNow                          |
+| `sh scripts/host-rehearsal.sh`                | Builds for a local host site under `/prompt-seen`, behind a proxy, and checks it end to end (Docker)       |
 
 Redirects and removed addresses (`content/redirects.yaml`) become host configuration in
 `deploy/generated/` on every `content:build`: the reference nginx include, `cloudflare/_redirects`,
 `netlify/_redirects`, `vercel/vercel.json`, and `static/`, meta refresh pages to copy over `dist/`
 for hosts without redirect rules (GitHub Pages, a bare bucket).
 
-Build-time settings come from `content/site.yaml`, overridden by environment variables:
-`SITE_ORIGIN`, `BASE_PATH` (empty for a root deployment), `URL_PATTERN`, `BUILD_MODE`
-(`preview`, the default, marks every page noindex; `production` is for the live site),
-`BUILD_ID` and `CONTENT_DIR`. Changing the base path needs a new build.
+Build-time settings come from `content/site.yaml` ([`site.example.yaml`](site.example.yaml)
+documents every key), overridden by environment variables ([`.env.example`](.env.example)):
+`SITE_ORIGIN`, `BASE_PATH` (empty for a root deployment), `URL_PATTERN`, `MEDIA_BASE_URL`,
+`BUILD_MODE` (`preview`, the default, marks every page noindex; `production` is for the live
+site), `BUILD_ID` and `CONTENT_DIR`. Changing the base path needs a new build.
+
+## Deploying
+
+The build is static files in `dist/{basePath}/` plus host configuration in `deploy/generated/`.
+There is no server process to run or patch; keep the build dependencies up to date. Build with
+the address the site will have, in production mode:
+
+```bash
+SITE_ORIGIN=https://xxx.com BASE_PATH=/prompt-seen BUILD_MODE=production npm run build
+```
+
+Then pick one of three forms (design doc §15.4):
+
+1. **The host serves the files.** Copy `dist/` to the server, point nginx's `root` at it and
+   `include` `deploy/generated/nginx/prompt-seen.conf`, as
+   [`deploy/nginx/host-server.conf`](deploy/nginx/host-server.conf) shows. Merge
+   `deploy/generated/robots-snippet.txt` into the host's `robots.txt`.
+2. **Static hosting.** Upload `dist/` with the host's file from `deploy/generated/`: Cloudflare
+   Pages (`npm run deploy:cloudflare:prepare`, then `wrangler pages deploy .deploy/cloudflare`),
+   Netlify (`netlify/_redirects`), Vercel (`vercel/vercel.json`), or GitHub Pages and plain
+   buckets (`static/`, meta refresh pages for redirects). For a root deployment build with
+   `BASE_PATH=` and `robots.mode: standalone`.
+3. **Static hosting behind the host site.** Deploy as in 2 and let the host forward
+   `/prompt-seen/*` there: [`deploy/hosts/`](deploy/hosts/) has an nginx and a Cloudflare Worker
+   example. This is how the project's own instance runs: GitHub Actions deploys every merge to
+   Cloudflare Pages and checks the live site ([`docs/operations.md`](docs/operations.md)).
+
+Afterwards, `npm run check:live` checks the deployed site from outside.
 
 ## Documentation
 
@@ -74,6 +97,8 @@ Build-time settings come from `content/site.yaml`, overridden by environment var
 - [Subpath hosting decision](docs/subpath-hosting-decision.md): why the site is a static export, with prototype results.
 - [Language coverage assessment](docs/language-coverage-assessment.md).
 - [First-load JavaScript](docs/first-load-js.md): what each page loads, by module, and what is left to cut.
+- [Operations](docs/operations.md): production setup, deploying, rolling back, search engines, analytics.
+- [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 - [`design/`](design/README.md): the chosen visual direction and reference pages. Tokens live in `src/styles/tokens/`.
 
 ## Licenses
