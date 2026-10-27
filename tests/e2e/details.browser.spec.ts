@@ -390,7 +390,9 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
     });
   const seen = () => page.evaluate(() => (window as unknown as { __seen: Seen }).__seen);
   const state = page.locator('[data-feed-state]');
-  for (const ms of [60, 1500]) {
+  // The slow case takes 3 s: a busy CI runner has gone over a second without drawing a frame
+  // (WebKit), and the indicator has to be drawn while loading to be seen.
+  for (const ms of [60, 3000]) {
     delay = ms;
     await watch();
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
@@ -410,7 +412,9 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
 test('加载指示: the popup says it is loading only once loading has taken 300 ms', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   type Seen = { pressed: number | null; visible: number | null };
-  for (const delay of [60, 1500]) {
+  // The slow case takes 3 s: a busy CI runner has gone over a second without drawing a frame
+  // (WebKit), and the indicator has to be drawn while loading to be seen.
+  for (const delay of [60, 3000]) {
     await page.unrouteAll();
     await page.route(/\/generated\/[^/]+\/prompts\/[^/]+\.json$/, async (route) => {
       await new Promise((r) => setTimeout(r, delay));
@@ -436,7 +440,7 @@ test('加载指示: the popup says it is loading only once loading has taken 300
       message(code, 'popup.loading'),
     );
     await cards(page).nth(4).locator('a').click();
-    await expect(page.locator('dialog[data-popup] [id$="-prompt"]').first()).toBeVisible({ timeout: 5000 });
+    await expect(page.locator('dialog[data-popup] [id$="-prompt"]').first()).toBeVisible({ timeout: 10_000 });
     const seen = await page.evaluate(() => (window as unknown as { __seen: Seen }).__seen);
     // Never visible within 300 ms of the press. Timed from the press, not from when a frame first
     // saw the status: a busy frame (WebKit) samples late and would shorten the wait it measures.
