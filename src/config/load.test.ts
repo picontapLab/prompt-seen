@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
+import YAML from 'yaml';
 import { ConfigError, loadConfig } from './load';
+import { siteSchema } from './schema';
 
 const SITE = `siteName: Test
 origin: https://example.com
@@ -127,5 +129,11 @@ describe('loadConfig', () => {
     const config = loadConfig(path.resolve(import.meta.dirname, '../..'), { BUILD_MODE: 'production' });
     expect(config.builtLocales.length).toBeGreaterThan(0);
     expect(config.locales).toHaveLength(13);
+  });
+
+  it('documents every site.yaml key in site.example.yaml, and the example is valid (§15.5.3)', () => {
+    const example = YAML.parse(fs.readFileSync(path.join(__dirname, '../../site.example.yaml'), 'utf8'));
+    expect(siteSchema.safeParse(example).success).toBe(true);
+    expect(Object.keys(example).sort()).toEqual(Object.keys(siteSchema.shape).sort());
   });
 });

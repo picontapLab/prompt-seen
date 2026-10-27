@@ -1,0 +1,20 @@
+name: Feature request
+description: An idea for the site or the engine.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you want to do
+      description: The task or situation, not the solution yet.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Other sites that do it well, screenshots, related issues.

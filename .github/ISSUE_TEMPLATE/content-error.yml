@@ -1,0 +1,31 @@
+name: Content error
+description: A prompt, template, translation or image is wrong, broken or misleading.
+labels: [content]
+body:
+  - type: input
+    id: address
+    attributes:
+      label: Address
+      description: The page with the problem.
+      placeholder: https://…/prompt-seen/en/prompts/…/
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong
+      options:
+        - The prompt does not give the result shown
+        - Wrong model, date or test information
+        - Translation error
+        - Broken image or link
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What you expected, what you found, and for a prompt the tool and model you used.
+    validations:
+      required: true

@@ -1,8 +1,8 @@
 # Prompt 与图片模板网站：详细架构设计
 
-> 文档版本：1.20  
-> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16；1.13–1.15 修订：2026-10-17；1.16–1.17 修订：2026-10-18；1.18–1.19 修订：2026-10-25；1.20 修订：2026-10-26）  
-> 状态：开发设计方案，尚未实施  
+> 文档版本：1.21  
+> 设计日期：2026-10-14（1.3–1.8 修订：2026-10-15；1.9–1.12 修订：2026-10-16；1.13–1.15 修订：2026-10-17；1.16–1.17 修订：2026-10-18；1.18–1.19 修订：2026-10-25；1.20 修订：2026-10-26；1.21 修订：2026-10-27）  
+> 状态：第一版已按第 17 章实施至步骤 5；步骤 6 全面验收与真实内容待完成  
 > 已确认约束：覆盖主流语言；开发者主要通过 Git 和文件维护内容；项目计划开源，并可挂载到已有主站的子路径（如 `xxx.com/prompt-seen`）；挂载后仍作为独立作品呈现，有自己的首屏焦点与视觉辨识度。  
 > 推荐覆盖：分两批启用 13 个 locale，详见第 8 章与《语言覆盖评估》。  
 > 1.2 增补：预渲染与客户端分工、前端状态、页面过渡、主题与动效规范，以及性能验收。  
@@ -24,6 +24,7 @@
 > 1.18 修订：步骤 4b 的决定——`site.yaml` 的 `home.featured` 结构与展出顺序（已开始的日期最新者在前，无日期者在后），只展出该语言可见且带标注的作品，没有时取“精选”顺序中第一件带标注的作品；“换一件”的顺序、焦点与播报；首屏桌面以片边承载作品、手机端改为作品、引述与“复制提示词”在前，标题与搜索在后，图片最大高度约为三分之一屏高；显影只在接管时图片仍在加载才发生，以模糊的缩略图为底、只改变不透明度，列表展示带同样采用；首页的作品在弹层中打开；首页元数据以展出作品为分享图（第 11.1.9、11.8.1、11.8.2、17.3 章）。
 > 1.19 修订：首次必要 JavaScript 的实测与归因——HTML 引用的脚本与空闲后的总量分开记录，后者包括空闲预载与页眉链接的路由预取；列表筛选栏的条件面板、已选条件与排序列表，以及模板编辑器的下拉，改为按需加载；测量脚本 `scripts/measure-first-load.ts`；其余可减项及其代价见《首次加载 JavaScript》（`docs/first-load-js.md`）（第 4.1、16.1 节）。版本号 1.18 是并行进行的步骤 4b 的修订。  
 > 1.20 修订：步骤 4c 的决定——收藏记录 `prompt-library:favorites:v1` 的格式（ID、类型与收藏时间）、损坏与禁用存储时的退路、导出文件格式与导入合并规则；收藏按钮（卡片角落的图标、详情与模板页的“收藏 / 已收藏”、移动端操作栏）与帧号的圈选记号；一次性提示与撤销的位置（外壳的 Toast，收藏页内原位撤销）；页眉在 1024 px 起显示收藏入口，更窄时在菜单与页脚；`explore` 页复用列表的精简索引、分页文件、连续列表与弹层，宽屏为侧栏筛选；`C`、`S` 与 `?` 通过页面按钮的 `data-shortcut` 生效，快捷键列表与单字符开关位于页脚（第 4.1、9.4、11.5、11.8.3、11.10、17.3 节）。  
+> 1.21 修订：步骤 5 的决定——S3 兼容对象存储驱动（Cloudflare R2，SigV4 自签，无 SDK）、`media.baseUrl` 与 `MEDIA_BASE_URL` 把图片地址切到 CDN，`media:sync` 上传与 `media:check` 部署前核对；生产部署工作流（CI 通过后构建、核对图片、部署到 Cloudflare Pages、检查平台地址与规范主机、提交 IndexNow）与回滚工作流（Pages API）；生产构建对 `*.pages.dev` 输出 `noindex`，主站转发时去掉该响应头；`check:live` 外部检查（状态码、canonical 与收录、sitemap、主站 robots.txt、爬虫 user-agent、CDN 图片）；IndexNow 以部署前后的 sitemap 差异提交，密钥文件位于基础路径；站长工具验证标签与空闲后加载的访问分析（Cloudflare Web Analytics 或 Plausible）；主站转发示例与本地演练；gitleaks 与开源协作文件；回滚与全新克隆演练（第 4、9.9、9.10.6、10.1、15.2–15.5、16.1、17.1、17.3、20 章，《运维》`docs/operations.md`）。  
 > 核心目标：SEO 与 AI 搜索友好、资源容易更新、视觉有辨识度且交互流畅易用、可独立部署或挂载到已有站点子路径。
 
 ## 1. 项目定位与设计目标
@@ -363,16 +364,23 @@ prompt-library/
 │   ├── dev.ts
 │   ├── package.ts
 │   ├── deploy-cloudflare.ts
+│   ├── deploy-rollback.ts        # Cloudflare Pages 生产回滚（步骤 5）
+│   ├── check-live.ts             # 部署后的外部检查
+│   ├── indexnow.ts               # 部署前后 sitemap 差异提交
+│   ├── host-rehearsal.sh         # 本地主站转发演练
 │   ├── media-import.ts
+│   ├── media-sync.ts             # 本地图片上传到对象存储
+│   ├── media-check.ts            # 构建引用的图片在 CDN 上可用
+│   ├── lib/live/                 # robots.txt 解析等外部检查辅助
 │   ├── content-export.ts
-│   ├── tokens-check.ts
-│   └── indexnow-ping.ts
+│   └── tokens-check.ts
 ├── design/
 │   ├── tokens/
 │   └── visual-direction/
 ├── docs/
 ├── deploy/
 │   ├── nginx/host-server.conf
+│   ├── hosts/                    # 主站转发示例（nginx、Cloudflare Worker）与本地演练
 │   └── generated/
 ├── tests/e2e/
 ├── public/generated/
@@ -1018,7 +1026,9 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 | Yandex | `ru` | Yandex Webmaster + IndexNow |
 | Baidu | `zh-Hans` | 第一版不专门优化。百度对境外托管、未备案站点的收录有限，需要时单独评估 |
 
-每次生产发布后，`scripts/indexnow-ping.ts` 只提交本次新增、修改和删除的地址，地址列表来自构建的内容差异。IndexNow 密钥文件所在路径决定可提交的地址范围，子路径部署时把密钥文件放在基础路径下即可覆盖本项目地址。
+每次生产发布后，`scripts/indexnow.ts` 只提交本次新增、修改和删除的地址，地址列表来自构建的内容差异。IndexNow 密钥文件所在路径决定可提交的地址范围，子路径部署时把密钥文件放在基础路径下即可覆盖本项目地址。
+
+实施细节（1.21）：部署前用 `indexnow snapshot` 读取线上 sitemap，部署后用 `indexnow submit` 再读一次，按地址与 `lastmod` 比较，提交新增、`lastmod` 变化与消失的地址（首次部署提交全部）；两侧都没有 `lastmod` 的地址无法比较，不提交。地址来自规范主机上的 sitemap，因此与 `urlPattern` 无关。密钥来自环境变量 `INDEXNOW_KEY`（8–128 位字母、数字与连字符），打包时写成 `{basePath}/{key}.txt`，提交时带 `keyLocation`；提交前先确认线上能读到该文件。提交端点为 `api.indexnow.org`，每批最多 10,000 个地址。Google 不使用 IndexNow，依靠 sitemap。站长工具的验证标签写在 `site.yaml` 的 `searchEngines.verification`（`google`、`bing`、`yandex`、`naver`），由两个根布局输出；Search Console 使用 `https://xxx.com/prompt-seen/` 的网址前缀资源，以 HTML 标记验证。接入步骤见《运维》。
 
 ### 9.10 GEO：AI 搜索与答案引擎
 
@@ -1082,6 +1092,8 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 
 部分 AI 应用不传递来源信息，引荐数据会偏低，应观察趋势而非绝对值。
 
+实施细节（1.21）：`site.yaml` 的 `analytics` 选择 `none`（默认）、`cloudflare`（Cloudflare Web Analytics，站点 token）或 `plausible`（站点域名与脚本地址）。两者都不使用 Cookie，按来源域名统计引荐；只有生产构建在页面加载完成且浏览器空闲后插入脚本（第 16.4 节），预览构建不统计。Cloudflare 的 `spa` 选项把弹层的 pushState 地址计为作品的浏览。挂载到主站时，主站 CSP 需放行对应脚本与上报来源（`analyticsOrigins`）。AI 爬虫的抓取情况看托管平台的机器人日志，`check:live` 另以各爬虫的 user-agent 请求页面，确认边缘层没有拦截或挑战（见第 9.10.2 节对伪造 user-agent 的说明）。
+
 ## 10. 图片处理与资源生命周期
 
 ### 10.1 导入流程
@@ -1101,6 +1113,8 @@ flowchart LR
 资源导入工具负责处理图片、上传和输出清单。代码仓库主要保存资源元数据与正文，原图和展示图存放在对象存储中。建议焦点由工具给出初值，维护者可在 YAML 中修改后重新生成裁切规格。
 
 存储层通过驱动接口访问：生产使用 S3 兼容对象存储；开源自托管与本地开发可使用本地文件驱动，把展示规格写入 `public/media/`，无需云端凭据即可完整运行，见第 15.5 节。
+
+实施细节（1.21）：S3 兼容驱动（`scripts/lib/media/s3.ts`）以 AWS Signature V4 自行签名，使用路径式地址，适用于 Cloudflare R2、AWS S3 与 MinIO，不引入 SDK；签名以 AWS 文档的示例向量做单元测试。写入前先检查对象：已存在且内容相同则跳过，内容不同则拒绝，对象带 `Cache-Control: public, max-age=31536000, immutable`。`MEDIA_STORAGE=s3` 与 `S3_*` 环境变量选择该驱动，凭据只存在于 CI 密钥与维护者本地，不进入构建配置。图片地址由 `site.yaml` 的 `media.baseUrl`（环境变量 `MEDIA_BASE_URL` 优先）决定：设置后页面、列表与弹层 JSON、Markdown、sitemap 与结构化数据中的图片都指向 CDN，打包时不再把 `public/media/` 放进产物。两种用法：内容仍把图片提交在 `public/media/`，部署前 `media:sync` 上传缺少的对象；或只把图片导入对象存储（此时 `content:validate` 对本地缺少的文件只给警告）。两种情况下，部署都先用 `media:check` 请求构建中引用的每个图片地址，全部返回图片才继续（第 10.4 节）。旧对象从不删除，回滚后旧地址仍然有效。
 
 ### 10.2 展示规格
 
@@ -2285,12 +2299,16 @@ Prompt 纸张的细节：
 
 对象存储凭据用于资源导入或明确配置的上传任务，不放入浏览器公开环境变量。外部贡献 PR 的普通校验任务不需要生产上传凭据。
 
+实施细节（1.21）：`.github/workflows/deploy.yml` 在主分支的 CI 通过后运行（也可手动指定提交）：以生产模式和实例变量（`SITE_ORIGIN`、可选的 `BASE_PATH` 与 `MEDIA_BASE_URL`）构建；有 CDN 时 `media:sync` 与 `media:check`；记录部署前的 sitemap；以生产分支上传到 Cloudflare Pages；对新部署自己的 `*.pages.dev` 地址运行 `check:live --platform`，再等待规范主机提供本次构建（最多三分钟）后运行 `check:live`；最后提交 IndexNow。生产变更串行执行，不中途取消；缺少 Cloudflare 密钥或 `SITE_ORIGIN` 时只提示并跳过。`check:live` 覆盖本节的部署后检查（首页、每个已启用语言的代表详情、一个模板、分页与 sitemap），并检查状态码、canonical、收录指令、Markdown 与 `llms.txt` 的类型、重定向与已删除地址、主站 robots.txt、爬虫 user-agent 与 CDN 图片。所需的密钥、变量与一次性设置见《运维》（`docs/operations.md`）。
+
 ### 15.3 回滚
 
 - 页面或代码问题：重新部署上一份静态产物，或回退 Git 提交后重新构建。
 - 内容问题：通过 Git revert 恢复此前内容。
 - 图片问题：恢复此前资源清单，对应旧哈希文件保持存在。
 - 模板问题：切换推荐版本，保留已发布示例所引用的版本。
+
+实施细节（1.21）：Cloudflare Pages 保留每次部署，`.github/workflows/rollback.yml`（或 `npm run deploy:rollback`）通过 Pages API 把生产切回之前一次成功的部署（默认当前部署之前的一次，也可指定部署 ID 或提交），不重新构建，随后以 `check:live --expect-build` 确认规范主机提供该版本。Pages 回滚只改变当前提供的内容，主分支上的提交仍需回退，否则下一次部署会重新发布。自行用 nginx 提供文件的主站按构建保留目录，以符号链接切换并重载，每个目录同时保存该构建生成的 nginx include。
 
 ### 15.4 根域名与子路径部署
 
@@ -2351,7 +2369,7 @@ feed:
 | sitemap | 不会被自动发现 | 在主站 robots.txt 中声明完整地址，或在 Search Console 提交；sitemap 位于基础路径下，作用范围正好覆盖本项目 |
 | canonical、hreflang、OG、结构化数据 | `basePath` 不会自动加入这些绝对地址 | 设 `metadataBase = origin + basePath`，其余绝对地址由 `url` 模块生成；构建测试检查原始 HTML |
 | `public/` 文件、搜索索引、Worker、fetch | 手写的 `/generated/…` 路径不会自动加前缀；`next/image` 使用 `public/` 文件时也需手动加 | 统一使用 `withBasePath()`；`next/link` 与路由会自动处理 |
-| 平台默认域名 | `*.vercel.app/prompt-seen/…` 等也提供生产内容 | 按第 9.3 节由宿主响应头输出 `noindex`，或限制对平台域名的直接访问 |
+| 平台默认域名 | `*.vercel.app/prompt-seen/…` 等也提供生产内容 | 按第 9.3 节由宿主响应头输出 `noindex`，或限制对平台域名的直接访问。实施（1.21）：生产构建的 `_headers` 对 `https://:project.pages.dev/*` 与 `https://:version.:project.pages.dev/*` 输出 `X-Robots-Tag: noindex`；主站转发时必须去掉该响应头（`deploy/hosts/` 的 nginx 与 Worker 示例），否则规范主机也会被标为不收录，`check:live` 在规范主机上发现该头即失败 |
 | `_next` 静态资源 | 主站也是 Next.js 时可能冲突 | 资源位于 `/prompt-seen/_next/`，同一条映射或转发规则即可覆盖（原型已确认） |
 | 主站按语言前缀组织 | 期望 `xxx.com/ja/prompt-seen/…`，单一 `basePath` 无法表达 | 在 `urlPattern` 中声明对外地址，由主站改写到本项目内部路径；canonical 等只使用对外地址 |
 | 代理行为 | 主站可能改写状态码或响应头 | 原样转发 301/308、404、410 与 `Location`、`Link`、`X-Robots-Tag`、缓存头；主站 CDN 不得把 404 改写成主站首页 |
@@ -2406,12 +2424,16 @@ feed:
 - 提供 `.env.example` 与 `site.example.yaml`；安装依赖后一条命令即可启动包含示例内容的站点。
 - README 说明三种部署形态与对应的最短步骤。
 
+实施（1.21）：根目录提供 `.env.example`（全部环境变量）与 `site.example.yaml`（`site.yaml` 的全部键及默认值，单元测试保证二者与 Schema 一致）；README 的“Deploying”一节说明三种形态；`deploy/hosts/` 提供主站转发示例，`scripts/host-rehearsal.sh` 在本机以代理与独立的主站 robots.txt 演练子路径部署。
+
 #### 15.5.4 安全与协作
 
 - 对象存储写入凭据只存在于 CI 与维护者本地；外部贡献者的 PR 只运行无凭据校验（第 15.2 节）。仓库启用密钥扫描。
 - 提供 CONTRIBUTING（代码与内容的贡献流程、内容许可确认）、行为准则，以及内容错误、侵权报告和功能建议的 Issue 模板。
 - 引擎按语义化版本发布并维护 CHANGELOG；配置或内容 Schema 变更时附带迁移说明，使下游实例可以安全升级。
 - 线上没有服务进程，自托管者不需要修补运行时，只需按期升级构建依赖；README 说明这一点。
+
+实施（1.21）：CI 的 `secrets` 任务用 gitleaks 扫描分支的全部历史；`CONTRIBUTING.md`、`CODE_OF_CONDUCT.md`（采用 Contributor Covenant 2.1）、`SECURITY.md`（GitHub 私密漏洞报告，侵权或含个人信息的报告也走此渠道）、`CHANGELOG.md`，以及内容错误、版权与许可问题、功能建议的 Issue 模板和 PR 模板。GitHub 自带的密钥扫描与推送保护需要维护者在仓库设置中开启。
 
 ## 16. 性能与质量验收
 
@@ -2425,7 +2447,7 @@ feed:
 | INP | ≤ 200 ms |
 | CLS | ≤ 0.1 |
 
-开发阶段使用 Lighthouse 与浏览器性能分析发现问题；实验室测试不能替代上线后的真实用户数据。
+开发阶段使用 Lighthouse 与浏览器性能分析发现问题；实验室测试不能替代上线后的真实用户数据。真实用户数据来自 Cloudflare Web Analytics 的 Core Web Vitals（第 9.10.6 节的 `analytics.provider: cloudflare`）；选用 Plausible 时没有该数据。
 
 初始工程预算建议：普通画廊和详情页首次必要 JavaScript 压缩后控制在 200 KiB 左右，首屏图片总量控制在 600 KiB 左右。搜索索引不进入普通页面首次加载。实际预算在首个可用页面完成后测量并记录。
 
@@ -2579,7 +2601,7 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 | 代码许可与内容许可 | 代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注，品牌不授权 | 根目录 `LICENSE` 与 `content/LICENSE` |
 | 国际化消息库 | next-intl，只用于 ICU 消息格式化 | 见第 4.1 节；语言路由仍由注册表与 `url` 模块负责 |
 
-以下事项可先用占位值，最迟在步骤 5 确定：正式域名与规范主机、Logo（此前用文字标识）、对象存储与 CDN（此前用本地文件驱动）、访问分析、AI 训练类爬虫策略。
+以下事项可先用占位值，最迟在步骤 5 确定：正式域名与规范主机、Logo（此前用文字标识）、对象存储与 CDN（此前用本地文件驱动）、访问分析、AI 训练类爬虫策略。步骤 5（1.21）已为它们提供配置位置（`SITE_ORIGIN` 等部署变量、`media.baseUrl`、`analytics`、`robots.aiTraining`），取值仍待维护者确定，见第 20 章。
 
 ### 17.2 会话图
 
@@ -2686,6 +2708,7 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 
 - 范围：生产部署与回滚演练（第 15.2、15.3 节）；对象存储驱动与 CDN（第 10.1 节）；在主站 `/prompt-seen` 下的部署演练与主站配合事项（第 15.4.3 节）；Search Console、Bing Webmaster Tools 与 IndexNow（第 9.9 节）；AI 爬虫的边缘层检查（第 9.10.2 节）；访问分析与 AI 引荐统计（第 9.10.6 节）；真实用户性能观测（第 16.1 节）；README、CONTRIBUTING、Issue 模板、`.env.example` 与 `site.example.yaml`（第 15.5.3、15.5.4 节）。
 - 通过条件：一次内容与图片更新可以回滚；子路径部署通过第 15.4.4 节验收；全新克隆的公开仓库无需云端凭据即可运行示例站点。
+- 结果（2026-10-27）：仓库内的部分按本节范围完成，实施细节写入第 4、9.9、9.10.6、10.1、15.2–15.5 与 16.1 节（1.21），运维步骤见《运维》（`docs/operations.md`）。需要账户与凭据的接入尚未进行，由维护者按《运维》完成：创建 Cloudflare Pages 项目与 API token、设置 GitHub 的 `production` 环境密钥与变量、确定规范主机并在主站配置转发与 robots.txt 合并、R2 存储桶与 CDN 域名、Search Console 等站长工具的验证与 sitemap 提交、IndexNow 密钥、访问分析 token、AI 训练类爬虫策略；在此之前部署工作流只提示并跳过。三项通过条件均在本机验证：（1）回滚：在参考 nginx 上把一条 Prompt 的英文标题与封面图（新导入的图片）同时更新后，重新提供上一份产物即恢复原标题与原图，原图地址仍为 200；按 Git 恢复内容并重新构建，详情页与更新前逐字节一致（构建 ID 除外）；新封面在补齐各已发布语言的替代文字前被发布规则阻止，说明图片更新同样受第 8.4 节约束。Cloudflare Pages 上的回滚由回滚工作流完成，需在项目建立后演练一次。（2）子路径部署：`scripts/host-rehearsal.sh` 以 `http://127.0.0.1:8091/prompt-seen/` 生产构建，放在一个代理主站之后（上游模拟 `pages.dev` 输出 `noindex`，主站去掉该头并提供合并了片段的 robots.txt），`check:live` 21 项全部通过，原始 HTTP 端到端测试经代理 89 项通过（2 项为阿拉伯语 RTL，生产构建不含该语言而跳过）；以 `--platform` 检查上游 19 项通过；若主站不去掉 `X-Robots-Tag`，每个页面检查均失败。真实主站上的验收与访问日志检查在接入后进行。（3）全新克隆：从 GitHub 克隆本分支到空目录，未设置任何云端变量，`npm ci`、`content:validate`（0 错误）、`npm run build` 均成功，原始 HTTP 端到端测试 151 项通过。单元测试新增 SigV4 签名（AWS 示例向量）、IndexNow 差异与分批、robots.txt 解析与匹配（含主站合并片段后的结果）、访问分析加载时机、CDN 图片地址、新配置键与 `site.example.yaml` 完整性；gitleaks 扫描历史无发现。
 
 **6 全面验收**
 
@@ -2754,7 +2777,7 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 - 1a 合并前：审查工程约定（目录、命名、测试与 CI，见 `docs/engineering-conventions.md`），后续会话都会沿用。
 - 步骤 2 合并前：重点审查，见第 17.3 节。
 - 每一轮并行结束后：确认共享契约没有分叉，必要时更新本文。
-- 步骤 5 之前：核对第 20 章的配置清单已经填写。
+- 步骤 5 之前：核对第 20 章的配置清单已经填写。步骤 5 按维护者的要求先完成仓库内的部分（2026-10-27），清单中需要账户的事项见第 20 章的标注。
 
 ## 18. 关键架构决定
 
@@ -2807,10 +2830,10 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 - 部署形态：独立域名、主站子路径或子域名；规范主机、`basePath` 与 `urlPattern`；目标宿主类型（nginx、Netlify、Cloudflare Pages、Vercel 或其他静态托管），决定生成哪些宿主配置。已确定：预览与生产托管使用 Cloudflare Pages，参考 nginx 用于测试与主站接入（第 17.1 节）；规范主机仍为占位。
 - 主站侧的配合：静态映射或转发规则、`absolute_redirect off` 等宿主配置、robots.txt 合并、CDN 与 WAF 的 AI 爬虫设置、CSP 约定。
 - 代码许可、Prompt 文本许可与图片授权策略。已确定：代码 MIT，Prompt 文本与说明 CC BY 4.0，图片逐张标注。
-- AI 训练类爬虫的允许策略（第 9.10.2 节）。
+- AI 训练类爬虫的允许策略（第 9.10.2 节）。目前为占位值 `disallow`。
 - 站点在其他平台的资料（结构化数据的 `sameAs`，如公开后的 GitHub 仓库与官方账号，第 9.6 节）。
-- 访问分析工具，以及 Search Console、Bing Webmaster Tools、IndexNow 密钥。
-- 图片存储提供方、CDN 域名和导入凭据配置。
+- 访问分析工具，以及 Search Console、Bing Webmaster Tools、IndexNow 密钥。已提供（1.21）：`analytics`（Cloudflare Web Analytics 或 Plausible）、`searchEngines.verification` 与 `INDEXNOW_KEY`；工具选择与取值待定。
+- 图片存储提供方、CDN 域名和导入凭据配置。已提供（1.21）：S3 兼容驱动（建议 Cloudflare R2）、`media.baseUrl` 与部署中的上传和核对；存储桶、域名与凭据待创建。
 - Git 仓库位置、主分支、部署项目，以及预览与生产托管平台。已确定：GitHub 私有仓库、`main` 分支、Cloudflare Pages；Pages 项目与 CI 密钥在步骤 5 由维护者创建，此前不需要。
 - 国际化消息库（须支持 ICU MessageFormat，第 11.11 节）。
 - 第一批自有或已明确可使用的 Prompt、图片和模板。
