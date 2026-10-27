@@ -1,3 +1,5 @@
+import type { ResolvedConfig } from '@/config/schema';
+
 // The only place that turns paths into addresses (design doc §4.1, §9.3, §15.4.3).
 //
 // Three kinds of address:
@@ -44,7 +46,22 @@ export type UrlConfig = {
   urlPattern: string;
   /** Every registered URL prefix, used to recognise the locale segment of a path. */
   localePrefixes: readonly string[];
+  /** CDN address of the media storage (site.yaml `media.baseUrl`); null: images are files of the build. */
+  mediaBaseUrl?: string | null;
 };
+
+/** The url module's settings from a resolved configuration (scripts and the app use the same). */
+export function urlConfigOf(
+  config: Pick<ResolvedConfig, 'origin' | 'basePath' | 'urlPattern' | 'locales' | 'media'>,
+): UrlConfig {
+  return {
+    origin: config.origin,
+    basePath: config.basePath,
+    urlPattern: config.urlPattern,
+    localePrefixes: config.locales.map((l) => l.pathPrefix),
+    mediaBaseUrl: config.media.baseUrl,
+  };
+}
 
 const collapseSlashes = (path: string) => path.replace(/\/{2,}/g, '/');
 
@@ -80,6 +97,21 @@ export function createUrlModule(cfg: UrlConfig) {
     return cfg.origin + collapseSlashes(publicPath.startsWith('/') ? publicPath : `/${publicPath}`);
   }
 
+  /**
+   * Address of a stored image (§10.1): on the CDN when one is configured, otherwise the file the
+   * local driver put in public/ under the base path. Use it for <img>, srcset and fetches.
+   */
+  function mediaUrl(key: string): string {
+    const file = key.replace(/^\/+/, '');
+    return cfg.mediaBaseUrl ? `${cfg.mediaBaseUrl}/${file}` : withBasePath(paths.media(file));
+  }
+
+  /** Public address of a stored image, for Open Graph, sitemaps, structured data and exports. */
+  function absoluteMediaUrl(key: string): string {
+    const file = key.replace(/^\/+/, '');
+    return cfg.mediaBaseUrl ? `${cfg.mediaBaseUrl}/${file}` : absoluteUrl(paths.media(file));
+  }
+
   /** Internal paths. New address types are added here, never assembled in pages (§17.4). */
   const paths = {
     /** Language entry at the base path itself; also the x-default (§8.2). */
@@ -113,7 +145,10 @@ export function createUrlModule(cfg: UrlConfig) {
     /** The search page (§11.8.6); `query` prefills it (`?q=`, §11.6.1). noindex. */
     search: (locale: string, query?: string) =>
       query?.trim() ? `/${locale}/search/?q=${encodeURIComponent(query.trim())}` : `/${locale}/search/`,
-    /** Images kept by the local media driver under public/ (§10.1); keys start with "media/". */
+    /**
+     * Images kept by the local media driver under public/ (§10.1); keys start with "media/".
+     * Pages use mediaUrl / absoluteMediaUrl, which switch to the CDN when one is configured.
+     */
     media: (key: string) => `/${key.replace(/^\/+/, '')}`,
     /** Per-locale error pages, referenced by host error_page rules (§4.1). */
     notFound: (locale: string) => `/${locale}/404/`,
@@ -137,5 +172,5 @@ export function createUrlModule(cfg: UrlConfig) {
     llms: () => '/llms.txt',
   };
 
-  return { withBasePath, stripBasePath, absoluteUrl, paths };
+  return { withBasePath, stripBasePath, absoluteUrl, mediaUrl, absoluteMediaUrl, paths };
 }

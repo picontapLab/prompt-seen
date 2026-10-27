@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ConfigError, contentDir, loadConfig } from '../src/config/load';
-import { createUrlModule } from '../src/modules/url/create';
+import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { loadEmitters } from './emitters/_registry';
 import type { EmitContext, Emitter } from './emitters/_types';
 import { printFindings } from './lib/content/findings';
@@ -17,12 +17,7 @@ import { OUTPUT_DIRS, ROOT, type OutputDir } from './lib/paths';
 
 async function build(emitters: Emitter[]): Promise<boolean> {
   const config = loadConfig(ROOT);
-  const url = createUrlModule({
-    origin: config.origin,
-    basePath: config.basePath,
-    urlPattern: config.urlPattern,
-    localePrefixes: config.locales.map((l) => l.pathPrefix),
-  });
+  const url = createUrlModule(urlConfigOf(config));
 
   const { findings, built } = loadContent({ root: ROOT, config, url });
   // Warnings and info are for content:validate; the build only shows what blocks it.

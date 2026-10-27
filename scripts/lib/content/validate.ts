@@ -289,10 +289,18 @@ export function validateContent(content: Content, config: ResolvedConfig, findin
     for (const key of files) {
       if (!key.startsWith(`media/${d.id}/`))
         findings.error(rec.file, `key "${key}" belongs to another image`, { fix: 'keys are written by media:import; do not edit them' });
-      if (!fs.existsSync(path.join(opts.mediaRoot, key)))
-        findings.error(rec.file, `image file ${key} is missing from storage`, {
-          fix: `run \`npm run media:import -- --refresh ${d.id}\` to regenerate it from the original, or re-import the image`,
-        });
+      if (!fs.existsSync(path.join(opts.mediaRoot, key))) {
+        // With a CDN (§10.1) an instance may keep its images only in object storage; the deploy
+        // checks them there with `media:check` before going live (§10.4).
+        if (config.media.baseUrl)
+          findings.warning(rec.file, `image file ${key} is not in local storage`, {
+            fix: `\`npm run media:check\` verifies it on ${config.media.baseUrl} before a deploy`,
+          });
+        else
+          findings.error(rec.file, `image file ${key} is missing from storage`, {
+            fix: `run \`npm run media:import -- --refresh ${d.id}\` to regenerate it from the original, or re-import the image`,
+          });
+      }
     }
     const ratio = d.width / d.height;
     for (const [name, v] of Object.entries(d.variants)) {

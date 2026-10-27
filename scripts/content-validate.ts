@@ -9,7 +9,7 @@ import path from 'node:path';
 import { parse, TYPE, type MessageFormatElement } from '@formatjs/icu-messageformat-parser';
 import { ConfigError, loadConfig } from '../src/config/load';
 import { catalogDir, listNamespaces, readCatalog, type Messages } from '../src/i18n/catalog';
-import { createUrlModule } from '../src/modules/url/create';
+import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { Findings, printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
 import { ROOT } from './lib/paths';
@@ -102,12 +102,7 @@ try {
   }
 
   // Content (step 1b). Findings do not depend on the build mode; what each build shows does.
-  const url = createUrlModule({
-    origin: config.origin,
-    basePath: config.basePath,
-    urlPattern: config.urlPattern,
-    localePrefixes: config.locales.map((l) => l.pathPrefix),
-  });
+  const url = createUrlModule(urlConfigOf(config));
   for (const f of loadContent({ root: ROOT, config, url }).findings.list) findings.add(f);
 } catch (error) {
   if (!(error instanceof ConfigError)) throw error;

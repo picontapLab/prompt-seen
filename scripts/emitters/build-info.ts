@@ -15,6 +15,8 @@ export default defineEmitter({
       origin: config.origin,
       basePath: config.basePath,
       urlPattern: config.urlPattern,
+      // Where images are served from: null for files of this build, else the CDN (§10.1).
+      mediaBaseUrl: config.media.baseUrl,
       defaultLocale: config.defaultLocale,
       // `enabled`: public; a built locale that is not is a preview-only draft (§8.2), which gets no
       // sitemap, Markdown versions or llms.txt lines (§9.10.4).

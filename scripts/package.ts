@@ -6,16 +6,12 @@ import { loadConfig } from '../src/config/load';
 import type { ContentManifest } from '../src/modules/content/types';
 import { feedIndexFile } from '../src/modules/feed/files';
 import { NO_MARKDOWN } from '../src/modules/geo/documents';
-import { createUrlModule, EMPTY_PARAM } from '../src/modules/url/create';
+import { createUrlModule, urlConfigOf, EMPTY_PARAM } from '../src/modules/url/create';
+import { keyFilePath, readIndexNowKey } from './lib/indexnow';
 import { ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
-const url = createUrlModule({
-  origin: config.origin,
-  basePath: config.basePath,
-  urlPattern: config.urlPattern,
-  localePrefixes: config.locales.map((l) => l.pathPrefix),
-});
+const url = createUrlModule(urlConfigOf(config));
 const outDir = path.join(ROOT, 'out');
 const distDir = path.join(ROOT, 'dist');
 const target = path.join(distDir, config.basePath);
@@ -59,6 +55,19 @@ for (const l of config.builtLocales)
 for (const l of config.builtLocales)
   for (const segment of ['categories', 'styles', 'use-cases', 'collections', ''])
     fs.rmSync(path.join(target, l.pathPrefix, segment, EMPTY_PARAM), { recursive: true, force: true });
+
+// With a CDN (media.baseUrl), pages load images from there (§10.1); the local driver's copies in
+// public/media/ would only be a second, unused address for every image.
+if (config.media.baseUrl) fs.rmSync(path.join(target, 'media'), { recursive: true, force: true });
+
+// IndexNow key file at the base path (§9.9): it vouches for this site's addresses only.
+let indexNowKey: string | null = null;
+try {
+  indexNowKey = readIndexNowKey(process.env);
+} catch (error) {
+  errors.push((error as Error).message);
+}
+if (indexNowKey) fs.writeFileSync(path.join(target, keyFilePath(indexNowKey)), indexNowKey);
 
 // Every built locale has its pages, error pages and the shared files exist.
 const fileFor = (internal: string) => path.join(target, internal.endsWith('/') ? `${internal}index.html` : internal);

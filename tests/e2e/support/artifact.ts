@@ -15,6 +15,8 @@ export type BuildInfo = {
   origin: string;
   basePath: string;
   urlPattern: string;
+  /** null: images are files of the build; else the CDN they are served from (§10.1). */
+  mediaBaseUrl: string | null;
   defaultLocale: string;
   locales: {
     code: string;

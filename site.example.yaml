@@ -1,0 +1,72 @@
+# Every key of content/site.yaml, with its default and what it does (design doc §15.4.2,
+# §15.5.2). An instance copies this into its own content directory as site.yaml and keeps only
+# what it changes. Unknown keys are errors. Environment variables override the keys noted below.
+
+# Shown in titles, structured data and the header.
+siteName: Prompt Seen
+# The canonical host: scheme and host only. Env: SITE_ORIGIN.
+origin: https://example.com
+# The path the site lives under on that host; "" for the root. Env: BASE_PATH.
+basePath: /prompt-seen
+# How public addresses are formed. "/{locale}{basePath}/{path}" when the host puts the language
+# first and rewrites to this site (§15.4.3). Env: URL_PATTERN.
+urlPattern: '{basePath}/{locale}/{path}'
+
+robots:
+  # standalone: the build's robots.txt is the host's (root deployments).
+  # snippet: deploy/generated/robots-snippet.txt for the host to merge (subpath deployments).
+  mode: standalone
+  # Model training crawlers (GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, CCBot):
+  # allow or disallow. Search and AI search crawlers are always allowed (§9.10.2).
+  aiTraining: disallow
+
+shell:
+  # default: this site's header and footer. host: the host site provides them; only the
+  # language and theme controls remain.
+  header: default
+  # system, or how to read the host site's theme preference.
+  themeSource: system
+
+brand:
+  # Brand-layer token overrides (§11.1.9); they must pass `npm run tokens:check` again.
+  tokens: null
+
+home:
+  # Works on show on the home page (§11.8.1): annotated prompts, from a date on.
+  featured: []
+  #   - prompt: p_045
+  #     from: '2026-10-19'
+
+feed:
+  # The list's showcase band (§11.8.2): the newest group whose date has passed.
+  showcase: []
+  #   - from: '2026-10-12'
+  #     lead: p_050          # an annotated prompt
+  #     works: [p_098, p_024] # up to two more
+  # Editorial interludes, one per list page, repeated in this order.
+  interludes: []
+  #   - { type: feature, prompt: p_067 }
+  #   - { type: templates }                  # or templates: [t_001, t_002]
+  #   - { type: collection, collection: c_001 }
+
+media:
+  # CDN address of the image storage (R2 custom domain, any S3 bucket's public address), without
+  # a trailing slash; keys such as media/a_001/… are appended. null: images are files of the
+  # build, from public/media/. Env: MEDIA_BASE_URL.
+  baseUrl: null
+
+analytics:
+  # none | cloudflare | plausible. Production builds only, loaded once the page is idle; no
+  # cookies (§9.10.6). Visits, referrers (AI referrals) and, with Cloudflare, Core Web Vitals.
+  provider: none
+  # cloudflare: token: <32-character site token>
+  # plausible:  domain: example.com
+  #             src: https://plausible.io/js/script.js
+
+searchEngines:
+  # The content value of each tool's verification meta tag (docs/operations.md).
+  verification:
+    google: null # Search Console, HTML tag method
+    bing: null # Bing Webmaster Tools, msvalidate.01
+    yandex: null # Yandex Webmaster
+    naver: null # Naver Search Advisor

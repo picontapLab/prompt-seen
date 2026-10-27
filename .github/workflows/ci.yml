@@ -1,6 +1,7 @@
 # PR and main-branch checks (design doc §15.1, §17.3 step 1a).
 # - check: lint, format, types, content validation, colour contrast of the tokens, unit tests,
 #   and the Storybook build.
+# - secrets: gitleaks over the branch's history (§15.5.4).
 # - build-and-test: the same code built at the root and under /prompt-seen, each served by the
 #   reference nginx and tested with Playwright in Chromium, Firefox and WebKit.
 # - preview: uploads the tested /prompt-seen preview build to Cloudflare Pages (noindex). It is
@@ -41,6 +42,16 @@ jobs:
       - run: npm test
       - name: Storybook builds (component state samples, §11.1.7)
         run: npm run storybook:build
+
+  # Committed secrets (design doc §15.5.4): every commit of the branch, with gitleaks' rules.
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Scan the history for secrets (gitleaks)
+        run: docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.30.1 git /repo --redact --no-banner --verbose
 
   build-and-test:
     runs-on: ubuntu-latest

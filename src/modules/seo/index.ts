@@ -45,6 +45,25 @@ export { isIndexable, type PageSections } from './indexing';
 export { indexableLocales } from './sitemaps';
 export type { JsonLdNode, LdCrumb, ListItemInput } from './structured-data';
 
+/**
+ * Verification tags of webmaster tools (§9.9), from site.yaml `searchEngines.verification`, for
+ * the layouts' metadata: Google Search Console and Yandex by name, Bing (`msvalidate.01`) and
+ * Naver Search Advisor as other tags. Empty when none is set.
+ */
+export function verificationMetadata(): Pick<Metadata, 'verification'> {
+  const v = config.searchEngines.verification;
+  const other = {
+    ...(v.bing && { 'msvalidate.01': v.bing }),
+    ...(v.naver && { 'naver-site-verification': v.naver }),
+  };
+  const verification = {
+    ...(v.google && { google: v.google }),
+    ...(v.yandex && { yandex: v.yandex }),
+    ...(Object.keys(other).length && { other }),
+  };
+  return Object.keys(verification).length ? { verification } : {};
+}
+
 const context: SeoContext = {
   siteName: config.siteName,
   defaultLocale: config.defaultLocale,
