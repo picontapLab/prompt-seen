@@ -1,0 +1,31 @@
+@layer components {
+  /* Saved: the heart fills in the text colour. Amber stays for the circled frame number
+     (§11.1.8: the mark colour is never a button's). */
+  .button[aria-pressed='true'] .heart {
+    fill: currentColor;
+  }
+  .heart {
+    transition: fill var(--duration-feedback) linear;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .heart {
+      transition: none;
+    }
+  }
+
+  /* On a work's image (§11.8.2 卡片): a round, translucent base so the heart reads on any
+     picture, the one round shape the darkroom direction allows besides none (§11.1.9). */
+  /* Through the button's own variables, so the order of the two stylesheets does not matter. */
+  .button.icon {
+    --_bg: color-mix(in srgb, var(--surface-raised) 80%, transparent);
+    --_border: transparent;
+    border-radius: 50%;
+    backdrop-filter: blur(6px);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .button.icon {
+      --_bg: var(--surface-raised);
+      backdrop-filter: none;
+    }
+  }
+}

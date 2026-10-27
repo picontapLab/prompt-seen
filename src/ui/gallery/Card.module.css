@@ -65,7 +65,8 @@
     margin-block-start: var(--space-4);
     line-height: var(--leading-sm);
   }
-  .frameNumber {
+  .frameMark {
+    position: relative;
     flex: none;
   }
   /* One line; the full title stays in the DOM for screen readers (§11.9 标题截断). */
@@ -124,9 +125,9 @@
     }
   }
 
-  /* The favourite button of step 4c, in the frame's top-end corner and outside the link:
-     always shown on touch screens, on hover or focus with a fine pointer, and always once the
-     work is saved (§11.8.2 卡片). */
+  /* The save button (step 4c), in the frame's top-end corner and outside the link: always
+     shown on touch screens, on hover or focus with a fine pointer, and always once the work is
+     saved (§11.8.2 卡片). */
   .actions {
     position: absolute;
     inset-block-start: var(--space-8);
@@ -134,7 +135,7 @@
     z-index: 1;
   }
   @media (hover: hover) and (pointer: fine) {
-    .card:not([data-active]) .actions {
+    .card:not(:has([data-saved])) .actions {
       opacity: 0;
       transition: opacity var(--duration-feedback) var(--ease-enter);
     }

@@ -1,0 +1,37 @@
+/* The header link to saved works (§11.5): from 1024 px, where the header has room for it (the
+   icon and count; the name too from 1280 px). Narrower screens reach it from the menu and the
+   footer. */
+@layer components {
+  a.link {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    a.link {
+      display: inline-flex;
+    }
+  }
+  .link {
+    min-inline-size: var(--target-min);
+    padding-inline: var(--space-8);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .label {
+    display: none;
+  }
+  .count {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    font-variant-numeric: tabular-nums;
+  }
+  @media (min-width: 1280px) {
+    .link {
+      padding-inline: var(--space-12);
+    }
+    .label {
+      display: inline;
+    }
+  }
+}

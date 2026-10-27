@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { CopyButton } from '@/ui/feedback/CopyButton';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import styles from './MobileActionBar.module.css';
@@ -10,19 +10,22 @@ import styles from './MobileActionBar.module.css';
  * The bottom action bar on narrow screens (design doc §11.8.3): copy as the primary action plus
  * share, so the prompt can be copied from anywhere on the page. It steps aside while the sheet's
  * own copy button is on screen, so two identical buttons never show at once. It renders hidden
- * and appears only once JavaScript runs, because its buttons need it. Saving arrives in step 4c.
+ * and appears only once JavaScript runs, because its buttons need it.
  */
 export function MobileActionBar({
   copyText,
   sheetCopyId,
   shareUrl,
   title,
+  favorite,
 }: {
   copyText: string;
   /** Id of the sheet's copy button. */
   sheetCopyId: string;
   shareUrl: string;
   title: string;
+  /** The save button as an icon (§11.8.3: copy, save and share). */
+  favorite?: ReactNode;
 }) {
   const t = useTranslations('detail');
   const [visible, setVisible] = useState(false);
@@ -54,6 +57,7 @@ export function MobileActionBar({
           failedHint: t('copy.failedHint'),
         }}
       />
+      {favorite}
       <ShareButton
         iconOnly
         url={shareUrl}

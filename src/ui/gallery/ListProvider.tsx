@@ -29,6 +29,13 @@ export type ListLocale = { code: string; pathPrefix: string };
 type ListContextValue = {
   locale: ListLocale;
   buildId: string;
+  /** Internal path of the page the conditions belong to: the list, or explore (step 4c). */
+  listPath: string;
+  /**
+   * The newest-first pages have addresses here (/prompts/page/{n}/), which the feed follows
+   * while scrolling. Explore has one address for every result, so it does not.
+   */
+  pageAddresses: boolean;
   query: FeedQuery;
   setQuery: (next: FeedQuery) => void;
   /** The slim metadata index, once loaded. */
@@ -67,12 +74,18 @@ const onIdle = (fn: () => void) =>
 export function ListProvider({
   locale,
   buildId,
+  listPath: path,
+  pageAddresses = true,
   children,
 }: {
   locale: ListLocale;
   buildId: string;
+  /** Defaults to the Prompt list. */
+  listPath?: string;
+  pageAddresses?: boolean;
   children: ReactNode;
 }) {
+  const listPath = path ?? paths.prompts(locale.pathPrefix);
   const hash = useSyncExternalStore(subscribe, readHash, serverHash);
   const [index, setIndex] = useState<FeedIndex | null>(null);
   const indexUrl = withBasePath(paths.generated(feedIndexFile(locale.code)));
@@ -99,10 +112,10 @@ export function ListProvider({
   const setQuery = useCallback(
     (next: FeedQuery) => {
       // A custom order has no page addresses: the list address plus the conditions (§9.4).
-      window.history.replaceState(null, '', withBasePath(paths.prompts(locale.pathPrefix)) + formatQuery(next));
+      window.history.replaceState(null, '', withBasePath(listPath) + formatQuery(next));
       for (const l of listeners) l();
     },
-    [locale.pathPrefix],
+    [listPath],
   );
 
   // Intent prefetch (§11.8.2 预取): a pointer or focus resting on a work's link for about 150 ms
@@ -125,8 +138,8 @@ export function ListProvider({
   };
 
   const value = useMemo(
-    () => ({ locale, buildId, query, setQuery, index, loadIndex }),
-    [locale, buildId, query, setQuery, index, loadIndex],
+    () => ({ locale, buildId, listPath, pageAddresses, query, setQuery, index, loadIndex }),
+    [locale, buildId, listPath, pageAddresses, query, setQuery, index, loadIndex],
   );
   return (
     <ListContext.Provider value={value}>
