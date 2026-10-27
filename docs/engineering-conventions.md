@@ -397,8 +397,10 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
   `applyGermanLabels()` (German interface text in place of English, `lang="de"`) and
   `slowColdVisit()` (no cache, Slow 4G, 4× CPU; Chromium). `details.browser.spec.ts` covers §11.9
   row by row and `motion.browser.spec.ts` the §12.8 scenarios the feature specs do not. A test
-  that watches page errors across navigations waits for `networkidle` before leaving a page:
-  WebKit reports route prefetches cancelled by the navigation as page errors.
+  that watches page errors across navigations waits for `networkidle` before leaving a page and
+  ignores `cancelledPrefetch()` from `tests/e2e/support/errors.ts`: WebKit reports fetches a
+  navigation cancels as page errors. The wait covers the page's own requests; the filter covers
+  route prefetches, which can start after it.
 - Timing tests: a state that can come and go quickly (a batch loading, placeholders) is caught by
   a `MutationObserver` installed before the action, not by polling an attribute, which reads at
   widening intervals. A delay run by CSS (`.after-delay`) counts on the frame clock from the first

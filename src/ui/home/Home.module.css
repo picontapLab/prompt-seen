@@ -222,8 +222,11 @@
       flex-wrap: nowrap;
     }
   }
+  /* The column follows the tile, so a long name (German "Veranstaltungsplakat") wraps instead of
+     widening a tile that shrank to share the row. */
   .tile {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-4);
     color: var(--text-primary);
     text-decoration: none;
@@ -251,6 +254,7 @@
   .tileName {
     margin-block-start: var(--space-4);
     font-weight: var(--weight-medium);
+    overflow-wrap: anywhere;
   }
   .tile:focus-visible {
     outline: var(--focus-ring-width) solid var(--accent);
