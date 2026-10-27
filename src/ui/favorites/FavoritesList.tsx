@@ -273,7 +273,7 @@ export function FavoritesList({
             </p>
           )}
           {load === 'loading' && (
-            <p className={styles.status} role="status">
+            <p className={`${styles.status} after-delay`} role="status">
               {t('page.loading')}
             </p>
           )}

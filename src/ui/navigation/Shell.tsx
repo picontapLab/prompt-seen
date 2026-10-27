@@ -7,6 +7,7 @@ import { paths } from '@/modules/url';
 import { Wordmark } from '@/ui/brand/Wordmark';
 import { FavoritesFeedback } from '@/ui/favorites/FavoritesFeedback';
 import { FavoritesLink } from '@/ui/favorites/FavoritesLink';
+import { ImageFade } from '@/ui/motion/ImageFade';
 import { SearchLauncher } from '@/ui/search/SearchLauncher';
 import { KeyboardShortcuts } from '@/ui/shortcuts/KeyboardShortcuts';
 import { LanguageSwitch } from './LanguageSwitch';
@@ -103,6 +104,8 @@ export async function Shell({
       <main id="main" tabIndex={-1} className={styles.main}>
         {children}
       </main>
+      {/* Later images fade in over their colour (§11.9 主色占位); step 6. */}
+      <ImageFade />
       <footer className={styles.footer}>
         <div className={`container ${styles.footerGrid}`}>
           {!host && (

@@ -35,7 +35,9 @@
     aspect-ratio: var(--ratio);
     border-radius: var(--radius-image);
     background: var(--placeholder);
-    box-shadow: 0 0 0 1px var(--image-hairline);
+    /* Inside the image, so the slot's overflow never clips it (§11.1.5, §11.9 图片描边). */
+    outline: 1px solid var(--image-hairline);
+    outline-offset: -1px;
   }
 
   .text {

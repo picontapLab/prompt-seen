@@ -512,7 +512,7 @@ export function Feed({ initial, end }: FeedProps) {
           it never pushes the works in view down (browsers without scroll anchoring would jump). */}
       <div className={styles.edgeSlot}>
         <div ref={topRef} className={styles.sentinel} aria-hidden="true" />
-        {prev === 'loading' && <p className={styles.edge}>{t('status.developingEarlier')}</p>}
+        {prev === 'loading' && <p className={`${styles.edge} after-delay`}>{t('status.developingEarlier')}</p>}
         {prev === 'error' && (
           <p className={styles.edge}>
             {t('status.failedEarlier')}{' '}
@@ -548,7 +548,7 @@ export function Feed({ initial, end }: FeedProps) {
       <div id={statusId} className={styles.status} tabIndex={-1}>
         <p className={styles.progress}>
           {next === 'loading' && <span className={styles.dot} aria-hidden="true" />}
-          {next === 'loading' && <span>{t('status.developing', nextRange)} · </span>}
+          {next === 'loading' && <span className="after-delay">{t('status.developing', nextRange)} · </span>}
           {failed ? (
             <span>
               {failed.stale ? t('status.stale') : t('filters.failed')}{' '}
@@ -603,7 +603,10 @@ export function Feed({ initial, end }: FeedProps) {
   );
 }
 
-/** Frames with no picture yet, at typical ratios, while a batch develops (§11.8.2 加载中). */
+/**
+ * Frames with no picture yet, at typical ratios, while a batch develops (§11.8.2 加载中). They take
+ * their place at once but show only after --delay-indicator, so a quick batch flashes nothing (§11.9).
+ */
 function Placeholders({ count }: { count: number }) {
   const ratios = [1, 0.8, 1.5, 0.75, 1.78, 1.25];
   return (
@@ -613,7 +616,7 @@ function Placeholders({ count }: { count: number }) {
         return (
           <span
             key={`placeholder-${i}`}
-            className={`${gallery.cell} ${styles.placeholder}`}
+            className={`${gallery.cell} ${styles.placeholder} after-delay`}
             style={{ '--w': r, '--h': 1, '--r': r } as CSSProperties}
             aria-hidden="true"
           />

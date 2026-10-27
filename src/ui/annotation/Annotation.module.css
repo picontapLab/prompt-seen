@@ -189,6 +189,8 @@
   }
   .quoted {
     font-weight: var(--weight-medium);
+    /* Its own language's stack (and size-adjusted fallback), not the page's (§8.6, §11.1.2). */
+    font-family: var(--font-text);
   }
 
   .caption {

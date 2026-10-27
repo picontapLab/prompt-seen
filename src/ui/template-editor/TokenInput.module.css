@@ -35,6 +35,8 @@
     font-size: var(--text-sm);
     line-height: var(--leading-sm);
     cursor: default;
+    /* Its own language's stack (and size-adjusted fallback), not the page's (§8.6, §11.1.2). */
+    font-family: var(--font-text);
   }
   .token[data-invalid] {
     border-color: var(--danger);

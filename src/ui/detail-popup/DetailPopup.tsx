@@ -570,7 +570,7 @@ function Pending({
             </p>
           </div>
         ) : (
-          <p role="status" className={styles.pendingStatus}>
+          <p role="status" className={`${styles.pendingStatus} after-delay`}>
             {t('loading')}
           </p>
         )}

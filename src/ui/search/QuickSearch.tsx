@@ -17,10 +17,10 @@ import {
 } from 'react-aria-components';
 import type { LocaleEntry } from '@/config';
 import { EMPTY_QUERY, formatQuery } from '@/modules/feed/query';
-import type { SearchHit } from '@/modules/search/types';
 import { paths, withBasePath } from '@/modules/url';
 import { IconButton } from '@/ui/primitives/Button';
 import { NoResults, SearchFailure } from './NoResults';
+import { panelSections, type PanelItem } from './panel-sections';
 import styles from './QuickSearch.module.css';
 import { clearRecentSearches, recentSearches, rememberSearch } from './recent';
 import { ResultRow } from './ResultRow';
@@ -28,13 +28,6 @@ import { useCommittedQuery, usePopular, useSearch } from './use-search';
 
 /** Results per group in the panel; the search page shows all (§11.8.6). */
 const PANEL_LIMIT = 5;
-
-type Item =
-  | { id: string; type: 'hit'; hit: SearchHit }
-  | { id: string; type: 'all'; total: number }
-  | { id: string; type: 'recent'; query: string }
-  | { id: 'clear-recent'; type: 'clear' }
-  | { id: string; type: 'popular'; label: string; href: string };
 
 /**
  * The quick search panel (§11.8.6): opened from any page with the header button, `/` or ⌘K /
@@ -63,38 +56,15 @@ export function QuickSearch({
   const trimmed = value.trim();
   // Results of an older query stay visible until the current one is answered (§12.5).
   const results = trimmed ? search.results : null;
-  const items: { key: string; title: string; items: Item[] }[] = [];
-  if (results) {
-    for (const g of results.groups)
-      items.push({
-        key: g.kind,
-        title: t(`groups.${g.kind}`),
-        items: g.hits.map((hit) => ({ id: hit.id, type: 'hit', hit })),
-      });
-    if (results.total > 0)
-      items.push({ key: 'all', title: '', items: [{ id: 'all', type: 'all', total: results.total }] });
-  } else if (!trimmed) {
-    if (recent.length)
-      items.push({
-        key: 'recent',
-        title: t('panel.recent'),
-        items: [
-          ...recent.map((q): Item => ({ id: `recent:${q}`, type: 'recent', query: q })),
-          { id: 'clear-recent', type: 'clear' },
-        ],
-      });
-    if (popular?.length)
-      items.push({
-        key: 'popular',
-        title: t('panel.popular'),
-        items: popular.map((p) => ({
-          id: `popular:${p.id}`,
-          type: 'popular',
-          label: p.label,
-          href: withBasePath(paths.prompts(locale.pathPrefix)) + formatQuery({ ...EMPTY_QUERY, use: [p.id] }),
-        })),
-      });
-  }
+  const items = panelSections({
+    query: trimmed,
+    results,
+    recent,
+    popular,
+    title: (section) =>
+      section === 'recent' || section === 'popular' ? t(`panel.${section}`) : t(`groups.${section}`),
+    popularHref: (id) => withBasePath(paths.prompts(locale.pathPrefix)) + formatQuery({ ...EMPTY_QUERY, use: [id] }),
+  });
 
   const searchPage = withBasePath(paths.search(locale.pathPrefix, trimmed));
   const remember = () => {
@@ -172,7 +142,7 @@ export function QuickSearch({
                       <ListBoxSection key={section.key} id={section.key} className={styles.section}>
                         {section.title && <Header className={styles.heading}>{section.title}</Header>}
                         {section.items.map((item) => (
-                          <PanelItem key={item.id} item={item} locale={locale} searchPage={searchPage} />
+                          <PanelEntry key={item.id} item={item} locale={locale} searchPage={searchPage} />
                         ))}
                       </ListBoxSection>
                     ))}
@@ -198,7 +168,7 @@ export function QuickSearch({
   );
 }
 
-function PanelItem({ item, locale, searchPage }: { item: Item; locale: LocaleEntry; searchPage: string }) {
+function PanelEntry({ item, locale, searchPage }: { item: PanelItem; locale: LocaleEntry; searchPage: string }) {
   const t = useTranslations('search');
   switch (item.type) {
     case 'hit':

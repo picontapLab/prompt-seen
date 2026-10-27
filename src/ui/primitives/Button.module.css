@@ -119,18 +119,30 @@
     --_border: transparent;
   }
 
-  /* Pending: same width, progress in place of the label (§11.1.7). */
+  /* Pending: same width, progress in place of the label (§11.1.7), once the wait has passed
+     --delay-indicator; a quicker answer leaves the label in place (§11.9 加载指示). */
   .button[data-pending] {
     cursor: progress;
   }
   .button[data-pending] .content {
-    visibility: hidden;
+    animation: pending-label 0s var(--delay-indicator) both;
+  }
+  @keyframes pending-label {
+    to {
+      visibility: hidden;
+    }
   }
   .progress {
     position: absolute;
     inset: 0;
     display: grid;
     place-items: center;
+    animation: pending-progress 0s var(--delay-indicator) both;
+  }
+  @keyframes pending-progress {
+    from {
+      opacity: 0;
+    }
   }
   .dots {
     display: inline-flex;
