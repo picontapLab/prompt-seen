@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { highlightParts } from './highlight-parts';
+import { panelSections } from './panel-sections';
 import { clearRecentSearches, recentSearches, rememberSearch, RECENT_KEY, RECENT_LIMIT } from './recent';
 
 function memoryStorage(initial: Record<string, string> = {}) {
@@ -72,5 +73,61 @@ describe('recent searches (§11.8.6, §11.6.2)', () => {
     } as unknown as Storage;
     expect(() => rememberSearch('en', 'neon', broken)).not.toThrow();
     expect(recentSearches('en', broken)).toEqual([]);
+  });
+});
+
+describe('quick search panel sections (§11.8.6)', () => {
+  const hit = (kind: 'prompt' | 'template', id: string) => ({
+    id: `${kind}:${id}`,
+    kind,
+    title: id,
+    description: '',
+    path: `/en/${kind}s/${id}/`,
+    frame: null,
+    thumb: null,
+    tags: [],
+    score: 1,
+    matched: [],
+  });
+  const base = { title: (s: string) => s, popularHref: (id: string) => `/en/prompts/#use=${id}` };
+  /** Every key in the ListBox: React Aria keeps sections and items in one collection. */
+  const keys = (sections: ReturnType<typeof panelSections>) =>
+    sections.flatMap((s) => [s.key, ...s.items.map((i) => i.id)]);
+
+  it('gives sections and items distinct keys, "see all" included', () => {
+    // A section and an item with the same key make React Aria's collection point a section at
+    // itself; rendering it never ends (a renderer crash while typing in the panel).
+    const sections = panelSections({
+      ...base,
+      query: 'neon',
+      results: {
+        query: 'neon',
+        locale: 'en',
+        total: 7,
+        groups: [
+          { kind: 'prompt', hits: [hit('prompt', 'p_001'), hit('prompt', 'p_002')] },
+          { kind: 'template', hits: [hit('template', 't_001')] },
+        ],
+      },
+      recent: [],
+      popular: null,
+    });
+    expect(sections.map((s) => s.title)).toEqual(['prompt', 'template', '']);
+    expect(sections.at(-1)!.items).toEqual([expect.objectContaining({ type: 'all', total: 7 })]);
+    const all = keys(sections);
+    expect(new Set(all).size).toBe(all.length);
+  });
+
+  it('shows recent searches and popular uses while the field is empty, with distinct keys', () => {
+    const sections = panelSections({
+      ...base,
+      query: '',
+      results: null,
+      recent: ['recent', 'popular'],
+      popular: [{ id: 'recent', label: 'Recent', count: 3 }],
+    });
+    expect(sections.map((s) => s.key)).toEqual(['section:recent', 'section:popular']);
+    const all = keys(sections);
+    expect(new Set(all).size).toBe(all.length);
   });
 });

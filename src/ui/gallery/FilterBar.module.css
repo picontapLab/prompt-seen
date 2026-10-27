@@ -19,20 +19,24 @@
   }
 
   /* Style tabs: text with a monospaced count; the current one underlined in `mark` (§11.1.9).
-     They scroll sideways rather than wrap, so the bar keeps one height. */
-  .tabs {
+     They scroll sideways rather than wrap, so the bar keeps one height; the row (ScrollRow) fades
+     the edge with more tabs and shows buttons for it (§11.9 横向滚动). */
+  .tabsRow {
     display: none;
     flex: 1 1 auto;
-    gap: var(--space-4) var(--space-16);
     min-inline-size: 0;
+  }
+  @media (min-width: 768px) {
+    .tabsRow {
+      display: block;
+    }
+  }
+  .tabs {
+    display: flex;
+    gap: var(--space-4) var(--space-16);
     overflow-x: auto;
     scrollbar-width: none;
     padding-block: var(--space-4);
-  }
-  @media (min-width: 768px) {
-    .tabs {
-      display: flex;
-    }
   }
   .tab {
     flex: none;

@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { feedIndex, localeIndex, samplePrompt, sampleTemplate } from './support/content';
+import { cancelledFetch } from './support/errors';
 
 // Favourites and keyboard shortcuts in real browsers (design doc §11.5, §11.6.2, §11.10, §17.3
 // step 4c): saving from cards, detail pages and the popup; the favourites page with undo,
@@ -24,9 +25,12 @@ const save = message(code, 'favorites.save');
 
 function watchErrors(page: Page) {
   const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  page.on('pageerror', (e) => {
+    if (!cancelledFetch(e.message)) errors.push(`pageerror: ${e.message}`);
+  });
   page.on('console', (m) => {
-    if (m.type() === 'error' && !m.text().includes('Failed to load resource')) errors.push(`console: ${m.text()}`);
+    if (m.type() === 'error' && !m.text().includes('Failed to load resource') && !cancelledFetch(m.text()))
+      errors.push(`console: ${m.text()}`);
   });
   return errors;
 }

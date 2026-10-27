@@ -76,21 +76,30 @@
     margin: 0;
     font-variant-numeric: tabular-nums;
   }
+  /* Appears with the status text after --delay-indicator (§11.9 加载指示; the global
+     .after-delay would replace the pulse, so the wait is part of this element's own animations). */
   .dot {
     inline-size: 8px;
     block-size: 8px;
     border-radius: 50%;
     background: var(--mark);
-    animation: developing 1.2s ease-in-out infinite alternate;
+    animation:
+      developing 1.2s ease-in-out infinite alternate,
+      dot-wait 0s var(--delay-indicator) both;
   }
   @keyframes developing {
     from {
       opacity: 0.35;
     }
   }
+  @keyframes dot-wait {
+    from {
+      opacity: 0;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .dot {
-      animation: none;
+      animation: dot-wait 0s var(--delay-indicator) both;
     }
   }
 

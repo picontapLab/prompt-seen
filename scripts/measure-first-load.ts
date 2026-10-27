@@ -1,7 +1,7 @@
 // Measures each page's JavaScript the way design doc §16.1 records it: the scripts the HTML
 // references (first load), and everything fetched until the page has been idle for a while (idle
 // preloads plus next/link prefetches of the routes linked from the page). Sizes are gzip (level 6)
-// of the bodies, since the reference nginx serves files uncompressed.
+// of the bodies, as the reference nginx compresses them (step 6).
 //
 // Run against the build in dist/, served with `npm run serve` (PORT as for the tests):
 //   npx tsx scripts/measure-first-load.ts [--no-prefetch] [/en/prompts/ …]
