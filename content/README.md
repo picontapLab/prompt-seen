@@ -171,6 +171,13 @@ Images are stored by the local driver in `public/media/`, which is part of the r
 fresh clone shows every image without cloud storage. Keys contain a hash of their content and
 are never overwritten; old files stay until a deliberate clean-up.
 
+The live site can serve images from object storage instead (design doc §10.1,
+[`docs/operations.md`](../docs/operations.md)): with `media.baseUrl` set, pages point at the CDN,
+`npm run media:sync` uploads the files from `public/media/` and every deploy checks the CDN with
+`npm run media:check`. Maintainers who keep images only in the bucket import with
+`MEDIA_STORAGE=s3` (and the `S3_*` variables of `.env.example`); `content:validate` then warns
+instead of failing about files that are not in `public/media/`.
+
 ## Taxonomy, topics and collections
 
 `categories.yaml`, `styles.yaml` and `use-cases.yaml` list terms with labels per language and,

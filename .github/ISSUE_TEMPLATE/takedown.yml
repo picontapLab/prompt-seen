@@ -1,0 +1,31 @@
+name: Copyright or license problem
+description: An image or prompt is used without permission or with a wrong license. If your report includes personal details, report it privately instead (see SECURITY.md).
+labels: [takedown]
+body:
+  - type: markdown
+    attributes:
+      value: This issue is public. For a report with personal or confidential details, use the private contact in SECURITY.md.
+  - type: input
+    id: address
+    attributes:
+      label: Address of the material
+      placeholder: https://…/prompt-seen/en/prompts/…/
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What the problem is
+      description: Which part (image, prompt text, description), what rights you hold or what license applies, and where the original is.
+    validations:
+      required: true
+  - type: dropdown
+    id: request
+    attributes:
+      label: What you ask for
+      options:
+        - Remove the material
+        - Correct the credit or license
+        - Other (explain above)
+    validations:
+      required: true
