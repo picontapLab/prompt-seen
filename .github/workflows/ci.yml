@@ -81,17 +81,24 @@ jobs:
       - run: npm run build
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium firefox webkit
+      - name: Disk space before the tests
+        run: df -h .
       - name: End-to-end tests through the reference nginx
         run: npm run test:e2e
         env:
           PW_BROWSERS: chromium,firefox,webkit
       # Traces are recorded only for retries (playwright.config.ts): recording every test filled
-      # the disk once. The free space left shows how close a run came.
+      # the disk once. The free space left shows how close a run came, and the largest
+      # directories what took it.
       - name: Disk space after the tests
         if: always()
-        run: df -h . && du -sh test-results || true
+        run: |
+          df -h .
+          du -sh test-results || true
+          sudo du -xh --max-depth=2 /tmp "$HOME" /var/lib/docker "$PWD" 2>/dev/null | sort -h | tail -15 || true
+      # Failed attempts of flaky tests too (their screenshots and error context; retries' traces).
       - uses: actions/upload-artifact@v7
-        if: failure()
+        if: ${{ !cancelled() }}
         with:
           name: playwright-${{ matrix.name }}
           path: test-results/

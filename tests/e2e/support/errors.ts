@@ -17,14 +17,16 @@ const ownHost = `127.0.0.1:${PORT}`;
 export const cancelledFetch = (message: string) =>
   message === 'Load failed' ||
   (message.includes(ownHost) && message.endsWith(' due to access control checks.')) ||
-  abortedFont(message);
+  abortedByFirefox(message);
 
 /**
- * Firefox's counterpart for web fonts: a console error "downloadable font: download failed (…):
- * status=2152398850 source: <address>" when leaving the page aborts the download (0x804B0002,
- * NS_BINDING_ABORTED). A font that fails for any other reason has another status.
+ * Firefox's counterparts, for this site's addresses: leaving a page aborts its downloads
+ * (NS_BINDING_ABORTED, 0x804B0002 = 2152398850). A web font reports it as a console error
+ * ("downloadable font: download failed (…): status=2152398850 source: <address>"), a worker still
+ * loading its scripts (Turbopack's worker loader) as a page error ("NS_BINDING_ABORTED: " with
+ * its file). A download that fails for any other reason reports another status.
  */
-const abortedFont = (message: string) =>
-  message.includes('downloadable font: download failed') &&
-  message.includes('status=2152398850') &&
-  message.includes(ownHost);
+const abortedByFirefox = (message: string) =>
+  message.includes(ownHost) &&
+  ((message.includes('downloadable font: download failed') && message.includes('status=2152398850')) ||
+    message.includes('NS_BINDING_ABORTED'));
