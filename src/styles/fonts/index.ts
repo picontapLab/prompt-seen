@@ -9,6 +9,9 @@ import localFont from 'next/font/local';
 // explicitly, so every subset joins one family that src/styles/tokens/type.css names directly.
 // Only the latin files of body text and the bold display face are preloaded. The size-adjusted
 // "… Fallback" faces (local Arial with metrics from the latin file) keep swapping from moving text.
+// next/font names those faces after the constant ("plexSansLatin Fallback"), whatever the
+// font-family declaration says, so the stacks reach them through the `variable` custom
+// properties that fontFallbackClassName puts on <html> (step 1c).
 //
 // "… for CJK" families reuse the same files with U+2014, U+2018–U+201F and U+2026 left out of
 // the range, so Chinese and Japanese pages render those with full-width CJK glyphs (§11.1.2).
@@ -26,6 +29,7 @@ export const plexSansLatin = localFont({
   display: 'swap',
   preload: true,
   adjustFontFallback: 'Arial',
+  variable: '--font-text-fallback', // its "… Fallback" face, see fontFallbackClassName
   declarations: [
     { prop: 'font-family', value: 'IBM Plex Sans' },
     {
@@ -142,6 +146,7 @@ export const firaLatin = localFont({
   display: 'swap',
   preload: true,
   adjustFontFallback: 'Arial',
+  variable: '--font-display-fallback', // its "… Fallback" face, see fontFallbackClassName
   declarations: [
     { prop: 'font-family', value: 'Fira Sans Extra Condensed' },
     {
@@ -313,3 +318,7 @@ export const plexSansArabic = localFont({
     },
   ],
 });
+
+// Declares --font-text-fallback and --font-display-fallback (the size-adjusted faces above) for
+// the stacks in src/styles/tokens/type.css. Goes on the root element.
+export const fontFallbackClassName = `${plexSansLatin.variable} ${firaLatin.variable}`;

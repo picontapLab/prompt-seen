@@ -2,8 +2,10 @@
  * Type tokens (design doc §11.1.2; families, display sizes and leading from §11.1.9).
  *
  * Families are declared by src/styles/fonts/index.ts (self-hosted subsets via next/font/local).
- * The "… Fallback" faces are size-adjusted local fonts generated from the same files, so swapping
- * in the web font barely moves text (§11.1.2).
+ * The size-adjusted local fonts generated from the same files ("… Fallback" faces) come in through
+ * --font-text-fallback and --font-display-fallback, which next/font declares on <html> (see
+ * fontFallbackClassName), so swapping in the web font barely moves text (§11.1.2). Each var()
+ * defaults to a family already in the stack, so without that class the entry simply drops out.
  *
  * Stacks and rhythm change by script, keyed on the nearest lang attribute: a Chinese page that
  * quotes an English prompt in lang="en" gets the Latin stack inside that block (§8.6).
@@ -47,8 +49,11 @@
 
   :where([lang]) {
     --font-display:
-      'Fira Sans Extra Condensed', 'Fira Sans Extra Condensed Fallback', 'IBM Plex Sans', system-ui, sans-serif;
-    --font-text: 'IBM Plex Sans', 'IBM Plex Sans Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      'Fira Sans Extra Condensed', var(--font-display-fallback, 'Fira Sans Extra Condensed'), 'IBM Plex Sans',
+      system-ui, sans-serif;
+    --font-text:
+      'IBM Plex Sans', var(--font-text-fallback, 'IBM Plex Sans'), system-ui, -apple-system, 'Segoe UI', Roboto,
+      sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     --leading-body: var(--leading-base);
     --leading-heading: 1.2;
@@ -93,7 +98,8 @@
   :where([lang]:lang(ar)) {
     --font-display: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
     --font-text:
-      'IBM Plex Sans Arabic', 'IBM Plex Sans', 'IBM Plex Sans Fallback', 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+      'IBM Plex Sans Arabic', 'IBM Plex Sans', var(--font-text-fallback, 'IBM Plex Sans'), 'Noto Sans Arabic',
+      'Segoe UI', sans-serif;
     --leading-body: 1.8;
     --leading-heading: 1.35;
     --leading-page-title: 1.35;

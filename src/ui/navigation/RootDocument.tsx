@@ -1,5 +1,5 @@
 import '@/styles/global.css';
-import '@/styles/fonts';
+import { fontFallbackClassName } from '@/styles/fonts';
 import { config, isPreviewBuild, type LocaleEntry } from '@/config';
 import type { Messages } from '@/i18n/catalog';
 import { analyticsLoader } from '@/modules/analytics/loader';
@@ -34,7 +34,7 @@ export function RootDocument({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={locale.htmlLang} dir={locale.direction} suppressHydrationWarning>
+    <html lang={locale.htmlLang} dir={locale.direction} className={fontFallbackClassName} suppressHydrationWarning>
       {/* App Router layouts render <head> directly; next/head is a Pages Router API. */}
       {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>

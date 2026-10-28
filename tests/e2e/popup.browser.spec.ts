@@ -95,6 +95,18 @@ async function expectOpen(page: Page, slug: string, p = prefix) {
   await expect.poll(() => page.evaluate(() => location.pathname)).toBe(detailUrl(slug, p));
 }
 
+/**
+ * Next.js has started on a page it loaded: it has written its router tree for the page into the
+ * entry. A Back pressed earlier is replayed once it starts, and the entry keeps the tree it had,
+ * the gallery's for an entry the popup wrote.
+ */
+async function routerStarted(page: Page, slug: string) {
+  await page.waitForFunction(
+    (s) => JSON.stringify(history.state?.__PRIVATE_NEXTJS_INTERNALS_TREE?.tree ?? null).includes(`["slug","${s}"`),
+    slug,
+  );
+}
+
 /** Closed, the address is the gallery's, nothing is locked and focus is on the work's card. */
 async function expectClosed(page: Page, slug: string) {
   await expect(popup(page)).not.toHaveAttribute('open', '');
@@ -228,6 +240,31 @@ test.describe('desktop', () => {
     await expectClosed(page, second.slug);
   });
 
+  test('focus returns to the card while a stylesheet is still loading (§11.3)', async ({ page }) => {
+    // Idle preloads add stylesheets after load. WebKit's focus() skips its style update while one
+    // loads, so the card could still count as inert from the closed modal dialog and keep no focus.
+    let release!: () => void;
+    const held = new Promise<void>((r) => (release = r));
+    await page.route('**/held-stylesheet.css', async (route) => {
+      await held;
+      await route.fulfill({ contentType: 'text/css', body: '' });
+    });
+    await gotoList(page);
+    await card(page, first.slug).click();
+    await expectOpen(page, first.slug);
+    await page.evaluate(() => {
+      const link = Object.assign(document.createElement('link'), { rel: 'stylesheet', href: '/held-stylesheet.css' });
+      document.head.append(link);
+    });
+    await page.keyboard.press('Escape');
+    await expectClosed(page, first.slug);
+    expect(
+      await page.evaluate(() => document.querySelector<HTMLLinkElement>('link[href$="held-stylesheet.css"]')!.sheet),
+    ).toBeNull();
+    release();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+  });
+
   test('§12.8-3: Esc right after opening, data still loading, cleans up everything', async ({ page }) => {
     await delayJson(page, third.slug, 1500);
     await gotoList(page);
@@ -305,12 +342,44 @@ test.describe('desktop', () => {
     await expect(page.locator('[data-page="prompt-detail"] h1')).toHaveText(detailOf(first.slug).title);
     expect(await state(page)).toMatchObject({ path: detailUrl(first.slug), open: false, locked: false });
     expect((await state(page)).doc).not.toBe(doc);
+    await routerStarted(page, first.slug);
+    // Chromium and WebKit go Back within the refreshed document (the entries shared one); Next.js
+    // renders the gallery there and, Forward, the full page again from the entry's tree.
     await page.goBack();
     await expect(page.locator('[role="feed"]')).toBeVisible();
     await expect.poll(async () => (await state(page)).path).toBe(listUrl);
     expect((await state(page)).open).toBe(false);
     await page.goForward();
     await expect(page.locator('[data-page="prompt-detail"] h1')).toHaveText(detailOf(first.slug).title);
+  });
+
+  test('§12.8-4: Back before a refreshed page has started, then Forward, show the content of the address', async ({
+    page,
+  }) => {
+    await gotoList(page);
+    await card(page, first.slug).click();
+    await expectOpen(page, first.slug);
+    // Hold the scripts, so the refreshed page has not started when Back is pressed.
+    let release!: () => void;
+    const held = new Promise<void>((r) => (release = r));
+    await page.route('**/_next/static/chunks/*.js', async (route) => {
+      await held;
+      await route.continue();
+    });
+    await page.reload({ waitUntil: 'commit' });
+    await expect(page.locator('[data-page="prompt-detail"] h1')).toHaveText(detailOf(first.slug).title);
+    await page.goBack({ waitUntil: 'commit' });
+    release();
+    await expect(page.locator('[role="feed"]')).toBeVisible();
+    await expect.poll(async () => (await state(page)).path).toBe(listUrl);
+    // Next.js replays the missed Back once it starts, and the entry keeps the state the popup wrote
+    // (the gallery's tree), so Forward reopens the popup over the gallery (§11.3.1). A browser that
+    // loads the gallery afresh shows the full page instead. Either is the work at the address.
+    await page.goForward();
+    await expect.poll(async () => (await state(page)).path).toBe(detailUrl(first.slug));
+    await expect(page.locator('[data-page="prompt-detail"] h1').or(dialogTitle(page))).toHaveText(
+      detailOf(first.slug).title,
+    );
   });
 
   test('§12.8-5: on a slow network the frame shows at once and stays closable; failures offer a retry', async ({

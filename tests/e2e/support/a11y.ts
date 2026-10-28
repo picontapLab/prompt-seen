@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import type { Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 
 /**
  * Waits for running CSS animations and transitions to finish (looping ones excepted). axe
@@ -15,6 +15,30 @@ export async function settle(page: Page): Promise<void> {
         .map((a) => a.finished.catch(() => undefined)),
     ),
   );
+}
+
+/**
+ * Scrolls to the top once the page has stopped scrolling. An instant scroll during a smooth one
+ * (the editor going to a field) does not stop it: Chromium ends a few pixels short of the top,
+ * and axe then reports links under the sticky header as obscured targets.
+ */
+export async function scrollToTop(page: Page): Promise<void> {
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) => {
+        let last = scrollY;
+        let still = 0;
+        const tick = () => {
+          still = scrollY === last ? still + 1 : 0;
+          last = scrollY;
+          if (still >= 5) resolve();
+          else requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }),
+  );
+  await page.evaluate(() => window.scrollTo(0, 0));
+  expect(await page.evaluate(() => scrollY)).toBe(0);
 }
 
 /** Serious and critical WCAG 2.2 AA violations (§16.3), checked once the page has settled. */

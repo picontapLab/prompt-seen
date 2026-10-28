@@ -2,6 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import { settle } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
+import { cancelledFetch } from './support/errors';
 
 // The page shell and theme of step 1c (design doc §11.6.3, §11.9, §15.5.2), in a real browser
 // against the packaged site.
@@ -11,12 +12,17 @@ const CANVAS = { light: 'rgb(237, 236, 232)', dark: 'rgb(18, 17, 16)' };
 const [first] = BUILD.locales;
 const home = (prefix = first!.pathPrefix) => `${BASE}/${prefix}/`;
 
-/** Fails the test on any page error or console error, hydration mismatches included. */
+/**
+ * Fails the test on any page error or console error, hydration mismatches included, except
+ * requests a reload or navigation cancels (`cancelledFetch`).
+ */
 function watchErrors(page: Page) {
   const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+  page.on('pageerror', (e) => {
+    if (!cancelledFetch(e.message)) errors.push(`pageerror: ${e.message}`);
+  });
   page.on('console', (m) => {
-    if (m.type() === 'error') errors.push(`console: ${m.text()}`);
+    if (m.type() === 'error' && !cancelledFetch(m.text())) errors.push(`console: ${m.text()}`);
   });
   return errors;
 }
