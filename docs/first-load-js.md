@@ -136,6 +136,9 @@ HTML references. Measured in both builds; `zh-hans` pages measure the same as `e
 
 KiB, gzip; bold is over the ~200 KiB budget.
 
+Re-measured after merging `main` d25499b (CI fixes, font fallback faces) into the branch
+(`/prompt-seen`): every page within 0.2 KiB of the table, template detail 204.1, explore 235.1.
+
 - **Precompiled messages** (−8.8 to −8.9 KiB on every page; the whole change on the Prompt detail,
   template and collection pages). `src/i18n/request.ts` compiles every catalog with icu-minify
   (`compileMessages` in `catalog.ts`), and `next.config.ts` aliases `use-intl/format-message` to its
