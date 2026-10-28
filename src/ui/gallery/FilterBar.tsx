@@ -172,12 +172,13 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
           <span className={styles.results} aria-live="polite">
             {t('results', { count: counts.total })}
           </span>
-          <Suspense>
-            <RemovableChips label={t('active')} labelHidden items={active} onRemove={remove} />
-          </Suspense>
+          {/* Before the chips, which load on demand: arriving later, they must not move it. */}
           <Button variant="ghost" onPress={clear}>
             {t('clear')}
           </Button>
+          <Suspense>
+            <RemovableChips label={t('active')} labelHidden items={active} onRemove={remove} />
+          </Suspense>
         </div>
       )}
 

@@ -64,6 +64,17 @@ const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)'
 const expands = () => window.matchMedia('(min-width: 768px)').matches;
 const serverPath = () => null;
 
+/**
+ * Focuses an element the modal dialog made inert, right after it closed. WebKit's focus() skips
+ * its style update while a stylesheet is loading (idle preloads add some after load), so the
+ * element would still count as inert and silently keep no focus; reading its box updates the
+ * style first.
+ */
+function focusOutside(el: HTMLElement) {
+  el.getBoundingClientRect();
+  el.focus({ preventScroll: true });
+}
+
 export function DetailPopup({
   locale,
   siteName,
@@ -191,7 +202,7 @@ export function DetailPopup({
     const slug = lastViewed.current;
     const link = slug ? cardLink(slug) : null;
     if (link) {
-      link.focus({ preventScroll: true });
+      focusOutside(link);
       // Chrome restores the entry's scroll position right after popstate (when restoration is
       // automatic); a synchronous scroll would be overwritten, so wait a frame (§11.3.1).
       requestAnimationFrame(() => link.scrollIntoView({ block: 'nearest' }));
@@ -200,7 +211,7 @@ export function DetailPopup({
       const heading = document.querySelector<HTMLElement>('main h1');
       if (heading) {
         if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
-        heading.focus({ preventScroll: true });
+        focusOutside(heading);
       }
     }
   }, [cardLink, stopMotion]);

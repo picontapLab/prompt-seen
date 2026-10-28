@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { renderTemplate } from '../../src/modules/template';
-import { seriousViolations, settle } from './support/a11y';
+import { scrollToTop, seriousViolations, settle } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, promptDetail, sampleTemplate, templateDetail } from './support/content';
 
@@ -310,7 +310,7 @@ test.describe('desktop', () => {
       await expect(input(page, textField.name)).toBeFocused();
       // Going to the field scrolls the breadcrumb under the sticky header, which axe reports as
       // an obscured target; the check here is about the error state itself.
-      await page.evaluate(() => window.scrollTo(0, 0));
+      await scrollToTop(page);
       expect(await seriousViolations(page)).toEqual([]);
     });
 

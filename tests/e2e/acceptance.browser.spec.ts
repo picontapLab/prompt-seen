@@ -229,6 +229,26 @@ test.describe('Arabic right-to-left sample (§16.5 阿拉伯语 RTL)', () => {
   });
 });
 
+test.describe('the size-adjusted fallback faces back the web fonts while they load (§11.1.2)', () => {
+  for (const locale of BUILD.locales.filter((l) => !/^(zh|ja|ko)/.test(l.code)))
+    test(`${locale.code}: the text and display stacks name a declared "… Fallback" face`, async ({ page }) => {
+      await page.goto(`${BASE}/${locale.pathPrefix}/`);
+      // next/font names the generated faces after the font constant, not after the family, so a
+      // stack that spells a name out misses them and swaps from system-ui (step 1c).
+      const missing = await page.evaluate(() => {
+        const families = (v: string) => v.split(',').map((f) => f.trim().replace(/^["']|["']$/g, ''));
+        const declared = new Set([...document.fonts].map((f) => families(f.family)[0]));
+        const cs = getComputedStyle(document.body);
+        return ['--font-text', ...(document.documentElement.lang === 'ar' ? [] : ['--font-display'])].flatMap((v) => {
+          const fallbacks = families(cs.getPropertyValue(v)).filter((f) => f.endsWith(' Fallback'));
+          if (!fallbacks.length) return [`${v}: no "… Fallback" face in ${cs.getPropertyValue(v)}`];
+          return fallbacks.filter((f) => !declared.has(f)).map((f) => `${v}: ${f} is not declared`);
+        });
+      });
+      expect(missing).toEqual([]);
+    });
+});
+
 test.describe('text in another language keeps its own type (§8.6, §11.1.2)', () => {
   for (const locale of BUILD.locales.filter((l) => l.code !== 'en'))
     test(`${locale.code}: English prompts and other quoted text use their own font stack`, async ({ page }) => {
