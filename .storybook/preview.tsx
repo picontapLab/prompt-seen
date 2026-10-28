@@ -1,9 +1,9 @@
 import '../src/styles/global.css';
-import '../src/styles/fonts';
 import type { Decorator, Preview } from '@storybook/nextjs-vite';
 import { NextIntlClientProvider } from 'next-intl';
 import { useLayoutEffect, type ReactNode } from 'react';
 import { formatLocale } from '../src/i18n/format-locale';
+import { fontFallbackClassName } from '../src/styles/fonts';
 import { MotionProvider } from '../src/ui/motion/MotionProvider';
 import { PrimitivesProvider } from '../src/ui/primitives/PrimitivesProvider';
 import { catalogs, storyLocales, type StoryLocale } from './messages';
@@ -19,6 +19,7 @@ function Modes({ theme, locale, motion, children }: Globals & { children: (schem
     const root = document.documentElement;
     root.lang = entry.htmlLang;
     root.dir = entry.direction;
+    root.classList.add(...fontFallbackClassName.split(' '));
     if (theme === 'both') root.removeAttribute('data-theme');
     else root.setAttribute('data-theme', theme);
     if (motion === 'reduce') root.setAttribute('data-motion', 'reduce');
