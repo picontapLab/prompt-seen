@@ -50,6 +50,28 @@ test.describe('§12.8-6: typing while the preview changes keeps the input, the c
     expect(await input.evaluate((el: HTMLInputElement) => [el.selectionStart, el.selectionEnd])).toEqual([5, 5]);
   });
 
+  test('text typed before the editor has started is kept', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    // Hold the scripts: the page is readable and typeable before they run (slow networks).
+    let release!: () => void;
+    const held = new Promise<void>((r) => (release = r));
+    await page.route('**/_next/static/chunks/*.js', async (route) => {
+      await held;
+      await route.continue();
+    });
+    await page.goto(`${BASE}${template!.path}`, { waitUntil: 'commit' });
+    const input = field(page, textField!.name);
+    await input.fill('Lantern');
+    release();
+    await expect(preview(page)).toContainText('Lantern');
+    // Rendering the field again (opening the docked preview) keeps it too.
+    const handle = page.locator('section:has(> [data-sheet-body]) button[aria-expanded]');
+    await handle.click();
+    await expect(handle).toHaveAttribute('aria-expanded', 'true');
+    await expect(input).toHaveValue('Lantern');
+    await expect(preview(page)).toContainText('Lantern');
+  });
+
   test('phone: opening and closing the docked preview keeps what was typed', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${BASE}${template!.path}`);

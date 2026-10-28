@@ -288,29 +288,29 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
     await expect(back).toBeHidden();
     expect(await tabs.evaluate((el) => getComputedStyle(el).maskImage)).toMatch(/gradient/);
     const offset = () => tabs.evaluate((el) => Math.abs(el.scrollLeft));
-    /** Presses forward and waits for the smooth scroll to come to rest. */
-    const press = async () => {
-      const before = await offset();
-      await forward.click();
-      await expect.poll(offset).toBeGreaterThan(before);
-      let previous = -1;
-      await expect
-        .poll(async () => {
-          const now = await offset();
-          const still = now === previous;
-          previous = now;
-          return still;
-        })
-        .toBe(true);
-    };
-    await press();
+    const atEnd = () => tabs.evaluate((el) => Math.abs(el.scrollLeft) + el.clientWidth >= el.scrollWidth - 1);
+    await forward.click();
+    await expect.poll(offset).toBeGreaterThan(0);
     await expect(back).toBeVisible();
     // The last tab can be reached and pressed with the pointer alone; no tab was chosen meanwhile.
-    for (let i = 0; i < 10 && (await forward.isVisible()); i++) await press();
+    // Forward goes away at the end, possibly while a press is on its way (a smooth scroll or a
+    // snap still moving on a busy runner), so press while it is there until the row has ended.
+    await expect(async () => {
+      if (await forward.isVisible()) await forward.click({ timeout: 1000 });
+      expect(await atEnd()).toBe(true);
+    }).toPass({ timeout: 20_000 });
     await expect(page).not.toHaveURL(/#/);
     await expect(forward).toBeHidden();
+    // The last tab shows whole, to the pixel: scroll positions are whole pixels, widths are not.
     const last = tabs.getByRole('button').last();
-    await expect(last).toBeInViewport({ ratio: 1 });
+    await expect(last).toBeInViewport();
+    expect(
+      await last.evaluate((tab) => {
+        const row = tab.parentElement!.getBoundingClientRect();
+        const box = tab.getBoundingClientRect();
+        return box.left >= row.left - 1 && box.right <= row.right + 1;
+      }),
+    ).toBe(true);
   });
 
   test('related works on a phone', async ({ page }) => {
@@ -362,11 +362,17 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
   });
   await page.goto(list);
   await takenOver(page);
+  // The feed listens for scrolling from its mount effect, which also takes over scroll restoration;
+  // a scroll before that loads nothing until it runs, later than the poll below waits on a busy runner.
+  await page.waitForFunction(() => history.scrollRestoration === 'manual');
   type Seen = { frame: number; start: number | null; visible: number | null; ratios: number[] };
   // Timed on the frame clock that runs the delay: `start` is the last frame before placeholder
   // frames entered the feed (a mutation observer sees them at once), and the delay counts from the
   // first frame that draws them, never earlier; `visible` is the first frame they show in. Timing
   // from the insertion itself comes up to a frame short when it lands mid-frame (283 ms in CI).
+  // Each frame is read once it has been drawn: in the frame callback, before the frame's style
+  // update, WebKit computes a frame inserted since the last one without its animation, so without
+  // the delay's opacity 0.
   const watch = () =>
     page.evaluate(() => {
       const seen: Seen = { frame: performance.now(), start: null, visible: null, ratios: [] };
@@ -377,13 +383,13 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
       }).observe(document.body, { childList: true, subtree: true });
       const check = (now: number) => {
         seen.frame = now;
-        const frames = [...document.querySelectorAll(selector)];
-        if (frames.length) {
+        setTimeout(() => {
+          const frames = [...document.querySelectorAll(selector)];
           if (frames.some((el) => getComputedStyle(el).opacity !== '0')) {
             seen.visible ??= now;
             seen.ratios = frames.map((el) => el.getBoundingClientRect().width / el.getBoundingClientRect().height);
           }
-        }
+        });
         requestAnimationFrame(check);
       };
       requestAnimationFrame(check);
@@ -428,11 +434,15 @@ test('加载指示: the popup says it is loading only once loading has taken 300
         const seen: Seen = { pressed: null, visible: null };
         (window as unknown as { __seen: Seen }).__seen = seen;
         document.addEventListener('pointerdown', () => (seen.pressed ??= performance.now()), true);
-        const check = () => {
-          const el = [...document.querySelectorAll('dialog[data-popup] [role="status"]')].find(
-            (s) => s.textContent === text,
-          );
-          if (el && getComputedStyle(el).opacity !== '0') seen.visible ??= performance.now();
+        // Read once each frame has been drawn (see 列表末尾: WebKit leaves out the animation of an
+        // element inserted since the last frame until the frame's style update).
+        const check = (now: number) => {
+          setTimeout(() => {
+            const el = [...document.querySelectorAll('dialog[data-popup] [role="status"]')].find(
+              (s) => s.textContent === text,
+            );
+            if (el && getComputedStyle(el).opacity !== '0') seen.visible ??= now;
+          });
           requestAnimationFrame(check);
         };
         requestAnimationFrame(check);
