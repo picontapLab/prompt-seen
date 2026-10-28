@@ -288,7 +288,12 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
     await expect(back).toBeHidden();
     expect(await tabs.evaluate((el) => getComputedStyle(el).maskImage)).toMatch(/gradient/);
     const offset = () => tabs.evaluate((el) => Math.abs(el.scrollLeft));
-    const atEnd = () => tabs.evaluate((el) => Math.abs(el.scrollLeft) + el.clientWidth >= el.scrollWidth - 1);
+    /** Where the tabs are: at their end, and the numbers behind that for a failure message. */
+    const position = () =>
+      tabs.evaluate((el) => ({
+        end: Math.abs(el.scrollLeft) + el.clientWidth >= el.scrollWidth - 1,
+        at: `scrollLeft ${el.scrollLeft} of ${el.scrollWidth - el.clientWidth}, page at ${scrollY}`,
+      }));
     await forward.click();
     await expect.poll(offset).toBeGreaterThan(0);
     await expect(back).toBeVisible();
@@ -297,7 +302,8 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
     // snap still moving on a busy runner), so press while it is there until the row has ended.
     await expect(async () => {
       if (await forward.isVisible()) await forward.click({ timeout: 1000 });
-      expect(await atEnd()).toBe(true);
+      const { end, at } = await position();
+      expect(end, at).toBe(true);
     }).toPass({ timeout: 20_000 });
     await expect(page).not.toHaveURL(/#/);
     await expect(forward).toBeHidden();
@@ -311,6 +317,25 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
         return box.left >= row.left - 1 && box.right <= row.right + 1;
       }),
     ).toBe(true);
+  });
+
+  test('a row left a few pixels short of its end goes the rest of the way', async ({ page }) => {
+    // WebKit can stop a smooth scroll interrupted by a second press 2–4 px short of the end and then
+    // ignore smooth scrolls from there; this places the row there without snapping, as it stops.
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await page.goto(list);
+    await takenOver(page);
+    const tabs = page.getByRole('group', { name: message(code, 'feed.filters.style') });
+    const overflows = await tabs.evaluate((el) => el.scrollWidth > el.clientWidth + 8);
+    test.skip(!overflows, 'the style tabs fit at this width');
+    const forward = tabs.locator('xpath=..').getByRole('button', { name: message(code, 'primitives.scrollRow.next') });
+    await expect(forward).toBeVisible();
+    await tabs.evaluate((el) => {
+      (el as HTMLElement).style.scrollSnapType = 'none';
+      el.scrollTo({ left: el.scrollWidth - el.clientWidth - 3, behavior: 'instant' });
+    });
+    await expect.poll(() => tabs.evaluate((el) => el.scrollWidth - el.clientWidth - el.scrollLeft)).toBe(0);
+    await expect(forward).toBeHidden();
   });
 
   test('related works on a phone', async ({ page }) => {

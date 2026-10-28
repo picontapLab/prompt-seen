@@ -406,7 +406,9 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
   row by row and `motion.browser.spec.ts` the §12.8 scenarios the feature specs do not. A test
   that watches page errors across navigations ignores `cancelledFetch()` from
   `tests/e2e/support/errors.ts`: WebKit reports requests a navigation cancels as page or console
-  errors, and waiting for `networkidle` before leaving does not prevent them in CI.
+  errors, and waiting for `networkidle` before leaving does not prevent them in CI. Firefox reports
+  the same for downloads a navigation aborts (`NS_BINDING_ABORTED`: a web font, a worker loading
+  its scripts).
 - Timing tests: a state that can come and go quickly (a batch loading, placeholders) is caught by a
   `MutationObserver` installed before the action, not by polling an attribute, which reads at
   widening intervals. Read what a frame drew after that frame (a `setTimeout` from the
@@ -432,8 +434,9 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
    each tested end to end in three browsers. A failed test is retried once, and only the retry
    records a trace (`playwright.config.ts`): a worker keeps every trace it records until it exits,
    passed tests included, and CI runs a build's tests in one worker, so tracing every test once
-   filled the runner's disk. The job prints the disk left after the tests; on failure,
-   `test-results/` is uploaded.
+   filled the runner's disk. A failed attempt leaves a screenshot and its error context, and
+   `test-results/` is uploaded after every run, so a flaky test's first failure can be read too.
+   The job prints the disk space before and after the tests, and the largest directories.
 4. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
    secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, and optionally the variable
    `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`). Without them the job reports a notice and
