@@ -15,4 +15,16 @@ const ownHost = `127.0.0.1:${PORT}`;
  * it in CI: Playwright resolves that at once when the page has been idle before.
  */
 export const cancelledFetch = (message: string) =>
-  message === 'Load failed' || (message.includes(ownHost) && message.endsWith(' due to access control checks.'));
+  message === 'Load failed' ||
+  (message.includes(ownHost) && message.endsWith(' due to access control checks.')) ||
+  abortedFont(message);
+
+/**
+ * Firefox's counterpart for web fonts: a console error "downloadable font: download failed (…):
+ * status=2152398850 source: <address>" when leaving the page aborts the download (0x804B0002,
+ * NS_BINDING_ABORTED). A font that fails for any other reason has another status.
+ */
+const abortedFont = (message: string) =>
+  message.includes('downloadable font: download failed') &&
+  message.includes('status=2152398850') &&
+  message.includes(ownHost);
