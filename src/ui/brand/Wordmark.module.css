@@ -16,7 +16,8 @@
     border-radius: 2px;
   }
   .name {
-    font-family: 'Fira Sans Extra Condensed', 'Fira Sans Extra Condensed Fallback', var(--font-display);
+    font-family:
+      'Fira Sans Extra Condensed', var(--font-display-fallback, 'Fira Sans Extra Condensed'), var(--font-display);
     font-size: var(--text-2xl);
     font-weight: var(--weight-display);
     line-height: 1;
