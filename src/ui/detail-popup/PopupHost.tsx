@@ -13,9 +13,10 @@ import {
 import { flushSync } from 'react-dom';
 import type { FeedCard } from '@/modules/feed/types';
 import { paths, stripBasePath, withBasePath } from '@/modules/url';
-import { DetailPopup, type PopupLocale, type PopupOrigin, type PopupSource } from './DetailPopup';
+import type { DetailPopup as DetailPopupType, PopupLocale, PopupOrigin, PopupSource } from './DetailPopup';
 import { notifyLocation, pushPopupEntry } from './history';
 import { isPlainClick, matchPromptPath } from './logic';
+import { PendingDialog, type PendingState } from './PendingDialog';
 
 // A gallery that opens works in the detail popup (design doc §11.3). Wrap the area whose links
 // should open the popup: a plain click on a link to a Prompt detail address of this locale
@@ -25,6 +26,10 @@ import { isPlainClick, matchPromptPath } from './logic';
 //
 // The list inside registers its works in reading order with usePopupList (or <PopupWorks>), so
 // previous / next follow the gallery and can ask it for the next batch.
+//
+// The popup itself (DetailPopup, with the detail body's client parts) is not first-load code
+// (§16.1): it loads once the host has hydrated. Until it is here, PendingDialog stands in, so a
+// click that comes first still opens at once and Esc and Back behave (§12.8-3, §12.8-5).
 
 const RegisterContext = createContext<((source: PopupSource | null) => void) | null>(null);
 
@@ -44,6 +49,12 @@ export function PopupWorks({ items }: { items: readonly FeedCard[] }) {
   return null;
 }
 
+type Popup = typeof DetailPopupType;
+/** Loaded once per page; a host mounted later (Back to a gallery) renders the popup at once. */
+let loaded: Popup | null = null;
+const loadPopup = () => import('./DetailPopup').then((m) => (loaded = m.DetailPopup));
+const NO_ITEMS: readonly FeedCard[] = [];
+
 export function PopupHost({
   locale,
   siteName,
@@ -57,6 +68,24 @@ export function PopupHost({
   const register = useCallback((s: PopupSource | null) => setSource(s), []);
   const origin = useRef<PopupOrigin | null>(null);
   const getOrigin = useCallback(() => origin.current, []);
+
+  // On the server and at hydration `loaded` is null, so both render the stand-in.
+  const [DetailPopup, setDetailPopup] = useState<Popup | null>(() => loaded);
+  const [failed, setFailed] = useState(false);
+  const [pending, setPending] = useState<PendingState>('closed');
+  const load = useCallback(() => {
+    loadPopup().then(
+      (popup) => setDetailPopup(() => popup),
+      () => setFailed(true),
+    );
+  }, []);
+  useEffect(() => {
+    if (!loaded) load();
+  }, [load]);
+  const retry = useCallback(() => {
+    setFailed(false);
+    load();
+  }, [load]);
 
   // Capture phase: before next/link's own handler (a related prompt in the popup is a Link),
   // which then sees the event handled and stays out.
@@ -83,7 +112,25 @@ export function PopupHost({
     <RegisterContext.Provider value={register}>
       <div onClickCapture={onClickCapture} data-popup-host="" style={{ display: 'contents' }}>
         {children}
-        <DetailPopup locale={locale} siteName={siteName} source={source} getOrigin={getOrigin} />
+        {/* While the stand-in is on its way out (Back under way), it finishes that first. */}
+        {DetailPopup && pending !== 'leaving' ? (
+          <DetailPopup
+            locale={locale}
+            siteName={siteName}
+            source={source}
+            getOrigin={getOrigin}
+            takeover={pending === 'open'}
+          />
+        ) : (
+          <PendingDialog
+            locale={locale}
+            items={source?.items ?? NO_ITEMS}
+            getOrigin={getOrigin}
+            failed={failed}
+            onRetry={retry}
+            onState={setPending}
+          />
+        )}
       </div>
     </RegisterContext.Provider>
   );

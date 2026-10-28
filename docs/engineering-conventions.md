@@ -83,6 +83,10 @@ Pages end with `/`; files such as `index.md` do not. A new kind of address is a 
   `common`.
 - End-to-end tests check that each locale's visible text comes from that locale's catalog
   (`message()` in `tests/e2e/support/artifact.ts`); add the same check for new pages.
+- Messages are precompiled with icu-minify (`compileMessages`, called by `src/i18n/request.ts`), and
+  `next.config.ts` aliases use-intl's formatter to its format-only version in every bundle, so no
+  ICU parser reaches the browser (design doc §16.1). `t.raw` is therefore unavailable. Code outside
+  React rendering formats with `catalogTranslator` (`src/i18n/translator.ts`).
 - `content:validate` fails on invalid ICU syntax, missing keys and arguments that differ from
   English. Translations written by machine are drafts until a reviewer signs them off (§8.4, §17.6).
 
@@ -154,7 +158,7 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
   component that imports an index re-exporting `'use client'` modules puts all of them in the
   first-load bundle. Code needed only on interaction loads on demand (`React.lazy`), as the
   language list, the menu sheet, the toast region, the list's filter panel and sort list
-  (`SortSelect`) and the editor's select do. React Aria's collections and overlays (`Select`,
+  (`SortSelect`), the editor's select and the detail popup do. React Aria's collections and overlays (`Select`,
   `Combobox`, `Dialog`, `TagGroup`) are the usual cost: one of them on a page can add ~40 KiB gzip.
 - **Stories**: next to the component (`*.stories.tsx`), with a states story showing default,
   hover, pressed, focus-visible, selected, disabled, loading and invalid where they apply
@@ -174,7 +178,9 @@ Set up in step 1c (design doc §11.1, §11.6.3, §12.4, §15.5.2).
   script applies, with its size-adjusted fallback (without it, an English prompt on a Chinese page
   reflows when the font arrives). Language names in links to other versions (`hreflang`) keep the
   page's face, so a page never downloads another script's web font for one word.
-  `acceptance.browser.spec.ts` checks both on every built language.
+  `acceptance.browser.spec.ts` checks both on every built language. next/font names a file after
+  its preload and size-adjust settings: a "… for CJK" face of a preloaded file repeats the Latin
+  face's settings, so CJK pages fetch the file once (checked in the same spec).
 - **Shell**: `src/ui/navigation/Shell.tsx` renders the skip link, header, the one `<main>` and the
   footer; pages render content only. `shell.header` in `site.yaml` picks `default` or `host`.
 
@@ -260,6 +266,9 @@ Set up in step 4a (design doc §11.3, §11.3.1, §11.3.2, §12.2).
   render into the dialog through `PortalScope`; an icon button there passes `tooltip={false}` or
   relies on that scope. An Esc that a control inside handles itself calls `preventDefault()`, so the
   dialog does not also close (the annotation phrases do).
+- `DetailPopup` is not first-load code: `PopupHost` imports it once hydrated. A click before it
+  arrives opens `PendingDialog`, which handles Esc, Close and Back itself; the popup then takes over
+  in one commit (`takeover`). Keep the two in step when the popup's opening or closing changes.
 - Next.js's patched `pushState` / `replaceState` are framework internals:
   `tests/e2e/popup.browser.spec.ts` is their regression suite; run it on every Next.js upgrade.
 
