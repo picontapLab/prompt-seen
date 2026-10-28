@@ -2,11 +2,11 @@
 id: p_010
 slug: ceramic-mug-poster
 createdAt: 2026-07-16
-updatedAt: 2026-07-16
+updatedAt: 2026-10-28
 promptSource:
   type: template
   templateId: t_001
-  version: v1
+  version: v4
   values:
     product: a speckled handmade ceramic mug
     sellingPoints:
@@ -20,11 +20,11 @@ styleIds:
   - minimal
 useCaseIds:
   - packaging
-coverAssetId: a_010
+coverAssetId: a_111
 relatedTemplateIds: []
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: optional
@@ -32,3 +32,4 @@ source:
   author: Prompt Seen
   url: null
   license: CC BY 4.0
+annotations: []

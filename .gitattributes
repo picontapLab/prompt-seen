@@ -1,0 +1,4 @@
+# Migration hashes and byte archives must survive checkout without line-ending conversion.
+migrations/** -text
+# Prompt snapshots retain meaningful template whitespace, including an empty optional field.
+migrations/**/prompt.txt whitespace=-blank-at-eol

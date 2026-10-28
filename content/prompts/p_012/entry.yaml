@@ -2,7 +2,7 @@
 id: p_012
 slug: plum-branch-in-ink
 createdAt: 2026-07-18
-updatedAt: 2026-07-18
+updatedAt: 2026-10-28
 promptSource:
   type: literal
   file: prompt.txt
@@ -13,12 +13,12 @@ styleIds:
   - minimal
 useCaseIds:
   - art-print
-coverAssetId: a_012
+coverAssetId: a_113
 relatedTemplateIds:
   - t_002
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: none
@@ -29,10 +29,10 @@ source:
 annotations:
   - phrase: dark dry-brush strokes
     region:
-      x: 0.08
-      y: 0.361
-      w: 0.609
-      h: 0.489
+      x: 0
+      y: 0.48
+      w: 0.32
+      h: 0.52
     note:
       en: Dry brush gives the branch its rough, broken edge.
       zh-Hans: “枯笔”让枝干出现粗糙、断续的边缘。
@@ -40,10 +40,10 @@ annotations:
       ar: ضربات الفرشاة الجافة تعطي الغصن حافته الخشنة المتقطعة.
   - phrase: pink plum blossoms clustered along the branch
     region:
-      x: 0.274
-      y: 0.314
-      w: 0.471
-      h: 0.325
+      x: 0.255
+      y: 0.22
+      w: 0.16
+      h: 0.24
     note:
       en: Placing the blossoms along the branch keeps them off the empty paper.
       zh-Hans: 把梅花放在枝条上，空白处就不会被花朵占满。
@@ -51,10 +51,10 @@ annotations:
       ar: وضع الأزهار على طول الغصن يُبقي الورق الفارغ نظيفًا.
   - phrase: a small red seal in the upper right corner
     region:
-      x: 0.88
-      y: 0.09
-      w: 0.068
-      h: 0.091
+      x: 0.92
+      y: 0.058
+      w: 0.055
+      h: 0.09
     note:
       en: Naming the corner keeps the seal away from the branch.
       zh-Hans: 写明角落，印章就不会压在枝条上。

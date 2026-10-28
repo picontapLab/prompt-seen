@@ -2,11 +2,11 @@
 id: p_024
 slug: green-tea-tin-poster
 createdAt: 2026-07-30
-updatedAt: 2026-07-30
+updatedAt: 2026-10-28
 promptSource:
   type: template
   templateId: t_001
-  version: v2
+  version: v5
   values:
     product: a loose-leaf green tea tin
     sellingPoints:
@@ -20,11 +20,11 @@ styleIds:
   - minimal
 useCaseIds:
   - packaging
-coverAssetId: a_024
+coverAssetId: a_125
 relatedTemplateIds: []
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: optional
@@ -35,10 +35,10 @@ source:
 annotations:
   - phrase: a soft circular backdrop
     region:
-      x: 0.26
-      y: 0.26
-      w: 0.48
-      h: 0.6
+      x: 0.28
+      y: 0.045
+      w: 0.66
+      h: 0.77
     note:
       en: The circle lifts a green tin off a green wall.
       zh-Hans: 圆形背景把绿色茶罐从绿色墙面上托出来。
@@ -46,10 +46,10 @@ annotations:
       ar: الدائرة تفصل العلبة الخضراء عن الجدار الأخضر.
   - phrase: single estate
     region:
-      x: 0.38
-      y: 0.4
-      w: 0.24
-      h: 0.17
+      x: 0.495
+      y: 0.343
+      w: 0.19
+      h: 0.235
     note:
       en: This selling point became the paper label band; quality claims tend to turn into labels.
       zh-Hans: 这个卖点变成了纸质标签带；品质类卖点往往会被画成标签。

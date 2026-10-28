@@ -1,0 +1,1968 @@
+{
+  "reviewer": "Codex: per-image prompt review, compressed-sheet inspection, Chrome desktop/mobile walkthrough and independent code review",
+  "checks": {
+    "unit": true,
+    "typecheck": true,
+    "lint": true,
+    "contentValidation": true,
+    "previewBuild": true,
+    "productionBuild": true,
+    "e2e": true,
+    "visualAll": true,
+    "annotations": true,
+    "rollback": true
+  },
+  "screenshots": [
+    {
+      "file": ".artifacts/screenshots/final-home-desktop.png",
+      "sha256": "d5dcde1deff37b3f1438ab8c0b4b39cd5465556b572bbdc8637fda42e8d18a55"
+    },
+    {
+      "file": ".artifacts/screenshots/final-home-mobile.png",
+      "sha256": "f0c860fd7f8499cebf3ad2748f2bbb2dd2ebf6581237937f1fc306b6a60624d8"
+    },
+    {
+      "file": ".artifacts/screenshots/final-gallery-desktop.png",
+      "sha256": "1b992ed3183c008d318ce36ce7ee6315d2861ce70cffb39fc5293a4ef93a246b"
+    },
+    {
+      "file": ".artifacts/screenshots/final-gallery-mobile.png",
+      "sha256": "a302c5608664b458717cf04b43604cc60e13af71ae92c64cb72c27d24a1b28a0"
+    },
+    {
+      "file": ".artifacts/screenshots/final-detail-desktop.png",
+      "sha256": "4579d8d7ca271bdc6bb1f59edbd097fef359d87e66da941f42c15d7a76283796"
+    },
+    {
+      "file": ".artifacts/screenshots/final-detail-mobile.png",
+      "sha256": "ebc49665ba645069f11025fcc6259b2acda90fdfd2ffcc09d371312cdcacd830"
+    },
+    {
+      "file": ".artifacts/screenshots/final-en-light.png",
+      "sha256": "ee97750e6f2b7a2ad392f55b3dfa4929c750a9fe58e580a0976593f995d7960f"
+    },
+    {
+      "file": ".artifacts/screenshots/final-en-dark.png",
+      "sha256": "4579d8d7ca271bdc6bb1f59edbd097fef359d87e66da941f42c15d7a76283796"
+    },
+    {
+      "file": ".artifacts/screenshots/final-zh-Hans-light.png",
+      "sha256": "e3e6811db4e0d8a1887bd3367372c194e1146dc2846bbc46feae30cc1b23a765"
+    },
+    {
+      "file": ".artifacts/screenshots/final-zh-Hans-dark.png",
+      "sha256": "9fc8cf5e5e84847b7a92527da503e5c461aa30bec64e2bc3e6df5041188fa33d"
+    },
+    {
+      "file": ".artifacts/screenshots/final-ja-light.png",
+      "sha256": "8339b37d16320922f0e479688b350485e3ea3647f20220a0a79cde16c98887c3"
+    },
+    {
+      "file": ".artifacts/screenshots/final-ja-dark.png",
+      "sha256": "3aa45f42787e82461130e6d651a22b98591a5144e23b8a376962d2877e184284"
+    },
+    {
+      "file": ".artifacts/screenshots/final-ar-light.png",
+      "sha256": "e95da84ea9d0534b5b277f8c4f74465c00676cfaf60c09f6ef742551310fe507"
+    },
+    {
+      "file": ".artifacts/screenshots/final-ar-dark.png",
+      "sha256": "d4b621e4c74a242b8917624ebd2604aa4cf41a0672931871427979db38c01fe5"
+    }
+  ],
+  "firstScreen": [
+    {
+      "page": "home",
+      "viewport": "desktop",
+      "imageBytes": 213540,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "status": 200,
+          "bytes": 33174
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-thumbnail-5545b08d210c.webp",
+          "status": 200,
+          "bytes": 8318
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "status": 200,
+          "bytes": 10640
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_113/plum-branch-in-ink-thumbnail-e809192afdaf.webp",
+          "status": 200,
+          "bytes": 11802
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "status": 200,
+          "bytes": 16790
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "status": 200,
+          "bytes": 2244
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "status": 200,
+          "bytes": 7854
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-thumbnail-02485b514e00.webp",
+          "status": 200,
+          "bytes": 8256
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "status": 200,
+          "bytes": 15124
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "status": 200,
+          "bytes": 21002
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "status": 200,
+          "bytes": 8612
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "status": 200,
+          "bytes": 7690
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_143/misty-ridges-first-light-card-deb9744d34a6.webp",
+          "status": 200,
+          "bytes": 62034
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 213.328125,
+            "y": 110,
+            "width": 330,
+            "height": 440
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "loaded": true,
+          "alt": "Dark musician playing a guitar, rim-lit in cyan and magenta against blurred lights.",
+          "rect": {
+            "x": 40,
+            "y": 880.78125,
+            "width": 129,
+            "height": 161
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_113/plum-branch-in-ink-thumbnail-e809192afdaf.webp",
+          "loaded": true,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 185.046875,
+            "y": 880.78125,
+            "width": 215,
+            "height": 161
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "loaded": true,
+          "alt": "A bowl of ramen seen from above with an egg, two pork slices and chopsticks on a dark table.",
+          "rect": {
+            "x": 416.0625,
+            "y": 880.78125,
+            "width": 129,
+            "height": 161
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "loaded": true,
+          "alt": "Five grey bamboo stalks and drifting leaves on warm paper, with a red seal at lower right.",
+          "rect": {
+            "x": 561.109375,
+            "y": 880.78125,
+            "width": 376,
+            "height": 161
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 953.46875,
+            "y": 880.78125,
+            "width": 287,
+            "height": 161
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "Green tea tin with a single-estate label and lid callout before a circular landscape backdrop.",
+          "rect": {
+            "x": 40,
+            "y": 1115.046875,
+            "width": 287,
+            "height": 230
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 40,
+            "y": 1485.734375,
+            "width": 93,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 149.484375,
+            "y": 1485.734375,
+            "width": 208,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 373.03125,
+            "y": 1485.734375,
+            "width": 146,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 534.984375,
+            "y": 1485.734375,
+            "width": 273,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 823.578125,
+            "y": 1485.734375,
+            "width": 93,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-thumbnail-02485b514e00.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 933.046875,
+            "y": 1485.734375,
+            "width": 78,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 1026.921875,
+            "y": 1485.734375,
+            "width": 93,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 1136.390625,
+            "y": 1485.734375,
+            "width": 88,
+            "height": 117
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "loaded": true,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 40,
+            "y": 1798.546875,
+            "width": 368,
+            "height": 459
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "loaded": true,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 423.671875,
+            "y": 1798.546875,
+            "width": 816,
+            "height": 459
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 40,
+            "y": 2330.96875,
+            "width": 603,
+            "height": 339
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 658.6875,
+            "y": 2330.96875,
+            "width": 339,
+            "height": 339
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 1013.875,
+            "y": 2330.96875,
+            "width": 226,
+            "height": 339
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 40,
+            "y": 2743.15625,
+            "width": 226,
+            "height": 282
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "loaded": false,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 281.640625,
+            "y": 2743.15625,
+            "width": 226,
+            "height": 282
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 523.28125,
+            "y": 2743.15625,
+            "width": 121,
+            "height": 282
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 660.09375,
+            "y": 2743.15625,
+            "width": 282,
+            "height": 282
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Citrus slices scattered on a plain background, segments visible.",
+          "rect": {
+            "x": 958.046875,
+            "y": 2743.15625,
+            "width": 282,
+            "height": 282
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 40,
+            "y": 3098.109375,
+            "width": 275,
+            "height": 344
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 330.921875,
+            "y": 3098.109375,
+            "width": 258,
+            "height": 344
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_143/misty-ridges-first-light-card-deb9744d34a6.webp",
+          "loaded": false,
+          "alt": "Grey-blue ridges fading into mist, with a pale sun behind the far range.",
+          "rect": {
+            "x": 40,
+            "y": 3894.640625,
+            "width": 569,
+            "height": 320
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 656,
+            "y": 3894.640625,
+            "width": 240,
+            "height": 320
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "page": "home",
+      "viewport": "mobile",
+      "imageBytes": 119094,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "status": 200,
+          "bytes": 33174
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-thumbnail-5545b08d210c.webp",
+          "status": 200,
+          "bytes": 8318
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "status": 200,
+          "bytes": 15124
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "status": 200,
+          "bytes": 16790
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "status": 200,
+          "bytes": 2244
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "status": 200,
+          "bytes": 21002
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_113/plum-branch-in-ink-thumbnail-e809192afdaf.webp",
+          "status": 200,
+          "bytes": 11802
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "status": 200,
+          "bytes": 10640
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 93.71875,
+            "y": 105,
+            "width": 203,
+            "height": 270
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "loaded": true,
+          "alt": "Dark musician playing a guitar, rim-lit in cyan and magenta against blurred lights.",
+          "rect": {
+            "x": 16,
+            "y": 1217.96875,
+            "width": 94,
+            "height": 118
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_113/plum-branch-in-ink-thumbnail-e809192afdaf.webp",
+          "loaded": true,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 116.375,
+            "y": 1217.96875,
+            "width": 157,
+            "height": 118
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "loaded": true,
+          "alt": "A bowl of ramen seen from above with an egg, two pork slices and chopsticks on a dark table.",
+          "rect": {
+            "x": 279.625,
+            "y": 1217.96875,
+            "width": 94,
+            "height": 118
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "loaded": true,
+          "alt": "Five grey bamboo stalks and drifting leaves on warm paper, with a red seal at lower right.",
+          "rect": {
+            "x": 16,
+            "y": 1398.90625,
+            "width": 200,
+            "height": 86
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 221.84375,
+            "y": 1398.90625,
+            "width": 152,
+            "height": 86
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "Green tea tin with a single-estate label and lid callout before a circular landscape backdrop.",
+          "rect": {
+            "x": 16,
+            "y": 1547.53125,
+            "width": 132,
+            "height": 106
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 1794.46875,
+            "width": 109,
+            "height": 137
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 131.3125,
+            "y": 1794.46875,
+            "width": 243,
+            "height": 137
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 2019.046875,
+            "width": 210,
+            "height": 168
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 2275.03125,
+            "width": 358,
+            "height": 153
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 2516.421875,
+            "width": 122,
+            "height": 153
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 144.125,
+            "y": 2516.421875,
+            "width": 102,
+            "height": 153
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 251.875,
+            "y": 2516.421875,
+            "width": 122,
+            "height": 153
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 2757.046875,
+            "width": 108,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 16,
+            "y": 3071.421875,
+            "width": 109,
+            "height": 137
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 131.3125,
+            "y": 3071.421875,
+            "width": 243,
+            "height": 137
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 16,
+            "y": 3271,
+            "width": 225,
+            "height": 127
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 247.234375,
+            "y": 3271,
+            "width": 127,
+            "height": 127
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 16,
+            "y": 3460.765625,
+            "width": 84,
+            "height": 126
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 106.078125,
+            "y": 3460.765625,
+            "width": 101,
+            "height": 126
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 213.015625,
+            "y": 3460.765625,
+            "width": 101,
+            "height": 126
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 319.953125,
+            "y": 3460.765625,
+            "width": 54,
+            "height": 126
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 16,
+            "y": 3649.890625,
+            "width": 124,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Citrus slices scattered on a plain background, segments visible.",
+          "rect": {
+            "x": 145.5625,
+            "y": 3649.890625,
+            "width": 124,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 275.125,
+            "y": 3649.890625,
+            "width": 99,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 16,
+            "y": 3836.453125,
+            "width": 103,
+            "height": 137
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Grey-blue ridges fading into mist, with a pale sun behind the far range.",
+          "rect": {
+            "x": 16,
+            "y": 4750.390625,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 16,
+            "y": 4924.390625,
+            "width": 253,
+            "height": 338
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "page": "gallery",
+      "viewport": "desktop",
+      "imageBytes": 200598,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-card-8dfa78b55e97.webp",
+          "status": 200,
+          "bytes": 34426
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "status": 200,
+          "bytes": 8612
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "status": 200,
+          "bytes": 10640
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "status": 200,
+          "bytes": 7690
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "status": 200,
+          "bytes": 2244
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-card-b71472a7e208.webp",
+          "status": 200,
+          "bytes": 26568
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_196/berry-bowl-thumbnail-363562de6b8f.webp",
+          "status": 200,
+          "bytes": 19056
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "status": 200,
+          "bytes": 6350
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "status": 200,
+          "bytes": 7854
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "status": 200,
+          "bytes": 15124
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_143/misty-ridges-first-light-card-deb9744d34a6.webp",
+          "status": 200,
+          "bytes": 62034
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-card-8dfa78b55e97.webp",
+          "loaded": true,
+          "alt": "Dark musician playing a guitar, rim-lit in cyan and magenta against blurred lights.",
+          "rect": {
+            "x": 68,
+            "y": 300.875,
+            "width": 307,
+            "height": 384
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 950,
+            "y": 300.875,
+            "width": 290,
+            "height": 163
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "Green tea tin with a single-estate label and lid callout before a circular landscape backdrop.",
+          "rect": {
+            "x": 950,
+            "y": 533.078125,
+            "width": 210,
+            "height": 168
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "loaded": true,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 40,
+            "y": 902.84375,
+            "width": 368,
+            "height": 459
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "loaded": true,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 423.671875,
+            "y": 902.84375,
+            "width": 816,
+            "height": 459
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 40,
+            "y": 1435.265625,
+            "width": 603,
+            "height": 339
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "loaded": true,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 658.6875,
+            "y": 1435.265625,
+            "width": 339,
+            "height": 339
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-card-b71472a7e208.webp",
+          "loaded": true,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 1013.875,
+            "y": 1435.265625,
+            "width": 226,
+            "height": 339
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_196/berry-bowl-thumbnail-363562de6b8f.webp",
+          "loaded": true,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 40,
+            "y": 1847.453125,
+            "width": 274,
+            "height": 342
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "loaded": true,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 329.734375,
+            "y": 1847.453125,
+            "width": 274,
+            "height": 342
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 40,
+            "y": 2311.484375,
+            "width": 171,
+            "height": 400
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 40,
+            "y": 2864.453125,
+            "width": 290,
+            "height": 290
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Citrus slices scattered on a plain background, segments visible.",
+          "rect": {
+            "x": 346.46875,
+            "y": 2864.453125,
+            "width": 290,
+            "height": 290
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 652.953125,
+            "y": 2864.453125,
+            "width": 232,
+            "height": 290
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 901.40625,
+            "y": 2864.453125,
+            "width": 218,
+            "height": 290
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat sun on the horizon above calm water with horizontal reflections.",
+          "rect": {
+            "x": 40,
+            "y": 3265.453125,
+            "width": 696,
+            "height": 232
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 40,
+            "y": 3650.453125,
+            "width": 256,
+            "height": 320
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Lavender flowers and pale-veined green leaves in a plum-coloured pot on cream.",
+          "rect": {
+            "x": 312.078125,
+            "y": 3650.453125,
+            "width": 240,
+            "height": 320
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 568.0625,
+            "y": 3650.453125,
+            "width": 256,
+            "height": 320
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl of ramen seen from above with an egg, two pork slices and chopsticks on a dark table.",
+          "rect": {
+            "x": 68,
+            "y": 4051.453125,
+            "width": 320,
+            "height": 400
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 40,
+            "y": 4604.4375,
+            "width": 309,
+            "height": 309
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat sun on the horizon above calm water with horizontal reflections.",
+          "rect": {
+            "x": 364.75,
+            "y": 4604.4375,
+            "width": 247,
+            "height": 309
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 627.828125,
+            "y": 4604.4375,
+            "width": 309,
+            "height": 309
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 40,
+            "y": 5005.4375,
+            "width": 696,
+            "height": 298
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 40,
+            "y": 5456.65625,
+            "width": 494,
+            "height": 494
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 550.265625,
+            "y": 5456.65625,
+            "width": 278,
+            "height": 494
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 844.4375,
+            "y": 5456.65625,
+            "width": 396,
+            "height": 494
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Single bare ink branch extending across warm paper, with a red seal at lower right.",
+          "rect": {
+            "x": 40,
+            "y": 5808.65625,
+            "width": 601,
+            "height": 338
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "page": "gallery",
+      "viewport": "mobile",
+      "imageBytes": 164114,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+          "status": 200,
+          "bytes": 10640
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-card-8dfa78b55e97.webp",
+          "status": 200,
+          "bytes": 34426
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "status": 200,
+          "bytes": 7690
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "status": 200,
+          "bytes": 8612
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "status": 200,
+          "bytes": 2244
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-thumbnail-02485b514e00.webp",
+          "status": 200,
+          "bytes": 8256
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "status": 200,
+          "bytes": 6350
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_196/berry-bowl-thumbnail-363562de6b8f.webp",
+          "status": 200,
+          "bytes": 19056
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_194/tall-tower-at-night-card-beec0d838427.webp",
+          "status": 200,
+          "bytes": 43862
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "status": 200,
+          "bytes": 7854
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "status": 200,
+          "bytes": 15124
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_151/neon-silhouette-portrait-card-8dfa78b55e97.webp",
+          "loaded": true,
+          "alt": "Dark musician playing a guitar, rim-lit in cyan and magenta against blurred lights.",
+          "rect": {
+            "x": 16,
+            "y": 272,
+            "width": 162,
+            "height": 203
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 16,
+            "y": 878.09375,
+            "width": 207,
+            "height": 116
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+          "loaded": true,
+          "alt": "Green tea tin with a single-estate label and lid callout before a circular landscape backdrop.",
+          "rect": {
+            "x": 228.65625,
+            "y": 878.09375,
+            "width": 145,
+            "height": 116
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_201/monochrome-mug-launch-thumbnail-b4a749434bb2.webp",
+          "loaded": true,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 16,
+            "y": 1181.40625,
+            "width": 109,
+            "height": 137
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_200/sage-tile-banner-thumbnail-1fcd822e8925.webp",
+          "loaded": true,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 131.3125,
+            "y": 1181.40625,
+            "width": 243,
+            "height": 137
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+          "loaded": true,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 16,
+            "y": 1380.984375,
+            "width": 225,
+            "height": 127
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "loaded": true,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 247.234375,
+            "y": 1380.984375,
+            "width": 127,
+            "height": 127
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_197/sunset-profile-thumbnail-02485b514e00.webp",
+          "loaded": true,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 16,
+            "y": 1570.75,
+            "width": 79,
+            "height": 119
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_196/berry-bowl-thumbnail-363562de6b8f.webp",
+          "loaded": true,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 101.328125,
+            "y": 1570.75,
+            "width": 95,
+            "height": 119
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_195/dawn-arcade-thumbnail-77831727d12e.webp",
+          "loaded": true,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 202.578125,
+            "y": 1570.75,
+            "width": 95,
+            "height": 119
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_194/tall-tower-at-night-card-beec0d838427.webp",
+          "loaded": true,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 16,
+            "y": 1801.765625,
+            "width": 181,
+            "height": 422
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+          "rect": {
+            "x": 16,
+            "y": 2603.703125,
+            "width": 124,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Citrus slices scattered on a plain background, segments visible.",
+          "rect": {
+            "x": 145.5625,
+            "y": 2603.703125,
+            "width": 124,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 275.125,
+            "y": 2603.703125,
+            "width": 99,
+            "height": 124
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 16,
+            "y": 2825.703125,
+            "width": 103,
+            "height": 137
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat sun on the horizon above calm water with horizontal reflections.",
+          "rect": {
+            "x": 16,
+            "y": 3096.703125,
+            "width": 358,
+            "height": 119
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A grid of square tiles with quarter circles, triangles and half circles.",
+          "rect": {
+            "x": 16,
+            "y": 3596,
+            "width": 95,
+            "height": 118
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Lavender flowers and pale-veined green leaves in a plum-coloured pot on cream.",
+          "rect": {
+            "x": 116.609375,
+            "y": 3596,
+            "width": 89,
+            "height": 118
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Geometric poster with a large disc, a half circle, a dot grid and solid bars.",
+          "rect": {
+            "x": 211.265625,
+            "y": 3596,
+            "width": 95,
+            "height": 118
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl of ramen seen from above with an egg, two pork slices and chopsticks on a dark table.",
+          "rect": {
+            "x": 16,
+            "y": 3867,
+            "width": 338,
+            "height": 422
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+          "rect": {
+            "x": 16,
+            "y": 4980.296875,
+            "width": 114,
+            "height": 114
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat sun on the horizon above calm water with horizontal reflections.",
+          "rect": {
+            "x": 136.0625,
+            "y": 4980.296875,
+            "width": 91,
+            "height": 114
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A single product on a pale plinth in front of a soft circular backdrop.",
+          "rect": {
+            "x": 233.328125,
+            "y": 4980.296875,
+            "width": 114,
+            "height": 114
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A flat skyline of block buildings with rows of small windows.",
+          "rect": {
+            "x": 16,
+            "y": 5251.296875,
+            "width": 358,
+            "height": 153
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A row of tall rounded arches casting diagonal shadows.",
+          "rect": {
+            "x": 16,
+            "y": 5784.65625,
+            "width": 146,
+            "height": 146
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Layered mountain ridges in flat colour under a soft gradient sky.",
+          "rect": {
+            "x": 168.421875,
+            "y": 5784.65625,
+            "width": 82,
+            "height": 146
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "A bowl seen from above on a dark wooden table, with chopsticks at the top right.",
+          "rect": {
+            "x": 256.828125,
+            "y": 5784.65625,
+            "width": 117,
+            "height": 146
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Single bare ink branch extending across warm paper, with a red seal at lower right.",
+          "rect": {
+            "x": 16,
+            "y": 6006.65625,
+            "width": 222,
+            "height": 125
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "page": "detail",
+      "viewport": "desktop",
+      "imageBytes": 227142,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-detail-e8b9c827c4c8.webp",
+          "status": 200,
+          "bytes": 102502
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "status": 200,
+          "bytes": 6350
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-thumbnail-5545b08d210c.webp",
+          "status": 200,
+          "bytes": 8318
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_170/lilac-bauhaus-poster-thumbnail-91aa577022b4.webp",
+          "status": 200,
+          "bytes": 5586
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_103/geometric-concert-poster-thumbnail-606f77066861.webp",
+          "status": 200,
+          "bytes": 9300
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_123/coral-jazz-night-thumbnail-bcf0dc829907.webp",
+          "status": 200,
+          "bytes": 10112
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_186/citrus-geometry-poster-thumbnail-f28e747f3318.webp",
+          "status": 200,
+          "bytes": 14654
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_177/sunset-travel-poster-thumbnail-26ab43765970.webp",
+          "status": 200,
+          "bytes": 8286
+        },
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_143/misty-ridges-first-light-card-deb9744d34a6.webp",
+          "status": 200,
+          "bytes": 62034
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-detail-e8b9c827c4c8.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 170.328125,
+            "y": 118,
+            "width": 426,
+            "height": 568
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-thumbnail-5545b08d210c.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 758.65625,
+            "y": 1521.796875,
+            "width": 72,
+            "height": 96
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_186/citrus-geometry-poster-thumbnail-f28e747f3318.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 40,
+            "y": 1846.796875,
+            "width": 191,
+            "height": 239
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_103/geometric-concert-poster-thumbnail-606f77066861.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 247.359375,
+            "y": 1846.796875,
+            "width": 179,
+            "height": 239
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_170/lilac-bauhaus-poster-thumbnail-91aa577022b4.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 442.703125,
+            "y": 1846.796875,
+            "width": 159,
+            "height": 239
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_123/coral-jazz-night-thumbnail-bcf0dc829907.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 618.109375,
+            "y": 1846.796875,
+            "width": 191,
+            "height": 239
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_198/blue-bauhaus-square-thumbnail-25389f5813db.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 825.46875,
+            "y": 1846.796875,
+            "width": 239,
+            "height": 239
+          }
+        },
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_177/sunset-travel-poster-thumbnail-26ab43765970.webp",
+          "loaded": true,
+          "alt": "",
+          "rect": {
+            "x": 1080.59375,
+            "y": 1846.796875,
+            "width": 159,
+            "height": 239
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "page": "detail",
+      "viewport": "mobile",
+      "imageBytes": 33174,
+      "files": [
+        {
+          "url": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "status": 200,
+          "bytes": 33174
+        }
+      ],
+      "currentSrc": [
+        {
+          "src": "http://127.0.0.1:8091/prompt-seen/media/a_146/jazz-club-poster-card-b2d5bacb68d1.webp",
+          "loaded": true,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 28,
+            "y": 105,
+            "width": 334,
+            "height": 445
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+          "rect": {
+            "x": 16,
+            "y": 2282.015625,
+            "width": 72,
+            "height": 96
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 16,
+            "y": 2631.015625,
+            "width": 115,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 137.234375,
+            "y": 2631.015625,
+            "width": 108,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 251.234375,
+            "y": 2631.015625,
+            "width": 96,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 353.234375,
+            "y": 2631.015625,
+            "width": 115,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 474.46875,
+            "y": 2631.015625,
+            "width": 144,
+            "height": 144
+          }
+        },
+        {
+          "src": "",
+          "loaded": false,
+          "alt": "",
+          "rect": {
+            "x": 624.46875,
+            "y": 2631.015625,
+            "width": 96,
+            "height": 144
+          }
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "executions": {
+    "unit": {
+      "files": 42,
+      "passed": 325,
+      "file": ".artifacts/unit-full.log",
+      "sha256": "6d0ebb6d0a8de3c7be0e6a133051e1800bfde2433f49a54ba429c36413508234"
+    },
+    "typecheck": {
+      "file": ".artifacts/typecheck-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lint": {
+      "file": ".artifacts/lint-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "format": {
+      "file": ".artifacts/format-final.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    "contentValidation": {
+      "preview": {
+        "file": ".artifacts/content-validation-preview.log",
+        "sha256": "bbe1452b8d3574221235972c40b5fbed0dc2e8cd0e12b506fdd03cef40deda43"
+      },
+      "production": {
+        "file": ".artifacts/content-validation-production.log",
+        "sha256": "bbe1452b8d3574221235972c40b5fbed0dc2e8cd0e12b506fdd03cef40deda43"
+      },
+      "warnings": "Existing missing translations, updated explanatory translations marked outdated, and intentionally retained legacy media."
+    },
+    "previewBuild": {
+      "basePath": "/prompt-seen",
+      "locales": 4,
+      "file": ".artifacts/build-preview.log",
+      "sha256": "26cb891945751a5b29df1a5436ba53aa37b99ffb88e4987a5c6a0129af2c5b11"
+    },
+    "productionBuild": {
+      "basePath": "",
+      "locales": 2,
+      "file": ".artifacts/build-production.log",
+      "sha256": "30fdd3c58a4873c8ef7c48382668e93335ddbc25b324a993196401fec4baa75e"
+    },
+    "e2ePreview": {
+      "passed": 392,
+      "skipped": 1,
+      "failed": 0,
+      "port": 8092,
+      "file": ".artifacts/e2e-preview-isolated.log",
+      "sha256": "80a09d24b9079d551ace5687a7125bf77b24af632920073847f65ca8661928fb"
+    },
+    "e2eProduction": {
+      "passed": 280,
+      "skipped": 11,
+      "failed": 0,
+      "port": 8093,
+      "file": ".artifacts/e2e-production.log",
+      "sha256": "e2b9ccf8b86e832659f7afe3a718704c05676d2ee1207cf1d78c871e2cb4801f"
+    },
+    "initialE2e": {
+      "reason": "An existing nginx from 2026-10-26 reused old routing configuration; fresh isolated container passed all checks.",
+      "file": ".artifacts/e2e-preview.log",
+      "sha256": "c5be15302d42171ea1099a1f8e349438fa1c52666e808034a22088a01d60c6bc"
+    },
+    "tokens": {
+      "file": ".artifacts/tokens-check.log",
+      "sha256": "16a881b9077a3328b409632cf5c9acabfa299dcdefdc7fe4897cf0bf7b4430bb"
+    },
+    "visual": {
+      "generatedImages": 101,
+      "annotatedPrompts": 7,
+      "annotations": 20,
+      "viewports": [
+        "1280x800",
+        "390x844"
+      ],
+      "walkthrough": [
+        {
+          "code": "en",
+          "scheme": "light",
+          "route": "/en/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "en",
+          "scheme": "dark",
+          "route": "/en/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "zh-Hans",
+          "scheme": "light",
+          "route": "/zh-hans/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "zh-Hans",
+          "scheme": "dark",
+          "route": "/zh-hans/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "ja",
+          "scheme": "light",
+          "route": "/ja/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "ja",
+          "scheme": "dark",
+          "route": "/ja/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "ar",
+          "scheme": "light",
+          "route": "/ar/prompts/jazz-club-poster/",
+          "status": 200
+        },
+        {
+          "code": "ar",
+          "scheme": "dark",
+          "route": "/ar/prompts/jazz-club-poster/",
+          "status": 200
+        }
+      ],
+      "method": "Agent inspected every generated output and compressed contact sheet; Chrome exercised each available detail page at both viewports and captured screenshots. Archived pages retain their existing state."
+    },
+    "rollback": {
+      "file": "migrations/gpt-image-v1/rollback-rehearsal.json",
+      "sha256": "245e0bb53057bea3fd6cfcb78a61276c9cea7997eadabf193e66e9c1e4e6a2c9",
+      "contentFilesRestored": 682,
+      "byteIdentical": true
+    },
+    "codeReview": {
+      "standards": "No remaining findings",
+      "spec": "No remaining findings"
+    }
+  }
+}

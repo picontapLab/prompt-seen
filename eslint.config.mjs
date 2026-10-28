@@ -10,6 +10,7 @@ export default defineConfig([
     'out/**',
     'dist/**',
     '.deploy/**',
+    '.artifacts/**',
     'public/generated/**',
     '.generated/**',
     'deploy/generated/**',

@@ -2,7 +2,7 @@
 id: p_067
 slug: ramen-from-above
 createdAt: 2026-09-11
-updatedAt: 2026-09-11
+updatedAt: 2026-10-28
 promptSource:
   type: literal
   file: prompt.txt
@@ -13,11 +13,11 @@ styleIds:
 useCaseIds:
   - social-post
   - editorial
-coverAssetId: a_067
+coverAssetId: a_168
 relatedTemplateIds: []
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: none
@@ -28,10 +28,10 @@ source:
 annotations:
   - phrase: two slices of chashu pork
     region:
-      x: 0.3
-      y: 0.34
-      w: 0.24
-      h: 0.12
+      x: 0.125
+      y: 0.235
+      w: 0.385
+      h: 0.43
     note:
       en: A count keeps toppings from multiplying across the bowl.
       zh-Hans: 写明数量，配料就不会铺满整碗。
@@ -39,10 +39,10 @@ annotations:
       ar: تحديد العدد يمنع تكاثر الإضافات في الوعاء.
   - phrase: a soft-boiled egg with an orange yolk
     region:
-      x: 0.55
-      y: 0.39
-      w: 0.18
-      h: 0.12
+      x: 0.59
+      y: 0.505
+      w: 0.26
+      h: 0.23
     note:
       en: Naming the yolk colour makes the egg the brightest point in the bowl.
       zh-Hans: 写出蛋黄的颜色，溏心蛋就成了碗里最亮的地方。
@@ -50,10 +50,10 @@ annotations:
       ar: ذكر لون الصفار يجعل البيضة أكثر نقطة سطوعًا.
   - phrase: wooden chopsticks resting at the top right
     region:
-      x: 0.7
-      y: 0.1
-      w: 0.3
-      h: 0.31
+      x: 0.525
+      y: 0.005
+      w: 0.475
+      h: 0.53
     note:
       en: A placed prop leads the eye into the bowl instead of crossing it.
       zh-Hans: 放好位置的道具把视线引入碗中，而不是横穿画面。

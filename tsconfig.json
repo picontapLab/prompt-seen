@@ -21,5 +21,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
-  "exclude": ["node_modules", "out", "dist", ".deploy", "spikes"]
+  "exclude": ["node_modules", "out", "dist", ".deploy", ".artifacts", "spikes"]
 }

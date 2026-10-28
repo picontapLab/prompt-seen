@@ -264,6 +264,12 @@ export const DIGITAL_SOURCE_TYPES = [
   'composite',
 ] as const;
 
+const webpProcessing = z.object({ quality: z.number().int().min(1).max(100), lossless: z.boolean() }).strict();
+export const processingSchema = z.object({
+  version: z.literal(1), thumbnail: webpProcessing, card: webpProcessing, detail: webpProcessing,
+  og: z.object({ quality: z.number().int().min(1).max(100) }).strict(),
+}).strict();
+
 export const mediaSchema = z
   .object({
     id: assetId,
@@ -273,6 +279,8 @@ export const mediaSchema = z
     height: dimension,
     original: z.object({ key: mediaKey }).strict(),
     variants: z.object({ thumbnail: variant, card: variant, detail: variant, og: variant }).strict(),
+    /** Persist reviewed encoding choices so media:import --refresh preserves them. */
+    processing: processingSchema.optional(),
     /** Only crops the Open Graph image (§5.4); everything on the site shows the full image. */
     focalPoint: z.object({ x: unit, y: unit }).strict().default({ x: 0.5, y: 0.5 }),
     placeholder: z.object({ color: hexColor }).strict(),

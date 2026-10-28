@@ -1,0 +1,37 @@
+{
+  "phase": "generation",
+  "reviewer": "Codex visual inspection",
+  "attemptId": "001",
+  "decision": "accept",
+  "checks": {
+    "subject": true,
+    "count": true,
+    "text": true,
+    "style": true,
+    "composition": true,
+    "artifacts": true
+  },
+  "reason": "Four lavender/violet hill silhouettes are distinct, with pale moon high on right and darkest foreground ridge. Both annotation regions were placed on this output.",
+  "artifacts": {
+    ".artifacts/gpt-image-v1/raw/a_098/001/output.png": "7ca4fee777e563de5a7935154b2ebeb84f61fd328dc30fe1d101be8fca733af9"
+  },
+  "focalPoint": {
+    "x": 0.55,
+    "y": 0.55
+  },
+  "regions": [
+    {
+      "x": 0.815,
+      "y": 0.1,
+      "w": 0.069,
+      "h": 0.125
+    },
+    {
+      "x": 0,
+      "y": 0.575,
+      "w": 1,
+      "h": 0.425
+    }
+  ],
+  "reviewedAt": "2026-10-28T14:09:04.845Z"
+}
