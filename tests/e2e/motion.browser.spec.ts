@@ -50,6 +50,28 @@ test.describe('§12.8-6: typing while the preview changes keeps the input, the c
     expect(await input.evaluate((el: HTMLInputElement) => [el.selectionStart, el.selectionEnd])).toEqual([5, 5]);
   });
 
+  test('text typed before the editor has started is kept', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    // Hold the scripts: the page is readable and typeable before they run (slow networks).
+    let release!: () => void;
+    const held = new Promise<void>((r) => (release = r));
+    await page.route('**/_next/static/chunks/*.js', async (route) => {
+      await held;
+      await route.continue();
+    });
+    await page.goto(`${BASE}${template!.path}`, { waitUntil: 'commit' });
+    const input = field(page, textField!.name);
+    await input.fill('Lantern');
+    release();
+    await expect(preview(page)).toContainText('Lantern');
+    // Rendering the field again (opening the docked preview) keeps it too.
+    const handle = page.locator('section:has(> [data-sheet-body]) button[aria-expanded]');
+    await handle.click();
+    await expect(handle).toHaveAttribute('aria-expanded', 'true');
+    await expect(input).toHaveValue('Lantern');
+    await expect(preview(page)).toContainText('Lantern');
+  });
+
   test('phone: opening and closing the docked preview keeps what was typed', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${BASE}${template!.path}`);
@@ -156,6 +178,28 @@ test.describe('§12.8-9: switching theme or language replays no page animation a
     await editorReady(page);
     await expect(field(page, textField!.name)).toHaveValue('Copper kettle');
   });
+});
+
+test('“Clear filters” stays where it first appears while the chosen filters load', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const style = index.prompts.flatMap((p) => p.styleIds)[0];
+  test.skip(!style, 'no styles in this content');
+  const url = `${BASE}/${prefix}/prompts/`;
+  // Hold the chunks the page loads on demand (the chosen filters' chips among them), not those
+  // its HTML references, so the page starts and the row first shows without them.
+  const html = await (await page.request.get(url)).text();
+  await page.route('**/_next/static/chunks/*.js', async (route) => {
+    if (!html.includes(new URL(route.request().url()).pathname)) await new Promise((r) => setTimeout(r, 1500));
+    await route.continue();
+  });
+  await page.goto(`${url}#style=${style}`);
+  await takenOver(page);
+  const bar = page.locator('[data-filtered]');
+  const clear = bar.getByRole('button', { name: message(code, 'feed.filters.clear') });
+  await expect(clear).toBeVisible();
+  const before = await clear.boundingBox();
+  await expect(bar.getByRole('grid', { name: message(code, 'feed.filters.active') })).toBeVisible();
+  expect(await clear.boundingBox()).toEqual(before);
 });
 
 test.describe('§12.8-10: nothing moves once fonts and images have loaded', () => {
