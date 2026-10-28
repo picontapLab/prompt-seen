@@ -86,9 +86,9 @@ popup and the showcase band (9.8). Template detail: the same shared chunk (34.9)
 
 | # | Change | Saves (gzip) | Risk and cost | Owner |
 | --- | --- | --- | --- | --- |
-| 1 | `DetailPopup` on demand: `PopupHost` keeps the click capture; the popup loads at hydration or on intent | ~10–14 KiB first load on the list and topic pages (list ≈ 200) | Medium–high. The click commits the open dialog synchronously so an Esc right after it closes the popup (§12.8-3); a click before the code arrives needs a pending state that handles Esc and Back itself | step 4a |
+| 1 | ~~`DetailPopup` on demand: `PopupHost` keeps the click capture; the popup loads at hydration or on intent~~ **Done 2026-10-27**, see below | ~10–14 KiB first load on the list and topic pages (list ≈ 200); measured 10.9–14.7 | Medium–high. The click commits the open dialog synchronously so an Esc right after it closes the popup (§12.8-3); a click before the code arrives needs a pending state that handles Esc and Back itself | step 4a |
 | 2 | Header links prefetch on intent (hover / focus → `router.prefetch`) instead of in the viewport | ~29 KiB JS and ~27 KiB RSC payload after idle on every page but the list | Low in code; the first header navigation waits for the network. A §16.4 "导航预取" decision | shell (1c) |
-| 3 | Precompiled ICU messages (next-intl `experimental.messages.precompile`, icu-minify) | ~9 KiB first load on every page | Medium. Catalogs are read with `fs` and passed as props, so either load them through the plugin's catalog loader or precompile the client namespaces at build time and alias `use-intl/format-message` for the browser only | i18n (1a) |
+| 3 | ~~Precompiled ICU messages (next-intl `experimental.messages.precompile`, icu-minify)~~ **Done 2026-10-27**, see below | ~9 KiB first load on every page; measured 8.8–8.9 | Medium. Catalogs are read with `fs` and passed as props, so either load them through the plugin's catalog loader or precompile the client namespaces at build time and alias `use-intl/format-message` for the browser only | i18n (1a) |
 | 4 | Quick search code on intent instead of idle | ~45 KiB after idle on every page | Reverses the 3d decision that `/` followed at once by typing reaches a ready field; needs buffered keystrokes | search (3d) |
 | 5 | Tooltip positioning on demand | ~4–5 KiB first load on every page | Medium. React Aria's `TooltipTrigger` and `Tooltip` share one module; the trigger would move to the `useTooltipTrigger` hooks | primitives (1c) |
 | 6 | React Aria strings only for built locales | a few KiB per collection chunk, now mostly lazy | Turbopack has no counterpart of `@react-aria/optimize-locales-plugin`; needs a `turbopack.rules` loader | — |
@@ -116,3 +116,55 @@ dialog load on first use.
 
 Explore is over the ~200 KiB budget on purpose: its side panel of counted chips and the order
 control (React Aria toggle buttons and radio group) are on the first screen of a noindex tool page.
+
+## Popup on demand and precompiled messages (2026-10-27)
+
+Reductions 1 and 3 above, on `main` aa65f2d (after step 6) and on branch `first-load-budget`. Same
+method: reference nginx, Chrome, cold cache, 1280 × 800, gzip level 6, first load = the scripts the
+HTML references. Measured in both builds; `zh-hans` pages measure the same as `en`.
+
+| Page | `/prompt-seen` before | after | root before | after | After idle (`/prompt-seen`) before → after |
+| --- | --- | --- | --- | --- | --- |
+| `/en/` (home) | **211.6** | 191.9 | **211.6** | 191.8 | 288.1 → 280.2 |
+| `/en/prompts/` (list) | **219.9** | 200.0 | **219.9** | 199.9 | 288.1 → 279.0 |
+| `/en/prompts/amber-harbor-sunset/` | 196.7 | 187.8 | 196.6 | 187.8 | 295.8 → 275.7 |
+| `/en/templates/ink-scroll/` | **212.7** | **203.9** | **212.7** | **203.8** | 311.8 → 291.8 |
+| `/en/collections/quiet-landscapes/` | 191.4 | 182.6 | 191.4 | 182.5 | 288.1 → 268.0 |
+| `/en/styles/ink/` (topic) | **209.0** | 185.5 | **208.9** | 185.5 | 297.1 → 289.0 |
+| `/en/explore/` | **255.0** | **235.0** | **254.9** | **235.0** | 300.5 → 291.5 |
+| `/en/favorites/` | **212.5** | 189.5 | **212.5** | 189.4 | 291.5 → 292.0 |
+
+KiB, gzip; bold is over the ~200 KiB budget.
+
+- **Precompiled messages** (−8.8 to −8.9 KiB on every page; the whole change on the Prompt detail,
+  template and collection pages). `src/i18n/request.ts` compiles every catalog with icu-minify
+  (`compileMessages` in `catalog.ts`), and `next.config.ts` aliases `use-intl/format-message` to its
+  format-only formatter for every bundle, as next-intl's `messages.precompile` does for imported
+  catalogs. `intl-messageformat` and the ICU parser leave the browser. Server components, client
+  islands and the browser format the same compiled messages; `t.raw` is not available.
+  `catalogTranslator` (route handlers, `content:export`) formats with icu-minify directly, so
+  bundled and unbundled callers agree; a unit test holds every message of every catalog equal to
+  the runtime formatter's output.
+- **Popup on demand** (a further −10.9 home, −11.1 list, −11.2 explore, −14.2 favourites, −14.7
+  topic). `PopupHost` keeps the click capture and imports `DetailPopup` once it has hydrated; the
+  popup and the detail body's client parts that only it uses now arrive after first load. A click
+  before the code opens `PendingDialog`, a stand-in with the frame, title and status line the popup
+  shows while its data loads: it opens in the click's commit, Esc, Close and the scrim go Back once,
+  Back closes it and returns focus to the card, and when the code arrives the popup replaces it in
+  one commit without replaying its entrance (`takeover`). `popup.browser.spec.ts` holds the code
+  back to test this.
+- The after-idle totals of pages without a popup fall by ~20 KiB as well: the list route's client
+  code that header-link prefetches bring no longer includes the popup.
+
+Template detail stays 3.9 KiB over: its extra 21 KiB over the shell is the editor, the page's first
+screen (the fields with React Aria's text field and input hooks, the controls and the preview). The
+next cut is 5 (tooltip positioning on demand, ~4–5 KiB on every page), which would bring it under 200.
+Explore stays over on purpose (above).
+
+Fonts in the same change: `zh-Hans` and `ja` pages downloaded IBM Plex Sans 400 and Fira Sans
+Extra Condensed 700 twice, because next/font names a file after its preload and size-adjust
+settings and the "… for CJK" faces of those files had other settings than the preloaded Latin
+faces. They now repeat the Latin faces' settings, so each file has one address. Fonts on the root
+build's `/zh-hans/` home 203.5 → 156.7 KiB, list 203.2 → 156.3, Prompt detail 190.0 → 143.1;
+`/en/` unchanged at 123.1.
+

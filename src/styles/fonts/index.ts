@@ -12,6 +12,10 @@ import localFont from 'next/font/local';
 //
 // "… for CJK" families reuse the same files with U+2014, U+2018–U+201F and U+2026 left out of
 // the range, so Chinese and Japanese pages render those with full-width CJK glyphs (§11.1.2).
+// next/font names a file after its preload and size-adjust settings, so the CJK faces of the two
+// preloaded files (body 400, display 700) repeat the Latin faces' settings: the same file then has
+// one address and CJK pages fetch the preloaded copy instead of a second one (step 6, §17.3).
+// Their "… Fallback" faces are unused.
 //
 // next/font needs literal arguments, hence the repetition. Never call these from client code.
 
@@ -81,8 +85,22 @@ export const plexSansCyrillic = localFont({
   ],
 });
 export const plexSansForCjk = localFont({
+  src: './files/ibm-plex-sans-latin-400-normal.woff2',
+  weight: '400',
+  display: 'swap',
+  preload: true, // as plexSansLatin: one address for the file
+  adjustFontFallback: 'Arial',
+  declarations: [
+    { prop: 'font-family', value: 'IBM Plex Sans for CJK' },
+    {
+      prop: 'unicode-range',
+      value:
+        'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-2013,U+2015-2017,U+2020-2025,U+2027-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
+    },
+  ],
+});
+export const plexSansForCjkHeavier = localFont({
   src: [
-    { path: './files/ibm-plex-sans-latin-400-normal.woff2', weight: '400' },
     { path: './files/ibm-plex-sans-latin-500-normal.woff2', weight: '500' },
     { path: './files/ibm-plex-sans-latin-600-normal.woff2', weight: '600' },
   ],
@@ -179,10 +197,23 @@ export const firaCyrillic = localFont({
   ],
 });
 export const firaForCjk = localFont({
-  src: [
-    { path: './files/fira-sans-extra-condensed-latin-600-normal.woff2', weight: '600' },
-    { path: './files/fira-sans-extra-condensed-latin-700-normal.woff2', weight: '700' },
+  src: './files/fira-sans-extra-condensed-latin-700-normal.woff2',
+  weight: '700',
+  display: 'swap',
+  preload: true, // as firaLatin: one address for the file
+  adjustFontFallback: 'Arial',
+  declarations: [
+    { prop: 'font-family', value: 'Fira Sans Extra Condensed for CJK' },
+    {
+      prop: 'unicode-range',
+      value:
+        'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-2013,U+2015-2017,U+2020-2025,U+2027-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
+    },
   ],
+});
+export const firaForCjkSemibold = localFont({
+  src: './files/fira-sans-extra-condensed-latin-600-normal.woff2',
+  weight: '600',
   display: 'swap',
   preload: false,
   adjustFontFallback: false,

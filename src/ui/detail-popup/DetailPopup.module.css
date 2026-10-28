@@ -33,6 +33,11 @@
     opacity: 0;
     transition: opacity var(--duration-exit) var(--ease-exit);
   }
+  /* The popup taking over PopupHost's stand-in dialog, which is on screen already (§16.1). */
+  .dialog[data-instant]::backdrop,
+  .dialog[data-instant] .panel {
+    animation: none;
+  }
 
   /* Phones: the full screen (§11.2). */
   .panel {
