@@ -102,7 +102,7 @@ export function ogCrop(width: number, height: number, focal: { x: number; y: num
 export async function renderVariants(
   input: Buffer,
   analysis: Pick<Analysis, 'width' | 'height'>,
-  media: Pick<MediaSource, 'focalPoint' | 'credit' | 'provenance'>,
+  media: Pick<MediaSource, 'focalPoint' | 'credit' | 'provenance' | 'processing'>,
 ): Promise<RenderedVariant[]> {
   const xmp = buildXmp(media.credit, media.provenance);
   const longest = Math.max(analysis.width, analysis.height);
@@ -110,10 +110,15 @@ export async function renderVariants(
 
   for (const name of ['thumbnail', 'card', 'detail'] as const) {
     const side = Math.min(VARIANT_LONGEST_SIDE[name], longest);
+    const encoding = media.processing?.[name];
     let pipeline = sharp(input)
       .autoOrient()
       .resize({ width: side, height: side, fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: name === 'thumbnail' ? 76 : 82, effort: 5 });
+      .webp(
+        encoding?.lossless
+          ? { lossless: true, effort: 5 }
+          : { quality: encoding?.quality ?? (name === 'thumbnail' ? 76 : 82), effort: 5 },
+      );
     // Metadata only where it matters for search and sharing; small variants stay small (§9.7).
     if (name === 'detail') pipeline = pipeline.withXmp(xmp);
     const { data, info } = await pipeline.toBuffer({ resolveWithObject: true });
@@ -126,7 +131,7 @@ export async function renderVariants(
     .extract(crop)
     .resize({ width: OG_SIZE.width, height: OG_SIZE.height, fit: 'fill', withoutEnlargement: true })
     .flatten({ background: '#ffffff' })
-    .jpeg({ quality: 84, mozjpeg: true })
+    .jpeg({ quality: media.processing?.og.quality ?? 84, mozjpeg: true })
     .withXmp(xmp)
     .toBuffer({ resolveWithObject: true });
   out.push({ name: 'og', bytes: data, width: info.width, height: info.height, mimeType: 'image/jpeg' });

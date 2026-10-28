@@ -8,7 +8,7 @@ import { createUrlModule } from '../../src/modules/url/create';
 import { loadContent } from '../lib/content/load';
 import { ROOT } from '../lib/paths';
 
-// The index over the repository's sample content (design doc §13, §16.3 搜索样本): typical
+// The index over the repository's content (design doc §13, §16.3 搜索样本): typical
 // queries per language find their entry, drafts stay out of production indexes, and kinds
 // without pages in this build are left out.
 
@@ -61,7 +61,13 @@ describe('typical queries (§16.3)', () => {
   it('find entries by English words and model names in other languages (mixed text)', () => {
     expect(titles('zh-Hans', 'neon').length).toBeGreaterThan(0);
     expect(titles('zh-Hans', 'neon 肖像')).toContain('霓虹肖像手机壁纸');
-    expect(titles('zh-Hans', 'sample renderer').length).toBeGreaterThan(0);
+    expect(titles('zh-Hans', 'GPT Image').length).toBeGreaterThan(0);
+    expect(
+      production
+        .engine('zh-Hans')
+        .docs.filter((d) => d.kind === 'prompt')
+        .every((d) => d.model === 'GPT Image'),
+    ).toBe(true);
   });
 
   it('find entries through taxonomy aliases (§13.2)', () => {

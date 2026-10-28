@@ -1,0 +1,19 @@
+{
+  "phase": "generation",
+  "reviewer": "Codex visual inspection",
+  "attemptId": "001",
+  "decision": "reject",
+  "checks": {
+    "subject": true,
+    "count": false,
+    "text": true,
+    "style": true,
+    "composition": true,
+    "artifacts": true
+  },
+  "reason": "Extra mountain/foreground ranges make the requested four ranges uncountable; simplify the public prompt before another attempt.",
+  "artifacts": {
+    ".artifacts/gpt-image-v1/raw/a_046/001/output.png": "b183ef43fbd1a5e8dd45aacfb8a9c3914ab2e71576f560f9834971ec2a11ba66"
+  },
+  "reviewedAt": "2026-10-28T12:31:16.617Z"
+}

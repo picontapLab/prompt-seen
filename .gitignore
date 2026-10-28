@@ -1,6 +1,9 @@
 # OS
 .DS_Store
 
+# Persistent local generation sources (content:build must not clear them)
+.artifacts/
+
 # Dependencies
 node_modules/
 

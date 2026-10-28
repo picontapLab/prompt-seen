@@ -2,7 +2,7 @@
 id: p_003
 slug: tea-can-on-sage
 createdAt: 2026-07-09
-updatedAt: 2026-07-09
+updatedAt: 2026-10-28
 promptSource:
   type: literal
   file: prompt.txt
@@ -13,12 +13,12 @@ styleIds:
   - minimal
 useCaseIds:
   - packaging
-coverAssetId: a_003
+coverAssetId: a_104
 relatedTemplateIds:
   - t_001
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: optional
@@ -26,3 +26,4 @@ source:
   author: Prompt Seen
   url: null
   license: CC BY 4.0
+annotations: []

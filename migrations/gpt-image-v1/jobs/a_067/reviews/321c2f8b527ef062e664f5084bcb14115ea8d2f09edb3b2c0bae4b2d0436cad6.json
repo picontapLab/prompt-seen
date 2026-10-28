@@ -1,0 +1,43 @@
+{
+  "phase": "generation",
+  "reviewer": "Codex visual inspection",
+  "attemptId": "003",
+  "decision": "accept",
+  "checks": {
+    "subject": true,
+    "count": true,
+    "text": true,
+    "style": true,
+    "composition": true,
+    "artifacts": true
+  },
+  "reason": "Reinspection confirms exactly two overlapping chashu slices. Orange-yolk egg, scallions, wavy noodles and upper-right chopsticks match the flat top-down brief.",
+  "artifacts": {
+    ".artifacts/gpt-image-v1/raw/a_067/003/output.png": "b610dafe0133c5cf4af12e05dd61f6d5d9af6c422b1198b4a4da0e77b89ae0b9"
+  },
+  "focalPoint": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "regions": [
+    {
+      "x": 0.125,
+      "y": 0.235,
+      "w": 0.385,
+      "h": 0.43
+    },
+    {
+      "x": 0.59,
+      "y": 0.505,
+      "w": 0.26,
+      "h": 0.23
+    },
+    {
+      "x": 0.525,
+      "y": 0.005,
+      "w": 0.475,
+      "h": 0.53
+    }
+  ],
+  "reviewedAt": "2026-10-28T13:55:12.308Z"
+}

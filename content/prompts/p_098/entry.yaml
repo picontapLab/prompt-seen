@@ -2,7 +2,7 @@
 id: p_098
 slug: lavender-twilight-hills
 createdAt: 2026-10-12
-updatedAt: 2026-10-12
+updatedAt: 2026-10-28
 promptSource:
   type: literal
   file: prompt.txt
@@ -13,11 +13,11 @@ styleIds:
   - minimal
 useCaseIds:
   - wallpaper
-coverAssetId: a_098
+coverAssetId: a_199
 relatedTemplateIds: []
 model:
-  displayName: Sample Renderer 1
-  providerModelId: sample-renderer-1
+  displayName: GPT Image
+  providerModelId: null
   verification: verified
 inputRequirements:
   referenceImage: none
@@ -28,10 +28,10 @@ source:
 annotations:
   - phrase: a pale moon high on the right
     region:
-      x: 0.761
-      y: 0.13
-      w: 0.079
-      h: 0.14
+      x: 0.815
+      y: 0.1
+      w: 0.069
+      h: 0.125
     note:
       en: Placing the moon high keeps it clear of the ridges.
       zh-Hans: 把月亮放高，它就不会被山脊遮住。
@@ -39,9 +39,9 @@ annotations:
   - phrase: the darkest ridge in the foreground
     region:
       x: 0
-      y: 0.636
+      y: 0.575
       w: 1
-      h: 0.364
+      h: 0.425
     note:
       en: Ordering values from dark to light builds depth without perspective.
       zh-Hans: 由深到浅排列明度，不用透视也能产生纵深。

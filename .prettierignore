@@ -3,6 +3,8 @@
 out/
 dist/
 .deploy/
+.artifacts/
+.claude/
 public/generated/
 .generated/
 deploy/generated/
@@ -20,6 +22,9 @@ playwright-report/
 
 # Content is human-edited and checked by content:validate instead
 content/
+
+# Immutable migration evidence uses canonical JSON serialization and byte archives
+migrations/
 
 # Storybook build
 storybook-static/

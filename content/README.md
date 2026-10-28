@@ -5,11 +5,12 @@ are edited by hand, reviewed in pull requests and checked by `npm run content:va
 search data and host configuration are generated from them by `npm run content:build`; nothing
 generated is edited by hand.
 
-The entries here are **a sample set** for building and testing the site (design doc §17.6). Their
-images are procedural flat-vector drawings, not model outputs; "Sample Renderer 1" is a
-placeholder model name; and their zh-Hans and ja translations were written alongside the English
-text and marked `reviewed` only so that every publishing path can be tested. Real entries replace
-them as they are tested and reviewed.
+The 101 content images are GPT Image outputs generated from the recorded prompts. Each has
+an immutable example run and generation/display reviews in `migrations/gpt-image-v1/`. The
+site mother image may be a lossless WebP conversion; display variants are compressed separately.
+The built-in tool does not expose an exact provider model ID or usage, so those values remain
+unknown. The original procedural media remain for rollback, and the 44 old runs are archived.
+Existing translation statuses do not imply a new human language review.
 
 ## Commands
 
@@ -160,6 +161,10 @@ point `currentVersion` at it.
 The newest run's date is shown as "last tested".
 
 ## Images
+
+For this migration, lossless WebP conversion may be used before import, with the tool output
+retained locally for audit. An optional `processing` profile records encoding settings so
+`media:import -- --refresh` reproduces the same display configuration.
 
 `media:import` validates the file (JPEG, PNG, WebP or AVIF), stores the original unchanged and
 writes four sizes: `thumbnail` (480 px), `card` (960 px) and `detail` (1600 px) as WebP, never

@@ -1,0 +1,43 @@
+{
+  "phase": "generation",
+  "reviewer": "Codex visual inspection",
+  "attemptId": "002",
+  "decision": "accept",
+  "checks": {
+    "subject": true,
+    "count": true,
+    "text": true,
+    "style": true,
+    "composition": true,
+    "artifacts": true
+  },
+  "reason": "Revised prompt gives crisp flat illustrated noodles, exactly two chashu slices, an orange-yolk egg, scallions and upper-right wooden chopsticks.",
+  "artifacts": {
+    ".artifacts/gpt-image-v1/raw/a_067/002/output.png": "773d95bf47c30f6d3493d661ed5796d1ab36faa5a06cd33021b8796a415a2a25"
+  },
+  "focalPoint": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "regions": [
+    {
+      "x": 0.114,
+      "y": 0.227,
+      "w": 0.413,
+      "h": 0.45
+    },
+    {
+      "x": 0.624,
+      "y": 0.475,
+      "w": 0.273,
+      "h": 0.249
+    },
+    {
+      "x": 0.565,
+      "y": 0.014,
+      "w": 0.435,
+      "h": 0.465
+    }
+  ],
+  "reviewedAt": "2026-10-28T11:10:55.056Z"
+}

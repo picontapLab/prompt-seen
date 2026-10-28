@@ -7,8 +7,8 @@ the root of a domain or under a subpath of another site, such as `example.com/pr
 Status: the first version is built (design doc §17, steps 1a–5): Prompt and template pages,
 the list with continuous loading and filters, the template editor, search, topics and collections,
 the detail popup, the home page, favourites, structured data, sitemaps and Markdown versions for AI
-tools, and the production deploy with rollback. The content is a sample set (`content/README.md`)
-until tested prompts replace it. Step 6, the full acceptance pass, is next.
+tools, and the production deploy with rollback. The content images are generated with GPT Image from their recorded prompts
+(`migrations/gpt-image-v1/report.json`). Step 6, the full acceptance pass, is next.
 
 ## Quick start
 
@@ -59,6 +59,13 @@ documents every key), overridden by environment variables ([`.env.example`](.env
 `SITE_ORIGIN`, `BASE_PATH` (empty for a root deployment), `URL_PATTERN`, `MEDIA_BASE_URL`,
 `BUILD_MODE` (`preview`, the default, marks every page noindex; `production` is for the live
 site), `BUILD_ID` and `CONTENT_DIR`. Changing the base path needs a new build.
+
+## Generating content images
+
+`npm run media:generate -- status --json` shows the 101-image migration. The CLI handles
+prompt snapshots, claims, receipts, reviews, compression, staged content, application and rollback.
+Actual generation uses the built-in image tool; no API key is required. See
+[`docs/gpt-image-migration-spec.md`](docs/gpt-image-migration-spec.md) for commands and contracts.
 
 ## Deploying
 

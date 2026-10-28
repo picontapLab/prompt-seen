@@ -613,6 +613,8 @@ provenance:
 
 实施细节（1.9）：`credit` 增加 `copyrightNotice`（第 9.7 节的 Copyright Notice）；可选的 `caption` 按 locale 提供图注。对象键形如 `media/a_001/{slug}-{规格}-{哈希前 12 位}.{扩展名}`，哈希取自该规格文件本身，因此修改焦点或署名后重新生成的规格得到新键，不覆盖已发布地址（第 10.4 节）。
 
+图片编码配置：media YAML 可选 `processing: { version: 1, thumbnail: { quality: 76, lossless: false }, card: { quality: 82, lossless: false }, detail: { quality: 82, lossless: false }, og: { quality: 84 } }`。quality 为 1–100 的整数；WebP 可启用 lossless，启用后不传 quality；OG 只支持 JPEG quality。缺省配置沿用上述默认值，兼容旧清单。导入与 `media:import --refresh` 使用同一配置，保留已验收的图片编码选择。
+
 - 对象键中的可读词在导入时由当时的 slug 生成，之后 slug 变更不重命名已发布对象，避免破坏缓存与外部引用。
 - `focalPoint` 只用于站外分享图（`og` 规格）的裁切。站内所有展示位置（首页展出、列表、特写行、详情、相关推荐）都按原始比例完整显示，见第 11.12 节。
 - `placeholder.color` 是导入时提取的主色，用作卡片加载前的底色，见第 11.9 节。
@@ -1132,6 +1134,8 @@ flowchart LR
 上述尺寸是初始配置。保持原始比例，不放大低分辨率来源；按实际设备和质量测试调整。根据需要生成 WebP、AVIF 和兼容回退格式，通过 `srcset` 与 `sizes` 选择适合的规格。
 
 实施细节（1.9）：`thumbnail`、`card`、`detail` 输出 WebP，`og` 输出 JPEG，均不放大；`og` 是按焦点裁切的 1200:630 区域，原图不足时按裁切区域的实际尺寸输出。导入接受 JPEG、PNG、WebP 与 AVIF，拒绝动图与过小图片。工具同时给出主色与建议焦点（libvips 的 attention 策略），维护者可在 YAML 中修改后用 `media:import --refresh` 重新生成。
+
+各规格的编码质量与 WebP 无损开关读取第 5.4 节的可选 `processing` 配置；导入和 refresh 共用同一渲染函数，refresh 保留配置并验证母图哈希，再生成新的不可变对象键。
 
 ### 10.3 页面加载规则
 
@@ -2792,6 +2796,8 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 | 分类与专题 | 一个达到发布条件的分类专题、一个未达到的分类，以及 2 个合集 |
 
 实施说明（1.9）：样例图片由程序绘制（扁平矢量，IPTC 来源类型 `algorithmicMedia`），不是模型输出；“Sample Renderer 1”是占位模型名。样例的简体中文与日语译文与英文同时写成，为测试发布路径标为 `reviewed`，并未经过人工审核；阿拉伯语为 `machine-draft` 草稿，只在预览构建中出现。关于页与 `content/README.md` 说明了这一点。真实内容到位后逐步替换。
+
+更新（2026-10-28）：按 [GPT Image 图片生成与样例迁移规格](gpt-image-migration-spec.md)，101 张内容图片已逐张通过内置 GPT Image 实际生成与视觉审核，并切换为新资产；100 份 Prompt 运行与 1 份独立模板运行保留实际 prompt 和可获取的模型信息，未返回的精确模型 ID 与用量保持未知。母图可无损转换，四种展示规格分别压缩；7 条内容的 20 个标注按新图定位。旧 44 份运行按原字节归档，旧图片保留用于回退。实际生成中发现的风格、文字与计数问题通过公开 prompt 修订和新模板版本处理，冻结的旧模板和运行不变。原发布范围与地址保持一致，译文状态单独维护。实现、评审和完整验收结果见 `migrations/gpt-image-v1/report.json`；预览子路径与生产根路径构建及 Chrome 端到端检查均已通过。
 
 内容线由维护者负责，与代码会话同时进行，不阻塞代码会话：
 

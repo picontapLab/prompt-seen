@@ -1,0 +1,3800 @@
+{
+  "schemaVersion": 1,
+  "migrationId": "gpt-image-v1",
+  "revision": 3,
+  "baseline": {
+    "head": "9286a0c68d86443b3b13e3c622f77ff471ece1f9",
+    "createdAt": "2026-10-28T11:08:18.935Z",
+    "timezone": "America/Los_Angeles",
+    "files": {
+      "content/collections/c_001/entry.yaml": "8937c249a496d5eba1627b96bae17e7091311cf1b57e1a56be23496142d195b0",
+      "content/collections/c_001/locales/en.mdx": "5fefeef7a6812b555c41ea84a77c79ab53e74ab8f9797843b3da8e314638402a",
+      "content/collections/c_001/locales/zh-Hans.mdx": "f4638b9c4c80744c7fe8dedaf2e7d43b3bd98d772b0eca13a9506a797e72d6a4",
+      "content/collections/c_002/entry.yaml": "5dffcff8a6707e7820c0aa4a8b3097a1ea34a18514f42fa9777516617d079cbb",
+      "content/collections/c_002/locales/en.mdx": "9c8ff76616ad0eeefea7b8bdfac01bf3ad60e2d3cea03ec2f32a8b4ca8619929",
+      "content/collections/c_002/locales/ja.mdx": "c5f9b04234d12086721970766a59b1559964c3230b918d82fba3815d65e58570",
+      "content/collections/c_002/locales/zh-Hans.mdx": "b66337cf3419d4799e94b76e729fbef0ad9e16985ee7290a790ada3372db2a9c",
+      "content/examples/x_001/prompt.txt": "b1ad3d936f062b44e2d32acdafafe2b7760f6650374710de9a50f4658ed58fef",
+      "content/examples/x_001/run.yaml": "f75ef9ae6c459c0132ad2f917a091d48ad91dd0692ea60e85be128fc623edfd0",
+      "content/examples/x_002/prompt.txt": "7d4215f1b5afe80da893d7caeac94ce968767ac93137db7ced0a4ac3636a6c92",
+      "content/examples/x_002/run.yaml": "4e68ce852b9021ea5c5ec140c153a52161518e689b73cfe18ba1f322d2bc756a",
+      "content/examples/x_003/prompt.txt": "f15b865293df489bf7861256840364f744bb969b62e0c463e33c3925da9c1baa",
+      "content/examples/x_003/run.yaml": "f5eb9ec307c575b572ed8ee0c6d9239f12c02a7537bb6f9a6fd2b3585bec7449",
+      "content/examples/x_004/prompt.txt": "2673b6574b59edcf7a51b683429f307c58917d6cbeb39bdead6f709842f04272",
+      "content/examples/x_004/run.yaml": "f700b0a2fc0be18d3d8b3cf923f6a78a77108abff471da6d1a6eab6e67deea0d",
+      "content/examples/x_005/prompt.txt": "955d3edb3883e123bb35d43e6b008c61b6625dbebe7a8f9dedd68facd19a9537",
+      "content/examples/x_005/run.yaml": "82c65fd5561cd478d81866b41ca9fcbf051e0295f7a31669b75865e3f8541225",
+      "content/examples/x_006/prompt.txt": "8d9af7820a5e57ff236699aa57e44fb4ee7c900e2fd47260e2ff5c809c6046f6",
+      "content/examples/x_006/run.yaml": "f8a58a03b903013e28e3e893750637b088df1aad1999407f704c2596509ae7ab",
+      "content/examples/x_007/prompt.txt": "f276e58ce18ee4d423fdc155ed290040f68a0fb8b581fa3d0996e0b13563ceeb",
+      "content/examples/x_007/run.yaml": "920f234a12b75d9f3db765d2bca87d5cbb66ce91c78f62e96102739266c731cc",
+      "content/examples/x_008/prompt.txt": "20cb02af5337f41ebb71b58dead64672a00afe1068dfcdc20dc7c780af038fb6",
+      "content/examples/x_008/run.yaml": "b7e493f407330fe0d471730f13fa1b27868ead1c82ae0d08a90ae0b6cfabcb4f",
+      "content/examples/x_009/prompt.txt": "bee1a6f87c2090b84eb1e717ae20c6cc4f88965a653300446d673403bca60507",
+      "content/examples/x_009/run.yaml": "19e4c077a1583316406198df7791b563c3c15625d84a15054643efe0f24815fe",
+      "content/examples/x_010/prompt.txt": "1c02bfd400dbba0e5ba44dc19b203ee604d4b3decb0d348ba2854761202167ca",
+      "content/examples/x_010/run.yaml": "395cfab8c46192f8c41efc50f7f3998b46315e3478514842d9b45b1541b24df9",
+      "content/examples/x_011/prompt.txt": "2ea47bb05f9166ab15c1700e7cf1a906ec36d857fafc8f9384207129c6ffb51f",
+      "content/examples/x_011/run.yaml": "5e4eb49a978c6380b71dad8553672d95f33105180646a930a599b6e7e931115c",
+      "content/examples/x_012/prompt.txt": "d0c05c85258374a8d3fa0af10901b1dbcb80ad225efdad553c6bba5f6e43e9db",
+      "content/examples/x_012/run.yaml": "62304bd81af3e0734427369622ceef91ee8ade24acc237e88d0f3d19514fadad",
+      "content/examples/x_013/prompt.txt": "d86e28c962d73319981f548efd349bf11a6c6d51cb63b7a827b9aac8a729adf7",
+      "content/examples/x_013/run.yaml": "defe46582c440f9b73f63755d98d896678176fe684afd169de189b2fd797b5cc",
+      "content/examples/x_014/prompt.txt": "c243dcdde7e99ae919e17f48bdb531fdd047903a115e2f90dacfc7471e91cafd",
+      "content/examples/x_014/run.yaml": "722536d9fd3bcbe038915602bfe4763c02293b532e4232ecf194743abef27d48",
+      "content/examples/x_015/prompt.txt": "7513f82bbe46123f4985e339696323843429c5486a0dcd85f451f7ead1b7d07e",
+      "content/examples/x_015/run.yaml": "396aa75c70f45e07cb4955f3c4a383a955ff7e5b04bf1471b30b557c02243c8f",
+      "content/examples/x_016/prompt.txt": "fc12d910486f8f70b0c7ad25948d981c566554e8c62d01b950ad7fbcfe80fa11",
+      "content/examples/x_016/run.yaml": "454f058ae848969d7b6429a6e18dc77dd65520edfea5821590ea0d429c6621c2",
+      "content/examples/x_017/prompt.txt": "78f0e233b447efade3359753bbf05a42cadcd7fc8e712f4a61c1c9ea641dd589",
+      "content/examples/x_017/run.yaml": "ae8b1b532fa1b626f441209fc9cb6c9efbb3f6fd34844cc7cbbc936d45943550",
+      "content/examples/x_018/prompt.txt": "56c277a4bf34f27b28c1252f33a09df452391fc62e13cbe47edd8e9cc7ce9032",
+      "content/examples/x_018/run.yaml": "2211a9e19dbf308bbe4e6baca5853837305b4264efc29246da217c2e3123eb96",
+      "content/examples/x_019/prompt.txt": "908c659db86fe8766f775aa79e2923659dfb3f268eeea50350aa62f8d5bc225a",
+      "content/examples/x_019/run.yaml": "34368bccc9423fb0c44f0d67bdb12d26d34f1ed4aebbfdbf41713cfc24ea2ae8",
+      "content/examples/x_020/prompt.txt": "4fe1b8450dc0756c8d405af417c42163bc7071e2d37c81cedf8914338b32e91a",
+      "content/examples/x_020/run.yaml": "76f238bdcac704d3303280472053f8fe906c637b0741ce000d4c4eb637a38468",
+      "content/examples/x_021/prompt.txt": "cf72971e4974f84d37ef14ff9a1b26ff7dfe37c7e1db9013140a9c3f298f7a3a",
+      "content/examples/x_021/run.yaml": "2ec0e3438e43321333b01931a4f9baa6f44abaef9211309eccfd5520b87940ef",
+      "content/examples/x_022/prompt.txt": "d00f75bc12c1a59e891968f54f2a3ea77fb6285d85d5460da7ff2d49520a3b9f",
+      "content/examples/x_022/run.yaml": "7e8162cde6bede1cc623d33e500a841319f64894315dc0c979f7328a7a822e95",
+      "content/examples/x_023/prompt.txt": "bc9ee427dd9af26ecd124819d59857c2e50a105f18ad3311e08be131bca40637",
+      "content/examples/x_023/run.yaml": "31fb7fc3efedc79024c901c8875ed9f259972f0b6de613279fd52b6fea6cfe2e",
+      "content/examples/x_024/prompt.txt": "a7f8601abafee4016833eb7e128e08ac44057f6e154533275ee4e0c5356116a9",
+      "content/examples/x_024/run.yaml": "26e8eb543c61ebe7bc8b0fa48c36996323b8df324e4bbb5a81b6347c2d3d0e35",
+      "content/examples/x_025/prompt.txt": "11c1472e6d3ecbbda24acf4549d7461b2ba6ac6715069559a8b8b9d60e26255f",
+      "content/examples/x_025/run.yaml": "0cf579a1323f74436a88ed0f02f49cb5fdc589f973acd7314176a509532fe21f",
+      "content/examples/x_026/prompt.txt": "0ebdbb0e32977ff509156f69fd6d00b778c584d5bd9c3bbe9a4c028358dbe1d5",
+      "content/examples/x_026/run.yaml": "4b629046d03cb367a0b414f6a5f246718f109d3ab86ae57d37877bff9356ad17",
+      "content/examples/x_027/prompt.txt": "3bad3b0d5afa0da4ef8fc75bab3d70479d17141aeb009409882cef5d6612f1f5",
+      "content/examples/x_027/run.yaml": "cfc2835c9c2129827a2403dda2db5119fb04da1926c2f07d602bf9060c850df1",
+      "content/examples/x_028/prompt.txt": "5e825f5de6ae99c45bd24b51c83860e8622e2b48155a38620092330f0aaaf531",
+      "content/examples/x_028/run.yaml": "ea69638f13145e966aff1c7176489e9a1c934e6d511089d1addbb1322700d4c3",
+      "content/examples/x_029/prompt.txt": "735cb1aaf43de2f897315280434fda49cce13843a772b275838efcbe5988bfc3",
+      "content/examples/x_029/run.yaml": "96d44bf00c8bc44223b3e0527a3d7e0aa8b6b73dd342d637240d91b6b72a6ad4",
+      "content/examples/x_030/prompt.txt": "29a384a451de1c01dc6e7729b85f0119e760ca748e647eb57b817a2744a0d99a",
+      "content/examples/x_030/run.yaml": "78e2d61f3b900cc1b04ab66506f1105b46d02a3c20a7996c8dc1880f94eb17d9",
+      "content/examples/x_031/prompt.txt": "18db200f684712f3959a9c0754106fa905084fdf191bf16a214411ee768db142",
+      "content/examples/x_031/run.yaml": "a531e95c4fbf13ea2a27fc17558807bd0cbd835959b33cb21a53d86566d3f692",
+      "content/examples/x_032/prompt.txt": "0a07aa3f6364a88b48efd62c23e9b6e59dc79177285617ebfc26be68fd2fee58",
+      "content/examples/x_032/run.yaml": "2bae811cfc780e4800a89e0dc4a73fb2effd44af9a81dbe584278753dea6803b",
+      "content/examples/x_033/prompt.txt": "f724648db3c587d205a3c84eeaa933c880898b69dc190aea06d94de8f583d6ee",
+      "content/examples/x_033/run.yaml": "c336b9fc35e570aa8155028d00dd5cd1cc7f15fd8552c3e8bae2127705eb64ab",
+      "content/examples/x_034/prompt.txt": "9d257bd62a3a03a7a412cd8186cf95a9d92ba5593a0c9150c03321c770fb73ec",
+      "content/examples/x_034/run.yaml": "90e21122b5481359cb788e24ec481378932de14695c3350b921fe3722b09bfa7",
+      "content/examples/x_035/prompt.txt": "00e788c9604bc8f86fa79ee9d1ced4bd2f34e08c03ebef1289236f64ae9380fa",
+      "content/examples/x_035/run.yaml": "235e0c351d787d927840e6fb044a76929760dd314bc736886ca9b7e6606d8fef",
+      "content/examples/x_036/prompt.txt": "62c4daab723c6d5e2d22b1a7fa01d09c009bdf0180777bfc7aab9449d6b76d45",
+      "content/examples/x_036/run.yaml": "10c59fce2de7d23f1f22b7884f2d4822664297f5696885f6272b08a6e8a2e301",
+      "content/examples/x_037/prompt.txt": "d05d0f2dcd883edf3d3d3ae6de30bd4d3d5801b99174920d0665c8accc8ffc58",
+      "content/examples/x_037/run.yaml": "beac91d4c21bdc9c5b0bfa762e270828f3907ea6f27b0b5fa74c53e3707c106f",
+      "content/examples/x_038/prompt.txt": "5c1a9d8f225b4bfdfb201f47ee10cd9708a13f72e4b1301c3ef319b9c98b8bf7",
+      "content/examples/x_038/run.yaml": "80ff9e5d53e59f46530b6354d6961e27a52f1b06151c164ddc70811a8e849249",
+      "content/examples/x_039/prompt.txt": "a11e7a8fbca564ee89b567ce66740001936f78cb25dc440e95b60d3d227f6303",
+      "content/examples/x_039/run.yaml": "4da19b4bbbe11d75cb34134548f8cbef7b96abe27fba5d72456c62712e101bd4",
+      "content/examples/x_040/prompt.txt": "ec89d3e9e39f3b65e32b73e5460f5ae9a4a357aaa24719bbbc3b5c1efb339ffa",
+      "content/examples/x_040/run.yaml": "14189ecc55492a6aa213778076489ffa67b001c01c40ead7b3fd9befb4f0a950",
+      "content/examples/x_041/prompt.txt": "5d5bd48b88f16fe6389cb81b2125dbb591e4f687ae01851044ea1be67c2ce4aa",
+      "content/examples/x_041/run.yaml": "bef09b695e445005f29139b60ee1bb8837ca64d01cdbecac42a18bde6d1689b2",
+      "content/examples/x_042/prompt.txt": "ddd01e2b921596efdd22cfd3455ce258ac7653959b303ca98079973dc6e73f15",
+      "content/examples/x_042/run.yaml": "a742842acad774d576b85142a22b3fe32ea8b8e49546fb76eb5cdde40be04615",
+      "content/examples/x_043/prompt.txt": "ceaecf87cc7cd8ef6d7f91905f9a8f48f067e611761b289a5c5e5d77d2992081",
+      "content/examples/x_043/run.yaml": "2dce15876f1c9454b0d4a9e0e258596fab51291ba9dcda1328cd056694f1a053",
+      "content/examples/x_044/prompt.txt": "6b031fc19233172bf0ec7a1dec90aa12b2a5f620c67ee0c726c4ea125f760a32",
+      "content/examples/x_044/run.yaml": "e43df73935fcfd48e6e74e2b816a9ff3bb5fe23d2b53f1e2921e15a8c1c11377",
+      "content/LICENSE": "d2cfd45ee9e4df612b58d0897be365e8b230678a441df5d1c0740833cd92187b",
+      "content/locales.yaml": "246db75afa4fd0d78e9fb2f91f9edc8a97327d1e0c1e9a841752183ae4363b76",
+      "content/media/a_001.yaml": "2814b44c7bbeed9bb86d9dd14d8f3f3360f7fda18345fb04862fe52c0c9d3af3",
+      "content/media/a_002.yaml": "44cd031dade16efbde04294bb8d0a74b19da0107232307407662d1ecafe62fa5",
+      "content/media/a_003.yaml": "f87ab3fcb0c1a037410597abcd847d00c7ac46081220d2bdd577a75b5f59ebc3",
+      "content/media/a_004.yaml": "59f719896e5e1a9d46819b00ada53fcbd8a4feebf34f204beade3e7aef1c9d39",
+      "content/media/a_005.yaml": "3aee5d3a50ddc33a6ce9a0bd8c61b126c59dd247245834a2e3ab1e5c2afaabfe",
+      "content/media/a_006.yaml": "3f957b076993868109cf26f947dee25a33a616656a1107a987e622ebd0a39972",
+      "content/media/a_007.yaml": "e6278c74a4937a3dec2e6a9d2cbeac0106378ee254fd3aad4f46826b11637e30",
+      "content/media/a_008.yaml": "35054e2c234703353a474b088bfccf8fb1b1ddf468229f237f3ad43bc1b2d840",
+      "content/media/a_009.yaml": "872be419587e5f3d504521bc8bd8cebc72c3c1b5ae562e3b02f2147ec5830901",
+      "content/media/a_010.yaml": "6eaf656e3f9870e46b4df9d68879de29cb1a434f4a1b5c5f065f6e9195392bcd",
+      "content/media/a_011.yaml": "e02509d8415a8b19e5c2c07ba392eb16cc75aa26995df18bb34a405b39adec8f",
+      "content/media/a_012.yaml": "fd093ce60975f274b6493ae8033af00baa901df29fe2d62a5a2c03e90bf89806",
+      "content/media/a_013.yaml": "1cb60e3b03e3f3ecc96ab0d7b83323c3f815903c08ed476518b233c356fa98cd",
+      "content/media/a_014.yaml": "128272f0825382626c52208366820c13a2e55242337746e835c550ed314481ec",
+      "content/media/a_015.yaml": "b93c4cd4be19cf6fe60e73e6703c1f121e9adaffd398b07b6a501de648256bc7",
+      "content/media/a_016.yaml": "0f133c4de9412ff347eab21749b59183557f7071a997b089400afa71cd8fa9d4",
+      "content/media/a_017.yaml": "b4ba04648e02702988827abfc902655a64e0803523a6b9364b6a8794261ad795",
+      "content/media/a_018.yaml": "1daaacb8cec72831d6cf77f1a18550eda02a55d2fce0ed330e7d677acdeac986",
+      "content/media/a_019.yaml": "d7b98dfd4d1f89cfbf712b74e54013bc97d58405eb1d918e30cb59eb12a488ba",
+      "content/media/a_020.yaml": "9afc3cce0d0eef8177e7d13abe9b0c7916dec892732cf9fdb2c6e3a3eb6d6adf",
+      "content/media/a_021.yaml": "1a67bb2b025be22d31b835c9937bc0183ad4fd38117e5c55eb45e77dbd44c69e",
+      "content/media/a_022.yaml": "6806c702872620eefa06a8b02ac4f10bd0c9c2a4b974c29da07a31fb06724073",
+      "content/media/a_023.yaml": "050d989ff10ce0489ea87ae1b086088bf01e7369666ee6b9b26085de172c07c9",
+      "content/media/a_024.yaml": "fdc3813ba526bfc49e0020224b4eb1bf2ddccc4cb7dd3f291dbfd481eb954936",
+      "content/media/a_025.yaml": "ffccd632cf36667a0257cc248d483ebc6f4861cffb7b1ca851ae1b0964f8cd63",
+      "content/media/a_026.yaml": "3be45dfdc56f3ec2fe6602f83bc209ff1d1b0875ccfa973c5f2b0bc579d3bc6e",
+      "content/media/a_027.yaml": "4df10259ebdc7eb8e402e7422c3bffc86b2aebd8d5ca0a31afddff62fa0afce5",
+      "content/media/a_028.yaml": "dacd5e8056d9efd0293b9b877e2df65388cb5e42af03aa03d7e744ee14422680",
+      "content/media/a_029.yaml": "8b490353f11e35821d620be3ae89acdfc7c1b1146dc3abfda71a91cdf3241047",
+      "content/media/a_030.yaml": "c27f76d8b2676ab2d27a94d50ae3ac96582fb3d706c273344ab5c95248239400",
+      "content/media/a_031.yaml": "c7e80d29876e545ac98aa0e7e6459d6a9506a748e468c5da8abb6e3d4dd491fb",
+      "content/media/a_032.yaml": "a3e31f777947f4b1f80909d453b1b77ff27e30ecd3836e73eebd79d34b9606b7",
+      "content/media/a_033.yaml": "3a1843a7ebe125a6ce01cdbd59e9058ebc4f87935c5337d8e8f503dab81ffcdb",
+      "content/media/a_034.yaml": "d956da08f5386923bcec4f571c8f9576508d7108d3c99dcac33d166c972dfee5",
+      "content/media/a_035.yaml": "107afde2121af62bb8da126fedd892cdb733782ce34991fa5d3b5ae30bef3fe9",
+      "content/media/a_036.yaml": "aac5ae6071bc1dbf3df952b08158976c027975c473ab2ba617b1c9b6d9523e95",
+      "content/media/a_037.yaml": "733bd86e6f51e72e455408ab254645bc87dcc9d12aa3063b40bd1c911dc76acc",
+      "content/media/a_038.yaml": "fbef51de146cabad140f67b7dc7d84165b5446fb15982133bcf71c043a0ca409",
+      "content/media/a_039.yaml": "71440b356e56ad2c0fa2c3444a9111487e991a71ddc1f4e4ed5a3654a5a4a07c",
+      "content/media/a_040.yaml": "c2b32c9d48e180d952228545c9dfbef627ab97d7112faff43323a591b6416e99",
+      "content/media/a_041.yaml": "425bc41c2ecd0891564b9bffbe4496ccccfaf87a803d32d8ae1faacd62b9afb4",
+      "content/media/a_042.yaml": "20c479d5593df3ed7049e8cf3e01643d5d414b4ed2a76eac478fb84c668aa55c",
+      "content/media/a_043.yaml": "b72160b876a4d7847af17e934ac896a9e53511954b72bfe0aea560adfa29e830",
+      "content/media/a_044.yaml": "f5242283431135ad78f3e62471448a82063f92812554ba711f3d6536ac41b96b",
+      "content/media/a_045.yaml": "2bde66aa98cf5ce84862955a1830879e24461facbe10626ff5f948879c181cbf",
+      "content/media/a_046.yaml": "d7229a1d76070b616af8a1060b297208f3f4ea5ebe1c8e96d3fdf74e3003b27d",
+      "content/media/a_047.yaml": "5328e9ef63a38bd6d03172dcc1bfa300869227ac9f09c139d557d339505170d0",
+      "content/media/a_048.yaml": "506b50ff4de3677359f1f321057a79690de7b84e0ffc9355d124b0291bc4672e",
+      "content/media/a_049.yaml": "3262ee73171b73e65066be95cd2e6aa90313fd5277739e32bad1a3f38ee1cd50",
+      "content/media/a_050.yaml": "ef56aa1c08d5a9b350102cf1754c1d0ce83b19bfb0c5637d915b89d92a96ec5b",
+      "content/media/a_051.yaml": "b3db77e9cc51b9796a779e65ab87ea10737e994537914261e8f0569ccf9257a8",
+      "content/media/a_052.yaml": "6338164ecb10f5d6d079d767191313964c870581ee035af2734e8da06b912e9e",
+      "content/media/a_053.yaml": "7708328ed6efce91b1dc78bc613ac242d2622ecef52ee52d7e0394a2fe2399bc",
+      "content/media/a_054.yaml": "7cd0b258301abd39bfb0d6d757f9b5d3d305ab9a5013e755bbda4a00753b16cd",
+      "content/media/a_055.yaml": "5f42581fffabb692f100bb83e71c18baaf32f9f7d05a44834f32522704363713",
+      "content/media/a_056.yaml": "f22da9ccb3153c730919b003f6f5dcabf022e617209a6e016879264e944c6539",
+      "content/media/a_057.yaml": "841e2e0acf47eba493f48a20cab3bbd966cf1941fe93e8ea5c5490f2a73aaf9b",
+      "content/media/a_058.yaml": "daf841866de634c918ad27d4944ca3821fca4186ce6691bf22ed8accf5a4279b",
+      "content/media/a_059.yaml": "15337e847dd60b2b74e602976f9e265909295b1592cc7717a1c83bb3fd904d14",
+      "content/media/a_060.yaml": "36ed97fe1957bbf95f1b51cdb76087637c0738f4a92abb3c71392444668b5282",
+      "content/media/a_061.yaml": "077521931ffe6952e0e9464ea95a4f52e8394691d2a20cc609bdaad3f38e634c",
+      "content/media/a_062.yaml": "28fede6ba0ac3bc2fec19fa5383e14ad55bc88b5ce0e45dc12b7de5cc9d8ab99",
+      "content/media/a_063.yaml": "ae4004c21f9988aa4639b2a374f3e5f865f9e86205a7692b7d7125513c7b8640",
+      "content/media/a_064.yaml": "9b8853dfcaba35fac35c2646d982841d3ccdec935be0e033e8678cf506c79005",
+      "content/media/a_065.yaml": "8deb1e481dea9ac73ff5c66328427c6073bcf0d0cc31665eb1c0577bba2351d1",
+      "content/media/a_066.yaml": "ae1caa386b6e6b59420a9098ca648780e3cb68631902ab3dc217e9ca7d735e3e",
+      "content/media/a_067.yaml": "c6be86593373d685eb3d83a52afab2ef12412506ce91bd4211043a13dc316b9b",
+      "content/media/a_068.yaml": "01892226d085f54a76ce28ba0b1b8b33a53a99b5c2ad57376a706717eb20a883",
+      "content/media/a_069.yaml": "6b1c1a636bb5732df366279304f5a9b3bf93915ae84ac479592123ee276db86f",
+      "content/media/a_070.yaml": "3f8d0510894bb9b6de8b7b7d01a2113b8bc6f1ce1c40853a1aea3bd028f6d38f",
+      "content/media/a_071.yaml": "15810155b5abdbc7c10e8f8a2d018e09e4afe32875dca35933f40cfe9b1e458b",
+      "content/media/a_072.yaml": "7e1243343ded0f230f9f4f7f2ba345bbad458cff2f73c20f65cb181f6e12d4e8",
+      "content/media/a_073.yaml": "ed0bfee070fed798b41b8a94beae87a4ef2a75a55aa2e491af96880e1677a2e0",
+      "content/media/a_074.yaml": "a1f3beb1c8f7df739e13f4cdcbc889c096d2f1211135e0ce86c209758c31cee9",
+      "content/media/a_075.yaml": "f4d5870ca2f6ae18ded0f970c5530783ae12866925d5395caae5dafdafc88a88",
+      "content/media/a_076.yaml": "d1f05fe98067e83210938ffd7e93edd565cfa0b3e9b6952b857fecdca239d34a",
+      "content/media/a_077.yaml": "e0861a9317e4f39471f585bc95e3a377da8b54cc209c1d21a031346963c8289d",
+      "content/media/a_078.yaml": "2fe1afcf0cdc06e4112e341d618d86dbafa6ba7353d515682c4fda2c72fb577b",
+      "content/media/a_079.yaml": "1952bb1bf28376dfe7aa541b633fbbc01c74af097791d0b1fdceef26baa067c5",
+      "content/media/a_080.yaml": "4826c4c6bce7b8206df6008c3c3ab27961d2a32292cc55bab62387841805fae7",
+      "content/media/a_081.yaml": "04a03e558e948bd667eca0fd5378906a10f580cae2897f3019b59207d48abc5b",
+      "content/media/a_082.yaml": "9e806b89cb3d5653cca756796c886bd78a0a08e2a74066ec11fc3e08cb471216",
+      "content/media/a_083.yaml": "1f491860ef9cee48cfbfb81bcba6e0ebe25e1587a44474dba6ad560aa38952f9",
+      "content/media/a_084.yaml": "ba5fc26f1a22cb3bf88c1405b6c5f90e12340528135fd7efb48be31978db7023",
+      "content/media/a_085.yaml": "e8daf81025cdfc81b74afbaa8a1aac6f0a21995672c8452ce30393695d09fd47",
+      "content/media/a_086.yaml": "8ae7b8cd7dbb3d4ea070dd6a3de118b207a01268a0a0d90e61efd2647400e5dc",
+      "content/media/a_087.yaml": "75eace6a3b562ea79f7bc5f3b92d9b2c02c7664eb1b5db6d3b633c7061ae3d58",
+      "content/media/a_088.yaml": "3cead9d5d8d85c10dcf168fafa77046da90320eabf96cba6165dc3b099c0699a",
+      "content/media/a_089.yaml": "aa30931dc5121c2e5b588ef072ac1d0bdcc6f620270dce6200f04958c4474c5a",
+      "content/media/a_090.yaml": "391cb8177a7822016da7e01be49ecb84e38281e7babf765a8adb8bbb242368d5",
+      "content/media/a_091.yaml": "f3cc2d82ce463e8236c5f9dda9917fd62647a4d4523398985c71bfe3970ed528",
+      "content/media/a_092.yaml": "e14a2180f18b7e845725dc89f1e14b831681b9f080b637a2aebbc0d39dfc30d2",
+      "content/media/a_093.yaml": "9e5af9135f1fefcbccd7820666707c48ed450bddfcfdd559f0f1162224350880",
+      "content/media/a_094.yaml": "b761a95ae42781e7d30a9ebe159b7d521b4d4ed84b2dea38b72454f5c86922fb",
+      "content/media/a_095.yaml": "4f05fced7ec6f75319580c46dd416c19d2a9ab07058a1ccc7296c301f677c4ad",
+      "content/media/a_096.yaml": "12d8d7881819483deedf55828726e397bc23477f1415e0c34c6aa982ea2a859d",
+      "content/media/a_097.yaml": "1b21374d0529a9568fc05397125bfc83f67aea87fc8ab61fc92a8e5b904df31f",
+      "content/media/a_098.yaml": "dfbdd06dee83e61c4e061c487e465da44656ba9fafb90d5337af597ea134b48f",
+      "content/media/a_099.yaml": "3d42e368e40187a22fc1c0786177d081a114a426b6b61b7c0eb675850989411f",
+      "content/media/a_100.yaml": "3a4dfa5d3992b5a2c05ad9dbfe58273faf9a69bb1a54b5a78b2238f07be743ee",
+      "content/media/a_101.yaml": "71d2bc1e0a4d72372dd5d62c44a2fea899bed266c9355a0c8b44bd8e6f4e7cd1",
+      "content/pages/about/locales/en.mdx": "b4e3dbcf936b50471ebff5986b7c4264279eaa8c187a7a9800eeba599260640c",
+      "content/pages/about/locales/ja.mdx": "d0944729d14598f3fbd8e051757c6665d649b24ccafeab16172562147cc92064",
+      "content/pages/about/locales/zh-Hans.mdx": "dfcd9602e2fb6c1ce0330bb4a8b70d89bc59efb1ea5fc811a2eb61bf46dbcf29",
+      "content/pages/license/locales/en.mdx": "e56093bc703b43f3f620e3fdc490768fcb60731b55721800d60f9278fdb7061c",
+      "content/pages/license/locales/zh-Hans.mdx": "13a4ac0be068ea3d6bc75603c3e425fc225c25aba8578b66b35fe732c1a28a09",
+      "content/prompts/p_001/entry.yaml": "5a20193d991dc6c33fb88d8e91356d3ba9b7f04a8178645c884b16b88b3fa9bd",
+      "content/prompts/p_001/locales/en.mdx": "bc72fac8bd3a8e82c64882693bfa90a1ee3f0990cfcdd4ccd6901eaead8c3e90",
+      "content/prompts/p_001/locales/ja.mdx": "574762199afeb1798afce968a057f7e849c258bb44d524c806b5409ca61b89b7",
+      "content/prompts/p_001/locales/zh-Hans.mdx": "e964d7ffa77ae1714a9dc456b56f9fdd6584342a74e262beaa29ad786179c94c",
+      "content/prompts/p_001/prompt.txt": "1c02bfd400dbba0e5ba44dc19b203ee604d4b3decb0d348ba2854761202167ca",
+      "content/prompts/p_002/entry.yaml": "56c28c133bc8de89f8018b66eb7f0410a7bce0c9d0e48dee2dc85546beed438d",
+      "content/prompts/p_002/locales/en.mdx": "69e2c9321f2b2eeaa1c0deeea29304a994e18e4b06e26d01e883a9cad97aa5b7",
+      "content/prompts/p_002/locales/ja.mdx": "bb5f8a2cb17a1e6081b69c726d64476244ce1f08808c95a82309bd7709eed0d3",
+      "content/prompts/p_002/locales/zh-Hans.mdx": "1044a509d3250883ef6919f99978f6e8aa2eda85b9d4f5b2a9145b57999d1c1a",
+      "content/prompts/p_002/prompt.txt": "2ea47bb05f9166ab15c1700e7cf1a906ec36d857fafc8f9384207129c6ffb51f",
+      "content/prompts/p_003/entry.yaml": "87e260602abcd22fcc82a156140eb97805825a3512275b1bc89cb5d061cb0f24",
+      "content/prompts/p_003/locales/en.mdx": "afd969fa5aca3d2cabbff6095685ea14cd1f3e5e9edc034ab855234d41407147",
+      "content/prompts/p_003/locales/ja.mdx": "0cb21c4ce7125bcfe6f216390a29ac614f6a67205ec5822d3addb62a11c79efa",
+      "content/prompts/p_003/locales/zh-Hans.mdx": "4d938349f777263f8d0353bcf5486a4c3ef8a0e064d0ceb5864db903ab04041b",
+      "content/prompts/p_003/prompt.txt": "d0c05c85258374a8d3fa0af10901b1dbcb80ad225efdad553c6bba5f6e43e9db",
+      "content/prompts/p_004/entry.yaml": "98fc7bc6bc1333c759acfee4881731b7fee300458552fe7a215151bf0c2e02dc",
+      "content/prompts/p_004/locales/en.mdx": "c62dbbfc2c5bafd20bdeaa5f30dd382be22b17477e0f3ffb6dc8304f35eee1c2",
+      "content/prompts/p_004/locales/ja.mdx": "ece51d4a028228736c377b21114fb1b98bbd56e5be82f47cd293d6b2064e4c90",
+      "content/prompts/p_004/locales/zh-Hans.mdx": "2cca3ecdcc3748f8a866cc549ff726b830345d476935b70ce385a0093755372a",
+      "content/prompts/p_004/prompt.txt": "0a28ffce8730290b25b0d306f9849218177384cb4563b288b5cb54cd8a422714",
+      "content/prompts/p_005/entry.yaml": "93548d95150f3123a0dc1170cdfd483163d1f5807002995e87dbecaf17fff867",
+      "content/prompts/p_005/locales/en.mdx": "b5d3116b1eed57b1aca5bbe71ea8dec3a61116e1cf38619702cf931113b0f9bb",
+      "content/prompts/p_005/locales/ja.mdx": "fbdba7f66e878edb50ae36e8e00985474d5ebca0f62879ca74d945e654817135",
+      "content/prompts/p_005/locales/zh-Hans.mdx": "f6989a58b0508a4f81917a20daf23588105cefa774f23ca575dab8161bad1fc1",
+      "content/prompts/p_005/prompt.txt": "e56cfb5c27c48a1111ed9cb1ff40a09d59964b5dff2439c1e8168394591f98db",
+      "content/prompts/p_006/entry.yaml": "f320b5729e7a2b2923f08f1f8ca0badfe09d7a7455346eb82c7320e9cb6e5ed7",
+      "content/prompts/p_006/locales/en.mdx": "7ddbf76ea968f670d44368970275c7e67e5e10e1171e188b6f2a6598bbe24c53",
+      "content/prompts/p_006/locales/ja.mdx": "bfadfbf2606921c92b6a9e09b5c773f8f9670dd7bc4ecec50331e38e14ea7d5a",
+      "content/prompts/p_006/locales/zh-Hans.mdx": "7fe23061c6e9b25a8c8e1c193ab4ab95a69ebdacf5a8459343025c7cf7835d42",
+      "content/prompts/p_006/prompt.txt": "d86e28c962d73319981f548efd349bf11a6c6d51cb63b7a827b9aac8a729adf7",
+      "content/prompts/p_007/entry.yaml": "c2cab0fa2542546644b780cf101cabc8420606bc7b8e343407b34f34e86da4c7",
+      "content/prompts/p_007/locales/en.mdx": "05bbf556ce4e93829dd3cda6830d687985123a51685f235ad1b3d1f7ecef99d3",
+      "content/prompts/p_007/locales/zh-Hans.mdx": "d0b2b77273c1ca368c0c28f503833e1899ca363ba6b6dd654599e0e083cb5bab",
+      "content/prompts/p_007/prompt.txt": "c243dcdde7e99ae919e17f48bdb531fdd047903a115e2f90dacfc7471e91cafd",
+      "content/prompts/p_008/entry.yaml": "2be969495052289eede8ca3031e3a95b98f3e944b4a38a7e61a58418122c8ac5",
+      "content/prompts/p_008/locales/en.mdx": "e578245de48d80e4a8a48eb7d1089d370afdbabbd1b3bb7db9ebbc69d0ba6f17",
+      "content/prompts/p_008/locales/ja.mdx": "ed63d91f0467793a7c2cded85fd22046ba2d49be7644f189349af6ab35e41222",
+      "content/prompts/p_008/locales/zh-Hans.mdx": "e6a1750b746274fa52cbe7d47fc934265a4b3ef054d62bb9556ea834864ddc00",
+      "content/prompts/p_008/prompt.txt": "7513f82bbe46123f4985e339696323843429c5486a0dcd85f451f7ead1b7d07e",
+      "content/prompts/p_009/entry.yaml": "a1a5dfb1fe4cbc3902a6ff3743bb9732d8f87a9299f199053f08a4d6b474b00f",
+      "content/prompts/p_009/locales/en.mdx": "22bc9bb7e8ad1e4f55acb78fe211696a6b43c3d08e65748ac5587cbb0c4b680e",
+      "content/prompts/p_009/locales/ja.mdx": "6430f67c14549c78a3913b2a607aad7b8328953de1a6c3aef3f7f8ccce63f459",
+      "content/prompts/p_009/locales/zh-Hans.mdx": "3eed1c640bf534e0d8fd33ad2f5464f5a09c848eea8711857337c659186fa021",
+      "content/prompts/p_009/prompt.txt": "fc12d910486f8f70b0c7ad25948d981c566554e8c62d01b950ad7fbcfe80fa11",
+      "content/prompts/p_010/entry.yaml": "a7d2fa71243be8ce30c6bc0a1ed3663dec90f3d627641ae3477dcf2597f32fea",
+      "content/prompts/p_010/locales/en.mdx": "3235893a2c5179e57714f93d415cf85c934633cfbb287a17b67b760b820936dc",
+      "content/prompts/p_010/locales/ja.mdx": "a868830770584cea6676826394854dc216c2bb70df4f6f6bf10e26ef6bf594ec",
+      "content/prompts/p_010/locales/zh-Hans.mdx": "8ded7f97474a1cb4215b2922e96da91240205d256dfb3a8834b0d50735334f07",
+      "content/prompts/p_011/entry.yaml": "826244d33d7a2d0a91da680c25819066f09d2468341f210a5b28ef1aaeb34a40",
+      "content/prompts/p_011/locales/en.mdx": "2f42bec32bfcf59490889c84562994f30492d9c64f6dc490524537475c1b6b61",
+      "content/prompts/p_011/locales/ja.mdx": "255837288ee791aee50cbf8f42cd757829fe045d73a74c06c8fc0c46b949a9dc",
+      "content/prompts/p_011/locales/zh-Hans.mdx": "3e08e859fee67de71051b9dc3b701d7f395eaf9cfefb38ec370a679adb04c808",
+      "content/prompts/p_011/prompt.txt": "87cf22f7e6e575b6809c205be0f9873a8ec22a6701d99bd3d40752ff671f02f1",
+      "content/prompts/p_012/entry.yaml": "ab98730689fc69a476a499b82ec792c2bb75de3fc7a8b86cd53e55c9e81262c8",
+      "content/prompts/p_012/locales/ar.mdx": "139e92482b2de6993f377da86eceb35953210c35205013b8e904e92bcc3c2839",
+      "content/prompts/p_012/locales/en.mdx": "269d33601046929a728cde3be217d5fb9782213f148037f5af463b7785451178",
+      "content/prompts/p_012/locales/ja.mdx": "f51639fd7e65c2c9ac36d5c75f32484f39b797cba3f3a95a7c76ae9d9fa05ed1",
+      "content/prompts/p_012/locales/zh-Hans.mdx": "f02297a3819cdae869c51b5152ba3c42abd3f3db2d86d0c2c0efdba98a674173",
+      "content/prompts/p_012/prompt.txt": "78f0e233b447efade3359753bbf05a42cadcd7fc8e712f4a61c1c9ea641dd589",
+      "content/prompts/p_013/entry.yaml": "e341a4c02b9c6cc8079fa17932ea3fac1bfe89a87a87fbcd6f38c9b46d497088",
+      "content/prompts/p_013/locales/en.mdx": "2d88be09912fb893b90912acf71a946912f4786246dfa49146376ae8787d4fb1",
+      "content/prompts/p_013/prompt.txt": "cdf3af957332b89c89eb1a341192b1c4d62468940f29e1ca309b28ffbe76b5d9",
+      "content/prompts/p_014/entry.yaml": "bec70f9cb6c6707331e57828d524ee4b90fc288bcfddf061f6332e7f3574a56e",
+      "content/prompts/p_014/locales/en.mdx": "e57f364a3813e1bd2c89111c2b4b46dd4fbf039dc0d97f6fff20fc3f0fce04e5",
+      "content/prompts/p_014/locales/zh-Hans.mdx": "e34b748c70b141b42d1c99d52f73e0f33c73457dfda3150827b8772ddb920651",
+      "content/prompts/p_014/prompt.txt": "21d0069cb2dbd1ae341d0a36dee2179742781fcc57dcd6bd998edc7fe6936071",
+      "content/prompts/p_015/entry.yaml": "262638a67b0fd3fc73a3a1890a2279a267c5a9348f277d275c6383a80f9621c6",
+      "content/prompts/p_015/locales/ar.mdx": "fcd166cc53f7077425aac3632c988903009eafb86802f46770f3a3b609932c1c",
+      "content/prompts/p_015/locales/en.mdx": "0b763b1dc50cb9afb174922e7524e4de786d2082b688771a26698ddbb68905a7",
+      "content/prompts/p_015/locales/ja.mdx": "49b851e0ace59e7b16517ea59f7d73aa02bec2600ceba2d7b09c4666692adaaa",
+      "content/prompts/p_015/locales/zh-Hans.mdx": "cecdf9ec0446bf689132cb56f971aa790ba7f65d36afc727c04724ea538f27e3",
+      "content/prompts/p_016/entry.yaml": "d023dc24316785a4dc8e68519793dc728aeaee659b30fff11f7ad46ae009408d",
+      "content/prompts/p_016/locales/en.mdx": "1850f7d428c9ad38c61749276aef1bb0edf0afefc6894b7ae59e7ee4cd966710",
+      "content/prompts/p_016/locales/ja.mdx": "7877dcdbb63db987cb4db74993c7524da65b89b03b760bd1e53b43884d960991",
+      "content/prompts/p_016/locales/zh-Hans.mdx": "9d0084d6680efb8266bb88cbd4c0af48d3a6b7bbb3e40e053eae558890506fac",
+      "content/prompts/p_016/prompt.txt": "56c277a4bf34f27b28c1252f33a09df452391fc62e13cbe47edd8e9cc7ce9032",
+      "content/prompts/p_017/entry.yaml": "6ce1e3587c0b25fe50888ee5ee95f0da11fb3d9333206604abc33dc5e0ddbb31",
+      "content/prompts/p_017/locales/en.mdx": "92572f7acdacc02a1a27089c7d6c0b38fde76a4ca0376d584478bc6c746b19b1",
+      "content/prompts/p_017/locales/zh-Hans.mdx": "847181d86bd53e6ea1e3d3ca884ab8694530d2b909a76ee886535e8c67cffc83",
+      "content/prompts/p_017/prompt.txt": "e8c8721001bd3d14f20a9dc86c3b725d8def96da5583372a41aa2c9c87fb3087",
+      "content/prompts/p_018/entry.yaml": "1cdc212488e5ad27d6b3ae7176ad7ed04f4afd75204dfe51e1640a9841324bd1",
+      "content/prompts/p_018/locales/en.mdx": "1516b52c0b7385ad7797a80947fa2030f51ca946a97de19fa40462f82081c09d",
+      "content/prompts/p_018/locales/zh-Hans.mdx": "05c7c8d8a4e9a2bbb5efb0769428900077811fd22892bdccfc7ef273c3bfd239",
+      "content/prompts/p_018/prompt.txt": "908c659db86fe8766f775aa79e2923659dfb3f268eeea50350aa62f8d5bc225a",
+      "content/prompts/p_019/entry.yaml": "feea8fc8a027d90e069dded272c5ce307a3b99cb067d332cb6eb64e0711f35aa",
+      "content/prompts/p_019/locales/en.mdx": "c19799cd821eece3b5be13a8150f6a9bcd2a213fdec42448a414a6fb20217c97",
+      "content/prompts/p_019/prompt.txt": "98961ed212e5d8fb3c7ecc59f7dd87a4360bf7b665217d72d13010db770441b1",
+      "content/prompts/p_020/entry.yaml": "260da57152e033f9e615268bd42e3be6c4b4515c76c0337325fb20d420239006",
+      "content/prompts/p_020/locales/en.mdx": "42e21ac56efd4ed4a00d8dffa5dbb4a8975942f37c8edf9dd4350f9e338de1b1",
+      "content/prompts/p_020/locales/ja.mdx": "5931f55479359a7b02745ce3d697daa15021adb50fed4224db08050cfefd882a",
+      "content/prompts/p_020/locales/zh-Hans.mdx": "d541b529c5097fd0ba0733662b385aaa661efb33331276e2ea5034ddedfb6c6f",
+      "content/prompts/p_020/prompt.txt": "992390c9cd010791c4acc0971d59ff0f317bb01abcb2ae7742f64b4598fa3cd6",
+      "content/prompts/p_021/entry.yaml": "47eb15ad6af9f03158de778f8140901b6e7be2b258f8341ebcc7d72a119daabe",
+      "content/prompts/p_021/locales/en.mdx": "c6db3f148c9666ff12993754802ba8ac01396686406282c99bbb0abc32fc7e72",
+      "content/prompts/p_021/locales/ja.mdx": "f49725ba5dedc6f24b3cd8d43c65bcac07398e22d6d2b463e694f6b00db54898",
+      "content/prompts/p_021/locales/zh-Hans.mdx": "363a44d8def510a2e6b929669bdf87927a98e18aa3a8f9683ddfe8aab06be1ed",
+      "content/prompts/p_021/prompt.txt": "4fe1b8450dc0756c8d405af417c42163bc7071e2d37c81cedf8914338b32e91a",
+      "content/prompts/p_022/entry.yaml": "fd82bdb3bc61bfebb393101cdad2ba3ad79a80b5a739f4cf95225d57510ca03d",
+      "content/prompts/p_022/locales/en.mdx": "18ddabad66f09fe3dd1b1ba3951bcb44af0094efd25c9a36b7c22d3161bd0117",
+      "content/prompts/p_022/locales/ja.mdx": "6f7496de197cc9806829b1d6520264b2e5e3649a87221b4dcd633128dc534f66",
+      "content/prompts/p_022/locales/zh-Hans.mdx": "8964efb99e7ae268e372fe36a5b34c15a9121c6682212a1cbf465d340368015d",
+      "content/prompts/p_022/prompt.txt": "cf72971e4974f84d37ef14ff9a1b26ff7dfe37c7e1db9013140a9c3f298f7a3a",
+      "content/prompts/p_023/entry.yaml": "97bb028ee6787fee0c61ec91594f43a15d43168f4e26a18544f31fb0060eb455",
+      "content/prompts/p_023/locales/en.mdx": "a8c24c23e06e0eea825b7bcf2e3780456fe61df0e77bbce64948b9eaf630f70f",
+      "content/prompts/p_023/locales/zh-Hans.mdx": "04e7d0a68fcc54415778c96ed13e5f16f67b7f25fb43b0a2a01f07f1e4679472",
+      "content/prompts/p_023/prompt.txt": "55b70964cd61d110f411426c8c8c7a09988f1a0ab070987a4c945a253d6d9bd5",
+      "content/prompts/p_024/entry.yaml": "854c50c2fdd9eefdb755dd8fcdc532abcd08f5b33271b8ca04ab0986d303e748",
+      "content/prompts/p_024/locales/ar.mdx": "e033cc13cb88e08991060da081079c8878202620df6b9607ebab04b8d72876ef",
+      "content/prompts/p_024/locales/en.mdx": "abaf06c7ae8fe082ffccf9d0b68169d5bd72550787c22bb265caffd1ab0f4ce9",
+      "content/prompts/p_024/locales/ja.mdx": "1b0f9a1943fae74548c3026c7b77e988d2b86da173159b73150f65e05eca6f28",
+      "content/prompts/p_024/locales/zh-Hans.mdx": "dc0f6839b726528ffcf6fab96fb674d2fdba6079eea5ff1e3cd43c305f4e37ee",
+      "content/prompts/p_025/entry.yaml": "6b5d939e22a498f3f30a871631e934584ac7b858de6fcaa17f097e6b29bb00b6",
+      "content/prompts/p_025/locales/en.mdx": "ec3a6bad96013c8d105e1e4998a86f736598f49bb715f6ae29836740fba12a00",
+      "content/prompts/p_025/locales/zh-Hans.mdx": "ca683027ecb998951b516569a464650dfa770f25e2d0be3dfdc345e4beb01dae",
+      "content/prompts/p_025/prompt.txt": "d00f75bc12c1a59e891968f54f2a3ea77fb6285d85d5460da7ff2d49520a3b9f",
+      "content/prompts/p_026/entry.yaml": "b503ba17299ed56d09ef7dbd5d75e16c19a2adf7d8bcca5ad05b9eb495ab13b4",
+      "content/prompts/p_026/locales/en.mdx": "3f154a99798da7af2251b1c9cbe2f90a26615223491ebb2d17d8becf2300860b",
+      "content/prompts/p_026/prompt.txt": "bc9ee427dd9af26ecd124819d59857c2e50a105f18ad3311e08be131bca40637",
+      "content/prompts/p_027/entry.yaml": "547f8f50413ed2111bffb4033094fad9df6a0c9f498fc28ee2f65bc08a5f1194",
+      "content/prompts/p_027/locales/en.mdx": "2559817aa95948f7af2eb2e0971e4c35a5087bc9dd5f3d292cbc329a5a919d18",
+      "content/prompts/p_027/locales/ja.mdx": "6c70550c5c5749b52819a3c8fceedf72ba7deceed04579e2fac20217c0562335",
+      "content/prompts/p_027/locales/zh-Hans.mdx": "251b6fb3941b9035d2980a8829806eb60f7f3f64ab954059b672e9df12c47e62",
+      "content/prompts/p_027/prompt.txt": "6dc737bc61f0f1e22b832fa654058bf7a272da18fd243688487189d6aa6ef215",
+      "content/prompts/p_028/entry.yaml": "79d6c193630d4108637c97756ab856090f8211b261323400fd86a56978834615",
+      "content/prompts/p_028/locales/en.mdx": "8550f19390b56d2671992810135cef5c806d908dbba51850eb3d4c9007a6e7cb",
+      "content/prompts/p_028/locales/ja.mdx": "7e228a6b04c450cb0d7e1fe33b249a592e13fe009848243f0532631b02aaae9e",
+      "content/prompts/p_028/locales/zh-Hans.mdx": "eaa3763f03d8a7d59831c600a17fe89f9c83855ce3d7ec2048921ba9f148ccc3",
+      "content/prompts/p_028/prompt.txt": "a7f8601abafee4016833eb7e128e08ac44057f6e154533275ee4e0c5356116a9",
+      "content/prompts/p_029/entry.yaml": "5358d1b4c27d43f44920f8837c1c3c2477e2707dd1cb08263ccfb3debdff18ba",
+      "content/prompts/p_029/locales/en.mdx": "1539c4b4e6d530d94313b711c7e2b37e683811abd6cfb5b37c4cbf9068fc9fcf",
+      "content/prompts/p_029/locales/zh-Hans.mdx": "f2b1ff8a69aa08562adb24df4eee028253277527ae31833e7d591b56d3b09225",
+      "content/prompts/p_029/prompt.txt": "7d68acf9dc249ea2b66079ab7b5725d8323e90f92fde9604bf8b095831112064",
+      "content/prompts/p_030/entry.yaml": "63eaaa699c9e9b75b352b8460705c485e448cfb9e10182028544bb02738850f4",
+      "content/prompts/p_030/locales/en.mdx": "e2ae10f413940b88a9adf2b9a4de7c09d8afadb6d67c4127aaec6ca22448963e",
+      "content/prompts/p_030/locales/ja.mdx": "e0ef4eb72eb18177a509cc9c8b3a55e2295e4d77e0c949a2989112f750369e2d",
+      "content/prompts/p_030/locales/zh-Hans.mdx": "84ee6c551f05d1dc0f99a670255f124193287d8f3f9c580811b14fb87f04cc9b",
+      "content/prompts/p_030/prompt.txt": "11c1472e6d3ecbbda24acf4549d7461b2ba6ac6715069559a8b8b9d60e26255f",
+      "content/prompts/p_031/entry.yaml": "eb07783bbf050c0244c1c17139e08eed776e6df0130ca51668b6aef5cfdff017",
+      "content/prompts/p_031/locales/en.mdx": "df62fe7cd48a0746488482d1406cb74e31907ce7c354e22fdf20a1f9a7dd7b64",
+      "content/prompts/p_031/locales/zh-Hans.mdx": "361062b0d09c37030f650dbbeac7af094579152f072ac90e92e01117315e7601",
+      "content/prompts/p_031/prompt.txt": "aa2ffc4248ddb713473cae9e45bbb3d4e419bc41090c5187cc1e3d169d10acdd",
+      "content/prompts/p_032/entry.yaml": "1236adde02611ee547f0adfca89adc57c264226f8190df007919c755df2c5c92",
+      "content/prompts/p_032/locales/en.mdx": "8d0472502c188861f846557ca0272e0f47c1d9b1f5e1e2f7a590fd856ac85c7b",
+      "content/prompts/p_032/locales/zh-Hans.mdx": "720181413d33c5275ca3702885bc16d371b126f0e006b8e2dda4dcd0c6306bd3",
+      "content/prompts/p_032/prompt.txt": "044d15a5172865fc0d329f9589827edad4278da76566d54fc97ded93d3f0fe60",
+      "content/prompts/p_033/entry.yaml": "d28f034810ca4cfeb152ba3d4a0f88388d99d9bf0df4adffebf0c037058f4444",
+      "content/prompts/p_033/locales/en.mdx": "9249b0a78c8bc011558f7fab6234eb20af8bbc79004442582c95a1c3a287ae4c",
+      "content/prompts/p_033/locales/ja.mdx": "af288d3746f6a3585d3cfc00b47c690a9b97471e009ad996d959c77b56099628",
+      "content/prompts/p_033/locales/zh-Hans.mdx": "95a82f56b09226c4ff0191dc37116bed3b0213e9e621a9a716af87d1d3551286",
+      "content/prompts/p_033/prompt.txt": "0ebdbb0e32977ff509156f69fd6d00b778c584d5bd9c3bbe9a4c028358dbe1d5",
+      "content/prompts/p_034/entry.yaml": "4c6b78d81703bc037f6fc25917e7616db9a3c532e407e7649114a6852116c052",
+      "content/prompts/p_034/locales/en.mdx": "3eead466e114db6cf2bc53aa22e02a24138d273f5b883564636c047a991bda2e",
+      "content/prompts/p_034/prompt.txt": "7424ae5aa1befdaf61208f6361fe5f70bae1d8e35c9ca567fd32342b1c2af932",
+      "content/prompts/p_035/entry.yaml": "a2bcc20da9909f280b987e5dc02a8f1f37a4cc7055e080e0ddb0572db54ebfb9",
+      "content/prompts/p_035/locales/en.mdx": "a108a57ff17f839824d79bc1df4844fd7c5929edb96642a4d6eef8d52c8a1f00",
+      "content/prompts/p_035/locales/zh-Hans.mdx": "25a327822b1e3185f37a30bf40e3b5fa2ac0deaaa5896c05a09bcd05795df68c",
+      "content/prompts/p_035/prompt.txt": "7f03d913f05448d2bbc4cca36cbfb1d22694b0ddb35043245caa6f3afb036c07",
+      "content/prompts/p_036/entry.yaml": "aa20fae70bbe6f88b1dc000e7a7c1e3d814d333bcd0f17d918f6b950cd89dbb2",
+      "content/prompts/p_036/locales/en.mdx": "741d0ca5bf8a00aeaa81e29df3ac5d2fe32c92fb3fe0c3a29b2b158b7370efe8",
+      "content/prompts/p_036/locales/zh-Hans.mdx": "fda9d02132f22c2e39c2aa7f0c29969962162f58fc6b9dd287f3b3c3aa8e997b",
+      "content/prompts/p_036/prompt.txt": "3bad3b0d5afa0da4ef8fc75bab3d70479d17141aeb009409882cef5d6612f1f5",
+      "content/prompts/p_037/entry.yaml": "73421ef2312ec5c85cabe827d2f0bb98f4428455675179048123724c047c8b9c",
+      "content/prompts/p_037/locales/en.mdx": "4b6f37b20add296ae27fa0439897792bb233e64e2e62ec34f8654a0fa2a1a567",
+      "content/prompts/p_037/locales/ja.mdx": "b62bbf35ef41113259bd1b66ce3bc1c2e734dc2ac3e6bf2d2b0528bd04483413",
+      "content/prompts/p_037/locales/zh-Hans.mdx": "80160b933929fd655a0b6a301053462f6aa443090ae5ceceeb66ff3a8036fc62",
+      "content/prompts/p_038/entry.yaml": "c988a5c9b2c2303e956bfb2b9d1c038b42e683558e5712f8fbd89a7be83d7d23",
+      "content/prompts/p_038/locales/en.mdx": "19044ff7a55e823143289141ab635d7e66a3c33ee3c16193246ca4adfc4f0bef",
+      "content/prompts/p_038/locales/zh-Hans.mdx": "4e3ba6446dc0071d4bd5a9720cfbfe9623f3bd1fdf8abf1d2c9688f46c3a0dd0",
+      "content/prompts/p_038/prompt.txt": "18ddffe7e3809073de753b8d899732b5fd1f5c87597b2fdeba5122c48f5e4cdf",
+      "content/prompts/p_039/entry.yaml": "0264e6167fd86111c565e4412400c736a0b54bc1d31535daae0c6d3e428a6cae",
+      "content/prompts/p_039/locales/en.mdx": "c86665fa466c99f17251f4e8efab67352d8b27df47a31c75cf3a0477393cf3da",
+      "content/prompts/p_039/locales/ja.mdx": "42a1a0361bca1f9be6a534afc2dc7bf8d7fc414cc1fb5576c202afe737d2b225",
+      "content/prompts/p_039/locales/zh-Hans.mdx": "16efa0b622716d9a78991d249c4838ddce7956b294eb7e5b79e0544317e17036",
+      "content/prompts/p_039/prompt.txt": "f3556e0150747a0baab24d63f5baada010333264c7ab6f162cd388e40e811aeb",
+      "content/prompts/p_040/entry.yaml": "d6d777abe2a65ed1aa2d36fb1839b3804fc4e27d6c9610c0eed31ad2b8572325",
+      "content/prompts/p_040/locales/en.mdx": "5e3481b7a97768f37c86376092cce47f5bd955861b00f5c83b7cae4dc436dd9d",
+      "content/prompts/p_040/locales/zh-Hans.mdx": "de628607460e92241f78e090a418128ec33e5d12ad3a7f270f24a8cc73fbb396",
+      "content/prompts/p_040/prompt.txt": "5e825f5de6ae99c45bd24b51c83860e8622e2b48155a38620092330f0aaaf531",
+      "content/prompts/p_041/entry.yaml": "393f94e8312f4ff584afe3b7bec06101cf769a8f5f945fd89af2505a3de8f6d4",
+      "content/prompts/p_041/locales/en.mdx": "4a67c365def30e6c5f54737b1916284b4569c118d96d30eb99c864a577a93eb6",
+      "content/prompts/p_041/locales/zh-Hans.mdx": "56f42939367f834765dfe9dfa8a451ed77de0b53042136da002a628ea9f0d1cb",
+      "content/prompts/p_041/prompt.txt": "3a8a86eae7cc7e159d4452d459b6f99ee5ca30241f5f7d1786420f12a66bcdb8",
+      "content/prompts/p_042/entry.yaml": "b222158fd300e2bfb1869ad0cc29741f3e92c9575c9ef632c61093b9c6080911",
+      "content/prompts/p_042/locales/en.mdx": "e55c4df68155e133ad4221f0c5631b13c39bc1bbe4bfc0ef23dd1e7326382671",
+      "content/prompts/p_042/locales/ja.mdx": "73a60719d4d2222e73b79e119c6bf117cccef66433d3682aa1f3e002d44daeba",
+      "content/prompts/p_042/locales/zh-Hans.mdx": "203df2df45391fb8ec1e7e699a789018ce4a6d27fd0be3f3a34e5e3268a0bf72",
+      "content/prompts/p_043/entry.yaml": "e79e9c0cf12f2765227b6ac11c10a3b53b061aeea34ceb1ec9278bb994591079",
+      "content/prompts/p_043/locales/en.mdx": "ce23ad2f8ba61e97e2981574c15606c59a85b5bb15f3c6951f8bfea9af9508be",
+      "content/prompts/p_043/locales/zh-Hans.mdx": "9a818ea03a2cf3e9a9b3b9d1d486011de3c317ef867eeb494ed5013fc4fbfaf0",
+      "content/prompts/p_043/prompt.txt": "311e07122f5df249735b2b08f047195ad80f1d2601c0afea81cdf51994885825",
+      "content/prompts/p_044/entry.yaml": "b92c407f01ca4f947df9470a4138d1eb7d2ef06eb2d2c6ce4a531a5bb710f426",
+      "content/prompts/p_044/locales/en.mdx": "ba5d12e441b1c4b55976cc23042ff60fea0d39c6dda8d5ae15a82c45bde4377b",
+      "content/prompts/p_044/prompt.txt": "fca5303be297cd7764ff4d608544ad86f0ea5ecc1d27ff90306e3eec70c7a9ae",
+      "content/prompts/p_045/entry.yaml": "5434a6ba8897916e2a9d45bfed177bde38522fe926f18d12889a72b039b2dc48",
+      "content/prompts/p_045/locales/ar.mdx": "d4310327ae0bf665210f670117d4fc663253d5b74f0e8c3096cae089b1020d63",
+      "content/prompts/p_045/locales/en.mdx": "6df4b0ef3c55866220fa9140acc9b5f8c4c78b13c168a0480c9af8aa3ba1c4a6",
+      "content/prompts/p_045/locales/ja.mdx": "97f80e49ebfdaa8a4c9bb639e8d009b1a05fd7c8c867eeb1832e3f3751860481",
+      "content/prompts/p_045/locales/zh-Hans.mdx": "650fae8bcac61b420854a59aa0972435c6197bd39b264039998103c48be164f8",
+      "content/prompts/p_045/prompt.txt": "735cb1aaf43de2f897315280434fda49cce13843a772b275838efcbe5988bfc3",
+      "content/prompts/p_046/entry.yaml": "278e380218c1d2000a2102aad701939e7f7f965c5f85a79d8153edf91974b2d9",
+      "content/prompts/p_046/locales/en.mdx": "39060cc928f7c9a2715cf069c6c3df256c3d3fa6a4f8297579f9bd837cbe1b95",
+      "content/prompts/p_046/locales/ja.mdx": "9c6506e09244322fe26e8bbf59c8e2e6817bfb64863abdb4dcd18e9b327cfaea",
+      "content/prompts/p_046/locales/zh-Hans.mdx": "409b59fb4f19da8145e641778588d79d708f42338ce3b504b0ddb5063bf91614",
+      "content/prompts/p_046/prompt.txt": "29a384a451de1c01dc6e7729b85f0119e760ca748e647eb57b817a2744a0d99a",
+      "content/prompts/p_047/entry.yaml": "3201c347deece77185b1d99bfe1864cf26724ef80b51ad358e389c403ed48110",
+      "content/prompts/p_047/locales/en.mdx": "0d062a7122367cff261be1167f9d3c8304fec0a871d7b4d24794a2daaf270e85",
+      "content/prompts/p_047/locales/zh-Hans.mdx": "7c03ef889817c36d81fbfe8633086c7c2fdb30f651a2023ec7e09212fbc10df7",
+      "content/prompts/p_047/prompt.txt": "45bb75b0807549f4e3766fd215b0d2a2c48def4cf612dd6830d56b2aebee1ee7",
+      "content/prompts/p_048/entry.yaml": "1880c5698ef8564a2ef9216ace5165890eaab049e3f987bc977617c655231276",
+      "content/prompts/p_048/locales/en.mdx": "30f05471532ee9f779b339eed393ab313a6d56e9916453981452a3cbfb7897b7",
+      "content/prompts/p_048/prompt.txt": "4bbda44d7a9d282f1ca2661d43f64fb9d84c34634e885e8620966fa9e4278cbc",
+      "content/prompts/p_049/entry.yaml": "87d7c79b4ed435a805dd746ca818a4aced4930c3c6367ffee44b3550b536b0e9",
+      "content/prompts/p_049/locales/en.mdx": "94873d4c8c97823ff3a589528ca2f222f12e18ab04f52ad1626149a4db8553f0",
+      "content/prompts/p_049/locales/zh-Hans.mdx": "2488838b98d362751ad38581fa9ea8ac2c1e39676bb9690ccfda7f8df69b9386",
+      "content/prompts/p_049/prompt.txt": "844b953b37510ca2e9121eb06c70d1b5a7ff2d413fae3e49f00eb5c6e5922ce2",
+      "content/prompts/p_050/entry.yaml": "56df811532b3c89651ae70cbf165a9e443563447d8f9173e4a316de2d2edc802",
+      "content/prompts/p_050/locales/ar.mdx": "87945af60e5e95a0a6a101306cd766577e5e9795a576e53814a8c19851026b3c",
+      "content/prompts/p_050/locales/en.mdx": "a141ccdfd7b9692b55fe5ee76e8d9ccfc9c4cecd1a44f502031891e9217ff98b",
+      "content/prompts/p_050/locales/ja.mdx": "763b5b993cc9b75bb44fb18a466c7640292897b298731963e8d2aaed1a7d30f9",
+      "content/prompts/p_050/locales/zh-Hans.mdx": "c256fa052febfee6b6b6d9112954cd36cd08141d8943b2f2c9c059f2c46aa0bb",
+      "content/prompts/p_051/entry.yaml": "e18bf91908eff37d066e168fdadf012a04e73c69d84c3c2c1ee93da05d7f249a",
+      "content/prompts/p_051/locales/en.mdx": "7d0b494deb29bccc5839e3b31677c0c07c13d0e95207ae490abf69fd57c7d657",
+      "content/prompts/p_051/locales/zh-Hans.mdx": "c8d7be51c95d843f93ee8c4d2ca16706a4b7d543b40f1ba074b9c17eba956b23",
+      "content/prompts/p_051/prompt.txt": "31da97451a4740d013464c7e8c6d05079dbb768e9c95b573e57a892146ccef39",
+      "content/prompts/p_052/entry.yaml": "4d60b014b701e7e6057381808481c4df610e2d3ed548ec9b62b8014b34bfb1f5",
+      "content/prompts/p_052/locales/en.mdx": "2eb5f38bd9795cecc12b99e11c74d8e9b865edb5691b289c146b7f7f97d3dc27",
+      "content/prompts/p_052/locales/ja.mdx": "ef1597a15195909a2ea03e0f459193b751ca724baf7bacd2f654abca7e3ad150",
+      "content/prompts/p_052/locales/zh-Hans.mdx": "65df99d046971425f4c33e826c747b076b9a4b9b4ef97744dc143a86e63f4b02",
+      "content/prompts/p_052/prompt.txt": "18db200f684712f3959a9c0754106fa905084fdf191bf16a214411ee768db142",
+      "content/prompts/p_053/entry.yaml": "3b63c361f1a22394b5c62ff6f97553cd381e9302dca7a7e579f1fcc4d8b32e40",
+      "content/prompts/p_053/locales/en.mdx": "989e404bfb5b5908b1fb842b8d4e1ca12246d85130c229921df477a8e0709e03",
+      "content/prompts/p_053/prompt.txt": "5b70d9c9fa0d03e99c07922a98d8abcb08648f75027437eb42cbe0c9bf43bf21",
+      "content/prompts/p_054/entry.yaml": "2dbd891e2b09399ecde390a937e0407e73c194d6cabfe921d4740178ce18c689",
+      "content/prompts/p_054/locales/en.mdx": "ac3742a2bf2f4666d4b7bb74c98d48c6a507dfc4a5d672f69b960309a788b5bc",
+      "content/prompts/p_054/locales/zh-Hans.mdx": "ee63e8c91ba23cd8ff2bdaf297ab679e28b2c9da0f69d799cd99eb9c4b87051c",
+      "content/prompts/p_054/prompt.txt": "1ce118c39d690a5405457f0f323338840fb7cc4d0ab31325f9caf55ad1f6e420",
+      "content/prompts/p_055/entry.yaml": "645653bb6f09bb0166c5a8a86f7bfb56d6573028b2a19837559019e92fb592cc",
+      "content/prompts/p_055/locales/en.mdx": "c53cbfe4f55bc444bc320da4e636b3d8e88b3fdb7ee1058847cadfd1fab234fa",
+      "content/prompts/p_055/locales/ja.mdx": "e7fb692a63ac73699b2efae9a9a957ebbb04e32df9fba2287d36ec1466f96860",
+      "content/prompts/p_055/locales/zh-Hans.mdx": "cb7ad5583d951c1a9ce69e146c487f957c77371df1224a3912c9cdeaafe7d8f8",
+      "content/prompts/p_055/prompt.txt": "0a07aa3f6364a88b48efd62c23e9b6e59dc79177285617ebfc26be68fd2fee58",
+      "content/prompts/p_056/entry.yaml": "714594f31e294e0bf89cea2648bf88b9f04abe807aab56a9e1d44a46b2fb7e21",
+      "content/prompts/p_056/locales/en.mdx": "be2dc29746c2a0726cc766483c7bc81d4050033424eb89bbfb7f4a1a7dc98682",
+      "content/prompts/p_056/locales/zh-Hans.mdx": "34307b4b90c276b30075e25e06b4f5f89f703a63fb002226d69e64257cb915cb",
+      "content/prompts/p_056/prompt.txt": "bd6bb44cc412e385db3508ae1af40a8e9fb39dec551ee27f9682be85d4a3adf0",
+      "content/prompts/p_057/entry.yaml": "701066031fc56770cc017372145776c5f729dba23caf5fc8881e65e1ff3560d1",
+      "content/prompts/p_057/locales/en.mdx": "4842baad2e7fe60bf76108785cb022ff7cd0c2ded77d3eba835475736ab6200e",
+      "content/prompts/p_057/locales/ja.mdx": "64200be5370b357f6abb658d8452b523f12be1c2ac7dfdbde02f3ce8908b99f3",
+      "content/prompts/p_057/locales/zh-Hans.mdx": "5ce59913da0a05c5eed591fb954535e6ae898f0879b3271b2bd152c78411de50",
+      "content/prompts/p_057/prompt.txt": "f724648db3c587d205a3c84eeaa933c880898b69dc190aea06d94de8f583d6ee",
+      "content/prompts/p_058/entry.yaml": "f52f76d98b4753c56d86bf7275e58a3e3b0a552a74d4fbef9f48339c26da9665",
+      "content/prompts/p_058/locales/en.mdx": "488d0b0d07e8cd82189e4d20e5c40d917942fc7846847aaafbc2b87598176ab8",
+      "content/prompts/p_058/locales/zh-Hans.mdx": "712dfd1f05071f5640c0a6a545cb97b54827eb008147b4f4ec540250be61a91e",
+      "content/prompts/p_058/prompt.txt": "d915b8029bae161a816ca6aeadfde31f2cfcd0797f59610144649921a9dca63f",
+      "content/prompts/p_059/entry.yaml": "05b71760afdb35694ad7bec7d99dcda92eb4d8a7e150a81c237a9b958b3bf376",
+      "content/prompts/p_059/locales/en.mdx": "d253b1f9e6ffc3e4b32e92421e4c90204b0160a36fd93f831ae9a2bc5e24779b",
+      "content/prompts/p_059/locales/zh-Hans.mdx": "46bf9e7a8c5034590f92a9515a3c828714238f4867dd4377595733e6d7ea7320",
+      "content/prompts/p_059/prompt.txt": "5bdf566d374b78d659fff3faad0eff23dfd57c2b138b9af4bc9c4b84b3008642",
+      "content/prompts/p_060/entry.yaml": "88a1ce34acf06a323e72581c20c22987d29003e812f26cf73ca5b7a111e56766",
+      "content/prompts/p_060/locales/en.mdx": "027d7461bcd96407ca8d2415a7e45d77229c1127d15b38c6494fbe54eab46190",
+      "content/prompts/p_060/locales/ja.mdx": "08c8c025b3490edb6fdce422f0aff0d86dd844dfbf3e332683c7bc090346b01e",
+      "content/prompts/p_060/locales/zh-Hans.mdx": "50b58e794260b617424f909f8c1a17d67c1384a22f1bc29e4a691f3889da956e",
+      "content/prompts/p_060/prompt.txt": "9d257bd62a3a03a7a412cd8186cf95a9d92ba5593a0c9150c03321c770fb73ec",
+      "content/prompts/p_061/entry.yaml": "7f60227e6667eb012bdd26c1bc4f661481cc63d97aaa3529f583cd18a64484dc",
+      "content/prompts/p_061/locales/en.mdx": "01e383a8a0649f1fe0433f93ddd46d96e0ae12f03d517622f23328d195fc6a59",
+      "content/prompts/p_061/locales/zh-Hans.mdx": "5698184d4760c58ae03bbd3559e573fd049108844f1b7d90127940f0cf9b6ab5",
+      "content/prompts/p_061/prompt.txt": "3fc02ffcb46c85e11dd1967bbf8049ffc78dffbf777d8b1db66e592798e61de9",
+      "content/prompts/p_062/entry.yaml": "5c3066d2278f5894a6b58871c5ba791084d1e7a5bb9085794de754e6526ea5ea",
+      "content/prompts/p_062/locales/en.mdx": "ce7634223dd3e8cfd10eab03f0039efbf62f83e37621ea0ec8342dce9f0dfbee",
+      "content/prompts/p_062/locales/ja.mdx": "190c229fb083c82d88d3559140d7c2c82bda510465085d2f257c8022d4433fdd",
+      "content/prompts/p_062/locales/zh-Hans.mdx": "ca9887776fe81cb3b9fbd95b3ad1fe79c3610378b1cc6bb8cdbc1167f9aaee9d",
+      "content/prompts/p_062/prompt.txt": "b2ed7407f2b6cbadd9ccd74a28e5ee32f0b0bc5f3df5e8890d43b00d252ebd09",
+      "content/prompts/p_063/entry.yaml": "813848c696ba818c8cf430392bd85f539351e907f0c1117270f67ea7e98746ec",
+      "content/prompts/p_063/locales/en.mdx": "fdfd44e7088eae501f5fe7d76e9ff29033c9f2a261c906dddda017fbbd7fb68d",
+      "content/prompts/p_063/locales/ja.mdx": "7c8eb7f6e3c85af7498e906389673cc84092d85468ed54e786b5ce67a9abb56d",
+      "content/prompts/p_063/locales/zh-Hans.mdx": "871334fb3cfb790c5854b0e0bacf022dfd292761409af2ed482703945f2b4526",
+      "content/prompts/p_064/entry.yaml": "b1392a81b8a3ec56102edf0d631acd86f53baa51f03f76ea1f7742fd1f9a4870",
+      "content/prompts/p_064/locales/en.mdx": "881b86b43186240d969bda372bb5e6c79bbbf29bb3d507c73597d420be7618b7",
+      "content/prompts/p_064/prompt.txt": "ef35563e550b6e75abb117b37dbaa279da1bdcc2a661d876f23aa42214c2563b",
+      "content/prompts/p_065/entry.yaml": "e096ecaef3ac66fd491128576a48a04860f27aa7b52a6cd8e0880a4eb2baab1b",
+      "content/prompts/p_065/locales/en.mdx": "7721b7dac0520dde47d7827ba4713ad902fc3e747084bb0e86437fd5f2516779",
+      "content/prompts/p_065/locales/zh-Hans.mdx": "63f633b822a16dba608a85917dbe99e5b9c58075b7b472ad5b45f350ff0fa04f",
+      "content/prompts/p_065/prompt.txt": "57d8eec1cfc9c5ae4d70507726d9fb93345bc0bc7cc5e6470e4eb9144a22bf1e",
+      "content/prompts/p_066/entry.yaml": "f75d80ef711e87dece0853ec0533ad3a248ae02bb23547cc769934fe5e482451",
+      "content/prompts/p_066/locales/en.mdx": "89560db0613acf6ee25ac9fc29bb84ec571e6b6fd7e9ebab05b4258af0a0a9b6",
+      "content/prompts/p_066/locales/zh-Hans.mdx": "6fcdfcad533c7a79c3be887d2494b6f608063a4f7876b495d752fc786964ccbb",
+      "content/prompts/p_066/prompt.txt": "2ceb72715cbf4e420c0eaf2fcdefa1f070588eb325f4c4a96d999a9b1250e448",
+      "content/prompts/p_067/entry.yaml": "53310517af6995d4b0d94ec6f27dbf2ce12f2257ca04427ab89d3849b8d9d5d9",
+      "content/prompts/p_067/locales/ar.mdx": "29ffa57cc46f2bf28bff849267c4ed7519a1519a27022543c8a1d0b8d61235ec",
+      "content/prompts/p_067/locales/en.mdx": "d7be14452d5dbaf382cee05d2050ae842d5b602f2f6b145c1cb2792863353b59",
+      "content/prompts/p_067/locales/ja.mdx": "5629de52bfb31ef94655bf65aeaed5f55c01747fc14e7add61230be2380c05f6",
+      "content/prompts/p_067/locales/zh-Hans.mdx": "8e56f6e3fb847cc178fbd0af94732f4ed6d94923d05b1d41075d48933eda472f",
+      "content/prompts/p_067/prompt.txt": "578be45fc978ef0dead917b4274c032c36f81c9223419a3ba93f02f9b5b5a972",
+      "content/prompts/p_068/entry.yaml": "b58afa5b4e5839379b249621a39f47c2d2833624ee74b07560e7c2f529a5a671",
+      "content/prompts/p_068/locales/en.mdx": "5e3ab3e419597c999042d45514e952b0637a38c94bfd95e0baac337280f5d385",
+      "content/prompts/p_068/locales/zh-Hans.mdx": "83c630da1675306fea01e9f3a80ad4fa544e84f7fbe290bf041116f39f90db5c",
+      "content/prompts/p_068/prompt.txt": "62c4daab723c6d5e2d22b1a7fa01d09c009bdf0180777bfc7aab9449d6b76d45",
+      "content/prompts/p_069/entry.yaml": "ca4c9589ae217eaa27e8affaf43a3ecaf6a843e0c68c489db8d7a059f78f519d",
+      "content/prompts/p_069/locales/en.mdx": "58a86c894c3d4e116aad8632107dd2bfbda87eb4368689aec1b523a837dd0080",
+      "content/prompts/p_069/locales/zh-Hans.mdx": "f583a074854fe12b6c729110f292c95dec62bf0611a7fa08f8ba1538d5e59971",
+      "content/prompts/p_069/prompt.txt": "6382ba4586ae8f3289b7f6a6bc70d26d089f323e3e6c981f4253d0d61920691d",
+      "content/prompts/p_070/entry.yaml": "45441cf08a219b4f171d83519d8d461e90b5c8a63ea7060dc8af73e0510fe08c",
+      "content/prompts/p_070/locales/en.mdx": "bf022e96a0019d7e197ad95edd72235a44835cae83450c6554e992318940d794",
+      "content/prompts/p_070/prompt.txt": "c3bcbff017b11b5fae58fd6f80b4905799be14c05de52783c6f29ec39c42b12f",
+      "content/prompts/p_071/entry.yaml": "375bd42e57c1896aa1d34edc000889dfc5fff0686f206236f38b9a58ad91742a",
+      "content/prompts/p_071/locales/en.mdx": "bcf01e3cdd35c9f43e9fe7092f8174a8424005fa4e09ebb296b1bf7468f88ecf",
+      "content/prompts/p_071/locales/ja.mdx": "001bc8f19909ecdefcd9c613d836d76a1e41d761f13fc00ea7d7e48b7dd4aa9a",
+      "content/prompts/p_071/locales/zh-Hans.mdx": "49447d97d91f864ad47e95f7a9ef8215b226257ee64daa75b22972eb18374591",
+      "content/prompts/p_072/entry.yaml": "827e75cf5b2a03dbea3c3d8a8fff0539fc1b3282831e0b46cad95d2d019ece61",
+      "content/prompts/p_072/locales/en.mdx": "6afe630596758065c63adefd7141098d2908f556cbd5b86968ffe17ab721526d",
+      "content/prompts/p_072/locales/zh-Hans.mdx": "7597a6e22f857929ca662f446e48986e59742f3a8af77597c1b4a715c0f503e4",
+      "content/prompts/p_072/prompt.txt": "3037ecfdc015e0977fd39c94749fac39885be120b3cd7da29261c30199606c0a",
+      "content/prompts/p_073/entry.yaml": "12dc7060fa79df61f30891a82af31221249314b1f4a13a353f04c7ffc590456c",
+      "content/prompts/p_073/locales/en.mdx": "36de46e90e4c58bfc5502ba8c830e3d412ba82d3d053893333961f5ea0810f57",
+      "content/prompts/p_073/locales/ja.mdx": "beface697f1113e3a326f5cd410f186f26f97c64e29d323ad1ff0a49d9d50ed4",
+      "content/prompts/p_073/locales/zh-Hans.mdx": "141994e18474a86fe7faa81ee20ef143166c2d4bdb5fc6afbb7c642698a97c28",
+      "content/prompts/p_073/prompt.txt": "c37a0de499b80af4b243140bc306fea65728bae2c70b6196e9978fb7513a1952",
+      "content/prompts/p_074/entry.yaml": "9a9de38eec81a2a71e887592877697d8160741f1b735bb67049ada9819bac57e",
+      "content/prompts/p_074/locales/en.mdx": "82e99e3c56d15590d3e7bf5e87ac79dc43ece453e41f324bd78c5c058a2eac06",
+      "content/prompts/p_074/locales/zh-Hans.mdx": "7341a26bcba196a724a22e597b2aec1f097d35c7d1a04dbaabd1d65049b8f29b",
+      "content/prompts/p_074/prompt.txt": "4d543abd4f55cbca7dcdee24f0fb57c8336a78121910863760251c78003df3db",
+      "content/prompts/p_075/entry.yaml": "a5f733eac28bfa20a2f3caab5f1e9ca72f06df9996fb868c8dfc25006def58a0",
+      "content/prompts/p_075/locales/en.mdx": "461849124ed129ab759b3f8fb52adf1a2101319ed15bd63aeb37fe484e13cf12",
+      "content/prompts/p_075/prompt.txt": "285e8ec66fb7304cec2bd36c0f776170c21ad258e634ae3cc723023ba393c671",
+      "content/prompts/p_076/entry.yaml": "0d7b36969f98b7dfd694f393f3472aa5073c2a8130cd4edea78f52679516dee0",
+      "content/prompts/p_076/locales/en.mdx": "075cab204d21e594f19fcf409d629eafe1fe66ec4a62c81a2cfef1488c308b70",
+      "content/prompts/p_076/locales/ja.mdx": "e0f0dde53c2b1b59d5f7581ba5784d2bb9517662c8ba6c68712deb7bace7cbd8",
+      "content/prompts/p_076/locales/zh-Hans.mdx": "6dba9b35159b5b7273b2141ee2e56921747709629190cdbf781aa99223385b1b",
+      "content/prompts/p_076/prompt.txt": "d05d0f2dcd883edf3d3d3ae6de30bd4d3d5801b99174920d0665c8accc8ffc58",
+      "content/prompts/p_077/entry.yaml": "f5ad68f417abc4b4c35a8b6cf10a21351b7a1e3e3a7a14a07f5961c655972087",
+      "content/prompts/p_077/locales/en.mdx": "fca16a23e09a3cc20adf69ca0c579dbdfe82acc8a8c87b55bfb5f15c8d461bf4",
+      "content/prompts/p_077/locales/zh-Hans.mdx": "a6c4b0ec5b442c35e30f2edb7f61235680800af0df28c633382eea5fbc40fe95",
+      "content/prompts/p_077/prompt.txt": "901e322602be760239c3221fd99c5662f26351e0abfe3f6329af34c3a44989ce",
+      "content/prompts/p_078/entry.yaml": "305c37c161e6a20c61057fee37029713df6294d00478b8de050cb068d48821b8",
+      "content/prompts/p_078/locales/en.mdx": "d80cdc9071f94df9df34ef6825c2393100d38b1be60d08ffed16537cdc6e2d36",
+      "content/prompts/p_078/locales/zh-Hans.mdx": "5af297b6f3952a1b397e842237521faf1f97f9538785da5966f956b72385fa04",
+      "content/prompts/p_078/prompt.txt": "7c269cba44326b3ac7c6b9db94ebf2d9f0cdc762399284a13ee4a753386d4bf5",
+      "content/prompts/p_079/entry.yaml": "7b155d381615a03dac0e25bd673af8a2614f57e42dc34513946f2279f9f46699",
+      "content/prompts/p_079/locales/en.mdx": "31175b0588ced55f2d0ba0360fc37936d5a3b1c8a905977b31297b69830619b9",
+      "content/prompts/p_079/locales/zh-Hans.mdx": "38cb615ba621c5546d0bac29b8b80e9a630c9d0845ff0f58c16fd09f9bc0dd60",
+      "content/prompts/p_079/prompt.txt": "5c1a9d8f225b4bfdfb201f47ee10cd9708a13f72e4b1301c3ef319b9c98b8bf7",
+      "content/prompts/p_080/entry.yaml": "89d462d25b2618f358ba1c310aea65578079a2d7ea078563232e9cde1d627f22",
+      "content/prompts/p_080/locales/en.mdx": "2d0a02b641b2b3193ce83bbc68c3b79727a62080ac715821cf1ef238ee0b143a",
+      "content/prompts/p_080/prompt.txt": "e6ccc5d6a0f9c5ba933fb6cde0891cdf002d2e951048846eb6cc84ce7291330b",
+      "content/prompts/p_081/entry.yaml": "897008140a5fdb9def81ccc3ad4b4d939bb76a2e77510356840bc1bf7642f01c",
+      "content/prompts/p_081/locales/en.mdx": "ec9ba71bdaececbc9344c5b24c92ed99545c562aad980a2ca14de1bc71dd66ae",
+      "content/prompts/p_081/locales/zh-Hans.mdx": "b473386c6b2adec48fd2ea6c7e06c0aca651f72e5a0ab54e0dfe0cb265319e07",
+      "content/prompts/p_081/prompt.txt": "a11e7a8fbca564ee89b567ce66740001936f78cb25dc440e95b60d3d227f6303",
+      "content/prompts/p_082/entry.yaml": "4f72f3750be2bd7d3cbcb59c6146313af7ffae157dee79be70936374535da259",
+      "content/prompts/p_082/locales/en.mdx": "fcf1af4dd8022226b9c6e38f3e13f99d73e849e665eaa97359d9a4a6bfa71588",
+      "content/prompts/p_082/locales/zh-Hans.mdx": "4f5e5775d519c361d158a7b3ad60455448c30a625383e5b1822c3203b527e54f",
+      "content/prompts/p_082/prompt.txt": "7f69a573c3a7a127822221ba4050084c50b4a409493a65fabbb065a789f946f9",
+      "content/prompts/p_083/entry.yaml": "cf5cbb20fbbd67d105df41b26974ddb17a3b477dd2c8d3a8503bd6e087c4a085",
+      "content/prompts/p_083/locales/en.mdx": "d79505cbdfce327eaa62d65f89fd4909963d78674dfea210bee1fb55011a4a0d",
+      "content/prompts/p_083/locales/zh-Hans.mdx": "c3cdad0153b5eecd8644c163cfe057154f807cb64e3cb4bb45895e82268747b6",
+      "content/prompts/p_083/prompt.txt": "61acaef64574ef758aec7c12c21a3b306f78cc6efde4c7de996ec7c5f029ba61",
+      "content/prompts/p_084/entry.yaml": "1c6114c6f12d421c362d0a84af2f3d2658a04f6e56b8641d16ca40dfd42f37e4",
+      "content/prompts/p_084/locales/en.mdx": "3652c57313f51e80fc515de06588a69ca8e27f4c288a49cbd0fc946fa9e7e03f",
+      "content/prompts/p_084/prompt.txt": "12be6ba5874326401e3658673e4bc9a5fd8437f1848ce22a1c0cc641eb8355b0",
+      "content/prompts/p_085/entry.yaml": "55368b6524785588a53cbd8bf0eae610dbe8b9b5f779a7c408ff1fd9329577f4",
+      "content/prompts/p_085/locales/en.mdx": "0a728622c7bdd7787aec053020f8168e91a33cc77103f69e3fc514c1710d1e7c",
+      "content/prompts/p_085/locales/ja.mdx": "2f7983496f86a89a2305bdf57a363c476d2b1526c1b03a138af2ca19c020cfd0",
+      "content/prompts/p_085/locales/zh-Hans.mdx": "4388161200f45609d28b31e0346f17751b3985790bc802ffb07d45208e184242",
+      "content/prompts/p_085/prompt.txt": "ec89d3e9e39f3b65e32b73e5460f5ae9a4a357aaa24719bbbc3b5c1efb339ffa",
+      "content/prompts/p_086/entry.yaml": "2acbb29e971b3e14fa9d7096ceebf6763ef23c8b3e2e388d56d0639742190a69",
+      "content/prompts/p_086/locales/en.mdx": "79e8f2126b8319895f8fc9951779569ede011adc2be5e547669628d0cfb4fb22",
+      "content/prompts/p_086/locales/zh-Hans.mdx": "640398198f72b236c11a6b86f3eb4f615f5a72a4b002153ef684caf535986899",
+      "content/prompts/p_086/prompt.txt": "a4796c7a216e94b52ea281ead5dbd8aaedc489958ab169d9f2463d956c5a42db",
+      "content/prompts/p_087/entry.yaml": "50bd5bdec126b7c7dd2e813a09cd7b32da97620224b5a5c993e00619aace61a8",
+      "content/prompts/p_087/locales/en.mdx": "77ac06de170322de0964179c943b7f75a13443156aec2b3a11f3ac06f4dbb528",
+      "content/prompts/p_087/locales/zh-Hans.mdx": "c6e81cd4051ff870273fb50b67c25097d7eb5c1f9788f7c865c3dfa05fb07231",
+      "content/prompts/p_087/prompt.txt": "779334ba99f2cfa8667c95f17a19eeefb493f58bc91f306269073d8cea04f042",
+      "content/prompts/p_088/entry.yaml": "7ae9eca9207f3c977812854271a312feb6e1e0a9e9519973414bc2e7ec8aa4a2",
+      "content/prompts/p_088/locales/en.mdx": "98997a2b30c08575037fe80a31148a545a6e45f69226703c3ae968ca78865db1",
+      "content/prompts/p_088/prompt.txt": "5d5bd48b88f16fe6389cb81b2125dbb591e4f687ae01851044ea1be67c2ce4aa",
+      "content/prompts/p_089/entry.yaml": "bd9e3c29771f8da835778eafa77111c7c027597fdff0dcc8ff773ec25fe5272d",
+      "content/prompts/p_089/locales/en.mdx": "09d77a4acd42dad67a9e0ab650d484cfacc7677900deee24f09f132d775177f9",
+      "content/prompts/p_089/locales/zh-Hans.mdx": "e114b7ab789dfe6ff14dc89c64e448a4a84607aa9836d1a0e84c5f0428e24490",
+      "content/prompts/p_089/prompt.txt": "2fe75aba0479ed4bbc0de6ea13c9f916035ef6f22f5b1434b891ec71503a2025",
+      "content/prompts/p_090/entry.yaml": "a4fed6ed79b342f3c64d1d723d7f58483c3c3df8638c8b56a750f5a38c79c279",
+      "content/prompts/p_090/locales/en.mdx": "02ffbb0a348e9e6809a23b527df90c4dbae6ea79ee799b878a3d0684dfa4f461",
+      "content/prompts/p_090/locales/ja.mdx": "df71a953cd02e34551b38dea6f2d3b7abd8f1d67f631a907f907c3b487a03ed9",
+      "content/prompts/p_090/locales/zh-Hans.mdx": "68623882d93d1b06a52d553fcf975caa33f4233c1a039698c595a296595b5c0a",
+      "content/prompts/p_090/prompt.txt": "b1f0243796b7092619e3b5c8e216cd3dfd6ca418f86f9b502cd344e833851cf0",
+      "content/prompts/p_091/entry.yaml": "15463d1c34139e7d86859964a1b601790a7745cab498c0e76e0e33da50241f5b",
+      "content/prompts/p_091/locales/en.mdx": "dd9b49de5e293ab6808f69ca84923ca67d4c27059bb149d57a785d2783149154",
+      "content/prompts/p_091/locales/zh-Hans.mdx": "764ac23d2d4abc493dc3eb28ee55ac3aa57c991b337d0a9957559c713b705a32",
+      "content/prompts/p_091/prompt.txt": "1013fc1e3377a8a21b4669b1a25dab39cdfec0119828c046c84d35d189a30cfa",
+      "content/prompts/p_092/entry.yaml": "fc5e3f9876f1c8893a37c4e71dead40db53f258a2fdbd6aa17ddd07c59e8ba0d",
+      "content/prompts/p_092/locales/en.mdx": "a6c828ea67433c4200c737bb68f906f8d206dd552014f59e8b5a26d55368b8b2",
+      "content/prompts/p_092/locales/zh-Hans.mdx": "86e6ff9894d4e4b214c41eefdf06220e2b32780210746949558e87fb24dfda94",
+      "content/prompts/p_092/prompt.txt": "42ef7809ac561c300fa999c09abd19c950ae4173c25526eb6725ff37eee47841",
+      "content/prompts/p_093/entry.yaml": "700d4c47139661aeb47383626feb931e03676575ec95f7cdc058562453bf3682",
+      "content/prompts/p_093/locales/en.mdx": "16676b6f5fed95ea62837d845ff679c7c6976fcbf7b47440718aaa9228ae63fd",
+      "content/prompts/p_093/locales/zh-Hans.mdx": "85e02addcc8d7e33bb0ec77ba6115c4ac359ac38c8ff3a8a4d5c663a7426cb18",
+      "content/prompts/p_093/prompt.txt": "ddd01e2b921596efdd22cfd3455ce258ac7653959b303ca98079973dc6e73f15",
+      "content/prompts/p_094/entry.yaml": "5fd506135d8b77c3976034dbfa204d760321f6999302be9505b250cc93104dd8",
+      "content/prompts/p_094/locales/en.mdx": "0fdd9341e903a361d33676606ed015c2765618614b582145fadbe5e7a926fdf1",
+      "content/prompts/p_094/prompt.txt": "c9280727f5cbecc577f4d05aa871b67d8d6ab2f7cec532bdff2b7722716c69b6",
+      "content/prompts/p_095/entry.yaml": "a5c162d5956b93659aa5842b68b88542c7f52e5129b417456519d432d60c01fb",
+      "content/prompts/p_095/locales/en.mdx": "6940477abf3017b34f7e945a4b78d6bb18964ff5fe7c51904e29ee517f4ba00b",
+      "content/prompts/p_095/prompt.txt": "74de14bba05fda1f3878d93865038d19a3a9b6fa79fea2595c8c132b25b7b024",
+      "content/prompts/p_096/entry.yaml": "9c17f622c736d8dfa114664675b669039c8957c6e831c46ea486e15eb41940bb",
+      "content/prompts/p_096/locales/en.mdx": "8ce928f4531e31a3638d5f3daa98a7f64cfb9a995849ed2542012501ecb5fdc6",
+      "content/prompts/p_096/prompt.txt": "e0efa3a2e7b4d786990eaa049c569963e41935f4b428b15b289260fe8aba476e",
+      "content/prompts/p_097/entry.yaml": "6964828c1fe73e5f2bceab9f994f1306a2927866cdf6ce577db7bd270c096be3",
+      "content/prompts/p_097/locales/en.mdx": "184b419fec3b98a16311a0dc06fbc41d24f25a5a6c1598365c91b4f7ee9c83ef",
+      "content/prompts/p_097/prompt.txt": "abafa6f6f6163ddc77eebf68b2e156d92948f214f023161d4b2c992bac7a7690",
+      "content/prompts/p_098/entry.yaml": "7da4a5d8f3310a9b6236d2668d9f7a8787854eb2b12482ff5c0cd2d51fbb249f",
+      "content/prompts/p_098/locales/en.mdx": "a585c15e92e799fa4749690cba403865620994d9e2bc19dc9782441e8aed49d4",
+      "content/prompts/p_098/locales/ja.mdx": "b4dee6bc3dba2a93ca355a4f3d5794ff1d96ca9a2c02e1914528453f8d016276",
+      "content/prompts/p_098/locales/zh-Hans.mdx": "1566bf2559609e9c67beb5f178972deee8c0181f490fc2e170e06baeb46204c9",
+      "content/prompts/p_098/prompt.txt": "ceaecf87cc7cd8ef6d7f91905f9a8f48f067e611761b289a5c5e5d77d2992081",
+      "content/prompts/p_099/entry.yaml": "f879d09273bedc5b515193b1b102495ad37b286c595562e2e9d893acd6e04ab7",
+      "content/prompts/p_099/locales/en.mdx": "ec76b5e0d6ed5f4f3b3688c238f3365af88ab817d27a531f42cc4e781c3e130e",
+      "content/prompts/p_099/prompt.txt": "ef7a30bc0a14e7d88c87ef92662a42bfbac7f787868a2eaa3a5a721530e5ef09",
+      "content/prompts/p_100/entry.yaml": "917ed5225a9b166734290c03efee1ae1ce626bd36df44b719490eebad894e201",
+      "content/prompts/p_100/locales/en.mdx": "ecf3b7c82152923d2952714d2dfc497c0a149b3e784072757782616b9bf66941",
+      "content/prompts/p_100/locales/ja.mdx": "39e97d8345270f4bc3b5cb6a613987cd8b40f14d12e33ab9cd83e22b7f6c516a",
+      "content/prompts/p_100/locales/zh-Hans.mdx": "816714cac67ff3ae636482e52c205730490f040d75c6ea58cf797e0b45066ab0",
+      "content/prompts/p_100/prompt.txt": "6b031fc19233172bf0ec7a1dec90aa12b2a5f620c67ee0c726c4ea125f760a32",
+      "content/README.md": "2554022a6c2c40e2e94c0a6048e884469b644961f734e227bb1eb4a9c9e34a35",
+      "content/redirects.yaml": "36c5133a4171ab7dd706bc47cc28c31612d98ad2ae9717450f7d88d556cc3ec0",
+      "content/site.yaml": "8d39cd3f64d08ad0a3f22430aa09dab3471d4900ba6eb01d3cf638c98c21c123",
+      "content/taxonomy/categories/landscape/locales/en.mdx": "29c7b26f5f0fb4880068c6edff294c4c7eb9eb053363366b775481e43fb213fe",
+      "content/taxonomy/categories/landscape/locales/ja.mdx": "81ac09018585d64f34835236da242aeaa5293f4f5fa3e72ebd6f167e48b65863",
+      "content/taxonomy/categories/landscape/locales/zh-Hans.mdx": "2149015bf800db52a2c05277ce1074150bea4268810f48bc022667018454a7d6",
+      "content/taxonomy/categories/poster/locales/en.mdx": "1fb67a91aede04faad7e80bf97ee1d21d4ea10a92a9297e0e5b98c4ac6fb7177",
+      "content/taxonomy/categories.yaml": "2556883fc890eca1406be7a562f64daf990961056f7585c2fb44a39743419a90",
+      "content/taxonomy/field-groups.yaml": "f5a8a172b5af0b0dfe0d5ed14ec72d2e5d29d00477bf6aef7ad936d522d900c2",
+      "content/taxonomy/styles/ink/locales/en.mdx": "fc51b6f2ff9ca01d7de901c685cadc137dac5c74edb36a7e37709a7338fe481f",
+      "content/taxonomy/styles/ink/locales/zh-Hans.mdx": "acd3d93feb25f31d53d27cb47b438bf54f77daaab3ec28ed103280b6651a623c",
+      "content/taxonomy/styles.yaml": "4d10868fb4f5f2009a79f196d45446e8e164795466bc960e4658714bb32e4d59",
+      "content/taxonomy/use-cases/wallpaper/locales/en.mdx": "5f266378fc8380cab40ef2c9b87d726b9ca9e9d53c22b82b5a0d9b426dee3922",
+      "content/taxonomy/use-cases.yaml": "e0933396b6d5feadb033f16ebea198098a147834bd5d73d9ad12f7a5298c7c07",
+      "content/templates/t_001/entry.yaml": "e0e930beb70f28f7737ca750e9dae5cd70c857ee66441dae002b54a10d4b7bed",
+      "content/templates/t_001/locales/ar.mdx": "e670de2dce09228445f07602366d37ad55c4196628f6f5774d5f70f21f38da26",
+      "content/templates/t_001/locales/en.mdx": "c76181006422413297201bdd805425cb2cffa0f7ee04f359f95053739926731e",
+      "content/templates/t_001/locales/ja.mdx": "0d004282161e6742516455a07a2eb73db9df1819411ecc53f9589e94c7e3fa2a",
+      "content/templates/t_001/locales/zh-Hans.mdx": "a54423a2bf12aa1bf9fcd70743ba8bcf2cee26e3fe42acbb4776b84996f0f708",
+      "content/templates/t_001/versions/v1/body.txt": "326afdf124508d40041d851a52990581603b9afc23f272783b0b897329cc4071",
+      "content/templates/t_001/versions/v1/fields.yaml": "e5fdc7659db61548486a497f1810802f17a55a151c019b719329d93e54b2d8cc",
+      "content/templates/t_001/versions/v1/samples/default.yaml": "0ce29d467af66b876f28f4c963b8670868e2dd8ee9774b42f61955706c56f046",
+      "content/templates/t_001/versions/v1/samples/loose-tea.yaml": "cfb2c9e7e4ff85593aeb428a8c646b7dc9c0e121dbed503bd60cbe95b4caac9b",
+      "content/templates/t_001/versions/v2/body.txt": "0a404a5c7805b33a216ab96569dfda7852e4613a9bce7519271368e89bef600b",
+      "content/templates/t_001/versions/v2/fields.yaml": "ce189404fea4d276f8ae82fe7b0a38e9c2ea87c14f9d7ac876dc412c332eff98",
+      "content/templates/t_001/versions/v2/samples/default.yaml": "8ede7e61b2c96f56176c1d30783c4f3bb7bc3c8a86fe8202357439e22e187406",
+      "content/templates/t_001/versions/v2/samples/sneaker.yaml": "94d95ab34f8cf4313f05600c2773269d42f2fbb98fa594830a7d3e802e5465a0",
+      "content/templates/t_001/versions/v2/samples/tea-tin.yaml": "994e599b23ffc869d2f470ba0a6b6526dd76a3f9450c3e5451bea057a43e5f60",
+      "content/templates/t_001/versions/v3/body.txt": "c34bee24847e541f0cf039028dcdaaa4998b66e5bfa9276fd2149b8365e580dd",
+      "content/templates/t_001/versions/v3/fields.yaml": "ce189404fea4d276f8ae82fe7b0a38e9c2ea87c14f9d7ac876dc412c332eff98",
+      "content/templates/t_001/versions/v3/samples/default.yaml": "8ede7e61b2c96f56176c1d30783c4f3bb7bc3c8a86fe8202357439e22e187406",
+      "content/templates/t_001/versions/v3/samples/sneaker.yaml": "94d95ab34f8cf4313f05600c2773269d42f2fbb98fa594830a7d3e802e5465a0",
+      "content/templates/t_001/versions/v3/samples/tea-tin.yaml": "994e599b23ffc869d2f470ba0a6b6526dd76a3f9450c3e5451bea057a43e5f60",
+      "content/templates/t_002/entry.yaml": "0e74042080554eee24c322a514543cbe46f7fe8eafe5e3e7468f1b71252bfccc",
+      "content/templates/t_002/locales/en.mdx": "196e120db13cbc2bd0ddd1115baaa2c768e47c6d86b205b7deaa866962d5458b",
+      "content/templates/t_002/locales/ja.mdx": "c4e4e36ad347783cbca147b6611e9fd5575bbb3401a57cd4e98b966bdacb3de9",
+      "content/templates/t_002/locales/zh-Hans.mdx": "6a0c4bc6a784542815a33a20d8e0a17bb9dd244ea3a224e38b231b4f7669af72",
+      "content/templates/t_002/versions/v1/body.txt": "6dbd43dfe689438775943dbe9ef8cbe18817957e7d8431c26ea9b2fcf7d6c94d",
+      "content/templates/t_002/versions/v1/fields.yaml": "76346381f11a92a525936e13db4308f39f266b6f09411dfd1ff1534a0313aec9",
+      "content/templates/t_002/versions/v1/samples/default.yaml": "9317cbd477073d089bb164e67e3edff2b2bb44704707ae4d6a2a3408627cf28a",
+      "content/templates/t_002/versions/v1/samples/misty.yaml": "6ca634c79a26b28f638e1bf9707edde2a0bb32427d3a9231af87bbe4288f1d79",
+      "content/templates/t_002/versions/v1/samples/tall-scroll.yaml": "99bbf129e590e39b11cf8a0236557bf970ffd0c6c692528646eb449469bed73a",
+      "content/templates/t_003/entry.yaml": "e951da360609ad181ed2dddee6e9b93e04d6c7450d9ff837230a15e4d3445df3",
+      "content/templates/t_003/locales/en.mdx": "a1043bffc0d6d66e4e02488f08ba24ee3fa2af9adcdd6a91162ea79f32b2fb5f",
+      "content/templates/t_003/locales/zh-Hans.mdx": "8ec2c8bc0f126a05df1531823274555d1eaf3ebfc124dcbaa1b12ecdb175d854",
+      "content/templates/t_003/versions/v1/body.txt": "bbaeea1a46be2a998af8576d72d3f4979150d2970145ee8dcd80ee2ea0402bd1",
+      "content/templates/t_003/versions/v1/fields.yaml": "64463dba788ac6d5a98d14b8e8799356439b9b4ed9faa90d2b4168fc0ff2c4c6",
+      "content/templates/t_003/versions/v1/samples/amber.yaml": "9e4fe4baa7e687031a107586f3d93ddaa55b5a2f6ad02ac954cfd32681f97c07",
+      "content/templates/t_003/versions/v1/samples/default.yaml": "64fd9ba02f79e229cb8ebb04009463eec2d1c0db892d2ba2c1018bb619c69974",
+      "migrations/gpt-image-v1/source-overrides.json": "2467170c238177b95af9dad4f8dacd9ec0eb116828f04ee71b2d078954eb41a8",
+      "README.md": "7485afbc94d12625415f13aab119ced96e4543fdb872194b615ef084a3997e21",
+      "src/i18n/messages/ar/detail.json": "3b800a5149541717557b8ae06d84ee8e96695df743369cae28f95715c2cc5bd0",
+      "src/i18n/messages/en/detail.json": "f04c2c1b4382d57acf29b248744fed3b4041d8954a378e2f1b63caef718dbcfe",
+      "src/i18n/messages/ja/detail.json": "28e833b1955b9fec61af051dbe3399437c63972539437200a3e98b9a885920ac",
+      "src/i18n/messages/zh-Hans/detail.json": "05fffb873190bf381cea75c987e60eb8e8de3fe6e3f681ec058eb50363bd2066"
+    },
+    "visible": {
+      "production/en": [
+        "/en/about/",
+        "/en/collections/posters-with-clear-hierarchy/",
+        "/en/collections/quiet-landscapes/",
+        "/en/license/",
+        "/en/prompts/amber-harbor-sunset/",
+        "/en/prompts/amber-lit-dancer/",
+        "/en/prompts/amber-teal-avatar/",
+        "/en/prompts/autumn-hills/",
+        "/en/prompts/autumn-quilt-pattern/",
+        "/en/prompts/bamboo-grove-scroll/",
+        "/en/prompts/bare-winter-branch/",
+        "/en/prompts/black-and-white-tiles/",
+        "/en/prompts/blood-orange-slices/",
+        "/en/prompts/blue-bauhaus-square/",
+        "/en/prompts/blue-ridge-panorama/",
+        "/en/prompts/blue-rim-avatar/",
+        "/en/prompts/blue-tile-pattern/",
+        "/en/prompts/bowl-of-miso-noodles/",
+        "/en/prompts/branch-across-a-scroll/",
+        "/en/prompts/breakfast-fruit-bowl/",
+        "/en/prompts/ceramic-mug-poster/",
+        "/en/prompts/citrus-geometry-poster/",
+        "/en/prompts/citrus-slices-on-mint/",
+        "/en/prompts/coffee-cup-autumn/",
+        "/en/prompts/coral-and-cream-tiles/",
+        "/en/prompts/coral-archway/",
+        "/en/prompts/coral-bottle-launch/",
+        "/en/prompts/coral-jazz-night/",
+        "/en/prompts/cyanotype-fern-fronds/",
+        "/en/prompts/dawn-over-the-sea/",
+        "/en/prompts/desert-dunes-warm-light/",
+        "/en/prompts/desert-ridges-noon/",
+        "/en/prompts/dusk-ridges-phone/",
+        "/en/prompts/forest-bauhaus-print/",
+        "/en/prompts/forest-ridges/",
+        "/en/prompts/geometric-concert-poster/",
+        "/en/prompts/grapefruit-and-lime/",
+        "/en/prompts/green-rolling-hills/",
+        "/en/prompts/green-tea-tin-poster/",
+        "/en/prompts/harbor-city-towers/",
+        "/en/prompts/herbal-jar/",
+        "/en/prompts/honey-jar-label/",
+        "/en/prompts/jazz-club-poster/",
+        "/en/prompts/knit-sneaker-poster/",
+        "/en/prompts/late-night-noodles/",
+        "/en/prompts/lavender-colonnade/",
+        "/en/prompts/lavender-evening-sail/",
+        "/en/prompts/lavender-pot/",
+        "/en/prompts/lavender-tiles/",
+        "/en/prompts/lavender-twilight-hills/",
+        "/en/prompts/layered-ridges-at-dusk/",
+        "/en/prompts/leafy-avatar/",
+        "/en/prompts/lemon-tree-in-a-pot/",
+        "/en/prompts/lilac-bauhaus-poster/",
+        "/en/prompts/lilac-portrait/",
+        "/en/prompts/lime-slices/",
+        "/en/prompts/mid-century-tiles/",
+        "/en/prompts/minimal-gift-box/",
+        "/en/prompts/misty-ridges-first-light/",
+        "/en/prompts/monochrome-arches/",
+        "/en/prompts/monochrome-blocks/",
+        "/en/prompts/monochrome-geometry/",
+        "/en/prompts/monochrome-mug-launch/",
+        "/en/prompts/monstera-leaves/",
+        "/en/prompts/moonlit-ranges/",
+        "/en/prompts/moonlit-sail/",
+        "/en/prompts/morning-mist-hills/",
+        "/en/prompts/morning-skyline/",
+        "/en/prompts/neon-alley-in-the-rain/",
+        "/en/prompts/neon-phone-portrait/",
+        "/en/prompts/neon-rim-profile/",
+        "/en/prompts/neon-silhouette-portrait/",
+        "/en/prompts/neon-tower-block/",
+        "/en/prompts/night-city-neon-sign/",
+        "/en/prompts/night-skyline-panorama/",
+        "/en/prompts/ocean-horizon-banner/",
+        "/en/prompts/peach-slices-banner/",
+        "/en/prompts/perfume-bottle/",
+        "/en/prompts/pine-on-a-winter-cliff/",
+        "/en/prompts/plum-avatar/",
+        "/en/prompts/plum-blossoms-in-spring/",
+        "/en/prompts/plum-branch-in-ink/",
+        "/en/prompts/potted-rubber-plant/",
+        "/en/prompts/quiet-harbor-noon/",
+        "/en/prompts/rainy-crossing-at-night/",
+        "/en/prompts/ramen-from-above/",
+        "/en/prompts/rice-bowl-with-egg/",
+        "/en/prompts/sage-cloister/",
+        "/en/prompts/sage-tile-banner/",
+        "/en/prompts/sailboat-at-sunset/",
+        "/en/prompts/skincare-tube-on-blue/",
+        "/en/prompts/summer-salad-bowl/",
+        "/en/prompts/sunlit-arcade/",
+        "/en/prompts/sunny-tile-pattern/",
+        "/en/prompts/sunset-rooftops/",
+        "/en/prompts/sunset-soda-can/",
+        "/en/prompts/sunset-travel-poster/",
+        "/en/prompts/tall-tower-at-night/",
+        "/en/prompts/tea-can-on-sage/",
+        "/en/prompts/tropical-leaves/",
+        "/en/templates/ink-scroll/",
+        "/en/templates/neon-rim-portrait/",
+        "/en/templates/product-poster/"
+      ],
+      "production/zh-Hans": [
+        "/zh-hans/about/",
+        "/zh-hans/collections/posters-with-clear-hierarchy/",
+        "/zh-hans/collections/quiet-landscapes/",
+        "/zh-hans/license/",
+        "/zh-hans/prompts/amber-harbor-sunset/",
+        "/zh-hans/prompts/amber-lit-dancer/",
+        "/zh-hans/prompts/autumn-hills/",
+        "/zh-hans/prompts/autumn-quilt-pattern/",
+        "/zh-hans/prompts/bamboo-grove-scroll/",
+        "/zh-hans/prompts/bare-winter-branch/",
+        "/zh-hans/prompts/blood-orange-slices/",
+        "/zh-hans/prompts/blue-ridge-panorama/",
+        "/zh-hans/prompts/blue-tile-pattern/",
+        "/zh-hans/prompts/bowl-of-miso-noodles/",
+        "/zh-hans/prompts/branch-across-a-scroll/",
+        "/zh-hans/prompts/breakfast-fruit-bowl/",
+        "/zh-hans/prompts/ceramic-mug-poster/",
+        "/zh-hans/prompts/citrus-geometry-poster/",
+        "/zh-hans/prompts/citrus-slices-on-mint/",
+        "/zh-hans/prompts/coffee-cup-autumn/",
+        "/zh-hans/prompts/coral-and-cream-tiles/",
+        "/zh-hans/prompts/coral-archway/",
+        "/zh-hans/prompts/coral-bottle-launch/",
+        "/zh-hans/prompts/coral-jazz-night/",
+        "/zh-hans/prompts/cyanotype-fern-fronds/",
+        "/zh-hans/prompts/dawn-over-the-sea/",
+        "/zh-hans/prompts/desert-dunes-warm-light/",
+        "/zh-hans/prompts/desert-ridges-noon/",
+        "/zh-hans/prompts/dusk-ridges-phone/",
+        "/zh-hans/prompts/forest-bauhaus-print/",
+        "/zh-hans/prompts/forest-ridges/",
+        "/zh-hans/prompts/geometric-concert-poster/",
+        "/zh-hans/prompts/grapefruit-and-lime/",
+        "/zh-hans/prompts/green-rolling-hills/",
+        "/zh-hans/prompts/green-tea-tin-poster/",
+        "/zh-hans/prompts/harbor-city-towers/",
+        "/zh-hans/prompts/herbal-jar/",
+        "/zh-hans/prompts/honey-jar-label/",
+        "/zh-hans/prompts/jazz-club-poster/",
+        "/zh-hans/prompts/knit-sneaker-poster/",
+        "/zh-hans/prompts/late-night-noodles/",
+        "/zh-hans/prompts/lavender-evening-sail/",
+        "/zh-hans/prompts/lavender-pot/",
+        "/zh-hans/prompts/lavender-twilight-hills/",
+        "/zh-hans/prompts/layered-ridges-at-dusk/",
+        "/zh-hans/prompts/lemon-tree-in-a-pot/",
+        "/zh-hans/prompts/lilac-bauhaus-poster/",
+        "/zh-hans/prompts/lilac-portrait/",
+        "/zh-hans/prompts/lime-slices/",
+        "/zh-hans/prompts/mid-century-tiles/",
+        "/zh-hans/prompts/minimal-gift-box/",
+        "/zh-hans/prompts/misty-ridges-first-light/",
+        "/zh-hans/prompts/monochrome-geometry/",
+        "/zh-hans/prompts/monochrome-mug-launch/",
+        "/zh-hans/prompts/monstera-leaves/",
+        "/zh-hans/prompts/moonlit-ranges/",
+        "/zh-hans/prompts/morning-mist-hills/",
+        "/zh-hans/prompts/morning-skyline/",
+        "/zh-hans/prompts/neon-alley-in-the-rain/",
+        "/zh-hans/prompts/neon-phone-portrait/",
+        "/zh-hans/prompts/neon-rim-profile/",
+        "/zh-hans/prompts/neon-silhouette-portrait/",
+        "/zh-hans/prompts/neon-tower-block/",
+        "/zh-hans/prompts/night-city-neon-sign/",
+        "/zh-hans/prompts/night-skyline-panorama/",
+        "/zh-hans/prompts/peach-slices-banner/",
+        "/zh-hans/prompts/perfume-bottle/",
+        "/zh-hans/prompts/pine-on-a-winter-cliff/",
+        "/zh-hans/prompts/plum-avatar/",
+        "/zh-hans/prompts/plum-blossoms-in-spring/",
+        "/zh-hans/prompts/plum-branch-in-ink/",
+        "/zh-hans/prompts/potted-rubber-plant/",
+        "/zh-hans/prompts/rainy-crossing-at-night/",
+        "/zh-hans/prompts/ramen-from-above/",
+        "/zh-hans/prompts/rice-bowl-with-egg/",
+        "/zh-hans/prompts/sailboat-at-sunset/",
+        "/zh-hans/prompts/summer-salad-bowl/",
+        "/zh-hans/prompts/sunny-tile-pattern/",
+        "/zh-hans/prompts/sunset-rooftops/",
+        "/zh-hans/prompts/sunset-soda-can/",
+        "/zh-hans/prompts/sunset-travel-poster/",
+        "/zh-hans/prompts/tall-tower-at-night/",
+        "/zh-hans/prompts/tea-can-on-sage/",
+        "/zh-hans/prompts/tropical-leaves/",
+        "/zh-hans/templates/ink-scroll/",
+        "/zh-hans/templates/product-poster/"
+      ],
+      "preview/en": [
+        "/en/about/",
+        "/en/collections/posters-with-clear-hierarchy/",
+        "/en/collections/quiet-landscapes/",
+        "/en/license/",
+        "/en/prompts/amber-harbor-sunset/",
+        "/en/prompts/amber-lit-dancer/",
+        "/en/prompts/amber-teal-avatar/",
+        "/en/prompts/autumn-hills/",
+        "/en/prompts/autumn-quilt-pattern/",
+        "/en/prompts/bamboo-grove-scroll/",
+        "/en/prompts/bare-winter-branch/",
+        "/en/prompts/berry-bowl/",
+        "/en/prompts/black-and-white-tiles/",
+        "/en/prompts/blood-orange-slices/",
+        "/en/prompts/blue-bauhaus-square/",
+        "/en/prompts/blue-ridge-panorama/",
+        "/en/prompts/blue-rim-avatar/",
+        "/en/prompts/blue-tile-pattern/",
+        "/en/prompts/bowl-of-miso-noodles/",
+        "/en/prompts/branch-across-a-scroll/",
+        "/en/prompts/breakfast-fruit-bowl/",
+        "/en/prompts/ceramic-mug-poster/",
+        "/en/prompts/citrus-geometry-poster/",
+        "/en/prompts/citrus-slices-on-mint/",
+        "/en/prompts/coffee-cup-autumn/",
+        "/en/prompts/coral-and-cream-tiles/",
+        "/en/prompts/coral-archway/",
+        "/en/prompts/coral-bottle-launch/",
+        "/en/prompts/coral-jazz-night/",
+        "/en/prompts/cyanotype-fern-fronds/",
+        "/en/prompts/dawn-arcade/",
+        "/en/prompts/dawn-over-the-sea/",
+        "/en/prompts/desert-dunes-warm-light/",
+        "/en/prompts/desert-ridges-noon/",
+        "/en/prompts/dusk-ridges-phone/",
+        "/en/prompts/forest-bauhaus-print/",
+        "/en/prompts/forest-ridges/",
+        "/en/prompts/geometric-concert-poster/",
+        "/en/prompts/grapefruit-and-lime/",
+        "/en/prompts/green-rolling-hills/",
+        "/en/prompts/green-tea-tin-poster/",
+        "/en/prompts/harbor-city-towers/",
+        "/en/prompts/herbal-jar/",
+        "/en/prompts/honey-jar-label/",
+        "/en/prompts/jazz-club-poster/",
+        "/en/prompts/knit-sneaker-poster/",
+        "/en/prompts/late-night-noodles/",
+        "/en/prompts/lavender-colonnade/",
+        "/en/prompts/lavender-evening-sail/",
+        "/en/prompts/lavender-pot/",
+        "/en/prompts/lavender-tiles/",
+        "/en/prompts/lavender-twilight-hills/",
+        "/en/prompts/layered-ridges-at-dusk/",
+        "/en/prompts/leafy-avatar/",
+        "/en/prompts/lemon-tree-in-a-pot/",
+        "/en/prompts/lilac-bauhaus-poster/",
+        "/en/prompts/lilac-portrait/",
+        "/en/prompts/lime-slices/",
+        "/en/prompts/mid-century-tiles/",
+        "/en/prompts/minimal-gift-box/",
+        "/en/prompts/misty-ridges-first-light/",
+        "/en/prompts/monochrome-arches/",
+        "/en/prompts/monochrome-blocks/",
+        "/en/prompts/monochrome-geometry/",
+        "/en/prompts/monochrome-mug-launch/",
+        "/en/prompts/monstera-leaves/",
+        "/en/prompts/moonlit-ranges/",
+        "/en/prompts/moonlit-sail/",
+        "/en/prompts/morning-mist-hills/",
+        "/en/prompts/morning-skyline/",
+        "/en/prompts/neon-alley-in-the-rain/",
+        "/en/prompts/neon-phone-portrait/",
+        "/en/prompts/neon-rim-profile/",
+        "/en/prompts/neon-silhouette-portrait/",
+        "/en/prompts/neon-tower-block/",
+        "/en/prompts/night-city-neon-sign/",
+        "/en/prompts/night-skyline-panorama/",
+        "/en/prompts/ocean-horizon-banner/",
+        "/en/prompts/peach-slices-banner/",
+        "/en/prompts/perfume-bottle/",
+        "/en/prompts/pine-on-a-winter-cliff/",
+        "/en/prompts/plum-avatar/",
+        "/en/prompts/plum-blossoms-in-spring/",
+        "/en/prompts/plum-branch-in-ink/",
+        "/en/prompts/potted-rubber-plant/",
+        "/en/prompts/quiet-harbor-noon/",
+        "/en/prompts/rainy-crossing-at-night/",
+        "/en/prompts/ramen-from-above/",
+        "/en/prompts/rice-bowl-with-egg/",
+        "/en/prompts/sage-cloister/",
+        "/en/prompts/sage-tile-banner/",
+        "/en/prompts/sailboat-at-sunset/",
+        "/en/prompts/skincare-tube-on-blue/",
+        "/en/prompts/summer-salad-bowl/",
+        "/en/prompts/sunlit-arcade/",
+        "/en/prompts/sunny-tile-pattern/",
+        "/en/prompts/sunset-profile/",
+        "/en/prompts/sunset-rooftops/",
+        "/en/prompts/sunset-soda-can/",
+        "/en/prompts/sunset-travel-poster/",
+        "/en/prompts/tall-tower-at-night/",
+        "/en/prompts/tea-can-on-sage/",
+        "/en/prompts/tropical-leaves/",
+        "/en/templates/ink-scroll/",
+        "/en/templates/neon-rim-portrait/",
+        "/en/templates/product-poster/"
+      ],
+      "preview/zh-Hans": [
+        "/zh-hans/about/",
+        "/zh-hans/collections/posters-with-clear-hierarchy/",
+        "/zh-hans/collections/quiet-landscapes/",
+        "/zh-hans/license/",
+        "/zh-hans/prompts/amber-harbor-sunset/",
+        "/zh-hans/prompts/amber-lit-dancer/",
+        "/zh-hans/prompts/autumn-hills/",
+        "/zh-hans/prompts/autumn-quilt-pattern/",
+        "/zh-hans/prompts/bamboo-grove-scroll/",
+        "/zh-hans/prompts/bare-winter-branch/",
+        "/zh-hans/prompts/blood-orange-slices/",
+        "/zh-hans/prompts/blue-ridge-panorama/",
+        "/zh-hans/prompts/blue-tile-pattern/",
+        "/zh-hans/prompts/bowl-of-miso-noodles/",
+        "/zh-hans/prompts/branch-across-a-scroll/",
+        "/zh-hans/prompts/breakfast-fruit-bowl/",
+        "/zh-hans/prompts/ceramic-mug-poster/",
+        "/zh-hans/prompts/citrus-geometry-poster/",
+        "/zh-hans/prompts/citrus-slices-on-mint/",
+        "/zh-hans/prompts/coffee-cup-autumn/",
+        "/zh-hans/prompts/coral-and-cream-tiles/",
+        "/zh-hans/prompts/coral-archway/",
+        "/zh-hans/prompts/coral-bottle-launch/",
+        "/zh-hans/prompts/coral-jazz-night/",
+        "/zh-hans/prompts/cyanotype-fern-fronds/",
+        "/zh-hans/prompts/dawn-over-the-sea/",
+        "/zh-hans/prompts/desert-dunes-warm-light/",
+        "/zh-hans/prompts/desert-ridges-noon/",
+        "/zh-hans/prompts/dusk-ridges-phone/",
+        "/zh-hans/prompts/forest-bauhaus-print/",
+        "/zh-hans/prompts/forest-ridges/",
+        "/zh-hans/prompts/geometric-concert-poster/",
+        "/zh-hans/prompts/grapefruit-and-lime/",
+        "/zh-hans/prompts/green-rolling-hills/",
+        "/zh-hans/prompts/green-tea-tin-poster/",
+        "/zh-hans/prompts/harbor-city-towers/",
+        "/zh-hans/prompts/herbal-jar/",
+        "/zh-hans/prompts/honey-jar-label/",
+        "/zh-hans/prompts/jazz-club-poster/",
+        "/zh-hans/prompts/knit-sneaker-poster/",
+        "/zh-hans/prompts/late-night-noodles/",
+        "/zh-hans/prompts/lavender-evening-sail/",
+        "/zh-hans/prompts/lavender-pot/",
+        "/zh-hans/prompts/lavender-twilight-hills/",
+        "/zh-hans/prompts/layered-ridges-at-dusk/",
+        "/zh-hans/prompts/lemon-tree-in-a-pot/",
+        "/zh-hans/prompts/lilac-bauhaus-poster/",
+        "/zh-hans/prompts/lilac-portrait/",
+        "/zh-hans/prompts/lime-slices/",
+        "/zh-hans/prompts/mid-century-tiles/",
+        "/zh-hans/prompts/minimal-gift-box/",
+        "/zh-hans/prompts/misty-ridges-first-light/",
+        "/zh-hans/prompts/monochrome-geometry/",
+        "/zh-hans/prompts/monochrome-mug-launch/",
+        "/zh-hans/prompts/monstera-leaves/",
+        "/zh-hans/prompts/moonlit-ranges/",
+        "/zh-hans/prompts/moonlit-sail/",
+        "/zh-hans/prompts/morning-mist-hills/",
+        "/zh-hans/prompts/morning-skyline/",
+        "/zh-hans/prompts/neon-alley-in-the-rain/",
+        "/zh-hans/prompts/neon-phone-portrait/",
+        "/zh-hans/prompts/neon-rim-profile/",
+        "/zh-hans/prompts/neon-silhouette-portrait/",
+        "/zh-hans/prompts/neon-tower-block/",
+        "/zh-hans/prompts/night-city-neon-sign/",
+        "/zh-hans/prompts/night-skyline-panorama/",
+        "/zh-hans/prompts/peach-slices-banner/",
+        "/zh-hans/prompts/perfume-bottle/",
+        "/zh-hans/prompts/pine-on-a-winter-cliff/",
+        "/zh-hans/prompts/plum-avatar/",
+        "/zh-hans/prompts/plum-blossoms-in-spring/",
+        "/zh-hans/prompts/plum-branch-in-ink/",
+        "/zh-hans/prompts/potted-rubber-plant/",
+        "/zh-hans/prompts/rainy-crossing-at-night/",
+        "/zh-hans/prompts/ramen-from-above/",
+        "/zh-hans/prompts/rice-bowl-with-egg/",
+        "/zh-hans/prompts/sailboat-at-sunset/",
+        "/zh-hans/prompts/summer-salad-bowl/",
+        "/zh-hans/prompts/sunny-tile-pattern/",
+        "/zh-hans/prompts/sunset-rooftops/",
+        "/zh-hans/prompts/sunset-soda-can/",
+        "/zh-hans/prompts/sunset-travel-poster/",
+        "/zh-hans/prompts/tall-tower-at-night/",
+        "/zh-hans/prompts/tea-can-on-sage/",
+        "/zh-hans/prompts/tropical-leaves/",
+        "/zh-hans/templates/ink-scroll/",
+        "/zh-hans/templates/neon-rim-portrait/",
+        "/zh-hans/templates/product-poster/"
+      ],
+      "preview/ja": [
+        "/ja/about/",
+        "/ja/collections/quiet-landscapes/",
+        "/ja/prompts/amber-lit-dancer/",
+        "/ja/prompts/autumn-hills/",
+        "/ja/prompts/bamboo-grove-scroll/",
+        "/ja/prompts/bowl-of-miso-noodles/",
+        "/ja/prompts/ceramic-mug-poster/",
+        "/ja/prompts/citrus-geometry-poster/",
+        "/ja/prompts/citrus-slices-on-mint/",
+        "/ja/prompts/coffee-cup-autumn/",
+        "/ja/prompts/coral-jazz-night/",
+        "/ja/prompts/cyanotype-fern-fronds/",
+        "/ja/prompts/desert-dunes-warm-light/",
+        "/ja/prompts/desert-ridges-noon/",
+        "/ja/prompts/forest-bauhaus-print/",
+        "/ja/prompts/geometric-concert-poster/",
+        "/ja/prompts/green-tea-tin-poster/",
+        "/ja/prompts/harbor-city-towers/",
+        "/ja/prompts/jazz-club-poster/",
+        "/ja/prompts/knit-sneaker-poster/",
+        "/ja/prompts/lavender-twilight-hills/",
+        "/ja/prompts/layered-ridges-at-dusk/",
+        "/ja/prompts/mid-century-tiles/",
+        "/ja/prompts/misty-ridges-first-light/",
+        "/ja/prompts/monochrome-mug-launch/",
+        "/ja/prompts/monstera-leaves/",
+        "/ja/prompts/moonlit-ranges/",
+        "/ja/prompts/morning-mist-hills/",
+        "/ja/prompts/morning-skyline/",
+        "/ja/prompts/neon-alley-in-the-rain/",
+        "/ja/prompts/neon-rim-profile/",
+        "/ja/prompts/neon-silhouette-portrait/",
+        "/ja/prompts/night-city-neon-sign/",
+        "/ja/prompts/pine-on-a-winter-cliff/",
+        "/ja/prompts/plum-branch-in-ink/",
+        "/ja/prompts/rainy-crossing-at-night/",
+        "/ja/prompts/ramen-from-above/",
+        "/ja/prompts/rice-bowl-with-egg/",
+        "/ja/prompts/sailboat-at-sunset/",
+        "/ja/prompts/sunset-soda-can/",
+        "/ja/prompts/sunset-travel-poster/",
+        "/ja/prompts/tea-can-on-sage/",
+        "/ja/prompts/tropical-leaves/",
+        "/ja/templates/ink-scroll/",
+        "/ja/templates/product-poster/"
+      ],
+      "preview/ar": [
+        "/ar/prompts/bamboo-grove-scroll/",
+        "/ar/prompts/green-tea-tin-poster/",
+        "/ar/prompts/jazz-club-poster/",
+        "/ar/prompts/neon-silhouette-portrait/",
+        "/ar/prompts/plum-branch-in-ink/",
+        "/ar/prompts/ramen-from-above/",
+        "/ar/templates/product-poster/"
+      ]
+    }
+  },
+  "policy": {
+    "transport": "builtin-imagegen",
+    "concurrency": 1,
+    "maxAttempts": 3,
+    "pilot": [
+      "a_018",
+      "a_045",
+      "a_101",
+      "a_050",
+      "a_063",
+      "a_020",
+      "a_067",
+      "a_064"
+    ],
+    "batchSize": 10,
+    "processingVersion": 1
+  },
+  "jobs": [
+    {
+      "id": "a_001",
+      "slug": "layered-ridges-at-dusk",
+      "promptId": "p_001",
+      "template": null,
+      "sourceExampleIds": [
+        "x_010"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_001/prompt.txt",
+      "promptSha256": "6a0aa8a2db4fd0897ff7b45b9ffa89740d5b015fd5da932024151963214c785a",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_102",
+      "newExampleId": "x_045",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_002",
+      "slug": "geometric-concert-poster",
+      "promptId": "p_002",
+      "template": null,
+      "sourceExampleIds": [
+        "x_011"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_002/prompt.txt",
+      "promptSha256": "a1ec9800d798ad0bc8d35ae14de40518d8870aed4d52fda2c74028ccd345f1df",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_103",
+      "newExampleId": "x_046",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_003",
+      "slug": "tea-can-on-sage",
+      "promptId": "p_003",
+      "template": null,
+      "sourceExampleIds": [
+        "x_012"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_003/prompt.txt",
+      "promptSha256": "524790114d51bfe131756ed0248bbb5c4f0af2d3717fe3f1ff015d0ea60efc03",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_104",
+      "newExampleId": "x_047",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_004",
+      "slug": "sailboat-at-sunset",
+      "promptId": "p_004",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_004/prompt.txt",
+      "promptSha256": "498dff34dd016f936053e9c4808fc61df8db918cdfaf9d760b98e5894c9704fd",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_105",
+      "newExampleId": "x_048",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_005",
+      "slug": "neon-rim-profile",
+      "promptId": "p_005",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_005/prompt.txt",
+      "promptSha256": "d08a24a32d363965a1f9878082603a14fba34330363ac1d21c8643f44bae93dd",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_106",
+      "newExampleId": "x_049",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_006",
+      "slug": "desert-dunes-warm-light",
+      "promptId": "p_006",
+      "template": null,
+      "sourceExampleIds": [
+        "x_013"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_006/prompt.txt",
+      "promptSha256": "9f1e986f14f48ee825c1f646d779b4d1c79b795794d00d1825a84ca38ef723a2",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_107",
+      "newExampleId": "x_050",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_007",
+      "slug": "potted-rubber-plant",
+      "promptId": "p_007",
+      "template": null,
+      "sourceExampleIds": [
+        "x_014"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_007/prompt.txt",
+      "promptSha256": "90484d57121ed65a20338657a1ab2576bcad0a67e4da403f71d280bc6f93eff4",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_108",
+      "newExampleId": "x_051",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_008",
+      "slug": "night-city-neon-sign",
+      "promptId": "p_008",
+      "template": null,
+      "sourceExampleIds": [
+        "x_015"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_008/prompt.txt",
+      "promptSha256": "b90122466985a3459c88da0994efcb43c6c83a0666b20761b9385c1786520ab1",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_109",
+      "newExampleId": "x_052",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_009",
+      "slug": "bowl-of-miso-noodles",
+      "promptId": "p_009",
+      "template": null,
+      "sourceExampleIds": [
+        "x_016"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_009/prompt.txt",
+      "promptSha256": "b4d01c9a07e56db98fed8aed524421feef90945f3b651dad9d5cbae4c69dc65d",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_110",
+      "newExampleId": "x_053",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_010",
+      "slug": "ceramic-mug-poster",
+      "promptId": "p_010",
+      "template": {
+        "id": "t_001",
+        "version": "v1",
+        "sample": "default",
+        "values": {
+          "product": "a speckled handmade ceramic mug",
+          "sellingPoints": [
+            "glazed by hand",
+            "keeps coffee warm"
+          ],
+          "palette": "warm neutral",
+          "aspectRatio": "4:5"
+        }
+      },
+      "sourceExampleIds": [
+        "x_001"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_010/prompt.txt",
+      "promptSha256": "85b2ca67e5abd5c364cd0a4e9d46fb2d6d44fbd07e7afd1c214a591e8b9c04fe",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_111",
+      "newExampleId": "x_054",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_011",
+      "slug": "mid-century-tiles",
+      "promptId": "p_011",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_011/prompt.txt",
+      "promptSha256": "f30b3180aa5032f6cbfed191e071b360de470bf07ebd260bb5e556f6d79a00be",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_112",
+      "newExampleId": "x_055",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_012",
+      "slug": "plum-branch-in-ink",
+      "promptId": "p_012",
+      "template": null,
+      "sourceExampleIds": [
+        "x_017"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_012/prompt.txt",
+      "promptSha256": "caf930d325a73da61fe58642a83ffefa4d247bf0c3e249b45cf9186acc8efce9",
+      "targetAspectRatio": "4:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_113",
+      "newExampleId": "x_056",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 3
+    },
+    {
+      "id": "a_013",
+      "slug": "sunlit-arcade",
+      "promptId": "p_013",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_013/prompt.txt",
+      "promptSha256": "427d3aa4ddf2528816cbef2378f8038486f0df21e8effaf3ea7f68e4a7bd113c",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_114",
+      "newExampleId": "x_057",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_014",
+      "slug": "grapefruit-and-lime",
+      "promptId": "p_014",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_014/prompt.txt",
+      "promptSha256": "dbfdd6f9ad87efc6510ce478932341ecdf9bc672b83a3730fc3bd2bd2af8197a",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_115",
+      "newExampleId": "x_058",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_015",
+      "slug": "bamboo-grove-scroll",
+      "promptId": "p_015",
+      "template": {
+        "id": "t_002",
+        "version": "v1",
+        "sample": "default",
+        "values": {
+          "subject": "a bamboo grove",
+          "season": "summer",
+          "brushwork": "soft grey washes with crisp dark nodes",
+          "elements": [
+            "five tall stalks",
+            "drifting leaves"
+          ],
+          "aspectRatio": "21:9"
+        }
+      },
+      "sourceExampleIds": [
+        "x_002"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_015/prompt.txt",
+      "promptSha256": "a0bf80ced08cbf310035b4e2992345aba03a1ad01b60c6b3b7b38f0ce516a526",
+      "targetAspectRatio": "21:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_116",
+      "newExampleId": "x_059",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 3
+    },
+    {
+      "id": "a_016",
+      "slug": "morning-mist-hills",
+      "promptId": "p_016",
+      "template": null,
+      "sourceExampleIds": [
+        "x_018"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_016/prompt.txt",
+      "promptSha256": "a6496aeaee6bcc1072f44cddf4e5a9347736e7d35d1abfac38226fd31b98a7ba",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_117",
+      "newExampleId": "x_060",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_017",
+      "slug": "coral-bottle-launch",
+      "promptId": "p_017",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_017/prompt.txt",
+      "promptSha256": "52e10f36aee157d43ed4db6591ad06ff59eabe5ce62888b1ef7467a0c4ba2e81",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "optional",
+      "newAssetId": "a_118",
+      "newExampleId": "x_061",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_018",
+      "slug": "blue-ridge-panorama",
+      "promptId": "p_018",
+      "template": null,
+      "sourceExampleIds": [
+        "x_019"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_018/prompt.txt",
+      "promptSha256": "b952822f846f1b667a4f57dc8edb7f03e30640cd6ca7d33d7593ba90563a5d37",
+      "targetAspectRatio": "21:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_119",
+      "newExampleId": "x_062",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_019",
+      "slug": "amber-teal-avatar",
+      "promptId": "p_019",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_019/prompt.txt",
+      "promptSha256": "1b697a87af0cd50de2be656613b2a4d05406644f2fcb93bca9a7ea453b3b3a51",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_120",
+      "newExampleId": "x_063",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_020",
+      "slug": "morning-skyline",
+      "promptId": "p_020",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_020/prompt.txt",
+      "promptSha256": "3fa2317d3bc1ac46d3fefbf528ec0add54d4728e0eedd6cf7d34debfa1239e6c",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_121",
+      "newExampleId": "x_064",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_021",
+      "slug": "citrus-slices-on-mint",
+      "promptId": "p_021",
+      "template": null,
+      "sourceExampleIds": [
+        "x_020"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_021/prompt.txt",
+      "promptSha256": "ba4865446ee75de5af6ec74bb7146ecb4bd0ce6f6e71de2f78fc7f7e02d79b0a",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_122",
+      "newExampleId": "x_065",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_022",
+      "slug": "coral-jazz-night",
+      "promptId": "p_022",
+      "template": null,
+      "sourceExampleIds": [
+        "x_021"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_022/prompt.txt",
+      "promptSha256": "46bb645faf2bff629157ccfcbc00fa4348964029f95e0c35f0479517691a2cb0",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_123",
+      "newExampleId": "x_066",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_023",
+      "slug": "summer-salad-bowl",
+      "promptId": "p_023",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_023/prompt.txt",
+      "promptSha256": "1dd0e063b32ea1331cdd36dde9dda54723c8b13f1ce37058fefb16a048b0b4d4",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_124",
+      "newExampleId": "x_067",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_024",
+      "slug": "green-tea-tin-poster",
+      "promptId": "p_024",
+      "template": {
+        "id": "t_001",
+        "version": "v2",
+        "sample": "tea-tin",
+        "values": {
+          "product": "a loose-leaf green tea tin",
+          "sellingPoints": [
+            "airtight lid",
+            "single estate"
+          ],
+          "palette": "sage green",
+          "aspectRatio": "5:4"
+        }
+      },
+      "sourceExampleIds": [
+        "x_003"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_024/prompt.txt",
+      "promptSha256": "50fad199420825a3c1f280e2d33df60b30edcc451bd11ece23259604e698ff91",
+      "targetAspectRatio": "5:4",
+      "inputRequirement": "optional",
+      "newAssetId": "a_125",
+      "newExampleId": "x_068",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "a_025",
+      "slug": "sunny-tile-pattern",
+      "promptId": "p_025",
+      "template": null,
+      "sourceExampleIds": [
+        "x_022"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_025/prompt.txt",
+      "promptSha256": "f7075cd922203b4406e52e17243eda32cce24ce73d2a2334f3a0242753f94272",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_126",
+      "newExampleId": "x_069",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_026",
+      "slug": "quiet-harbor-noon",
+      "promptId": "p_026",
+      "template": null,
+      "sourceExampleIds": [
+        "x_023"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_026/prompt.txt",
+      "promptSha256": "04596418b8ef919820b1fffa7d370f25c4968e7715c1904a8602bde614bc124e",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_127",
+      "newExampleId": "x_070",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_027",
+      "slug": "tropical-leaves",
+      "promptId": "p_027",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_027/prompt.txt",
+      "promptSha256": "c8f9ae03a7a011b7fd5f4e83853412444022653182c9ea0b352aa708356537ec",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_128",
+      "newExampleId": "x_071",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_028",
+      "slug": "monstera-leaves",
+      "promptId": "p_028",
+      "template": null,
+      "sourceExampleIds": [
+        "x_024"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_028/prompt.txt",
+      "promptSha256": "84f3c28c2a4e832d38c0536696c301c1f33ea88b434ad02550b52b7e95549f0b",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_129",
+      "newExampleId": "x_072",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_029",
+      "slug": "minimal-gift-box",
+      "promptId": "p_029",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_029/prompt.txt",
+      "promptSha256": "152ba39f0c16cf13cffd7ed35017885fc4dc525d08aabd9c6a34877ff8ca8187",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_130",
+      "newExampleId": "x_073",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_030",
+      "slug": "autumn-hills",
+      "promptId": "p_030",
+      "template": null,
+      "sourceExampleIds": [
+        "x_025"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_030/prompt.txt",
+      "promptSha256": "e76973764ac7a60a8c4fff0c7cd27abd3e163432970c9ecb5efc73cafdcfb157",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_131",
+      "newExampleId": "x_074",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_031",
+      "slug": "bare-winter-branch",
+      "promptId": "p_031",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_031/prompt.txt",
+      "promptSha256": "32007a74ca5afdbfad99f894d3c0995d88fbd9dc2078253198e22b07e7da4a68",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_132",
+      "newExampleId": "x_075",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_032",
+      "slug": "neon-tower-block",
+      "promptId": "p_032",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_032/prompt.txt",
+      "promptSha256": "e573dbdcdd91b8ea0ddfb36f0fae647777694cff33373509bb35122381a1dd3f",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_133",
+      "newExampleId": "x_076",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_033",
+      "slug": "cyanotype-fern-fronds",
+      "promptId": "p_033",
+      "template": null,
+      "sourceExampleIds": [
+        "x_026"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_033/prompt.txt",
+      "promptSha256": "797783866869999ac9f45ab4add7e957c2604e4c90e47378a5a4c56c17b88b70",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_134",
+      "newExampleId": "x_077",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_034",
+      "slug": "lavender-colonnade",
+      "promptId": "p_034",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_034/prompt.txt",
+      "promptSha256": "a2e80454a637fc085b421dd3ae5858699b72714f817851ca0ec382159ef5babe",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_135",
+      "newExampleId": "x_078",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_035",
+      "slug": "blood-orange-slices",
+      "promptId": "p_035",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_035/prompt.txt",
+      "promptSha256": "38511dd9be3c1f944a4cfbd7efe71ad004f71dbdbc05026b86db57477f98afdc",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_136",
+      "newExampleId": "x_079",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_036",
+      "slug": "neon-phone-portrait",
+      "promptId": "p_036",
+      "template": null,
+      "sourceExampleIds": [
+        "x_027"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_036/prompt.txt",
+      "promptSha256": "745da6189e71b4f660c40ec6cef19c50368c3f6beb02e5df47de4eb59cdba860",
+      "targetAspectRatio": "9:16",
+      "inputRequirement": "none",
+      "newAssetId": "a_137",
+      "newExampleId": "x_080",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_037",
+      "slug": "knit-sneaker-poster",
+      "promptId": "p_037",
+      "template": {
+        "id": "t_001",
+        "version": "v2",
+        "sample": "sneaker",
+        "values": {
+          "product": "a dark knit running sneaker",
+          "sellingPoints": [
+            "recycled knit upper",
+            "cushioned white sole"
+          ],
+          "palette": "soft grey",
+          "aspectRatio": "1:1",
+          "headline": "Run lighter"
+        }
+      },
+      "sourceExampleIds": [
+        "x_004"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_037/prompt.txt",
+      "promptSha256": "586322dcfd9278abec4ced1829108379909c29d1181dad4439a3002c66952494",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "optional",
+      "newAssetId": "a_138",
+      "newExampleId": "x_081",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_038",
+      "slug": "monochrome-geometry",
+      "promptId": "p_038",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_038/prompt.txt",
+      "promptSha256": "911dcd60eb251f0bd4aa60d1551b0bc9a75bd5cfa79d01119078b45451de43a3",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_139",
+      "newExampleId": "x_082",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_039",
+      "slug": "rice-bowl-with-egg",
+      "promptId": "p_039",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_039/prompt.txt",
+      "promptSha256": "bbfc84c6fefad7189f8bdbff00bf3d147f8f994ae649b18a9ebdb48bf735a918",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_140",
+      "newExampleId": "x_083",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_040",
+      "slug": "blue-tile-pattern",
+      "promptId": "p_040",
+      "template": null,
+      "sourceExampleIds": [
+        "x_028"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_040/prompt.txt",
+      "promptSha256": "b579e7df20f5b785599425f8b504d82be7eb3bc06cbb5891beb6f9e9dc2b2051",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_141",
+      "newExampleId": "x_084",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_041",
+      "slug": "lavender-evening-sail",
+      "promptId": "p_041",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_041/prompt.txt",
+      "promptSha256": "d9a4a9e7a12d5b2072c92adf56a5ffa210e20a12cb55d3d2660294ee85689c0d",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_142",
+      "newExampleId": "x_085",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_042",
+      "slug": "misty-ridges-first-light",
+      "promptId": "p_042",
+      "template": {
+        "id": "t_002",
+        "version": "v1",
+        "sample": "misty",
+        "values": {
+          "subject": "misty mountain ridges",
+          "season": "autumn",
+          "brushwork": "loose wet washes",
+          "elements": [
+            "five receding ridges",
+            "a pale sun behind the far range"
+          ],
+          "aspectRatio": "16:9"
+        }
+      },
+      "sourceExampleIds": [
+        "x_005"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_042/prompt.txt",
+      "promptSha256": "4ce776f3c561a8e3f67ec2ae6c7e42174edac96489bd70d5755b3ddf371451b9",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_143",
+      "newExampleId": "x_086",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_043",
+      "slug": "honey-jar-label",
+      "promptId": "p_043",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_043/prompt.txt",
+      "promptSha256": "172e2def5d7eb25aa04c18bbbdac1236ead479cd77175b7d0ac454426d55d44a",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_144",
+      "newExampleId": "x_087",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_044",
+      "slug": "monochrome-blocks",
+      "promptId": "p_044",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_044/prompt.txt",
+      "promptSha256": "d94383b7d05451d481522bca791673a88891400491d4217d62fa7d2f410d2df8",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_145",
+      "newExampleId": "x_088",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_045",
+      "slug": "jazz-club-poster",
+      "promptId": "p_045",
+      "template": null,
+      "sourceExampleIds": [
+        "x_029"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_045/prompt.txt",
+      "promptSha256": "917a582ecd39cdc61646614501b05ecb15551df8c67ad8412536d3a7337f18b1",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_146",
+      "newExampleId": "x_089",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 5
+    },
+    {
+      "id": "a_046",
+      "slug": "moonlit-ranges",
+      "promptId": "p_046",
+      "template": null,
+      "sourceExampleIds": [
+        "x_030"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_046/prompt.txt",
+      "promptSha256": "18f5ba11c69cf645ce3eeb6da187def1224a5f987fa3f4cf1f503d03f56ba4a3",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_147",
+      "newExampleId": "x_090",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_047",
+      "slug": "lemon-tree-in-a-pot",
+      "promptId": "p_047",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_047/prompt.txt",
+      "promptSha256": "b82060be7a6a8f2cfe64bd09f5d3c64674ec6728a08485b94ab1a670de02abe7",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_148",
+      "newExampleId": "x_091",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_048",
+      "slug": "sage-cloister",
+      "promptId": "p_048",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_048/prompt.txt",
+      "promptSha256": "faec515be679853623d2ad1dffbbbf6d6fff87c7f67224468ce70d0cfb5acfbd",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_149",
+      "newExampleId": "x_092",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_049",
+      "slug": "citrus-on-lilac",
+      "promptId": "p_049",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_049/prompt.txt",
+      "promptSha256": "7d684179d315429e0af7c8cffe25804278d8338d04490580767ee725b438857a",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_150",
+      "newExampleId": "x_093",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_050",
+      "slug": "neon-silhouette-portrait",
+      "promptId": "p_050",
+      "template": {
+        "id": "t_003",
+        "version": "v1",
+        "sample": "default",
+        "values": {
+          "character": "a young musician",
+          "rimLight": "cyan and magenta",
+          "background": "soft bokeh lights",
+          "mood": "quiet focus",
+          "aspectRatio": "4:5"
+        }
+      },
+      "sourceExampleIds": [
+        "x_006"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_050/prompt.txt",
+      "promptSha256": "42ea32e19faf800a02c77720d8028082423f8426b95e48785a6a445dc6b122c0",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_151",
+      "newExampleId": "x_094",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "a_051",
+      "slug": "coral-and-cream-tiles",
+      "promptId": "p_051",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_051/prompt.txt",
+      "promptSha256": "eeb9de82554060c401f208dbd4ee37d0f1e8e84c9cac3e3a6ab1ec013e42cfaa",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_152",
+      "newExampleId": "x_095",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_052",
+      "slug": "forest-bauhaus-print",
+      "promptId": "p_052",
+      "template": null,
+      "sourceExampleIds": [
+        "x_031"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_052/prompt.txt",
+      "promptSha256": "45c8ae81191b6b887f0682d9802884a25f25c329fca7f01b7b30d02b0b2d9cc8",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_153",
+      "newExampleId": "x_096",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_053",
+      "slug": "skincare-tube-on-blue",
+      "promptId": "p_053",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_053/prompt.txt",
+      "promptSha256": "4059bf4eff7380f17028334d07b9aab6ea458b12bfbd5bca4ea013f2438b35f6",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "optional",
+      "newAssetId": "a_154",
+      "newExampleId": "x_097",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_054",
+      "slug": "dawn-over-the-sea",
+      "promptId": "p_054",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_054/prompt.txt",
+      "promptSha256": "9555d7c5a24a0c037cb2962775e72a694547518f4d3bb2b3a00346198f297c41",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_155",
+      "newExampleId": "x_098",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_055",
+      "slug": "neon-alley-in-the-rain",
+      "promptId": "p_055",
+      "template": null,
+      "sourceExampleIds": [
+        "x_032"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_055/prompt.txt",
+      "promptSha256": "65bb893baa4424020d803fb3cedd1f420f48d3f90b48a17a6a18466e23702cbf",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_156",
+      "newExampleId": "x_099",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_056",
+      "slug": "plum-blossoms-in-spring",
+      "promptId": "p_056",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_056/prompt.txt",
+      "promptSha256": "5a5e922e0669276fefc13bf1c010aec61cbfda01b227f0728ca8c9aaa1cedd83",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_157",
+      "newExampleId": "x_100",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_057",
+      "slug": "desert-ridges-noon",
+      "promptId": "p_057",
+      "template": null,
+      "sourceExampleIds": [
+        "x_033"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_057/prompt.txt",
+      "promptSha256": "3a90913a0045c17aaa6c4bcd4303b190592dd7b18cefb75b7944915a120ca776",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_158",
+      "newExampleId": "x_101",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_058",
+      "slug": "sunset-rooftops",
+      "promptId": "p_058",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_058/prompt.txt",
+      "promptSha256": "60f272d27ffe6ad6bd70b995c62b9676cbe3e6700a6cda6f0de513d665b736b1",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_159",
+      "newExampleId": "x_102",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_059",
+      "slug": "breakfast-fruit-bowl",
+      "promptId": "p_059",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_059/prompt.txt",
+      "promptSha256": "40c2007941057ac3722a1c76a4a441fe656c2e64036166877bfc11174b4035bd",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_160",
+      "newExampleId": "x_103",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_060",
+      "slug": "rainy-crossing-at-night",
+      "promptId": "p_060",
+      "template": null,
+      "sourceExampleIds": [
+        "x_034"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_060/prompt.txt",
+      "promptSha256": "41a2647d35279ca29a6ebbbe78f5cc64aa519ac4192ad9636a3c58833ab5ae77",
+      "targetAspectRatio": "3:2",
+      "inputRequirement": "none",
+      "newAssetId": "a_161",
+      "newExampleId": "x_104",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_061",
+      "slug": "lilac-portrait",
+      "promptId": "p_061",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_061/prompt.txt",
+      "promptSha256": "5791b2e38b6addb071437920b659c495b19776b8b6dc3225cb9ed09b2cf818f1",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_162",
+      "newExampleId": "x_105",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_062",
+      "slug": "coffee-cup-autumn",
+      "promptId": "p_062",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_062/prompt.txt",
+      "promptSha256": "76ea6789337f70ec22bad1f8121f5eef321cdbacb70d1f258a4ebdd1e97bff82",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_163",
+      "newExampleId": "x_106",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_063",
+      "slug": "pine-on-a-winter-cliff",
+      "promptId": "p_063",
+      "template": {
+        "id": "t_002",
+        "version": "v1",
+        "sample": "tall-scroll",
+        "values": {
+          "subject": "a lone pine on a winter cliff",
+          "season": "winter",
+          "brushwork": "dry brush with visible texture",
+          "elements": [
+            "a single leaning trunk"
+          ],
+          "aspectRatio": "1:3"
+        }
+      },
+      "sourceExampleIds": [
+        "x_007"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_063/prompt.txt",
+      "promptSha256": "ced063d7ea5ab977551186176e71f5c3a8f1888dd427e26b01899a3dacb3c4e9",
+      "targetAspectRatio": "1:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_164",
+      "newExampleId": "x_107",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_064",
+      "slug": "black-and-white-tiles",
+      "promptId": "p_064",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_064/prompt.txt",
+      "promptSha256": "374a142cfbedd05c90e54a16693a0358cdb7384bb50cc377d1fdc43c9d4234ce",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_165",
+      "newExampleId": "x_108",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_065",
+      "slug": "coral-archway",
+      "promptId": "p_065",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_065/prompt.txt",
+      "promptSha256": "031ea38d13e4edcc2921a5400b606648f9ee30e72751fa7a042010b6838de1cf",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_166",
+      "newExampleId": "x_109",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_066",
+      "slug": "moonlit-sail",
+      "promptId": "p_066",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_066/prompt.txt",
+      "promptSha256": "b9dc06aebdcd1e69004fbfb8b7b28f2eb2df8c67beb11e6abae8b01c0279a5f1",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_167",
+      "newExampleId": "x_110",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_067",
+      "slug": "ramen-from-above",
+      "promptId": "p_067",
+      "template": null,
+      "sourceExampleIds": [
+        "x_035"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_067/prompt.txt",
+      "promptSha256": "44a3905b5469214ea2bcdba55fed700059238be5cf0aba3e52010cbcf39bc249",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_168",
+      "newExampleId": "x_111",
+      "requiredAltLocales": [
+        "ar",
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 3
+    },
+    {
+      "id": "a_068",
+      "slug": "green-rolling-hills",
+      "promptId": "p_068",
+      "template": null,
+      "sourceExampleIds": [
+        "x_036"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_068/prompt.txt",
+      "promptSha256": "b3e3ba97b72d323818345eef82dc3dc6d39971f7883b46b969687979b7220b38",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_169",
+      "newExampleId": "x_112",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_069",
+      "slug": "lilac-bauhaus-poster",
+      "promptId": "p_069",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_069/prompt.txt",
+      "promptSha256": "f55647058fbe50c15a279381df22a6a0c4e1af966500fd25eaa48df9f0b0953a",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_170",
+      "newExampleId": "x_113",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_070",
+      "slug": "leafy-avatar",
+      "promptId": "p_070",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_070/prompt.txt",
+      "promptSha256": "8c6aa02eedf0cb9b24e730ca3020321b6bc34598e477e44603516b9ad447741d",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_171",
+      "newExampleId": "x_114",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_071",
+      "slug": "amber-lit-dancer",
+      "promptId": "p_071",
+      "template": {
+        "id": "t_003",
+        "version": "v1",
+        "sample": "amber",
+        "values": {
+          "character": "a dancer mid-turn",
+          "rimLight": "amber and teal",
+          "background": "a flat dark gradient",
+          "aspectRatio": "4:5"
+        }
+      },
+      "sourceExampleIds": [
+        "x_008"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_071/prompt.txt",
+      "promptSha256": "abde39c858b0d981c7ec75d3cd4bcd9f9510ab9dc37d7d030527fc80ab247e20",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_172",
+      "newExampleId": "x_115",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_072",
+      "slug": "perfume-bottle",
+      "promptId": "p_072",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_072/prompt.txt",
+      "promptSha256": "9dfa6c09a06f23c55d33a1af5782f09f7f9d8cba7bf841f7c6b2e5e391819033",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_173",
+      "newExampleId": "x_116",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_073",
+      "slug": "harbor-city-towers",
+      "promptId": "p_073",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_073/prompt.txt",
+      "promptSha256": "f0648e392d6d0e6eadd1880698db5b6e0e48c086f3065b76f003df60c0a9c23b",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_174",
+      "newExampleId": "x_117",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_074",
+      "slug": "peach-slices-banner",
+      "promptId": "p_074",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_074/prompt.txt",
+      "promptSha256": "eaf930d06518dacecd6463ceab27753a9b19819fd1a8b93fad4a0895c8cd5329",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_175",
+      "newExampleId": "x_118",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_075",
+      "slug": "lavender-tiles",
+      "promptId": "p_075",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_075/prompt.txt",
+      "promptSha256": "5faf807359acab0dcc69e5509a0bc13c71741d23af6b22f1410f5d9466cb89ed",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_176",
+      "newExampleId": "x_119",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_076",
+      "slug": "sunset-travel-poster",
+      "promptId": "p_076",
+      "template": null,
+      "sourceExampleIds": [
+        "x_037"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_076/prompt.txt",
+      "promptSha256": "24415ca5e03209458d1e1cf47053419b04ae5c6dfcc6ed8aa6fb465229c31fa2",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_177",
+      "newExampleId": "x_120",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_077",
+      "slug": "branch-across-a-scroll",
+      "promptId": "p_077",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_077/prompt.txt",
+      "promptSha256": "ac990a9ffa4a6f171bf24ea6abbf9bfcf0a5eecb8c5a66c5f565f70796864445",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_178",
+      "newExampleId": "x_121",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_078",
+      "slug": "late-night-noodles",
+      "promptId": "p_078",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_078/prompt.txt",
+      "promptSha256": "a698919fdfd6259dfda16bd1ac93a8a08ca3e7efbacefe333bad34ac4b172a43",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_179",
+      "newExampleId": "x_122",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_079",
+      "slug": "dusk-ridges-phone",
+      "promptId": "p_079",
+      "template": null,
+      "sourceExampleIds": [
+        "x_038"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_079/prompt.txt",
+      "promptSha256": "27aebbb6bf7ab94a36a1dba8fd5fa1a1983af1ec8d9b38a0067440fb4db1c729",
+      "targetAspectRatio": "9:16",
+      "inputRequirement": "none",
+      "newAssetId": "a_180",
+      "newExampleId": "x_123",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_080",
+      "slug": "monochrome-arches",
+      "promptId": "p_080",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_080/prompt.txt",
+      "promptSha256": "7e19e5f7ba5e94676fc72d534be658a23a24ea23653e82f51a94adb2eb297a7d",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_181",
+      "newExampleId": "x_124",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_081",
+      "slug": "night-skyline-panorama",
+      "promptId": "p_081",
+      "template": null,
+      "sourceExampleIds": [
+        "x_039"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_081/prompt.txt",
+      "promptSha256": "1bdffb9492ee2a824e3d8679ff9d1f17776ae3022b9ed4c58e35e9f4f86e29d5",
+      "targetAspectRatio": "21:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_182",
+      "newExampleId": "x_125",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_082",
+      "slug": "herbal-jar",
+      "promptId": "p_082",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_082/prompt.txt",
+      "promptSha256": "d6a79f76bb73510a2b7c31b22deca16716f420a84d0ae01a043f7fd6b2c658f6",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "optional",
+      "newAssetId": "a_183",
+      "newExampleId": "x_126",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_083",
+      "slug": "amber-harbor-sunset",
+      "promptId": "p_083",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_083/prompt.txt",
+      "promptSha256": "50623d09bcec2818915be4afc9fa1295a6debc2016e9158e26de921f925b05c1",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_184",
+      "newExampleId": "x_127",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_084",
+      "slug": "blue-rim-avatar",
+      "promptId": "p_084",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_084/prompt.txt",
+      "promptSha256": "60fa8abd158ccdc4e44321b1f4d1820cada962caf5cfde71e1a65b4964eb838c",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_185",
+      "newExampleId": "x_128",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_085",
+      "slug": "citrus-geometry-poster",
+      "promptId": "p_085",
+      "template": null,
+      "sourceExampleIds": [
+        "x_040"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_085/prompt.txt",
+      "promptSha256": "4c02a20405cdd44327e9b083d952f04eb0248f3523679150129a620103e59bd4",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_186",
+      "newExampleId": "x_129",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_086",
+      "slug": "lavender-pot",
+      "promptId": "p_086",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_086/prompt.txt",
+      "promptSha256": "d5c7371090af94f50a0324775504385126a7dddd8972471d68226f4b5a45a58d",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_187",
+      "newExampleId": "x_130",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_087",
+      "slug": "autumn-quilt-pattern",
+      "promptId": "p_087",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_087/prompt.txt",
+      "promptSha256": "2c5f8b7c3a45c5bac83b4006609b8394009efd2039eb515c2cdc2cfec64af02c",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_188",
+      "newExampleId": "x_131",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_088",
+      "slug": "ocean-horizon-banner",
+      "promptId": "p_088",
+      "template": null,
+      "sourceExampleIds": [
+        "x_041"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_088/prompt.txt",
+      "promptSha256": "c7f6e203360e2882d8d1c634ded622ff446067c994846bcafbfeaeffeee269ae",
+      "targetAspectRatio": "3:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_189",
+      "newExampleId": "x_132",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_089",
+      "slug": "forest-ridges",
+      "promptId": "p_089",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_089/prompt.txt",
+      "promptSha256": "20398b29b11f465aa527a2b3b0c51088332f899b2476a4c6bf0601d4f8c980e8",
+      "targetAspectRatio": "3:4",
+      "inputRequirement": "none",
+      "newAssetId": "a_190",
+      "newExampleId": "x_133",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_090",
+      "slug": "sunset-soda-can",
+      "promptId": "p_090",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_090/prompt.txt",
+      "promptSha256": "e3d1cd57f5c27eb040198e7adb9459a31f38ca15500cd65391eb296cabc573dd",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_191",
+      "newExampleId": "x_134",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_091",
+      "slug": "lime-slices",
+      "promptId": "p_091",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_091/prompt.txt",
+      "promptSha256": "2fedbf932792ddfa4e7295d4ba035040a6e6128f0879d9ff7c67fc51fa79ff60",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_192",
+      "newExampleId": "x_135",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_092",
+      "slug": "plum-avatar",
+      "promptId": "p_092",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_092/prompt.txt",
+      "promptSha256": "04a8610ec3a09bfdb30547071f00311f26609c01a52744357f855f6eb7477e10",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_193",
+      "newExampleId": "x_136",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_093",
+      "slug": "tall-tower-at-night",
+      "promptId": "p_093",
+      "template": null,
+      "sourceExampleIds": [
+        "x_042"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_093/prompt.txt",
+      "promptSha256": "b100e010766dea509f01caa064a6f4add7e8b6c31470c82800dcece2fdfdabce",
+      "targetAspectRatio": "9:21",
+      "inputRequirement": "none",
+      "newAssetId": "a_194",
+      "newExampleId": "x_137",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_094",
+      "slug": "dawn-arcade",
+      "promptId": "p_094",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_094/prompt.txt",
+      "promptSha256": "f46a84333eaa9f9b5fb2c3b2359dd18a7ab90c50c96cf622eb08e2feea1a65ce",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_195",
+      "newExampleId": "x_138",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_095",
+      "slug": "berry-bowl",
+      "promptId": "p_095",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_095/prompt.txt",
+      "promptSha256": "02e4de32f5da24ee4078df81a66f4e0078993fa9a341037ab796b6c2dd80610b",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_196",
+      "newExampleId": "x_139",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_096",
+      "slug": "sunset-profile",
+      "promptId": "p_096",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_096/prompt.txt",
+      "promptSha256": "e4d016ec23c0e8a85fcaf5062e7bd1feb7912fb7479ee6fe12158fd05d897609",
+      "targetAspectRatio": "2:3",
+      "inputRequirement": "none",
+      "newAssetId": "a_197",
+      "newExampleId": "x_140",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_097",
+      "slug": "blue-bauhaus-square",
+      "promptId": "p_097",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_097/prompt.txt",
+      "promptSha256": "26494541556a1ece6022e22c8fe7f84b693d1675a2ff9c9a5afed69866c864dc",
+      "targetAspectRatio": "1:1",
+      "inputRequirement": "none",
+      "newAssetId": "a_198",
+      "newExampleId": "x_141",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_098",
+      "slug": "lavender-twilight-hills",
+      "promptId": "p_098",
+      "template": null,
+      "sourceExampleIds": [
+        "x_043"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_098/prompt.txt",
+      "promptSha256": "8cb8cb910e357eb697397d251b8b495d16edccdb0a93150a18ed485e73078aab",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_199",
+      "newExampleId": "x_142",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "a_099",
+      "slug": "sage-tile-banner",
+      "promptId": "p_099",
+      "template": null,
+      "sourceExampleIds": [],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_099/prompt.txt",
+      "promptSha256": "aaab6fdd12c5b83ad55f24b44ae619415876158f4f822cd5f13db0cc7dd30b3d",
+      "targetAspectRatio": "16:9",
+      "inputRequirement": "none",
+      "newAssetId": "a_200",
+      "newExampleId": "x_143",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_100",
+      "slug": "monochrome-mug-launch",
+      "promptId": "p_100",
+      "template": null,
+      "sourceExampleIds": [
+        "x_044"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_100/prompt.txt",
+      "promptSha256": "14c460eda4ff5dc619eb1716744a4f9ea6eba3c38bfbab43c7ac97f535ec7831",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "optional",
+      "newAssetId": "a_201",
+      "newExampleId": "x_144",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    },
+    {
+      "id": "a_101",
+      "slug": "product-poster-v2-default",
+      "promptId": null,
+      "template": {
+        "id": "t_001",
+        "version": "v3",
+        "sample": "default",
+        "values": {
+          "product": "a speckled handmade ceramic mug",
+          "sellingPoints": [
+            "glazed by hand",
+            "keeps coffee warm"
+          ],
+          "palette": "warm neutral",
+          "aspectRatio": "4:5",
+          "headline": "Made slowly"
+        }
+      },
+      "sourceExampleIds": [
+        "x_009"
+      ],
+      "promptFile": "migrations/gpt-image-v1/jobs/a_101/prompt.txt",
+      "promptSha256": "246dcd06cf1bf160ee035d16d5d617542aaf819a061f9c08d4d1c362604197dd",
+      "targetAspectRatio": "4:5",
+      "inputRequirement": "none",
+      "newAssetId": "a_202",
+      "newExampleId": "x_145",
+      "requiredAltLocales": [
+        "en",
+        "ja",
+        "zh-Hans"
+      ],
+      "annotationCount": 0
+    }
+  ],
+  "references": [
+    {
+      "file": "content/prompts/p_001/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_001"
+    },
+    {
+      "file": "content/prompts/p_002/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_002"
+    },
+    {
+      "file": "content/prompts/p_003/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_003"
+    },
+    {
+      "file": "content/prompts/p_004/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_004"
+    },
+    {
+      "file": "content/prompts/p_005/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_005"
+    },
+    {
+      "file": "content/prompts/p_006/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_006"
+    },
+    {
+      "file": "content/prompts/p_007/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_007"
+    },
+    {
+      "file": "content/prompts/p_008/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_008"
+    },
+    {
+      "file": "content/prompts/p_009/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_009"
+    },
+    {
+      "file": "content/prompts/p_010/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_010"
+    },
+    {
+      "file": "content/prompts/p_011/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_011"
+    },
+    {
+      "file": "content/prompts/p_012/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_012"
+    },
+    {
+      "file": "content/prompts/p_013/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_013"
+    },
+    {
+      "file": "content/prompts/p_014/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_014"
+    },
+    {
+      "file": "content/prompts/p_015/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_015"
+    },
+    {
+      "file": "content/prompts/p_016/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_016"
+    },
+    {
+      "file": "content/prompts/p_017/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_017"
+    },
+    {
+      "file": "content/prompts/p_018/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_018"
+    },
+    {
+      "file": "content/prompts/p_019/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_019"
+    },
+    {
+      "file": "content/prompts/p_020/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_020"
+    },
+    {
+      "file": "content/prompts/p_021/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_021"
+    },
+    {
+      "file": "content/prompts/p_022/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_022"
+    },
+    {
+      "file": "content/prompts/p_023/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_023"
+    },
+    {
+      "file": "content/prompts/p_024/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_024"
+    },
+    {
+      "file": "content/prompts/p_025/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_025"
+    },
+    {
+      "file": "content/prompts/p_026/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_026"
+    },
+    {
+      "file": "content/prompts/p_027/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_027"
+    },
+    {
+      "file": "content/prompts/p_028/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_028"
+    },
+    {
+      "file": "content/prompts/p_029/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_029"
+    },
+    {
+      "file": "content/prompts/p_030/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_030"
+    },
+    {
+      "file": "content/prompts/p_031/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_031"
+    },
+    {
+      "file": "content/prompts/p_032/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_032"
+    },
+    {
+      "file": "content/prompts/p_033/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_033"
+    },
+    {
+      "file": "content/prompts/p_034/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_034"
+    },
+    {
+      "file": "content/prompts/p_035/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_035"
+    },
+    {
+      "file": "content/prompts/p_036/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_036"
+    },
+    {
+      "file": "content/prompts/p_037/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_037"
+    },
+    {
+      "file": "content/prompts/p_038/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_038"
+    },
+    {
+      "file": "content/prompts/p_039/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_039"
+    },
+    {
+      "file": "content/prompts/p_040/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_040"
+    },
+    {
+      "file": "content/prompts/p_041/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_041"
+    },
+    {
+      "file": "content/prompts/p_042/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_042"
+    },
+    {
+      "file": "content/prompts/p_043/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_043"
+    },
+    {
+      "file": "content/prompts/p_044/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_044"
+    },
+    {
+      "file": "content/prompts/p_045/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_045"
+    },
+    {
+      "file": "content/prompts/p_046/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_046"
+    },
+    {
+      "file": "content/prompts/p_047/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_047"
+    },
+    {
+      "file": "content/prompts/p_048/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_048"
+    },
+    {
+      "file": "content/prompts/p_049/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_049"
+    },
+    {
+      "file": "content/prompts/p_050/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_050"
+    },
+    {
+      "file": "content/prompts/p_051/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_051"
+    },
+    {
+      "file": "content/prompts/p_052/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_052"
+    },
+    {
+      "file": "content/prompts/p_053/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_053"
+    },
+    {
+      "file": "content/prompts/p_054/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_054"
+    },
+    {
+      "file": "content/prompts/p_055/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_055"
+    },
+    {
+      "file": "content/prompts/p_056/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_056"
+    },
+    {
+      "file": "content/prompts/p_057/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_057"
+    },
+    {
+      "file": "content/prompts/p_058/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_058"
+    },
+    {
+      "file": "content/prompts/p_059/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_059"
+    },
+    {
+      "file": "content/prompts/p_060/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_060"
+    },
+    {
+      "file": "content/prompts/p_061/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_061"
+    },
+    {
+      "file": "content/prompts/p_062/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_062"
+    },
+    {
+      "file": "content/prompts/p_063/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_063"
+    },
+    {
+      "file": "content/prompts/p_064/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_064"
+    },
+    {
+      "file": "content/prompts/p_065/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_065"
+    },
+    {
+      "file": "content/prompts/p_066/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_066"
+    },
+    {
+      "file": "content/prompts/p_067/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_067"
+    },
+    {
+      "file": "content/prompts/p_068/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_068"
+    },
+    {
+      "file": "content/prompts/p_069/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_069"
+    },
+    {
+      "file": "content/prompts/p_070/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_070"
+    },
+    {
+      "file": "content/prompts/p_071/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_071"
+    },
+    {
+      "file": "content/prompts/p_072/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_072"
+    },
+    {
+      "file": "content/prompts/p_073/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_073"
+    },
+    {
+      "file": "content/prompts/p_074/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_074"
+    },
+    {
+      "file": "content/prompts/p_075/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_075"
+    },
+    {
+      "file": "content/prompts/p_076/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_076"
+    },
+    {
+      "file": "content/prompts/p_077/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_077"
+    },
+    {
+      "file": "content/prompts/p_078/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_078"
+    },
+    {
+      "file": "content/prompts/p_079/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_079"
+    },
+    {
+      "file": "content/prompts/p_080/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_080"
+    },
+    {
+      "file": "content/prompts/p_081/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_081"
+    },
+    {
+      "file": "content/prompts/p_082/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_082"
+    },
+    {
+      "file": "content/prompts/p_083/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_083"
+    },
+    {
+      "file": "content/prompts/p_084/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_084"
+    },
+    {
+      "file": "content/prompts/p_085/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_085"
+    },
+    {
+      "file": "content/prompts/p_086/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_086"
+    },
+    {
+      "file": "content/prompts/p_087/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_087"
+    },
+    {
+      "file": "content/prompts/p_088/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_088"
+    },
+    {
+      "file": "content/prompts/p_089/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_089"
+    },
+    {
+      "file": "content/prompts/p_090/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_090"
+    },
+    {
+      "file": "content/prompts/p_091/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_091"
+    },
+    {
+      "file": "content/prompts/p_092/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_092"
+    },
+    {
+      "file": "content/prompts/p_093/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_093"
+    },
+    {
+      "file": "content/prompts/p_094/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_094"
+    },
+    {
+      "file": "content/prompts/p_095/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_095"
+    },
+    {
+      "file": "content/prompts/p_096/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_096"
+    },
+    {
+      "file": "content/prompts/p_097/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_097"
+    },
+    {
+      "file": "content/prompts/p_098/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_098"
+    },
+    {
+      "file": "content/prompts/p_099/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_099"
+    },
+    {
+      "file": "content/prompts/p_100/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_100"
+    },
+    {
+      "file": "content/collections/c_001/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_045"
+    },
+    {
+      "file": "content/collections/c_002/entry.yaml",
+      "field": "coverAssetId",
+      "assetId": "a_042"
+    }
+  ]
+}

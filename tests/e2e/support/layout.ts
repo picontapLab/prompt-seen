@@ -191,7 +191,7 @@ export const GERMAN: Record<string, string> = {
   Featured: 'Empfehlungen',
   'Skip the list': 'Liste überspringen',
   Page: 'Seite',
-  Original: 'Originalbild',
+  'Full-size image': 'Bild in voller Größe',
   Home: 'Startseite',
   Share: 'Teilen',
   'Link copied': 'Link in die Zwischenablage kopiert',

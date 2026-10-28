@@ -16,6 +16,7 @@
     "content:new": "tsx scripts/content-new.ts",
     "content:export": "npm run gen && tsx scripts/content-export.ts",
     "media:import": "tsx scripts/media-import.ts",
+    "media:generate": "node --import tsx scripts/media-generate.ts",
     "build": "npm run gen && npm run content:build && next build && tsx scripts/package.ts",
     "typecheck": "npm run gen && tsc --noEmit",
     "tokens:check": "tsx scripts/tokens-check.ts",
