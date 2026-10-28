@@ -398,17 +398,23 @@ test('列表末尾: a slow batch shows frames at work ratios after 300 ms; a qui
   const state = page.locator('[data-feed-state]');
   // The slow case takes 3 s: a busy CI runner has gone over a second without drawing a frame
   // (WebKit), and the indicator has to be drawn while loading to be seen.
+  const works = page.locator('[role="feed"] > article');
   for (const ms of [60, 3000]) {
+    // From a feed at rest (it may have asked for a batch by itself on arriving), so the batch timed
+    // is the one this scroll asks for.
+    await expect(state).toHaveAttribute('data-feed-state', 'idle', { timeout: 10_000 });
     delay = ms;
     await watch();
+    const before = await works.count();
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    // A 60 ms batch can be done before the state is read, so wait for its frames instead.
-    await expect.poll(async () => (await seen()).start).not.toBeNull();
+    // Wait for the batch itself: a 60 ms one can be done before its frames are ever drawn, or even
+    // inserted (on a busy runner React renders the loading state and the batch in one go).
+    await expect.poll(() => works.count(), { timeout: 10_000 }).toBeGreaterThan(before);
     await expect(state).toHaveAttribute('data-feed-state', 'idle', { timeout: 10_000 });
     const s = await seen();
-    expect(s.start, `${ms} ms: frames take their place while loading`).not.toBeNull();
     if (s.visible !== null) expect(s.visible - s.start!, `${ms} ms`).toBeGreaterThanOrEqual(300);
     if (ms > 300) {
+      expect(s.start, `${ms} ms: frames take their place while loading`).not.toBeNull();
       expect(s.visible, `${ms} ms`).not.toBeNull();
       for (const r of s.ratios) expect(r).toBeGreaterThan(0.5);
     }
