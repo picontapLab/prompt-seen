@@ -12,7 +12,6 @@ import {
   useRef,
   useState,
   useSyncExternalStore,
-  type CSSProperties,
   type RefObject,
 } from 'react';
 import { flushSync } from 'react-dom';
@@ -24,7 +23,7 @@ import { getImage } from '@/modules/media';
 import { paths, stripBasePath, withBasePath } from '@/modules/url';
 import { duration, ease } from '@/styles/tokens/motion';
 import { loadJson, peekJson, prefetchJson } from '@/ui/gallery/prefetch';
-import { Button, IconButton } from '@/ui/primitives/Button';
+import { IconButton } from '@/ui/primitives/Button';
 import { PortalScope } from '@/ui/primitives/PortalScope';
 import { PromptDetailBody } from '@/ui/prompt-detail/PromptDetailBody';
 import { fly, rectOf, type Flight } from './flight';
@@ -37,6 +36,7 @@ import {
   subscribeLocation,
 } from './history';
 import { isVisibleBox, matchPromptPath } from './logic';
+import { Pending } from './Pending';
 import { useSwipe } from './useSwipe';
 import styles from './DetailPopup.module.css';
 
@@ -44,6 +44,9 @@ import styles from './DetailPopup.module.css';
 // the address is a Prompt detail address of this locale while the gallery that hosts it is
 // mounted; everything else (the dialog, scroll lock, title, focus) follows from that. The body
 // is the full page's PromptDetailBody, rendered from the same JSON model.
+//
+// PopupHost loads this module after hydration (§16.1); a click that arrives first opens the host's
+// stand-in dialog (PendingDialog), which this popup takes over once it is here (`takeover`).
 
 export type PopupLocale = Pick<LocaleEntry, 'code' | 'pathPrefix' | 'htmlLang' | 'direction'>;
 
@@ -66,12 +69,18 @@ export function DetailPopup({
   siteName,
   source,
   getOrigin,
+  takeover = false,
 }: {
   locale: PopupLocale;
   siteName: string;
   source: PopupSource | null;
   /** The card of the latest click that opened the popup (PopupHost). */
   getOrigin: () => PopupOrigin | null;
+  /**
+   * Mounted in place of PopupHost's open stand-in dialog: the popup is on screen already, so it
+   * opens without entry animations or a flight. Read once, at mount.
+   */
+  takeover?: boolean;
 }) {
   const t = useTranslations('popup');
   const td = useTranslations('detail');
@@ -138,6 +147,7 @@ export function DetailPopup({
   const downTarget = useRef<EventTarget | null>(null);
   /** The click whose image has flown already. */
   const flown = useRef<PopupOrigin | null>(null);
+  const takingOver = useRef(takeover);
 
   const stopMotion = useCallback(() => {
     for (const f of flights.current) f.animation.cancel();
@@ -175,6 +185,7 @@ export function DetailPopup({
     stopMotion();
     const dlg = dialogRef.current;
     if (dlg?.open) dlg.close();
+    if (dlg) delete dlg.dataset.instant; // the next opening animates again
     delete document.documentElement.dataset.popupOpen;
     document.title = savedTitle.current;
     const slug = lastViewed.current;
@@ -208,6 +219,11 @@ export function DetailPopup({
       if (exit.current) stopMotion(); // a new target interrupts a closing popup
       if (!shown.current) {
         shown.current = true;
+        if (takingOver.current) {
+          // The stand-in dialog showed this work already: no second entrance, no flight.
+          dlg.dataset.instant = '';
+          flown.current = getOrigin();
+        }
         savedTitle.current = document.title;
         document.documentElement.dataset.popupOpen = '';
         if (!dlg.open) dlg.showModal();
@@ -217,7 +233,8 @@ export function DetailPopup({
     } else if (shown.current) {
       restore();
     }
-  }, [openSlug, restore, stopMotion]);
+    takingOver.current = false;
+  }, [openSlug, restore, stopMotion, getOrigin]);
 
   // Navigating to another route unmounts the gallery with the popup: release what we hold.
   useLayoutEffect(
@@ -526,56 +543,6 @@ export function DetailPopup({
         )}
       </PortalScope>
     </dialog>
-  );
-}
-
-/** Until the model is there: the frame the visitor clicked, its title and a status line (§11.3.2). */
-function Pending({
-  card,
-  titleId,
-  failed,
-  fullPage,
-  onRetry,
-}: {
-  card: FeedCard | null;
-  titleId: string;
-  failed: boolean;
-  fullPage: string;
-  onRetry: () => void;
-}) {
-  const t = useTranslations('popup');
-  const img = card ? getImage(card.cover, 'card') : null;
-  return (
-    <div className={styles.pending}>
-      {card && img && (
-        <span
-          className={styles.pendingFrame}
-          style={{ '--w': card.cover.width, '--h': card.cover.height, background: img.placeholder } as CSSProperties}
-        >
-          <img src={img.src} srcSet={img.srcSet} sizes="(min-width: 1024px) 58vw, 100vw" alt={img.alt} />
-        </span>
-      )}
-      <div className={styles.pendingText}>
-        <h2 id={titleId} className={styles.pendingTitle}>
-          {card?.title ?? t('loading')}
-        </h2>
-        {failed ? (
-          <div role="alert" className={styles.pendingStatus}>
-            <p>{t('failed')}</p>
-            <p className={styles.pendingActions}>
-              <Button variant="secondary" onPress={onRetry}>
-                {t('retry')}
-              </Button>
-              <a href={fullPage}>{t('openFull')}</a>
-            </p>
-          </div>
-        ) : (
-          <p role="status" className={`${styles.pendingStatus} after-delay`}>
-            {t('loading')}
-          </p>
-        )}
-      </div>
-    </div>
   );
 }
 

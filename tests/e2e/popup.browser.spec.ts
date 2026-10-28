@@ -6,7 +6,9 @@ import { feedIndex, feedPage, localeIndex, promptDetail } from './support/conten
 
 // The detail popup in real browsers (design doc §11.3, §11.3.1, §11.3.2, §12.8 scenarios 1–5
 // and 8, §16.2 "详情弹层", §16.5 "可打断" "可恢复", §17.3 step 4a). Also the regression suite for
-// Next.js's handling of native pushState / replaceState (§16.3): run it on every upgrade.
+// Next.js's handling of native pushState / replaceState (§16.3): run it on every upgrade. The
+// popup's code loads after hydration (§16.1); clicks soon after it may meet the host's stand-in
+// dialog, and one test holds the code back to check the stand-in on purpose.
 
 const locale = BUILD.locales[0]!;
 const code = locale.code;
@@ -78,8 +80,8 @@ const state = (page: Page) =>
     title: document.title,
   }));
 
-async function gotoList(page: Page, url = listUrl) {
-  await page.goto(url);
+async function gotoList(page: Page, url = listUrl, waitUntil: 'load' | 'domcontentloaded' = 'load') {
+  await page.goto(url, { waitUntil });
   // React has attached its handlers to the host and the feed.
   await page.waitForFunction(() => {
     const el = document.querySelector('[role="feed"]');
@@ -237,6 +239,61 @@ test.describe('desktop', () => {
     await page.waitForTimeout(1700); // the late answer must not reopen it
     await expectClosed(page, third.slug);
     expect(await state(page)).toMatchObject({ doc, historyLength: historyLength + 1, path: listUrl });
+  });
+
+  test('§12.8-3: a click before the popup has loaded opens its stand-in; Esc and Back close it; the popup takes over', async ({
+    page,
+  }) => {
+    // The popup's code is not first-load (§16.1): hold every script the HTML does not reference.
+    const html = await (await page.request.get(listUrl)).text();
+    const referenced = new Set(
+      [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"/g)].map((m) => new URL(m[1]!, 'http://x').pathname),
+    );
+    let release!: () => void;
+    const released = new Promise<void>((r) => (release = r));
+    await page.route('**/_next/static/chunks/*.js', async (route) => {
+      if (!referenced.has(new URL(route.request().url()).pathname)) await released;
+      await route.continue().catch(() => {}); // the page may be gone by then
+    });
+    // A held script started before the load event delays it.
+    await gotoList(page, listUrl, 'domcontentloaded');
+    const { doc, historyLength } = await state(page);
+
+    await card(page, first.slug).click();
+    await expectOpen(page, first.slug);
+    // The frame, the work's title and a status line, as the popup shows them while its data loads.
+    await expect(popup(page).getByRole('heading', { level: 2, name: first.title })).toBeVisible();
+    await expect(popup(page).getByRole('status')).toHaveText(message(code, 'popup.loading'));
+    await expect(popup(page).locator('[data-popup-close]')).toBeFocused();
+    await expect(popup(page).locator('[data-popup-step]')).toHaveCount(0);
+    expect(await state(page)).toMatchObject({ ours: true, locked: true, doc, historyLength: historyLength + 1 });
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape'); // a second Esc must not go back past the gallery
+    await expectClosed(page, first.slug);
+    expect(await state(page)).toMatchObject({ doc, historyLength: historyLength + 1, path: listUrl });
+
+    await card(page, second.slug).click();
+    await expectOpen(page, second.slug);
+    await page.goBack({ waitUntil: 'commit' }); // the load event may still wait for held scripts
+    await expectClosed(page, second.slug);
+    await page.goForward({ waitUntil: 'commit' });
+    await expectOpen(page, second.slug);
+
+    // The code arrives while the stand-in is open: the popup replaces it without entering again.
+    release();
+    await expect(popup(page).locator('[data-stage-picture]')).toBeVisible();
+    await expect(popup(page)).toHaveAttribute('data-instant', '');
+    await expect(popup(page).locator('[data-popup-step="next"]')).toBeVisible();
+    await expect(popup(page).locator('[data-popup-close]')).toBeFocused();
+    expect(await popupMovement(page)).toEqual([]);
+    expect(await state(page)).toMatchObject({ locked: true, doc });
+    await page.keyboard.press('Escape');
+    await expectClosed(page, second.slug);
+    expect(await state(page)).toMatchObject({ doc, historyLength: historyLength + 1, path: listUrl });
+    // Later openings animate as usual.
+    await card(page, third.slug).click();
+    await expectOpen(page, third.slug);
+    await expect(popup(page)).not.toHaveAttribute('data-instant', '');
   });
 
   test('§12.8-4: Back, Forward and a refresh show the content of the address', async ({ page }) => {

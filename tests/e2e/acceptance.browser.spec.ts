@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { DISPLAY_CJK } from '../../src/styles/fonts/display-cjk';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, samplePrompt, sampleTemplate } from './support/content';
 import { cancelledFetch } from './support/errors';
@@ -267,6 +268,55 @@ test.describe('text in another language keeps its own type (§8.6, §11.1.2)', (
         });
         expect(wrong, path).toEqual([]);
       }
+    });
+});
+
+test.describe('CJK pages: each web font file once, full-width quotation marks (§11.1.2)', () => {
+  for (const locale of BUILD.locales.filter((l) => DISPLAY_CJK[l.code]))
+    test(`${locale.code}: one download per font file; the Latin faces leave quotes to CJK fonts`, async ({ page }) => {
+      const fonts = new Set<string>();
+      page.on('request', (r) => {
+        if (r.resourceType() === 'font' && r.url().includes('/_next/static/media/')) fonts.add(r.url());
+      });
+      for (const path of [`/${locale.pathPrefix}/`, `/${locale.pathPrefix}/prompts/`, samplePrompt(locale.code).path]) {
+        await page.goto(`${BASE}${path}`);
+        await takenOver(page);
+        await page.evaluate(() => document.fonts.ready);
+      }
+      // next/font names a file `{file}[-s][.p].{content hash}.woff2`: one hash under two names is
+      // one file downloaded twice (step 6 found the preloaded Latin copy and the "for CJK" copy).
+      const byHash = new Map<string, string[]>();
+      for (const url of fonts) {
+        const hash = /\.([^./]+)\.woff2$/.exec(url)?.[1] ?? url;
+        byHash.set(hash, [...(byHash.get(hash) ?? []), url.split('/').at(-1)!]);
+      }
+      expect(fonts.size).toBeGreaterThan(0);
+      expect([...byHash.values()].filter((names) => names.length > 1)).toEqual([]);
+
+      // The page's body and display faces leave the em dash, curly quotes and the ellipsis out of
+      // their ranges, so the system's CJK font renders them full width.
+      const covered = await page.evaluate(() => {
+        const first = (v: string) =>
+          v
+            .split(',')[0]!
+            .trim()
+            .replace(/^["']|["']$/g, '');
+        const cs = getComputedStyle(document.body);
+        const families = ['--font-text', '--font-display'].map((v) => first(cs.getPropertyValue(v)));
+        const covers = (range: string, cp: number) =>
+          range.split(',').some((part) => {
+            const r = part.trim().replace(/^U\+/i, '');
+            const [lo, hi = lo] = r.includes('?') ? [r.replace(/\?/g, '0'), r.replace(/\?/g, 'F')] : r.split('-');
+            return parseInt(lo!, 16) <= cp && cp <= parseInt(hi!, 16);
+          });
+        const faces = [...document.fonts].filter((f) => families.includes(first(f.family)));
+        const out = faces.length ? [] : [`no faces for ${families.join(', ')}`];
+        for (const f of faces)
+          for (const cp of [0x2014, 0x2018, 0x2019, 0x201c, 0x201d, 0x2026])
+            if (covers(f.unicodeRange, cp)) out.push(`${f.family} ${f.weight}: U+${cp.toString(16).toUpperCase()}`);
+        return out;
+      });
+      expect(covered).toEqual([]);
     });
 });
 
