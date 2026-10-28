@@ -386,11 +386,18 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
   next/link prefetches). Record the numbers when a change moves them.
 - Pages have no serious or critical axe-core violations (WCAG 2.2 AA tags). Check with
   `seriousViolations(page)` from `tests/e2e/support/a11y.ts`: it waits for entry animations to
-  finish first (`settle()`), since axe measures contrast at the opacity of the moment.
+  finish first (`settle()`), since axe measures contrast at the opacity of the moment. After the
+  page scrolled smoothly (the editor going to a field), `scrollToTop()` waits for the scroll to
+  stop before going to the top: an instant scroll does not stop a smooth one, and axe reports links
+  left under the sticky header as obscured targets.
 - `tests/e2e/support/content.ts` reads the build's content model, so tests pick real entries
   (`samplePrompt`, `sampleTemplate`) and compare pages with their data.
 - Before clicking a client control, wait for hydration where the click must be handled
   (`hydrated()` in `detail.browser.spec.ts`). WebKit on macOS tabs to buttons with Option held.
+  React attaches `__reactProps` while it hydrates, before it commits; when a test needs what a
+  page does once mounted (its listeners, its history state), wait for something a mount effect
+  does: the feed sets `history.scrollRestoration` to `manual`, and Next.js writes the page's
+  router tree into `history.state` (`routerStarted()` in `popup.browser.spec.ts`).
 - Acceptance (step 6, design doc §16.5, §11.9, §12.8): `acceptance.browser.spec.ts` checks every
   built language in both themes at four widths with `layoutProblems()` (sideways page scroll, text
   cut off, overlapping controls) from `tests/e2e/support/layout.ts`, which also has
@@ -399,13 +406,18 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
   row by row and `motion.browser.spec.ts` the §12.8 scenarios the feature specs do not. A test
   that watches page errors across navigations ignores `cancelledFetch()` from
   `tests/e2e/support/errors.ts`: WebKit reports requests a navigation cancels as page or console
-  errors, and waiting for `networkidle` before leaving does not prevent them in CI.
-- Timing tests: a state that can come and go quickly (a batch loading, placeholders) is caught by
-  a `MutationObserver` installed before the action, not by polling an attribute, which reads at
-  widening intervals. A delay run by CSS (`.after-delay`) counts on the frame clock from the first
-  frame that draws the element, so time it from the last frame before the insertion (the
-  `requestAnimationFrame` timestamp), or from the press that started it. Text compared across
-  browsers drops bidi marks (U+200E, U+200F, U+061C): Firefox's page text has none.
+  errors, and waiting for `networkidle` before leaving does not prevent them in CI. Firefox reports
+  the same for downloads a navigation aborts (`NS_BINDING_ABORTED`: a web font, a worker loading
+  its scripts).
+- Timing tests: a state that can come and go quickly (a batch loading, placeholders) is caught by a
+  `MutationObserver` installed before the action, not by polling an attribute, which reads at
+  widening intervals. Read what a frame drew after that frame (a `setTimeout` from the
+  `requestAnimationFrame` callback): in the callback, before the frame's style update, WebKit
+  computes an element inserted since the last frame without its CSS animations. A delay run by CSS
+  (`.after-delay`) counts on the frame clock from the first frame that draws the element, so time it
+  from the last frame before the insertion (the `requestAnimationFrame` timestamp), or from the
+  press that started it. Text compared across browsers drops bidi marks (U+200E, U+200F, U+061C):
+  Firefox's page text has none.
 - Lab measurements (§16.1, §16.5): `npx tsx scripts/measure-lab.ts [paths]` against the served
   build prints LCP, CLS, blocking time, transfer and input delays on a cold cache, for desktop and
   for a phone on Slow 4G with a 4× slower CPU. The reference nginx compresses text as a host
@@ -419,7 +431,12 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
 2. `secrets`: gitleaks over the branch's history. A test that needs a token-like value uses one
    that scanners ignore (a repeated character, or the documented `…EXAMPLE` keys).
 3. `build-and-test`: a production build at the root and a preview build under `/prompt-seen`,
-   each tested end to end in three browsers.
+   each tested end to end in three browsers. A failed test is retried once, and only the retry
+   records a trace (`playwright.config.ts`): a worker keeps every trace it records until it exits,
+   passed tests included, and CI runs a build's tests in one worker, so tracing every test once
+   filled the runner's disk. A failed attempt leaves a screenshot and its error context, and
+   `test-results/` is uploaded after every run, so a flaky test's first failure can be read too.
+   The job prints the disk space before and after the tests, and the largest directories.
 4. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
    secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, and optionally the variable
    `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`). Without them the job reports a notice and

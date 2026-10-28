@@ -35,6 +35,8 @@ test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('scrolling loads every batch by itself; the address follows the page in view (§9.4)', async ({ page }) => {
+    // Up to 80 wheel steps: 13–24 s in WebKit on CI, too close to the default 30 s.
+    test.setTimeout(60_000);
     const errors = watchErrors(page);
     await page.goto(listUrl());
     await hydrated(page);
@@ -47,9 +49,12 @@ test.describe('desktop', () => {
     for (let i = 0; i < 80; i += 1) {
       await page.mouse.wheel(0, 700);
       await page.waitForTimeout(80);
-      const path = await page.evaluate(() => location.pathname);
+      const { path, end } = await page.evaluate(() => ({
+        path: location.pathname,
+        end: !!document.querySelector('[data-feed-end]'),
+      }));
       if (path !== lastPath) seenPaths.add((lastPath = path));
-      if (await page.locator('[data-feed-end]').count()) break;
+      if (end) break;
     }
     await expect(page.locator('[data-feed-end]')).toHaveText(
       message(code, 'feed.status.end', { total: String(index.items.length) }),
