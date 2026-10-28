@@ -180,6 +180,28 @@ test.describe('§12.8-9: switching theme or language replays no page animation a
   });
 });
 
+test('“Clear filters” stays where it first appears while the chosen filters load', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const style = index.prompts.flatMap((p) => p.styleIds)[0];
+  test.skip(!style, 'no styles in this content');
+  const url = `${BASE}/${prefix}/prompts/`;
+  // Hold the chunks the page loads on demand (the chosen filters' chips among them), not those
+  // its HTML references, so the page starts and the row first shows without them.
+  const html = await (await page.request.get(url)).text();
+  await page.route('**/_next/static/chunks/*.js', async (route) => {
+    if (!html.includes(new URL(route.request().url()).pathname)) await new Promise((r) => setTimeout(r, 1500));
+    await route.continue();
+  });
+  await page.goto(`${url}#style=${style}`);
+  await takenOver(page);
+  const bar = page.locator('[data-filtered]');
+  const clear = bar.getByRole('button', { name: message(code, 'feed.filters.clear') });
+  await expect(clear).toBeVisible();
+  const before = await clear.boundingBox();
+  await expect(bar.getByRole('grid', { name: message(code, 'feed.filters.active') })).toBeVisible();
+  expect(await clear.boundingBox()).toEqual(before);
+});
+
 test.describe('§12.8-10: nothing moves once fonts and images have loaded', () => {
   test.skip(({ browserName }) => browserName !== 'chromium', 'layout shifts are read with the Layout Instability API');
   test.setTimeout(240_000);
