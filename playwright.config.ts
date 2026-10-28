@@ -24,7 +24,10 @@ export default defineConfig({
   reporter: process.env.CI ? [['github'], ['list']] : [['list']],
   use: {
     baseURL: `http://127.0.0.1:${PORT}`,
-    trace: 'retain-on-failure',
+    // A worker keeps every recorded trace (screencast frames included) on disk until it exits, even
+    // for tests that pass, and CI runs a whole build's tests in one worker: recording every test
+    // filled the runner's disk (ENOSPC). CI records only the retry of a failed test.
+    trace: process.env.CI ? 'on-first-retry' : 'retain-on-failure',
   },
   projects: [
     { name: 'http', testMatch: /\.http\.spec\.ts$/ },

@@ -134,6 +134,21 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   const missing = fieldsWithErrors(fields, result.errors);
   const shown = visibleErrors(state, result.errors);
 
+  // --- Text typed before hydration (§12.8-6): React leaves it in the fields while hydrating, but
+  // the next render of a controlled field would put the first render's value back. Take it in
+  // before anything renders again; it also wins over a draft or a shared link applied below.
+  const typedEarly = useRef<Record<string, string>>({});
+  useLayoutEffect(() => {
+    for (const field of fields) {
+      if (field.type !== 'string') continue;
+      const el = shells.current
+        .get(field.name)
+        ?.querySelector<HTMLInputElement | HTMLTextAreaElement>('input, textarea');
+      if (el && el.value !== initial.current.values[field.name]) typedEarly.current[field.name] = el.value;
+    }
+    for (const [name, value] of Object.entries(typedEarly.current)) dispatch({ type: 'edit', field: name, value });
+  }, [fields]);
+
   // --- After hydration: values from a shared link, else from a draft (§11.6.3, §11.8.4).
   useEffect(() => {
     function fromFragment(): boolean {
@@ -158,6 +173,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
       if (draft && !sameValues(draft, defaults))
         dispatch({ type: 'load', values: draft, notice: { kind: 'restored' } });
     }
+    for (const [name, value] of Object.entries(typedEarly.current)) dispatch({ type: 'edit', field: name, value });
     const onHash = () => fromFragment();
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
