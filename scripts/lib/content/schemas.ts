@@ -18,7 +18,9 @@ export const assetId = idOf('asset');
 export const collectionId = idOf('collection');
 
 export const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-export const slug = z.string().regex(SLUG_PATTERN, 'use lowercase letters, digits and single hyphens, e.g. "ink-portrait"');
+export const slug = z
+  .string()
+  .regex(SLUG_PATTERN, 'use lowercase letters, digits and single hyphens, e.g. "ink-portrait"');
 /** Taxonomy and field-group IDs double as topic slugs (§9.1). */
 export const termId = slug;
 export const versionId = z.string().regex(/^v\d+$/, 'versions are named v1, v2, …');
@@ -26,9 +28,12 @@ export const versionId = z.string().regex(/^v\d+$/, 'versions are named v1, v2, 
 export const isoDate = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}$/, 'dates are written YYYY-MM-DD')
-  .refine((v) => !Number.isNaN(Date.parse(`${v}T00:00:00Z`)) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v), {
-    message: 'not a real calendar date',
-  });
+  .refine(
+    (v) => !Number.isNaN(Date.parse(`${v}T00:00:00Z`)) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v),
+    {
+      message: 'not a real calendar date',
+    },
+  );
 
 /** Text per locale code, e.g. `{ en: …, zh-Hans: … }`. */
 export const localeText = z.record(z.string(), z.string().trim().min(1, 'text must not be empty'));
@@ -40,7 +45,10 @@ const hexColor = z.string().regex(/^#[0-9A-Fa-f]{6}$/, 'colours are written #RRG
 const unit = z.number().min(0).max(1);
 
 const fieldValue = z.union([z.string(), z.array(z.string())]);
-export const fieldValues = z.record(z.string().regex(FIELD_NAME_PATTERN, 'field names look like "productName"'), fieldValue);
+export const fieldValues = z.record(
+  z.string().regex(FIELD_NAME_PATTERN, 'field names look like "productName"'),
+  fieldValue,
+);
 
 // ---------------------------------------------------------------------------------------------
 // Prompts (§5.2)
@@ -48,7 +56,9 @@ export const fieldValues = z.record(z.string().regex(FIELD_NAME_PATTERN, 'field 
 const region = z
   .object({ x: unit, y: unit, w: unit.positive(), h: unit.positive() })
   .strict()
-  .refine((r) => r.x + r.w <= 1.0001 && r.y + r.h <= 1.0001, { message: 'the region must stay inside the image (x + w ≤ 1, y + h ≤ 1)' });
+  .refine((r) => r.x + r.w <= 1.0001 && r.y + r.h <= 1.0001, {
+    message: 'the region must stay inside the image (x + w ≤ 1, y + h ≤ 1)',
+  });
 
 export const annotationSchema = z
   .object({
@@ -63,6 +73,32 @@ const model = z
   .object({ displayName: optionalText, providerModelId: optionalText })
   .strict()
   .default({ displayName: null, providerModelId: null });
+
+export const inputRequirementsSchema = z
+  .object({
+    referenceImage: z.enum(['none', 'optional', 'required']).default('none'),
+    instructions: localeText.default({}),
+    slots: z
+      .array(
+        z
+          .object({
+            id: z.string().regex(/^[a-z][A-Za-z0-9]*$/),
+            labels: localeText,
+            min: z.number().int().nonnegative(),
+            max: z.number().int().positive(),
+          })
+          .strict()
+          .refine((s) => s.min <= s.max, 'slot minimum exceeds maximum'),
+      )
+      .default([]),
+  })
+  .strict()
+  .superRefine((input, ctx) => {
+    const ids = input.slots.map((s) => s.id);
+    if (new Set(ids).size !== ids.length) ctx.addIssue({ code: 'custom', message: 'duplicate reference slot' });
+    if (input.slots.length && input.referenceImage !== (input.slots.some((s) => s.min > 0) ? 'required' : 'optional'))
+      ctx.addIssue({ code: 'custom', message: 'reference requirement contradicts slots' });
+  });
 
 export const promptEntrySchema = z
   .object({
@@ -101,10 +137,8 @@ export const promptEntrySchema = z
       })
       .strict()
       .default({ displayName: null, providerModelId: null, verification: 'unknown' }),
-    inputRequirements: z
-      .object({ referenceImage: z.enum(['none', 'optional', 'required']).default('none') })
-      .strict()
-      .default({ referenceImage: 'none' }),
+    inputRequirements: inputRequirementsSchema.prefault({}),
+    showcaseExampleId: exampleId.nullable().default(null),
     source: z
       .object({ author: optionalText, url: httpUrl.nullable().default(null), license: optionalText })
       .strict()
@@ -219,6 +253,9 @@ export const exampleRunSchema = z
     /** SHA-256 of prompt.txt, the exact text sent to the generator. */
     promptSha256: z.string().regex(/^[0-9a-f]{64}$/, 'a lowercase hexadecimal SHA-256 (64 characters)'),
     referenceAssetIds: z.array(assetId).default([]),
+    referenceBindings: z
+      .array(z.object({ slotId: text, referenceIndex: z.number().int().nonnegative() }).strict())
+      .default([]),
     outputAssetIds: z.array(assetId).min(1, 'a run records at least one output image'),
     provider: optionalText,
     model,
@@ -265,10 +302,15 @@ export const DIGITAL_SOURCE_TYPES = [
 ] as const;
 
 const webpProcessing = z.object({ quality: z.number().int().min(1).max(100), lossless: z.boolean() }).strict();
-export const processingSchema = z.object({
-  version: z.literal(1), thumbnail: webpProcessing, card: webpProcessing, detail: webpProcessing,
-  og: z.object({ quality: z.number().int().min(1).max(100) }).strict(),
-}).strict();
+export const processingSchema = z
+  .object({
+    version: z.literal(1),
+    thumbnail: webpProcessing,
+    card: webpProcessing,
+    detail: webpProcessing,
+    og: z.object({ quality: z.number().int().min(1).max(100) }).strict(),
+  })
+  .strict();
 
 export const mediaSchema = z
   .object({
@@ -358,9 +400,7 @@ export const redirectsFileSchema = z
       )
       .default([]),
     /** Removed without a replacement: 410 (§9.5). */
-    gone: z
-      .array(z.object({ kind: redirectKind, slug, reason: z.enum(['removed', 'license']) }).strict())
-      .default([]),
+    gone: z.array(z.object({ kind: redirectKind, slug, reason: z.enum(['removed', 'license']) }).strict()).default([]),
   })
   .strict();
 export type RedirectsSource = z.infer<typeof redirectsFileSchema>;

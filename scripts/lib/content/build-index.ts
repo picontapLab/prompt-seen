@@ -67,7 +67,23 @@ export const detailKey = (kind: EntryKind, key: string) => `${kind}/${key}`;
 const frameNumber = (id: string) => id.slice(id.indexOf('_') + 1).padStart(4, '0');
 
 const COMMON_RATIOS: [number, number][] = [
-  [1, 1], [4, 5], [5, 4], [3, 4], [4, 3], [2, 3], [3, 2], [9, 16], [16, 9], [1, 2], [2, 1], [21, 9], [9, 21], [3, 1], [1, 3], [5, 7], [7, 5],
+  [1, 1],
+  [4, 5],
+  [5, 4],
+  [3, 4],
+  [4, 3],
+  [2, 3],
+  [3, 2],
+  [9, 16],
+  [16, 9],
+  [1, 2],
+  [2, 1],
+  [21, 9],
+  [9, 21],
+  [3, 1],
+  [1, 3],
+  [5, 7],
+  [7, 5],
 ];
 
 /** "4:5" for 1536 × 1920; common ratios win over exact fractions (§9.2 test information). */
@@ -145,7 +161,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       r.data.id,
       'prompt',
       r.locales,
-      { coverAssetId: r.data.coverAssetId, terms: promptTerms(r), annotationNotes: r.data.annotations.map((a) => a.note) },
+      {
+        coverAssetId: r.data.coverAssetId,
+        terms: promptTerms(r),
+        annotationNotes: r.data.annotations.map((a) => a.note),
+      },
       // Without an image or prompt text there is nothing to show, even in preview.
       r.data.coverAssetId !== null && content.media.has(r.data.coverAssetId) && promptTextOf(content, r) !== null,
     );
@@ -157,26 +177,44 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       { coverAssetId: null, terms: templateTerms(r), fields: r.versions.get(r.data.currentVersion)?.fields ?? [] },
       r.versions.has(r.data.currentVersion),
     );
-  for (const r of content.pages.values()) decide(`page:${r.slug}`, 'page', r.locales, { coverAssetId: null, terms: [] });
+  for (const r of content.pages.values())
+    decide(`page:${r.slug}`, 'page', r.locales, { coverAssetId: null, terms: [] });
 
   const vis = (owner: string, locale: string) => visible.get(owner)?.get(locale) ?? null;
 
   // Collections and topics depend on what they contain, so they are decided after prompts.
   for (const r of content.collections.values()) {
-    decide(r.data.id, 'collection', r.locales, { coverAssetId: r.data.coverAssetId, terms: [] }, content.media.has(r.data.coverAssetId));
+    decide(
+      r.data.id,
+      'collection',
+      r.locales,
+      { coverAssetId: r.data.coverAssetId, terms: [] },
+      content.media.has(r.data.coverAssetId),
+    );
     const map = visible.get(r.data.id)!;
     for (const code of [...map.keys()])
       if (r.data.items.filter((id) => vis(id, code)).length < COLLECTION_MIN_ITEMS) map.delete(code);
   }
   const promptsOfTerm = (key: TaxonomyKey, id: string, locale: string) =>
     [...content.prompts.values()].filter(
-      (p) => vis(p.data.id, locale) && (key === 'category' ? p.data.categoryId === id : (key === 'style' ? p.data.styleIds : p.data.useCaseIds).includes(id)),
+      (p) =>
+        vis(p.data.id, locale) &&
+        (key === 'category'
+          ? p.data.categoryId === id
+          : (key === 'style' ? p.data.styleIds : p.data.useCaseIds).includes(id)),
     );
   for (const t of content.topics) {
     const owner = `topic:${t.taxonomy}:${t.termId}`;
-    decide(owner, 'topic', t.locales, { coverAssetId: null, terms: [{ key: t.taxonomy, id: t.termId }] }, content.taxonomy[t.taxonomy].has(t.termId));
+    decide(
+      owner,
+      'topic',
+      t.locales,
+      { coverAssetId: null, terms: [{ key: t.taxonomy, id: t.termId }] },
+      content.taxonomy[t.taxonomy].has(t.termId),
+    );
     const map = visible.get(owner)!;
-    for (const code of [...map.keys()]) if (promptsOfTerm(t.taxonomy, t.termId, code).length < TOPIC_MIN_PROMPTS) map.delete(code);
+    for (const code of [...map.keys()])
+      if (promptsOfTerm(t.taxonomy, t.termId, code).length < TOPIC_MIN_PROMPTS) map.delete(code);
   }
 
   // ---- Addresses ---------------------------------------------------------------------------------
@@ -233,7 +271,13 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       alt: m.alt[code] ?? '',
       caption: m.caption[code] ?? null,
       variants: full
-        ? { thumbnail: m.variants.thumbnail, card: m.variants.card, detail: m.variants.detail, og: m.variants.og, original }
+        ? {
+            thumbnail: m.variants.thumbnail,
+            card: m.variants.card,
+            detail: m.variants.detail,
+            og: m.variants.og,
+            original,
+          }
         : { thumbnail: m.variants.thumbnail, card: m.variants.card, detail: m.variants.detail },
       credit: m.credit,
       digitalSourceType: m.provenance.digitalSourceType,
@@ -251,8 +295,14 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     return { body: compiled.blocks, toc: compiled.toc };
   };
 
-  const translation = (v: Vis): TranslationInfo => ({ sourceLocale: v.state.sourceLocale ?? v.file.locale, reviewStatus: v.state.review });
-  const seo = (file: LocaleFile) => ({ title: file.fm.seoTitle ?? file.fm.title, description: file.fm.seoDescription ?? file.fm.description });
+  const translation = (v: Vis): TranslationInfo => ({
+    sourceLocale: v.state.sourceLocale ?? v.file.locale,
+    reviewStatus: v.state.review,
+  });
+  const seo = (file: LocaleFile) => ({
+    title: file.fm.seoTitle ?? file.fm.title,
+    description: file.fm.seoDescription ?? file.fm.description,
+  });
 
   const termLabel = (key: TaxonomyKey, id: string, code: string) => {
     const labels = content.taxonomy[key].get(id)?.labels ?? {};
@@ -263,8 +313,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     const own = term.labels[code] ?? term.labels[config.defaultLocale] ?? '';
     const words = [
       ...(term.aliases[code] ?? []),
-      ...Object.entries(term.labels).filter(([c]) => c !== code).map(([, label]) => label),
-      ...Object.entries(term.aliases).filter(([c]) => c !== code).flatMap(([, list]) => list),
+      ...Object.entries(term.labels)
+        .filter(([c]) => c !== code)
+        .map(([, label]) => label),
+      ...Object.entries(term.aliases)
+        .filter(([c]) => c !== code)
+        .flatMap(([, list]) => list),
     ];
     return [...new Set(words)].filter((w) => w !== own);
   };
@@ -278,15 +332,20 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
   // ---- Summaries -----------------------------------------------------------------------------------
 
   const runsOfPrompt = (id: string) =>
-    [...content.examples.values()].filter((x) => x.data.promptId === id).sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
+    [...content.examples.values()]
+      .filter((x) => x.data.promptId === id)
+      .sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
   const runsOfTemplate = (id: string) =>
-    [...content.examples.values()].filter((x) => x.data.template?.id === id).sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
+    [...content.examples.values()]
+      .filter((x) => x.data.template?.id === id)
+      .sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
 
   const promptSummary = (r: PromptRecord, code: string): PromptSummary => {
     const v = vis(r.data.id, code)!;
     const text = promptTextOf(content, r)!;
     const source = r.data.promptSource;
-    const language = source.type === 'literal' ? source.language : content.templates.get(source.templateId)!.data.promptLanguage;
+    const language =
+      source.type === 'literal' ? source.language : content.templates.get(source.templateId)!.data.promptLanguage;
     return {
       kind: 'prompt',
       id: r.data.id,
@@ -315,7 +374,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
   const templateCover = (r: TemplateRecord) => {
     const runs = runsOfTemplate(r.data.id);
     const preferred =
-      runs.find((x) => x.data.template!.version === r.data.currentVersion && x.data.template!.sample === 'default') ?? runs[0];
+      runs.find((x) => x.data.template!.version === r.data.currentVersion && x.data.template!.sample === 'default') ??
+      runs[0];
     return preferred?.data.outputAssetIds[0] ?? null;
   };
 
@@ -371,9 +431,15 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
 
   for (const locale of built) {
     const code = locale.code;
-    const prompts = [...content.prompts.values()].filter((r) => vis(r.data.id, code)).map((r) => promptSummary(r, code)).sort(newestFirst);
+    const prompts = [...content.prompts.values()]
+      .filter((r) => vis(r.data.id, code))
+      .map((r) => promptSummary(r, code))
+      .sort(newestFirst);
     const promptById = new Map(prompts.map((p) => [p.id, p]));
-    const templates = [...content.templates.values()].filter((r) => vis(r.data.id, code)).map((r) => templateSummary(r, code)).sort(newestFirst);
+    const templates = [...content.templates.values()]
+      .filter((r) => vis(r.data.id, code))
+      .map((r) => templateSummary(r, code))
+      .sort(newestFirst);
     const templateById = new Map(templates.map((t) => [t.id, t]));
     const collections = [...content.collections.values()]
       .filter((r) => vis(r.data.id, code))
@@ -426,7 +492,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         cover: imageRef(r.data.coverAssetId!, code, true),
         seo: seo(v.file),
         ...richBody(v.file, code),
-        prompt: { text, language: summary.promptLanguage, characters: graphemeLength(text), lines: text.split('\n').length },
+        prompt: {
+          text,
+          language: summary.promptLanguage,
+          characters: graphemeLength(text),
+          lines: text.split('\n').length,
+        },
         annotations,
         test: {
           model: summary.model,
@@ -437,7 +508,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         },
         examples,
         source: r.data.source,
-        template: source.type === 'template' ? { id: source.templateId, version: source.version, values: source.values } : null,
+        inputInstructions: r.data.inputRequirements.instructions[code] ?? null,
+        showcaseExampleId: r.data.showcaseExampleId,
+        template:
+          source.type === 'template' ? { id: source.templateId, version: source.version, values: source.values } : null,
         taxonomy: {
           category: termRef('category', r.data.categoryId, code),
           styles: r.data.styleIds.map((id) => termRef('style', id, code)),
@@ -462,7 +536,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       if (!v) continue;
       const version = r.versions.get(r.data.currentVersion)!;
       const spec = versionSpec(version);
-      const label = (labels: Record<string, string>) => labels[code] ?? labels[config.defaultLocale] ?? Object.values(labels)[0] ?? '';
+      const label = (labels: Record<string, string>) =>
+        labels[code] ?? labels[config.defaultLocale] ?? Object.values(labels)[0] ?? '';
       const fields: LocalizedField[] = version.fields.map((f) => ({
         ...toFieldSpec(f),
         label: label(f.labels),
@@ -491,7 +566,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         examples: runsOfTemplate(r.data.id).map((x) => exampleView(x.data.id, code)),
         relatedPrompts: prompts.filter((p) => {
           const pr = content.prompts.get(p.id)!.data;
-          return pr.relatedTemplateIds.includes(r.data.id) || (pr.promptSource.type === 'template' && pr.promptSource.templateId === r.data.id);
+          return (
+            pr.relatedTemplateIds.includes(r.data.id) ||
+            (pr.promptSource.type === 'template' && pr.promptSource.templateId === r.data.id)
+          );
         }),
         taxonomy: {
           category: r.data.categoryId ? termRef('category', r.data.categoryId, code) : null,
@@ -616,6 +694,13 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       prompt: x.prompt ?? '',
       promptSha256: d.promptSha256,
       parameters: Object.entries(d.parameters).map(([name, value]) => ({ name, value })),
+      referenceLabels: d.referenceAssetIds.map((_, index) => {
+        const binding = d.referenceBindings.find((b) => b.referenceIndex === index);
+        const slot =
+          d.promptId &&
+          content.prompts.get(d.promptId)?.data.inputRequirements.slots.find((s) => s.id === binding?.slotId);
+        return slot ? (slot.labels[code] ?? '') : '';
+      }),
       references: d.referenceAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
       outputs: d.outputAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
       notes: d.notes[code] ?? null,
@@ -641,7 +726,12 @@ function manifest(
     collection: (p: string, slug: string) => url.paths.collection(p, slug),
   };
   const slugOf = (kind: 'prompt' | 'template' | 'collection', id: string) =>
-    (kind === 'prompt' ? content.prompts.get(id) : kind === 'template' ? content.templates.get(id) : content.collections.get(id))?.data.slug;
+    (kind === 'prompt'
+      ? content.prompts.get(id)
+      : kind === 'template'
+        ? content.templates.get(id)
+        : content.collections.get(id)
+    )?.data.slug;
   const builtHomes = new Set(built.map((l) => url.paths.home(l.pathPrefix)));
 
   for (const item of content.redirects?.redirects ?? []) {
@@ -649,7 +739,11 @@ function manifest(
       const slug = slugOf(item.kind, item.to);
       if (!slug) continue;
       for (const l of built)
-        if (vis(item.to, l.code)) redirects.push({ from: kindPath[item.kind](l.pathPrefix, item.from), to: kindPath[item.kind](l.pathPrefix, slug) });
+        if (vis(item.to, l.code))
+          redirects.push({
+            from: kindPath[item.kind](l.pathPrefix, item.from),
+            to: kindPath[item.kind](l.pathPrefix, slug),
+          });
     } else {
       // A fixed path is kept when its target is a built locale's address (or outside any locale).
       const firstSegment = `/${item.to.split('/')[1]}/`;
@@ -658,16 +752,23 @@ function manifest(
     }
   }
   // Page 1 of a list is the list itself; its duplicate address redirects there (§9.4).
-  for (const l of built) redirects.push({ from: `${url.paths.prompts(l.pathPrefix)}page/1/`, to: url.paths.prompts(l.pathPrefix) });
+  for (const l of built)
+    redirects.push({ from: `${url.paths.prompts(l.pathPrefix)}page/1/`, to: url.paths.prompts(l.pathPrefix) });
   const redirected = new Set(redirects.map((r) => r.from));
   for (const item of content.redirects?.gone ?? [])
-    for (const l of built) gone.push({ path: kindPath[item.kind](l.pathPrefix, item.slug), locale: l.code, reason: item.reason });
+    for (const l of built)
+      gone.push({ path: kindPath[item.kind](l.pathPrefix, item.slug), locale: l.code, reason: item.reason });
 
   // An archived locale version answers 410 unless a redirect covers its address (§9.5).
-  const archived = (kind: 'prompt' | 'template' | 'collection', slug: string, locs: ReadonlyMap<string, LocaleFile>) => {
+  const archived = (
+    kind: 'prompt' | 'template' | 'collection',
+    slug: string,
+    locs: ReadonlyMap<string, LocaleFile>,
+  ) => {
     for (const l of built) {
       const path = kindPath[kind](l.pathPrefix, slug);
-      if (locs.get(l.code)?.fm.status === 'archived' && !redirected.has(path)) gone.push({ path, locale: l.code, reason: 'archived' });
+      if (locs.get(l.code)?.fm.status === 'archived' && !redirected.has(path))
+        gone.push({ path, locale: l.code, reason: 'archived' });
     }
   };
   for (const r of content.prompts.values()) archived('prompt', r.data.slug, r.locales);

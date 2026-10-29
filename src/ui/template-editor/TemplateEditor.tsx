@@ -15,7 +15,8 @@ import {
   type CSSProperties,
   type MouseEvent,
 } from 'react';
-import type { ImageRef, LocalizedField, TemplateSample } from '@/modules/content/types';
+import type { ExampleRunView, ImageRef, LocalizedField, TemplateSample } from '@/modules/content/types';
+import { matchingExample } from '@/modules/template/examples';
 import { getImage } from '@/modules/media';
 import { graphemeLength, renderTemplate, type FieldError, type FieldValues } from '@/modules/template';
 import { absoluteUrl } from '@/modules/url';
@@ -60,6 +61,7 @@ export type EditorModel = {
   version: { id: string; body: string; fields: LocalizedField[]; samples: TemplateSample[] };
   /** Image of the default sample (§11.8.4 示例图说明). */
   cover: ImageRef | null;
+  examples?: ExampleRunView[];
 };
 
 export type TemplateEditorProps = {
@@ -303,7 +305,9 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
           ? t('mismatch', { version: notice.version, current: version.id })
           : '';
 
-  const img = model.cover && getImage(model.cover, 'card');
+  const matched = matchingExample(model.examples ?? [], model.templateId, version.id, state.values, result.text);
+  const sampleImage = matched?.outputs[0] ?? model.cover;
+  const img = sampleImage && getImage(sampleImage, 'card');
 
   return (
     <div className={styles.editor} data-editor={model.templateId} data-version={version.id}>
@@ -463,7 +467,9 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                       decoding="async"
                     />
                   </span>
-                  <figcaption className={styles.sampleNote}>{d('template.sampleImage')}</figcaption>
+                  <figcaption className={styles.sampleNote}>
+                    {matched ? d('template.testedImage') : d('template.unmatchedImage')}
+                  </figcaption>
                 </figure>
               )}
             </div>

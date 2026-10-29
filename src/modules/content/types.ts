@@ -191,6 +191,7 @@ export type ExampleRunView = {
   promptSha256: string;
   parameters: { name: string; value: string | number | boolean | null }[];
   references: ImageRef[];
+  referenceLabels?: string[];
   outputs: ImageRef[];
   notes: string | null;
 };
@@ -212,6 +213,8 @@ export type PromptDetail = PromptSummary & {
     referenceImage: 'none' | 'optional' | 'required';
   };
   examples: ExampleRunView[];
+  inputInstructions?: string | null;
+  showcaseExampleId?: string | null;
   source: SourceInfo;
   template: { id: string; version: string; values: FieldValues } | null;
   taxonomy: { category: TermRef; styles: TermRef[]; useCases: TermRef[] };

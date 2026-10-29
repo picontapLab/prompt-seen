@@ -27,6 +27,13 @@
       inset-block-start: calc(var(--nav-height) + var(--space-16));
       align-self: start;
     }
+    .withReferences {
+      position: static;
+    }
+    .referenceStage {
+      margin-block-start: var(--space-20);
+      max-inline-size: 100%;
+    }
     .info {
       grid-column: 8 / span 5;
     }

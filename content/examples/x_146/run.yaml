@@ -1,0 +1,21 @@
+# One recorded generation (design doc §5.5). prompt.txt is the exact text that was sent and never
+# changes; promptSha256 is its hash. Fill in the model, parameters and notes.
+id: x_146
+promptId: p_101
+template:
+  id: t_004
+  version: v1
+  sample: default
+  values:
+    landscape: alpine valley with pine forests and a turquoise lake
+promptSha256: 804522af8748694e635aa54178afaa6fae64ed1cada00db53dce81a4f2c59785
+referenceAssetIds: []
+outputAssetIds:
+  - a_203
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes: {}

@@ -40,6 +40,7 @@ export function TemplateDetailBody({
     promptLanguage: detail.promptLanguage,
     version: { id: version.id, body: version.body, fields: version.fields, samples: version.samples },
     cover: detail.cover,
+    examples: detail.examples,
   };
 
   return (

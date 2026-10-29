@@ -1,0 +1,2549 @@
+{
+  "title": "Prompt Seen 高关注图片与提示词 Top 50",
+  "research_date": "2026-10-28",
+  "timezone": "America/Los_Angeles",
+  "summary": {
+    "shortlisted_candidates": 90,
+    "selected_concepts": 50,
+    "primary_platform_counts": {
+      "Bilibili": 5,
+      "Reddit": 10,
+      "X": 29,
+      "Civitai": 6
+    },
+    "family_counts": {
+      "个性化照片与角色": 17,
+      "品牌与商业设计": 11,
+      "信息设计与故事": 8,
+      "艺术与趣味视觉": 14
+    },
+    "evidence_counts": {
+      "A": 40,
+      "B": 10
+    },
+    "reference_image_counts": {
+      "required": 27,
+      "none": 17,
+      "optional": 6
+    },
+    "source_publication_years": {
+      "2023": 5,
+      "2024": 2,
+      "2025": 20,
+      "2026": 23
+    },
+    "all_prompts_generation_verified": false,
+    "ranking_method": "Editorial prioritization for Prompt Seen: reuse value, gaps in current library, observed engagement, source quality and recency. No cross-platform metric summation and no claim of an exhaustive worldwide ranking."
+  },
+  "items": [
+    {
+      "rank": 1,
+      "candidate_id": "CN04",
+      "title_zh": "同一角色16格中文表情贴纸",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "统一角色、可反复使用的中文贴纸，现库缺少成套输出。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "一张角色参考图；16条短中文配文"
+      },
+      "primary_source": {
+        "platform": "Bilibili",
+        "url": "https://www.bilibili.com/opus/1148687573157150722",
+        "author": "川扑通",
+        "published_at": "2025-12-22",
+        "metric_object_url": "https://www.bilibili.com/video/BV1uaqqB2Ez7/",
+        "metric_object_published_at": "2025-12-20",
+        "metric_scope_zh": "整条教程或作品展示视频",
+        "metrics": {
+          "views": 344604,
+          "likes": 26934,
+          "saves": 5872,
+          "comments": 938,
+          "shares": 1029,
+          "coins": 859,
+          "danmaku": 73
+        },
+        "metric_label_zh": "344,604 播放 / 26,934 赞 / 5,872 藏",
+        "evidence_grade": "A",
+        "evidence_method_zh": "B站 官方公开只读 API",
+        "evidence_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7",
+        "observed_at": "2026-10-29T06:17:12Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "作者专栏公开完整prompt，原作者还标明改编来源",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid. Use the uploaded character as the sole character, keeping the face, hairstyle, outfit and colors consistent. Give each cell a different everyday emotion or gesture: joy, surprise, thanks, encouragement, sleepiness, celebration, curiosity, agreement, apology, determination, greeting, laughter, relief, confusion, excitement and affection. Simple expressive cartoon drawing, white cutout borders, generous separation. Add one short Chinese caption per cell from this supplied list: {{captions}}. Avoid background scenes and overlapping stickers.",
+      "variable_examples": [
+        {
+          "name": "captions",
+          "example": "开心, 哇, 谢谢, 加油, 困了, 庆祝, 好奇, 好的, 抱歉, 坚持, 你好, 哈哈, 松口气, 疑惑, 激动, 抱抱"
+        }
+      ],
+      "prompt_example_en": "Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid. Use the uploaded character as the sole character, keeping the face, hairstyle, outfit and colors consistent. Give each cell a different everyday emotion or gesture: joy, surprise, thanks, encouragement, sleepiness, celebration, curiosity, agreement, apology, determination, greeting, laughter, relief, confusion, excitement and affection. Simple expressive cartoon drawing, white cutout borders, generous separation. Add one short Chinese caption per cell from this supplied list: 开心, 哇, 谢谢, 加油, 困了, 庆祝, 好奇, 好的, 抱歉, 坚持, 你好, 哈哈, 松口气, 疑惑, 激动, 抱抱. Avoid background scenes and overlapping stickers.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "视频互动仅支持对应玩法的关注度，不归因于某张静态图。",
+      "source_evidence_file": "china-visual-evidence.md"
+    },
+    {
+      "rank": 2,
+      "candidate_id": "R02",
+      "title_zh": "儿童涂鸦变真实生物或玩具",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "前后对比明显，家庭素材易得，情感分享动机强。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "儿童绘画照片或扫描件"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1k9x3ru/my_5_year_old_sons_drawings_rerendered_by_chatgpt/",
+        "author": "RudeAndReckless",
+        "published_at": "2025-04-28",
+        "metric_object_url": "https://www.reddit.com/r/ChatGPT/comments/1k9x3ru/my_5_year_old_sons_drawings_rerendered_by_chatgpt/",
+        "metric_object_published_at": "2025-04-28",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 6653,
+          "comments": null
+        },
+        "metric_label_zh": "6,653 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1k9x3ru/my_5_year_old_sons_drawings_rerendered_by_chatgpt/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "公开：原帖含完整转换提示词，强调保留不对称和原图比例。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Use this child's drawing as the exact design blueprint for a believable physical creature or object. Keep its outline, odd proportions, asymmetry, misplaced features and every unusual mark. Translate the colored areas into tactile materials such as fur, rubber, wood or painted metal, choosing materials that suit the drawing. Place the result on a simple real-world surface with soft daylight and contact shadows. Make it tangible without redesigning it; show one finished image.",
+      "variable_examples": [],
+      "prompt_example_en": "Use this child's drawing as the exact design blueprint for a believable physical creature or object. Keep its outline, odd proportions, asymmetry, misplaced features and every unusual mark. Translate the colored areas into tactile materials such as fur, rubber, wood or painted metal, choosing materials that suit the drawing. Place the result on a simple real-world surface with soft daylight and contact shadows. Make it tangible without redesigning it; show one finished image.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "复现时不能替孩子纠正形状；此处是独立重写模板。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 3,
+      "candidate_id": "x_1962647019090256101",
+      "title_zh": "照片转桌面收藏手办与包装",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "桌面手办与包装的识别度高，可做一键换主体模板。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物、宠物或自创角色照片"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/GeminiApp/status/1962647019090256101",
+        "author": "GeminiApp",
+        "published_at": "2025-09-01T22:41:28.000Z",
+        "metric_object_url": "https://x.com/GeminiApp/status/1962647019090256101",
+        "metric_object_published_at": "2025-09-01T22:41:28.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 6338,
+          "conversation_count": 365,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "6,338 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1",
+        "observed_at": "2026-10-29T06:20:06Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "串帖中的完整prompt未读取",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Convert the subject in the uploaded photo into a realistic painted collectible figure displayed on a desk. Preserve distinctive facial features, outfit and pose while making the materials clearly miniature resin and plastic. Place it on a clear circular stand, with a matching illustrated retail box nearby and a monitor showing the same figure as a modeling wireframe. Use natural desktop lighting.",
+      "variable_examples": [],
+      "prompt_example_en": "Convert the subject in the uploaded photo into a realistic painted collectible figure displayed on a desk. Preserve distinctive facial features, outfit and pose while making the materials clearly miniature resin and plastic. Place it on a clear circular stand, with a matching illustrated retail box nearby and a monitor showing the same figure as a modeling wireframe. Use natural desktop lighting.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": "已视觉核对官方附图；只是一张手办效果图，非可3D打印模型。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 4,
+      "candidate_id": "x_2013268963266904438",
+      "title_zh": "同一产品九宫格品牌故事板",
+      "family_zh": "品牌与商业设计",
+      "priority": "first_batch",
+      "site_fit_zh": "把单张产品照扩展为九种营销镜头，补足现有单张海报。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "清晰的产品正面照"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/Dari_Designs/status/2013268963266904438",
+        "author": "Dari_Designs",
+        "published_at": "2026-01-19T15:15:00.000Z",
+        "metric_object_url": "https://x.com/Dari_Designs/status/2013268963266904438",
+        "metric_object_published_at": "2026-01-19T15:15:00.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 5179,
+          "conversation_count": 25,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "5,179 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2013268963266904438&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖指向的原prompt片段可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Using the uploaded product photo, design a 3-by-3 campaign contact sheet. Keep the container, label and brand palette consistent across all nine panels. Include a hero shot, packaging close-up, human interaction, material detail, repeated arrangement, floating product, texture macro, still life and usage scene. Use coherent lighting, even gutters and a 4:5 canvas.",
+      "variable_examples": [],
+      "prompt_example_en": "Using the uploaded product photo, design a 3-by-3 campaign contact sheet. Keep the container, label and brand palette consistent across all nine panels. Include a hero shot, packaging close-up, human interaction, material detail, repeated arrangement, floating product, texture macro, still life and usage scene. Use coherent lighting, even gutters and a 4:5 canvas.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": "本帖5179赞属于九宫格成品展示；原始prompt帖2012178722615329176另有2484赞，不能相加。两帖均已核验。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 5,
+      "candidate_id": "R08",
+      "title_zh": "宠物拟人，保留姿态和神情",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "让用户联想到自己的宠物，姿态和性格形成分享话题。",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "宠物照片；年龄范围和性格"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+        "author": "AndrewJumpen",
+        "published_at": "2025-04-07",
+        "metric_object_url": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+        "metric_object_published_at": "2025-04-07",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 1777,
+          "comments": null
+        },
+        "metric_label_zh": "1,777 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "公开：原帖指令及评论精细化版本均可读。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Imagine the pet in this photograph as a fully human character. Translate the pet's expression, posture, energy and distinctive markings into a believable hairstyle, clothing palette and personal style. Keep the camera angle, lighting and surrounding room consistent with the source. The person should be {{age_range}} and convey {{personality}}. Use realistic human anatomy with no animal ears, muzzle, paws or tail. Make the resemblance come from attitude and visual details rather than an animal-human hybrid.",
+      "variable_examples": [
+        {
+          "name": "age_range",
+          "example": "an adult in their thirties"
+        },
+        {
+          "name": "personality",
+          "example": "calm, curious and slightly mischievous"
+        }
+      ],
+      "prompt_example_en": "Imagine the pet in this photograph as a fully human character. Translate the pet's expression, posture, energy and distinctive markings into a believable hairstyle, clothing palette and personal style. Keep the camera angle, lighting and surrounding room consistent with the source. The person should be an adult in their thirties and convey calm, curious and slightly mischievous. Use realistic human anatomy with no animal ears, muzzle, paws or tail. Make the resemblance come from attitude and visual details rather than an animal-human hybrid.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "不要把毛色强行映射为人类族群；肤色、年龄等由用户指定或保持开放。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 6,
+      "candidate_id": "R04",
+      "title_zh": "房间照片变等距剖面模型图",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "真实空间到微缩剖面的变化可见，兼顾家居展示与趣味。",
+      "category_id": "architecture",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "房间照片"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+        "author": "GMScreech",
+        "published_at": "2025-03-26",
+        "metric_object_url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+        "metric_object_published_at": "2025-03-26",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 2746,
+          "comments": null
+        },
+        "metric_label_zh": "2,746 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "公开：作者在评论说明参考场景生成等距3D样式图。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create an isometric cutaway illustration of the room in the reference photo. Reconstruct the visible furniture, colors and object positions faithfully, retaining the room's distinctive details. Remove the ceiling and the two front walls so the interior is easy to read. Use a consistent orthographic three-quarter view, realistic miniature materials, soft ambient shadows and a neutral background. Do not invent extra rooms or furniture. Output a single rendered image, not a floor-plan document.",
+      "variable_examples": [],
+      "prompt_example_en": "Create an isometric cutaway illustration of the room in the reference photo. Reconstruct the visible furniture, colors and object positions faithfully, retaining the room's distinctive details. Remove the ceiling and the two front walls so the interior is easy to read. Use a consistent orthographic three-quarter view, realistic miniature materials, soft ambient shadows and a neutral background. Do not invent extra rooms or furniture. Output a single rendered image, not a floor-plan document.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "输出是模型外观的二维图，不是可编辑3D文件或精确建筑图。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 7,
+      "candidate_id": "x_2009660363227152653",
+      "title_zh": "同主题触感3D图标九宫格",
+      "family_zh": "品牌与商业设计",
+      "priority": "first_batch",
+      "site_fit_zh": "成套图标的一致材质、视角、留白可作为模板约束。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "主题与九个物件或动作"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/NanoBanana/status/2009660363227152653",
+        "author": "NanoBanana",
+        "published_at": "2026-01-09T16:15:42.000Z",
+        "metric_object_url": "https://x.com/NanoBanana/status/2009660363227152653",
+        "metric_object_published_at": "2026-01-09T16:15:42.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2599,
+          "conversation_count": 135,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,599 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2009660363227152653&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create nine cohesive 3D icons for {{theme}} arranged in a neat square grid. Give each icon a distinct action or object while preserving the same rounded geometry, tactile matte materials, color palette and lighting. Use simple recognizable silhouettes, consistent scale, equal spacing and a clean white background. Do not add text, borders or watermarks.",
+      "variable_examples": [
+        {
+          "name": "theme",
+          "example": "a neighborhood coffee shop"
+        }
+      ],
+      "prompt_example_en": "Create nine cohesive 3D icons for a neighborhood coffee shop arranged in a neat square grid. Give each icon a distinct action or object while preserving the same rounded geometry, tactile matte materials, color palette and lighting. Use simple recognizable silhouettes, consistent scale, equal spacing and a clean white background. Do not add text, borders or watermarks.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 8,
+      "candidate_id": "R01",
+      "title_zh": "日常照片变治愈手绘动画",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "熟悉场景转成手绘动画，使用门槛低且现库没有同类输入流程。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "日常照片或合照"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/",
+        "author": "Torkveen",
+        "published_at": "2025-03-26",
+        "metric_object_url": "https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/",
+        "metric_object_published_at": "2025-03-26",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 10750,
+          "comments": null
+        },
+        "metric_label_zh": "10,750 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "公开：作者说明上传角色参考照片后指定吉卜力风格；不是纯文生图。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Redraw the uploaded photograph as a warm hand-painted animated-film frame. Keep the same people, recognizable facial proportions, clothing, gestures, camera position and important background objects. Use expressive clean outlines, soft watercolor scenery, carefully painted light and shade, and a quiet everyday atmosphere. Preserve each person's distinct expression. Avoid glossy 3D shading, excessive skin smoothing and a uniform yellow filter.",
+      "variable_examples": [],
+      "prompt_example_en": "Redraw the uploaded photograph as a warm hand-painted animated-film frame. Keep the same people, recognizable facial proportions, clothing, gestures, camera position and important background objects. Use expressive clean outlines, soft watercolor scenery, carefully painted light and shade, and a quiet everyday atmosphere. Preserve each person's distinct expression. Avoid glossy 3D shading, excessive skin smoothing and a uniform yellow filter.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "本模板概括手绘动画语言，不复制剧中角色；原帖总分不代表每张图的独立分数。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 9,
+      "candidate_id": "x_2048360321379701233",
+      "title_zh": "餐饮品牌全套VI展示板",
+      "family_zh": "品牌与商业设计",
+      "priority": "first_batch",
+      "site_fit_zh": "把杯、袋、菜单等做成统一视觉展示，比孤立产品静物增量更大。",
+      "category_id": "product",
+      "use_case_ids": ["packaging"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "品牌名称、配色、调性；已有Logo可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/MrLarus/status/2048360321379701233",
+        "author": "MrLarus",
+        "published_at": "2026-04-26T11:15:31.000Z",
+        "metric_object_url": "https://x.com/MrLarus/status/2048360321379701233",
+        "metric_object_published_at": "2026-04-26T11:15:31.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1211,
+          "conversation_count": 33,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,211 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2048360321379701233&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Design one presentation board for the fictional cafe {{name}}. Develop a coherent identity using {{palette}} and {{mood}}. Show its primary logo, takeaway cup, food carton, shopping bag, menu, table card and three compact campaign applications. Keep the same mark and typography across every mockup. Arrange the objects by function on a clean editorial grid with readable supplied labels.",
+      "variable_examples": [
+        {
+          "name": "name",
+          "example": "Moss & Mug"
+        },
+        {
+          "name": "palette",
+          "example": "sage green, cream and terracotta"
+        },
+        {
+          "name": "mood",
+          "example": "warm, calm and practical"
+        }
+      ],
+      "prompt_example_en": "Design one presentation board for the fictional cafe Moss & Mug. Develop a coherent identity using sage green, cream and terracotta and warm, calm and practical. Show its primary logo, takeaway cup, food carton, shopping bag, menu, table card and three compact campaign applications. Keep the same mark and typography across every mockup. Arrange the objects by function on a clean editorial grid with readable supplied labels.",
+      "generation_verified": false,
+      "source_model_as_reported": "ChatGPT-Image-2.0（作者原帖用语）",
+      "notes_zh": "已查看原图；只生成提案视觉，不等于可生产包装刀模或可编辑VI源文件。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 10,
+      "candidate_id": "x_1916521742052503804",
+      "title_zh": "个性人物钥匙扣商品图",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "适合个人周边与礼物概念，可换主体而保持拍摄结构。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物或宠物参考照"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1916521742052503804",
+        "author": "azed_ai",
+        "published_at": "2025-04-27T15:56:05.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1916521742052503804",
+        "metric_object_published_at": "2025-04-27T15:56:05.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1213,
+          "conversation_count": 67,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,213 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1916521742052503804&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Turn the subject in the reference photo into a small collectible keychain charm. Preserve recognizable colors and facial features in a simplified miniature form. Add a believable metal loop and short chain attached at the top. Photograph the charm beside a real key on a warm tabletop, using soft window light and shallow depth of field.",
+      "variable_examples": [],
+      "prompt_example_en": "Turn the subject in the reference photo into a small collectible keychain charm. Preserve recognizable colors and facial features in a simplified miniature form. Add a believable metal loop and short chain attached at the top. Photograph the charm beside a real key on a warm tabletop, using soft window light and shallow depth of field.",
+      "generation_verified": false,
+      "source_model_as_reported": "GPT-4o",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 11,
+      "candidate_id": "x_2043047413770809708",
+      "title_zh": "国家立体地形旅行指南",
+      "family_zh": "信息设计与故事",
+      "priority": "first_batch",
+      "site_fit_zh": "把旅游信息与立体地形结合，补充信息型视觉内容。",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "已核对的地图、目的地清单、路线"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/TechieBySA/status/2043047413770809708",
+        "author": "TechieBySA",
+        "published_at": "2026-04-11T19:23:56.000Z",
+        "metric_object_url": "https://x.com/TechieBySA/status/2043047413770809708",
+        "metric_object_published_at": "2026-04-11T19:23:56.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 3902,
+          "conversation_count": 67,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "3,902 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2043047413770809708&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Build a travel infographic for {{country}} using the supplied verified map and destination list. Render the map as a raised miniature terrain model with a few recognizable landmark miniatures. Add clear city labels, route lines and concise checklists in the margins. Place a small suitcase and compass beside the map. Use a light studio background and readable typography.",
+      "variable_examples": [
+        {
+          "name": "country",
+          "example": "Japan"
+        }
+      ],
+      "prompt_example_en": "Build a travel infographic for Japan using the supplied verified map and destination list. Render the map as a raised miniature terrain model with a few recognizable landmark miniatures. Add clear city labels, route lines and concise checklists in the margins. Place a small suitcase and compass beside the map. Use a light studio background and readable typography.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana 2",
+      "notes_zh": "已查看原图；地图位置和景点事实需人工核对，prompt不能凭空保证地理准确。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 12,
+      "candidate_id": "x_2017928823497453789",
+      "title_zh": "产品剖透视技术信息图",
+      "family_zh": "信息设计与故事",
+      "priority": "first_batch",
+      "site_fit_zh": "技术解释有明确用途；模板能约束层级、引线和局部细节。",
+      "category_id": "product",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "产品名称、准确结构资料与标注；外观照可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/TechieBySA/status/2017928823497453789",
+        "author": "TechieBySA",
+        "published_at": "2026-02-01T11:51:37.000Z",
+        "metric_object_url": "https://x.com/TechieBySA/status/2017928823497453789",
+        "metric_object_published_at": "2026-02-01T11:51:37.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 3525,
+          "conversation_count": 57,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "3,525 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2017928823497453789&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create an educational cutaway illustration of {{device}} from the supplied specifications. Show a three-quarter product view with selected housing panels transparent. Draw precise leader lines to major components, using four accent colors for functional groups. Keep labels short and legible on white. Include one enlarged detail inset. Use only the provided dimensions and technical facts.",
+      "variable_examples": [
+        {
+          "name": "device",
+          "example": "a hand-cranked coffee grinder"
+        }
+      ],
+      "prompt_example_en": "Create an educational cutaway illustration of a hand-cranked coffee grinder from the supplied specifications. Show a three-quarter product view with selected housing panels transparent. Draw precise leader lines to major components, using four accent colors for functional groups. Keep labels short and legible on white. Include one enlarged detail inset. Use only the provided dimensions and technical facts.",
+      "generation_verified": false,
+      "source_model_as_reported": "GPT-1.5 Image（作者原帖用语）",
+      "notes_zh": "已查看原图；本条按原帖作者标注记录模型名，不据此确认正式型号。结构和参数须另行核验。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 13,
+      "candidate_id": "CN05",
+      "title_zh": "时尚杂志封面肖像",
+      "family_zh": "个性化照片与角色",
+      "priority": "first_batch",
+      "site_fit_zh": "有明确封面用途，适合展示身份保持和摄影布光的前后对比。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片"
+      },
+      "primary_source": {
+        "platform": "Bilibili",
+        "url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+        "author": "哩布哩布AI",
+        "published_at": "2023-06-30",
+        "metric_object_url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+        "metric_object_published_at": "2023-06-30",
+        "metric_scope_zh": "整条教程或作品展示视频",
+        "metrics": {
+          "views": 56375,
+          "likes": 3074,
+          "saves": 2984,
+          "comments": 64,
+          "shares": 202,
+          "coins": 184,
+          "danmaku": 7
+        },
+        "metric_label_zh": "56,375 播放 / 3,074 赞 / 2,984 藏",
+        "evidence_grade": "A",
+        "evidence_method_zh": "B站 官方公开只读 API",
+        "evidence_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV16m4y1a7uC",
+        "observed_at": "2026-10-29T06:17:12Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "未取得完整prompt；本次依据展示主题改编",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Use the uploaded portrait to create a sophisticated fashion-cover photograph. Preserve the person's identity. Style them in an architectural black jacket against a warm gray seamless studio backdrop. One large softbox from the left, subtle edge light, natural skin texture, restrained makeup and a direct confident gaze. Waist-up composition with generous empty space above the head for a magazine title and clear margins for later typesetting. Minimal editorial styling, muted colors, vertical 4:5. Do not invent typography or brand names.",
+      "variable_examples": [],
+      "prompt_example_en": "Use the uploaded portrait to create a sophisticated fashion-cover photograph. Preserve the person's identity. Style them in an architectural black jacket against a warm gray seamless studio backdrop. One large softbox from the left, subtle edge light, natural skin texture, restrained makeup and a direct confident gaze. Waist-up composition with generous empty space above the head for a magazine title and clear margins for later typesetting. Minimal editorial styling, muted colors, vertical 4:5. Do not invent typography or brand names.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "视频互动仅支持对应玩法的关注度，不归因于某张静态图。",
+      "source_evidence_file": "china-visual-evidence.md"
+    },
+    {
+      "rank": 14,
+      "candidate_id": "x_2017865644365255078",
+      "title_zh": "悬浮食材分层料理信息图",
+      "family_zh": "信息设计与故事",
+      "priority": "first_batch",
+      "site_fit_zh": "将现有美食静物扩展到菜谱信息图，可复用变量多。",
+      "category_id": "food",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "菜品、已确认的食材与用量"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/Taaruk_/status/2017865644365255078",
+        "author": "Taaruk_",
+        "published_at": "2026-02-01T07:40:34.000Z",
+        "metric_object_url": "https://x.com/Taaruk_/status/2017865644365255078",
+        "metric_object_published_at": "2026-02-01T07:40:34.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2176,
+          "conversation_count": 50,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,176 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2017865644365255078&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Illustrate {{dish}} as a mouthwatering food diagram. Place the finished bowl at the bottom and separate its main ingredients into tidy floating layers above it, with steam connecting the composition. Add concise labels and quantities from the supplied recipe, using thin leader lines. Use warm directional light, realistic food textures and a clean background with ample margins.",
+      "variable_examples": [
+        {
+          "name": "dish",
+          "example": "a bowl of miso ramen"
+        }
+      ],
+      "prompt_example_en": "Illustrate a bowl of miso ramen as a mouthwatering food diagram. Place the finished bowl at the bottom and separate its main ingredients into tidy floating layers above it, with steam connecting the composition. Add concise labels and quantities from the supplied recipe, using thin leader lines. Use warm directional light, realistic food textures and a clean background with ample margins.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana Pro",
+      "notes_zh": "食谱数量和营养信息只采用用户给定资料。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 15,
+      "candidate_id": "x_1993729800922341810",
+      "title_zh": "城市地标与天气的3D微缩卡片",
+      "family_zh": "信息设计与故事",
+      "priority": "first_batch",
+      "site_fit_zh": "地点与天气变化带来重复使用需求，适合模板编辑器。",
+      "category_id": "architecture",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "城市、指定日期、已确认天气和温度"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/dotey/status/1993729800922341810",
+        "author": "dotey",
+        "published_at": "2025-11-26T17:13:20.000Z",
+        "metric_object_url": "https://x.com/dotey/status/1993729800922341810",
+        "metric_object_published_at": "2025-11-26T17:13:20.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2550,
+          "conversation_count": 107,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,550 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1993729800922341810&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a vertical weather card for {{city}} using the supplied date and forecast. Build a compact isometric miniature of several local landmarks with coherent toy-like materials. Express the forecast through sky, lighting and small environmental details. Leave a clear header for the city name and a footer for the exact provided temperature and weather symbol.",
+      "variable_examples": [
+        {
+          "name": "city",
+          "example": "Kyoto"
+        }
+      ],
+      "prompt_example_en": "Create a vertical weather card for Kyoto using the supplied date and forecast. Build a compact isometric miniature of several local landmarks with coherent toy-like materials. Express the forecast through sky, lighting and small environmental details. Leave a clear header for the city name and a footer for the exact provided temperature and weather symbol.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana Pro",
+      "notes_zh": "天气数据必须明确提供；图片模型不会因写入current而自动获得实时天气。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 16,
+      "candidate_id": "CN09",
+      "title_zh": "老照片温和修复与自然上色",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "修复与自然上色有真实需求；与现有装饰图差异明显。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "待修复的旧照片"
+      },
+      "primary_source": {
+        "platform": "Bilibili",
+        "url": "https://www.bilibili.com/video/BV17w41157Ev/",
+        "author": "火星时代",
+        "published_at": "2023-12-25",
+        "metric_object_url": "https://www.bilibili.com/video/BV17w41157Ev/",
+        "metric_object_published_at": "2023-12-25",
+        "metric_scope_zh": "整条教程或作品展示视频",
+        "metrics": {
+          "views": 33334,
+          "likes": 505,
+          "saves": 1340,
+          "comments": 62,
+          "shares": 139,
+          "coins": 211,
+          "danmaku": 112
+        },
+        "metric_label_zh": "33,334 播放 / 505 赞 / 1,340 藏",
+        "evidence_grade": "A",
+        "evidence_method_zh": "B站 官方公开只读 API",
+        "evidence_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev",
+        "observed_at": "2026-10-29T06:17:12Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "未取得完整prompt；本次依据修复主题改编",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Carefully restore this old family photograph. Remove visible scratches, dust and stains while preserving the original framing, faces, expressions, age, clothing construction and background objects. Improve clarity conservatively without making skin plastic or inventing sharp facial details where the source is unclear. Add subdued, plausible period colors and retain a little film grain. Do not modernize the clothing, change identities, remove people or replace the setting. Return one restored image at the original aspect ratio.",
+      "variable_examples": [],
+      "prompt_example_en": "Carefully restore this old family photograph. Remove visible scratches, dust and stains while preserving the original framing, faces, expressions, age, clothing construction and background objects. Improve clarity conservatively without making skin plastic or inventing sharp facial details where the source is unclear. Add subdued, plausible period colors and retain a little film grain. Do not modernize the clothing, change identities, remove people or replace the setting. Return one restored image at the original aspect ratio.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "视频互动仅支持对应玩法的关注度，不归因于某张静态图。",
+      "source_evidence_file": "china-visual-evidence.md"
+    },
+    {
+      "rank": 17,
+      "candidate_id": "x_2008976966255337666",
+      "title_zh": "人物剪影内的照片拼贴海报",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "用于人物纪念、运动海报和个人年度回顾，具有故事性。",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "清晰侧脸照、多张回忆或动作照片、姓名"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2008976966255337666",
+        "author": "AmirMushich",
+        "published_at": "2026-01-07T19:00:08.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2008976966255337666",
+        "metric_object_published_at": "2026-01-07T19:00:08.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 4032,
+          "conversation_count": 79,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "4,032 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2008976966255337666&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Make a portrait tribute poster from the uploaded photographs. A large monochrome profile silhouette fills the page; within it, arrange a precise grid of small action and memory photographs. Keep the outer face contour readable. Use one restrained accent color, off-white textured paper and generous margins. Add only the supplied name in small editorial type.",
+      "variable_examples": [],
+      "prompt_example_en": "Make a portrait tribute poster from the uploaded photographs. A large monochrome profile silhouette fills the page; within it, arrange a precise grid of small action and memory photographs. Keep the outer face contour readable. Use one restrained accent color, off-white textured paper and generous margins. Add only the supplied name in small editorial type.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 18,
+      "candidate_id": "x_2020241008693506483",
+      "title_zh": "真人照片转一致姿态的3D角色",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "保留姿态与服饰的3D转绘是易懂的个性化入口。",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/firatbilal/status/2020241008693506483",
+        "author": "firatbilal",
+        "published_at": "2026-02-07T20:59:25.000Z",
+        "metric_object_url": "https://x.com/firatbilal/status/2020241008693506483",
+        "metric_object_published_at": "2026-02-07T20:59:25.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 3324,
+          "conversation_count": 29,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "3,324 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2020241008693506483&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Restyle the uploaded portrait as an expressive stylized 3D character. Preserve the person’s pose, clothing colors, hairstyle and camera angle. Simplify shapes into carefully sculpted forms, with subtle skin shading and tactile fabric. Keep recognizable proportions without extreme distortion. Match the original scene layout and use soft cinematic lighting with natural depth of field.",
+      "variable_examples": [],
+      "prompt_example_en": "Restyle the uploaded portrait as an expressive stylized 3D character. Preserve the person’s pose, clothing colors, hairstyle and camera angle. Simplify shapes into carefully sculpted forms, with subtle skin shading and tactile fabric. Keep recognizable proportions without extreme distortion. Match the original scene layout and use soft cinematic lighting with natural depth of field.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "选择原始prompt帖3324赞；后续Super Bowl展示帖1645赞不重复计入。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 19,
+      "candidate_id": "x_2027094912357761319",
+      "title_zh": "一致角色的四格温暖小故事",
+      "family_zh": "信息设计与故事",
+      "priority": "second_batch",
+      "site_fit_zh": "角色一致性与四格叙事，比单张插画更有复用空间。",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "角色描述和四个故事节点；角色参考图可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/GoogleAI/status/2027094912357761319",
+        "author": "GoogleAI",
+        "published_at": "2026-02-26T18:54:23.000Z",
+        "metric_object_url": "https://x.com/GoogleAI/status/2027094912357761319",
+        "metric_object_published_at": "2026-02-26T18:54:23.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1256,
+          "conversation_count": 109,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,256 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2027094912357761319&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Draw a four-panel comic about three original fluffy creatures building a tiny treehouse. Panel one shows their ambitious plan, panel two a funny construction mistake, panel three their cooperative repair, and panel four a cozy celebration. Keep each character’s size, colors and accessories consistent. Use clear visual storytelling, soft lighting and no speech bubbles unless text is provided.",
+      "variable_examples": [],
+      "prompt_example_en": "Draw a four-panel comic about three original fluffy creatures building a tiny treehouse. Panel one shows their ambitious plan, panel two a funny construction mistake, panel three their cooperative repair, and panel four a cozy celebration. Keep each character’s size, colors and accessories consistent. Use clear visual storytelling, soft lighting and no speech bubbles unless text is provided.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana 2",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 20,
+      "candidate_id": "x_1914258586588639270",
+      "title_zh": "复古工业专利蓝图",
+      "family_zh": "信息设计与故事",
+      "priority": "second_batch",
+      "site_fit_zh": "复古蓝图适合装饰画和设计灵感；线稿语言是现库空缺。",
+      "category_id": "illustration",
+      "use_case_ids": ["art-print"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "物件名称、短标注；外观参考可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1914258586588639270",
+        "author": "azed_ai",
+        "published_at": "2025-04-21T10:03:06.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1914258586588639270",
+        "metric_object_published_at": "2025-04-21T10:03:06.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2820,
+          "conversation_count": 63,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,820 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1914258586588639270&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖文字或图片ALT可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Depict {{object}} as a vintage engineering plate on deep cobalt paper. Draw precise ivory linework for a central three-quarter view, an exploded assembly and two small cross-sections. Use sparse dimension arrows and short supplied labels, with a discreet serial-number box. Keep the drawing elegant and mechanically plausible, with slight paper wear around the margins.",
+      "variable_examples": [
+        {
+          "name": "object",
+          "example": "a mechanical pocket watch"
+        }
+      ],
+      "prompt_example_en": "Depict a mechanical pocket watch as a vintage engineering plate on deep cobalt paper. Draw precise ivory linework for a central three-quarter view, an exploded assembly and two small cross-sections. Use sparse dimension arrows and short supplied labels, with a discreet serial-number box. Keep the drawing elegant and mechanically plausible, with slight paper wear around the margins.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 21,
+      "candidate_id": "x_1971529965301829959",
+      "title_zh": "工业产品多视图概念草图",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "多视角一致性和材料细节适合工业设计草案。",
+      "category_id": "product",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "产品概念、设计特征、配色；参考图可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1971529965301829959",
+        "author": "azed_ai",
+        "published_at": "2025-09-26T10:59:07.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1971529965301829959",
+        "metric_object_published_at": "2025-09-26T10:59:07.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1051,
+          "conversation_count": 26,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,051 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1971529965301829959&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖文字或图片ALT可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a concept-design board for an original {{product}}. Arrange a large perspective sketch, front and side elevations, and two material-detail studies on white paper. Use controlled graphite lines, restrained marker shading and a few {{color}} accents. Keep geometry consistent between views and annotate only the supplied design features. Present it like an early professional design proposal.",
+      "variable_examples": [
+        {
+          "name": "product",
+          "example": "a reusable ceramic travel cup"
+        },
+        {
+          "name": "color",
+          "example": "coral red"
+        }
+      ],
+      "prompt_example_en": "Create a concept-design board for an original a reusable ceramic travel cup. Arrange a large perspective sketch, front and side elevations, and two material-detail studies on white paper. Use controlled graphite lines, restrained marker shading and a few coral red accents. Keep geometry consistent between views and annotate only the supplied design features. Present it like an early professional design proposal.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 22,
+      "candidate_id": "x_1911075302941622512",
+      "title_zh": "毛绒材质Emoji与图标",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "单体毛绒化突出触感，可做头像、贴纸与周边概念。",
+      "category_id": "illustration",
+      "use_case_ids": ["avatar"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "简单Emoji或图标图像"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/gizakdag/status/1911075302941622512",
+        "author": "gizakdag",
+        "published_at": "2025-04-12T15:13:52.000Z",
+        "metric_object_url": "https://x.com/gizakdag/status/1911075302941622512",
+        "metric_object_published_at": "2025-04-12T15:13:52.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2527,
+          "conversation_count": 63,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,527 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1911075302941622512&lang=en&token=1",
+        "observed_at": "2026-10-29T06:20:06Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Rebuild the uploaded icon as a small three-dimensional object covered in dense soft fur. Keep its silhouette and essential color areas instantly recognizable. Show individual fibers catching the light, rounded padded volume and a soft shadow beneath it. Float the object against a light neutral studio backdrop. Use a close product-photography composition without adding any text.",
+      "variable_examples": [],
+      "prompt_example_en": "Rebuild the uploaded icon as a small three-dimensional object covered in dense soft fur. Keep its silhouette and essential color areas instantly recognizable. Show individual fibers catching the light, rounded padded volume and a soft shadow beneath it. Float the object against a light neutral studio backdrop. Use a close product-photography composition without adding any text.",
+      "generation_verified": false,
+      "source_model_as_reported": "GPT-4o",
+      "notes_zh": "原帖明确是fluffy emojis；毛绒Logo只是可扩展用途，不能冒充原帖标题。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 23,
+      "candidate_id": "x_2008421241091154115",
+      "title_zh": "节日红色写真与祝福九宫格",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "节日可以复用，表情与姿态变化提供成套输出。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片和九条简短祝福"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/wanerfu/status/2008421241091154115",
+        "author": "wanerfu",
+        "published_at": "2026-01-06T06:11:53.000Z",
+        "metric_object_url": "https://x.com/wanerfu/status/2008421241091154115",
+        "metric_object_published_at": "2026-01-06T06:11:53.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1161,
+          "conversation_count": 58,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,161 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2008421241091154115&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "外部prompt文档未读取",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Make a square nine-panel holiday portrait sheet from the uploaded photo. Keep the same face, hairstyle and red knit outfit in every panel while varying natural expressions and playful hand poses. Use a plain ivory studio backdrop, subtle festive doodles and the nine supplied short greetings. Ensure each greeting is readable and the grid spacing is consistent.",
+      "variable_examples": [],
+      "prompt_example_en": "Make a square nine-panel holiday portrait sheet from the uploaded photo. Keep the same face, hairstyle and red knit outfit in every panel while varying natural expressions and playful hand poses. Use a plain ivory studio backdrop, subtle festive doodles and the nine supplied short greetings. Ensure each greeting is readable and the grid spacing is consistent.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana Pro",
+      "notes_zh": "原例为2026马年，网站模板应将年份、生肖和祝福全部变量化，避免过期。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 24,
+      "candidate_id": "x_2027798913516761522",
+      "title_zh": "字形窗口里的摄影海报",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "字形容纳摄影主体，适合活动、运动与音乐宣传。",
+      "category_id": "poster",
+      "use_case_ids": ["event-poster"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "动作照片、短词与主色"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2027798913516761522",
+        "author": "AmirMushich",
+        "published_at": "2026-02-28T17:31:50.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2027798913516761522",
+        "metric_object_published_at": "2026-02-28T17:31:50.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1547,
+          "conversation_count": 25,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,547 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2027798913516761522&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Set the exact word {{word}} in oversized bold condensed capitals across a vertical poster. Fill only the letter shapes with the uploaded action photograph, aligning the subject so its key gesture remains readable. Use a solid {{color}} field around the letters, small corner metadata and generous margins. Preserve strong letter contrast and avoid decorative clutter.",
+      "variable_examples": [
+        {
+          "name": "word",
+          "example": "PLAY"
+        },
+        {
+          "name": "color",
+          "example": "coral red"
+        }
+      ],
+      "prompt_example_en": "Set the exact word PLAY in oversized bold condensed capitals across a vertical poster. Fill only the letter shapes with the uploaded action photograph, aligning the subject so its key gesture remains readable. Use a solid coral red field around the letters, small corner metadata and generous margins. Preserve strong letter contrast and avoid decorative clutter.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 25,
+      "candidate_id": "x_2043381172646920237",
+      "title_zh": "膨胀气球字与尖刺字标",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "立体字本身就是主体，补充现有偏几何图案的海报。",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "短英文单词和颜色"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2043381172646920237",
+        "author": "AmirMushich",
+        "published_at": "2026-04-12T17:30:10.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2043381172646920237",
+        "metric_object_published_at": "2026-04-12T17:30:10.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2641,
+          "conversation_count": 21,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,641 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2043381172646920237&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Render the exact word {{word}} as an inflated sculptural wordmark. Use rounded irregular letterforms, glossy {{color}} material and a few expressive tapered protrusions. Keep every letter readable and the spacing intentional. Float the object above a pale studio floor with a soft contact shadow. Use close framing, crisp highlights and no extra text.",
+      "variable_examples": [
+        {
+          "name": "word",
+          "example": "PLAY"
+        },
+        {
+          "name": "color",
+          "example": "coral red"
+        }
+      ],
+      "prompt_example_en": "Render the exact word PLAY as an inflated sculptural wordmark. Use rounded irregular letterforms, glossy coral red material and a few expressive tapered protrusions. Keep every letter readable and the spacing intentional. Float the object above a pale studio floor with a soft contact shadow. Use close framing, crisp highlights and no extra text.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 26,
+      "candidate_id": "x_2026316195977146728",
+      "title_zh": "带标题与行动按钮的社媒广告",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "把成图做成可直接排版的广告草案；按钮是画面元素。",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "产品图、标题、副文案与行动文案"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2026316195977146728",
+        "author": "AmirMushich",
+        "published_at": "2026-02-24T15:20:02.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2026316195977146728",
+        "metric_object_published_at": "2026-02-24T15:20:02.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2289,
+          "conversation_count": 32,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,289 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2026316195977146728&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a 4:5 social campaign image for {{product}} using the supplied brand colors. Combine a realistic hero photograph with bold flat graphic shapes that guide the eye. Set the exact headline {{headline}} in large readable type, add {{subtext}} beneath it and place a clear {{cta}} pill near the lower edge. Keep the layout spacious and product details consistent.",
+      "variable_examples": [
+        {
+          "name": "product",
+          "example": "a reusable ceramic travel cup"
+        },
+        {
+          "name": "headline",
+          "example": "SLOW DOWN"
+        },
+        {
+          "name": "subtext",
+          "example": "A little pause, every day"
+        },
+        {
+          "name": "cta",
+          "example": "EXPLORE"
+        }
+      ],
+      "prompt_example_en": "Create a 4:5 social campaign image for a reusable ceramic travel cup using the supplied brand colors. Combine a realistic hero photograph with bold flat graphic shapes that guide the eye. Set the exact headline SLOW DOWN in large readable type, add A little pause, every day beneath it and place a clear EXPLORE pill near the lower edge. Keep the layout spacious and product details consistent.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 27,
+      "candidate_id": "x_2028115571724660920",
+      "title_zh": "几何模块与摄影融合的品牌海报",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "摄影穿插几何网格，与现有纯几何海报形成区分。",
+      "category_id": "poster",
+      "use_case_ids": ["event-poster"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物或产品照片、品牌配色"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2028115571724660920",
+        "author": "AmirMushich",
+        "published_at": "2026-03-01T14:30:07.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2028115571724660920",
+        "metric_object_published_at": "2026-03-01T14:30:07.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2570,
+          "conversation_count": 18,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,570 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2028115571724660920&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Design a vertical campaign poster for {{brand}} using the supplied product or person image. Divide the page into an intentional grid of large rectangles and quarter-circle shapes in the brand palette. Let parts of the photographed subject cross the geometric boundaries while other parts are masked. Use a clear focal point, small logo placement and minimal text.",
+      "variable_examples": [
+        {
+          "name": "brand",
+          "example": "LUMA Coffee"
+        }
+      ],
+      "prompt_example_en": "Design a vertical campaign poster for LUMA Coffee using the supplied product or person image. Divide the page into an intentional grid of large rectangles and quarter-circle shapes in the brand palette. Let parts of the photographed subject cross the geometric boundaries while other parts are masked. Use a clear focal point, small logo placement and minimal text.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": "已查看原图：核心是几何模块、色块和摄影遮罩，不能只按转载标题称普通排字。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 28,
+      "candidate_id": "x_2027157212863631567",
+      "title_zh": "复古掌机像素对战画面",
+      "family_zh": "信息设计与故事",
+      "priority": "second_batch",
+      "site_fit_zh": "完整游戏画面有即刻识别度，像素语言可拓展到游戏概念。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "prompt",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "原创角色、场景、配色"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/ProperPrompter/status/2027157212863631567",
+        "author": "ProperPrompter",
+        "published_at": "2026-02-26T23:01:56.000Z",
+        "metric_object_url": "https://x.com/ProperPrompter/status/2027157212863631567",
+        "metric_object_published_at": "2026-02-26T23:01:56.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 4659,
+          "conversation_count": 106,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "4,659 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2027157212863631567&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖完整文字可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a polished pixel-art screenshot of an original turn-based creature game. Two invented creatures face each other across a moonlit marsh arena. Show one attack with luminous pixel particles, clear silhouettes and a limited jewel-tone palette. Add restrained health bars and simple menu buttons. Preserve crisp pixel clusters without smoothing, on a 4:3 canvas.",
+      "variable_examples": [],
+      "prompt_example_en": "Create a polished pixel-art screenshot of an original turn-based creature game. Two invented creatures face each other across a moonlit marsh arena. Show one attack with luminous pixel particles, clear silhouettes and a limited jewel-tone palette. Add restrained health bars and simple menu buttons. Preserve crisp pixel clusters without smoothing, on a 4:3 canvas.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana 2",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 29,
+      "candidate_id": "x_2032908105994961090",
+      "title_zh": "品牌Logo的云朵与玻璃形态",
+      "family_zh": "品牌与商业设计",
+      "priority": "second_batch",
+      "site_fit_zh": "云朵与玻璃变体合为一个Logo形态模板，避免只换材质占多个名额。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "清晰Logo或标志轮廓"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/AmirMushich/status/2032908105994961090",
+        "author": "AmirMushich",
+        "published_at": "2026-03-14T19:53:56.000Z",
+        "metric_object_url": "https://x.com/AmirMushich/status/2032908105994961090",
+        "metric_object_published_at": "2026-03-14T19:53:56.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 3632,
+          "conversation_count": 18,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "3,632 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2032908105994961090&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Transform the uploaded symbol into a single large cloud floating in an open blue sky. Preserve its overall silhouette while building the form from believable billowing vapor, translucent edges and soft internal shadows. Keep the scene minimal with tiny distant clouds for scale. Photograph it from the ground in warm late-afternoon light. No lettering or extra logos.",
+      "variable_examples": [],
+      "prompt_example_en": "Transform the uploaded symbol into a single large cloud floating in an open blue sky. Preserve its overall silhouette while building the form from believable billowing vapor, translucent edges and soft internal shadows. Keep the scene minimal with tiny distant clouds for scale. Photograph it from the ground in warm late-afternoon light. No lettering or extra logos.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md",
+      "variants": [
+        {
+          "name_zh": "悬浮玻璃雕塑",
+          "source_url": "https://x.com/AmirMushich/status/2043027627640799569",
+          "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2043027627640799569&lang=en&token=1",
+          "author": "AmirMushich",
+          "published_at": "2026-04-11T18:05:18.000Z",
+          "observed_at": "2026-10-29T06:10:42Z",
+          "metrics": {
+            "likes": 3177,
+            "conversation_count": 35,
+            "views": null,
+            "reposts": null,
+            "bookmarks": null
+          },
+          "prompt_en": "Turn the uploaded logo into a substantial polished glass sculpture suspended against a bright sky. Keep the outline exact, give the form thick beveled edges and realistic refraction, and allow faint spectral highlights to appear in the glass. Use a low camera angle, believable scale and clean negative space. Avoid adding lettering beyond the original mark.",
+          "note_zh": "该变体3177赞单列，不与云朵原帖3632赞相加。"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "candidate_id": "x_2018685474131562751",
+      "title_zh": "人群拖影中的静止人物",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "清晰人物与拖影人群的反差明显，适合城市肖像。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/Taaruk_/status/2018685474131562751",
+        "author": "Taaruk_",
+        "published_at": "2026-02-03T13:58:17.000Z",
+        "metric_object_url": "https://x.com/Taaruk_/status/2018685474131562751",
+        "metric_object_published_at": "2026-02-03T13:58:17.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1118,
+          "conversation_count": 31,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,118 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2018685474131562751&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a cinematic street portrait from the supplied adult photo. Keep the subject completely sharp and still at the center while surrounding pedestrians stretch into directional long-exposure trails. Use a busy city setting, restrained cool colors and a warm accent light on the face. Preserve realistic anatomy and clothing details, with an eye-level lens and 4:5 framing.",
+      "variable_examples": [],
+      "prompt_example_en": "Create a cinematic street portrait from the supplied adult photo. Keep the subject completely sharp and still at the center while surrounding pedestrians stretch into directional long-exposure trails. Use a busy city setting, restrained cool colors and a warm accent light on the face. Preserve realistic anatomy and clothing details, with an eye-level lens and 4:5 framing.",
+      "generation_verified": false,
+      "source_model_as_reported": "Nano Banana Pro",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 31,
+      "candidate_id": "x_2011304086847832089",
+      "title_zh": "直闪抓拍风特写肖像",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "直接闪光与颗粒形成日常抓拍感，区别现库霓虹人像。",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "成年人物照片"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/oggii_0/status/2011304086847832089",
+        "author": "oggii_0",
+        "published_at": "2026-01-14T05:07:17.000Z",
+        "metric_object_url": "https://x.com/oggii_0/status/2011304086847832089",
+        "metric_object_published_at": "2026-01-14T05:07:17.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 2165,
+          "conversation_count": 58,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "2,165 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2011304086847832089&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Use the uploaded adult portrait to create a candid flash photograph at night. Frame the face and shoulders tightly as the subject turns toward the camera, with an unposed expression and a slight off-center crop. Use direct on-camera flash, a dark indistinct background, visible fine grain and realistic skin texture. Preserve identity and avoid beauty-filter smoothing.",
+      "variable_examples": [],
+      "prompt_example_en": "Use the uploaded adult portrait to create a candid flash photograph at night. Frame the face and shoulders tightly as the subject turns toward the camera, with an unposed expression and a slight off-center crop. Use direct on-camera flash, a dark indistinct background, visible fine grain and realistic skin texture. Preserve identity and avoid beauty-filter smoothing.",
+      "generation_verified": false,
+      "source_model_as_reported": "Gemini Nano Banana Pro",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 32,
+      "candidate_id": "x_2029142137015812314",
+      "title_zh": "本人和巨型3D分身同框",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "写实本人和巨大卡通分身同框，适合个性化视觉梗。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/Emmma___0/status/2029142137015812314",
+        "author": "Emmma___0",
+        "published_at": "2026-03-04T10:29:19.000Z",
+        "metric_object_url": "https://x.com/Emmma___0/status/2029142137015812314",
+        "metric_object_published_at": "2026-03-04T10:29:19.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1421,
+          "conversation_count": 49,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,421 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2029142137015812314&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Using the uploaded portrait, create a playful scene where the same adult person appears as both a realistic human and a towering stylized 3D companion. Match their face, hairstyle, outfit colors and gesture. Place both on the same sunlit street, with correct contact shadows and perspective. Give the larger character friendly proportions while keeping the smaller person photographic.",
+      "variable_examples": [],
+      "prompt_example_en": "Using the uploaded portrait, create a playful scene where the same adult person appears as both a realistic human and a towering stylized 3D companion. Match their face, hairstyle, outfit colors and gesture. Place both on the same sunlit street, with correct contact shadows and perspective. Give the larger character friendly proportions while keeping the smaller person photographic.",
+      "generation_verified": false,
+      "source_model_as_reported": "Google Gemini Nano Banana Pro",
+      "notes_zh": "官方响应作者为Emmma___0；第三方库写Kashberg_0，采用官方当前screen_name。",
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 33,
+      "candidate_id": "CN01",
+      "title_zh": "双人AI婚纱写真",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "两张参考图合成具有分享用途；已标注的量化信号中等，先做小批样张。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "两位成年人的照片"
+      },
+      "primary_source": {
+        "platform": "Bilibili",
+        "url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+        "author": "张奕的AI工具铺",
+        "published_at": "2025-09-24",
+        "metric_object_url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+        "metric_object_published_at": "2025-09-24",
+        "metric_scope_zh": "整条教程或作品展示视频",
+        "metrics": {
+          "views": 9416,
+          "likes": 231,
+          "saves": 345,
+          "comments": 139,
+          "shares": 65,
+          "coins": 208,
+          "danmaku": 4
+        },
+        "metric_label_zh": "9,416 播放 / 231 赞 / 345 藏",
+        "evidence_grade": "A",
+        "evidence_method_zh": "B站 官方公开只读 API",
+        "evidence_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY",
+        "observed_at": "2026-10-29T06:17:12Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "作者提供外部prompt文档链接，本轮未读取文档",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Using the two uploaded portraits, create a wedding editorial photograph of the same two adults. Keep both faces recognizable and their proportions natural. Dress them in an ivory wedding outfit and a charcoal suit, standing close together in a sunlit garden with a stone arch and soft greenery. Candid laughter, a gentle breeze, warm film colors, realistic skin and fabric, flattering late-afternoon side light. Frame from the knees upward in a vertical 4:5 composition. No extra people, text or logos.",
+      "variable_examples": [],
+      "prompt_example_en": "Using the two uploaded portraits, create a wedding editorial photograph of the same two adults. Keep both faces recognizable and their proportions natural. Dress them in an ivory wedding outfit and a charcoal suit, standing close together in a sunlit garden with a stone arch and soft greenery. Candid laughter, a gentle breeze, warm film colors, realistic skin and fabric, flattering late-afternoon side light. Frame from the knees upward in a vertical 4:5 composition. No extra people, text or logos.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "视频互动仅支持对应玩法的关注度，不归因于某张静态图。",
+      "source_evidence_file": "china-visual-evidence.md",
+      "secondary_evidence": [
+        {
+          "platform": "Douyin",
+          "url": "https://www.douyin.com/video/7553614841110383882",
+          "author": null,
+          "post_date": "2025-09-24",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "saves": null,
+            "shares": null,
+            "views": null
+          },
+          "raw_metrics": ["2.9万", "2594", "2.4万", "5.7万"],
+          "evidence_level": "B: indexed primary page, metric labels missing",
+          "note": "Unlabeled Douyin sequence is supplementary only; do not add to the Bilibili counts or map values to engagement types."
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "candidate_id": "CN06",
+      "title_zh": "明代风格汉服写真人像",
+      "family_zh": "个性化照片与角色",
+      "priority": "second_batch",
+      "site_fit_zh": "中文受众熟悉的服饰题材，可扩展季节与场景。",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "人物照片和服饰参考"
+      },
+      "primary_source": {
+        "platform": "Bilibili",
+        "url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+        "author": "K43",
+        "published_at": "2023-02-09",
+        "metric_object_url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+        "metric_object_published_at": "2023-02-09",
+        "metric_scope_zh": "整条教程或作品展示视频",
+        "metrics": {
+          "views": 18638,
+          "likes": 477,
+          "saves": 689,
+          "comments": 116,
+          "shares": 98,
+          "coins": 178,
+          "danmaku": 14
+        },
+        "metric_label_zh": "18,638 播放 / 477 赞 / 689 藏",
+        "evidence_grade": "A",
+        "evidence_method_zh": "B站 官方公开只读 API",
+        "evidence_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm",
+        "observed_at": "2026-10-29T06:17:12Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "未取得完整prompt；本次依据展示主题改编",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a refined portrait of the adult in the uploaded photo wearing a Ming-inspired hanfu ensemble: a pale jade standing-collar jacket with delicate embroidery and a structured dark-red pleated skirt. Preserve the person's facial identity. Set the scene in a quiet traditional garden beside a carved wooden window and bamboo. Soft overcast light, believable woven silk, restrained jewelry, graceful natural posture, documentary costume-photography texture. Three-quarter-length vertical 4:5 composition. No modern accessories, logos or fantasy armor.",
+      "variable_examples": [],
+      "prompt_example_en": "Create a refined portrait of the adult in the uploaded photo wearing a Ming-inspired hanfu ensemble: a pale jade standing-collar jacket with delicate embroidery and a structured dark-red pleated skirt. Preserve the person's facial identity. Set the scene in a quiet traditional garden beside a carved wooden window and bamboo. Soft overcast light, believable woven silk, restrained jewelry, graceful natural posture, documentary costume-photography texture. Three-quarter-length vertical 4:5 composition. No modern accessories, logos or fantasy armor.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "视频互动仅支持对应玩法的关注度，不归因于某张静态图。",
+      "source_evidence_file": "china-visual-evidence.md"
+    },
+    {
+      "rank": 35,
+      "candidate_id": "x_2045504669401653414",
+      "title_zh": "博物馆图鉴式汉服与器物拆解",
+      "family_zh": "信息设计与故事",
+      "priority": "second_batch",
+      "site_fit_zh": "与写真不同，重点是材料、结构、纹样的知识性展示。",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "服饰或器物参考、已核对史料与中文标注"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/MrLarus/status/2045504669401653414",
+        "author": "MrLarus",
+        "published_at": "2026-04-18T14:08:11.000Z",
+        "metric_object_url": "https://x.com/MrLarus/status/2045504669401653414",
+        "metric_object_published_at": "2026-04-18T14:08:11.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1125,
+          "conversation_count": 52,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,125 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=2045504669401653414&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "只取得原帖片段",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a museum-catalog illustration of {{garment_or_object}} using the supplied historical reference notes. Show a large realistic central view and neatly separated detail studies around it. Label materials, construction and decorative motifs in concise Chinese supplied by the user. Use fine leader lines, a restrained palette and an ivory paper background. Keep uncertain historical details out.",
+      "variable_examples": [
+        {
+          "name": "garment_or_object",
+          "example": "a traditional embroidered jacket"
+        }
+      ],
+      "prompt_example_en": "Create a museum-catalog illustration of a traditional embroidered jacket using the supplied historical reference notes. Show a large realistic central view and neatly separated detail studies around it. Label materials, construction and decorative motifs in concise Chinese supplied by the user. Use fine leader lines, a restrained palette and an ivory paper background. Keep uncertain historical details out.",
+      "generation_verified": false,
+      "source_model_as_reported": "GPT-image-2（作者原帖用语）",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 36,
+      "candidate_id": "x_1920115927661883397",
+      "title_zh": "主题美甲设计特写",
+      "family_zh": "品牌与商业设计",
+      "priority": "explore_batch",
+      "site_fit_zh": "具体生活方式应用，图案可作为多种设计变体。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "主题、配色和五种甲面图案"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1920115927661883397",
+        "author": "azed_ai",
+        "published_at": "2025-05-07T13:58:05.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1920115927661883397",
+        "metric_object_published_at": "2025-05-07T13:58:05.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 1290,
+          "conversation_count": 92,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "1,290 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1920115927661883397&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "称prompt在回复中，未读取回复全文",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Photograph a neatly posed adult hand showing a coordinated nail-art collection inspired by {{theme}}. Use {{palette}}, with a different small motif on each nail while maintaining a consistent style. Include realistic cuticles, subtle glossy reflections and clean finger anatomy. Use soft studio lighting, a simple contrasting background and close-up beauty campaign framing.",
+      "variable_examples": [
+        {
+          "name": "theme",
+          "example": "a neighborhood coffee shop"
+        },
+        {
+          "name": "palette",
+          "example": "sage green, cream and terracotta"
+        }
+      ],
+      "prompt_example_en": "Photograph a neatly posed adult hand showing a coordinated nail-art collection inspired by a neighborhood coffee shop. Use sage green, cream and terracotta, with a different small motif on each nail while maintaining a consistent style. Include realistic cuticles, subtle glossy reflections and clean finger anatomy. Use soft studio lighting, a simple contrasting background and close-up beauty campaign framing.",
+      "generation_verified": false,
+      "source_model_as_reported": "GPT-4o",
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 37,
+      "candidate_id": "x_1968631874663891175",
+      "title_zh": "层叠剪纸故事插画",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "纸层、纤维和阴影适合童书、贺卡与活动主视觉。",
+      "category_id": "illustration",
+      "use_case_ids": ["book-cover"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "场景与主角"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1968631874663891175",
+        "author": "azed_ai",
+        "published_at": "2025-09-18T11:03:08.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1968631874663891175",
+        "metric_object_published_at": "2025-09-18T11:03:08.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 994,
+          "conversation_count": 47,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "994 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1968631874663891175&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖文字或图片ALT可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Build an illustration of {{scene}} entirely from layered cut paper. Use a limited palette of sage, peach and cream, with visible paper fibers and gently lifted edges. Separate foreground, subject and background into readable depth layers, casting delicate shadows between them. Keep the composition calm and graphic, with one clear storytelling focal point.",
+      "variable_examples": [
+        {
+          "name": "scene",
+          "example": "a fox reading beneath a woodland tree"
+        }
+      ],
+      "prompt_example_en": "Build an illustration of a fox reading beneath a woodland tree entirely from layered cut paper. Use a limited palette of sage, peach and cream, with visible paper fibers and gently lifted edges. Separate foreground, subject and background into readable depth layers, casting delicate shadows between them. Keep the composition calm and graphic, with one clear storytelling focal point.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md"
+    },
+    {
+      "rank": 38,
+      "candidate_id": "x_1911359730888614168",
+      "title_zh": "有指纹的手捏黏土角色",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "手作痕迹形成明确风格；中文旅行黏土教程作为补充线索。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "optional",
+        "description_zh": "角色或场景；照片可选"
+      },
+      "primary_source": {
+        "platform": "X",
+        "url": "https://x.com/azed_ai/status/1911359730888614168",
+        "author": "azed_ai",
+        "published_at": "2025-04-13T10:04:05.000Z",
+        "metric_object_url": "https://x.com/azed_ai/status/1911359730888614168",
+        "metric_object_published_at": "2025-04-13T10:04:05.000Z",
+        "metric_scope_zh": "整条X帖子或图集",
+        "metrics": {
+          "likes": 937,
+          "conversation_count": 48,
+          "views": null,
+          "reposts": null,
+          "bookmarks": null
+        },
+        "metric_label_zh": "937 赞",
+        "evidence_grade": "A",
+        "evidence_method_zh": "X 官方公开嵌入接口",
+        "evidence_url": "https://cdn.syndication.twimg.com/tweet-result?id=1911359730888614168&lang=en&token=1",
+        "observed_at": "2026-10-29T06:10:42Z",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "原帖文字或图片ALT可见",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a single-frame stop-motion-style scene featuring {{character}}. Build everything from colored modeling clay, including tiny props and a simple handmade set. Show subtle fingerprints, tool marks and imperfect paint that make the objects feel physical. Give the character a readable expression and pose. Use soft practical lighting and a gently blurred pastel backdrop.",
+      "variable_examples": [
+        {
+          "name": "character",
+          "example": "a cheerful small robot tending a houseplant"
+        }
+      ],
+      "prompt_example_en": "Create a single-frame stop-motion-style scene featuring a cheerful small robot tending a houseplant. Build everything from colored modeling clay, including tiny props and a simple handmade set. Show subtle fingerprints, tool marks and imperfect paint that make the objects feel physical. Give the character a readable expression and pose. Use soft practical lighting and a gently blurred pastel backdrop.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": null,
+      "source_evidence_file": "x-social-evidence.md",
+      "secondary_evidence": [
+        {
+          "platform": "Douyin",
+          "url": "https://www.douyin.com/video/7367353489397157120",
+          "raw_metrics": ["6549", "222", "5594", "2347"],
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "saves": null,
+            "shares": null,
+            "views": null
+          },
+          "note_zh": "中文旅行黏土视频教程的补充线索；指标标签缺失，不纳入量化基准，也不推定单张图片互动。"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "candidate_id": "cv-11798302",
+      "title_zh": "水果变小动物",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "水果和宠物形态融合，有易理解的视觉笑点。",
+      "category_id": "food",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "水果种类与小动物"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/11798302",
+        "author": "freek22",
+        "published_at": "2024-05-07T15:47:56.575Z",
+        "metric_object_url": "https://civitai.com/images/11798302",
+        "metric_object_published_at": "2024-05-07T15:47:56.575Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 767,
+          "laughCount": 1894,
+          "likeCount": 9976,
+          "dislikeCount": 0,
+          "heartCount": 3864,
+          "commentCount": 0
+        },
+        "metric_label_zh": "9,976 赞 / 3,864 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=11798302&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a macro photograph of a tiny {{animal}} made entirely from one ripe {{fruit}}. Its silhouette, ears and paws are formed naturally from the fruit flesh, while the skin texture, seeds and leaves remain convincingly edible. The creature sits on a plain ceramic plate beside one normal fruit for scale. Gentle window light, shallow depth of field, playful but physically coherent construction, no eyes pasted on, clean square composition.",
+      "variable_examples": [
+        {
+          "name": "animal",
+          "example": "tabby kitten"
+        },
+        {
+          "name": "fruit",
+          "example": "strawberry"
+        }
+      ],
+      "prompt_example_en": "Create a macro photograph of a tiny tabby kitten made entirely from one ripe strawberry. Its silhouette, ears and paws are formed naturally from the fruit flesh, while the skin texture, seeds and leaves remain convincingly edible. The creature sits on a plain ceramic plate beside one normal fruit for scale. Gentle window light, shallow depth of field, playful but physically coherent construction, no eyes pasted on, clean square composition.",
+      "generation_verified": false,
+      "source_model_as_reported": "SDXL Hyper",
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 40,
+      "candidate_id": "cv-64517382",
+      "title_zh": "水晶球瀑布溢出桌面",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "内部世界越过玻璃边界，超现实机制清楚且可扩展。",
+      "category_id": "product",
+      "use_case_ids": ["art-print"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "球内微缩景观"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/64517382",
+        "author": "CreativeEdge",
+        "published_at": "2025-04-24T02:17:01.986Z",
+        "metric_object_url": "https://civitai.com/images/64517382",
+        "metric_object_published_at": "2025-04-24T02:17:01.986Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 1362,
+          "laughCount": 1899,
+          "likeCount": 14162,
+          "dislikeCount": 0,
+          "heartCount": 5068,
+          "commentCount": 2
+        },
+        "metric_label_zh": "14,162 赞 / 5,068 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=64517382&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "On an aged oak table stands a clear crystal sphere containing a miniature {{landscape}}. A waterfall from that tiny world flows through the glass boundary and cascades over the table edge into the surrounding room. Make the impossible transition seamless and visually readable. Photorealistic water, believable glass refraction, moody window light, warm wood against cool turquoise water, one central object, cinematic still-life composition.",
+      "variable_examples": [
+        {
+          "name": "landscape",
+          "example": "a mossy forest waterfall"
+        }
+      ],
+      "prompt_example_en": "On an aged oak table stands a clear crystal sphere containing a miniature a mossy forest waterfall. A waterfall from that tiny world flows through the glass boundary and cascades over the table edge into the surrounding room. Make the impossible transition seamless and visually readable. Photorealistic water, believable glass refraction, moody window light, warm wood against cool turquoise water, one central object, cinematic still-life composition.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 41,
+      "candidate_id": "cv-145769039",
+      "title_zh": "魔药瓶里挤着一只猫",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "近期社区样本；宠物与容器的形体反差适合趣味图。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "宠物种类"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/145769039",
+        "author": "Cinnadust",
+        "published_at": "2026-10-15T20:00:00.000Z",
+        "metric_object_url": "https://civitai.com/images/145769039",
+        "metric_object_published_at": "2026-10-15T20:00:00.000Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 106,
+          "laughCount": 385,
+          "likeCount": 1692,
+          "dislikeCount": 0,
+          "heartCount": 627,
+          "commentCount": 36
+        },
+        "metric_label_zh": "1,692 赞 / 627 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=145769039&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create a whimsical still life inside a cozy alchemist shop. In the foreground, a transparent round potion flask contains a very fluffy {{animal}} that comfortably fills its entire volume like a liquid, with an exaggerated unimpressed expression. Keep the animal charming and unharmed. Paint the animal with crisp cartoon shapes while rendering the glass and wooden shelf photographically. Add three softly glowing colored bottles behind it, warm candlelight, readable silhouette, square composition.",
+      "variable_examples": [
+        {
+          "name": "animal",
+          "example": "tabby kitten"
+        }
+      ],
+      "prompt_example_en": "Create a whimsical still life inside a cozy alchemist shop. In the foreground, a transparent round potion flask contains a very fluffy tabby kitten that comfortably fills its entire volume like a liquid, with an exaggerated unimpressed expression. Keep the animal charming and unharmed. Paint the animal with crisp cartoon shapes while rendering the glass and wooden shelf photographically. Add three softly glowing colored bottles behind it, warm candlelight, readable silhouette, square composition.",
+      "generation_verified": false,
+      "source_model_as_reported": "OpenAI",
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 42,
+      "candidate_id": "cv-145231848",
+      "title_zh": "彩绘悬崖灯塔航拍",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "近期社区样本；真实海岸与大面积彩绘结合。",
+      "category_id": "architecture",
+      "use_case_ids": ["art-print"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "灯塔或其他小型建筑"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/145231848",
+        "author": "Silbrio",
+        "published_at": "2026-10-10T10:50:05.116Z",
+        "metric_object_url": "https://civitai.com/images/145231848",
+        "metric_object_published_at": "2026-10-10T10:50:05.116Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 85,
+          "laughCount": 232,
+          "likeCount": 1741,
+          "dislikeCount": 0,
+          "heartCount": 532,
+          "commentCount": 7
+        },
+        "metric_label_zh": "1,741 赞 / 532 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=145231848&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Create an overhead aerial photograph of a small {{building}} on a rugged coastal headland. Transform the ground around it into sweeping hand-painted ribbons of coral, turquoise and saffron, with concentric arcs following the natural contour of the cliff. Keep the building and ocean physically realistic. Tiny seabirds provide scale, fractured sea ice fades into deep water, flat overcast light, precise graphic composition, no lettering.",
+      "variable_examples": [
+        {
+          "name": "building",
+          "example": "white lighthouse"
+        }
+      ],
+      "prompt_example_en": "Create an overhead aerial photograph of a small white lighthouse on a rugged coastal headland. Transform the ground around it into sweeping hand-painted ribbons of coral, turquoise and saffron, with concentric arcs following the natural contour of the cliff. Keep the building and ocean physically realistic. Tiny seabirds provide scale, fractured sea ice fades into deep water, flat overcast light, precise graphic composition, no lettering.",
+      "generation_verified": false,
+      "source_model_as_reported": "Krea 2 Turbo",
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 43,
+      "candidate_id": "cv-145341157",
+      "title_zh": "实拍鸡尾酒叠加手绘涂鸦",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "近期社区样本；真实材质与手绘角色互动，适合餐饮营销。",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "饮品种类"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/145341157",
+        "author": "serendipper150",
+        "published_at": "2026-10-11T12:08:53.847Z",
+        "metric_object_url": "https://civitai.com/images/145341157",
+        "metric_object_published_at": "2026-10-11T12:08:53.847Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 56,
+          "laughCount": 209,
+          "likeCount": 1682,
+          "dislikeCount": 0,
+          "heartCount": 511,
+          "commentCount": 5
+        },
+        "metric_label_zh": "1,682 赞 / 511 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=145341157&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Make a playful editorial image of a hand holding a {{drink}} against a bright ivory background. Render the hand, condensation and glass as a sharp studio photograph. Overlay sparse black ink doodles: a tiny imaginary swimmer in the drink, an expressive face on the garnish, a few loose bubbles and energetic curved lines. The drawing should interact clearly with the photograph while remaining visibly hand drawn. Leave open space for a headline, but add no text.",
+      "variable_examples": [
+        {
+          "name": "drink",
+          "example": "sparkling citrus lemonade"
+        }
+      ],
+      "prompt_example_en": "Make a playful editorial image of a hand holding a sparkling citrus lemonade against a bright ivory background. Render the hand, condensation and glass as a sharp studio photograph. Overlay sparse black ink doodles: a tiny imaginary swimmer in the drink, an expressive face on the garnish, a few loose bubbles and energetic curved lines. The drawing should interact clearly with the photograph while remaining visibly hand drawn. Leave open space for a headline, but add no text.",
+      "generation_verified": false,
+      "source_model_as_reported": "Krea 2 Turbo",
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 44,
+      "candidate_id": "cv-9517243",
+      "title_zh": "猫咪鱼贩的市集摊位",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "动物职业群像可形成系列，职业道具使故事容易看懂。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "宠物种类与摊位职业"
+      },
+      "primary_source": {
+        "platform": "Civitai",
+        "url": "https://civitai.com/images/9517243",
+        "author": "Tugoff",
+        "published_at": "2024-04-09T17:30:28.993Z",
+        "metric_object_url": "https://civitai.com/images/9517243",
+        "metric_object_published_at": "2024-04-09T17:30:28.993Z",
+        "metric_scope_zh": "单张社区图片",
+        "metrics": {
+          "cryCount": 886,
+          "laughCount": 2952,
+          "likeCount": 13522,
+          "dislikeCount": 0,
+          "heartCount": 5117,
+          "commentCount": 1
+        },
+        "metric_label_zh": "13,522 赞 / 5,117 爱心",
+        "evidence_grade": "A",
+        "evidence_method_zh": "Civitai 官方公开 images API",
+        "evidence_url": "https://civitai.com/api/v1/images?imageId=9517243&withMeta=true",
+        "observed_at": "2026-10-28T23:12:22-07:00",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "API公开原prompt；本次独立改写并移除模型专用触发词",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "A charming anthropomorphic {{animal}} runs a tiny fish stall at a lively morning market. The animal wears a neatly tied apron and proudly presents a fresh fish on brown paper while a customer hand offers a few coins. Keep the animal facial features recognizable and the paws anatomically simple. Detailed wooden crates, soft morning sunlight, shallow depth of field, photorealistic textures with a whimsical storybook mood, no signs or lettering.",
+      "variable_examples": [
+        {
+          "name": "animal",
+          "example": "tabby kitten"
+        }
+      ],
+      "prompt_example_en": "A charming anthropomorphic tabby kitten runs a tiny fish stall at a lively morning market. The animal wears a neatly tied apron and proudly presents a fresh fish on brown paper while a customer hand offers a few coins. Keep the animal facial features recognizable and the paws anatomically simple. Detailed wooden crates, soft morning sunlight, shallow depth of field, photorealistic textures with a whimsical storybook mood, no signs or lettering.",
+      "generation_verified": false,
+      "source_model_as_reported": "SDXL 1.0",
+      "notes_zh": "平台 API 的 likeCount、heartCount、commentCount 分别记录；并非去重人数，未核验自然互动比例。Month是检索窗口，stats未明确为月内增量。",
+      "source_evidence_file": "community-evidence.md"
+    },
+    {
+      "rank": 45,
+      "candidate_id": "R06",
+      "title_zh": "日本街头胶片纪实感",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "胶片纪实感可做风格参考，但新增价值低于可上传照片的模板。",
+      "category_id": "portrait",
+      "use_case_ids": ["editorial"],
+      "entry_kind_hint": "prompt",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "地点、主体与摄影时间"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/",
+        "author": "KobraKay87",
+        "published_at": "2025-03-08",
+        "metric_object_url": "https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/",
+        "metric_object_published_at": "2025-03-08",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 2405,
+          "comments": null
+        },
+        "metric_label_zh": "2,405 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "未见原作者公开完整prompt；评论中多次有人索取。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "A candid 35mm-film photograph of an ordinary evening on a quiet Japanese neighborhood street. A person in everyday clothing pauses beside a small shop while a bicycle and distant pedestrians add life to the scene. Use an unposed composition, imperfect framing, gentle motion blur, subdued colors, natural skin texture, fine film grain and soft halation around practical lights. Keep the setting believable and lived-in; avoid fashion-ad polish and excessive neon. Landscape 3:2.",
+      "variable_examples": [],
+      "prompt_example_en": "A candid 35mm-film photograph of an ordinary evening on a quiet Japanese neighborhood street. A person in everyday clothing pauses beside a small shop while a bicycle and distant pedestrians add life to the scene. Use an unposed composition, imperfect framing, gentle motion blur, subdued colors, natural skin texture, fine film grain and soft halation around practical lights. Keep the setting believable and lived-in; avoid fashion-ad polish and excessive neon. Landscape 3:2.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "依据主题原创模板；未逐像素查看原图，不能宣称准确反推。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 46,
+      "candidate_id": "R14",
+      "title_zh": "太阳朋克树冠城市",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "太阳朋克题材给现有建筑与风景增加明确世界观。",
+      "category_id": "architecture",
+      "use_case_ids": ["wallpaper"],
+      "entry_kind_hint": "prompt",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "城市结构、植物与时段"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/midjourney/comments/1ive0td/city_of_earth_in_2500s/",
+        "author": "Eastern-Ad-4903",
+        "published_at": "2025-02-22",
+        "metric_object_url": "https://www.reddit.com/r/midjourney/comments/1ive0td/city_of_earth_in_2500s/",
+        "metric_object_published_at": "2025-02-22",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 1237,
+          "comments": null
+        },
+        "metric_label_zh": "1,237 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/midjourney/comments/1ive0td/city_of_earth_in_2500s/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "该帖未提取到完整原prompt；同作者次日Futuristic Green City公开了相关prompt。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "An expansive optimistic future city built around giant tree canopies and walkable public gardens. Combine clean white architecture, terraced greenery, shaded pedestrian bridges and small quiet transit vehicles. Show everyday people at ground level to make the city feel inhabited. Render the scene as a detailed retro-futurist animation background with crisp shapes, soft atmospheric perspective, silver-blue highlights and rich greens. Morning sunlight, panoramic composition, no dystopian decay.",
+      "variable_examples": [],
+      "prompt_example_en": "An expansive optimistic future city built around giant tree canopies and walkable public gardens. Combine clean white architecture, terraced greenery, shaded pedestrian bridges and small quiet transit vehicles. Show everyday people at ground level to make the city feel inhabited. Render the scene as a detailed retro-futurist animation background with crisp shapes, soft atmospheric perspective, silver-blue highlights and rich greens. Morning sunlight, panoramic composition, no dystopian decay.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "相关补充帖只有91分，不能把它和1237分原帖当作同一prompt已获验证。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 47,
+      "candidate_id": "R09",
+      "title_zh": "掌心微缩自然世界",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "手掌与完整自然世界的尺度反差，是微缩视觉的清楚入口。",
+      "category_id": "landscape",
+      "use_case_ids": ["wallpaper"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "自然景观类型"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/midjourney/comments/16tnjm8",
+        "author": null,
+        "published_at": "2023-09-27",
+        "metric_object_url": "https://www.reddit.com/r/midjourney/comments/16tnjm8",
+        "metric_object_published_at": "2023-09-27",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 3202,
+          "comments": null
+        },
+        "metric_label_zh": "3,202 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/midjourney/comments/16tnjm8",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "检索未确认完整prompt。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "A tiny self-contained {{forest_island_mountain_valley}} resting in an open human palm, built like an exquisite miniature ecosystem. Include small trees, textured rocks and a narrow stream, with convincing scale differences between the landscape and the fingers. Photograph it with a macro lens, gentle daylight, shallow depth of field and rich natural colors. Keep the miniature crisp and the background soft. No buildings, labels or fantasy creatures; the wonder comes from scale alone.",
+      "variable_examples": [
+        {
+          "name": "forest_island_mountain_valley",
+          "example": "a mossy forest with a tiny waterfall"
+        }
+      ],
+      "prompt_example_en": "A tiny self-contained a mossy forest with a tiny waterfall resting in an open human palm, built like an exquisite miniature ecosystem. Include small trees, textured rocks and a narrow stream, with convincing scale differences between the landscape and the fingers. Photograph it with a macro lens, gentle daylight, shallow depth of field and rich natural colors. Keep the miniature crisp and the background soft. No buildings, labels or fantasy creatures; the wonder comes from scale alone.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "依据标题的微缩自然主题原创；掌心载体是本站模板的新增设计，不声称原图具有该元素。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 48,
+      "candidate_id": "R03",
+      "title_zh": "名画或照片变童趣蜡笔画",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "关注度高但讨论包含批评；定位为童趣蜡笔风，保留前后对比玩法。",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "照片或画作"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/",
+        "author": "SoHornyBeaver",
+        "published_at": "2025-05-18",
+        "metric_object_url": "https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/",
+        "metric_object_published_at": "2025-05-18",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 6188,
+          "comments": null
+        },
+        "metric_label_zh": "6,188 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "标题即转换指令；非完整工作流。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "Reinterpret the supplied picture as a playful crayon drawing on off-white classroom paper. Retain only the main subjects, their positions and the most recognizable colors. Use uneven wax strokes, gaps in the coloring, simple flat shapes, oversized faces and slightly wandering outlines. Keep the composition charming and readable, with visible paper grain and no polished digital gradients. Treat it as an intentionally naive illustration rather than a realistic rendering.",
+      "variable_examples": [],
+      "prompt_example_en": "Reinterpret the supplied picture as a playful crayon drawing on off-white classroom paper. Retain only the main subjects, their positions and the most recognizable colors. Use uneven wax strokes, gaps in the coloring, simple flat shapes, oversized faces and slightly wandering outlines. Keep the composition charming and readable, with visible paper grain and no polished digital gradients. Treat it as an intentionally naive illustration rather than a realistic rendering.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "高互动明显包含批评：观众认为成品过于精细，不像真实五岁儿童作品。网站应命名为童趣蜡笔风，不声称真实儿童能力。",
+      "source_evidence_file": "reddit-evidence.md",
+      "attention_is_not_uniform_approval": true
+    },
+    {
+      "rank": 49,
+      "candidate_id": "R13",
+      "title_zh": "空无一人的阈限空间",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "阈限空间是已有建筑库之外的气氛选题，先做小规模补充。",
+      "category_id": "architecture",
+      "use_case_ids": ["wallpaper"],
+      "entry_kind_hint": "prompt",
+      "input_requirements": {
+        "reference_image": "none",
+        "description_zh": "空间类型、光源与配色"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/midjourney/comments/1jd1jkf",
+        "author": null,
+        "published_at": "2025-03-17",
+        "metric_object_url": "https://www.reddit.com/r/midjourney/comments/1jd1jkf",
+        "metric_object_published_at": "2025-03-17",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 565,
+          "comments": null
+        },
+        "metric_label_zh": "565 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/midjourney/comments/1jd1jkf",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "作者说明使用liminal图片blend；并非单一文字prompt。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "An empty underground staff dining area that feels strangely familiar: faded booth seating, tiled floors, fluorescent lights, metal railings and a corridor that disappears into darkness. Arrange the space plausibly but with one subtly awkward architectural transition. Use a level handheld camera, muted colors, low contrast, imperfect fluorescent color and the texture of an old compact-camera photograph. No people, monsters, blood, warning signs or dramatic fog; unease should come from the ordinary place itself.",
+      "variable_examples": [],
+      "prompt_example_en": "An empty underground staff dining area that feels strangely familiar: faded booth seating, tiled floors, fluorescent lights, metal railings and a corridor that disappears into darkness. Arrange the space plausibly but with one subtly awkward architectural transition. Use a level handheld camera, muted colors, low contrast, imperfect fluorescent color and the texture of an old compact-camera photograph. No people, monsters, blood, warning signs or dramatic fog; unease should come from the ordinary place itself.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "原作使用图片混合，纯文字模板不是同一工作流。",
+      "source_evidence_file": "reddit-evidence.md"
+    },
+    {
+      "rank": 50,
+      "candidate_id": "R16",
+      "title_zh": "远看藏人像，近看是花卉风景",
+      "family_zh": "艺术与趣味视觉",
+      "priority": "explore_batch",
+      "site_fit_zh": "需要ControlNet等结构引导，放在进阶实验区，不作为一键成功模板。",
+      "category_id": "landscape",
+      "use_case_ids": ["social-post"],
+      "entry_kind_hint": "template",
+      "input_requirements": {
+        "reference_image": "required",
+        "description_zh": "高对比轮廓图与结构控制工作流"
+      },
+      "primary_source": {
+        "platform": "Reddit",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+        "author": "seniorbrinco",
+        "published_at": "2023-08-20",
+        "metric_object_url": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+        "metric_object_published_at": "2023-08-20",
+        "metric_scope_zh": "整篇帖子或图集",
+        "metrics": {
+          "post_score": 1032,
+          "comments": null
+        },
+        "metric_label_zh": "1,032 分",
+        "evidence_grade": "B",
+        "evidence_method_zh": "一手帖搜索索引快照",
+        "evidence_url": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+        "observed_at": "2026-10-28",
+        "cache_timestamp_known": false
+      },
+      "source_prompt_status_zh": "公开：文字提示、模型、ControlNet QR Monster、参考轮廓与参数。",
+      "prompt_provenance": "independent_adaptation_or_theme_reconstruction",
+      "prompt_template_en": "A lush flower garden with stone paths, dense foliage and patches of warm sunlight. Arrange the major light and dark masses to follow the supplied high-contrast silhouette, while making each local region look like natural plants, stones and shadows. At normal viewing distance it should read as a believable garden; when reduced in size, the hidden silhouette should become recognizable. Avoid explicit drawn facial lines and avoid text.",
+      "variable_examples": [],
+      "prompt_example_en": "A lush flower garden with stone paths, dense foliage and patches of warm sunlight. Arrange the major light and dark masses to follow the supplied high-contrast silhouette, while making each local region look like natural plants, stones and shadows. At normal viewing distance it should read as a believable garden; when reduced in size, the hidden silhouette should become recognizable. Avoid explicit drawn facial lines and avoid text.",
+      "generation_verified": false,
+      "source_model_as_reported": null,
+      "notes_zh": "必须提供控制轮廓并使用结构引导；单纯复制文字不能稳定复现。本站当前若只提供纯prompt，优先级应降低。",
+      "source_evidence_file": "reddit-evidence.md",
+      "requires_additional_workflow": "structure conditioning such as ControlNet; text prompt alone is insufficient"
+    }
+  ]
+}

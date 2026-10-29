@@ -271,6 +271,7 @@ export function promptMarkdown(detail: PromptDetail, ctx: MarkdownContext): stri
   return join([
     ...head(detail, ctx),
     image(detail.cover, ctx),
+    detail.inputInstructions && escapeText(detail.inputInstructions),
     `## ${t('detail.test.label')}\n\n${testRecord.join('\n')}`,
     `## ${t('detail.sheet.label', { language: ctx.languageName(detail.prompt.language) })}\n\n${codeBlock(detail.prompt.text)}`,
     template && labelled(t, t('detail.customize'), link(template.title, ctx.absoluteUrl(template.path))),
