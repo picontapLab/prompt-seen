@@ -60,7 +60,8 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
   const prefix = locale.pathPrefix;
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
 
-  const images = [detail.cover, ...detail.examples.flatMap((r) => r.outputs)].filter(
+  const showcase = detail.examples.find((r) => r.id === detail.showcaseExampleId);
+  const images = [detail.cover, ...(showcase ? showcase.outputs : detail.examples.flatMap((r) => r.outputs))].filter(
     (img, i, all) => all.findIndex((x) => x.assetId === img.assetId) === i,
   );
 
@@ -68,7 +69,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
     <AnnotationProvider annotations={detail.annotations}>
       <article className={styles.detail} data-detail="prompt" data-entry={detail.id} data-save-scope="">
         <div className={styles.top}>
-          <div className={styles.media}>
+          <div className={`${styles.media} ${showcase?.references.length ? styles.withReferences : ''}`}>
             <ImageStage
               images={images}
               startPrint={`${detail.frameNumber} ▸ ${detail.frameNumber}A`}
@@ -76,6 +77,18 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               sizes="(min-width: 1024px) 58vw, 100vw"
               preview={coverPreview}
             />
+            {showcase && showcase.references.length > 0 && (
+              <section className={styles.referenceStage} aria-label={t('examples.references')}>
+                <h2 className={styles.sectionHeading}>{t('examples.references')}</h2>
+                <p>{showcase.referenceLabels?.filter(Boolean).join(' · ')}</p>
+                <ImageStage
+                  images={showcase.references}
+                  startPrint={detail.frameNumber}
+                  endPrint={t('examples.references')}
+                  sizes="(min-width: 1024px) 30vw, 90vw"
+                />
+              </section>
+            )}
           </div>
 
           <div className={styles.info}>
@@ -97,6 +110,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               )}
               <p className={styles.summary}>{detail.description}</p>
               <TestInfo detail={detail} />
+              {detail.inputInstructions && <p className={styles.summary}>{detail.inputInstructions}</p>}
             </header>
 
             <PromptSheet

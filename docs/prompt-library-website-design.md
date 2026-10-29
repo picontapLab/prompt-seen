@@ -2933,3 +2933,20 @@ React DOM 与 Next.js 运行时约占每个页面 133 KiB，外壳自身约 54 K
 50. [本地设计资产：`design/`](../design/README.md)（选定方向的页面、截图与 token 原稿）
 51. [Next.js：原生 History API](https://nextjs.org/docs/app/getting-started/linking-and-navigating#native-history-api)
 52. [方案 B 原型：`spikes/option-b/`](../spikes/option-b/README.md)（一次性实现，测试可复用）
+
+## Top 50 rollout — first implementation slice (2026-10-29)
+
+The [rollout plan](top50-content-implementation-plan.md) remains the target. The first slice adds
+optional localized input instructions and reference slots to prompt sources, reference bindings
+to recorded runs, and an explicit showcase run checked against the current prompt and cover.
+Old entries retain their defaults. Prompt details and their Markdown export expose the input
+instructions. A showcase with reference images displays those inputs alongside its result section.
+
+Template previews now match the template ID, version, exact rendered prompt and field values to
+recorded examples. Custom values without a matching run are labelled as untested and any retained
+cover is explicitly described as a different example. No generation happens in the browser.
+
+The first real case is p_101 / t_004 / x_146 (crystal sphere waterfall, research rank 40), with
+media a_203. This is 1 of the planned 50 cases and 1 of at least 66 outputs. The remaining cases,
+versioned template input contracts, general production CLI, structured inspiration metadata and
+collection rollout are still pending. Do not describe this slice as the completed Top 50 rollout.

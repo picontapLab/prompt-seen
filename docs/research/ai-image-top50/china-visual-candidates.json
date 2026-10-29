@@ -1,0 +1,590 @@
+{
+  "observed_date": "2026-10-28",
+  "timezone": "America/Los_Angeles",
+  "scope": "Chinese public social/community posts; image demonstrations and image-making tutorials are separated from video-derived visual concepts.",
+  "caveats": [
+    "Bilibili candidate metrics were upgraded to direct public read-only API verification (code 0 and labeled stat fields). Douyin figures remain search-engine snapshots of primary pages, not live API verification.",
+    "Douyin extraction omits metric labels. Store raw ordered counts; do not assert that the first number is a verified like count. Account-wide likes and follower totals are excluded.",
+    "Bilibili top-of-page view counts are kept separate from playlist totals. Videos and tutorial views do not prove that an individual still image earned those views.",
+    "All English prompts below are newly authored adaptation drafts, not the creator's original prompt and not generation-tested.",
+    "Low-signal or metric-missing entries are reserves, not demonstrated viral successes.",
+    "No reliable Xiaohongshu original-post metric was obtained. Instagram and TikTok searches did not yield adequate original-post metrics in this research lane."
+  ],
+  "candidates": [
+    {
+      "id": "CN01",
+      "title_zh": "双人AI婚纱写真",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+      "author": "张奕的AI工具铺",
+      "post_date": "2025-09-24",
+      "metrics": {
+        "views": 9416,
+        "likes": 231,
+        "saves": 345,
+        "comments": 139,
+        "shares": 65,
+        "coins": 208,
+        "danmaku": 4
+      },
+      "raw_metrics": [
+        "view=9416",
+        "like=231",
+        "favorite=345",
+        "reply=139",
+        "share=65"
+      ],
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "image-making tutorial video",
+      "source_prompt_public": "Creator description links a publicly offered Feishu prompt document; the document itself was not read.",
+      "appeal_zh": "双人身份保持与仪式感结合，用户可直接替换自己的照片，成片有明确分享用途。",
+      "editorial_priority": "shortlist",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Using the two uploaded portraits, create a wedding editorial photograph of the same two adults. Keep both faces recognizable and their proportions natural. Dress them in an ivory wedding outfit and a charcoal suit, standing close together in a sunlit garden with a stone arch and soft greenery. Candid laughter, a gentle breeze, warm film colors, realistic skin and fabric, flattering late-afternoon side light. Frame from the knees upward in a vertical 4:5 composition. No extra people, text or logos.",
+      "secondary_evidence": [
+        {
+          "platform": "Douyin",
+          "url": "https://www.douyin.com/video/7553614841110383882",
+          "author": null,
+          "post_date": "2025-09-24",
+          "metrics": {
+            "likes": null,
+            "comments": null,
+            "saves": null,
+            "shares": null,
+            "views": null
+          },
+          "raw_metrics": [
+            "2.9万",
+            "2594",
+            "2.4万",
+            "5.7万"
+          ],
+          "evidence_level": "B: indexed primary page, metric labels missing",
+          "note": "Unlabeled Douyin sequence is supplementary only; do not add to the Bilibili counts or map values to engagement types."
+        }
+      ],
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1758713110,
+      "metric_object_url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "source_prompt_document_url": "https://ai.feishu.cn/wiki/X8G5wFXuHiYhs9kyGercDPQYnsg?from=from_copylink"
+    },
+    {
+      "id": "CN02",
+      "title_zh": "创意伴郎伴娘团合照",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7607819974732010987",
+      "author": "小赵公子(Zz)",
+      "post_date": "2026-02-17",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "1.8万",
+        "269",
+        "2274",
+        "8813"
+      ],
+      "evidence_level": "B: indexed primary page, metric labels missing",
+      "evidence_type": "wedding visual concept showcase, tagged 豆包过年",
+      "source_prompt_public": "Not visible in extracted text; exact generation workflow not verified.",
+      "appeal_zh": "多人姿态与夸张视角制造反差，适合婚礼邀请、伴郎伴娘纪念和社交合照。",
+      "editorial_priority": "shortlist with generation provenance check",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Create a playful wedding-party editorial from the uploaded group references, preserving each person's face and keeping the exact number of people. Photograph the couple in the center while friends lean inward from the edges, forming an energetic circular composition around a low-positioned wide-angle camera. Elegant coordinated clothing, a clear blue sky, ivory flowers and spontaneous smiles. Keep facial proportions believable despite the wide lens. A lively magazine photograph with crisp daylight, no text, no cloned faces, vertical 4:5."
+    },
+    {
+      "id": "CN03",
+      "title_zh": "旅行照片变黏土世界",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7367353489397157120",
+      "author": "Jacob🐕",
+      "post_date": "2024-05-10",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "6549",
+        "222",
+        "5594",
+        "2347"
+      ],
+      "evidence_level": "B: indexed primary page, metric labels missing",
+      "evidence_type": "clay-style travel-vlog tutorial; proposed output is a still-image adaptation",
+      "source_prompt_public": "No text-to-image prompt visible; source uses a clay-style effect workflow.",
+      "appeal_zh": "熟悉旅行照片与笨拙手作质感形成反差，人物和景点都可替换。",
+      "editorial_priority": "supplementary Chinese evidence for a static clay template; merge with a stronger image-based source where available",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Rebuild the uploaded travel photograph as a handmade clay diorama. Preserve the placement of the traveler, buildings, trees and horizon so the original place remains recognizable. Turn every visible surface into softly rounded modeling clay with slight fingerprints, uneven edges and miniature construction details. Give the traveler a friendly simplified face while retaining their hairstyle and clothing colors. Warm pastel palette, diffuse daylight, shallow macro depth of field, charming stop-motion-film still. Match the reference framing and add no lettering."
+    },
+    {
+      "id": "CN04",
+      "title_zh": "同一角色16格中文表情贴纸",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/opus/1148687573157150722",
+      "author": "川扑通",
+      "post_date": "2025-12-20",
+      "metrics": {
+        "views": 344604,
+        "likes": 26934,
+        "saves": 5872,
+        "comments": 938,
+        "shares": 1029,
+        "coins": 859,
+        "danmaku": 73
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "original image-sticker showcase video, plus creator article containing full prompt",
+      "source_prompt_public": "Yes, full image prompt is visible. Creator credits an adaptation of Honglizi's prompt; no copying license was established.",
+      "appeal_zh": "统一身份加多种表情，兼具收藏和聊天复用价值，适合把复杂原案简化为可替换模板。",
+      "editorial_priority": "shortlist",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid. Use the uploaded character as the sole character, keeping the face, hairstyle, outfit and colors consistent. Give each cell a different everyday emotion or gesture: joy, surprise, thanks, encouragement, sleepiness, celebration, curiosity, agreement, apology, determination, greeting, laughter, relief, confusion, excitement and affection. Simple expressive cartoon drawing, white cutout borders, generous separation. Add one short Chinese caption per cell from this supplied list: [CAPTIONS]. Avoid background scenes and overlapping stickers.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1766211132,
+      "metric_object_url": "https://www.bilibili.com/video/BV1uaqqB2Ez7/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "原视频卡片：34.4万",
+        "73"
+      ],
+      "raw_metrics": [
+        "view=344604",
+        "like=26934",
+        "favorite=5872",
+        "reply=938",
+        "share=1029"
+      ],
+      "article_date": "2025-12-22"
+    },
+    {
+      "id": "CN05",
+      "title_zh": "时尚杂志封面肖像",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "author": "哩布哩布AI",
+      "post_date": "2023-06-30",
+      "metrics": {
+        "views": 56375,
+        "likes": 3074,
+        "saves": 2984,
+        "comments": 64,
+        "shares": 202,
+        "coins": 184,
+        "danmaku": 7
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "fashion-image model showcase",
+      "source_prompt_public": "No complete prompt in extracted text; model and controls are discussed.",
+      "appeal_zh": "有明确用途的头像升级；棚拍质感和排版空间使其能转为个人封面。",
+      "editorial_priority": "shortlist, evergreen",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Use the uploaded portrait to create a sophisticated fashion-cover photograph. Preserve the person's identity. Style them in an architectural black jacket against a warm gray seamless studio backdrop. One large softbox from the left, subtle edge light, natural skin texture, restrained makeup and a direct confident gaze. Waist-up composition with generous empty space above the head for a magazine title and clear margins for later typesetting. Minimal editorial styling, muted colors, vertical 4:5. Do not invent typography or brand names.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV16m4y1a7uC",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1688119200,
+      "metric_object_url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：5.6万",
+        "7",
+        "互动区：3074 / 184 / 2992"
+      ],
+      "raw_metrics": [
+        "view=56375",
+        "like=3074",
+        "favorite=2984",
+        "reply=64",
+        "share=202"
+      ]
+    },
+    {
+      "id": "CN06",
+      "title_zh": "明代风格汉服写真人像",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+      "author": "K43",
+      "post_date": "2023-02-09",
+      "metrics": {
+        "views": 18638,
+        "likes": 477,
+        "saves": 689,
+        "comments": 116,
+        "shares": 98,
+        "coins": 178,
+        "danmaku": 14
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "creator's Ming-inspired Hanfu LoRA image showcase",
+      "source_prompt_public": "No complete prompt visible; creator says model and image pack are in comments.",
+      "appeal_zh": "汉服细节与日常人像变装结合，为中文内容库提供明确的文化主题。",
+      "editorial_priority": "shortlist, evergreen",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Create a refined portrait of the adult in the uploaded photo wearing a Ming-inspired hanfu ensemble: a pale jade standing-collar jacket with delicate embroidery and a structured dark-red pleated skirt. Preserve the person's facial identity. Set the scene in a quiet traditional garden beside a carved wooden window and bamboo. Soft overcast light, believable woven silk, restrained jewelry, graceful natural posture, documentary costume-photography texture. Three-quarter-length vertical 4:5 composition. No modern accessories, logos or fantasy armor.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1675952390,
+      "metric_object_url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：1.9万",
+        "14"
+      ],
+      "raw_metrics": [
+        "view=18638",
+        "like=477",
+        "favorite=689",
+        "reply=116",
+        "share=98"
+      ]
+    },
+    {
+      "id": "CN07",
+      "title_zh": "干净棚拍证件照风头像",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1zm4y1J7vr/",
+      "author": "哩布哩布AI",
+      "post_date": "2023-07-04",
+      "metrics": {
+        "views": 14723,
+        "likes": 441,
+        "saves": 611,
+        "comments": 25,
+        "shares": 57,
+        "coins": 51,
+        "danmaku": 0
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "ID-photo-style image model showcase",
+      "source_prompt_public": "No complete prompt visible; source describes a white-background LoRA.",
+      "appeal_zh": "低理解成本、强实用性，适合个人资料头像；页面不应把生成结果承诺为官方证件合规照。",
+      "editorial_priority": "shortlist, evergreen",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Edit the uploaded adult portrait into a clean studio headshot for a personal profile. Preserve the exact facial structure, skin tone, age and distinctive features. Front-facing head and shoulders, level eyes, relaxed closed-mouth expression, neatly arranged hair and a simple navy shirt. Use a uniform light-gray background and soft symmetrical lighting with a subtle natural shadow under the chin. Keep realistic skin texture and accurate anatomy. Centered vertical 3:4 crop, no text, logos or artificial beauty-filter effect.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1zm4y1J7vr",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1688466237,
+      "metric_object_url": "https://www.bilibili.com/video/BV1zm4y1J7vr/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：1.5万",
+        "0"
+      ],
+      "raw_metrics": [
+        "view=14723",
+        "like=441",
+        "favorite=611",
+        "reply=25",
+        "share=57"
+      ]
+    },
+    {
+      "id": "CN08",
+      "title_zh": "保持人物一致性的旅行写真",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1rMspzkEcB/",
+      "author": "不止设计工作室",
+      "post_date": "2025-10-27",
+      "metrics": {
+        "views": 14675,
+        "likes": 36,
+        "saves": 55,
+        "comments": 6,
+        "shares": 10,
+        "coins": 6,
+        "danmaku": 0
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "photo-editing tutorial with portrait/selfie/travel examples",
+      "source_prompt_public": "Creator links a TXT prompt download; linked file was not accessed.",
+      "appeal_zh": "用户自己的脸加可选目的地，输入简单，适合作为多目的地系列模板。",
+      "editorial_priority": "reserve: views verified but only 36 likes and 55 saves",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Place the adult from the uploaded portrait in a candid travel photograph at [DESTINATION]. Preserve their facial identity and natural proportions. They wear [OUTFIT] and pause mid-walk beside a distinctive local street feature, looking just past the camera. Include believable local architecture, a few softly blurred passersby and late-afternoon sunlight. Photograph at eye level with a 35mm travel-photography feel, gentle film grain and realistic colors. Vertical 4:5 composition, no text or tourist-brand logos.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1rMspzkEcB",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1761534000,
+      "metric_object_url": "https://www.bilibili.com/video/BV1rMspzkEcB/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：1.5万",
+        "0"
+      ],
+      "raw_metrics": [
+        "view=14675",
+        "like=36",
+        "favorite=55",
+        "reply=6",
+        "share=10"
+      ]
+    },
+    {
+      "id": "CN09",
+      "title_zh": "老照片温和修复与自然上色",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV17w41157Ev/",
+      "author": "火星时代",
+      "post_date": "2023-12-25",
+      "metrics": {
+        "views": 33334,
+        "likes": 505,
+        "saves": 1340,
+        "comments": 62,
+        "shares": 139,
+        "coins": 211,
+        "danmaku": 112
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "creator's grandmother-photo restoration tutorial",
+      "source_prompt_public": "Workflow named, but no complete prompt visible.",
+      "corroboration_url": "https://www.douyin.com/video/7386301086992190755",
+      "corroboration_raw_metrics": [
+        "4862",
+        "270",
+        "416",
+        "1471"
+      ],
+      "appeal_zh": "家庭记忆带来情感价值，前后对比易展示，适合长期搜索流量。",
+      "editorial_priority": "shortlist, evergreen",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Carefully restore this old family photograph. Remove visible scratches, dust and stains while preserving the original framing, faces, expressions, age, clothing construction and background objects. Improve clarity conservatively without making skin plastic or inventing sharp facial details where the source is unclear. Add subdued, plausible period colors and retain a little film grain. Do not modernize the clothing, change identities, remove people or replace the setting. Return one restored image at the original aspect ratio.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1703505000,
+      "metric_object_url": "https://www.bilibili.com/video/BV17w41157Ev/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：3.3万",
+        "112"
+      ],
+      "raw_metrics": [
+        "view=33334",
+        "like=505",
+        "favorite=1340",
+        "reply=62",
+        "share=139"
+      ]
+    },
+    {
+      "id": "CN13",
+      "title_zh": "建筑草图变写实效果图",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1wC4y1d7FH/",
+      "author": "大樟树Design",
+      "post_date": "2023-10-07",
+      "metrics": {
+        "views": 29954,
+        "likes": 601,
+        "saves": 1966,
+        "comments": 181,
+        "shares": 280,
+        "coins": 407,
+        "danmaku": 19
+      },
+      "evidence_level": "A: direct public Bilibili read-only API, code 0, labeled stat fields",
+      "evidence_type": "multi-part architectural image-generation course; broad workflow demand signal",
+      "source_prompt_public": "No complete prompt visible; episode titles demonstrate sketch-to-render, room renovation and plan rendering.",
+      "appeal_zh": "可展示明确前后对比，有专业设计用途；流量属于课程需求，不能归因单张图片。",
+      "editorial_priority": "reserve: broad tutorial signal",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Transform the uploaded architectural sketch into a realistic visualization without changing the building massing, window positions, roofline, site boundaries or camera angle. Apply [MATERIAL PALETTE] and set the scene in [SEASON] with soft morning light. Add restrained planting, believable glazing reflections and a few scale-appropriate people. Preserve the design's clear geometric intent and avoid adding floors or structural elements. Architectural photography with balanced exposure and straight verticals, same aspect ratio as the sketch.",
+      "api_source_url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1wC4y1d7FH",
+      "api_response_code": 0,
+      "api_pubdate_unix": 1696648713,
+      "metric_object_url": "https://www.bilibili.com/video/BV1wC4y1d7FH/",
+      "metric_observed_at_utc": "2026-10-29T06:17:12Z",
+      "indexed_snapshot_raw_metrics": [
+        "顶部播放：3.0万",
+        "19",
+        "互动区：596 / 403 / 1959"
+      ],
+      "raw_metrics": [
+        "view=29954",
+        "like=601",
+        "favorite=1966",
+        "reply=181",
+        "share=280"
+      ]
+    },
+    {
+      "id": "CN14",
+      "title_zh": "双人红底纪念照",
+      "platform": "RunningHub",
+      "url": "https://www.runninghub.cn/post/2067127754264506369",
+      "author": "孤海AI",
+      "post_date": "2026-06-17",
+      "metrics": {
+        "likes": 30,
+        "comments": null,
+        "saves": 84,
+        "shares": null,
+        "views": 1617
+      },
+      "raw_metrics": [
+        "1617 浏览",
+        "30 点赞",
+        "84 收藏"
+      ],
+      "evidence_level": "A: directly opened primary community page with explicit metric labels",
+      "evidence_type": "image-making community workflow, niche rather than viral",
+      "source_prompt_public": "Workflow description visible; no full model prompt read.",
+      "appeal_zh": "两张照片合为双人纪念照，背景与服装容易参数化。收藏信号清楚，但绝对热度较低。",
+      "editorial_priority": "reserve: low absolute reach",
+      "prompt_type": "newly authored adaptation",
+      "prompt_en": "Combine the two uploaded adult portraits into a warm commemorative studio photograph. Place the two people shoulder to shoulder, facing the camera, preserving each person's exact facial identity and relative height. Both wear simple ivory shirts with natural collars. Use an evenly lit, rich red background, gentle smiles and realistic skin texture. Head-and-shoulders framing, balanced spacing, horizontal 4:3 composition. No document text, seals, official marks or beauty-filter distortion."
+    }
+  ],
+  "excluded_or_reserve": [
+    {
+      "id": "CN10",
+      "title_zh": "巨构宿舍：日常空间无限放大",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7690869717854162219",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "2488",
+        "107",
+        "966",
+        "735"
+      ],
+      "evidence_type": "AI video concept; still-image adaptation only",
+      "editorial_priority": "reserve: video-derived"
+    },
+    {
+      "id": "CN11",
+      "title_zh": "山海经异兽生态摄影",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1dy75z8ECB/",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": 877000
+      },
+      "raw_metrics": [
+        "顶部播放：87.7万",
+        "979"
+      ],
+      "evidence_type": "AI video, not an independently measured still image",
+      "editorial_priority": "reserve: strong video signal, still transfer untested"
+    },
+    {
+      "id": "CN12",
+      "title_zh": "中国水墨女将电影海报",
+      "platform": "Bilibili",
+      "url": "https://www.bilibili.com/video/BV1hvH6zTEhH/",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": 1002000
+      },
+      "raw_metrics": [
+        "顶部播放：100.2万",
+        "235",
+        "互动区：3434 / 1735 / 1940"
+      ],
+      "evidence_type": "original AI animated short, not independently measured still image",
+      "editorial_priority": "reserve: strong video signal, still transfer untested"
+    },
+    {
+      "id": "CN15",
+      "title_zh": "海边电影三宫格",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7560400435132910908",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "297",
+        "22",
+        "87",
+        "138"
+      ],
+      "evidence_type": "image prompt tutorial; full prompts visible in comments",
+      "editorial_priority": "reserve: needs stronger post evidence"
+    },
+    {
+      "id": "CN16",
+      "title_zh": "雪景电影三宫格",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7563220498360847666",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [],
+      "evidence_type": "image prompt tutorial",
+      "editorial_priority": "reserve: metric missing"
+    },
+    {
+      "id": "CN17",
+      "title_zh": "宠物照镜子的春日写真",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7613710670538916465",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "146",
+        "13",
+        "75",
+        "6"
+      ],
+      "evidence_type": "pet image showcase with author's prompt in comments",
+      "editorial_priority": "reserve: low signal"
+    },
+    {
+      "id": "CN18",
+      "title_zh": "人与宠物温暖拥抱合照",
+      "platform": "Douyin",
+      "url": "https://www.douyin.com/video/7592489627472236467",
+      "metrics": {
+        "likes": null,
+        "comments": null,
+        "saves": null,
+        "shares": null,
+        "views": null
+      },
+      "raw_metrics": [
+        "534",
+        "158",
+        "276",
+        "206"
+      ],
+      "evidence_type": "two-reference photo composition tutorial",
+      "editorial_priority": "reserve: niche signal"
+    }
+  ],
+  "observed_at_utc": "2026-10-29T06:17:12Z"
+}

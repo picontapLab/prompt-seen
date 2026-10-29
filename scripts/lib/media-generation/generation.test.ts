@@ -16,6 +16,13 @@ function workspace() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'prompt-generation-'));
   roots.push(root);
   fs.cpSync(path.resolve('content'), path.join(root, 'content'), { recursive: true });
+  // This migration tests the original corpus, not later editorial additions.
+  for (const [kind, limit] of [
+    ['prompts', 100],
+    ['templates', 3],
+  ] as const)
+    for (const name of fs.readdirSync(path.join(root, 'content', kind)))
+      if (Number(name.slice(2)) > limit) fs.rmSync(path.join(root, 'content', kind, name), { recursive: true });
   const journalFile = path.resolve('migrations/gpt-image-v1/apply-journal.json');
   if (fs.existsSync(journalFile)) {
     const journal = JSON.parse(fs.readFileSync(journalFile, 'utf8')) as {

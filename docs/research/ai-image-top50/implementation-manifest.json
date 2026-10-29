@@ -1,0 +1,3694 @@
+{
+  "schema_version": "implementation-plan/v1",
+  "status": "proposed-not-implemented",
+  "executable_import": false,
+  "campaign_id": "top50-2026-10",
+  "planned_at": "2026-10-29",
+  "timezone": "America/Los_Angeles",
+  "research_source": "docs/research/ai-image-top50/top50.json",
+  "research_sha256": "f7ffde0a24947fbde3ea5cfe604ec43d77af031803c4732e4cdd96717b051214",
+  "summary": {
+    "new_prompt_entries": 50,
+    "new_templates": 31,
+    "literal_prompt_entries": 19,
+    "minimum_accepted_output_images": 66,
+    "reference_image_counts": {
+      "required": 27,
+      "none": 17,
+      "optional": 6
+    },
+    "batch_counts": {
+      "B0": 5,
+      "B1": 12,
+      "B2": 19,
+      "B3": 14
+    },
+    "all_generation_verified": false
+  },
+  "publication": {
+    "source_locale": "en",
+    "reviewed_translation_locales": ["zh-Hans"],
+    "preview_ui_locales": ["ja", "ar"],
+    "new_collection_count": 5,
+    "source_engagement_observation_policy": "Preserve observed_at, evidence method, metric scope, and original metric object URL from research. Never infer live counters or aggregate cross-platform scores."
+  },
+  "preparation_gates": [
+    "Normalize template bodies so all field_plan names are bound and every default sample renders.",
+    "Material field #29 must use one common body valid for cloud and glass; freeze only after both pass.",
+    "Prepare and credit all reference assets; assign IDs under a lock; record bindings.",
+    "Verify #50 structure-guided workflow before promising all 50 published.",
+    "All generated outputs and translations need recorded review before publication."
+  ],
+  "items": [
+    {
+      "rank": 1,
+      "candidate_id": "CN04",
+      "title_zh": "同一角色16格中文表情贴纸",
+      "status": "planned",
+      "batch": "B0",
+      "proposed_slug": "character-chinese-sticker-sheet",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "CN04",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "captions",
+          "type": "string-list",
+          "label_zh": "16条中文配文",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder",
+          "separator": "; ",
+          "minItems": 16,
+          "maxItems": 16
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "一张角色参考图；16条短中文配文",
+        "slots": [
+          {
+            "id": "character",
+            "label_zh": "角色参考",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "恰好16格；角色身份一致；16条中文配文逐字正确，分隔清楚",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "CN04",
+        "primary_source_url": "https://www.bilibili.com/opus/1148687573157150722",
+        "evidence_file": "china-visual-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 2,
+      "candidate_id": "R02",
+      "title_zh": "儿童涂鸦变真实生物或玩具",
+      "status": "planned",
+      "batch": "B0",
+      "proposed_slug": "sketch-to-real-creature",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R02",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "儿童绘画照片或扫描件",
+        "slots": [
+          {
+            "id": "drawing",
+            "label_zh": "原始涂鸦",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "保留原始涂鸦的轮廓、比例和怪异细节；转换后的实体材质可信",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R02",
+        "primary_source_url": "https://www.reddit.com/r/ChatGPT/comments/1k9x3ru/my_5_year_old_sons_drawings_rerendered_by_chatgpt/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 3,
+      "candidate_id": "x_1962647019090256101",
+      "title_zh": "照片转桌面收藏手办与包装",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "custom-collectible-figure",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1962647019090256101",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物、宠物或自创角色照片",
+        "slots": [
+          {
+            "id": "subject",
+            "label_zh": "人物、宠物或原创角色",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "主体身份、手办比例、底座和包装对应；不多肢、不乱字",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1962647019090256101",
+        "primary_source_url": "https://x.com/GeminiApp/status/1962647019090256101",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 4,
+      "candidate_id": "x_2013268963266904438",
+      "title_zh": "同一产品九宫格品牌故事板",
+      "status": "planned",
+      "batch": "B0",
+      "proposed_slug": "product-brand-story-grid",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2013268963266904438",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "brandPalette",
+          "type": "string",
+          "label_zh": "品牌配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        },
+        {
+          "name": "scenes",
+          "type": "string-list",
+          "label_zh": "九个画面主题",
+          "group": "composition",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 9,
+          "maxItems": 9
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "清晰的产品正面照",
+        "slots": [
+          {
+            "id": "product",
+            "label_zh": "产品正面照",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "恰好九格；产品轮廓与标志一致；九个画面主题不同",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2013268963266904438",
+        "primary_source_url": "https://x.com/Dari_Designs/status/2013268963266904438",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 5,
+      "candidate_id": "R08",
+      "title_zh": "宠物拟人，保留姿态和神情",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "pet-as-human",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R08",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {
+          "age_range": "ageRange"
+        }
+      },
+      "field_plan": [
+        {
+          "name": "ageRange",
+          "type": "string",
+          "label_zh": "成年年龄范围",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "personality",
+          "type": "string",
+          "label_zh": "性格",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "宠物照片；年龄范围和性格",
+        "slots": [
+          {
+            "id": "pet",
+            "label_zh": "宠物照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "宠物神情、姿态和主要色彩可对应；人物年龄为成年人",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R08",
+        "primary_source_url": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 6,
+      "candidate_id": "R04",
+      "title_zh": "房间照片变等距剖面模型图",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "room-isometric-cutaway",
+      "category_id": "architecture",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R04",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "房间照片",
+        "slots": [
+          {
+            "id": "room",
+            "label_zh": "房间照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "房间主要结构与家具相对位置保持；剖面透视一致",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R04",
+        "primary_source_url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 7,
+      "candidate_id": "x_2009660363227152653",
+      "title_zh": "同主题触感3D图标九宫格",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "tactile-icon-grid",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2009660363227152653",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "theme",
+          "type": "string",
+          "label_zh": "图标主题",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "items",
+          "type": "string-list",
+          "label_zh": "九个图标对象",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 9,
+          "maxItems": 9
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "主题与九个物件或动作",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "恰好九个图标；对象与输入清单逐一对应；材质和光照统一",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2009660363227152653",
+        "primary_source_url": "https://x.com/NanoBanana/status/2009660363227152653",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 8,
+      "candidate_id": "R01",
+      "title_zh": "日常照片变治愈手绘动画",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "cozy-hand-drawn-photo",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R01",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "日常照片或合照",
+        "slots": [
+          {
+            "id": "scene",
+            "label_zh": "日常照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "原图主体、人数与构图保持；手绘质感清晰",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R01",
+        "primary_source_url": "https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 9,
+      "candidate_id": "x_2048360321379701233",
+      "title_zh": "餐饮品牌全套VI展示板",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "restaurant-brand-identity",
+      "category_id": "product",
+      "use_case_ids": ["packaging"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2048360321379701233",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "name",
+          "type": "string",
+          "label_zh": "品牌名称",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "品牌配色",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "mood",
+          "type": "string",
+          "label_zh": "品牌调性",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "品牌名称、配色、调性；已有Logo可选",
+        "slots": [
+          {
+            "id": "logo",
+            "label_zh": "已有Logo",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "品牌名逐字正确；配色统一；包装与菜单等载体齐全可辨",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2048360321379701233",
+        "primary_source_url": "https://x.com/MrLarus/status/2048360321379701233",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 10,
+      "candidate_id": "x_1916521742052503804",
+      "title_zh": "个性人物钥匙扣商品图",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "personalized-character-keychain",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1916521742052503804",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物或宠物参考照",
+        "slots": [
+          {
+            "id": "subject",
+            "label_zh": "人物或宠物",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "钥匙扣结构成立；主体可识别；金属环与挂件连接合理",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1916521742052503804",
+        "primary_source_url": "https://x.com/azed_ai/status/1916521742052503804",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 11,
+      "candidate_id": "x_2043047413770809708",
+      "title_zh": "国家立体地形旅行指南",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "terrain-travel-guide",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2043047413770809708",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "country",
+          "type": "string",
+          "label_zh": "目的地国家",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "destinations",
+          "type": "string-list",
+          "label_zh": "核对后的目的地",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        },
+        {
+          "name": "routeNotes",
+          "type": "string",
+          "label_zh": "核对后的路线说明",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "multiline": true
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "已核对的地图、目的地清单、路线",
+        "slots": [
+          {
+            "id": "map",
+            "label_zh": "核对后的地图",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "地图边界、城市相对位置和路线与提供资料一致；标注正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2043047413770809708",
+        "primary_source_url": "https://x.com/TechieBySA/status/2043047413770809708",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 12,
+      "candidate_id": "x_2017928823497453789",
+      "title_zh": "产品剖透视技术信息图",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "product-cutaway-infographic",
+      "category_id": "product",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2017928823497453789",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "device",
+          "type": "string",
+          "label_zh": "产品名称",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "structureNotes",
+          "type": "string",
+          "label_zh": "核对后的结构资料",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "multiline": true
+        },
+        {
+          "name": "labels",
+          "type": "string-list",
+          "label_zh": "准确的部件标注",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "产品名称、准确结构资料与标注；外观照可选",
+        "slots": [
+          {
+            "id": "product",
+            "label_zh": "产品外观",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "剖视结构与提供资料一致；标注对应正确；不编造技术结论",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2017928823497453789",
+        "primary_source_url": "https://x.com/TechieBySA/status/2017928823497453789",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 13,
+      "candidate_id": "CN05",
+      "title_zh": "时尚杂志封面肖像",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "editorial-cover-portrait",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "CN05",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "人物肖像",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "repeat",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true,
+            "purpose": "repeat the frozen prompt with a different prepared input, keeping all input requirements satisfied"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "人物身份与皮肤质感保持；标题留白明确；不擅自生成刊名",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "CN05",
+        "primary_source_url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+        "evidence_file": "china-visual-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 14,
+      "candidate_id": "x_2017865644365255078",
+      "title_zh": "悬浮食材分层料理信息图",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "floating-recipe-layers",
+      "category_id": "food",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2017865644365255078",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "dish",
+          "type": "string",
+          "label_zh": "菜品名称",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "ingredients",
+          "type": "string-list",
+          "label_zh": "食材与用量",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "菜品、已确认的食材与用量",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "食材分层清楚；标签与已确认用量对应；不添加未提供原料",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2017865644365255078",
+        "primary_source_url": "https://x.com/Taaruk_/status/2017865644365255078",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 15,
+      "candidate_id": "x_1993729800922341810",
+      "title_zh": "城市地标与天气的3D微缩卡片",
+      "status": "planned",
+      "batch": "B1",
+      "proposed_slug": "miniature-city-weather-card",
+      "category_id": "architecture",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1993729800922341810",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "city",
+          "type": "string",
+          "label_zh": "城市名称",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "dateLabel",
+          "type": "string",
+          "label_zh": "指定日期",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        },
+        {
+          "name": "forecast",
+          "type": "string",
+          "label_zh": "已核对的天气与温度",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        },
+        {
+          "name": "landmarks",
+          "type": "string-list",
+          "label_zh": "当地地标",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "城市、指定日期、已确认天气和温度",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          },
+          {
+            "name": "alternate",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false,
+            "purpose": "change meaningful field values"
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "城市、指定日期、温度逐字正确；地标对应；不把旧预报说成实时",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1993729800922341810",
+        "primary_source_url": "https://x.com/dotey/status/1993729800922341810",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 16,
+      "candidate_id": "CN09",
+      "title_zh": "老照片温和修复与自然上色",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "gentle-old-photo-restoration",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "CN09",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "待修复的旧照片",
+        "slots": [
+          {
+            "id": "oldPhoto",
+            "label_zh": "待修复旧照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "同一人物与构图；保守修复；不虚构原图看不清的五官",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "CN09",
+        "primary_source_url": "https://www.bilibili.com/video/BV17w41157Ev/",
+        "evidence_file": "china-visual-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 17,
+      "candidate_id": "x_2008976966255337666",
+      "title_zh": "人物剪影内的照片拼贴海报",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "portrait-silhouette-collage",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2008976966255337666",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "name",
+          "type": "string",
+          "label_zh": "人物姓名",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "label_zh": "强调色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "清晰侧脸照、多张回忆或动作照片、姓名",
+        "slots": [
+          {
+            "id": "profile",
+            "label_zh": "侧脸轮廓",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "id": "memories",
+            "label_zh": "回忆或动作照片",
+            "min": 2,
+            "max": 4
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "侧脸外轮廓清楚；拼贴素材来自绑定参考；姓名正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2008976966255337666",
+        "primary_source_url": "https://x.com/AmirMushich/status/2008976966255337666",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 18,
+      "candidate_id": "x_2020241008693506483",
+      "title_zh": "真人照片转一致姿态的3D角色",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "photo-to-stylized-3d",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2020241008693506483",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "人物与姿态",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "姿态、服装主色与机位保持；3D形式统一",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2020241008693506483",
+        "primary_source_url": "https://x.com/firatbilal/status/2020241008693506483",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 19,
+      "candidate_id": "x_2027094912357761319",
+      "title_zh": "一致角色的四格温暖小故事",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "consistent-four-panel-story",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2027094912357761319",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "characters",
+          "type": "string",
+          "label_zh": "原创角色设定",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "multiline": true
+        },
+        {
+          "name": "storyBeats",
+          "type": "string-list",
+          "label_zh": "四个故事节点",
+          "group": "composition",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 4,
+          "maxItems": 4
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "角色描述和四个故事节点；角色参考图可选",
+        "slots": [
+          {
+            "id": "character",
+            "label_zh": "角色设定图",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "恰好四格；人物身份和配饰一致；故事节点顺序正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2027094912357761319",
+        "primary_source_url": "https://x.com/GoogleAI/status/2027094912357761319",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 20,
+      "candidate_id": "x_1914258586588639270",
+      "title_zh": "复古工业专利蓝图",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "vintage-patent-blueprint",
+      "category_id": "illustration",
+      "use_case_ids": ["art-print"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1914258586588639270",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "object",
+          "type": "string",
+          "label_zh": "物件名称",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "labels",
+          "type": "string-list",
+          "label_zh": "短标注",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "物件名称、短标注；外观参考可选",
+        "slots": [
+          {
+            "id": "object",
+            "label_zh": "物件外观",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "视图可读；所给标签准确；说明是概念插画而非真实工程图",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1914258586588639270",
+        "primary_source_url": "https://x.com/azed_ai/status/1914258586588639270",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 21,
+      "candidate_id": "x_1971529965301829959",
+      "title_zh": "工业产品多视图概念草图",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "industrial-concept-sketches",
+      "category_id": "product",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1971529965301829959",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "product",
+          "type": "string",
+          "label_zh": "产品概念",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "label_zh": "强调色",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "features",
+          "type": "string-list",
+          "label_zh": "设计特征",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "产品概念、设计特征、配色；参考图可选",
+        "slots": [
+          {
+            "id": "product",
+            "label_zh": "产品外观",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "多视图同一产品；主要结构和设计特征一致",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1971529965301829959",
+        "primary_source_url": "https://x.com/azed_ai/status/1971529965301829959",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 22,
+      "candidate_id": "x_1911075302941622512",
+      "title_zh": "毛绒材质Emoji与图标",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "fluffy-emoji-object",
+      "category_id": "illustration",
+      "use_case_ids": ["avatar"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1911075302941622512",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "简单Emoji或图标图像",
+        "slots": [
+          {
+            "id": "icon",
+            "label_zh": "图标轮廓",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "轮廓与关键色块可辨认；毛绒纤维清楚",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1911075302941622512",
+        "primary_source_url": "https://x.com/gizakdag/status/1911075302941622512",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 23,
+      "candidate_id": "x_2008421241091154115",
+      "title_zh": "节日红色写真与祝福九宫格",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "festive-portrait-grid",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2008421241091154115",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "greetings",
+          "type": "string-list",
+          "label_zh": "九条短祝福",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 9,
+          "maxItems": 9
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片和九条简短祝福",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "人物肖像",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "恰好九格；人物一致；九条祝福逐字正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2008421241091154115",
+        "primary_source_url": "https://x.com/wanerfu/status/2008421241091154115",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 24,
+      "candidate_id": "x_2027798913516761522",
+      "title_zh": "字形窗口里的摄影海报",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "photo-inside-letterforms",
+      "category_id": "poster",
+      "use_case_ids": ["event-poster"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2027798913516761522",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "word",
+          "type": "string",
+          "label_zh": "准确的短词",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "label_zh": "背景主色",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "动作照片、短词与主色",
+        "slots": [
+          {
+            "id": "action",
+            "label_zh": "动作照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "短词逐字准确；字形内图像与输入对应；文字仍可读",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2027798913516761522",
+        "primary_source_url": "https://x.com/AmirMushich/status/2027798913516761522",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 25,
+      "candidate_id": "x_2043381172646920237",
+      "title_zh": "膨胀气球字与尖刺字标",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "inflated-sculptural-wordmark",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2043381172646920237",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "word",
+          "type": "string",
+          "label_zh": "准确的英文短词",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "label_zh": "材质颜色",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "短英文单词和颜色",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "短词逐字准确；气球字与尖刺材质可读，字母不缺失",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2043381172646920237",
+        "primary_source_url": "https://x.com/AmirMushich/status/2043381172646920237",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 26,
+      "candidate_id": "x_2026316195977146728",
+      "title_zh": "带标题与行动按钮的社媒广告",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "social-campaign-product-ad",
+      "category_id": "poster",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2026316195977146728",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "product",
+          "type": "string",
+          "label_zh": "产品名称",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "label_zh": "标题原文",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "subtext",
+          "type": "string",
+          "label_zh": "副文案原文",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "cta",
+          "type": "string",
+          "label_zh": "行动文案原文",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "brandPalette",
+          "type": "string",
+          "label_zh": "品牌配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "产品图、标题、副文案与行动文案",
+        "slots": [
+          {
+            "id": "product",
+            "label_zh": "产品照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "产品保持；标题、副文案、CTA逐字正确；层级清楚",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2026316195977146728",
+        "primary_source_url": "https://x.com/AmirMushich/status/2026316195977146728",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 27,
+      "candidate_id": "x_2028115571724660920",
+      "title_zh": "几何模块与摄影融合的品牌海报",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "geometric-photo-brand-poster",
+      "category_id": "poster",
+      "use_case_ids": ["event-poster"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2028115571724660920",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "brand",
+          "type": "string",
+          "label_zh": "品牌名称",
+          "group": "text",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "品牌配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物或产品照片、品牌配色",
+        "slots": [
+          {
+            "id": "subject",
+            "label_zh": "人物或产品照片",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "主体与品牌配色对应；几何网格与照片的遮挡关系正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2028115571724660920",
+        "primary_source_url": "https://x.com/AmirMushich/status/2028115571724660920",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 28,
+      "candidate_id": "x_2027157212863631567",
+      "title_zh": "复古掌机像素对战画面",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "pixel-creature-battle",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2027157212863631567",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "creatures",
+          "type": "string-list",
+          "label_zh": "两位原创角色",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "arena",
+          "type": "string",
+          "label_zh": "对战场景",
+          "group": "composition",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "像素配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "原创角色、场景、配色",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "原创角色与场景对应；像素边缘清晰；菜单文字如有则可读",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2027157212863631567",
+        "primary_source_url": "https://x.com/ProperPrompter/status/2027157212863631567",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 29,
+      "candidate_id": "x_2032908105994961090",
+      "title_zh": "品牌Logo的云朵与玻璃形态",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "cloud-and-glass-logo",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2032908105994961090",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "material",
+          "type": "enum",
+          "label_zh": "云朵或玻璃材质",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "options": ["cloud", "glass"]
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "清晰Logo或标志轮廓",
+        "slots": [
+          {
+            "id": "logo",
+            "label_zh": "Logo轮廓",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "material": "cloud",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          },
+          {
+            "name": "glass",
+            "material": "glass",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 2,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "同一Logo轮廓；cloud和glass两个已实测样例分别匹配正文与材质",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2032908105994961090",
+        "primary_source_url": "https://x.com/AmirMushich/status/2032908105994961090",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 30,
+      "candidate_id": "x_2018685474131562751",
+      "title_zh": "人群拖影中的静止人物",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "still-subject-motion-crowd",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2018685474131562751",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "成年人物肖像",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "主体清晰且身份保持；人群方向性拖影明显",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2018685474131562751",
+        "primary_source_url": "https://x.com/Taaruk_/status/2018685474131562751",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 31,
+      "candidate_id": "x_2011304086847832089",
+      "title_zh": "直闪抓拍风特写肖像",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "candid-flash-portrait",
+      "category_id": "portrait",
+      "use_case_ids": ["avatar"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2011304086847832089",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "成年人物照片",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "成年人物肖像",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "身份保持；直闪与暗背景符合；皮肤不过度磨皮",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2011304086847832089",
+        "primary_source_url": "https://x.com/oggii_0/status/2011304086847832089",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 32,
+      "candidate_id": "x_2029142137015812314",
+      "title_zh": "本人和巨型3D分身同框",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "giant-3d-self-companion",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2029142137015812314",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "成年人物肖像",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "大小人物身份一致；比例、接触阴影和透视合理",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2029142137015812314",
+        "primary_source_url": "https://x.com/Emmma___0/status/2029142137015812314",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 33,
+      "candidate_id": "CN01",
+      "title_zh": "双人AI婚纱写真",
+      "status": "planned",
+      "batch": "B0",
+      "proposed_slug": "two-person-wedding-editorial",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "CN01",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "两位成年人的照片",
+        "slots": [
+          {
+            "id": "personA",
+            "label_zh": "第一位成年人",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "id": "personB",
+            "label_zh": "第二位成年人",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "两位输入身份分别保持、不串脸；人物数与肢体正确",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "CN01",
+        "primary_source_url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+        "evidence_file": "china-visual-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 34,
+      "candidate_id": "CN06",
+      "title_zh": "明代风格汉服写真人像",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "ming-inspired-hanfu-portrait",
+      "category_id": "portrait",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "个性化照片与角色",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "CN06",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "人物照片和服饰参考",
+        "slots": [
+          {
+            "id": "person",
+            "label_zh": "成年人物肖像",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "id": "garment",
+            "label_zh": "服饰参考",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "人物身份与服饰参考保持；说明为明代风格创作，不宣称考据复原",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "CN06",
+        "primary_source_url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+        "evidence_file": "china-visual-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 35,
+      "candidate_id": "x_2045504669401653414",
+      "title_zh": "博物馆图鉴式汉服与器物拆解",
+      "status": "planned",
+      "batch": "B2",
+      "proposed_slug": "museum-object-breakdown",
+      "category_id": "illustration",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "信息设计与故事",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_2045504669401653414",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {
+          "garment_or_object": "garmentOrObject"
+        }
+      },
+      "field_plan": [
+        {
+          "name": "garmentOrObject",
+          "type": "string",
+          "label_zh": "服饰或器物",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "historyNotes",
+          "type": "string",
+          "label_zh": "已核对的史料",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "multiline": true
+        },
+        {
+          "name": "labels",
+          "type": "string-list",
+          "label_zh": "准确的中文标注",
+          "group": "text",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 1,
+          "maxItems": 12
+        }
+      ],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "服饰或器物参考、已核对史料与中文标注",
+        "slots": [
+          {
+            "id": "object",
+            "label_zh": "服饰或器物参考",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "图鉴标签逐字正确；细节有史料对应；不补造不确定史实",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_2045504669401653414",
+        "primary_source_url": "https://x.com/MrLarus/status/2045504669401653414",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 36,
+      "candidate_id": "x_1920115927661883397",
+      "title_zh": "主题美甲设计特写",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "themed-nail-art",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "品牌与商业设计",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1920115927661883397",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "theme",
+          "type": "string",
+          "label_zh": "美甲主题",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "配色",
+          "group": "style",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "motifs",
+          "type": "string-list",
+          "label_zh": "五种甲面图案",
+          "group": "subject",
+          "required": true,
+          "preparation": "author-and-bind-placeholder",
+          "separator": "; ",
+          "minItems": 5,
+          "maxItems": 5
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "主题、配色和五种甲面图案",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "五指结构正常；五个图案与清单对应；甲面材质可信",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1920115927661883397",
+        "primary_source_url": "https://x.com/azed_ai/status/1920115927661883397",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 37,
+      "candidate_id": "x_1968631874663891175",
+      "title_zh": "层叠剪纸故事插画",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "layered-paper-story",
+      "category_id": "illustration",
+      "use_case_ids": ["book-cover"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1968631874663891175",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "scene",
+          "type": "string",
+          "label_zh": "故事场景",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "palette",
+          "type": "string",
+          "label_zh": "纸张配色",
+          "group": "style",
+          "required": true,
+          "preparation": "author-and-bind-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "场景与主角",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "纸层边缘与投影明确；故事焦点清楚",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1968631874663891175",
+        "primary_source_url": "https://x.com/azed_ai/status/1968631874663891175",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 38,
+      "candidate_id": "x_1911359730888614168",
+      "title_zh": "有指纹的手捏黏土角色",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "handmade-clay-character",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "x_1911359730888614168",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "character",
+          "type": "string",
+          "label_zh": "角色与场景",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "optional",
+        "instructions_zh": "角色或场景；照片可选",
+        "slots": [
+          {
+            "id": "character",
+            "label_zh": "角色或人物参考",
+            "min": 0,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "指纹、手工痕迹、表情和黏土材质明显",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "x_1911359730888614168",
+        "primary_source_url": "https://x.com/azed_ai/status/1911359730888614168",
+        "evidence_file": "x-social-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 39,
+      "candidate_id": "cv-11798302",
+      "title_zh": "水果变小动物",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "fruit-animal-miniature",
+      "category_id": "food",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-11798302",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "animal",
+          "type": "string",
+          "label_zh": "小动物",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        },
+        {
+          "name": "fruit",
+          "type": "string",
+          "label_zh": "水果",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "水果种类与小动物",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "水果材质贯穿动物；轮廓可辨；没有直接拼贴真实动物眼睛",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-11798302",
+        "primary_source_url": "https://civitai.com/images/11798302",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 40,
+      "candidate_id": "cv-64517382",
+      "title_zh": "水晶球瀑布溢出桌面",
+      "status": "planned",
+      "batch": "B0",
+      "proposed_slug": "crystal-sphere-waterfall",
+      "category_id": "product",
+      "use_case_ids": ["art-print"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-64517382",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "landscape",
+          "type": "string",
+          "label_zh": "球内景观",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "球内微缩景观",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "球内景观、玻璃折射、穿出玻璃的瀑布与桌边水流连续可读",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-64517382",
+        "primary_source_url": "https://civitai.com/images/64517382",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 41,
+      "candidate_id": "cv-145769039",
+      "title_zh": "魔药瓶里挤着一只猫",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "cat-in-potion-flask",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-145769039",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "animal",
+          "type": "string",
+          "label_zh": "宠物种类",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "宠物种类",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "动物表情清楚；玻璃和卡通对比明确；动物表现舒适无伤害",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-145769039",
+        "primary_source_url": "https://civitai.com/images/145769039",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 42,
+      "candidate_id": "cv-145231848",
+      "title_zh": "彩绘悬崖灯塔航拍",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "painted-cliff-lighthouse",
+      "category_id": "architecture",
+      "use_case_ids": ["art-print"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-145231848",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "building",
+          "type": "string",
+          "label_zh": "海岸建筑",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "灯塔或其他小型建筑",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "灯塔与海岸真实；彩带沿悬崖地形排列；俯拍构图清晰",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-145231848",
+        "primary_source_url": "https://civitai.com/images/145231848",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 43,
+      "candidate_id": "cv-145341157",
+      "title_zh": "实拍鸡尾酒叠加手绘涂鸦",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "cocktail-ink-doodles",
+      "category_id": "product",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-145341157",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "drink",
+          "type": "string",
+          "label_zh": "饮品种类",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "饮品种类",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "实拍饮品与手绘层区分清楚；手部结构正常",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-145341157",
+        "primary_source_url": "https://civitai.com/images/145341157",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 44,
+      "candidate_id": "cv-9517243",
+      "title_zh": "猫咪鱼贩的市集摊位",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "cat-fish-market",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "cv-9517243",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [
+        {
+          "name": "animal",
+          "type": "string",
+          "label_zh": "摊主动物",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "宠物种类与摊位职业",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "猫咪摊主、鱼摊与交易关系清楚；爪部结构简洁合理",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "cv-9517243",
+        "primary_source_url": "https://civitai.com/images/9517243",
+        "evidence_file": "community-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 45,
+      "candidate_id": "R06",
+      "title_zh": "日本街头胶片纪实感",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "japanese-street-film",
+      "category_id": "portrait",
+      "use_case_ids": ["editorial"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R06",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "地点、主体与摄影时间",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "日常街景可信；胶片颗粒和光晕自然；没有伪造纪实来源",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R06",
+        "primary_source_url": "https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 46,
+      "candidate_id": "R14",
+      "title_zh": "太阳朋克树冠城市",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "solarpunk-canopy-city",
+      "category_id": "architecture",
+      "use_case_ids": ["wallpaper"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R14",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "城市结构、植物与时段",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "树冠城市的步行交通、建筑尺度与人物关系成立",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R14",
+        "primary_source_url": "https://www.reddit.com/r/midjourney/comments/1ive0td/city_of_earth_in_2500s/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 47,
+      "candidate_id": "R09",
+      "title_zh": "掌心微缩自然世界",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "miniature-world-in-palm",
+      "category_id": "landscape",
+      "use_case_ids": ["wallpaper"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "template-backed",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R09",
+        "start_from": "prompt_template_en",
+        "normalization_required": true,
+        "placeholder_renames": {
+          "forest_island_mountain_valley": "landscape"
+        }
+      },
+      "field_plan": [
+        {
+          "name": "landscape",
+          "type": "string",
+          "label_zh": "掌心景观",
+          "group": "subject",
+          "required": true,
+          "preparation": "retain-or-rename-placeholder"
+        }
+      ],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "自然景观类型",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "掌心结构正确；自然景观尺度成立；微缩主体清晰",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R09",
+        "primary_source_url": "https://www.reddit.com/r/midjourney/comments/16tnjm8",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 48,
+      "candidate_id": "R03",
+      "title_zh": "名画或照片变童趣蜡笔画",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "playful-crayon-reinterpretation",
+      "category_id": "illustration",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R03",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "照片或画作",
+        "slots": [
+          {
+            "id": "picture",
+            "label_zh": "照片或画作",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "reference-edit",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "原图主体位置与主色保留；蜡笔质感可辨；来源讨论的争议不隐藏",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R03",
+        "primary_source_url": "https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 49,
+      "candidate_id": "R13",
+      "title_zh": "空无一人的阈限空间",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "quiet-liminal-interior",
+      "category_id": "architecture",
+      "use_case_ids": ["wallpaper"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R13",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "none",
+        "instructions_zh": "空间类型、光源与配色",
+        "slots": []
+      },
+      "production": {
+        "workflow": "text-to-image",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": false
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": false,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "空间结构基本成立；无人物；不靠怪物或血腥制造氛围",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R13",
+        "primary_source_url": "https://www.reddit.com/r/midjourney/comments/1jd1jkf",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    },
+    {
+      "rank": 50,
+      "candidate_id": "R16",
+      "title_zh": "远看藏人像，近看是花卉风景",
+      "status": "planned",
+      "batch": "B3",
+      "proposed_slug": "hidden-portrait-flower-garden",
+      "category_id": "landscape",
+      "use_case_ids": ["social-post"],
+      "collection_family_zh": "艺术与趣味视觉",
+      "entry_mode": "literal",
+      "assigned_ids": {
+        "prompt": null,
+        "template": null,
+        "examples": [],
+        "media": []
+      },
+      "prompt_source": {
+        "research_candidate_id": "R16",
+        "start_from": "prompt_example_en",
+        "normalization_required": true,
+        "placeholder_renames": {}
+      },
+      "field_plan": [],
+      "input_plan": {
+        "reference_image": "required",
+        "instructions_zh": "高对比轮廓图与结构控制工作流",
+        "slots": [
+          {
+            "id": "silhouette",
+            "label_zh": "高对比轮廓",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      },
+      "production": {
+        "workflow": "structure-guided",
+        "samples": [
+          {
+            "name": "default",
+            "minimum_accepted_outputs": 1,
+            "uses_reference_images": true
+          }
+        ],
+        "minimum_accepted_outputs": 1,
+        "early_feasibility_gate": true,
+        "actual_model": null,
+        "generation_verified": false
+      },
+      "acceptance_checks_zh": [
+        "缩略图能辨认指定轮廓，大图仍是自然花园；记录实际结构引导方法与参数",
+        "实测prompt、参考图顺序与哈希、生成回执、输出图片逐一对应；中英文说明与alt经复核"
+      ],
+      "inspiration": {
+        "source_candidate_id": "R16",
+        "primary_source_url": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+        "evidence_file": "reddit-evidence.md",
+        "metrics_policy": "dated source snapshot only; not metrics for our generated result"
+      }
+    }
+  ]
+}
