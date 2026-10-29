@@ -1,0 +1,25 @@
+fields:
+  - name: animal
+    required: true
+    group: subject
+    labels:
+      en: Animal
+      zh-Hans: 小动物
+    help: {}
+    type: string
+    default: tabby kitten
+    minLength: null
+    maxLength: 250
+    multiline: false
+  - name: fruit
+    required: true
+    group: subject
+    labels:
+      en: Fruit
+      zh-Hans: 水果
+    help: {}
+    type: string
+    default: strawberry
+    minLength: null
+    maxLength: 250
+    multiline: false

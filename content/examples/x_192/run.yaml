@@ -1,0 +1,35 @@
+id: x_192
+promptId: p_147
+template:
+  id: t_031
+  version: v1
+  sample: default
+  values:
+    country: Japan
+    destinations:
+      - Tokyo
+      - Kyoto
+      - Osaka
+    routeNotes: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the
+      supplied map locations. No travel times, prices or current transport
+      claims.
+  contractHash: aca5859e3b4e19f26c7bbc58eb88c4634546ebd529b29bbac3355bbc3c80ccd6
+promptSha256: 37defec316891df29eb6542fcb0e5f080496c833a4c65b56b6d6f76002ed5cb8
+referenceAssetIds:
+  - a_262
+referenceBindings:
+  - slotId: map
+    referenceIndex: 0
+outputAssetIds:
+  - a_261
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: Main islands and city order recognizable; schematic route, not navigation.
+    Default labels Tokyo, Kyoto, Osaka checked. Alternate rejected because route
+    arrow direction contradicts Tokyo-to-Kyoto notes.
+  zh-Hans: 以核对后的轮廓为依据，制作带目的地和路线的微缩旅行地图。

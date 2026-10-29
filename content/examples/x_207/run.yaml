@@ -1,0 +1,36 @@
+id: x_207
+promptId: p_148
+template:
+  id: t_032
+  version: v1
+  sample: default
+  values:
+    greetings:
+      - 喜悦
+      - 平安
+      - 热爱
+      - 干杯
+      - 希望
+      - 微笑
+      - 心愿
+      - 温暖
+      - 快乐
+  contractHash: 82d80efaa5fc6022c9de187dc90efe2744613973db8e27c2252eb8d160dfd29f
+promptSha256: 8570917d5dc536dc368ed481eed8770f822a24306f6db1e1a4b4d083bb1e2da0
+referenceAssetIds:
+  - a_214
+referenceBindings:
+  - slotId: person
+    referenceIndex: 0
+outputAssetIds:
+  - a_279
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: "Nine cells and all supplied Chinese greetings verified:
+    喜悦、平安、热爱、干杯、希望、微笑、心愿、温暖、快乐. Same adult and red knit."
+  zh-Hans: 同一人物以九种节日表情搭配简短祝福。

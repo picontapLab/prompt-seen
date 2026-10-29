@@ -1,0 +1,53 @@
+fields:
+  - name: city
+    required: true
+    group: subject
+    labels:
+      en: City
+      zh-Hans: 城市名称
+    help: {}
+    type: string
+    default: Kyoto
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: dateLabel
+    required: true
+    group: text
+    labels:
+      en: Date label
+      zh-Hans: 指定日期
+    help: {}
+    type: string
+    default: DEMO — 12 APR
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: forecast
+    required: true
+    group: text
+    labels:
+      en: Forecast
+      zh-Hans: 已核对的天气与温度
+    help: {}
+    type: string
+    default: "FICTIONAL FORECAST: 18°C, partly cloudy"
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: landmarks
+    required: true
+    group: subject
+    labels:
+      en: Landmarks
+      zh-Hans: 当地地标
+    help: {}
+    type: string-list
+    default:
+      - a Kyoto pagoda
+      - a red shrine gate
+      - a wooden town house
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "

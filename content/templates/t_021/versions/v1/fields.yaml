@@ -1,0 +1,40 @@
+fields:
+  - name: creatures
+    required: true
+    group: subject
+    labels:
+      en: Creatures
+      zh-Hans: 两位原创角色
+    help: {}
+    type: string-list
+    default:
+      - a small turquoise moss dragon
+      - an amber crystal beetle
+    minItems: 2
+    maxItems: 2
+    itemMaxLength: null
+    separator: "; "
+  - name: arena
+    required: true
+    group: composition
+    labels:
+      en: Arena
+      zh-Hans: 对战场景
+    help: {}
+    type: string
+    default: a moonlit marsh
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: palette
+    required: true
+    group: style
+    labels:
+      en: Palette
+      zh-Hans: 像素配色
+    help: {}
+    type: string
+    default: turquoise, amber and deep violet
+    minLength: null
+    maxLength: 300
+    multiline: false

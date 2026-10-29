@@ -1,0 +1,81 @@
+id: p_105
+slug: cocktail-ink-doodles
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_008
+  version: v1
+  values:
+    drink: sparkling citrus lemonade
+categoryId: product
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_207
+relatedTemplateIds:
+  - t_008
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: none
+showcaseExampleId: x_150
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: cv-145341157
+    platform: Civitai
+    author: serendipper150
+    url: https://civitai.com/images/145341157
+    publishedAt: 2026-10-11T12:08:53.847Z
+    metricObjectUrl: https://civitai.com/images/145341157
+    metricObjectPublishedAt: 2026-10-11T12:08:53.847Z
+    metricScope:
+      en: Original image page
+      zh-Hans: 单张社区图片
+    observedAt: 2026-10-28T23:12:22-07:00
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: Civitai 官方公开 images API
+    evidenceUrl: https://civitai.com/api/v1/images?imageId=145341157&withMeta=true
+    sourcePromptStatus:
+      en: Source prompt or excerpt available; independently adapted
+      zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
+    metrics:
+      - key: cryCount
+        value: 56
+        labels:
+          en: Cry reactions
+          zh-Hans: 哭泣反应
+      - key: laughCount
+        value: 209
+        labels:
+          en: Laugh reactions
+          zh-Hans: 大笑反应
+      - key: likeCount
+        value: 1682
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: dislikeCount
+        value: 0
+        labels:
+          en: Dislikes
+          zh-Hans: 踩
+      - key: heartCount
+        value: 511
+        labels:
+          en: Hearts
+          zh-Hans: 爱心
+      - key: commentCount
+        value: 5
+        labels:
+          en: Comments
+          zh-Hans: 评论

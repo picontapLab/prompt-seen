@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r1-default",
+    "candidateId": "CN04",
+    "prompt": "Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid. Use the uploaded character as the sole character, keeping the face, hairstyle, outfit and colors consistent. Give each cell a different everyday emotion or gesture: joy, surprise, thanks, encouragement, sleepiness, celebration, curiosity, agreement, apology, determination, greeting, laughter, relief, confusion, excitement and affection. Simple expressive cartoon drawing, white cutout borders, generous separation. Add one short Chinese caption per cell from this supplied list: 开心; 哇; 谢谢; 加油; 困了; 庆祝; 好奇; 好的; 抱歉; 坚持; 你好; 哈哈; 松口气; 疑惑; 激动; 抱抱. Avoid background scenes and overlapping stickers.",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/adult-a.png"
+      }
+    ],
+    "targetAspectRatio": "1:1"
+  },
+  "fingerprint": "53406899c7e7d176062a027878d17ea4f57444623bf3db69b62be29cc4a57c82",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/adult-a.png",
+      "sha256": "321de25b873caa856d47c786855f0513ed3832cb3fedaa86eafcab6f0910f87d",
+      "slotId": "character"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:16:06.902Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/top50-2026-10/jobs/r1-default/output-299434c8c7ac90debf20ef04e4028e59ca01eaead4f18e57ab57858ff1d87b99.png",
+      "sha256": "299434c8c7ac90debf20ef04e4028e59ca01eaead4f18e57ab57858ff1d87b99"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T08:25:40.170Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Caption 松口气 was shortened to 松气; exact Chinese text acceptance failed.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T08:25:40.178Z"
+  }
+}

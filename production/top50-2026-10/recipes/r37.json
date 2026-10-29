@@ -1,0 +1,136 @@
+{
+  "candidateId": "x_1968631874663891175",
+  "slug": "layered-paper-story",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "book-cover"
+  ],
+  "body": "Build an illustration of {{scene}} entirely from layered cut paper. Use a limited palette of {{palette}}, with visible paper fibers and gently lifted edges. Separate foreground, subject and background into readable depth layers, casting delicate shadows between them. Keep the composition calm and graphic, with one clear storytelling focal point.",
+  "fields": [
+    {
+      "name": "scene",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Scene",
+        "zh-Hans": "故事场景"
+      },
+      "default": "a fox reading beneath a woodland tree",
+      "maxLength": 300
+    },
+    {
+      "name": "palette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Palette",
+        "zh-Hans": "纸张配色"
+      },
+      "default": "sage, peach and cream",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "scene": "a fox reading beneath a woodland tree",
+    "palette": "sage, peach and cream"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Describe one scene and choose a limited paper palette.",
+      "zh-Hans": "场景与主角"
+    },
+    "slots": []
+  },
+  "locales": {
+    "en": {
+      "title": "Layered paper story",
+      "description": "Paper fibers and lifted edges give a quiet story illustration physical depth.",
+      "body": "## How to use\n\nDescribe one scene and choose a limited paper palette.\n\nKeep foreground, subject and background separated by believable paper shadows.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "层叠剪纸故事插画",
+      "description": "纸张纤维与翘起边缘为安静的故事插画带来立体层次。",
+      "body": "## 使用方法\n\n准备：场景与主角。纸张纤维与翘起边缘为安静的故事插画带来立体层次。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Paper fibers and lifted edges give a quiet story illustration physical depth.",
+    "zh-Hans": "纸张纤维与翘起边缘为安静的故事插画带来立体层次。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1968631874663891175",
+      "platform": "X",
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1968631874663891175",
+      "publishedAt": "2025-09-18T11:03:08.000Z",
+      "metricObjectUrl": "https://x.com/azed_ai/status/1968631874663891175",
+      "metricObjectPublishedAt": "2025-09-18T11:03:08.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1968631874663891175&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "原帖文字或图片ALT可见"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 994,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 47,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "dea41d35030bce4ff370588143d9a2ae45e905d07a6baf3c7b7393ac02a05e2d"
+  }
+}

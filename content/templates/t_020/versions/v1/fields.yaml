@@ -1,0 +1,25 @@
+fields:
+  - name: word
+    required: true
+    group: text
+    labels:
+      en: Word
+      zh-Hans: 准确的英文短词
+    help: {}
+    type: string
+    default: PLAY
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: color
+    required: true
+    group: style
+    labels:
+      en: Color
+      zh-Hans: 材质颜色
+    help: {}
+    type: string
+    default: coral red
+    minLength: null
+    maxLength: 300
+    multiline: false

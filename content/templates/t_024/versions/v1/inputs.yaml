@@ -1,0 +1,11 @@
+referenceImage: optional
+instructions:
+  en: Describe a character and scene; an original character reference is optional.
+  zh-Hans: 角色或场景；照片可选
+slots:
+  - id: character
+    labels:
+      en: Character
+      zh-Hans: 角色或人物参考
+    min: 0
+    max: 1

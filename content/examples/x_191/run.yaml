@@ -1,0 +1,43 @@
+id: x_191
+promptId: p_146
+template:
+  id: t_030
+  version: v1
+  sample: default
+  values:
+    captions:
+      - 开心
+      - 哇
+      - 谢谢
+      - 加油
+      - 困了
+      - 庆祝
+      - 好奇
+      - 好的
+      - 抱歉
+      - 坚持
+      - 你好
+      - 哈哈
+      - 安心
+      - 疑惑
+      - 激动
+      - 抱抱
+  contractHash: bb03d14620f27cbd12cbb8dfa3feb5a5356524db32224d75dc63da9c8a04b330
+promptSha256: a92db7a5a56fee6dd680073a683eb963e641349bfe376d7f1d35a0f0c71a9728
+referenceAssetIds:
+  - a_214
+referenceBindings:
+  - slotId: character
+    referenceIndex: 0
+outputAssetIds:
+  - a_260
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: 16 distinct cells; all 16 supplied Chinese captions checked in reading
+    order, including 安心. Same hairstyle and navy outfit.
+  zh-Hans: 16种情绪化为同一角色的贴纸，每格配一句简短中文。

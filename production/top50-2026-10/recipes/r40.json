@@ -1,0 +1,127 @@
+{
+  "candidateId": "cv-64517382",
+  "slug": "crystal-sphere-waterfall",
+  "categoryId": "product",
+  "useCaseIds": [],
+  "body": "On an aged oak table stands a clear crystal sphere containing a miniature {{landscape}}. A waterfall from that tiny world flows through the glass boundary and cascades over the table edge into the surrounding room. Make the impossible transition seamless and visually readable. Photorealistic water, believable glass refraction, moody window light, warm wood against cool turquoise water, one central object, cinematic still-life composition.",
+  "fields": [
+    {
+      "name": "landscape",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "labels": {
+        "en": "Landscape inside the sphere",
+        "zh-Hans": "球内景观"
+      },
+      "default": "alpine valley with pine forests and a turquoise lake"
+    }
+  ],
+  "values": {
+    "landscape": "alpine valley with pine forests and a turquoise lake"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Describe a miniature landscape. Copy the prompt into your image generator; no reference image is needed.",
+      "zh-Hans": "填写球内微缩景观，将完整提示词复制到图像生成工具，无需参考图。"
+    }
+  },
+  "alt": {
+    "en": "A miniature alpine valley inside a crystal sphere, with a waterfall flowing across an oak table.",
+    "zh-Hans": "水晶球里是阿尔卑斯山谷，瀑布穿过球壁，沿橡木桌边流下。"
+  },
+  "locales": {
+    "en": {
+      "title": "Crystal sphere waterfall",
+      "description": "A miniature alpine world spills a waterfall out of a glass sphere and over an oak table.",
+      "body": "## How to use\n\nDescribe the landscape inside the sphere. Keep the water crossing the glass boundary and the table edge explicit: these two transitions create the illusion.\n\n## Recorded result\n\nThe default landscape was generated with the built-in image tool on 2026-10-29. The exact provider model ID was not supplied. Changing the landscape has not yet been tested."
+    },
+    "zh-Hans": {
+      "title": "水晶球瀑布溢出桌面",
+      "description": "水晶球内的微缩山谷化作瀑布，穿过玻璃并沿橡木桌边流下。",
+      "body": "## 使用方法\n\n填写水晶球里的景观，保留“水流穿过玻璃边界”和“沿桌边流下”两处描述，让不可能的空间关系清晰可见。\n\n## 实测结果\n\n默认山谷景观于 2026-10-29 使用内置图像工具生成。工具没有返回准确的模型 ID。修改景观后的效果尚未实测。"
+    }
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-64517382",
+      "platform": "Civitai",
+      "author": "CreativeEdge",
+      "url": "https://civitai.com/images/64517382",
+      "publishedAt": "2025-04-24T02:17:01.986Z",
+      "metricObjectUrl": "https://civitai.com/images/64517382",
+      "metricObjectPublishedAt": "2025-04-24T02:17:01.986Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=64517382&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 1362,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 1899,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 14162,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 5068,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 2,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "467e091f1d0b6f155800c1f8d53b8c3d5d4ebb94d62828b6b87785b06ced2830"
+  }
+}

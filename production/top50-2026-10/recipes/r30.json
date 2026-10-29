@@ -1,0 +1,118 @@
+{
+  "candidateId": "x_2018685474131562751",
+  "slug": "still-subject-motion-crowd",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a cinematic street portrait from the supplied adult photo. Keep the subject completely sharp and still at the center while surrounding pedestrians stretch into directional long-exposure trails. Use a busy city setting, restrained cool colors and a warm accent light on the face. Preserve realistic anatomy and clothing details, with an eye-level lens and 4:5 framing.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one adult portrait. Our reference is a fictional AI-generated person.",
+      "zh-Hans": "人物照片"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Person",
+          "zh-Hans": "成年人物肖像"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Still portrait, moving crowd",
+      "description": "A sharp central figure contrasts with long-exposure pedestrian trails.",
+      "body": "## How to use\n\nUpload one adult portrait. Our reference is a fictional AI-generated person.\n\nThe face should remain sharp while the surrounding crowd carries the motion.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "人群拖影中的静止人物",
+      "description": "清晰的中心人物与长曝光人群拖影形成反差。",
+      "body": "## 使用方法\n\n准备：人物照片。清晰的中心人物与长曝光人群拖影形成反差。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A sharp central figure contrasts with long-exposure pedestrian trails.",
+    "zh-Hans": "清晰的中心人物与长曝光人群拖影形成反差。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2018685474131562751",
+      "platform": "X",
+      "author": "Taaruk_",
+      "url": "https://x.com/Taaruk_/status/2018685474131562751",
+      "publishedAt": "2026-02-03T13:58:17.000Z",
+      "metricObjectUrl": "https://x.com/Taaruk_/status/2018685474131562751",
+      "metricObjectPublishedAt": "2026-02-03T13:58:17.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2018685474131562751&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1118,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 31,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "403f4eef736d40e00445f80e9d63297ce787d9f6504177d150099d7e20149e54"
+  }
+}

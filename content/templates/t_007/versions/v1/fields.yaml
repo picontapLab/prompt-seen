@@ -1,0 +1,13 @@
+fields:
+  - name: building
+    required: true
+    group: subject
+    labels:
+      en: Coastal building
+      zh-Hans: 海岸建筑
+    help: {}
+    type: string
+    default: white lighthouse
+    minLength: null
+    maxLength: 250
+    multiline: false

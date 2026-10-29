@@ -1,0 +1,169 @@
+{
+  "candidateId": "x_1971529965301829959",
+  "slug": "industrial-concept-sketches",
+  "categoryId": "product",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Create a concept-design board for an original {{product}}. Arrange a large perspective sketch, front and side elevations, and two material-detail studies on white paper. Use controlled graphite lines, restrained marker shading and a few {{color}} accents. Keep geometry consistent between views and annotate only these design features: {{features}}. Present it like an early professional design proposal.",
+  "fields": [
+    {
+      "name": "product",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Product",
+        "zh-Hans": "产品概念"
+      },
+      "default": "a reusable ceramic travel cup",
+      "maxLength": 300
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Color",
+        "zh-Hans": "强调色"
+      },
+      "default": "coral red",
+      "maxLength": 300
+    },
+    {
+      "name": "features",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Features",
+        "zh-Hans": "设计特征"
+      },
+      "default": [
+        "removable lid",
+        "ceramic body",
+        "silicone grip"
+      ]
+    }
+  ],
+  "values": {
+    "product": "a reusable ceramic travel cup",
+    "color": "coral red",
+    "features": [
+      "removable lid",
+      "ceramic body",
+      "silicone grip"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Supply product concept, accent color and design features; an exterior reference is optional.",
+      "zh-Hans": "产品概念、设计特征、配色；参考图可选"
+    },
+    "slots": [
+      {
+        "id": "product",
+        "labels": {
+          "en": "Product",
+          "zh-Hans": "产品外观"
+        },
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Industrial concept sketch board",
+      "description": "Perspective, elevations and detail studies describe one coherent product concept.",
+      "body": "## How to use\n\nSupply product concept, accent color and design features; an exterior reference is optional.\n\nCompare geometry between views; treat the result as an early visual proposal.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "工业产品多视图概念草图",
+      "description": "透视图、立面图和细节研究展示统一的产品概念。",
+      "body": "## 使用方法\n\n准备：产品概念、设计特征、配色；参考图可选。透视图、立面图和细节研究展示统一的产品概念。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Perspective, elevations and detail studies describe one coherent product concept.",
+    "zh-Hans": "透视图、立面图和细节研究展示统一的产品概念。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1971529965301829959",
+      "platform": "X",
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1971529965301829959",
+      "publishedAt": "2025-09-26T10:59:07.000Z",
+      "metricObjectUrl": "https://x.com/azed_ai/status/1971529965301829959",
+      "metricObjectPublishedAt": "2025-09-26T10:59:07.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1971529965301829959&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "原帖文字或图片ALT可见"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1051,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 26,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "44d69ff885447d28069a0958f64302c0e375ec136f2d51c7a92896541b9e71ca"
+  }
+}

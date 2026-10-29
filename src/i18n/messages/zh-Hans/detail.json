@@ -22,7 +22,8 @@
       "none": "无需参考图",
       "optional": "可选参考图",
       "required": "需要参考图"
-    }
+    },
+    "recordedUnknownModel": "已有实测结果 · 模型身份未核实"
   },
   "sheet": {
     "label": "提示词 · {language}",
@@ -67,7 +68,9 @@
     "references": "参考图",
     "outputs": "生成结果",
     "promptUsed": "这张样张使用的提示词",
-    "unknown": "未记录"
+    "unknown": "未记录",
+    "selectRun": "选择实测结果",
+    "cover": "封面"
   },
   "source": {
     "heading": "来源与许可",
@@ -108,5 +111,14 @@
     "examples": "用这个模板生成的作品",
     "testedImage": "这张图片来自当前参数的实测记录。",
     "unmatchedImage": "当前参数尚无实测图片。此处展示其他样例。"
+  },
+  "inspiration": {
+    "heading": "灵感来源与证据",
+    "adaptation": "本站提示词为独立改写，展示图片为本站记录的生成结果。",
+    "original": "原始内容",
+    "snapshot": "来源互动快照",
+    "observed": "观察时间：{date}",
+    "evidence": "证据",
+    "scope": "这些数字属于原始帖子或视频，是调研时的快照，并非实时计数或本站图片的评分。"
   }
 }

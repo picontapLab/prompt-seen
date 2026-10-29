@@ -65,7 +65,9 @@ for (const locale of BUILD.locales) {
         const value = sample[field.name];
         if (field.type === 'string' && typeof value === 'string' && value)
           expect(html, `value of ${field.name}`).toMatch(
-            new RegExp(`value="${value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`),
+            new RegExp(
+              `(?:value="${value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"|>${value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</textarea>)`,
+            ),
           );
         if (field.type === 'string-list' && Array.isArray(value))
           for (const item of value) expect(html, `item of ${field.name}`).toContain(item);

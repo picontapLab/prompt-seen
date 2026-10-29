@@ -1,0 +1,155 @@
+{
+  "candidateId": "x_2008976966255337666",
+  "slug": "portrait-silhouette-collage",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Make a portrait tribute poster from the uploaded photographs. Image 1 is the profile contour; subsequent images are the memory photographs. A large monochrome profile silhouette fills the page; within it, arrange a precise grid of small action and memory photographs. Keep the outer face contour readable. Use {{accentColor}} as the restrained accent color, off-white textured paper and generous margins. Add only the exact name {{name}} in small editorial type.",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Name",
+        "zh-Hans": "人物姓名"
+      },
+      "default": "LIN",
+      "maxLength": 300
+    },
+    {
+      "name": "accentColor",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Accent color",
+        "zh-Hans": "强调色"
+      },
+      "default": "terracotta red",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "name": "LIN",
+    "accentColor": "terracotta red"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one side-profile photo followed by two to four memory photos; supply a name and accent color.",
+      "zh-Hans": "清晰侧脸照、多张回忆或动作照片、姓名"
+    },
+    "slots": [
+      {
+        "id": "profile",
+        "labels": {
+          "en": "Profile",
+          "zh-Hans": "侧脸轮廓"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "memories",
+        "labels": {
+          "en": "Memories",
+          "zh-Hans": "回忆或动作照片"
+        },
+        "min": 2,
+        "max": 4
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Profile memory collage",
+      "description": "A readable profile encloses a grid of personal photo moments.",
+      "body": "## How to use\n\nUpload one side-profile photo followed by two to four memory photos; supply a name and accent color.\n\nKeep the outer contour legible and identify which input appears in each region.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "人物剪影内的照片拼贴海报",
+      "description": "清晰侧脸轮廓中排列多张回忆照片。",
+      "body": "## 使用方法\n\n准备：清晰侧脸照、多张回忆或动作照片、姓名。清晰侧脸轮廓中排列多张回忆照片。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A readable profile encloses a grid of personal photo moments.",
+    "zh-Hans": "清晰侧脸轮廓中排列多张回忆照片。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2008976966255337666",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2008976966255337666",
+      "publishedAt": "2026-01-07T19:00:08.000Z",
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2008976966255337666",
+      "metricObjectPublishedAt": "2026-01-07T19:00:08.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2008976966255337666&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 4032,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 79,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "d15808ce00ec099cb18ee4a7dbd3f2f4ef993de61d9520005be457b2dc58ce80"
+  }
+}

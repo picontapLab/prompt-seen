@@ -1,0 +1,81 @@
+id: p_147
+slug: terrain-travel-guide
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_031
+  version: v1
+  values:
+    country: Japan
+    destinations:
+      - Tokyo
+      - Kyoto
+      - Osaka
+    routeNotes: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map locations. No travel times, prices or current transport claims.
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - editorial
+coverAssetId: a_261
+relatedTemplateIds:
+  - t_031
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_192
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_2043047413770809708
+    platform: X
+    author: TechieBySA
+    url: https://x.com/TechieBySA/status/2043047413770809708
+    publishedAt: 2026-04-11T19:23:56.000Z
+    metricObjectUrl: https://x.com/TechieBySA/status/2043047413770809708
+    metricObjectPublishedAt: 2026-04-11T19:23:56.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:10:42Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2043047413770809708&lang=en&token=1
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 称prompt在回复中，未读取回复全文
+    metrics:
+      - key: likes
+        value: 3902
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 67
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

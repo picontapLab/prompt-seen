@@ -1,0 +1,37 @@
+fields:
+  - name: name
+    required: true
+    group: text
+    labels:
+      en: Name
+      zh-Hans: 品牌名称
+    help: {}
+    type: string
+    default: Moss & Mug
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: palette
+    required: true
+    group: style
+    labels:
+      en: Palette
+      zh-Hans: 品牌配色
+    help: {}
+    type: string
+    default: sage green, cream and terracotta
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: mood
+    required: true
+    group: style
+    labels:
+      en: Mood
+      zh-Hans: 品牌调性
+    help: {}
+    type: string
+    default: warm, calm and practical
+    minLength: null
+    maxLength: 300
+    multiline: false

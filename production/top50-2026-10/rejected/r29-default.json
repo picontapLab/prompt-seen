@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r29-default",
+    "candidateId": "x_2032908105994961090",
+    "prompt": "Transform the uploaded symbol into one sculptural object made of cloud. Preserve the outer silhouette and all important negative spaces. For cloud, build believable billowing vapor with translucent edges and soft internal shadows. For glass, use clear solid blown glass with refracted highlights and physically plausible thickness. Float the object against a quiet pale blue studio-like gradient with soft warm side light. Keep the composition minimal and the whole symbol visible. No lettering or extra logos.",
+    "references": [
+      {
+        "slotId": "logo",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/logo.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "c2f9b2d5b9bdf27ce900c9a91b90a6d41ffed6a252d6de53438719b0325ea188",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/logo.png",
+      "sha256": "6da6b23b171a8b3980a6c2d4134c2074ef8dd41a91ce9e9ca4d3512b6d15e847",
+      "slotId": "logo"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:31:18.695Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/top50-2026-10/jobs/r29-default/output-df92b11edb40e16508524ee9ac2238b769c3a0e81dceee39c7684ff1edf504c9.png",
+      "sha256": "df92b11edb40e16508524ee9ac2238b769c3a0e81dceee39c7684ff1edf504c9"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T08:53:57.244Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Rejected: output mixes glass shell and cloud filling instead of isolating selected material.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T08:53:57.247Z"
+  }
+}

@@ -1,0 +1,13 @@
+fields:
+  - name: character
+    required: true
+    group: subject
+    labels:
+      en: Character
+      zh-Hans: 角色与场景
+    help: {}
+    type: string
+    default: a cheerful small robot tending a houseplant
+    minLength: null
+    maxLength: 300
+    multiline: false

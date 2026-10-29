@@ -1,0 +1,83 @@
+id: p_133
+slug: custom-collectible-figure
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_241
+relatedTemplateIds: []
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one clear subject photo. The example uses a fictional AI-generated adult.
+    zh-Hans: 人物、宠物或自创角色照片
+  slots:
+    - id: subject
+      labels:
+        en: Subject
+        zh-Hans: 人物、宠物或原创角色
+      min: 1
+      max: 1
+showcaseExampleId: x_178
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_1962647019090256101
+    platform: X
+    author: GeminiApp
+    url: https://x.com/GeminiApp/status/1962647019090256101
+    publishedAt: 2025-09-01T22:41:28.000Z
+    metricObjectUrl: https://x.com/GeminiApp/status/1962647019090256101
+    metricObjectPublishedAt: 2025-09-01T22:41:28.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:20:06Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 串帖中的完整prompt未读取
+    metrics:
+      - key: likes
+        value: 6338
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 365
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

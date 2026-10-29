@@ -1,0 +1,130 @@
+{
+  "candidateId": "cv-145341157",
+  "slug": "cocktail-ink-doodles",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Make a playful editorial image of a hand holding a {{drink}} against a bright ivory background. Render the hand, condensation and glass as a sharp studio photograph. Overlay sparse black ink doodles: a tiny imaginary swimmer in the drink, an expressive face on the garnish, a few loose bubbles and energetic curved lines. The drawing should interact clearly with the photograph while remaining visibly hand drawn. Leave open space for a headline, but add no text.",
+  "fields": [
+    {
+      "name": "drink",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Drink",
+        "zh-Hans": "饮品种类"
+      },
+      "default": "sparkling citrus lemonade"
+    }
+  ],
+  "values": {
+    "drink": "sparkling citrus lemonade"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is needed. Copy the full prompt into your image generator.",
+      "zh-Hans": "无需参考图，将完整提示词复制到图像生成工具即可。"
+    }
+  },
+  "locales": {
+    "en": {
+      "title": "Drink photography with ink doodles",
+      "description": "A real-looking lemonade and hand meet playful black ink swimmers, bubbles and a smiling lemon.",
+      "body": "## How to use\n\nChange the drink but retain condensation and the contrast between photography and ink. Leave the background open if you intend to add a headline later.\n\n## Recorded result\n\nThe default was generated with the built-in image tool. The precise provider model ID was not returned. Other values are not yet tested."
+    },
+    "zh-Hans": {
+      "title": "实拍鸡尾酒叠加手绘涂鸦",
+      "description": "写实柠檬汽水和手部，与黑色线条泳者、气泡和微笑柠檬融在一起。",
+      "body": "## 使用方法\n\n可以替换饮品，保留凝结水珠和实拍与墨线的对比；如果之后需要添加标题，应保留背景留白。\n\n## 实测结果\n\n默认样例由内置图像工具生成，工具未返回精确的模型 ID。其他参数组合尚未实测。"
+    }
+  },
+  "alt": {
+    "en": "A real-looking lemonade and hand meet playful black ink swimmers, bubbles and a smiling lemon.",
+    "zh-Hans": "写实柠檬汽水和手部，与黑色线条泳者、气泡和微笑柠檬融在一起。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-145341157",
+      "platform": "Civitai",
+      "author": "serendipper150",
+      "url": "https://civitai.com/images/145341157",
+      "publishedAt": "2026-10-11T12:08:53.847Z",
+      "metricObjectUrl": "https://civitai.com/images/145341157",
+      "metricObjectPublishedAt": "2026-10-11T12:08:53.847Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=145341157&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 56,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 209,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 1682,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 511,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 5,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "c4daedc96a3e57cf9c135e34b12922867caae0a9f625a5fc8050a188fdc39eae"
+  }
+}

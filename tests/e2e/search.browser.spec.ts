@@ -28,7 +28,7 @@ async function openPage(page: Page, path: string) {
 }
 
 /** A word from the title of the newest prompt of a locale: a query that must find it. */
-const titleWord = (code: string) => localeIndex(code).prompts[0]!.title.split(/\s+/)[0]!;
+const titleWord = (code: string) => localeIndex(code).prompts[0]!.title.split(/[\s-]+/)[0]!;
 
 test.describe('desktop', () => {
   test.use({ viewport: { width: 1280, height: 800 } });
@@ -75,7 +75,9 @@ test.describe('desktop', () => {
     await openPage(page, template!.path);
     const text = page.locator('input[type="text"], textarea').first();
     await text.click();
-    await text.press('End');
+    await text.evaluate((el: HTMLInputElement | HTMLTextAreaElement) =>
+      el.setSelectionRange(el.value.length, el.value.length),
+    );
     await page.keyboard.type('/');
     await expect(panel(page)).toHaveCount(0);
     await expect(text).toHaveValue(/\/$/);

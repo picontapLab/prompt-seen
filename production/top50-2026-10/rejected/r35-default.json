@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r35-default",
+    "candidateId": "x_2045504669401653414",
+    "prompt": "Create a museum-catalog illustration of a modern fictional Ming-inspired jacket and pleated skirt using these checked reference notes: This is a contemporary fictional costume reference, not a museum artifact. Describe only visible construction: standing collar, front fastening, pale jade jacket, small embroidered floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker, collection number or undocumented historical claim.. Show a large realistic central view and neatly separated detail studies around it. Label materials, construction and decorative motifs in only these exact concise Chinese labels: 立领; 前襟; 花卉刺绣; 褶裥裙. Use fine leader lines, a restrained palette and an ivory paper background. Keep uncertain historical details out.",
+    "references": [
+      {
+        "slotId": "object",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/garment.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "b606bf49b187b31ef3d856f80ace06c20034aa67f1f57e9f798156af759be0b1",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/production/top50-2026-10/references/garment.png",
+      "sha256": "62078a0265644b91152937211ff8ef3d58667baf43138352cf6beb1f35b31e38",
+      "slotId": "object"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:31:18.711Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/top50-2026-10/jobs/r35-default/output-5a4b924b00be92902586be322cfdec7c9330c328d04ea3dda8184fe941a97457.png",
+      "sha256": "5a4b924b00be92902586be322cfdec7c9330c328d04ea3dda8184fe941a97457"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T08:54:00.513Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Rejected: final Chinese label is malformed; revise label to simpler accurate wording.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T08:54:00.517Z"
+  }
+}

@@ -8,9 +8,19 @@ import type { FieldError } from '../../../src/modules/template/types';
 import type { Findings } from './findings';
 import type { Content, LocaleFile, TaxonomyKey } from './read';
 import { TAXONOMY_FILES, sha256 } from './read';
-import { linkTargetLocales, localeStates, promptTextOf, publishProblems, sameValues, versionSpec } from './rules';
+import {
+  inputRequirementsOf,
+  runInputRequirements,
+  linkTargetLocales,
+  localeStates,
+  promptTextOf,
+  publishProblems,
+  sameValues,
+  versionSpec,
+} from './rules';
 import { validateFeedSettings } from './validate-feed';
 import { validateHomeSettings } from './validate-home';
+import { templateContractHash } from './template-contract';
 
 // Cross-file rules (design doc §14.2 steps 3–5, §14.3). Mode-independent: the same content
 // gives the same findings in every build. What a build shows is decided in build-index.ts.
@@ -165,6 +175,8 @@ export function validateContent(
       }
     }
 
+    if (d.inputRequirements.referenceImage !== inputRequirementsOf(content, rec).referenceImage)
+      findings.error(rec.file, 'referenceImage summary differs from the template version input contract');
     const text = promptTextOf(content, rec);
     if (text !== null) {
       const spans: [number, number, number][] = [];
@@ -209,7 +221,7 @@ export function validateContent(
       'content/prompts',
       `${untested.length} prompt(s) have no recorded run or no known model: ${untested.join(', ')}`,
       {
-        fix: 'record an ExampleRun with the model and date (§5.5); pages show "Not verified" until then',
+        fix: 'record actual outputs and known model information (§5.5); if the provider did not return a model ID, keep it unknown. Pages distinguish recorded output from model verification.',
       },
     );
   }
@@ -306,8 +318,7 @@ export function validateContent(
       assetExists(id, run.file, 'outputAssetIds', run.lineOf(['outputAssetIds']));
       usedAssets.add(id);
     });
-    const owner = d.promptId ? content.prompts.get(d.promptId) : null;
-    const slots = owner?.data.inputRequirements.slots ?? [];
+    const slots = runInputRequirements(content, d).slots;
     if (slots.length) {
       const indices = d.referenceBindings.map((b) => b.referenceIndex);
       if (
@@ -343,6 +354,14 @@ export function validateContent(
         continue;
       }
       if (brokenVersions.has(`${d.template.id}/${d.template.version}`)) continue;
+      if (
+        d.template.contractHash &&
+        d.template.contractHash !== templateContractHash(version.body, version.fields, version.inputs)
+      )
+        findings.error(
+          run.file,
+          `template ${d.template.id} ${d.template.version} contract changed after this run; restore it and create a new version`,
+        );
       const spec = versionSpec(version);
       const result = renderTemplate(spec, d.template.values);
       if (result.text !== run.prompt)

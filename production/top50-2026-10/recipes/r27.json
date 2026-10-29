@@ -1,0 +1,146 @@
+{
+  "candidateId": "x_2028115571724660920",
+  "slug": "geometric-photo-brand-poster",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "event-poster"
+  ],
+  "body": "Design a vertical campaign poster for {{brand}} using the supplied product or person image. Divide the page into an intentional grid of large rectangles and quarter-circle shapes in this brand palette: {{palette}}. Let parts of the photographed subject cross the geometric boundaries while other parts are masked. Use a clear focal point, small logo placement and minimal text.",
+  "fields": [
+    {
+      "name": "brand",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Brand",
+        "zh-Hans": "品牌名称"
+      },
+      "default": "PINE",
+      "maxLength": 300
+    },
+    {
+      "name": "palette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Palette",
+        "zh-Hans": "品牌配色"
+      },
+      "default": "sage green, cream and terracotta",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "brand": "PINE",
+    "palette": "sage green, cream and terracotta"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one product or person photo and supply a brand name and palette.",
+      "zh-Hans": "人物或产品照片、品牌配色"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject",
+          "zh-Hans": "人物或产品照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Geometric brand poster",
+      "description": "Product photography crosses a grid of large color blocks and curves.",
+      "body": "## How to use\n\nUpload one product or person photo and supply a brand name and palette.\n\nKeep the photographed subject recognizable across masked boundaries.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "几何模块与摄影融合的品牌海报",
+      "description": "产品照片穿过大色块与弧线构成的几何网格。",
+      "body": "## 使用方法\n\n准备：人物或产品照片、品牌配色。产品照片穿过大色块与弧线构成的几何网格。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Product photography crosses a grid of large color blocks and curves.",
+    "zh-Hans": "产品照片穿过大色块与弧线构成的几何网格。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2028115571724660920",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2028115571724660920",
+      "publishedAt": "2026-03-01T14:30:07.000Z",
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2028115571724660920",
+      "metricObjectPublishedAt": "2026-03-01T14:30:07.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2028115571724660920&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2570,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 18,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "fd554e0f253c55501972becfdfa396bec5160c99036315e4c3702780366df886"
+  }
+}

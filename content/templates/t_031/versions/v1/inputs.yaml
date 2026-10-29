@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload a verified map and supply checked destinations and route notes.
+  zh-Hans: 已核对的地图、目的地清单、路线
+slots:
+  - id: map
+    labels:
+      en: Map
+      zh-Hans: 核对后的地图
+    min: 1
+    max: 1

@@ -1,0 +1,35 @@
+fields:
+  - name: brandPalette
+    required: true
+    group: style
+    labels:
+      en: Brand palette
+      zh-Hans: 品牌配色
+    help: {}
+    type: string
+    default: sage green, ivory and brushed silver
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: scenes
+    required: true
+    group: composition
+    labels:
+      en: Scenes
+      zh-Hans: 九个画面主题
+    help: {}
+    type: string-list
+    default:
+      - hero shot
+      - cap and label close-up
+      - hand holding the bottle
+      - brushed metal detail
+      - three-bottle repeated arrangement
+      - floating bottle
+      - paint texture macro
+      - bottle beside leaves
+      - bottle on a picnic table
+    minItems: 9
+    maxItems: 9
+    itemMaxLength: null
+    separator: "; "

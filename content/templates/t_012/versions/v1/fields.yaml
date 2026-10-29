@@ -1,0 +1,31 @@
+fields:
+  - name: dish
+    required: true
+    group: subject
+    labels:
+      en: Dish
+      zh-Hans: 菜品名称
+    help: {}
+    type: string
+    default: a bowl of miso ramen
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: ingredients
+    required: true
+    group: text
+    labels:
+      en: Ingredients
+      zh-Hans: 食材与用量
+    help: {}
+    type: string-list
+    default:
+      - noodles 120 g
+      - miso broth 350 ml
+      - one halved boiled egg
+      - corn 30 g
+      - scallions 10 g
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "

@@ -1,0 +1,94 @@
+{
+  "candidateId": "R04",
+  "slug": "room-isometric-cutaway",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create an isometric cutaway illustration of the room in the reference photo. Reconstruct the visible furniture, colors and object positions faithfully, retaining the room's distinctive details. Remove the ceiling and the two front walls so the interior is easy to read. Use a consistent orthographic three-quarter view, realistic miniature materials, soft ambient shadows and a neutral background. Do not invent extra rooms or furniture. Output a single rendered image, not a floor-plan document.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one room photo with the important furniture visible. The example room is synthetic.",
+      "zh-Hans": "房间照片"
+    },
+    "slots": [
+      {
+        "id": "room",
+        "labels": {
+          "en": "Room",
+          "zh-Hans": "房间照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Room to isometric miniature",
+      "description": "A living room becomes an open miniature with its furniture arrangement preserved.",
+      "body": "## How to use\n\nUpload one room photo with the important furniture visible. The example room is synthetic.\n\nCompare the window, sofa, table, rug and shelving positions.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "房间照片变等距剖面模型图",
+      "description": "保留家具布局，把客厅转为敞开的等距微缩模型。",
+      "body": "## 使用方法\n\n准备：房间照片。保留家具布局，把客厅转为敞开的等距微缩模型。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A living room becomes an open miniature with its furniture arrangement preserved.",
+    "zh-Hans": "保留家具布局，把客厅转为敞开的等距微缩模型。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "R04",
+      "platform": "Reddit",
+      "author": "GMScreech",
+      "url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "publishedAt": "2025-03-26",
+      "metricObjectUrl": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "metricObjectPublishedAt": "2025-03-26",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整篇帖子或图集"
+      },
+      "observedAt": "2026-10-28",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Indexed primary-source snapshot",
+        "zh-Hans": "一手帖搜索索引快照"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "公开：作者在评论说明参考场景生成等距3D样式图。"
+      },
+      "metrics": [
+        {
+          "key": "post_score",
+          "value": 2746,
+          "labels": {
+            "en": "Post score",
+            "zh-Hans": "帖子分数"
+          }
+        },
+        {
+          "key": "comments",
+          "value": null,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "9b6d9fd6d39cff0e789e8a3eb18e67f0f349f36afb8e19b5cfa9780495f52f24"
+  }
+}

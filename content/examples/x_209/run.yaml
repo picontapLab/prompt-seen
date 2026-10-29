@@ -1,0 +1,37 @@
+id: x_209
+promptId: p_150
+template:
+  id: t_034
+  version: v1
+  sample: default
+  values:
+    garmentOrObject: a modern fictional Ming-inspired jacket and pleated skirt
+    historyNotes: "This is a contemporary fictional costume reference, not a museum
+      artifact. Describe only visible construction: standing collar, front
+      fastening, pale jade jacket, small embroidered floral motifs and a
+      dark-red pleated skirt. Do not add a dynasty date, maker, collection
+      number or undocumented historical claim."
+    labels:
+      - 立领
+      - 前襟
+      - 花卉刺绣
+      - 裙褶
+  contractHash: 2713b30054f28a6a8a1df2491e0f4db6496fe1f9d5613607853945ae943a21f3
+promptSha256: 887a5444028678938a82f200c33cbcb8ca7fbccb19eced3a80bc542e23491c40
+referenceAssetIds:
+  - a_258
+referenceBindings:
+  - slotId: object
+    referenceIndex: 0
+outputAssetIds:
+  - a_281
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: "Four supplied labels checked: 立领、前襟、花卉刺绣、裙褶. Jade jacket and pleated skirt
+    match fictional garment reference; no invented historical dates."
+  zh-Hans: 主体与局部研究构成克制的中文图鉴式展示。

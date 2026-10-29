@@ -1,0 +1,214 @@
+{
+  "candidateId": "x_2032908105994961090",
+  "slug": "cloud-and-glass-logo",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Transform the uploaded symbol into one floating sculptural object made entirely of {{material}}. Preserve the outer silhouette and all important negative spaces. Use the natural optical and surface properties of the selected material throughout the entire object, with no container, outer casing or second material. Float it against a quiet pale blue studio-like gradient with soft warm side light. Keep the composition minimal and the whole symbol visible. No lettering or extra logos.",
+  "fields": [
+    {
+      "name": "material",
+      "type": "enum",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Material",
+        "zh-Hans": "云朵或玻璃材质"
+      },
+      "default": "cloud",
+      "options": [
+        {
+          "value": "cloud",
+          "labels": {
+            "en": "Cloud",
+            "zh-Hans": "云朵"
+          }
+        },
+        {
+          "value": "glass",
+          "labels": {
+            "en": "Glass",
+            "zh-Hans": "玻璃"
+          }
+        }
+      ]
+    }
+  ],
+  "values": {
+    "material": "cloud"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one clear logo silhouette and choose cloud or glass.",
+      "zh-Hans": "清晰Logo或标志轮廓"
+    },
+    "slots": [
+      {
+        "id": "logo",
+        "labels": {
+          "en": "Logo",
+          "zh-Hans": "Logo轮廓"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Logo in cloud or glass",
+      "description": "One original emblem explores two distinct materials while preserving its silhouette.",
+      "body": "## How to use\n\nUpload one clear logo silhouette and choose cloud or glass.\n\nCompare material behavior and negative spaces; both material options have recorded examples.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "品牌Logo的云朵与玻璃形态",
+      "description": "同一原创标志探索云朵和玻璃两种材质，并保持轮廓。",
+      "body": "## 使用方法\n\n准备：清晰Logo或标志轮廓。同一原创标志探索云朵和玻璃两种材质，并保持轮廓。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "One original emblem explores two distinct materials while preserving its silhouette.",
+    "zh-Hans": "同一原创标志探索云朵和玻璃两种材质，并保持轮廓。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2032908105994961090",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2032908105994961090",
+      "publishedAt": "2026-03-14T19:53:56.000Z",
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2032908105994961090",
+      "metricObjectPublishedAt": "2026-03-14T19:53:56.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2032908105994961090&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 3632,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 18,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    },
+    {
+      "candidateId": "x_2043027627640799569",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2043027627640799569",
+      "publishedAt": "2026-04-11T18:05:18.000Z",
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2043027627640799569",
+      "metricObjectPublishedAt": "2026-04-11T18:05:18.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2043027627640799569&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Glass variant; independently adapted",
+        "zh-Hans": "玻璃变体；独立改写，指标单列"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 3177,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 35,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "fdd97ef5352849f17ce0935bc3b57b1a3c2b9e51194cbe6260ca6c3937ba578d"
+  }
+}

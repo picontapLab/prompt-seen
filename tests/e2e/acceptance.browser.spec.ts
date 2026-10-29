@@ -82,6 +82,12 @@ test.describe('German long labels (§16.5 德语长标签)', () => {
       for (const { name, path } of mainPages('en', en!.pathPrefix)) {
         await page.goto(`${BASE}${path}`);
         await takenOver(page);
+        // Inspect long labels with the preview open; the collapsed sheet intentionally hides its later actions.
+        const handle = page.locator('[data-static-from="lg"] > button');
+        if (await handle.isVisible()) {
+          await handle.click();
+          await expect(handle).toHaveAttribute('aria-expanded', 'true');
+        }
         expect(await applyGermanLabels(page), `${name}: labels replaced`).toBeGreaterThan(5);
         expect(await layoutProblems(page), `${name} ${path} in German`).toEqual([]);
       }

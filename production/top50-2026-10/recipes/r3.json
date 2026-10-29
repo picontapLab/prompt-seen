@@ -1,0 +1,118 @@
+{
+  "candidateId": "x_1962647019090256101",
+  "slug": "custom-collectible-figure",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Convert the subject in the uploaded photo into a realistic painted collectible figure displayed on a desk. Preserve distinctive facial features, outfit and pose while making the materials clearly miniature resin and plastic. Place it on a clear circular stand, with a matching illustrated retail box nearby and a monitor showing the same figure as a modeling wireframe. Use natural desktop lighting.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one clear subject photo. The example uses a fictional AI-generated adult.",
+      "zh-Hans": "人物、宠物或自创角色照片"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject",
+          "zh-Hans": "人物、宠物或原创角色"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Desktop collectible figure",
+      "description": "A portrait becomes a miniature figure with a matching box and modeling-screen display.",
+      "body": "## How to use\n\nUpload one clear subject photo. The example uses a fictional AI-generated adult.\n\nCheck the face, clothing, stand and repeated figure on the box.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "照片转桌面收藏手办与包装",
+      "description": "肖像化为桌面收藏手办，并配有包装盒与建模屏幕。",
+      "body": "## 使用方法\n\n准备：人物、宠物或自创角色照片。肖像化为桌面收藏手办，并配有包装盒与建模屏幕。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A portrait becomes a miniature figure with a matching box and modeling-screen display.",
+    "zh-Hans": "肖像化为桌面收藏手办，并配有包装盒与建模屏幕。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1962647019090256101",
+      "platform": "X",
+      "author": "GeminiApp",
+      "url": "https://x.com/GeminiApp/status/1962647019090256101",
+      "publishedAt": "2025-09-01T22:41:28.000Z",
+      "metricObjectUrl": "https://x.com/GeminiApp/status/1962647019090256101",
+      "metricObjectPublishedAt": "2025-09-01T22:41:28.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:20:06Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "串帖中的完整prompt未读取"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 6338,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 365,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "cf24d5d3066a363b214c55f7b8006f6c8e4c3f0ad7f1d554c67b1a4c9448cf35"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "candidateId": "x_1914258586588639270",
+  "slug": "vintage-patent-blueprint",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "art-print"
+  ],
+  "body": "Depict {{object}} as a vintage engineering plate on deep cobalt paper. Draw precise ivory linework for a central three-quarter view, an exploded assembly and two small cross-sections. Use sparse dimension arrows and these exact short labels: {{labels}}, with a discreet serial-number box. Keep the drawing elegant and mechanically plausible, with slight paper wear around the margins.",
+  "fields": [
+    {
+      "name": "object",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Object",
+        "zh-Hans": "物件名称"
+      },
+      "default": "a mechanical pocket watch",
+      "maxLength": 300
+    },
+    {
+      "name": "labels",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Labels",
+        "zh-Hans": "短标注"
+      },
+      "default": [
+        "CASE",
+        "DIAL",
+        "GEARS",
+        "CROWN"
+      ]
+    }
+  ],
+  "values": {
+    "object": "a mechanical pocket watch",
+    "labels": [
+      "CASE",
+      "DIAL",
+      "GEARS",
+      "CROWN"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Supply an object and short labels; an exterior reference is optional.",
+      "zh-Hans": "物件名称、短标注；外观参考可选"
+    },
+    "slots": [
+      {
+        "id": "object",
+        "labels": {
+          "en": "Object",
+          "zh-Hans": "物件外观"
+        },
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Vintage engineering plate",
+      "description": "Ivory linework turns an object into an elegant cobalt technical-style plate.",
+      "body": "## How to use\n\nSupply an object and short labels; an exterior reference is optional.\n\nThis is a decorative concept plate, not a working patent or engineering specification.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "复古工业专利蓝图",
+      "description": "象牙色线条将物件化为钴蓝底的复古技术风格图版。",
+      "body": "## 使用方法\n\n准备：物件名称、短标注；外观参考可选。象牙色线条将物件化为钴蓝底的复古技术风格图版。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n这是装饰性技术风格概念图，不是可用于制造的专利图纸。"
+    }
+  },
+  "alt": {
+    "en": "Ivory linework turns an object into an elegant cobalt technical-style plate.",
+    "zh-Hans": "象牙色线条将物件化为钴蓝底的复古技术风格图版。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1914258586588639270",
+      "platform": "X",
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1914258586588639270",
+      "publishedAt": "2025-04-21T10:03:06.000Z",
+      "metricObjectUrl": "https://x.com/azed_ai/status/1914258586588639270",
+      "metricObjectPublishedAt": "2025-04-21T10:03:06.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1914258586588639270&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "原帖文字或图片ALT可见"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2820,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 63,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "16f59b6d4e626e8448f1f7009bdef058505f0d1c8e377ba18ea0a02c10fa3e5f"
+  }
+}

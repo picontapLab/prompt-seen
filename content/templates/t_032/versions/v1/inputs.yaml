@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload one portrait and exactly nine short greetings. Our person is synthetic.
+  zh-Hans: 人物照片和九条简短祝福
+slots:
+  - id: person
+    labels:
+      en: Person
+      zh-Hans: 人物肖像
+    min: 1
+    max: 1

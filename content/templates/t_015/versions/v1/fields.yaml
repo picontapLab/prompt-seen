@@ -1,0 +1,47 @@
+fields:
+  - name: theme
+    required: true
+    group: subject
+    labels:
+      en: Theme
+      zh-Hans: 图标主题
+    help: {}
+    type: string
+    default: a neighborhood coffee shop
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: items
+    required: true
+    group: subject
+    labels:
+      en: Items
+      zh-Hans: 九个图标对象
+    help: {}
+    type: string-list
+    default:
+      - coffee cup
+      - coffee bean
+      - kettle
+      - grinder
+      - croissant
+      - milk carton
+      - takeaway bag
+      - spoon
+      - coffee plant
+    minItems: 9
+    maxItems: 9
+    itemMaxLength: null
+    separator: "; "
+  - name: palette
+    required: true
+    group: style
+    labels:
+      en: Palette
+      zh-Hans: 配色
+    help: {}
+    type: string
+    default: sage green, cream and terracotta
+    minLength: null
+    maxLength: 300
+    multiline: false

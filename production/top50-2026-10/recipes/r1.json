@@ -1,0 +1,185 @@
+{
+  "candidateId": "CN04",
+  "slug": "character-chinese-sticker-sheet",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid. Use the uploaded character as the sole character, keeping the face, hairstyle, outfit and colors consistent. Give each cell a different everyday emotion or gesture: joy, surprise, thanks, encouragement, sleepiness, celebration, curiosity, agreement, apology, determination, greeting, laughter, relief, confusion, excitement and affection. Simple expressive cartoon drawing, white cutout borders, generous separation. Add one short Chinese caption per cell from this supplied list: {{captions}}. Avoid background scenes and overlapping stickers. Render every caption verbatim, in reading order, without shortening or omitting any Chinese character.",
+  "fields": [
+    {
+      "name": "captions",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 16,
+      "maxItems": 16,
+      "labels": {
+        "en": "Captions",
+        "zh-Hans": "16条中文配文"
+      },
+      "default": [
+        "开心",
+        "哇",
+        "谢谢",
+        "加油",
+        "困了",
+        "庆祝",
+        "好奇",
+        "好的",
+        "抱歉",
+        "坚持",
+        "你好",
+        "哈哈",
+        "安心",
+        "疑惑",
+        "激动",
+        "抱抱"
+      ]
+    }
+  ],
+  "values": {
+    "captions": [
+      "开心",
+      "哇",
+      "谢谢",
+      "加油",
+      "困了",
+      "庆祝",
+      "好奇",
+      "好的",
+      "抱歉",
+      "坚持",
+      "你好",
+      "哈哈",
+      "安心",
+      "疑惑",
+      "激动",
+      "抱抱"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one character reference. Supply exactly sixteen short captions in reading order.",
+      "zh-Hans": "一张角色参考图；16条短中文配文"
+    },
+    "slots": [
+      {
+        "id": "character",
+        "labels": {
+          "en": "Character",
+          "zh-Hans": "角色参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Chinese character sticker sheet",
+      "description": "Sixteen emotions become a consistent character sticker sheet with short Chinese captions.",
+      "body": "## How to use\n\nUpload one character reference. Supply exactly sixteen short captions in reading order.\n\nKeep captions short and inspect every character at full size.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "同一角色16格中文表情贴纸",
+      "description": "16种情绪化为同一角色的贴纸，每格配一句简短中文。",
+      "body": "## 使用方法\n\n准备：一张角色参考图；16条短中文配文。16种情绪化为同一角色的贴纸，每格配一句简短中文。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Sixteen emotions become a consistent character sticker sheet with short Chinese captions.",
+    "zh-Hans": "16种情绪化为同一角色的贴纸，每格配一句简短中文。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "CN04",
+      "platform": "Bilibili",
+      "author": "川扑通",
+      "url": "https://www.bilibili.com/opus/1148687573157150722",
+      "publishedAt": "2025-12-22",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV1uaqqB2Ez7/",
+      "metricObjectPublishedAt": "2025-12-20",
+      "metricScope": {
+        "en": "Whole tutorial or showcase video",
+        "zh-Hans": "整条教程或作品展示视频"
+      },
+      "observedAt": "2026-10-29T06:17:12Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "B站 官方公开只读 API"
+      },
+      "evidenceUrl": "https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "作者专栏公开完整prompt，原作者还标明改编来源"
+      },
+      "metrics": [
+        {
+          "key": "views",
+          "value": 344604,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "likes",
+          "value": 26934,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "saves",
+          "value": 5872,
+          "labels": {
+            "en": "Saves",
+            "zh-Hans": "收藏"
+          }
+        },
+        {
+          "key": "comments",
+          "value": 938,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        },
+        {
+          "key": "shares",
+          "value": 1029,
+          "labels": {
+            "en": "Shares",
+            "zh-Hans": "分享"
+          }
+        },
+        {
+          "key": "coins",
+          "value": 859,
+          "labels": {
+            "en": "Coins",
+            "zh-Hans": "投币"
+          }
+        },
+        {
+          "key": "danmaku",
+          "value": 73,
+          "labels": {
+            "en": "Danmaku",
+            "zh-Hans": "弹幕"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "eafd6df96c14ea25d18a163b50e07e0446dd8a1f883706c2165eafa176daa4a8"
+  }
+}

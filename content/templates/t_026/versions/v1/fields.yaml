@@ -1,0 +1,25 @@
+fields:
+  - name: name
+    required: true
+    group: text
+    labels:
+      en: Name
+      zh-Hans: 人物姓名
+    help: {}
+    type: string
+    default: LIN
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: accentColor
+    required: true
+    group: style
+    labels:
+      en: Accent color
+      zh-Hans: 强调色
+    help: {}
+    type: string
+    default: terracotta red
+    minLength: null
+    maxLength: 300
+    multiline: false

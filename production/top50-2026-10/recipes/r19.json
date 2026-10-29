@@ -1,0 +1,159 @@
+{
+  "candidateId": "x_2027094912357761319",
+  "slug": "consistent-four-panel-story",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Draw a four-panel comic featuring {{characters}}. The four panels in reading order show: {{storyBeats}}. Keep each character’s size, colors and accessories consistent. Use clear visual storytelling, soft lighting and no speech bubbles unless text is provided.",
+  "fields": [
+    {
+      "name": "characters",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "multiline": true,
+      "labels": {
+        "en": "Characters",
+        "zh-Hans": "原创角色设定"
+      },
+      "default": "three original fluffy creatures: a round mint-green builder with a yellow scarf, a small peach helper with round glasses, and a tall lavender helper with a blue cap",
+      "maxLength": 2000
+    },
+    {
+      "name": "storyBeats",
+      "type": "string-list",
+      "group": "composition",
+      "required": true,
+      "separator": "; ",
+      "minItems": 4,
+      "maxItems": 4,
+      "labels": {
+        "en": "Story beats",
+        "zh-Hans": "四个故事节点"
+      },
+      "default": [
+        "the three plan a tiny treehouse",
+        "they accidentally install a crooked door",
+        "they cooperate to straighten the door",
+        "they celebrate inside the cozy finished treehouse"
+      ]
+    }
+  ],
+  "values": {
+    "characters": "three original fluffy creatures: a round mint-green builder with a yellow scarf, a small peach helper with round glasses, and a tall lavender helper with a blue cap",
+    "storyBeats": [
+      "the three plan a tiny treehouse",
+      "they accidentally install a crooked door",
+      "they cooperate to straighten the door",
+      "they celebrate inside the cozy finished treehouse"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Describe the cast and supply exactly four ordered story beats; a character sheet is optional.",
+      "zh-Hans": "角色描述和四个故事节点；角色参考图可选"
+    },
+    "slots": [
+      {
+        "id": "character",
+        "labels": {
+          "en": "Character",
+          "zh-Hans": "角色设定图"
+        },
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Four-panel character story",
+      "description": "Consistent original characters act out four clear story beats.",
+      "body": "## How to use\n\nDescribe the cast and supply exactly four ordered story beats; a character sheet is optional.\n\nRead the panels in order and check each character remains recognizable.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "一致角色的四格温暖小故事",
+      "description": "原创角色以一致造型演绎四个清楚的故事节点。",
+      "body": "## 使用方法\n\n准备：角色描述和四个故事节点；角色参考图可选。原创角色以一致造型演绎四个清楚的故事节点。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Consistent original characters act out four clear story beats.",
+    "zh-Hans": "原创角色以一致造型演绎四个清楚的故事节点。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2027094912357761319",
+      "platform": "X",
+      "author": "GoogleAI",
+      "url": "https://x.com/GoogleAI/status/2027094912357761319",
+      "publishedAt": "2026-02-26T18:54:23.000Z",
+      "metricObjectUrl": "https://x.com/GoogleAI/status/2027094912357761319",
+      "metricObjectPublishedAt": "2026-02-26T18:54:23.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2027094912357761319&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1256,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 109,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "7762a209fec1bf13b0a67635fdc9a4dd9e07b934c6d77fa524dc1949baa78fe7"
+  }
+}

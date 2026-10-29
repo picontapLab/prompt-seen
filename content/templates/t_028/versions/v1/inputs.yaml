@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload one product photo and supply headline, subtext, call to action and palette.
+  zh-Hans: 产品图、标题、副文案与行动文案
+slots:
+  - id: product
+    labels:
+      en: Product
+      zh-Hans: 产品照片
+    min: 1
+    max: 1

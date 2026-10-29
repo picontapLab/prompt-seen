@@ -1,0 +1,130 @@
+{
+  "candidateId": "cv-145231848",
+  "slug": "painted-cliff-lighthouse",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "art-print"
+  ],
+  "body": "Create an overhead aerial photograph of a small {{building}} on a rugged coastal headland. Transform the ground around it into sweeping hand-painted ribbons of coral, turquoise and saffron, with concentric arcs following the natural contour of the cliff. Keep the building and ocean physically realistic. Tiny seabirds provide scale, fractured sea ice fades into deep water, flat overcast light, precise graphic composition, no lettering.",
+  "fields": [
+    {
+      "name": "building",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Coastal building",
+        "zh-Hans": "海岸建筑"
+      },
+      "default": "white lighthouse"
+    }
+  ],
+  "values": {
+    "building": "white lighthouse"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is needed. Copy the full prompt into your image generator.",
+      "zh-Hans": "无需参考图，将完整提示词复制到图像生成工具即可。"
+    }
+  },
+  "locales": {
+    "en": {
+      "title": "Painted cliff lighthouse",
+      "description": "Painted coral, turquoise and saffron bands follow a rocky coast around a white lighthouse.",
+      "body": "## How to use\n\nChoose a compact coastal building. Keep the aerial view and make the paint follow the terrain instead of floating above it.\n\n## Recorded result\n\nThe default was generated with the built-in image tool. The precise provider model ID was not returned. Other values are not yet tested."
+    },
+    "zh-Hans": {
+      "title": "彩绘悬崖灯塔航拍",
+      "description": "珊瑚红、青绿和藏红色彩带沿岩石海岸铺开，围绕着白色灯塔。",
+      "body": "## 使用方法\n\n选择小型海岸建筑，保留俯拍视角，让彩带沿地形延展而不是漂浮在空中。\n\n## 实测结果\n\n默认样例由内置图像工具生成，工具未返回精确的模型 ID。其他参数组合尚未实测。"
+    }
+  },
+  "alt": {
+    "en": "Painted coral, turquoise and saffron bands follow a rocky coast around a white lighthouse.",
+    "zh-Hans": "珊瑚红、青绿和藏红色彩带沿岩石海岸铺开，围绕着白色灯塔。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-145231848",
+      "platform": "Civitai",
+      "author": "Silbrio",
+      "url": "https://civitai.com/images/145231848",
+      "publishedAt": "2026-10-10T10:50:05.116Z",
+      "metricObjectUrl": "https://civitai.com/images/145231848",
+      "metricObjectPublishedAt": "2026-10-10T10:50:05.116Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=145231848&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 85,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 232,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 1741,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 532,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 7,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "937d295366db881d079b6a879a6cccac1e9bd709db21cd5b1d14203fc5a87472"
+  }
+}

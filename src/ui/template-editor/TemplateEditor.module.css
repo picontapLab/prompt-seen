@@ -220,6 +220,12 @@
     gap: var(--space-8) var(--space-12);
   }
 
+  .actions > * {
+    max-inline-size: 100%;
+    white-space: normal;
+    line-height: var(--leading-base);
+  }
+
   /* The default sample's image, small and at its own ratio, labelled as that sample's (§11.8.4). */
   .sample {
     display: flex;

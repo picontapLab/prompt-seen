@@ -1,0 +1,172 @@
+{
+  "candidateId": "x_2045504669401653414",
+  "slug": "museum-object-breakdown",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Create a museum-catalog illustration of {{garmentOrObject}} using these checked reference notes: {{historyNotes}}. Show a large realistic central view and neatly separated detail studies around it. Label materials, construction and decorative motifs in only these exact concise Chinese labels: {{labels}}. Use fine leader lines, a restrained palette and an ivory paper background. Keep uncertain historical details out.",
+  "fields": [
+    {
+      "name": "garmentOrObject",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Garment or object",
+        "zh-Hans": "服饰或器物"
+      },
+      "default": "a modern fictional Ming-inspired jacket and pleated skirt",
+      "maxLength": 300
+    },
+    {
+      "name": "historyNotes",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "multiline": true,
+      "labels": {
+        "en": "History notes",
+        "zh-Hans": "已核对的史料"
+      },
+      "default": "This is a contemporary fictional costume reference, not a museum artifact. Describe only visible construction: standing collar, front fastening, pale jade jacket, small embroidered floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker, collection number or undocumented historical claim.",
+      "maxLength": 2000
+    },
+    {
+      "name": "labels",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Labels",
+        "zh-Hans": "准确的中文标注"
+      },
+      "default": [
+        "立领",
+        "前襟",
+        "花卉刺绣",
+        "裙褶"
+      ]
+    }
+  ],
+  "values": {
+    "garmentOrObject": "a modern fictional Ming-inspired jacket and pleated skirt",
+    "historyNotes": "This is a contemporary fictional costume reference, not a museum artifact. Describe only visible construction: standing collar, front fastening, pale jade jacket, small embroidered floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker, collection number or undocumented historical claim.",
+    "labels": [
+      "立领",
+      "前襟",
+      "花卉刺绣",
+      "裙褶"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload an object reference and supply checked notes and exact Chinese labels.",
+      "zh-Hans": "服饰或器物参考、已核对史料与中文标注"
+    },
+    "slots": [
+      {
+        "id": "object",
+        "labels": {
+          "en": "Object",
+          "zh-Hans": "服饰或器物参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Museum-style object study",
+      "description": "A central object and detail studies form a restrained Chinese-labeled catalog plate.",
+      "body": "## How to use\n\nUpload an object reference and supply checked notes and exact Chinese labels.\n\nOur example is a modern fictional costume. Do not infer historical provenance from the image.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "博物馆图鉴式汉服与器物拆解",
+      "description": "主体与局部研究构成克制的中文图鉴式展示。",
+      "body": "## 使用方法\n\n准备：服饰或器物参考、已核对史料与中文标注。主体与局部研究构成克制的中文图鉴式展示。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n默认对象为现代虚构服饰，不应从画面推断年代、作者或馆藏。"
+    }
+  },
+  "alt": {
+    "en": "A central object and detail studies form a restrained Chinese-labeled catalog plate.",
+    "zh-Hans": "主体与局部研究构成克制的中文图鉴式展示。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2045504669401653414",
+      "platform": "X",
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2045504669401653414",
+      "publishedAt": "2026-04-18T14:08:11.000Z",
+      "metricObjectUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "metricObjectPublishedAt": "2026-04-18T14:08:11.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2045504669401653414&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1125,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 52,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "492e81979b8a1152d958f08b2a631ea826760b53556c0a10bcbf71fb23d82a07"
+  }
+}

@@ -100,6 +100,28 @@ export const inputRequirementsSchema = z
       ctx.addIssue({ code: 'custom', message: 'reference requirement contradicts slots' });
   });
 
+export type InputRequirementsSource = z.infer<typeof inputRequirementsSchema>;
+
+/** Evidence belongs to the source post, never to the independently generated output. */
+export const inspirationSourceSchema = z
+  .object({
+    candidateId: z.string().min(1),
+    platform: z.string().min(1),
+    author: optionalText,
+    url: httpUrl,
+    publishedAt: optionalText,
+    metricObjectUrl: httpUrl,
+    metricObjectPublishedAt: optionalText,
+    metricScope: localeText,
+    observedAt: z.string().min(1),
+    cacheTimestampKnown: z.boolean(),
+    evidenceMethod: localeText,
+    evidenceUrl: httpUrl,
+    sourcePromptStatus: localeText,
+    metrics: z.array(z.object({ key: z.string().min(1), value: z.number().nullable(), labels: localeText }).strict()),
+  })
+  .strict();
+
 export const promptEntrySchema = z
   .object({
     id: promptId,
@@ -139,6 +161,8 @@ export const promptEntrySchema = z
       .default({ displayName: null, providerModelId: null, verification: 'unknown' }),
     inputRequirements: inputRequirementsSchema.prefault({}),
     showcaseExampleId: exampleId.nullable().default(null),
+    promptProvenance: z.enum(['unknown', 'original', 'independent-adaptation', 'source-prompt']).default('unknown'),
+    inspirationSources: z.array(inspirationSourceSchema).default([]),
     source: z
       .object({ author: optionalText, url: httpUrl.nullable().default(null), license: optionalText })
       .strict()
@@ -246,6 +270,10 @@ export const exampleRunSchema = z
         /** The sample the values came from, e.g. "default"; its values must match (§6.4). */
         sample: z.string().nullable().default(null),
         values: fieldValues,
+        contractHash: z
+          .string()
+          .regex(/^[0-9a-f]{64}$/)
+          .optional(),
       })
       .strict()
       .nullable()

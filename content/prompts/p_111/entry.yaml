@@ -1,0 +1,93 @@
+id: p_111
+slug: editorial-cover-portrait
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_213
+relatedTemplateIds: []
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one adult portrait. Our reference is a fictional AI-generated person.
+    zh-Hans: 人物照片
+  slots:
+    - id: person
+      labels:
+        en: Person
+        zh-Hans: 人物肖像
+      min: 1
+      max: 1
+showcaseExampleId: x_156
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: CN05
+    platform: Bilibili
+    author: 哩布哩布AI
+    url: https://www.bilibili.com/video/BV16m4y1a7uC/
+    publishedAt: 2023-06-30
+    metricObjectUrl: https://www.bilibili.com/video/BV16m4y1a7uC/
+    metricObjectPublishedAt: 2023-06-30
+    metricScope:
+      en: Whole tutorial or showcase video
+      zh-Hans: 整条教程或作品展示视频
+    observedAt: 2026-10-29T06:17:12Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: B站 官方公开只读 API
+    evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV16m4y1a7uC
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 未取得完整prompt；本次依据展示主题改编
+    metrics:
+      - key: views
+        value: 56375
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: likes
+        value: 3074
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: saves
+        value: 2984
+        labels:
+          en: Saves
+          zh-Hans: 收藏
+      - key: comments
+        value: 64
+        labels:
+          en: Comments
+          zh-Hans: 评论
+      - key: shares
+        value: 202
+        labels:
+          en: Shares
+          zh-Hans: 分享
+      - key: coins
+        value: 184
+        labels:
+          en: Coins
+          zh-Hans: 投币
+      - key: danmaku
+        value: 7
+        labels:
+          en: Danmaku
+          zh-Hans: 弹幕

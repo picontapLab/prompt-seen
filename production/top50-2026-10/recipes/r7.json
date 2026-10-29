@@ -1,0 +1,171 @@
+{
+  "candidateId": "x_2009660363227152653",
+  "slug": "tactile-icon-grid",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create nine cohesive 3D icons for {{theme}} arranged in a neat square grid. The nine objects in reading order are: {{items}}. Use the palette {{palette}}. Give each icon a distinct action or object while preserving the same rounded geometry, tactile matte materials, color palette and lighting. Use simple recognizable silhouettes, consistent scale, equal spacing and a clean white background. Do not add text, borders or watermarks.",
+  "fields": [
+    {
+      "name": "theme",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Theme",
+        "zh-Hans": "图标主题"
+      },
+      "default": "a neighborhood coffee shop",
+      "maxLength": 300
+    },
+    {
+      "name": "items",
+      "type": "string-list",
+      "group": "subject",
+      "required": true,
+      "separator": "; ",
+      "minItems": 9,
+      "maxItems": 9,
+      "labels": {
+        "en": "Items",
+        "zh-Hans": "九个图标对象"
+      },
+      "default": [
+        "coffee cup",
+        "coffee bean",
+        "kettle",
+        "grinder",
+        "croissant",
+        "milk carton",
+        "takeaway bag",
+        "spoon",
+        "coffee plant"
+      ]
+    },
+    {
+      "name": "palette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Palette",
+        "zh-Hans": "配色"
+      },
+      "default": "sage green, cream and terracotta",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "theme": "a neighborhood coffee shop",
+    "items": [
+      "coffee cup",
+      "coffee bean",
+      "kettle",
+      "grinder",
+      "croissant",
+      "milk carton",
+      "takeaway bag",
+      "spoon",
+      "coffee plant"
+    ],
+    "palette": "sage green, cream and terracotta"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Choose a theme, palette and exactly nine distinct objects.",
+      "zh-Hans": "主题与九个物件或动作"
+    },
+    "slots": []
+  },
+  "locales": {
+    "en": {
+      "title": "Tactile nine-icon set",
+      "description": "Nine rounded objects share one palette, material and lighting system.",
+      "body": "## How to use\n\nChoose a theme, palette and exactly nine distinct objects.\n\nCount the icons and check spacing, silhouettes and material consistency.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "同主题触感3D图标九宫格",
+      "description": "九个圆润图标采用一致的配色、材质和光照。",
+      "body": "## 使用方法\n\n准备：主题与九个物件或动作。九个圆润图标采用一致的配色、材质和光照。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Nine rounded objects share one palette, material and lighting system.",
+    "zh-Hans": "九个圆润图标采用一致的配色、材质和光照。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2009660363227152653",
+      "platform": "X",
+      "author": "NanoBanana",
+      "url": "https://x.com/NanoBanana/status/2009660363227152653",
+      "publishedAt": "2026-01-09T16:15:42.000Z",
+      "metricObjectUrl": "https://x.com/NanoBanana/status/2009660363227152653",
+      "metricObjectPublishedAt": "2026-01-09T16:15:42.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2009660363227152653&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2599,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 135,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "dff43a1890cc274d96ed7bde1c34adcf8f4dbb5ff93f273ee6744520163d942c"
+  }
+}

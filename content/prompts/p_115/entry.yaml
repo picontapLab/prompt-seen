@@ -1,0 +1,99 @@
+id: p_115
+slug: two-person-wedding-editorial
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_218
+relatedTemplateIds: []
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload person A first, then person B. Both references are fictional AI-generated adults.
+    zh-Hans: 两位成年人的照片
+  slots:
+    - id: personA
+      labels:
+        en: Person a
+        zh-Hans: 第一位成年人
+      min: 1
+      max: 1
+    - id: personB
+      labels:
+        en: Person b
+        zh-Hans: 第二位成年人
+      min: 1
+      max: 1
+showcaseExampleId: x_160
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: CN01
+    platform: Bilibili
+    author: 张奕的AI工具铺
+    url: https://www.bilibili.com/video/BV18sJ9zeEGY/
+    publishedAt: 2025-09-24
+    metricObjectUrl: https://www.bilibili.com/video/BV18sJ9zeEGY/
+    metricObjectPublishedAt: 2025-09-24
+    metricScope:
+      en: Whole tutorial or showcase video
+      zh-Hans: 整条教程或作品展示视频
+    observedAt: 2026-10-29T06:17:12Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: B站 官方公开只读 API
+    evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 作者提供外部prompt文档链接，本轮未读取文档
+    metrics:
+      - key: views
+        value: 9416
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: likes
+        value: 231
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: saves
+        value: 345
+        labels:
+          en: Saves
+          zh-Hans: 收藏
+      - key: comments
+        value: 139
+        labels:
+          en: Comments
+          zh-Hans: 评论
+      - key: shares
+        value: 65
+        labels:
+          en: Shares
+          zh-Hans: 分享
+      - key: coins
+        value: 208
+        labels:
+          en: Coins
+          zh-Hans: 投币
+      - key: danmaku
+        value: 4
+        labels:
+          en: Danmaku
+          zh-Hans: 弹幕

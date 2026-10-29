@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload one clear logo silhouette and choose cloud or glass.
+  zh-Hans: 清晰Logo或标志轮廓
+slots:
+  - id: logo
+    labels:
+      en: Logo
+      zh-Hans: Logo轮廓
+    min: 1
+    max: 1

@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload one pet photo and choose an adult age range and personality. The example pet is synthetic.
+  zh-Hans: 宠物照片；年龄范围和性格
+slots:
+  - id: pet
+    labels:
+      en: Pet
+      zh-Hans: 宠物照片
+    min: 1
+    max: 1
