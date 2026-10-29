@@ -1,0 +1,157 @@
+{
+  "candidateId": "x_2027157212863631567",
+  "slug": "pixel-creature-battle",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a polished pixel-art screenshot of an original turn-based creature game. These two invented creatures face each other: {{creatures}}. Arena: {{arena}}. Show one attack with luminous pixel particles, clear silhouettes and a limited palette of {{palette}}. Add restrained health bars and simple menu buttons. Preserve crisp pixel clusters without smoothing, on a 4:3 canvas.",
+  "fields": [
+    {
+      "name": "creatures",
+      "type": "string-list",
+      "group": "subject",
+      "required": true,
+      "separator": "; ",
+      "minItems": 2,
+      "maxItems": 2,
+      "labels": {
+        "en": "Creatures",
+        "zh-Hans": "两位原创角色"
+      },
+      "default": [
+        "a small turquoise moss dragon",
+        "an amber crystal beetle"
+      ]
+    },
+    {
+      "name": "arena",
+      "type": "string",
+      "group": "composition",
+      "required": true,
+      "labels": {
+        "en": "Arena",
+        "zh-Hans": "对战场景"
+      },
+      "default": "a moonlit marsh",
+      "maxLength": 300
+    },
+    {
+      "name": "palette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Palette",
+        "zh-Hans": "像素配色"
+      },
+      "default": "turquoise, amber and deep violet",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "creatures": [
+      "a small turquoise moss dragon",
+      "an amber crystal beetle"
+    ],
+    "arena": "a moonlit marsh",
+    "palette": "turquoise, amber and deep violet"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Describe exactly two original creatures, arena and palette.",
+      "zh-Hans": "原创角色、场景、配色"
+    },
+    "slots": []
+  },
+  "locales": {
+    "en": {
+      "title": "Original pixel creature battle",
+      "description": "Two invented creatures face off in a crisp pixel-art arena.",
+      "body": "## How to use\n\nDescribe exactly two original creatures, arena and palette.\n\nCheck distinct silhouettes and hard pixel edges instead of blurred filtering.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "复古掌机像素对战画面",
+      "description": "两位原创生物在清晰的像素场景中对战。",
+      "body": "## 使用方法\n\n准备：原创角色、场景、配色。两位原创生物在清晰的像素场景中对战。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Two invented creatures face off in a crisp pixel-art arena.",
+    "zh-Hans": "两位原创生物在清晰的像素场景中对战。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2027157212863631567",
+      "platform": "X",
+      "author": "ProperPrompter",
+      "url": "https://x.com/ProperPrompter/status/2027157212863631567",
+      "publishedAt": "2026-02-26T23:01:56.000Z",
+      "metricObjectUrl": "https://x.com/ProperPrompter/status/2027157212863631567",
+      "metricObjectPublishedAt": "2026-02-26T23:01:56.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2027157212863631567&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "原帖完整文字可见"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 4659,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 106,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "d78eb9d0fab9c29c11b87702cd70ce480581c7663324d26016c8504362725460"
+  }
+}

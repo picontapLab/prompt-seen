@@ -1,7 +1,7 @@
 # Top 50 案例落地方案：代码调整、内容生产与发布
 
 - 日期：2026-10-29（America/Los_Angeles）
-- 状态：**实施中，首段已接入 1/50 个实测案例。详见 [实施进度](research/ai-image-top50/implementation-progress.md)。**
+- 状态：**已接入 50/50 个案例、31/31 个模板与 66 张验收结果，最终浏览器验收与双线代码复审已通过。详见 [实施进度](research/ai-image-top50/implementation-progress.md)。**
 - 适用项目：Prompt Seen，当前工作区 100 个 Prompt、3 个 Template。
 - 内容依据：[Top 50 调研报告](research/ai-image-top50/top50-report.md)、[研究原始数据](research/ai-image-top50/top50.json)。
 - 执行清单：[50 条实施映射](research/ai-image-top50/implementation-manifest.json)。该文件是规划格式，`executable_import: false`；不能直接作为生产内容导入。
@@ -351,8 +351,10 @@ npm run test:e2e
 - 代码检查、静态构建和相关自动化测试通过，5 个代表性案例有桌面/手机截图，来源区和输入对照已人工核验。
 - 媒体同步与生产部署检查通过，当前批次的内容映射、审核记录及恢复路径可以追溯。
 
-## 11. 本次方案交付与下一步
+## 11. 实施落点
 
-本次新增的是这份实施文档和 50 条规划清单，尚未修改应用、导入正式案例或生成实测图片。研究文件保持为证据来源，当前已有的 README/package 改动也不纳入本方案修改。
+50 条案例及 31 个模板已接入；67 条实测记录中，较早的 #50 强人脸版本保留为历史比较，不计入 66 张验收结果。5 个合集与 3 个首页标注案例已接入。生产命令的实际参数、状态和恢复操作见 [生产工具说明](../production/README.md)，本方案第 5 节命令为设计阶段的示意，不应直接执行。
 
-执行时从 S0/S1 开始，先打通 B0 的 5 例，再推进 B1–B3。每个里程碑交付可浏览页面、准确的完成计数和剩余阻塞；最终以第 10 节的完整验收定义收尾。
+生成调用使用内置图像工具。工具未返回精确模型 ID 的运行保持 unknown。地图使用有来源的参考轮廓；天气与服饰明确为演示；#50 使用参考图约束，未声称使用 ControlNet。生产部署需要真实 SITE_ORIGIN 与现有工作流凭据；当前工作范围为项目实现、静态构建及本机视觉验收。
+
+最终检查结果、截图与审查记录见 [实施进度](research/ai-image-top50/implementation-progress.md)。

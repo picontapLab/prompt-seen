@@ -1,0 +1,80 @@
+id: p_142
+slug: social-campaign-product-ad
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_028
+  version: v1
+  values:
+    product: the supplied PINE insulated water bottle
+    headline: SLOW DOWN
+    subtext: A little pause, every day
+    cta: EXPLORE
+    brandPalette: sage green, cream and terracotta
+categoryId: poster
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_255
+relatedTemplateIds:
+  - t_028
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_187
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_2026316195977146728
+    platform: X
+    author: AmirMushich
+    url: https://x.com/AmirMushich/status/2026316195977146728
+    publishedAt: 2026-02-24T15:20:02.000Z
+    metricObjectUrl: https://x.com/AmirMushich/status/2026316195977146728
+    metricObjectPublishedAt: 2026-02-24T15:20:02.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:10:42Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2026316195977146728&lang=en&token=1
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 称prompt在回复中，未读取回复全文
+    metrics:
+      - key: likes
+        value: 2289
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 32
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

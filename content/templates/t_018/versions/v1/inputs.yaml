@@ -1,0 +1,11 @@
+referenceImage: optional
+instructions:
+  en: Supply an object and short labels; an exterior reference is optional.
+  zh-Hans: 物件名称、短标注；外观参考可选
+slots:
+  - id: object
+    labels:
+      en: Object
+      zh-Hans: 物件外观
+    min: 0
+    max: 1

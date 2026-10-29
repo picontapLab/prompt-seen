@@ -20,9 +20,17 @@ function workspace() {
   for (const [kind, limit] of [
     ['prompts', 100],
     ['templates', 3],
+    ['collections', 2],
   ] as const)
     for (const name of fs.readdirSync(path.join(root, 'content', kind)))
       if (Number(name.slice(2)) > limit) fs.rmSync(path.join(root, 'content', kind, name), { recursive: true });
+  const siteFile = path.join(root, 'content/site.yaml');
+  const site = YAML.parse(fs.readFileSync(siteFile, 'utf8'));
+  site.home.featured = site.home.featured.filter((item: { prompt: string }) => Number(item.prompt.slice(2)) <= 100);
+  site.feed.showcase = site.feed.showcase.filter((item: { lead: string }) => Number(item.lead.slice(2)) <= 100);
+  site.feed.interludes = site.feed.interludes.filter((item: { type: string; collection?: string; prompt?: string }) =>
+    item.type === 'collection' ? Number(item.collection?.slice(2)) <= 2 : item.type !== 'feature' || Number(item.prompt?.slice(2)) <= 100);
+  fs.writeFileSync(siteFile, YAML.stringify(site));
   const journalFile = path.resolve('migrations/gpt-image-v1/apply-journal.json');
   if (fs.existsSync(journalFile)) {
     const journal = JSON.parse(fs.readFileSync(journalFile, 'utf8')) as {

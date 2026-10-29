@@ -1,0 +1,11 @@
+referenceImage: optional
+instructions:
+  en: Supply product concept, accent color and design features; an exterior reference is optional.
+  zh-Hans: 产品概念、设计特征、配色；参考图可选
+slots:
+  - id: product
+    labels:
+      en: Product
+      zh-Hans: 产品外观
+    min: 0
+    max: 1

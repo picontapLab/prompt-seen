@@ -20,6 +20,7 @@ import { readText, sha256 } from './lib/content/read';
 import { toFieldSpec } from './lib/content/rules';
 import { fieldsFileSchema, sampleSchema, SLUG_PATTERN, taxonomyFileSchema } from './lib/content/schemas';
 import { ROOT } from './lib/paths';
+import { acquireContentLock } from './lib/content-production/lock';
 
 const usage = `Usage:
   npm run content:new -- prompt <slug> [--category <id>] [--locale en]
@@ -250,4 +251,10 @@ function main() {
   );
 }
 
-main();
+const release = acquireContentLock(ROOT);
+process.once('exit', release);
+try {
+  main();
+} finally {
+  release();
+}

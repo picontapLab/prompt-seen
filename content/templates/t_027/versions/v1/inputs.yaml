@@ -1,0 +1,11 @@
+referenceImage: required
+instructions:
+  en: Upload one action photo and supply a short uppercase word and background color.
+  zh-Hans: 动作照片、短词与主色
+slots:
+  - id: action
+    labels:
+      en: Action
+      zh-Hans: 动作照片
+    min: 1
+    max: 1

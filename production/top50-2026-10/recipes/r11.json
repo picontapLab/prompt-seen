@@ -1,0 +1,170 @@
+{
+  "candidateId": "x_2043047413770809708",
+  "slug": "terrain-travel-guide",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Build a travel infographic for {{country}} using the supplied verified map. Destinations: {{destinations}}. Route notes: {{routeNotes}}. Render the map as a raised miniature terrain model with a few recognizable landmark miniatures. Add clear city labels, route lines and concise checklists in the margins. Place a small suitcase and compass beside the map. Use a light studio background and readable typography.",
+  "fields": [
+    {
+      "name": "country",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Country",
+        "zh-Hans": "目的地国家"
+      },
+      "default": "Japan",
+      "maxLength": 300
+    },
+    {
+      "name": "destinations",
+      "type": "string-list",
+      "group": "subject",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Destinations",
+        "zh-Hans": "核对后的目的地"
+      },
+      "default": [
+        "Tokyo",
+        "Kyoto",
+        "Osaka"
+      ]
+    },
+    {
+      "name": "routeNotes",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "multiline": true,
+      "labels": {
+        "en": "Route notes",
+        "zh-Hans": "核对后的路线说明"
+      },
+      "default": "Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map locations. No travel times, prices or current transport claims.",
+      "maxLength": 2000
+    }
+  ],
+  "values": {
+    "country": "Japan",
+    "destinations": [
+      "Tokyo",
+      "Kyoto",
+      "Osaka"
+    ],
+    "routeNotes": "Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map locations. No travel times, prices or current transport claims."
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload a verified map and supply checked destinations and route notes.",
+      "zh-Hans": "已核对的地图、目的地清单、路线"
+    },
+    "slots": [
+      {
+        "id": "map",
+        "labels": {
+          "en": "Map",
+          "zh-Hans": "核对后的地图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Miniature terrain travel guide",
+      "description": "A verified outline anchors a miniature destination map and labeled route.",
+      "body": "## How to use\n\nUpload a verified map and supply checked destinations and route notes.\n\nThis is an illustrative route diagram; compare label positions with the reference map.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.\n## Reference map\n\nThe supplied guide uses the main-island outline and city points from [Natural Earth](https://www.naturalearthdata.com/), a public-domain dataset. It is a generalized illustration, with smaller outlying islands omitted.\n\n## Map scope\n\nA schematic illustration of the main islands, with decorative relief and landmarks. The rendered map is not a navigation map; inspect label placement against the supplied reference before publication.\n\n## Checked destination names\n\nCity attractions were cross-checked against [GO TOKYO](https://www.gotokyo.org/en/see-and-do/attractions/) and [Kyoto Travel](https://kyoto.travel/en/getting-around/). Decorative landmark miniatures are not map coordinates."
+    },
+    "zh-Hans": {
+      "title": "国家立体地形旅行指南",
+      "description": "以核对后的轮廓为依据，制作带目的地和路线的微缩旅行地图。",
+      "body": "## 使用方法\n\n准备：已核对的地图、目的地清单、路线。以核对后的轮廓为依据，制作带目的地和路线的微缩旅行地图。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n地图用于视觉演示，路线与标签需对照参考核查，不提供实时交通信息。\n\n## 参考地图\n\n参考图采用 [Natural Earth](https://www.naturalearthdata.com/) 公共领域地图的主要岛屿轮廓与城市坐标，是省略外围小岛的概括示意图。\n\n## 地图范围\n\n这是日本主要岛屿的示意插画，地形与地标经过艺术化处理，不用于导航。对外使用前应对照参考地图复核文字位置。\n\n## 目的地核对\n\n景点名称对照 [东京官方旅游指南](https://www.gotokyo.org/en/see-and-do/attractions/)与[京都官方旅游指南](https://kyoto.travel/en/getting-around/)核对。装饰性地标模型不代表精确坐标。"
+    }
+  },
+  "alt": {
+    "en": "A verified outline anchors a miniature destination map and labeled route.",
+    "zh-Hans": "以核对后的轮廓为依据，制作带目的地和路线的微缩旅行地图。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2043047413770809708",
+      "platform": "X",
+      "author": "TechieBySA",
+      "url": "https://x.com/TechieBySA/status/2043047413770809708",
+      "publishedAt": "2026-04-11T19:23:56.000Z",
+      "metricObjectUrl": "https://x.com/TechieBySA/status/2043047413770809708",
+      "metricObjectPublishedAt": "2026-04-11T19:23:56.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2043047413770809708&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 3902,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 67,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "91c6f120e1e5200ed53aa8821d47d8b1a4682162528506ffe58158cf5a073491"
+  }
+}

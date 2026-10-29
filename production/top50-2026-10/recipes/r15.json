@@ -1,0 +1,172 @@
+{
+  "candidateId": "x_1993729800922341810",
+  "slug": "miniature-city-weather-card",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a vertical weather card for {{city}} using this date label: {{dateLabel}} and this forecast: {{forecast}}. The landmarks are: {{landmarks}}. Clearly retain the DEMO and FICTIONAL qualifiers. Build a compact isometric miniature of several local landmarks with coherent toy-like materials. Express the forecast through sky, lighting and small environmental details. Leave a clear header for the city name and a footer for the exact provided temperature and weather symbol.",
+  "fields": [
+    {
+      "name": "city",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "City",
+        "zh-Hans": "城市名称"
+      },
+      "default": "Kyoto",
+      "maxLength": 300
+    },
+    {
+      "name": "dateLabel",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Date label",
+        "zh-Hans": "指定日期"
+      },
+      "default": "DEMO — 12 APR",
+      "maxLength": 300
+    },
+    {
+      "name": "forecast",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Forecast",
+        "zh-Hans": "已核对的天气与温度"
+      },
+      "default": "FICTIONAL FORECAST: 18°C, partly cloudy",
+      "maxLength": 300
+    },
+    {
+      "name": "landmarks",
+      "type": "string-list",
+      "group": "subject",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Landmarks",
+        "zh-Hans": "当地地标"
+      },
+      "default": [
+        "a Kyoto pagoda",
+        "a red shrine gate",
+        "a wooden town house"
+      ]
+    }
+  ],
+  "values": {
+    "city": "Kyoto",
+    "dateLabel": "DEMO — 12 APR",
+    "forecast": "FICTIONAL FORECAST: 18°C, partly cloudy",
+    "landmarks": [
+      "a Kyoto pagoda",
+      "a red shrine gate",
+      "a wooden town house"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Supply city, date, forecast and landmarks. Our sample forecast is fictional.",
+      "zh-Hans": "城市、指定日期、已确认天气和温度"
+    },
+    "slots": []
+  },
+  "locales": {
+    "en": {
+      "title": "Miniature city weather card",
+      "description": "Toy-like landmarks illustrate a clearly labeled weather-card scenario.",
+      "body": "## How to use\n\nSupply city, date, forecast and landmarks. Our sample forecast is fictional.\n\nReplace the demo forecast with verified data before publishing a live weather card.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "城市地标与天气的3D微缩卡片",
+      "description": "玩具质感的城市地标演绎明确标注的天气卡片场景。",
+      "body": "## 使用方法\n\n准备：城市、指定日期、已确认天气和温度。玩具质感的城市地标演绎明确标注的天气卡片场景。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n默认天气是明确标注的虚构演示，并非实时预报。"
+    }
+  },
+  "alt": {
+    "en": "Toy-like landmarks illustrate a clearly labeled weather-card scenario.",
+    "zh-Hans": "玩具质感的城市地标演绎明确标注的天气卡片场景。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1993729800922341810",
+      "platform": "X",
+      "author": "dotey",
+      "url": "https://x.com/dotey/status/1993729800922341810",
+      "publishedAt": "2025-11-26T17:13:20.000Z",
+      "metricObjectUrl": "https://x.com/dotey/status/1993729800922341810",
+      "metricObjectPublishedAt": "2025-11-26T17:13:20.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1993729800922341810&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2550,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 107,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "fefbdf3db1ffa9319b89ecfac5da9ea59de4cca9f02c1bb152131de3e70e4f2b"
+  }
+}

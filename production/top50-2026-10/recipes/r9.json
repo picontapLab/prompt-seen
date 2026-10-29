@@ -1,0 +1,159 @@
+{
+  "candidateId": "x_2048360321379701233",
+  "slug": "restaurant-brand-identity",
+  "categoryId": "product",
+  "useCaseIds": [
+    "packaging"
+  ],
+  "body": "Design one presentation board for the fictional cafe {{name}}. Develop a coherent identity using {{palette}} and {{mood}}. Show its primary logo, takeaway cup, food carton, shopping bag, menu, table card and three compact campaign applications. Keep the same mark and typography across every mockup. Arrange the objects by function on a clean editorial grid with readable supplied labels.",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Name",
+        "zh-Hans": "品牌名称"
+      },
+      "default": "Moss & Mug",
+      "maxLength": 300
+    },
+    {
+      "name": "palette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Palette",
+        "zh-Hans": "品牌配色"
+      },
+      "default": "sage green, cream and terracotta",
+      "maxLength": 300
+    },
+    {
+      "name": "mood",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Mood",
+        "zh-Hans": "品牌调性"
+      },
+      "default": "warm, calm and practical",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "name": "Moss & Mug",
+    "palette": "sage green, cream and terracotta",
+    "mood": "warm, calm and practical"
+  },
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Supply a fictional brand name, palette and mood; an existing logo is optional.",
+      "zh-Hans": "品牌名称、配色、调性；已有Logo可选"
+    },
+    "slots": [
+      {
+        "id": "logo",
+        "labels": {
+          "en": "Logo",
+          "zh-Hans": "已有Logo"
+        },
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Cafe identity presentation",
+      "description": "A fictional cafe identity extends across cups, packaging and editorial applications.",
+      "body": "## How to use\n\nSupply a fictional brand name, palette and mood; an existing logo is optional.\n\nCheck repeated lettering and marks before using mockups as design references.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "餐饮品牌全套VI展示板",
+      "description": "虚构咖啡品牌的视觉系统延展到纸杯、包装和宣传物料。",
+      "body": "## 使用方法\n\n准备：品牌名称、配色、调性；已有Logo可选。虚构咖啡品牌的视觉系统延展到纸杯、包装和宣传物料。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A fictional cafe identity extends across cups, packaging and editorial applications.",
+    "zh-Hans": "虚构咖啡品牌的视觉系统延展到纸杯、包装和宣传物料。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2048360321379701233",
+      "platform": "X",
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2048360321379701233",
+      "publishedAt": "2026-04-26T11:15:31.000Z",
+      "metricObjectUrl": "https://x.com/MrLarus/status/2048360321379701233",
+      "metricObjectPublishedAt": "2026-04-26T11:15:31.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2048360321379701233&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1211,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 33,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "e72b366d34b2a91d287a954773e25afce0003f438542e60039c3779a38d3c495"
+  }
+}

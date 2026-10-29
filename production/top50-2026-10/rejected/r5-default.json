@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r5-default",
+    "candidateId": "R08",
+    "prompt": "Imagine the pet in this photograph as a fully human character. Translate the pet's expression, posture, energy and distinctive markings into a believable hairstyle, clothing palette and personal style. Keep the camera angle, lighting and surrounding room consistent with the source. The person should be an adult in their thirties and convey calm, curious and slightly mischievous. Use realistic human anatomy with no animal ears, muzzle, paws or tail. Make the resemblance come from attitude and visual details rather than an animal-human hybrid.",
+    "references": [
+      {
+        "slotId": "pet",
+        "path": "production/top50-2026-10/references/pet.png"
+      }
+    ],
+    "targetAspectRatio": "1:1"
+  },
+  "fingerprint": "e4e9519959313afe079b9278d76429f801574209b2af7984e7e201798f7e3d4a",
+  "references": [
+    {
+      "path": "production/top50-2026-10/references/pet.png",
+      "sha256": "75e0fc3126722f1f6db9c5f728cb869e3405c4f6924e2b0e4d4a6367aa7d7db7",
+      "slotId": "pet"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:16:06.937Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/top50-2026-10/jobs/r5-default/output-0f4a714d6cb7d034a2e2df469f0c9d62f5623ee7ff7fd00db9aa4d3ef989addf.png",
+      "sha256": "0f4a714d6cb7d034a2e2df469f0c9d62f5623ee7ff7fd00db9aa4d3ef989addf"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T08:25:40.194Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "An orange furry tail-like form remains behind the hip; fully human anatomy requirement failed.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T08:25:40.199Z"
+  }
+}

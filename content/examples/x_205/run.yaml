@@ -1,0 +1,30 @@
+id: x_205
+promptId: p_117
+template:
+  id: t_012
+  version: v1
+  sample: alternate
+  values:
+    dish: a bowl of vegetable udon
+    ingredients:
+      - udon noodles 150 g
+      - vegetable broth 400 ml
+      - tofu 80 g
+      - shiitake 40 g
+      - bok choy 60 g
+  contractHash: 3bc69e2c5634ef83161ce77acf494831e73c47328d950560a2f5647a2ed354ea
+promptSha256: 776eeccb93bf9d123d96955d53233ce2ce4c40c26133e4effc1d91372c1cea9b
+referenceAssetIds: []
+referenceBindings: []
+outputAssetIds:
+  - a_277
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: "All supplied ingredient labels and quantities checked: noodles 150g, broth
+    400ml, tofu 80g, shiitake 40g, bok choy 60g."
+  zh-Hans: 食材悬浮在成品碗上方，展示指定用量。

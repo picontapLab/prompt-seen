@@ -1,0 +1,122 @@
+{
+  "candidateId": "R08",
+  "slug": "pet-as-human",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "avatar"
+  ],
+  "body": "Imagine the pet in this photograph as a fully human character. Translate the pet's expression, posture, energy and distinctive markings into a believable hairstyle, clothing palette and personal style. Keep the camera angle, lighting and surrounding room consistent with the source. The person should be {{ageRange}} and convey {{personality}}. Use realistic human anatomy with no animal ears, muzzle, paws or tail. Make the resemblance come from attitude and visual details rather than an animal-human hybrid. Remove every trace of animal anatomy from the final image, including any tail behind the body. Clothing must be ordinary woven human clothing without fur, tail-shaped fabric or animal costume elements. Show the full seated human silhouette clearly.",
+  "fields": [
+    {
+      "name": "ageRange",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Age range",
+        "zh-Hans": "成年年龄范围"
+      },
+      "default": "an adult in their thirties",
+      "maxLength": 300
+    },
+    {
+      "name": "personality",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Personality",
+        "zh-Hans": "性格"
+      },
+      "default": "calm, curious and slightly mischievous",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "ageRange": "an adult in their thirties",
+    "personality": "calm, curious and slightly mischievous"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one pet photo and choose an adult age range and personality. The example pet is synthetic.",
+      "zh-Hans": "宠物照片；年龄范围和性格"
+    },
+    "slots": [
+      {
+        "id": "pet",
+        "labels": {
+          "en": "Pet",
+          "zh-Hans": "宠物照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Your pet as a person",
+      "description": "Pet posture and markings become a human personality, hairstyle and wardrobe.",
+      "body": "## How to use\n\nUpload one pet photo and choose an adult age range and personality. The example pet is synthetic.\n\nResemblance should come from attitude and colors, with fully human anatomy.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "宠物拟人，保留姿态和神情",
+      "description": "把宠物的姿态与花纹转译为人物性格、发型与服装。",
+      "body": "## 使用方法\n\n准备：宠物照片；年龄范围和性格。把宠物的姿态与花纹转译为人物性格、发型与服装。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Pet posture and markings become a human personality, hairstyle and wardrobe.",
+    "zh-Hans": "把宠物的姿态与花纹转译为人物性格、发型与服装。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "R08",
+      "platform": "Reddit",
+      "author": "AndrewJumpen",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+      "publishedAt": "2025-04-07",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+      "metricObjectPublishedAt": "2025-04-07",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整篇帖子或图集"
+      },
+      "observedAt": "2026-10-28",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Indexed primary-source snapshot",
+        "zh-Hans": "一手帖搜索索引快照"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1jtnuxu/with_chat_gpt_you_can_transform_your_cat_into/",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "公开：原帖指令及评论精细化版本均可读。"
+      },
+      "metrics": [
+        {
+          "key": "post_score",
+          "value": 1777,
+          "labels": {
+            "en": "Post score",
+            "zh-Hans": "帖子分数"
+          }
+        },
+        {
+          "key": "comments",
+          "value": null,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "e67118e85097ff3d0ff01a762f675ecf223baf7b7444847d8ebd9701697e22af"
+  }
+}

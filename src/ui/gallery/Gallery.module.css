@@ -188,6 +188,8 @@
     border-radius: var(--radius-image);
   }
   .bannerFrame img {
+    outline: 1px solid var(--image-hairline);
+    outline-offset: -1px;
     display: block;
     inline-size: 100%;
     block-size: 100%;

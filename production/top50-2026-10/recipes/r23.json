@@ -1,0 +1,155 @@
+{
+  "candidateId": "x_2008421241091154115",
+  "slug": "festive-portrait-grid",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Make a square nine-panel holiday portrait sheet from the uploaded photo. Keep the same face, hairstyle and red knit outfit in every panel while varying natural expressions and playful hand poses. Use a plain ivory studio backdrop, subtle festive doodles and these nine exact short greetings, in reading order: {{greetings}}. Ensure each greeting is readable and the grid spacing is consistent.",
+  "fields": [
+    {
+      "name": "greetings",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 9,
+      "maxItems": 9,
+      "labels": {
+        "en": "Greetings",
+        "zh-Hans": "九条短祝福"
+      },
+      "default": [
+        "喜悦",
+        "平安",
+        "热爱",
+        "干杯",
+        "希望",
+        "微笑",
+        "心愿",
+        "温暖",
+        "快乐"
+      ]
+    }
+  ],
+  "values": {
+    "greetings": [
+      "喜悦",
+      "平安",
+      "热爱",
+      "干杯",
+      "希望",
+      "微笑",
+      "心愿",
+      "温暖",
+      "快乐"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one portrait and exactly nine short greetings. Our person is synthetic.",
+      "zh-Hans": "人物照片和九条简短祝福"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Person",
+          "zh-Hans": "人物肖像"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Nine holiday portraits",
+      "description": "One person appears in nine festive expressions with short greetings.",
+      "body": "## How to use\n\nUpload one portrait and exactly nine short greetings. Our person is synthetic.\n\nInspect identity, hand anatomy, panel count and every greeting.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "节日红色写真与祝福九宫格",
+      "description": "同一人物以九种节日表情搭配简短祝福。",
+      "body": "## 使用方法\n\n准备：人物照片和九条简短祝福。同一人物以九种节日表情搭配简短祝福。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "One person appears in nine festive expressions with short greetings.",
+    "zh-Hans": "同一人物以九种节日表情搭配简短祝福。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2008421241091154115",
+      "platform": "X",
+      "author": "wanerfu",
+      "url": "https://x.com/wanerfu/status/2008421241091154115",
+      "publishedAt": "2026-01-06T06:11:53.000Z",
+      "metricObjectUrl": "https://x.com/wanerfu/status/2008421241091154115",
+      "metricObjectPublishedAt": "2026-01-06T06:11:53.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2008421241091154115&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "外部prompt文档未读取"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1161,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 58,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "6752931d6dc4921679904a6dc1ad607312d0a56e81244d1e0bb9edde86dbaf80"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "candidateId": "CN06",
+  "slug": "ming-inspired-hanfu-portrait",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a refined portrait of the adult in the uploaded photo wearing the costume shown in image 2, a modern Ming-inspired hanfu ensemble: a pale jade standing-collar jacket with delicate embroidery and a structured dark-red pleated skirt. Preserve the person's facial identity. Set the scene in a quiet traditional garden beside a carved wooden window and bamboo. Soft overcast light, believable woven silk, restrained jewelry, graceful natural posture, documentary costume-photography texture. Three-quarter-length vertical 4:5 composition. No modern accessories, logos or fantasy armor.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the adult portrait first and costume second. Both inputs are synthetic; the costume is a modern fictional design.",
+      "zh-Hans": "人物照片和服饰参考"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Person",
+          "zh-Hans": "成年人物肖像"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "garment",
+        "labels": {
+          "en": "Garment",
+          "zh-Hans": "服饰参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Ming-inspired costume portrait",
+      "description": "A portrait and costume reference combine in a quiet garden scene.",
+      "body": "## How to use\n\nUpload the adult portrait first and costume second. Both inputs are synthetic; the costume is a modern fictional design.\n\nThis is costume inspiration, not an authenticated historical reconstruction.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "明代风格汉服写真人像",
+      "description": "将肖像与服饰参考结合，置于安静的园林场景。",
+      "body": "## 使用方法\n\n准备：人物照片和服饰参考。将肖像与服饰参考结合，置于安静的园林场景。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n服饰为现代虚构设计，不是经过考据的历史复原。"
+    }
+  },
+  "alt": {
+    "en": "A portrait and costume reference combine in a quiet garden scene.",
+    "zh-Hans": "将肖像与服饰参考结合，置于安静的园林场景。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "CN06",
+      "platform": "Bilibili",
+      "author": "K43",
+      "url": "https://www.bilibili.com/video/BV1wT411R7fm/",
+      "publishedAt": "2023-02-09",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV1wT411R7fm/",
+      "metricObjectPublishedAt": "2023-02-09",
+      "metricScope": {
+        "en": "Whole tutorial or showcase video",
+        "zh-Hans": "整条教程或作品展示视频"
+      },
+      "observedAt": "2026-10-29T06:17:12Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "B站 官方公开只读 API"
+      },
+      "evidenceUrl": "https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "未取得完整prompt；本次依据展示主题改编"
+      },
+      "metrics": [
+        {
+          "key": "views",
+          "value": 18638,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "likes",
+          "value": 477,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "saves",
+          "value": 689,
+          "labels": {
+            "en": "Saves",
+            "zh-Hans": "收藏"
+          }
+        },
+        {
+          "key": "comments",
+          "value": 116,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        },
+        {
+          "key": "shares",
+          "value": 98,
+          "labels": {
+            "en": "Shares",
+            "zh-Hans": "分享"
+          }
+        },
+        {
+          "key": "coins",
+          "value": 178,
+          "labels": {
+            "en": "Coins",
+            "zh-Hans": "投币"
+          }
+        },
+        {
+          "key": "danmaku",
+          "value": 14,
+          "labels": {
+            "en": "Danmaku",
+            "zh-Hans": "弹幕"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "eb86bd11220bfeadd28c2b275f459c76e194e52ecd22dc9f3b88bcc4e584d777"
+  }
+}

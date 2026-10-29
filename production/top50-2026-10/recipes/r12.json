@@ -1,0 +1,174 @@
+{
+  "candidateId": "x_2017928823497453789",
+  "slug": "product-cutaway-infographic",
+  "categoryId": "product",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Create an educational cutaway illustration of {{device}} from these concept specifications: {{structureNotes}}. Use only these labels: {{labels}}. Show a three-quarter product view with selected housing panels transparent. Draw precise leader lines to major components, using four accent colors for functional groups. Keep labels short and legible on white. Include one enlarged detail inset. Use only the provided dimensions and technical facts.",
+  "fields": [
+    {
+      "name": "device",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Device",
+        "zh-Hans": "产品名称"
+      },
+      "default": "an original concept hand-cranked coffee grinder",
+      "maxLength": 300
+    },
+    {
+      "name": "structureNotes",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "multiline": true,
+      "labels": {
+        "en": "Structure notes",
+        "zh-Hans": "核对后的结构资料"
+      },
+      "default": "Fictional concept specification: removable top crank turns a vertical shaft; a conical burr pair sits below a bean hopper; grounds fall into a detachable lower cup. No dimensions or performance claims.",
+      "maxLength": 2000
+    },
+    {
+      "name": "labels",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Labels",
+        "zh-Hans": "准确的部件标注"
+      },
+      "default": [
+        "CRANK",
+        "SHAFT",
+        "HOPPER",
+        "BURRS",
+        "GROUNDS CUP"
+      ]
+    }
+  ],
+  "values": {
+    "device": "an original concept hand-cranked coffee grinder",
+    "structureNotes": "Fictional concept specification: removable top crank turns a vertical shaft; a conical burr pair sits below a bean hopper; grounds fall into a detachable lower cup. No dimensions or performance claims.",
+    "labels": [
+      "CRANK",
+      "SHAFT",
+      "HOPPER",
+      "BURRS",
+      "GROUNDS CUP"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Supply the device, checked structure notes and exact labels; a product photo is optional.",
+      "zh-Hans": "产品名称、准确结构资料与标注；外观照可选"
+    },
+    "slots": [
+      {
+        "id": "product",
+        "labels": {
+          "en": "Product",
+          "zh-Hans": "产品外观"
+        },
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Product cutaway explainer",
+      "description": "Transparent housing reveals a supplied component layout with restrained labels.",
+      "body": "## How to use\n\nSupply the device, checked structure notes and exact labels; a product photo is optional.\n\nThe default is a fictional concept, not a certified engineering drawing.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "产品剖透视技术信息图",
+      "description": "透明外壳展示指定部件布局，配以简洁标注。",
+      "body": "## 使用方法\n\n准备：产品名称、准确结构资料与标注；外观照可选。透明外壳展示指定部件布局，配以简洁标注。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n默认资料为虚构产品概念，不是经过认证的工程图。"
+    }
+  },
+  "alt": {
+    "en": "Transparent housing reveals a supplied component layout with restrained labels.",
+    "zh-Hans": "透明外壳展示指定部件布局，配以简洁标注。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2017928823497453789",
+      "platform": "X",
+      "author": "TechieBySA",
+      "url": "https://x.com/TechieBySA/status/2017928823497453789",
+      "publishedAt": "2026-02-01T11:51:37.000Z",
+      "metricObjectUrl": "https://x.com/TechieBySA/status/2017928823497453789",
+      "metricObjectPublishedAt": "2026-02-01T11:51:37.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2017928823497453789&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 3525,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 57,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "e4796272c1b547dfe2b21e54732b385579f323957197a109c839d18071bcad8a"
+  }
+}

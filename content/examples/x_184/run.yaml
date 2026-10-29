@@ -1,0 +1,34 @@
+id: x_184
+promptId: p_139
+template:
+  id: t_026
+  version: v1
+  sample: default
+  values:
+    name: LIN
+    accentColor: terracotta red
+  contractHash: 7987394b0ba84d15f4ed765989a4ee6efb65f44c4c0b232d33f38a7f860a0ef2
+promptSha256: 329ed0c905ab5dd2e2d60408ebadeafebf8e405f83239facf1461f3051a7b7f6
+referenceAssetIds:
+  - a_251
+  - a_247
+  - a_214
+referenceBindings:
+  - slotId: profile
+    referenceIndex: 0
+  - slotId: memories
+    referenceIndex: 1
+  - slotId: memories
+    referenceIndex: 2
+outputAssetIds:
+  - a_250
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: Profile contour readable; action and portrait inputs arranged inside
+    silhouette; LIN exact.
+  zh-Hans: 清晰侧脸轮廓中排列多张回忆照片。

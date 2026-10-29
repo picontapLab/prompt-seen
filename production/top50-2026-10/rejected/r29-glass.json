@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r29-glass",
+    "candidateId": "x_2032908105994961090",
+    "prompt": "Transform the uploaded symbol into one sculptural object made of glass. Preserve the outer silhouette and all important negative spaces. For cloud, build believable billowing vapor with translucent edges and soft internal shadows. For glass, use clear solid blown glass with refracted highlights and physically plausible thickness. Float the object against a quiet pale blue studio-like gradient with soft warm side light. Keep the composition minimal and the whole symbol visible. No lettering or extra logos.",
+    "references": [
+      {
+        "slotId": "logo",
+        "path": "production/top50-2026-10/references/logo.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "8721ae5e60d75bf427c57ad10b3de6962d1604a60ef26d16751a0e17f9557a0e",
+  "references": [
+    {
+      "path": "production/top50-2026-10/references/logo.png",
+      "sha256": "6da6b23b171a8b3980a6c2d4134c2074ef8dd41a91ce9e9ca4d3512b6d15e847",
+      "slotId": "logo"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:31:18.723Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/top50-2026-10/jobs/r29-glass/output-3106cdda8140da020372ff5134513d2beee6a6a94fc55926774ef0952312ab93.png",
+      "sha256": "3106cdda8140da020372ff5134513d2beee6a6a94fc55926774ef0952312ab93"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T08:54:03.472Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Rejected: output mixes glass shell and cloud filling instead of isolating selected material.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T08:54:03.475Z"
+  }
+}

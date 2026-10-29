@@ -1,0 +1,30 @@
+fields:
+  - name: object
+    required: true
+    group: subject
+    labels:
+      en: Object
+      zh-Hans: 物件名称
+    help: {}
+    type: string
+    default: a mechanical pocket watch
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: labels
+    required: true
+    group: text
+    labels:
+      en: Labels
+      zh-Hans: 短标注
+    help: {}
+    type: string-list
+    default:
+      - CASE
+      - DIAL
+      - GEARS
+      - CROWN
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "

@@ -1,0 +1,104 @@
+id: p_123
+slug: product-brand-story-grid
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_017
+  version: v1
+  values:
+    brandPalette: sage green, ivory and brushed silver
+    scenes:
+      - hero shot
+      - cap and label close-up
+      - hand holding the bottle
+      - brushed metal detail
+      - three-bottle repeated arrangement
+      - floating bottle
+      - paint texture macro
+      - bottle beside leaves
+      - bottle on a picnic table
+categoryId: product
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_228
+relatedTemplateIds:
+  - t_017
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_168
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_2013268963266904438
+    platform: X
+    author: Dari_Designs
+    url: https://x.com/Dari_Designs/status/2013268963266904438
+    publishedAt: 2026-01-19T15:15:00.000Z
+    metricObjectUrl: https://x.com/Dari_Designs/status/2013268963266904438
+    metricObjectPublishedAt: 2026-01-19T15:15:00.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:10:42Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2013268963266904438&lang=en&token=1
+    sourcePromptStatus:
+      en: Source prompt or excerpt available; independently adapted
+      zh-Hans: 原帖指向的原prompt片段可见
+    metrics:
+      - key: likes
+        value: 5179
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 25
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: cap and label close-up
+    region:
+      x: 0.34
+      y: 0.01
+      w: 0.32
+      h: 0.31
+    note:
+      en: The second panel reserves space for the cap texture and readable PINE mark.
+      zh-Hans: 第二格集中展示瓶盖纹理和 PINE 标志。
+  - phrase: three-bottle repeated arrangement
+    region:
+      x: 0.34
+      y: 0.34
+      w: 0.32
+      h: 0.32
+    note:
+      en: Repeating the same product establishes a coherent campaign rhythm.
+      zh-Hans: 同一产品重复排列，让九宫格保持统一的视觉节奏。

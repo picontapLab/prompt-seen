@@ -26,11 +26,11 @@ import type {
   TranslationInfo,
   Visibility,
 } from '../../../src/modules/content/types';
-import { graphemeLength, renderTemplate } from '../../../src/modules/template/render';
+import { graphemeLength, renderTemplate, resolveValues } from '../../../src/modules/template/render';
 import type { createUrlModule } from '../../../src/modules/url/create';
 import { compileMdx, type ContentLink } from './mdx';
 import type { Content, LocaleFile, PromptRecord, TaxonomyKey, TemplateRecord } from './read';
-import { TAXONOMY_FILES } from './read';
+import { TAXONOMY_FILES, sha256 } from './read';
 import {
   COLLECTION_MIN_ITEMS,
   localeStates,
@@ -39,6 +39,9 @@ import {
   TOPIC_MIN_PROMPTS,
   toFieldSpec,
   versionSpec,
+  inputRequirementsOf,
+  runInputRequirements,
+  sameValues,
   type LocaleState,
 } from './rules';
 
@@ -502,13 +505,22 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         test: {
           model: summary.model,
           verification: summary.verification,
+          recordedOutput: examples.some((run) => run.prompt === text && run.outputs.length > 0),
           lastTestedAt: summary.lastTestedAt,
           aspectRatio: aspectRatioLabel(summary.cover.width, summary.cover.height),
-          referenceImage: r.data.inputRequirements.referenceImage,
+          referenceImage: inputRequirementsOf(content, r).referenceImage,
         },
         examples,
         source: r.data.source,
-        inputInstructions: r.data.inputRequirements.instructions[code] ?? null,
+        promptProvenance: r.data.promptProvenance,
+        inspirationSources: r.data.inspirationSources.map((source) => ({
+          ...source,
+          metricScope: source.metricScope[code] ?? '',
+          evidenceMethod: source.evidenceMethod[code] ?? '',
+          sourcePromptStatus: source.sourcePromptStatus[code] ?? '',
+          metrics: source.metrics.map(({ key, value, labels }) => ({ key, value, label: labels[code] ?? key })),
+        })),
+        inputInstructions: inputRequirementsOf(content, r).instructions[code] ?? null,
         showcaseExampleId: r.data.showcaseExampleId,
         template:
           source.type === 'template' ? { id: source.templateId, version: source.version, values: source.values } : null,
@@ -545,7 +557,24 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         groupLabel: f.group ? label(content.fieldGroups.get(f.group)?.labels ?? {}) || null : null,
         optionLabels: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, label(o.labels)])) : {},
       }));
-      const samples = [...version.samples].map(([name, s]) => ({ name, values: s.values }));
+      const samples = [...version.samples].map(([name, s]) => ({
+        name,
+        values: s.values,
+        exampleIds: runsOfTemplate(r.data.id)
+          .filter((run) => {
+            const t = run.data.template;
+            const rendered = renderTemplate(spec, s.values).text;
+            return (
+              t?.version === version.id &&
+              t.sample === name &&
+              rendered !== null &&
+              run.data.promptSha256 === sha256(rendered) &&
+              run.prompt === rendered &&
+              sameValues(t.values, resolveValues(spec.fields, s.values), spec.fields)
+            );
+          })
+          .map((run) => run.data.id),
+      }));
       const defaultValues = version.samples.get('default')?.values ?? {};
       const model: TemplateDetail = {
         ...templateById.get(r.data.id)!,
@@ -555,6 +584,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         })(),
         seo: seo(v.file),
         ...richBody(v.file, code),
+        inputInstructions: version.inputs?.instructions[code] ?? null,
         version: {
           id: version.id,
           body: version.body,
@@ -696,9 +726,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       parameters: Object.entries(d.parameters).map(([name, value]) => ({ name, value })),
       referenceLabels: d.referenceAssetIds.map((_, index) => {
         const binding = d.referenceBindings.find((b) => b.referenceIndex === index);
-        const slot =
-          d.promptId &&
-          content.prompts.get(d.promptId)?.data.inputRequirements.slots.find((s) => s.id === binding?.slotId);
+        const slot = runInputRequirements(content, d).slots.find((s) => s.id === binding?.slotId);
         return slot ? (slot.labels[code] ?? '') : '';
       }),
       references: d.referenceAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),

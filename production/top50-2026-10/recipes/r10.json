@@ -1,0 +1,118 @@
+{
+  "candidateId": "x_1916521742052503804",
+  "slug": "personalized-character-keychain",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Turn the subject in the reference photo into a small collectible keychain charm. Preserve recognizable colors and facial features in a simplified miniature form. Add a believable metal loop and short chain attached at the top. Photograph the charm beside a real key on a warm tabletop, using soft window light and shallow depth of field.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one person or pet reference. Our person is a fictional AI-generated adult.",
+      "zh-Hans": "人物或宠物参考照"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject",
+          "zh-Hans": "人物或宠物"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Personalized keychain charm",
+      "description": "A recognizable subject becomes a miniature charm beside a real key.",
+      "body": "## How to use\n\nUpload one person or pet reference. Our person is a fictional AI-generated adult.\n\nInspect the chain attachment and the scale relative to the key.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "个性人物钥匙扣商品图",
+      "description": "熟悉的人物化为钥匙旁的小巧挂件。",
+      "body": "## 使用方法\n\n准备：人物或宠物参考照。熟悉的人物化为钥匙旁的小巧挂件。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A recognizable subject becomes a miniature charm beside a real key.",
+    "zh-Hans": "熟悉的人物化为钥匙旁的小巧挂件。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_1916521742052503804",
+      "platform": "X",
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1916521742052503804",
+      "publishedAt": "2025-04-27T15:56:05.000Z",
+      "metricObjectUrl": "https://x.com/azed_ai/status/1916521742052503804",
+      "metricObjectPublishedAt": "2025-04-27T15:56:05.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=1916521742052503804&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1213,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 67,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "427e4cb685b4d1af65769c813a22df93d3574f725492dbff2e47783bc5b6512b"
+  }
+}

@@ -1,0 +1,82 @@
+id: p_118
+slug: miniature-city-weather-card
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_013
+  version: v1
+  values:
+    city: Kyoto
+    dateLabel: DEMO — 12 APR
+    forecast: "FICTIONAL FORECAST: 18°C, partly cloudy"
+    landmarks:
+      - a Kyoto pagoda
+      - a red shrine gate
+      - a wooden town house
+categoryId: architecture
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_222
+relatedTemplateIds:
+  - t_013
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: none
+showcaseExampleId: x_163
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_1993729800922341810
+    platform: X
+    author: dotey
+    url: https://x.com/dotey/status/1993729800922341810
+    publishedAt: 2025-11-26T17:13:20.000Z
+    metricObjectUrl: https://x.com/dotey/status/1993729800922341810
+    metricObjectPublishedAt: 2025-11-26T17:13:20.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:10:42Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1993729800922341810&lang=en&token=1
+    sourcePromptStatus:
+      en: Source prompt or excerpt available; independently adapted
+      zh-Hans: 只取得原帖片段
+    metrics:
+      - key: likes
+        value: 2550
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 107
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

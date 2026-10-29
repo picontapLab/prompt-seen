@@ -1,0 +1,143 @@
+{
+  "candidateId": "CN01",
+  "slug": "two-person-wedding-editorial",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Using the two uploaded portraits, create a wedding editorial photograph of the same two adults. Keep both faces recognizable and their proportions natural. Dress them in an ivory wedding outfit and a charcoal suit, standing close together in a sunlit garden with a stone arch and soft greenery. Candid laughter, a gentle breeze, warm film colors, realistic skin and fabric, flattering late-afternoon side light. Frame from the knees upward in a vertical 4:5 composition. No extra people, text or logos.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload person A first, then person B. Both references are fictional AI-generated adults.",
+      "zh-Hans": "两位成年人的照片"
+    },
+    "slots": [
+      {
+        "id": "personA",
+        "labels": {
+          "en": "Person a",
+          "zh-Hans": "第一位成年人"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "personB",
+        "labels": {
+          "en": "Person b",
+          "zh-Hans": "第二位成年人"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Two-person wedding editorial",
+      "description": "Two supplied adult portraits become a warm garden wedding photograph.",
+      "body": "## How to use\n\nUpload person A first, then person B. Both references are fictional AI-generated adults.\n\nCheck both faces separately, natural proportions and consistent lighting.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "双人AI婚纱写真",
+      "description": "两张成年人的肖像合成为温暖的花园婚纱写真。",
+      "body": "## 使用方法\n\n准备：两位成年人的照片。两张成年人的肖像合成为温暖的花园婚纱写真。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Two supplied adult portraits become a warm garden wedding photograph.",
+    "zh-Hans": "两张成年人的肖像合成为温暖的花园婚纱写真。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "CN01",
+      "platform": "Bilibili",
+      "author": "张奕的AI工具铺",
+      "url": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+      "publishedAt": "2025-09-24",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV18sJ9zeEGY/",
+      "metricObjectPublishedAt": "2025-09-24",
+      "metricScope": {
+        "en": "Whole tutorial or showcase video",
+        "zh-Hans": "整条教程或作品展示视频"
+      },
+      "observedAt": "2026-10-29T06:17:12Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "B站 官方公开只读 API"
+      },
+      "evidenceUrl": "https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "作者提供外部prompt文档链接，本轮未读取文档"
+      },
+      "metrics": [
+        {
+          "key": "views",
+          "value": 9416,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "likes",
+          "value": 231,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "saves",
+          "value": 345,
+          "labels": {
+            "en": "Saves",
+            "zh-Hans": "收藏"
+          }
+        },
+        {
+          "key": "comments",
+          "value": 139,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        },
+        {
+          "key": "shares",
+          "value": 65,
+          "labels": {
+            "en": "Shares",
+            "zh-Hans": "分享"
+          }
+        },
+        {
+          "key": "coins",
+          "value": 208,
+          "labels": {
+            "en": "Coins",
+            "zh-Hans": "投币"
+          }
+        },
+        {
+          "key": "danmaku",
+          "value": 4,
+          "labels": {
+            "en": "Danmaku",
+            "zh-Hans": "弹幕"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "b8ad67680b9fbf0963e70a53cc98edd467843e8fafeda77d38300ad7b6f80426"
+  }
+}

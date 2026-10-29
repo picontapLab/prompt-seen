@@ -1,0 +1,94 @@
+{
+  "candidateId": "R16",
+  "slug": "hidden-portrait-flower-garden",
+  "categoryId": "landscape",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create an optical-illusion landscape photograph, using the uploaded portrait only as a very faint low-frequency arrangement guide. Photograph an expansive natural English flower garden from a high oblique viewpoint: small irregular beds of pink and white roses, lavender, winding narrow gravel paths, many scattered shrubs, a few cypress trees, patches of dappled sunlight. At full resolution every patch is ordinary separate foliage, flowers, gravel or deep garden shadow. ONLY when viewed as a tiny thumbnail or with eyes squinted, the overall distribution of light and dark loosely suggests the supplied face. Break every facial contour into disconnected irregular plant clusters. No physical human face, skin, anatomical eyes, carved face, face-shaped paving, topiary head, bust, portrait mural or vertical face sculpture. Keep the main garden plane receding into the distance; prioritize a convincing garden over precise portrait likeness. No text.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload a high-contrast portrait guide and use a tool capable of strong reference or structure conditioning.",
+      "zh-Hans": "高对比轮廓图与结构控制工作流"
+    },
+    "slots": [
+      {
+        "id": "silhouette",
+        "labels": {
+          "en": "Silhouette",
+          "zh-Hans": "高对比轮廓"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Hidden portrait in a flower garden",
+      "description": "Garden light and shadow follow a supplied face structure at different viewing scales.",
+      "body": "## How to use\n\nUpload a high-contrast portrait guide and use a tool capable of strong reference or structure conditioning.\n\nInspect both full size and thumbnail. Plain text alone is insufficient; our recorded workflow supplies the guide image directly.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.\n\n## Result limitation\n\nThe current result uses the supplied silhouette with the built-in image tool, not ControlNet. Individual flower beds, trees and paths form an oblique garden plane, while a thumbnail reveals the face. The face can still be noticed at full size; subtlety and likeness vary across generations. The earlier, stronger face-shaped result remains in the run history."
+    },
+    "zh-Hans": {
+      "title": "远看藏人像，近看是花卉风景",
+      "description": "花园的明暗遵循参考人像结构，在不同观看尺度下呈现变化。",
+      "body": "## 使用方法\n\n准备：高对比轮廓图与结构控制工作流。花园的明暗遵循参考人像结构，在不同观看尺度下呈现变化。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n必须提供高对比结构参考并使用能约束结构的工具。单独复制文字不能稳定复现；需要分别检查大图和缩略图的轮廓可辨识程度。\n\n## 实测边界\n\n当前结果使用内置图像工具与轮廓参考图，没有使用 ControlNet。花坛、树木和小径构成俯视花园，缩略图中可辨人像；大图中仍可能看出面部，隐蔽程度与相似度会随生成变化。较早的人脸形态更强的结果保留在历史记录中。"
+    }
+  },
+  "alt": {
+    "en": "Garden light and shadow follow a supplied face structure at different viewing scales.",
+    "zh-Hans": "花园的明暗遵循参考人像结构，在不同观看尺度下呈现变化。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "R16",
+      "platform": "Reddit",
+      "author": "seniorbrinco",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+      "publishedAt": "2023-08-20",
+      "metricObjectUrl": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+      "metricObjectPublishedAt": "2023-08-20",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整篇帖子或图集"
+      },
+      "observedAt": "2026-10-28",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Indexed primary-source snapshot",
+        "zh-Hans": "一手帖搜索索引快照"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "公开：文字提示、模型、ControlNet QR Monster、参考轮廓与参数。"
+      },
+      "metrics": [
+        {
+          "key": "post_score",
+          "value": 1032,
+          "labels": {
+            "en": "Post score",
+            "zh-Hans": "帖子分数"
+          }
+        },
+        {
+          "key": "comments",
+          "value": null,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "aa600f7781118ac8909216187a8d22702f4c7d58aff075529ba7d0d739fe67a0"
+  }
+}

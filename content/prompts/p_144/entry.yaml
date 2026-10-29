@@ -1,0 +1,99 @@
+id: p_144
+slug: ming-inspired-hanfu-portrait
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_257
+relatedTemplateIds: []
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the adult portrait first and costume second. Both inputs are synthetic; the costume is a modern fictional design.
+    zh-Hans: 人物照片和服饰参考
+  slots:
+    - id: person
+      labels:
+        en: Person
+        zh-Hans: 成年人物肖像
+      min: 1
+      max: 1
+    - id: garment
+      labels:
+        en: Garment
+        zh-Hans: 服饰参考
+      min: 1
+      max: 1
+showcaseExampleId: x_189
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: CN06
+    platform: Bilibili
+    author: K43
+    url: https://www.bilibili.com/video/BV1wT411R7fm/
+    publishedAt: 2023-02-09
+    metricObjectUrl: https://www.bilibili.com/video/BV1wT411R7fm/
+    metricObjectPublishedAt: 2023-02-09
+    metricScope:
+      en: Whole tutorial or showcase video
+      zh-Hans: 整条教程或作品展示视频
+    observedAt: 2026-10-29T06:17:12Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: B站 官方公开只读 API
+    evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 未取得完整prompt；本次依据展示主题改编
+    metrics:
+      - key: views
+        value: 18638
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: likes
+        value: 477
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: saves
+        value: 689
+        labels:
+          en: Saves
+          zh-Hans: 收藏
+      - key: comments
+        value: 116
+        labels:
+          en: Comments
+          zh-Hans: 评论
+      - key: shares
+        value: 98
+        labels:
+          en: Shares
+          zh-Hans: 分享
+      - key: coins
+        value: 178
+        labels:
+          en: Coins
+          zh-Hans: 投币
+      - key: danmaku
+        value: 14
+        labels:
+          en: Danmaku
+          zh-Hans: 弹幕
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

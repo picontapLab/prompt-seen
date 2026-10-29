@@ -1,0 +1,25 @@
+fields:
+  - name: ageRange
+    required: true
+    group: subject
+    labels:
+      en: Age range
+      zh-Hans: 成年年龄范围
+    help: {}
+    type: string
+    default: an adult in their thirties
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: personality
+    required: true
+    group: subject
+    labels:
+      en: Personality
+      zh-Hans: 性格
+    help: {}
+    type: string
+    default: calm, curious and slightly mischievous
+    minLength: null
+    maxLength: 300
+    multiline: false

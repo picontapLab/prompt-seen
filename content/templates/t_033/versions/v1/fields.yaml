@@ -1,0 +1,21 @@
+fields:
+  - name: material
+    required: true
+    group: style
+    labels:
+      en: Material
+      zh-Hans: 云朵或玻璃材质
+    help: {}
+    type: enum
+    default: cloud
+    options:
+      - value: cloud
+        swatch: null
+        labels:
+          en: Cloud
+          zh-Hans: 云朵
+      - value: glass
+        swatch: null
+        labels:
+          en: Glass
+          zh-Hans: 玻璃

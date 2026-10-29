@@ -435,3 +435,34 @@ describe('helpers', () => {
     expect(openingOf('word '.repeat(60)).length).toBeLessThanOrEqual(161);
   });
 });
+
+describe('versioned reference inputs', () => {
+  it('inherits the selected template version input contract in prompt and template views', () => {
+    const root = setup({
+      'content/prompts/p_001/prompt.txt': null,
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait', 'inputRequirements: { referenceImage: required }\n').replace(
+        'promptSource: { type: literal, language: en }',
+        'promptSource: { type: template, templateId: t_001, version: v1, values: { product: a mug, palette: warm } }',
+      ),
+      'content/templates/t_001/versions/v1/inputs.yaml': 'referenceImage: required\ninstructions: { en: Upload the product photo., zh-Hans: 上传产品照片。 }\nslots:\n  - { id: product, labels: { en: Product photo, zh-Hans: 产品照片 }, min: 1, max: 1 }\n',
+    });
+    const runFile = path.join(root, 'content/examples/x_001/run.yaml');
+    fs.appendFileSync(runFile, 'referenceAssetIds: [a_002]\nreferenceBindings: [{ slotId: product, referenceIndex: 0 }]\n');
+    const r = load(root);
+    expect(blocking(r.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(r, 'prompt', 'en', 'p_001')?.inputInstructions).toBe('Upload the product photo.');
+    expect(detail<TemplateDetail>(r, 'template', 'en', 't_001')?.inputInstructions).toBe('Upload the product photo.');
+    expect(detail<TemplateDetail>(r, 'template', 'en', 't_001')?.version.samples[0]?.exampleIds).toEqual(['x_001']);
+    expect(detail<PromptDetail>(r, 'prompt', 'en', 'p_001')?.examples?.[0]?.referenceLabels).toEqual(['Product photo']);
+  });
+});
+
+it('localizes source evidence without turning source metrics into site ratings', () => {
+  const evidence = { candidateId: 'original', platform: 'Forum', author: 'Artist', url: 'https://example.com/post', publishedAt: '2025-01-01', metricObjectUrl: 'https://example.com/post', metricObjectPublishedAt: '2025-01-01', metricScope: { en: 'Whole post', 'zh-Hans': '整篇帖子' }, observedAt: '2026-10-28', cacheTimestampKnown: false, evidenceMethod: { en: 'Primary page', 'zh-Hans': '原始页面' }, evidenceUrl: 'https://example.com/post', sourcePromptStatus: { en: 'Excerpt', 'zh-Hans': '片段' }, metrics: [{ key: 'likes', value: 42, labels: { en: 'Likes', 'zh-Hans': '赞' } }] };
+  const r = load(setup({ 'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait', `promptProvenance: independent-adaptation\ninspirationSources: ${JSON.stringify([evidence])}\n`) }));
+  expect(blocking(r.findings.list)).toEqual([]);
+  const p = detail<PromptDetail>(r, 'prompt', 'zh-Hans', 'p_001');
+  expect(p?.inspirationSources?.[0]?.metricScope).toBe('整篇帖子');
+  expect(p?.inspirationSources?.[0]?.metrics).toEqual([{ key: 'likes', value: 42, label: '赞' }]);
+  expect(p?.promptProvenance).toBe('independent-adaptation');
+});

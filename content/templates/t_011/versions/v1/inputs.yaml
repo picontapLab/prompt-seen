@@ -1,0 +1,11 @@
+referenceImage: optional
+instructions:
+  en: Supply the device, checked structure notes and exact labels; a product photo is optional.
+  zh-Hans: 产品名称、准确结构资料与标注；外观照可选
+slots:
+  - id: product
+    labels:
+      en: Product
+      zh-Hans: 产品外观
+    min: 0
+    max: 1

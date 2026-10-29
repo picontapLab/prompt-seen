@@ -1,0 +1,134 @@
+{
+  "candidateId": "CN09",
+  "slug": "gentle-old-photo-restoration",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Carefully restore this old family photograph. Remove visible scratches, dust and stains while preserving the original framing, faces, expressions, age, clothing construction and background objects. Improve clarity conservatively without making skin plastic or inventing sharp facial details where the source is unclear. Add subdued, plausible period colors and retain a little film grain. Do not modernize the clothing, change identities, remove people or replace the setting. Return one restored image at the original aspect ratio.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one old photo. Our before image is a synthetic aged photograph, not a real family archive.",
+      "zh-Hans": "待修复的旧照片"
+    },
+    "slots": [
+      {
+        "id": "oldPhoto",
+        "labels": {
+          "en": "Old photo",
+          "zh-Hans": "待修复旧照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Conservative photo restoration",
+      "description": "Scratches and fading are reduced while the original scene stays recognizable.",
+      "body": "## How to use\n\nUpload one old photo. Our before image is a synthetic aged photograph, not a real family archive.\n\nCompare faces and background; generated details cannot establish historical facts.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "老照片温和修复与自然上色",
+      "description": "减轻划痕与褪色，同时保持原始场景可辨认。",
+      "body": "## 使用方法\n\n准备：待修复的旧照片。减轻划痕与褪色，同时保持原始场景可辨认。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。\n## 使用边界\n\n输入为模拟老化的合成照片，不是真实家庭档案；生成细节不能证明历史事实。"
+    }
+  },
+  "alt": {
+    "en": "Scratches and fading are reduced while the original scene stays recognizable.",
+    "zh-Hans": "减轻划痕与褪色，同时保持原始场景可辨认。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "CN09",
+      "platform": "Bilibili",
+      "author": "火星时代",
+      "url": "https://www.bilibili.com/video/BV17w41157Ev/",
+      "publishedAt": "2023-12-25",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV17w41157Ev/",
+      "metricObjectPublishedAt": "2023-12-25",
+      "metricScope": {
+        "en": "Whole tutorial or showcase video",
+        "zh-Hans": "整条教程或作品展示视频"
+      },
+      "observedAt": "2026-10-29T06:17:12Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "B站 官方公开只读 API"
+      },
+      "evidenceUrl": "https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "未取得完整prompt；本次依据修复主题改编"
+      },
+      "metrics": [
+        {
+          "key": "views",
+          "value": 33334,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "likes",
+          "value": 505,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "saves",
+          "value": 1340,
+          "labels": {
+            "en": "Saves",
+            "zh-Hans": "收藏"
+          }
+        },
+        {
+          "key": "comments",
+          "value": 62,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        },
+        {
+          "key": "shares",
+          "value": 139,
+          "labels": {
+            "en": "Shares",
+            "zh-Hans": "分享"
+          }
+        },
+        {
+          "key": "coins",
+          "value": 211,
+          "labels": {
+            "en": "Coins",
+            "zh-Hans": "投币"
+          }
+        },
+        {
+          "key": "danmaku",
+          "value": 112,
+          "labels": {
+            "en": "Danmaku",
+            "zh-Hans": "弹幕"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "efd78ef9d00c3e3a9fdf6116145f610cff6279e49bf3ccb23c21f5e88b29fedb"
+  }
+}

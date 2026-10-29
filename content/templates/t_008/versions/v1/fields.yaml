@@ -1,0 +1,13 @@
+fields:
+  - name: drink
+    required: true
+    group: subject
+    labels:
+      en: Drink
+      zh-Hans: 饮品种类
+    help: {}
+    type: string
+    default: sparkling citrus lemonade
+    minLength: null
+    maxLength: 250
+    multiline: false

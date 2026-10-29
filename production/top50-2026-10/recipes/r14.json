@@ -1,0 +1,150 @@
+{
+  "candidateId": "x_2017865644365255078",
+  "slug": "floating-recipe-layers",
+  "categoryId": "food",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "Illustrate {{dish}} as a mouthwatering food diagram. Place the finished bowl at the bottom and separate its main ingredients into tidy floating layers above it, with steam connecting the composition. Add concise labels and quantities from this supplied recipe: {{ingredients}}, using thin leader lines. Use warm directional light, realistic food textures and a clean background with ample margins.",
+  "fields": [
+    {
+      "name": "dish",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Dish",
+        "zh-Hans": "菜品名称"
+      },
+      "default": "a bowl of miso ramen",
+      "maxLength": 300
+    },
+    {
+      "name": "ingredients",
+      "type": "string-list",
+      "group": "text",
+      "required": true,
+      "separator": "; ",
+      "minItems": 1,
+      "maxItems": 12,
+      "labels": {
+        "en": "Ingredients",
+        "zh-Hans": "食材与用量"
+      },
+      "default": [
+        "noodles 120 g",
+        "miso broth 350 ml",
+        "one halved boiled egg",
+        "corn 30 g",
+        "scallions 10 g"
+      ]
+    }
+  ],
+  "values": {
+    "dish": "a bowl of miso ramen",
+    "ingredients": [
+      "noodles 120 g",
+      "miso broth 350 ml",
+      "one halved boiled egg",
+      "corn 30 g",
+      "scallions 10 g"
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "Supply a dish and verified ingredient quantities.",
+      "zh-Hans": "菜品、已确认的食材与用量"
+    },
+    "slots": []
+  },
+  "locales": {
+    "en": {
+      "title": "Floating ingredient recipe",
+      "description": "Ingredients rise above a finished bowl with exact supplied quantities.",
+      "body": "## How to use\n\nSupply a dish and verified ingredient quantities.\n\nUse your own checked recipe; inspect every ingredient label.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "悬浮食材分层料理信息图",
+      "description": "食材悬浮在成品碗上方，展示指定用量。",
+      "body": "## 使用方法\n\n准备：菜品、已确认的食材与用量。食材悬浮在成品碗上方，展示指定用量。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "Ingredients rise above a finished bowl with exact supplied quantities.",
+    "zh-Hans": "食材悬浮在成品碗上方，展示指定用量。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2017865644365255078",
+      "platform": "X",
+      "author": "Taaruk_",
+      "url": "https://x.com/Taaruk_/status/2017865644365255078",
+      "publishedAt": "2026-02-01T07:40:34.000Z",
+      "metricObjectUrl": "https://x.com/Taaruk_/status/2017865644365255078",
+      "metricObjectPublishedAt": "2026-02-01T07:40:34.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2017865644365255078&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2176,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 50,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "4399dc45352f88463d8948126f1cb182bdceb5842b262a0ad60d52cb967ccd1b"
+  }
+}

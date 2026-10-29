@@ -1,0 +1,130 @@
+{
+  "candidateId": "cv-145769039",
+  "slug": "cat-in-potion-flask",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a whimsical still life inside a cozy alchemist shop. In the foreground, a transparent round potion flask contains a very fluffy {{animal}} that comfortably fills its entire volume like a liquid, with an exaggerated unimpressed expression. Keep the animal charming and unharmed. Paint the animal with crisp cartoon shapes while rendering the glass and wooden shelf photographically. Add three softly glowing colored bottles behind it, warm candlelight, readable silhouette, square composition.",
+  "fields": [
+    {
+      "name": "animal",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Animal",
+        "zh-Hans": "宠物种类"
+      },
+      "default": "tabby kitten"
+    }
+  ],
+  "values": {
+    "animal": "tabby kitten"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is needed. Copy the full prompt into your image generator.",
+      "zh-Hans": "无需参考图，将完整提示词复制到图像生成工具即可。"
+    }
+  },
+  "locales": {
+    "en": {
+      "title": "Cat in a potion flask",
+      "description": "A grumpy kitten fills a round potion bottle in a warmly lit alchemist shop.",
+      "body": "## How to use\n\nChange the animal while keeping the rounded bottle and readable expression. This is a fantasy scene: retain the explicit comfortable, unharmed description.\n\n## Recorded result\n\nThe default was generated with the built-in image tool. The precise provider model ID was not returned. Other values are not yet tested."
+    },
+    "zh-Hans": {
+      "title": "魔药瓶里挤着一只猫",
+      "description": "一只不高兴的小猫填满圆形魔药瓶，周围是温暖的烛光和发光药瓶。",
+      "body": "## 使用方法\n\n可以替换宠物种类，保留圆瓶造型和鲜明表情。这是幻想场景，保留动物舒适、未受伤的说明。\n\n## 实测结果\n\n默认样例由内置图像工具生成，工具未返回精确的模型 ID。其他参数组合尚未实测。"
+    }
+  },
+  "alt": {
+    "en": "A grumpy kitten fills a round potion bottle in a warmly lit alchemist shop.",
+    "zh-Hans": "一只不高兴的小猫填满圆形魔药瓶，周围是温暖的烛光和发光药瓶。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-145769039",
+      "platform": "Civitai",
+      "author": "Cinnadust",
+      "url": "https://civitai.com/images/145769039",
+      "publishedAt": "2026-10-15T20:00:00.000Z",
+      "metricObjectUrl": "https://civitai.com/images/145769039",
+      "metricObjectPublishedAt": "2026-10-15T20:00:00.000Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=145769039&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 106,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 385,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 1692,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 627,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 36,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "dafe38feb9f8e27bedc3ade04d4395242c685b01c914118769adf37881624540"
+  }
+}

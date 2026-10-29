@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "r11-alternate",
+    "candidateId": "x_2043047413770809708",
+    "prompt": "Build a travel infographic for Japan using the supplied verified map. Destinations: Tokyo; Kyoto. Route notes: Illustrative two-stop route from Tokyo to Kyoto. Use the checked reference positions and omit Osaka from the destination list. No live travel information.. Render the map as a raised miniature terrain model with a few recognizable landmark miniatures. Add clear city labels, route lines and concise checklists in the margins. Place a small suitcase and compass beside the map. Use a light studio background and readable typography.",
+    "references": [
+      {
+        "slotId": "map",
+        "path": "production/top50-2026-10/references/japan-map.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "4fbf00eeffe331211ceaa636b7222189d04db29fa13f25b71ec2afa7c3cab957",
+  "references": [
+    {
+      "path": "production/top50-2026-10/references/japan-map.png",
+      "sha256": "aaad3f17bfe526fd165eb15358ef3cc5e505f7b461afd05eff9f4c02cb154d3b",
+      "slotId": "map"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-10-29T08:45:07.501Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/top50-2026-10/jobs/r11-alternate/output-fcddf573edb9732af372ebf4f834e07a2e76d3b05c9f4138b4a7b8c633ed9f55.png",
+      "sha256": "fcddf573edb9732af372ebf4f834e07a2e76d3b05c9f4138b4a7b8c633ed9f55"
+    },
+    "provider": "OpenAI",
+    "model": null,
+    "recordedAt": "2026-10-29T09:04:39.496Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Main islands and city order recognizable; schematic route, not navigation. Default labels Tokyo, Kyoto, Osaka checked. Alternate rejected because route arrow direction contradicts Tokyo-to-Kyoto notes.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-10-29T09:04:39.499Z"
+  }
+}

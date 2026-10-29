@@ -22,7 +22,8 @@
       "none": "No reference image",
       "optional": "Reference image optional",
       "required": "Reference image required"
-    }
+    },
+    "recordedUnknownModel": "Recorded output · model unverified"
   },
   "sheet": {
     "label": "Prompt · {language}",
@@ -67,7 +68,9 @@
     "references": "Reference images",
     "outputs": "Output",
     "promptUsed": "Prompt used for this print",
-    "unknown": "Not recorded"
+    "unknown": "Not recorded",
+    "selectRun": "Recorded result",
+    "cover": "Cover"
   },
   "source": {
     "heading": "Source and licence",
@@ -108,5 +111,14 @@
     "examples": "Made with this template",
     "testedImage": "Recorded result for these exact values.",
     "unmatchedImage": "These values have no recorded result. The image shows a different example."
+  },
+  "inspiration": {
+    "heading": "Inspiration & source evidence",
+    "adaptation": "This prompt is an independent adaptation. The image shown here is our own recorded result.",
+    "original": "Original content",
+    "snapshot": "Source snapshot",
+    "observed": "Observed {date}",
+    "evidence": "Evidence",
+    "scope": "These figures belong to the original post or video. They are dated snapshots, not live counters or ratings of our image."
   }
 }

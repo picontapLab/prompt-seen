@@ -1,0 +1,143 @@
+{
+  "candidateId": "cv-11798302",
+  "slug": "fruit-animal-miniature",
+  "categoryId": "food",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a macro photograph of a tiny {{animal}} made entirely from one ripe {{fruit}}. Its silhouette, ears and paws are formed naturally from the fruit flesh, while the skin texture, seeds and leaves remain convincingly edible. The creature sits on a plain ceramic plate beside one normal fruit for scale. Gentle window light, shallow depth of field, playful but physically coherent construction, no eyes pasted on, clean square composition.",
+  "fields": [
+    {
+      "name": "animal",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Animal",
+        "zh-Hans": "小动物"
+      },
+      "default": "tabby kitten"
+    },
+    {
+      "name": "fruit",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Fruit",
+        "zh-Hans": "水果"
+      },
+      "default": "strawberry"
+    }
+  ],
+  "values": {
+    "animal": "tabby kitten",
+    "fruit": "strawberry"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is needed. Copy the full prompt into your image generator.",
+      "zh-Hans": "无需参考图，将完整提示词复制到图像生成工具即可。"
+    }
+  },
+  "locales": {
+    "en": {
+      "title": "Fruit animal miniature",
+      "description": "A strawberry becomes a tiny kitten, with seeds and fruit flesh forming its face and paws.",
+      "body": "## How to use\n\nKeep the animal small and the fruit material continuous. Change animal and fruit together; preserve the ordinary fruit beside it as a scale reference.\n\n## Recorded result\n\nThe default was generated with the built-in image tool. The precise provider model ID was not returned. Other values are not yet tested."
+    },
+    "zh-Hans": {
+      "title": "水果变小动物",
+      "description": "草莓的果肉与籽粒构成小猫的脸、耳朵和爪子。",
+      "body": "## 使用方法\n\n保持小动物尺寸与水果材质连贯，可同时替换动物和水果，保留旁边的普通水果作为尺度参照。\n\n## 实测结果\n\n默认样例由内置图像工具生成，工具未返回精确的模型 ID。其他参数组合尚未实测。"
+    }
+  },
+  "alt": {
+    "en": "A strawberry becomes a tiny kitten, with seeds and fruit flesh forming its face and paws.",
+    "zh-Hans": "草莓的果肉与籽粒构成小猫的脸、耳朵和爪子。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-11798302",
+      "platform": "Civitai",
+      "author": "freek22",
+      "url": "https://civitai.com/images/11798302",
+      "publishedAt": "2024-05-07T15:47:56.575Z",
+      "metricObjectUrl": "https://civitai.com/images/11798302",
+      "metricObjectPublishedAt": "2024-05-07T15:47:56.575Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=11798302&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 767,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 1894,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 9976,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 3864,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 0,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "ab859c2cee5182b8a5bef06230377dcb6421c01062bef0d013a2fbac6732ee37"
+  }
+}

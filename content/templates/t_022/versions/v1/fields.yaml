@@ -1,0 +1,43 @@
+fields:
+  - name: theme
+    required: true
+    group: subject
+    labels:
+      en: Theme
+      zh-Hans: 美甲主题
+    help: {}
+    type: string
+    default: a neighborhood coffee shop
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: palette
+    required: true
+    group: style
+    labels:
+      en: Palette
+      zh-Hans: 配色
+    help: {}
+    type: string
+    default: sage green, cream and terracotta
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: motifs
+    required: true
+    group: subject
+    labels:
+      en: Motifs
+      zh-Hans: 五种甲面图案
+    help: {}
+    type: string-list
+    default:
+      - coffee cup
+      - coffee bean
+      - leaf
+      - cream swirl
+      - terracotta stripe
+    minItems: 5
+    maxItems: 5
+    itemMaxLength: null
+    separator: "; "

@@ -1,0 +1,93 @@
+id: p_138
+slug: gentle-old-photo-restoration
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_248
+relatedTemplateIds: []
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one old photo. Our before image is a synthetic aged photograph, not a real family archive.
+    zh-Hans: 待修复的旧照片
+  slots:
+    - id: oldPhoto
+      labels:
+        en: Old photo
+        zh-Hans: 待修复旧照片
+      min: 1
+      max: 1
+showcaseExampleId: x_183
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: CN09
+    platform: Bilibili
+    author: 火星时代
+    url: https://www.bilibili.com/video/BV17w41157Ev/
+    publishedAt: 2023-12-25
+    metricObjectUrl: https://www.bilibili.com/video/BV17w41157Ev/
+    metricObjectPublishedAt: 2023-12-25
+    metricScope:
+      en: Whole tutorial or showcase video
+      zh-Hans: 整条教程或作品展示视频
+    observedAt: 2026-10-29T06:17:12Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: B站 官方公开只读 API
+    evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 未取得完整prompt；本次依据修复主题改编
+    metrics:
+      - key: views
+        value: 33334
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: likes
+        value: 505
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: saves
+        value: 1340
+        labels:
+          en: Saves
+          zh-Hans: 收藏
+      - key: comments
+        value: 62
+        labels:
+          en: Comments
+          zh-Hans: 评论
+      - key: shares
+        value: 139
+        labels:
+          en: Shares
+          zh-Hans: 分享
+      - key: coins
+        value: 211
+        labels:
+          en: Coins
+          zh-Hans: 投币
+      - key: danmaku
+        value: 112
+        labels:
+          en: Danmaku
+          zh-Hans: 弹幕
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

@@ -32,7 +32,7 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
       ) : (
         <span className={styles.badge} data-tone="unverified">
           <CircleDashed aria-hidden="true" />
-          {t('notVerified')}
+          {test.recordedOutput ? t('recordedUnknownModel') : t('notVerified')}
         </span>
       )}
       {/* Facts in two short runs, so a wrapped line never starts with a separator. */}

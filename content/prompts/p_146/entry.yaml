@@ -1,0 +1,120 @@
+id: p_146
+slug: character-chinese-sticker-sheet
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_030
+  version: v1
+  values:
+    captions:
+      - 开心
+      - 哇
+      - 谢谢
+      - 加油
+      - 困了
+      - 庆祝
+      - 好奇
+      - 好的
+      - 抱歉
+      - 坚持
+      - 你好
+      - 哈哈
+      - 安心
+      - 疑惑
+      - 激动
+      - 抱抱
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_260
+relatedTemplateIds:
+  - t_030
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_191
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: CN04
+    platform: Bilibili
+    author: 川扑通
+    url: https://www.bilibili.com/opus/1148687573157150722
+    publishedAt: 2025-12-22
+    metricObjectUrl: https://www.bilibili.com/video/BV1uaqqB2Ez7/
+    metricObjectPublishedAt: 2025-12-20
+    metricScope:
+      en: Whole tutorial or showcase video
+      zh-Hans: 整条教程或作品展示视频
+    observedAt: 2026-10-29T06:17:12Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: B站 官方公开只读 API
+    evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
+    sourcePromptStatus:
+      en: Source prompt or excerpt available; independently adapted
+      zh-Hans: 作者专栏公开完整prompt，原作者还标明改编来源
+    metrics:
+      - key: views
+        value: 344604
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: likes
+        value: 26934
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: saves
+        value: 5872
+        labels:
+          en: Saves
+          zh-Hans: 收藏
+      - key: comments
+        value: 938
+        labels:
+          en: Comments
+          zh-Hans: 评论
+      - key: shares
+        value: 1029
+        labels:
+          en: Shares
+          zh-Hans: 分享
+      - key: coins
+        value: 859
+        labels:
+          en: Coins
+          zh-Hans: 投币
+      - key: danmaku
+        value: 73
+        labels:
+          en: Danmaku
+          zh-Hans: 弹幕
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: a clean 4-by-4 grid
+    region:
+      x: 0.01
+      y: 0.01
+      w: 0.98
+      h: 0.98
+    note:
+      en: The explicit grid fixes the sticker count and reading order.
+      zh-Hans: 明确四行四列，控制贴纸数量和配文阅读顺序。
+  - phrase: face, hairstyle, outfit and colors consistent
+    region:
+      x: 0.01
+      y: 0.01
+      w: 0.24
+      h: 0.23
+    note:
+      en: Identity and clothing stay consistent across the sixteen emotions.
+      zh-Hans: 统一面部、发型与服装，让十六种表情保持同一个角色。

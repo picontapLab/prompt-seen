@@ -1,0 +1,23 @@
+fields:
+  - name: greetings
+    required: true
+    group: text
+    labels:
+      en: Greetings
+      zh-Hans: 九条短祝福
+    help: {}
+    type: string-list
+    default:
+      - 喜悦
+      - 平安
+      - 热爱
+      - 干杯
+      - 希望
+      - 微笑
+      - 心愿
+      - 温暖
+      - 快乐
+    minItems: 9
+    maxItems: 9
+    itemMaxLength: null
+    separator: "; "

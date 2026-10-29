@@ -1,0 +1,41 @@
+fields:
+  - name: country
+    required: true
+    group: subject
+    labels:
+      en: Country
+      zh-Hans: 目的地国家
+    help: {}
+    type: string
+    default: Japan
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: destinations
+    required: true
+    group: subject
+    labels:
+      en: Destinations
+      zh-Hans: 核对后的目的地
+    help: {}
+    type: string-list
+    default:
+      - Tokyo
+      - Kyoto
+      - Osaka
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "
+  - name: routeNotes
+    required: true
+    group: text
+    labels:
+      en: Route notes
+      zh-Hans: 核对后的路线说明
+    help: {}
+    type: string
+    default: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map locations. No travel times, prices or current transport claims.
+    minLength: null
+    maxLength: 2000
+    multiline: true

@@ -1,0 +1,25 @@
+fields:
+  - name: scene
+    required: true
+    group: subject
+    labels:
+      en: Scene
+      zh-Hans: 故事场景
+    help: {}
+    type: string
+    default: a fox reading beneath a woodland tree
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: palette
+    required: true
+    group: style
+    labels:
+      en: Palette
+      zh-Hans: 纸张配色
+    help: {}
+    type: string
+    default: sage, peach and cream
+    minLength: null
+    maxLength: 300
+    multiline: false

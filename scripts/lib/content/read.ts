@@ -12,6 +12,8 @@ import {
   collectionLocalizedSchema,
   exampleRunSchema,
   fieldsFileSchema,
+  inputRequirementsSchema,
+  type InputRequirementsSource,
   ID_PREFIX,
   localizedSchema,
   mediaSchema,
@@ -68,6 +70,7 @@ export type TemplateVersion = {
   fieldsFile: string;
   fields: FieldSource[];
   fieldsLineOf: ParsedYaml['lineOf'];
+  inputs?: InputRequirementsSource | null;
   /** name → values, `default` first. */
   samples: Map<string, { file: string; values: FieldValues }>;
 };
@@ -131,7 +134,9 @@ const subdirs = (dir: string) =>
 
 function readYamlFile<T>(file: string, schema: z.ZodType<T>, findings: Findings, hint?: string): Located<T> | null {
   if (!fs.existsSync(file)) {
-    findings.error(file, 'file is missing', { fix: 'run `npm run content:new` to create entries with every required file' });
+    findings.error(file, 'file is missing', {
+      fix: 'run `npm run content:new` to create entries with every required file',
+    });
     return null;
   }
   const parsed = parseYaml(file, readText(file), findings);
@@ -149,7 +154,9 @@ function readLocaleFiles(
   const files = new Map<string, LocaleFile>();
   const localesDir = path.join(dir, 'locales');
   if (!fs.existsSync(localesDir)) {
-    findings.error(localesDir, 'no locales/ directory', { fix: 'add locales/en.mdx (or the source language) with frontmatter' });
+    findings.error(localesDir, 'no locales/ directory', {
+      fix: 'add locales/en.mdx (or the source language) with frontmatter',
+    });
     return files;
   }
   const codes = new Set(registry.map((l) => l.code));
@@ -166,7 +173,10 @@ function readLocaleFiles(
     const source = readText(file);
     const split = splitFrontmatter(source);
     if (!split) {
-      findings.error(file, 'missing frontmatter', { line: 1, fix: 'start the file with ---, the fields title, status and updatedAt, then ---' });
+      findings.error(file, 'missing frontmatter', {
+        line: 1,
+        fix: 'start the file with ---, the fields title, status and updatedAt, then ---',
+      });
       continue;
     }
     const parsed = parseYaml(file, split.frontmatter, findings);
@@ -200,7 +210,8 @@ function readTerms(file: string, findings: Findings): Map<string, TermRecord> | 
   const list = check(taxonomyFileSchema, parsed, findings);
   if (!list) return null;
   list.forEach((term, i) => {
-    if (terms.has(term.id)) findings.error(file, `duplicate id "${term.id}"`, { line: parsed.lineOf([i, 'id']), field: `${i}.id` });
+    if (terms.has(term.id))
+      findings.error(file, `duplicate id "${term.id}"`, { line: parsed.lineOf([i, 'id']), field: `${i}.id` });
     terms.set(term.id, { ...term, file, line: parsed.lineOf([i]) });
   });
   return terms;
@@ -239,9 +250,13 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         if (!promptText) findings.error(promptFile, 'prompt.txt is empty');
       }
     } else if (fs.existsSync(promptFile)) {
-      findings.error(promptFile, 'a template-based prompt has no prompt.txt; its text is rendered from the template (§5.2)', {
-        fix: 'delete prompt.txt, or change promptSource.type to literal',
-      });
+      findings.error(
+        promptFile,
+        'a template-based prompt has no prompt.txt; its text is rendered from the template (§5.2)',
+        {
+          fix: 'delete prompt.txt, or change promptSource.type to literal',
+        },
+      );
     }
     content.prompts.set(rec.data.id, { ...rec, promptText, promptFile, locales });
   }
@@ -263,8 +278,14 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
       const bodyFile = path.join(vdir, 'body.txt');
       const fieldsFile = path.join(vdir, 'fields.yaml');
       const fields = readYamlFile(fieldsFile, fieldsFileSchema, findings);
+      const inputsFile = path.join(vdir, 'inputs.yaml');
+      const inputs = fs.existsSync(inputsFile)
+        ? (readYamlFile(inputsFile, inputRequirementsSchema, findings)?.data ?? null)
+        : null;
       if (!fs.existsSync(bodyFile)) {
-        findings.error(bodyFile, 'body.txt is missing', { fix: 'add the template text with {{fieldName}} placeholders' });
+        findings.error(bodyFile, 'body.txt is missing', {
+          fix: 'add the template text with {{fieldName}} placeholders',
+        });
         continue;
       }
       const body = normalizePrompt(readText(bodyFile));
@@ -273,7 +294,10 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
       const samples = new Map<string, { file: string; values: FieldValues }>();
       const samplesDir = path.join(vdir, 'samples');
       const sampleFiles = fs.existsSync(samplesDir)
-        ? fs.readdirSync(samplesDir).filter((f) => f.endsWith('.yaml')).sort()
+        ? fs
+            .readdirSync(samplesDir)
+            .filter((f) => f.endsWith('.yaml'))
+            .sort()
         : [];
       for (const f of ['default.yaml', ...sampleFiles.filter((f) => f !== 'default.yaml')]) {
         if (!sampleFiles.includes(f)) continue;
@@ -291,6 +315,7 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         fieldsFile,
         fields: fields.data.fields,
         fieldsLineOf: fields.lineOf,
+        inputs,
         samples,
       });
     }
@@ -305,7 +330,8 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
     checkDirId('example', entryDir, rec.file, rec.data.id, findings);
     const promptFile = path.join(entryDir, 'prompt.txt');
     const prompt = fs.existsSync(promptFile) ? normalizePrompt(readText(promptFile)) : null;
-    if (prompt === null) findings.error(promptFile, 'prompt.txt is missing: a run keeps the exact prompt it used (§5.5)');
+    if (prompt === null)
+      findings.error(promptFile, 'prompt.txt is missing: a run keeps the exact prompt it used (§5.5)');
     content.examples.set(rec.data.id, { ...rec, promptFile, prompt });
   }
 
@@ -314,10 +340,18 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
   if (fs.existsSync(mediaDir)) {
     for (const name of fs.readdirSync(mediaDir).sort()) {
       if (!name.endsWith('.yaml')) continue;
-      const rec = readYamlFile(path.join(mediaDir, name), mediaSchema, findings, 'media files are written by `npm run media:import`');
+      const rec = readYamlFile(
+        path.join(mediaDir, name),
+        mediaSchema,
+        findings,
+        'media files are written by `npm run media:import`',
+      );
       if (!rec) continue;
       if (name !== `${rec.data.id}.yaml`)
-        findings.error(rec.file, `id "${rec.data.id}" does not match the file name`, { field: 'id', fix: `rename the file to ${rec.data.id}.yaml` });
+        findings.error(rec.file, `id "${rec.data.id}" does not match the file name`, {
+          field: 'id',
+          fix: `rename the file to ${rec.data.id}.yaml`,
+        });
       content.media.set(rec.data.id, rec);
     }
   }
@@ -336,7 +370,9 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
   for (const name of subdirs(path.join(dir, 'pages'))) {
     const pageDir = path.join(dir, 'pages', name);
     if (!SLUG_PATTERN.test(name)) {
-      findings.error(pageDir, `"${name}" is not a valid page slug`, { fix: 'use lowercase letters, digits and hyphens' });
+      findings.error(pageDir, `"${name}" is not a valid page slug`, {
+        fix: 'use lowercase letters, digits and hyphens',
+      });
       continue;
     }
     content.pages.set(name, { dir: pageDir, slug: name, locales: readLocaleFiles(pageDir, registry, findings) });
@@ -351,7 +387,12 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
     else content.unreadable.add(key);
     for (const termId of subdirs(path.join(taxonomyDir, spec.dir))) {
       const topicDir = path.join(taxonomyDir, spec.dir, termId);
-      content.topics.push({ dir: topicDir, taxonomy: key, termId, locales: readLocaleFiles(topicDir, registry, findings) });
+      content.topics.push({
+        dir: topicDir,
+        taxonomy: key,
+        termId,
+        locales: readLocaleFiles(topicDir, registry, findings),
+      });
     }
   }
   const groups = readTerms(path.join(taxonomyDir, 'field-groups.yaml'), findings);

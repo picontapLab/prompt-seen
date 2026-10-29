@@ -3,7 +3,7 @@ import type { FieldSpec, FieldValues, TemplateVersionSpec } from '../../../src/m
 import type { ReviewStatus } from '../../../src/modules/content/types';
 import type { ContentLink } from './mdx';
 import type { Content, LocaleFile, PromptRecord, TaxonomyKey, TemplateVersion } from './read';
-import type { FieldSource } from './schemas';
+import { inputRequirementsSchema, type FieldSource, type ExampleRunSource } from './schemas';
 
 // Publishing rules shared by validation (which reports them) and the index (which uses them to
 // decide what each build shows). Design doc §8.4, §8.5, §9.1.
@@ -33,7 +33,13 @@ export function localeStates(locales: ReadonlyMap<string, LocaleFile>): Map<stri
   for (const [code, file] of locales) {
     const t = file.fm.translation;
     if (!t) {
-      states.set(code, { isSource: true, sourceLocale: code, review: 'source', outdated: false, currentSourceHash: null });
+      states.set(code, {
+        isSource: true,
+        sourceLocale: code,
+        review: 'source',
+        outdated: false,
+        currentSourceHash: null,
+      });
       continue;
     }
     const sourceFile = locales.get(t.sourceLocale);
@@ -127,11 +133,15 @@ export function publishProblems(p: PublishContext): Problem[] {
       field: 'translation.reviewStatus',
     });
   if (!p.state.isSource && p.state.sourceLocale === null)
-    problems.push({ message: 'the entry has no single source-language file', fix: 'exactly one locale file has no translation block' });
+    problems.push({
+      message: 'the entry has no single source-language file',
+      fix: 'exactly one locale file has no translation block',
+    });
 
   if (!file.fm.description)
     problems.push({
-      message: 'description is required to publish: the one-sentence summary of what it makes and when to use it (§9.2)',
+      message:
+        'description is required to publish: the one-sentence summary of what it makes and when to use it (§9.2)',
       field: 'description',
     });
 
@@ -153,13 +163,19 @@ export function publishProblems(p: PublishContext): Problem[] {
         fix: `add alt.${locale} to ${mediaFile(p.coverAssetId)}`,
       });
   } else if (p.kind === 'prompt') {
-    problems.push({ message: 'the prompt has no cover image', fix: 'import one with `npm run media:import` and set coverAssetId' });
+    problems.push({
+      message: 'the prompt has no cover image',
+      fix: 'import one with `npm run media:import` and set coverAssetId',
+    });
   }
 
   for (const { key, id } of p.terms) {
     const term = content.taxonomy[key].get(id);
     if (term && !term.labels[locale])
-      problems.push({ message: `${key} "${id}" has no ${locale} label`, fix: `add labels.${locale} to ${term.file.replace(/^.*?content\//, 'content/')}` });
+      problems.push({
+        message: `${key} "${id}" has no ${locale} label`,
+        fix: `add labels.${locale} to ${term.file.replace(/^.*?content\//, 'content/')}`,
+      });
   }
 
   p.annotationNotes?.forEach((note, i) => {
@@ -171,15 +187,25 @@ export function publishProblems(p: PublishContext): Problem[] {
   });
 
   for (const field of p.fields ?? []) {
-    if (!field.labels[locale]) problems.push({ message: `field "${field.name}" has no ${locale} label (§8.5)`, fix: `add labels.${locale} in fields.yaml` });
+    if (!field.labels[locale])
+      problems.push({
+        message: `field "${field.name}" has no ${locale} label (§8.5)`,
+        fix: `add labels.${locale} in fields.yaml`,
+      });
     if (field.type === 'enum')
       for (const o of field.options)
         if (!o.labels[locale])
-          problems.push({ message: `option "${o.value}" of "${field.name}" has no ${locale} label`, fix: `add labels.${locale} in fields.yaml` });
+          problems.push({
+            message: `option "${o.value}" of "${field.name}" has no ${locale} label`,
+            fix: `add labels.${locale} in fields.yaml`,
+          });
     if (field.group) {
       const group = content.fieldGroups.get(field.group);
       if (group && !group.labels[locale])
-        problems.push({ message: `field group "${field.group}" has no ${locale} label`, fix: `add labels.${locale} in content/taxonomy/field-groups.yaml` });
+        problems.push({
+          message: `field group "${field.group}" has no ${locale} label`,
+          fix: `add labels.${locale} in content/taxonomy/field-groups.yaml`,
+        });
     }
   }
 
@@ -198,6 +224,22 @@ export function publishProblems(p: PublishContext): Problem[] {
 
 /** Plain field values equal, ignoring key order and surrounding space. */
 export function sameValues(a: FieldValues, b: FieldValues, fields: readonly FieldSpec[]): boolean {
-  const norm = (v: string | string[] | undefined) => (Array.isArray(v) ? v.map((x) => x.trim()) : v?.trim() ?? null);
+  const norm = (v: string | string[] | undefined) => (Array.isArray(v) ? v.map((x) => x.trim()) : (v?.trim() ?? null));
   return fields.every((f) => JSON.stringify(norm(a[f.name])) === JSON.stringify(norm(b[f.name])));
+}
+
+/** Template instances inherit the immutable version input contract. */
+export function inputRequirementsOf(content: Content, rec: PromptRecord) {
+  const source = rec.data.promptSource;
+  return (
+    (source.type === 'template'
+      ? content.templates.get(source.templateId)?.versions.get(source.version)?.inputs
+      : null) ?? rec.data.inputRequirements
+  );
+}
+
+export function runInputRequirements(content: Content, run: ExampleRunSource) {
+  const version = run.template && content.templates.get(run.template.id)?.versions.get(run.template.version);
+  const owner = run.promptId && content.prompts.get(run.promptId);
+  return version?.inputs ?? (owner ? inputRequirementsOf(content, owner) : inputRequirementsSchema.parse({}));
 }

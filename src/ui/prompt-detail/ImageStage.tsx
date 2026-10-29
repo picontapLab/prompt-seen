@@ -24,6 +24,8 @@ export type ImageStageProps = {
    * to the sharp image once it has decoded (§11.3.2).
    */
   preview?: string;
+  priority?: boolean;
+  annotationsEnabled?: boolean;
 };
 
 /**
@@ -33,9 +35,18 @@ export type ImageStageProps = {
  * (no fade that waits for JavaScript, §12.3). Below: caption, size and a link to the original;
  * with several results, a strip of thumbnails switches the image.
  */
-export function ImageStage({ images, startPrint, endPrint, sizes, preview }: ImageStageProps) {
+export function ImageStage({
+  images,
+  startPrint,
+  endPrint,
+  sizes,
+  preview,
+  priority = true,
+  annotationsEnabled = true,
+}: ImageStageProps) {
   const t = useTranslations('detail.image');
-  const annotations = useAnnotations();
+  const context = useAnnotations();
+  const annotations = annotationsEnabled ? context : null;
   const [index, setIndex] = useState(0);
   // Per image: failed loads, and retries so far (a retry adds a query so the browser refetches).
   const [failed, setFailed] = useState<ReadonlySet<number>>(new Set());
@@ -63,7 +74,13 @@ export function ImageStage({ images, startPrint, endPrint, sizes, preview }: Ima
   return (
     <div className={styles.stage} id={annotations?.stageId}>
       <FilmStrip startPrint={startPrint} endPrint={endPrint}>
-        <div className={styles.picture} style={frame} data-annotated={annotated || undefined} data-stage-picture="">
+        <div
+          className={styles.picture}
+          style={frame}
+          data-annotated={annotated || undefined}
+          data-stage-picture={priority ? '' : undefined}
+          data-reference-picture={!priority ? '' : undefined}
+        >
           {preview && index === 0 && !failed.has(0) && (
             <img src={preview} alt="" aria-hidden="true" className={`${styles.image} ${styles.preview}`} />
           )}
@@ -78,7 +95,7 @@ export function ImageStage({ images, startPrint, endPrint, sizes, preview }: Ima
               height={props.height}
               alt={props.alt}
               className={styles.image}
-              fetchPriority={index === 0 ? 'high' : 'auto'}
+              fetchPriority={priority && index === 0 ? 'high' : 'auto'}
               decoding={index === 0 ? undefined : 'async'}
               onError={() => setFailed((f) => new Set(f).add(index))}
             />

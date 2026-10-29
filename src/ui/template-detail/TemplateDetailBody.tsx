@@ -44,6 +44,7 @@ export function TemplateDetailBody({
       run.outputs[0]
         ? [
             {
+              id: run.id,
               prompt: run.prompt,
               template: run.template,
               image: run.outputs[0],
@@ -64,6 +65,7 @@ export function TemplateDetailBody({
         <header className={detailStyles.header}>
           <h1 className={detailStyles.title}>{detail.title}</h1>
           <p className={detailStyles.summary}>{detail.description}</p>
+          {detail.inputInstructions && <p className={detailStyles.summary}>{detail.inputInstructions}</p>}
           <div className={detailStyles.actions}>
             {/* Saving (§11.5) and `S` (§11.10). */}
             <FavoriteButton

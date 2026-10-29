@@ -238,7 +238,10 @@ export function promptMarkdown(detail: PromptDetail, ctx: MarkdownContext): stri
   const credit = detail.cover.credit;
 
   const testRecord = [
-    verified ? t('detail.test.verifiedWith', { model }) : t('detail.test.notVerified') + (model ? ` (${model})` : ''),
+    verified
+      ? t('detail.test.verifiedWith', { model })
+      : (test.recordedOutput ? t('detail.test.recordedUnknownModel') : t('detail.test.notVerified')) +
+        (model ? ` (${model})` : ''),
     `${t('detail.test.dimensions', { width: detail.cover.width, height: detail.cover.height })} · ${test.aspectRatio}`,
     test.lastTestedAt ? t('detail.test.lastTested', { date: test.lastTestedAt }) : t('detail.test.neverTested'),
     t(`detail.test.reference.${test.referenceImage}`),
@@ -285,6 +288,25 @@ export function promptMarkdown(detail: PromptDetail, ctx: MarkdownContext): stri
       `- ${labelled(t, t('detail.source.prompt'), promptSource ? promptFacts.join(' · ') : t('detail.source.unknown'))}`,
       `- ${labelled(t, t('detail.source.image'), imageFacts.length ? imageFacts.join(' · ') : t('detail.source.unknown'))}`,
     ].join('\n')}`,
+    (detail.inspirationSources?.length ?? 0) > 0 &&
+      `## ${t('detail.inspiration.heading')}\n\n${detail.promptProvenance === 'independent-adaptation' ? t('detail.inspiration.adaptation') + '\n\n' : ''}${detail
+        .inspirationSources!.map((source) =>
+          [
+            link(`${source.platform}${source.author ? ` · ${source.author}` : ''}`, source.url),
+            source.publishedAt && escapeText(source.publishedAt),
+            link(source.metricScope, source.metricObjectUrl),
+            source.metrics
+              .filter((m) => m.value !== null)
+              .map((m) => `${escapeText(m.label)}: ${m.value}`)
+              .join(' · '),
+            escapeText(t('detail.inspiration.observed', { date: source.observedAt })),
+            link(source.evidenceMethod, source.evidenceUrl),
+            escapeText(source.sourcePromptStatus),
+          ]
+            .filter(Boolean)
+            .join(' · '),
+        )
+        .join('\n\n')}\n\n${t('detail.inspiration.scope')}`,
   ]);
 }
 
@@ -334,6 +356,7 @@ export function templateMarkdown(detail: TemplateDetail, ctx: MarkdownContext): 
 
   return join([
     ...head(detail, ctx),
+    detail.inputInstructions && escapeText(detail.inputInstructions),
     escapeText(
       [
         t('detail.template.version', { version: version.id }),

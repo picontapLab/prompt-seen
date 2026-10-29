@@ -1,0 +1,118 @@
+{
+  "candidateId": "x_2020241008693506483",
+  "slug": "photo-to-stylized-3d",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "avatar"
+  ],
+  "body": "Restyle the uploaded portrait as an expressive stylized 3D character. Preserve the person’s pose, clothing colors, hairstyle and camera angle. Simplify shapes into carefully sculpted forms, with subtle skin shading and tactile fabric. Keep recognizable proportions without extreme distortion. Match the original scene layout and use soft cinematic lighting with natural depth of field.",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one portrait with a clear pose. Our reference is a fictional AI-generated adult.",
+      "zh-Hans": "人物照片"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Person",
+          "zh-Hans": "人物与姿态"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Portrait to sculpted 3D character",
+      "description": "The original pose and outfit become a softly lit sculpted character.",
+      "body": "## How to use\n\nUpload one portrait with a clear pose. Our reference is a fictional AI-generated adult.\n\nCompare camera angle, hairstyle and clothing colors with the input.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "真人照片转一致姿态的3D角色",
+      "description": "保留姿态与服装，转绘为柔光下的三维角色。",
+      "body": "## 使用方法\n\n准备：人物照片。保留姿态与服装，转绘为柔光下的三维角色。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "The original pose and outfit become a softly lit sculpted character.",
+    "zh-Hans": "保留姿态与服装，转绘为柔光下的三维角色。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2020241008693506483",
+      "platform": "X",
+      "author": "firatbilal",
+      "url": "https://x.com/firatbilal/status/2020241008693506483",
+      "publishedAt": "2026-02-07T20:59:25.000Z",
+      "metricObjectUrl": "https://x.com/firatbilal/status/2020241008693506483",
+      "metricObjectPublishedAt": "2026-02-07T20:59:25.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2020241008693506483&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "只取得原帖片段"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 3324,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 29,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "852246bc241d13920d88cfb3eb43824711094046de7d08ba2a1890de89c36eea"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "candidateId": "x_2026316195977146728",
+  "slug": "social-campaign-product-ad",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a 4:5 social campaign image for {{product}} using the uploaded product photo and this palette: {{brandPalette}}. Combine a realistic hero photograph with bold flat graphic shapes that guide the eye. Set the exact headline {{headline}} in large readable type, add {{subtext}} beneath it and place a clear {{cta}} pill near the lower edge. Keep the layout spacious and product details consistent.",
+  "fields": [
+    {
+      "name": "product",
+      "type": "string",
+      "group": "subject",
+      "required": true,
+      "labels": {
+        "en": "Product",
+        "zh-Hans": "产品名称"
+      },
+      "default": "the supplied PINE insulated water bottle",
+      "maxLength": 300
+    },
+    {
+      "name": "headline",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题原文"
+      },
+      "default": "SLOW DOWN",
+      "maxLength": 300
+    },
+    {
+      "name": "subtext",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Subtext",
+        "zh-Hans": "副文案原文"
+      },
+      "default": "A little pause, every day",
+      "maxLength": 300
+    },
+    {
+      "name": "cta",
+      "type": "string",
+      "group": "text",
+      "required": true,
+      "labels": {
+        "en": "Cta",
+        "zh-Hans": "行动文案原文"
+      },
+      "default": "EXPLORE",
+      "maxLength": 300
+    },
+    {
+      "name": "brandPalette",
+      "type": "string",
+      "group": "style",
+      "required": true,
+      "labels": {
+        "en": "Brand palette",
+        "zh-Hans": "品牌配色"
+      },
+      "default": "sage green, cream and terracotta",
+      "maxLength": 300
+    }
+  ],
+  "values": {
+    "product": "the supplied PINE insulated water bottle",
+    "headline": "SLOW DOWN",
+    "subtext": "A little pause, every day",
+    "cta": "EXPLORE",
+    "brandPalette": "sage green, cream and terracotta"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one product photo and supply headline, subtext, call to action and palette.",
+      "zh-Hans": "产品图、标题、副文案与行动文案"
+    },
+    "slots": [
+      {
+        "id": "product",
+        "labels": {
+          "en": "Product",
+          "zh-Hans": "产品照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Product social campaign",
+      "description": "A product photo meets bold graphic shapes and exact campaign copy.",
+      "body": "## How to use\n\nUpload one product photo and supply headline, subtext, call to action and palette.\n\nInspect label consistency and every line of campaign copy.\n\n## Recorded result\n\nThe example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs."
+    },
+    "zh-Hans": {
+      "title": "带标题与行动按钮的社媒广告",
+      "description": "产品照片搭配鲜明几何图形与准确的广告文字。",
+      "body": "## 使用方法\n\n准备：产品图、标题、副文案与行动文案。产品照片搭配鲜明几何图形与准确的广告文字。\n\n## 实测结果\n\n样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。"
+    }
+  },
+  "alt": {
+    "en": "A product photo meets bold graphic shapes and exact campaign copy.",
+    "zh-Hans": "产品照片搭配鲜明几何图形与准确的广告文字。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "x_2026316195977146728",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2026316195977146728",
+      "publishedAt": "2026-02-24T15:20:02.000Z",
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2026316195977146728",
+      "metricObjectPublishedAt": "2026-02-24T15:20:02.000Z",
+      "metricScope": {
+        "en": "Whole post or image gallery",
+        "zh-Hans": "整条X帖子或图集"
+      },
+      "observedAt": "2026-10-29T06:10:42Z",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "X 官方公开嵌入接口"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2026316195977146728&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete original prompt not retrieved; independently adapted",
+        "zh-Hans": "称prompt在回复中，未读取回复全文"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 2289,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "conversation_count",
+          "value": 32,
+          "labels": {
+            "en": "Replies",
+            "zh-Hans": "回复"
+          }
+        },
+        {
+          "key": "views",
+          "value": null,
+          "labels": {
+            "en": "Views",
+            "zh-Hans": "播放或浏览"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": null,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        },
+        {
+          "key": "bookmarks",
+          "value": null,
+          "labels": {
+            "en": "Bookmarks",
+            "zh-Hans": "书签"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "143699046178b7d15c203004ad6291790fe5e15d348227cc9378d51ce51e1f58"
+  }
+}

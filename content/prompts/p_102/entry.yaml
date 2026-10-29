@@ -1,0 +1,82 @@
+id: p_102
+slug: fruit-animal-miniature
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_005
+  version: v1
+  values:
+    animal: tabby kitten
+    fruit: strawberry
+categoryId: food
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_204
+relatedTemplateIds:
+  - t_005
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: none
+showcaseExampleId: x_147
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: cv-11798302
+    platform: Civitai
+    author: freek22
+    url: https://civitai.com/images/11798302
+    publishedAt: 2024-05-07T15:47:56.575Z
+    metricObjectUrl: https://civitai.com/images/11798302
+    metricObjectPublishedAt: 2024-05-07T15:47:56.575Z
+    metricScope:
+      en: Original image page
+      zh-Hans: 单张社区图片
+    observedAt: 2026-10-28T23:12:22-07:00
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: Civitai 官方公开 images API
+    evidenceUrl: https://civitai.com/api/v1/images?imageId=11798302&withMeta=true
+    sourcePromptStatus:
+      en: Source prompt or excerpt available; independently adapted
+      zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
+    metrics:
+      - key: cryCount
+        value: 767
+        labels:
+          en: Cry reactions
+          zh-Hans: 哭泣反应
+      - key: laughCount
+        value: 1894
+        labels:
+          en: Laugh reactions
+          zh-Hans: 大笑反应
+      - key: likeCount
+        value: 9976
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: dislikeCount
+        value: 0
+        labels:
+          en: Dislikes
+          zh-Hans: 踩
+      - key: heartCount
+        value: 3864
+        labels:
+          en: Hearts
+          zh-Hans: 爱心
+      - key: commentCount
+        value: 0
+        labels:
+          en: Comments
+          zh-Hans: 评论

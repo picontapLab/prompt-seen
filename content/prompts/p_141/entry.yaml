@@ -1,0 +1,77 @@
+id: p_141
+slug: photo-inside-letterforms
+createdAt: 2026-10-29
+updatedAt: 2026-10-29
+promptSource:
+  type: template
+  templateId: t_027
+  version: v1
+  values:
+    word: PLAY
+    color: coral red
+categoryId: poster
+styleIds: []
+useCaseIds:
+  - event-poster
+coverAssetId: a_254
+relatedTemplateIds:
+  - t_027
+model:
+  displayName: null
+  providerModelId: null
+  verification: unknown
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_186
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: x_2027798913516761522
+    platform: X
+    author: AmirMushich
+    url: https://x.com/AmirMushich/status/2027798913516761522
+    publishedAt: 2026-02-28T17:31:50.000Z
+    metricObjectUrl: https://x.com/AmirMushich/status/2027798913516761522
+    metricObjectPublishedAt: 2026-02-28T17:31:50.000Z
+    metricScope:
+      en: Whole post or image gallery
+      zh-Hans: 整条X帖子或图集
+    observedAt: 2026-10-29T06:10:42Z
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Official public API snapshot
+      zh-Hans: X 官方公开嵌入接口
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2027798913516761522&lang=en&token=1
+    sourcePromptStatus:
+      en: Complete original prompt not retrieved; independently adapted
+      zh-Hans: 称prompt在回复中，未读取回复全文
+    metrics:
+      - key: likes
+        value: 1547
+        labels:
+          en: Likes
+          zh-Hans: 赞
+      - key: conversation_count
+        value: 25
+        labels:
+          en: Replies
+          zh-Hans: 回复
+      - key: views
+        value: null
+        labels:
+          en: Views
+          zh-Hans: 播放或浏览
+      - key: reposts
+        value: null
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+      - key: bookmarks
+        value: null
+        labels:
+          en: Bookmarks
+          zh-Hans: 书签
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

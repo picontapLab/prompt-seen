@@ -21,6 +21,12 @@ home:
   # whose `from` date has passed is shown first; "Another frame" steps through the started ones,
   # latest first, then those without a date.
   featured:
+    - prompt: p_146
+      from: '2026-10-29'
+    - prompt: p_123
+      from: '2026-10-28'
+    - prompt: p_101
+      from: '2026-10-27'
     - prompt: p_045
       from: '2026-10-19'
     - prompt: p_050
@@ -33,12 +39,17 @@ feed:
   # The list's showcase band (§11.8.2): the newest group whose `from` date has passed is shown.
   # `lead` must be an annotated prompt; `works` are up to two more, shown beside it.
   showcase:
+    - from: '2026-10-29'
+      lead: p_123
+      works: [p_146, p_101]
     - from: '2026-10-12'
       lead: p_050
       works: [p_098, p_024]
   # Editorial interludes (§11.8.2), one per page of the list in this order, then repeated.
   # Works wider than 2:1 or taller than 1:2 get feature rows of their own (§11.1.4).
   interludes:
+    - type: collection
+      collection: c_003
     - type: feature
       prompt: p_067
     - type: templates

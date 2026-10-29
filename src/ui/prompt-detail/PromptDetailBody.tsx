@@ -17,12 +17,13 @@ import { RichText } from '@/ui/rich-text/RichText';
 import { encodeShare } from '@/ui/template-editor/share';
 import { promptCrumbs } from './crumbs';
 import { ExampleRuns } from './ExampleRuns';
-import { ImageStage } from './ImageStage';
+import { RecordedShowcase } from './RecordedShowcase';
 import { languageName } from './language';
 import { MobileActionBar } from './MobileActionBar';
 import { PromptSheet } from './PromptSheet';
 import { RelatedRow } from './RelatedRow';
 import { SourceInfo } from './SourceInfo';
+import { InspirationSources } from './InspirationSources';
 import { TestInfo } from './TestInfo';
 import styles from './Detail.module.css';
 
@@ -60,42 +61,11 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
   const prefix = locale.pathPrefix;
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
 
-  const showcase = detail.examples.find((r) => r.id === detail.showcaseExampleId);
-  const images = [detail.cover, ...(showcase ? showcase.outputs : detail.examples.flatMap((r) => r.outputs))].filter(
-    (img, i, all) => all.findIndex((x) => x.assetId === img.assetId) === i,
-  );
-
   return (
     <AnnotationProvider annotations={detail.annotations}>
       <article className={styles.detail} data-detail="prompt" data-entry={detail.id} data-save-scope="">
-        <div className={styles.top}>
-          <div className={`${styles.media} ${showcase?.references.length ? styles.withReferences : ''}`}>
-            <ImageStage
-              images={images}
-              startPrint={`${detail.frameNumber} ▸ ${detail.frameNumber}A`}
-              endPrint={`${siteName.toUpperCase()} 400`}
-              sizes="(min-width: 1024px) 58vw, 100vw"
-              preview={coverPreview}
-            />
-            {showcase && showcase.references.length > 0 && (
-              <AnnotationProvider annotations={[]}>
-                <section className={styles.referenceStage} aria-label={t('examples.references')}>
-                  <h2 className={styles.sectionHeading}>{t('examples.references')}</h2>
-                  <ImageStage
-                    images={showcase.references.map((image, index) => ({
-                      ...image,
-                      caption: showcase.referenceLabels?.[index] || image.caption,
-                    }))}
-                    startPrint={detail.frameNumber}
-                    endPrint={t('examples.references')}
-                    sizes="(min-width: 1024px) 30vw, 90vw"
-                  />
-                </section>
-              </AnnotationProvider>
-            )}
-          </div>
-
-          <div className={styles.info}>
+        <div className={`${styles.top} ${styles.promptTop}`}>
+          <div className={`${styles.info} ${styles.promptIntro}`}>
             <Breadcrumb
               label={t('breadcrumb.label')}
               items={promptCrumbs(detail, prefix, (key) => t(`breadcrumb.${key}`))}
@@ -116,7 +86,24 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               <TestInfo detail={detail} />
               {detail.inputInstructions && <p className={styles.summary}>{detail.inputInstructions}</p>}
             </header>
+          </div>
+          <RecordedShowcase
+            runs={detail.examples.map(({ id, outputs, references, referenceLabels, prompt }) => ({
+              id,
+              outputs,
+              references,
+              referenceLabels,
+              prompt,
+            }))}
+            defaultId={detail.showcaseExampleId ?? undefined}
+            cover={detail.cover}
+            currentPrompt={detail.prompt.text}
+            frameNumber={detail.frameNumber}
+            siteName={siteName}
+            preview={coverPreview}
+          />
 
+          <div className={styles.info}>
             <PromptSheet
               copyText={detail.prompt.text}
               language={detail.prompt.language}
@@ -180,6 +167,10 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
             />
 
             <SourceInfo source={detail.source} image={detail.cover} />
+            <InspirationSources
+              sources={detail.inspirationSources ?? []}
+              independentlyAdapted={detail.promptProvenance === 'independent-adaptation'}
+            />
           </div>
         </div>
 

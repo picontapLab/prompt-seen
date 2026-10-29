@@ -1,0 +1,30 @@
+fields:
+  - name: captions
+    required: true
+    group: text
+    labels:
+      en: Captions
+      zh-Hans: 16条中文配文
+    help: {}
+    type: string-list
+    default:
+      - 开心
+      - 哇
+      - 谢谢
+      - 加油
+      - 困了
+      - 庆祝
+      - 好奇
+      - 好的
+      - 抱歉
+      - 坚持
+      - 你好
+      - 哈哈
+      - 安心
+      - 疑惑
+      - 激动
+      - 抱抱
+    minItems: 16
+    maxItems: 16
+    itemMaxLength: null
+    separator: "; "

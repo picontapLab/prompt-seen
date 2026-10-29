@@ -61,7 +61,7 @@ export type EditorModel = {
   version: { id: string; body: string; fields: LocalizedField[]; samples: TemplateSample[] };
   /** Image of the default sample (§11.8.4 示例图说明). */
   cover: ImageRef | null;
-  examples?: (Pick<ExampleRunView, 'prompt' | 'template'> & { image: ImageRef; references: ImageRef[] })[];
+  examples?: (Pick<ExampleRunView, 'id' | 'prompt' | 'template'> & { image: ImageRef; references: ImageRef[] })[];
 };
 
 export type TemplateEditorProps = {
@@ -305,7 +305,10 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
           ? t('mismatch', { version: notice.version, current: version.id })
           : '';
 
-  const matched = matchingExample(model.examples ?? [], model.templateId, version.id, state.values, result.text);
+  const selectedSample = version.samples[state.sample];
+  const eligible = selectedSample?.exampleIds;
+  const runs = eligible ? (model.examples ?? []).filter((run) => eligible.includes(run.id)) : (model.examples ?? []);
+  const matched = matchingExample(runs, model.templateId, version.id, state.values, result.text);
   const sampleImage = matched?.image ?? model.cover;
   const img = sampleImage && getImage(sampleImage, 'card');
 

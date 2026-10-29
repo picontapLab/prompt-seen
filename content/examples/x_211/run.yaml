@@ -1,0 +1,30 @@
+id: x_211
+promptId: p_147
+template:
+  id: t_031
+  version: v1
+  sample: alternate
+  values:
+    country: Japan
+    destinations:
+      - Tokyo
+      - Kyoto
+    routeNotes: Two-stop schematic connection between Tokyo and Kyoto. Connect their checked positions with one neutral dotted line without any arrowheads or directional symbols. Exclude Osaka from the destination list. Label the map MAIN ISLANDS; this is an illustrative guide, not a navigation map or live travel information.
+  contractHash: aca5859e3b4e19f26c7bbc58eb88c4634546ebd529b29bbac3355bbc3c80ccd6
+promptSha256: f6c32c282a1ce33f92034cb43c489afb54f12878ad89fa105ad11a025c30e169
+referenceAssetIds:
+  - a_262
+referenceBindings:
+  - slotId: map
+    referenceIndex: 0
+outputAssetIds:
+  - a_283
+provider: OpenAI
+model:
+  displayName: null
+  providerModelId: null
+recordedAt: 2026-10-29
+parameters: {}
+notes:
+  en: Tokyo and Kyoto connected with non-directional dotted line. Main islands and explicit illustrative/not-navigation disclaimer readable. Landmarks and relief decorative, not geospatial measurements.
+  zh-Hans: 以核对后的轮廓为依据，制作带目的地和路线的微缩旅行地图。

@@ -6,11 +6,11 @@
     min-inline-size: 0;
     /* The tallest the image may be: most of a phone screen (§11.8.3 mobile: up to 70vh), or the
        viewport below the navigation, the film edges and the caption row on desktop. */
-    --_max-h: 70svh;
+    --_max-h: var(--stage-max-h, 70svh);
   }
   @media (min-width: 1024px) {
     .stage {
-      --_max-h: calc(100svh - var(--nav-height) - 11rem);
+      --_max-h: var(--stage-max-h, calc(100svh - var(--nav-height) - 11rem));
     }
   }
 
@@ -142,6 +142,8 @@
     border-color: var(--mark);
   }
   .thumbs img {
+    outline: 1px solid var(--image-hairline);
+    outline-offset: -1px;
     display: block;
     inline-size: 100%;
     block-size: 100%;

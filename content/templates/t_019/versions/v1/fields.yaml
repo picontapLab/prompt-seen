@@ -1,0 +1,41 @@
+fields:
+  - name: product
+    required: true
+    group: subject
+    labels:
+      en: Product
+      zh-Hans: 产品概念
+    help: {}
+    type: string
+    default: a reusable ceramic travel cup
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: color
+    required: true
+    group: style
+    labels:
+      en: Color
+      zh-Hans: 强调色
+    help: {}
+    type: string
+    default: coral red
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: features
+    required: true
+    group: text
+    labels:
+      en: Features
+      zh-Hans: 设计特征
+    help: {}
+    type: string-list
+    default:
+      - removable lid
+      - ceramic body
+      - silicone grip
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "

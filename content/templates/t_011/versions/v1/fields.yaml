@@ -1,0 +1,43 @@
+fields:
+  - name: device
+    required: true
+    group: subject
+    labels:
+      en: Device
+      zh-Hans: 产品名称
+    help: {}
+    type: string
+    default: an original concept hand-cranked coffee grinder
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: structureNotes
+    required: true
+    group: text
+    labels:
+      en: Structure notes
+      zh-Hans: 核对后的结构资料
+    help: {}
+    type: string
+    default: "Fictional concept specification: removable top crank turns a vertical shaft; a conical burr pair sits below a bean hopper; grounds fall into a detachable lower cup. No dimensions or performance claims."
+    minLength: null
+    maxLength: 2000
+    multiline: true
+  - name: labels
+    required: true
+    group: text
+    labels:
+      en: Labels
+      zh-Hans: 准确的部件标注
+    help: {}
+    type: string-list
+    default:
+      - CRANK
+      - SHAFT
+      - HOPPER
+      - BURRS
+      - GROUNDS CUP
+    minItems: 1
+    maxItems: 12
+    itemMaxLength: null
+    separator: "; "

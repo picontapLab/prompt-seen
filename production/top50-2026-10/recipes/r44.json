@@ -1,0 +1,130 @@
+{
+  "candidateId": "cv-9517243",
+  "slug": "cat-fish-market",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "A charming anthropomorphic {{animal}} runs a tiny fish stall at a lively morning market. The animal wears a neatly tied apron and proudly presents a fresh fish on brown paper while a customer hand offers a few coins. Keep the animal facial features recognizable and the paws anatomically simple. Detailed wooden crates, soft morning sunlight, shallow depth of field, photorealistic textures with a whimsical storybook mood, no signs or lettering.",
+  "fields": [
+    {
+      "name": "animal",
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "group": "subject",
+      "labels": {
+        "en": "Animal",
+        "zh-Hans": "摊主动物"
+      },
+      "default": "tabby kitten"
+    }
+  ],
+  "values": {
+    "animal": "tabby kitten"
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is needed. Copy the full prompt into your image generator.",
+      "zh-Hans": "无需参考图，将完整提示词复制到图像生成工具即可。"
+    }
+  },
+  "locales": {
+    "en": {
+      "title": "Cat at the fish market",
+      "description": "A tiny tabby fishmonger exchanges a fresh fish for coins in morning market light.",
+      "body": "## How to use\n\nChange the animal while preserving the fish, customer hand and coins: these objects explain the interaction. Keep the paws simple.\n\n## Recorded result\n\nThe default was generated with the built-in image tool. The precise provider model ID was not returned. Other values are not yet tested."
+    },
+    "zh-Hans": {
+      "title": "猫咪鱼贩的市集摊位",
+      "description": "清晨市集中，系着围裙的小虎斑猫用鲜鱼交换硬币。",
+      "body": "## 使用方法\n\n替换动物时保留鲜鱼、顾客的手和硬币，这些物件让交易关系清晰。爪部结构保持简洁。\n\n## 实测结果\n\n默认样例由内置图像工具生成，工具未返回精确的模型 ID。其他参数组合尚未实测。"
+    }
+  },
+  "alt": {
+    "en": "A tiny tabby fishmonger exchanges a fresh fish for coins in morning market light.",
+    "zh-Hans": "清晨市集中，系着围裙的小虎斑猫用鲜鱼交换硬币。"
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "cv-9517243",
+      "platform": "Civitai",
+      "author": "Tugoff",
+      "url": "https://civitai.com/images/9517243",
+      "publishedAt": "2024-04-09T17:30:28.993Z",
+      "metricObjectUrl": "https://civitai.com/images/9517243",
+      "metricObjectPublishedAt": "2024-04-09T17:30:28.993Z",
+      "metricScope": {
+        "en": "Original image page",
+        "zh-Hans": "单张社区图片"
+      },
+      "observedAt": "2026-10-28T23:12:22-07:00",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Official public API snapshot",
+        "zh-Hans": "Civitai 官方公开 images API"
+      },
+      "evidenceUrl": "https://civitai.com/api/v1/images?imageId=9517243&withMeta=true",
+      "sourcePromptStatus": {
+        "en": "Source prompt or excerpt available; independently adapted",
+        "zh-Hans": "API公开原prompt；本次独立改写并移除模型专用触发词"
+      },
+      "metrics": [
+        {
+          "key": "cryCount",
+          "value": 886,
+          "labels": {
+            "en": "Cry reactions",
+            "zh-Hans": "哭泣反应"
+          }
+        },
+        {
+          "key": "laughCount",
+          "value": 2952,
+          "labels": {
+            "en": "Laugh reactions",
+            "zh-Hans": "大笑反应"
+          }
+        },
+        {
+          "key": "likeCount",
+          "value": 13522,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "赞"
+          }
+        },
+        {
+          "key": "dislikeCount",
+          "value": 0,
+          "labels": {
+            "en": "Dislikes",
+            "zh-Hans": "踩"
+          }
+        },
+        {
+          "key": "heartCount",
+          "value": 5117,
+          "labels": {
+            "en": "Hearts",
+            "zh-Hans": "爱心"
+          }
+        },
+        {
+          "key": "commentCount",
+          "value": 1,
+          "labels": {
+            "en": "Comments",
+            "zh-Hans": "评论"
+          }
+        }
+      ]
+    }
+  ],
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-29T10:26:40.046Z",
+    "contentHash": "1caa14579b0d4f27ebb7286dccf483f8fedf50189c5fc2efd1bb9a2c78ef43cf"
+  }
+}

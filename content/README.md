@@ -229,4 +229,6 @@ counts fail content validation. Inputs remain asset IDs, never text-template fie
 Optional prompt `showcaseExampleId` selects the run shown with its reference images.
 It must belong to the prompt, include its cover among outputs and preserve the exact current
 prompt text. Older prompts may omit it. Localized input instructions are included in both
-HTML details and Markdown export. Template-version input files are not implemented yet.
+HTML details and Markdown export. Templates store the input contract in `versions/vN/inputs.yaml`; prompts inherit that version.
+Recorded template runs freeze body, fields and inputs in `template.contractHash`. Changing any of them requires a new version.
+See [the production workflow](../production/README.md) for preparing, reviewing and applying new cases.

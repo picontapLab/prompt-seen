@@ -1,0 +1,30 @@
+fields:
+  - name: characters
+    required: true
+    group: subject
+    labels:
+      en: Characters
+      zh-Hans: 原创角色设定
+    help: {}
+    type: string
+    default: "three original fluffy creatures: a round mint-green builder with a yellow scarf, a small peach helper with round glasses, and a tall lavender helper with a blue cap"
+    minLength: null
+    maxLength: 2000
+    multiline: true
+  - name: storyBeats
+    required: true
+    group: composition
+    labels:
+      en: Story beats
+      zh-Hans: 四个故事节点
+    help: {}
+    type: string-list
+    default:
+      - the three plan a tiny treehouse
+      - they accidentally install a crooked door
+      - they cooperate to straighten the door
+      - they celebrate inside the cozy finished treehouse
+    minItems: 4
+    maxItems: 4
+    itemMaxLength: null
+    separator: "; "

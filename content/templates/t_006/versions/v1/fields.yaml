@@ -1,0 +1,13 @@
+fields:
+  - name: animal
+    required: true
+    group: subject
+    labels:
+      en: Animal
+      zh-Hans: 宠物种类
+    help: {}
+    type: string
+    default: tabby kitten
+    minLength: null
+    maxLength: 250
+    multiline: false

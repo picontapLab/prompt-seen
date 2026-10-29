@@ -1,0 +1,61 @@
+fields:
+  - name: product
+    required: true
+    group: subject
+    labels:
+      en: Product
+      zh-Hans: 产品名称
+    help: {}
+    type: string
+    default: the supplied PINE insulated water bottle
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: headline
+    required: true
+    group: text
+    labels:
+      en: Headline
+      zh-Hans: 标题原文
+    help: {}
+    type: string
+    default: SLOW DOWN
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: subtext
+    required: true
+    group: text
+    labels:
+      en: Subtext
+      zh-Hans: 副文案原文
+    help: {}
+    type: string
+    default: A little pause, every day
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: cta
+    required: true
+    group: text
+    labels:
+      en: Cta
+      zh-Hans: 行动文案原文
+    help: {}
+    type: string
+    default: EXPLORE
+    minLength: null
+    maxLength: 300
+    multiline: false
+  - name: brandPalette
+    required: true
+    group: style
+    labels:
+      en: Brand palette
+      zh-Hans: 品牌配色
+    help: {}
+    type: string
+    default: sage green, cream and terracotta
+    minLength: null
+    maxLength: 300
+    multiline: false

@@ -208,6 +208,7 @@ export type PromptDetail = PromptSummary & {
     model: ModelInfo;
     verification: PromptSummary['verification'];
     lastTestedAt: string | null;
+    recordedOutput?: boolean;
     /** Of the cover image, e.g. "4:5". */
     aspectRatio: string;
     referenceImage: 'none' | 'optional' | 'required';
@@ -215,6 +216,8 @@ export type PromptDetail = PromptSummary & {
   examples: ExampleRunView[];
   inputInstructions?: string | null;
   showcaseExampleId?: string | null;
+  promptProvenance?: 'unknown' | 'original' | 'independent-adaptation' | 'source-prompt';
+  inspirationSources?: InspirationSource[];
   source: SourceInfo;
   template: { id: string; version: string; values: FieldValues } | null;
   taxonomy: { category: TermRef; styles: TermRef[]; useCases: TermRef[] };
@@ -233,9 +236,27 @@ export type LocalizedField = FieldSpec & {
   optionLabels: Record<string, string>;
 };
 
-export type TemplateSample = { name: string; values: FieldValues };
+export type InspirationSource = {
+  candidateId: string;
+  platform: string;
+  author: string | null;
+  url: string;
+  publishedAt: string | null;
+  metricObjectUrl: string;
+  metricObjectPublishedAt: string | null;
+  metricScope: string;
+  observedAt: string;
+  cacheTimestampKnown: boolean;
+  evidenceMethod: string;
+  evidenceUrl: string;
+  sourcePromptStatus: string;
+  metrics: { key: string; value: number | null; label: string }[];
+};
+
+export type TemplateSample = { name: string; values: FieldValues; exampleIds?: string[] };
 
 export type TemplateDetail = TemplateSummary & {
+  inputInstructions?: string | null;
   seo: SeoText;
   body: RichBlock[];
   toc: TocItem[];
