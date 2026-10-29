@@ -16,7 +16,7 @@ npm run content:produce -- status --campaign top50-2026-10
 ```
 
 - Job: `key`, `candidateId`, `prompt`, `references: [{slotId, path}]`, `targetAspectRatio` (or `null` when no aspect setting was submitted).
-- Receipt: `outputPath`, `provider`, `model` (keep `null` if not returned).
+- Receipt: `outputPath`, `provider`, `model` (record the known model family/name; keep `null` only when the model identity is genuinely unknown).
 - Review: `accepted`, `notes`, `reviewer`. Review pixels, specified text, reference roles and small-image readability before accepting.
 - Editorial review: after checking the complete recipe in both languages, add `editorialReview: {reviewer, reviewedAt, contentHash}` using the hash from `recipe-hash`. This is separate from image review. Any recipe change invalidates the attestation.
 - Recipe: see the concrete files in `top50-2026-10/recipes/`. An additional run supplies `target: {promptId, sampleName}` and its actual `values`. Used template bodies, fields, input contracts and existing sample values are immutable. Create a new version for semantic changes.
@@ -36,6 +36,6 @@ Published receipts are in `production/applied/`; run snapshots and referenced me
 
 ## Top 50 provenance
 
-The collection is an editorial selection, not a cross-platform popularity leaderboard. Source metrics belong to original posts and keep their observation dates and evidence method. All website prompts are independent adaptations; generated examples and synthetic references are Prompt Seen demonstrations. The map reference uses Natural Earth public-domain data with explicit attribution. Image generation returned no exact model ID for most runs; this remains unknown in the content.
+The collection is an editorial selection, not a cross-platform popularity leaderboard. Source metrics belong to original posts and keep their observation dates and evidence method. All website prompts are independent adaptations; generated examples and synthetic references are Prompt Seen demonstrations. The map reference uses Natural Earth public-domain data with explicit attribution. The campaign uses OpenAI GPT Image. The known family is recorded as `displayName: GPT Image`; exact version IDs were not returned, so `providerModelId` remains `null`. See `top50-2026-10/model-annotation.json` for the correction of earlier missing family names; original receipts retain their historical values.
 
 The live site is not deployed by these commands. Build and verify the packaged artifact, then use the repository's deployment workflow with its real `SITE_ORIGIN` and configured credentials.
