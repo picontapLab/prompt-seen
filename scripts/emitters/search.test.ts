@@ -65,10 +65,16 @@ describe('typical queries (§16.3)', () => {
     expect(
       production
         .engine('zh-Hans')
-        .docs.filter((d) => d.kind === 'prompt' && Number(d.id.slice(2)) <= 100)
+        .docs.filter((d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) <= 100)
         .every((d) => d.model === 'GPT Image'),
     ).toBe(true);
-    expect(production.engine('zh-Hans').docs.find((d) => d.id === 'p_124')?.model).toBeFalsy();
+    const top50 = production
+      .engine('zh-Hans')
+      .docs.filter(
+        (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 101 && Number(d.id.split('_').at(-1)) <= 150,
+      );
+    expect(top50).toHaveLength(50);
+    expect(top50.every((d) => d.model === 'GPT Image')).toBe(true);
   });
 
   it('find entries through taxonomy aliases (§13.2)', () => {

@@ -221,7 +221,7 @@ export function validateContent(
       'content/prompts',
       `${untested.length} prompt(s) have no recorded run or no known model: ${untested.join(', ')}`,
       {
-        fix: 'record actual outputs and known model information (§5.5); if the provider did not return a model ID, keep it unknown. Pages distinguish recorded output from model verification.',
+        fix: 'record actual outputs and known model information (§5.5); record a known model family in displayName even when the exact providerModelId is unavailable; leave only the unknown ID null. Pages distinguish recorded output from model verification.',
       },
     );
   }

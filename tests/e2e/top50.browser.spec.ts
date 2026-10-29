@@ -43,6 +43,7 @@ test('multiple references keep their roles and source snapshots are separate fro
   const stage = page.locator('[data-recorded-showcase]');
   await expect(stage.getByRole('region', { name: message('zh-Hans', 'detail.examples.references') })).toBeVisible();
   await expect(page.getByRole('heading', { name: message('zh-Hans', 'detail.inspiration.heading') })).toBeVisible();
-  await expect(page.getByText(message('zh-Hans', 'detail.test.recordedUnknownModel'), { exact: true })).toBeVisible();
+  await expect(page.locator('[data-tone="verified"]')).toContainText('GPT Image');
+  await expect(page.getByText(message('zh-Hans', 'detail.test.recordedUnknownModel'), { exact: true })).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
 });
