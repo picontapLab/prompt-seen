@@ -61,7 +61,7 @@ export type EditorModel = {
   version: { id: string; body: string; fields: LocalizedField[]; samples: TemplateSample[] };
   /** Image of the default sample (§11.8.4 示例图说明). */
   cover: ImageRef | null;
-  examples?: ExampleRunView[];
+  examples?: (Pick<ExampleRunView, 'prompt' | 'template'> & { image: ImageRef; references: ImageRef[] })[];
 };
 
 export type TemplateEditorProps = {
@@ -306,7 +306,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
           : '';
 
   const matched = matchingExample(model.examples ?? [], model.templateId, version.id, state.values, result.text);
-  const sampleImage = matched?.outputs[0] ?? model.cover;
+  const sampleImage = matched?.image ?? model.cover;
   const img = sampleImage && getImage(sampleImage, 'card');
 
   return (
@@ -451,6 +451,31 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                 />
               </div>
 
+              {matched && matched.references.length > 0 && (
+                <section aria-label={d('examples.references')}>
+                  <p className={styles.sampleNote}>{d('examples.references')}</p>
+                  {matched.references.map((reference, index) => {
+                    const input = getImage(reference, 'thumbnail');
+                    return (
+                      <figure className={styles.sample} key={`${reference.assetId}-${index}`}>
+                        <span
+                          className={styles.sampleFrame}
+                          style={{ '--w': input.width, '--h': input.height } as CSSProperties}
+                        >
+                          <img
+                            src={input.src}
+                            width={input.width}
+                            height={input.height}
+                            alt={input.alt}
+                            loading="lazy"
+                          />
+                        </span>
+                        <figcaption className={styles.sampleNote}>{reference.caption}</figcaption>
+                      </figure>
+                    );
+                  })}
+                </section>
+              )}
               {img && (
                 <figure className={styles.sample}>
                   <span

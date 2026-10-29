@@ -40,7 +40,21 @@ export function TemplateDetailBody({
     promptLanguage: detail.promptLanguage,
     version: { id: version.id, body: version.body, fields: version.fields, samples: version.samples },
     cover: detail.cover,
-    examples: detail.examples,
+    examples: detail.examples.flatMap((run) =>
+      run.outputs[0]
+        ? [
+            {
+              prompt: run.prompt,
+              template: run.template,
+              image: run.outputs[0],
+              references: run.references.map((image, index) => ({
+                ...image,
+                caption: run.referenceLabels?.[index] || image.caption,
+              })),
+            },
+          ]
+        : [],
+    ),
   };
 
   return (
