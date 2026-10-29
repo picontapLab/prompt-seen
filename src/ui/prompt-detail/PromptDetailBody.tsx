@@ -78,16 +78,20 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               preview={coverPreview}
             />
             {showcase && showcase.references.length > 0 && (
-              <section className={styles.referenceStage} aria-label={t('examples.references')}>
-                <h2 className={styles.sectionHeading}>{t('examples.references')}</h2>
-                <p>{showcase.referenceLabels?.filter(Boolean).join(' · ')}</p>
-                <ImageStage
-                  images={showcase.references}
-                  startPrint={detail.frameNumber}
-                  endPrint={t('examples.references')}
-                  sizes="(min-width: 1024px) 30vw, 90vw"
-                />
-              </section>
+              <AnnotationProvider annotations={[]}>
+                <section className={styles.referenceStage} aria-label={t('examples.references')}>
+                  <h2 className={styles.sectionHeading}>{t('examples.references')}</h2>
+                  <ImageStage
+                    images={showcase.references.map((image, index) => ({
+                      ...image,
+                      caption: showcase.referenceLabels?.[index] || image.caption,
+                    }))}
+                    startPrint={detail.frameNumber}
+                    endPrint={t('examples.references')}
+                    sizes="(min-width: 1024px) 30vw, 90vw"
+                  />
+                </section>
+              </AnnotationProvider>
             )}
           </div>
 

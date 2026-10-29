@@ -14,17 +14,17 @@ Existing translation statuses do not imply a new human language review.
 
 ## Commands
 
-| Command                                                         | What it does                                                         |
-| --------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `npm run content:new -- prompt <slug>`                          | New prompt directory with the next ID, as a draft                    |
-| `npm run content:new -- template <slug>`                        | New template with `versions/v1/`                                     |
-| `npm run content:new -- collection <slug> --cover a_012 --items p_001,p_002` | New collection                                          |
-| `npm run content:new -- page <slug>`                            | New content page (like `about`)                                      |
-| `npm run content:new -- example --prompt p_001`                 | New example run with the prompt's current text and its cover image   |
-| `npm run media:import -- <image> --slug <words> --alt en="…"`   | Store an image and its display sizes; writes `media/a_NNN.yaml`      |
-| `npm run media:import -- --refresh a_012`                       | Regenerate sizes after editing `focalPoint` or `credit`              |
-| `npm run content:validate`                                      | Check everything; `--quiet` hides maintenance hints                  |
-| `npm run dev`                                                   | Local site that rebuilds when files here change                      |
+| Command                                                                      | What it does                                                       |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `npm run content:new -- prompt <slug>`                                       | New prompt directory with the next ID, as a draft                  |
+| `npm run content:new -- template <slug>`                                     | New template with `versions/v1/`                                   |
+| `npm run content:new -- collection <slug> --cover a_012 --items p_001,p_002` | New collection                                                     |
+| `npm run content:new -- page <slug>`                                         | New content page (like `about`)                                    |
+| `npm run content:new -- example --prompt p_001`                              | New example run with the prompt's current text and its cover image |
+| `npm run media:import -- <image> --slug <words> --alt en="…"`                | Store an image and its display sizes; writes `media/a_NNN.yaml`    |
+| `npm run media:import -- --refresh a_012`                                    | Regenerate sizes after editing `focalPoint` or `credit`            |
+| `npm run content:validate`                                                   | Check everything; `--quiet` hides maintenance hints                |
+| `npm run dev`                                                                | Local site that rebuilds when files here change                    |
 
 `content:validate` reports four levels (design doc §14.3). **Errors** stop every build.
 **Publish errors** mean a version marked `published` does not meet the publishing rules; they
@@ -103,9 +103,7 @@ each on its own line:
 ```mdx
 <Figure asset="a_012" caption="The same prompt without the seal" />
 
-<Callout>
-A highlighted note.
-</Callout>
+<Callout>A highlighted note.</Callout>
 ```
 
 Link to other content by ID, so links survive slug changes and the base path:
@@ -203,3 +201,32 @@ redirects:
 gone:
   - { kind: prompt, slug: removed-slug, reason: license } # 410: removed or license
 ```
+
+### Reference inputs and showcase runs
+
+Prompt `inputRequirements` may include localized `instructions` and image `slots`:
+
+```yaml
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the first person's portrait, then the second person's portrait.
+  slots:
+    - { id: personA, labels: { en: First person }, min: 1, max: 1 }
+    - { id: personB, labels: { en: Second person }, min: 1, max: 1 }
+```
+
+Slot IDs are unique, start with a lowercase letter and contain only letters/digits.
+Counts are nonnegative integers with `min <= max` and `max > 0`. A positive minimum
+requires `referenceImage: required`; all-zero minima require `optional`. Older entries
+without slots keep their existing reference-image flag and presentation.
+
+For a run owned by a prompt with slots, bind every ordered `referenceAssetIds` element
+exactly once using `referenceBindings: [{slotId: personA, referenceIndex: 0}, ...]`.
+Indices start at zero; unknown slots, duplicate/out-of-range indices and incorrect slot
+counts fail content validation. Inputs remain asset IDs, never text-template fields.
+
+Optional prompt `showcaseExampleId` selects the run shown with its reference images.
+It must belong to the prompt, include its cover among outputs and preserve the exact current
+prompt text. Older prompts may omit it. Localized input instructions are included in both
+HTML details and Markdown export. Template-version input files are not implemented yet.

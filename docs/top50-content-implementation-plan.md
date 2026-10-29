@@ -1,7 +1,7 @@
 # Top 50 案例落地方案：代码调整、内容生产与发布
 
 - 日期：2026-10-29（America/Los_Angeles）
-- 状态：**实施设计，尚未修改应用代码、导入内容或完成图片实测。**
+- 状态：**实施中，首段已接入 1/50 个实测案例。详见 [实施进度](research/ai-image-top50/implementation-progress.md)。**
 - 适用项目：Prompt Seen，当前工作区 100 个 Prompt、3 个 Template。
 - 内容依据：[Top 50 调研报告](research/ai-image-top50/top50-report.md)、[研究原始数据](research/ai-image-top50/top50.json)。
 - 执行清单：[50 条实施映射](research/ai-image-top50/implementation-manifest.json)。该文件是规划格式，`executable_import: false`；不能直接作为生产内容导入。
