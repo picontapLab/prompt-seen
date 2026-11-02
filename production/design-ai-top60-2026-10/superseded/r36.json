@@ -1,0 +1,33 @@
+{
+  "candidateId": "design-top60-36",
+  "rank": 36,
+  "promptId": "p_186",
+  "slug": "design-top60-38",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "displayMode": "poster-detail",
+  "prompt": "竖版百科卡[主题]；主视觉、局部放大、圆角模块、分类/习性/结构/用途/风险/优缺点/Top5；浅色柔和、信息密度高不拥挤。",
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Use an original or licensed reference image when the prompt calls for one.",
+      "zh-Hans": "如提示词需要参考图，请使用原创或已获许可的素材。"
+    },
+    "slots": []
+  },
+  "outputAssetIds": [
+    "a_287"
+  ],
+  "provider": "OpenAI",
+  "model": "GPT Image",
+  "status": "accepted",
+  "visualReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "notes": "Desktop detail and collection display checked; text and brand fidelity remain manual checks."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-42-reverse-v4",
+    "candidateId": "design-top60-42",
+    "prompt": "以附图中的蓝色两房3D建筑图为唯一场景。只把相机绕建筑的竖直中心轴旋转180度，保持俯视角与焦距。所有墙体、隔墙、门、窗、材料、世界空间光照与阴影不变，不新增物件。反向视角应使原来的小房间在画面右侧、大房间在左侧；原顶边的两个窗在近侧，原入口门在远侧。不要水平镜像图片；生成真正的反向三维视角。4:3。",
+    "references": [
+      {
+        "slotId": "axonometric",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-42-v4/output-b50feae21ec6d9223082f09a012e4bd2073116eef2feb14070949019bc7eb0ee.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "c35106e3ce3f874d09d20ab8cb2577f58566d7e6636bbbb3ef01fe28a7fd009e",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-42-v4/output-b50feae21ec6d9223082f09a012e4bd2073116eef2feb14070949019bc7eb0ee.png",
+      "sha256": "b50feae21ec6d9223082f09a012e4bd2073116eef2feb14070949019bc7eb0ee",
+      "slotId": "axonometric"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:34:44.743Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-42-reverse-v4/output-3601a560e19dc4d2b11d4363c60b331613191244602f9e02b65359f354a52f99.png",
+      "sha256": "3601a560e19dc4d2b11d4363c60b331613191244602f9e02b65359f354a52f99"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:45:32.337Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Second step: the large room is now on the left, the small room on the right, windows near the camera and the entrance on the far side. This is a generated spatial concept; exact geometry and lighting conservation are not guaranteed.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-31T00:01:52.743Z"
+  }
+}

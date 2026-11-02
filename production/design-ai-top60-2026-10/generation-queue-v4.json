@@ -1,0 +1,248 @@
+[
+  {
+    "key": "design60-3-v5",
+    "candidateId": "design-top60-03",
+    "prompt": "Use the attached cobalt skincare bottle as the product reference. Studio packshot on seamless white, three-quarter view showing the cylindrical body and dropper cap. Preserve its actual blue glass material, ivory rubber dropper and gold collar, proportions and silhouette. Neutral white balance, crisp edges, generous breathing room, square image. No new label, no other objects.",
+    "references": [
+      {
+        "slotId": "product",
+        "path": "production/design-ai-top60-2026-10/outputs/p_151-attempt1.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 3
+  },
+  {
+    "key": "design60-28-v4",
+    "candidateId": "design-top60-28",
+    "prompt": "将上传的虚构岛屿地图转成古代羊皮纸藏宝图。保持海岸线、西部港口、北方三组山丘、中央城镇、东部池塘和东南棕榈滩的位置关系，改用手绘山脉、港口城堡、帆船、罗盘玫瑰、从港口经过城镇通往东南沙滩的虚线寻宝路线，在沙滩标大红X。古旧褐色墨线，羊皮纸，方图，无现代UI。",
+    "references": [
+      {
+        "slotId": "map",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-map/output-ff76ef42d9a2d767d53f6afb8f5e9743d1cd35fae9a8add5889c8c8222c27645.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 28
+  },
+  {
+    "key": "design60-37-v4",
+    "candidateId": "design-top60-37",
+    "prompt": "根据上传的完整文字文档设计高密度中文版式。城市阅读节活动指南，3:4竖版，多栏网格、标题层级、24组原文内容必须全部出现且各一次，不添加文字，不改变日期、时间、地点。黑字、米白底、红色小标签，清晰排版、适度小型书籍图标。必须逐字保留文档内容。这是虚构活动的排版压力测试。",
+    "references": [
+      {
+        "slotId": "document",
+        "path": "production/design-ai-top60-2026-10/references/document.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 37
+  },
+  {
+    "key": "design60-41-v4",
+    "candidateId": "design-top60-41",
+    "prompt": "上传手绘草图是唯一建筑设计来源。将它转换成写实建筑摄影，严格保持坡屋顶、门、三扇窗、三级台阶、空间比例、视角和构图。竖向浅雪松木墙板、深灰金属屋顶、黑色细窗框、混凝土台阶，柔和日光，真实材质纹理，空旷灰色地面。不要增删门窗或装饰，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-sketch/output-46ae05f7ca9a4f2ff30533b9854fac338235c65dc9c904accf982da0e9fed399.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 41
+  },
+  {
+    "key": "design60-42-v4",
+    "candidateId": "design-top60-42",
+    "prompt": "将上传2D两房平面图转换成3D轴测建筑图，保持外轮廓、偏左隔墙、隔墙门、右房底边入户门和顶边两扇窗位置与比例。墙体统一拉伸高度，无屋顶，蓝图深蓝背景、浅蓝实体和白色细边线、柔和环境遮蔽。相机从平面图下边偏右的方向俯视，能看到两房内部，无家具、无文字。4:3。",
+    "references": [
+      {
+        "slotId": "floorPlan",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-plan/output-60f0cf107e2a724c92e43d46fd8f12b31dd8b6a40c54aa7a324c87dbc9ba1a1e.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 42
+  },
+  {
+    "key": "design60-43-v4",
+    "candidateId": "design-top60-43",
+    "prompt": "第一张图是深绿水磨石材质，第二张是目标客厅。仅把目标图中可见的浅橡木地板替换成第一张的深绿色水磨石，匹配纹理尺度、透视和光影。保留沙发、桌子、花瓶、地毯、落地灯、窗、门、墙、相机角度和构图完全不变。不改变地毯，不添加物品。4:3。",
+    "references": [
+      {
+        "slotId": "materialSample",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-material/output-17bb20243eb5c03566c3e51e67bf250412fbd41d82d7d111ee695bf629c14529.png"
+      },
+      {
+        "slotId": "targetScene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 43
+  },
+  {
+    "key": "design60-44-v4",
+    "candidateId": "design-top60-44",
+    "prompt": "第一张为橙色灯芯绒沙发参考，第二张为目标客厅。用第一张沙发替换第二张图中的蓝绿色沙发，放在同一位置，匹配透视、尺度和光照，保持橙色灯芯绒、圆扶手和短木脚。移除旧沙发及其抱枕，其他窗门、桌子、花瓶、地毯、灯、墙和地板全部不变。4:3。",
+    "references": [
+      {
+        "slotId": "furniture",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-furniture/output-6bed48819434898ffb0d1f97ba6c3236ac06e08edd11378fc99ac011b8d4c37f.png"
+      },
+      {
+        "slotId": "targetScene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 44
+  },
+  {
+    "key": "design60-45-v4",
+    "candidateId": "design-top60-45",
+    "prompt": "将上传空房布置为温暖北欧卧室：浅橡木双人床、米白床品、柔绿毯子、低床头柜和简洁床头灯，床在左侧墙边，不遮挡门窗。必须保持原相机角度、视野、房间比例、唯一后窗和右墙门的位置尺寸。禁止增删移动门窗与墙体，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-empty/output-57c5bfc68e731643a27573afdf4d7810ff90b848ce96a456bd77b465fa711a3c.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 45
+  },
+  {
+    "key": "design60-46-v4",
+    "candidateId": "design-top60-46",
+    "prompt": "把上传白模转成写实室内可视化。严格锁定几何、透视、三座沙发、长方茶几、左侧落地灯、右侧窗户的位置与构图。墙面奶油色灰泥，地面浅橡木，沙发米色亚麻，茶几暖白洞石，灯架黄铜，灯罩白色织物。北欧柔和窗光，不增加家具或装饰，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-clay/output-911761b6fb0b6a822e9813040ef9150acc1cee9fb7c6c9210b47e6a23bc31605.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 46
+  },
+  {
+    "key": "design60-47-v4",
+    "candidateId": "design-top60-47",
+    "prompt": "将上传白天客厅照片转成真实夜景。只改变照明和窗外时间：激活左边现有黄铜落地灯的暖光，窗外深蓝夜空，玻璃出现合理室内反射，柔和光衰减与阴影。锁定原几何、材质、物品、门窗、相机、构图，不新增任何灯具或物体。4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 47
+  },
+  {
+    "key": "design60-48-v4",
+    "candidateId": "design-top60-48",
+    "prompt": "从上传客厅图提取软装，生成白底高级产品目录板。每件独特物品只出现一次：蓝绿沙发、蓝绿抱枕款式、圆木茶几、黄铜落地灯、奶油地毯、白色花瓶含枝叶，共六格。正面展示，按家具/织物/灯饰分组，分别编号01到06。排除窗门墙面地板，不添加物品，不重复同款抱枕。3:4。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 48
+  },
+  {
+    "key": "design60-49-v4",
+    "candidateId": "design-top60-49",
+    "prompt": "把上传合成人物转成被双手捧着的手工钩织Q版玩偶，保留短黑发、红圆眼镜、黄外套、白上衣、青绿裤和白鞋。强调鲜明配色和真实纱线针脚，完整玩偶被两只自然成人手轻托，木桌和窗边暖光，亲切工艺摄影。3:4，无文字。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 49
+  },
+  {
+    "key": "design60-50-v4",
+    "candidateId": "design-top60-50",
+    "prompt": "根据上传合成人物全身照片生成放在真实桌面上的全身动漫手办。保持站姿、微笑、短黑发、红圆眼镜、黄外套、白T恤、青绿裤和白鞋。手机随手拍三分之四视角，精细头发与衣料纹理、柔和渐变色，人物头到脚完整入镜，简洁圆底座，无文字。3:4。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 50
+  },
+  {
+    "key": "design60-51-v4",
+    "candidateId": "design-top60-51",
+    "prompt": "把上传合成人物照片转成书架上的摇头娃娃，明显放大头部、细弹簧颈、身体卡通化。保留短黑发、红圆眼镜、脸部特征、黄外套与青绿裤。完整娃娃站在小圆底座，真实书架和模糊书脊，暖光，无可读文字。3:4。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 51
+  },
+  {
+    "key": "design60-52-v4",
+    "candidateId": "design-top60-52",
+    "prompt": "基于上传银色无线鼠标重做材质：保持鼠标轮廓、滚轮、按键缝和角度，改为透明虹彩玻璃，有蓝绿紫色折射与色散。黑色背景，HDRI斜向主光、边缘轮廓光、克制辉光、高对比。仅一只鼠标，不新增物体、不改变外形，方图。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-4-v3/output-b679b4b92cab53ef9bd8b1e6372b7ac9f3aeab7bf02b5d17f0c7ff9ba2ac1b1c.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 52
+  },
+  {
+    "key": "design60-55-v4",
+    "candidateId": "design-top60-55",
+    "prompt": "把上传合成人物做成手持特写中的彩色Q版钥匙扣：保留短黑发、红圆眼镜、黄色外套、青绿裤和白鞋，软橡胶材质、粗黑轮廓，头顶挂孔接小银色钥匙圈。成年人的手指捏住钥匙圈，完整小挂件可见，浅中性背景，方图无文字。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 55
+  },
+  {
+    "key": "design60-56-v4",
+    "candidateId": "design-top60-56",
+    "prompt": "把上传合成人物转换成Kawaii珐琅徽章，保留短黑发、红圆眼镜、黄外套、青绿裤、白鞋和微笑，亮面金属轮廓、鲜艳珐琅色块，不添加新特征，单枚完整徽章白底方形样机，轻微投影。无文字。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 56
+  },
+  {
+    "key": "design60-58-v4",
+    "candidateId": "design-top60-58",
+    "prompt": "第一张是体素松树风格参考，第二张是待转换的樱桃像素图标。仅将第二张的两颗红樱桃、相连绿梗和叶片转为第一张的立方体素几何和等距3D渲染风格，Octane质感、柔和环境遮蔽、白色背景，完整轮廓。不要把松树或草地加入输出。方图、无文字。",
+    "references": [
+      {
+        "slotId": "styleReference",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-voxel/output-2e1b0a09ee3ac6eabc6bf250e6fd325572f0c4d61a2cf8bd74a74aeeffc49c2e.png"
+      },
+      {
+        "slotId": "targetIcon",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-57-v3/output-bc55dc5f720b055c2d3c9361389ffd3cae8280c3d6847c931075a0068fc28696.png"
+      }
+    ],
+    "targetAspectRatio": null,
+    "rank": 58
+  }
+]

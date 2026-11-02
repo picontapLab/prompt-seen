@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-49",
+  "target": {
+    "promptId": "p_197",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-49",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "把上传合成人物转成被双手捧着的手工钩织Q版玩偶，保留短黑发、红圆眼镜、黄外套、白上衣、青绿裤和白鞋。强调鲜明配色和真实纱线针脚，完整玩偶被两只自然成人手轻托，木桌和窗边暖光，亲切工艺摄影。3:4，无文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject reference",
+          "zh-Hans": "主体参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Portrait to crochet doll",
+      "description": "A complete knitted doll is cupped in two hands. Bob hair, red glasses and yellow-teal clothing preserve the synthetic reference identity.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nA complete knitted doll is cupped in two hands. Bob hair, red glasses and yellow-teal clothing preserve the synthetic reference identity.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 49. [Source](https://github.com/jamez-bondos/awesome-gpt4o-images/blob/main/README_en.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "照片→手工钩织Q版玩偶",
+      "description": "双手托起完整钩织玩偶，短发、红眼镜及黄绿服装保留合成参考特征。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n双手托起完整钩织玩偶，短发、红眼镜及黄绿服装保留合成参考特征。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 49 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "A complete knitted doll is cupped in two hands. Bob hair, red glasses and yellow-teal clothing preserve the synthetic reference identity.",
+    "zh-Hans": "双手托起完整钩织玩偶，短发、红眼镜及黄绿服装保留合成参考特征。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:17.985Z",
+    "contentHash": "0377c585c0c9e1711d9643f8efb245684e40a8253cf3b83c8cf0e602717ea115"
+  }
+}

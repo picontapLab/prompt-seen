@@ -1,0 +1,64 @@
+{
+  "candidateId": "design-top60-44",
+  "target": {
+    "promptId": "p_192",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-44",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "第一张为橙色灯芯绒沙发参考，第二张为目标客厅。用第一张沙发替换第二张图中的蓝绿色沙发，放在同一位置，匹配透视、尺度和光照，保持橙色灯芯绒、圆扶手和短木脚。移除旧沙发及其抱枕，其他窗门、桌子、花瓶、地毯、灯、墙和地板全部不变。4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "furniture",
+        "labels": {
+          "en": "Replacement furniture",
+          "zh-Hans": "替换家具"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "targetScene",
+        "labels": {
+          "en": "Target scene",
+          "zh-Hans": "目标场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Reference sofa replacement",
+      "description": "The orange corduroy sofa replaces the teal sofa and its cushions; the remaining room arrangement and daylight are preserved.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nThe orange corduroy sofa replaces the teal sofa and its cushions; the remaining room arrangement and daylight are preserved.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 44. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "家具参考图→室内现场替换",
+      "description": "橙色灯芯绒沙发替换蓝绿沙发及其抱枕，其他室内布局与日光保持。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n橙色灯芯绒沙发替换蓝绿沙发及其抱枕，其他室内布局与日光保持。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 44 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "The orange corduroy sofa replaces the teal sofa and its cushions; the remaining room arrangement and daylight are preserved.",
+    "zh-Hans": "橙色灯芯绒沙发替换蓝绿沙发及其抱枕，其他室内布局与日光保持。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:05.889Z",
+    "contentHash": "0cc391389a96f5c6196fb8e5c913e2366108e572a681428f3a908eaaea6535c0"
+  }
+}

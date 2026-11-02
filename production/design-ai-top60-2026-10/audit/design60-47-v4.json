@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-47-v4",
+    "candidateId": "design-top60-47",
+    "prompt": "将上传白天客厅照片转成真实夜景。只改变照明和窗外时间：激活左边现有黄铜落地灯的暖光，窗外深蓝夜空，玻璃出现合理室内反射，柔和光衰减与阴影。锁定原几何、材质、物品、门窗、相机、构图，不新增任何灯具或物体。4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "49d5418ab031a4b3b7e1f74d399dad64d4b2459a2fc9bde83ddcd221bb38e849",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png",
+      "sha256": "6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05",
+      "slotId": "scene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.606Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-47-v4/output-39406fa82630b6989e2c95ce3e8215f49dac29d01379c69a7d2dcdfbc0aea85a.png",
+      "sha256": "39406fa82630b6989e2c95ce3e8215f49dac29d01379c69a7d2dcdfbc0aea85a"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:37:26.473Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The original lamp glows warmly, the window turns dark blue, and all main objects and the camera remain fixed.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:15.216Z"
+  }
+}

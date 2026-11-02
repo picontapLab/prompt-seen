@@ -1,0 +1,48 @@
+{
+  "definition": {
+    "key": "design60-44-v4",
+    "candidateId": "design-top60-44",
+    "prompt": "第一张为橙色灯芯绒沙发参考，第二张为目标客厅。用第一张沙发替换第二张图中的蓝绿色沙发，放在同一位置，匹配透视、尺度和光照，保持橙色灯芯绒、圆扶手和短木脚。移除旧沙发及其抱枕，其他窗门、桌子、花瓶、地毯、灯、墙和地板全部不变。4:3。",
+    "references": [
+      {
+        "slotId": "furniture",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-furniture/output-6bed48819434898ffb0d1f97ba6c3236ac06e08edd11378fc99ac011b8d4c37f.png"
+      },
+      {
+        "slotId": "targetScene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "5dd75a70a3340c98b80dea9c723810be60cfa53fb960b75ece0cfe00c062967b",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-furniture/output-6bed48819434898ffb0d1f97ba6c3236ac06e08edd11378fc99ac011b8d4c37f.png",
+      "sha256": "6bed48819434898ffb0d1f97ba6c3236ac06e08edd11378fc99ac011b8d4c37f",
+      "slotId": "furniture"
+    },
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png",
+      "sha256": "6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05",
+      "slotId": "targetScene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.595Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-44-v4/output-3eae6327cd3770548fd71e2631728ae3435b3a25aa43a40bf80c23c7e139112f.png",
+      "sha256": "3eae6327cd3770548fd71e2631728ae3435b3a25aa43a40bf80c23c7e139112f"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:35:39.141Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The orange corduroy sofa replaces the teal sofa and its cushions; the remaining room arrangement and daylight are preserved.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:05.887Z"
+  }
+}

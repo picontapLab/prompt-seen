@@ -1,0 +1,33 @@
+{
+  "candidateId": "design-top60-40",
+  "rank": 40,
+  "promptId": "p_190",
+  "slug": "design-top60-42",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "art-print"
+  ],
+  "displayMode": "before-after",
+  "prompt": "将2D平面图转换成3D轴测建筑图，墙体统一拉伸高度，使用蓝图风格并加柔和环境遮蔽；第二轮仅把相机绕竖轴旋转180°，其他几何、材质和阴影保持一致。",
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Use an original or licensed reference image when the prompt calls for one.",
+      "zh-Hans": "如提示词需要参考图，请使用原创或已获许可的素材。"
+    },
+    "slots": []
+  },
+  "outputAssetIds": [
+    "a_288"
+  ],
+  "provider": "OpenAI",
+  "model": "GPT Image",
+  "status": "accepted",
+  "visualReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "notes": "Desktop detail and collection display checked; text and brand fidelity remain manual checks."
+  }
+}

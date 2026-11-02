@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-28-v4",
+    "candidateId": "design-top60-28",
+    "prompt": "将上传的虚构岛屿地图转成古代羊皮纸藏宝图。保持海岸线、西部港口、北方三组山丘、中央城镇、东部池塘和东南棕榈滩的位置关系，改用手绘山脉、港口城堡、帆船、罗盘玫瑰、从港口经过城镇通往东南沙滩的虚线寻宝路线，在沙滩标大红X。古旧褐色墨线，羊皮纸，方图，无现代UI。",
+    "references": [
+      {
+        "slotId": "map",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-map/output-ff76ef42d9a2d767d53f6afb8f5e9743d1cd35fae9a8add5889c8c8222c27645.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "497a4bde9a2ca6f7aab0947514756815f0abebd19110d999da4b94cc6c077868",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-map/output-ff76ef42d9a2d767d53f6afb8f5e9743d1cd35fae9a8add5889c8c8222c27645.png",
+      "sha256": "ff76ef42d9a2d767d53f6afb8f5e9743d1cd35fae9a8add5889c8c8222c27645",
+      "slotId": "map"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.573Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-28-v4/output-ca5e6ada3216344dd00dca584c3ac5b8d110d8fe94783eaffa4a13d87ba774d3.png",
+      "sha256": "ca5e6ada3216344dd00dca584c3ac5b8d110d8fe94783eaffa4a13d87ba774d3"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:32:28.707Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The crescent coastline, west harbor, three northern hills, central town and eastern pond are retained; a dashed route leads to the southeast X.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:51:22.725Z"
+  }
+}

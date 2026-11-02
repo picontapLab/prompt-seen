@@ -1,0 +1,12 @@
+referenceImage: required
+instructions:
+  en: Upload the reference images in the listed order. The example uses synthetic
+    input images.
+  zh-Hans: 按列出的顺序上传参考图。本例使用合成输入素材。
+slots:
+  - id: product
+    labels:
+      en: Product reference
+      zh-Hans: 产品参考
+    min: 1
+    max: 1

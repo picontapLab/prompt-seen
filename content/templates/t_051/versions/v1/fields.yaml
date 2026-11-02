@@ -1,0 +1,16 @@
+fields:
+  - name: brand
+    required: true
+    group: subject
+    labels:
+      en: Exact label
+      zh-Hans: 准确标签
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: BERRY DAY
+    minLength: 1
+    maxLength: 400
+    multiline: false

@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-48",
+  "target": {
+    "promptId": "p_196",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-48",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "从上传客厅照片提取六种独立软装，生成3:4白底产品目录板，3行2列。第一行标题 FURNITURE：01蓝绿沙发（必须去掉沙发上的两只独立抱枕，只保留座垫和靠背），02圆木茶几。第二行标题 TEXTILES：03只展示一只蓝绿抱枕，04奶油地毯。第三行标题 DECOR：05黄铜落地灯，06白色花瓶与枝叶。每个物品只出现一次，不能把独立展示的抱枕再放回沙发。每格仅数字，不添加物品名。排除窗门墙地面，正面单品摄影，保留参考物品外形材质。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "scene",
+        "labels": {
+          "en": "Source scene",
+          "zh-Hans": "原始场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Interior furnishings catalog board",
+      "description": "Six numbered products occupy the requested groups. The sofa has no loose cushions, and the standalone cushion appears only once.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nSix numbered products occupy the requested groups. The sofa has no loose cushions, and the standalone cushion appears only once.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 48. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "室内软装提取目录板",
+      "description": "六件编号单品归入指定分组，沙发已去掉独立抱枕，同款抱枕仅展示一次。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n六件编号单品归入指定分组，沙发已去掉独立抱枕，同款抱枕仅展示一次。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 48 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "Six numbered products occupy the requested groups. The sofa has no loose cushions, and the standalone cushion appears only once.",
+    "zh-Hans": "六件编号单品归入指定分组，沙发已去掉独立抱枕，同款抱枕仅展示一次。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:55:05.557Z",
+    "contentHash": "788469c23670524e3fada66e29b93cdf5b940af59f4eeb6b4c3dd6ecfeb4af16"
+  }
+}

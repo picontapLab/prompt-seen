@@ -1,0 +1,31 @@
+fields:
+  - name: material
+    required: true
+    group: subject
+    labels:
+      en: Material and color
+      zh-Hans: 材质与颜色
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: brown leather
+    minLength: 1
+    maxLength: 400
+    multiline: false
+  - name: stitchColor
+    required: true
+    group: subject
+    labels:
+      en: Stitch color
+      zh-Hans: 缝线颜色
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: cream
+    minLength: 1
+    maxLength: 400
+    multiline: false

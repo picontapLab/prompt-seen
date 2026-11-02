@@ -1,0 +1,45 @@
+id: p_206
+slug: design-top60-58
+createdAt: 2026-10-29
+updatedAt: 2026-10-30
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - art-print
+coverAssetId: a_354
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the reference images in the listed order. The example uses synthetic
+      input images.
+    zh-Hans: 按列出的顺序上传参考图。本例使用合成输入素材。
+  slots:
+    - id: styleReference
+      labels:
+        en: Voxel style
+        zh-Hans: 体素风格
+      min: 1
+      max: 1
+    - id: targetIcon
+      labels:
+        en: Target icon
+        zh-Hans: 目标图标
+      min: 1
+      max: 1
+showcaseExampleId: x_266
+promptProvenance: independent-adaptation
+inspirationSources: []
+source:
+  author: Prompt Seen; independent adaptation of supplied case 58
+  url: https://github.com/jamez-bondos/awesome-gpt4o-images/blob/main/README_en.md
+  license: CC BY 4.0
+annotations: []

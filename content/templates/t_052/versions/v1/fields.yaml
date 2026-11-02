@@ -1,0 +1,16 @@
+fields:
+  - name: circuitColor
+    required: true
+    group: subject
+    labels:
+      en: Circuit color
+      zh-Hans: 管路颜色
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: orange
+    minLength: 1
+    maxLength: 400
+    multiline: false

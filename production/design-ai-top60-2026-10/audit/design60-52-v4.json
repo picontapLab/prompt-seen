@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-52-v4",
+    "candidateId": "design-top60-52",
+    "prompt": "基于上传银色无线鼠标重做材质：保持鼠标轮廓、滚轮、按键缝和角度，改为透明虹彩玻璃，有蓝绿紫色折射与色散。黑色背景，HDRI斜向主光、边缘轮廓光、克制辉光、高对比。仅一只鼠标，不新增物体、不改变外形，方图。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-4-v3/output-b679b4b92cab53ef9bd8b1e6372b7ac9f3aeab7bf02b5d17f0c7ff9ba2ac1b1c.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "5495d3b2a4c1aaf8e4347d5c328944c862af16fac8c327f0c18a29556eef88da",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-4-v3/output-b679b4b92cab53ef9bd8b1e6372b7ac9f3aeab7bf02b5d17f0c7ff9ba2ac1b1c.png",
+      "sha256": "b679b4b92cab53ef9bd8b1e6372b7ac9f3aeab7bf02b5d17f0c7ff9ba2ac1b1c",
+      "slotId": "subject"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.624Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-52-v4/output-7abf5018ee2a7b80eab829f7a3f5bd3f01cacbfd52717a761cfc4130c3912bd1.png",
+      "sha256": "7abf5018ee2a7b80eab829f7a3f5bd3f01cacbfd52717a761cfc4130c3912bd1"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:39:44.844Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Mouse outline, split buttons and scroll wheel are retained, with transparent rainbow glass and rim light against black.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:26.543Z"
+  }
+}

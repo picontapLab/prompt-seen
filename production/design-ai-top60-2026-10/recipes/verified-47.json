@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-47",
+  "target": {
+    "promptId": "p_195",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-47",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "将上传白天客厅照片转成真实夜景。只改变照明和窗外时间：激活左边现有黄铜落地灯的暖光，窗外深蓝夜空，玻璃出现合理室内反射，柔和光衰减与阴影。锁定原几何、材质、物品、门窗、相机、构图，不新增任何灯具或物体。4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "scene",
+        "labels": {
+          "en": "Source scene",
+          "zh-Hans": "原始场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Daylight interior to night",
+      "description": "The original lamp glows warmly, the window turns dark blue, and all main objects and the camera remain fixed.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nThe original lamp glows warmly, the window turns dark blue, and all main objects and the camera remain fixed.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 47. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "日景→夜景建筑摄影",
+      "description": "原落地灯亮起暖光，窗外变深蓝夜色，主要物品与相机位置保持。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n原落地灯亮起暖光，窗外变深蓝夜色，主要物品与相机位置保持。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 47 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "The original lamp glows warmly, the window turns dark blue, and all main objects and the camera remain fixed.",
+    "zh-Hans": "原落地灯亮起暖光，窗外变深蓝夜色，主要物品与相机位置保持。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:15.218Z",
+    "contentHash": "a32cefc9d314943325b1c4884d33fc98757a5634be1daf3ada19694d055fd473"
+  }
+}

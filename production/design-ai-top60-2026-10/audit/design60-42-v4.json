@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-42-v4",
+    "candidateId": "design-top60-42",
+    "prompt": "将上传2D两房平面图转换成3D轴测建筑图，保持外轮廓、偏左隔墙、隔墙门、右房底边入户门和顶边两扇窗位置与比例。墙体统一拉伸高度，无屋顶，蓝图深蓝背景、浅蓝实体和白色细边线、柔和环境遮蔽。相机从平面图下边偏右的方向俯视，能看到两房内部，无家具、无文字。4:3。",
+    "references": [
+      {
+        "slotId": "floorPlan",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-plan/output-60f0cf107e2a724c92e43d46fd8f12b31dd8b6a40c54aa7a324c87dbc9ba1a1e.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "077ca549095840468d33326839d2c955bd57936dee52d5c9f508a0e87addf629",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-plan/output-60f0cf107e2a724c92e43d46fd8f12b31dd8b6a40c54aa7a324c87dbc9ba1a1e.png",
+      "sha256": "60f0cf107e2a724c92e43d46fd8f12b31dd8b6a40c54aa7a324c87dbc9ba1a1e",
+      "slotId": "floorPlan"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.580Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-42-v4/output-b50feae21ec6d9223082f09a012e4bd2073116eef2feb14070949019bc7eb0ee.png",
+      "sha256": "b50feae21ec6d9223082f09a012e4bd2073116eef2feb14070949019bc7eb0ee"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:34:02.954Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Two rooms, the offset divider, two windows and both doors correspond to the plan. This is the first generated view; the separately recorded reverse-view step uses this image as its input.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:51:59.064Z"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "candidateId": "design-top60-58",
+  "target": {
+    "promptId": "p_206",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-58",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "第一张是体素松树风格参考，第二张是待转换的樱桃像素图标。仅将第二张的两颗红樱桃、相连绿梗和叶片转为第一张的立方体素几何和等距3D渲染风格，Octane质感、柔和环境遮蔽、白色背景，完整轮廓。不要把松树或草地加入输出。方图、无文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "styleReference",
+        "labels": {
+          "en": "Voxel style",
+          "zh-Hans": "体素风格"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "targetIcon",
+        "labels": {
+          "en": "Target icon",
+          "zh-Hans": "目标图标"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Flat cherry icon to voxel form",
+      "description": "The cherry target becomes isometric cubic geometry using the tree style reference, without copying the tree or grass block.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nThe cherry target becomes isometric cubic geometry using the tree style reference, without copying the tree or grass block.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 58. [Source](https://github.com/jamez-bondos/awesome-gpt4o-images/blob/main/README_en.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "平面图标→Voxel 3D图标",
+      "description": "樱桃目标转为等距立方体素，沿用树参考的风格，未把树或草地带入输出。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n樱桃目标转为等距立方体素，沿用树参考的风格，未把树或草地带入输出。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 58 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "The cherry target becomes isometric cubic geometry using the tree style reference, without copying the tree or grass block.",
+    "zh-Hans": "樱桃目标转为等距立方体素，沿用树参考的风格，未把树或草地带入输出。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:42.568Z",
+    "contentHash": "d25fa75c7cc99af84b96e9cfd83ba9c3fb234334c7fc06ce89caf1e4e0d6289a"
+  }
+}

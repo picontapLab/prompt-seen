@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-45-v4",
+    "candidateId": "design-top60-45",
+    "prompt": "将上传空房布置为温暖北欧卧室：浅橡木双人床、米白床品、柔绿毯子、低床头柜和简洁床头灯，床在左侧墙边，不遮挡门窗。必须保持原相机角度、视野、房间比例、唯一后窗和右墙门的位置尺寸。禁止增删移动门窗与墙体，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-empty/output-57c5bfc68e731643a27573afdf4d7810ff90b848ce96a456bd77b465fa711a3c.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "a86a595350484a8e2861489c94755bb3f3cffba8ceaf295f37abe65249a14674",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-empty/output-57c5bfc68e731643a27573afdf4d7810ff90b848ce96a456bd77b465fa711a3c.png",
+      "sha256": "57c5bfc68e731643a27573afdf4d7810ff90b848ce96a456bd77b465fa711a3c",
+      "slotId": "scene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.599Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-45-v4/output-7cb749b702766b09717847ed222dacd4fd4c4353649d6d96d383afbd082d7f5f.png",
+      "sha256": "7cb749b702766b09717847ed222dacd4fd4c4353649d6d96d383afbd082d7f5f"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:36:41.289Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "A warm bedroom is furnished along the left wall; the original rear window, right door and camera view are retained.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:09.074Z"
+  }
+}

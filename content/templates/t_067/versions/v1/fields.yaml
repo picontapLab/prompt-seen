@@ -1,0 +1,16 @@
+fields:
+  - name: organization
+    required: true
+    group: subject
+    labels:
+      en: Fictional organization
+      zh-Hans: 虚构组织名称
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: 蓝湾海洋学院
+    minLength: 1
+    maxLength: 400
+    multiline: false

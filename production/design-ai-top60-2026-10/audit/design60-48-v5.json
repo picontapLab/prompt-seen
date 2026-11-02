@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-48-v5",
+    "candidateId": "design-top60-48",
+    "prompt": "从上传客厅照片提取六种独立软装，生成3:4白底产品目录板，3行2列。第一行标题 FURNITURE：01蓝绿沙发（必须去掉沙发上的两只独立抱枕，只保留座垫和靠背），02圆木茶几。第二行标题 TEXTILES：03只展示一只蓝绿抱枕，04奶油地毯。第三行标题 DECOR：05黄铜落地灯，06白色花瓶与枝叶。每个物品只出现一次，不能把独立展示的抱枕再放回沙发。每格仅数字，不添加物品名。排除窗门墙地面，正面单品摄影，保留参考物品外形材质。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "d73d60a56fdb1aa6f2bc2e28b076cdf362da0c4ab3b010ec37b5aee7374f940b",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png",
+      "sha256": "6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05",
+      "slotId": "scene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:52:23.320Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-48-v5/output-6b67a835a26c7495bd85d3890a9ef3613b1ce6541622a3f32c06cc96a27748b9.png",
+      "sha256": "6b67a835a26c7495bd85d3890a9ef3613b1ce6541622a3f32c06cc96a27748b9"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:53:48.336Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Six numbered products occupy the requested groups. The sofa has no loose cushions, and the standalone cushion appears only once.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:55:05.555Z"
+  }
+}

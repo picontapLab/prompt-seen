@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-51",
+  "target": {
+    "promptId": "p_199",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-51",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "把上传合成人物照片转成书架上的摇头娃娃，明显放大头部、细弹簧颈、身体卡通化。保留短黑发、红圆眼镜、脸部特征、黄外套与青绿裤。完整娃娃站在小圆底座，真实书架和模糊书脊，暖光，无可读文字。3:4。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject reference",
+          "zh-Hans": "主体参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Portrait to bookshelf bobblehead",
+      "description": "An oversized recognizable head and exposed spring neck distinguish the bobblehead, with reference colors retained on a bookshelf.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nAn oversized recognizable head and exposed spring neck distinguish the bobblehead, with reference colors retained on a bookshelf.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 51. [Source](https://github.com/jamez-bondos/awesome-gpt4o-images/blob/main/README_en.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "自拍→书架上的摇头娃娃",
+      "description": "放大且可辨识的头部与外露弹簧颈形成摇头娃娃，保留参考配色，置于书架。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n放大且可辨识的头部与外露弹簧颈形成摇头娃娃，保留参考配色，置于书架。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 51 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "An oversized recognizable head and exposed spring neck distinguish the bobblehead, with reference colors retained on a bookshelf.",
+    "zh-Hans": "放大且可辨识的头部与外露弹簧颈形成摇头娃娃，保留参考配色，置于书架。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:23.824Z",
+    "contentHash": "5968b1909a193fd6cfa246ab4241cd70a601cfd628bddcfa19e7ea05ce4ec1d7"
+  }
+}

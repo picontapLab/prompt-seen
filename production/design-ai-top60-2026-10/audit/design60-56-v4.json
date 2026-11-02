@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-56-v4",
+    "candidateId": "design-top60-56",
+    "prompt": "把上传合成人物转换成Kawaii珐琅徽章，保留短黑发、红圆眼镜、黄外套、青绿裤、白鞋和微笑，亮面金属轮廓、鲜艳珐琅色块，不添加新特征，单枚完整徽章白底方形样机，轻微投影。无文字。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "0eed8566a091166043efe26e8de7b38d49feac9e1944ab26fe47549d4bd816d9",
+  "references": [
+    {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png",
+      "sha256": "5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513",
+      "slotId": "subject"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.631Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/design-ai-top60-2026-10/jobs/design60-56-v4/output-f2f249e0bc6c807145ad3ea88d9b7e548e227691a4d235680335d25028463f60.png",
+      "sha256": "f2f249e0bc6c807145ad3ea88d9b7e548e227691a4d235680335d25028463f60"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:40:41.187Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "A single full-body pin uses shiny metal boundaries and saturated enamel, preserving the reference hair, glasses and clothing colors.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:37.322Z"
+  }
+}
