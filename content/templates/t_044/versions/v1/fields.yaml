@@ -1,0 +1,31 @@
+fields:
+  - name: product
+    required: true
+    group: subject
+    labels:
+      en: Product
+      zh-Hans: 产品
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: a dark green tea tin
+    minLength: 1
+    maxLength: 400
+    multiline: false
+  - name: brandColor
+    required: true
+    group: subject
+    labels:
+      en: Background color
+      zh-Hans: 背景颜色
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: deep cobalt
+    minLength: 1
+    maxLength: 400
+    multiline: false

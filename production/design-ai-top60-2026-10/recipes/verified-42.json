@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-42",
+  "target": {
+    "promptId": "p_190",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-42",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "将上传2D两房平面图转换成3D轴测建筑图，保持外轮廓、偏左隔墙、隔墙门、右房底边入户门和顶边两扇窗位置与比例。墙体统一拉伸高度，无屋顶，蓝图深蓝背景、浅蓝实体和白色细边线、柔和环境遮蔽。相机从平面图下边偏右的方向俯视，能看到两房内部，无家具、无文字。4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "floorPlan",
+        "labels": {
+          "en": "Floor plan",
+          "zh-Hans": "平面图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Floor plan to blueprint axonometric",
+      "description": "Two rooms, the offset divider, two windows and both doors correspond to the plan. This is the first generated view; the separately recorded reverse-view step uses this image as its input.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nTwo rooms, the offset divider, two windows and both doors correspond to the plan. This is the first generated view; the separately recorded reverse-view step uses this image as its input.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 42. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "2D平面图→3D轴测图与反向视角",
+      "description": "两房、偏置隔墙、双窗与两扇门对应平面图。本图为第一轮轴测，另存的反向视角运行以本图为输入。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n两房、偏置隔墙、双窗与两扇门对应平面图。本图为第一轮轴测，另存的反向视角运行以本图为输入。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 42 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "Two rooms, the offset divider, two windows and both doors correspond to the plan. This is the first generated view; the separately recorded reverse-view step uses this image as its input.",
+    "zh-Hans": "两房、偏置隔墙、双窗与两扇门对应平面图。本图为第一轮轴测，另存的反向视角运行以本图为输入。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:51:59.066Z",
+    "contentHash": "63ff81832f62e1ad6a765cc499d4f2c4eb19ec36eb442059e27d6cad00563f56"
+  }
+}

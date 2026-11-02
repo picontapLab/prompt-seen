@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-51-v4",
+    "candidateId": "design-top60-51",
+    "prompt": "把上传合成人物照片转成书架上的摇头娃娃，明显放大头部、细弹簧颈、身体卡通化。保留短黑发、红圆眼镜、脸部特征、黄外套与青绿裤。完整娃娃站在小圆底座，真实书架和模糊书脊，暖光，无可读文字。3:4。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "54eb6893b826599b8c9e3bcff5a71ef929f4097b261459de105fcb5bb49cf06a",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png",
+      "sha256": "5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513",
+      "slotId": "subject"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.621Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-51-v4/output-89ecaba9299f5afe893591effd84719eb117cb62094d39ae44cdb980a29c3c9b.png",
+      "sha256": "89ecaba9299f5afe893591effd84719eb117cb62094d39ae44cdb980a29c3c9b"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:39:24.418Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "An oversized recognizable head and exposed spring neck distinguish the bobblehead, with reference colors retained on a bookshelf.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:23.823Z"
+  }
+}

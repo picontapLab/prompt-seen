@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-46-v4",
+    "candidateId": "design-top60-46",
+    "prompt": "把上传白模转成写实室内可视化。严格锁定几何、透视、三座沙发、长方茶几、左侧落地灯、右侧窗户的位置与构图。墙面奶油色灰泥，地面浅橡木，沙发米色亚麻，茶几暖白洞石，灯架黄铜，灯罩白色织物。北欧柔和窗光，不增加家具或装饰，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-clay/output-911761b6fb0b6a822e9813040ef9150acc1cee9fb7c6c9210b47e6a23bc31605.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "94325af43167353994cb962b45162efbbdc4d04c3fb8d71764ed9d7449d4c3b4",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-clay/output-911761b6fb0b6a822e9813040ef9150acc1cee9fb7c6c9210b47e6a23bc31605.png",
+      "sha256": "911761b6fb0b6a822e9813040ef9150acc1cee9fb7c6c9210b47e6a23bc31605",
+      "slotId": "scene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.602Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-46-v4/output-1d167a0f1d5d99f755857861c482494e7909d2b98ff0971df8df9d213b1ae9c9.png",
+      "sha256": "1d167a0f1d5d99f755857861c482494e7909d2b98ff0971df8df9d213b1ae9c9"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:37:04.688Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Sofa, table, lamp and right window retain the clay layout while linen, travertine, oak and brass replace the white materials.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:12.225Z"
+  }
+}

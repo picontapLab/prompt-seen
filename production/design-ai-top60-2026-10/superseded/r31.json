@@ -1,0 +1,33 @@
+{
+  "candidateId": "design-top60-31",
+  "rank": 31,
+  "promptId": "p_181",
+  "slug": "design-top60-33",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "displayMode": "poster-detail",
+  "prompt": "为[作品]生成角色关系图；节点、连线、箭头表示关系；角色肖像/符号和短标签；层级与阅读路径清楚。",
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "optional",
+    "instructions": {
+      "en": "Use an original or licensed reference image when the prompt calls for one.",
+      "zh-Hans": "如提示词需要参考图，请使用原创或已获许可的素材。"
+    },
+    "slots": []
+  },
+  "outputAssetIds": [
+    "a_287"
+  ],
+  "provider": "OpenAI",
+  "model": "GPT Image",
+  "status": "accepted",
+  "visualReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30",
+    "notes": "Desktop detail and collection display checked; text and brand fidelity remain manual checks."
+  }
+}

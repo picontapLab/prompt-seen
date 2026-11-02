@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-55",
+  "target": {
+    "promptId": "p_203",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-55",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "把上传合成人物做成手持特写中的彩色Q版钥匙扣：保留短黑发、红圆眼镜、黄色外套、青绿裤和白鞋，软橡胶材质、粗黑轮廓，头顶挂孔接小银色钥匙圈。成年人的手指捏住钥匙圈，完整小挂件可见，浅中性背景，方图无文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "subject",
+        "labels": {
+          "en": "Subject reference",
+          "zh-Hans": "主体参考"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Portrait to rubber keychain",
+      "description": "A hand holds the silver ring above a complete chibi rubber charm; black edges and reference colors are clear.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nA hand holds the silver ring above a complete chibi rubber charm; black edges and reference colors are clear.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 55. [Source](https://github.com/jamez-bondos/awesome-gpt4o-images/blob/main/README_en.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "照片→软胶Q版钥匙扣",
+      "description": "手指捏住银圈，完整Q版软胶挂件的黑轮廓和参考配色清楚。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n手指捏住银圈，完整Q版软胶挂件的黑轮廓和参考配色清楚。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 55 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "A hand holds the silver ring above a complete chibi rubber charm; black edges and reference colors are clear.",
+    "zh-Hans": "手指捏住银圈，完整Q版软胶挂件的黑轮廓和参考配色清楚。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:34.541Z",
+    "contentHash": "8261a36eb0d37c2bf4ffbf476d8d8d25088a3187f718c84c7c61700a0d24f8e6"
+  }
+}

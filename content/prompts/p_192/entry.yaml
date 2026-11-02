@@ -1,0 +1,45 @@
+id: p_192
+slug: design-top60-44
+createdAt: 2026-10-29
+updatedAt: 2026-10-30
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: architecture
+styleIds: []
+useCaseIds:
+  - editorial
+coverAssetId: a_337
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the reference images in the listed order. The example uses synthetic
+      input images.
+    zh-Hans: 按列出的顺序上传参考图。本例使用合成输入素材。
+  slots:
+    - id: furniture
+      labels:
+        en: Replacement furniture
+        zh-Hans: 替换家具
+      min: 1
+      max: 1
+    - id: targetScene
+      labels:
+        en: Target scene
+        zh-Hans: 目标场景
+      min: 1
+      max: 1
+showcaseExampleId: x_253
+promptProvenance: independent-adaptation
+inspirationSources: []
+source:
+  author: Prompt Seen; independent adaptation of supplied case 44
+  url: https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md
+  license: CC BY 4.0
+annotations: []

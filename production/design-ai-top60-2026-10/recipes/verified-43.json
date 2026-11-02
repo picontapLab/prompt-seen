@@ -1,0 +1,64 @@
+{
+  "candidateId": "design-top60-43",
+  "target": {
+    "promptId": "p_191",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-43",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "第一张图是深绿水磨石材质，第二张是目标客厅。仅把目标图中可见的浅橡木地板替换成第一张的深绿色水磨石，匹配纹理尺度、透视和光影。保留沙发、桌子、花瓶、地毯、落地灯、窗、门、墙、相机角度和构图完全不变。不改变地毯，不添加物品。4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "materialSample",
+        "labels": {
+          "en": "Material swatch",
+          "zh-Hans": "材质样本"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "targetScene",
+        "labels": {
+          "en": "Target scene",
+          "zh-Hans": "目标场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Terrazzo floor material replacement",
+      "description": "Only the visible floor becomes green terrazzo; the rug, furniture, door and window retain their positions and shapes.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nOnly the visible floor becomes green terrazzo; the rug, furniture, door and window retain their positions and shapes.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 43. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "材质样本→场景材质替换",
+      "description": "可见地板变为绿色水磨石，地毯、家具、门窗的位置和形状保持。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n可见地板变为绿色水磨石，地毯、家具、门窗的位置和形状保持。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 43 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "Only the visible floor becomes green terrazzo; the rug, furniture, door and window retain their positions and shapes.",
+    "zh-Hans": "可见地板变为绿色水磨石，地毯、家具、门窗的位置和形状保持。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:01.937Z",
+    "contentHash": "446674c9657ae0cc697975a17036d3edc14dfb9b07dfabb3b0497f19c6b37ed7"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-45",
+  "target": {
+    "promptId": "p_193",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-45",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "将上传空房布置为温暖北欧卧室：浅橡木双人床、米白床品、柔绿毯子、低床头柜和简洁床头灯，床在左侧墙边，不遮挡门窗。必须保持原相机角度、视野、房间比例、唯一后窗和右墙门的位置尺寸。禁止增删移动门窗与墙体，4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "scene",
+        "labels": {
+          "en": "Source scene",
+          "zh-Hans": "原始场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Furnish an empty bedroom",
+      "description": "A warm bedroom is furnished along the left wall; the original rear window, right door and camera view are retained.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nA warm bedroom is furnished along the left wall; the original rear window, right door and camera view are retained.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 45. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "空房间一键软装方案",
+      "description": "左墙新增温暖卧室布置，原后窗、右门与相机视角保持。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n左墙新增温暖卧室布置，原后窗、右门与相机视角保持。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 45 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "A warm bedroom is furnished along the left wall; the original rear window, right door and camera view are retained.",
+    "zh-Hans": "左墙新增温暖卧室布置，原后窗、右门与相机视角保持。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:09.075Z",
+    "contentHash": "c5161885219e959ab8cfd3d95d2b8797e01d05ba06693aee9dc8e9679d44cbdd"
+  }
+}

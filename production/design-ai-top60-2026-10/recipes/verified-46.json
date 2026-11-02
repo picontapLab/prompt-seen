@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-46",
+  "target": {
+    "promptId": "p_194",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-46",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "把上传白模转成写实室内可视化。严格锁定几何、透视、三座沙发、长方茶几、左侧落地灯、右侧窗户的位置与构图。墙面奶油色灰泥，地面浅橡木，沙发米色亚麻，茶几暖白洞石，灯架黄铜，灯罩白色织物。北欧柔和窗光，不增加家具或装饰，4:3。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "scene",
+        "labels": {
+          "en": "Source scene",
+          "zh-Hans": "原始场景"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Clay model to material visualization",
+      "description": "Sofa, table, lamp and right window retain the clay layout while linen, travertine, oak and brass replace the white materials.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nSofa, table, lamp and right window retain the clay layout while linen, travertine, oak and brass replace the white materials.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 46. [Source](https://github.com/qzh3722/awesome-nano-banana-spatial-design/blob/main/README.md). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "白模/黏土模型→写实材质渲染",
+      "description": "沙发、茶几、灯与右窗保持白模布局，新增亚麻、洞石、橡木和黄铜材质。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n沙发、茶几、灯与右窗保持白模布局，新增亚麻、洞石、橡木和黄铜材质。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 46 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "Sofa, table, lamp and right window retain the clay layout while linen, travertine, oak and brass replace the white materials.",
+    "zh-Hans": "沙发、茶几、灯与右窗保持白模布局，新增亚麻、洞石、橡木和黄铜材质。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:52:12.229Z",
+    "contentHash": "b455732137e3700c06ed965f558caa1dae1d832aac2490b56d52d1830bf2efab"
+  }
+}

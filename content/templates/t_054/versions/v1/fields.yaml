@@ -1,0 +1,61 @@
+fields:
+  - name: city
+    required: true
+    group: subject
+    labels:
+      en: City
+      zh-Hans: 城市
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: 里斯本
+    minLength: 1
+    maxLength: 400
+    multiline: false
+  - name: cityTitle
+    required: true
+    group: subject
+    labels:
+      en: City title
+      zh-Hans: 城市标题
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: LISBON
+    minLength: 1
+    maxLength: 400
+    multiline: false
+  - name: countryTitle
+    required: true
+    group: subject
+    labels:
+      en: Country title
+      zh-Hans: 国家标题
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: PORTUGAL
+    minLength: 1
+    maxLength: 400
+    multiline: false
+  - name: landmarks
+    required: true
+    group: subject
+    labels:
+      en: Landmarks
+      zh-Hans: 城市特征
+    help:
+      en: Changing this value creates an untested variant. Keep related content
+        consistent.
+      zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+    type: string
+    default: 黄色电车、斜坡街道、红瓦屋顶、蓝色河面
+    minLength: 1
+    maxLength: 400
+    multiline: false

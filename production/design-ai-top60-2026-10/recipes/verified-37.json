@@ -1,0 +1,55 @@
+{
+  "candidateId": "design-top60-37",
+  "target": {
+    "promptId": "p_185",
+    "sampleName": "default"
+  },
+  "slug": "design-top60-37",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "根据上传文档做高密度中文版式，3:4。严格抄录24行内容，每行只出现一次。标题使用第一行；剩下23行按原顺序排入三个窄栏中的独立小卡片，每张卡片完整一行，不拆成重复标题和内容。原文自带冒号就保留，不新增编号或小标题，不重复主题作为副标题，不重复提示句。米白纸、黑字、少量红色分隔线和小书籍图标。所有文字以上传原稿为准，字清晰，无其他文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the reference images in the listed order. The example uses synthetic input images.",
+      "zh-Hans": "按列出的顺序上传参考图。本例使用合成输入素材。"
+    },
+    "slots": [
+      {
+        "id": "document",
+        "labels": {
+          "en": "Exact source text",
+          "zh-Hans": "完整文字原稿"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Dense Chinese layout stress test",
+      "description": "All 24 source lines appear once across the title and three columns; the original date, hours and location are retained.",
+      "body": "## How to use\n\nCopy the exact prompt used for this image. Changing the subject creates a new, untested variant. Upload the ordered synthetic reference images shown in the run before generating.\n\n## Observed result\n\nAll 24 source lines appear once across the title and three columns; the original date, hours and location are retained.\n\n## Source\n\nIndependently adapted from the supplied design prompt collection, case 37. [Source](https://github.com/ZeroLu/awesome-gpt-image/blob/main/README.md#dense-chinese-layout-stress-test). GPT Image returned no precise version identifier."
+    },
+    "zh-Hans": {
+      "title": "高密度中文排版压力测试",
+      "description": "标题与三栏共完整呈现24行原稿，每行一次；日期、时间及地点保持。",
+      "body": "## 使用方法\n\n复制本图实际使用的完整提示词。修改主体后属于尚未验证的新变体。生成前，按顺序上传运行记录中展示的合成参考图。\n\n## 观察结果\n\n标题与三栏共完整呈现24行原稿，每行一次；日期、时间及地点保持。\n\n## 来源\n\n根据所提供设计 Prompt 清单第 37 条独立改写。[来源页面](https://pixonara.com/prompts/ai-product-photo-prompts)。生成工具未返回精确模型版本。"
+    }
+  },
+  "alt": {
+    "en": "All 24 source lines appear once across the title and three columns; the original date, hours and location are retained.",
+    "zh-Hans": "标题与三栏共完整呈现24行原稿，每行一次；日期、时间及地点保持。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-10-30T23:51:45.605Z",
+    "contentHash": "abb68a615a91d465e129a72392ca366534ce2720f61a0cc2235e7e543c0460dd"
+  }
+}

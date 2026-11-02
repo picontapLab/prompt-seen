@@ -1,0 +1,48 @@
+{
+  "definition": {
+    "key": "design60-58-v4",
+    "candidateId": "design-top60-58",
+    "prompt": "第一张是体素松树风格参考，第二张是待转换的樱桃像素图标。仅将第二张的两颗红樱桃、相连绿梗和叶片转为第一张的立方体素几何和等距3D渲染风格，Octane质感、柔和环境遮蔽、白色背景，完整轮廓。不要把松树或草地加入输出。方图、无文字。",
+    "references": [
+      {
+        "slotId": "styleReference",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-voxel/output-2e1b0a09ee3ac6eabc6bf250e6fd325572f0c4d61a2cf8bd74a74aeeffc49c2e.png"
+      },
+      {
+        "slotId": "targetIcon",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-57-v3/output-bc55dc5f720b055c2d3c9361389ffd3cae8280c3d6847c931075a0068fc28696.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "c91fc05daa51fb72e2df3e786be6b853833226dc7c81a2c9a8d754bee342c04a",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-voxel/output-2e1b0a09ee3ac6eabc6bf250e6fd325572f0c4d61a2cf8bd74a74aeeffc49c2e.png",
+      "sha256": "2e1b0a09ee3ac6eabc6bf250e6fd325572f0c4d61a2cf8bd74a74aeeffc49c2e",
+      "slotId": "styleReference"
+    },
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-57-v3/output-bc55dc5f720b055c2d3c9361389ffd3cae8280c3d6847c931075a0068fc28696.png",
+      "sha256": "bc55dc5f720b055c2d3c9361389ffd3cae8280c3d6847c931075a0068fc28696",
+      "slotId": "targetIcon"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.635Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-58-v4/output-ee6f810385fc3bd8db200703077b9da7ca63e7354e7bb1786d272876cf22177d.png",
+      "sha256": "ee6f810385fc3bd8db200703077b9da7ca63e7354e7bb1786d272876cf22177d"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:41:03.101Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The cherry target becomes isometric cubic geometry using the tree style reference, without copying the tree or grass block.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:42.566Z"
+  }
+}

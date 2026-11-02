@@ -1,0 +1,48 @@
+{
+  "definition": {
+    "key": "design60-43-v4",
+    "candidateId": "design-top60-43",
+    "prompt": "第一张图是深绿水磨石材质，第二张是目标客厅。仅把目标图中可见的浅橡木地板替换成第一张的深绿色水磨石，匹配纹理尺度、透视和光影。保留沙发、桌子、花瓶、地毯、落地灯、窗、门、墙、相机角度和构图完全不变。不改变地毯，不添加物品。4:3。",
+    "references": [
+      {
+        "slotId": "materialSample",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-material/output-17bb20243eb5c03566c3e51e67bf250412fbd41d82d7d111ee695bf629c14529.png"
+      },
+      {
+        "slotId": "targetScene",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "f67f42b324ef92285e43de827394aa8a9b19bcf9b629611729a09f309ed2d8de",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-material/output-17bb20243eb5c03566c3e51e67bf250412fbd41d82d7d111ee695bf629c14529.png",
+      "sha256": "17bb20243eb5c03566c3e51e67bf250412fbd41d82d7d111ee695bf629c14529",
+      "slotId": "materialSample"
+    },
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-room/output-6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05.png",
+      "sha256": "6668aecabd0668168c1504ba3cae87c023c719d8845c80d459c57448b460ae05",
+      "slotId": "targetScene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.589Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-43-v4/output-05c1552145b74a3d9fa3bfd5a2ee61d518c476f59287a15d3a7aca9361287db3.png",
+      "sha256": "05c1552145b74a3d9fa3bfd5a2ee61d518c476f59287a15d3a7aca9361287db3"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:35:18.676Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Only the visible floor becomes green terrazzo; the rug, furniture, door and window retain their positions and shapes.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:01.936Z"
+  }
+}

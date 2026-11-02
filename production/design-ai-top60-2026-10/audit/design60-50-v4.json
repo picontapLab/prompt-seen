@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-50-v4",
+    "candidateId": "design-top60-50",
+    "prompt": "根据上传合成人物全身照片生成放在真实桌面上的全身动漫手办。保持站姿、微笑、短黑发、红圆眼镜、黄外套、白T恤、青绿裤和白鞋。手机随手拍三分之四视角，精细头发与衣料纹理、柔和渐变色，人物头到脚完整入镜，简洁圆底座，无文字。3:4。",
+    "references": [
+      {
+        "slotId": "subject",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "2ea2ec19966f18b44ad01e8e3d8e2692a32ed08ba51fa73f3fdba726841071b4",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-person/output-5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513.png",
+      "sha256": "5243dedbc76f0f71cd715e8e10f383e55bb015ba6bd2d409068d60468c077513",
+      "slotId": "subject"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.617Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-50-v4/output-48ae94e16a837cb46b44eb79adffcef5b78dae15975a6de1991ddd7d93a9490e.png",
+      "sha256": "48ae94e16a837cb46b44eb79adffcef5b78dae15975a6de1991ddd7d93a9490e"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:38:43.848Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The full figure stands on a round desktop base; pose, bob haircut, red glasses and outfit colors remain recognizable.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:52:21.043Z"
+  }
+}

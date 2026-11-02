@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "design60-41-v4",
+    "candidateId": "design-top60-41",
+    "prompt": "上传手绘草图是唯一建筑设计来源。将它转换成写实建筑摄影，严格保持坡屋顶、门、三扇窗、三级台阶、空间比例、视角和构图。竖向浅雪松木墙板、深灰金属屋顶、黑色细窗框、混凝土台阶，柔和日光，真实材质纹理，空旷灰色地面。不要增删门窗或装饰，4:3。",
+    "references": [
+      {
+        "slotId": "scene",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-sketch/output-46ae05f7ca9a4f2ff30533b9854fac338235c65dc9c904accf982da0e9fed399.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "7b3dfad64519ad659a8256226f0afe6b73d18979e120a81e01ddf24c186f6688",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-ref-sketch/output-46ae05f7ca9a4f2ff30533b9854fac338235c65dc9c904accf982da0e9fed399.png",
+      "sha256": "46ae05f7ca9a4f2ff30533b9854fac338235c65dc9c904accf982da0e9fed399",
+      "slotId": "scene"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-10-30T23:31:15.578Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/design-ai-top60-2026-10/jobs/design60-41-v4/output-bab7696eeafe9081588a155d103f26fe9d0e38899274596bd4fa5b69136ba09f.png",
+      "sha256": "bab7696eeafe9081588a155d103f26fe9d0e38899274596bd4fa5b69136ba09f"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-10-30T23:33:43.564Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "The gable, front door, three windows and three steps preserve the sketch arrangement and perspective, with wood, metal and concrete materials added.",
+    "reviewer": "Codex visual inspection",
+    "reviewedAt": "2026-10-30T23:51:56.076Z"
+  }
+}

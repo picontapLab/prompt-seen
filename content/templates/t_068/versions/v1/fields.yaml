@@ -1,0 +1,16 @@
+fields:
+  - name: rotation
+    required: true
+    group: composition
+    labels:
+      en: Rotation in degrees
+      zh-Hans: 旋转角度
+    help:
+      en: Changing the angle also requires revising the room-position directions in
+        the prompt. Only the default is demonstrated.
+      zh-Hans: 修改角度时还需同步修改提示词中的房间方位描述。仅默认值有展示结果。
+    type: string
+    default: "180"
+    minLength: 1
+    maxLength: 3
+    multiline: false
