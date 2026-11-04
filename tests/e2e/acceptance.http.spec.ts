@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import YAML from 'yaml';
 import { expect, test } from '@playwright/test';
+import { mediaSchema } from '../../scripts/lib/content/schemas';
 import { BASE, BUILD, ROOT } from './support/artifact';
 import { localeIndex } from './support/content';
 
@@ -76,17 +78,22 @@ for (const locale of BUILD.locales) {
 
 test('the detail and og image files carry IPTC credit and digital source type (§9.7)', async ({ request }) => {
   test.skip(!!BUILD.mediaBaseUrl, 'images come from the CDN in this build; media:check covers them');
-  const dir = path.join(ROOT, 'dist', BASE, 'media');
+  // Refreshing metadata creates new immutable keys and retains the previous objects for
+  // rollback. Check every current asset's detail/og variants, not superseded byte archives.
+  const dir = path.join(ROOT, 'content/media');
   const files = fs
     .readdirSync(dir)
-    .flatMap((asset) => fs.readdirSync(path.join(dir, asset)).map((f) => `${asset}/${f}`))
-    .filter((f) => /-(detail|og)-[0-9a-f]+\.\w+$/.test(f));
+    .filter((file) => file.endsWith('.yaml'))
+    .flatMap((file) => {
+      const media = mediaSchema.parse(YAML.parse(fs.readFileSync(path.join(dir, file), 'utf8')));
+      return [media.variants.detail.key, media.variants.og.key];
+    });
   expect(files.length).toBeGreaterThan(0);
   for (const file of files) {
-    const res = await request.get(`${BASE}/media/${file}`);
+    const res = await request.get(`${BASE}/${file}`);
     expect(res.status(), file).toBe(200);
     const bytes = (await res.body()).toString('latin1');
-    expect(bytes, `${file}: digital source type`).toContain('Iptc4xmpExt:DigitalSourceType');
-    expect(bytes, `${file}: credit`).toMatch(/photoshop:Credit|dc:creator/);
+    expect(bytes.includes('Iptc4xmpExt:DigitalSourceType'), `${file}: digital source type`).toBe(true);
+    expect(/photoshop:Credit|dc:creator/.test(bytes), `${file}: credit`).toBe(true);
   }
 });

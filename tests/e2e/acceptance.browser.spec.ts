@@ -1,7 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import { DISPLAY_CJK } from '../../src/styles/fonts/display-cjk';
 import { BASE, BUILD, message } from './support/artifact';
-import { localeIndex, samplePrompt, sampleTemplate } from './support/content';
+import { feedPage, localeIndex, pagePromptIds, promptDetail, samplePrompt, sampleTemplate } from './support/content';
 import { cancelledFetch } from './support/errors';
 import { layoutProblems, slowColdVisit, applyGermanLabels } from './support/layout';
 
@@ -351,7 +351,8 @@ test.describe('touch (§16.5 触屏)', () => {
 
   test('a phone reader finds, opens, copies and closes a work by touch alone', async ({ page }) => {
     const [first] = BUILD.locales;
-    const prompt = samplePrompt(first!.code);
+    // An annotated sample can move to a later page as new prompts are published.
+    const prompt = promptDetail(first!.code, pagePromptIds(feedPage(first!.code, 1))[0]!);
     await page.goto(`${BASE}/${first!.pathPrefix}/prompts/`);
     await takenOver(page);
     const card = page.locator(`[role="feed"] a[href="${BASE}${prompt.path}"]`).first();

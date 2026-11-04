@@ -10,7 +10,7 @@
   },
   "scripts": {
     "gen": "tsx scripts/config-gen.ts",
-    "dev": "npm run gen && tsx scripts/dev.ts",
+    "dev": "npm run gen && tsx scripts/dev.ts --port 3009",
     "content:validate": "npm run gen && tsx scripts/content-validate.ts",
     "content:build": "tsx scripts/content-build.ts",
     "content:new": "tsx scripts/content-new.ts",

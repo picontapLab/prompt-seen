@@ -1,0 +1,23 @@
+title = "Prompt Seen secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+  # Local job ownership IDs are randomUUID() values, not provider credentials
+  # (scripts/lib/media-generation/jobs.ts). Retain scanning of all other fields.
+  [[rules.allowlists]]
+  description = "Archived local generation claim UUIDs"
+  condition = "AND"
+  paths = ['''^migrations/gpt-image-v1/.*\.json$''']
+  regexTarget = "match"
+  regexes = ['''^claimToken":\s*"[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}"$''']
+
+  [[rules.allowlists]]
+  description = "Reviewed public production job identifier"
+  condition = "AND"
+  paths = ['''^production/applied/r35-default-retry2\.json$''']
+  regexTarget = "match"
+  regexes = ['''^key":\s*"r35-default-retry2"$''']
