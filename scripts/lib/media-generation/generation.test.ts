@@ -29,7 +29,10 @@ function workspace() {
   site.home.featured = site.home.featured.filter((item: { prompt: string }) => Number(item.prompt.slice(2)) <= 100);
   site.feed.showcase = site.feed.showcase.filter((item: { lead: string }) => Number(item.lead.slice(2)) <= 100);
   site.feed.interludes = site.feed.interludes.filter((item: { type: string; collection?: string; prompt?: string }) =>
-    item.type === 'collection' ? Number(item.collection?.slice(2)) <= 2 : item.type !== 'feature' || Number(item.prompt?.slice(2)) <= 100);
+    item.type === 'collection'
+      ? Number(item.collection?.slice(2)) <= 2
+      : item.type !== 'feature' || Number(item.prompt?.slice(2)) <= 100,
+  );
   fs.writeFileSync(siteFile, YAML.stringify(site));
   const journalFile = path.resolve('migrations/gpt-image-v1/apply-journal.json');
   if (fs.existsSync(journalFile)) {

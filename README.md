@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-Open <http://localhost:3000/prompt-seen/>. To work without the base path, start with `BASE_PATH= npm run dev`.
+Open <http://localhost:3009/prompt-seen/>. To work without the base path, start with `BASE_PATH= npm run dev`.
 
 ## Commands
 

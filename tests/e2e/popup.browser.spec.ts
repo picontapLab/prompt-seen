@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import type { FeedCard } from '../../src/modules/feed/types';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
-import { feedIndex, feedPage, localeIndex, promptDetail } from './support/content';
+import { feedIndex, feedPage, localeIndex, pagePromptIds, promptDetail } from './support/content';
 
 // The detail popup in real browsers (design doc §11.3, §11.3.1, §11.3.2, §12.8 scenarios 1–5
 // and 8, §16.2 "详情弹层", §16.5 "可打断" "可恢复", §17.3 step 4a). Also the regression suite for
@@ -490,7 +490,12 @@ test.describe('desktop', () => {
   test('Esc first cancels a current annotation, then closes (§11.1.9)', async ({ page }) => {
     const annotated = works.find((w) => detailOf(w.slug).annotations.length > 0);
     test.skip(!annotated, 'no annotated prompt');
-    await gotoList(page);
+    // Start on the sample's actual page; new entries may push it beyond page one.
+    const pageNumber = Array.from({ length: index.pageCount }, (_, i) => i + 1).find((n) =>
+      pagePromptIds(feedPage(code, n)).includes(annotated!.id),
+    );
+    expect(pageNumber).toBeDefined();
+    await gotoList(page, pageNumber === 1 ? listUrl : `${listUrl}page/${pageNumber}/`);
     await card(page, annotated!.slug).click();
     await expectOpen(page, annotated!.slug);
     const phrase = popup(page).locator('button[data-letter="A"]');
