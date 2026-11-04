@@ -21,9 +21,9 @@
 - 20 张截图已检查：首页、合集、结果/参考图、来源证据、模板切换与自定义值、深色、RTL；关闭 JavaScript 后仍能读取 Prompt 和图片。
 - 设计令牌对比度 44 项必需配对及 28 项补充配对通过；本次源码格式检查通过。
 - 两条独立代码审查线复核后均为 0 项未解决发现，见 [最终复审](final-review.md)。
-- 验收证据见 [视觉验收](../../screenshots/top50/final/README.md)。
+- 验收结果已记录在本文件和项目测试报告中；本机截图等一次性证据未纳入仓库。
 - 没有部署到公网；生产 canonical 和凭据由项目既有部署工作流提供。
 
 模型信息补充：本批 50 个案例、67 条运行统一记录已知模型家族 GPT Image；补齐 40 个案例和 57 条运行此前遗漏的名称。精确版本 ID 仍为空，原始回执与补注分开保留。
 
-实际映射见 content-map.json；生成审核见 production/applied；失败尝试见 production/top50-2026-10/rejected；生产恢复见 production/README.md。
+实际映射见 content-map.json；生成审核见 production/applied；生产流程见 production/README.md。

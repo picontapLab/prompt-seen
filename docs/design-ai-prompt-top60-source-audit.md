@@ -1,7 +1,7 @@
 # Design AI Prompt Top 60：来源与复用审计
 
 - 审计日期：2026-10-29（America/Los_Angeles）
-- 审计对象：`<private-local-file>`
+- 审计对象：`external-sources/design_ai_prompt_top60.md`
 - 目的：判断 60 条案例能否在 Prompt Seen 中生成、记录并发布；判断外部 Prompt 和示例图能否直接复制。
 
 ## 结论

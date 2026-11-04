@@ -1,7 +1,7 @@
 # Design AI Prompt Top 60：项目接入核查
 
 - 核查日期：2026-10-29（America/Los_Angeles）
-- 输入文件：`<private-local-file>`
+- 输入文件：`external-sources/design_ai_prompt_top60.md`
 - 目标：判断案例能否在 Prompt Seen 中生成、记录并发布，以及原 Prompt 和示例图能否直接复用。
 
 ## 结论
