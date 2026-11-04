@@ -30,7 +30,34 @@ playwright-report/
 blob-report/
 
 # Local environment
-.env*.local
+.env
+.env.*
+!.env.example
+
+# Local agent state and machine-specific instructions
+.claude/
+AGENTS.md
+
+# Local tooling caches and reports
+.cache/
+coverage/
+*.log
+
+# One-time prototypes and visual evidence
+spikes/option-b/
+docs/screenshots/
+
+# Non-runtime content-production artifacts
+production/*/outputs/
+production/*/jobs/
+production/*/qa/
+production/*/reconciled/
+production/*/superseded/
+production/*/rejected/
+production/*/generation-queue*.json
+production/*/reference-queue.json
+production/*/reference-generations.json
+production/*/badge-replacement.json
 
 # Spike build and test output (spikes/*/ also keep their own .gitignore)
 spikes/*/.next/

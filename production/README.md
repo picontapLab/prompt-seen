@@ -26,9 +26,9 @@ npm run content:produce -- status --campaign top50-2026-10
 
 ## Resume safely
 
-Frozen attempts live under `.artifacts/content-production/<campaign>/jobs/`. A running job must be reconciled against the returned image before another attempt. A changed prompt, input or setting needs a new key. This campaign limits a recipe/sample to three attempts before reconsidering the recipe; there is no automatic retry loop. Failed attempts and reasons are retained in `top50-2026-10/rejected/`.
+Frozen attempts live under `.artifacts/content-production/<campaign>/jobs/`. A running job must be reconciled against the returned image before another attempt. A changed prompt, input or setting needs a new key. This campaign limits a recipe/sample to three attempts before reconsidering the recipe; there is no automatic retry loop. Failed-attempt records may remain in the ignored local campaign workspace while a run is being diagnosed.
 
-Preparation writes `.artifacts/content-production/prepared/<key>/prepared.json` with a plan hash and hashes of every destination. Apply aborts if any destination changed. After interruption, rerun apply with the same hash: the existing transaction journal resumes or rolls back safely and refuses external-edit conflicts. An already applied, unchanged plan is idempotent. Do not reuse an applied plan after later editorial changes.
+Preparation writes `.artifacts/content-production/prepared/<key>/prepared.json` with a plan hash and hashes of every destination. Apply aborts if any destination changed. After interruption, rerun apply with the same hash: the existing transaction journal resumes or rolls back safely and refuses external-edit conflicts. An already applied, unchanged plan is idempotent. Do not reuse an applied plan after later editorial changes. Local failed-attempt records are disposable and are not runtime inputs.
 
 Content writes and `content:new` share `.artifacts/content-production/.content.lock`. If a process was killed, inspect its recorded PID and verify it is no longer running before manually removing the stale lock. Never remove a live writer's lock.
 

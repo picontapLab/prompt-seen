@@ -47,7 +47,7 @@
 | 搜索 | “透明电路咖啡机”返回对应 Prompt 和模板，可进入正确详情 |
 | 浏览器日志 | 未观察到站点运行错误；已有 JSON 查看器扩展报错与本站无关 |
 
-截图见 `production/design-ai-top60-2026-10/qa/current-project-gallery.jpg`（原反馈位置）、`desktop-gallery.jpg`、`badge-v2.jpg`、`mobile-references.jpg` 和 `mobile-template.jpg`。移动预览尺寸已恢复。网页交互为代表案例抽查，不声称穷尽所有浏览器/全部交互路径。
+网页交互为代表案例抽查，不声称穷尽所有浏览器/全部交互路径。截图属于一次性本机验收产物，未纳入仓库。
 
 ## 保留的局限
 
