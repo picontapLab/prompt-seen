@@ -249,15 +249,9 @@ Project facts:
 ## Documentation
 
 - [`content/README.md`](content/README.md): how to write and publish content, for maintainers.
-- [Design document](docs/prompt-library-website-design.md) (Chinese): the source of truth.
-  §17 is the implementation plan and session map.
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
-- [Subpath hosting decision](docs/subpath-hosting-decision.md): why the site is a static export, with prototype results.
-- [Language coverage assessment](docs/language-coverage-assessment.md).
-- [First-load JavaScript](docs/first-load-js.md): what each page loads, by module, and what is left to cut.
 - [Operations](docs/operations.md): production setup, deploying, rolling back, search engines, analytics.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
-- [`design/`](design/README.md): the chosen visual direction and reference pages. Tokens live in `src/styles/tokens/`.
 
 ## Licenses
 
