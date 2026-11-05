@@ -70,3 +70,11 @@ searchEngines:
     bing: null # Bing Webmaster Tools, msvalidate.01
     yandex: null # Yandex Webmaster
     naver: null # Naver Search Advisor
+
+# Optional parent application, active only when its origin matches this deployment.
+# Model links are exact display-name + locale mappings; omit unknown models.
+host:
+  origin: https://example.com
+  name: Example
+  publisherId: https://example.com/#organization
+  modelPages: {}

@@ -86,14 +86,17 @@ test('the detail and og image files carry IPTC credit and digital source type (Â
     .filter((file) => file.endsWith('.yaml'))
     .flatMap((file) => {
       const media = mediaSchema.parse(YAML.parse(fs.readFileSync(path.join(dir, file), 'utf8')));
-      return [media.variants.detail.key, media.variants.og.key];
+      return [media.variants.detail.key, media.variants.og.key].map((key) => ({
+        key,
+        hasCredit: Boolean(media.credit.creator || media.credit.creditText),
+      }));
     });
   expect(files.length).toBeGreaterThan(0);
-  for (const file of files) {
+  for (const { key: file, hasCredit } of files) {
     const res = await request.get(`${BASE}/${file}`);
     expect(res.status(), file).toBe(200);
     const bytes = (await res.body()).toString('latin1');
     expect(bytes.includes('Iptc4xmpExt:DigitalSourceType'), `${file}: digital source type`).toBe(true);
-    expect(/photoshop:Credit|dc:creator/.test(bytes), `${file}: credit`).toBe(true);
+    expect(/photoshop:Credit|dc:creator/.test(bytes), `${file}: credit matches declared provenance`).toBe(hasCredit);
   }
 });

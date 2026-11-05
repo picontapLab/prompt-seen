@@ -340,8 +340,13 @@ for (const locale of BUILD.locales) {
       url: publicUrl(`/${locale.pathPrefix}/`),
       inLanguage: locale.htmlLang,
     });
-    expect(node(html, 'Organization')).toMatchObject({ name: BUILD.siteName, url: publicUrl('/') });
-    expect((await request.head(local(node(html, 'Organization').logo))).status()).toBe(200);
+    if (BUILD.publisherId) {
+      expect(node(html, 'WebSite').publisher).toEqual({ '@id': BUILD.publisherId });
+      expect(node(html, 'Organization')).toBeUndefined();
+    } else {
+      expect(node(html, 'Organization')).toMatchObject({ name: BUILD.siteName, url: publicUrl('/') });
+      expect((await request.head(local(node(html, 'Organization').logo))).status()).toBe(200);
+    }
   });
 }
 

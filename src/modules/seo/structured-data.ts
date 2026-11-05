@@ -24,6 +24,8 @@ export type LdContext = {
   logoPath: string;
   /** Profiles of the site elsewhere (`sameAs`), such as its repository once it is public. */
   sameAs?: readonly string[];
+  /** Existing host organization; no duplicate Organization node is emitted. */
+  publisherId?: string;
 };
 
 /** One item of a visible breadcrumb; `href` is an internal path, or null when shown as text. */
@@ -87,10 +89,11 @@ export function licenseValue(name: string | null | undefined): JsonLdValue | und
 // ---------------------------------------------------------------------------------------------
 // Site
 
-const organizationId = (ctx: LdContext) => `${ctx.absoluteUrl(ctx.entryPath)}#organization`;
+const organizationId = (ctx: LdContext) => ctx.publisherId ?? `${ctx.absoluteUrl(ctx.entryPath)}#organization`;
 
 /** The project as an Organization: name, address, logo and profiles (§9.6 "语言首页"). */
-export function organization(ctx: LdContext): JsonLdNode {
+export function organization(ctx: LdContext): JsonLdNode | null {
+  if (ctx.publisherId) return null;
   return node({
     '@type': 'Organization',
     '@id': organizationId(ctx),

@@ -146,6 +146,16 @@ export const siteSchema = z
     // Cookie-free visit statistics, AI referrals and real-user Core Web Vitals (§9.10.6, §16.1),
     // step 5. Production builds only; loaded after the page is idle (§16.4).
     analytics: analytics.default({ provider: 'none' }),
+    // Optional relationship to the host application; used only on its canonical origin.
+    host: z
+      .object({
+        origin,
+        name: z.string().min(1),
+        publisherId: z.url({ protocol: /^https$/ }),
+        modelPages: z.record(z.string(), z.record(z.string(), z.url({ protocol: /^https$/ }))),
+      })
+      .strict()
+      .optional(),
     // Site verification tags of webmaster tools (§9.9), step 5. Public values; null leaves the tag out.
     searchEngines: z
       .object({

@@ -13,6 +13,7 @@ export default defineEmitter({
       siteName: config.siteName,
       buildMode: config.buildMode,
       origin: config.origin,
+      publisherId: config.host?.origin === config.origin ? config.host.publisherId : null,
       basePath: config.basePath,
       urlPattern: config.urlPattern,
       // Where images are served from: null for files of this build, else the CDN (§10.1).

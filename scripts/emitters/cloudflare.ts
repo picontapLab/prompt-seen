@@ -19,9 +19,11 @@ export default defineEmitter({
           [
             'https://:project.pages.dev/*',
             '  X-Robots-Tag: noindex',
+            '  X-Prompt-Seen-Platform-Noindex: production-v1',
             '',
             'https://:version.:project.pages.dev/*',
             '  X-Robots-Tag: noindex',
+            '  X-Prompt-Seen-Platform-Noindex: production-v1',
             '',
           ]),
       `${url.withBasePath('/_next/static/')}*`,

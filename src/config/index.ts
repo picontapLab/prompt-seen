@@ -8,6 +8,9 @@ export type { BuildMode, LocaleEntry, ResolvedConfig } from './schema';
 
 export const config = CONFIG;
 
+/** Host integration is enabled only for this configured canonical origin. */
+export const hostSite = CONFIG.host?.origin === CONFIG.origin ? CONFIG.host : undefined;
+
 /** Locales generated in this build, in registry order. */
 export const builtLocales: readonly LocaleEntry[] = CONFIG.builtLocales;
 

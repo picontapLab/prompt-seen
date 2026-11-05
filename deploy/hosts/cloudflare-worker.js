@@ -5,7 +5,7 @@
 // It keeps the path, status and headers, drops X-Robots-Tag (production deploys mark
 // *.pages.dev noindex, which must not reach the canonical host, §9.3), and leaves redirects to
 // the browser. See deploy/hosts/README.md.
-const PAGES_HOST = 'prompt-seen.pages.dev';
+const PAGES_HOST = 'YOUR_ACTUAL_PAGES_SUBDOMAIN.pages.dev';
 
 const worker = {
   async fetch(request) {

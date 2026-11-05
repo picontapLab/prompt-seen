@@ -100,6 +100,7 @@ jobs:
         id: deploy
         uses: cloudflare/wrangler-action@v4
         with:
+          wranglerVersion: 4.130.0
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy .deploy/cloudflare --project-name=${{ env.PROJECT }} --branch=main --commit-hash=${{ env.BUILD_ID }}
