@@ -34,6 +34,11 @@ blob-report/
 .env.*
 !.env.example
 
+# Cloudflare local secrets and Wrangler state (including nested Worker projects)
+.dev.vars
+.dev.vars.*
+.wrangler/
+
 # Local agent state and machine-specific instructions
 .claude/
 AGENTS.md
@@ -70,8 +75,5 @@ spikes/*/playwright-report/
 # Storybook build
 storybook-static/
 
-# Local deployment credentials and Wrangler state
-.dev.vars
-.dev.vars.*
-.wrangler/
+# Local isolated deployment checkouts
 .worktrees/

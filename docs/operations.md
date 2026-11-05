@@ -223,6 +223,25 @@ Analytics: it measures the `pages.dev` address.
 
 - Object storage and Cloudflare credentials exist only as GitHub secrets and in the maintainer's
   shell. Builds never contain them; PR checks of other people's forks get no secrets.
+- Local `.env*` files (except `.env.example`), Cloudflare `.dev.vars` / `.dev.vars.*` files,
+  and `.wrangler/` state are Git-ignored. Keep `.env.example` free of real credentials and
+  never use `git add -f` to commit local secrets. These ignore rules do not remove files or
+  credentials already committed; exposed credentials must be revoked and replaced.
+- Pages uploads must target `.deploy/cloudflare/`, prepared by
+  `npm run deploy:cloudflare:prepare` after a fresh build. Never upload the repository root.
+  The prepare command only assembles local files; the Pages upload does not commit or push
+  to Git. A local Wrangler upload can deploy this directory without pushing the repository.
+- `content/`, `public/media/`, and the tracked records in `production/` and `migrations/`
+  travel with Git pushes and are readable by anyone with repository access. Production
+  records support publication deduplication and audits; migration archives also support
+  tests. Keep private work in the ignored `.artifacts/` workspace, and review records before
+  adding them to tracked directories. Making a repository private does not make its deployed
+  website private.
+- Treat every deployed page, generated data file, and image as public unless access control
+  is configured separately. Preview builds can include drafts and preview locales;
+  `noindex` discourages search indexing but does not restrict access. Use
+  `BUILD_MODE=production` for public production deployments. CI also uploads test results
+  and the preview build as GitHub Actions artifacts; these are separate from Git commits.
 - CI runs gitleaks over the history of every branch. On GitHub, also turn on secret scanning and
   push protection where the plan allows (Settings › Code security).
 - The site has no server process. Keep the build dependencies up to date; there is no runtime
