@@ -1,0 +1,41 @@
+{
+  "cases": 27,
+  "stills": 15,
+  "gifs": 12,
+  "animatedDisplayVariants": 36,
+  "referenceBindings": 10,
+  "originalBytesPreserved": true,
+  "promptHashesVerified": true,
+  "exactProviderModelId": null,
+  "modelFamily": "GPT Image",
+  "browserAnimationReview": "12 original GIFs loaded; changing poses and crop boundaries visually reviewed",
+  "targetedTests": "6 passed across publication and GIF preservation suites",
+  "status": "complete",
+  "contentValidation": {
+    "errors": 0,
+    "publishErrors": 0,
+    "existingWarnings": 8
+  },
+  "contentBuild": "passed",
+  "typecheck": "passed",
+  "targetedLint": "passed",
+  "acceptedCases": 27,
+  "acceptedOutputs": 27,
+  "nextBuild": {
+    "status": "passed",
+    "staticPages": 1329
+  },
+  "packaging": {
+    "status": "passed",
+    "output": "dist/prompt-seen",
+    "locales": 4
+  },
+  "projectPageReview": {
+    "status": "passed",
+    "cases": [
+      "G01",
+      "S10"
+    ],
+    "observations": "GIF and original reference displayed; Chinese prompts, GIF badge, model information, reference gallery and generated edit rendered correctly."
+  }
+}

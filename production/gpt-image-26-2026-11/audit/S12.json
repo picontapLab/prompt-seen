@@ -1,0 +1,49 @@
+{
+  "caseId": "S12",
+  "definition": {
+    "key": "image26-s12-v1",
+    "candidateId": "image26-s12",
+    "prompt": "把输入河谷线稿转成可信的自然风景照片。严格沿用新线稿中的河道走向、木桥位置、松树数量与山脊比例，补充岩石、草地、河水和树皮的真实材质。采用清晨柔光，阴影方向一致。去除纸张和笔触，但不要重新设计构图或增加建筑。",
+    "references": [
+      {
+        "slotId": "reference",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B03.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "d094ab6d4f7be9a4a5e9accc6c16385d76820eb49c8fa619ef14e732e1fca6b5",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B03.png",
+      "sha256": "552b6f4de0f996ceafcf37903cec5fb47e46a88a3cce1105775e78700ffcbc26",
+      "slotId": "reference"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:10:14.715Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s12-v1/output-d2f725d263d19ee9d3bd1e21d1813cdf12e6633fd0de43b0aa9aee98ce7f29bd.png",
+      "sha256": "d2f725d263d19ee9d3bd1e21d1813cdf12e6633fd0de43b0aa9aee98ce7f29bd"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:11:23.065Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Preserves the sketch river curve, three foreground pines and right-side bridge. Adds realistic grass, water and timber texture; overall finish remains slightly painterly.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:11:23.132Z"
+  },
+  "contentIds": {
+    "prompt": "p_220",
+    "template": null,
+    "example": "x_284",
+    "media": [
+      "a_377",
+      "a_378"
+    ]
+  }
+}

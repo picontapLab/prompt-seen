@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSPro
 import { feedIndexFile, feedPageFile } from '@/modules/feed/files';
 import type { FeedCard, FeedIndex, FeedPage } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { paths, withBasePath } from '@/modules/url';
 import { exportFavorites, favoritesStore, importFavorites, type Favorite } from '@/state/favorites/store';
 import { PopupWorks } from '@/ui/detail-popup/PopupHost';
@@ -348,7 +349,9 @@ export function FavoritesList({
                           />
                         </span>
                       )}
-                      <span className={styles.templateTitle}>{item.title}</span>
+                      <span className={styles.templateTitle}>
+                        {item.title} <GifBadge image={item.cover} hasGifOutput={item.hasGifOutput} />
+                      </span>
                     </a>
                     <span className={styles.templateMeta}>{t('page.fields', { count: item.fieldCount })}</span>
                     <div className={styles.templateActions}>

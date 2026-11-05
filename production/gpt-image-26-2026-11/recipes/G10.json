@@ -1,0 +1,96 @@
+{
+  "candidateId": "image26-g10",
+  "slug": "image26-g10-two-dancing-robots",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n让输入图中的两个机器人跳一段同步循环舞。保持左绿右橙、体型与颜色一致，两者先向外侧踏步并挥手，再向内侧踏步拍手，最后回到初始站姿。固定正面镜头，完整身体可见，彼此保持间距，不交换位置，不融合肢体。白色背景，落地阴影稳定，不加文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-g10",
+      "platform": "X",
+      "author": "Gangban",
+      "url": "https://x.com/798145343h/status/2118164732989608405",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/798145343h/status/2118164732989608405",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://x.com/798145343h/status/2118164732989608405",
+      "sourcePromptStatus": {
+        "en": "The original prompt was not found. This is an independently inferred prompt.",
+        "zh-Hans": "未取得原提示词，本次为独立推导方案。"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 53,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "点赞"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": 1,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Two dancing robots",
+      "description": "Green and orange robots retain their left-right positions and identities while stepping, waving and bringing hands together",
+      "body": "## How to use\n\nUse the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nGreen and orange robots retain their left-right positions and identities while stepping, waving and bringing hands together. Full bodies stay inside each cell. Six-frame composed GIF with white background.\n\n## GIF assembly\n\nThe model generated a 3-column by 2-row PNG sprite sheet. Crop equal cells in row-major order and encode six frames at 300 ms per frame with infinite looping. The resulting GIF is 512 × 512 pixels and 1.8 seconds per cycle. No interpolation was added. This is a composed animation, not a native GIF returned by the model.\n\n## Source and generation\n\nThe original prompt was not found. This is an independently inferred prompt. [Source](https://x.com/798145343h/status/2118164732989608405). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "双角色跳舞",
+      "description": "绿色与橙色机器人保持左右顺序，完成迈步、挥手和双手靠拢，身体始终完整",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n绿色与橙色机器人保持左右顺序，完成迈步、挥手和双手靠拢，身体始终完整。\n\n## GIF 合成\n\n模型生成三列两行 PNG 精灵图，随后按从左到右、从上到下顺序裁出六帧，每帧 300 毫秒，设为无限循环。成品为 512×512 像素，每轮 1.8 秒；未增加补间帧。这是多步合成动画，不是模型直接返回的原生 GIF。\n\n## 来源与生成\n\n未取得原提示词，本次为独立推导方案。[来源](https://x.com/798145343h/status/2118164732989608405)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "Green and orange robots retain their left-right positions and identities while stepping, waving and bringing hands together.",
+    "zh-Hans": "绿色与橙色机器人保持左右顺序，完成迈步、挥手和双手靠拢，身体始终完整。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:51:43.190Z",
+    "contentHash": "553e6c6527fa416982b5c8151d66793f2b562467237d38e14e4b9dc349100a3d"
+  }
+}

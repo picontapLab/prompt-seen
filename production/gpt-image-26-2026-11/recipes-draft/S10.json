@@ -1,0 +1,81 @@
+{
+  "candidateId": "image26-s10",
+  "slug": "image26-s10-marked-vase-color-edit",
+  "categoryId": "product",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "依据输入照片和红色圈选标注，只把圈内陶瓷花瓶的釉色改成钴蓝色。保留花瓶的形状、反光、阴影和插花，不改变桌面、墙面及其他物件。最终成图移除红圈和所有标注，维持自然摄影质感。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "markup",
+        "labels": {
+          "en": "Vase markup overlay",
+          "zh-Hans": "花瓶圈选标注层"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-s10",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方指南",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "publishedAt": null,
+      "metricObjectUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "sourcePromptStatus": {
+        "en": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+        "zh-Hans": "来源公开原提示词；本次使用单独记录的制作提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Marked vase color edit",
+      "description": "A prompt for marked vase color edit. Uses an independently generated reference.",
+      "body": "## How to use\n\nA prompt for marked vase color edit. Uses an independently generated reference.\n\n## Source\n\nThe source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup).\n\n## Production status\n\nDraft awaiting actual generation and visual review. No result has been verified."
+    },
+    "zh-Hans": {
+      "title": "圈选花瓶局部改色",
+      "description": "圈选花瓶局部改色的制作提示词。使用原创生成底图。",
+      "body": "## 使用方法\n\n圈选花瓶局部改色的制作提示词。使用原创生成底图。\n\n## 来源\n\n来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup)。\n\n## 制作状态\n\n等待实际生成和视觉审核的草稿，尚无验证过的成品。"
+    }
+  },
+  "alt": {
+    "en": "Marked vase color edit — draft label to verify against the generated output",
+    "zh-Hans": "圈选花瓶局部改色——待生成后核实的暂定描述"
+  }
+}

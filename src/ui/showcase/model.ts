@@ -7,6 +7,7 @@ import { promptExcerpt } from '@/ui/annotation/layout';
  * server from the detail model and passed to client islands as is.
  */
 export type Showcase = {
+  hasGifOutput?: boolean;
   id: string;
   path: string;
   title: string;
@@ -26,6 +27,7 @@ export type Showcase = {
 export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
   const excerpt = promptExcerpt(detail.prompt.text, detail.annotations, maxQuote);
   return {
+    hasGifOutput: detail.hasGifOutput,
     id: detail.id,
     path: detail.path,
     title: detail.title,

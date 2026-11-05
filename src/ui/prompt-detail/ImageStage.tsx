@@ -8,6 +8,7 @@ import { getImage, imageUrl } from '@/modules/media';
 import { AnnotationOverlay } from '@/ui/annotation/AnnotationOverlay';
 import { useAnnotations } from '@/ui/annotation/AnnotationProvider';
 import { FilmStrip } from '@/ui/brand/FilmStrip';
+import { GifBadge } from '@/ui/media/GifBadge';
 import styles from './ImageStage.module.css';
 
 export type ImageStageProps = {
@@ -54,7 +55,7 @@ export function ImageStage({
   const image = images[index] ?? images[0]!;
   const props = getImage(image, 'detail');
   const original = image.variants.original;
-  const annotated = index === 0 && !!annotations && annotations.annotations.length > 0;
+  const annotated = !image.animation && index === 0 && !!annotations && annotations.annotations.length > 0;
   const retry = retries[index] ?? 0;
   const shown = useRef<HTMLImageElement>(null);
 
@@ -81,7 +82,7 @@ export function ImageStage({
           data-stage-picture={priority ? '' : undefined}
           data-reference-picture={!priority ? '' : undefined}
         >
-          {preview && index === 0 && !failed.has(0) && (
+          {preview && !image.animation && index === 0 && !failed.has(0) && (
             <img src={preview} alt="" aria-hidden="true" className={`${styles.image} ${styles.preview}`} />
           )}
           {!failed.has(index) ? (
@@ -126,6 +127,7 @@ export function ImageStage({
       <div className={styles.captionRow}>
         {image.caption && <span className={styles.caption}>{image.caption}</span>}
         <span className={styles.meta}>
+          <GifBadge image={image} />
           <span className="tabular">{t('dimensions', { width: image.width, height: image.height })}</span>
           {original && (
             <a href={imageUrl(original)} target="_blank" rel="noopener" className={styles.original}>
@@ -157,6 +159,7 @@ export function ImageStage({
                     loading="lazy"
                     decoding="async"
                   />
+                  <GifBadge image={img} overlay />
                 </button>
               </li>
             );

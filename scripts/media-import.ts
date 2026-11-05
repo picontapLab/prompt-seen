@@ -21,6 +21,7 @@ import { localStorage, s3StorageFromEnv } from './lib/media/storage';
 import { ROOT } from './lib/paths';
 
 const usage = `Usage:
+  Formats: JPEG, PNG, WebP, AVIF and GIF (GIF animations autoplay in display variants).
   npm run media:import -- <image> --slug <words-for-the-file-name> [--alt <locale>="text"]… [options]
   npm run media:import -- --refresh <asset-id>
 Options: --caption <locale>="text"  --creator  --credit  --copyright  --license  --license-url

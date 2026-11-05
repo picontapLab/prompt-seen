@@ -1,0 +1,83 @@
+{
+  "candidateId": "image26-g09",
+  "slug": "image26-g09-standing-backflip-loop",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n生成一段固定侧面机位的循环 GIF：一位虚构的成年体操运动员站在宽阔浅灰训练垫中央，屈膝蓄力，完成一次原地后空翻，双脚落回原来位置，再站直回到起始姿势。全身始终可见，训练服颜色固定，背景无其他人物，动作节奏连贯，落地有短暂停顿，避免肢体重复和身体穿过地面。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {},
+    "slots": []
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-g09",
+      "platform": "X",
+      "author": "Gabriel Chua",
+      "url": "https://x.com/gabrielchua/status/2118135343354720648",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/gabrielchua/status/2118135343354720648",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://x.com/gabrielchua/status/2118135343354720648",
+      "sourcePromptStatus": {
+        "en": "The original prompt was not found. This is an independently inferred prompt.",
+        "zh-Hans": "未取得原提示词，本次为独立推导方案。"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 132,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "点赞"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": 15,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Standing backflip loop",
+      "description": "A female adult gymnast shows crouch, takeoff, tucked rotation and landing across six poses",
+      "body": "## How to use\n\nUse the exact recorded prompt. No reference image is required. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nA female adult gymnast shows crouch, takeoff, tucked rotation and landing across six poses. The written prompt specified an adult without gender. Composed GIF; six-step motion is coarse and the first crouch differs from the final standing pose.\n\n## GIF assembly\n\nThe model generated a 3-column by 2-row PNG sprite sheet. Crop equal cells in row-major order and encode six frames at 300 ms per frame with infinite looping. The resulting GIF is 512 × 512 pixels and 1.8 seconds per cycle. No interpolation was added. This is a composed animation, not a native GIF returned by the model.\n\n## Source and generation\n\nThe original prompt was not found. This is an independently inferred prompt. [Source](https://x.com/gabrielchua/status/2118135343354720648). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "运动员原地后空翻",
+      "description": "成年女性体操运动员展示下蹲、起跳、团身旋转和落地",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，无需参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n成年女性体操运动员展示下蹲、起跳、团身旋转和落地。提示词仅指定成年人；六帧动作衔接较粗，起始下蹲与结束站姿不完全一致。\n\n## GIF 合成\n\n模型生成三列两行 PNG 精灵图，随后按从左到右、从上到下顺序裁出六帧，每帧 300 毫秒，设为无限循环。成品为 512×512 像素，每轮 1.8 秒；未增加补间帧。这是多步合成动画，不是模型直接返回的原生 GIF。\n\n## 来源与生成\n\n未取得原提示词，本次为独立推导方案。[来源](https://x.com/gabrielchua/status/2118135343354720648)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "A female adult gymnast shows crouch, takeoff, tucked rotation and landing across six poses.",
+    "zh-Hans": "成年女性体操运动员展示下蹲、起跳、团身旋转和落地。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:51:40.433Z",
+    "contentHash": "2571fefeb682991d6ca28d28d73aa6c14c08bf7edd443b1b980c270052b428ee"
+  }
+}

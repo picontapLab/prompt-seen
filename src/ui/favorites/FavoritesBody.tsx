@@ -25,6 +25,7 @@ export async function FavoritesBody({ locale }: { locale: LocaleEntry }) {
       path: x.path,
       title: x.title,
       fieldCount: x.fieldCount,
+      hasGifOutput: x.hasGifOutput,
       cover: x.cover && slimImage(x.cover),
     }),
   );

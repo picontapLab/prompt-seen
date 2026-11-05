@@ -1,0 +1,79 @@
+{
+  "candidateId": "image26-g12",
+  "slug": "image26-g12-animated-notebook-owl",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n使用输入笔记本照片，让纸上的猫头鹰铅笔涂鸦轻轻动起来。先眨眼，再把两侧翅膀各抬起一点，最后恢复起始姿势。只改变涂鸦内部的线条姿态，保持纸张、桌面、笔触风格、光线和机位不变，不变成三维实体，不飞离纸面，不新增文字。输出短循环 GIF。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-g12",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方发布页",
+      "url": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "publishedAt": null,
+      "metricObjectUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "sourcePromptStatus": {
+        "en": "The original prompt was not found. This is an independently inferred prompt.",
+        "zh-Hans": "未取得原提示词，本次为独立推导方案。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Animated notebook owl",
+      "description": "Pencil owl blinks and lifts its wings while remaining a drawing on the notebook page",
+      "body": "## How to use\n\nUse the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nPencil owl blinks and lifts its wings while remaining a drawing on the notebook page. Six-frame composed GIF preserves the paper setting with small page and line drift between frames.\n\n## GIF assembly\n\nThe model generated a 3-column by 2-row PNG sprite sheet. Crop equal cells in row-major order and encode six frames at 300 ms per frame with infinite looping. The resulting GIF is 512 × 512 pixels and 1.8 seconds per cycle. No interpolation was added. This is a composed animation, not a native GIF returned by the model.\n\n## Source and generation\n\nThe original prompt was not found. This is an independently inferred prompt. [Source](https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "笔记本猫头鹰涂鸦动起来",
+      "description": "笔记本上的铅笔猫头鹰眨眼并抬起翅膀，保持纸上涂鸦形态；纸张和线条在各帧间有小幅位移",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n笔记本上的铅笔猫头鹰眨眼并抬起翅膀，保持纸上涂鸦形态；纸张和线条在各帧间有小幅位移。\n\n## GIF 合成\n\n模型生成三列两行 PNG 精灵图，随后按从左到右、从上到下顺序裁出六帧，每帧 300 毫秒，设为无限循环。成品为 512×512 像素，每轮 1.8 秒；未增加补间帧。这是多步合成动画，不是模型直接返回的原生 GIF。\n\n## 来源与生成\n\n未取得原提示词，本次为独立推导方案。[来源](https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "Pencil owl blinks and lifts its wings while remaining a drawing on the notebook page.",
+    "zh-Hans": "笔记本上的铅笔猫头鹰眨眼并抬起翅膀，保持纸上涂鸦形态；纸张和线条在各帧间有小幅位移。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:51:49.604Z",
+    "contentHash": "b97bb29b6f88a3fb282b927a329cd855a3583be73d8b36dbb1069f4e56dd9d2b"
+  }
+}

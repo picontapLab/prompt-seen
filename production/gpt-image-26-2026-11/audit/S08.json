@@ -1,0 +1,37 @@
+{
+  "caseId": "S08",
+  "definition": {
+    "key": "image26-s08-v1",
+    "candidateId": "image26-s08",
+    "prompt": "为高中生设计横版细胞呼吸概念图。以细胞轮廓和放大的线粒体作为主体，区分细胞质中的糖酵解、线粒体基质中的后续反应及内膜上的电子传递过程。用不同色带表示物质流与能量流，标注葡萄糖、氧气、二氧化碳、水和 ATP。控制文字密度，中文术语清楚，配色一致，避免装饰遮挡流程。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "7c717d841d8c457644896eef020508cde0fe76c07b5aa9aafb485d9e9f68948a",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:05:41.262Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s08-v1/output-ea348935b35c2f972ff126324d80f223406d0955e05ad4e4f67cc002aac336fb.png",
+      "sha256": "ea348935b35c2f972ff126324d80f223406d0955e05ad4e4f67cc002aac336fb"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:06:46.506Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Legible Chinese concept diagram distinguishes cytoplasm, mitochondrial matrix and inner membrane, with oxygen, water and ATP. Simplified: omits the acetyl-CoA transition and detailed chemiosmosis; not a complete biochemistry teaching reference.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:06:46.528Z"
+  },
+  "contentIds": {
+    "prompt": "p_216",
+    "template": null,
+    "example": "x_280",
+    "media": [
+      "a_370"
+    ]
+  }
+}

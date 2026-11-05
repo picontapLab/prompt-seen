@@ -1,0 +1,37 @@
+{
+  "caseId": "S09",
+  "definition": {
+    "key": "image26-s09-v1",
+    "candidateId": "image26-s09",
+    "prompt": "设计一页横向 16:9 的虚构创业融资幻灯片，标题“城市骑行服务的市场机会”。左侧三层同心圆解释总市场、可服务市场与首期目标市场；右侧用三根柱形图展示演示数据 2026 年 10、2027 年 14、2028 年 19。统一蓝绿色，数字对齐，底部清晰注明“示意数据，不用于投资决策”。不要编造真实机构来源。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "105ff15a685c685c66e702bd97c02e4de41725a0198795857691f0431263e0e4",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:06:46.688Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s09-v1/output-565380cd48cfa938224a494958ac87fe0f7beb4e3011388d4e7922d2046e6265.png",
+      "sha256": "565380cd48cfa938224a494958ac87fe0f7beb4e3011388d4e7922d2046e6265"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:08:05.862Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Fictional market slide has 2026/2027/2028 bars of 10/14/19 and visible illustrative-data disclaimer. The model added fictional market sizes 1000/320/80 and a 37.8 percent CAGR; nested circles are not concentric.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:08:05.866Z"
+  },
+  "contentIds": {
+    "prompt": "p_217",
+    "template": null,
+    "example": "x_281",
+    "media": [
+      "a_371"
+    ]
+  }
+}

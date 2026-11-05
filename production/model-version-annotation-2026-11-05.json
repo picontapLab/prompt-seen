@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-05",
+  "source": "Project owner supplied the version attribution: existing images use GPT Image 2.5; the new batch uses GPT Image 2.6.",
+  "scope": "Published content model display names in prompt entries and example runs. Historical generation receipts remain unchanged.",
+  "previousDisplayName": "GPT Image",
+  "defaultDisplayName": "GPT Image 2.5",
+  "newBatch": {
+    "contentMap": "production/gpt-image-26-2026-11/content-map.json",
+    "displayName": "GPT Image 2.6"
+  },
+  "providerModelId": null,
+  "providerModelIdNote": "The generation tool did not return exact API model identifiers. Display versions are supplied by the project owner; no API identifier is inferred.",
+  "counts": {
+    "prompts": {
+      "GPT Image 2.5": 208,
+      "GPT Image 2.6": 27
+    },
+    "examples": {
+      "GPT Image 2.5": 227,
+      "GPT Image 2.6": 27
+    }
+  }
+}

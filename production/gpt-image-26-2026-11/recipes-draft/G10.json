@@ -1,0 +1,89 @@
+{
+  "candidateId": "image26-g10",
+  "slug": "image26-g10-two-dancing-robots",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n让输入图中的两个机器人跳一段同步循环舞。保持左绿右橙、体型与颜色一致，两者先向外侧踏步并挥手，再向内侧踏步拍手，最后回到初始站姿。固定正面镜头，完整身体可见，彼此保持间距，不交换位置，不融合肢体。白色背景，落地阴影稳定，不加文字。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-g10",
+      "platform": "X",
+      "author": "Gangban",
+      "url": "https://x.com/798145343h/status/2118164732989608405",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/798145343h/status/2118164732989608405",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://x.com/798145343h/status/2118164732989608405",
+      "sourcePromptStatus": {
+        "en": "The original prompt was not found. This is an independently inferred prompt.",
+        "zh-Hans": "未取得原提示词，本次为独立推导方案。"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 53,
+          "labels": {
+            "en": "Likes",
+            "zh-Hans": "点赞"
+          }
+        },
+        {
+          "key": "reposts",
+          "value": 1,
+          "labels": {
+            "en": "Reposts",
+            "zh-Hans": "转发"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Two dancing robots",
+      "description": "A prompt for two dancing robots. Uses an independently generated reference.",
+      "body": "## How to use\n\nA prompt for two dancing robots. Uses an independently generated reference.\n\n## Source\n\nThe original prompt was not found. This is an independently inferred prompt. [Source](https://x.com/798145343h/status/2118164732989608405).\n\n## Production status\n\nDraft awaiting actual generation and visual review. No result has been verified."
+    },
+    "zh-Hans": {
+      "title": "双角色跳舞",
+      "description": "双角色跳舞的制作提示词。使用原创生成底图。",
+      "body": "## 使用方法\n\n双角色跳舞的制作提示词。使用原创生成底图。\n\n## 来源\n\n未取得原提示词，本次为独立推导方案。[来源](https://x.com/798145343h/status/2118164732989608405)。\n\n## 制作状态\n\n等待实际生成和视觉审核的草稿，尚无验证过的成品。"
+    }
+  },
+  "alt": {
+    "en": "Two dancing robots — draft label to verify against the generated output",
+    "zh-Hans": "双角色跳舞——待生成后核实的暂定描述"
+  }
+}

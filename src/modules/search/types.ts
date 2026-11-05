@@ -6,10 +6,11 @@ export const SEARCH_KINDS = ['prompt', 'template', 'collection', 'topic'] as con
 export type SearchKind = (typeof SEARCH_KINDS)[number];
 
 /** A small picture beside a result: the work's thumbnail at its original ratio. */
-export type SearchThumb = { key: string; width: number; height: number; placeholder: string };
+export type SearchThumb = { key: string; width: number; height: number; placeholder: string; mimeType?: string };
 
 /** What a result shows; stored in the index beside the terms. */
 export type SearchStored = {
+  hasGifOutput?: boolean;
   kind: SearchKind;
   title: string;
   description: string;

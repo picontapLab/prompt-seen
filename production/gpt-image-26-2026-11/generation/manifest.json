@@ -1,0 +1,996 @@
+{
+  "modelStatus": "User authorized built-in tool; exact provider model version unverified",
+  "status": "imported-verified",
+  "caseCount": 27,
+  "referenceCount": 7,
+  "tasks": [
+    {
+      "id": "B01",
+      "key": "image26-b01-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B01.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B01.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed image: frosted jug at left, pale vase at right, gray tiles and narrow window; suitable original edit reference."
+    },
+    {
+      "id": "B02",
+      "key": "image26-b02-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B02.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B02.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: original pixel courier, mint helmet, orange scooter and cream background; mild texture retained."
+    },
+    {
+      "id": "B03",
+      "key": "image26-b03-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B03.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B03.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: original black line landscape, three large pines, curving river and foreground bridge; suitable structure reference."
+    },
+    {
+      "id": "B04",
+      "key": "image26-b04-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B04.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B04.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: original blue-haired chibi character, round clip, navy apron and orange boots, complete body; suitable identity reference."
+    },
+    {
+      "id": "B05",
+      "key": "image26-b05-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B05.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B05.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: round mint fish with cream belly, coral fins and yellow hat; soft tactile toy texture rather than smooth clay."
+    },
+    {
+      "id": "B06",
+      "key": "image26-b06-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B06.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B06.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: distinct green round and orange square robots, full bodies, visible joints and white background."
+    },
+    {
+      "id": "B07",
+      "key": "image26-b07-v1",
+      "kind": "reference",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B07.png",
+      "status": "accepted",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B07.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Reviewed: original pencil owl on right notebook page, three head feathers, visible page edges and wood desk."
+    },
+    {
+      "id": "S01",
+      "key": "image26-s01-v1",
+      "kind": "case",
+      "title": "老水手与狗",
+      "titleEn": "Sailor and dog documentary portrait",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S01.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#control-style-and-lighting",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#control-style-and-lighting",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S01.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "An older fisherman repairs a net with a small dog resting beside his boot. Natural skin and fabric detail, subdued light; the dog is close to the lower edge.",
+      "contentIds": {
+        "prompt": "p_209",
+        "template": null,
+        "example": "x_273",
+        "media": [
+          "a_363"
+        ]
+      }
+    },
+    {
+      "id": "S02",
+      "key": "image26-s02-v1",
+      "kind": "case",
+      "title": "咖啡机原理信息图",
+      "titleEn": "Coffee machine process infographic",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S02.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#explain-a-process-visually",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#explain-a-process-visually",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S02.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Cutaway espresso machine shows water tank, pump, heater, brew head, coffee puck and cup. Chinese labels and three explanatory steps are legible; schematic layout is illustrative, not an engineering drawing.",
+      "contentIds": {
+        "prompt": "p_210",
+        "template": null,
+        "example": "x_274",
+        "media": [
+          "a_364"
+        ]
+      }
+    },
+    {
+      "id": "S03",
+      "key": "image26-s03-v1",
+      "kind": "case",
+      "title": "街头服饰广告",
+      "titleEn": "Streetwear campaign poster",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S03.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#render-exact-text",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#render-exact-text",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S03.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Three adults on an urban footbridge, cream charcoal and olive outfits. THREAD and MOVE YOUR WAY are spelled correctly and do not cover faces.",
+      "contentIds": {
+        "prompt": "p_211",
+        "template": null,
+        "example": "x_275",
+        "media": [
+          "a_365"
+        ]
+      }
+    },
+    {
+      "id": "S04",
+      "key": "image26-s04-v1",
+      "kind": "case",
+      "title": "面包店 Logo",
+      "titleEn": "Bakery logo",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S04.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#design-a-reusable-logo",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#design-a-reusable-logo",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S04.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Bread and wheat mark with correctly spelled Field & Flour. Verified PNG alpha and inspected against white; warm brown vector-like raster with slight tonal variation.",
+      "contentIds": {
+        "prompt": "p_212",
+        "template": null,
+        "example": "x_276",
+        "media": [
+          "a_366"
+        ]
+      }
+    },
+    {
+      "id": "S05",
+      "key": "image26-s05-v1",
+      "kind": "case",
+      "title": "1969 年音乐节人群",
+      "titleEn": "1969 outdoor music festival",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S05.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#use-historical-and-real-world-context",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#use-historical-and-real-world-context",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S05.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Fictional period-style outdoor festival scene: seated adults, vintage camera and vehicles, distant stage, faded film texture. Not an archival photograph or a verified reconstruction.",
+      "contentIds": {
+        "prompt": "p_213",
+        "template": null,
+        "example": "x_277",
+        "media": [
+          "a_367"
+        ]
+      }
+    },
+    {
+      "id": "S06",
+      "key": "image26-s06-v1",
+      "kind": "case",
+      "title": "宠物独处四格漫画",
+      "titleEn": "Pet home-alone comic strip",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S06.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-story-into-a-comic-strip",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-story-into-a-comic-strip",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S06.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Four-panel comic preserves the red-collared dog and living room. Departure, sofa pose, cushion-building and innocent return pose are readable; final cushion fort is mostly collapsed.",
+      "contentIds": {
+        "prompt": "p_214",
+        "template": null,
+        "example": "x_278",
+        "media": [
+          "a_368"
+        ]
+      }
+    },
+    {
+      "id": "S07",
+      "key": "image26-s07-v1",
+      "kind": "case",
+      "title": "农贸市场手机界面",
+      "titleEn": "Farmers market mobile interface",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S07.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#create-an-interface-preview",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#create-an-interface-preview",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S07.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Chinese farmers market UI includes search, produce and bakery cards, two merchant cards, opening hours and four navigation icons. This is a visual mockup, not a functioning app.",
+      "contentIds": {
+        "prompt": "p_215",
+        "template": null,
+        "example": "x_279",
+        "media": [
+          "a_369"
+        ]
+      }
+    },
+    {
+      "id": "S08",
+      "key": "image26-s08-v1",
+      "kind": "case",
+      "title": "细胞呼吸教学图",
+      "titleEn": "Cellular respiration learning diagram",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S08.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#create-scientific-and-educational-visuals",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#create-scientific-and-educational-visuals",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S08.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Legible Chinese concept diagram distinguishes cytoplasm, mitochondrial matrix and inner membrane, with oxygen, water and ATP. Simplified: omits the acetyl-CoA transition and detailed chemiosmosis; not a complete biochemistry teaching reference.",
+      "contentIds": {
+        "prompt": "p_216",
+        "template": null,
+        "example": "x_280",
+        "media": [
+          "a_370"
+        ]
+      }
+    },
+    {
+      "id": "S09",
+      "key": "image26-s09-v1",
+      "kind": "case",
+      "title": "市场机会融资页",
+      "titleEn": "Market opportunity pitch slide",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S09.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#build-slides-diagrams-and-charts",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#build-slides-diagrams-and-charts",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S09.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Fictional market slide has 2026/2027/2028 bars of 10/14/19 and visible illustrative-data disclaimer. The model added fictional market sizes 1000/320/80 and a 37.8 percent CAGR; nested circles are not concentric.",
+      "contentIds": {
+        "prompt": "p_217",
+        "template": null,
+        "example": "x_281",
+        "media": [
+          "a_371"
+        ]
+      }
+    },
+    {
+      "id": "S10",
+      "key": "image26-s10-v1",
+      "kind": "case",
+      "title": "圈选花瓶局部改色",
+      "titleEn": "Marked vase color edit",
+      "dependencies": [
+        "B01",
+        "B01-overlay"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S10.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-edit",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S10.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Vase changed from cream to cobalt blue, red markup removed. Jug, dried stems, tiles and window remain visually consistent; new glaze is glossier.",
+      "contentIds": {
+        "prompt": "p_218",
+        "template": null,
+        "example": "x_282",
+        "media": [
+          "a_372",
+          "a_373",
+          "a_374"
+        ]
+      }
+    },
+    {
+      "id": "S11",
+      "key": "image26-s11-v1",
+      "kind": "case",
+      "title": "像素风摩托骑士",
+      "titleEn": "Pixel-art motorcycle rider",
+      "dependencies": [
+        "B02"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S11.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-edit",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S11.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Side-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing. More detailed pixels than the source; both wheels visible.",
+      "contentIds": {
+        "prompt": "p_219",
+        "template": null,
+        "example": "x_283",
+        "media": [
+          "a_375",
+          "a_376"
+        ]
+      }
+    },
+    {
+      "id": "S12",
+      "key": "image26-s12-v1",
+      "kind": "case",
+      "title": "河谷线稿转写实照片",
+      "titleEn": "River valley sketch to photograph",
+      "dependencies": [
+        "B03"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S12.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-edit",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S12.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Preserves the sketch river curve, three foreground pines and right-side bridge. Adds realistic grass, water and timber texture; overall finish remains slightly painterly.",
+      "contentIds": {
+        "prompt": "p_220",
+        "template": null,
+        "example": "x_284",
+        "media": [
+          "a_377",
+          "a_378"
+        ]
+      }
+    },
+    {
+      "id": "S13",
+      "key": "image26-s13-v1",
+      "kind": "case",
+      "title": "橘猫打工人十二格表情图",
+      "titleEn": "Orange office cat sticker sheet",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S13.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://x.com/karanwithai/status/2118156092865994837/photo/1",
+      "sourcePromptUrl": "https://x.com/karanwithai/status/2118156317034693026",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S13.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Twelve orange-cat workplace stickers in three columns and four rows. All twelve requested Chinese captions are legible and match the prompt; navy ties and crayon style remain consistent.",
+      "contentIds": {
+        "prompt": "p_221",
+        "template": null,
+        "example": "x_285",
+        "media": [
+          "a_379"
+        ]
+      }
+    },
+    {
+      "id": "S14",
+      "key": "image26-s14-v1",
+      "kind": "case",
+      "title": "浅蓝水中的橙色锦鲤",
+      "titleEn": "Orange koi in pale blue water",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S14.png",
+      "sourcePromptType": "官方视频屏幕显示的完整原文",
+      "promptLanguage": "en",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://openai.com/index/introducing-images-2-6/#more-ways-to-create-and-edit-in-the-api",
+      "sourcePromptUrl": "https://openai.com/index/introducing-images-2-6/#more-ways-to-create-and-edit-in-the-api",
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S14.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Orange koi seen from above in pale blue water with light caustics; tail slightly cropped at left. Generated with the exact short source prompt.",
+      "contentIds": {
+        "prompt": "p_222",
+        "template": null,
+        "example": "x_286",
+        "media": [
+          "a_380"
+        ]
+      }
+    },
+    {
+      "id": "S15",
+      "key": "image26-s15-v1",
+      "kind": "case",
+      "title": "鹈鹕骑红色自行车",
+      "titleEn": "Pelican on a red bicycle",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S15.png",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "png",
+      "workflow": "still-generation",
+      "sourceUrl": "https://x.com/zzjinmu/status/2118148465444450421",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/S15.png",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Pelican with complete beak rides a red bicycle beside the sea at sunset. Both wheels visible, two feet on pedals, wings near handlebar; suitable synthetic animation reference.",
+      "contentIds": {
+        "prompt": "p_223",
+        "template": null,
+        "example": "x_287",
+        "media": [
+          "a_381"
+        ]
+      }
+    },
+    {
+      "id": "G01",
+      "key": "image26-g01-v2",
+      "kind": "case",
+      "title": "雪林小猴子举灯",
+      "titleEn": "Monkey raising a lantern",
+      "dependencies": [
+        "G01-reference"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G01.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif",
+      "sourcePromptUrl": "https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "priorAttempt": "image26-g01-v1",
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G01.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking. Cropped row-major into a 512px GIF, 300ms per frame, infinite loop; slight background drift between poses. This is a composed GIF, not native GIF output.",
+      "contentIds": {
+        "prompt": "p_224",
+        "template": null,
+        "example": "x_288",
+        "media": [
+          "a_382",
+          "a_383"
+        ]
+      }
+    },
+    {
+      "id": "G02",
+      "key": "image26-g02-v1",
+      "kind": "case",
+      "title": "股价下跌哭泣",
+      "titleEn": "Falling-stock reaction loop",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G02.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "sourcePromptUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G02.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Six-frame office reaction progresses from hope to shock, crying and wiping tears, then returns to the starting pose. Falling chart stays visible. Encoded as a 1.8-second looping GIF from the generated sheet.",
+      "contentIds": {
+        "prompt": "p_225",
+        "template": null,
+        "example": "x_289",
+        "media": [
+          "a_384"
+        ]
+      }
+    },
+    {
+      "id": "G03",
+      "key": "image26-g03-v1",
+      "kind": "case",
+      "title": "股价上涨撒钱",
+      "titleEn": "Rising-stock celebration loop",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G03.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "sourcePromptUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G03.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Six generated office poses show surprise, celebration and tossing blank paper slips, then return to seated start. Rising chart remains consistent. Composed 1.8-second looping GIF; not native animated model output.",
+      "contentIds": {
+        "prompt": "p_226",
+        "template": null,
+        "example": "x_290",
+        "media": [
+          "a_385"
+        ]
+      }
+    },
+    {
+      "id": "G04",
+      "key": "image26-g04-v1",
+      "kind": "case",
+      "title": "白鸡跳舞",
+      "titleEn": "Dancing white chicken",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G04.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/OpenAI/status/2118124953832935810",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G04.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Six white-chicken dance poses alternate feet and wings, ending with a smile. Full body remains inside each cell. Composed looping GIF; subtle pose-scale variation.",
+      "contentIds": {
+        "prompt": "p_227",
+        "template": null,
+        "example": "x_291",
+        "media": [
+          "a_386"
+        ]
+      }
+    },
+    {
+      "id": "G05",
+      "key": "image26-g05-v1",
+      "kind": "case",
+      "title": "蓝发角色吃饭 真香",
+      "titleEn": "Blue-haired character eating rice",
+      "dependencies": [
+        "B04"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G05.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/Gorden_Sun/status/2118166046175908016",
+      "sourcePromptUrl": "https://x.com/Gorden_Sun/status/2118166046175908016",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G05.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Synthetic blue-haired character retains hair clip and apron across six rice-eating poses. The Chinese caption 真香 is legible throughout. Spoon rises, mouth opens, eyes close and pose resets. Composed GIF with minor text placement drift.",
+      "contentIds": {
+        "prompt": "p_228",
+        "template": null,
+        "example": "x_292",
+        "media": [
+          "a_387",
+          "a_388"
+        ]
+      }
+    },
+    {
+      "id": "G06",
+      "key": "image26-g06-v1",
+      "kind": "case",
+      "title": "白羽鸡打太极",
+      "titleEn": "Chicken practicing tai chi",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G06.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/HurJax131/status/2118158102688399690",
+      "sourcePromptUrl": "https://x.com/HurJax131/status/2118158102688399690",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G06.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "White chicken opens and closes its wings across six tai-chi-inspired poses in a courtyard. Full body and two feet remain visible; gesture is stylized rather than accurate martial-arts instruction. Composed GIF.",
+      "contentIds": {
+        "prompt": "p_229",
+        "template": null,
+        "example": "x_293",
+        "media": [
+          "a_389"
+        ]
+      }
+    },
+    {
+      "id": "G07",
+      "key": "image26-g07-v1",
+      "kind": "case",
+      "title": "2005 年中国家庭吃饭",
+      "titleEn": "Family dinner in China in 2005",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G07.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/HurJax131/status/2118158102688399690",
+      "sourcePromptUrl": "https://x.com/HurJax131/status/2118158102688399690",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G07.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Four family members remain around the same dinner table as the father lifts food and the mother nods. Old television and 2005 calendar support the fictional period scene. Six-frame composed GIF, not historical footage.",
+      "contentIds": {
+        "prompt": "p_230",
+        "template": null,
+        "example": "x_294",
+        "media": [
+          "a_390"
+        ]
+      }
+    },
+    {
+      "id": "G08",
+      "key": "image26-g08-v1",
+      "kind": "case",
+      "title": "圆鱼角色循环表情",
+      "titleEn": "Round fish reaction loop",
+      "dependencies": [
+        "B05"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G08.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/maxthon_zx/status/2118162629613302085",
+      "sourcePromptUrl": "https://x.com/maxthon_zx/status/2118162629613302085",
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G08.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Original round fish retains its yellow hat, mint body and coral fins. Six poses produce a small bob and tail shift; the two requested nods are subtle rather than strongly separated. Composed looping GIF.",
+      "contentIds": {
+        "prompt": "p_231",
+        "template": null,
+        "example": "x_295",
+        "media": [
+          "a_391",
+          "a_392"
+        ]
+      }
+    },
+    {
+      "id": "G09",
+      "key": "image26-g09-v1",
+      "kind": "case",
+      "title": "男子原地后空翻",
+      "titleEn": "Standing backflip loop",
+      "dependencies": [],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G09.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/gabrielchua/status/2118135343354720648",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G09.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "A female adult gymnast shows crouch, takeoff, tucked rotation and landing across six poses. The written prompt specified an adult without gender. Composed GIF; six-step motion is coarse and the first crouch differs from the final standing pose.",
+      "contentIds": {
+        "prompt": "p_232",
+        "template": null,
+        "example": "x_296",
+        "media": [
+          "a_393"
+        ]
+      }
+    },
+    {
+      "id": "G10",
+      "key": "image26-g10-v1",
+      "kind": "case",
+      "title": "双角色跳舞",
+      "titleEn": "Two dancing robots",
+      "dependencies": [
+        "B06"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G10.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/798145343h/status/2118164732989608405",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G10.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Green and orange robots retain their left-right positions and identities while stepping, waving and bringing hands together. Full bodies stay inside each cell. Six-frame composed GIF with white background.",
+      "contentIds": {
+        "prompt": "p_233",
+        "template": null,
+        "example": "x_297",
+        "media": [
+          "a_394",
+          "a_395"
+        ]
+      }
+    },
+    {
+      "id": "G11",
+      "key": "image26-g11-v1",
+      "kind": "case",
+      "title": "鹈鹕骑自行车循环",
+      "titleEn": "Cycling pelican loop",
+      "dependencies": [
+        "S15"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G11.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://x.com/MinLiBuilds/status/2118138824673173569",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G11.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Pelican and red bicycle preserve the sunset reference. Legs shift between pedaling poses with slight body bobbing. Composed GIF; pedal geometry and background alignment vary, and wheel rotation is not physically continuous.",
+      "contentIds": {
+        "prompt": "p_234",
+        "template": null,
+        "example": "x_298",
+        "media": [
+          "a_396",
+          "a_381"
+        ]
+      }
+    },
+    {
+      "id": "G12",
+      "key": "image26-g12-v1",
+      "kind": "case",
+      "title": "笔记本猫头鹰涂鸦动起来",
+      "titleEn": "Animated notebook owl",
+      "dependencies": [
+        "B07"
+      ],
+      "plannedModel": "gpt-image-2.6-sunburst",
+      "outputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G12.gif",
+      "sourcePromptType": "新编复现方案，非来源原文",
+      "promptLanguage": "zh-Hans",
+      "expectedFormat": "gif",
+      "workflow": "builtin-sprite-sheet-then-gif",
+      "sourceUrl": "https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs",
+      "sourcePromptUrl": null,
+      "status": "imported",
+      "postprocess": {
+        "columns": 3,
+        "rows": 2,
+        "frameDelayMs": 300,
+        "loop": 0
+      },
+      "actualOutputPath": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/G12.gif",
+      "actualModel": "GPT Image",
+      "providerModelId": null,
+      "reviewNotes": "Pencil owl blinks and lifts its wings while remaining a drawing on the notebook page. Six-frame composed GIF preserves the paper setting with small page and line drift between frames.",
+      "contentIds": {
+        "prompt": "p_235",
+        "template": null,
+        "example": "x_299",
+        "media": [
+          "a_397",
+          "a_398"
+        ]
+      }
+    }
+  ],
+  "publicationChecks": [
+    "Record actual provider model ID and submitted parameters; never label another model as 2.6.",
+    "Verify prompt language: the current publisher defaults literal prompts to en; most of this campaign is zh-Hans.",
+    "For S14 preserve source-prompt provenance rather than independent-adaptation.",
+    "Replace all draft alt text and production status with observed findings after visual review.",
+    "Do not apply editorialReview attestations before reviewing real output and final bilingual copy.",
+    "Preserve GIF timing and input references; do not publish static contact sheets as GIF examples."
+  ],
+  "generationChannel": "built-in image_gen",
+  "plannedModel": "gpt-image-2.6-sunburst",
+  "actualModel": "GPT Image",
+  "providerModelId": null
+}

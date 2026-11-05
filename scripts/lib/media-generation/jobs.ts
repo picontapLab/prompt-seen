@@ -118,16 +118,16 @@ export async function describeArtifact(root: string, file: string): Promise<Arti
     !meta.width ||
     !meta.height ||
     !meta.format ||
-    (meta.pages ?? 1) > 1 ||
-    !['png', 'jpeg', 'webp', 'avif'].includes(meta.format)
+    ((meta.pages ?? 1) > 1 && !['gif', 'webp'].includes(meta.format)) ||
+    !['png', 'jpeg', 'webp', 'avif', 'gif'].includes(meta.format)
   )
-    throw new Error('Expected one readable raster image');
+    throw new Error('Expected a readable raster image (animations must be GIF or WebP)');
   return {
     file: path.relative(root, file),
     sha256: hashFile(file),
     bytes: fs.statSync(file).size,
     width: meta.autoOrient.width,
-    height: meta.autoOrient.height,
+    height: meta.pageHeight ?? meta.autoOrient.height,
     format: meta.format,
   };
 }

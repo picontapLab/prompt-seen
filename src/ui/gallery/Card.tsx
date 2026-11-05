@@ -8,6 +8,7 @@ import { CircleMark } from '@/ui/brand/CircleMark';
 import { CropMarks } from '@/ui/brand/CropMarks';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import styles from './Card.module.css';
 
@@ -52,7 +53,8 @@ export function useCardFacts(card: FeedCard) {
  * A work in the justified rows (design doc §11.1.4, §11.8.2, §11.1.9): the image complete at
  * its original ratio in a frame of its dominant colour, and a two-line label: frame number and
  * title, then the test facts, which the opening of the prompt replaces while a fine pointer
- * rests on the card. Image and label are one link to the detail page; the favourite button sits
+ * rests on the card. The image's model badge appears on hover or keyboard focus.
+ * Image and label are one link to the detail page; the favourite button sits
  * outside it. Works on the server and in the browser (the feed appends cards client-side).
  *
  * Sizing: `--w` and `--h` come from the image, so the row layout is final in the first HTML
@@ -72,6 +74,7 @@ export function Card({
 }: CardProps) {
   const id = useId();
   const facts = useCardFacts(card);
+  const t = useTranslations('feed.card');
   const f = useTranslations('favorites');
   const img = getImage(card.cover, 'card');
   const style = { '--w': card.cover.width, '--h': card.cover.height } as CSSProperties;
@@ -108,6 +111,14 @@ export function Card({
             decoding={priority ? undefined : 'async'}
           />
           <CropMarks mode="interactive" size={14} offset={7} />
+          <span className={styles.badges}>
+            <GifBadge image={card.cover} hasGifOutput={card.hasGifOutput} />
+            {card.verification === 'verified' && card.model ? (
+              <span className={styles.modelBadge} data-model-badge="">
+                {t('byModel', { model: card.model })}
+              </span>
+            ) : null}
+          </span>
         </span>
         <span className={styles.label}>
           <span className={styles.frameMark}>

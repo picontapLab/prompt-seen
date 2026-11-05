@@ -9,10 +9,14 @@ import type { Showcase } from '@/ui/showcase/model';
 export const FEED_PAGE_SIZE = 24;
 
 /** The image fields a card needs; full credits stay in the detail model. */
-export type FeedImage = Pick<ImageRef, 'width' | 'height' | 'placeholder' | 'alt' | 'variants'>;
+export type FeedImage = Pick<
+  ImageRef,
+  'width' | 'height' | 'placeholder' | 'alt' | 'variants' | 'mimeType' | 'animation'
+>;
 
 /** One work in the justified rows (§11.1.4, §11.8.2). */
 export type FeedCard = {
+  hasGifOutput?: boolean;
   id: string;
   slug: string;
   path: string;

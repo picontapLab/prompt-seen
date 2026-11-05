@@ -1,0 +1,49 @@
+{
+  "caseId": "S11",
+  "definition": {
+    "key": "image26-s11-v1",
+    "candidateId": "image26-s11",
+    "prompt": "参考输入图的像素颗粒、有限色板、硬边轮廓和阴影方式，创作一位戴头盔的成年骑手驾驶复古摩托车的侧面全身图。主体完整居中，车轮均可见，白色背景，保持像素风，不照搬参考图人物和车辆，不加入文字、商标或渐变光效。",
+    "references": [
+      {
+        "slotId": "reference",
+        "path": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B02.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "b19ed13ac6abbef0ad962ac3e39b6cb7257950b8ae3fba639ea326f6e3a97b19",
+  "references": [
+    {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/output/imagegen/gpt-image-26-2026-11/B02.png",
+      "sha256": "a1d3b483d26713cd964761a4ae4c34e092ac3f729a933925274a1b87f2e69740",
+      "slotId": "reference"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:09:25.016Z",
+  "receipt": {
+    "output": {
+      "path": "/Users/hp/Desktop/bywork/prompt-seen/.artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s11-v1/output-a817817ed1dc39259344da5ab73ffb7f11e47373f906cb4f95e65120f5cb131d.png",
+      "sha256": "a817817ed1dc39259344da5ab73ffb7f11e47373f906cb4f95e65120f5cb131d"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:10:14.540Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Side-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing. More detailed pixels than the source; both wheels visible.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:10:14.544Z"
+  },
+  "contentIds": {
+    "prompt": "p_219",
+    "template": null,
+    "example": "x_283",
+    "media": [
+      "a_375",
+      "a_376"
+    ]
+  }
+}

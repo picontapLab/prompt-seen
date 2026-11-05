@@ -43,10 +43,10 @@ describe('analyze', () => {
   });
 
   it('rejects other formats and tiny images', async () => {
-    const gif = await sharp({ create: { width: 400, height: 400, channels: 3, background: '#fff' } })
-      .gif()
+    const tiff = await sharp({ create: { width: 400, height: 400, channels: 3, background: '#fff' } })
+      .tiff()
       .toBuffer();
-    await expect(analyze(gif)).rejects.toBeInstanceOf(ImportError);
+    await expect(analyze(tiff)).rejects.toBeInstanceOf(ImportError);
     const tiny = await sharp({ create: { width: 100, height: 100, channels: 3, background: '#fff' } })
       .png()
       .toBuffer();
