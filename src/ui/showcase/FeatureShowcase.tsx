@@ -7,6 +7,7 @@ import { AnnotationOverlay } from '@/ui/annotation/AnnotationOverlay';
 import { AnnotationProvider } from '@/ui/annotation/AnnotationProvider';
 import { FilmStrip } from '@/ui/brand/FilmStrip';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { textDirection } from '@/ui/prompt-detail/language';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import { DevelopImage } from './DevelopImage';
@@ -84,17 +85,18 @@ export function FeatureShowcase({
   };
   const picture = (
     <div className={styles.picture} style={frame}>
-      {develop ? (
+      {develop && !s.cover.animation ? (
         <DevelopImage {...imgProps} preview={getImage(s.cover, 'thumbnail').src} />
       ) : (
         <img {...imgProps} alt={imgProps.alt} />
       )}
-      <AnnotationOverlay />
+      {!s.cover.animation && <AnnotationOverlay />}
+      <GifBadge image={s.cover} hasGifOutput={s.hasGifOutput} overlay />
     </div>
   );
 
   return (
-    <AnnotationProvider annotations={s.annotations} defaultCurrent={defaultAnnotation}>
+    <AnnotationProvider annotations={s.cover.animation ? [] : s.annotations} defaultCurrent={defaultAnnotation}>
       <figure
         className={styles.showcase}
         data-size={size}
@@ -103,7 +105,7 @@ export function FeatureShowcase({
       >
         <div
           className={styles.media}
-          data-annotated={s.annotations.length > 0 || undefined}
+          data-annotated={(!s.cover.animation && s.annotations.length > 0) || undefined}
           data-film={film ? '' : undefined}
         >
           {film ? (

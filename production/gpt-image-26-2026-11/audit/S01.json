@@ -1,0 +1,37 @@
+{
+  "caseId": "S01",
+  "definition": {
+    "key": "image26-s01-v1",
+    "candidateId": "image26-s01",
+    "prompt": "拍摄一张竖幅纪实人像：一位虚构的年长渔民坐在海港修网棚门口，一只小型杂毛犬靠着他的靴子休息。阴天柔光，视线与人物平齐，自然皮肤纹理，衣服有盐渍与使用痕迹，色彩克制，轻微胶片颗粒，背景能看见虚焦的渔网。避免摆拍姿势和过度磨皮。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "1d8b14a42a5b16f3dcfd5ef4b42a2f3faff46adc66b013c16e5d265c5157aba7",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T06:56:10.024Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s01-v1/output-e0e9ff2eed61d05cc9ff16e6a32170b5ce7865edafa526d4486cbcd72954521e.png",
+      "sha256": "e0e9ff2eed61d05cc9ff16e6a32170b5ce7865edafa526d4486cbcd72954521e"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T06:56:58.067Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "An older fisherman repairs a net with a small dog resting beside his boot. Natural skin and fabric detail, subdued light; the dog is close to the lower edge.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T06:56:58.071Z"
+  },
+  "contentIds": {
+    "prompt": "p_209",
+    "template": null,
+    "example": "x_273",
+    "media": [
+      "a_363"
+    ]
+  }
+}

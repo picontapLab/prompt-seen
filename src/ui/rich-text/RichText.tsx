@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import type { RichBlock, RichInline } from '@/modules/content/types';
 import { getImage } from '@/modules/media';
+import { GifBadge } from '@/ui/media/GifBadge';
 import styles from './RichText.module.css';
 
 // Renders the rich text the build compiled from MDX (design doc §3.5, §5.3): a closed set of
@@ -146,7 +147,11 @@ function Block({ block }: { block: RichBlock }) {
             decoding="async"
             style={{ background: img.placeholder }}
           />
-          {block.caption && <figcaption>{block.caption}</figcaption>}
+          {(block.caption || block.image.mimeType === 'image/gif') && (
+            <figcaption>
+              <GifBadge image={block.image} /> {block.caption}
+            </figcaption>
+          )}
         </figure>
       );
     }

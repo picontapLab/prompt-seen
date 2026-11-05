@@ -1,0 +1,68 @@
+id: p_233
+slug: image26-g10-two-dancing-robots
+createdAt: 2026-11-04
+updatedAt: 2026-11-04
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_394
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Use the independently generated reference assets in the displayed order. Do not use the official or social source images.
+    zh-Hans: 按展示顺序使用原创生成底图；不使用官方或社交作者原图。
+  slots:
+    - id: reference
+      labels:
+        en: Original synthetic reference
+        zh-Hans: 原创生成参考图
+      min: 1
+      max: 1
+showcaseExampleId: x_297
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: image26-g10
+    platform: X
+    author: Gangban
+    url: https://x.com/798145343h/status/2118164732989608405
+    publishedAt: null
+    metricObjectUrl: https://x.com/798145343h/status/2118164732989608405
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original source post; not this new generated output. Multiple cases from one post share the metrics.
+      zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
+    observedAt: 2026-11-04
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: "Prior research: direct page and visual review. Counts have not been refreshed."
+      zh-Hans: 此前调研的原站页面及视觉核对，未刷新互动数。
+    evidenceUrl: https://x.com/798145343h/status/2118164732989608405
+    sourcePromptStatus:
+      en: The original prompt was not found. This is an independently inferred prompt.
+      zh-Hans: 未取得原提示词，本次为独立推导方案。
+    metrics:
+      - key: likes
+        value: 53
+        labels:
+          en: Likes
+          zh-Hans: 点赞
+      - key: reposts
+        value: 1
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

@@ -13,9 +13,13 @@ export const ACCEPTED_FORMATS = {
   png: 'image/png',
   webp: 'image/webp',
   avif: 'image/avif',
+  gif: 'image/gif',
 } as const;
 type Format = keyof typeof ACCEPTED_FORMATS;
-const EXTENSION: Record<Format, string> = { jpeg: 'jpg', png: 'png', webp: 'webp', avif: 'avif' };
+const EXTENSION: Record<Format, string> = { jpeg: 'jpg', png: 'png', webp: 'webp', avif: 'avif', gif: 'gif' };
+
+/** Bound animated decoding/encoding work, including the largest original frames. */
+export const ANIMATION_LIMITS = { bytes: 50 * 1024 * 1024, frames: 500, pixels: 100_000_000 } as const;
 
 /** Longest side of each display variant (§10.2). */
 export const VARIANT_LONGEST_SIDE = { thumbnail: 480, card: 960, detail: 1600 } as const;
@@ -28,6 +32,8 @@ export type Analysis = {
   extension: string;
   width: number;
   height: number;
+  byteSize: number;
+  animation?: MediaSource['animation'];
   /** "sha256:<64 hex>" of the original file. */
   contentHash: string;
   placeholder: string;
@@ -56,9 +62,18 @@ export async function analyze(input: Buffer): Promise<Analysis> {
   }
   const format = meta.format as string;
   if (!(format in ACCEPTED_FORMATS))
-    throw new ImportError(`${format || 'unknown'} images are not accepted; use JPEG, PNG, WebP or AVIF`);
-  if ((meta.pages ?? 1) > 1) throw new ImportError('animated or multi-page images are not accepted');
-  const { width, height } = meta.autoOrient;
+    throw new ImportError(`${format || 'unknown'} images are not accepted; use JPEG, PNG, WebP, AVIF or GIF`);
+  const frames = meta.pages ?? 1;
+  if (frames > 1 && format !== 'gif') throw new ImportError('only GIF animations are accepted');
+  const width = meta.autoOrient.width;
+  const height = format === 'gif' ? (meta.pageHeight ?? meta.height) : meta.autoOrient.height;
+  if (
+    format === 'gif' &&
+    (input.length > ANIMATION_LIMITS.bytes ||
+      frames > ANIMATION_LIMITS.frames ||
+      width * height * frames > ANIMATION_LIMITS.pixels)
+  )
+    throw new ImportError('GIF exceeds animation limits (50 MiB, 500 frames or 100 million decoded pixels)');
   if (width < 320 || height < 200)
     throw new ImportError(`${width} × ${height} is too small; the shortest useful size is about 320 × 200`);
 
@@ -83,6 +98,16 @@ export async function analyze(input: Buffer): Promise<Analysis> {
     extension: EXTENSION[format as Format],
     width,
     height,
+    byteSize: input.length,
+    ...(frames > 1
+      ? {
+          animation: {
+            frameCount: frames,
+            durationMs: (meta.delay ?? []).reduce((sum, delay) => sum + delay, 0),
+            loopCount: meta.loop ?? null,
+          },
+        }
+      : {}),
     contentHash: `sha256:${crypto.createHash('sha256').update(input).digest('hex')}`,
     placeholder: `#${hex(r)}${hex(g)}${hex(b)}`.toUpperCase(),
     focalPoint,
@@ -101,7 +126,7 @@ export function ogCrop(width: number, height: number, focal: { x: number; y: num
 
 export async function renderVariants(
   input: Buffer,
-  analysis: Pick<Analysis, 'width' | 'height'>,
+  analysis: Pick<Analysis, 'width' | 'height' | 'animation'>,
   media: Pick<MediaSource, 'focalPoint' | 'credit' | 'provenance' | 'processing'>,
 ): Promise<RenderedVariant[]> {
   const xmp = buildXmp(media.credit, media.provenance);
@@ -111,7 +136,7 @@ export async function renderVariants(
   for (const name of ['thumbnail', 'card', 'detail'] as const) {
     const side = Math.min(VARIANT_LONGEST_SIDE[name], longest);
     const encoding = media.processing?.[name];
-    let pipeline = sharp(input)
+    let pipeline = sharp(input, { animated: !!analysis.animation })
       .autoOrient()
       .resize({ width: side, height: side, fit: 'inside', withoutEnlargement: true })
       .webp(
@@ -122,7 +147,7 @@ export async function renderVariants(
     // Metadata only where it matters for search and sharing; small variants stay small (§9.7).
     if (name === 'detail') pipeline = pipeline.withXmp(xmp);
     const { data, info } = await pipeline.toBuffer({ resolveWithObject: true });
-    out.push({ name, bytes: data, width: info.width, height: info.height, mimeType: 'image/webp' });
+    out.push({ name, bytes: data, width: info.width, height: info.pageHeight ?? info.height, mimeType: 'image/webp' });
   }
 
   const crop = ogCrop(analysis.width, analysis.height, media.focalPoint);

@@ -50,19 +50,20 @@ export async function prepareJob(root: string, jobId: string, id = 'gpt-image-v1
       throw new Error(`Provide all ${job.annotationCount} new annotation regions: ${jobId}`);
     const input = fs.readFileSync(source);
     const meta = await sharp(input).metadata();
-    const candidate = await sharp(input)
-      .autoOrient()
-      .toColourspace('srgb')
-      .webp({ lossless: true, effort: 5 })
-      .toBuffer();
+    // A GIF is the model's original animation, not a single frame to normalize.
+    const candidate =
+      meta.format === 'gif'
+        ? input
+        : await sharp(input).autoOrient().toColourspace('srgb').webp({ lossless: true, effort: 5 }).toBuffer();
     // Source retention is safe only when its decoded sRGB pixels already match the normalized mother.
     const pixels = await sharp(input).autoOrient().toColourspace('srgb').ensureAlpha().raw().toBuffer();
     const retainedPixels = await sharp(input).ensureAlpha().raw().toBuffer();
     const retain =
-      input.length < candidate.length &&
-      (!meta.orientation || meta.orientation === 1) &&
-      (!meta.space || meta.space === 'srgb') &&
-      pixels.equals(retainedPixels);
+      meta.format === 'gif' ||
+      (input.length < candidate.length &&
+        (!meta.orientation || meta.orientation === 1) &&
+        (!meta.space || meta.space === 'srgb') &&
+        pixels.equals(retainedPixels));
     const mother = retain ? input : candidate;
     const extension = retain ? (attempt.raw.format === 'jpeg' ? 'jpg' : attempt.raw.format) : 'webp';
     const motherPath = within(p.artifacts, `jobs/${jobId}/mother.${extension}`);

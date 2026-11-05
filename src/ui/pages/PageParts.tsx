@@ -3,6 +3,7 @@ import type { ImageRef, RichBlock, TocItem } from '@/modules/content/types';
 import type { FeedCard } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
 import { Card } from '@/ui/gallery/Card';
+import { GifBadge } from '@/ui/media/GifBadge';
 import gallery from '@/ui/gallery/Gallery.module.css';
 import { Breadcrumb, type Crumb } from '@/ui/navigation/Breadcrumb';
 import { RichText } from '@/ui/rich-text/RichText';
@@ -42,6 +43,7 @@ export function Cover({
           decoding={priority ? undefined : 'async'}
           fetchPriority={priority ? 'high' : undefined}
         />
+        <GifBadge image={image} overlay />
       </span>
       {image.caption && <figcaption className={styles.caption}>{image.caption}</figcaption>}
     </figure>

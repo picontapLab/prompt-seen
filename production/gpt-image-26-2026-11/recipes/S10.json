@@ -1,0 +1,88 @@
+{
+  "candidateId": "image26-s10",
+  "slug": "image26-s10-marked-vase-color-edit",
+  "categoryId": "product",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "依据输入照片和红色圈选标注，只把圈内陶瓷花瓶的釉色改成钴蓝色。保留花瓶的形状、反光、阴影和插花，不改变桌面、墙面及其他物件。最终成图移除红圈和所有标注，维持自然摄影质感。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "markup",
+        "labels": {
+          "en": "Vase markup overlay",
+          "zh-Hans": "花瓶圈选标注层"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-s10",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方指南",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "publishedAt": null,
+      "metricObjectUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup",
+      "sourcePromptStatus": {
+        "en": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+        "zh-Hans": "来源公开原提示词；本次使用单独记录的制作提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Marked vase color edit",
+      "description": "Vase changed from cream to cobalt blue, red markup removed",
+      "body": "## How to use\n\nUse the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nVase changed from cream to cobalt blue, red markup removed. Jug, dried stems, tiles and window remain visually consistent; new glaze is glossier.\n\n## Source and generation\n\nThe source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "圈选花瓶局部改色",
+      "description": "花瓶由米色改为钴蓝，红圈已移除；玻璃壶、干燥枝条、墙砖和窗户保持视觉一致",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n花瓶由米色改为钴蓝，红圈已移除；玻璃壶、干燥枝条、墙砖和窗户保持视觉一致。新釉面比原图更有光泽。\n\n## 来源与生成\n\n来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "Vase changed from cream to cobalt blue, red markup removed.",
+    "zh-Hans": "花瓶由米色改为钴蓝，红圈已移除；玻璃壶、干燥枝条、墙砖和窗户保持视觉一致。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:50:58.255Z",
+    "contentHash": "96e9c576a48c73df5abac33616be3f3e2fe7466a08e35a18ab1fc7bd239fc6c3"
+  }
+}

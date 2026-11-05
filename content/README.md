@@ -118,7 +118,17 @@ Raw HTML, imports, `{expressions}` and other components are errors. A literal br
 
 `entry.yaml` (see any sample) holds the taxonomy, `coverAssetId`, `relatedTemplateIds`,
 `model` (`verification: verified | unverified | unknown`; a verified prompt names its model),
-`inputRequirements.referenceImage`, `source` and optional `annotations`:
+`inputRequirements.referenceImage`, `source` and optional `annotations`.
+
+Set `model.displayName` to the known model version (for example, `GPT Image 2.6`), and use
+the same name in the corresponding example runs. Detail badges and card hover labels use this
+value. `providerModelId` is the exact provider/API identifier and stays `null` when unavailable.
+The project owner's 2026-11-05 version attribution labels the existing 208 prompts as GPT Image
+2.5 and the 27 prompts in `production/gpt-image-26-2026-11/content-map.json` as GPT Image 2.6;
+see `production/model-version-annotation-2026-11-05.json`. Historical generation receipts retain
+the model information originally returned by the tool.
+
+Example annotations:
 
 ```yaml
 annotations:

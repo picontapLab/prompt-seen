@@ -1,0 +1,37 @@
+{
+  "caseId": "G04",
+  "definition": {
+    "key": "image26-g04-v1",
+    "candidateId": "image26-g04",
+    "prompt": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n生成一段方形循环 GIF：一只白羽鸡站在浅米色无缝背景中央，先向左踏一步、抬左翅，再向右踏一步、抬右翅，最后轻轻点头回到原位。完整身体和双脚始终在画面内，机位固定，红色鸡冠外形稳定，柔和落地阴影。动作俏皮，首尾衔接，不出现文字或镜头推拉。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "ba12caf5066ce477c4f067821594d7f0eaaeb5fa8e43a40d3c1b8744a28ee895",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:25:27.345Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-g04-v1/output-c327bdac5626bfeed9e50f16be575721a46398486bf48266261180ae0a3889ba.gif",
+      "sha256": "c327bdac5626bfeed9e50f16be575721a46398486bf48266261180ae0a3889ba"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:26:37.658Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Six white-chicken dance poses alternate feet and wings, ending with a smile. Full body remains inside each cell. Composed looping GIF; subtle pose-scale variation.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:26:37.661Z"
+  },
+  "contentIds": {
+    "prompt": "p_227",
+    "template": null,
+    "example": "x_291",
+    "media": [
+      "a_386"
+    ]
+  }
+}

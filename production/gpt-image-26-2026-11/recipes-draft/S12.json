@@ -1,0 +1,72 @@
+{
+  "candidateId": "image26-s12",
+  "slug": "image26-s12-river-valley-sketch-to-photograph",
+  "categoryId": "landscape",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "把输入河谷线稿转成可信的自然风景照片。严格沿用新线稿中的河道走向、木桥位置、松树数量与山脊比例，补充岩石、草地、河水和树皮的真实材质。采用清晨柔光，阴影方向一致。去除纸张和笔触，但不要重新设计构图或增加建筑。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-s12",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方指南",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image",
+      "publishedAt": null,
+      "metricObjectUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image",
+      "sourcePromptStatus": {
+        "en": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+        "zh-Hans": "来源公开原提示词；本次使用单独记录的制作提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "River valley sketch to photograph",
+      "description": "A prompt for river valley sketch to photograph. Uses an independently generated reference.",
+      "body": "## How to use\n\nA prompt for river valley sketch to photograph. Uses an independently generated reference.\n\n## Source\n\nThe source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image).\n\n## Production status\n\nDraft awaiting actual generation and visual review. No result has been verified."
+    },
+    "zh-Hans": {
+      "title": "河谷线稿转写实照片",
+      "description": "河谷线稿转写实照片的制作提示词。使用原创生成底图。",
+      "body": "## 使用方法\n\n河谷线稿转写实照片的制作提示词。使用原创生成底图。\n\n## 来源\n\n来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image)。\n\n## 制作状态\n\n等待实际生成和视觉审核的草稿，尚无验证过的成品。"
+    }
+  },
+  "alt": {
+    "en": "River valley sketch to photograph — draft label to verify against the generated output",
+    "zh-Hans": "河谷线稿转写实照片——待生成后核实的暂定描述"
+  }
+}

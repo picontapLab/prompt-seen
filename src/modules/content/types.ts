@@ -58,6 +58,9 @@ export type ImageCredit = {
 
 export type ImageRef = {
   assetId: string;
+  /** Original file format; display variants may be animated WebP. */
+  mimeType?: string;
+  animation?: { frameCount: number; durationMs: number; loopCount: number | null };
   width: number;
   height: number;
   /** width / height. */
@@ -109,6 +112,8 @@ type Localized = {
 
 export type PromptSummary = Localized & {
   kind: 'prompt';
+  /** Derived from example outputs, never reference inputs. */
+  hasGifOutput?: boolean;
   /** Four-digit frame number from the stable ID, e.g. "0127" (§11.1.9). */
   frameNumber: string;
   cover: ImageRef;
@@ -127,6 +132,7 @@ export type PromptSummary = Localized & {
 
 export type TemplateSummary = Localized & {
   kind: 'template';
+  hasGifOutput?: boolean;
   cover: ImageRef | null;
   currentVersion: string;
   fieldCount: number;

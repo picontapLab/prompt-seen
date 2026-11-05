@@ -302,9 +302,9 @@ export type ExampleRunSource = z.infer<typeof exampleRunSchema>;
 // ---------------------------------------------------------------------------------------------
 // Media (§5.4, §10)
 
-export const MEDIA_KEY_PATTERN = /^media\/a_\d{3,}\/[a-z0-9-]+\.(?:jpg|png|webp|avif)$/;
+export const MEDIA_KEY_PATTERN = /^media\/a_\d{3,}\/[a-z0-9-]+\.(?:jpg|png|webp|avif|gif)$/;
 const mediaKey = z.string().regex(MEDIA_KEY_PATTERN, 'keys look like "media/a_001/slug-detail-<hash>.webp"');
-const mimeType = z.enum(['image/jpeg', 'image/png', 'image/webp', 'image/avif']);
+const mimeType = z.enum(['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif']);
 const dimension = z.number().int().positive();
 const variant = z.object({ key: mediaKey, width: dimension, height: dimension, mimeType }).strict();
 
@@ -345,6 +345,13 @@ export const mediaSchema = z
     id: assetId,
     contentHash: z.string().regex(/^sha256:[0-9a-f]{64}$/, 'written by media:import as "sha256:<64 hex digits>"'),
     mimeType,
+    byteSize: z.number().int().positive().optional(),
+    animation: z.object({
+      frameCount: z.number().int().min(2),
+      durationMs: z.number().int().nonnegative(),
+      /** Zero means infinite; null means the file does not specify a loop count. */
+      loopCount: z.number().int().nonnegative().nullable(),
+    }).strict().optional(),
     width: dimension,
     height: dimension,
     original: z.object({ key: mediaKey }).strict(),

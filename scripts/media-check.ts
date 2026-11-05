@@ -37,7 +37,7 @@ async function main() {
 
   // Keys are "media/<asset>/<file>"; JSON may escape slashes as "\/".
   const pattern = new RegExp(
-    `${escapeRegExp(base)}(?:/|\\\\/)(media(?:/|\\\\/)[A-Za-z0-9_./\\\\-]+?\\.(?:webp|avif|jpe?g|png))`,
+    `${escapeRegExp(base)}(?:/|\\\\/)(media(?:/|\\\\/)[A-Za-z0-9_./\\\\-]+?\\.(?:webp|avif|jpe?g|png|gif))`,
     'g',
   );
   const urls = new Set<string>();

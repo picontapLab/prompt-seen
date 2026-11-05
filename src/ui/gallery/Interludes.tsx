@@ -4,6 +4,7 @@ import { useId, type CSSProperties } from 'react';
 import { promptJsonFile } from '@/modules/feed/files';
 import type { FeedTemplate, Interlude } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { paths, withBasePath } from '@/modules/url';
 import { CopyButton } from '@/ui/feedback/CopyButton';
 import { textDirection } from '@/ui/prompt-detail/language';
@@ -166,7 +167,9 @@ export function CollectionBanner({ block, posinset, setsize, ...rest }: { block:
         />
       </span>
       <div className={styles.bannerText}>
-        <span className={styles.eyebrow}>{t('interlude.collection', { count: c.itemCount })}</span>
+        <span className={styles.eyebrow}>
+          {t('interlude.collection', { count: c.itemCount })} <GifBadge image={c.cover} />
+        </span>
         <h2 id={id} className={styles.bannerTitle}>
           {c.title}
         </h2>

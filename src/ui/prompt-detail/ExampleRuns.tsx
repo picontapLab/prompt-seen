@@ -4,6 +4,7 @@ import { useId } from 'react';
 import type { ExampleRunView, ImageRef, TemplateSummary } from '@/modules/content/types';
 import { getImage } from '@/modules/media';
 import { paths } from '@/modules/url';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { isoDate, modelName } from './TestInfo';
 import styles from './Detail.module.css';
 
@@ -30,6 +31,7 @@ function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string 
                 loading="lazy"
                 decoding="async"
               />
+              <GifBadge image={img} overlay />
             </li>
           );
         })}

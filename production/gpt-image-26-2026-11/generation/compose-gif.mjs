@@ -1,0 +1,14 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';import {createRequire} from 'node:module';import crypto from 'node:crypto';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');const require=createRequire(root+'/package.json');const sharp=require('sharp');
+const [id,src]=process.argv.slice(2);const out=root+'/output/imagegen/gpt-image-26-2026-11';
+const sheet=out+'/'+id+'-sheet.png';fs.copyFileSync(src,sheet);
+const m=await sharp(sheet).metadata();const w=Math.floor(m.width/3),h=Math.floor(m.height/2);
+const frames=[];
+for(let i=0;i<6;i++)frames.push(await sharp(sheet).extract({left:(i%3)*w,top:Math.floor(i/3)*h,width:w,height:h}).ensureAlpha().raw().toBuffer());
+const output=out+'/'+id+'.gif';await sharp(Buffer.concat(frames),{raw:{width:w,height:h*6,channels:4,pageHeight:h}}).gif({delay:[300,300,300,300,300,300],loop:0,effort:7}).toFile(output);
+const actual=await sharp(output,{animated:true}).metadata();
+if(actual.pages!==6||actual.loop!==0||actual.delay.reduce((a,b)=>a+b,0)!==1800)throw Error('Animation metadata mismatch');
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const audit={id,toolOutput:src,sheet,sheetSha256:sha(sheet),output,outputSha256:sha(output),method:'GPT Image sprite sheet, equal-cell row-major crop, GIF encoding',frameCount:6,width:w,height:h,frameDelaysMs:actual.delay,loop:actual.loop,trimmedRightPixels:m.width-w*3,trimmedBottomPixels:m.height-h*2};
+fs.mkdirSync(root+'/production/gpt-image-26-2026-11/generation/animation-audit',{recursive:true});fs.writeFileSync(root+'/production/gpt-image-26-2026-11/generation/animation-audit/'+id+'.json',JSON.stringify(audit,null,2)+'\n');
+console.log(JSON.stringify({output,frames:actual.pages,width:w,height:h,durationMs:1800}));

@@ -1,0 +1,37 @@
+{
+  "caseId": "S02",
+  "definition": {
+    "key": "image26-s02-v1",
+    "candidateId": "image26-s02",
+    "prompt": "设计一张竖版教育信息图，解释一台虚构家用浓缩咖啡机如何工作。以清楚的剖面结构展示水箱、泵、加热单元、冲煮头、粉饼和接液杯，用连续箭头区分冷水、热水和咖啡流向。每个部件只标一个简短中文名称。顶部标题为“从水到咖啡”，底部用三句话说明过程，网格整齐，白底，蓝色与咖啡棕配色。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "3b2b7adfddfcccdb2070ac61c517d96df0ba7d32c01def1143ebc660631b3cd4",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T06:56:58.230Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s02-v1/output-38d44c0ef5122947cf51d4698c8498a470a70baa57b6f92caaa515cf18fdd58c.png",
+      "sha256": "38d44c0ef5122947cf51d4698c8498a470a70baa57b6f92caaa515cf18fdd58c"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T06:58:05.753Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Cutaway espresso machine shows water tank, pump, heater, brew head, coffee puck and cup. Chinese labels and three explanatory steps are legible; schematic layout is illustrative, not an engineering drawing.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T06:58:05.756Z"
+  },
+  "contentIds": {
+    "prompt": "p_210",
+    "template": null,
+    "example": "x_274",
+    "media": [
+      "a_364"
+    ]
+  }
+}

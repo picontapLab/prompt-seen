@@ -66,7 +66,7 @@ describe('typical queries (§16.3)', () => {
       production
         .engine('zh-Hans')
         .docs.filter((d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) <= 100)
-        .every((d) => d.model === 'GPT Image'),
+        .every((d) => d.model === 'GPT Image 2.5'),
     ).toBe(true);
     const top50 = production
       .engine('zh-Hans')
@@ -74,7 +74,14 @@ describe('typical queries (§16.3)', () => {
         (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 101 && Number(d.id.split('_').at(-1)) <= 150,
       );
     expect(top50).toHaveLength(50);
-    expect(top50.every((d) => d.model === 'GPT Image')).toBe(true);
+    expect(top50.every((d) => d.model === 'GPT Image 2.5')).toBe(true);
+    const latest = production
+      .engine('zh-Hans')
+      .docs.filter(
+        (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 209 && Number(d.id.split('_').at(-1)) <= 235,
+      );
+    expect(latest).toHaveLength(27);
+    expect(latest.every((d) => d.model === 'GPT Image 2.6')).toBe(true);
   });
 
   it('find entries through taxonomy aliases (§13.2)', () => {

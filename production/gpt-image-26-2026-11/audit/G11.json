@@ -1,0 +1,49 @@
+{
+  "caseId": "G11",
+  "definition": {
+    "key": "image26-g11-v1",
+    "candidateId": "image26-g11",
+    "prompt": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。\n\n动作与主题：\n使用输入图片中的鹈鹕、红色自行车和海边木栈道，制作一个侧面跟拍循环 GIF。鹈鹕持续平稳踩踏，车轮转动，身体轻微上下起伏，主体保持画面中央。让木板与背景以可循环方式缓慢移动，保持自行车结构和鸟喙长度稳定，机位高度不变，不加入其他角色，结尾接回开头。",
+    "references": [
+      {
+        "slotId": "reference",
+        "path": "output/imagegen/gpt-image-26-2026-11/S15.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "7b574613b7aa2f3d769a101d88603e8273e0cc30dfa857383301d37b0e644898",
+  "references": [
+    {
+      "path": "output/imagegen/gpt-image-26-2026-11/S15.png",
+      "sha256": "10c33092faee23e30d739283bf0e6073c357cbbdd2acc7a7fdb3801477d6c159",
+      "slotId": "reference"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:34:38.141Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-g11-v1/output-253ae2f8e6a30fe2f9bf20f30dd19c692c3edf28d4e529e9c466ed323c892581.gif",
+      "sha256": "253ae2f8e6a30fe2f9bf20f30dd19c692c3edf28d4e529e9c466ed323c892581"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:36:18.747Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Pelican and red bicycle preserve the sunset reference. Legs shift between pedaling poses with slight body bobbing. Composed GIF; pedal geometry and background alignment vary, and wheel rotation is not physically continuous.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:36:18.751Z"
+  },
+  "contentIds": {
+    "prompt": "p_234",
+    "template": null,
+    "example": "x_298",
+    "media": [
+      "a_396",
+      "a_381"
+    ]
+  }
+}

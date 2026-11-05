@@ -69,6 +69,8 @@ export async function importMedia({
     id,
     contentHash: analysis.contentHash,
     mimeType: analysis.mimeType,
+    byteSize: analysis.byteSize,
+    animation: analysis.animation,
     width: analysis.width,
     height: analysis.height,
     original: { key: originalKey(id, slug, analysis.contentHash, analysis.extension) },
@@ -107,6 +109,11 @@ export async function refreshMedia({
   const input = await storage.get(media.original.key);
   const analysis = await analyze(input);
   if (analysis.contentHash !== media.contentHash) throw new Error('Mother image content hash mismatch');
+  media.byteSize = analysis.byteSize;
+  media.animation = analysis.animation;
+  doc.set('byteSize', media.byteSize);
+  if (media.animation) doc.set('animation', media.animation);
+  else doc.delete('animation');
   const slug = /^media\/a_\d+\/(.+)-original-[a-f0-9]+\.\w+$/.exec(media.original.key)?.[1] ?? id;
   media.variants = await storeVariants(storage, slug, input, media);
   doc.set('variants', media.variants);

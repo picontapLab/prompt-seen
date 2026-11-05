@@ -17,7 +17,16 @@ import {
 // same options, so both come from `engineOptions`.
 
 const FIELDS = ['title', 'terms', 'model', 'description', 'body'] as const;
-const STORED: (keyof SearchStored)[] = ['kind', 'title', 'description', 'path', 'frame', 'thumb', 'tags'];
+const STORED: (keyof SearchStored)[] = [
+  'kind',
+  'title',
+  'description',
+  'path',
+  'frame',
+  'thumb',
+  'tags',
+  'hasGifOutput',
+];
 
 /**
  * Field weights in the order of §13.1: title, then category and use (terms), then description,
@@ -108,6 +117,7 @@ export function search(engine: Engine, query: string, limit = Infinity): SearchR
       frame: (r.frame as string | null) ?? null,
       thumb: (r.thumb as SearchStored['thumb']) ?? null,
       tags: (r.tags as string[]) ?? [],
+      hasGifOutput: r.hasGifOutput === true,
     });
   }
   return {

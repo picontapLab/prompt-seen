@@ -63,6 +63,8 @@ export const shapeOf = (width: number, height: number): Shape => {
 };
 
 export const slimImage = (image: ImageRef): FeedImage => ({
+  mimeType: image.mimeType,
+  animation: image.animation,
   width: image.width,
   height: image.height,
   placeholder: image.placeholder,
@@ -72,6 +74,7 @@ export const slimImage = (image: ImageRef): FeedImage => ({
 
 export function toCard(p: PromptSummary, ratioLabel: ComposeInput['ratioLabel']): FeedCard {
   return {
+    hasGifOutput: p.hasGifOutput,
     id: p.id,
     slug: p.slug,
     path: p.path,

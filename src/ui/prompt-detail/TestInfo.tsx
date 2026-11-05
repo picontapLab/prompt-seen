@@ -1,6 +1,7 @@
 import { CircleCheck, CircleDashed } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import type { PromptDetail } from '@/modules/content/types';
+import { GifBadge } from '@/ui/media/GifBadge';
 import styles from './Detail.module.css';
 
 /** "2026-10-10" as a date at midnight UTC, the time zone every page formats in (§11.9). */
@@ -14,7 +15,7 @@ export const modelName = (model: { displayName: string | null; providerModelId: 
  * as a badge, or "Not verified" in a neutral outlined badge; size, ratio, whether a reference
  * image is needed, and both dates, as visible text. Dates are absolute: pages are pre-rendered.
  */
-export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cover' | 'updatedAt'> }) {
+export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cover' | 'updatedAt' | 'hasGifOutput'> }) {
   const t = useTranslations('detail.test');
   const format = useFormatter();
   const { test, cover } = detail;
@@ -24,6 +25,7 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
 
   return (
     <div className={styles.testInfo} aria-label={t('label')} role="group">
+      <GifBadge image={cover} hasGifOutput={detail.hasGifOutput} />
       {verified ? (
         <span className={styles.badge} data-tone="verified">
           <CircleCheck aria-hidden="true" />

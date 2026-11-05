@@ -7,7 +7,14 @@ import type { Favorite } from '@/state/favorites/store';
 // with the page. Pure: no fetching, so tests run it on plain data.
 
 /** A saved template as the favourites page shows it. */
-export type TemplateItem = { id: string; path: string; title: string; fieldCount: number; cover: FeedImage | null };
+export type TemplateItem = {
+  id: string;
+  path: string;
+  title: string;
+  fieldCount: number;
+  cover: FeedImage | null;
+  hasGifOutput?: boolean;
+};
 
 /** Pages of the newest-first list that hold these prompts; IDs the index lacks are not here. */
 export function pagesFor(index: Pick<FeedIndex, 'items'>, ids: Iterable<string>): number[] {

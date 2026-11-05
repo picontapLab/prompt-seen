@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { useId, type CSSProperties } from 'react';
 import type { ImageRef } from '@/modules/content/types';
 import { getImage } from '@/modules/media';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { ScrollRow } from '@/ui/primitives/ScrollRow';
 import styles from './RelatedRow.module.css';
 
@@ -50,7 +51,9 @@ export function RelatedRow({ heading, items }: { heading: string; items: readonl
                     />
                   )}
                 </span>
-                <span className={styles.title}>{item.title}</span>
+                <span className={styles.title}>
+                  {item.title} <GifBadge image={item.image} />
+                </span>
                 {item.meta && <span className={styles.meta}>{item.meta}</span>}
               </Link>
             </li>

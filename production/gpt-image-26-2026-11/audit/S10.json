@@ -1,0 +1,59 @@
+{
+  "caseId": "S10",
+  "definition": {
+    "key": "image26-s10-v1",
+    "candidateId": "image26-s10",
+    "prompt": "依据输入照片和红色圈选标注，只把圈内陶瓷花瓶的釉色改成钴蓝色。保留花瓶的形状、反光、阴影和插花，不改变桌面、墙面及其他物件。最终成图移除红圈和所有标注，维持自然摄影质感。",
+    "references": [
+      {
+        "slotId": "reference",
+        "path": "output/imagegen/gpt-image-26-2026-11/B01.png"
+      },
+      {
+        "slotId": "markup",
+        "path": "output/imagegen/gpt-image-26-2026-11/B01-overlay.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "63cdaffd924d117e5d99f1ab01547b77a8282c949dff2cb8292dd9c6d9b41771",
+  "references": [
+    {
+      "path": "output/imagegen/gpt-image-26-2026-11/B01.png",
+      "sha256": "deb6f191821e2b72b1295c53191a54a0fadad506360a1289d44c413d9b421917",
+      "slotId": "reference"
+    },
+    {
+      "path": "output/imagegen/gpt-image-26-2026-11/B01-overlay.png",
+      "sha256": "f34754c1f3ec9563587792b14e41faf80513657b40b03f0a990d5d7f65baf576",
+      "slotId": "markup"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T07:08:06.204Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s10-v1/output-25dbee10ed121f1076da8ec1c33bf27188ff458d9440951bc0d20eef8b9e04ce.png",
+      "sha256": "25dbee10ed121f1076da8ec1c33bf27188ff458d9440951bc0d20eef8b9e04ce"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:09:24.852Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Vase changed from cream to cobalt blue, red markup removed. Jug, dried stems, tiles and window remain visually consistent; new glaze is glossier.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:09:24.857Z"
+  },
+  "contentIds": {
+    "prompt": "p_218",
+    "template": null,
+    "example": "x_282",
+    "media": [
+      "a_372",
+      "a_373",
+      "a_374"
+    ]
+  }
+}

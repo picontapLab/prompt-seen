@@ -5,6 +5,9 @@ import { afterEach, describe, expect, it } from 'vitest';
 import type { LocaleEntry, ResolvedConfig } from '../../../src/config/schema';
 import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/types';
 import { createUrlModule } from '../../../src/modules/url/create';
+import { toCard } from '../../../src/modules/feed/compose';
+import { searchDocuments } from '../../../src/modules/search/documents';
+import { createIndex, loadEngine, search } from '../../../src/modules/search/engine';
 import { aspectRatioLabel, openingOf } from './build-index';
 import type { Finding } from './findings';
 import { loadContent } from './load';
@@ -168,6 +171,38 @@ function load(root: string, mode: 'production' | 'preview' = 'production') {
 const blocking = (list: Finding[]) => list.filter((f) => f.level === 'error' || f.level === 'publish');
 const detail = <T,>(r: ReturnType<typeof load>, kind: string, locale: string, key: string) =>
   r.built!.details.find((d) => d.kind === kind && d.locale === locale && d.key === key)?.model as T | undefined;
+
+it.each(['output', 'reference'])('derives GIF case badges from %s assets through content, feed and search', (role) => {
+  const root = setup({
+    'content/media/a_002.yaml': media('a_002')
+      .replace('image/jpeg', 'image/gif').replace('x-original-aaa.jpg', 'x-original-aaa.gif') +
+      '\nanimation: { frameCount: 2, durationMs: 360, loopCount: 0 }\n',
+  });
+  fs.writeFileSync(path.join(root, 'public/media/a_002/x-original-aaa.gif'), 'fixture');
+  const runFile = path.join(root, 'content/examples/x_001/run.yaml');
+  fs.writeFileSync(runFile, fs.readFileSync(runFile, 'utf8').replace('outputAssetIds: [a_001]',
+    role === 'output' ? 'outputAssetIds: [a_001, a_002]' : 'outputAssetIds: [a_001]\nreferenceAssetIds: [a_002]'));
+  const result = load(root);
+  expect(blocking(result.findings.list)).toEqual([]);
+  const index = result.built!.locales.get('en')!;
+  const prompt = index.prompts.find((p) => p.id === 'p_001')!;
+  expect(prompt.cover.mimeType).toBe('image/jpeg');
+  expect(prompt.hasGifOutput).toBe(role === 'output');
+  expect(index.templates[0]!.hasGifOutput).toBe(role === 'output');
+  expect(toCard(prompt, aspectRatioLabel).hasGifOutput).toBe(role === 'output');
+  const gifCard = toCard(index.prompts.find((p) => p.id === 'p_002')!, aspectRatioLabel);
+  expect(gifCard.cover).toMatchObject({ mimeType: 'image/gif', animation: { frameCount: 2 } });
+  const documents = searchDocuments({
+    index,
+    prompt: (id) => detail<PromptDetail>(result, 'prompt', 'en', id) ?? null,
+    template: (id) => detail<TemplateDetail>(result, 'template', 'en', id) ?? null,
+    pages: { collections: true, topics: true },
+  });
+  const engine = loadEngine({ buildId: 'gif-test', locale: 'en', counts: { prompt: 3, template: 1, collection: 1, topic: 1 }, popular: [], terms: [], index: JSON.parse(JSON.stringify(createIndex(documents, 'en'))) });
+  const hits = search(engine, 'GIF').groups.flatMap((group) => group.hits);
+  expect(hits.some((hit) => hit.id === 'prompt:p_001' && hit.hasGifOutput)).toBe(role === 'output');
+  expect(hits.find((hit) => hit.id === 'prompt:p_002')?.thumb?.mimeType).toBe('image/gif');
+});
 
 describe('a valid content tree', () => {
   it('validates and builds a production index', () => {

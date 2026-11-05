@@ -15,7 +15,9 @@ export type DocumentSources = {
 
 const thumbOf = (image: ImageRef | null): SearchThumb | null => {
   const v = image?.variants.thumbnail ?? image?.variants.card;
-  return image && v ? { key: v.key, width: v.width, height: v.height, placeholder: image.placeholder } : null;
+  return image && v
+    ? { key: v.key, width: v.width, height: v.height, placeholder: image.placeholder, mimeType: image.mimeType }
+    : null;
 };
 
 /** Every word that finds a term: its label, its aliases and its labels in other languages. */
@@ -41,13 +43,14 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
     docs.push({
       id: `prompt:${p.id}`,
       kind: 'prompt',
+      hasGifOutput: p.hasGifOutput,
       title: p.title,
       description: p.description,
       path: p.path,
       frame: p.frameNumber,
       thumb: thumbOf(p.cover),
       tags,
-      terms: words,
+      terms: [words, p.hasGifOutput || p.cover.mimeType === 'image/gif' ? 'GIF' : ''].join(' \n'),
       model: [p.model.displayName, p.model.providerModelId].filter(Boolean).join(' \n'),
       body: detail?.prompt.text ?? p.promptOpening,
     });
@@ -63,13 +66,18 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
     docs.push({
       id: `template:${t.id}`,
       kind: 'template',
+      hasGifOutput: t.hasGifOutput,
       title: t.title,
       description: t.description,
       path: t.path,
       frame: null,
       thumb: thumbOf(t.cover),
       tags,
-      terms: [words, ...(detail?.version.fields.map((f) => f.label) ?? [])].join(' \n'),
+      terms: [
+        words,
+        t.hasGifOutput || t.cover?.mimeType === 'image/gif' ? 'GIF' : '',
+        ...(detail?.version.fields.map((f) => f.label) ?? []),
+      ].join(' \n'),
       model: '',
       body: detail?.version.body.replace(/\{\{\s*\w+\s*\}\}/g, ' ') ?? t.bodyExcerpt,
     });

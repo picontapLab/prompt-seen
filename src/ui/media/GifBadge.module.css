@@ -1,0 +1,24 @@
+@layer components {
+  .badge {
+    display: inline-block;
+    flex: none;
+    padding-inline: var(--space-4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-image);
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-xs);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .badge[data-overlay] {
+    position: absolute;
+    inset-block-end: var(--space-8);
+    inset-inline-start: var(--space-8);
+    z-index: 1;
+    pointer-events: none;
+  }
+}

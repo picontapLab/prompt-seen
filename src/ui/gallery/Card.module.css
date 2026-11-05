@@ -57,6 +57,36 @@
     border-radius: inherit;
   }
 
+  .badges {
+    position: absolute;
+    inset-block-end: var(--space-8);
+    inset-inline: var(--space-8);
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: var(--space-8);
+    pointer-events: none;
+  }
+  .modelBadge {
+    display: none;
+    margin-inline-start: auto;
+    max-inline-size: 100%;
+    padding: var(--space-4) var(--space-8);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-image);
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+    overflow-wrap: anywhere;
+  }
+  .card:has(:focus-visible) .modelBadge {
+    display: block;
+    opacity: 1;
+  }
+
   .label {
     display: flex;
     align-items: baseline;
@@ -104,6 +134,15 @@
      and the facts give way to the prompt's opening. The image is never dimmed or scaled. Touch
      screens skip all of this; the opening is on the detail page. */
   @media (hover: hover) and (pointer: fine) {
+    .modelBadge {
+      display: block;
+      opacity: 0;
+      transition: opacity var(--duration-feedback) var(--ease-enter);
+    }
+    .card:hover .modelBadge,
+    .card:focus-within .modelBadge {
+      opacity: 1;
+    }
     .link:hover {
       translate: 0 calc(-1 * var(--distance-hover));
     }
@@ -118,6 +157,9 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
+    .modelBadge {
+      transition: none;
+    }
     .link,
     .link:hover {
       transition: none;

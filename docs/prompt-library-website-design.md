@@ -1133,7 +1133,9 @@ flowchart LR
 
 上述尺寸是初始配置。保持原始比例，不放大低分辨率来源；按实际设备和质量测试调整。根据需要生成 WebP、AVIF 和兼容回退格式，通过 `srcset` 与 `sizes` 选择适合的规格。
 
-实施细节（1.9）：`thumbnail`、`card`、`detail` 输出 WebP，`og` 输出 JPEG，均不放大；`og` 是按焦点裁切的 1200:630 区域，原图不足时按裁切区域的实际尺寸输出。导入接受 JPEG、PNG、WebP 与 AVIF，拒绝动图与过小图片。工具同时给出主色与建议焦点（libvips 的 attention 策略），维护者可在 YAML 中修改后用 `media:import --refresh` 重新生成。
+实施细节（1.9，GIF 支持修订）：`thumbnail`、`card`、`detail` 输出 WebP，`og` 输出 JPEG，均不放大；`og` 是按焦点裁切的 1200:630 区域，原图不足时按裁切区域的实际尺寸输出。导入接受 JPEG、PNG、WebP、AVIF 与 GIF；仅 GIF 输入允许多帧，仍拒绝过小图片。GIF 原文件原样保留，三个展示规格生成保留透明度、帧延时与循环次数的动画 WebP，OG 使用首帧静态图。宽高始终指单帧尺寸。工具同时给出主色与建议焦点（libvips 的 attention 策略），维护者可在 YAML 中修改后用 `media:import --refresh` 重新生成。
+
+GIF 在列表、搜索、收藏、详情和案例中自动播放，无播放或暂停操作，沿用原文件的循环次数和原生懒加载。媒体记录增加可选 `animation: { frameCount, durationMs, loopCount }` 和 `byteSize`；旧静态资产兼容。导入上限为 50 MiB、500 帧、总解码像素 1 亿。展示保留原始 MIME 信息，GIF 资产显示 `GIF`；静态封面但案例输出包含 GIF 时显示“含 GIF 案例”，参考图不参与该标记。详情与首屏展示中的动画不叠加静态区域框或显影预览。文生 GIF、图生 GIF 沿用 `ExampleRun`，分别记录实际 Prompt、参考图、输出资产及模型信息。
 
 各规格的编码质量与 WebP 无损开关读取第 5.4 节的可选 `processing` 配置；导入和 refresh 共用同一渲染函数，refresh 保留配置并验证母图哈希，再生成新的不可变对象键。
 

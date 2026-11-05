@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import type { SearchHit } from '@/modules/search/types';
 import { mediaUrl } from '@/modules/url';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
+import { GifBadge } from '@/ui/media/GifBadge';
 import { Highlight } from './Highlight';
 import styles from './Search.module.css';
 
@@ -36,7 +37,8 @@ export function ResultRow({ hit, locale, description }: { hit: SearchHit; locale
       </span>
       <span className={styles.text}>
         <span className={styles.title}>
-          <Highlight text={hit.title} locale={locale} terms={hit.matched} />
+          <Highlight text={hit.title} locale={locale} terms={hit.matched} />{' '}
+          <GifBadge image={thumb} hasGifOutput={hit.hasGifOutput} />
         </span>
         {description && hit.description && (
           <span className={styles.description}>

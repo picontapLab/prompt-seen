@@ -1,0 +1,79 @@
+{
+  "candidateId": "image26-s11",
+  "slug": "image26-s11-pixel-art-motorcycle-rider",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "editorial"
+  ],
+  "body": "参考输入图的像素颗粒、有限色板、硬边轮廓和阴影方式，创作一位戴头盔的成年骑手驾驶复古摩托车的侧面全身图。主体完整居中，车轮均可见，白色背景，保持像素风，不照搬参考图人物和车辆，不加入文字、商标或渐变光效。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated reference assets in the displayed order. Do not use the official or social source images.",
+      "zh-Hans": "按展示顺序使用原创生成底图；不使用官方或社交作者原图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original synthetic reference",
+          "zh-Hans": "原创生成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-s11",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方指南",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style",
+      "publishedAt": null,
+      "metricObjectUrl": "https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style",
+      "sourcePromptStatus": {
+        "en": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+        "zh-Hans": "来源公开原提示词；本次使用单独记录的制作提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Pixel-art motorcycle rider",
+      "description": "Side-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing",
+      "body": "## How to use\n\nUse the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nSide-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing. More detailed pixels than the source; both wheels visible.\n\n## Source and generation\n\nThe source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "像素风摩托骑士",
+      "description": "摩托骑士沿用原创参考图的配色和块状轮廓，同时更换车辆与服装",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n摩托骑士沿用原创参考图的配色和块状轮廓，同时更换车辆与服装。双轮完整可见，像素细节比参考图更密。\n\n## 来源与生成\n\n来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#transfer-a-visual-style)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "Side-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing.",
+    "zh-Hans": "摩托骑士沿用原创参考图的配色和块状轮廓，同时更换车辆与服装。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:51:01.687Z",
+    "contentHash": "d0102278ebd5ee49e7c3d866a45dfb48fd7839d02cc0123499c9ebbd76287c15"
+  }
+}

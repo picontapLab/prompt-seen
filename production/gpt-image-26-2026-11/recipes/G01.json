@@ -1,0 +1,79 @@
+{
+  "candidateId": "image26-g01",
+  "slug": "image26-g01-monkey-raising-a-lantern",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "制作一张供后期裁帧合成 GIF 的动画精灵图，PNG 静态画布，宽 1536 高 1024 像素，精确三列两行，共六个等大的 512×512 正方形帧。每格是独立完整画面，按从左到右、从上到下依次播放。无外边距、无格线、无分隔条、无编号。角色不要跨越格子边界。所有格子中角色尺寸、脚下基线、镜头、背景与光照必须固定一致，只有动作姿态逐步变化。请把以下动画描述转成六个清晰不同的连续姿态；最后一格回到第一格姿态，以便循环。本次交付的是完整六格精灵图，不要只画一个姿势。使用输入小猴子图片保持角色、衣服、灯笼和环境一致。\n\n动作与主题：\n生成一段正方形无缝循环 GIF：一只穿绿色冬装的小猴子站在雪林里，身后远处有亮着暖灯的小木屋。它双手托着纸灯笼，缓慢举到脸旁，眨眼看向灯光，再把灯笼放回胸前。身体位置和镜头固定，灯笼始终握在手中，最后一帧回到起始姿势。动作简洁清晰，避免大幅飘雪和镜头移动。",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the independently generated monkey reference.",
+      "zh-Hans": "使用本次原创生成的小猴子参考图。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Original monkey reference",
+          "zh-Hans": "原创小猴子参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "image26-g01",
+      "platform": "OpenAI",
+      "author": "OpenAI 官方指南",
+      "url": "https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif",
+      "publishedAt": null,
+      "metricObjectUrl": "https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+        "zh-Hans": "原始来源帖，非本次新生成成品；同帖多个任务共用指标。"
+      },
+      "observedAt": "2026-11-04",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Prior research: direct page and visual review. Counts have not been refreshed.",
+        "zh-Hans": "此前调研的原站页面及视觉核对，未刷新互动数。"
+      },
+      "evidenceUrl": "https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif",
+      "sourcePromptStatus": {
+        "en": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+        "zh-Hans": "来源公开原提示词；本次使用单独记录的制作提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Monkey raising a lantern",
+      "description": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking",
+      "body": "## How to use\n\nUse the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.\n\n## Observed result\n\nSix distinct generated poses show the monkey raising and lowering the lantern and blinking. Cropped row-major into a 512px GIF, 300ms per frame, infinite loop; slight background drift between poses. This is a composed GIF, not native GIF output.\n\n## GIF assembly\n\nThe model generated a 3-column by 2-row PNG sprite sheet. Crop equal cells in row-major order and encode six frames at 300 ms per frame with infinite looping. The resulting GIF is 512 × 512 pixels and 1.8 seconds per cycle. No interpolation was added. This is a composed animation, not a native GIF returned by the model.\n\n## Source and generation\n\nThe source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif). Source-post engagement does not measure this newly generated example.\n\nProduced with the built-in GPT Image tool. The tool did not return an exact provider model ID; GPT Image 2.6 is the research topic, not a verified version claim for this output. All reference images used here were generated for this project."
+    },
+    "zh-Hans": {
+      "title": "雪林小猴子举灯",
+      "description": "小猴子在六帧中举起、放下灯笼并眨眼",
+      "body": "## 使用方法\n\n使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。\n\n## 观察结果\n\n小猴子在六帧中举起、放下灯笼并眨眼。衣服与灯笼保持一致，背景存在轻微位移。\n\n## GIF 合成\n\n模型生成三列两行 PNG 精灵图，随后按从左到右、从上到下顺序裁出六帧，每帧 300 毫秒，设为无限循环。成品为 512×512 像素，每轮 1.8 秒；未增加补间帧。这是多步合成动画，不是模型直接返回的原生 GIF。\n\n## 来源与生成\n\n来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif)。来源帖互动数不代表本次新生成案例的热度。\n\n本例使用内置 GPT Image 工具生成。工具未返回精确模型 ID；GPT Image 2.6 是调研主题，不作为本次输出的已验证版本声明。使用的参考图均为本项目新生成。"
+    }
+  },
+  "alt": {
+    "en": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking.",
+    "zh-Hans": "小猴子在六帧中举起、放下灯笼并眨眼。"
+  },
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "editorialReview": {
+    "reviewer": "Codex: inspected generated media and bilingual copy",
+    "reviewedAt": "2026-11-05T07:51:16.173Z",
+    "contentHash": "93ed3d520b81d5e89f6be2a934186e79bd2af8a171cf5285582a7c5ba9185012"
+  }
+}

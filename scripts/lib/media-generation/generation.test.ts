@@ -10,6 +10,7 @@ import { claimNext, migrationStatus, readAttempt, recordResult, reviewJob } from
 import { paths } from './files';
 import { prepareJob } from './prepare';
 import { buildStagedContent } from './content';
+import { animatedGif } from '../../../tests/support/gif';
 
 const roots: string[] = [];
 function workspace() {
@@ -159,70 +160,81 @@ describe('generation manifest', () => {
   });
 });
 
-it('requires a separate hash-bound display review after preparing an accepted image', async () => {
-  const root = workspace();
-  const manifest = await planMigration(root);
-  const claim = await claimNext(root);
-  if (!claim.claimToken || !claim.jobId || !claim.attemptId) throw new Error('Expected a claim');
-  const sourcePath = path.join(root, 'source.png');
-  await sharp({ create: { width: 1792, height: 768, channels: 4, background: '#667788' } })
-    .png()
-    .toFile(sourcePath);
-  await recordResult(root, claim.jobId, claim.attemptId, claim.claimToken, { outcome: 'success', sourcePath });
-  // Simulate loss of the projected-state write after the completed receipt was persisted.
-  const statePath = path.join(root, 'migrations/gpt-image-v1/jobs', claim.jobId, 'state.json');
-  const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
-  fs.writeFileSync(statePath, JSON.stringify({ ...state, status: 'running' }));
-  expect(
-    (await recordResult(root, claim.jobId, claim.attemptId, claim.claimToken, { outcome: 'success', sourcePath }))
-      .status,
-  ).toBe('generated');
-  const raw = readAttempt(
-    paths(root),
-    manifest.jobs.find((j) => j.id === claim.jobId)!,
-    claim.attemptId,
-  ).raw!;
-  await reviewJob(root, claim.jobId, {
-    phase: 'generation',
-    reviewer: 'test reviewer',
-    attemptId: claim.attemptId,
-    decision: 'accept',
-    checks: { subject: true, count: true, text: true, style: true, composition: true, artifacts: true },
-    artifacts: { [raw.file]: raw.sha256 },
-  });
-  const processed = await prepareJob(root, claim.jobId);
-  expect(processed.status).toBe('processed');
-  expect(processed.artifacts).toHaveLength(5);
-  await expect(
-    reviewJob(root, claim.jobId, {
+it.each(['png', 'gif'])(
+  'requires a separate hash-bound display review after preparing an accepted %s',
+  async (format) => {
+    const root = workspace();
+    const manifest = await planMigration(root);
+    const claim = await claimNext(root);
+    if (!claim.claimToken || !claim.jobId || !claim.attemptId) throw new Error('Expected a claim');
+    const sourcePath = path.join(root, `source.${format}`);
+    if (format === 'gif') fs.writeFileSync(sourcePath, await animatedGif(1792, 768));
+    else
+      await sharp({ create: { width: 1792, height: 768, channels: 4, background: '#667788' } })
+        .png()
+        .toFile(sourcePath);
+    await recordResult(root, claim.jobId, claim.attemptId, claim.claimToken, { outcome: 'success', sourcePath });
+    // Simulate loss of the projected-state write after the completed receipt was persisted.
+    const statePath = path.join(root, 'migrations/gpt-image-v1/jobs', claim.jobId, 'state.json');
+    const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    fs.writeFileSync(statePath, JSON.stringify({ ...state, status: 'running' }));
+    expect(
+      (await recordResult(root, claim.jobId, claim.attemptId, claim.claimToken, { outcome: 'success', sourcePath }))
+        .status,
+    ).toBe('generated');
+    const raw = readAttempt(
+      paths(root),
+      manifest.jobs.find((j) => j.id === claim.jobId)!,
+      claim.attemptId,
+    ).raw!;
+    await reviewJob(root, claim.jobId, {
+      phase: 'generation',
+      reviewer: 'test reviewer',
+      attemptId: claim.attemptId,
+      decision: 'accept',
+      checks: { subject: true, count: true, text: true, style: true, composition: true, artifacts: true },
+      artifacts: { [raw.file]: raw.sha256 },
+    });
+    const processed = await prepareJob(root, claim.jobId);
+    expect(processed.status).toBe('processed');
+    expect(processed.artifacts).toHaveLength(5);
+    if (format === 'gif') {
+      const original = processed.artifacts.find((a) => a.format === 'gif')!;
+      expect(fs.readFileSync(path.join(root, original.file))).toEqual(fs.readFileSync(sourcePath));
+      const display = processed.artifacts.find((a) => a.file.includes('-detail-'))!;
+      expect((await sharp(path.join(root, display.file)).metadata()).pages).toBe(2);
+    }
+    await expect(
+      reviewJob(root, claim.jobId, {
+        phase: 'display',
+        reviewer: 'test reviewer',
+        attemptId: claim.attemptId,
+        decision: 'accept',
+        checks: { card: true, detail: true, mobile: true, alt: true, annotations: true, focus: true },
+        contentHash: processed.contentHash!,
+        artifacts: {},
+      }),
+    ).rejects.toThrow(/hash mismatch/);
+    expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('processed');
+    await reviewJob(root, claim.jobId, {
       phase: 'display',
       reviewer: 'test reviewer',
       attemptId: claim.attemptId,
       decision: 'accept',
       checks: { card: true, detail: true, mobile: true, alt: true, annotations: true, focus: true },
       contentHash: processed.contentHash!,
-      artifacts: {},
-    }),
-  ).rejects.toThrow(/hash mismatch/);
-  expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('processed');
-  await reviewJob(root, claim.jobId, {
-    phase: 'display',
-    reviewer: 'test reviewer',
-    attemptId: claim.attemptId,
-    decision: 'accept',
-    checks: { card: true, detail: true, mobile: true, alt: true, annotations: true, focus: true },
-    contentHash: processed.contentHash!,
-    artifacts: Object.fromEntries(processed.artifacts.map((a) => [a.file, a.sha256])),
-  });
-  expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('prepared');
-  expect(fs.existsSync(path.join(root, 'content/media/a_119.yaml'))).toBe(false);
-  fs.appendFileSync(path.join(root, 'content/prompts/p_002/prompt.txt'), '\nKeep all shapes distinct.\n');
-  await rebaseMigration(root);
-  expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('prepared');
-  const preparedContent = path.join(root, '.artifacts/gpt-image-v1/jobs/a_018/content.json');
-  fs.appendFileSync(preparedContent, '\n');
-  await expect(verifyAssets(root, 'gpt-image-v1', 'prepared')).rejects.toThrow(/content.*changed/i);
-});
+      artifacts: Object.fromEntries(processed.artifacts.map((a) => [a.file, a.sha256])),
+    });
+    expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('prepared');
+    expect(fs.existsSync(path.join(root, 'content/media/a_119.yaml'))).toBe(false);
+    fs.appendFileSync(path.join(root, 'content/prompts/p_002/prompt.txt'), '\nKeep all shapes distinct.\n');
+    await rebaseMigration(root);
+    expect(migrationStatus(root).jobs.find((j) => j.id === claim.jobId)?.state.status).toBe('prepared');
+    const preparedContent = path.join(root, '.artifacts/gpt-image-v1/jobs/a_018/content.json');
+    fs.appendFileSync(preparedContent, '\n');
+    await expect(verifyAssets(root, 'gpt-image-v1', 'prepared')).rejects.toThrow(/content.*changed/i);
+  },
+);
 
 describe('generation queue', () => {
   it('persists a claim across restarts and never retries an unknown result automatically', async () => {

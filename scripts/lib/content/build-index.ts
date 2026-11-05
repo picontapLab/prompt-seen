@@ -266,6 +266,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     const original: ImageVariant = { key: m.original.key, width: m.width, height: m.height, mimeType: m.mimeType };
     return {
       assetId,
+      mimeType: m.mimeType,
+      ...(m.animation ? { animation: m.animation } : {}),
       width: m.width,
       height: m.height,
       ratio,
@@ -362,6 +364,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
       frameNumber: frameNumber(r.data.id),
       cover: imageRef(r.data.coverAssetId!, code, false),
+      hasGifOutput: runsOfPrompt(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       categoryId: r.data.categoryId,
       styleIds: r.data.styleIds,
       useCaseIds: r.data.useCaseIds,
@@ -398,6 +401,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       createdAt: r.data.createdAt,
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
       cover: cover && content.media.has(cover) ? imageRef(cover, code, false) : null,
+      hasGifOutput: runsOfTemplate(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       currentVersion: r.data.currentVersion,
       fieldCount: version.fields.length,
       promptLanguage: r.data.promptLanguage,

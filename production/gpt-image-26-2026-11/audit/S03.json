@@ -1,0 +1,37 @@
+{
+  "caseId": "S03",
+  "definition": {
+    "key": "image26-s03-v1",
+    "candidateId": "image26-s03",
+    "prompt": "设计一个虚构街头服装品牌的竖版广告。三位成年朋友站在城市天桥上，穿米白、炭灰和橄榄绿的宽松服装，自然互动，清晨侧光，摄影感。顶部准确显示“THREAD”，中间留出清晰的产品轮廓，底部准确显示“MOVE YOUR WAY”。只出现这两组文字，字号清晰，避免文字遮住人脸。",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "b138fdcd31e73333ec9cf67eb88a9f76630d10c7f0847a642f5bf935db51e57b",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-05T06:58:05.909Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-2026-11/jobs/image26-s03-v1/output-ea8f2397fef55aa2a33a505734686ec3b025620cf010cf5e7a68e82571658755.png",
+      "sha256": "ea8f2397fef55aa2a33a505734686ec3b025620cf010cf5e7a68e82571658755"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-05T07:01:20.793Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Three adults on an urban footbridge, cream charcoal and olive outfits. THREAD and MOVE YOUR WAY are spelled correctly and do not cover faces.",
+    "reviewer": "Codex visual review",
+    "reviewedAt": "2026-11-05T07:01:20.799Z"
+  },
+  "contentIds": {
+    "prompt": "p_211",
+    "template": null,
+    "example": "x_275",
+    "media": [
+      "a_365"
+    ]
+  }
+}

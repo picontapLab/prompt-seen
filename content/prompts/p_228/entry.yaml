@@ -1,0 +1,68 @@
+id: p_228
+slug: image26-g05-blue-haired-character-eating-rice
+createdAt: 2026-11-04
+updatedAt: 2026-11-04
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_387
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Use the independently generated reference assets in the displayed order. Do not use the official or social source images.
+    zh-Hans: 按展示顺序使用原创生成底图；不使用官方或社交作者原图。
+  slots:
+    - id: reference
+      labels:
+        en: Original synthetic reference
+        zh-Hans: 原创生成参考图
+      min: 1
+      max: 1
+showcaseExampleId: x_292
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: image26-g05
+    platform: X
+    author: Gorden Sun
+    url: https://x.com/Gorden_Sun/status/2118166046175908016
+    publishedAt: null
+    metricObjectUrl: https://x.com/Gorden_Sun/status/2118166046175908016
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original source post; not this new generated output. Multiple cases from one post share the metrics.
+      zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
+    observedAt: 2026-11-04
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: "Prior research: direct page and visual review. Counts have not been refreshed."
+      zh-Hans: 此前调研的原站页面及视觉核对，未刷新互动数。
+    evidenceUrl: https://x.com/Gorden_Sun/status/2118166046175908016
+    sourcePromptStatus:
+      en: The source provides an original prompt; this production uses the separately recorded working prompt.
+      zh-Hans: 来源公开原提示词；本次使用单独记录的制作提示词。
+    metrics:
+      - key: likes
+        value: 14
+        labels:
+          en: Likes
+          zh-Hans: 点赞
+      - key: reposts
+        value: 1
+        labels:
+          en: Reposts
+          zh-Hans: 转发
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
