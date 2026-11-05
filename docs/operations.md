@@ -14,7 +14,7 @@ move to object storage (Cloudflare R2) behind a CDN address.
 browser ── xxx.com/prompt-seen/… ──▶ host site (nginx or a Cloudflare Worker)
                                        │  forwards the path unchanged, drops X-Robots-Tag
                                        ▼
-                                     prompt-seen.pages.dev/prompt-seen/…   (Cloudflare Pages)
+                                     YOUR_ACTUAL_PAGES_SUBDOMAIN.pages.dev/prompt-seen/…   (Cloudflare Pages)
 browser ── media.xxx.com/media/… ──▶ R2 bucket (optional; media.baseUrl)
 ```
 
@@ -24,7 +24,7 @@ These steps need accounts and credentials. Nothing in the repository creates the
 
 1. **Cloudflare Pages project.** `npx wrangler pages project create prompt-seen --production-branch main`
    (or in the dashboard, as a Direct Upload project). The production address becomes
-   `prompt-seen.pages.dev`.
+   `YOUR_ACTUAL_PAGES_SUBDOMAIN.pages.dev`.
 2. **API token.** A Cloudflare API token with _Account › Cloudflare Pages › Edit_. Add the
    repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. From then on, CI also
    uploads every PR's `/prompt-seen` preview build (noindex).

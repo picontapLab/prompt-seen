@@ -1,7 +1,7 @@
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
-import { builtLocales, config, type LocaleEntry } from '@/config';
+import { builtLocales, config, hostSite, type LocaleEntry } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
 import { paths } from '@/modules/url';
 import { Wordmark } from '@/ui/brand/Wordmark';
@@ -112,6 +112,13 @@ export async function Shell({
             <div className={styles.footerBrand}>
               <Wordmark siteName={config.siteName} size="sm" />
               <p>{t('footer.tagline')}</p>
+              {hostSite && (
+                <p>
+                  <a href={`${hostSite.origin}${locale.code === 'zh-Hans' ? '/zh' : '/'}`}>
+                    {locale.code === 'zh-Hans' ? 'PicOnTap 的提示词库' : 'A prompt library by PicOnTap'}
+                  </a>
+                </p>
+              )}
             </div>
           )}
           <nav aria-labelledby="footer-languages" className={styles.footerBlock}>

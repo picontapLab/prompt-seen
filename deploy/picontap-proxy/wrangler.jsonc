@@ -1,0 +1,37 @@
+{
+  "name": "prompt-seen-proxy",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-05",
+  "observability": { "enabled": true },
+  "env": {
+    "preview": {
+      "name": "prompt-seen-proxy-preview",
+      "workers_dev": true,
+      "preview_urls": false,
+      "routes": [],
+      "vars": {
+        "DEPLOYMENT_MODE": "preview",
+        "CANONICAL_ORIGIN": "https://picontap.com",
+        "BASE_PATH": "/prompt-seen",
+        "PAGES_ORIGIN": "https://picontap-prompt-seen.pages.dev",
+        "PREVIEW_HOSTNAME": "prompt-seen-proxy-preview.lvxingwriter.workers.dev",
+        "PAGES_304_WITHOUT_MARKER": "false",
+        "FORCE_NOINDEX": "false",
+      },
+    },
+    "production": {
+      "name": "prompt-seen-proxy-production",
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [{ "pattern": "picontap.com/prompt-seen/*", "zone_name": "picontap.com" }],
+      "vars": {
+        "DEPLOYMENT_MODE": "production",
+        "CANONICAL_ORIGIN": "https://picontap.com",
+        "BASE_PATH": "/prompt-seen",
+        "PAGES_ORIGIN": "https://picontap-prompt-seen.pages.dev",
+        "PAGES_304_WITHOUT_MARKER": "false",
+        "FORCE_NOINDEX": "false",
+      },
+    },
+  },
+}

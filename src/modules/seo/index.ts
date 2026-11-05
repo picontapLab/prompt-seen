@@ -1,7 +1,7 @@
 import 'server-only';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { builtLocales, config, type LocaleEntry } from '@/config';
+import { builtLocales, config, hostSite, type LocaleEntry } from '@/config';
 import type { Alternate, ImageRef, PromptDetail, TemplateDetail } from '@/modules/content/types';
 import { absoluteImageUrl } from '@/modules/media';
 import { absoluteUrl, paths } from '@/modules/url';
@@ -78,6 +78,7 @@ const ld: LdContext = {
   absoluteImageUrl,
   entryPath: paths.languageEntry(),
   logoPath: paths.siteIcon(),
+  publisherId: hostSite?.publisherId,
 };
 
 async function documentTitle(locale: LocaleEntry, title: string, kind: 'prompt' | 'template') {

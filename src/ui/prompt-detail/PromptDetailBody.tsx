@@ -1,7 +1,7 @@
-import { SlidersHorizontal } from 'lucide-react';
+import { ArrowUpRight, SlidersHorizontal } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
-import type { LocaleEntry } from '@/config';
+import { hostSite, type LocaleEntry } from '@/config';
 import type { PromptDetail } from '@/modules/content/types';
 import { absoluteUrl, paths } from '@/modules/url';
 import { AnnotatedText } from '@/ui/annotation/AnnotatedText';
@@ -152,6 +152,17 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
                 labels={{ share: t('share.label'), copied: t('share.copied'), failed: t('share.failed') }}
               />
             </div>
+
+            {hostSite && (
+              <p>
+                <a href={`${hostSite.origin}${locale.code === 'zh-Hans' ? '/zh' : '/'}`} className={styles.external}>
+                  {locale.code === 'zh-Hans'
+                    ? '复制提示词后，在 PicOnTap 中创作'
+                    : 'Copy the prompt, then create in PicOnTap'}
+                  <ArrowUpRight aria-hidden="true" />
+                </a>
+              </p>
+            )}
 
             <AnnotationNotes heading={t('annotations.heading')} promptLanguage={detail.prompt.language} />
 

@@ -67,6 +67,9 @@ jobs:
           - name: subpath
             base_path: /prompt-seen
             build_mode: preview
+          - name: subpath-production
+            base_path: /prompt-seen
+            build_mode: production
     name: build-and-test (${{ matrix.name }})
     env:
       BASE_PATH: ${{ matrix.base_path }}
@@ -137,6 +140,7 @@ jobs:
         id: deploy
         uses: cloudflare/wrangler-action@v4
         with:
+          wranglerVersion: 4.130.0
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy .deploy/cloudflare --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'prompt-seen' }} --branch=${{ github.head_ref }} --commit-hash=${{ github.event.pull_request.head.sha }}

@@ -5,9 +5,23 @@ origin: https://example.com # canonical host; placeholder until step 5
 basePath: /prompt-seen # empty string for a root deployment
 urlPattern: '{basePath}/{locale}/{path}' # or "/{locale}{basePath}/{path}" when the host prefixes languages
 
+host:
+  origin: https://picontap.com
+  name: PicOnTap
+  publisherId: https://picontap.com/#organization
+  modelPages:
+    GPT Image 2.5:
+      en: https://picontap.com/models/gpt-image-2-5
+      zh-Hans: https://picontap.com/zh/models/gpt-image-2-5
+
+# Public Web Analytics site identifier, already configured for picontap.com.
+analytics:
+  provider: cloudflare
+  token: dcd58318f5c74357907bb73747649618
+
 robots:
   mode: snippet # standalone: emit robots.txt; snippet: emit robots-snippet.txt for the host
-  aiTraining: disallow # training crawlers (§9.10.2); placeholder until decided
+  aiTraining: allow # PicOnTap preserves its existing public crawler permissions
 
 shell:
   header: default # default | host

@@ -1,5 +1,6 @@
-import { CircleCheck, CircleDashed } from 'lucide-react';
-import { useFormatter, useTranslations } from 'next-intl';
+import { ArrowUpRight, CircleCheck, CircleDashed } from 'lucide-react';
+import { useFormatter, useLocale, useTranslations } from 'next-intl';
+import { hostSite } from '@/config';
 import type { PromptDetail } from '@/modules/content/types';
 import { GifBadge } from '@/ui/media/GifBadge';
 import styles from './Detail.module.css';
@@ -20,6 +21,8 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
   const format = useFormatter();
   const { test, cover } = detail;
   const model = modelName(test.model);
+  const locale = useLocale();
+  const modelHref = hostSite && model ? hostSite.modelPages[model]?.[locale] : undefined;
   const verified = test.verification === 'verified' && model;
   const date = (d: string) => format.dateTime(isoDate(d), { dateStyle: 'medium' });
 
@@ -29,7 +32,14 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
       {verified ? (
         <span className={styles.badge} data-tone="verified">
           <CircleCheck aria-hidden="true" />
-          {t('verifiedWith', { model })}
+          {modelHref ? (
+            <a href={modelHref} className={styles.external}>
+              {t('verifiedWith', { model })}
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+          ) : (
+            t('verifiedWith', { model })
+          )}
         </span>
       ) : (
         <span className={styles.badge} data-tone="unverified">

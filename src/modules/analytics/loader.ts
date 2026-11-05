@@ -27,5 +27,5 @@ export function analyticsLoader(analytics: ResolvedConfig['analytics']): string 
     attributes = { src: CLOUDFLARE_BEACON, 'data-cf-beacon': JSON.stringify({ token: analytics.token, spa: true }) };
   else if (analytics.provider === 'plausible') attributes = { src: analytics.src, 'data-domain': analytics.domain };
   else return null;
-  return `(function(){var a=${JSON.stringify(attributes)};function add(){var s=document.createElement('script');s.defer=true;for(var k in a)s.setAttribute(k,a[k]);document.body.appendChild(s)}function idle(){'requestIdleCallback'in window?requestIdleCallback(add,{timeout:4000}):setTimeout(add,1500)}document.readyState==='complete'?idle():addEventListener('load',idle,{once:true})})();`;
+  return `(function(){var a=${JSON.stringify(attributes)};function add(){if(Array.from(document.scripts).some(function(s){return s.src===a.src}))return;var s=document.createElement('script');s.defer=true;for(var k in a)s.setAttribute(k,a[k]);document.body.appendChild(s)}function idle(){'requestIdleCallback'in window?requestIdleCallback(add,{timeout:4000}):setTimeout(add,1500)}document.readyState==='complete'?idle():addEventListener('load',idle,{once:true})})();`;
 }

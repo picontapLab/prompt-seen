@@ -13,6 +13,7 @@ export type BuildInfo = {
   siteName: string;
   buildMode: 'production' | 'preview';
   origin: string;
+  publisherId?: string | null;
   basePath: string;
   urlPattern: string;
   /** null: images are files of the build; else the CDN they are served from (§10.1). */

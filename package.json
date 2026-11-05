@@ -24,7 +24,7 @@
     "lint": "eslint --max-warnings=0 .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "vitest run",
+    "test": "vitest run && node --test deploy/picontap-proxy/worker.test.js",
     "test:e2e": "playwright test",
     "storybook": "npm run gen && storybook dev -p 6006",
     "storybook:build": "npm run gen && storybook build --quiet -o storybook-static",

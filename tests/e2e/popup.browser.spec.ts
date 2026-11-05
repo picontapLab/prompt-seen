@@ -472,7 +472,12 @@ test.describe('desktop', () => {
     const host = works.find((w) => detailOf(w.slug).relatedTemplates.length > 0);
     test.skip(!host, 'no prompt with a related template');
     const template = detailOf(host!.slug).relatedTemplates[0]!;
-    await gotoList(page);
+    const pageNumber = Array.from({ length: index.pageCount }, (_, i) => i + 1).find((n) =>
+      pagePromptIds(feedPage(code, n)).includes(host!.id),
+    );
+    expect(pageNumber).toBeDefined();
+    const galleryUrl = pageNumber === 1 ? listUrl : `${listUrl}page/${pageNumber}/`;
+    await gotoList(page, galleryUrl);
     const { doc } = await state(page);
     await card(page, host!.slug).click();
     await expectOpen(page, host!.slug);

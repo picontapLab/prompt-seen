@@ -25,6 +25,14 @@ const ctx: LdContext = {
 
 const zh = { code: 'zh-Hans', htmlLang: 'zh-Hans' };
 
+it('references the existing host publisher without duplicating its Organization', () => {
+  const host = { ...ctx, publisherId: 'https://picontap.com/#organization' };
+  expect(organization(host)).toBeNull();
+  expect(website({ path: '/zh-hans/', locale: zh }, host).publisher).toEqual({
+    '@id': 'https://picontap.com/#organization',
+  });
+});
+
 const credit = {
   creator: null,
   creditText: null,
@@ -271,7 +279,7 @@ describe('site nodes', () => {
       url: 'https://example.com/prompt-seen/',
       logo: 'https://example.com/prompt-seen/icon.svg',
     });
-    expect(organization({ ...ctx, sameAs: ['https://github.com/example/prompt-seen'] }).sameAs).toEqual([
+    expect(organization({ ...ctx, sameAs: ['https://github.com/example/prompt-seen'] })?.sameAs).toEqual([
       'https://github.com/example/prompt-seen',
     ]);
   });

@@ -5,13 +5,14 @@ import { analyticsLoader, analyticsOrigins } from './loader';
 // The analytics loader (design doc §9.10.6, §16.4): nothing without a provider; otherwise one
 // script element, added after load once the browser is idle.
 
-function run(source: string, readyState: 'loading' | 'complete') {
+function run(source: string, readyState: 'loading' | 'complete', scripts: { src: string }[] = []) {
   const added: Record<string, string>[] = [];
   const listeners: Record<string, () => void> = {};
   const idle: (() => void)[] = [];
   const context = {
     document: {
       readyState,
+      scripts,
       body: { appendChild: (el: { attrs: Record<string, string> }) => added.push(el.attrs) },
       createElement: () => {
         const attrs: Record<string, string> = {};
@@ -71,4 +72,12 @@ describe('analyticsLoader', () => {
       analyticsOrigins({ provider: 'plausible', domain: 'x', src: 'https://stats.example.org/js/script.js' }).script,
     ).toEqual(['https://stats.example.org']);
   });
+});
+
+it('does not duplicate a Cloudflare beacon already injected by the zone', () => {
+  const page = run(analyticsLoader({ provider: 'cloudflare', token: 'f'.repeat(32) })!, 'complete', [
+    { src: 'https://static.cloudflareinsights.com/beacon.min.js' },
+  ]);
+  page.idle[0]!();
+  expect(page.added).toEqual([]);
 });
