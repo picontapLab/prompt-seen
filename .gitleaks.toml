@@ -21,3 +21,10 @@ id = "generic-api-key"
   paths = ['''^production/applied/r35-default-retry2\.json$''']
   regexTarget = "match"
   regexes = ['''^key":\s*"r35-default-retry2"$''']
+
+  [[rules.allowlists]]
+  description = "PicOnTap public Cloudflare Web Analytics site identifier (embedded in HTML, not an API credential)"
+  condition = "AND"
+  paths = ['''^content/site\.yaml$''']
+  regexTarget = "match"
+  regexes = ['''^token:\s*dcd58318f5c74357907bb73747649618$''']

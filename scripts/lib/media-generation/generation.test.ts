@@ -234,6 +234,8 @@ it.each(['png', 'gif'])(
     fs.appendFileSync(preparedContent, '\n');
     await expect(verifyAssets(root, 'gpt-image-v1', 'prepared')).rejects.toThrow(/content.*changed/i);
   },
+  // Includes real multi-format image encoding and a filesystem migration on CI runners.
+  30_000,
 );
 
 describe('generation queue', () => {

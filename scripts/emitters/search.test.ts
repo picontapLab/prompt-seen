@@ -23,7 +23,18 @@ function build(mode: 'production' | 'preview') {
   const { built } = loadContent({ root: ROOT, config, url });
   if (!built) throw new Error('the sample content must build');
   const details = new Map(built.details.map((d) => [`${d.locale}/${d.kind}/${d.key}`, d.model]));
+  const engines = new Map<
+    string,
+    {
+      engine: ReturnType<typeof loadEngine>;
+      docs: ReturnType<typeof searchDocuments>;
+      index: typeof built.locales extends Map<string, infer V> ? V : never;
+    }
+  >();
   const engine = (code: string, pages = { collections: false, topics: false }) => {
+    const cacheKey = `${code}/${pages.collections}/${pages.topics}`;
+    const cached = engines.get(cacheKey);
+    if (cached) return cached;
     const index = built.locales.get(code)!;
     const docs = searchDocuments({
       index,
@@ -39,7 +50,9 @@ function build(mode: 'production' | 'preview') {
       terms: suggestTerms(index),
       index: JSON.parse(JSON.stringify(createIndex(docs, code))),
     };
-    return { engine: loadEngine(file), docs, index };
+    const result = { engine: loadEngine(file), docs, index };
+    engines.set(cacheKey, result);
+    return result;
   };
   return { built, engine };
 }
