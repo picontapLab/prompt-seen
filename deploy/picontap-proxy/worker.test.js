@@ -74,6 +74,8 @@ test('forwards path, query and protocol headers without credentials; strips only
     assert.equal(res.headers.get(h), null);
   assert.equal(res.headers.get('X-Frame-Options'), 'SAMEORIGIN');
   assert.match(res.headers.get('Content-Security-Policy'), /connect-src https:\/\/picontap.com\/prompt-seen\//);
+  assert.ok(res.headers.get('Content-Security-Policy').split(' ').includes('https://picontap.com/cdn-cgi/rum'));
+  assert.ok(!res.headers.get('Content-Security-Policy').split(' ').includes('https://picontap.com'));
 });
 
 for (const path of [

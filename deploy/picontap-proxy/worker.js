@@ -56,7 +56,7 @@ function finish(request, env, response, robotsResult = 'none') {
   // Media fetches support the download action; images and navigation are not restricted.
   headers.set(
     'Content-Security-Policy',
-    `connect-src ${new URL(request.url).origin}/prompt-seen/ https://prompt-seen-media.picontap.com/media/ https://cloudflareinsights.com`,
+    `connect-src ${new URL(request.url).origin}/prompt-seen/ ${new URL(request.url).origin}/cdn-cgi/rum https://prompt-seen-media.picontap.com/media/ https://cloudflareinsights.com`,
   );
   if (env.DEPLOYMENT_MODE === 'preview') headers.set('X-Prompt-Seen-Proxy-Robots-Result', robotsResult);
   if (env.DEPLOYMENT_MODE === 'preview' || env.FORCE_NOINDEX === 'true') {
