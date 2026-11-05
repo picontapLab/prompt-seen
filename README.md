@@ -12,6 +12,7 @@
 </p>
 
 <p align="center">
+  <a href="https://picontap.com/prompt-seen/">Live demo</a> ·
   <a href="#gallery">Gallery</a> ·
   <a href="#social-sharing--playful-edits">Social &amp; playful</a> ·
   <a href="#image-models">Image models</a> ·
