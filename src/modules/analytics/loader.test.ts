@@ -5,11 +5,17 @@ import { analyticsLoader, analyticsOrigins } from './loader';
 // The analytics loader (design doc §9.10.6, §16.4): nothing without a provider; otherwise one
 // script element, added after load once the browser is idle.
 
-function run(source: string, readyState: 'loading' | 'complete', scripts: { src: string }[] = []) {
+function run(
+  source: string,
+  readyState: 'loading' | 'complete',
+  scripts: { src: string }[] = [],
+  origin = 'https://example.com',
+) {
   const added: Record<string, string>[] = [];
   const listeners: Record<string, () => void> = {};
   const idle: (() => void)[] = [];
   const context = {
+    location: { origin },
     document: {
       readyState,
       scripts,
@@ -36,14 +42,14 @@ function run(source: string, readyState: 'loading' | 'complete', scripts: { src:
 
 describe('analyticsLoader', () => {
   it('adds nothing without a provider', () => {
-    expect(analyticsLoader({ provider: 'none' })).toBeNull();
+    expect(analyticsLoader({ provider: 'none' }, 'https://example.com')).toBeNull();
     expect(analyticsOrigins({ provider: 'none' })).toEqual({ script: [], connect: [] });
   });
 
   it('waits for load and idle, then adds the Cloudflare beacon with its token', () => {
     // A placeholder token of one repeated digit, which secret scanners rightly ignore.
     const token = 'f'.repeat(32);
-    const source = analyticsLoader({ provider: 'cloudflare', token })!;
+    const source = analyticsLoader({ provider: 'cloudflare', token }, 'https://example.com')!;
     const page = run(source, 'loading');
     expect(page.added).toEqual([]);
     page.listeners.load!();
@@ -60,7 +66,10 @@ describe('analyticsLoader', () => {
 
   it('adds Plausible with its domain when the page has already loaded', () => {
     const page = run(
-      analyticsLoader({ provider: 'plausible', domain: 'example.com', src: 'https://stats.example.org/js/script.js' })!,
+      analyticsLoader(
+        { provider: 'plausible', domain: 'example.com', src: 'https://stats.example.org/js/script.js' },
+        'https://example.com',
+      )!,
       'complete',
     );
     page.idle[0]!();
@@ -75,9 +84,25 @@ describe('analyticsLoader', () => {
 });
 
 it('does not duplicate a Cloudflare beacon already injected by the zone', () => {
-  const page = run(analyticsLoader({ provider: 'cloudflare', token: 'f'.repeat(32) })!, 'complete', [
-    { src: 'https://static.cloudflareinsights.com/beacon.min.js' },
-  ]);
+  const page = run(
+    analyticsLoader({ provider: 'cloudflare', token: 'f'.repeat(32) }, 'https://example.com')!,
+    'complete',
+    [{ src: 'https://static.cloudflareinsights.com/beacon.min.js' }],
+  );
   page.idle[0]!();
   expect(page.added).toEqual([]);
 });
+
+it.each(['http://127.0.0.1:8090', 'https://preview.pages.dev', 'https://proxy-preview.account.workers.dev'])(
+  'does not send production analytics from %s',
+  (origin) => {
+    const page = run(
+      analyticsLoader({ provider: 'cloudflare', token: 'f'.repeat(32) }, 'https://example.com')!,
+      'complete',
+      [],
+      origin,
+    );
+    expect(page.idle).toEqual([]);
+    expect(page.added).toEqual([]);
+  },
+);

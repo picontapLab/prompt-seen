@@ -3,6 +3,7 @@ import { fontFallbackClassName } from '@/styles/fonts';
 import { config, isPreviewBuild, type LocaleEntry } from '@/config';
 import type { Messages } from '@/i18n/catalog';
 import { analyticsLoader } from '@/modules/analytics/loader';
+import { absoluteUrl } from '@/modules/url';
 import { PREFERENCES_KEY } from '@/state/preferences/store';
 import { themeInitScript } from '@/state/preferences/theme';
 import { ThemeProvider } from '@/state/preferences/theme-provider';
@@ -11,7 +12,7 @@ import { InlineScript } from './InlineScript';
 import { IntlProvider } from './IntlProvider';
 
 // Visit statistics run on the live site only (§9.10.6); previews and local builds stay unmeasured.
-const analytics = isPreviewBuild ? null : analyticsLoader(config.analytics);
+const analytics = isPreviewBuild ? null : analyticsLoader(config.analytics, new URL(absoluteUrl('/')).origin);
 
 /**
  * The document for every page (design doc §8.6, §11.6.3): <html lang dir>, global styles and
