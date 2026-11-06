@@ -1,7 +1,7 @@
 # Instance configuration (design doc §15.4.2). Environment variables win:
 # SITE_ORIGIN, BASE_PATH, URL_PATTERN, BUILD_MODE (production | preview), BUILD_ID, CONTENT_DIR.
 siteName: Prompt Seen
-origin: https://example.com # canonical host; placeholder until step 5
+origin: https://promptseen.dev # canonical host
 basePath: '' # domain root; set BASE_PATH=/prompt-seen to build for a subpath
 urlPattern: '{basePath}/{locale}/{path}' # or "/{locale}{basePath}/{path}" when the host prefixes languages
 repository: https://github.com/picontapLab/prompt-seen # the header, menu and footer link to it
