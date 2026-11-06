@@ -8,7 +8,7 @@ repository: https://github.com/picontapLab/prompt-seen # the header, menu and fo
 
 robots:
   mode: standalone # standalone domain; use snippet when a host owns the root robots.txt
-  aiTraining: disallow # training crawlers (§9.10.2); placeholder until decided
+  aiTraining: allow # allow training crawlers to index the public prompt library
 
 shell:
   header: default # default | host
