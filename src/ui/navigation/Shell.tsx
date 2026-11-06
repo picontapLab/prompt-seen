@@ -92,7 +92,11 @@ export async function Shell({
                 <LanguageSwitch />
               </div>
             )}
-            <ThemeToggle />
+            {/* Below 480 px the wordmark leaves room for two controls; the menu has the theme
+                (§11.6.3). Without a wordmark, or without a menu, the button stays. */}
+            <div className={host || minimal ? undefined : styles.fromSm}>
+              <ThemeToggle />
+            </div>
             {!minimal && (
               <div className={styles.narrow}>
                 <MobileMenu links={saved ? [...sections, saved] : sections} />
