@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createUrlModule } from './create';
+import { createUrlModule, urlConfigOf } from './create';
 
 const base = {
   origin: 'https://example.com',
@@ -27,7 +27,7 @@ describe('url module', () => {
 
   it('builds absolute URLs on the canonical host', () => {
     const { absoluteUrl, paths } = createUrlModule(base);
-    expect(absoluteUrl(paths.languageEntry())).toBe('https://example.com/prompt-seen/');
+    expect(absoluteUrl(paths.siteRoot())).toBe('https://example.com/prompt-seen/');
     expect(absoluteUrl(paths.home('en'))).toBe('https://example.com/prompt-seen/en/');
     expect(absoluteUrl(paths.prompt('zh-hans', 'ink-portrait'))).toBe(
       'https://example.com/prompt-seen/zh-hans/prompts/ink-portrait/',
@@ -43,6 +43,48 @@ describe('url module', () => {
     expect(absoluteUrl('/')).toBe('https://example.com/');
     expect(absoluteUrl('/en/prompts/')).toBe('https://example.com/en/prompts/');
     expect(withBasePath('/en/')).toBe('/en/');
+  });
+
+  it.each(['', '/prompt-seen'])('uses the site root for the configured default home (base %s)', (basePath) => {
+    const url = createUrlModule({ ...base, basePath, defaultLocalePrefix: 'en' });
+    expect(url.paths.home('en')).toBe('/');
+    expect(url.absoluteUrl(url.paths.home('en'))).toBe(`https://example.com${basePath}/`);
+    expect(url.withBasePath(url.paths.home('zh-hans'))).toBe(`${basePath}/zh-hans/`);
+    expect(url.paths.prompt('en', 'ink-portrait')).toBe('/en/prompts/ink-portrait/');
+    expect(url.mediaUrl('media/a_001/x.webp')).toBe(`${basePath}/media/a_001/x.webp`);
+  });
+
+  it('derives the default home from the registry code, not its position or URL prefix', () => {
+    const cfg = urlConfigOf({
+      ...base,
+      defaultLocale: 'zh-Hans',
+      locales: [
+        {
+          code: 'en',
+          pathPrefix: 'en',
+          nativeName: 'English',
+          htmlLang: 'en',
+          direction: 'ltr',
+          enabled: true,
+          preview: false,
+          phase: 1,
+        },
+        {
+          code: 'zh-Hans',
+          pathPrefix: 'zh-hans',
+          nativeName: '简体中文',
+          htmlLang: 'zh-Hans',
+          direction: 'ltr',
+          enabled: true,
+          preview: false,
+          phase: 1,
+        },
+      ],
+      media: { baseUrl: null },
+    });
+    const { paths } = createUrlModule(cfg);
+    expect(paths.home('zh-hans')).toBe('/');
+    expect(paths.home('en')).toBe('/en/');
   });
 
   it('follows a host-language urlPattern (§15.4.3)', () => {

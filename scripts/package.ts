@@ -72,12 +72,13 @@ if (indexNowKey) fs.writeFileSync(path.join(target, keyFilePath(indexNowKey)), i
 // Every built locale has its pages, error pages and the shared files exist.
 const fileFor = (internal: string) => path.join(target, internal.endsWith('/') ? `${internal}index.html` : internal);
 const required = [
-  url.paths.languageEntry(),
+  url.paths.siteRoot(),
   '/404.html',
   '/icon.svg',
   url.paths.generated('build.json'),
   ...config.builtLocales.flatMap((l) => [
     url.paths.home(l.pathPrefix),
+    `/${l.pathPrefix}/`, // backward-compatible prefixed home, including the default locale
     url.paths.notFound(l.pathPrefix),
     url.paths.gone(l.pathPrefix),
   ]),

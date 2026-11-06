@@ -33,8 +33,10 @@ export type StringListField = FieldBase & {
 };
 
 export type EnumOption = {
-  /** Stable value; this is what the prompt receives (§6.3). */
+  /** Stable value stored in samples, drafts and shared links (§6.3). */
   value: string;
+  /** Output in the selected prompt language; the stored option value stays stable. */
+  renderText?: string;
   /** Colour chips for palette-like options (§11.8.4); presentation only. */
   swatch: string[] | null;
 };
@@ -45,7 +47,7 @@ export type EnumField = FieldBase & {
   options: EnumOption[];
 };
 
-/** A field as the renderer needs it: no labels, so it is the same in every locale. */
+/** A field as the renderer needs it: no UI labels; output text may be localized. */
 export type FieldSpec = StringField | StringListField | EnumField;
 
 /** Values entered by a user or read from a sample. Missing keys fall back to defaults. */

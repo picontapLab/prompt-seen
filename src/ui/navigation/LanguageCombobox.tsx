@@ -16,7 +16,8 @@ import { preferencesStore } from '@/state/preferences/store';
  * the same resource when the page has a version in that language (its hreflang alternates). A
  * page with versions but none in that language opens the missing-translation page, which lists
  * the versions there are (§11.8.7); a page without versions opens that language's home. The
- * choice is remembered for the language entry (§8.2). Loaded on first use (LanguageSwitch).
+ * choice is remembered, but the root always opens in the default language.
+ * Loaded on first use (LanguageSwitch).
  */
 export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: boolean; autoFocus?: boolean }) {
   const t = useTranslations('shell.language');
@@ -75,7 +76,7 @@ function targetPath(pathname: string, target: LocaleEntry): string {
       .map((l) => l.hreflang)
       .filter((h) => h !== 'x-default'),
   );
-  if (!onLocalePage) return paths.home(target.pathPrefix);
+  if (!onLocalePage || rest.every((segment) => !segment)) return paths.home(target.pathPrefix);
   // On the missing-translation page itself, carry on with the page the visitor came from.
   if (rest[0] === 'translation-missing') {
     const info = parseMissingFragment(location.hash, builtLocales);

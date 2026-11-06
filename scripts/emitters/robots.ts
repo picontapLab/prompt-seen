@@ -12,7 +12,7 @@ export default defineEmitter({
   run({ config, url, write }) {
     // At the root of a host the exported robots.txt is the host's file: nothing to merge.
     if (config.robots.mode !== 'snippet' || url.withBasePath('/') === '/') return;
-    const root = new URL(url.absoluteUrl(url.paths.languageEntry()));
+    const root = new URL(url.absoluteUrl(url.paths.siteRoot()));
     write(
       'deploy',
       'robots-snippet.txt',

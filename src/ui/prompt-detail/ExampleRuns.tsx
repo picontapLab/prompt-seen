@@ -145,7 +145,7 @@ export function ExampleRuns({
             {run.prompt.trim() !== currentPrompt.trim() && (
               <details className={styles.runPrompt}>
                 <summary>{t('promptUsed')}</summary>
-                <p lang={promptLanguage} dir="auto">
+                <p lang={run.promptLanguage ?? (run.prompt === currentPrompt ? promptLanguage : undefined)} dir="auto">
                   {run.prompt}
                 </p>
               </details>

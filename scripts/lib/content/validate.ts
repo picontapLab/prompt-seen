@@ -21,6 +21,7 @@ import {
 import { validateFeedSettings } from './validate-feed';
 import { validateHomeSettings } from './validate-home';
 import { templateContractHash } from './template-contract';
+import { resolveTemplate, validatePromptVariants } from './prompt-variants';
 
 // Cross-file rules (design doc §14.2 steps 3–5, §14.3). Mode-independent: the same content
 // gives the same findings in every build. What a build shows is decided in build-index.ts.
@@ -307,7 +308,10 @@ export function validateContent(
   }
 
   // --- Example runs (§5.5, §6.4) ----------------------------------------------------------------
+  validatePromptVariants(content, findings);
   for (const run of content.examples.values()) {
+    if (run.data.promptLanguage && !codes.has(run.data.promptLanguage))
+      findings.error(run.file, 'promptLanguage is not a registered locale code');
     const d = run.data;
     if (d.promptId && !content.prompts.has(d.promptId))
       findings.error(run.file, `prompt ${d.promptId} does not exist`, {
@@ -362,7 +366,16 @@ export function validateContent(
           run.file,
           `template ${d.template.id} ${d.template.version} contract changed after this run; restore it and create a new version`,
         );
-      const spec = versionSpec(version);
+      const recTemplate = content.templates.get(d.template.id)!;
+      const language = d.promptLanguage ?? recTemplate.data.promptLanguage;
+      if (language !== recTemplate.data.promptLanguage && !version.promptLocales.has(language)) {
+        findings.error(run.file, `template ${d.template.id} ${d.template.version} has no ${language} prompt locale`);
+        continue;
+      }
+      const selected = resolveTemplate(recTemplate, version, language);
+      const spec = selected.spec;
+      if (selected.variantHash !== (d.template.variantHash ?? null))
+        findings.error(run.file, 'template variantHash is missing or changed after this run; restore the variant or create a new version');
       const result = renderTemplate(spec, d.template.values);
       if (result.text !== run.prompt)
         findings.error(
@@ -375,7 +388,7 @@ export function validateContent(
           },
         );
       if (d.template.sample) {
-        const sample = version.samples.get(d.template.sample);
+        const sample = selected.samples.get(d.template.sample);
         if (!sample)
           findings.error(run.file, `sample "${d.template.sample}" does not exist in ${d.template.version}`, {
             field: 'template.sample',

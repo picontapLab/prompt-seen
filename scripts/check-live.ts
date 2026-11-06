@@ -6,7 +6,7 @@
 //   npm run check:live -- --expect-build <id>      and that this build is the one being served
 //   npm run check:live -- --expect-build <id> --wait 180   first wait up to 180 s for it (host caches)
 //
-// Checks: the build's own build.json; language entry, every public locale's home, a Prompt and
+// Checks: the build's own build.json; default home, every public locale's home, a Prompt and
 // a template per locale and a list page answer 200 with the canonical address and the right
 // indexing; sitemaps; Markdown and llms.txt types; a redirect, a removed address and an unknown
 // one; the host's robots.txt carries this site's rules and sitemap; pages answer search and AI
@@ -84,6 +84,7 @@ async function main() {
     origin: string;
     basePath: string;
     urlPattern: string;
+    defaultLocale: string;
     mediaBaseUrl?: string | null;
     locales: { code: string; pathPrefix: string; enabled: boolean }[];
   };
@@ -92,6 +93,7 @@ async function main() {
       origin: build.origin,
       basePath: build.basePath,
       urlPattern: build.urlPattern,
+      defaultLocale: build.defaultLocale,
       locales: build.locales as never,
       media: { baseUrl: build.mediaBaseUrl ?? null },
     }),
@@ -132,7 +134,7 @@ async function main() {
   }
 
   const publicLocales = build.locales.filter((l) => l.enabled);
-  await page(url.paths.languageEntry(), 'language entry');
+  await page(url.paths.siteRoot(), 'default-language home');
   for (const l of publicLocales) await page(url.paths.home(l.pathPrefix), `${l.code} home`);
 
   // Sitemaps: index, one per public locale; representative pages from them.

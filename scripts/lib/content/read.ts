@@ -18,6 +18,11 @@ import {
   localizedSchema,
   mediaSchema,
   promptEntrySchema,
+  promptAnnotationsSchema,
+  promptVariantSchema,
+  templateVariantSchema,
+  type PromptAnnotationsSource,
+  type TemplateVariantSource,
   redirectsFileSchema,
   sampleSchema,
   SLUG_PATTERN,
@@ -59,6 +64,7 @@ export type PromptRecord = Located<PromptEntrySource> & {
   promptText: string | null;
   promptFile: string;
   locales: Map<string, LocaleFile>;
+  promptLocales: Map<string, { file: string; text: string | null; values: FieldValues; annotations: PromptAnnotationsSource }>;
 };
 
 export type TemplateVersion = {
@@ -73,6 +79,7 @@ export type TemplateVersion = {
   inputs?: InputRequirementsSource | null;
   /** name → values, `default` first. */
   samples: Map<string, { file: string; values: FieldValues }>;
+  promptLocales: Map<string, { file: string; bodyFile: string; body: string; data: TemplateVariantSource }>;
 };
 
 export type TemplateRecord = Located<TemplateEntrySource> & {
@@ -217,6 +224,38 @@ function readTerms(file: string, findings: Findings): Map<string, TermRecord> | 
   return terms;
 }
 
+/** Optional prompt bodies are content, with no separate translation publishing state. */
+function variantDirs(dir: string, registry: readonly LocaleEntry[], findings: Findings, allowed: string[]) {
+  const base = path.join(dir, 'prompt-locales');
+  if (!fs.existsSync(base)) return [];
+  const result: { code: string; dir: string }[] = [];
+  for (const entry of fs.readdirSync(base, { withFileTypes: true })) {
+    if (entry.name.startsWith('.')) continue;
+    const target = path.join(base, entry.name);
+    if (!entry.isDirectory() || !registry.some((l) => l.code === entry.name)) {
+      findings.error(target, 'prompt-locales must contain directories named after registered locale codes');
+      continue;
+    }
+    for (const child of fs.readdirSync(target, { withFileTypes: true })) {
+      if (child.name.startsWith('.')) continue;
+      if (!child.isFile() || !allowed.includes(child.name))
+        findings.error(path.join(target, child.name), `unexpected prompt locale file; allowed: ${allowed.join(', ')}`);
+    }
+    result.push({ code: entry.name, dir: target });
+  }
+  return result.sort((a, b) => a.code.localeCompare(b.code));
+}
+
+function variantText(file: string, findings: Findings): string | null {
+  if (!fs.existsSync(file)) {
+    findings.error(file, 'prompt locale text file is missing');
+    return null;
+  }
+  const text = normalizePrompt(readText(file));
+  if (!text) findings.error(file, 'prompt locale text is empty');
+  return text;
+}
+
 export function readContent(dir: string, registry: readonly LocaleEntry[], findings: Findings): Content {
   const content: Content = {
     dir,
@@ -258,7 +297,21 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         },
       );
     }
-    content.prompts.set(rec.data.id, { ...rec, promptText, promptFile, locales });
+    const promptLocales: PromptRecord['promptLocales'] = new Map();
+    const literal = rec.data.promptSource.type === 'literal';
+    for (const variant of variantDirs(entryDir, registry, findings, literal ? ['prompt.txt', 'annotations.yaml'] : ['variant.yaml'])) {
+      if (literal) {
+        const file = path.join(variant.dir, 'prompt.txt');
+        const annotationsFile = path.join(variant.dir, 'annotations.yaml');
+        const annotations = fs.existsSync(annotationsFile)
+          ? readYamlFile(annotationsFile, promptAnnotationsSchema, findings)?.data.annotations ?? [] : [];
+        promptLocales.set(variant.code, { file, text: variantText(file, findings), values: {}, annotations });
+      } else {
+        const data = readYamlFile(path.join(variant.dir, 'variant.yaml'), promptVariantSchema, findings);
+        if (data) promptLocales.set(variant.code, { file: data.file, text: null, ...data.data });
+      }
+    }
+    content.prompts.set(rec.data.id, { ...rec, promptText, promptFile, locales, promptLocales });
   }
 
   // Templates
@@ -306,6 +359,14 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         if (sample) samples.set(f.slice(0, -'.yaml'.length), { file, values: sample.data });
       }
       if (!fields) continue;
+      const promptLocales: TemplateVersion['promptLocales'] = new Map();
+      for (const variant of variantDirs(vdir, registry, findings, ['body.txt', 'variant.yaml'])) {
+        const localizedBodyFile = path.join(variant.dir, 'body.txt');
+        const localizedBody = variantText(localizedBodyFile, findings);
+        const data = readYamlFile(path.join(variant.dir, 'variant.yaml'), templateVariantSchema, findings);
+        if (data && localizedBody !== null)
+          promptLocales.set(variant.code, { file: data.file, bodyFile: localizedBodyFile, body: localizedBody, data: data.data });
+      }
       versions.set(vid, {
         id: vid,
         dir: vdir,
@@ -317,6 +378,7 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         fieldsLineOf: fields.lineOf,
         inputs,
         samples,
+        promptLocales,
       });
     }
     content.templates.set(rec.data.id, { ...rec, versions, locales });

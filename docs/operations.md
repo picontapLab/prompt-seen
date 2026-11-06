@@ -6,17 +6,34 @@ clone needs no account or credential (README, "Quick start").
 
 ## The production setup
 
-The site is a static export. Production is a Cloudflare Pages project; the host site
-(`xxx.com`) forwards `/prompt-seen/` to it. Images can stay in the build (as in a fresh clone) or
-move to object storage (Cloudflare R2) behind a CDN address.
+The site is a static export, deployed at the root of its own domain by default. `/` serves the
+English home directly, with the full navigation and language switch. Other language homes keep
+their prefixes (for example `/zh-hans/`), and content routes keep their locale prefixes
+(`/en/prompts/…`, `/zh-hans/prompts/…`). `/en/` remains a working alias whose canonical points to
+`/`; sitemap and home links use `/`. Browser language and saved preferences do not redirect the root.
+
+For Cloudflare Pages, connect the domain to the Pages project directly. No subpath proxy is
+needed. Images can stay in the build or move to object storage behind a CDN address.
 
 ```text
-browser ── xxx.com/prompt-seen/… ──▶ host site (nginx or a Cloudflare Worker)
-                                       │  forwards the path unchanged, drops X-Robots-Tag
-                                       ▼
-                                     prompt-seen.pages.dev/prompt-seen/…   (Cloudflare Pages)
-browser ── media.xxx.com/media/… ──▶ R2 bucket (optional; media.baseUrl)
+browser ── your-domain.com/… ──▶ Cloudflare Pages (custom domain)
+browser ── media.your-domain.com/media/… ──▶ R2 bucket (optional; media.baseUrl)
 ```
+
+A local production build for a domain:
+
+```sh
+SITE_ORIGIN=https://your-domain.com BASE_PATH= BUILD_MODE=production npm run build
+SITE_ORIGIN=https://your-domain.com BASE_PATH= BUILD_MODE=production npm run deploy:cloudflare:prepare
+```
+
+Upload `.deploy/cloudflare/` to Pages, or serve `dist/` with the generated nginx configuration.
+The root build includes `dist/index.html`, `_next/`, `media/`, `robots.txt` and `sitemap.xml`.
+`SITE_ORIGIN` must be the public domain so canonical, share and sitemap URLs match it. Changing
+`BASE_PATH` requires rebuilding; moving a subpath build's files does not update its bundled URLs.
+
+For an optional subpath deployment, set `BASE_PATH=/prompt-seen` and `robots.mode: snippet`,
+then use [The host site](#the-host-site). Both build modes keep the same home behavior.
 
 ### One-time setup (maintainer)
 
@@ -32,10 +49,12 @@ These steps need accounts and credentials. Nothing in the repository creates the
    the production secrets and variables there, and add required reviewers if deploys should wait
    for approval.
 4. **Canonical host.** Set the variable `SITE_ORIGIN`, e.g. `https://xxx.com`. `BASE_PATH`
-   defaults to `content/site.yaml` (`/prompt-seen`); set it to `/` for a root deployment.
+   defaults to the empty path in `content/site.yaml`; leave it unset or set it to `/` in GitHub
+   for a root deployment. In a local shell use `BASE_PATH=` (an empty value).
    `CLOUDFLARE_PAGES_PROJECT` if the project is not called `prompt-seen`.
-5. **The host site** forwards `/prompt-seen/` (see [The host site](#the-host-site)) and merges
-   `deploy/generated/robots-snippet.txt` into its root `robots.txt`.
+5. **Custom domain.** Add the domain in the Pages project’s Custom domains settings and complete
+   DNS setup. Keep `robots.mode: standalone`; the build serves the root `robots.txt`.
+   Subpath deployments instead configure [The host site](#the-host-site).
 6. **Optional: images in R2.**
    - Create a bucket and connect a custom domain to it (R2 › bucket › Settings › Custom
      Domains), e.g. `media.xxx.com`. Public access through the custom domain is what pages use.
@@ -46,7 +65,7 @@ These steps need accounts and credentials. Nothing in the repository creates the
    - The deploy then uploads new images (`media:sync`), checks every image the build uses
      (`media:check`) and leaves images out of the Pages upload.
 7. **Optional: IndexNow.** Generate a key (`openssl rand -hex 16`) and add it as the secret
-   `INDEXNOW_KEY`. Each build then publishes `/prompt-seen/<key>.txt`, and each deploy submits
+   `INDEXNOW_KEY`. Each root build then publishes `/<key>.txt`, and each deploy submits
    the addresses it added, changed or removed.
 8. **Webmaster tools.** See [Search engines](#search-engines).
 9. **Analytics.** See [Analytics and real-user performance](#analytics-and-real-user-performance).
@@ -87,8 +106,8 @@ the same commit:
 Run it by hand from _Actions › Deploy › Run workflow_ to deploy a specific commit or tag. One
 production change runs at a time; a deploy is never cancelled half-way.
 
-The first deploy fails at step 6 until the host forwards `/prompt-seen/`: the files are live on
-`pages.dev`, the canonical site is not yet. Set up the host and run the workflow again.
+Step 6 requires the custom domain to serve the Pages project (or the optional subpath proxy
+to forward requests). Configure that connection before checking the canonical site.
 
 ## Rolling back
 
@@ -223,6 +242,25 @@ Analytics: it measures the `pages.dev` address.
 
 - Object storage and Cloudflare credentials exist only as GitHub secrets and in the maintainer's
   shell. Builds never contain them; PR checks of other people's forks get no secrets.
+- Local `.env*` files (except `.env.example`), Cloudflare `.dev.vars` / `.dev.vars.*` files,
+  and `.wrangler/` state are Git-ignored. Keep `.env.example` free of real credentials and
+  never use `git add -f` to commit local secrets. These ignore rules do not remove files or
+  credentials already committed; exposed credentials must be revoked and replaced.
+- Pages uploads must target `.deploy/cloudflare/`, prepared by
+  `npm run deploy:cloudflare:prepare` after a fresh build. Never upload the repository root.
+  The prepare command only assembles local files; the Pages upload does not commit or push
+  to Git. A local Wrangler upload can deploy this directory without pushing the repository.
+- `content/`, `public/media/`, and the tracked records in `production/` and `migrations/`
+  travel with Git pushes and are readable by anyone with repository access. Production
+  records support publication deduplication and audits; migration archives also support
+  tests. Keep private work in the ignored `.artifacts/` workspace, and review records before
+  adding them to tracked directories. Making a repository private does not make its deployed
+  website private.
+- Treat every deployed page, generated data file, and image as public unless access control
+  is configured separately. Preview builds can include drafts and preview locales;
+  `noindex` discourages search indexing but does not restrict access. Use
+  `BUILD_MODE=production` for public production deployments. CI also uploads test results
+  and the preview build as GitHub Actions artifacts; these are separate from Git commits.
 - CI runs gitleaks over the history of every branch. On GitHub, also turn on secret scanning and
   push protection where the plan allows (Settings › Code security).
 - The site has no server process. Keep the build dependencies up to date; there is no runtime

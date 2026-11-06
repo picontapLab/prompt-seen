@@ -183,6 +183,73 @@ it.each(['png', 'gif'])(
     expect(literalEntry.promptSource).toMatchObject({ type: 'literal', language: 'zh-Hans' });
     expect(literalEntry.promptProvenance).toBe('source-prompt');
 
+    if (format === 'png') {
+      const variantFiles = {
+        [`templates/${plan.ids.template}/versions/v1/prompt-locales/zh-Hans/body.txt`]: '一颗{{color}}球。',
+        [`templates/${plan.ids.template}/versions/v1/prompt-locales/zh-Hans/variant.yaml`]:
+          'samples: { default: { color: 蓝色 }, alternate: { color: 红色 } }\n',
+        [`prompts/${plan.ids.prompt}/prompt-locales/zh-Hans/variant.yaml`]: 'values: { color: 蓝色 }\n',
+        [`prompts/${literalPlan.ids.prompt}/prompt-locales/en/prompt.txt`]: 'A blue sphere.',
+      };
+      for (const [name, text] of Object.entries(variantFiles)) {
+        const file = path.join(root, 'content', name);
+        fs.mkdirSync(path.dirname(file), { recursive: true });
+        fs.writeFileSync(file, text);
+      }
+      const sourceFiles = [
+        `templates/${plan.ids.template}/versions/v1/body.txt`,
+        `templates/${plan.ids.template}/versions/v1/samples/default.yaml`,
+        `prompts/${literalPlan.ids.prompt}/prompt.txt`,
+      ];
+      const before = sourceFiles.map((name) => fs.readFileSync(path.join(root, 'content', name), 'utf8'));
+      for (const translated of [
+        {
+          ...recipe,
+          body: '一颗{{color}}球。',
+          values: { color: '蓝色' },
+          promptLanguage: 'zh-Hans',
+          target: { promptId: plan.ids.prompt, sampleName: 'default' },
+        },
+        {
+          ...literalRecipe,
+          body: 'A blue sphere.',
+          promptLanguage: 'en',
+          target: { promptId: literalPlan.ids.prompt, sampleName: 'default' },
+        },
+      ]) {
+        const key = `translated-${translated.promptLanguage.toLowerCase()}`;
+        const text = translated.promptLanguage === 'en' ? 'A blue sphere.' : '一颗蓝色球。';
+        planJob(jobRoot, {
+          key,
+          candidateId: translated.candidateId,
+          prompt: text,
+          references: [],
+          targetAspectRatio: null,
+        });
+        claimJob(jobRoot, key);
+        recordJob(jobRoot, key, { outputPath: output, provider: 'Test', model: null });
+        reviewJob(jobRoot, key, { accepted: true, notes: 'Fixture accepted', reviewer: 'test' });
+        const ready = await prepareContent(root, jobRoot, key, {
+          ...translated,
+          editorialReview: {
+            reviewer: 'test',
+            reviewedAt: new Date().toISOString(),
+            contentHash: recipeReviewHash(translated),
+          },
+        });
+        await applyPrepared(root, key, ready.planHash);
+        const run = YAML.parse(
+          fs.readFileSync(path.join(root, 'content/examples', ready.ids.example, 'run.yaml'), 'utf8'),
+        );
+        expect(run.promptLanguage).toBe(translated.promptLanguage);
+        expect(
+          fs.readFileSync(path.join(root, 'content/examples', ready.ids.example, 'prompt.txt'), 'utf8').trim(),
+        ).toBe(text);
+        if (translated.fields.length) expect(run.template.variantHash).toMatch(/^[a-f0-9]{64}$/);
+      }
+      expect(sourceFiles.map((name) => fs.readFileSync(path.join(root, 'content', name), 'utf8'))).toEqual(before);
+    }
+
     const inputFile = path.join(root, 'content/templates', plan.ids.template!, 'versions/v1/inputs.yaml');
     fs.writeFileSync(
       inputFile,

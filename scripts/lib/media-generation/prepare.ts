@@ -105,6 +105,7 @@ export async function prepareJob(root: string, jobId: string, id = 'gpt-image-v1
     const run = exampleRunSchema.parse({
       id: job.newExampleId,
       promptId: job.promptId,
+      promptLanguage: job.promptLanguage,
       template: job.template,
       promptSha256: job.promptSha256,
       referenceAssetIds: [],

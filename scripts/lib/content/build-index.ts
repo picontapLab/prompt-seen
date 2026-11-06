@@ -31,14 +31,13 @@ import type { createUrlModule } from '../../../src/modules/url/create';
 import { compileMdx, type ContentLink } from './mdx';
 import type { Content, LocaleFile, PromptRecord, TaxonomyKey, TemplateRecord } from './read';
 import { TAXONOMY_FILES, sha256 } from './read';
+import { matchingPromptRuns, resolvePrompt, resolveTemplate, runPromptLanguage, sourcePromptLanguage } from './prompt-variants';
 import {
   COLLECTION_MIN_ITEMS,
   localeStates,
   promptTextOf,
   publishProblems,
   TOPIC_MIN_PROMPTS,
-  toFieldSpec,
-  versionSpec,
   inputRequirementsOf,
   runInputRequirements,
   sameValues,
@@ -347,10 +346,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
 
   const promptSummary = (r: PromptRecord, code: string): PromptSummary => {
     const v = vis(r.data.id, code)!;
-    const text = promptTextOf(content, r)!;
-    const source = r.data.promptSource;
-    const language =
-      source.type === 'literal' ? source.language : content.templates.get(source.templateId)!.data.promptLanguage;
+    const selected = resolvePrompt(content, r, code);
+    const text = selected.text!;
+    const language = selected.language;
+    const matches = matchingPromptRuns(content, r, code);
+    const isSource = language === sourcePromptLanguage(content, r);
     return {
       kind: 'prompt',
       id: r.data.id,
@@ -368,9 +368,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       categoryId: r.data.categoryId,
       styleIds: r.data.styleIds,
       useCaseIds: r.data.useCaseIds,
-      model: { displayName: r.data.model.displayName, providerModelId: r.data.model.providerModelId },
-      verification: r.data.model.verification,
-      lastTestedAt: runsOfPrompt(r.data.id)[0]?.data.recordedAt ?? null,
+      model: isSource ? { displayName: r.data.model.displayName, providerModelId: r.data.model.providerModelId }
+        : matches[0]?.data.model ?? { displayName: null, providerModelId: null },
+      verification: isSource ? r.data.model.verification : 'unknown',
+      lastTestedAt: matches[0]?.data.recordedAt ?? null,
       promptLanguage: language,
       promptOpening: openingOf(text),
       annotated: r.data.annotations.length > 0,
@@ -388,6 +389,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
   const templateSummary = (r: TemplateRecord, code: string): TemplateSummary => {
     const v = vis(r.data.id, code)!;
     const version = r.versions.get(r.data.currentVersion)!;
+    const selected = resolveTemplate(r, version, code);
     const cover = templateCover(r);
     return {
       kind: 'template',
@@ -404,8 +406,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       hasGifOutput: runsOfTemplate(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       currentVersion: r.data.currentVersion,
       fieldCount: version.fields.length,
-      promptLanguage: r.data.promptLanguage,
-      bodyExcerpt: openingOf(version.body, 200),
+      promptLanguage: selected.language,
+      bodyExcerpt: openingOf(selected.spec.body, 200),
     };
   };
 
@@ -470,8 +472,9 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const v = vis(r.data.id, code);
       if (!v) continue;
       const summary = promptById.get(r.data.id)!;
-      const text = promptTextOf(content, r)!;
-      const annotations: Annotation[] = r.data.annotations
+      const selected = resolvePrompt(content, r, code);
+      const text = selected.text!;
+      const annotations: Annotation[] = selected.annotations
         .map((a) => ({ a, start: text.indexOf(a.phrase) }))
         .filter((x) => x.start >= 0)
         .sort((x, y) => x.start - y.start)
@@ -509,7 +512,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         test: {
           model: summary.model,
           verification: summary.verification,
-          recordedOutput: examples.some((run) => run.prompt === text && run.outputs.length > 0),
+          recordedOutput: matchingPromptRuns(content, r, code).some((run) => run.data.outputAssetIds.length > 0),
           lastTestedAt: summary.lastTestedAt,
           aspectRatio: aspectRatioLabel(summary.cover.width, summary.cover.height),
           referenceImage: inputRequirementsOf(content, r).referenceImage,
@@ -527,7 +530,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         inputInstructions: inputRequirementsOf(content, r).instructions[code] ?? null,
         showcaseExampleId: r.data.showcaseExampleId,
         template:
-          source.type === 'template' ? { id: source.templateId, version: source.version, values: source.values } : null,
+          source.type === 'template' ? { id: source.templateId, version: source.version, values: selected.values! } : null,
         taxonomy: {
           category: termRef('category', r.data.categoryId, code),
           styles: r.data.styleIds.map((id) => termRef('style', id, code)),
@@ -551,17 +554,18 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const v = vis(r.data.id, code);
       if (!v) continue;
       const version = r.versions.get(r.data.currentVersion)!;
-      const spec = versionSpec(version);
+      const selected = resolveTemplate(r, version, code);
+      const spec = selected.spec;
       const label = (labels: Record<string, string>) =>
         labels[code] ?? labels[config.defaultLocale] ?? Object.values(labels)[0] ?? '';
-      const fields: LocalizedField[] = version.fields.map((f) => ({
-        ...toFieldSpec(f),
+      const fields: LocalizedField[] = version.fields.map((f, i) => ({
+        ...spec.fields[i]!,
         label: label(f.labels),
         help: f.help[code] ?? null,
         groupLabel: f.group ? label(content.fieldGroups.get(f.group)?.labels ?? {}) || null : null,
         optionLabels: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, label(o.labels)])) : {},
       }));
-      const samples = [...version.samples].map(([name, s]) => ({
+      const samples = [...selected.samples].map(([name, s]) => ({
         name,
         values: s.values,
         exampleIds: runsOfTemplate(r.data.id)
@@ -574,12 +578,13 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
               rendered !== null &&
               run.data.promptSha256 === sha256(rendered) &&
               run.prompt === rendered &&
+              runPromptLanguage(content, run) === selected.language &&
               sameValues(t.values, resolveValues(spec.fields, s.values), spec.fields)
             );
           })
           .map((run) => run.data.id),
       }));
-      const defaultValues = version.samples.get('default')?.values ?? {};
+      const defaultValues = selected.samples.get('default')?.values ?? {};
       const model: TemplateDetail = {
         ...templateById.get(r.data.id)!,
         cover: (() => {
@@ -591,7 +596,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         inputInstructions: version.inputs?.instructions[code] ?? null,
         version: {
           id: version.id,
-          body: version.body,
+          body: spec.body,
           fields,
           samples,
           defaultPrompt: renderTemplate(spec, defaultValues).text ?? '',
@@ -726,6 +731,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       model: d.model,
       template: d.template,
       prompt: x.prompt ?? '',
+      promptLanguage: runPromptLanguage(content, x),
       promptSha256: d.promptSha256,
       parameters: Object.entries(d.parameters).map(([name, value]) => ({ name, value })),
       referenceLabels: d.referenceAssetIds.map((_, index) => {
@@ -764,7 +770,7 @@ function manifest(
         ? content.templates.get(id)
         : content.collections.get(id)
     )?.data.slug;
-  const builtHomes = new Set(built.map((l) => url.paths.home(l.pathPrefix)));
+  const builtLocaleRoots = new Set(built.map((l) => `/${l.pathPrefix}/`));
 
   for (const item of content.redirects?.redirects ?? []) {
     if ('kind' in item) {
@@ -780,7 +786,7 @@ function manifest(
       // A fixed path is kept when its target is a built locale's address (or outside any locale).
       const firstSegment = `/${item.to.split('/')[1]}/`;
       const targetsLocale = config.locales.some((l) => `/${l.pathPrefix}/` === firstSegment);
-      if (!targetsLocale || builtHomes.has(firstSegment)) redirects.push({ from: item.from, to: item.to });
+      if (!targetsLocale || builtLocaleRoots.has(firstSegment)) redirects.push({ from: item.from, to: item.to });
     }
   }
   // Page 1 of a list is the list itself; its duplicate address redirects there (§9.4).

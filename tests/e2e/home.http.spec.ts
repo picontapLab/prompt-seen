@@ -3,13 +3,13 @@ import path from 'node:path';
 import { expect, test } from '@playwright/test';
 import { parse } from 'yaml';
 import { featuredOrder } from '../../src/modules/home/featured';
-import { BASE, BUILD, message, publicUrl, ROOT } from './support/artifact';
+import { BASE, BUILD, homePath, message, publicUrl, ROOT } from './support/artifact';
 import { feedIndex, localeIndex, promptDetail } from './support/content';
 import { alternates, canonical, dataAttr, elementText, title } from './support/html';
 
 // The home page as crawlers receive it (design doc §11.8.1, §9.3, §16.2 首屏展示, §17.3 step 4b):
 // the work on show, its label, annotated quote and actions are in the first HTML; the page has
-// its own title, canonical and hreflang with the language entry as x-default; every work and
+// its own title, canonical and hreflang with the default home as x-default; every work and
 // section below links to a page of this build.
 
 const site = parse(fs.readFileSync(path.join(ROOT, 'content/site.yaml'), 'utf8')) as {
@@ -28,7 +28,7 @@ function worksOnShow(code: string): string[] {
 }
 
 const expectedAlternates = {
-  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(`/${l.pathPrefix}/`)])),
+  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(homePath(l))])),
   'x-default': publicUrl('/'),
 };
 const meta = (html: string, property: string) =>
@@ -38,7 +38,7 @@ const hrefs = (html: string) =>
 
 for (const locale of BUILD.locales) {
   const code = locale.code;
-  const url = `${BASE}/${locale.pathPrefix}/`;
+  const url = `${BASE}${homePath(locale)}`;
 
   test(`${code}: the first screen is in the HTML: the work on show, its quote and actions`, async ({ request }) => {
     const res = await request.get(url);
@@ -80,11 +80,11 @@ for (const locale of BUILD.locales) {
     else expect(html).not.toContain(another);
   });
 
-  test(`${code}: metadata: canonical, hreflang with the language entry as x-default, the work as share image`, async ({
+  test(`${code}: metadata: canonical, hreflang with the default home as x-default, the work as share image`, async ({
     request,
   }) => {
     const html = await (await request.get(url)).text();
-    expect(canonical(html)).toBe(publicUrl(`/${locale.pathPrefix}/`));
+    expect(canonical(html)).toBe(publicUrl(homePath(locale)));
     expect(alternates(html)).toEqual(expectedAlternates);
     const work = promptDetail(code, worksOnShow(code)[0]!);
     expect(meta(html, 'og:image')).toContain(work.cover.variants.og!.key);
@@ -103,7 +103,7 @@ for (const locale of BUILD.locales) {
     for (const c of index.collections.slice(0, 2)) expect(links).toContain(`${BASE}${c.path}`);
     // Every same-site page link answers 200 (fragments are the list's filters).
     const pages = [
-      ...new Set(links.filter((h) => h.startsWith(`${BASE}/${locale.pathPrefix}/`)).map((h) => h.split('#')[0]!)),
+      ...new Set(links.filter((h) => h.startsWith(`${BASE}${homePath(locale)}`)).map((h) => h.split('#')[0]!)),
     ];
     for (const href of pages) expect((await request.get(href)).status(), href).toBe(200);
   });

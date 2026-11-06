@@ -12,6 +12,8 @@ import { aspectRatioLabel, openingOf } from './build-index';
 import type { Finding } from './findings';
 import { loadContent } from './load';
 import { sha256, sourceHashOf } from './read';
+import { resolveTemplate } from './prompt-variants';
+import { templateContractHash } from './template-contract';
 
 // Content pipeline rules (design doc §5, §6.4, §8.4, §8.5, §9.1, §9.5, §14.3), checked on
 // small content trees written to a temporary directory.
@@ -223,7 +225,7 @@ describe('a valid content tree', () => {
     expect(p.annotations).toEqual([
       expect.objectContaining({ letter: 'A', start: PROMPT.indexOf('a single'), note: '控制印章' }),
     ]);
-    expect(p.test).toMatchObject({ aspectRatio: '4:5', lastTestedAt: '2026-10-05' });
+    expect(p.test).toMatchObject({ aspectRatio: '4:5', lastTestedAt: null }); // The recorded run used different text.
     expect(p.alternates).toEqual([
       { locale: 'en', path: '/en/prompts/ink-portrait/' },
       { locale: 'zh-Hans', path: '/zh-hans/prompts/ink-portrait/' },
@@ -500,4 +502,148 @@ it('localizes source evidence without turning source metrics into site ratings',
   expect(p?.inspirationSources?.[0]?.metricScope).toBe('整篇帖子');
   expect(p?.inspirationSources?.[0]?.metrics).toEqual([{ key: 'likes', value: 42, label: '赞' }]);
   expect(p?.promptProvenance).toBe('independent-adaptation');
+});
+
+// Prompt language is independent of the page translation workflow.
+describe('prompt body languages', () => {
+  const zh = '水墨学者肖像，柔和渐变，右下角的一枚红色印章。';
+  const literal = {
+    'content/prompts/p_001/prompt-locales/zh-Hans/prompt.txt': zh,
+    'content/prompts/p_001/prompt-locales/zh-Hans/annotations.yaml': 'annotations:\n  - sourcePhrase: a single red seal stamp in the lower right\n    phrase: 右下角的一枚红色印章\n',
+  };
+  const translatedTemplate = {
+    'content/templates/t_001/locales/zh-Hans.mdx': zhFor('## How to adjust it\n\nChange the seal colour.\n', { ...enFm, title: 'Poster' }),
+    'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/body.txt': '{{product}}的{{palette}}海报。',
+    'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/variant.yaml': 'enumText:\n  palette: { warm: 暖色, cold: 冷色 }\nsamples:\n  default: { product: 马克杯, palette: warm }\n  second: { product: 茶叶罐, palette: cold }\n',
+  };
+  const derived = {
+    'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait').replace('promptSource: { type: literal, language: en }', 'promptSource: { type: template, templateId: t_001, version: v1, values: { product: a mug, palette: warm } }'),
+    'content/prompts/p_001/prompt.txt': null,
+    'content/prompts/p_001/prompt-locales/zh-Hans/variant.yaml': 'values: { product: 蓝色马克杯, palette: cold }\n',
+  };
+
+  it('selects available bodies, preserves annotations, and falls back only to the source', () => {
+    const result = load(setup(literal), 'preview');
+    expect(blocking(result.findings.list)).toEqual([]);
+    const chinese = detail<PromptDetail>(result, 'prompt', 'zh-Hans', 'p_001')!;
+    expect(chinese.prompt).toMatchObject({ text: zh, language: 'zh-Hans' });
+    expect(chinese.annotations[0]).toMatchObject({ phrase: '右下角的一枚红色印章', start: zh.indexOf('右下角'), note: '控制印章' });
+    expect(chinese.test).toMatchObject({ recordedOutput: false, lastTestedAt: null, verification: 'unknown' });
+    for (const locale of ['en', 'ja']) expect(detail<PromptDetail>(result, 'prompt', locale, 'p_001')!.prompt).toMatchObject({ text: PROMPT, language: 'en' });
+    const index = result.built!.locales.get('zh-Hans')!;
+    const documents = searchDocuments({ index, prompt: () => chinese, template: () => null, pages: { collections: true, topics: true } });
+    expect(documents.find((d) => d.id === 'prompt:p_001')!.body).toBe(zh);
+  });
+
+  it('keeps a present translation after the source prompt changes', () => {
+    const result = load(setup({ ...literal, 'content/prompts/p_001/prompt.txt': `${PROMPT} Keep the edges soft.` }));
+    expect(blocking(result.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(result, 'prompt', 'zh-Hans', 'p_001')!.prompt.text).toBe(zh);
+  });
+
+  it('uses a Chinese source when English is unavailable', () => {
+    const result = load(setup({
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait').replace('language: en', 'language: zh-Hans'),
+      'content/prompts/p_001/prompt.txt': zh,
+    }));
+    expect(blocking(result.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(result, 'prompt', 'en', 'p_001')!.prompt).toMatchObject({ text: zh, language: 'zh-Hans' });
+  });
+
+  it('renders localized templates with stable enum values and no borrowed generation evidence', () => {
+    const result = load(setup(translatedTemplate));
+    expect(blocking(result.findings.list)).toEqual([]);
+    const chinese = detail<TemplateDetail>(result, 'template', 'zh-Hans', 't_001')!;
+    expect(chinese.version.defaultPrompt).toBe('马克杯的暖色海报。');
+    expect(chinese.promptLanguage).toBe('zh-Hans');
+    expect(chinese.version.fields[1]).toMatchObject({ default: 'warm', options: [{ value: 'warm', renderText: '暖色' }, { value: 'cold', renderText: '冷色' }] });
+    expect(chinese.version.samples[0]!.exampleIds).toEqual([]);
+    expect(detail<TemplateDetail>(result, 'template', 'en', 't_001')!.version.defaultPrompt).toBe('Poster for a mug in warm.');
+  });
+
+  it('renders a derived prompt from its fixed template version and translated values', () => {
+    const result = load(setup({ ...translatedTemplate, ...derived }));
+    expect(blocking(result.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(result, 'prompt', 'zh-Hans', 'p_001')).toMatchObject({ prompt: { text: '蓝色马克杯的冷色海报。', language: 'zh-Hans' }, template: { version: 'v1', values: { product: '蓝色马克杯', palette: 'cold' } } });
+    expect(detail<PromptDetail>(result, 'prompt', 'en', 'p_001')!.prompt.text).toBe('Poster for a mug in warm.');
+    const withoutValues = load(setup({ ...translatedTemplate, ...derived, 'content/prompts/p_001/prompt-locales/zh-Hans/variant.yaml': null }));
+    expect(detail<PromptDetail>(withoutValues, 'prompt', 'zh-Hans', 'p_001')!.prompt.language).toBe('en');
+  });
+
+  it.each([
+    ['missing annotation', { ...literal, 'content/prompts/p_001/prompt-locales/zh-Hans/annotations.yaml': null }, 'annotations'],
+    ['empty prompt', { ...literal, 'content/prompts/p_001/prompt-locales/zh-Hans/prompt.txt': '  ' }, 'empty'],
+    ['invalid locale', { 'content/prompts/p_001/prompt-locales/zh-hans/prompt.txt': zh }, 'registered'],
+    ['duplicate source', { 'content/prompts/p_001/prompt-locales/en/prompt.txt': PROMPT }, 'source language'],
+    ['missing template dependency', derived, 'has no zh-Hans'],
+    ['unknown metadata', { ...translatedTemplate, 'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/variant.yaml': 'reviewStatus: reviewed\nsamples: {}' }, 'Unrecognized'],
+    ['missing option', { ...translatedTemplate, 'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/variant.yaml': 'enumText: { palette: { warm: 暖色 } }\nsamples: {}' }, 'enumText.palette'],
+    ['wrong placeholders', { ...translatedTemplate, 'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/body.txt': '{{unknown}}海报。' }, 'placeholders'],
+  ] as const)('rejects %s instead of silently falling back', (_name, patch, message) => {
+    const result = load(setup(patch));
+    expect(result.built).toBeNull();
+    expect(blocking(result.findings.list).some((f) => f.message.includes(message))).toBe(true);
+  });
+
+  it('freezes a translated template used by a run without changing the source contract', () => {
+    const root = setup(translatedTemplate);
+    const initial = load(root);
+    const template = initial.content.templates.get('t_001')!;
+    const version = template.versions.get('v1')!;
+    const sourceHash = templateContractHash(version.body, version.fields, version.inputs);
+    const original = load(setup()).content.templates.get('t_001')!.versions.get('v1')!;
+    expect(sourceHash).toBe(templateContractHash(original.body, original.fields, original.inputs));
+    const selected = resolveTemplate(template, version, 'zh-Hans');
+    const run = `id: x_002
+promptLanguage: zh-Hans
+template: { id: t_001, version: v1, sample: default, values: { product: 马克杯, palette: warm }, contractHash: ${sourceHash}, variantHash: ${selected.variantHash} }
+promptSha256: ${sha256('马克杯的暖色海报。')}
+outputAssetIds: [a_001]
+recordedAt: 2026-11-05
+model: { displayName: Test model }
+`;
+    const dir = path.join(root, 'content/examples/x_002');
+    fs.mkdirSync(dir);
+    fs.writeFileSync(path.join(dir, 'run.yaml'), run);
+    fs.writeFileSync(path.join(dir, 'prompt.txt'), '马克杯的暖色海报。');
+    const result = load(root);
+    expect(blocking(result.findings.list)).toEqual([]);
+    expect(detail<TemplateDetail>(result, 'template', 'zh-Hans', 't_001')!.version.samples[0]!.exampleIds).toEqual(['x_002']);
+    fs.writeFileSync(path.join(dir, 'run.yaml'), run.replace(`, variantHash: ${selected.variantHash}`, ''));
+    expect(blocking(load(root).findings.list).some((f) => f.message.includes('variantHash'))).toBe(true);
+    fs.writeFileSync(path.join(dir, 'run.yaml'), run);
+    fs.writeFileSync(path.join(root, 'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/body.txt'), '{{product}}的{{palette}}海报！');
+    expect(blocking(load(root).findings.list).some((f) => f.message.includes('variantHash'))).toBe(true);
+  });
+
+  it('validates localized defaults, lists and annotation ambiguity', () => {
+    const base = setup(translatedTemplate);
+    const fields = fs.readFileSync(path.join(base, 'content/templates/t_001/versions/v1/fields.yaml'), 'utf8');
+    const result = load(setup({
+      ...translatedTemplate,
+      'content/templates/t_001/versions/v1/fields.yaml': fields.replace('maxLength: 40', 'default: a mug, maxLength: 40') + '  - { name: features, type: string-list, default: [simple, clean], separator: ", ", labels: { en: Features, zh-Hans: 特点 } }\n',
+      'content/templates/t_001/versions/v1/body.txt': 'Poster for {{product}} in {{palette}}: {{features}}.',
+      'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/body.txt': '{{product}}的{{palette}}海报：{{features}}。',
+      'content/templates/t_001/versions/v1/prompt-locales/zh-Hans/variant.yaml': 'defaults: { product: 马克杯, features: [简洁, 干净] }\nenumText: { palette: source }\nseparators: { features: "；" }\nsamples: { default: { product: 马克杯, palette: warm, features: [简洁, 干净] }, second: { product: 茶罐, palette: cold, features: [质感] } }\n',
+      'content/examples/x_001/run.yaml': null,
+      'content/examples/x_001/prompt.txt': null,
+    }));
+    expect(blocking(result.findings.list)).toEqual([]);
+    const template = detail<TemplateDetail>(result, 'template', 'zh-Hans', 't_001')!;
+    expect(template.version.defaultPrompt).toBe('马克杯的warm海报：简洁；干净。');
+    expect(template.version.fields[0]!.default).toBe('马克杯');
+    const ambiguous = load(setup({ ...literal, 'content/prompts/p_001/prompt-locales/zh-Hans/prompt.txt': zh + zh }));
+    expect(blocking(ambiguous.findings.list).some((f) => f.message.includes('exactly once'))).toBe(true);
+  });
+
+  it('matches only the exact language and text of a recorded literal run', () => {
+    const result = load(setup({
+      ...literal,
+      'content/examples/x_002/prompt.txt': zh,
+      'content/examples/x_002/run.yaml': `id: x_002\npromptId: p_001\npromptLanguage: zh-Hans\npromptSha256: ${sha256(zh)}\noutputAssetIds: [a_001]\nrecordedAt: 2026-11-05\nmodel: { displayName: Test model }\n`,
+    }));
+    expect(blocking(result.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(result, 'prompt', 'zh-Hans', 'p_001')!.test).toMatchObject({ recordedOutput: true, lastTestedAt: '2026-11-05' });
+    expect(detail<PromptDetail>(result, 'prompt', 'en', 'p_001')!.test.recordedOutput).toBe(false);
+  });
 });

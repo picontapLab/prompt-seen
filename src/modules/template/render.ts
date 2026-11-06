@@ -81,6 +81,10 @@ export function validateValues(fields: readonly FieldSpec[], values: FieldValues
 /** The text a value contributes to the prompt (§6.3): lists joined, enums by value, trimmed. */
 export function serializeValue(field: FieldSpec, value: string | string[] | undefined): string {
   if (value === undefined) return '';
+  if (field.type === 'enum' && typeof value === 'string') {
+    const option = field.options.find((o) => o.value === toLf(value).trim());
+    if (option?.renderText !== undefined) return option.renderText;
+  }
   if (field.type === 'string-list') {
     return (Array.isArray(value) ? value : [value])
       .map((item) => toLf(item).trim())

@@ -42,7 +42,7 @@ export default defineEmitter({
       ...locales.flatMap((l) => {
         const notFound = url.withBasePath(url.paths.notFound(l.pathPrefix));
         return [
-          `location ${url.withBasePath(url.paths.home(l.pathPrefix))} {`,
+          `location ${url.withBasePath(`/${l.pathPrefix}/`)} {`,
           `    charset utf-8; charset_types ${TEXT_TYPES};`,
           `    error_page 404 ${notFound}index.html;`,
           '}',

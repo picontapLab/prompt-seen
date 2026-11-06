@@ -88,12 +88,13 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
             </header>
           </div>
           <RecordedShowcase
-            runs={detail.examples.map(({ id, outputs, references, referenceLabels, prompt }) => ({
+            runs={detail.examples.map(({ id, outputs, references, referenceLabels, prompt, promptLanguage }) => ({
               id,
               outputs,
               references,
               referenceLabels,
               prompt,
+              promptLanguage,
             }))}
             defaultId={detail.showcaseExampleId ?? undefined}
             cover={detail.cover}

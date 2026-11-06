@@ -15,8 +15,8 @@ export type Preferences = {
    */
   singleKeyShortcuts: boolean;
   /**
-   * Registry code of the language the visitor last chose (§8.2). Only offered as "Continue in
-   * {language}" on the language entry; addresses with a language are never redirected.
+   * Registry code of the language the visitor last chose. Explicit URLs always decide the
+   * page language; the root home uses the configured default regardless of this preference.
    */
   language: string | null;
   /** The one-time note that favourites stay on this device has been shown (§11.5, §11.9). */

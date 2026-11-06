@@ -1,7 +1,7 @@
 import type { Viewport } from 'next';
 import { themeColor } from '@/styles/tokens/theme-color';
 
-// Pass-through root layout. <html> is rendered one level down, by the language entry and by
+// Pass-through root layout. <html> is rendered one level down, by the default-language home and by
 // [locale]/layout.tsx (through RootDocument), so every page gets its own lang and dir (design
 // doc §8.6). Pages under [locale] that call notFound() need a [locale]/not-found.tsx without
 // <html>; the root not-found.tsx renders a full document and is only used for unmatched URLs.

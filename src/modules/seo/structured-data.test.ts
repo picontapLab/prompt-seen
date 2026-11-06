@@ -68,7 +68,7 @@ const prompt = (over: Partial<PromptDetail> = {}): PromptDetail =>
   }) as unknown as PromptDetail;
 
 describe('promptWork', () => {
-  it('describes the prompt as a CreativeWork in the page language', () => {
+  it('describes the prompt in its actual language even on a translated page', () => {
     const work = promptWork(prompt(), zh, ctx);
     expect(work).toMatchObject({
       '@type': 'CreativeWork',
@@ -76,7 +76,7 @@ describe('promptWork', () => {
       name: '水墨梅枝',
       description: '一句话用途。',
       text: 'Ink plum branch </script><b>',
-      inLanguage: 'zh-Hans',
+      inLanguage: 'en',
       datePublished: '2026-10-01',
       dateModified: '2026-10-12',
     });
@@ -171,6 +171,7 @@ describe('templateWork', () => {
     const detail = {
       path: '/en/templates/poster/',
       title: 'Product poster',
+      promptLanguage: 'en',
       description: 'Fill in a product.',
       createdAt: '2026-07-10',
       updatedAt: '2026-09-02',

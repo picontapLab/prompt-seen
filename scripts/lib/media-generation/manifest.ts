@@ -8,7 +8,8 @@ import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
 import { buildIndex } from '../content/build-index';
 import { Findings } from '../content/findings';
 import { normalizePrompt, readContent } from '../content/read';
-import { promptTextOf, versionSpec } from '../content/rules';
+import { promptTextOf } from '../content/rules';
+import { resolveTemplate, runPromptLanguage, sourcePromptLanguage } from '../content/prompt-variants';
 import { exampleRunSchema } from '../content/schemas';
 import { atomicWrite, digest, filesUnder, hashFile, locked, paths, readJson, within, writeJson } from './files';
 import { initialState, manifestSchema, stateSchema, type Job, type Manifest } from './schema';
@@ -68,6 +69,7 @@ function collectManifest(
             .object({
               previousPromptSha256: z.string().regex(/^[a-f0-9]{64}$/),
               template: exampleRunSchema.shape.template,
+              promptLanguage: z.string().min(2).optional(),
             })
             .strict(),
         )
@@ -118,6 +120,9 @@ function collectManifest(
       throw new Error(`Conflicting or missing prompt sources for ${assetId}`);
     let text = texts[0]!;
     const owner = owners[0];
+    let promptLanguage = owner
+      ? sourcePromptLanguage(content, owner)
+      : (runs.map((run) => runPromptLanguage(content, run)).find((language) => language !== null) ?? undefined);
     const ownerSource = owner?.data.promptSource;
     let template = owner
       ? ownerSource?.type === 'template'
@@ -140,9 +145,20 @@ function collectManifest(
       if (owner || !override.template || override.previousPromptSha256 !== digest(text))
         throw new Error(`Invalid standalone template revision for ${assetId}`);
       template = override.template;
-      const version = content.templates.get(template.id)?.versions.get(template.version);
-      const rendered = version ? renderTemplate(versionSpec(version), template.values).text : null;
+      const recTemplate = content.templates.get(template.id);
+      const version = recTemplate?.versions.get(template.version);
+      promptLanguage = override.promptLanguage ?? recTemplate?.data.promptLanguage;
+      if (
+        recTemplate &&
+        version &&
+        promptLanguage !== recTemplate.data.promptLanguage &&
+        !version.promptLocales.has(promptLanguage!)
+      )
+        throw new Error(`Missing template locale: ${promptLanguage}`);
+      const selected = recTemplate && version ? resolveTemplate(recTemplate, version, promptLanguage!) : null;
+      const rendered = selected ? renderTemplate(selected.spec, template.values).text : null;
       if (!rendered) throw new Error(`Invalid template override for ${assetId}`);
+      if (selected?.variantHash) template = { ...template, variantHash: selected.variantHash };
       text = rendered;
     }
     const ratios = [...text.matchAll(/\b(\d+)\s*:\s*(\d+)\b/g)].map((m) => `${m[1]}:${m[2]}`);
@@ -163,6 +179,7 @@ function collectManifest(
       id: assetId,
       slug: owner?.data.slug ?? 'product-poster-v2-default',
       promptId: owner?.data.id ?? null,
+      ...(promptLanguage ? { promptLanguage } : {}),
       template: exampleRunSchema.shape.template.parse(template),
       sourceExampleIds: runs.map((r) => r.data.id),
       promptFile: path.relative(root, path.join(p.dir, 'jobs', assetId, 'prompt.txt')),

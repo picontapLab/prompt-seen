@@ -1,5 +1,5 @@
 import 'server-only';
-import { builtLocales, config, type LocaleEntry } from '@/config';
+import { builtLocales, type LocaleEntry } from '@/config';
 import { localeIndex } from '@/modules/content';
 import type { ImageRef, Visibility } from '@/modules/content/types';
 import { feedIndex, feedPage, type FeedCard, type FeedPage } from '@/modules/feed';
@@ -38,10 +38,8 @@ export function localeSitemapUrls(locale: LocaleEntry, sections: PageSections): 
   const templates = published(index.templates);
   const urls: SitemapUrl[] = [];
 
-  // The language entry is the x-default of every home page (§8.2); it belongs to no locale and is
-  // listed once, with the default locale. Sitemaps are submitted through robots.txt or Search
-  // Console, so a URL above the sitemap's own directory is accepted.
-  if (locale.code === config.defaultLocale) urls.push({ loc: absoluteUrl(paths.languageEntry()) });
+  // Only the canonical home: the default locale lives at the root, its prefixed alias is omitted.
+  // Sitemaps are submitted through robots.txt or Search Console, allowing the root URL here.
   urls.push({ loc: absoluteUrl(paths.home(prefix)) });
 
   if (sections.prompts) {

@@ -67,3 +67,7 @@ export function message(code: string, key: string, values: Record<string, string
   if (typeof node !== 'string') throw new Error(`no message ${key} in ${code}`);
   return node.replace(/\{(\w+)\}/g, (_, name: string) => values[name] ?? `{${name}}`);
 }
+
+/** Canonical home: the default language lives at the site root. */
+export const homePath = (locale: Pick<BuildInfo['locales'][number], 'code' | 'pathPrefix'>) =>
+  locale.code === BUILD.defaultLocale ? '/' : `/${locale.pathPrefix}/`;

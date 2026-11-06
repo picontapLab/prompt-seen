@@ -103,6 +103,7 @@ export function verifyPublishedContracts(root: string, id = 'gpt-image-v1') {
     const run = exampleRunSchema.parse(YAML.parse(fs.readFileSync(path.join(dir, 'run.yaml'), 'utf8')));
     if (
       run.promptSha256 !== job.promptSha256 ||
+      (job.promptLanguage !== undefined && run.promptLanguage !== job.promptLanguage) ||
       normalizePrompt(fs.readFileSync(path.join(dir, 'prompt.txt'), 'utf8')) !== promptOf(root, job) ||
       run.outputAssetIds.length !== 1 ||
       run.outputAssetIds[0] !== job.newAssetId ||

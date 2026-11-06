@@ -181,3 +181,23 @@ describe('validateValues', () => {
     expect(validateValues([headline], { headline: '   ' })).toEqual([]);
   });
 });
+
+it('localizes enum output while preserving stable values and literal user input', () => {
+  const localized: TemplateVersionSpec = {
+    body: '{{product}}，配色{{palette}}',
+    fields: [
+      product,
+      {
+        ...palette,
+        options: [
+          { value: 'warm neutral', renderText: '暖色', swatch: null },
+          { value: 'monochrome', renderText: '单色', swatch: null },
+        ],
+      },
+    ],
+  };
+  const result = renderTemplate(localized, { product: '{{palette}}', palette: 'warm neutral' });
+  expect(result.text).toBe('{{palette}}，配色暖色');
+  expect(result.values).toEqual({ product: '{{palette}}', palette: 'warm neutral' });
+  expect(renderTemplate(localized, { product: 'cup', palette: '暖色' }).ok).toBe(false);
+});

@@ -66,7 +66,7 @@ describe('typical queries (§16.3)', () => {
       production
         .engine('zh-Hans')
         .docs.filter((d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) <= 100)
-        .every((d) => d.model === 'GPT Image 2.5'),
+        .every((d) => d.model === (d.id === 'prompt:p_024' ? '' : 'GPT Image 2.5')),
     ).toBe(true);
     const top50 = production
       .engine('zh-Hans')

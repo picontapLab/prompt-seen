@@ -404,7 +404,7 @@ prompt-library/
 - `src/config/` 读取 `content/site.yaml` 与环境变量，输出站点源、基础路径、URL 模式、品牌与功能开关。代码其他位置不直接读取环境变量。`load.ts` 只在 Node 中运行（脚本与 `next.config.ts`）；`npm run gen` 把校验后的配置与 locale 字面量类型写入 `generated/`，应用代码只通过 `@/config` 使用这些常量。lint 禁止 `src/` 中直接读取 `process.env`，以及在 `url` 模块以外使用 `origin`、`basePath` 与 `urlPattern`。
 - 可覆盖 `site.yaml` 的环境变量：`SITE_ORIGIN`、`BASE_PATH`（根部署时为空）、`URL_PATTERN`、`BUILD_MODE`、`BUILD_ID` 与 `CONTENT_DIR`。`BUILD_MODE` 为 `production` 或 `preview`，默认 `preview`：预览构建的全部页面带 `noindex`，并额外生成注册表中标记 `preview: true` 的 locale（第 8.2 节）；生产构建只生成已启用的 locale。
 - `src/i18n/` 使用 next-intl，只负责 ICU 消息格式化（第 11.11 节）；locale 前缀、路由与 hreflang 来自语言注册表与 `url` 模块，不使用 next-intl 的中间件（静态导出不能运行）。消息按功能拆分为 `messages/{locale code}/{namespace}.json`，文件名即命名空间；客户端模块只接收所需的命名空间。`content:validate` 检查 ICU 语法、缺失的键，以及各语言与英语的参数是否一致。实施细节（1.24）：`src/i18n/request.ts` 用 icu-minify 把消息预编译后再交给 next-intl，`next.config.ts` 把 `use-intl/format-message` 换成只格式化的版本（与 next-intl 的 `messages.precompile` 相同），服务端组件、客户端模块与浏览器格式化的都是预编译的消息，ICU 解析器不进入浏览器；`t.raw` 因此不可用。路由处理器与脚本使用的 `catalogTranslator` 直接以 icu-minify 格式化，单元测试保证每条消息的输出与运行时解析的结果相同。
-- `src/app/layout.tsx` 只透传子节点；`<html lang dir>` 由 `[locale]/layout.tsx` 与语言入口的 `(entry)/layout.tsx` 输出，使每个页面带有自己的语言与方向（第 8.6 节）。`[locale]` 下的页面调用 `notFound()` 时，需要不输出 `<html>` 的 `[locale]/not-found.tsx`。
+- `src/app/layout.tsx` 只透传子节点；`<html lang dir>` 由 `[locale]/layout.tsx` 与默认语言首页的 `(entry)/layout.tsx` 输出，使每个页面带有自己的语言与方向（第 8.6 节）。`[locale]` 下的页面调用 `notFound()` 时，需要不输出 `<html>` 的 `[locale]/not-found.tsx`。
 - `src/modules/` 封装内容读取、模板渲染、资源选择、搜索与 SEO 规则。`url/` 是生成所有对外地址的唯一模块；`geo/` 负责 Markdown 版本、`llms.txt` 与 AI 爬虫规则输出。
 - `src/ui/primitives/` 封装 React Aria 组件基元与项目样式，业务组件只使用这一层，不直接拼装 ARIA 属性。
 - `src/ui/brand/` 是品牌层元素（片边、帧号、裁切标记、占位字标）；`src/ui/motion/` 是动效 Provider 与预设；`src/ui/navigation/` 是根文档与可替换外壳（第 15.5.2 节）。
@@ -433,7 +433,7 @@ prompt-library/
 - `content:build` 的每种输出是 `scripts/emitters/` 下的一个文件，默认导出 `defineEmitter({ name, description, run })`，由注册表自动发现；输出只经 `ctx.write` 写入 `public/generated/`、`.generated/` 或 `deploy/generated/`（第 17.4 节）。`_` 开头的文件是辅助模块。
 - `scripts/package.ts` 把 `out/` 打包到 `dist/{basePath}/`，并检查每个已生成 locale 的首页与错误页都存在；`scripts/deploy-cloudflare.ts` 在此基础上组装 Cloudflare Pages 的上传目录。
 - `docs/` 保存本文、《子路径部署决策》《语言覆盖评估》与《工程约定》（`engineering-conventions.md`）。
-- 每种语言的错误页预生成在 `/{locale}/404/` 与 `/{locale}/410/`，由宿主的错误页规则引用；根 `not-found.tsx` 生成未知语言使用的 `404.html`；根 `page.tsx` 是语言入口（第 8.2 节）；`icon.svg` 使站点图标带基础路径（第 15.4.3 节）。
+- 每种语言的错误页预生成在 `/{locale}/404/` 与 `/{locale}/410/`，由宿主的错误页规则引用；根 `not-found.tsx` 生成未知语言使用的 `404.html`；根 `page.tsx` 是默认英语首页（第 8.2 节）；`icon.svg` 使站点图标带基础路径（第 15.4.3 节）。
 - `index.md` 等 Route Handler 不在 `[locale]` layout 之下，拿不到父级参数，其 `generateStaticParams` 必须同时返回 `locale` 与 `slug`，否则导出报错。
 
 ## 5. 核心内容模型
@@ -636,7 +636,7 @@ provenance:
 
 示例目录中的 `prompt.txt` 是不可随模板更新而改变的历史快照。它用于说明图片生成条件，不作为当前 Prompt 的第二份编辑源。
 
-实施细节（1.9）：`run.yaml` 的字段为 `promptId`、`template`（`id`、`version`、`sample`、`values`）、`promptSha256`、`referenceAssetIds`、`outputAssetIds`、`provider`、`model`、`recordedAt`、`parameters` 与按 locale 的 `notes`，`promptId` 与 `template` 至少有一个。构建校验 `prompt.txt` 的哈希；带模板的记录要求该版本以记录的参数重新渲染后与 `prompt.txt` 完全一致，所用样本也不得改变，以此落实第 6.4 节“已用于公开生成示例的版本保持固定”。最近一次记录的日期即“最后测试于”。
+实施细节（1.9）：`run.yaml` 的字段为 `promptId`、`template`（`id`、`version`、`sample`、`values`）、`promptSha256`、`referenceAssetIds`、`outputAssetIds`、`provider`、`model`、`recordedAt`、`parameters` 与按 locale 的 `notes`，`promptId` 与 `template` 至少有一个。构建校验 `prompt.txt` 的哈希；带模板的记录要求该版本以记录的参数重新渲染后与 `prompt.txt` 完全一致，所用样本也不得改变，以此落实第 6.4 节“已用于公开生成示例的版本保持固定”。“最后测试于”只取与当前展示正文、实际语言、固定模板版本及参数精确匹配的最近一次记录；其他历史记录继续在示例区展示。新 run 记录 `promptLanguage`，译文模板 run 另有 `template.variantHash` 保护实际渲染契约，原文 `contractHash` 保持不变。
 
 ## 6. 模板系统
 
@@ -723,7 +723,7 @@ Keep the product silhouette clear and the visual hierarchy readable.
 
 样本参数存放于 `samples/default.yaml`，用于默认展示和渲染测试；同目录下的其他样本供编辑器“换个示例”按固定顺序循环。
 
-实施细节（1.9）：字段类型为 `string`（`default`、`minLength`、`maxLength`、`multiline`）、`string-list`（`default`、`minItems`、`maxItems`、`itemMaxLength`、`separator`）与 `enum`（`default`，`options` 含 `value`、`labels` 与可选 `swatch`）；`help` 可选。长度按用户可见字符（字素簇）计算。正文中的每个占位符都要有字段定义，每个字段都要在正文中使用，每个样本都必须能完整渲染，否则构建失败并指出位置。
+实施细节（1.9）：字段类型为 `string`（`default`、`minLength`、`maxLength`、`multiline`）、`string-list`（`default`、`minItems`、`maxItems`、`itemMaxLength`、`separator`）与 `enum`（`default`，`options` 含 `value`、`labels` 与可选 `swatch`）；`help` 可选。长度按用户可见字符（字素簇）计算。正文中的每个占位符都要有字段定义，每个字段都要在正文中使用，每个样本都必须能完整渲染，否则构建失败并指出位置。 可选正文语言变体在构建时合成有效字段，enum 保留稳定 `value`，渲染输出使用 `renderText ?? value`；自由文本默认值、样本参数和列表连接符可本地化，详见第 8.3 节。
 
 `group`、`help` 与 `swatch` 只影响编辑器呈现（分组、帮助文字与色块），不参与 Prompt 渲染，修改它们不需要创建新的模板版本。`group` 的取值与各语言名称在 `content/taxonomy/field-groups.yaml` 中维护。
 
@@ -736,7 +736,7 @@ Keep the product silhouette clear and the visual hierarchy readable.
 | 必填值缺失 | 返回字段错误，不输出声称完整的 Prompt |
 | 默认值 | 从字段定义读取，用户修改后使用修改值 |
 | 数组 | 使用字段声明的分隔符序列化 |
-| 枚举 | 使用稳定 `value`；界面只翻译显示标签 |
+| 枚举 | 参数保存稳定 `value`；正文输出使用当前变体的 `renderText ?? value`，界面标签独立本地化 |
 | 可选字段 | 空值替换为空字符串；模板作者负责保证句子仍合理 |
 | 替换过程 | 单次替换，不对用户输入中的占位符再次解释 |
 | 执行能力 | 只做文本替换和校验，不执行字段内的表达式或代码 |
@@ -831,11 +831,11 @@ URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/
 
 各语言共用稳定 ID 与英文 slug，标题和正文独立维护。泛英语、西语和法语先使用语言级标签；巴西葡语使用地区标签。需要葡萄牙本地用语时新增 `pt-PT`，不复制未经本地化的巴西版本。BCP 47 允许的标签与搜索引擎接受的 hreflang 范围要分别验证；第一版西语使用 `es`，不使用 Google 当前未支持的 `es-419` 作为 hreflang。
 
-根地址 `/` 提供语言入口，可作为 `x-default`。该页面返回 200，包含项目简介、各语言入口和少量精选图片，不按 `Accept-Language` 或 IP 自动跳转：搜索引擎抓取通常不携带语言偏好，自动跳转会使其只能看到一种语言。页面可根据浏览器语言在客户端突出推荐语言，用户点击后保存偏好；再次访问根地址时显示“继续使用 {语言}”的明确入口，仍不强制跳转。用户可主动选择语言并保存偏好；不依据 IP 强制跳离其直接访问的语言地址。语言菜单使用语言名称而非仅以国旗代表语言。
+根地址 `/` 直接返回默认语言首页，默认英语（`content/locales.yaml` 的 `defaultLocale: en`），作为英语首页 canonical 与 `x-default`。首份静态 HTML 包含当前展出、作品、搜索、导航和语言切换，不再显示语言选择页，也不按 `Accept-Language`、IP 或已保存的语言偏好跳转。用户通过页眉语言菜单和页脚入口主动切换语言；菜单使用母语名称。
 
-实施说明（1.16）：语言入口由站名、一句话定位、语言列表与一组最新作品的印样条组成；每种语言以母语名称和该语言的一句介绍列出，带 `lang` 与 `dir`。推荐语言按浏览器的语言列表依次匹配注册表（先完整标签，再去掉地区，再取同一语言的其他变体；无文字子标签的中文按地区区分简繁），只在接管后加“根据浏览器语言推荐”标记。在入口或语言菜单中选择语言时，偏好存储的 `language` 字段记录该 locale；再次访问入口时显示“继续使用 {语言}”的按钮，以该语言书写。首次输出对所有访问者相同，任何情况下都不跳转。
+实施说明（2026-11-05）：根路由与 `/{locale}/` 路由复用 `src/ui/home/HomePage.tsx`，共享页面内容、metadata 与结构化数据。`paths.home()` 将默认语言首页映射到 `/`，其他语言仍使用 `/zh-hans/` 等前缀；旧 `/en/` 返回相同首页，canonical 指向 `/`，sitemap 只列规范首页。英语列表、详情、搜索等内容页仍保留 `/en/...`，避免无关地址迁移。语言菜单从其他语言首页切回英语时进入 `/`；详情页继续切换到同一条目的译文。
 
-子路径部署时，全部地址的前缀为 `{basePath}/{locale}/`；“根地址”与 `x-default` 指基础路径本身，如 `xxx.com/prompt-seen/`，见第 15.4 节。
+默认使用域名根部署（`basePath: ''`、`robots.mode: standalone`）。需要子路径时仍可设置 `BASE_PATH=/prompt-seen`，首页与 `x-default` 对应基础路径本身，如 `xxx.com/prompt-seen/`，其他页面以 `{basePath}/{locale}/` 开头；子路径的 robots 由宿主合并，见第 15.4 节。
 
 ### 8.3 三种不同的语言覆盖
 
@@ -845,9 +845,13 @@ URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/
 | 内容语言 | 标题、描述、用途、操作说明、专题、图片说明与关键词 | 经审核后形成独立 SEO 页面 |
 | Prompt 与图片文字语言 | 实际提示词正文、画面中要求出现的文字 | 单独记录版本及验证情况，不由界面语言推断 |
 
-Prompt 默认保留已验证的原始语言，网站覆盖 13 个 locale 并不意味着生图工具已经验证了这 13 种语言。需要翻译实际 Prompt 时，应保存独立变体和验证标记；不得把原图描述为该翻译版的实测输出。
+Prompt 正文多语言为可选能力：有当前网站语言的正文时使用该正文，没有时使用原始正文。正文译文随代码合并生效，不维护单独的审核或过期状态。显示、复制和下载使用同一份正文，保留现有 UI 和交互。网站覆盖 13 个 locale 不表示生图工具已经验证了这 13 种语言；生成记录仍须对应实际使用的提示词，不得把原图描述为另一语言正文的实测输出。
+
+正文随页面语言切换的扩展设计见 [Prompt 与模板正文多语言设计](./multilingual-prompt-design.md)。该方案采用可选语言文件、原文回退和统一模板渲染，保持现有参数、草稿及分享操作，JSON 导出直接使用新结构。实现位于 `scripts/lib/content/prompt-variants.ts`，三类双语试点为 `p_217`、`t_001`、`p_024`。
 
 ### 8.4 翻译、审核与发布判断
+
+本节及第 8.5 节的现有翻译元数据与发布规则针对 `locales/{code}.mdx` 的页面标题、说明等内容，不用于限制第 8.3 节的 Prompt 正文语言文件。本次正文多语言改造不改变现有页面发布及缺失翻译路由。
 
 建议流程：源内容 → 自动翻译草稿 → 术语与语义审核 → 页面预览 → 按 locale 发布。
 
@@ -956,7 +960,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - `lastmod` 使用内容实际修改时间；普通重新部署不改变全部页面的时间。
 - 不设置限制性的 `nosnippet`、`max-snippet` 或 `max-image-preview`；搜索结果摘要与 AI 摘要都依赖可用片段。
 - 结构化数据按第 9.6 节的映射生成，描述页面真实内容，不承诺特定富媒体搜索展示。
-- 实施细节（1.11）：页面的 `generateMetadata` 只调用 `@/modules/seo`（`promptMetadata`、`templateMetadata`、`pageMetadata`），不自行组装 title、canonical、hreflang 与 Open Graph；规则在纯函数 `buildPageMetadata` 中并有单元测试。文档标题为“{标题} · {类型} · {站名}”，类型名按 locale 来自消息文件。条目页的 hreflang 列出本次构建中该条目的全部版本（含自身），有多个版本时 x-default 指向默认语言版本；默认语言没有该条目时不输出 x-default。语言首页仍以语言入口为 x-default（第 8.2 节）。`og:locale` 使用 `language_TERRITORY`，如 zh-Hans → `zh_CN`、zh-Hant → `zh_TW`、ar → `ar_AR`。分享图使用 `og` 规格的实际尺寸：原图小于 1200 px 时不放大（样例中有 900 × 473），因此尺寸不一定是 1200 × 630。
+- 实施细节（1.11）：页面的 `generateMetadata` 只调用 `@/modules/seo`（`promptMetadata`、`templateMetadata`、`pageMetadata`），不自行组装 title、canonical、hreflang 与 Open Graph；规则在纯函数 `buildPageMetadata` 中并有单元测试。文档标题为“{标题} · {类型} · {站名}”，类型名按 locale 来自消息文件。条目页的 hreflang 列出本次构建中该条目的全部版本（含自身），有多个版本时 x-default 指向默认语言版本；默认语言没有该条目时不输出 x-default。语言首页以默认语言根首页为 x-default（第 8.2 节）。`og:locale` 使用 `language_TERRITORY`，如 zh-Hans → `zh_CN`、zh-Hant → `zh_TW`、ar → `ar_AR`。分享图使用 `og` 规格的实际尺寸：原图小于 1200 px 时不放大（样例中有 900 × 473），因此尺寸不一定是 1200 × 630。
 - 实施细节（1.13）：sitemap index 位于 `{basePath}/sitemap.xml`，列出每个已启用 locale 的 `/{locale}/sitemap-pages.xml`。只收录已启用 locale 中已发布的版本：预览构建中的草稿与仅预览的 locale（如日语、阿拉伯语草稿）不进入。语言入口随默认语言的 sitemap 列出（sitemap 经 robots.txt 或 Search Console 提交，不受文件所在目录的范围限制）。条目页的 `lastmod` 为该版本的 `updatedAt`；列表分页取该页作品中最新的 `updatedAt`；语言首页与语言入口没有内容日期，不输出 `lastmod`。sitemap 只列出本次构建已有的页面类型，由 `src/ui/navigation/sections.ts` 的标志决定（`pageSections()`）：新增列表、专题、合集、关于与许可页的步骤翻转对应标志即可。预览构建中条目页的 hreflang 也指向草稿版本（预览页全部 `noindex`），生产构建没有草稿，二者一致。页面有 Markdown 版本时输出 `<link rel="alternate" type="text/markdown">`。
 
 ### 9.4 分页、筛选与链接
@@ -999,7 +1003,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 
 - 不使用 `HowTo`（Google 已停止该富媒体结果）、`SearchAction`（站内搜索框富媒体结果已停用）与 `FAQPage`（富媒体结果仅限少数权威站点）。不把 Prompt 标成 `Article` 或 `Product`。
 - `license` 与 `acquireLicensePage` 同时具备时，Google 图片可显示“可授权”标记；字段未知时省略属性，不填占位值。
-- `inLanguage` 取页面语言。Prompt 正文语言不同时，通过可见的“Prompt 语言”标签说明，不在结构化数据中虚构译文。
+- Prompt 和模板的 `CreativeWork.inLanguage` 取实际选中正文的语言，与可见的“Prompt 语言”标签一致；站点、专题等节点继续取页面语言。
 - 结构化数据由 `seo` 模块从同一内容索引生成；构建测试校验其中的标题、日期、作者和面包屑与可见内容一致。
 - 实施细节（1.13）：页面以 `<JsonLd>` 输出一个 `@graph`，函数在 `@/modules/seo`（`promptStructuredData`、`templateStructuredData`、`collectionStructuredData`、`homeStructuredData`、`aboutStructuredData`），映射是纯函数 `structured-data.ts`。面包屑与可见面包屑由同一函数生成（`src/ui/prompt-detail/crumbs.ts`）；Google 要求除最后一项外每项都有地址，中间项只显示文字时不输出 `BreadcrumbList`。内容文件只记录名字：`author`、`creator` 与站名相同时为站点 `Organization`，否则视为 `Person`。许可名称（如 `CC BY 4.0`，大小写与 SPDX 写法均可）映射到许可正文地址，其他名称输出带 `name` 的 `CreativeWork`；`ImageObject.license` 只用已知地址。主图使用 `detail` 规格及其尺寸。列表的 `ItemList` 只列当前页作品，按可见顺序跨页连续编号（第 2 页从 25 起），不含展示带与编辑段落中重复出现的作品。步骤 4b 之前，语言首页的占位页已输出 `WebSite` 与 `Organization`（`logo` 为站点图标）；`sameAs` 在仓库公开后加入（第 20 章）。Google 富媒体结果测试需要公开地址，在步骤 5 部署后运行；本步骤以单元测试与端到端测试校验结构及其与可见内容的一致性。
 
@@ -2337,7 +2341,9 @@ Prompt 纸张的细节：
 
 子路径让内容与主站集中在同一主机下，Search Console 与站点信号更集中，但需要主站提供转发或静态映射并合并 robots.txt。主站基础设施无法稳定做到时，使用子域名。
 
-本项目以静态导出部署（《[子路径部署决策](./subpath-hosting-decision.md)》的方案 B），宿主只需提供静态文件；构建同时生成 nginx include、`_redirects`、`vercel.json` 等宿主配置。主站任选一种接入方式，都不需要 Node.js 运行时：
+本项目默认以独立域名的根路径部署：域名直接关联静态托管项目，发布 `dist/`（Cloudflare Pages 使用 `.deploy/cloudflare/`），无需主站代理。`SITE_ORIGIN` 设置规范域名，静态资源、robots、sitemap 与分享地址随配置生成。
+
+可选的子路径部署继续使用《[子路径部署决策](./subpath-hosting-decision.md)》的方案 B。宿主只需提供静态文件；构建同时生成 nginx include、`_redirects`、`vercel.json` 等宿主配置。主站任选一种接入方式，都不需要 Node.js 运行时：
 
 1. 主站服务器把 `/prompt-seen/` 映射到 `dist/prompt-seen/`，并 `include` 生成的 nginx 配置。
 2. 把产物合并进主站的静态部署目录，同时合并生成的重定向配置。
@@ -2351,10 +2357,10 @@ Prompt 纸张的细节：
 # content/site.yaml，与环境变量合并，环境变量优先
 siteName: Prompt Seen
 origin: https://xxx.com                 # 规范主机
-basePath: /prompt-seen                  # 根部署时留空
+basePath: ''                            # 默认域名根部署；子路径部署设为 /prompt-seen
 urlPattern: "{basePath}/{locale}/{path}" # 主站按语言前缀组织时可改为 "/{locale}{basePath}/{path}"
 robots:
-  mode: snippet                         # standalone：输出 robots.txt；snippet：输出供主站合并的 robots-snippet.txt
+  mode: standalone                      # 根部署输出 robots.txt；子路径用 snippet 供主站合并
   aiTraining: disallow                  # 第 9.10.2 节训练类爬虫的策略
 shell:
   header: default                       # default 或 host：使用与主站一致的页眉、页脚配置

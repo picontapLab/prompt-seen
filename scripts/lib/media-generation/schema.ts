@@ -7,6 +7,7 @@ export const jobSchema = z.object({
   id: jobIdSchema,
   slug: z.string(),
   promptId: z.string().nullable(),
+  promptLanguage: z.string().min(2).optional(),
   template: exampleRunSchema.shape.template,
   sourceExampleIds: z.array(z.string()),
   promptFile: z.string(),

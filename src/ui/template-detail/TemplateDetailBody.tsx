@@ -46,6 +46,7 @@ export function TemplateDetailBody({
             {
               id: run.id,
               prompt: run.prompt,
+              promptLanguage: run.promptLanguage,
               template: run.template,
               image: run.outputs[0],
               references: run.references.map((image, index) => ({
@@ -79,6 +80,7 @@ export function TemplateDetailBody({
           </div>
         </header>
         <TemplateEditor
+          key={`${detail.id}:${version.id}`}
           model={model}
           languageName={languageName(detail.promptLanguage, locale.htmlLang)}
           showLanguageNote={detail.promptLanguage.split('-')[0] !== locale.htmlLang.split('-')[0]}

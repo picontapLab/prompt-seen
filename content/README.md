@@ -64,6 +64,60 @@ A content page is served at `/{locale}/{directory name}/`, so its name cannot be
 routes use (prompts, templates, collections, categories, styles, use-cases, search, explore,
 favorites, translation-missing, 404, 410); `content:validate` reports it.
 
+## Optional prompt languages
+
+Prompt bodies and page descriptions have separate language files. Keep adding single-language
+cases as before; no translation directory is required. Within an existing page, the build uses
+`prompt-locales/{code}/` when present and otherwise the original prompt language. Codes match
+`locales.yaml` exactly (for example `zh-Hans`). Missing body translations are normal and do not
+produce warnings. Files committed together are usable together; prompt translations have no
+review, draft or expiry metadata.
+
+- Literal prompt: add `prompts/p_NNN/prompt-locales/{code}/prompt.txt`. If the source has
+  annotations, also add `annotations.yaml` with `annotations: [{ sourcePhrase: "…", phrase: "…" }]`.
+  Map every original phrase once; each translated phrase must occur exactly once, without overlaps.
+  The existing notes and image regions are reused.
+- Template: add `templates/t_NNN/versions/vN/prompt-locales/{code}/body.txt` and `variant.yaml`.
+  Keep the same placeholders and field constraints. `defaults` covers all non-enum fields with a
+  source default; `enumText` covers each enum with a complete stable-value-to-output map or the
+  string `source`; `separators` covers every list field; `samples` covers all source sample names,
+  each with a complete set of valid values. Omit empty `defaults`, `enumText` and `separators`.
+- Derived prompt: add `prompts/p_NNN/prompt-locales/{code}/variant.yaml` containing `values`
+  and optional `annotations`. It must reference an existing translation of its fixed source
+  template version. A template translation alone does not translate derived prompts.
+
+For example, a template `A {{color}} {{product}}.` with enum values `blue` and `red`, a string
+field `product` with no default, and one sample can use this Chinese body and variant:
+
+```text
+一个{{color}}{{product}}。
+```
+
+```yaml
+enumText:
+  color: { blue: 蓝色, red: 红色 }
+samples:
+  default: { color: blue, product: 杯子 }
+```
+
+The enum value saved in drafts and shared links is still `blue`; only the rendered output is
+`蓝色`. User-entered text is kept across language switches. Copy, download, popup data, search,
+Markdown, JSON export (current format version 2) and prompt structured data all use the selected
+body. Update the entry's `updatedAt` when changing a body or its translations.
+
+Generation runs retain their exact text. New runs record `promptLanguage`; translated template
+runs also record `template.variantHash` alongside the source `contractHash`. These hashes protect
+recorded generation evidence, not translation publication status. After a template variant has
+been used in a run, change it in a new template version. Older runs without a language only count
+when their source text can be reproduced exactly. A translation without its own matching run is
+still available, but does not claim the original's test result.
+
+For an existing target, `content:produce` can select an already-authored translation with the
+recipe's `promptLanguage`; its body and values must reproduce the generation exactly. Template
+recipes retain the source fields/input contract and select an existing translated sample.
+Single-language commands keep their existing defaults. See
+[the full design](../docs/multilingual-prompt-design.md) and the pilots `p_217`, `p_024` and `t_001`.
+
 ## Locale files and publishing
 
 Each `locales/{code}.mdx` starts with frontmatter:
@@ -90,7 +144,7 @@ A version is published in a language when (§8.4): the language is enabled in `l
 it has a description, at least one `##` section with text, alt text for the cover in that
 language, annotation notes in that language, labels for its taxonomy terms (and, for
 templates, field labels) in that language, and links only to entries published in that
-language. Missing languages simply have no page; nothing falls back to English.
+language. Missing page descriptions have no page; the prompt-body fallback above does not create a page.
 
 Preview builds (`BUILD_MODE=preview`, the default locally) also show drafts and the languages
 marked `preview: true`, so work in progress can be checked. Archived versions answer 410.
