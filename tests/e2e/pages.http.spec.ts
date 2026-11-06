@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
-import { BASE, BUILD, message, publicUrl } from './support/artifact';
+import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
 import { localeIndex, manifest } from './support/content';
 import { alternates, canonical, dataAttr, elementText, htmlElement, robots } from './support/html';
 
 // Step 3e as crawlers and hosts see it (design doc §8.2, §9.1, §9.5, §11.8.5, §11.8.7, §17.3):
-// the language entry never redirects; topics, collections and content pages exist exactly where
+// the default home never redirects; topics, collections and content pages exist exactly where
 // they meet their publishing rule; redirects, 410 and 404 answer with the right status through
 // the reference nginx and its generated include.
 
@@ -27,19 +27,19 @@ const decode = (text: string) =>
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>');
 
-// --- Language entry (§8.2) ---------------------------------------------------------------------
+// --- Default-language home ------------------------------------------------------------------
 
-test('the language entry answers 200 for every Accept-Language and links every language', async ({ request }) => {
+test('the root serves the default home for every Accept-Language and links every language', async ({ request }) => {
   for (const lang of ['en', 'ja-JP,ja;q=0.9', 'zh-CN', 'ar', 'de-DE']) {
     const res = await request.get(`${BASE}/`, { headers: { 'accept-language': lang }, maxRedirects: 0 });
     expect(res.status(), lang).toBe(200);
     const html = await res.text();
-    expect(dataAttr(html, 'page')).toBe('language-entry');
-    for (const l of BUILD.locales) {
-      expect(html, l.code).toContain(`href="${BASE}/${l.pathPrefix}/"`);
-      // Each language says what the site is in its own words.
-      expect(html).toContain(message(l.code, 'pages.entry.enter'));
-    }
+    expect(dataAttr(html, 'page')).toBe('home');
+    expect(dataAttr(html, 'locale')).toBe(BUILD.defaultLocale);
+    expect(elementText(html, 'h1')).toBe(message(BUILD.defaultLocale, 'home.hero.title'));
+    expect(html).not.toContain('data-page="language-entry"');
+    for (const l of BUILD.locales) expect(html, l.code).toContain(`href="${BASE}${homePath(l)}"`);
+    expect(canonical(html)).toBe(publicUrl('/'));
     expect(alternates(html)['x-default']).toBe(publicUrl('/'));
   }
 });

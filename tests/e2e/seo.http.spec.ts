@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { expect, test, type APIRequestContext } from '@playwright/test';
 import type { PromptDetail, TemplateDetail } from '../../src/modules/content/types';
-import { BASE, BUILD, ROOT, message, publicUrl } from './support/artifact';
+import { BASE, BUILD, homePath, ROOT, message, publicUrl } from './support/artifact';
 import {
   feedIndex,
   feedPage,
@@ -115,6 +115,10 @@ for (const locale of publicLocales) {
     const entries = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
     const byLoc = new Map(entries.map((e) => [e.loc, e]));
     expect(byLoc.size, 'no address twice').toBe(entries.length);
+    expect(byLoc.has(publicUrl(homePath(locale)))).toBe(true);
+    if (locale.code === BUILD.defaultLocale)
+      expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
+
 
     // Every published prompt and template is there, with its date and main image; no draft is.
     const index = localeIndex(locale.code);
@@ -277,7 +281,7 @@ for (const locale of BUILD.locales) {
       name: elementText(html, 'h1'),
       description: d.description,
       text: promptText(html),
-      inLanguage: locale.htmlLang,
+      inLanguage: d.prompt.language,
       datePublished: d.createdAt,
       dateModified: d.updatedAt,
     });
@@ -311,7 +315,7 @@ for (const locale of BUILD.locales) {
       name: elementText(html, 'h1'),
       text: promptText(html),
       version: t!.version.id,
-      inLanguage: locale.htmlLang,
+      inLanguage: t!.promptLanguage,
     });
   });
 
@@ -337,7 +341,7 @@ for (const locale of BUILD.locales) {
   test(`${locale.code}: the home page names the site and its publisher`, async ({ request }) => {
     const html = await (await get(request, `${BASE}/${locale.pathPrefix}/`)).text();
     expect(node(html, 'WebSite')).toMatchObject({
-      url: publicUrl(`/${locale.pathPrefix}/`),
+      url: publicUrl(homePath(locale)),
       inLanguage: locale.htmlLang,
     });
     expect(node(html, 'Organization')).toMatchObject({ name: BUILD.siteName, url: publicUrl('/') });
@@ -357,3 +361,21 @@ test('share images are the og crop: 1200 × 630, or that ratio when the original
   expect(Math.abs(w / h - 1200 / 630)).toBeLessThan(0.01);
   expect((await request.head(local(meta('og:image')!))).status()).toBe(200);
 });
+
+for (const code of ['en', 'zh-Hans']) {
+  test(`${code}: translated prompt HTML, popup, Markdown and structured data agree`, async ({ request }) => {
+    for (const id of ['p_217', 'p_024']) {
+      const detail = promptDetail(code, id);
+      const html = await (await get(request, `${BASE}${detail.path}`)).text();
+      expect(promptText(html)).toBe(detail.prompt.text);
+      const work = node(html, 'CreativeWork');
+      expect(work.text).toBe(detail.prompt.text);
+      expect(work.inLanguage).toBe(detail.prompt.language);
+      const popup = await (await get(request, `${BASE}/generated/${code}/prompts/${detail.slug}.json`)).json();
+      expect(popup.prompt).toEqual(detail.prompt);
+      expect(popup.annotations).toEqual(detail.annotations);
+      const md = await (await get(request, `${BASE}${detail.path}index.md`)).text();
+      expect(firstCodeBlock(md)).toBe(detail.prompt.text);
+    }
+  });
+}

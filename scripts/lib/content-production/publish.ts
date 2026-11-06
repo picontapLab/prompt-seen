@@ -4,11 +4,13 @@ import path from 'node:path';
 import YAML from 'yaml';
 import { z } from 'zod';
 import { loadConfig } from '../../../src/config/load';
-import { createUrlModule } from '../../../src/modules/url/create';
+import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
 import { renderTemplate } from '../../../src/modules/template/render';
 import { loadContent } from '../content/load';
-import { sha256, sourceHashOf } from '../content/read';
-import { toFieldSpec } from '../content/rules';
+import { readContent, sha256, sourceHashOf } from '../content/read';
+import { Findings } from '../content/findings';
+import { resolvePrompt, resolveTemplate, sourcePromptLanguage } from '../content/prompt-variants';
+import { sameValues, toFieldSpec } from '../content/rules';
 import {
   fieldSchema,
   fieldsFileSchema,
@@ -108,7 +110,7 @@ function validate(root: string, dir: string) {
   const result = loadContent({
     root,
     config,
-    url: createUrlModule({ ...config, localePrefixes: config.locales.map((l) => l.pathPrefix) }),
+    url: createUrlModule(urlConfigOf(config)),
     dir,
     mediaRoot: path.join(root, 'public'),
   });
@@ -144,10 +146,9 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
     if (job.status !== 'accepted' || !job.receipt || !job.review?.accepted)
       throw new Error('Preparation requires an accepted generation');
     if (job.definition.candidateId !== recipe.candidateId) throw new Error('Candidate does not match generation');
-    const text = recipe.fields.length
+    let text = recipe.fields.length
       ? renderTemplate({ body: recipe.body, fields: recipe.fields.map(toFieldSpec) }, recipe.values).text
       : recipe.body;
-    if (!text || text !== job.definition.prompt) throw new Error('Recipe does not render the exact recorded prompt');
     for (const asset of [job.receipt.output, ...job.references])
       if (crypto.createHash('sha256').update(fs.readFileSync(asset.path)).digest('hex') !== asset.sha256)
         throw new Error('Recorded asset changed');
@@ -183,12 +184,52 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
         ? nextId(path.join(stageContent, 'templates'), 't')
         : null;
     const versionId = existingTemplate?.version ?? 'v1';
+    let promptLanguage = recipe.promptLanguage ?? 'en';
+    let variantHash: string | null = null;
+    let sourceContractHash = recipe.fields.length
+      ? templateContractHash(recipe.body, recipe.fields, recipe.inputRequirements)
+      : null;
+    let translated = false;
+    if (existing) {
+      const config = loadConfig(root, {});
+      const findings = new Findings(root);
+      const content = readContent(stageContent, config.locales, findings);
+      if (findings.blocking) throw new Error('Existing content cannot be read');
+      const rec = content.prompts.get(promptId)!;
+      const sourceLanguage = sourcePromptLanguage(content, rec);
+      promptLanguage = recipe.promptLanguage ?? sourceLanguage;
+      translated = promptLanguage !== sourceLanguage;
+      if (translated && !rec.promptLocales.has(promptLanguage))
+        throw new Error(`Missing prompt locale: ${promptLanguage}`);
+      if (existingTemplate) {
+        const template = content.templates.get(existingTemplate.templateId)!;
+        const version = template.versions.get(versionId)!;
+        if (translated && !version.promptLocales.has(promptLanguage))
+          throw new Error(`Missing template locale: ${promptLanguage}`);
+        const selected = resolveTemplate(template, version, promptLanguage);
+        if (selected.spec.body !== recipe.body) throw new Error('Existing body is immutable; create a new version');
+        text = renderTemplate(selected.spec, recipe.values).text;
+        variantHash = selected.variantHash;
+        sourceContractHash = templateContractHash(version.body, version.fields, version.inputs);
+        if (
+          translated &&
+          (!selected.samples.has(recipe.target!.sampleName) ||
+            !sameValues(selected.samples.get(recipe.target!.sampleName)!.values, recipe.values, selected.spec.fields))
+        )
+          throw new Error('Translated sample values must match the existing language variant');
+      } else if (resolvePrompt(content, rec, promptLanguage).text !== recipe.body) {
+        throw new Error('Existing body is immutable; create a new version');
+      }
+    }
+    if (!loadConfig(root, {}).locales.some((locale) => locale.code === promptLanguage))
+      throw new Error('Unregistered prompt language');
+    if (!text || text !== job.definition.prompt) throw new Error('Recipe does not render the exact recorded prompt');
     if (existing) {
       const versionDir = templateId ? path.join(stageContent, 'templates', templateId, 'versions', versionId) : null;
       const bodyFile = versionDir
         ? path.join(versionDir, 'body.txt')
         : path.join(stageContent, 'prompts', promptId, 'prompt.txt');
-      if (fs.readFileSync(bodyFile, 'utf8').trim() !== recipe.body)
+      if (!translated && fs.readFileSync(bodyFile, 'utf8').trim() !== recipe.body)
         throw new Error('Existing body is immutable; create a new version');
       if (versionDir) {
         const fields = fieldsFileSchema.parse(
@@ -204,6 +245,7 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
           throw new Error('Existing version contract changed');
         const sampleFile = path.join(versionDir, 'samples', `${recipe.target!.sampleName}.yaml`);
         if (
+          !translated &&
           fs.existsSync(sampleFile) &&
           JSON.stringify(YAML.parse(fs.readFileSync(sampleFile, 'utf8'))) !== JSON.stringify(recipe.values)
         )
@@ -320,13 +362,14 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
       write(path.join(stageContent, `templates/${templateId}/versions/v1/body.txt`), recipe.body + '\n');
       writeLocales(`templates/${templateId}`);
     }
-    if (templateId && recipe.target)
+    if (templateId && recipe.target && !translated)
       yaml(`templates/${templateId}/versions/${versionId}/samples/${recipe.target.sampleName}.yaml`, recipe.values);
     yaml(`examples/${exampleId}/run.yaml`, {
       id: exampleId,
       promptId,
+      promptLanguage,
       template: template
-        ? { ...template, contractHash: templateContractHash(recipe.body, recipe.fields, recipe.inputRequirements) }
+        ? { ...template, contractHash: sourceContractHash, ...(variantHash ? { variantHash } : {}) }
         : null,
       promptSha256: sha256(text),
       referenceAssetIds: referenceIds,

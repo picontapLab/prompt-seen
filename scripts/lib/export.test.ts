@@ -89,6 +89,24 @@ describe('llms.txt', () => {
 });
 
 describe('content:export JSON', () => {
+  it('exports the resolved body language and localized template output in one current format', () => {
+    for (const code of ['en', 'zh-Hans']) {
+      const locale = config.builtLocales.find((l) => l.code === code)!;
+      const data = exportJson(sources, config.buildId, locale, ['prompt', 'template']);
+      expect(data.version).toBe(2);
+      const prompt = data.prompts.find((p) => p.id === 'p_217')!;
+      expect(prompt.kind === 'prompt' && prompt.prompt).toEqual({
+        text: sources.reader.getDetailModel('prompt', 'p_217', code)!.prompt.text,
+        language: code,
+      });
+      const template = data.templates.find((t) => t.id === 't_001')!;
+      expect(template.kind === 'template' && template.promptLanguage).toBe(code);
+      expect(template.kind === 'template' && template.defaultPrompt).toBe(
+        sources.reader.getDetailModel('template', 't_001', code)!.version.defaultPrompt,
+      );
+    }
+  });
+
   it('carries a format version, licences and only published records', () => {
     const locale = config.builtLocales.find((l) => l.code === 'en')!;
     const data = exportJson(sources, config.buildId, locale, ['prompt', 'template']);

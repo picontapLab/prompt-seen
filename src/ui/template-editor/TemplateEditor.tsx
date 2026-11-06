@@ -61,7 +61,10 @@ export type EditorModel = {
   version: { id: string; body: string; fields: LocalizedField[]; samples: TemplateSample[] };
   /** Image of the default sample (§11.8.4 示例图说明). */
   cover: ImageRef | null;
-  examples?: (Pick<ExampleRunView, 'id' | 'prompt' | 'template'> & { image: ImageRef; references: ImageRef[] })[];
+  examples?: (Pick<ExampleRunView, 'id' | 'prompt' | 'promptLanguage' | 'template'> & {
+    image: ImageRef;
+    references: ImageRef[];
+  })[];
 };
 
 export type TemplateEditorProps = {
@@ -125,6 +128,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   const [announcement, setAnnouncement] = useState('');
   const latest = useRef(state);
   const initial = useRef(state);
+  const previousDefaults = useRef(defaults);
   const shells = useRef(new Map<string, HTMLElement>());
   const previewId = `${id}-prompt`;
 
@@ -140,7 +144,10 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   // the next render of a controlled field would put the first render's value back. Take it in
   // before anything renders again; it also wins over a draft or a shared link applied below.
   const typedEarly = useRef<Record<string, string>>({});
+  const capturedEarly = useRef(false);
   useLayoutEffect(() => {
+    if (capturedEarly.current) return;
+    capturedEarly.current = true;
     for (const field of fields) {
       if (field.type !== 'string') continue;
       const el = shells.current
@@ -150,6 +157,22 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
     }
     for (const [name, value] of Object.entries(typedEarly.current)) dispatch({ type: 'edit', field: name, value });
   }, [fields]);
+
+  // Flush before a locale route replaces the editor or its defaults. The delayed save below
+  // still handles typing; a quick language switch must not discard the final edit.
+  useLayoutEffect(() => {
+    const flush = () => {
+      const values = latest.current.values;
+      if (values === initial.current.values) return;
+      if (sameValues(values, defaults)) removeDraft(browserStorage(), key);
+      else writeDraft(browserStorage(), key, values);
+    };
+    window.addEventListener('pagehide', flush);
+    return () => {
+      flush();
+      window.removeEventListener('pagehide', flush);
+    };
+  }, [defaults, key]);
 
   // --- After hydration: values from a shared link, else from a draft (§11.6.3, §11.8.4).
   useEffect(() => {
@@ -172,10 +195,16 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
     }
     if (!fromFragment()) {
       const draft = readDraft(browserStorage(), key, fields);
-      if (draft && !sameValues(draft, defaults))
-        dispatch({ type: 'load', values: draft, notice: { kind: 'restored' } });
+      if (draft)
+        dispatch({ type: 'load', values: draft, notice: sameValues(draft, defaults) ? null : { kind: 'restored' } });
+      else if (sameValues(latest.current.values, previousDefaults.current)) {
+        initial.current = initialEditorState(defaults);
+        dispatch({ type: 'load', values: defaults });
+      }
     }
+    previousDefaults.current = defaults;
     for (const [name, value] of Object.entries(typedEarly.current)) dispatch({ type: 'edit', field: name, value });
+    typedEarly.current = {};
     const onHash = () => fromFragment();
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
@@ -308,7 +337,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   const selectedSample = version.samples[state.sample];
   const eligible = selectedSample?.exampleIds;
   const runs = eligible ? (model.examples ?? []).filter((run) => eligible.includes(run.id)) : (model.examples ?? []);
-  const matched = matchingExample(runs, model.templateId, version.id, state.values, result.text);
+  const matched = matchingExample(runs, model.templateId, version.id, state.values, result.text, model.promptLanguage);
   const sampleImage = matched?.image ?? model.cover;
   const img = sampleImage && getImage(sampleImage, 'card');
 

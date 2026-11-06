@@ -9,4 +9,9 @@ describe('matching a template preview to a recorded generation', () => {
     expect(matchingExample([run], 't_001', 'v1', { color: 'blue' }, 'A blue cup')).toBeNull();
     expect(matchingExample([run], 't_001', 'v1', { color: 'red' }, 'A red bowl')).toBeNull();
   });
+  it('does not borrow evidence from another language even when the text is identical', () => {
+    const english = { ...run, promptLanguage: 'en' };
+    expect(matchingExample([english], 't_001', 'v1', { color: 'red' }, 'A red cup', 'zh-Hans')).toBeNull();
+    expect(matchingExample([english], 't_001', 'v1', { color: 'red' }, 'A red cup', 'en')?.id).toBe('x_001');
+  });
 });

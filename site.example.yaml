@@ -7,7 +7,7 @@ siteName: Prompt Seen
 # The canonical host: scheme and host only. Env: SITE_ORIGIN.
 origin: https://example.com
 # The path the site lives under on that host; "" for the root. Env: BASE_PATH.
-basePath: /prompt-seen
+basePath: '' # use /prompt-seen only for a subpath deployment
 # How public addresses are formed. "/{locale}{basePath}/{path}" when the host puts the language
 # first and rewrites to this site (§15.4.3). Env: URL_PATTERN.
 urlPattern: '{basePath}/{locale}/{path}'

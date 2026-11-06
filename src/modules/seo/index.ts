@@ -76,7 +76,7 @@ const ld: LdContext = {
   siteName: config.siteName,
   absoluteUrl,
   absoluteImageUrl,
-  entryPath: paths.languageEntry(),
+  entryPath: paths.siteRoot(),
   logoPath: paths.siteIcon(),
 };
 
@@ -149,7 +149,7 @@ export function pageMetadata(page: {
 
 /**
  * A locale's home page (§8.2, §9.3, step 4b): every built language's home in hreflang and the
- * language entry at the base path as the x-default. The share image is the work on show.
+ * default-language home at the base path as the x-default. The share image is the work on show.
  */
 export function homeMetadata(
   locale: LocaleEntry,
@@ -168,7 +168,7 @@ export function homeMetadata(
     ...metadata,
     alternates: {
       ...metadata.alternates,
-      languages: { ...metadata.alternates?.languages, 'x-default': absoluteUrl(paths.languageEntry()) },
+      languages: { ...metadata.alternates?.languages, 'x-default': absoluteUrl(paths.siteRoot()) },
     },
   };
 }

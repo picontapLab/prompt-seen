@@ -237,6 +237,19 @@ void _fieldsMatch;
 export const fieldsFileSchema = z.object({ fields: z.array(fieldSchema).min(1) }).strict();
 export const sampleSchema = fieldValues;
 
+export const promptAnnotationsSchema = z.object({
+  annotations: z.array(z.object({ sourcePhrase: text, phrase: text }).strict()).default([]),
+}).strict();
+export const promptVariantSchema = promptAnnotationsSchema.extend({ values: fieldValues }).strict();
+export const templateVariantSchema = z.object({
+  defaults: fieldValues.default({}),
+  enumText: z.record(z.string(), z.union([z.literal('source'), z.record(z.string(), text)])).default({}),
+  separators: z.record(z.string(), z.string().min(1)).default({}),
+  samples: z.record(z.string(), fieldValues),
+}).strict();
+export type PromptAnnotationsSource = z.infer<typeof promptAnnotationsSchema>['annotations'];
+export type TemplateVariantSource = z.infer<typeof templateVariantSchema>;
+
 export const templateEntrySchema = z
   .object({
     id: templateId,
@@ -261,6 +274,7 @@ const parameterValue = z.union([z.string(), z.number(), z.boolean(), z.null()]);
 
 export const exampleRunSchema = z
   .object({
+    promptLanguage: z.string().min(2).optional(),
     id: exampleId,
     promptId: promptId.nullable().default(null),
     template: z
@@ -274,6 +288,7 @@ export const exampleRunSchema = z
           .string()
           .regex(/^[0-9a-f]{64}$/)
           .optional(),
+        variantHash: z.string().regex(/^[0-9a-f]{64}$/).optional(),
       })
       .strict()
       .nullable()

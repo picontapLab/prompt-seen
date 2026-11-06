@@ -11,7 +11,7 @@ import type { BuiltContent } from './content/build-index';
 // file a format version, so downstream tools can rely on the shape (§19.1).
 
 /** Bumped when a field changes meaning or is removed; new fields keep the version. */
-export const EXPORT_VERSION = 1;
+export const EXPORT_VERSION = 2;
 
 /** A content reader over an in-memory build, so exports never read stale generated files. */
 export function builtReader(built: BuiltContent): GeoSources['reader'] {

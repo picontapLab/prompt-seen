@@ -4,9 +4,9 @@ import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, manifest } from './support/content';
 import { cancelledFetch } from './support/errors';
 
-// Step 3e in a real browser (design doc §8.2, §11.8.5, §11.8.7): the language entry suggests and
-// remembers without redirecting, the language menu explains a missing translation, the 410 page
-// names its reason, long pages track the section being read, and every page passes axe.
+// In a real browser: the root serves the default language without redirecting; the language
+// menu explains a missing translation, the 410 page names its reason, long pages track the
+// section being read, and every page passes axe.
 
 const KEY = 'prompt-library:preferences:v1';
 const [first] = BUILD.locales;
@@ -30,27 +30,42 @@ const hydrated = (page: Page, selector: string) =>
     return !!el && Object.keys(el).some((k) => k.startsWith('__reactProps'));
   }, selector);
 
-test.describe('language entry', () => {
+test.describe('default home', () => {
   test.use({ locale: second ? `${second.htmlLang}` : 'en' });
 
-  test('suggests the browser language, stays put, and remembers the choice', async ({ page }) => {
+  test('opens in English despite browser and saved preferences, and switches languages both ways', async ({ page }) => {
     test.skip(!second, 'needs two built locales');
     const errors = watchErrors(page);
+    await page.addInitScript(
+      ({ key, language }) => {
+        localStorage.setItem(key, JSON.stringify({ version: 1, language }));
+      },
+      { key: KEY, language: second!.code },
+    );
     await page.goto(`${BASE}/`);
-    await hydrated(page, 'a[hreflang]');
-    await expect(page.locator(`li[data-suggested][lang="${second!.htmlLang}"]`)).toBeVisible();
-    await expect(page.locator('li[data-suggested]')).toHaveCount(1);
-    await expect(page.locator('[data-continue]')).toHaveCount(0);
-    expect(new URL(page.url()).pathname).toBe(`${BASE}/`); // no redirect, ever
+    await expect(page.locator('[data-page="home"]')).toHaveAttribute('data-locale', BUILD.defaultLocale);
+    await expect(page.locator('h1')).toHaveText(message(BUILD.defaultLocale, 'home.hero.title'));
+    await expect(page.locator('[data-page="language-entry"]')).toHaveCount(0);
+    expect(new URL(page.url()).pathname).toBe(`${BASE}/`);
 
-    await page.locator(`li[lang="${second!.htmlLang}"] a`).click();
+    await hydrated(page, 'header button[aria-haspopup="listbox"]');
+    await page
+      .getByRole('button', { name: new RegExp(message(BUILD.defaultLocale, 'shell.language.label')) })
+      .first()
+      .click();
+    await page.getByRole('option', { name: new RegExp(second!.nativeName) }).click();
     await page.waitForURL(`**${BASE}/${second!.pathPrefix}/`);
+    await expect(page.locator('[data-page="home"]')).toHaveAttribute('data-locale', second!.code);
     expect(JSON.parse((await page.evaluate((k) => localStorage.getItem(k), KEY))!).language).toBe(second!.code);
 
-    await page.goto(`${BASE}/`);
-    const again = page.locator(`[data-continue="${second!.code}"]`);
-    await expect(again).toHaveText(message(second!.code, 'pages.entry.continue', { language: second!.nativeName }));
-    expect(new URL(page.url()).pathname).toBe(`${BASE}/`);
+    await hydrated(page, 'header button[aria-haspopup="listbox"]');
+    await page
+      .getByRole('button', { name: new RegExp(message(second!.code, 'shell.language.label')) })
+      .first()
+      .click();
+    await page.getByRole('option', { name: new RegExp(first!.nativeName) }).click();
+    await page.waitForURL((url) => url.pathname === `${BASE}/`);
+    await expect(page.locator('html')).toHaveAttribute('lang', first!.htmlLang);
     expect(errors).toEqual([]);
   });
 });

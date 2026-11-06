@@ -8,7 +8,7 @@ import { CopyButton } from '@/ui/feedback/CopyButton';
 import { ImageStage } from './ImageStage';
 import styles from './Detail.module.css';
 
-type Run = Pick<ExampleRunView, 'id' | 'outputs' | 'references' | 'referenceLabels' | 'prompt'>;
+type Run = Pick<ExampleRunView, 'id' | 'outputs' | 'references' | 'referenceLabels' | 'prompt' | 'promptLanguage'>;
 
 /** Keep the selected run's inputs, output and immutable prompt together. */
 export function RecordedShowcase({
@@ -85,7 +85,7 @@ export function RecordedShowcase({
       {run && run.prompt.trim() !== currentPrompt.trim() && (
         <details className={styles.runPrompt}>
           <summary>{t('examples.promptUsed')}</summary>
-          <p id={`${id}-snapshot`} lang="en" dir="auto">
+          <p id={`${id}-snapshot`} lang={run.promptLanguage ?? undefined} dir="auto">
             {run.prompt}
           </p>
           <CopyButton

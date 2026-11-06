@@ -2,6 +2,7 @@ import type { FieldValues } from './types';
 
 type RecordedExample = {
   prompt: string;
+  promptLanguage?: string | null;
   template: { id: string; version: string; values: FieldValues } | null;
 };
 
@@ -12,6 +13,7 @@ export function matchingExample<T extends RecordedExample>(
   version: string,
   values: FieldValues,
   prompt: string | null,
+  language?: string,
 ): T | null {
   if (prompt === null) return null;
   return (
@@ -21,6 +23,7 @@ export function matchingExample<T extends RecordedExample>(
         template?.id === templateId &&
         template.version === version &&
         run.prompt === prompt &&
+        (language === undefined || run.promptLanguage === language) &&
         Object.keys(values).length === Object.keys(template.values).length &&
         Object.entries(values).every(([key, value]) => JSON.stringify(value) === JSON.stringify(template.values[key]))
       );

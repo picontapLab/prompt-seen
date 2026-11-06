@@ -24,7 +24,7 @@ import { ThemeChooser, ThemeToggle } from './ThemeSwitch';
  * keeps only what this site must provide itself (language, theme) without its brand. Pages
  * render inside <main>; they never import the header, footer or brand assets themselves.
  *
- * `minimal` is for pages outside a locale (language entry, unknown-address 404): no sections
+ * `minimal` is for the unknown-address 404: no sections
  * and no language switch, since those pages are themselves the way into a language.
  */
 export async function Shell({
@@ -47,7 +47,7 @@ export async function Shell({
   // Saved works (§11.5, step 4c): in the header from 1024 px, in the menu below 768 px and in
   // the footer at every width, so the header never overflows.
   const saved = minimal ? null : { key: 'favorites', href: paths.favorites(locale.pathPrefix), label: f('link') };
-  const homeHref = minimal ? paths.languageEntry() : paths.home(locale.pathPrefix);
+  const homeHref = minimal ? paths.siteRoot() : paths.home(locale.pathPrefix);
   const pages = minimal ? [] : footerPages(locale.code);
 
   return (

@@ -6,7 +6,7 @@ import type { SeoLocale } from './build';
 // Pages render the result with <JsonLd> (./JsonLd.tsx) through the wrappers in ./index.ts.
 //
 // Rules from §9.6: no HowTo, SearchAction or FAQPage; a prompt is a CreativeWork, never an
-// Article or Product; `inLanguage` is the page's language even when the prompt is in another;
+// Article or Product; `inLanguage` describes the resolved prompt body on prompt/template works;
 // unknown fields are left out, never filled with placeholders.
 
 export type JsonLdNode = { [key: string]: JsonLdValue };
@@ -18,7 +18,7 @@ export type LdContext = {
   absoluteUrl: (path: string) => string;
   /** Image variant → URL on the canonical host (`@/modules/media`). */
   absoluteImageUrl: (variant: ImageVariant) => string;
-  /** Internal path of the language entry: the site as a whole, across locales (§8.2). */
+  /** Internal path of the root home: the site as a whole, across locales. */
   entryPath: string;
   /** Internal path of the site icon, the Organization's logo. */
   logoPath: string;
@@ -172,7 +172,7 @@ export function breadcrumbList(crumbs: readonly LdCrumb[], ctx: LdContext): Json
 
 /**
  * A Prompt detail page (§9.6 "Prompt 详情"): the prompt as a CreativeWork whose `text` is the
- * prompt, in the page's language; its source template as `isBasedOn`.
+ * prompt, in its actual body language; its source template as `isBasedOn`.
  */
 export function promptWork(detail: PromptDetail, locale: SeoLocale, ctx: LdContext): JsonLdNode {
   const url = ctx.absoluteUrl(detail.path);
@@ -184,7 +184,7 @@ export function promptWork(detail: PromptDetail, locale: SeoLocale, ctx: LdConte
     name: detail.title,
     description: detail.description,
     text: detail.prompt.text,
-    inLanguage: locale.htmlLang,
+    inLanguage: detail.prompt.language,
     datePublished: detail.createdAt,
     dateModified: detail.updatedAt,
     author: detail.source.author ? agent(detail.source.author, ctx, detail.source.url) : undefined,
@@ -205,7 +205,7 @@ export function templateWork(detail: TemplateDetail, locale: SeoLocale, ctx: LdC
     description: detail.description,
     text: detail.version.defaultPrompt,
     version: detail.version.id,
-    inLanguage: locale.htmlLang,
+    inLanguage: detail.promptLanguage,
     datePublished: detail.createdAt,
     dateModified: detail.updatedAt,
     image: detail.cover ? imageObject(detail.cover, ctx) : undefined,

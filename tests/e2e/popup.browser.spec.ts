@@ -472,7 +472,11 @@ test.describe('desktop', () => {
     const host = works.find((w) => detailOf(w.slug).relatedTemplates.length > 0);
     test.skip(!host, 'no prompt with a related template');
     const template = detailOf(host!.slug).relatedTemplates[0]!;
-    await gotoList(page);
+    // Content dates can move the first related-template card beyond the initial batch.
+    const pageNumber = Array.from({ length: index.pageCount }, (_, i) => i + 1).find((n) =>
+      pagePromptIds(feedPage(code, n)).includes(host!.id),
+    )!;
+    await gotoList(page, pageNumber === 1 ? listUrl : `${listUrl}page/${pageNumber}/`);
     const { doc } = await state(page);
     await card(page, host!.slug).click();
     await expectOpen(page, host!.slug);

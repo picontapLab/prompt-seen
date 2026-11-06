@@ -4,7 +4,7 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 import { parse } from 'yaml';
 import { featuredOrder } from '../../src/modules/home/featured';
 import { seriousViolations } from './support/a11y';
-import { BASE, BUILD, message, ROOT } from './support/artifact';
+import { BASE, BUILD, homePath, message, ROOT } from './support/artifact';
 import { feedIndex, localeIndex, promptDetail } from './support/content';
 
 // The home page in real browsers (design doc §11.8.1, §11.1.9, §16.2 首屏展示, §16.5 首屏吸引力,
@@ -14,7 +14,7 @@ import { feedIndex, localeIndex, promptDetail } from './support/content';
 
 const locale = BUILD.locales[0]!;
 const code = locale.code;
-const url = `${BASE}/${locale.pathPrefix}/`;
+const url = `${BASE}${homePath(locale)}`;
 const site = parse(fs.readFileSync(path.join(ROOT, 'content/site.yaml'), 'utf8')) as {
   home: { featured: { prompt: string; from?: string }[] };
 };
@@ -227,7 +227,7 @@ test.describe('reduced motion', () => {
 
 for (const l of BUILD.locales)
   test(`${l.code}: the home page's text comes from its own catalog`, async ({ page }) => {
-    await page.goto(`${BASE}/${l.pathPrefix}/`);
+    await page.goto(`${BASE}${homePath(l)}`);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(message(l.code, 'home.hero.title'));
     await expect(page.locator('#home-search')).toHaveAccessibleName(message(l.code, 'home.search.label'));
     if (worksOnShow(l.code).length > 1)

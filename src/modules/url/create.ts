@@ -46,19 +46,22 @@ export type UrlConfig = {
   urlPattern: string;
   /** Every registered URL prefix, used to recognise the locale segment of a path. */
   localePrefixes: readonly string[];
+  /** Locale whose canonical home is the site root. Supplied by urlConfigOf. */
+  defaultLocalePrefix?: string;
   /** CDN address of the media storage (site.yaml `media.baseUrl`); null: images are files of the build. */
   mediaBaseUrl?: string | null;
 };
 
 /** The url module's settings from a resolved configuration (scripts and the app use the same). */
 export function urlConfigOf(
-  config: Pick<ResolvedConfig, 'origin' | 'basePath' | 'urlPattern' | 'locales' | 'media'>,
+  config: Pick<ResolvedConfig, 'origin' | 'basePath' | 'urlPattern' | 'locales' | 'defaultLocale' | 'media'>,
 ): UrlConfig {
   return {
     origin: config.origin,
     basePath: config.basePath,
     urlPattern: config.urlPattern,
     localePrefixes: config.locales.map((l) => l.pathPrefix),
+    defaultLocalePrefix: config.locales.find((l) => l.code === config.defaultLocale)!.pathPrefix,
     mediaBaseUrl: config.media.baseUrl,
   };
 }
@@ -114,9 +117,9 @@ export function createUrlModule(cfg: UrlConfig) {
 
   /** Internal paths. New address types are added here, never assembled in pages (§17.4). */
   const paths = {
-    /** Language entry at the base path itself; also the x-default (§8.2). */
-    languageEntry: () => '/',
-    home: (locale: string) => `/${locale}/`,
+    /** Default-language home at the base path itself; also the x-default. */
+    siteRoot: () => '/',
+    home: (locale: string) => (locale === cfg.defaultLocalePrefix ? '/' : `/${locale}/`),
     prompts: (locale: string) => `/${locale}/prompts/`,
     /** The list with filter conditions; `fragment` comes from the feed's formatQuery ("#use=poster"). */
     promptsFiltered: (locale: string, fragment: string) => `/${locale}/prompts/${fragment}`,

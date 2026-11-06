@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { BASE, BUILD, message, publicUrl } from './support/artifact';
+import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
 import {
   alternates,
   canonical,
@@ -17,7 +17,7 @@ import {
 
 const isPreview = BUILD.buildMode === 'preview';
 const expectedAlternates = {
-  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(`/${l.pathPrefix}/`)])),
+  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(homePath(l))])),
   'x-default': publicUrl('/'),
 };
 
@@ -31,12 +31,12 @@ function expectPrefixedReferences(html: string) {
   expect(outside, 'same-host references outside the base path').toEqual([]);
 }
 
-test('language entry at the base path is the x-default', async ({ request }) => {
+test('default home at the base path is the x-default', async ({ request }) => {
   const res = await request.get(`${BASE}/`);
   expect(res.status()).toBe(200);
   expect(res.headers()['content-type']).toBe('text/html; charset=utf-8');
   const html = await res.text();
-  expect(dataAttr(html, 'page')).toBe('language-entry');
+  expect(dataAttr(html, 'page')).toBe('home');
   expect(canonical(html)).toBe(publicUrl('/'));
   expect(alternates(html)).toEqual(expectedAlternates);
   expectIndexing(html);
@@ -53,7 +53,7 @@ for (const locale of BUILD.locales) {
     // Text comes from this locale's catalog, not the default language (§8.3).
     expect(elementText(html, 'h1')).toBe(message(locale.code, 'home.hero.title'));
     expect(title(html)).toBe(message(locale.code, 'home.documentTitle', { siteName: BUILD.siteName }));
-    expect(canonical(html)).toBe(publicUrl(`/${locale.pathPrefix}/`));
+    expect(canonical(html)).toBe(publicUrl(homePath(locale)));
     expect(canonical(html)).toMatch(new RegExp(`^${BUILD.origin}${BASE}/`));
     expect(alternates(html)).toEqual(expectedAlternates);
     expectIndexing(html);

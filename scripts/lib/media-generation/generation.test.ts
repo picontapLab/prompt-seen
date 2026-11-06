@@ -59,6 +59,8 @@ function workspace() {
     if (Number(name.slice(2, -5)) > 101) fs.rmSync(path.join(root, 'content/media', name));
   for (let i = 1; i <= 100; i++) {
     const suffix = String(i).padStart(3, '0');
+    // These variants were authored after the archived template versions used by this fixture.
+    fs.rmSync(path.join(root, `content/prompts/p_${suffix}/prompt-locales`), { recursive: true, force: true });
     const entryFile = path.join(root, `content/prompts/p_${suffix}/entry.yaml`);
     const entry = YAML.parseDocument(fs.readFileSync(entryFile, 'utf8'));
     entry.set('coverAssetId', `a_${suffix}`);

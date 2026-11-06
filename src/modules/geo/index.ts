@@ -53,7 +53,7 @@ export function markdownDocument(kind: MarkdownKind, prefix: string, slug: strin
  * (robots.mode: snippet, §15.4.3). Either way the file only covers this site's addresses.
  */
 export function robotsDocument(): string {
-  const root = new URL(absoluteUrl(paths.languageEntry()));
+  const root = new URL(absoluteUrl(paths.siteRoot()));
   const scope = withBasePath('/');
   return robotsTxt({
     // At the root of a host this file is the host's robots.txt, whatever the configured mode.

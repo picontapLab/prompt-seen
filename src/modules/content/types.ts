@@ -194,6 +194,8 @@ export type ExampleRunView = {
   template: { id: string; version: string; sample: string | null; values: FieldValues } | null;
   /** The exact prompt that produced the outputs (§5.5); never changes. */
   prompt: string;
+  /** Language of this immutable run, independently of the page or current prompt. */
+  promptLanguage?: string | null;
   promptSha256: string;
   parameters: { name: string; value: string | number | boolean | null }[];
   references: ImageRef[];

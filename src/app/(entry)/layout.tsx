@@ -5,6 +5,7 @@ import { pickNamespaces } from '@/i18n/catalog';
 import { CLIENT_COMMON_NAMESPACES } from '@/i18n/client-messages';
 import { verificationMetadata } from '@/modules/seo';
 import { absoluteUrl } from '@/modules/url';
+import { DisplayFontStylesheet } from '@/styles/fonts/DisplayFontStylesheet';
 import { RootDocument } from '@/ui/navigation/RootDocument';
 import { Shell } from '@/ui/navigation/Shell';
 
@@ -16,15 +17,14 @@ export const metadata: Metadata = {
   ...verificationMetadata(),
 };
 
-// The language entry lists every language in its own name; its chrome uses the default locale.
+// The root home has the same navigation, language switch and fonts as a locale home.
 export default async function EntryLayout({ children }: { children: React.ReactNode }) {
   setRequestLocale(defaultLocale.code);
   const messages = pickNamespaces(await getMessages({ locale: defaultLocale.code }), CLIENT_COMMON_NAMESPACES);
   return (
     <RootDocument locale={defaultLocale} messages={messages}>
-      <Shell locale={defaultLocale} minimal>
-        {children}
-      </Shell>
+      <DisplayFontStylesheet code={defaultLocale.code} />
+      <Shell locale={defaultLocale}>{children}</Shell>
     </RootDocument>
   );
 }
