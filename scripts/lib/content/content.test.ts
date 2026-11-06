@@ -30,6 +30,7 @@ function configFor(buildMode: 'production' | 'preview'): ResolvedConfig {
     origin: 'https://example.com',
     basePath: '/prompt-seen',
     urlPattern: '{basePath}/{locale}/{path}',
+  repository: null,
     robots: { mode: 'standalone', aiTraining: 'disallow' },
     shell: { header: 'default', themeSource: 'system' },
     brand: { tokens: null },

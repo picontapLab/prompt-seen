@@ -11,6 +11,9 @@ basePath: '' # use /prompt-seen only for a subpath deployment
 # How public addresses are formed. "/{locale}{basePath}/{path}" when the host puts the language
 # first and rewrites to this site (§15.4.3). Env: URL_PATTERN.
 urlPattern: '{basePath}/{locale}/{path}'
+# The site's source on GitHub, as https://github.com/owner/name. The header, menu and footer link
+# to it; null shows no link. `shell.header: host` leaves it out with the rest of the brand.
+repository: null
 
 robots:
   # standalone: the build's robots.txt is the host's (root deployments).

@@ -57,6 +57,43 @@ test('every locale page has the skip link, header, one main landmark and footer'
   }
 });
 
+const REPOSITORY = 'https://github.com/picontapLab/prompt-seen';
+const markPath = (page: Page) => page.locator(`header a[href="${REPOSITORY}"] svg path`);
+
+test('the header link to the repository opens it and wags the tail on hover', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const errors = watchErrors(page);
+  await page.goto(home());
+  const link = page.locator(`header a[href="${REPOSITORY}"]`);
+  await expect(link).toBeVisible();
+  await expect(link).toHaveAttribute('target', '_blank');
+  await expect(link).toHaveAccessibleName(/GitHub/);
+
+  const rest = await markPath(page).getAttribute('d');
+  await link.hover();
+  await expect.poll(() => markPath(page).getAttribute('d')).not.toBe(rest);
+  await page.mouse.move(0, 400);
+  await expect.poll(() => markPath(page).getAttribute('d'), { timeout: 6000 }).toBe(rest);
+  expect(errors).toEqual([]);
+});
+
+test('the footer links to the repository at every width', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto(home());
+  await expect(page.locator(`footer a[href="${REPOSITORY}"]`)).toBeVisible();
+});
+
+test('under reduced motion the tail stays still', async ({ browser }) => {
+  const context = await browser.newContext({ reducedMotion: 'reduce', viewport: { width: 1280, height: 800 } });
+  const page = await context.newPage();
+  await page.goto(home());
+  const rest = await markPath(page).getAttribute('d');
+  await page.locator(`header a[href="${REPOSITORY}"]`).hover();
+  await page.waitForTimeout(1500);
+  expect(await markPath(page).getAttribute('d')).toBe(rest);
+  await context.close();
+});
+
 test('a stored theme applies before any script of the app runs (no flash)', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.addInitScript(([key]) => localStorage.setItem(key!, JSON.stringify({ theme: 'light' })), [KEY]);
