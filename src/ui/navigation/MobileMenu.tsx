@@ -9,13 +9,20 @@ const load = () => import('./MenuSheet');
 const MenuSheet = lazy(load);
 
 export type MenuLink = { key: string; href: string; label: string };
+export type RepositoryMenuLink = { href: string; label: string };
 
 /**
  * Menu for narrow screens (§11.2, §11.8.2): the sections, language and theme in a side sheet.
  * Footer links are repeated here so they stay reachable above an endless list. The sheet loads
  * on first open; it stays mounted afterwards so closing can animate.
  */
-export function MobileMenu({ links }: { links: readonly MenuLink[] }) {
+export function MobileMenu({
+  links,
+  repository,
+}: {
+  links: readonly MenuLink[];
+  repository?: RepositoryMenuLink | null;
+}) {
   const t = useTranslations('shell.menu');
   const [open, setOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -36,7 +43,7 @@ export function MobileMenu({ links }: { links: readonly MenuLink[] }) {
       />
       {loaded && (
         <Suspense>
-          <MenuSheet links={links} isOpen={open} onOpenChange={setOpen} />
+          <MenuSheet links={links} repository={repository} isOpen={open} onOpenChange={setOpen} />
         </Suspense>
       )}
     </>

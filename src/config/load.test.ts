@@ -28,6 +28,27 @@ function fixture(site = SITE, locales = LOCALES) {
 }
 afterEach(() => dirs.splice(0).forEach((d) => fs.rmSync(d, { recursive: true, force: true })));
 
+describe('repository', () => {
+  const parse = (repository?: unknown) =>
+    siteSchema.safeParse({ siteName: 'Test', origin: 'https://example.com', basePath: '', repository });
+
+  it('is off unless the site names one', () => {
+    expect(parse().data?.repository).toBeNull();
+  });
+
+  it('takes a GitHub repository address', () => {
+    expect(parse('https://github.com/example/prompt-seen').data?.repository).toBe(
+      'https://github.com/example/prompt-seen',
+    );
+  });
+
+  it('rejects addresses that are not a GitHub repository, since the link shows its logo', () => {
+    expect(parse('https://gitlab.com/example/prompt-seen').success).toBe(false);
+    expect(parse('http://github.com/example/prompt-seen').success).toBe(false);
+    expect(parse('https://github.com/example').success).toBe(false);
+  });
+});
+
 const issues = (fn: () => unknown) => {
   try {
     fn();

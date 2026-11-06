@@ -1,0 +1,41 @@
+/* The link to the site's source, with the cat of GitHub's mark (§12.1). */
+@layer components {
+  .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    min-inline-size: var(--target-min);
+    min-block-size: var(--target-min);
+    border-radius: var(--radius-control);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .labelled {
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+  /* Larger than a UI icon: the tail is the point, and it needs the pixels to read. */
+  .mark {
+    flex: none;
+    inline-size: 28px;
+    block-size: 28px;
+    fill: currentColor;
+  }
+  .labelled .mark {
+    inline-size: 36px;
+    block-size: 36px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .labelled:hover {
+      text-decoration: underline;
+    }
+    .link:not(.labelled):hover {
+      background: var(--accent-subtle);
+    }
+  }
+  .link:focus-visible {
+    outline: var(--focus-ring-width) solid var(--accent);
+    outline-offset: var(--focus-ring-offset);
+  }
+}

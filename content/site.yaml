@@ -4,6 +4,7 @@ siteName: Prompt Seen
 origin: https://example.com # canonical host; placeholder until step 5
 basePath: '' # domain root; set BASE_PATH=/prompt-seen to build for a subpath
 urlPattern: '{basePath}/{locale}/{path}' # or "/{locale}{basePath}/{path}" when the host prefixes languages
+repository: https://github.com/picontapLab/prompt-seen # the header, menu and footer link to it
 
 robots:
   mode: standalone # standalone domain; use snippet when a host owns the root robots.txt

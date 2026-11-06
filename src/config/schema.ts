@@ -97,12 +97,18 @@ const interlude = z.discriminatedUnion('type', [
   z.object({ type: z.literal('collection'), collection: entryId('c') }).strict(),
 ]);
 
+// The site's source on GitHub. The link shows GitHub's mark, so nothing else belongs here.
+const repository = z
+  .url({ protocol: /^https$/, hostname: /^github\.com$/ })
+  .refine((value) => /^\/[^/]+\/[^/]+$/.test(new URL(value).pathname), 'repository is https://github.com/owner/name');
+
 export const siteSchema = z
   .object({
     siteName: z.string().min(1),
     origin,
     basePath,
     urlPattern: urlPattern.default('{basePath}/{locale}/{path}'),
+    repository: repository.nullable().default(null),
     robots: z
       .object({
         // standalone: emit robots.txt; snippet: emit robots-snippet.txt for the host to merge (§15.4.3).

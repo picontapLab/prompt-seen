@@ -4,17 +4,20 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Dialog } from '@/ui/primitives/Dialog';
 import LanguageCombobox from './LanguageCombobox';
-import type { MenuLink } from './MobileMenu';
+import type { MenuLink, RepositoryMenuLink } from './MobileMenu';
+import { RepositoryLink } from './RepositoryLink';
 import styles from './Shell.module.css';
 import { ThemeChooser } from './ThemeSwitch';
 
 /** The narrow-screen menu sheet; loaded the first time the menu opens (MobileMenu). */
 export default function MenuSheet({
   links,
+  repository,
   isOpen,
   onOpenChange,
 }: {
   links: readonly MenuLink[];
+  repository?: RepositoryMenuLink | null;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
@@ -43,6 +46,7 @@ export default function MenuSheet({
             <LanguageCombobox quiet={false} />
           </div>
           <ThemeChooser />
+          {repository && <RepositoryLink {...repository} labelled />}
         </div>
       )}
     </Dialog>

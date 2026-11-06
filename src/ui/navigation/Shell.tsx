@@ -12,6 +12,7 @@ import { SearchLauncher } from '@/ui/search/SearchLauncher';
 import { KeyboardShortcuts } from '@/ui/shortcuts/KeyboardShortcuts';
 import { LanguageSwitch } from './LanguageSwitch';
 import { MobileMenu } from './MobileMenu';
+import { RepositoryLink } from './RepositoryLink';
 import { footerPages } from './footer-pages';
 import { headerSections } from './sections';
 import styles from './Shell.module.css';
@@ -49,6 +50,11 @@ export async function Shell({
   const saved = minimal ? null : { key: 'favorites', href: paths.favorites(locale.pathPrefix), label: f('link') };
   const homeHref = minimal ? paths.siteRoot() : paths.home(locale.pathPrefix);
   const pages = minimal ? [] : footerPages(locale.code);
+  // Part of the brand, so a host site's shell leaves it out.
+  const repository =
+    config.repository && !host
+      ? { href: config.repository, label: t('repository', { siteName: config.siteName }) }
+      : null;
 
   return (
     <>
@@ -92,10 +98,11 @@ export async function Shell({
                 <LanguageSwitch />
               </div>
             )}
+            {repository && !minimal && <RepositoryLink {...repository} className={styles.headerRepository} />}
             <ThemeToggle />
             {!minimal && (
               <div className={styles.narrow}>
-                <MobileMenu links={saved ? [...sections, saved] : sections} />
+                <MobileMenu links={saved ? [...sections, saved] : sections} repository={repository} />
               </div>
             )}
           </div>
@@ -112,6 +119,7 @@ export async function Shell({
             <div className={styles.footerBrand}>
               <Wordmark siteName={config.siteName} size="sm" />
               <p>{t('footer.tagline')}</p>
+              {repository && <RepositoryLink {...repository} labelled />}
             </div>
           )}
           <nav aria-labelledby="footer-languages" className={styles.footerBlock}>

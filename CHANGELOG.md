@@ -12,6 +12,8 @@ First version, built in steps 1a–5 of the implementation plan (design doc §17
 
 New keys in `content/site.yaml`, all optional (see `site.example.yaml`):
 
+- `repository`: the site's source on GitHub (`https://github.com/owner/name`); the header, menu and
+  footer link to it. `null`, the default, shows no link.
 - `media.baseUrl`: the CDN address of the image storage; `MEDIA_BASE_URL` overrides it.
 - `analytics`: `provider: none | cloudflare | plausible` with its token or domain.
 - `searchEngines.verification`: `google`, `bing`, `yandex`, `naver` verification values.
