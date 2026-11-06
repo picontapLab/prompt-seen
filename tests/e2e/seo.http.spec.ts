@@ -116,9 +116,7 @@ for (const locale of publicLocales) {
     const byLoc = new Map(entries.map((e) => [e.loc, e]));
     expect(byLoc.size, 'no address twice').toBe(entries.length);
     expect(byLoc.has(publicUrl(homePath(locale)))).toBe(true);
-    if (locale.code === BUILD.defaultLocale)
-      expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
-
+    if (locale.code === BUILD.defaultLocale) expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
 
     // Every published prompt and template is there, with its date and main image; no draft is.
     const index = localeIndex(locale.code);
