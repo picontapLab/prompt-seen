@@ -1,0 +1,713 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: editor.browser.spec.ts >> desktop >> axe (dark): the template list
+- Location: tests/e2e/editor.browser.spec.ts:317:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Prompt Seen home" [ref=e5]:
+        - /url: /
+        - generic [ref=e8]: PROMPT SEEN
+      - navigation "Main" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Prompts" [ref=e12]:
+              - /url: /en/prompts/
+          - listitem [ref=e13]:
+            - link "Templates" [ref=e14]:
+              - /url: /en/templates/
+          - listitem [ref=e15]:
+            - link "Collections" [ref=e16]:
+              - /url: /en/collections/
+      - generic [ref=e17]:
+        - link "Search" [ref=e18] [cursor=pointer]:
+          - /url: /en/search/
+          - generic [ref=e19]:
+            - generic [ref=e23]: Search
+            - generic [aria-hidden] [ref=e24]: /
+        - link "Saved" [ref=e25] [cursor=pointer]:
+          - /url: /en/favorites/
+          - generic [aria-hidden] [ref=e29]: Saved
+        - 'button "Language: English" [ref=e32] [cursor=pointer]':
+          - generic [ref=e33]:
+            - generic [ref=e34]: "Language:"
+            - text: English
+        - link "Prompt Seen on GitHub" [ref=e38]:
+          - /url: https://github.com/picontapLab/prompt-seen
+        - button "Switch to light theme" [ref=e41] [cursor=pointer]
+  - main [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - heading "Templates" [level=1] [ref=e55]
+          - paragraph [ref=e57]: Each template is a tested prompt with a few blanks. Fill them in and the prompt updates as you type; copy it or download it as a text file.
+        - paragraph [ref=e58]: 68 templates
+      - list [ref=e59]:
+        - listitem [ref=e60]:
+          - article [ref=e61]:
+            - link "Reverse an axonometric viewpoint" [ref=e62]:
+              - /url: /en/templates/design-top60-42-reverse-template/
+              - heading "Reverse an axonometric viewpoint" [level=2] [ref=e64]
+            - paragraph [ref=e65]: Version v1 · 1 field
+            - paragraph [ref=e66]: "Second step: the large room is now on the left, the small room on the right, windows near the camera and the entrance on the far side. This is a generated spatial concept; exact geometry and lighting conservation are not guaranteed."
+            - paragraph [ref=e67]: 以附图中的蓝色两房3D建筑图为唯一场景。
+            - button "Save" [ref=e69] [cursor=pointer]
+        - listitem [ref=e74]:
+          - article [ref=e75]:
+            - link "Ocean-engineering school mascot" [ref=e76]:
+              - /url: /en/templates/design-top60-60-template/
+              - heading "Ocean-engineering school mascot" [level=2] [ref=e78]
+            - paragraph [ref=e79]: Version v1 · 1 field
+            - paragraph [ref=e80]: A friendly otter wears blue-white research clothing and goggles, holds a small underwater robot, and stands fully visible on a round base.
+            - paragraph [ref=e81]: 为虚构组织“organization”创建一个3D Q版动漫吉祥物：亲切的小海獭研究员，蓝白海洋工程工作服，胸前原创小波浪图形，手持迷你水下机器人，护目镜抬在额头，站在简洁圆形底座上。
+            - button "Save" [ref=e83] [cursor=pointer]
+        - listitem [ref=e88]:
+          - article [ref=e89]:
+            - link "Miniature studio inside an ESC key" [ref=e90]:
+              - /url: /en/templates/design-top60-59-template/
+              - heading "Miniature studio inside an ESC key" [level=2] [ref=e92]
+            - paragraph [ref=e93]: Version v1 · 1 field
+            - paragraph [ref=e94]: A single clear ESC keycap contains a seated worker, screens, lamp, cables, cup and greenery, with surrounding keyboard keys visible.
+            - paragraph [ref=e95]: 在真实机械键盘左上角的一枚透明ESC键帽内放入等距微型电脑工作室：一个微小人物坐在人体工学椅上面对发光屏幕，旁有台灯、线缆、杯子和苔藓土壤。
+            - button "Save" [ref=e97] [cursor=pointer]
+        - listitem [ref=e102]:
+          - article [ref=e103]:
+            - link "Cat silicone wrist-rest concept" [ref=e104]:
+              - /url: /en/templates/design-top60-54-template/
+              - heading "Cat silicone wrist-rest concept" [level=2] [ref=e106]
+            - paragraph [ref=e107]: Version v1 · 1 field
+            - paragraph [ref=e108]: A rounded orange cat supports and embraces a natural wrist; the soft-looking flat base contacts the table. Material safety and ergonomics are not tested.
+            - paragraph [ref=e109]: 把猫咪emoji 🐱 拟人化成抱住手腕的Q版硅胶腕托。
+            - button "Save" [ref=e111] [cursor=pointer]
+        - listitem [ref=e116]:
+          - article [ref=e117]:
+            - link "Chrome star badge card" [ref=e118]:
+              - /url: /en/templates/design-top60-53-template/
+              - heading "Chrome star badge card" [level=2] [ref=e120]
+            - paragraph [ref=e121]: Version v2 · 2 fields
+            - paragraph [ref=e122]: One rounded mirror-metal star on a fully visible cream card. The hanging aperture is now a horizontal Euro slot with a central upward semicircle; STAR CLUB and Small shine. Big joy. are correct. Warm reflections tint the metal.
+            - paragraph [ref=e123]: 把星星emoji ⭐ 做成贴在竖版卡片上的高细节金属徽章，镜面铬，圆润3D五角星，柔和反射、干净阴影。
+            - button "Save" [ref=e125] [cursor=pointer]
+        - listitem [ref=e130]:
+          - article [ref=e131]:
+            - link "Swallow silhouette narrative poster" [ref=e132]:
+              - /url: /en/templates/design-top60-36-template/
+              - heading "Swallow silhouette narrative poster" [level=2] [ref=e134]
+            - paragraph [ref=e135]: Version v1 · 1 field
+            - paragraph [ref=e136]: A clear flying swallow contains a lighthouse, town, lit path and traveler in a watercolor world with generous paper margins.
+            - paragraph [ref=e137]: 剪影宇宙收藏版叙事海报，2:3竖幅，主题theme。
+            - button "Save" [ref=e139] [cursor=pointer]
+        - listitem [ref=e144]:
+          - article [ref=e145]:
+            - link "Chinese citrus tea launch poster" [ref=e146]:
+              - /url: /en/templates/design-top60-31-template/
+              - heading "Chinese citrus tea launch poster" [level=2] [ref=e148]
+            - paragraph [ref=e149]: Version v1 · 5 fields
+            - paragraph [ref=e150]: Brand, flavor, 18-yuan price, half-price offer, June 1–7 dates and CTA are all visible and legible. The campaign is fictional.
+            - paragraph [ref=e151]: 3:4竖版新中式茶饮上市海报，深绿、米白和金色，宣纸纹理和山水留白，中央透明杯中的柑橘冰茶，茶叶、橘片、冰块和少量金箔。
+            - button "Save" [ref=e153] [cursor=pointer]
+        - listitem [ref=e158]:
+          - article [ref=e159]:
+            - link "Retro gardening public-service poster" [ref=e160]:
+              - /url: /en/templates/design-top60-30-template/
+              - heading "Retro gardening public-service poster" [level=2] [ref=e162]
+            - paragraph [ref=e163]: Version v1 · 1 field
+            - paragraph [ref=e164]: Two blue-clad gardeners carry the specified tools. The full Chinese slogan is legible with period-style printed texture.
+            - paragraph [ref=e165]: 1980年代风格公益宣传画，3:4竖幅。
+            - button "Save" [ref=e167] [cursor=pointer]
+        - listitem [ref=e172]:
+          - article [ref=e173]:
+            - link "Coloring sheet with color guide" [ref=e174]:
+              - /url: /en/templates/design-top60-29-template/
+              - heading "Coloring sheet with color guide" [level=2] [ref=e176]
+            - paragraph [ref=e177]: Version v1 · 2 fields
+            - paragraph [ref=e178]: The main rabbit-and-garden drawing is black on white with a small colored scene at bottom right. Physical print size depends on export settings.
+            - paragraph [ref=e179]: 可打印8.5:11纵向儿童涂色页，适合age儿童，场景是scene。
+            - button "Save" [ref=e181] [cursor=pointer]
+        - listitem [ref=e186]:
+          - article [ref=e187]:
+            - link "Folded paper forest pop-up book" [ref=e188]:
+              - /url: /en/templates/design-top60-27-template/
+              - heading "Folded paper forest pop-up book" [level=2] [ref=e190]
+            - paragraph [ref=e191]: Version v1 · 1 field
+            - paragraph [ref=e192]: An open book supports layered paper trees, a cottage, fox and stream bridge. Paper grain, tabs, folds and layer shadows are visible.
+            - paragraph [ref=e193]: 多层折叠纸雕弹出书，2:3竖幅，正面略俯视角。
+            - button "Save" [ref=e195] [cursor=pointer]
+        - listitem [ref=e200]:
+          - article [ref=e201]:
+            - link "Hand-drawn tea instruction card" [ref=e202]:
+              - /url: /en/templates/design-top60-26-template/
+              - heading "Hand-drawn tea instruction card" [level=2] [ref=e204]
+            - paragraph [ref=e205]: Version v1 · 1 field
+            - paragraph [ref=e206]: The title 泡茶三步 and the ordered steps 温杯、投茶、注水 are correct, with separate cup, leaf and pouring illustrations on warm paper.
+            - paragraph [ref=e207]: 9:16米白纸张手绘中文知识卡，主题泡茶。
+            - button "Save" [ref=e209] [cursor=pointer]
+        - listitem [ref=e214]:
+          - article [ref=e215]:
+            - link "MELT conceptual wordmark" [ref=e216]:
+              - /url: /en/templates/design-top60-25-template/
+              - heading "MELT conceptual wordmark" [level=2] [ref=e218]
+            - paragraph [ref=e219]: Version v1 · 2 fields
+            - paragraph [ref=e220]: MELT remains legible as its stems become drips. The line Letters soften into motion. is rendered exactly on warm white.
+            - paragraph [ref=e221]: Create a high-contrast conceptual wordmark for the exact word "word".
+            - button "Save" [ref=e223] [cursor=pointer]
+        - listitem [ref=e228]:
+          - article [ref=e229]:
+            - link "The Moonlight Postman film poster" [ref=e230]:
+              - /url: /en/templates/design-top60-24-template/
+              - heading "The Moonlight Postman film poster" [level=2] [ref=e232]
+            - paragraph [ref=e233]: Version v1 · 1 field
+            - paragraph [ref=e234]: Original cyclist postman in a moonlit town; the exact title 月光邮差 is clear, with visible cross-folds, scratches and worn edges.
+            - paragraph [ref=e235]: 为原创动画故事“title”制作怀旧电影海报，2:3竖版。
+            - button "Save" [ref=e237] [cursor=pointer]
+        - listitem [ref=e242]:
+          - article [ref=e243]:
+            - link "Retro radial sale poster" [ref=e244]:
+              - /url: /en/templates/design-top60-23-template/
+              - heading "Retro radial sale poster" [level=2] [ref=e246]
+            - paragraph [ref=e247]: Version v1 · 2 fields
+            - paragraph [ref=e248]: Red-yellow radial layout with an illustrated woman pointing to the CTA. Both Chinese strings 夏日特惠 and 立即选购 are legible; a simple sun mark appears above.
+            - paragraph [ref=e249]: 复古径向爆炸促销海报，3:4竖版，红黄径向背景；中心原创复古插画人物微笑并指向按钮。
+            - button "Save" [ref=e251] [cursor=pointer]
+        - listitem [ref=e256]:
+          - article [ref=e257]:
+            - link "Lisbon vector-style travel poster" [ref=e258]:
+              - /url: /en/templates/design-top60-22-template/
+              - heading "Lisbon vector-style travel poster" [level=2] [ref=e260]
+            - paragraph [ref=e261]: Version v1 · 4 fields
+            - paragraph [ref=e262]: LISBON and PORTUGAL are spelled correctly, with a yellow tram, sloped street, red roofs and blue river in simplified flat shapes. Some subtle tonal variation remains.
+            - paragraph [ref=e263]: 为city做2:3彩色夏日矢量风旅行海报。
+            - button "Save" [ref=e265] [cursor=pointer]
+        - listitem [ref=e270]:
+          - article [ref=e271]:
+            - link "Frosted fluid exhibition poster" [ref=e272]:
+              - /url: /en/templates/design-top60-21-template/
+              - heading "Frosted fluid exhibition poster" [level=2] [ref=e274]
+            - paragraph [ref=e275]: Version v1 · 1 field
+            - paragraph [ref=e276]: Blue-violet frosted glass sculpture on cool gray. The title 流体之间 overlaps the vessel, with the covered letters deliberately blurred as requested.
+            - paragraph [ref=e277]: 3:4竖版展览海报，冷灰背景。
+            - button "Save" [ref=e279] [cursor=pointer]
+        - listitem [ref=e284]:
+          - article [ref=e285]:
+            - link "Transparent coffee machine concept" [ref=e286]:
+              - /url: /en/templates/design-top60-20-template/
+              - heading "Transparent coffee machine concept" [level=2] [ref=e288]
+            - paragraph [ref=e289]: Version v1 · 1 field
+            - paragraph [ref=e290]: Transparent coffee machine exposes orange tubes, grinder and chamber while pouring into one glass cup. This is a visual concept, not an engineering diagram.
+            - paragraph [ref=e291]: "Recontextualize a coffee machine as a transparent precision artifact: optical-glass body exposes water tubes, pressure chamber, grinder and extraction path; physical circuitColor circuitry;…"
+            - button "Save" [ref=e293] [cursor=pointer]
+        - listitem [ref=e298]:
+          - article [ref=e299]:
+            - link "Strawberry jam social advertisement" [ref=e300]:
+              - /url: /en/templates/design-top60-19-template/
+              - heading "Strawberry jam social advertisement" [level=2] [ref=e302]
+            - paragraph [ref=e303]: Version v1 · 1 field
+            - paragraph [ref=e304]: Floating jam jar with legible BERRY DAY label, red splash, strawberries and leaves; a generic phone feed sits behind it on a red-orange background.
+            - paragraph [ref=e305]: Photorealistic commercial poster of a glass strawberry jam jar floating in mid-air, glossy red jam, black lid, cream label facing camera reading exactly "brand".
+            - button "Save" [ref=e307] [cursor=pointer]
+        - listitem [ref=e312]:
+          - article [ref=e313]:
+            - link "Outdoor chronograph among rocks" [ref=e314]:
+              - /url: /en/templates/design-top60-18-template/
+              - heading "Outdoor chronograph among rocks" [level=2] [ref=e316]
+            - paragraph [ref=e317]: Version v1 · 1 field
+            - paragraph [ref=e318]: Matte-black chronograph with orange accents framed by rocks and distant mountains. Dial markings remain a generated concept, not a validated watch specification.
+            - paragraph [ref=e319]: "Single still product photograph: rugged matte-black chronograph watch with accentColor accents tightly framed between textured rocks."
+            - button "Save" [ref=e321] [cursor=pointer]
+        - listitem [ref=e326]:
+          - article [ref=e327]:
+            - link "Backlit country honey advertisement" [ref=e328]:
+              - /url: /en/templates/design-top60-17-template/
+              - heading "Backlit country honey advertisement" [level=2] [ref=e330]
+            - paragraph [ref=e331]: Version v1 · 1 field
+            - paragraph [ref=e332]: Golden honey in a bronze-lidded glass jar among wheat and yellow flowers, with bee and ivy accents; backlight and a restrained blank cream label match the requested concept.
+            - paragraph [ref=e333]: Premium honey jar in a shallow wooden hollow among wild wheat and tiny yellow flowers; transparent glass with luminous golden honey, lidFinish lid, restrained blank cream label, one bee and ivy…
+            - button "Save" [ref=e335] [cursor=pointer]
+        - listitem [ref=e340]:
+          - article [ref=e341]:
+            - link "Steaming pumpkin soup" [ref=e342]:
+              - /url: /en/templates/design-top60-14-template/
+              - heading "Steaming pumpkin soup" [level=2] [ref=e344]
+            - paragraph [ref=e345]: Version v1 · 3 fields
+            - paragraph [ref=e346]: One ceramic soup bowl on wood with parsley, visible steam and daylight; bowl proportions and garnish are coherent.
+            - paragraph [ref=e347]: Appetizing commercial photograph of one bowl of dish in a rustic cream ceramic bowl on a dark wood table.
+            - button "Save" [ref=e349] [cursor=pointer]
+        - listitem [ref=e354]:
+          - article [ref=e355]:
+            - link "Backlit iced-tea pour" [ref=e356]:
+              - /url: /en/templates/design-top60-13-template/
+              - heading "Backlit iced-tea pour" [level=2] [ref=e358]
+            - paragraph [ref=e359]: Version v1 · 2 fields
+            - paragraph [ref=e360]: Amber tea pours from a carafe into one glass; a clear stream, sharp droplets, blank front label and teal backdrop are visible.
+            - paragraph [ref=e361]: Commercial beverage photograph of drink being poured from a glass carafe into a clear cylindrical glass.
+            - button "Save" [ref=e363] [cursor=pointer]
+        - listitem [ref=e368]:
+          - article [ref=e369]:
+            - link "Headphone launch pedestal" [ref=e370]:
+              - /url: /en/templates/design-top60-12-template/
+              - heading "Headphone launch pedestal" [level=2] [ref=e372]
+            - paragraph [ref=e373]: Version v1 · 1 field
+            - paragraph [ref=e374]: One black headphone rests on a stone pedestal at right; haze and overhead lighting leave the left half open. Wide 16:9 composition matches the request.
+            - paragraph [ref=e375]: Launch-announcement visual of one finish wireless headphone on a pale stone pedestal.
+            - button "Save" [ref=e377] [cursor=pointer]
+        - listitem [ref=e382]:
+          - article [ref=e383]:
+            - link "Frozen lemon splash advertisement" [ref=e384]:
+              - /url: /en/templates/design-top60-11-template/
+              - heading "Frozen lemon splash advertisement" [level=2] [ref=e386]
+            - paragraph [ref=e387]: Version v1 · 1 field
+            - paragraph [ref=e388]: One sparkling drink bottle remains unobscured; lemon, mint and sharp water arcs frame it on navy, with the left third reserved for copy.
+            - paragraph [ref=e389]: "Editorial product poster: one clear bottle of sparkling lemon drink surrounded by lemon slices, mint leaves and a curved splash of water frozen mid-air."
+            - button "Save" [ref=e391] [cursor=pointer]
+        - listitem [ref=e396]:
+          - article [ref=e397]:
+            - link "Promotional poster with copy space" [ref=e398]:
+              - /url: /en/templates/design-top60-10-template/
+              - heading "Promotional poster with copy space" [level=2] [ref=e400]
+            - paragraph [ref=e401]: Version v1 · 2 fields
+            - paragraph [ref=e402]: A green tea tin occupies the lower portion of a cobalt poster, leaving the top clear for later copy.
+            - paragraph [ref=e403]: "Use case: product-mockup"
+            - button "Save" [ref=e405] [cursor=pointer]
+        - listitem [ref=e410]:
+          - article [ref=e411]:
+            - link "Seasonal brand scene" [ref=e412]:
+              - /url: /en/templates/design-top60-09-template/
+              - heading "Seasonal brand scene" [level=2] [ref=e414]
+            - paragraph [ref=e415]: Version v1 · 2 fields
+            - paragraph [ref=e416]: An amber sports bottle stands among restrained autumn leaves by a lake; the bottle remains dominant.
+            - paragraph [ref=e417]: "Use case: product-mockup"
+            - button "Save" [ref=e419] [cursor=pointer]
+        - listitem [ref=e424]:
+          - article [ref=e425]:
+            - link "Product in natural use" [ref=e426]:
+              - /url: /en/templates/design-top60-08-template/
+              - heading "Product in natural use" [level=2] [ref=e428]
+            - paragraph [ref=e429]: Version v1 · 2 fields
+            - paragraph [ref=e430]: A natural hand adjusts a coral desk fan; object scale and tabletop contact are coherent in warm light.
+            - paragraph [ref=e431]: "Use case: product-mockup"
+            - button "Save" [ref=e433] [cursor=pointer]
+        - listitem [ref=e438]:
+          - article [ref=e439]:
+            - link "Morning lifestyle product scene" [ref=e440]:
+              - /url: /en/templates/design-top60-07-template/
+              - heading "Morning lifestyle product scene" [level=2] [ref=e442]
+            - paragraph [ref=e443]: Version v1 · 2 fields
+            - paragraph [ref=e444]: A linen pouch is the focal point on a linen-covered table, lit from a left window with a notebook nearby.
+            - paragraph [ref=e445]: "Use case: product-mockup"
+            - button "Save" [ref=e447] [cursor=pointer]
+        - listitem [ref=e452]:
+          - article [ref=e453]:
+            - link "Top-down product detail" [ref=e454]:
+              - /url: /en/templates/design-top60-06-template/
+              - heading "Top-down product detail" [level=2] [ref=e456]
+            - paragraph [ref=e457]: Version v1 · 2 fields
+            - paragraph [ref=e458]: Top-down espresso-machine controls show coherent buttons and brushed metal, with a softly blurred countertop. The machine is a fictional concept.
+            - paragraph [ref=e459]: "Use case: product-mockup"
+            - button "Save" [ref=e461] [cursor=pointer]
+        - listitem [ref=e466]:
+          - article [ref=e467]:
+            - link "Leather stitching macro" [ref=e468]:
+              - /url: /en/templates/design-top60-05-template/
+              - heading "Leather stitching macro" [level=2] [ref=e470]
+            - paragraph [ref=e471]: Version v1 · 2 fields
+            - paragraph [ref=e472]: Leather grain and cream stitching are sharp near the wallet corner, with directional side light and shallow focus.
+            - paragraph [ref=e473]: Extreme close-up of a material wallet corner and its stitchColor stitching, shallow depth of field, directional side light revealing tactile surface detail, accurate material color and…
+            - button "Save" [ref=e475] [cursor=pointer]
+        - listitem [ref=e480]:
+          - article [ref=e481]:
+            - link "Floating product packshot" [ref=e482]:
+              - /url: /en/templates/design-top60-04-template/
+              - heading "Floating product packshot" [level=2] [ref=e484]
+            - paragraph [ref=e485]: Version v1 · 1 field
+            - paragraph [ref=e486]: The silver mouse has a visible air gap above its separate soft shadow; the full silhouette and scroll wheel are intact.
+            - paragraph [ref=e487]: Floating a finish wireless computer mouse on pure white.
+            - button "Save" [ref=e489] [cursor=pointer]
+        - listitem [ref=e494]:
+          - article [ref=e495]:
+            - link "Three-quarter ceramic packaging view" [ref=e496]:
+              - /url: /en/templates/design-top60-03-template/
+              - heading "Three-quarter ceramic packaging view" [level=2] [ref=e498]
+            - paragraph [ref=e499]: Version v1 · 1 field
+            - paragraph [ref=e500]: The elevated three-quarter view exposes the sculptural lid top and hollow side handle, preserving the reference speckled ceramic and gold collar.
+            - paragraph [ref=e501]: Use the attached sculptural ceramic perfume bottle as a shape and material reference.
+            - button "Save" [ref=e503] [cursor=pointer]
+        - listitem [ref=e508]:
+          - article [ref=e509]:
+            - link "Pure-white commerce packshot" [ref=e510]:
+              - /url: /en/templates/design-top60-02-template/
+              - heading "Pure-white commerce packshot" [level=2] [ref=e512]
+            - paragraph [ref=e513]: Version v1 · 1 field
+            - paragraph [ref=e514]: A complete white fabric-covered speaker is centered on white with a contact shadow and no added text.
+            - paragraph [ref=e515]: "Use case: product-mockup"
+            - button "Save" [ref=e517] [cursor=pointer]
+        - listitem [ref=e522]:
+          - article [ref=e523]:
+            - link "Minimal studio product hero" [ref=e524]:
+              - /url: /en/templates/design-top60-01-template/
+              - heading "Minimal studio product hero" [level=2] [ref=e526]
+            - paragraph [ref=e527]: Version v1 · 2 fields
+            - paragraph [ref=e528]: A single cobalt dropper bottle is crisp on a warm gradient, with soft shadow and restrained reflection.
+            - paragraph [ref=e529]: "Use case: product-mockup"
+            - button "Save" [ref=e531] [cursor=pointer]
+        - listitem [ref=e536]:
+          - article [ref=e537]:
+            - link "Museum-style object study" [ref=e538]:
+              - /url: /en/templates/museum-object-breakdown/
+              - heading "Museum-style object study" [level=2] [ref=e540]
+            - paragraph [ref=e541]: Version v1 · 3 fields
+            - paragraph [ref=e542]: A central object and detail studies form a restrained Chinese-labeled catalog plate.
+            - paragraph [ref=e543]: "Create a museum-catalog illustration of garmentOrObject using these checked reference notes: historyNotes."
+            - button "Save" [ref=e545] [cursor=pointer]
+        - listitem [ref=e550]:
+          - article [ref=e551]:
+            - link "Logo in cloud or glass" [ref=e552]:
+              - /url: /en/templates/cloud-and-glass-logo/
+              - heading "Logo in cloud or glass" [level=2] [ref=e554]
+            - paragraph [ref=e555]: Version v1 · 1 field
+            - paragraph [ref=e556]: One original emblem explores two distinct materials while preserving its silhouette.
+            - paragraph [ref=e557]: Transform the uploaded symbol into one floating sculptural object made entirely of material.
+            - button "Save" [ref=e559] [cursor=pointer]
+        - listitem [ref=e564]:
+          - article [ref=e565]:
+            - link "Nine holiday portraits" [ref=e566]:
+              - /url: /en/templates/festive-portrait-grid/
+              - heading "Nine holiday portraits" [level=2] [ref=e568]
+            - paragraph [ref=e569]: Version v1 · 1 field
+            - paragraph [ref=e570]: One person appears in nine festive expressions with short greetings.
+            - paragraph [ref=e571]: Make a square nine-panel holiday portrait sheet from the uploaded photo.
+            - button "Save" [ref=e573] [cursor=pointer]
+        - listitem [ref=e578]:
+          - article [ref=e579]:
+            - link "Miniature terrain travel guide" [ref=e580]:
+              - /url: /en/templates/terrain-travel-guide/
+              - heading "Miniature terrain travel guide" [level=2] [ref=e582]
+            - paragraph [ref=e583]: Version v1 · 3 fields
+            - paragraph [ref=e584]: A verified outline anchors a miniature destination map and labeled route.
+            - paragraph [ref=e585]: Build a travel infographic for country using the supplied verified map.
+            - button "Save" [ref=e587] [cursor=pointer]
+        - listitem [ref=e592]:
+          - article [ref=e593]:
+            - link "Chinese character sticker sheet" [ref=e594]:
+              - /url: /en/templates/character-chinese-sticker-sheet/
+              - heading "Chinese character sticker sheet" [level=2] [ref=e596]
+            - paragraph [ref=e597]: Version v1 · 1 field
+            - paragraph [ref=e598]: Sixteen emotions become a consistent character sticker sheet with short Chinese captions.
+            - paragraph [ref=e599]: Design one square sticker sheet containing exactly sixteen separate stickers in a clean 4-by-4 grid.
+            - button "Save" [ref=e601] [cursor=pointer]
+        - listitem [ref=e606]:
+          - article [ref=e607]:
+            - link "Geometric brand poster" [ref=e608]:
+              - /url: /en/templates/geometric-photo-brand-poster/
+              - heading "Geometric brand poster" [level=2] [ref=e610]
+            - paragraph [ref=e611]: Version v1 · 2 fields
+            - paragraph [ref=e612]: Product photography crosses a grid of large color blocks and curves.
+            - paragraph [ref=e613]: Design a vertical campaign poster for brand using the supplied product or person image.
+            - button "Save" [ref=e615] [cursor=pointer]
+        - listitem [ref=e620]:
+          - article [ref=e621]:
+            - link "Product social campaign" [ref=e622]:
+              - /url: /en/templates/social-campaign-product-ad/
+              - heading "Product social campaign" [level=2] [ref=e624]
+            - paragraph [ref=e625]: Version v1 · 5 fields
+            - paragraph [ref=e626]: A product photo meets bold graphic shapes and exact campaign copy.
+            - paragraph [ref=e627]: "Create a 4:5 social campaign image for product using the uploaded product photo and this palette: brandPalette."
+            - button "Save" [ref=e629] [cursor=pointer]
+        - listitem [ref=e634]:
+          - article [ref=e635]:
+            - link "Photograph inside letterforms" [ref=e636]:
+              - /url: /en/templates/photo-inside-letterforms/
+              - heading "Photograph inside letterforms" [level=2] [ref=e638]
+            - paragraph [ref=e639]: Version v1 · 2 fields
+            - paragraph [ref=e640]: A supplied action photograph fills bold, readable poster lettering.
+            - paragraph [ref=e641]: Set the exact word word in oversized bold condensed capitals across a vertical poster.
+            - button "Save" [ref=e643] [cursor=pointer]
+        - listitem [ref=e648]:
+          - article [ref=e649]:
+            - link "Profile memory collage" [ref=e650]:
+              - /url: /en/templates/portrait-silhouette-collage/
+              - heading "Profile memory collage" [level=2] [ref=e652]
+            - paragraph [ref=e653]: Version v1 · 2 fields
+            - paragraph [ref=e654]: A readable profile encloses a grid of personal photo moments.
+            - paragraph [ref=e655]: Make a portrait tribute poster from the uploaded photographs.
+            - button "Save" [ref=e657] [cursor=pointer]
+        - listitem [ref=e662]:
+          - article [ref=e663]:
+            - link "Your pet as a person" [ref=e664]:
+              - /url: /en/templates/pet-as-human/
+              - heading "Your pet as a person" [level=2] [ref=e666]
+            - paragraph [ref=e667]: Version v1 · 2 fields
+            - paragraph [ref=e668]: Pet posture and markings become a human personality, hairstyle and wardrobe.
+            - paragraph [ref=e669]: Imagine the pet in this photograph as a fully human character.
+            - button "Save" [ref=e671] [cursor=pointer]
+        - listitem [ref=e676]:
+          - article [ref=e677]:
+            - link "Handmade clay character" [ref=e678]:
+              - /url: /en/templates/handmade-clay-character/
+              - heading "Handmade clay character" [level=2] [ref=e680]
+            - paragraph [ref=e681]: Version v1 · 1 field
+            - paragraph [ref=e682]: Fingerprints and tool marks make a small clay scene feel tangible.
+            - paragraph [ref=e683]: Create a single-frame stop-motion-style scene featuring character.
+            - button "Save" [ref=e685] [cursor=pointer]
+        - listitem [ref=e690]:
+          - article [ref=e691]:
+            - link "Layered paper story" [ref=e692]:
+              - /url: /en/templates/layered-paper-story/
+              - heading "Layered paper story" [level=2] [ref=e694]
+            - paragraph [ref=e695]: Version v1 · 2 fields
+            - paragraph [ref=e696]: Paper fibers and lifted edges give a quiet story illustration physical depth.
+            - paragraph [ref=e697]: Build an illustration of scene entirely from layered cut paper.
+            - button "Save" [ref=e699] [cursor=pointer]
+        - listitem [ref=e704]:
+          - article [ref=e705]:
+            - link "Themed nail-art close-up" [ref=e706]:
+              - /url: /en/templates/themed-nail-art/
+              - heading "Themed nail-art close-up" [level=2] [ref=e708]
+            - paragraph [ref=e709]: Version v1 · 3 fields
+            - paragraph [ref=e710]: Five coordinated nail motifs share a theme and beauty-campaign palette.
+            - paragraph [ref=e711]: Photograph a neatly posed adult hand showing a coordinated nail-art collection inspired by theme.
+            - button "Save" [ref=e713] [cursor=pointer]
+        - listitem [ref=e718]:
+          - article [ref=e719]:
+            - link "Original pixel creature battle" [ref=e720]:
+              - /url: /en/templates/pixel-creature-battle/
+              - heading "Original pixel creature battle" [level=2] [ref=e722]
+            - paragraph [ref=e723]: Version v1 · 3 fields
+            - paragraph [ref=e724]: Two invented creatures face off in a crisp pixel-art arena.
+            - paragraph [ref=e725]: Create a polished pixel-art screenshot of an original turn-based creature game.
+            - button "Save" [ref=e727] [cursor=pointer]
+        - listitem [ref=e732]:
+          - article [ref=e733]:
+            - link "Inflated sculptural wordmark" [ref=e734]:
+              - /url: /en/templates/inflated-sculptural-wordmark/
+              - heading "Inflated sculptural wordmark" [level=2] [ref=e736]
+            - paragraph [ref=e737]: Version v1 · 2 fields
+            - paragraph [ref=e738]: A short word becomes a glossy inflated object with deliberate spacing.
+            - paragraph [ref=e739]: Render the exact word word as an inflated sculptural wordmark.
+            - button "Save" [ref=e741] [cursor=pointer]
+        - listitem [ref=e746]:
+          - article [ref=e747]:
+            - link "Industrial concept sketch board" [ref=e748]:
+              - /url: /en/templates/industrial-concept-sketches/
+              - heading "Industrial concept sketch board" [level=2] [ref=e750]
+            - paragraph [ref=e751]: Version v1 · 3 fields
+            - paragraph [ref=e752]: Perspective, elevations and detail studies describe one coherent product concept.
+            - paragraph [ref=e753]: Create a concept-design board for an original product.
+            - button "Save" [ref=e755] [cursor=pointer]
+        - listitem [ref=e760]:
+          - article [ref=e761]:
+            - link "Vintage engineering plate" [ref=e762]:
+              - /url: /en/templates/vintage-patent-blueprint/
+              - heading "Vintage engineering plate" [level=2] [ref=e764]
+            - paragraph [ref=e765]: Version v1 · 2 fields
+            - paragraph [ref=e766]: Ivory linework turns an object into an elegant cobalt technical-style plate.
+            - paragraph [ref=e767]: Depict object as a vintage engineering plate on deep cobalt paper.
+            - button "Save" [ref=e769] [cursor=pointer]
+        - listitem [ref=e774]:
+          - article [ref=e775]:
+            - link "3x3 product campaign prompt template" [ref=e776]:
+              - /url: /en/templates/product-brand-story-grid/
+              - heading "3x3 product campaign prompt template" [level=2] [ref=e778]
+            - paragraph [ref=e779]: Version v1 · 2 fields
+            - paragraph [ref=e780]: Adapt the palette and nine scenes of a reference-photo campaign prompt, with two recorded examples and their original product input.
+            - paragraph [ref=e781]: Using the uploaded product photo, design a 3-by-3 campaign contact sheet.
+            - button "Save" [ref=e783] [cursor=pointer]
+        - listitem [ref=e788]:
+          - article [ref=e789]:
+            - link "Cafe identity presentation" [ref=e790]:
+              - /url: /en/templates/restaurant-brand-identity/
+              - heading "Cafe identity presentation" [level=2] [ref=e792]
+            - paragraph [ref=e793]: Version v1 · 3 fields
+            - paragraph [ref=e794]: A fictional cafe identity extends across cups, packaging and editorial applications.
+            - paragraph [ref=e795]: Design one presentation board for the fictional cafe name.
+            - button "Save" [ref=e797] [cursor=pointer]
+        - listitem [ref=e802]:
+          - article [ref=e803]:
+            - link "Tactile nine-icon set" [ref=e804]:
+              - /url: /en/templates/tactile-icon-grid/
+              - heading "Tactile nine-icon set" [level=2] [ref=e806]
+            - paragraph [ref=e807]: Version v1 · 3 fields
+            - paragraph [ref=e808]: Nine rounded objects share one palette, material and lighting system.
+            - paragraph [ref=e809]: Create nine cohesive 3D icons for theme arranged in a neat square grid.
+            - button "Save" [ref=e811] [cursor=pointer]
+        - listitem [ref=e816]:
+          - article [ref=e817]:
+            - link "Four-panel character story" [ref=e818]:
+              - /url: /en/templates/consistent-four-panel-story/
+              - heading "Four-panel character story" [level=2] [ref=e820]
+            - paragraph [ref=e821]: Version v1 · 2 fields
+            - paragraph [ref=e822]: Consistent original characters act out four clear story beats.
+            - paragraph [ref=e823]: Draw a four-panel comic featuring characters.
+            - button "Save" [ref=e825] [cursor=pointer]
+        - listitem [ref=e830]:
+          - article [ref=e831]:
+            - link "Miniature city weather card" [ref=e832]:
+              - /url: /en/templates/miniature-city-weather-card/
+              - heading "Miniature city weather card" [level=2] [ref=e834]
+            - paragraph [ref=e835]: Version v1 · 4 fields
+            - paragraph [ref=e836]: Toy-like landmarks illustrate a clearly labeled weather-card scenario.
+            - paragraph [ref=e837]: "Create a vertical weather card for city using this date label: dateLabel and this forecast: forecast."
+            - button "Save" [ref=e839] [cursor=pointer]
+        - listitem [ref=e844]:
+          - article [ref=e845]:
+            - link "Floating ingredient recipe" [ref=e846]:
+              - /url: /en/templates/floating-recipe-layers/
+              - heading "Floating ingredient recipe" [level=2] [ref=e848]
+            - paragraph [ref=e849]: Version v1 · 2 fields
+            - paragraph [ref=e850]: Ingredients rise above a finished bowl with exact supplied quantities.
+            - paragraph [ref=e851]: Illustrate dish as a mouthwatering food diagram.
+            - button "Save" [ref=e853] [cursor=pointer]
+        - listitem [ref=e858]:
+          - article [ref=e859]:
+            - link "Product cutaway explainer" [ref=e860]:
+              - /url: /en/templates/product-cutaway-infographic/
+              - heading "Product cutaway explainer" [level=2] [ref=e862]
+            - paragraph [ref=e863]: Version v1 · 3 fields
+            - paragraph [ref=e864]: Transparent housing reveals a supplied component layout with restrained labels.
+            - paragraph [ref=e865]: "Create an educational cutaway illustration of device from these concept specifications: structureNotes."
+            - button "Save" [ref=e867] [cursor=pointer]
+        - listitem [ref=e872]:
+          - article [ref=e873]:
+            - link "Miniature world in a palm" [ref=e874]:
+              - /url: /en/templates/miniature-world-in-palm/
+              - heading "Miniature world in a palm" [level=2] [ref=e876]
+            - paragraph [ref=e877]: Version v1 · 1 field
+            - paragraph [ref=e878]: A mossy forest and tiny waterfall form a miniature ecosystem in an open hand.
+            - paragraph [ref=e879]: A tiny self-contained landscape resting in an open human palm, built like an exquisite miniature ecosystem.
+            - button "Save" [ref=e881] [cursor=pointer]
+        - listitem [ref=e886]:
+          - article [ref=e887]:
+            - link "Cat at the fish market" [ref=e888]:
+              - /url: /en/templates/cat-fish-market/
+              - heading "Cat at the fish market" [level=2] [ref=e890]
+            - paragraph [ref=e891]: Version v1 · 1 field
+            - paragraph [ref=e892]: A tiny tabby fishmonger exchanges a fresh fish for coins in morning market light.
+            - paragraph [ref=e893]: A charming anthropomorphic animal runs a tiny fish stall at a lively morning market.
+            - button "Save" [ref=e895] [cursor=pointer]
+        - listitem [ref=e900]:
+          - article [ref=e901]:
+            - link "Drink photography with ink doodles" [ref=e902]:
+              - /url: /en/templates/cocktail-ink-doodles/
+              - heading "Drink photography with ink doodles" [level=2] [ref=e904]
+            - paragraph [ref=e905]: Version v1 · 1 field
+            - paragraph [ref=e906]: A real-looking lemonade and hand meet playful black ink swimmers, bubbles and a smiling lemon.
+            - paragraph [ref=e907]: Make a playful editorial image of a hand holding a drink against a bright ivory background.
+            - button "Save" [ref=e909] [cursor=pointer]
+        - listitem [ref=e914]:
+          - article [ref=e915]:
+            - link "Painted cliff lighthouse" [ref=e916]:
+              - /url: /en/templates/painted-cliff-lighthouse/
+              - heading "Painted cliff lighthouse" [level=2] [ref=e918]
+            - paragraph [ref=e919]: Version v1 · 1 field
+            - paragraph [ref=e920]: Painted coral, turquoise and saffron bands follow a rocky coast around a white lighthouse.
+            - paragraph [ref=e921]: Create an overhead aerial photograph of a small building on a rugged coastal headland.
+            - button "Save" [ref=e923] [cursor=pointer]
+        - listitem [ref=e928]:
+          - article [ref=e929]:
+            - link "Cat in a potion flask" [ref=e930]:
+              - /url: /en/templates/cat-in-potion-flask/
+              - heading "Cat in a potion flask" [level=2] [ref=e932]
+            - paragraph [ref=e933]: Version v1 · 1 field
+            - paragraph [ref=e934]: A grumpy kitten fills a round potion bottle in a warmly lit alchemist shop.
+            - paragraph [ref=e935]: Create a whimsical still life inside a cozy alchemist shop.
+            - button "Save" [ref=e937] [cursor=pointer]
+        - listitem [ref=e942]:
+          - article [ref=e943]:
+            - link "Fruit animal miniature" [ref=e944]:
+              - /url: /en/templates/fruit-animal-miniature/
+              - heading "Fruit animal miniature" [level=2] [ref=e946]
+            - paragraph [ref=e947]: Version v1 · 2 fields
+            - paragraph [ref=e948]: A strawberry becomes a tiny kitten, with seeds and fruit flesh forming its face and paws.
+            - paragraph [ref=e949]: Create a macro photograph of a tiny animal made entirely from one ripe fruit.
+            - button "Save" [ref=e951] [cursor=pointer]
+        - listitem [ref=e956]:
+          - article [ref=e957]:
+            - link "A world inside a crystal sphere" [ref=e958]:
+              - /url: /en/templates/crystal-sphere-waterfall/
+              - heading "A world inside a crystal sphere" [level=2] [ref=e960]
+            - paragraph [ref=e961]: Version v1 · 1 field
+            - paragraph [ref=e962]: A miniature alpine world spills a waterfall out of a glass sphere and over an oak table.
+            - paragraph [ref=e963]: On an aged oak table stands a clear crystal sphere containing a miniature landscape.
+            - button "Save" [ref=e965] [cursor=pointer]
+        - listitem [ref=e970]:
+          - article [ref=e971]:
+            - link "Neon rim-light portrait" [ref=e972]:
+              - /url: /en/templates/neon-rim-portrait/
+              - heading "Neon rim-light portrait" [level=2] [ref=e974]
+            - paragraph [ref=e975]: Version v1 · 5 fields
+            - paragraph [ref=e976]: Describe a character, two rim-light colours and a background to get a moody silhouette portrait.
+            - paragraph [ref=e977]: Moody portrait of character as a dark silhouette, rim-lit in rimLight against background.
+            - button "Save" [ref=e979] [cursor=pointer]
+        - listitem [ref=e984]:
+          - article [ref=e985]:
+            - link "Ink scroll" [ref=e986]:
+              - /url: /en/templates/ink-scroll/
+              - heading "Ink scroll" [level=2] [ref=e988]
+            - paragraph [ref=e989]: Version v1 · 5 fields
+            - paragraph [ref=e990]: Fill in a subject, a season, the brushwork and a few details to get an ink painting prompt with plenty of empty space.
+            - paragraph [ref=e991]: Traditional Chinese ink painting of subject in season, on warm rice paper with generous empty space.
+            - button "Save" [ref=e993] [cursor=pointer]
+        - listitem [ref=e998]:
+          - article [ref=e999]:
+            - link "Product poster" [ref=e1000]:
+              - /url: /en/templates/product-poster/
+              - heading "Product poster" [level=2] [ref=e1002]
+            - paragraph [ref=e1003]: Version v3 · 5 fields
+            - paragraph [ref=e1004]: Fill in a product, up to three selling points, a palette and a ratio to get a clean flat-vector product poster.
+            - paragraph [ref=e1005]: Create a two-dimensional flat-vector editorial product poster.
+            - button "Save" [ref=e1007] [cursor=pointer]
+  - contentinfo [ref=e1012]:
+    - generic [ref=e1013]:
+      - generic [ref=e1014]:
+        - generic [ref=e1017]: PROMPT SEEN
+        - paragraph [ref=e1018]: Tested image prompts and templates. See what each phrase does.
+        - link "Prompt Seen on GitHub" [ref=e1019]:
+          - /url: https://github.com/picontapLab/prompt-seen
+      - navigation [ref=e1022]:
+        - heading "LANGUAGES" [level=2] [ref=e1023]
+        - list [ref=e1024]:
+          - listitem [ref=e1025]:
+            - link "English" [ref=e1026]:
+              - /url: /
+          - listitem [ref=e1027]:
+            - link "简体中文" [ref=e1028]:
+              - /url: /zh-hans/
+      - generic [ref=e1029]:
+        - heading [level=2] [aria-hidden] [ref=e1030]: THEME
+        - generic [ref=e1031]:
+          - generic [ref=e1032]: Theme
+          - radiogroup "Theme" [ref=e1033]:
+            - radio "System" [checked] [ref=e1034] [cursor=pointer]
+            - radio "Light" [ref=e1037] [cursor=pointer]
+            - radio "Dark" [ref=e1039] [cursor=pointer]
+        - link "Saved" [ref=e1041]:
+          - /url: /en/favorites/
+        - button "Keyboard shortcuts" [ref=e1044] [cursor=pointer]
+      - navigation "Prompt Seen" [ref=e1048]:
+        - list [ref=e1049]:
+          - listitem [ref=e1050]:
+            - link "About Prompt Seen" [ref=e1051]:
+              - /url: /en/about/
+          - listitem [ref=e1052]:
+            - link "License" [ref=e1053]:
+              - /url: /en/license/
+      - paragraph [ref=e1054]: "Code: MIT. Prompt text and notes: CC BY 4.0. Images: licence noted per work."
+  - alert [ref=e1055]
+```
