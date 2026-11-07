@@ -1,0 +1,100 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker processes
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/07 03:39:23 [notice] 1#1: start worker process 29
+
+Running 23 tests using 5 workers
+
+(node:11793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [http] › tests/e2e/seo.http.spec.ts:102:1 › the sitemap index lists one sitemap per public locale, and only those (48ms)
+  ✓   6 [http] › tests/e2e/seo.http.spec.ts:173:1 › robots.txt allows search and AI search, applies the training policy and names the sitemap (27ms)
+  ✓   7 [http] › tests/e2e/seo.http.spec.ts:203:3 › en: a prompt's index.md is Markdown, canonical to its page, and says what the page says (61ms)
+  ✓   8 [http] › tests/e2e/seo.http.spec.ts:223:3 › en: a template's index.md holds the default prompt the page shows (79ms)
+  ✓   9 [http] › tests/e2e/seo.http.spec.ts:203:3 › zh-Hans: a prompt's index.md is Markdown, canonical to its page, and says what the page says (95ms)
+  ✓  10 [http] › tests/e2e/seo.http.spec.ts:223:3 › zh-Hans: a template's index.md holds the default prompt the page shows (81ms)
+  ✓   2 [http] › tests/e2e/seo.http.spec.ts:112:3 › zh-Hans: the sitemap lists every published page with its content date and main image (561ms)
+  ✓   4 [http] › tests/e2e/seo.http.spec.ts:112:3 › en: the sitemap lists every published page with its content date and main image (591ms)
+  -  11 [http] › tests/e2e/seo.http.spec.ts:236:1 › drafts and preview-only locales have no index.md and no Markdown alternate
+  ✓  14 [http] › tests/e2e/seo.http.spec.ts:306:3 › en: a template's structured data is its default prompt and current version (65ms)
+  ✓  13 [http] › tests/e2e/seo.http.spec.ts:271:3 › en: a prompt's structured data matches its title, dates, author and breadcrumb (468ms)
+  ✓  16 [http] › tests/e2e/seo.http.spec.ts:339:3 › en: the home page names the site and its publisher (75ms)
+  ✓  15 [http] › tests/e2e/seo.http.spec.ts:320:3 › en: list pages describe their works in visible order (482ms)
+  ✓  18 [http] › tests/e2e/seo.http.spec.ts:306:3 › zh-Hans: a template's structured data is its default prompt and current version (29ms)
+  ✓  17 [http] › tests/e2e/seo.http.spec.ts:271:3 › zh-Hans: a prompt's structured data matches its title, dates, author and breadcrumb (45ms)
+  ✓  20 [http] › tests/e2e/seo.http.spec.ts:339:3 › zh-Hans: the home page names the site and its publisher (23ms)
+  ✓  21 [http] › tests/e2e/seo.http.spec.ts:353:1 › share images are the og crop: 1200 × 630, or that ratio when the original is smaller (20ms)
+  ✓  19 [http] › tests/e2e/seo.http.spec.ts:320:3 › zh-Hans: list pages describe their works in visible order (61ms)
+  ✓  22 [http] › tests/e2e/seo.http.spec.ts:364:3 › en: translated prompt HTML, popup, Markdown and structured data agree (42ms)
+  ✓  23 [http] › tests/e2e/seo.http.spec.ts:364:3 › zh-Hans: translated prompt HTML, popup, Markdown and structured data agree (36ms)
+  ✓   3 [http] › tests/e2e/seo.http.spec.ts:140:3 › zh-Hans: every sitemap address is a page whose canonical is that address (1.9s)
+  ✓  12 [http] › tests/e2e/seo.http.spec.ts:253:1 › llms.txt links only published, reachable content (1.4s)
+  ✓   1 [http] › tests/e2e/seo.http.spec.ts:140:3 › en: every sitemap address is a page whose canonical is that address (2.1s)
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 20#20: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 21#21: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 22#22: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 23#23: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 21#21: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 20#20: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 22#22: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 25#25: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 24#24: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 23#23: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 24#24: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 25#25: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 28#28: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 28#28: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 26#26: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 26#26: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 27#27: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 29#29: exiting
+[WebServer] 2026/11/07 03:39:26 [notice] 29#29: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 27#27: exit
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 27
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/07 03:39:26 [notice] 1#1: exit
+
+  1 skipped
+  22 passed (3.9s)

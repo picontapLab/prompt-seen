@@ -1,0 +1,60 @@
+Source: https://github.com/picontapLab/prompt-seen/actions/runs/42338354334/job/128300282723
+Attempt 1, head 6b7eddd5da5249592b11e95db7ebaa3683fe9cd8. Selected unmodified failure-summary lines; ANSI color escapes removed.
+2026-11-07T04:27:48.4235658Z ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+2026-11-07T04:27:48.4236118Z 
+2026-11-07T04:27:48.4241536Z  FAIL  scripts/emitters/search.test.ts > typical queries (§16.3) > find entries by English words and model names in other languages (mixed text)
+2026-11-07T04:27:48.4247040Z Error: Test timed out in 5000ms.
+2026-11-07T04:27:48.4248857Z If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+2026-11-07T04:27:48.4250720Z  ❯ scripts/emitters/search.test.ts:61:3
+2026-11-07T04:27:48.4304325Z      59|   });
+2026-11-07T04:27:48.4305529Z      60|
+2026-11-07T04:27:48.4306525Z      61|   it('find entries by English words and model names in other languages…
+2026-11-07T04:27:48.4307424Z        |   ^
+2026-11-07T04:27:48.4308294Z      62|     expect(titles('zh-Hans', 'neon').length).toBeGreaterThan(0);
+2026-11-07T04:27:48.4309502Z      63|     expect(titles('zh-Hans', 'neon 肖像')).toContain('霓虹肖像手机壁纸');
+2026-11-07T04:27:48.4310380Z 
+2026-11-07T04:27:48.4310954Z ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+2026-11-07T04:27:48.4311443Z 
+2026-11-07T04:27:48.4312880Z  FAIL  scripts/lib/media-generation/generation.test.ts > requires a separate hash-bound display review after preparing an accepted png
+2026-11-07T04:27:48.4315472Z  FAIL  scripts/lib/media-generation/generation.test.ts > requires a separate hash-bound display review after preparing an accepted gif
+2026-11-07T04:27:48.4317459Z Error: Test timed out in 5000ms.
+2026-11-07T04:27:48.4318981Z If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+2026-11-07T04:27:48.4320684Z  ❯ scripts/lib/media-generation/generation.test.ts:165:24
+2026-11-07T04:27:48.4367221Z     163| });
+2026-11-07T04:27:48.4396928Z     164|
+2026-11-07T04:27:48.4397258Z 
+2026-11-07T04:27:48.4397623Z     165| it.each(['png', 'gif'])(
+2026-11-07T04:27:48.4398687Z        |                        ^
+2026-11-07T04:27:48.4399617Z     166|   'requires a separate hash-bound display review after preparing an ac…
+2026-11-07T04:27:48.4400415Z     167|   async (format) => {
+2026-11-07T04:27:48.4400758Z 
+2026-11-07T04:27:48.4401167Z ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+2026-11-07T04:27:48.4401515Z 
+2026-11-07T04:27:48.4416387Z  Test Files  2 failed | 49 passed (51)
+2026-11-07T04:27:48.4418126Z       Tests  3 failed | 381 passed (384)
+2026-11-07T04:27:48.4419260Z    Start at  04:27:14
+2026-11-07T04:27:48.4420453Z    Duration  33.99s (tests 80%, import 17%, transform 2%)
+2026-11-07T04:27:48.4421198Z 
+2026-11-07T04:27:48.4422347Z     Isolate  51 workers spawned · ~136ms startup each (spawn + environment, per file)
+2026-11-07T04:27:48.4424490Z              at least ~2.18s faster with isolate: false — reuses workers across files instead of one per file
+2026-11-07T04:27:48.4426093Z 
+2026-11-07T04:27:48.4435234Z 
+2026-11-07T04:27:48.4468176Z ##[error]Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ scripts/emitters/search.test.ts:61:3
+
+
+2026-11-07T04:27:48.4480935Z 
+2026-11-07T04:27:48.4485300Z ##[error]Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ scripts/lib/media-generation/generation.test.ts:165:24
+
+
+2026-11-07T04:27:48.4487591Z 
+2026-11-07T04:27:48.4491132Z ##[error]Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ scripts/lib/media-generation/generation.test.ts:165:24
+
+
+2026-11-07T04:27:48.4837374Z ##[error]Process completed with exit code 1.
+2026-11-07T04:27:48.5008043Z

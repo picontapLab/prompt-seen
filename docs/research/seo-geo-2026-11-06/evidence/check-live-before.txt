@@ -1,0 +1,34 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 check:live
+> npm run gen && tsx scripts/check-live.ts
+
+npm warn Unknown env config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 gen
+> tsx scripts/config-gen.ts
+
+config: production build 89395feb8e5f, basePath "", locales en, zh-Hans
+✓ build 7ab2486c21460834dc3cbf7a20bb751baf842b3a (production) for https://promptseen.dev/
+✓ default-language home: 200, canonical, indexable
+✓ en home: 200, canonical, indexable
+✓ zh-Hans home: 200, canonical, indexable
+✓ sitemaps: 2 for 2 public locale(s), 639 addresses
+✓ en Prompt: 200, canonical, indexable
+✓ en template: 200, canonical, indexable
+✓ en list page 2: 200, canonical, indexable
+✓ zh-Hans Prompt: 200, canonical, indexable
+✓ zh-Hans template: 200, canonical, indexable
+✓ zh-Hans list page 2: 200, canonical, indexable
+✓ index.md: Markdown with a canonical Link header
+✓ llms.txt: 200 text/plain; charset=utf-8
+✓ site icon: 200
+✓ redirect /en/prompts/neon-profile-study/: 301 → /en/prompts/neon-rim-profile/
+! removed /en/prompts/retired-sunset-poster/: 404 (this host cannot answer 410; Google treats both alike)
+✓ unknown address: 404, the site's 404 page
+! error page address /en/404/: 200 (served directly; it carries noindex, but an internal location is better)
+✓ host robots.txt: search and AI search allowed, training allowed for /
+✓ host robots.txt: Sitemap: https://promptseen.dev/sitemap.xml
+✓ 13 crawler user agents get the full page (confirm verified bots in the platform's logs)
+check:live: 19 passed, 2 warning(s), 0 failed (https://promptseen.dev)

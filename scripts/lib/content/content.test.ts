@@ -7,6 +7,7 @@ import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/
 import { createUrlModule } from '../../../src/modules/url/create';
 import { toCard } from '../../../src/modules/feed/compose';
 import { searchDocuments } from '../../../src/modules/search/documents';
+import { promptMarkdown, templateMarkdown, type MarkdownContext } from '../../../src/modules/geo/markdown';
 import { createIndex, loadEngine, search } from '../../../src/modules/search/engine';
 import { aspectRatioLabel, openingOf } from './build-index';
 import type { Finding } from './findings';
@@ -475,6 +476,48 @@ describe('helpers', () => {
 });
 
 describe('versioned reference inputs', () => {
+  it('keeps ordered reference originals and slot labels beside the matching output in both Markdown documents', () => {
+    const root = setup({
+      'content/prompts/p_001/prompt.txt': null,
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait', 'inputRequirements: { referenceImage: required }\n').replace(
+        'promptSource: { type: literal, language: en }',
+        'promptSource: { type: template, templateId: t_001, version: v1, values: { product: a mug, palette: warm } }',
+      ),
+      'content/templates/t_001/versions/v1/inputs.yaml': [
+        'referenceImage: required',
+        'slots:',
+        '  - { id: photo, labels: { en: "Original [product]" }, min: 1, max: 1 }',
+        '  - { id: markup, labels: { en: Markup overlay }, min: 1, max: 1 }',
+      ].join('\n'),
+    });
+    fs.appendFileSync(path.join(root, 'content/examples/x_001/run.yaml'),
+      'referenceAssetIds: [a_003, a_002]\nreferenceBindings: [{ slotId: photo, referenceIndex: 0 }, { slotId: markup, referenceIndex: 1 }]\n');
+    const r = load(root);
+    expect(blocking(r.findings.list)).toEqual([]);
+    const ctx: MarkdownContext = {
+      absoluteUrl: (p) => `https://example.com/prompt-seen${p}`,
+      absoluteImageUrl: (v) => `https://media.example.com/${v.key}`,
+      t: (key, values) => key === 'geo.markdown.field' ? `${values?.label}: ${values?.value}` : key,
+      languageName: (tag) => tag,
+    };
+    const prompt = detail<PromptDetail>(r, 'prompt', 'en', 'p_001')!;
+    const template = detail<TemplateDetail>(r, 'template', 'en', 't_001')!;
+    for (const markdown of [promptMarkdown(prompt, ctx), templateMarkdown(template, ctx)]) {
+      const records = markdown.slice(markdown.indexOf('## detail.examples.heading'));
+      expect(records).toContain('1. Original \\[product\\]');
+      expect(records).toContain('2. Markup overlay');
+      const first = records.indexOf('https://media.example.com/media/a_003/x-original-aaa.jpg');
+      const second = records.indexOf('https://media.example.com/media/a_002/x-original-aaa.jpg');
+      const output = records.indexOf('#### detail.examples.outputs');
+      expect(first).toBeGreaterThan(0);
+      expect(second).toBeGreaterThan(first);
+      expect(output).toBeGreaterThan(second);
+      expect(records.slice(output)).toContain('https://media.example.com/media/a_001/x-detail-ddd.webp');
+    }
+    expect(promptMarkdown({ ...prompt, examples: prompt.examples.map((run) => ({ ...run, references: [] })) }, ctx))
+      .not.toContain('#### detail.examples.references');
+  });
+
   it('inherits the selected template version input contract in prompt and template views', () => {
     const root = setup({
       'content/prompts/p_001/prompt.txt': null,
