@@ -59,27 +59,26 @@ describe('typical queries (§16.3)', () => {
   });
 
   it('find entries by English words and model names in other languages (mixed text)', () => {
-    expect(titles('zh-Hans', 'neon').length).toBeGreaterThan(0);
-    expect(titles('zh-Hans', 'neon 肖像')).toContain('霓虹肖像手机壁纸');
-    expect(titles('zh-Hans', 'GPT Image').length).toBeGreaterThan(0);
+    // Query one loaded index, as the application does; rebuilding it for all six
+    // assertions made this corpus-sized test exceed CI's five-second limit.
+    const { engine, docs } = production.engine('zh-Hans');
+    const matches = (q: string) => search(engine, q).groups.flatMap((g) => g.hits.map((h) => h.title));
+    expect(matches('neon').length).toBeGreaterThan(0);
+    expect(matches('neon 肖像')).toContain('霓虹肖像手机壁纸');
+    expect(matches('GPT Image').length).toBeGreaterThan(0);
     expect(
-      production
-        .engine('zh-Hans')
-        .docs.filter((d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) <= 100)
+      docs
+        .filter((d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) <= 100)
         .every((d) => d.model === (d.id === 'prompt:p_024' ? '' : 'GPT Image 2.5')),
     ).toBe(true);
-    const top50 = production
-      .engine('zh-Hans')
-      .docs.filter(
-        (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 101 && Number(d.id.split('_').at(-1)) <= 150,
-      );
+    const top50 = docs.filter(
+      (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 101 && Number(d.id.split('_').at(-1)) <= 150,
+    );
     expect(top50).toHaveLength(50);
     expect(top50.every((d) => d.model === 'GPT Image 2.5')).toBe(true);
-    const latest = production
-      .engine('zh-Hans')
-      .docs.filter(
-        (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 209 && Number(d.id.split('_').at(-1)) <= 235,
-      );
+    const latest = docs.filter(
+      (d) => d.kind === 'prompt' && Number(d.id.split('_').at(-1)) >= 209 && Number(d.id.split('_').at(-1)) <= 235,
+    );
     expect(latest).toHaveLength(27);
     expect(latest.every((d) => d.model === 'GPT Image 2.6')).toBe(true);
   });
