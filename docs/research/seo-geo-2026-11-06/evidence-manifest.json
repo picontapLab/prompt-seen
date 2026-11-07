@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-07T04:29:44.486753+00:00",
+  "createdAt": "2026-11-07T04:46:06.752420+00:00",
   "timezone": "America/Los_Angeles",
   "primaryGeoSample": "ai-q1-r1.json through ai-q7-r2.json: 7 questions, 2 complete repetitions. Local validation is not post-deployment search evidence.",
   "files": [
@@ -815,8 +815,8 @@
     },
     {
       "path": "evidence/release-preflight/NOTES.md",
-      "bytes": 1312,
-      "sha256": "f544ed1831d82826b441f0b56f0f0cb1a0996732df74db51f19b7839793103c8",
+      "bytes": 2792,
+      "sha256": "ccae7e009c18180bee0e864a91bf4f65a5611e15fb2f5a8bf10d7f391cc9299a",
       "role": "release-preflight"
     },
     {
@@ -832,6 +832,18 @@
       "role": "release-preflight"
     },
     {
+      "path": "evidence/release-preflight/ci-iptc-failure.txt",
+      "bytes": 994,
+      "sha256": "0d6c114e02eff1bfb1dcc72c5428014fc6745a477cb615671d8e7bb01eadf072",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/ci-shards.patch",
+      "bytes": 2009,
+      "sha256": "ded77f3cd2edf9f225d2e6d52166a3aafa3f67d12d7079e9366a9d35502a7cac",
+      "role": "release-preflight"
+    },
+    {
       "path": "evidence/release-preflight/ci-timeout-fix.txt",
       "bytes": 2338,
       "sha256": "6a02ac8d712d96b2d0c918af76e513dba4fe0171e905b36bc42515a00b05f657",
@@ -844,9 +856,33 @@
       "role": "release-preflight"
     },
     {
+      "path": "evidence/release-preflight/iptc-test-fix.patch",
+      "bytes": 2354,
+      "sha256": "2997307678427b993278d891b2cf7330c9b6ad6b56aed26ec7ec4b406190de93",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/iptc-test.txt",
+      "bytes": 4616,
+      "sha256": "593b30b61a280e9f8ba174e7da1619ec089fa40a9231b12b539699e4d81527da",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/runner-shutdown.txt",
+      "bytes": 456,
+      "sha256": "bd942d8c7724c7082589a11c1bea64ac6869bfb72795510caf310b56dbd89b1e",
+      "role": "release-preflight"
+    },
+    {
       "path": "evidence/release-preflight/secrets.txt",
       "bytes": 130,
       "sha256": "0b45d237cb86023cca18ea65974122bf1d5655c04d6cf477aaf9c13ff881d381",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/shard-coverage.json",
+      "bytes": 261,
+      "sha256": "61ae386e4d5cd87f3d505c2ae83e4218be8a9cc7b4564b8513cc73561bec6adb",
       "role": "release-preflight"
     },
     {

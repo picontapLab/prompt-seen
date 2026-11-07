@@ -76,7 +76,7 @@ for (const locale of BUILD.locales) {
   });
 }
 
-test('the detail and og image files carry IPTC credit and digital source type (§9.7)', async ({ request }) => {
+test('the detail and og image files carry declared IPTC credit and digital source type (§9.7)', async ({ request }) => {
   test.skip(!!BUILD.mediaBaseUrl, 'images come from the CDN in this build; media:check covers them');
   // Refreshing metadata creates new immutable keys and retains the previous objects for
   // rollback. Check every current asset's detail/og variants, not superseded byte archives.
@@ -86,14 +86,23 @@ test('the detail and og image files carry IPTC credit and digital source type (�
     .filter((file) => file.endsWith('.yaml'))
     .flatMap((file) => {
       const media = mediaSchema.parse(YAML.parse(fs.readFileSync(path.join(dir, file), 'utf8')));
-      return [media.variants.detail.key, media.variants.og.key];
+      return [media.variants.detail.key, media.variants.og.key].map((key) => ({
+        key,
+        creator: media.credit.creator,
+        creditText: media.credit.creditText,
+        digitalSourceType: media.provenance.digitalSourceType,
+      }));
     });
   expect(files.length).toBeGreaterThan(0);
-  for (const file of files) {
+  for (const { key: file, creator, creditText, digitalSourceType } of files) {
     const res = await request.get(`${BASE}/${file}`);
     expect(res.status(), file).toBe(200);
     const bytes = (await res.body()).toString('latin1');
     expect(bytes.includes('Iptc4xmpExt:DigitalSourceType'), `${file}: digital source type`).toBe(true);
-    expect(/photoshop:Credit|dc:creator/.test(bytes), `${file}: credit`).toBe(true);
+    expect(bytes.includes(`digitalsourcetype/${digitalSourceType}`), `${file}: source value`).toBe(true);
+    // Optional credit stays unknown when the source record is empty. Require each
+    // declared field, and reject invented attribution on uncredited references.
+    expect(bytes.includes('photoshop:Credit'), `${file}: credit`).toBe(Boolean(creditText));
+    expect(bytes.includes('dc:creator'), `${file}: creator`).toBe(Boolean(creator));
   }
 });
