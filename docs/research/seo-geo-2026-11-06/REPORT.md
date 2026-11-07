@@ -1,6 +1,6 @@
 # Prompt Seen：SEO / GEO 取证、局部修复与观测
 
-调查日期：2026-11-06，America/Los_Angeles。原始记录使用 UTC ISO 时间（对应 11 月 7 日 UTC）。本轮完成本地实现，**没有部署，也没有证明搜索排名、曝光、点击或 AI 引用已提高**。
+调查日期：2026-11-06，America/Los_Angeles。原始记录使用 UTC ISO 时间（对应 11 月 7 日 UTC）。本报告主体记录本地审计完成时的基线；当时尚未部署。用户随后授权发布，已完成的生产部署与搜索提交见 [RELEASE.md](RELEASE.md)。**仍未证明搜索排名、曝光、点击或 AI 引用已提高**。
 
 **已确认的结论：** 选定页面的基础 HTTP、索引指令和规范地址正常，但 Google 的收录状态不同；4 个参考图页面的生产 Markdown 均遗漏实际输入。当前能直接修复并验收的是“可引用的生成证据不完整”，不能把它认定为未收录的原因。
 
@@ -153,8 +153,8 @@ p_151 保留未修改作参照；t_017 与它起初均已收录，可优先比�
 - `pilot-incomplete/` 明确排除：首次 AI 采集器只读取 `main/#search`，漏掉 AI Mode 的引用 DOM；另有 GSC 标签页重复声明变量导致没有真正切换 URL 的错误快照。随后改为新作用域、校验正文中的目标 URL，并重新采集。**先前中间汇报的“5 页均已发现未收录”错误；本报告和有效记录已更正。**
 - Schema.org 浏览器代码输入首次没有真正提交编辑器内容；最终使用公开 `/validate` 接口提交抽取的代码，原始结果 0 error / 0 warning。没有把失败的空 URL 检查算作通过。
 - Google 流量验证原文保留在 `ai-q2-r3.json`，客户端 IP 已标记脱敏；不绕过验证。其余有效回答完整保留。所有 source/receipt 来自已有资料，不新增生成测试。
-- 无可用的完整 28 天查询/页面表现、无新版本生产重抓与后 28 天效果，均仍待观测。此次只完成本地修复与验证，不自动部署、提交收录请求、改 robots/WAF、发消息、做外链或扩展内容规模。
+- 无可用的完整 28 天查询/页面表现、无新版本生产重抓与后 28 天效果，均仍待观测。本地审计阶段未执行部署或索引请求；后续获授权的部署与提交另记于 RELEASE.md。未改 robots/WAF、做外链或扩展内容规模。
 
-原始证据文件索引与哈希见 [evidence-manifest.json](evidence-manifest.json)。未来部署后，先重跑生产 HTTP 与所选页面验证，再等待真实收录/重抓证据，才能进入效果验收。
+原始证据文件索引与哈希见 [evidence-manifest.json](evidence-manifest.json)。生产 HTTP 与所选页面的后续验证已经完成，见 RELEASE.md；仍须等待真实收录/重抓与可比效果数据。
 
 公开提交前对 GSC 账户内检查 ID 和 Cloudflare 请求来源 IP 做定点脱敏，见 [publication-redactions.json](publication-redactions.json)。未改变页面、日期、状态或回答内容；公开文件哈希以本 manifest 为准。
