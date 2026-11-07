@@ -236,6 +236,9 @@ it.each(['png', 'gif'])(
     fs.appendFileSync(preparedContent, '\n');
     await expect(verifyAssets(root, 'gpt-image-v1', 'prepared')).rejects.toThrow(/content.*changed/i);
   },
+  // Copies the archived corpus, resizes real images and validates two review phases.
+  // CI takes 5–7 seconds; this is an integration check, not a five-second latency budget.
+  20_000,
 );
 
 describe('generation queue', () => {

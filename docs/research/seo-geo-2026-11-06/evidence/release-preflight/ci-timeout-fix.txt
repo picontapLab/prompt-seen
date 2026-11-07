@@ -1,0 +1,24 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+ RUN  v5.0.5 /Users/hp/Desktop/bywork/prompt-seen
+
+ ✓ scripts/emitters/search.test.ts > typical queries (§16.3) > find entries by title in every language 1306ms
+ ✓ scripts/emitters/search.test.ts > typical queries (§16.3) > find entries by English words and model names in other languages (mixed text) 525ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation manifest > preserves historical runs even when they have no Prompt owner 3105ms
+ ✓ scripts/emitters/search.test.ts > typical queries (§16.3) > find entries through taxonomy aliases (§13.2) 1187ms
+ ✓ scripts/emitters/search.test.ts > what goes into an index > only entries this build shows: no drafts in production 817ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation manifest > validates editorial content in staging before an application can be planned 2475ms
+ ✓ scripts/emitters/search.test.ts > what goes into an index > collections and topics only when their pages exist 694ms
+ ✓ scripts/emitters/search.test.ts > what goes into an index > offers the most used use cases as popular 0ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation manifest > snapshots all prompts, including the independent current template default, without reallocating IDs 2242ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation manifest > revises a literal prompt while preserving historical runs and the prior snapshot 2651ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation manifest > uses the current template owner after a version upgrade and rejects edits to a frozen version 2819ms
+ ✓ scripts/lib/media-generation/generation.test.ts > requires a separate hash-bound display review after preparing an accepted png 4376ms
+ ✓ scripts/lib/media-generation/generation.test.ts > requires a separate hash-bound display review after preparing an accepted gif 4248ms
+ ✓ scripts/lib/media-generation/generation.test.ts > generation queue > persists a claim across restarts and never retries an unknown result automatically 2005ms
+
+ Test Files  2 passed (2)
+      Tests  14 passed (14)
+   Start at  20:28:50
+   Duration  24.34s (tests 88%, import 11%)
+

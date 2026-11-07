@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-07T04:23:11.369723+00:00",
+  "createdAt": "2026-11-07T04:29:44.486753+00:00",
   "timezone": "America/Los_Angeles",
   "primaryGeoSample": "ai-q1-r1.json through ai-q7-r2.json: 7 questions, 2 complete repetitions. Local validation is not post-deployment search evidence.",
   "files": [
@@ -812,6 +812,30 @@
       "bytes": 1839,
       "sha256": "a8c63f1eb04126021a4973d35d498926d777e78da833d8daf10dada6ee8861f7",
       "role": "generation-source-evidence"
+    },
+    {
+      "path": "evidence/release-preflight/NOTES.md",
+      "bytes": 1312,
+      "sha256": "f544ed1831d82826b441f0b56f0f0cb1a0996732df74db51f19b7839793103c8",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/ci-fix.patch",
+      "bytes": 3091,
+      "sha256": "7b7fb278cd54c5136f07aa4849e922a3f21cc78ec4dbb376814ac902142ef7a5",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/ci-initial-failure.txt",
+      "bytes": 4156,
+      "sha256": "4319dc6428db507de197967c52e44df8282ffd4429694094a8e124048cbbfc92",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/ci-timeout-fix.txt",
+      "bytes": 2338,
+      "sha256": "6a02ac8d712d96b2d0c918af76e513dba4fe0171e905b36bc42515a00b05f657",
+      "role": "release-preflight"
     },
     {
       "path": "evidence/release-preflight/format.txt",
