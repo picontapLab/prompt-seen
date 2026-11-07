@@ -58,6 +58,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        name: [root, subpath]
+        # Keep the complete suite, but bound each runner's browser lifetime. Two
+        # full-suite runs were terminated by runner shutdown during WebKit.
+        shard: [1, 2, 3]
         include:
           # Production build at the root of a host.
           - name: root
@@ -67,7 +71,7 @@ jobs:
           - name: subpath
             base_path: /prompt-seen
             build_mode: preview
-    name: build-and-test (${{ matrix.name }})
+    name: build-and-test (${{ matrix.name }}, ${{ matrix.shard }}/3)
     env:
       BASE_PATH: ${{ matrix.base_path }}
       BUILD_MODE: ${{ matrix.build_mode }}
@@ -84,7 +88,7 @@ jobs:
       - name: Disk space before the tests
         run: df -h .
       - name: End-to-end tests through the reference nginx
-        run: npm run test:e2e
+        run: npm run test:e2e -- --shard=${{ matrix.shard }}/3
         env:
           PW_BROWSERS: chromium,firefox,webkit
       # Traces are recorded only for retries (playwright.config.ts): recording every test filled
@@ -100,14 +104,14 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-${{ matrix.name }}
+          name: playwright-${{ matrix.name }}-${{ matrix.shard }}
           path: test-results/
           retention-days: 7
       - name: Keep the tested preview build for deployment
-        if: matrix.name == 'subpath'
+        if: matrix.name == 'subpath' && matrix.shard == 1
         run: npm run deploy:cloudflare:prepare
       - uses: actions/upload-artifact@v7
-        if: matrix.name == 'subpath'
+        if: matrix.name == 'subpath' && matrix.shard == 1
         with:
           name: cloudflare-preview
           path: .deploy/cloudflare/
