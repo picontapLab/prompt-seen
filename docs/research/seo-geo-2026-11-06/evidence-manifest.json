@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-07T04:46:06.752420+00:00",
+  "createdAt": "2026-11-07T04:55:16.051048+00:00",
   "timezone": "America/Los_Angeles",
   "primaryGeoSample": "ai-q1-r1.json through ai-q7-r2.json: 7 questions, 2 complete repetitions. Local validation is not post-deployment search evidence.",
   "files": [
@@ -815,8 +815,8 @@
     },
     {
       "path": "evidence/release-preflight/NOTES.md",
-      "bytes": 2792,
-      "sha256": "ccae7e009c18180bee0e864a91bf4f65a5611e15fb2f5a8bf10d7f391cc9299a",
+      "bytes": 3504,
+      "sha256": "31c39f6f477aeebf102b45d7304b22c3f30518176ceb6ac54110db85226fe820",
       "role": "release-preflight"
     },
     {
@@ -841,6 +841,12 @@
       "path": "evidence/release-preflight/ci-shards.patch",
       "bytes": 2009,
       "sha256": "ded77f3cd2edf9f225d2e6d52166a3aafa3f67d12d7079e9366a9d35502a7cac",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/ci-single-worker.patch",
+      "bytes": 773,
+      "sha256": "1e6bcb6ae036ac10709e7e1b880dd4f08e872676a07c15d1c123e6de1627b30a",
       "role": "release-preflight"
     },
     {
@@ -889,6 +895,12 @@
       "path": "evidence/release-preflight/unit-tests.txt",
       "bytes": 507,
       "sha256": "2cd4aa04de075b165770cc325d08bc800ab951c7be3b1a517747c5cfe011685a",
+      "role": "release-preflight"
+    },
+    {
+      "path": "evidence/release-preflight/webkit-single-worker.txt",
+      "bytes": 7293,
+      "sha256": "5a2002bbfafa16456bc365b26173f35eef4522c2eaa8b5b1152fef338ec6e794",
       "role": "release-preflight"
     },
     {
