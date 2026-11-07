@@ -88,7 +88,9 @@ jobs:
       - name: Disk space before the tests
         run: df -h .
       - name: End-to-end tests through the reference nginx
-        run: npm run test:e2e -- --shard=${{ matrix.shard }}/3
+        # A shard still has image-heavy WebKit pages: keep one browser worker per
+        # runner, matching the resource budget documented in playwright.config.ts.
+        run: npm run test:e2e -- --shard=${{ matrix.shard }}/3 --workers=1
         env:
           PW_BROWSERS: chromium,firefox,webkit
       # Traces are recorded only for retries (playwright.config.ts): recording every test filled
