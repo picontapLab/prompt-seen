@@ -1,0 +1,170 @@
+{
+  "product": "Google Search AI Mode",
+  "modelId": null,
+  "country": "US parameter",
+  "language": "en",
+  "device": "desktop",
+  "primaryReplicatesPerQuestion": 2,
+  "validResponses": 14,
+  "responsesAccuratelyCitingPromptSeen": 0,
+  "responseLevelAccurateCitationRate": 0,
+  "citationPrecision": null,
+  "precisionReason": "No Prompt Seen citations; undefined denominator, not zero precision",
+  "excluded": "pilot-incomplete/* omitted links; q1-r3 extra unbalanced replicate; q2-r3 traffic challenge; remaining third replicates not run",
+  "questions": [
+    {
+      "questionId": "q1",
+      "question": "How can I create AI product photos from a reference image with tested prompts and visible inputs and outputs?",
+      "replicates": [
+        {
+          "file": "ai-q1-r1.json",
+          "capturedAt": "2026-11-07T03:37:23.313Z",
+          "links": 16,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "7cbd524e7ed55c1f2476206bde1bad74d166b73955dd2342902e75a3f13618ea"
+        },
+        {
+          "file": "ai-q1-r2.json",
+          "capturedAt": "2026-11-07T03:38:18.153Z",
+          "links": 13,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "6d5da7153420982d4d5f69e77d147b4700ea14c622b1a9ffbd14dcc32eb7dbc1"
+        }
+      ]
+    },
+    {
+      "questionId": "q2",
+      "question": "How can I create a 3x3 product campaign grid from one reference photo?",
+      "replicates": [
+        {
+          "file": "ai-q2-r1.json",
+          "capturedAt": "2026-11-07T03:37:30.953Z",
+          "links": 12,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "328772c1704140b7e2792c1b729c3936dd336b05c45ff0a2eae5d545783adcb4"
+        },
+        {
+          "file": "ai-q2-r2.json",
+          "capturedAt": "2026-11-07T03:38:26.173Z",
+          "links": 11,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "3a04ae172c1c24ec8678c92a3669a2ef4de117d849957128f4ff928b89ba2365"
+        }
+      ]
+    },
+    {
+      "questionId": "q3",
+      "question": "Which product campaign grid prompt shows the exact prompt, reference image and generated result?",
+      "replicates": [
+        {
+          "file": "ai-q3-r1.json",
+          "capturedAt": "2026-11-07T03:37:35.576Z",
+          "links": 15,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "b6e7fb4669775aa56f28ee2f7298bf9dc807a04b94a77c3239e8c7514be4fe6c"
+        },
+        {
+          "file": "ai-q3-r2.json",
+          "capturedAt": "2026-11-07T03:38:30.862Z",
+          "links": 13,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "b6e7fb4669775aa56f28ee2f7298bf9dc807a04b94a77c3239e8c7514be4fe6c"
+        }
+      ]
+    },
+    {
+      "questionId": "q4",
+      "question": "How can I change a ceramic product photo to a three-quarter view while preserving its shape and material?",
+      "replicates": [
+        {
+          "file": "ai-q4-r1.json",
+          "capturedAt": "2026-11-07T03:37:43.521Z",
+          "links": 11,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "26b01476a10a2f42f1f4c24cb0cf37b6692e7aae8794b60463d6669e1a4f9450"
+        },
+        {
+          "file": "ai-q4-r2.json",
+          "capturedAt": "2026-11-07T03:38:41.887Z",
+          "links": 10,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "420a38cfb65f90fdd6df0ec097fbad2bc0a93d00a6854b14cd8baeae768f7083"
+        }
+      ]
+    },
+    {
+      "questionId": "q5",
+      "question": "How can I change only the color of a vase in a photo using an AI image editing prompt?",
+      "replicates": [
+        {
+          "file": "ai-q5-r1.json",
+          "capturedAt": "2026-11-07T03:37:51.583Z",
+          "links": 12,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "2c625d5ca3599883896627e10ac77420943bcbd9db8adc9f3a12ad571b106515"
+        },
+        {
+          "file": "ai-q5-r2.json",
+          "capturedAt": "2026-11-07T03:38:49.565Z",
+          "links": 9,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "3bd18c01b31998be6af89157fc782d3bb0d056eccc857e9dad34160f7acc7a5d"
+        }
+      ]
+    },
+    {
+      "questionId": "q6",
+      "question": "How do I use an original product photo and a marked-up reference image together for a targeted color edit?",
+      "replicates": [
+        {
+          "file": "ai-q6-r1.json",
+          "capturedAt": "2026-11-07T03:37:59.306Z",
+          "links": 12,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "865110ac6ca96310d41598a04a23e21863940134d79520b8b3b74e2b84e54213"
+        },
+        {
+          "file": "ai-q6-r2.json",
+          "capturedAt": "2026-11-07T03:38:57.373Z",
+          "links": 9,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "356d6faad2cbe9fe2a700b7c20e46cf762c59cc5e4940190de17e909d05d5fd1"
+        }
+      ]
+    },
+    {
+      "questionId": "q7",
+      "question": "Can a tested product photography prompt guarantee the same output if the model ID and seed are not recorded?",
+      "replicates": [
+        {
+          "file": "ai-q7-r1.json",
+          "capturedAt": "2026-11-07T03:38:07.062Z",
+          "links": 16,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "b9886da10842b11d851dd01daab295156993f16744fc8156c6f17f280c5ef96a"
+        },
+        {
+          "file": "ai-q7-r2.json",
+          "capturedAt": "2026-11-07T03:39:05.028Z",
+          "links": 9,
+          "ownCitations": [],
+          "ownMention": false,
+          "answerSha256": "ff6315886130d3bb3ee0d2499a854aad4799cb5a6f8d679e51fa583483508acf"
+        }
+      ]
+    }
+  ]
+}

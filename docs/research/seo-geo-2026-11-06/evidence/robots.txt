@@ -1,0 +1,23 @@
+# robots.txt (design doc §9.10.2). Generated from content/site.yaml; do not edit.
+
+User-agent: *
+Allow: /
+
+# AI search and answer engines, and pages a user asks an assistant to read.
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+Allow: /
+
+# Model training (robots.aiTraining: allow).
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://promptseen.dev/sitemap.xml
