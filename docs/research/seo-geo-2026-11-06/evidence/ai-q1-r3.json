@@ -1,0 +1,150 @@
+{
+  "capturedAt": "2026-11-07T03:39:23.154Z",
+  "url": "https://www.google.com/search?q=How+can+I+create+AI+product+photos+from+a+reference+image+with+tested+prompts+and+visible+inputs+and+outputs%3F+Search+the+web+and+cite+the+sources+supporting+your+answer.&hl=en&gl=us&pws=0&udm=50&mstk=AUtExfAR_Ikgy17v_mwDy92XN_63jBjbmYo3aNhz_Dxd7P6KvxDOPKAsX_RD5IqJbDFDPyXOuK6sVpKwJfoFSnnXcccoK-VgUPbBrDhnF72giI_z9nqVIx635uRgOA-ZGQ7WpqtcAuGoQFTAPCbp6KP1sWBq-N8RIatsttbyjO1MdB4X2Utb0GoG7H2GSqBoAALNDSDBSqMxzMNbUfmSi3fWOz99hJhlF9lrMc0zsVEUqIdk508YfBnD1zyIZ3vS7OyIMIv-v6k7FcAmTJeT6NcacUdq8RFn63V7NUJVeCZjpNzKaAN60X9Gn7Ehb9eG3PZOtCpHxN8gHFdZdQ&csuir=1&mtid=W53uarn9OLiM8L0Pytea0Qg",
+  "title": "How can I create AI product photos from a reference image with tested prompts and visible inputs and outputs? Search the web and cite the sources supporting your answer. - Google Search",
+  "text": "Skip to main content\nAccessibility help\nAI Mode\nAll\nImages\nVideos\nNews\nMore\nUpgrade\nSearch Results\nHow can I create AI product photos from a reference image with tested prompts and visible inputs and outputs? Search the web and cite the sources supporting your answer.\nCreating realistic AI product photos from a reference image requires a structured \"image-to-image\" workflow. Instead of asking the AI to invent a product from scratch, you provide an existing high-resolution photo of your product (the input reference) and use bounded prompts to control the lighting, background, and environment (the output) while keeping the original product unchanged. \nnightjar.so\n +2\nA blueprint for the workflow is detailed below, featuring tested prompt structures, and a clear breakdown of visible inputs and outputs based on established industry practices from PrompTessor and Tolstoy.\n1. The Step-by-Step Generation Workflow\nPrepare a Clean Input Reference: Start with a high-resolution, front-facing or three-quarter view photo of the product. Ensure it has neutral lighting, clear edges, and a simple background (like white or gray) so the AI can easily isolate the product. \nNim · The ultimate app for AI video production\nSelect Your Image Generator & Model: Upload the reference into an AI image generator that supports image-to-image or source-guided generation (such as Canva's AI Product Photos, Nano Banana Pro, or LTX Studio). \nLTX\n +2\nAdjust the Creativity Slider: Most image-to-image tools feature a slider for image strength/creativity. Set this lower to keep the core product shape, textures, and labels strict and unaltered, allowing the model only to change the background. \nOpenArt\nWrite a Bounded Prompt: Describe the final scene you want, emphasizing studio elements like lighting, camera angle, and the environment rather than editing instructions. \nwww.gotolstoy.com\n +1\nGenerate and QA: Generate variations and run Quality Assurance (QA) against your original reference to ensure text labels, logos, and materials did not warp. \nnightjar.so\n +1\n2. Tested Prompt Framework & Examples\nEffective AI product photography prompts combine commercial art direction with strict product constraints. They tell the AI what to build around the product, explicitly stating what features must remain untouched. \nPrompTessor\n📋 The Bounded Prompt Template\n[Product Description/SKU ID] using the supplied product reference image. Positioned [placement/angle], resting on [surface/foreground]. Set in a [detailed background environment]. Illuminated by [lighting style], captured with a [camera type/lens/shot type]. Crucial constraint: Keep the product shape, brand logo, text, and materials exactly consistent with the reference photo. Do not distort or overwrite the product. \nwww.gotolstoy.com\n +1\n🧪 3 Tested Prompt Examples\nStudio / Minimalist Listing (Best for Clean Catalogs):\n\"A premium skincare bottle using the supplied reference image, centered on a smooth, matte beige ceramic block. Minimalist studio background with soft shadow plays from an unseen window. Elegant morning sunlight, high-end commercial art direction, 85mm lens, crisp details. Keep the front label text, white cap, and translucent glass texture perfectly true to the reference image.\"\n \nwww.gotolstoy.com\n +1\nLifestyle Scene (Best for Social Media & Ads):\n\"An olive green canvas backpack (SKU BAG-042) using the supplied product references, resting naturally on a pale stone park bench. Background shows a softly blurred, sun-drenched botanical garden pathway. Golden hour daylight, shallow depth of field, commercial travel aesthetic. Preserve the exact rectangular shape, two strap handles, and metallic zippers from the original photo.\"\n \nwww.gotolstoy.com\n +1\nDynamic / Macro Detail (Best for Luxury Items):\n\"A luxury watch using the input reference image, angled in a three-quarter view. Resting on a dark, wet volcanic rock texture with tiny, crisp water droplets surrounding the base. Dramatic side-lighting, deep shadows, dark moody background, macro photography, 100mm lens. The watch face numerals, metallic finish, and leather strap must remain completely unaltered.\"\n \nLeonardo.Ai\n +2\n3. Clear Map of Inputs vs. Outputs\nTo build a predictable design pipeline, you must separate your known facts from the AI's visual invention. This structural table mapping shows how inputs transform into outputs: \nwww.gotolstoy.com\nComponent\tVisible Input (What You Provide)\tVisible Output (What the AI Generates)\nProduct Identity\tHigh-res PNG/JPEG, crisp product edges, accurate brand colors, clear labels/logos.\tThe exact, untouched product seamlessly integrated with new lighting cast on its surfaces.\nEnvironment\tThe bounded prompt text defining the surface and location (e.g., \"stone bench\", \"ceramic block\").\tA completely new background scene matching the requested aesthetic.\nAtmosphere\tText instructions specifying the lighting and depth (e.g., \"Golden hour\", \"Soft window shadows\").\tRealistic lighting effects, reflections, shadows, and cinematic background blur.\nComposition\tCamera parameters and crop choices (e.g., \"vertical crop\", \"85mm lens\", \"room for copy\").\tA final platform-ready image framed precisely as requested for store listings or ad space.\nTo help narrow down the workflow for your specific store, tell me:\nWhat type of product are you photographing?\nWhat kind of environment do you want to create (e.g., clean studio, outdoor lifestyle, holiday-themed)?\nDo you have a specific AI tool you prefer to use?\nwww.gotolstoy.com\nHow to Generate Product Images With AI - Tolstoy\nSeparates known facts from visual invention Creative direction Placement, composition, light, background, and crop Makes acceptanc...\nPrompTessor\n15 AI Product Photography Prompts for Ecommerce (2026)\nThis guide provides 15 copy-and-paste AI product photography prompts for studio images, lifestyle scenes, marketplace listings, ad...\nLTX\nHow To Do AI Product Photography: Make AI Product Photos | LTX Blog\nAI product photography utilizes machine learning to generate studio-quality images or enhance existing photos via text prompts (re...\nShow all\nAI Mode response is ready",
+  "links": [
+    {
+      "text": "Maps",
+      "label": null,
+      "url": "https://maps.google.com/maps?q=How+can+I+create+AI+product+photos+from+a+reference+image+with+tested+prompts+and+visible+inputs+and+outputs?+Search+the+web+and+cite+the+sources+supporting+your+answer.&hl=en&gl=us&pws=0&udm=50&um=1&ie=UTF-8&ved=1t:200715&ictx=111"
+    },
+    {
+      "text": "See your Search history",
+      "label": null,
+      "url": "https://myactivity.google.com/search-services/history/search?utm_source=aim&utm_campaign=aim_tm"
+    },
+    {
+      "text": "Connected Content Apps",
+      "label": null,
+      "url": "https://myactivity.google.com/search-services/apps?utm_source=aim&utm_medium=web&utm_campaign=aim_lhs_cca&continue=https://www.google.com/search-personalization/"
+    },
+    {
+      "text": "See your Search history",
+      "label": null,
+      "url": "https://myactivity.google.com/search-services/history/search?utm_source=aim&utm_campaign=aim_tm"
+    },
+    {
+      "text": "Connected Content Apps",
+      "label": null,
+      "url": "https://myactivity.google.com/search-services/apps?utm_source=aim&utm_medium=web&utm_campaign=aim_lhs_cca&continue=https://www.google.com/search-personalization/"
+    },
+    {
+      "text": "",
+      "label": "nightjar.so",
+      "url": "https://nightjar.so/blog/ultimate-guide-ai-product-photography"
+    },
+    {
+      "text": "PrompTessor",
+      "label": null,
+      "url": "https://promptessor.com/blog/ai-product-photography-prompts-2026"
+    },
+    {
+      "text": "Tolstoy",
+      "label": null,
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "Nim · The ultimate app for AI video production",
+      "url": "https://nim.video/blog/ai-product-photo-generator"
+    },
+    {
+      "text": "Canva's AI Product Photos",
+      "label": null,
+      "url": "https://www.canva.com/apps/AAGXp9Q0Bd4/ai-product-photos"
+    },
+    {
+      "text": "Nano Banana Pro",
+      "label": null,
+      "url": "https://nanabananapro.com/templates/professional-product-photography-from-reference"
+    },
+    {
+      "text": "",
+      "label": "LTX",
+      "url": "https://ltx.io/blog/ai-product-photography"
+    },
+    {
+      "text": "",
+      "label": "OpenArt",
+      "url": "https://openart.ai/blog/ai-image-generator-from-image/"
+    },
+    {
+      "text": "",
+      "label": "www.gotolstoy.com",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "nightjar.so",
+      "url": "https://nightjar.so/blog/ultimate-guide-ai-product-photography"
+    },
+    {
+      "text": "",
+      "label": "PrompTessor",
+      "url": "https://promptessor.com/blog/ai-product-photography-prompts-2026"
+    },
+    {
+      "text": "",
+      "label": "www.gotolstoy.com",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "www.gotolstoy.com",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "www.gotolstoy.com",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "Leonardo.Ai",
+      "url": "https://leonardo.ai/ai-photography"
+    },
+    {
+      "text": "",
+      "label": "www.gotolstoy.com",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "Privacy Policy",
+      "label": null,
+      "url": "https://policies.google.com/privacy"
+    },
+    {
+      "text": "Terms of Service",
+      "label": null,
+      "url": "https://policies.google.com/terms"
+    },
+    {
+      "text": "",
+      "label": "How to Generate Product Images With AI - Tolstoy",
+      "url": "https://www.gotolstoy.com/blog/how-to-generate-product-images-with-ai"
+    },
+    {
+      "text": "",
+      "label": "15 AI Product Photography Prompts for Ecommerce (2026)",
+      "url": "https://promptessor.com/blog/ai-product-photography-prompts-2026"
+    },
+    {
+      "text": "",
+      "label": "How To Do AI Product Photography: Make AI Product Photos | LTX Blog",
+      "url": "https://ltx.io/blog/ai-product-photography"
+    }
+  ],
+  "questionId": "q1",
+  "question": "How can I create AI product photos from a reference image with tested prompts and visible inputs and outputs?",
+  "submittedPrompt": "How can I create AI product photos from a reference image with tested prompts and visible inputs and outputs? Search the web and cite the sources supporting your answer.",
+  "replicate": 3,
+  "product": "Google Search AI Mode",
+  "modelId": null,
+  "modelIdReason": "UI does not expose an exact model identifier",
+  "countryParameter": "US",
+  "languageParameter": "en",
+  "device": "desktop",
+  "session": "fresh query URL; same signed-in account; independence of backend/cache unknown",
+  "complete": true
+}

@@ -1,8 +1,8 @@
 ---
-title: Nine-frame product campaign
-description: One product photo becomes nine coordinated campaign compositions.
+title: 3x3 product campaign from one reference photo
+description: Copy the recorded product campaign prompt and compare two nine-panel outputs with the same synthetic PINE bottle reference.
 status: published
-updatedAt: 2026-10-29
+updatedAt: 2026-11-06
 ---
 
 ## How to use
@@ -13,4 +13,14 @@ Keep the product silhouette, cap and label consistent in every panel.
 
 ## Recorded result
 
-The example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.
+The two test prints use the same synthetic PINE bottle reference, not a customer product photo. The default run uses sage green, ivory and brushed silver; the alternate run changes the palette and nine scene descriptions. Each print below pairs its input with its own output and submitted prompt.
+
+Both outputs contain nine panels. The bottle, silver cap and PINE lettering remain recognizable in the product views; the material and paint close-ups do not show a whole bottle. These are observations of these two outputs, not a guarantee for other packaging or small label text.
+
+## Generation evidence and limits
+
+The [default run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) and [alternate run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) preserve prompt hashes, ordered reference IDs and output IDs. Both were recorded on October 29, 2026 using the built-in image tool.
+
+The GPT Image 2.5 display version comes from the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). The tool returned no exact API model ID. Seed, sampling settings and quality settings were not recorded; the empty parameter record does not establish defaults. Reusing the prompt does not guarantee identical pixels.
+
+Use the [campaign template](template:t_017) to change the palette or scenes. A changed prompt or product photo is an untested variant: check panel count, product shape and lettering against your own reference before using the result.
