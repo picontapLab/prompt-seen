@@ -1,0 +1,23 @@
+✓ build 2fb7029f63aa643af3a7a21673febda03cac390c (production) for https://promptseen.dev/
+✓ serves build 2fb7029f63aa643af3a7a21673febda03cac390c
+✓ default-language home: 200, canonical, indexable
+✓ en home: 200, canonical, indexable
+✓ zh-Hans home: 200, canonical, indexable
+✓ sitemaps: 2 for 2 public locale(s), 639 addresses
+✓ en Prompt: 200, canonical, indexable
+✓ en template: 200, canonical, indexable
+✓ en list page 2: 200, canonical, indexable
+✓ zh-Hans Prompt: 200, canonical, indexable
+✓ zh-Hans template: 200, canonical, indexable
+✓ zh-Hans list page 2: 200, canonical, indexable
+✓ index.md: Markdown with a canonical Link header
+✓ llms.txt: 200 text/plain; charset=utf-8
+✓ site icon: 200
+✓ redirect /en/prompts/neon-profile-study/: 301 → /en/prompts/neon-rim-profile/
+! removed /en/prompts/retired-sunset-poster/: 404 (this host cannot answer 410; Google treats both alike)
+✓ unknown address: 404, the site's 404 page
+! error page address /en/404/: 200 (served directly; it carries noindex, but an internal location is better)
+✓ host robots.txt: search and AI search allowed, training allowed for /
+✓ host robots.txt: Sitemap: https://promptseen.dev/sitemap.xml
+✓ 13 crawler user agents get the full page (confirm verified bots in the platform's logs)
+check:live: 20 passed, 2 warning(s), 0 failed (https://promptseen.dev)
