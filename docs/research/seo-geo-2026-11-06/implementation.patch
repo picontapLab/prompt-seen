@@ -1,0 +1,224 @@
+diff --git a/content/prompts/p_123/locales/en.mdx b/content/prompts/p_123/locales/en.mdx
+index 947f6a8..4d2fc98 100644
+--- a/content/prompts/p_123/locales/en.mdx
++++ b/content/prompts/p_123/locales/en.mdx
+@@ -1,8 +1,8 @@
+ ---
+-title: Nine-frame product campaign
+-description: One product photo becomes nine coordinated campaign compositions.
++title: 3x3 product campaign from one reference photo
++description: Copy the recorded product campaign prompt and compare two nine-panel outputs with the same synthetic PINE bottle reference.
+ status: published
+-updatedAt: 2026-10-29
++updatedAt: 2026-11-06
+ ---
+ 
+ ## How to use
+@@ -13,4 +13,14 @@ Keep the product silhouette, cap and label consistent in every panel.
+ 
+ ## Recorded result
+ 
+-The example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.
++The two test prints use the same synthetic PINE bottle reference, not a customer product photo. The default run uses sage green, ivory and brushed silver; the alternate run changes the palette and nine scene descriptions. Each print below pairs its input with its own output and submitted prompt.
++
++Both outputs contain nine panels. The bottle, silver cap and PINE lettering remain recognizable in the product views; the material and paint close-ups do not show a whole bottle. These are observations of these two outputs, not a guarantee for other packaging or small label text.
++
++## Generation evidence and limits
++
++The [default run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) and [alternate run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) preserve prompt hashes, ordered reference IDs and output IDs. Both were recorded on October 29, 2026 using the built-in image tool.
++
++The GPT Image 2.5 display version comes from the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). The tool returned no exact API model ID. Seed, sampling settings and quality settings were not recorded; the empty parameter record does not establish defaults. Reusing the prompt does not guarantee identical pixels.
++
++Use the [campaign template](template:t_017) to change the palette or scenes. A changed prompt or product photo is an untested variant: check panel count, product shape and lettering against your own reference before using the result.
+diff --git a/content/prompts/p_153/locales/en.mdx b/content/prompts/p_153/locales/en.mdx
+index 367924a..f48eb91 100644
+--- a/content/prompts/p_153/locales/en.mdx
++++ b/content/prompts/p_153/locales/en.mdx
+@@ -1,9 +1,8 @@
+ ---
+-title: Three-quarter ceramic packaging view
+-description: The elevated three-quarter view exposes the sculptural lid top and
+-  hollow side handle, preserving the reference speckled ceramic and gold collar.
++title: Product photo angle change for ceramic packaging
++description: A recorded reference-image prompt for an elevated three-quarter ceramic packshot, with the original input, output and shape-preservation limits.
+ status: published
+-updatedAt: 2026-10-30
++updatedAt: 2026-11-06
+ ---
+ 
+ ## How to use
+@@ -14,6 +13,12 @@ Copy the exact prompt used for this image. Changing the subject creates a new, u
+ 
+ The elevated three-quarter view exposes the sculptural lid top and hollow side handle, preserving the reference speckled ceramic and gold collar.
+ 
++## Generation evidence and limits
++
++This example uses one synthetic ceramic perfume-bottle reference. It asks for a new camera angle on seamless white, not a new package design. Compare the cap, collar, handle opening and body proportions with the reference shown in the test print. The output is a generated interpretation; this single example does not establish exact geometry from unseen sides.
++
++The [October 30 run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_269/run.yaml) links the submitted prompt hash, reference a_359 and output a_358 to template v1. GPT Image 2.5 is the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json); the generation tool returned no exact API model ID. Seed, sampling and quality settings were not recorded. Reusing this prompt does not guarantee identical pixels or accurate views of a different product.
++
+ ## Source
+ 
+ Independently adapted from the supplied design prompt collection, case 3. [Source](https://pixonara.com/prompts/ai-product-photo-prompts). GPT Image returned no precise version identifier.
+diff --git a/content/prompts/p_218/locales/en.mdx b/content/prompts/p_218/locales/en.mdx
+index 7fee1a4..fee041e 100644
+--- a/content/prompts/p_218/locales/en.mdx
++++ b/content/prompts/p_218/locales/en.mdx
+@@ -1,18 +1,26 @@
+ ---
+-title: Marked vase color edit
+-description: Vase changed from cream to cobalt blue, red markup removed
++title: Change a vase color using a photo and markup
++description: A recorded AI color-edit prompt with two ordered reference inputs, the cobalt-blue vase output and the observed change in glaze.
+ status: published
+-updatedAt: 2026-11-04
++updatedAt: 2026-11-06
+ ---
+ 
+ ## How to use
+ 
+ Use the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.
+ 
++Upload the original synthetic room photo first and the separate red-circle markup overlay second. The overlay identifies the vase; it is not the generated result. The recorded working prompt is in Chinese and remains unchanged here. An English translation would be a new, untested prompt.
++
+ ## Observed result
+ 
+ Vase changed from cream to cobalt blue, red markup removed. Jug, dried stems, tiles and window remain visually consistent; new glaze is glossier.
+ 
++## Generation evidence and limits
++
++The [run record](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml) links the prompt hash to inputs a_373 and a_374, in that order, and output a_372. The [generation receipt](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json) preserves input and output hashes. Its timestamp is November 5 UTC, corresponding to November 4 in Los Angeles, the date displayed for this run.
++
++GPT Image 2.6 is the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). The tool returned no exact API model ID; seed, sampling and quality settings were not recorded. This one output shows a color change with a glossier surface, not proof that a color edit preserves every reflection or pixel. Check material finish and surrounding objects when trying your own image.
++
+ ## Source and generation
+ 
+ The source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). Source-post engagement does not measure this newly generated example.
+diff --git a/content/templates/t_017/locales/en.mdx b/content/templates/t_017/locales/en.mdx
+index a1801a9..bc06ce5 100644
+--- a/content/templates/t_017/locales/en.mdx
++++ b/content/templates/t_017/locales/en.mdx
+@@ -1,8 +1,8 @@
+ ---
+-title: Nine-frame product campaign
+-description: One product photo becomes nine coordinated campaign compositions.
++title: 3x3 product campaign prompt template
++description: Adapt the palette and nine scenes of a reference-photo campaign prompt, with two recorded examples and their original product input.
+ status: published
+-updatedAt: 2026-10-29
++updatedAt: 2026-11-06
+ ---
+ 
+ ## How to use
+@@ -13,7 +13,15 @@ Keep the product silhouette, cap and label consistent in every panel.
+ 
+ ## Recorded result
+ 
+-The example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.
++This template has two recorded examples using the same synthetic PINE bottle reference. The default values produce the submitted text for the sage, ivory and silver campaign; the alternate values use charcoal, amber and outdoor scenes. The [tested campaign case](prompt:p_123) explains what was observed in each output.
++
++## Generation evidence and limits
++
++The [default run](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) and [alternate run](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) record template v1, submitted values, prompt hashes, reference IDs and output IDs on October 29, 2026. Upload the product reference shown with the matching test print; the template fields change the text, not the input image.
++
++GPT Image 2.5 is the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). The built-in image tool returned no exact API model ID, and no seed, sampling or quality settings were recorded. Matching the text and input does not guarantee identical pixels.
++
++Editing fields creates a prompt, not a newly generated image. Values without a matching recorded run remain untested. Check the nine-panel layout, label text and product silhouette after generating with your own photo.
+ 
+ ## Inspiration
+ 
+diff --git a/scripts/lib/content/content.test.ts b/scripts/lib/content/content.test.ts
+index 55e4af4..6be1cec 100644
+--- a/scripts/lib/content/content.test.ts
++++ b/scripts/lib/content/content.test.ts
+@@ -7,6 +7,7 @@ import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/
+ import { createUrlModule } from '../../../src/modules/url/create';
+ import { toCard } from '../../../src/modules/feed/compose';
+ import { searchDocuments } from '../../../src/modules/search/documents';
++import { promptMarkdown, templateMarkdown, type MarkdownContext } from '../../../src/modules/geo/markdown';
+ import { createIndex, loadEngine, search } from '../../../src/modules/search/engine';
+ import { aspectRatioLabel, openingOf } from './build-index';
+ import type { Finding } from './findings';
+@@ -475,6 +476,48 @@ describe('helpers', () => {
+ });
+ 
+ describe('versioned reference inputs', () => {
++  it('keeps ordered reference originals and slot labels beside the matching output in both Markdown documents', () => {
++    const root = setup({
++      'content/prompts/p_001/prompt.txt': null,
++      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait', 'inputRequirements: { referenceImage: required }\n').replace(
++        'promptSource: { type: literal, language: en }',
++        'promptSource: { type: template, templateId: t_001, version: v1, values: { product: a mug, palette: warm } }',
++      ),
++      'content/templates/t_001/versions/v1/inputs.yaml': [
++        'referenceImage: required',
++        'slots:',
++        '  - { id: photo, labels: { en: "Original [product]" }, min: 1, max: 1 }',
++        '  - { id: markup, labels: { en: Markup overlay }, min: 1, max: 1 }',
++      ].join('\n'),
++    });
++    fs.appendFileSync(path.join(root, 'content/examples/x_001/run.yaml'),
++      'referenceAssetIds: [a_003, a_002]\nreferenceBindings: [{ slotId: photo, referenceIndex: 0 }, { slotId: markup, referenceIndex: 1 }]\n');
++    const r = load(root);
++    expect(blocking(r.findings.list)).toEqual([]);
++    const ctx: MarkdownContext = {
++      absoluteUrl: (p) => `https://example.com/prompt-seen${p}`,
++      absoluteImageUrl: (v) => `https://media.example.com/${v.key}`,
++      t: (key, values) => key === 'geo.markdown.field' ? `${values?.label}: ${values?.value}` : key,
++      languageName: (tag) => tag,
++    };
++    const prompt = detail<PromptDetail>(r, 'prompt', 'en', 'p_001')!;
++    const template = detail<TemplateDetail>(r, 'template', 'en', 't_001')!;
++    for (const markdown of [promptMarkdown(prompt, ctx), templateMarkdown(template, ctx)]) {
++      const records = markdown.slice(markdown.indexOf('## detail.examples.heading'));
++      expect(records).toContain('1. Original \\[product\\]');
++      expect(records).toContain('2. Markup overlay');
++      const first = records.indexOf('https://media.example.com/media/a_003/x-original-aaa.jpg');
++      const second = records.indexOf('https://media.example.com/media/a_002/x-original-aaa.jpg');
++      const output = records.indexOf('#### detail.examples.outputs');
++      expect(first).toBeGreaterThan(0);
++      expect(second).toBeGreaterThan(first);
++      expect(output).toBeGreaterThan(second);
++      expect(records.slice(output)).toContain('https://media.example.com/media/a_001/x-detail-ddd.webp');
++    }
++    expect(promptMarkdown({ ...prompt, examples: prompt.examples.map((run) => ({ ...run, references: [] })) }, ctx))
++      .not.toContain('#### detail.examples.references');
++  });
++
+   it('inherits the selected template version input contract in prompt and template views', () => {
+     const root = setup({
+       'content/prompts/p_001/prompt.txt': null,
+diff --git a/src/modules/geo/markdown.ts b/src/modules/geo/markdown.ts
+index c4027a4..2466aac 100644
+--- a/src/modules/geo/markdown.ts
++++ b/src/modules/geo/markdown.ts
+@@ -219,6 +219,29 @@ function exampleRuns(
+     if (run.notes) parts.push(labelled(t, t('detail.examples.notes'), escapeText(run.notes)));
+     if (run.prompt !== currentPrompt)
+       parts.push(labelled(t, t('detail.examples.promptUsed'), '').trimEnd(), codeBlock(run.prompt));
++    // A reference-driven result is not reproducible from its prompt and output alone.
++    // Preserve the recorded input order and slot labels, and link the original bytes.
++    if (run.references.length) {
++      parts.push(`#### ${t('detail.examples.references')}`);
++      parts.push(
++        run.references
++          .map((reference, index) =>
++            listItem(
++              `${index + 1}.`,
++              [
++                escapeText(run.referenceLabels?.[index] || reference.alt),
++                image(reference, ctx),
++                reference.variants.original &&
++                  link(t('detail.image.original'), ctx.absoluteImageUrl(reference.variants.original)),
++              ]
++                .filter(Boolean)
++                .join('\n\n'),
++            ),
++          )
++          .join('\n\n'),
++      );
++      parts.push(`#### ${t('detail.examples.outputs')}`);
++    }
+     const outputs = run.outputs.map((o) => image(o, ctx)).filter(Boolean);
+     if (outputs.length) parts.push(outputs.join('\n\n'));
+   }

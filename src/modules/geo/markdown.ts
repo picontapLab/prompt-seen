@@ -219,6 +219,29 @@ function exampleRuns(
     if (run.notes) parts.push(labelled(t, t('detail.examples.notes'), escapeText(run.notes)));
     if (run.prompt !== currentPrompt)
       parts.push(labelled(t, t('detail.examples.promptUsed'), '').trimEnd(), codeBlock(run.prompt));
+    // A reference-driven result is not reproducible from its prompt and output alone.
+    // Preserve the recorded input order and slot labels, and link the original bytes.
+    if (run.references.length) {
+      parts.push(`#### ${t('detail.examples.references')}`);
+      parts.push(
+        run.references
+          .map((reference, index) =>
+            listItem(
+              `${index + 1}.`,
+              [
+                escapeText(run.referenceLabels?.[index] || reference.alt),
+                image(reference, ctx),
+                reference.variants.original &&
+                  link(t('detail.image.original'), ctx.absoluteImageUrl(reference.variants.original)),
+              ]
+                .filter(Boolean)
+                .join('\n\n'),
+            ),
+          )
+          .join('\n\n'),
+      );
+      parts.push(`#### ${t('detail.examples.outputs')}`);
+    }
     const outputs = run.outputs.map((o) => image(o, ctx)).filter(Boolean);
     if (outputs.length) parts.push(outputs.join('\n\n'));
   }

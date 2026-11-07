@@ -1,0 +1,137 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 build
+> npm run gen && npm run content:build && next build && tsx scripts/package.ts
+
+npm warn Unknown env config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 gen
+> tsx scripts/config-gen.ts
+
+config: production build 89395feb8e5f, basePath "", locales en, zh-Hans
+npm warn Unknown env config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 content:build
+> tsx scripts/content-build.ts
+
+  build-info          1 file(s)  public/generated/build.json: build id, mode, base path and locales
+  content           617 file(s)  .generated/content/: manifest, per-locale indexes and detail models
+  cloudflare          2 file(s)  deploy/generated/cloudflare/_headers, _redirects
+  display-fonts      29 file(s)  public/generated/fonts/: CJK display font subsets of titles and display-face interface text
+  feed               23 file(s)  public/generated/{locale}/feed/: list pages and filter index; .generated/feed/: showcase band
+  netlify             1 file(s)  deploy/generated/netlify/_redirects: redirects and error pages for Netlify
+  nginx               1 file(s)  deploy/generated/nginx/prompt-seen.conf: reference host include
+  prompt-json       446 file(s)  public/generated/{locale}/prompts/{slug}.json: detail models for the popup
+  robots              0 file(s)  deploy/generated/robots-snippet.txt: crawler rules for the host to merge (snippet mode)
+  search              2 file(s)  public/generated/{locale}/search/index.json: per-locale search index
+  static-redirects    7 file(s)  deploy/generated/static/: meta refresh pages for hosts without redirect rules
+  vercel              1 file(s)  deploy/generated/vercel/vercel.json: redirects for Vercel
+content:build production 89395feb8e5f: 1130 file(s) from 12 emitter(s); en 231p/68t/12c/3s/2pg, zh-Hans 215p/67t/12c/2s/2pg
+▲ Next.js 16.4.2 (Turbopack)
+✓ Running next.config.ts took 338ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1378ms
+  Running TypeScript ...
+  Finished TypeScript in 4.3s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/1243) ...
+  Generating static pages using 9 workers (310/1243) 
+  Generating static pages using 9 workers (621/1243) 
+  Generating static pages using 9 workers (932/1243) 
+✓ Generating static pages using 9 workers (1243/1243) in 5.4s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[locale]
+│ ├ ● /en
+│ └ ● /zh-hans
+├   /[locale]/[page]
+│ ├ ● /en/about
+│ ├ ● /en/license
+│ ├ ● /zh-hans/about
+│ └ ● /zh-hans/license
+├   /[locale]/404
+│ ├ ● /en/404
+│ └ ● /zh-hans/404
+├   /[locale]/410
+│ ├ ● /en/410
+│ └ ● /zh-hans/410
+├   /[locale]/categories/[slug]
+│ ├ ● /en/categories/landscape
+│ ├ ● /en/categories/poster
+│ └ ● /zh-hans/categories/landscape
+├   /[locale]/collections
+│ ├ ● /en/collections
+│ └ ● /zh-hans/collections
+├   /[locale]/collections/[slug]
+│ ├ ● /en/collections/design-ai-asset-concepts
+│ ├ ● /en/collections/design-ai-spatial-design
+│ ├ ● /en/collections/design-ai-poster-information
+│ └ ● [+21 more paths]
+├   /[locale]/explore
+│ ├ ● /en/explore
+│ └ ● /zh-hans/explore
+├   /[locale]/favorites
+│ ├ ● /en/favorites
+│ └ ● /zh-hans/favorites
+├   /[locale]/prompts
+│ ├ ● /en/prompts
+│ └ ● /zh-hans/prompts
+├   /[locale]/prompts/[slug]
+│ ├ ● /en/prompts/image26-g12-animated-notebook-owl
+│ ├ ● /en/prompts/image26-g11-cycling-pelican-loop
+│ ├ ● /en/prompts/image26-g10-two-dancing-robots
+│ └ ● [+443 more paths]
+├   /[locale]/prompts/[slug]/index.md
+│ ├ ● /en/prompts/image26-g12-animated-notebook-owl/index.md
+│ ├ ● /en/prompts/image26-g11-cycling-pelican-loop/index.md
+│ ├ ● /en/prompts/image26-g10-two-dancing-robots/index.md
+│ └ ● [+443 more paths]
+├   /[locale]/prompts/page/[page]
+│ ├ ● /en/prompts/page/2
+│ ├ ● /en/prompts/page/3
+│ ├ ● /en/prompts/page/4
+│ └ ● [+14 more paths]
+├   /[locale]/search
+│ ├ ● /en/search
+│ └ ● /zh-hans/search
+├   /[locale]/sitemap-pages.xml
+│ ├ ● /en/sitemap-pages.xml
+│ └ ● /zh-hans/sitemap-pages.xml
+├   /[locale]/styles/[slug]
+│ ├ ● /en/styles/ink
+│ └ ● /zh-hans/styles/ink
+├   /[locale]/templates
+│ ├ ● /en/templates
+│ └ ● /zh-hans/templates
+├   /[locale]/templates/[slug]
+│ ├ ● /en/templates/design-top60-42-reverse-template
+│ ├ ● /en/templates/design-top60-60-template
+│ ├ ● /en/templates/design-top60-59-template
+│ └ ● [+132 more paths]
+├   /[locale]/templates/[slug]/index.md
+│ ├ ● /en/templates/design-top60-42-reverse-template/index.md
+│ ├ ● /en/templates/design-top60-60-template/index.md
+│ ├ ● /en/templates/design-top60-59-template/index.md
+│ └ ● [+132 more paths]
+├   /[locale]/translation-missing
+│ ├ ● /en/translation-missing
+│ └ ● /zh-hans/translation-missing
+├   /[locale]/use-cases/[slug]
+│ ├ ● /en/use-cases/_none
+│ └ ● /zh-hans/use-cases/_none
+├ ○ /icon.svg
+├ ○ /llms.txt
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+package: out/ -> dist/ (production, 2 locale(s))
