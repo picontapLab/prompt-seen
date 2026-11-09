@@ -219,6 +219,55 @@ export function publishProblems(p: PublishContext): Problem[] {
       });
   }
 
+  // The page renders figures and all historical run images, not just its cover.
+  const assets = new Set(file.compiled.figures.map((figure) => figure.assetId));
+  const owner =
+    p.kind === 'prompt'
+      ? [...content.prompts.values()].find((r) => r.locales.get(locale) === file)
+      : p.kind === 'template'
+        ? [...content.templates.values()].find((r) => r.locales.get(locale) === file)
+        : null;
+  const contracts = [];
+  if (owner && p.kind === 'prompt') {
+    const prompt = content.prompts.get(owner.data.id)!;
+    contracts.push(inputRequirementsOf(content, prompt));
+  }
+  if (owner && p.kind === 'template') {
+    const template = content.templates.get(owner.data.id)!;
+    const inputs = template.versions.get(template.data.currentVersion)?.inputs;
+    if (inputs) contracts.push(inputs);
+  }
+  for (const run of content.examples.values()) {
+    if (
+      !owner ||
+      !(p.kind === 'prompt' ? run.data.promptId === owner.data.id : run.data.template?.id === owner.data.id)
+    )
+      continue;
+    for (const id of [...run.data.referenceAssetIds, ...run.data.outputAssetIds]) assets.add(id);
+    contracts.push(runInputRequirements(content, run.data));
+  }
+  for (const id of assets)
+    if (!content.media.get(id)?.data.alt[locale]?.trim())
+      problems.push({
+        message: `displayed image ${id} has no ${locale} alt`,
+        field: `media.${id}.alt.${locale}`,
+        fix: `add semantic alt.${locale} to ${mediaFile(id)}`,
+      });
+  for (const inputs of new Set(contracts)) {
+    if (inputs.referenceImage === 'required' && !inputs.instructions[locale]?.trim())
+      problems.push({
+        message: `required reference input has no ${locale} instructions`,
+        field: `inputRequirements.instructions.${locale}`,
+        fix: 'describe the required input in this language',
+      });
+    for (const slot of inputs.slots)
+      if (!slot.labels[locale]?.trim())
+        problems.push({
+          message: `reference slot ${slot.id} has no ${locale} label`,
+          field: `inputRequirements.slots.${slot.id}.labels.${locale}`,
+          fix: 'translate the reference slot label',
+        });
+  }
   return problems;
 }
 

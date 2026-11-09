@@ -485,9 +485,10 @@ describe('versioned reference inputs', () => {
       ),
       'content/templates/t_001/versions/v1/inputs.yaml': [
         'referenceImage: required',
+        'instructions: { en: Upload the product photo and markup overlay., zh-Hans: 上传商品照片和标注叠加图。 }',
         'slots:',
-        '  - { id: photo, labels: { en: "Original [product]" }, min: 1, max: 1 }',
-        '  - { id: markup, labels: { en: Markup overlay }, min: 1, max: 1 }',
+        '  - { id: photo, labels: { en: "Original [product]", zh-Hans: 商品原图 }, min: 1, max: 1 }',
+        '  - { id: markup, labels: { en: Markup overlay, zh-Hans: 标注叠加图 }, min: 1, max: 1 }',
       ].join('\n'),
     });
     fs.appendFileSync(path.join(root, 'content/examples/x_001/run.yaml'),

@@ -149,7 +149,11 @@ describe('loadConfig', () => {
   it('accepts the repository configuration', () => {
     const config = loadConfig(path.resolve(import.meta.dirname, '../..'), { BUILD_MODE: 'production' });
     expect(config.builtLocales.length).toBeGreaterThan(0);
-    expect(config.locales).toHaveLength(13);
+    expect(new Set(config.locales.map((locale) => locale.code)).size).toBe(config.locales.length);
+    expect(config.locales.some((locale) => locale.code === config.defaultLocale && locale.enabled)).toBe(true);
+    expect(config.builtLocales).toEqual(config.locales.filter((locale) => locale.enabled));
+    const preview = loadConfig(path.resolve(import.meta.dirname, '../..'), { BUILD_MODE: 'preview' });
+    expect(preview.builtLocales).toEqual(preview.locales.filter((locale) => locale.enabled || locale.preview));
   });
 
   it('documents every site.yaml key in site.example.yaml, and the example is valid (§15.5.3)', () => {

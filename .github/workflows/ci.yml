@@ -35,6 +35,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run content:validate
+      - name: Japanese localization coverage
+        run: |
+          mkdir -p .artifacts/localization/ja
+          npm run --silent locale:check -- --locale ja --json > .artifacts/localization/ja/report.json
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: japanese-localization-coverage
+          path: .artifacts/localization/ja/report.json
       - run: npm run tokens:check
       - run: npm run typecheck
       - run: npm run lint
