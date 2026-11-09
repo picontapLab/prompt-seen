@@ -1,0 +1,20 @@
+schemaVersion: 1
+locale: ja
+status: draft
+sourcePolicy: Shared YAML uses the default-locale field when present, otherwise the first explicit locale key in sorted order; each report records the exact source file and field.
+terms:
+  - { source: Prompt, target: プロンプト, sourceFile: src/i18n/messages/en/detail.json, note: モデルに渡す本文。本文自体は翻訳しない。 }
+  - { source: Template, target: テンプレート, sourceFile: src/i18n/messages/en/templates.json }
+  - { source: Reference image, target: 参照画像, sourceFile: scripts/lib/content/schemas.ts }
+  - { source: Output image, target: 生成結果, sourceFile: scripts/lib/content/schemas.ts }
+  - { source: Collection, target: コレクション, sourceFile: src/i18n/messages/en/pages.json }
+  - { source: Copy, target: コピー, sourceFile: src/i18n/messages/en/detail.json }
+  - { source: Download, target: ダウンロード, sourceFile: src/i18n/messages/en/detail.json }
+  - { source: Reset, target: リセット, sourceFile: src/i18n/messages/en/templates.json }
+  - { source: Not verified, target: 未検証, sourceFile: content/pages/about/locales/en.mdx }
+preservationRules:
+  - { fieldKind: prompt-body, reason: コピー・ダウンロードと生成記録の一致を保つ。 }
+  - { fieldKind: template-value, reason: 安定した選択肢の値・既定値・サンプルパラメータは描画契約の一部。 }
+exceptions: []
+# preservationRules describe immutable data, not review exemptions. Any untranslated prose
+# exception must name one exact report field key and have an actual fingerprint-bound review.

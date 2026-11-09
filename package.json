@@ -35,7 +35,8 @@
     "media:check": "tsx scripts/media-check.ts",
     "check:live": "npm run gen && tsx scripts/check-live.ts",
     "indexnow": "tsx scripts/indexnow.ts",
-    "locale:check": "node --import tsx scripts/locale-check.ts"
+    "locale:check": "node --import tsx scripts/locale-check.ts",
+    "locale:import": "node --import tsx scripts/locale-import.ts"
   },
   "dependencies": {
     "icu-minify": "4.14.9",
