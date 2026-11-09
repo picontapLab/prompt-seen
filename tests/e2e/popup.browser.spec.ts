@@ -553,6 +553,9 @@ test.describe('desktop', () => {
       context.waitForEvent('page'),
       card(page, first.slug).click({ modifiers: [modifier] }),
     ]);
+    // Assert the page after selecting the newly opened background tab, as a visitor would.
+    // Firefox may defer its document while the gallery remains the foreground tab.
+    await tab.bringToFront();
     await expect(tab.locator('[data-page="prompt-detail"] h1')).toHaveText(detailOf(first.slug).title);
     expect(await state(page)).toMatchObject({ path: listUrl, open: false });
 

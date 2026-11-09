@@ -3,6 +3,8 @@ import path from 'node:path';
 import { expect, test } from '@playwright/test';
 import { BASE, BUILD, ROOT, message } from './support/artifact';
 import { localeIndex } from './support/content';
+import { layoutProblems } from './support/layout';
+import { cancelledFetch } from './support/errors';
 
 type SearchCase = { id: string; query: string; expectedAny: string[]; maxRank?: number; expectEmpty?: boolean };
 const cases: SearchCase[] = JSON.parse(
@@ -67,4 +69,40 @@ test.describe('Japanese localization search acceptance', () => {
     await expect(panel.getByText(message('ja', 'search.groups.prompt'), { exact: true })).toBeVisible();
     await cdp.detach();
   });
+});
+
+test.describe('Japanese editorial and error pages at every supported width', () => {
+  test.skip(!japanese, 'Japanese is not included in this artifact');
+  for (const width of [390, 768, 1024, 1440])
+    for (const theme of ['light', 'dark'] as const)
+      test(`${width}px ${theme}: collection, topics, legal pages and error states`, async ({ page }, testInfo) => {
+        test.setTimeout(60000);
+        await page.setViewportSize({ width, height: 900 });
+        await page.emulateMedia({ colorScheme: theme });
+        const errors: string[] = [];
+        page.on('pageerror', (error) => {
+          if (!cancelledFetch(error.message)) errors.push(error.message);
+        });
+        const index = localeIndex('ja');
+        const paths = [
+          ...index.collections.slice(0, 1).map((item) => item.path),
+          ...index.topics.map((item) => item.path),
+          ...index.pages.map((item) => item.path),
+          `/${japanese!.pathPrefix}/translation-missing/`,
+          `/${japanese!.pathPrefix}/no-such-page/`,
+        ];
+        for (const path of paths) {
+          await page.goto(`${BASE}${path}`);
+          await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
+          await expect(page.locator('h1')).toBeVisible();
+          await page.waitForFunction(() => {
+            const el = document.querySelector('header button');
+            return el && Object.keys(el).some((key) => key.startsWith('__reactProps'));
+          });
+          expect(await layoutProblems(page), path).toEqual([]);
+          if (width === 390 && theme === 'dark' && path === paths[0])
+            await page.screenshot({ path: testInfo.outputPath('japanese-collection-phone.png'), fullPage: true });
+        }
+        expect(errors).toEqual([]);
+      });
 });

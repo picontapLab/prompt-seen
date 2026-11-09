@@ -94,7 +94,8 @@ function workspace() {
 }
 afterEach(() => roots.splice(0).forEach((root) => fs.rmSync(root, { recursive: true, force: true })));
 
-describe('generation manifest', () => {
+// These integration fixtures copy and validate the evolving real corpus; this is not a timing assertion.
+describe('generation manifest', { timeout: 30_000 }, () => {
   it('preserves historical runs even when they have no Prompt owner', async () => {
     const root = workspace();
     await planMigration(root);

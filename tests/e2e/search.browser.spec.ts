@@ -111,7 +111,7 @@ test.describe('desktop', () => {
     await hydrated(page);
     await page.keyboard.press('/');
     await expect(panel(page).getByText(message('en', 'search.panel.recent'), { exact: true })).toBeVisible();
-    await expect(options(page).filter({ hasText: word })).toHaveCount(1);
+    await expect(panel(page).getByRole('option', { name: word, exact: true })).toHaveCount(1);
     // Popular uses link to the list filtered by that use (§11.8.6 热门用途).
     await expect(
       options(page)

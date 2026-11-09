@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "buildId": "ja-production-candidate",
+  "completedAt": "2026-11-09T07:00:51.637Z",
+  "reviewer": "Repository maintainer (user-reported actual acceptance)",
+  "conclusion": "approved",
+  "environments": [
+    {
+      "os": "macOS",
+      "browser": "Safari",
+      "deviceModel": "not supplied",
+      "imeName": "not supplied"
+    },
+    {
+      "os": "iOS",
+      "browser": "Safari",
+      "deviceModel": "not supplied",
+      "imeName": "not supplied"
+    }
+  ],
+  "scenarios": [
+    "Japanese composition and confirmation in search",
+    "Quick search: composing Enter does not submit early",
+    "Template: committed text and caret are retained",
+    "Copy, reset and language switching preserve the expected content"
+  ],
+  "evidence": "User explicitly confirmed both desktop and phone were actually checked and passed; then supplied macos, ios, safari. This is user-reported manual acceptance, separate from Chromium CDP automation."
+}

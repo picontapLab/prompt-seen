@@ -88,8 +88,7 @@ export function layoutProblems(page: Page, scope = 'body'): Promise<string[]> {
         if (/sticky|fixed/.test(getComputedStyle(a).position)) return a;
       return null;
     };
-    const drawn = (el: Element) => {
-      const r = el.getBoundingClientRect();
+    const drawn = (el: Element, r: DOMRect) => {
       let { left, right, top, bottom } = r;
       for (let a = el.parentElement; a; a = a.parentElement) {
         const cs = getComputedStyle(a);
@@ -110,10 +109,14 @@ export function layoutProblems(page: Page, scope = 'body'): Promise<string[]> {
         !el.hasAttribute('data-scroll-button') &&
         el.closest('header, main, footer'),
     );
-    const rects = plain.flatMap((el) => {
-      const r = drawn(el);
-      return r ? [{ el, r }] : [];
-    });
+    // Wrapped inline links have one painted rectangle per line. Their union includes
+    // empty space beside the short line and can falsely overlap an adjacent link.
+    const rects = plain.flatMap((el) =>
+      [...el.getClientRects()].flatMap((fragment) => {
+        const r = drawn(el, fragment);
+        return r ? [{ el, r }] : [];
+      }),
+    );
     for (let i = 0; i < rects.length; i++)
       for (let j = i + 1; j < rects.length; j++) {
         const a = rects[i]!;
