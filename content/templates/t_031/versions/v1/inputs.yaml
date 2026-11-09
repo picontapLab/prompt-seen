@@ -2,10 +2,12 @@ referenceImage: required
 instructions:
   en: Upload a verified map and supply checked destinations and route notes.
   zh-Hans: 已核对的地图、目的地清单、路线
+  ja: 確認済みの地図をアップロードし、確認済みの目的地と経路の説明を指定してください。
 slots:
   - id: map
     labels:
       en: Map
       zh-Hans: 核对后的地图
+      ja: 地図
     min: 1
     max: 1

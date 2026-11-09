@@ -2,10 +2,12 @@ referenceImage: required
 instructions:
   en: Upload an object reference and supply checked notes and exact Chinese labels.
   zh-Hans: 服饰或器物参考、已核对史料与中文标注
+  ja: 物体の参照画像をアップロードし、確認済みの説明と正確な中国語ラベルを指定してください。
 slots:
   - id: object
     labels:
       en: Object
       zh-Hans: 服饰或器物参考
+      ja: 物体
     min: 1
     max: 1

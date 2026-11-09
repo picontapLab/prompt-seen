@@ -5,10 +5,12 @@ fields:
     labels:
       en: City
       zh-Hans: 城市
+      ja: 都市
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 里斯本
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: City title
       zh-Hans: 城市标题
+      ja: 都市名の見出し
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: LISBON
     minLength: 1
@@ -35,10 +39,12 @@ fields:
     labels:
       en: Country title
       zh-Hans: 国家标题
+      ja: 国名の見出し
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: PORTUGAL
     minLength: 1
@@ -50,10 +56,12 @@ fields:
     labels:
       en: Landmarks
       zh-Hans: 城市特征
+      ja: 名所
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 黄色电车、斜坡街道、红瓦屋顶、蓝色河面
     minLength: 1

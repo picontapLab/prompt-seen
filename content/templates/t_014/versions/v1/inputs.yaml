@@ -1,11 +1,14 @@
 referenceImage: optional
 instructions:
-  en: Describe the cast and supply exactly four ordered story beats; a character sheet is optional.
+  en: Describe the cast and supply exactly four ordered story beats; a character
+    sheet is optional.
   zh-Hans: 角色描述和四个故事节点；角色参考图可选
+  ja: 登場するキャラクターを説明し、物語の展開を順番にちょうど 4 つ指定してください。キャラクター設定画の使用は任意です。
 slots:
   - id: character
     labels:
       en: Character
       zh-Hans: 角色设定图
+      ja: 人物
     min: 0
     max: 1

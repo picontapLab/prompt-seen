@@ -5,10 +5,12 @@ fields:
     labels:
       en: Brand
       zh-Hans: 品牌
+      ja: ブランド
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 青山茶事
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: Price
       zh-Hans: 价格
+      ja: 価格
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 18元
     minLength: 1
@@ -35,10 +39,12 @@ fields:
     labels:
       en: Offer
       zh-Hans: 活动
+      ja: 特典
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 第二杯半价
     minLength: 1
@@ -50,10 +56,12 @@ fields:
     labels:
       en: Dates
       zh-Hans: 时间
+      ja: 日付
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 6月1日—6月7日
     minLength: 1
@@ -65,10 +73,12 @@ fields:
     labels:
       en: CTA
       zh-Hans: 行动文案
+      ja: 誘導文（CTA）
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 到店尝鲜
     minLength: 1

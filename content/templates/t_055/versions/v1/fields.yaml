@@ -5,10 +5,12 @@ fields:
     labels:
       en: Headline
       zh-Hans: 主标题
+      ja: 見出し
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 夏日特惠
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: CTA
       zh-Hans: 行动文案
+      ja: 誘導文（CTA）
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 立即选购
     minLength: 1

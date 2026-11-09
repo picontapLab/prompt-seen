@@ -5,10 +5,12 @@ fields:
     labels:
       en: Accent color
       zh-Hans: 点缀色
+      ja: アクセントカラー
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: orange
     minLength: 1

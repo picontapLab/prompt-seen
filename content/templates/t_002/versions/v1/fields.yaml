@@ -11,7 +11,7 @@ fields:
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
-      ja: 主題は一つ。例：「竹林」
+      ja: 「竹林」のように、主な題材をひとつ指定します。
   - name: season
     type: enum
     required: true
@@ -61,7 +61,7 @@ fields:
         labels:
           en: Loose wet washes
           zh-Hans: 湿笔晕染
-          ja: にじみ
+          ja: ゆったりとにじむ墨
       - value: dry brush with visible texture
         labels:
           en: Dry brush
@@ -81,7 +81,7 @@ fields:
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
-      ja: 数えられるものが効果的です。例：「五本の竹」
+      ja: 数えられるものが効果的です。例：「背の高い茎 5 本」。
   - name: aspectRatio
     type: enum
     required: true

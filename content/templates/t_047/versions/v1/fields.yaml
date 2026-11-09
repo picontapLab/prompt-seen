@@ -5,10 +5,12 @@ fields:
     labels:
       en: Drink
       zh-Hans: 饮料
+      ja: 飲み物
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: amber iced tea
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: Background color
       zh-Hans: 背景颜色
+      ja: 背景色
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: teal
     minLength: 1

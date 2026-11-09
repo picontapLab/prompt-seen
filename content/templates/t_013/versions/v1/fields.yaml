@@ -5,6 +5,7 @@ fields:
     labels:
       en: City
       zh-Hans: 城市名称
+      ja: 都市
     help: {}
     type: string
     default: Kyoto
@@ -17,6 +18,7 @@ fields:
     labels:
       en: Date label
       zh-Hans: 指定日期
+      ja: 日付の表記
     help: {}
     type: string
     default: DEMO — 12 APR
@@ -29,6 +31,7 @@ fields:
     labels:
       en: Forecast
       zh-Hans: 已核对的天气与温度
+      ja: 天気予報
     help: {}
     type: string
     default: "FICTIONAL FORECAST: 18°C, partly cloudy"
@@ -41,6 +44,7 @@ fields:
     labels:
       en: Landmarks
       zh-Hans: 当地地标
+      ja: 名所
     help: {}
     type: string-list
     default:

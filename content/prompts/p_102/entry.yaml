@@ -40,43 +40,52 @@ inspirationSources:
     metricScope:
       en: Original image page
       zh-Hans: 单张社区图片
+      ja: 元の画像ページ
     observedAt: 2026-10-28T23:12:22-07:00
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: Civitai 官方公开 images API
+      ja: 公式の公開 API のスナップショット
     evidenceUrl: https://civitai.com/api/v1/images?imageId=11798302&withMeta=true
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
+      ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
     metrics:
       - key: cryCount
         value: 767
         labels:
           en: Cry reactions
           zh-Hans: 哭泣反应
+          ja: 泣くリアクション
       - key: laughCount
         value: 1894
         labels:
           en: Laugh reactions
           zh-Hans: 大笑反应
+          ja: 笑うリアクション
       - key: likeCount
         value: 9976
         labels:
           en: Likes
           zh-Hans: 赞
+          ja: いいね
       - key: dislikeCount
         value: 0
         labels:
           en: Dislikes
           zh-Hans: 踩
+          ja: 低評価
       - key: heartCount
         value: 3864
         labels:
           en: Hearts
           zh-Hans: 爱心
+          ja: ハート
       - key: commentCount
         value: 0
         labels:
           en: Comments
           zh-Hans: 评论
+          ja: コメント

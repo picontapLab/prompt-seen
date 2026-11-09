@@ -5,9 +5,12 @@ fields:
     labels:
       en: Characters
       zh-Hans: 原创角色设定
+      ja: キャラクター
     help: {}
     type: string
-    default: "three original fluffy creatures: a round mint-green builder with a yellow scarf, a small peach helper with round glasses, and a tall lavender helper with a blue cap"
+    default: "three original fluffy creatures: a round mint-green builder with a
+      yellow scarf, a small peach helper with round glasses, and a tall lavender
+      helper with a blue cap"
     minLength: null
     maxLength: 2000
     multiline: true
@@ -17,6 +20,7 @@ fields:
     labels:
       en: Story beats
       zh-Hans: 四个故事节点
+      ja: 物語の展開
     help: {}
     type: string-list
     default:

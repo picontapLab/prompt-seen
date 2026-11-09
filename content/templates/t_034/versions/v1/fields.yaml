@@ -5,6 +5,7 @@ fields:
     labels:
       en: Garment or object
       zh-Hans: 服饰或器物
+      ja: 衣装または物体
     help: {}
     type: string
     default: a modern fictional Ming-inspired jacket and pleated skirt
@@ -17,9 +18,14 @@ fields:
     labels:
       en: History notes
       zh-Hans: 已核对的史料
+      ja: 歴史の説明
     help: {}
     type: string
-    default: "This is a contemporary fictional costume reference, not a museum artifact. Describe only visible construction: standing collar, front fastening, pale jade jacket, small embroidered floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker, collection number or undocumented historical claim."
+    default: "This is a contemporary fictional costume reference, not a museum
+      artifact. Describe only visible construction: standing collar, front
+      fastening, pale jade jacket, small embroidered floral motifs and a
+      dark-red pleated skirt. Do not add a dynasty date, maker, collection
+      number or undocumented historical claim."
     minLength: null
     maxLength: 2000
     multiline: true
@@ -29,6 +35,7 @@ fields:
     labels:
       en: Labels
       zh-Hans: 准确的中文标注
+      ja: ラベル
     help: {}
     type: string-list
     default:

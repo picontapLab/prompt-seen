@@ -5,10 +5,12 @@ fields:
     labels:
       en: Rotation in degrees
       zh-Hans: 旋转角度
+      ja: 回転角度（度）
     help:
       en: Changing the angle also requires revising the room-position directions in
         the prompt. Only the default is demonstrated.
       zh-Hans: 修改角度时还需同步修改提示词中的房间方位描述。仅默认值有展示结果。
+      ja: 角度を変える場合は、プロンプト内の部屋の位置関係の指示も修正する必要があります。実演しているのはデフォルト値だけです。
     type: string
     default: "180"
     minLength: 1

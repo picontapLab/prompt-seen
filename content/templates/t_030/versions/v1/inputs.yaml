@@ -1,11 +1,14 @@
 referenceImage: required
 instructions:
-  en: Upload one character reference. Supply exactly sixteen short captions in reading order.
+  en: Upload one character reference. Supply exactly sixteen short captions in
+    reading order.
   zh-Hans: 一张角色参考图；16条短中文配文
+  ja: キャラクターの参照画像を 1 枚アップロードしてください。短いキャプションを読む順にちょうど 16 個指定します。
 slots:
   - id: character
     labels:
       en: Character
       zh-Hans: 角色参考
+      ja: 人物
     min: 1
     max: 1

@@ -19,13 +19,18 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one adult portrait as the identity reference. Our reference is a fictional adult generated for this example, replacing the unavailable author input.
+    en: Upload one adult portrait as the identity reference. Our reference is a
+      fictional adult generated for this example, replacing the unavailable
+      author input.
     zh-Hans: 上传一张成人肖像作为身份参考。本例以本站生成的虚构成人代替未公开的作者底图。
+    ja: 人物の特徴を参照するため、成人のポートレートを 1
+      枚アップロードしてください。この参照画像は、入手できない作者の入力画像の代わりに、この作例用に生成した架空の成人です。
   slots:
     - id: person
       labels:
         en: Project-generated reference
         zh-Hans: 本站生成的示例参考图
+        ja: このプロジェクト用に生成した参照画像
       min: 1
       max: 1
 showcaseExampleId: x_305
@@ -41,21 +46,25 @@ inspirationSources:
     metricScope:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
+      ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
+      ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118202866448077182&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
+      ja: 作者の全文を原文の言語で掲載
     metrics:
       - key: likes
         value: 39
         labels:
           en: Source post likes
           zh-Hans: 原帖点赞
+          ja: 出典投稿のいいね数
 source:
   author: AIwithSarah_
   url: https://x.com/AIwithSarah_/status/2118202866448077182

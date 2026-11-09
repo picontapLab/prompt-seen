@@ -1,11 +1,14 @@
 referenceImage: required
 instructions:
-  en: Upload one portrait and exactly nine short greetings. Our person is synthetic.
+  en: Upload one portrait and exactly nine short greetings. Our person is
+    synthetic.
   zh-Hans: 人物照片和九条简短祝福
+  ja: ポートレートを 1 枚アップロードし、短い挨拶をちょうど 9 個指定してください。作例の人物は生成したものです。
 slots:
   - id: person
     labels:
       en: Person
       zh-Hans: 人物肖像
+      ja: 人物
     min: 1
     max: 1

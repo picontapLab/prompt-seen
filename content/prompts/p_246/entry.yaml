@@ -21,6 +21,7 @@ inputRequirements:
   instructions:
     en: Paste the complete original prompt without adding an input image.
     zh-Hans: 直接使用完整原词，不需要参考图。
+    ja: 入力画像を追加せず、元のプロンプト全文を貼り付けてください。
   slots: []
 showcaseExampleId: x_310
 promptProvenance: source-prompt
@@ -35,21 +36,25 @@ inspirationSources:
     metricScope:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
+      ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
+      ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118581030781382805&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
+      ja: 作者の全文を原文の言語で掲載
     metrics:
       - key: likes
         value: 62
         labels:
           en: Source post likes
           zh-Hans: 原帖点赞
+          ja: 出典投稿のいいね数
 source:
   author: johnAGI168
   url: https://x.com/johnAGI168/status/2118581030781382805

@@ -5,10 +5,12 @@ fields:
     labels:
       en: Age
       zh-Hans: 年龄
+      ja: 年齢
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 6岁
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: Scene
       zh-Hans: 场景
+      ja: 場面
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: 小兔在花园浇花
     minLength: 1

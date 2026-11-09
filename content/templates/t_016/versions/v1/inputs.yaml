@@ -1,11 +1,14 @@
 referenceImage: optional
 instructions:
-  en: Supply a fictional brand name, palette and mood; an existing logo is optional.
+  en: Supply a fictional brand name, palette and mood; an existing logo is
+    optional.
   zh-Hans: 品牌名称、配色、调性；已有Logo可选
+  ja: 架空のブランド名、配色、ムードを指定してください。既存のロゴの使用は任意です。
 slots:
   - id: logo
     labels:
       en: Logo
       zh-Hans: 已有Logo
+      ja: ロゴ
     min: 0
     max: 1

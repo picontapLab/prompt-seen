@@ -3,10 +3,12 @@ instructions:
   en: Upload the reference images in the listed order. The example uses synthetic
     input images.
   zh-Hans: 按列出的顺序上传参考图。本例使用合成输入素材。
+  ja: 参照画像を記載順にアップロードしてください。この作例では、生成した入力画像を使っています。
 slots:
   - id: product
     labels:
       en: Product reference
       zh-Hans: 产品参考
+      ja: 商品の参照画像
     min: 1
     max: 1

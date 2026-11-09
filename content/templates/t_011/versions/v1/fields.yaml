@@ -5,6 +5,7 @@ fields:
     labels:
       en: Device
       zh-Hans: 产品名称
+      ja: 機器
     help: {}
     type: string
     default: an original concept hand-cranked coffee grinder
@@ -17,9 +18,12 @@ fields:
     labels:
       en: Structure notes
       zh-Hans: 核对后的结构资料
+      ja: 構造の説明
     help: {}
     type: string
-    default: "Fictional concept specification: removable top crank turns a vertical shaft; a conical burr pair sits below a bean hopper; grounds fall into a detachable lower cup. No dimensions or performance claims."
+    default: "Fictional concept specification: removable top crank turns a vertical
+      shaft; a conical burr pair sits below a bean hopper; grounds fall into a
+      detachable lower cup. No dimensions or performance claims."
     minLength: null
     maxLength: 2000
     multiline: true
@@ -29,6 +33,7 @@ fields:
     labels:
       en: Labels
       zh-Hans: 准确的部件标注
+      ja: ラベル
     help: {}
     type: string-list
     default:

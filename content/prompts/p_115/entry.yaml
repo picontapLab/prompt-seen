@@ -19,19 +19,23 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload person A first, then person B. Both references are fictional AI-generated adults.
+    en: Upload person A first, then person B. Both references are fictional
+      AI-generated adults.
     zh-Hans: 两位成年人的照片
+    ja: 最初に人物 A、次に人物 B の画像をアップロードしてください。どちらの参照画像も、AI で生成した架空の成人です。
   slots:
     - id: personA
       labels:
         en: Person a
         zh-Hans: 第一位成年人
+        ja: 人物 A
       min: 1
       max: 1
     - id: personB
       labels:
         en: Person b
         zh-Hans: 第二位成年人
+        ja: 人物 B
       min: 1
       max: 1
 showcaseExampleId: x_160
@@ -52,48 +56,58 @@ inspirationSources:
     metricScope:
       en: Whole tutorial or showcase video
       zh-Hans: 整条教程或作品展示视频
+      ja: チュートリアルまたは作品紹介の動画全体
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: B站 官方公开只读 API
+      ja: 公式の公開 API のスナップショット
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 作者提供外部prompt文档链接，本轮未读取文档
+      ja: 元のプロンプト全文は取得できていません。独自に調整しています。
     metrics:
       - key: views
         value: 9416
         labels:
           en: Views
           zh-Hans: 播放或浏览
+          ja: 閲覧数
       - key: likes
         value: 231
         labels:
           en: Likes
           zh-Hans: 赞
+          ja: いいね
       - key: saves
         value: 345
         labels:
           en: Saves
           zh-Hans: 收藏
+          ja: 保存数
       - key: comments
         value: 139
         labels:
           en: Comments
           zh-Hans: 评论
+          ja: コメント
       - key: shares
         value: 65
         labels:
           en: Shares
           zh-Hans: 分享
+          ja: 共有数
       - key: coins
         value: 208
         labels:
           en: Coins
           zh-Hans: 投币
+          ja: コイン数
       - key: danmaku
         value: 4
         labels:
           en: Danmaku
           zh-Hans: 弹幕
+          ja: 弾幕コメント数

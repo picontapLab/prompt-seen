@@ -19,13 +19,16 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one room photo with the important furniture visible. The example room is synthetic.
+    en: Upload one room photo with the important furniture visible. The example room
+      is synthetic.
     zh-Hans: 房间照片
+    ja: 主要な家具が見える室内写真を 1 枚アップロードしてください。作例の部屋は生成したものです。
   slots:
     - id: room
       labels:
         en: Room
         zh-Hans: 房间照片
+        ja: 室内
       min: 1
       max: 1
 showcaseExampleId: x_170
@@ -41,26 +44,31 @@ inspirationSources:
     metricScope:
       en: Whole post or image gallery
       zh-Hans: 整篇帖子或图集
+      ja: 投稿全体または画像ギャラリー全体
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
       en: Indexed primary-source snapshot
       zh-Hans: 一手帖搜索索引快照
+      ja: 検索インデックス上の一次情報のスナップショット
     evidenceUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 公开：作者在评论说明参考场景生成等距3D样式图。
+      ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
     metrics:
       - key: post_score
         value: 2746
         labels:
           en: Post score
           zh-Hans: 帖子分数
+          ja: 投稿スコア
       - key: comments
         value: null
         labels:
           en: Comments
           zh-Hans: 评论
+          ja: コメント
 source:
   author: Prompt Seen
   url: null

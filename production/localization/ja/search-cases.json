@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "cases": [
+    {
+      "id": "kanji-compound",
+      "query": "朝霧",
+      "expectedAny": [
+        "prompt:p_016"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "kanji-bamboo",
+      "query": "竹林",
+      "expectedAny": [
+        "prompt:p_015"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "kanji-product",
+      "query": "緑茶缶",
+      "expectedAny": [
+        "prompt:p_024"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "kanji-kana",
+      "query": "味噌 フード",
+      "expectedAny": [
+        "prompt:p_009"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "compound-desert",
+      "query": "真昼 砂漠",
+      "expectedAny": [
+        "prompt:p_057"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "katakana-light",
+      "query": "ネオン リムライト",
+      "expectedAny": [
+        "prompt:p_005"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "hiragana-rice",
+      "query": "ご飯",
+      "expectedAny": [
+        "prompt:p_039"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "katakana-leaf",
+      "query": "モンステラ",
+      "expectedAny": [
+        "prompt:p_028"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "katakana-fern",
+      "query": "サイアノタイプ シダ",
+      "expectedAny": [
+        "prompt:p_033"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "voiced-kana",
+      "query": "ジャズクラブ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "halfwidth-kana",
+      "query": "ｼﾞｬｽﾞｸﾗﾌﾞ ﾎﾟｽﾀｰ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "combining-dakuten",
+      "query": "ジャズクラブ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "fullwidth-model",
+      "query": "ＧＰＴ Ｉｍａｇｅ ２．５ 緑茶缶",
+      "expectedAny": [
+        "prompt:p_024"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "mixed-model",
+      "query": "GPT Image 2.5 ネオン リムライト",
+      "expectedAny": [
+        "prompt:p_005"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "declared-kana-alias",
+      "query": "チラシ ジャズクラブ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "declared-latin-alias",
+      "query": "flyer ジャズクラブ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "other-language-label",
+      "query": "海报 ジャズクラブ",
+      "expectedAny": [
+        "prompt:p_045"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "complete-title",
+      "query": "セージ色の背景に置いた茶缶",
+      "expectedAny": [
+        "prompt:p_003"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "prompt-id",
+      "query": "p_111",
+      "expectedAny": [
+        "prompt:p_111"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "frame-number",
+      "query": "0111",
+      "expectedAny": [
+        "prompt:p_111"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "template-id",
+      "query": "t_001",
+      "expectedAny": [
+        "template:t_001"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "fullwidth-id",
+      "query": "ｐ＿１１１",
+      "expectedAny": [
+        "prompt:p_111"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "collection-id",
+      "query": "c_001",
+      "expectedAny": [
+        "collection:c_001"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "japanese-original-id",
+      "query": "p_237",
+      "expectedAny": [
+        "prompt:p_237"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "spaced-query",
+      "query": "  緑茶缶  ",
+      "expectedAny": [
+        "prompt:p_024"
+      ],
+      "maxRank": 5
+    },
+    {
+      "id": "no-result",
+      "query": "zyxqv987654321架空検索",
+      "expectedAny": [],
+      "expectEmpty": true
+    }
+  ]
+}

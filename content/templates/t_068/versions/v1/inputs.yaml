@@ -2,10 +2,12 @@ referenceImage: required
 instructions:
   en: Upload the first blue axonometric result from case 42.
   zh-Hans: 上传案例 42 第一轮生成的蓝色轴测图。
+  ja: 作例 42 で最初に生成した青い軸測投影図をアップロードしてください。
 slots:
   - id: axonometric
     labels:
       en: First axonometric result
       zh-Hans: 第一轮轴测图
+      ja: 最初に生成した軸測投影図
     min: 1
     max: 1

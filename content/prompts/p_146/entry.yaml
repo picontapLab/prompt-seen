@@ -50,51 +50,61 @@ inspirationSources:
     metricScope:
       en: Whole tutorial or showcase video
       zh-Hans: 整条教程或作品展示视频
+      ja: チュートリアルまたは作品紹介の動画全体
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: B站 官方公开只读 API
+      ja: 公式の公開 API のスナップショット
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 作者专栏公开完整prompt，原作者还标明改编来源
+      ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
     metrics:
       - key: views
         value: 344604
         labels:
           en: Views
           zh-Hans: 播放或浏览
+          ja: 閲覧数
       - key: likes
         value: 26934
         labels:
           en: Likes
           zh-Hans: 赞
+          ja: いいね
       - key: saves
         value: 5872
         labels:
           en: Saves
           zh-Hans: 收藏
+          ja: 保存数
       - key: comments
         value: 938
         labels:
           en: Comments
           zh-Hans: 评论
+          ja: コメント
       - key: shares
         value: 1029
         labels:
           en: Shares
           zh-Hans: 分享
+          ja: 共有数
       - key: coins
         value: 859
         labels:
           en: Coins
           zh-Hans: 投币
+          ja: コイン数
       - key: danmaku
         value: 73
         labels:
           en: Danmaku
           zh-Hans: 弹幕
+          ja: 弾幕コメント数
 source:
   author: Prompt Seen
   url: null
@@ -109,6 +119,7 @@ annotations:
     note:
       en: The explicit grid fixes the sticker count and reading order.
       zh-Hans: 明确四行四列，控制贴纸数量和配文阅读顺序。
+      ja: 明示したグリッドが、ステッカーの数と読む順番を決めています。
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -118,3 +129,4 @@ annotations:
     note:
       en: Identity and clothing stay consistent across the sixteen emotions.
       zh-Hans: 统一面部、发型与服装，让十六种表情保持同一个角色。
+      ja: 16 種類の感情を通して、人物の特徴と服装を統一しています。

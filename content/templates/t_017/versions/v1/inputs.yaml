@@ -2,10 +2,12 @@ referenceImage: required
 instructions:
   en: Upload one product photo; supply a palette and exactly nine scene themes.
   zh-Hans: 清晰的产品正面照
+  ja: 商品写真を 1 枚アップロードし、配色と、場面のテーマをちょうど 9 つ指定してください。
 slots:
   - id: product
     labels:
       en: Product
       zh-Hans: 产品正面照
+      ja: 商品
     min: 1
     max: 1

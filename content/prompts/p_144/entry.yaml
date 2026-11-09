@@ -19,19 +19,23 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload the adult portrait first and costume second. Both inputs are synthetic; the costume is a modern fictional design.
+    en: Upload the adult portrait first and costume second. Both inputs are
+      synthetic; the costume is a modern fictional design.
     zh-Hans: 人物照片和服饰参考
+    ja: 成人のポートレートを先に、衣装を次にアップロードしてください。どちらも生成した入力画像で、衣装は現代の架空のデザインです。
   slots:
     - id: person
       labels:
         en: Person
         zh-Hans: 成年人物肖像
+        ja: 人物
       min: 1
       max: 1
     - id: garment
       labels:
         en: Garment
         zh-Hans: 服饰参考
+        ja: 衣装
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -47,51 +51,61 @@ inspirationSources:
     metricScope:
       en: Whole tutorial or showcase video
       zh-Hans: 整条教程或作品展示视频
+      ja: チュートリアルまたは作品紹介の動画全体
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: B站 官方公开只读 API
+      ja: 公式の公開 API のスナップショット
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 未取得完整prompt；本次依据展示主题改编
+      ja: 元のプロンプト全文は取得できていません。独自に調整しています。
     metrics:
       - key: views
         value: 18638
         labels:
           en: Views
           zh-Hans: 播放或浏览
+          ja: 閲覧数
       - key: likes
         value: 477
         labels:
           en: Likes
           zh-Hans: 赞
+          ja: いいね
       - key: saves
         value: 689
         labels:
           en: Saves
           zh-Hans: 收藏
+          ja: 保存数
       - key: comments
         value: 116
         labels:
           en: Comments
           zh-Hans: 评论
+          ja: コメント
       - key: shares
         value: 98
         labels:
           en: Shares
           zh-Hans: 分享
+          ja: 共有数
       - key: coins
         value: 178
         labels:
           en: Coins
           zh-Hans: 投币
+          ja: コイン数
       - key: danmaku
         value: 14
         labels:
           en: Danmaku
           zh-Hans: 弹幕
+          ja: 弾幕コメント数
 source:
   author: Prompt Seen
   url: null

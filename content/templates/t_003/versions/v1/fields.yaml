@@ -11,7 +11,7 @@ fields:
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
-      ja: 人物と一つの動き。例：「回転中のダンサー」
+      ja: 人物とポーズをひとつ指定します。例：「回転中のダンサー」。
   - name: rimLight
     type: enum
     required: true
@@ -37,7 +37,7 @@ fields:
         labels:
           en: Amber and teal
           zh-Hans: 琥珀与青绿
-          ja: 琥珀とティール
+          ja: 琥珀色と青緑
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -70,7 +70,7 @@ fields:
         labels:
           en: Flat dark gradient
           zh-Hans: 平涂暗色渐变
-          ja: 暗いグラデーション
+          ja: 平面的な暗いグラデーション
   - name: mood
     type: string
     required: false

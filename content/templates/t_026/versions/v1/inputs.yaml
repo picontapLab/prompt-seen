@@ -1,17 +1,21 @@
 referenceImage: required
 instructions:
-  en: Upload one side-profile photo followed by two to four memory photos; supply a name and accent color.
+  en: Upload one side-profile photo followed by two to four memory photos; supply
+    a name and accent color.
   zh-Hans: 清晰侧脸照、多张回忆或动作照片、姓名
+  ja: 横顔の写真を 1 枚、その後に思い出の写真を 2〜4 枚アップロードし、名前とアクセントカラーを指定してください。
 slots:
   - id: profile
     labels:
       en: Profile
       zh-Hans: 侧脸轮廓
+      ja: 横顔
     min: 1
     max: 1
   - id: memories
     labels:
       en: Memories
       zh-Hans: 回忆或动作照片
+      ja: 思い出の写真
     min: 2
     max: 4

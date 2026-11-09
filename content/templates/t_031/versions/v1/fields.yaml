@@ -5,6 +5,7 @@ fields:
     labels:
       en: Country
       zh-Hans: 目的地国家
+      ja: 国
     help: {}
     type: string
     default: Japan
@@ -17,6 +18,7 @@ fields:
     labels:
       en: Destinations
       zh-Hans: 核对后的目的地
+      ja: 目的地
     help: {}
     type: string-list
     default:
@@ -33,9 +35,12 @@ fields:
     labels:
       en: Route notes
       zh-Hans: 核对后的路线说明
+      ja: 経路の説明
     help: {}
     type: string
-    default: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map locations. No travel times, prices or current transport claims.
+    default: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the
+      supplied map locations. No travel times, prices or current transport
+      claims.
     minLength: null
     maxLength: 2000
     multiline: true

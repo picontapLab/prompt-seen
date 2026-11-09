@@ -35,41 +35,49 @@ inspirationSources:
     metricScope:
       en: Whole post or image gallery
       zh-Hans: 整条X帖子或图集
+      ja: 投稿全体または画像ギャラリー全体
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: X 官方公开嵌入接口
+      ja: 公式の公開 API のスナップショット
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2027798913516761522&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 称prompt在回复中，未读取回复全文
+      ja: 元のプロンプト全文は取得できていません。独自に調整しています。
     metrics:
       - key: likes
         value: 1547
         labels:
           en: Likes
           zh-Hans: 赞
+          ja: いいね
       - key: conversation_count
         value: 25
         labels:
           en: Replies
           zh-Hans: 回复
+          ja: 返信数
       - key: views
         value: null
         labels:
           en: Views
           zh-Hans: 播放或浏览
+          ja: 閲覧数
       - key: reposts
         value: null
         labels:
           en: Reposts
           zh-Hans: 转发
+          ja: リポスト数
       - key: bookmarks
         value: null
         labels:
           en: Bookmarks
           zh-Hans: 书签
+          ja: ブックマーク数
 source:
   author: Prompt Seen
   url: null

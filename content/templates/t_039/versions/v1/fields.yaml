@@ -5,10 +5,12 @@ fields:
     labels:
       en: Material and color
       zh-Hans: 材质与颜色
+      ja: 素材と色
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: brown leather
     minLength: 1
@@ -20,10 +22,12 @@ fields:
     labels:
       en: Stitch color
       zh-Hans: 缝线颜色
+      ja: ステッチの色
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
+      ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
     type: string
     default: cream
     minLength: 1

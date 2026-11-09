@@ -12,7 +12,7 @@ fields:
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
-      ja: 物と素材を書きます。例：「斑点のある陶器のマグカップ」
+      ja: 物と素材を書きます。例：「斑点模様の陶器のマグカップ」。
       ar: اذكر الشيء ومادته، مثل “كوب خزفي منقّط”.
   - name: sellingPoints
     type: string-list
@@ -147,5 +147,5 @@ fields:
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
-      ja: 任意。短い言葉ほど正しく描かれます。
+      ja: 任意です。短い言葉ほど正確に描画されやすくなります。
       ar: اختياري. الكلمات القصيرة تظهر بدقة أكبر.

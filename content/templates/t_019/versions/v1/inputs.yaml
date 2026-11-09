@@ -1,11 +1,14 @@
 referenceImage: optional
 instructions:
-  en: Supply product concept, accent color and design features; an exterior reference is optional.
+  en: Supply product concept, accent color and design features; an exterior
+    reference is optional.
   zh-Hans: 产品概念、设计特征、配色；参考图可选
+  ja: 商品コンセプト、アクセントカラー、デザインの特徴を指定してください。外観の参照画像の使用は任意です。
 slots:
   - id: product
     labels:
       en: Product
       zh-Hans: 产品外观
+      ja: 商品
     min: 0
     max: 1
