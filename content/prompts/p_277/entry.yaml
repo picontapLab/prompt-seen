@@ -1,0 +1,60 @@
+id: p_277
+slug: daily-woof-pet-newspaper
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: poster
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_463
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.
+    zh-Hans: 上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。
+    ja: 犬の鮮明な写真を1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
+  slots:
+    - id: pet
+      labels:
+        en: Dog photo
+        zh-Hans: 狗狗照片
+        ja: 犬の写真
+      min: 1
+      max: 1
+showcaseExampleId: x_341
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: one large photograph
+    region:
+      x: 0.035
+      y: 0.43
+      w: 0.93
+      h: 0.545
+    note:
+      en: One dominant pet photo keeps the story instantly clear.
+      zh-Hans: 一张主照片让宠物故事一眼可懂。
+      ja: 大きなペットの写真を1枚置くことで、話の内容がすぐに伝わります。
+  - phrase: bold black serif typography
+    region:
+      x: 0.034
+      y: 0.12
+      w: 0.93
+      h: 0.205
+    note:
+      en: Bold serif type makes the headline feel like a newspaper.
+      zh-Hans: 粗衬线字体形成报纸头条感。
+      ja: 太いセリフ体が、新聞の見出しらしさを生んでいます。

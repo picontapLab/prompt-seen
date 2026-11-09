@@ -1,0 +1,33 @@
+fields:
+  - name: age
+    required: true
+    group: text
+    labels:
+      en: Birthday age
+      zh-Hans: 生日年龄
+      ja: 誕生日の年齢
+    help:
+      en: Use a short age such as 30.
+      zh-Hans: 填写简短年龄，例如 30。
+      ja: 30など、短い年齢表記を入力してください。
+    type: string
+    default: "30"
+    minLength: 1
+    maxLength: 3
+    multiline: false
+  - name: personName
+    required: true
+    group: text
+    labels:
+      en: Name
+      zh-Hans: 姓名
+      ja: 名前
+    help:
+      en: Use a short display name.
+      zh-Hans: 填写简短显示姓名。
+      ja: 短い表示名を入力してください。
+    type: string
+    default: ALEX
+    minLength: 1
+    maxLength: 16
+    multiline: false

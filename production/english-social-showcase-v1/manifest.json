@@ -1,0 +1,950 @@
+{
+  "schemaVersion": 1,
+  "campaign": "english-social-showcase-v1",
+  "status": "featured",
+  "specDate": "2026-11-08",
+  "timezone": "America/Los_Angeles",
+  "targets": {
+    "cases": 12,
+    "acceptedOutputs": 12,
+    "referenceImages": 3,
+    "templates": 7,
+    "collection": 1
+  },
+  "heroOrder": [
+    "c01",
+    "c02",
+    "c07",
+    "c08",
+    "c04",
+    "c10",
+    "c03",
+    "c05",
+    "c06",
+    "c09",
+    "c11",
+    "c12"
+  ],
+  "firstBatch": [
+    "c01",
+    "c02",
+    "c07",
+    "c08"
+  ],
+  "collectionSlug": "english-social-reactions",
+  "references": [
+    {
+      "id": "r1",
+      "candidateId": "ENSOC-V1-R1",
+      "title": {
+        "en": "Fictional adult portrait in a teal sweatshirt",
+        "zh-Hans": "青绿色卫衣的虚构成年女性肖像"
+      },
+      "status": "imported",
+      "promptFile": "prompts/r1.txt",
+      "jobFile": "job-definitions/r1.json",
+      "desiredAspectRatio": "1:1",
+      "acceptedPath": "production/english-social-showcase-v1/references/r1/accepted.png",
+      "usedBy": [
+        "c01",
+        "c07",
+        "c09"
+      ],
+      "assetId": "a_458",
+      "acceptedJobKey": "ensoc-v1-r1-a01",
+      "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "r2",
+      "candidateId": "ENSOC-V1-R2",
+      "title": {
+        "en": "Orange-and-white corgi with a green bandana",
+        "zh-Hans": "佩戴绿色三角巾的橙白柯基"
+      },
+      "status": "imported",
+      "promptFile": "prompts/r2.txt",
+      "jobFile": "job-definitions/r2.json",
+      "desiredAspectRatio": "1:1",
+      "acceptedPath": "production/english-social-showcase-v1/references/r2/accepted.png",
+      "usedBy": [
+        "c02",
+        "c08",
+        "c12"
+      ],
+      "assetId": "a_460",
+      "acceptedJobKey": "ensoc-v1-r2-a01",
+      "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "r3",
+      "candidateId": "ENSOC-V1-R3",
+      "title": {
+        "en": "Fictional adult portrait in a burgundy T-shirt",
+        "zh-Hans": "酒红色上衣的虚构成年男性肖像"
+      },
+      "status": "imported",
+      "promptFile": "prompts/r3.txt",
+      "jobFile": "job-definitions/r3.json",
+      "desiredAspectRatio": "1:1",
+      "acceptedPath": "production/english-social-showcase-v1/references/r3/accepted.png",
+      "usedBy": [
+        "c07",
+        "c11"
+      ],
+      "assetId": "a_462",
+      "acceptedJobKey": "ensoc-v1-r3-a01",
+      "sha256": "5ccfde12df05d91f008f48d4cc93734578a2b6cec3722b6b0c17004290a70e03",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    }
+  ],
+  "cases": [
+    {
+      "id": "c01",
+      "candidateId": "ENSOC-V1-C01",
+      "slug": "everyday-reaction-stickers",
+      "title": {
+        "en": "Your Everyday Reactions",
+        "zh-Hans": "你的日常反应九宫格"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c01.txt",
+      "recipeFile": "recipes/c01.json",
+      "jobFile": "job-definitions/c01.json",
+      "referenceBindings": [
+        {
+          "slotId": "person",
+          "referenceId": "r1"
+        }
+      ],
+      "template": true,
+      "exactText": [
+        "Hey!",
+        "Same.",
+        "Seriously?",
+        "I'm in!",
+        "Nope.",
+        "Thank you!",
+        "You got this.",
+        "BRB",
+        "Love it!"
+      ],
+      "internalPredecessors": [
+        "p_146"
+      ],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.02,
+            "y": 0.01,
+            "w": 0.96,
+            "h": 0.98
+          },
+          "note": {
+            "en": "The grid fixes nine separate reactions.",
+            "zh-Hans": "网格限定九个独立反应。"
+          }
+        },
+        {
+          "phrase": "face and hairstyle consistent",
+          "region": {
+            "x": 0.035,
+            "y": 0.015,
+            "w": 0.28,
+            "h": 0.215
+          },
+          "note": {
+            "en": "The same person remains recognizable across expressions.",
+            "zh-Hans": "不同表情仍保留同一人物的识别特征。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Exactly nine distinct reactions; recognizable R1 identity in all cells.",
+        "No beauty-filter identity change; all nine supplied captions match."
+      ],
+      "promptId": "p_274",
+      "templateId": "t_069",
+      "exampleId": "x_338",
+      "coverAssetId": "a_457",
+      "acceptedJobKey": "ensoc-v1-c01-a01",
+      "sha256": "fcdab9d2f6733f61937fad277bd587da59892c09e97e0a4becdada39582b73b5",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c02",
+      "candidateId": "ENSOC-V1-C02",
+      "slug": "dog-mood-reaction-stickers",
+      "title": {
+        "en": "My Dog, My Mood",
+        "zh-Hans": "我的狗就是我的心情"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c02.txt",
+      "recipeFile": "recipes/c02.json",
+      "jobFile": "job-definitions/c02.json",
+      "referenceBindings": [
+        {
+          "slotId": "pet",
+          "referenceId": "r2"
+        }
+      ],
+      "template": true,
+      "exactText": [
+        "Hi, human!",
+        "Did someone say snacks?",
+        "Side eye.",
+        "Not sorry.",
+        "Let's go!",
+        "Need a nap.",
+        "Good job!",
+        "Miss you.",
+        "Love you!"
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.025,
+            "y": 0.015,
+            "w": 0.95,
+            "h": 0.96
+          },
+          "note": {
+            "en": "Nine cells create a compact reaction set.",
+            "zh-Hans": "九格形成紧凑的反应合集。"
+          }
+        },
+        {
+          "phrase": "coat markings and green bandana",
+          "region": {
+            "x": 0.09,
+            "y": 0.025,
+            "w": 0.195,
+            "h": 0.22
+          },
+          "note": {
+            "en": "Distinctive fur and the bandana preserve the pet identity.",
+            "zh-Hans": "毛色标记与三角巾保持宠物身份一致。"
+          }
+        }
+      ],
+      "acceptance": [
+        "White blaze, upright ears and green bandana remain consistent.",
+        "The longest caption stays readable on at most two lines."
+      ],
+      "promptId": "p_275",
+      "templateId": "t_070",
+      "exampleId": "x_339",
+      "coverAssetId": "a_459",
+      "acceptedJobKey": "ensoc-v1-c02-a01",
+      "sha256": "23f09bb926967ddadd2085588c821673a5ce36217bdae3f713ff1e31e41197f1",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c03",
+      "candidateId": "ENSOC-V1-C03",
+      "slug": "office-cat-reaction-stickers",
+      "title": {
+        "en": "Office Cat, Off Duty",
+        "zh-Hans": "职场橘猫下班了"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c03.txt",
+      "recipeFile": "recipes/c03.json",
+      "jobFile": "job-definitions/c03.json",
+      "referenceBindings": [],
+      "template": true,
+      "exactText": [
+        "Morning.",
+        "Coffee first.",
+        "On it.",
+        "Quick question.",
+        "You're on mute.",
+        "Lunch?",
+        "Still loading.",
+        "Done!",
+        "Logging off."
+      ],
+      "internalPredecessors": [
+        "p_221"
+      ],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.01,
+            "y": 0.01,
+            "w": 0.98,
+            "h": 0.97
+          },
+          "note": {
+            "en": "Each cell is one workplace reply.",
+            "zh-Hans": "每格对应一句工作聊天回复。"
+          }
+        },
+        {
+          "phrase": "textured crayon lines",
+          "region": {
+            "x": 0.06,
+            "y": 0.035,
+            "w": 0.24,
+            "h": 0.2
+          },
+          "note": {
+            "en": "Crayon texture gives the cat a handmade look.",
+            "zh-Hans": "蜡笔质感形成手绘风格。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Navy tie and orange stripes remain consistent.",
+        "Video-call caption is exactly \"You're on mute.\""
+      ],
+      "promptId": "p_278",
+      "templateId": "t_071",
+      "exampleId": "x_342",
+      "coverAssetId": "a_464",
+      "acceptedJobKey": "ensoc-v1-c03-a02",
+      "sha256": "b7ca8aa11ae41e0980c30f15a6fa48e0c8ec2ef7bc92b55873c7564e5c84d68d",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c04",
+      "candidateId": "ENSOC-V1-C04",
+      "slug": "social-battery-raccoon-stickers",
+      "title": {
+        "en": "Social Battery: Low",
+        "zh-Hans": "社交电量不足"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c04.txt",
+      "recipeFile": "recipes/c04.json",
+      "jobFile": "job-definitions/c04.json",
+      "referenceBindings": [],
+      "template": true,
+      "exactText": [
+        "I'm in!",
+        "Who's coming?",
+        "Small talk?",
+        "Need a minute.",
+        "Battery low.",
+        "I'm staying in.",
+        "Maybe next time.",
+        "Recharging.",
+        "Home sweet home."
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.02,
+            "y": 0.01,
+            "w": 0.96,
+            "h": 0.97
+          },
+          "note": {
+            "en": "The grid shows a range of social moods.",
+            "zh-Hans": "九格表现不同社交状态。"
+          }
+        },
+        {
+          "phrase": "tactile fabric",
+          "region": {
+            "x": 0.39,
+            "y": 0.04,
+            "w": 0.21,
+            "h": 0.18
+          },
+          "note": {
+            "en": "Visible fabric makes the character feel like a soft toy.",
+            "zh-Hans": "可见织物质感让角色像毛绒玩具。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Soft fabric texture survives thumbnail downscaling.",
+        "Keep humor warm and relatable rather than hostile."
+      ],
+      "promptId": "p_279",
+      "templateId": "t_072",
+      "exampleId": "x_343",
+      "coverAssetId": "a_465",
+      "acceptedJobKey": "ensoc-v1-c04-a01",
+      "sha256": "5683acbf1c165f935ac6ea89583dcf8f7604689abc36f62e72b4e99ede82ad91",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c05",
+      "candidateId": "ENSOC-V1-C05",
+      "slug": "supportive-frog-reaction-stickers",
+      "title": {
+        "en": "Tiny Frog, Big Support",
+        "zh-Hans": "小青蛙的大大鼓励"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c05.txt",
+      "recipeFile": "recipes/c05.json",
+      "jobFile": "job-definitions/c05.json",
+      "referenceBindings": [],
+      "template": true,
+      "exactText": [
+        "You got this.",
+        "Proud of you.",
+        "One step at a time.",
+        "Take a break.",
+        "Here for you.",
+        "Small wins count.",
+        "Sending hugs.",
+        "Nice work!",
+        "Rest is okay."
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.025,
+            "y": 0.01,
+            "w": 0.95,
+            "h": 0.98
+          },
+          "note": {
+            "en": "Nine separate gestures form a reusable support set.",
+            "zh-Hans": "九种独立动作构成鼓励贴纸合集。"
+          }
+        },
+        {
+          "phrase": "handmade clay texture",
+          "region": {
+            "x": 0.4,
+            "y": 0.1,
+            "w": 0.22,
+            "h": 0.19
+          },
+          "note": {
+            "en": "Subtle clay texture gives the frog a tactile appearance.",
+            "zh-Hans": "细微黏土质感形成可触摸的视觉效果。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Frog remains green with a yellow scarf in every cell.",
+        "Encouragement is readable without relying on decorative icons."
+      ],
+      "promptId": "p_280",
+      "templateId": "t_073",
+      "exampleId": "x_344",
+      "coverAssetId": "a_466",
+      "acceptedJobKey": "ensoc-v1-c05-a01",
+      "sha256": "0de3d39495731704136d2b60af2d131763a06eef2a5f194f1995b4188c501483",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c06",
+      "candidateId": "ENSOC-V1-C06",
+      "slug": "gaming-ghost-reaction-stickers",
+      "title": {
+        "en": "One More Game",
+        "zh-Hans": "再来一局"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c06.txt",
+      "recipeFile": "recipes/c06.json",
+      "jobFile": "job-definitions/c06.json",
+      "referenceBindings": [],
+      "template": true,
+      "exactText": [
+        "GG!",
+        "Nice!",
+        "My bad.",
+        "Lagging.",
+        "BRB",
+        "One more?",
+        "We got this.",
+        "So close!",
+        "Logging off."
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "clean 3-by-3 grid",
+          "region": {
+            "x": 0.012,
+            "y": 0.015,
+            "w": 0.975,
+            "h": 0.965
+          },
+          "note": {
+            "en": "Nine cells cover common gaming replies.",
+            "zh-Hans": "九格覆盖常见游戏聊天回复。"
+          }
+        },
+        {
+          "phrase": "crisp pixel edges",
+          "region": {
+            "x": 0.055,
+            "y": 0.035,
+            "w": 0.22,
+            "h": 0.2
+          },
+          "note": {
+            "en": "Crisp blocks establish the pixel-art style.",
+            "zh-Hans": "清晰像素块形成像素画风格。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Pixel lettering is legible; no mixed smooth and pixel rendering.",
+        "No existing game logo or copied character."
+      ],
+      "promptId": "p_281",
+      "templateId": "t_074",
+      "exampleId": "x_345",
+      "coverAssetId": "a_467",
+      "acceptedJobKey": "ensoc-v1-c06-a01",
+      "sha256": "90d11fa8cd14a31e9bcd1de391fe236995d66a46803cddcdbd0af279152c4d37",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c07",
+      "candidateId": "ENSOC-V1-C07",
+      "slug": "bestie-photo-booth",
+      "title": {
+        "en": "Bestie Photo Booth",
+        "zh-Hans": "好友照片亭四连拍"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "4:5",
+      "promptFile": "prompts/c07.txt",
+      "recipeFile": "recipes/c07.json",
+      "jobFile": "job-definitions/c07.json",
+      "referenceBindings": [
+        {
+          "slotId": "personA",
+          "referenceId": "r1"
+        },
+        {
+          "slotId": "personB",
+          "referenceId": "r3"
+        }
+      ],
+      "template": false,
+      "exactText": [
+        "Better together"
+      ],
+      "internalPredecessors": [
+        "p_148"
+      ],
+      "annotationIntents": [
+        {
+          "phrase": "four photos in a 2-by-2 grid",
+          "region": {
+            "x": 0.02,
+            "y": 0.018,
+            "w": 0.96,
+            "h": 0.868
+          },
+          "note": {
+            "en": "Four frames form one compact photo-booth print.",
+            "zh-Hans": "四帧组成完整照片亭拼图。"
+          }
+        },
+        {
+          "phrase": "direct flash and subtle film grain",
+          "region": {
+            "x": 0.05,
+            "y": 0.05,
+            "w": 0.41,
+            "h": 0.35
+          },
+          "note": {
+            "en": "Flash and grain establish the photographic look.",
+            "zh-Hans": "闪光与颗粒共同形成摄影质感。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Exactly four photos with both people in each.",
+        "R1 always left and R3 always right; no blended or swapped identities."
+      ],
+      "promptId": "p_276",
+      "templateId": null,
+      "exampleId": "x_340",
+      "coverAssetId": "a_461",
+      "acceptedJobKey": "ensoc-v1-c07-a01",
+      "sha256": "1f71c6df0c1183b0ccf433a6c87f713a36d421445867bcdd905d14a1dbcf28da",
+      "width": 1122,
+      "height": 1402,
+      "format": "png"
+    },
+    {
+      "id": "c08",
+      "candidateId": "ENSOC-V1-C08",
+      "slug": "daily-woof-pet-newspaper",
+      "title": {
+        "en": "The Daily Woof",
+        "zh-Hans": "汪汪日报"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c08.txt",
+      "recipeFile": "recipes/c08.json",
+      "jobFile": "job-definitions/c08.json",
+      "referenceBindings": [
+        {
+          "slotId": "pet",
+          "referenceId": "r2"
+        }
+      ],
+      "template": false,
+      "exactText": [
+        "THE DAILY WOOF",
+        "LOCAL DOG DENIES EVERYTHING",
+        "Witnesses report a suspicious amount of fluff."
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "one large photograph",
+          "region": {
+            "x": 0.035,
+            "y": 0.43,
+            "w": 0.93,
+            "h": 0.545
+          },
+          "note": {
+            "en": "One dominant pet photo keeps the story instantly clear.",
+            "zh-Hans": "一张主照片让宠物故事一眼可懂。"
+          }
+        },
+        {
+          "phrase": "bold black serif typography",
+          "region": {
+            "x": 0.034,
+            "y": 0.12,
+            "w": 0.93,
+            "h": 0.205
+          },
+          "note": {
+            "en": "Bold serif type makes the headline feel like a newspaper.",
+            "zh-Hans": "粗衬线字体形成报纸头条感。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Only three requested text elements, no invented body copy.",
+        "R2 identity visible; headline remains readable on mobile."
+      ],
+      "promptId": "p_277",
+      "templateId": null,
+      "exampleId": "x_341",
+      "coverAssetId": "a_463",
+      "acceptedJobKey": "ensoc-v1-c08-a01",
+      "sha256": "f21d978e3950d50cb94d3822fa96c97e045e88a0ccd502c21c3bf9ca990369ff",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c09",
+      "candidateId": "ENSOC-V1-C09",
+      "slug": "making-plans-reaction-meme",
+      "title": {
+        "en": "Me Making Plans",
+        "zh-Hans": "约好出门的我"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c09.txt",
+      "recipeFile": "recipes/c09.json",
+      "jobFile": "job-definitions/c09.json",
+      "referenceBindings": [
+        {
+          "slotId": "person",
+          "referenceId": "r1"
+        }
+      ],
+      "template": false,
+      "exactText": [
+        "Me making plans",
+        "Me when it's time to leave"
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "two vertically stacked panels",
+          "region": {
+            "x": 0.008,
+            "y": 0.008,
+            "w": 0.984,
+            "h": 0.984
+          },
+          "note": {
+            "en": "Top and bottom create the setup and punchline.",
+            "zh-Hans": "上下两格形成铺垫和反差笑点。"
+          }
+        },
+        {
+          "phrase": "expressive editorial illustration",
+          "region": {
+            "x": 0.36,
+            "y": 0.015,
+            "w": 0.25,
+            "h": 0.27
+          },
+          "note": {
+            "en": "Expressions carry the joke at a glance.",
+            "zh-Hans": "鲜明表情帮助快速理解笑点。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Exactly two vertically stacked panels with the same person.",
+        "Distinct daylight enthusiasm and nighttime reluctance."
+      ],
+      "promptId": "p_282",
+      "templateId": null,
+      "exampleId": "x_346",
+      "coverAssetId": "a_468",
+      "acceptedJobKey": "ensoc-v1-c09-a01",
+      "sha256": "9419e20f05e558525271922558529dcf5c4e412c50a91e6c5fc67b98bd4fcba7",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c10",
+      "candidateId": "ENSOC-V1-C10",
+      "slug": "weekend-starter-pack-collage",
+      "title": {
+        "en": "Weekend Starter Pack",
+        "zh-Hans": "周末生活入门包"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c10.txt",
+      "recipeFile": "recipes/c10.json",
+      "jobFile": "job-definitions/c10.json",
+      "referenceBindings": [],
+      "template": false,
+      "exactText": [
+        "WEEKEND STARTER PACK",
+        "Coffee. Books. No plans."
+      ],
+      "internalPredecessors": [
+        "p_120"
+      ],
+      "annotationIntents": [
+        {
+          "phrase": "exactly six separate vignettes",
+          "region": {
+            "x": 0.02,
+            "y": 0.16,
+            "w": 0.96,
+            "h": 0.68
+          },
+          "note": {
+            "en": "Six visual groups keep the collage simple.",
+            "zh-Hans": "六组视觉元素让拼贴保持简洁。"
+          }
+        },
+        {
+          "phrase": "tactile paper-cut shapes",
+          "region": {
+            "x": 0.34,
+            "y": 0.18,
+            "w": 0.29,
+            "h": 0.28
+          },
+          "note": {
+            "en": "Layered paper textures create the collage style.",
+            "zh-Hans": "层叠纸张质感形成拼贴风格。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Six groups; sneakers count as a pair and cat plus cushion as one group.",
+        "Only the title and footer contain text."
+      ],
+      "promptId": "p_283",
+      "templateId": null,
+      "exampleId": "x_347",
+      "coverAssetId": "a_469",
+      "acceptedJobKey": "ensoc-v1-c10-a01",
+      "sha256": "d377d5e8e365e562dc93b91c556f252bee0534e194ee0a3c0885d2116a92afdd",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    },
+    {
+      "id": "c11",
+      "candidateId": "ENSOC-V1-C11",
+      "slug": "birthday-main-character-card",
+      "title": {
+        "en": "Birthday Main Character",
+        "zh-Hans": "生日主角收藏卡"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "4:5",
+      "promptFile": "prompts/c11.txt",
+      "recipeFile": "recipes/c11.json",
+      "jobFile": "job-definitions/c11.json",
+      "referenceBindings": [
+        {
+          "slotId": "person",
+          "referenceId": "r3"
+        }
+      ],
+      "template": true,
+      "exactText": [
+        "LEVEL 30 UNLOCKED",
+        "ALEX",
+        "Cake first. Responsibilities later."
+      ],
+      "internalPredecessors": [],
+      "annotationIntents": [
+        {
+          "phrase": "large portrait",
+          "region": {
+            "x": 0.17,
+            "y": 0.17,
+            "w": 0.66,
+            "h": 0.58
+          },
+          "note": {
+            "en": "The person remains the focus of the card.",
+            "zh-Hans": "人物是卡片的视觉中心。"
+          }
+        },
+        {
+          "phrase": "cobalt blue and silver foil textures",
+          "region": {
+            "x": 0.04,
+            "y": 0.19,
+            "w": 0.25,
+            "h": 0.49
+          },
+          "note": {
+            "en": "Blue and foil textures establish a celebratory card finish.",
+            "zh-Hans": "钴蓝与银箔质感形成庆祝卡片效果。"
+          }
+        }
+      ],
+      "acceptance": [
+        "R3 identity preserved; exactly three requested text elements.",
+        "ALEX and LEVEL 30 UNLOCKED remain readable on mobile."
+      ],
+      "promptId": "p_284",
+      "templateId": "t_075",
+      "exampleId": "x_348",
+      "coverAssetId": "a_470",
+      "acceptedJobKey": "ensoc-v1-c11-a01",
+      "sha256": "ccde616bab1a20485d3d6858a32cbd6daa50051ae0f925fa2562d5d75e4773cd",
+      "width": 1122,
+      "height": 1402,
+      "format": "png"
+    },
+    {
+      "id": "c12",
+      "candidateId": "ENSOC-V1-C12",
+      "slug": "dog-home-alone-comic",
+      "title": {
+        "en": "Five Minutes Home Alone",
+        "zh-Hans": "独自在家的五分钟"
+      },
+      "status": "featured",
+      "desiredAspectRatio": "1:1",
+      "promptFile": "prompts/c12.txt",
+      "recipeFile": "recipes/c12.json",
+      "jobFile": "job-definitions/c12.json",
+      "referenceBindings": [
+        {
+          "slotId": "pet",
+          "referenceId": "r2"
+        }
+      ],
+      "template": false,
+      "exactText": [
+        "I'll be good.",
+        "They're gone.",
+        "My house now.",
+        "Welcome back!"
+      ],
+      "internalPredecessors": [
+        "p_214"
+      ],
+      "annotationIntents": [
+        {
+          "phrase": "four panels in a 2-by-2 grid",
+          "region": {
+            "x": 0.008,
+            "y": 0.008,
+            "w": 0.984,
+            "h": 0.984
+          },
+          "note": {
+            "en": "Four panels establish the story sequence.",
+            "zh-Hans": "四格明确故事的阅读顺序。"
+          }
+        },
+        {
+          "phrase": "warm storybook illustration",
+          "region": {
+            "x": 0.02,
+            "y": 0.6,
+            "w": 0.465,
+            "h": 0.38
+          },
+          "note": {
+            "en": "Warm illustration gives the story a friendly tone.",
+            "zh-Hans": "温暖插画让故事保持亲切感。"
+          }
+        }
+      ],
+      "acceptance": [
+        "Four distinct actions in correct reading order.",
+        "Room layout and R2 identity consistent; captions match exactly."
+      ],
+      "promptId": "p_285",
+      "templateId": null,
+      "exampleId": "x_349",
+      "coverAssetId": "a_471",
+      "acceptedJobKey": "ensoc-v1-c12-a01",
+      "sha256": "0832df1a642c3245f6c3862fd6ecf36da4b302eea177ad54cb20436ac9564922",
+      "width": 1254,
+      "height": 1254,
+      "format": "png"
+    }
+  ],
+  "collectionId": "c_015",
+  "publicationDate": "2026-11-09"
+}

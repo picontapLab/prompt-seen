@@ -1,0 +1,30 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c03-a01",
+    "candidateId": "ENSOC-V1-C03",
+    "prompt": "Create a square office-cat sticker sheet in a clean 3-by-3 grid. Draw an original round orange cat wearing a navy tie, using textured crayon lines on warm cream paper.\n\nKeep the face, orange stripes and navy tie identical across cells. Use small office props and mix sleepy, helpful and quietly sarcastic expressions.\n\nExactly nine stickers, read left to right, top to bottom. Give every sticker a distinct expression and pose that clearly matches its caption. Keep the character identity, proportions, outfit and colors consistent across all nine cells. Use generous equal spacing and a simple pale background. Make each silhouette clear, with a white die-cut border. Render each supplied English caption exactly once, verbatim, in large bold lettering inside its own cell, using no more than two lines. The captions, in reading order, are: Morning.; Coffee first.; On it.; Quick question.; You're on mute.; Lunch?; Still loading.; Done!; Logging off.. No extra titles, watermarks, overlapping cells or additional text.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "fc4a519d4e3091dd4d69019586048bd6f829aab9e275f197dc527b3dc01e75f6",
+  "references": [],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-09T08:21:54.265Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c03-a01/output-a8f619500210b78927386bab79f7e4ee48f4476e5f3dc8a7c51d2a1f3a73cd78.png",
+      "sha256": "a8f619500210b78927386bab79f7e4ee48f4476e5f3dc8a7c51d2a1f3a73cd78"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:23:49.528Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Rejected: last caption reads Logging off.. with two periods. The prompt appended punctuation after the supplied caption list. Nine cells, navy ties and crayon texture otherwise match. Revise the unfrozen template to put the caption list on its own line and retry with a new key.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:23:49.532Z"
+  },
+  "generationTool": "image_gen.imagegen",
+  "modelVersion": null
+}

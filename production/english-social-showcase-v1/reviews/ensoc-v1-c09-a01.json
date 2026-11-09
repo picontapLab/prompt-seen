@@ -1,0 +1,46 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c09-a01",
+    "candidateId": "ENSOC-V1-C09",
+    "prompt": "Create a square reaction meme with two vertically stacked panels and expressive editorial illustration. Keep the reference person recognizable in both panels. Preserve their facial features, skin tone and hairstyle. In the top panel, show them smiling enthusiastically at their phone in daylight; caption \"Me making plans\". In the bottom panel, show them wrapped in a blanket on the sofa at night, reluctantly looking toward shoes by the door; caption \"Me when it's time to leave\". Put each caption in a generous clear band inside its own panel, using large bold English lettering. No additional text, logos or watermarks.",
+    "references": [
+      {
+        "slotId": "person",
+        "path": "production/english-social-showcase-v1/references/r1/accepted.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "8a5e71c85750a610a0df2fec8fffb051e9b50d5aaddcbdaa15e26653cd7cd508",
+  "references": [
+    {
+      "path": "production/english-social-showcase-v1/references/r1/accepted.png",
+      "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777",
+      "slotId": "person"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:29:20.545Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c09-a01/output-9419e20f05e558525271922558529dcf5c4e412c50a91e6c5fc67b98bd4fcba7.png",
+      "sha256": "9419e20f05e558525271922558529dcf5c4e412c50a91e6c5fc67b98bd4fcba7"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:30:45.569Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Exactly two stacked illustrated panels: R1 smiles at a phone in daylight above, then looks reluctantly from a blanket-covered sofa toward shoes by the door at night. R1 facial features and curls remain recognizable. Both requested captions are exact and very large; no additional labels.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:30:45.575Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

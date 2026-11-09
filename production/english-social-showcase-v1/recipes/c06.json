@@ -1,0 +1,90 @@
+{
+  "candidateId": "ENSOC-V1-C06",
+  "slug": "gaming-ghost-reaction-stickers",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a square gaming sticker sheet in a clean 3-by-3 grid. Use an original white pixel-art ghost with cobalt-blue headphones, crisp pixel edges and readable pixel lettering.\n\nUse a limited retro palette, a pale cool background and exaggerated gaming reactions. Keep the ghost and headphones consistent, with a design independent of existing game characters.\n\nExactly nine stickers, read left to right, top to bottom. Give every sticker a distinct expression and pose that clearly matches its caption. Keep the character identity, proportions, outfit and colors consistent across all nine cells. Use generous equal spacing and a simple pale background. Make each silhouette clear, with a white die-cut border. Render each supplied English caption exactly once, verbatim, in large bold lettering inside its own cell, using no more than two lines. The captions, in reading order, are:\n{{captions}}\n\nNo extra titles, watermarks, overlapping cells or additional text.",
+  "promptLanguage": "en",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "name": "captions",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Nine English captions",
+        "zh-Hans": "九条英文配文"
+      },
+      "help": {
+        "en": "Exactly nine short captions in reading order; up to 28 characters each.",
+        "zh-Hans": "按阅读顺序填写九条短句，每条最多 28 个字符。"
+      },
+      "type": "string-list",
+      "default": [
+        "GG!",
+        "Nice!",
+        "My bad.",
+        "Lagging.",
+        "BRB",
+        "One more?",
+        "We got this.",
+        "So close!",
+        "Logging off."
+      ],
+      "minItems": 9,
+      "maxItems": 9,
+      "itemMaxLength": 28,
+      "separator": "; "
+    }
+  ],
+  "values": {
+    "captions": [
+      "GG!",
+      "Nice!",
+      "My bad.",
+      "Lagging.",
+      "BRB",
+      "One more?",
+      "We got this.",
+      "So close!",
+      "Logging off."
+    ]
+  },
+  "inputRequirements": {
+    "referenceImage": "none",
+    "instructions": {
+      "en": "No reference image is required. Copy the prompt and generate one image. Keep all lettering in English.",
+      "zh-Hans": "无需参考图，复制提示词后生成一张图片。画面文字保持英文。"
+    },
+    "slots": []
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "One More Game",
+      "description": "A pixel ghost shares nine short gaming reactions for wins, mistakes and one more round.",
+      "body": "## How to use\n\nNo reference image is required. Copy the prompt and generate one image. Keep all lettering in English.\n\n## What to check\n\nInspect identity, layout and every requested caption at full size and at phone display size. This is a static image; individual sticker export is a separate workflow."
+    },
+    "zh-Hans": {
+      "title": "再来一局",
+      "description": "像素小幽灵用九条短句表达胜利、失误和再来一局。",
+      "body": "## 使用方法\n\n无需参考图，复制提示词后生成一张图片。画面文字保持英文。\n\n## 检查重点\n\n核对主体一致性、构图与指定配字，并在原尺寸和手机展示尺寸检查。这是一张静态图片，独立贴纸导出属于另一项工作。"
+    }
+  },
+  "alt": {
+    "en": "Nine white pixel ghost reactions with blue headphones and short English gaming captions.",
+    "zh-Hans": "戴蓝色耳机的白色像素幽灵反应九宫格，配有英文游戏短句。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:36:24.679Z",
+    "contentHash": "248152523e9a7c3fd85bb555adc5dc54bf296276c3cc526a0193707f5d067656"
+  }
+}

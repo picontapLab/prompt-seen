@@ -1,0 +1,67 @@
+{
+  "candidateId": "ENSOC-V1-C07",
+  "slug": "bestie-photo-booth",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a 4:5 photo-booth print with four photos in a 2-by-2 grid. Use a cobalt curtain, direct flash and subtle film grain. Preserve both reference identities. Reference image 1 is the person on the left; reference image 2 is the person on the right in every panel. Preserve their facial features, skin tones and hairstyles. Show relaxed smiles, exaggerated surprise, shared laughter and a playful shoulder lean, in reading order. Add a cream paper border with the readable caption \"Better together\" below the four photos. Keep both faces clear and fully inside every frame. No extra text, logos or watermarks.",
+  "promptLanguage": "en",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the first adult portrait, then the second adult portrait. Image 1 stays on the left; image 2 stays on the right. The demonstration uses AI-generated fictional people. Keep all lettering in English.",
+      "zh-Hans": "依次上传第一位和第二位成年人的肖像。图 1 保持在左，图 2 保持在右。示例采用 AI 生成的虚构人物。画面文字保持英文。"
+    },
+    "slots": [
+      {
+        "id": "personA",
+        "labels": {
+          "en": "First person, left",
+          "zh-Hans": "第一位人物，左侧"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "personB",
+        "labels": {
+          "en": "Second person, right",
+          "zh-Hans": "第二位人物，右侧"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Bestie Photo Booth",
+      "description": "Combine two portraits into four playful photo-booth moments with a film-print finish.",
+      "body": "## How to use\n\nUpload the first adult portrait, then the second adult portrait. Image 1 stays on the left; image 2 stays on the right. The demonstration uses AI-generated fictional people. Keep all lettering in English.\n\n## What to check\n\nInspect identity, layout and every requested caption at full size and at phone display size."
+    },
+    "zh-Hans": {
+      "title": "好友照片亭四连拍",
+      "description": "将两张人物肖像变成带胶片质感的四张好友照片亭合影。",
+      "body": "## 使用方法\n\n依次上传第一位和第二位成年人的肖像。图 1 保持在左，图 2 保持在右。示例采用 AI 生成的虚构人物。画面文字保持英文。\n\n## 检查重点\n\n核对主体一致性、构图与指定配字，并在原尺寸和手机展示尺寸检查。"
+    }
+  },
+  "alt": {
+    "en": "Four photo-booth images of two friends against a cobalt curtain, framed by a cream border reading Better together.",
+    "zh-Hans": "钴蓝幕布前两位朋友的四张照片亭合影，米色边框写着 Better together。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:21:07.445Z",
+    "contentHash": "46e82e438913d80a7cbd7078bded1b3a4416509070164c29420d386952e66865"
+  }
+}

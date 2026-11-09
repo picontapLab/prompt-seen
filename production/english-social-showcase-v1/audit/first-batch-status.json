@@ -1,0 +1,273 @@
+{
+  "coverage": {
+    "cases": [
+      {
+        "candidateId": "ENSOC-V1-C01",
+        "promptId": "p_274",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C02",
+        "promptId": "p_275",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C03",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C04",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C05",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C06",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C07",
+        "promptId": "p_276",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C08",
+        "promptId": "p_277",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C09",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C10",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C11",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      },
+      {
+        "candidateId": "ENSOC-V1-C12",
+        "promptId": null,
+        "outputs": 0,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 0,
+        "complete": false
+      }
+    ],
+    "recordedCases": 4,
+    "targetCases": 12,
+    "acceptedCases": 4,
+    "acceptedOutputs": 4,
+    "recordedOutputs": 4,
+    "targetOutputs": 12
+  },
+  "jobs": [
+    {
+      "key": "ensoc-v1-c01-a01",
+      "candidateId": "ENSOC-V1-C01",
+      "status": "accepted",
+      "publication": "applied",
+      "fingerprint": "c545de539034c5d22d7f16fc8bf07a0f57cee1df6e51c734096e03fceb086366",
+      "review": {
+        "accepted": true,
+        "notes": "Nine distinct cartoon reactions in an even 3-by-3 arrangement. Inspected all captions in order: Hey!, Same., Seriously?, I am in contraction, Nope., Thank you!, You got this., BRB, Love it!; apostrophe in the fourth caption is present. R1 curly hair, facial features and teal sweatshirt remain recognizable across all cells. Large high-contrast lettering, pale background and white borders; no extra title. Phone layout will be checked after import.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:15:15.214Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c02-a01",
+      "candidateId": "ENSOC-V1-C02",
+      "status": "accepted",
+      "publication": "applied",
+      "fingerprint": "2d9a1550944f2275d5e6dea5e44744445b6094db188302b1428092ecc9ea502f",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected nine separate corgi reactions with all nine requested captions in correct order, including the two-line snacks question and punctuation. White facial blaze, upright ears and green bandana remain consistent. Distinct wave, play bow, side eye, belly-up, running, sleeping, approval, longing and hug poses. Sleep marks and hearts function as expression symbols. No unrelated titles or text.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:16:46.200Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c03-a01",
+      "candidateId": "ENSOC-V1-C03",
+      "status": "needs_attention",
+      "publication": "not-prepared",
+      "fingerprint": "fc4a519d4e3091dd4d69019586048bd6f829aab9e275f197dc527b3dc01e75f6",
+      "review": {
+        "accepted": false,
+        "notes": "Rejected: last caption reads Logging off.. with two periods. The prompt appended punctuation after the supplied caption list. Nine cells, navy ties and crayon texture otherwise match. Revise the unfrozen template to put the caption list on its own line and retry with a new key.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:23:49.532Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c03-a02",
+      "candidateId": "ENSOC-V1-C03",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "57a1a8de61723a631a1c07951cce86b7189c699a13fc8e015ac4113141a143a6",
+      "review": {
+        "accepted": true,
+        "notes": "Revised output has exactly nine crayon orange-cat cells, consistent navy tie wherever the torso is visible, clear office props and distinct reactions. All nine captions checked; Logging off. now has one period, and You are on mute contraction has its apostrophe. No extra labels. Textured crayon style and bold navy lettering match the brief.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:25:22.992Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c04-a01",
+      "candidateId": "ENSOC-V1-C04",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "e34ce13530a820ae9f1cc2507c57521cf0c50bbe942ef46690f9a2330cc1c576",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected nine plush raccoon reactions with lavender hoodie and consistent face mask. Exact captions in reading order with single final periods and correct apostrophes; two-line captions remain within their cells. Fur and hoodie texture clearly visible, expressive eyelids, low-battery icon and cozy home props follow the brief.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:26:40.543Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c05-a01",
+      "candidateId": "ENSOC-V1-C05",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "14929d0399d7dff9d96d750c56dba5e555f2589f95611ca037fc75cd0de5ed51",
+      "review": {
+        "accepted": true,
+        "notes": "Nine green frog reactions with yellow scarves, matte handmade texture and soft studio shadows. All nine supportive captions checked for wording, punctuation and reading order, with at most two lines each. Gestures include thumbs-up, steps, a flower, celebration, open arms and rest. Generous spacing; no extra title.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:28:02.989Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c06-a01",
+      "candidateId": "ENSOC-V1-C06",
+      "status": "running",
+      "publication": "not-prepared",
+      "fingerprint": "e3c9333f5288ab78f123728f0725392eb20201b70fd3bccb7c1fee310d2c9245",
+      "review": null,
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c07-a01",
+      "candidateId": "ENSOC-V1-C07",
+      "status": "accepted",
+      "publication": "applied",
+      "fingerprint": "22590abbeb3449c2263bd0c787fda16c3c358f097b12042c93644ee7e04becb7",
+      "review": {
+        "accepted": true,
+        "notes": "Four photos in a 2-by-2 grid on a 4:5 cream paper print. R1 remains left and R3 right in all panels; both faces recognizable with intact features, teal and burgundy tops. Smiling, surprise, laughter and shoulder lean occur in the requested sequence. Blue curtain, flash look, subtle grain, exact Better together caption with no other text.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:18:17.568Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-c08-a01",
+      "candidateId": "ENSOC-V1-C08",
+      "status": "accepted",
+      "publication": "applied",
+      "fingerprint": "628490b0723cbbbdef80a728d205097313d69dae33bcfc7adeb3969245e1f6dd",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected exact masthead THE DAILY WOOF, headline LOCAL DOG DENIES EVERYTHING and subheading Witnesses report a suspicious amount of fluff. No extra article text. Large readable serif typography, warm newsprint, one large corgi photo beside a torn cushion and fluff. White blaze, orange coat and green bandana match R2.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:19:38.166Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-r1-a01",
+      "candidateId": "ENSOC-V1-R1",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "35c64ae2927368cfcfdfd270079ea2cbf303e66f1f6cb27ae0700cbb2f2ff1f0",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected original portrait: fictional adult woman, medium-brown skin, shoulder-length dark curls, brown eyes and teal sweatshirt; head and shoulders fully visible, neutral light-gray background, no text or logos. Identity reference accepted. Exact model version is not returned by the built-in tool.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:11:17.129Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-r2-a01",
+      "candidateId": "ENSOC-V1-R2",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "a69a01407ad76635169190384fec4fd383a75affdcb282c7a7f087b366bc5576",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected orange-and-white corgi sitting against warm gray: centered white blaze, upright ears entirely in frame, four paws visible including the rear paw between front legs, plain forest-green bandana, no text or props. Pet reference accepted.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:11:55.426Z"
+      },
+      "failure": null
+    },
+    {
+      "key": "ensoc-v1-r3-a01",
+      "candidateId": "ENSOC-V1-R3",
+      "status": "accepted",
+      "publication": "not-prepared",
+      "fingerprint": "c5e0470a7893b2a8e3131e2a655e46ebb2ac4bfbf7e3409ca37f861b44ceaf92",
+      "review": {
+        "accepted": true,
+        "notes": "Inspected fictional adult man with short wavy brown hair, brown eyes, freckles and burgundy shirt. Full head and shoulders visible on neutral gray; realistic skin texture, no text, accessories or logos. Reference accepted.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-09T08:13:02.015Z"
+      },
+      "failure": null
+    }
+  ]
+}

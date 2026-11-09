@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-09T09:15:57.108793+00:00",
+  "baseCommit": "8888b8da4124ec0db9dfddf5a3a9528b461fbd23",
+  "scope": "Task-only staged diff; unrelated pre-existing unstaged changes excluded.",
+  "status": "passed",
+  "reviews": [
+    {
+      "kind": "standards",
+      "reviewer": "/root/review_standards",
+      "status": "no-findings",
+      "findings": [],
+      "summary": "Reviewed repository conventions, coverage logic and tests, browser tests, representative content/templates/media, generation provenance, and localization reviews. No confirmed rule violations or actionable maintainability issues."
+    },
+    {
+      "kind": "spec",
+      "reviewer": "/root/review_spec",
+      "status": "no-findings",
+      "findings": [],
+      "summary": "Reviewed against docs/english-social-showcase-spec.md and its documented adaptations. Independently verified all 12 prompts and output hashes, three reference hashes and eight ordered input bindings, seven template defaults, 24 annotations, homepage and collection order, original-content coverage and regression cases, representative mobile screenshots, provenance records, and browser assertions. No missing requirements or incorrect implementation identified."
+    }
+  ],
+  "deployment": "Not performed; local implementation only."
+}

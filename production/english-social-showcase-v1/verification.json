@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-09T09:05:52.205Z",
+  "timezone": "America/Los_Angeles",
+  "publicationDate": "2026-11-09",
+  "sourceBaseCommit": "8888b8da4124ec0db9dfddf5a3a9528b461fbd23",
+  "status": "implemented-and-verified-locally",
+  "deployed": false,
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "providerModelId": null,
+    "attempts": 16,
+    "accepted": 15,
+    "rejected": 1
+  },
+  "counts": {
+    "cases": 12,
+    "acceptedOutputs": 12,
+    "references": 3,
+    "uniqueMedia": 15,
+    "templates": 7,
+    "annotations": 24,
+    "collections": 1,
+    "newHomeEntries": 12
+  },
+  "coverage": {
+    "cases": [
+      {
+        "candidateId": "ENSOC-V1-C01",
+        "promptId": "p_274",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C02",
+        "promptId": "p_275",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C03",
+        "promptId": "p_278",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C04",
+        "promptId": "p_279",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C05",
+        "promptId": "p_280",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C06",
+        "promptId": "p_281",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C07",
+        "promptId": "p_276",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C08",
+        "promptId": "p_277",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C09",
+        "promptId": "p_282",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C10",
+        "promptId": "p_283",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C11",
+        "promptId": "p_284",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      },
+      {
+        "candidateId": "ENSOC-V1-C12",
+        "promptId": "p_285",
+        "outputs": 1,
+        "expectedOutputs": 1,
+        "acceptedOutputs": 1,
+        "complete": true
+      }
+    ],
+    "recordedCases": 12,
+    "targetCases": 12,
+    "acceptedCases": 12,
+    "acceptedOutputs": 12,
+    "recordedOutputs": 12,
+    "targetOutputs": 12
+  },
+  "commands": [
+    {
+      "command": "node --import tsx scripts/content-validate.ts",
+      "exitCode": 0,
+      "log": "audit/content-validation.txt",
+      "logCreatedAt": "2026-11-09T08:44:38.767Z",
+      "logUpdatedAt": "2026-11-09T08:44:44.198Z"
+    },
+    {
+      "command": "BUILD_MODE=production node --import tsx scripts/config-gen.ts && node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0,
+      "log": "audit/typecheck.txt",
+      "logCreatedAt": "2026-11-09T08:58:56.702Z",
+      "logUpdatedAt": "2026-11-09T08:58:56.702Z"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": "audit/lint.txt",
+      "logCreatedAt": "2026-11-09T08:53:31.033Z",
+      "logUpdatedAt": "2026-11-09T08:53:31.168Z"
+    },
+    {
+      "command": "npm run format:check",
+      "exitCode": 0,
+      "log": "audit/format-check.txt",
+      "logCreatedAt": "2026-11-09T08:58:56.458Z",
+      "logUpdatedAt": "2026-11-09T08:59:33.844Z"
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "log": "audit/unit-tests.txt",
+      "logCreatedAt": "2026-11-09T08:53:31.034Z",
+      "logUpdatedAt": "2026-11-09T08:54:13.421Z"
+    },
+    {
+      "command": "BUILD_MODE=production npm run build",
+      "exitCode": 0,
+      "log": "audit/build.txt",
+      "logCreatedAt": "2026-11-09T08:48:53.447Z",
+      "logUpdatedAt": "2026-11-09T08:49:27.082Z"
+    },
+    {
+      "command": "PORT=8099 npx playwright test tests/e2e/english-social-showcase.browser.spec.ts --workers=2",
+      "exitCode": 0,
+      "log": "audit/browser-showcase.txt",
+      "logCreatedAt": "2026-11-09T08:53:37.122Z",
+      "logUpdatedAt": "2026-11-09T08:54:15.497Z"
+    },
+    {
+      "command": "PORT=8099 npx playwright test tests/e2e/home.http.spec.ts tests/e2e/home.browser.spec.ts tests/e2e/detail.browser.spec.ts tests/e2e/prompt-languages.browser.spec.ts tests/e2e/social-adaptations.browser.spec.ts --workers=2",
+      "exitCode": 0,
+      "log": "audit/browser-regression.txt",
+      "logCreatedAt": "2026-11-09T08:56:16.174Z",
+      "logUpdatedAt": "2026-11-09T08:57:01.382Z"
+    }
+  ],
+  "tests": {
+    "unit": {
+      "files": 53,
+      "passed": 418
+    },
+    "showcaseBrowser": {
+      "passed": 11
+    },
+    "regressionBrowser": {
+      "passed": 45,
+      "skipped": 1,
+      "skipReason": "Arabic RTL check is skipped because Arabic is not enabled in the production build."
+    }
+  },
+  "localeReview": {
+    "locale": "ja",
+    "ready": true,
+    "addedReviewRecords": 107,
+    "reviewer": "Codex (AI text review)"
+  },
+  "visualReview": {
+    "originals": "All 12 outputs and 3 references inspected for identity, layout, caption spelling/punctuation and dimensions.",
+    "phone": "All 12 phone screenshots inspected at 390x844; main captions readable and image/copy actions visible.",
+    "desktop": "1440x900 image ratio, visibility and actions verified by browser tests; screenshots retained for every new frame.",
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "locales": [
+      "en",
+      "zh-Hans"
+    ],
+    "ogReviewed": [
+      "c01",
+      "c07",
+      "c08",
+      "c11"
+    ],
+    "ogAdjusted": [
+      "c07",
+      "c08",
+      "c11"
+    ],
+    "ogLimit": "The existing pipeline never upscales: the two 1122px-wide portraits have 1122x589 OG derivatives instead of 1200x630."
+  },
+  "screenshots": [
+    "audit/screenshots/c01-1440.png",
+    "audit/screenshots/c01-390.png",
+    "audit/screenshots/c02-1440.png",
+    "audit/screenshots/c02-390.png",
+    "audit/screenshots/c03-1440.png",
+    "audit/screenshots/c03-390.png",
+    "audit/screenshots/c04-1440.png",
+    "audit/screenshots/c04-390.png",
+    "audit/screenshots/c05-1440.png",
+    "audit/screenshots/c05-390.png",
+    "audit/screenshots/c06-1440.png",
+    "audit/screenshots/c06-390.png",
+    "audit/screenshots/c07-1440.png",
+    "audit/screenshots/c07-390.png",
+    "audit/screenshots/c08-1440.png",
+    "audit/screenshots/c08-390.png",
+    "audit/screenshots/c09-1440.png",
+    "audit/screenshots/c09-390.png",
+    "audit/screenshots/c10-1440.png",
+    "audit/screenshots/c10-390.png",
+    "audit/screenshots/c11-1440.png",
+    "audit/screenshots/c11-390.png",
+    "audit/screenshots/c12-1440.png",
+    "audit/screenshots/c12-390.png"
+  ],
+  "adjustments": [
+    "Added only this batch’s Japanese explanatory copy and reviewed fingerprints because the current branch enables Japanese as a release invariant.",
+    "Kept withdrawn collection c_014 unused; allocated c_015.",
+    "Retained rejected C03 attempt a01; changed unfrozen C03-C06 caption-list punctuation before generation; C03 accepted on attempt a02."
+  ],
+  "environmentNotes": [
+    "The initial npm run typecheck failed under the sandbox because tsx could not open its IPC socket; the equivalent direct Node/tsx import and tsc command passed.",
+    "Production build and browser tests ran with approved local process/socket access. No push or deployment performed."
+  ],
+  "codeReview": {
+    "status": "passed",
+    "report": "audit/code-review.json",
+    "standards": "no-findings",
+    "spec": "no-findings"
+  },
+  "cases": [
+    {
+      "id": "c01",
+      "candidateId": "ENSOC-V1-C01",
+      "slug": "everyday-reaction-stickers",
+      "promptId": "p_274",
+      "templateId": "t_069",
+      "exampleId": "x_338",
+      "coverAssetId": "a_457",
+      "acceptedJobKey": "ensoc-v1-c01-a01",
+      "images": [
+        {
+          "id": "a_457",
+          "original": "public/media/a_457/everyday-reaction-stickers-original-fcdab9d2f673.png",
+          "sha256": "fcdab9d2f6733f61937fad277bd587da59892c09e97e0a4becdada39582b73b5",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_458",
+          "original": "public/media/a_458/everyday-reaction-stickers-reference-original-c88e8ebf43c0.png",
+          "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c02",
+      "candidateId": "ENSOC-V1-C02",
+      "slug": "dog-mood-reaction-stickers",
+      "promptId": "p_275",
+      "templateId": "t_070",
+      "exampleId": "x_339",
+      "coverAssetId": "a_459",
+      "acceptedJobKey": "ensoc-v1-c02-a01",
+      "images": [
+        {
+          "id": "a_459",
+          "original": "public/media/a_459/dog-mood-reaction-stickers-original-23f09bb92696.png",
+          "sha256": "23f09bb926967ddadd2085588c821673a5ce36217bdae3f713ff1e31e41197f1",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_460",
+          "original": "public/media/a_460/dog-mood-reaction-stickers-reference-original-2d7b2b829edb.png",
+          "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c03",
+      "candidateId": "ENSOC-V1-C03",
+      "slug": "office-cat-reaction-stickers",
+      "promptId": "p_278",
+      "templateId": "t_071",
+      "exampleId": "x_342",
+      "coverAssetId": "a_464",
+      "acceptedJobKey": "ensoc-v1-c03-a02",
+      "images": [
+        {
+          "id": "a_464",
+          "original": "public/media/a_464/office-cat-reaction-stickers-original-b7ca8aa11ae4.png",
+          "sha256": "b7ca8aa11ae41e0980c30f15a6fa48e0c8ec2ef7bc92b55873c7564e5c84d68d",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c04",
+      "candidateId": "ENSOC-V1-C04",
+      "slug": "social-battery-raccoon-stickers",
+      "promptId": "p_279",
+      "templateId": "t_072",
+      "exampleId": "x_343",
+      "coverAssetId": "a_465",
+      "acceptedJobKey": "ensoc-v1-c04-a01",
+      "images": [
+        {
+          "id": "a_465",
+          "original": "public/media/a_465/social-battery-raccoon-stickers-original-5683acbf1c16.png",
+          "sha256": "5683acbf1c165f935ac6ea89583dcf8f7604689abc36f62e72b4e99ede82ad91",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c05",
+      "candidateId": "ENSOC-V1-C05",
+      "slug": "supportive-frog-reaction-stickers",
+      "promptId": "p_280",
+      "templateId": "t_073",
+      "exampleId": "x_344",
+      "coverAssetId": "a_466",
+      "acceptedJobKey": "ensoc-v1-c05-a01",
+      "images": [
+        {
+          "id": "a_466",
+          "original": "public/media/a_466/supportive-frog-reaction-stickers-original-0de3d3949573.png",
+          "sha256": "0de3d39495731704136d2b60af2d131763a06eef2a5f194f1995b4188c501483",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c06",
+      "candidateId": "ENSOC-V1-C06",
+      "slug": "gaming-ghost-reaction-stickers",
+      "promptId": "p_281",
+      "templateId": "t_074",
+      "exampleId": "x_345",
+      "coverAssetId": "a_467",
+      "acceptedJobKey": "ensoc-v1-c06-a01",
+      "images": [
+        {
+          "id": "a_467",
+          "original": "public/media/a_467/gaming-ghost-reaction-stickers-original-90d11fa8cd14.png",
+          "sha256": "90d11fa8cd14a31e9bcd1de391fe236995d66a46803cddcdbd0af279152c4d37",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c07",
+      "candidateId": "ENSOC-V1-C07",
+      "slug": "bestie-photo-booth",
+      "promptId": "p_276",
+      "templateId": null,
+      "exampleId": "x_340",
+      "coverAssetId": "a_461",
+      "acceptedJobKey": "ensoc-v1-c07-a01",
+      "images": [
+        {
+          "id": "a_461",
+          "original": "public/media/a_461/bestie-photo-booth-original-1f71c6df0c11.png",
+          "sha256": "1f71c6df0c1183b0ccf433a6c87f713a36d421445867bcdd905d14a1dbcf28da",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "id": "a_458",
+          "original": "public/media/a_458/everyday-reaction-stickers-reference-original-c88e8ebf43c0.png",
+          "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_462",
+          "original": "public/media/a_462/bestie-photo-booth-reference-original-5ccfde12df05.png",
+          "sha256": "5ccfde12df05d91f008f48d4cc93734578a2b6cec3722b6b0c17004290a70e03",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c08",
+      "candidateId": "ENSOC-V1-C08",
+      "slug": "daily-woof-pet-newspaper",
+      "promptId": "p_277",
+      "templateId": null,
+      "exampleId": "x_341",
+      "coverAssetId": "a_463",
+      "acceptedJobKey": "ensoc-v1-c08-a01",
+      "images": [
+        {
+          "id": "a_463",
+          "original": "public/media/a_463/daily-woof-pet-newspaper-original-f21d978e3950.png",
+          "sha256": "f21d978e3950d50cb94d3822fa96c97e045e88a0ccd502c21c3bf9ca990369ff",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_460",
+          "original": "public/media/a_460/dog-mood-reaction-stickers-reference-original-2d7b2b829edb.png",
+          "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c09",
+      "candidateId": "ENSOC-V1-C09",
+      "slug": "making-plans-reaction-meme",
+      "promptId": "p_282",
+      "templateId": null,
+      "exampleId": "x_346",
+      "coverAssetId": "a_468",
+      "acceptedJobKey": "ensoc-v1-c09-a01",
+      "images": [
+        {
+          "id": "a_468",
+          "original": "public/media/a_468/making-plans-reaction-meme-original-9419e20f05e5.png",
+          "sha256": "9419e20f05e558525271922558529dcf5c4e412c50a91e6c5fc67b98bd4fcba7",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_458",
+          "original": "public/media/a_458/everyday-reaction-stickers-reference-original-c88e8ebf43c0.png",
+          "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c10",
+      "candidateId": "ENSOC-V1-C10",
+      "slug": "weekend-starter-pack-collage",
+      "promptId": "p_283",
+      "templateId": null,
+      "exampleId": "x_347",
+      "coverAssetId": "a_469",
+      "acceptedJobKey": "ensoc-v1-c10-a01",
+      "images": [
+        {
+          "id": "a_469",
+          "original": "public/media/a_469/weekend-starter-pack-collage-original-d377d5e8e365.png",
+          "sha256": "d377d5e8e365e562dc93b91c556f252bee0534e194ee0a3c0885d2116a92afdd",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c11",
+      "candidateId": "ENSOC-V1-C11",
+      "slug": "birthday-main-character-card",
+      "promptId": "p_284",
+      "templateId": "t_075",
+      "exampleId": "x_348",
+      "coverAssetId": "a_470",
+      "acceptedJobKey": "ensoc-v1-c11-a01",
+      "images": [
+        {
+          "id": "a_470",
+          "original": "public/media/a_470/birthday-main-character-card-original-ccde616bab1a.png",
+          "sha256": "ccde616bab1a20485d3d6858a32cbd6daa50051ae0f925fa2562d5d75e4773cd",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "id": "a_462",
+          "original": "public/media/a_462/bestie-photo-booth-reference-original-5ccfde12df05.png",
+          "sha256": "5ccfde12df05d91f008f48d4cc93734578a2b6cec3722b6b0c17004290a70e03",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    },
+    {
+      "id": "c12",
+      "candidateId": "ENSOC-V1-C12",
+      "slug": "dog-home-alone-comic",
+      "promptId": "p_285",
+      "templateId": null,
+      "exampleId": "x_349",
+      "coverAssetId": "a_471",
+      "acceptedJobKey": "ensoc-v1-c12-a01",
+      "images": [
+        {
+          "id": "a_471",
+          "original": "public/media/a_471/dog-home-alone-comic-original-0832df1a642c.png",
+          "sha256": "0832df1a642c3245f6c3862fd6ecf36da4b302eea177ad54cb20436ac9564922",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "id": "a_460",
+          "original": "public/media/a_460/dog-mood-reaction-stickers-reference-original-2d7b2b829edb.png",
+          "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "annotationCount": 2
+    }
+  ],
+  "auditLogNormalization": "Captured text logs have trailing whitespace and CR progress endings removed for version control; command results are unchanged."
+}

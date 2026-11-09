@@ -1,0 +1,58 @@
+{
+  "candidateId": "ENSOC-V1-C09",
+  "slug": "making-plans-reaction-meme",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a square reaction meme with two vertically stacked panels and expressive editorial illustration. Keep the reference person recognizable in both panels. Preserve their facial features, skin tone and hairstyle. In the top panel, show them smiling enthusiastically at their phone in daylight; caption \"Me making plans\". In the bottom panel, show them wrapped in a blanket on the sofa at night, reluctantly looking toward shoes by the door; caption \"Me when it's time to leave\". Put each caption in a generous clear band inside its own panel, using large bold English lettering. No additional text, logos or watermarks.",
+  "promptLanguage": "en",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one clear adult portrait. The demonstration reference is AI-generated. Keep all lettering in English.",
+      "zh-Hans": "上传一张清晰的成年人肖像。示例参考图由 AI 生成。画面文字保持英文。"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Person portrait",
+          "zh-Hans": "人物肖像"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Me Making Plans",
+      "description": "Turn one portrait into a two-panel joke about making plans and wanting to stay home.",
+      "body": "## How to use\n\nUpload one clear adult portrait. The demonstration reference is AI-generated. Keep all lettering in English.\n\n## What to check\n\nInspect identity, layout and every requested caption at full size and at phone display size."
+    },
+    "zh-Hans": {
+      "title": "约好出门的我",
+      "description": "用同一人物的上下两格反差，表达约局积极、出门犹豫的心情。",
+      "body": "## 使用方法\n\n上传一张清晰的成年人肖像。示例参考图由 AI 生成。画面文字保持英文。\n\n## 检查重点\n\n核对主体一致性、构图与指定配字，并在原尺寸和手机展示尺寸检查。"
+    }
+  },
+  "alt": {
+    "en": "Two stacked illustrated panels contrast a person happily making plans with the same person reluctant to leave the sofa.",
+    "zh-Hans": "上下两格插画对比同一人物积极约局和不愿离开沙发出门的状态。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:36:28.775Z",
+    "contentHash": "e9d0c546a4fca318b42b9d78d679be75725ea036c288cd57c601937ca21d1770"
+  }
+}

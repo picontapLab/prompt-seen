@@ -1,0 +1,60 @@
+id: p_282
+slug: making-plans-reaction-meme
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_468
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one clear adult portrait. The demonstration reference is AI-generated. Keep all lettering in English.
+    zh-Hans: 上传一张清晰的成年人肖像。示例参考图由 AI 生成。画面文字保持英文。
+    ja: 成人の鮮明なポートレートを1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
+  slots:
+    - id: person
+      labels:
+        en: Person portrait
+        zh-Hans: 人物肖像
+        ja: 人物のポートレート
+      min: 1
+      max: 1
+showcaseExampleId: x_346
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: two vertically stacked panels
+    region:
+      x: 0.008
+      y: 0.008
+      w: 0.984
+      h: 0.984
+    note:
+      en: Top and bottom create the setup and punchline.
+      zh-Hans: 上下两格形成铺垫和反差笑点。
+      ja: 上下の2コマで、前振りとオチを作っています。
+  - phrase: expressive editorial illustration
+    region:
+      x: 0.36
+      y: 0.015
+      w: 0.25
+      h: 0.27
+    note:
+      en: Expressions carry the joke at a glance.
+      zh-Hans: 鲜明表情帮助快速理解笑点。
+      ja: 表情の違いによって、ひと目で冗談が伝わります。

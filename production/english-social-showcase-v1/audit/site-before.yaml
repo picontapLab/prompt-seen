@@ -1,0 +1,62 @@
+# Instance configuration (design doc §15.4.2). Environment variables win:
+# SITE_ORIGIN, BASE_PATH, URL_PATTERN, BUILD_MODE (production | preview), BUILD_ID, CONTENT_DIR.
+siteName: Prompt Seen
+origin: https://promptseen.dev # canonical host
+basePath: '' # domain root; set BASE_PATH=/prompt-seen to build for a subpath
+urlPattern: '{basePath}/{locale}/{path}' # or "/{locale}{basePath}/{path}" when the host prefixes languages
+repository: https://github.com/picontapLab/prompt-seen # the header, menu and footer link to it
+
+robots:
+  mode: standalone # standalone domain; use snippet when a host owns the root robots.txt
+  aiTraining: allow # allow training crawlers to index the public prompt library
+
+shell:
+  header: default # default | host
+  themeSource: system
+
+brand:
+  tokens: null # path to brand-layer token overrides (§11.1.9)
+
+home:
+  # Works on show on the home first screen (§11.8.1). Annotated prompts only. The latest entry
+  # whose `from` date has passed is shown first; "Another frame" steps through the started ones,
+  # latest first, then those without a date.
+  featured:
+    - prompt: p_146
+      from: '2026-10-29'
+    - prompt: p_123
+      from: '2026-10-28'
+    - prompt: p_101
+      from: '2026-10-27'
+    - prompt: p_045
+      from: '2026-10-19'
+    - prompt: p_050
+      from: '2026-10-12'
+    - prompt: p_012
+      from: '2026-10-05'
+    - prompt: p_067
+    - prompt: p_015
+feed:
+  # The list's showcase band (§11.8.2): the newest group whose `from` date has passed is shown.
+  # `lead` must be an annotated prompt; `works` are up to two more, shown beside it.
+  showcase:
+    - from: '2026-10-29'
+      lead: p_123
+      works: [p_146, p_101]
+    - from: '2026-10-12'
+      lead: p_050
+      works: [p_098, p_024]
+  # Editorial interludes (§11.8.2), one per page of the list in this order, then repeated.
+  # Works wider than 2:1 or taller than 1:2 get feature rows of their own (§11.1.4).
+  interludes:
+    - type: collection
+      collection: c_008
+    - type: collection
+      collection: c_003
+    - type: feature
+      prompt: p_067
+    - type: templates
+    - type: collection
+      collection: c_001
+    - type: feature
+      prompt: p_012

@@ -1,0 +1,46 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c11-a01",
+    "candidateId": "ENSOC-V1-C11",
+    "prompt": "Create a playful 4:5 birthday collectible card with a large portrait, cobalt blue and silver foil textures. Preserve the reference person's facial identity and hairstyle. Show a waist-up portrait wearing a paper party crown, framed by small stars and restrained confetti. Use an original card layout with strong readable typography. Render these exact texts: \"LEVEL 30 UNLOCKED\", \"ALEX\", and \"Cake first. Responsibilities later.\" Keep all three text elements inside generous margins. No tiny statistics, brand logos or additional text.",
+    "references": [
+      {
+        "slotId": "person",
+        "path": "production/english-social-showcase-v1/references/r3/accepted.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "2ff99994aa2b2717b96f95e715a1926041e39da2d15ea2e3a2114dfd2d8c0d98",
+  "references": [
+    {
+      "path": "production/english-social-showcase-v1/references/r3/accepted.png",
+      "sha256": "5ccfde12df05d91f008f48d4cc93734578a2b6cec3722b6b0c17004290a70e03",
+      "slotId": "person"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:32:01.134Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c11-a01/output-ccde616bab1a20485d3d6858a32cbd6daa50051ae0f925fa2562d5d75e4773cd.png",
+      "sha256": "ccde616bab1a20485d3d6858a32cbd6daa50051ae0f925fa2562d5d75e4773cd"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:34:07.892Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "4:5 collectible birthday card with recognizable R3 face, freckles and brown wavy hair, paper crown fully inside the frame, cobalt blue and silver foil. All three requested text elements match exactly: LEVEL 30 UNLOCKED, ALEX, Cake first. Responsibilities later. Name and level are large; no invented statistics or brand marks.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:34:07.922Z"
+  },
+  "inspectedDimensions": {
+    "width": 1122,
+    "height": 1402,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

@@ -1,0 +1,46 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c08-a01",
+    "candidateId": "ENSOC-V1-C08",
+    "prompt": "Create a square fictional pet newspaper front page with one large photograph, warm newsprint and bold black serif typography. Use the dog in the reference photo, preserving its coat markings and green bandana. Show it sitting beside a torn cushion, looking comically innocent. Render the masthead \"THE DAILY WOOF\", the large headline \"LOCAL DOG DENIES EVERYTHING\", and the short subheading \"Witnesses report a suspicious amount of fluff.\" exactly once each. Use only these three text elements. Keep the main headline readable at small sizes. No additional article text, logos or watermarks.",
+    "references": [
+      {
+        "slotId": "pet",
+        "path": "production/english-social-showcase-v1/references/r2/accepted.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "628490b0723cbbbdef80a728d205097313d69dae33bcfc7adeb3969245e1f6dd",
+  "references": [
+    {
+      "path": "production/english-social-showcase-v1/references/r2/accepted.png",
+      "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+      "slotId": "pet"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:18:17.714Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c08-a01/output-f21d978e3950d50cb94d3822fa96c97e045e88a0ccd502c21c3bf9ca990369ff.png",
+      "sha256": "f21d978e3950d50cb94d3822fa96c97e045e88a0ccd502c21c3bf9ca990369ff"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:19:38.144Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Inspected exact masthead THE DAILY WOOF, headline LOCAL DOG DENIES EVERYTHING and subheading Witnesses report a suspicious amount of fluff. No extra article text. Large readable serif typography, warm newsprint, one large corgi photo beside a torn cushion and fluff. White blaze, orange coat and green bandana match R2.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:19:38.166Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

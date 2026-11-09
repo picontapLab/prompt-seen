@@ -1,0 +1,44 @@
+diff --git a/content/site.yaml b/content/site.yaml
+index e418e9a5..ef86abbd 100644
+--- a/content/site.yaml
++++ b/content/site.yaml
+@@ -22,6 +22,30 @@ home:
+   # whose `from` date has passed is shown first; "Another frame" steps through the started ones,
+   # latest first, then those without a date.
+   featured:
++    - prompt: p_274
++      from: '2026-11-09'
++    - prompt: p_275
++      from: '2026-11-09'
++    - prompt: p_276
++      from: '2026-11-09'
++    - prompt: p_277
++      from: '2026-11-09'
++    - prompt: p_279
++      from: '2026-11-09'
++    - prompt: p_283
++      from: '2026-11-09'
++    - prompt: p_278
++      from: '2026-11-09'
++    - prompt: p_280
++      from: '2026-11-09'
++    - prompt: p_281
++      from: '2026-11-09'
++    - prompt: p_282
++      from: '2026-11-09'
++    - prompt: p_284
++      from: '2026-11-09'
++    - prompt: p_285
++      from: '2026-11-09'
+     - prompt: p_146
+       from: '2026-10-29'
+     - prompt: p_123
+@@ -49,6 +73,8 @@ feed:
+   # Editorial interludes (§11.8.2), one per page of the list in this order, then repeated.
+   # Works wider than 2:1 or taller than 1:2 get feature rows of their own (§11.1.4).
+   interludes:
++    - type: collection
++      collection: c_015
+     - type: collection
+       collection: c_008
+     - type: collection

@@ -1,0 +1,46 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c12-a01",
+    "candidateId": "ENSOC-V1-C12",
+    "prompt": "Create a square dog comic with four panels in a 2-by-2 grid, using warm storybook illustration. Keep the same cozy living room and the same reference dog throughout. Preserve its coat markings and green bandana. Panel 1: the dog sits politely by the closing door; caption \"I'll be good.\" Panel 2: it looks toward the sofa; caption \"They're gone.\" Panel 3: it proudly occupies a pile of cushions; caption \"My house now.\" Panel 4: it sits innocently as the door opens; caption \"Welcome back!\" Read left to right, top to bottom. Use large readable captions in clear bands inside each panel. No extra panels, text, logos or watermarks.",
+    "references": [
+      {
+        "slotId": "pet",
+        "path": "production/english-social-showcase-v1/references/r2/accepted.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "0683a5c27d5b7faea4712058e35c9a6869a9d07b52a6805d86b84d11a3796009",
+  "references": [
+    {
+      "path": "production/english-social-showcase-v1/references/r2/accepted.png",
+      "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+      "slotId": "pet"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:34:08.113Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c12-a01/output-0832df1a642c3245f6c3862fd6ecf36da4b302eea177ad54cb20436ac9564922.png",
+      "sha256": "0832df1a642c3245f6c3862fd6ecf36da4b302eea177ad54cb20436ac9564922"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:36:11.327Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Four warm storybook panels in correct order: dog by closing door, looking at sofa, occupying cushions, innocent greeting at open door. Consistent corgi facial blaze, ears and green bandana, with recurring sofa, bookshelf, lamp, rug and wall picture in the living room. All four requested captions appear exactly once with correct punctuation and large readable letters.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:36:11.358Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

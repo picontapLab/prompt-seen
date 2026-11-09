@@ -12,6 +12,10 @@ const campaignSchema = z.object({
     }),
   ),
 });
+const appliedSchema = z.object({
+  candidateId: z.string(),
+  ids: z.object({ prompt: z.string(), example: z.string() }),
+});
 const entries = (dir: string, file: string) =>
   fs.existsSync(dir)
     ? fs
@@ -27,8 +31,30 @@ export function campaignCoverage(root: string, campaign: string) {
   );
   const prompts = entries(path.join(root, 'content/prompts'), 'entry.yaml');
   const runs = entries(path.join(root, 'content/examples'), 'run.yaml');
+  const appliedDir = path.join(root, 'production/applied');
+  const receipts = fs.existsSync(appliedDir)
+    ? fs
+        .readdirSync(appliedDir)
+        .filter((name) => name.endsWith('.json'))
+        .map((name) => appliedSchema.parse(JSON.parse(fs.readFileSync(path.join(appliedDir, name), 'utf8'))))
+    : [];
   const cases = definition.cases.map(({ candidateId, expectedOutputs, acceptedExampleIds }) => {
-    const prompt = prompts.find((prompt) => prompt.inspirationSources?.[0]?.candidateId === candidateId);
+    const applied = receipts.filter((receipt) => receipt.candidateId === candidateId);
+    const promptIds = [...new Set(applied.map((receipt) => receipt.ids.prompt))];
+    if (promptIds.length > 1)
+      throw new Error(`Candidate ${candidateId} has conflicting applied prompts: ${promptIds.join(', ')}`);
+    const prompt = applied.length
+      ? prompts.find((prompt) => prompt.id === promptIds[0])
+      : prompts.find((prompt) =>
+          prompt.inspirationSources?.some((source: { candidateId?: string }) => source.candidateId === candidateId),
+        );
+    for (const receipt of applied) {
+      const run = runs.find((run) => run.id === receipt.ids.example);
+      if (!prompt || !run || run.promptId !== prompt.id)
+        throw new Error(
+          `Candidate ${candidateId} has an invalid applied receipt: ${receipt.ids.prompt}/${receipt.ids.example}`,
+        );
+    }
     const outputs = prompt
       ? runs.filter((run) => run.promptId === prompt.id).reduce((sum, run) => sum + run.outputAssetIds.length, 0)
       : 0;

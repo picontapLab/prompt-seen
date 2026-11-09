@@ -1,0 +1,35 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c03-a02",
+    "candidateId": "ENSOC-V1-C03",
+    "prompt": "Create a square office-cat sticker sheet in a clean 3-by-3 grid. Draw an original round orange cat wearing a navy tie, using textured crayon lines on warm cream paper.\n\nKeep the face, orange stripes and navy tie identical across cells. Use small office props and mix sleepy, helpful and quietly sarcastic expressions.\n\nExactly nine stickers, read left to right, top to bottom. Give every sticker a distinct expression and pose that clearly matches its caption. Keep the character identity, proportions, outfit and colors consistent across all nine cells. Use generous equal spacing and a simple pale background. Make each silhouette clear, with a white die-cut border. Render each supplied English caption exactly once, verbatim, in large bold lettering inside its own cell, using no more than two lines. The captions, in reading order, are:\nMorning.; Coffee first.; On it.; Quick question.; You're on mute.; Lunch?; Still loading.; Done!; Logging off.\n\nNo extra titles, watermarks, overlapping cells or additional text.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "57a1a8de61723a631a1c07951cce86b7189c699a13fc8e015ac4113141a143a6",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:23:49.722Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c03-a02/output-b7ca8aa11ae41e0980c30f15a6fa48e0c8ec2ef7bc92b55873c7564e5c84d68d.png",
+      "sha256": "b7ca8aa11ae41e0980c30f15a6fa48e0c8ec2ef7bc92b55873c7564e5c84d68d"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:25:22.974Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Revised output has exactly nine crayon orange-cat cells, consistent navy tie wherever the torso is visible, clear office props and distinct reactions. All nine captions checked; Logging off. now has one period, and You are on mute contraction has its apostrophe. No extra labels. Textured crayon style and bold navy lettering match the brief.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:25:22.992Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

@@ -1,0 +1,35 @@
+{
+  "definition": {
+    "key": "ensoc-v1-r1-a01",
+    "candidateId": "ENSOC-V1-R1",
+    "prompt": "Create a photorealistic reference portrait of a fictional 28-year-old woman with medium-brown skin, shoulder-length dark curly hair and brown eyes, wearing a plain teal crewneck sweatshirt. Front-facing waist-up composition, relaxed slight smile, both eyes clearly visible, entire hairstyle and shoulders inside the frame. Soft daylight, light gray background, natural skin texture. No props, text, logos or beauty filters. Square image.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "35c64ae2927368cfcfdfd270079ea2cbf303e66f1f6cb27ae0700cbb2f2ff1f0",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:09:45.993Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-r1-a01/output-c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777.png",
+      "sha256": "c88e8ebf43c0310634953b8550f1930f49a8f0fea02cb00445509933c8672777"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:11:17.123Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Inspected original portrait: fictional adult woman, medium-brown skin, shoulder-length dark curls, brown eyes and teal sweatshirt; head and shoulders fully visible, neutral light-gray background, no text or logos. Identity reference accepted. Exact model version is not returned by the built-in tool.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:11:17.129Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

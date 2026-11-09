@@ -1,0 +1,58 @@
+{
+  "candidateId": "ENSOC-V1-C12",
+  "slug": "dog-home-alone-comic",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a square dog comic with four panels in a 2-by-2 grid, using warm storybook illustration. Keep the same cozy living room and the same reference dog throughout. Preserve its coat markings and green bandana. Panel 1: the dog sits politely by the closing door; caption \"I'll be good.\" Panel 2: it looks toward the sofa; caption \"They're gone.\" Panel 3: it proudly occupies a pile of cushions; caption \"My house now.\" Panel 4: it sits innocently as the door opens; caption \"Welcome back!\" Read left to right, top to bottom. Use large readable captions in clear bands inside each panel. No extra panels, text, logos or watermarks.",
+  "promptLanguage": "en",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.",
+      "zh-Hans": "上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。"
+    },
+    "slots": [
+      {
+        "id": "pet",
+        "labels": {
+          "en": "Dog photo",
+          "zh-Hans": "狗狗照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Five Minutes Home Alone",
+      "description": "A four-panel dog comic turns a short moment home alone into a playful story.",
+      "body": "## How to use\n\nUpload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.\n\n## What to check\n\nInspect identity, layout and every requested caption at full size and at phone display size."
+    },
+    "zh-Hans": {
+      "title": "独自在家的五分钟",
+      "description": "四格宠物漫画把独自在家的短暂时刻变成趣味小故事。",
+      "body": "## 使用方法\n\n上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。\n\n## 检查重点\n\n核对主体一致性、构图与指定配字，并在原尺寸和手机展示尺寸检查。"
+    }
+  },
+  "alt": {
+    "en": "Four warm illustrated panels show a green-bandana corgi taking over a sofa and greeting its returning owner.",
+    "zh-Hans": "四格温暖插画展示戴绿三角巾的柯基占据沙发，再迎接主人回家的故事。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:36:41.819Z",
+    "contentHash": "c957ed3ba2e18622173e0d213597101e1d1d8a0066abc27263e916af9a7ecae1"
+  }
+}

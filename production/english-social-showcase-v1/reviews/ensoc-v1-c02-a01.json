@@ -1,0 +1,46 @@
+{
+  "definition": {
+    "key": "ensoc-v1-c02-a01",
+    "candidateId": "ENSOC-V1-C02",
+    "prompt": "Create a square dog sticker sheet in a clean 3-by-3 grid. Preserve the reference dog's coat markings and green bandana. Use playful pet illustration with expressive ears and paws.\n\nKeep the centered white facial blaze, upright ears and short-legged body recognizable in every cell. Use natural canine expressions with playful exaggeration.\n\nExactly nine stickers, read left to right, top to bottom. Give every sticker a distinct expression and pose that clearly matches its caption. Keep the character identity, proportions, outfit and colors consistent across all nine cells. Use generous equal spacing and a simple pale background. Make each silhouette clear, with a white die-cut border. Render each supplied English caption exactly once, verbatim, in large bold lettering inside its own cell, using no more than two lines. The captions, in reading order, are: Hi, human!; Did someone say snacks?; Side eye.; Not sorry.; Let's go!; Need a nap.; Good job!; Miss you.; Love you!. No extra titles, watermarks, overlapping cells or additional text.",
+    "references": [
+      {
+        "slotId": "pet",
+        "path": "production/english-social-showcase-v1/references/r2/accepted.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "2d9a1550944f2275d5e6dea5e44744445b6094db188302b1428092ecc9ea502f",
+  "references": [
+    {
+      "path": "production/english-social-showcase-v1/references/r2/accepted.png",
+      "sha256": "2d7b2b829edb6bdfae82cd16cb9e735bf6107554f9614c36ac82931941724fc2",
+      "slotId": "pet"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-09T08:15:15.374Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/english-social-showcase-v1/jobs/ensoc-v1-c02-a01/output-23f09bb926967ddadd2085588c821673a5ce36217bdae3f713ff1e31e41197f1.png",
+      "sha256": "23f09bb926967ddadd2085588c821673a5ce36217bdae3f713ff1e31e41197f1"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T08:16:46.196Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Inspected nine separate corgi reactions with all nine requested captions in correct order, including the two-line snacks question and punctuation. White facial blaze, upright ears and green bandana remain consistent. Distinct wave, play bow, side eye, belly-up, running, sleeping, approval, longing and hug poses. Sleep marks and hearts function as expression symbols. No unrelated titles or text.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:16:46.200Z"
+  },
+  "inspectedDimensions": {
+    "width": 1254,
+    "height": 1254,
+    "format": "png"
+  },
+  "modelVersion": null,
+  "generationTool": "image_gen.imagegen"
+}

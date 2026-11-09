@@ -1,0 +1,60 @@
+id: p_285
+slug: dog-home-alone-comic
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_471
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.
+    zh-Hans: 上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。
+    ja: 犬の鮮明な写真を1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
+  slots:
+    - id: pet
+      labels:
+        en: Dog photo
+        zh-Hans: 狗狗照片
+        ja: 犬の写真
+      min: 1
+      max: 1
+showcaseExampleId: x_349
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: four panels in a 2-by-2 grid
+    region:
+      x: 0.008
+      y: 0.008
+      w: 0.984
+      h: 0.984
+    note:
+      en: Four panels establish the story sequence.
+      zh-Hans: 四格明确故事的阅读顺序。
+      ja: 4つのコマが、物語を読む順序を明確にしています。
+  - phrase: warm storybook illustration
+    region:
+      x: 0.02
+      y: 0.6
+      w: 0.465
+      h: 0.38
+    note:
+      en: Warm illustration gives the story a friendly tone.
+      zh-Hans: 温暖插画让故事保持亲切感。
+      ja: 温かい絵本風のイラストが、親しみやすい雰囲気を作っています。

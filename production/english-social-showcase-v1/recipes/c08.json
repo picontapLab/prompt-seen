@@ -1,0 +1,58 @@
+{
+  "candidateId": "ENSOC-V1-C08",
+  "slug": "daily-woof-pet-newspaper",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create a square fictional pet newspaper front page with one large photograph, warm newsprint and bold black serif typography. Use the dog in the reference photo, preserving its coat markings and green bandana. Show it sitting beside a torn cushion, looking comically innocent. Render the masthead \"THE DAILY WOOF\", the large headline \"LOCAL DOG DENIES EVERYTHING\", and the short subheading \"Witnesses report a suspicious amount of fluff.\" exactly once each. Use only these three text elements. Keep the main headline readable at small sizes. No additional article text, logos or watermarks.",
+  "promptLanguage": "en",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.",
+      "zh-Hans": "上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。"
+    },
+    "slots": [
+      {
+        "id": "pet",
+        "labels": {
+          "en": "Dog photo",
+          "zh-Hans": "狗狗照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "The Daily Woof",
+      "description": "Put your dog on the front page of a fictional newspaper with a playful, readable headline.",
+      "body": "## How to use\n\nUpload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.\n\n## What to check\n\nInspect identity, layout and every requested caption at full size and at phone display size."
+    },
+    "zh-Hans": {
+      "title": "汪汪日报",
+      "description": "让狗狗登上虚构报纸头版，配上清晰可读的趣味标题。",
+      "body": "## 使用方法\n\n上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。\n\n## 检查重点\n\n核对主体一致性、构图与指定配字，并在原尺寸和手机展示尺寸检查。"
+    }
+  },
+  "alt": {
+    "en": "A fictional Daily Woof newspaper shows a green-bandana corgi beside a torn cushion under the headline LOCAL DOG DENIES EVERYTHING.",
+    "zh-Hans": "虚构汪汪日报头版展示戴绿三角巾的柯基与破靠垫，标题为 LOCAL DOG DENIES EVERYTHING。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T08:21:12.210Z",
+    "contentHash": "1f2fddb76da669c13468784cd291c4bf860b1266f4e3f529a46df320edf2be81"
+  }
+}

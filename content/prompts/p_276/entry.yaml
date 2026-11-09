@@ -1,0 +1,67 @@
+id: p_276
+slug: bestie-photo-booth
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_461
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the first adult portrait, then the second adult portrait. Image 1 stays on the left; image 2 stays on the right. The demonstration uses AI-generated fictional people. Keep all lettering in English.
+    zh-Hans: 依次上传第一位和第二位成年人的肖像。图 1 保持在左，图 2 保持在右。示例采用 AI 生成的虚构人物。画面文字保持英文。
+    ja: 1人目、2人目の順に成人のポートレートをアップロードしてください。画像1の人物は左、画像2の人物は右に配置します。作例の人物は AI で生成した架空の人物です。画像内の文字はすべて英語にしてください。
+  slots:
+    - id: personA
+      labels:
+        en: First person, left
+        zh-Hans: 第一位人物，左侧
+        ja: 1人目・左側
+      min: 1
+      max: 1
+    - id: personB
+      labels:
+        en: Second person, right
+        zh-Hans: 第二位人物，右侧
+        ja: 2人目・右側
+      min: 1
+      max: 1
+showcaseExampleId: x_340
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations:
+  - phrase: four photos in a 2-by-2 grid
+    region:
+      x: 0.02
+      y: 0.018
+      w: 0.96
+      h: 0.868
+    note:
+      en: Four frames form one compact photo-booth print.
+      zh-Hans: 四帧组成完整照片亭拼图。
+      ja: 4つのフレームで、コンパクトなフォトブースプリントを作っています。
+  - phrase: direct flash and subtle film grain
+    region:
+      x: 0.05
+      y: 0.05
+      w: 0.41
+      h: 0.35
+    note:
+      en: Flash and grain establish the photographic look.
+      zh-Hans: 闪光与颗粒共同形成摄影质感。
+      ja: フラッシュと粒子感が、写真らしい仕上がりを生んでいます。
