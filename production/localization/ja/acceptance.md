@@ -1,6 +1,6 @@
 # Japanese release acceptance
 
-Status: release preparation; Japanese is not enabled in the working repository yet. This record distinguishes text review, generated-artifact checks, user-reported manual acceptance, and deployment.
+Status: release candidate; Japanese is enabled in the candidate commit after content, local artifact and user-reported IME acceptance. Hosted CI and actual deployment are still pending. This record distinguishes text review, generated-artifact checks, user-reported manual acceptance, and deployment.
 
 ## Scope and immutable content
 
