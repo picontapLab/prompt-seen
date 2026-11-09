@@ -96,3 +96,22 @@ for (const locale of BUILD.locales) {
     expect(past.status()).toBe(404);
   });
 }
+
+for (const locale of BUILD.locales) {
+  test(`${locale.code}: every feed JSON card carries its localized description, never a prompt opening`, async ({
+    request,
+  }) => {
+    const index = localeIndex(locale.code);
+    for (let n = 1; n <= Math.ceil(index.prompts.length / 24); n++) {
+      const data = await (await request.get(`${BASE}/generated/${locale.code}/feed/latest/${n}.json`)).json();
+      for (const block of data.blocks) {
+        const cards = block.t === 'cards' ? block.items : block.t === 'feature' ? [block.card] : [];
+        for (const card of cards) {
+          expect(card.locale).toBe(locale.code);
+          expect(card.description).toBe(index.prompts.find((p) => p.id === card.id)!.description);
+          expect(card).not.toHaveProperty('promptOpening');
+        }
+      }
+    }
+  });
+}

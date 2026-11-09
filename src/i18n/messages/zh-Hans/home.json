@@ -1,14 +1,15 @@
 {
-  "documentTitle": "{siteName} · 经过实测的图像提示词，看见每句话的作用",
-  "description": "经过实测的图像提示词与模板。每件作品都附有完整提示词、测试所用的模型与日期，以及每句话在画面里起的作用。",
+  "documentTitle": "带实际效果示例的 AI 图像提示词与模板 | {siteName}",
+  "description": "浏览带实际效果示例的 AI 图像提示词、可复用模板与模型信息，寻找人像、海报、商品图等创作灵感。",
   "hero": {
     "label": "本周展出",
     "eyebrow": "本周展出",
-    "title": "看见每句话的作用。",
-    "hint": "悬停、点按或用 Tab 键选中带字母的短语，画面上会框出它影响的区域。",
+    "title": "带实际效果示例的 AI 图像提示词",
+    "hint": "看见每句话的作用。悬停、点按或用 Tab 键选中带字母的短语，查看它在图中的对应区域。",
     "open": "查看第 {frame} 格",
     "another": "换一件",
-    "showing": "正在展出：第 {frame} 格，{title}"
+    "showing": "正在展出：第 {frame} 格，{title}",
+    "intro": "浏览提示词、对比生成效果，修改模板，创作人像、海报、商品图等作品。"
   },
   "search": {
     "label": "搜索提示词与模板",
@@ -17,25 +18,25 @@
   },
   "uses": "按用途浏览",
   "more": {
-    "title": "更多展出",
-    "all": "{count, plural, other {全部 # 件作品}}"
+    "title": "精选图像提示词",
+    "all": "{count, plural, other {全部 # 条提示词}}"
   },
   "useCases": {
     "title": "按用途浏览",
     "count": "{count, plural, other {# 件作品}}"
   },
   "latest": {
-    "title": "最新收录",
-    "all": "浏览全部作品"
+    "title": "最新提示词",
+    "all": "浏览全部提示词"
   },
   "templates": {
-    "title": "模板",
-    "intro": "填好彩色的空格，提示词随之写成。",
+    "title": "可自定义的提示词模板",
+    "intro": "选择模板并修改字段，生成你的提示词。",
     "fields": "{count, plural, other {# 个字段}}",
     "all": "全部模板"
   },
   "collections": {
-    "title": "专题合集",
+    "title": "提示词合集",
     "count": "{count, plural, other {# 项}}",
     "all": "全部合集"
   }

@@ -10,6 +10,7 @@ import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { GifBadge } from '@/ui/media/GifBadge';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
+import { textDirection } from '@/ui/prompt-detail/language';
 import styles from './Card.module.css';
 
 export type CardProps = {
@@ -51,9 +52,8 @@ export function useCardFacts(card: FeedCard) {
 
 /**
  * A work in the justified rows (design doc §11.1.4, §11.8.2, §11.1.9): the image complete at
- * its original ratio in a frame of its dominant colour, and a two-line label: frame number and
- * title, then the test facts, which the opening of the prompt replaces while a fine pointer
- * rests on the card. The image's model badge appears on hover or keyboard focus.
+ * its original ratio in a frame of its dominant colour, followed by its title, localized
+ * summary and test facts. The image's model badge appears on hover or keyboard focus.
  * Image and label are one link to the detail page; the favourite button sits
  * outside it. Works on the server and in the browser (the feed appends cards client-side).
  *
@@ -85,7 +85,7 @@ export function Card({
       className={className ? `${styles.card} ${className}` : styles.card}
       style={style}
       aria-labelledby={`${id}-title`}
-      aria-describedby={`${id}-facts`}
+      aria-describedby={`${id}-summary ${id}-facts`}
       aria-posinset={posinset}
       aria-setsize={setsize}
       data-entry={card.id}
@@ -130,12 +130,17 @@ export function Card({
           </span>
         </span>
         <span className={styles.lines}>
+          <span
+            id={`${id}-summary`}
+            className={styles.summary}
+            data-card-summary=""
+            lang={card.locale}
+            dir={textDirection(card.locale)}
+          >
+            {card.description}
+          </span>
           <span id={`${id}-facts`} className={styles.facts}>
             {facts}
-          </span>
-          {/* The same opening is on the detail page; screen readers get the facts instead. */}
-          <span className={styles.opening} lang={card.promptLanguage} aria-hidden="true">
-            {card.promptOpening}
           </span>
         </span>
       </a>

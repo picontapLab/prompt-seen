@@ -116,6 +116,12 @@
     gap: var(--space-16);
     min-inline-size: 0;
   }
+  .promptLabel {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    line-height: var(--leading-xs);
+  }
   .quote {
     margin: 0;
     max-inline-size: var(--measure-prompt);
@@ -128,6 +134,14 @@
   /* A phone's first screen holds the work, the quote and its actions (§11.8.1): body size there. */
   .showcase[data-size='hero'] .quote {
     font-size: var(--text-base);
+  }
+  @container (max-width: 767.98px) {
+    .showcase[data-size='hero'] .text {
+      gap: var(--space-12);
+    }
+    .showcase[data-size='hero'] .quote {
+      line-height: 1.5;
+    }
   }
   @container (min-width: 768px) {
     .showcase[data-size='hero'] .quote {

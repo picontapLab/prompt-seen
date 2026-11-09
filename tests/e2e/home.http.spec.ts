@@ -1,31 +1,13 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { expect, test } from '@playwright/test';
-import { parse } from 'yaml';
-import { featuredOrder } from '../../src/modules/home/featured';
-import { BASE, BUILD, homePath, message, publicUrl, ROOT } from './support/artifact';
-import { feedIndex, localeIndex, promptDetail } from './support/content';
+import { worksOnShow } from './support/home';
+import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
+import { localeIndex, promptDetail } from './support/content';
 import { alternates, canonical, dataAttr, elementText, title } from './support/html';
 
 // The home page as crawlers receive it (design doc §11.8.1, §9.3, §16.2 首屏展示, §17.3 step 4b):
 // the work on show, its label, annotated quote and actions are in the first HTML; the page has
 // its own title, canonical and hreflang with the default home as x-default; every work and
 // section below links to a page of this build.
-
-const site = parse(fs.readFileSync(path.join(ROOT, 'content/site.yaml'), 'utf8')) as {
-  home: { featured: { prompt: string; from?: string }[] };
-};
-// The build date decides which works on show have started (the build and the tests run the same day).
-const today = new Date().toISOString().slice(0, 10);
-
-/** Works on show in a locale, in order: started, visible there and annotated; else the stand-in. */
-function worksOnShow(code: string): string[] {
-  const prompts = new Map(localeIndex(code).prompts.map((p) => [p.id, p]));
-  const configured = featuredOrder(site.home.featured, today).filter((id) => prompts.get(id)?.annotated);
-  if (configured.length) return configured;
-  const stand = feedIndex(code).featured.find((id) => prompts.get(id)?.annotated) ?? localeIndex(code).prompts[0]?.id;
-  return stand ? [stand] : [];
-}
 
 const expectedAlternates = {
   ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(homePath(l))])),
@@ -47,7 +29,12 @@ for (const locale of BUILD.locales) {
     expect(dataAttr(html, 'page')).toBe('home');
 
     const onShow = worksOnShow(code);
-    expect(onShow.length).toBeGreaterThan(0);
+    if (!onShow.length) {
+      expect(elementText(html, 'h1')).toBe(message(code, 'home.hero.title'));
+      expect(html).toContain(message(code, 'home.hero.intro'));
+      expect(dataAttr(html, 'on-show')).toBeNull();
+      return;
+    }
     expect(dataAttr(html, 'on-show')).toBe(onShow[0]);
     const work = promptDetail(code, onShow[0]!);
 
@@ -86,7 +73,12 @@ for (const locale of BUILD.locales) {
     const html = await (await request.get(url)).text();
     expect(canonical(html)).toBe(publicUrl(homePath(locale)));
     expect(alternates(html)).toEqual(expectedAlternates);
-    const work = promptDetail(code, worksOnShow(code)[0]!);
+    const first = worksOnShow(code)[0];
+    if (!first) {
+      expect(meta(html, 'og:image')).toBeNull();
+      return;
+    }
+    const work = promptDetail(code, first);
     expect(meta(html, 'og:image')).toContain(work.cover.variants.og!.key);
     expect(meta(html, 'og:description')).toBe(message(code, 'home.description'));
   });
@@ -99,12 +91,41 @@ for (const locale of BUILD.locales) {
     const links = hrefs(html);
     for (const href of newest) expect(links).toContain(href);
     // Templates and collections link to their pages.
-    for (const t of index.templates.slice(0, 3)) expect(links).toContain(`${BASE}${t.path}`);
+    for (const t of [...index.templates]
+      .sort((a, b) => Number(b.promptLanguage === code) - Number(a.promptLanguage === code))
+      .slice(0, 3))
+      expect(links).toContain(`${BASE}${t.path}`);
     for (const c of index.collections.slice(0, 2)) expect(links).toContain(`${BASE}${c.path}`);
     // Every same-site page link answers 200 (fragments are the list's filters).
     const pages = [
       ...new Set(links.filter((h) => h.startsWith(`${BASE}${homePath(locale)}`)).map((h) => h.split('#')[0]!)),
     ];
     for (const href of pages) expect((await request.get(href)).status(), href).toBe(200);
+  });
+}
+
+for (const locale of BUILD.locales) {
+  test(`${locale.code}: localized browsing summaries and conditional template previews are in initial HTML`, async ({
+    request,
+  }) => {
+    const html = await (await request.get(`${BASE}${homePath(locale)}`)).text();
+    const index = localeIndex(locale.code);
+    const summaries = [...html.matchAll(/<span\b[^>]*data-card-summary=""[^>]*>[\s\S]*?<\/span>/g)];
+    expect(summaries.length).toBe(
+      Math.min(6, Math.max(0, index.prompts.length - 1)) + Math.min(12, index.prompts.length),
+    );
+    for (const [node] of summaries) {
+      expect(node).toContain(`lang="${locale.code}"`);
+      expect(node).not.toContain('aria-hidden');
+      expect(index.prompts.map((p) => p.description)).toContain(elementText(node, 'span'));
+    }
+    expect(html).toContain(message(locale.code, 'home.hero.intro'));
+    const chosen = [...index.templates]
+      .sort((a, b) => Number(b.promptLanguage === locale.code) - Number(a.promptLanguage === locale.code))
+      .slice(0, 3);
+    expect([...html.matchAll(/data-template-summary=""/g)]).toHaveLength(chosen.length);
+    expect([...html.matchAll(/data-template-excerpt=""/g)]).toHaveLength(
+      chosen.filter((t) => t.promptLanguage === locale.code).length,
+    );
   });
 }

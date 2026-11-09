@@ -36,7 +36,8 @@ it('renders animated responsive images and GIF badges in initial HTML without pl
           verification: 'verified',
           lastTestedAt: null,
           promptLanguage: 'en',
-          promptOpening: 'Animate this.',
+          locale: 'en',
+          description: 'Animate this.',
           hasGifOutput: true,
         }}
       />
@@ -67,7 +68,8 @@ it('marks GIF outputs even when the cover is a static image', () => {
           verification: 'unknown',
           lastTestedAt: null,
           promptLanguage: 'en',
-          promptOpening: 'Animate this.',
+          locale: 'en',
+          description: 'Animate this.',
           hasGifOutput: true,
         }}
       />

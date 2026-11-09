@@ -36,8 +36,9 @@ export async function FavoritesBody({ locale }: { locale: LocaleEntry }) {
         <p className={styles.device}>{t('device')}</p>
       </header>
       <ClientMessages namespaces={['favorites', 'feed', 'detail', 'popup', 'shortcuts']}>
-        <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+        <PopupHost key={locale.code} locale={popupLocale(locale)} siteName={config.siteName}>
           <FavoritesList
+            key={`${locale.code}:${config.buildId}`}
             locale={{ code: locale.code, pathPrefix: locale.pathPrefix }}
             buildId={config.buildId}
             templates={templates}

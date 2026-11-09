@@ -75,3 +75,19 @@ for (const locale of BUILD.locales) {
     }
   });
 }
+
+for (const locale of BUILD.locales) {
+  test(`${locale.code}: template list always describes the use and only quotes matching body languages`, async ({
+    request,
+  }) => {
+    const html = await (await request.get(`${BASE}/${locale.pathPrefix}/templates/`)).text();
+    for (const template of localeIndex(locale.code).templates) {
+      const card = html.match(new RegExp(`<article[^>]*data-entry="${template.id}"[^>]*>([\\s\\S]*?)</article>`))?.[1];
+      expect(card).toBeTruthy();
+      const summary = card!.match(/<p[^>]*data-template-summary=""[^>]*>[\s\S]*?<\/p>/)?.[0];
+      expect(summary).toContain(`lang="${locale.code}"`);
+      expect(elementText(summary!, 'p')).toBe(template.description);
+      expect(card!.includes('data-template-excerpt')).toBe(template.promptLanguage === locale.code);
+    }
+  });
+}

@@ -33,6 +33,7 @@ const FIRST_SCREEN_USES = 4;
 export function homeModel(locale: LocaleEntry): HomeModel {
   const index = localeIndex(locale.code);
   return composeHome({
+    locale: locale.code,
     // The build date, as for the list's showcase band: works scheduled later wait.
     today: new Date().toISOString().slice(0, 10),
     prompts: index.prompts,
@@ -102,16 +103,23 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
 
   return (
     <ClientMessages locale={locale.code} namespaces={['detail', 'popup', 'home', 'favorites', 'shortcuts']}>
-      <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+      <PopupHost key={locale.code} locale={popupLocale(locale)} siteName={config.siteName}>
         <PopupWorks items={works} />
         <div className={`container ${styles.home}`} data-page="home" data-locale={locale.code}>
           {model.onShow.length > 0 ? (
-            <HomeHero works={model.onShow} locale={locale.code} siteName={config.siteName} footer={footer} />
+            <HomeHero
+              key={locale.code}
+              works={model.onShow}
+              locale={locale.code}
+              siteName={config.siteName}
+              footer={footer}
+            />
           ) : (
             <section className={styles.hero} aria-labelledby="home-title">
               <h1 id="home-title" className={styles.title}>
                 {t('hero.title')}
               </h1>
+              <p className={styles.heroIntro}>{t('hero.intro')}</p>
               {footer}
             </section>
           )}

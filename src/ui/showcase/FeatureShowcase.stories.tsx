@@ -8,7 +8,7 @@ import { jazzShowcase } from './fixtures';
 const meta = {
   title: 'Showcase/FeatureShowcase',
   component: FeatureShowcase,
-  args: { showcase: jazzShowcase },
+  args: { showcase: jazzShowcase, locale: 'en' },
   parameters: { layout: 'padded' },
   // The showcase lays itself out by the width of its parent (a container query).
   decorators: [(Story) => <div style={{ containerType: 'inline-size' }}>{Story()}</div>],

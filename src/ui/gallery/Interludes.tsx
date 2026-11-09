@@ -48,6 +48,7 @@ export function FeatureRow({ block, posinset, setsize, locale, ...rest }: { bloc
       data-entry={block.card.id}
     >
       <FeatureShowcase
+        locale={locale}
         showcase={s}
         size="row"
         headingLevel="h2"
@@ -79,8 +80,8 @@ export function FeatureRow({ block, posinset, setsize, locale, ...rest }: { bloc
 }
 
 /**
- * Template cards (§11.8.1, §11.8.2): each template's opening with its placeholders in their
- * variable colours, so "fill in the blanks" is clear before opening it. The list's template strip
+ * Template cards (§11.8.1, §11.8.2): localized uses, plus same-language excerpts with
+ * placeholders in their variable colours. The list's template strip
  * and the home page show the same cards.
  */
 export function TemplateCards({ items }: { items: readonly FeedTemplate[] }) {
@@ -88,26 +89,41 @@ export function TemplateCards({ items }: { items: readonly FeedTemplate[] }) {
   return (
     <ul className={styles.templates}>
       {items.map((tpl) => (
-        <li key={tpl.id}>
+        <li key={tpl.id} data-entry={tpl.id}>
           <a href={withBasePath(tpl.path)} className={styles.template}>
             <span className={styles.templateTitle}>{tpl.title}</span>
             <span className={styles.templateMeta}>{t('interlude.fields', { count: tpl.fieldCount })}</span>
-            <span className={styles.excerpt} lang={tpl.promptLanguage} dir={textDirection(tpl.promptLanguage)}>
-              {tpl.excerpt.map((part, i) =>
-                typeof part === 'string' ? (
-                  part
-                ) : (
-                  <span
-                    key={i}
-                    className={styles.variable}
-                    style={{ '--_v': part.c } as CSSProperties}
-                    data-var={part.c}
-                  >
-                    {part.v}
-                  </span>
-                ),
-              )}
+            <span
+              className={styles.templateSummary}
+              data-template-summary=""
+              lang={tpl.locale}
+              dir={textDirection(tpl.locale)}
+            >
+              {tpl.description}
             </span>
+            {tpl.excerpt && (
+              <span
+                className={styles.excerpt}
+                data-template-excerpt=""
+                lang={tpl.promptLanguage}
+                dir={textDirection(tpl.promptLanguage)}
+              >
+                {tpl.excerpt.map((part, i) =>
+                  typeof part === 'string' ? (
+                    part
+                  ) : (
+                    <span
+                      key={i}
+                      className={styles.variable}
+                      style={{ '--_v': part.c } as CSSProperties}
+                      data-var={part.c}
+                    >
+                      {part.v}
+                    </span>
+                  ),
+                )}
+              </span>
+            )}
           </a>
         </li>
       ))}

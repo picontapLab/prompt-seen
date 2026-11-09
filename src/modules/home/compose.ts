@@ -6,7 +6,7 @@ import type {
   TemplateSummary,
   Term,
 } from '@/modules/content/types';
-import { slimImage, templateExcerpt } from '@/modules/feed/compose';
+import { slimImage, pickFeedTemplates } from '@/modules/feed/compose';
 import type { FeedImage, FeedTemplate } from '@/modules/feed/types';
 import { toShowcase, type Showcase } from '@/ui/showcase/model';
 import { featuredOrder, type HomeSettings } from './featured';
@@ -20,6 +20,7 @@ export { featuredOrder, type HomeSettings } from './featured';
 // the list's own pages, so a work reads the same everywhere (engineering conventions).
 
 export type HomeInput = {
+  locale: string;
   /** Build date, YYYY-MM-DD: decides which works on show have started. */
   today: string;
   /** Visible prompts, newest first (LocaleIndex.prompts). */
@@ -72,19 +73,64 @@ export const HOME_LIMITS = { more: 6, useCases: 8, latest: 12, templates: 3, col
 
 export function composeHome(input: HomeInput): HomeModel {
   const byId = new Map(input.prompts.map((p) => [p.id, p]));
-  const annotated = (id: string) => {
-    const detail = byId.has(id) ? input.promptDetail(id) : null;
-    return detail && detail.annotations.length > 0 ? detail : null;
+  const activeIds = featuredOrder(input.settings.featured, input.today);
+  const active = new Set(activeIds);
+  const futureOnlyIds = new Set(input.settings.featured.map((f) => f.prompt).filter((id) => !active.has(id)));
+  const details = new Map<string, PromptDetail | null>();
+  const available = (id: string): PromptDetail | null => {
+    if (details.has(id)) return details.get(id)!;
+    const summary = byId.get(id);
+    const d = summary?.locale === input.locale && !futureOnlyIds.has(id) ? input.promptDetail(id) : null;
+    const usable =
+      d &&
+      d.id === id &&
+      d.locale === input.locale &&
+      d.prompt.text.trim() &&
+      d.cover?.width > 0 &&
+      d.cover.height > 0 &&
+      Object.values(d.cover.variants).some(Boolean)
+        ? d
+        : null;
+    details.set(id, usable);
+    return usable;
   };
-
-  // Only annotated works go on show (§5.2, §11.8.1). Without a configured one in this locale,
-  // the first annotated work of the featured order stands in; without any, the newest work.
-  let onShow = featuredOrder(input.settings.featured, input.today)
-    .map(annotated)
-    .filter((d) => !!d);
-  if (onShow.length === 0) {
-    const stand = input.featuredOrder.map(annotated).find((d) => !!d) ?? input.promptDetail(input.prompts[0]?.id ?? '');
-    onShow = stand ? [stand] : [];
+  const sameLanguage = (d: PromptDetail) => d.prompt.language === input.locale;
+  const configured = activeIds.flatMap((id) => {
+    const d = available(id);
+    return d?.annotations.length ? [d] : [];
+  });
+  let onShow: PromptDetail[];
+  if (configured.some(sameLanguage)) {
+    onShow = [...configured.filter(sameLanguage), ...configured.filter((d) => !sameLanguage(d))];
+  } else {
+    const seen = new Set(configured.map((d) => d.id));
+    let first: PromptDetail | null = null;
+    let matching: PromptDetail | null = null;
+    for (const id of input.featuredOrder) {
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const d = available(id);
+      if (!d?.annotations.length) continue;
+      first ??= d;
+      if (sameLanguage(d)) {
+        matching = d;
+        break;
+      }
+    }
+    onShow = matching ? [matching, ...configured] : configured.length ? configured : first ? [first] : [];
+    if (!onShow.length) {
+      let fallback: PromptDetail | null = null;
+      for (const summary of input.prompts) {
+        const d = available(summary.id);
+        if (!d) continue;
+        fallback ??= d;
+        if (sameLanguage(d)) {
+          fallback = d;
+          break;
+        }
+      }
+      if (fallback) onShow = [fallback];
+    }
   }
   const showcases = onShow.map((d): OnShow => ({ ...toShowcase(d), slug: d.slug }));
 
@@ -118,24 +164,7 @@ export function composeHome(input: HomeInput): HomeModel {
       ];
     });
 
-  const templates = input.templates
-    .slice(0, HOME_LIMITS.templates)
-    .map((t): FeedTemplate | null => {
-      const detail = input.templateDetail(t.id);
-      if (!detail) return null;
-      return {
-        id: t.id,
-        path: t.path,
-        title: t.title,
-        fieldCount: t.fieldCount,
-        promptLanguage: t.promptLanguage,
-        excerpt: templateExcerpt(
-          t.bodyExcerpt,
-          detail.version.fields.map((f) => f.name),
-        ),
-      };
-    })
-    .filter((t) => !!t);
+  const templates = pickFeedTemplates(input.templates, input.templateDetail, input.locale, HOME_LIMITS.templates);
 
   const collections = input.collectionsLinked ? input.collections.slice(0, HOME_LIMITS.collections) : [];
 

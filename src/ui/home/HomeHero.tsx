@@ -14,7 +14,7 @@ import styles from './Home.module.css';
 /**
  * The home first screen (design doc §11.8.1): one work on show, large at its original ratio on
  * film, its label, the opening of its prompt with lettered phrases, "Copy prompt" and the way to
- * its page. "Another frame" steps through the works on show in the order of site.yaml; the first
+ * its page. "Another frame" steps through the works on show in the locale’s build-time selection order; the first
  * one is the build's, so the first output is the same for every visitor, and nothing rotates by
  * itself. The page's title and the search field (`footer`) sit in the text column.
  */
@@ -57,6 +57,7 @@ export function HomeHero({
   return (
     <section ref={section} className={styles.hero} aria-labelledby="home-title" data-on-show={s.id}>
       <FeatureShowcase
+        locale={locale}
         key={s.id}
         showcase={s}
         size="hero"
@@ -72,6 +73,7 @@ export function HomeHero({
             <h1 id="home-title" className={styles.title}>
               {t('title')}
             </h1>
+            <p className={styles.heroIntro}>{t('intro')}</p>
           </div>
         }
         captionHint={t('hint')}

@@ -32,7 +32,8 @@ export const Feature: Story = {
           verification: 'unknown',
           lastTestedAt: null,
           promptLanguage: 'en',
-          promptOpening: '',
+          locale: 'en',
+          description: '',
         },
       }}
     />
@@ -52,6 +53,8 @@ export const Templates: Story = {
             id: 't_001',
             path: '/en/templates/product-poster/',
             title: 'Product poster',
+            locale: 'en',
+            description: 'Customize the subject and palette for your image.',
             fieldCount: 4,
             promptLanguage: 'en',
             excerpt: [
@@ -67,6 +70,8 @@ export const Templates: Story = {
             id: 't_002',
             path: '/en/templates/ink-scroll/',
             title: 'Ink scroll',
+            locale: 'en',
+            description: 'Customize the subject and palette for your image.',
             fieldCount: 3,
             promptLanguage: 'en',
             excerpt: [

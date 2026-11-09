@@ -1,7 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import type { PromptDetail, PromptSummary, TemplateDetail, TemplateSummary } from '@/modules/content/types';
 import { articleCount, assembleBatch, interludeGap, type ListItem } from './assemble';
-import { composeFeed, currentShowcaseGroups, shapeOf, templateExcerpt, type ComposeInput } from './compose';
+import {
+  composeFeed,
+  currentShowcaseGroups,
+  shapeOf,
+  templateExcerpt,
+  pickFeedTemplates,
+  toFeedTemplate,
+  type ComposeInput,
+} from './compose';
 import { EMPTY_QUERY, facetCounts, formatQuery, parseQuery, queryResults, editorialFor } from './query';
 import type { FeedCard, Interlude } from './types';
 
@@ -128,6 +136,27 @@ describe('assembleBatch', () => {
 });
 
 describe('composeFeed', () => {
+  it('serializes the published page summary without the original prompt opening', () => {
+    const feed = composeFeed(
+      input([
+        prompt(1, {
+          description: 'A lantern reflected in rain.',
+          promptLanguage: 'zh-Hans',
+          promptOpening: '原始提示词',
+        }),
+      ]),
+    );
+    const block = feed.pages[0]!.blocks[0]!;
+    expect(block.t).toBe('cards');
+    if (block.t !== 'cards') throw new Error('Expected cards');
+    expect(block.items[0]).toMatchObject({
+      locale: 'en',
+      description: 'A lantern reflected in rain.',
+      promptLanguage: 'zh-Hans',
+    });
+    expect(block.items[0]).not.toHaveProperty('promptOpening');
+  });
+
   it('splits newest-first pages of 24 with positions for the feed pattern', () => {
     const feed = composeFeed(input(list(50)));
     expect(
@@ -194,6 +223,40 @@ describe('composeFeed', () => {
 });
 
 describe('helpers', () => {
+  it('fills automatic template strips with same-language bodies first, skipping missing details', () => {
+    const summaries = ['zh-Hans', 'en', 'zh-Hans', 'en', 'en'].map((promptLanguage, i) => ({
+      id: String(i),
+      locale: 'en',
+      title: String(i),
+      description: 'A poster template.',
+      path: `/en/templates/${i}/`,
+      fieldCount: 1,
+      promptLanguage,
+      bodyExcerpt: 'Draw {{subject}}',
+    })) as TemplateSummary[];
+    const detail = (id: string) =>
+      id === '3' ? null : ({ id, locale: 'en', version: { fields: [{ name: 'subject' }] } } as TemplateDetail);
+    const picked = pickFeedTemplates(summaries, detail, 'en', 3);
+    expect(picked.map((t) => t.id)).toEqual(['1', '4', '0']);
+    expect(picked[0]).toMatchObject({
+      locale: 'en',
+      description: 'A poster template.',
+      excerpt: ['Draw ', { v: 'subject', c: 1 }],
+    });
+    expect(picked[2]!.excerpt).toBeNull();
+    expect(toFeedTemplate(summaries[0]!, { ...detail('0')!, locale: 'ja' })).toBeNull();
+    expect(toFeedTemplate(summaries[0]!, detail('1'))).toBeNull();
+    const feed = composeFeed(
+      input([], {
+        templates: summaries,
+        templateDetail: detail,
+        settings: { showcase: [], interludes: [{ type: 'templates', templates: ['0', '1', '4'] }] },
+      }),
+    );
+    const strip = feed.index.editorial[0]!;
+    expect(strip.t === 'templates' && strip.items.map((t) => t.id)).toEqual(['0', '1', '4']);
+  });
+
   it('buckets shapes', () => {
     expect([shapeOf(4, 5), shapeOf(1, 1), shapeOf(16, 9), shapeOf(21, 9), shapeOf(1, 3)]).toEqual([
       'portrait',

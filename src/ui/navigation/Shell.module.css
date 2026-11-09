@@ -102,6 +102,18 @@
     gap: var(--space-8);
     margin-inline-start: auto;
   }
+  /* Keep all three touch targets on one row at 320px. */
+  @media (max-width: 479.98px) {
+    .bar {
+      column-gap: var(--space-8);
+    }
+    .tools {
+      gap: var(--space-4);
+    }
+    .home {
+      --_wordmark-size: var(--text-lg);
+    }
+  }
   .wide {
     display: none;
     inline-size: 11rem;

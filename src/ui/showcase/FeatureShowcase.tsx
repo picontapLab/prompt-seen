@@ -8,7 +8,7 @@ import { AnnotationProvider } from '@/ui/annotation/AnnotationProvider';
 import { FilmStrip } from '@/ui/brand/FilmStrip';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { GifBadge } from '@/ui/media/GifBadge';
-import { textDirection } from '@/ui/prompt-detail/language';
+import { languageName, textDirection } from '@/ui/prompt-detail/language';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import { DevelopImage } from './DevelopImage';
 import type { Showcase } from './model';
@@ -16,6 +16,8 @@ import styles from './FeatureShowcase.module.css';
 
 export type FeatureShowcaseProps = {
   showcase: Showcase;
+  /** Page registry code; the quoted prompt may use another language. */
+  locale: string;
   /**
    * hero: the home first screen (§11.8.1), image about 55–60 % wide and up to most of the
    * viewport tall. row: a feature row or the list's showcase band (§11.8.2), shorter.
@@ -55,6 +57,7 @@ export type FeatureShowcaseProps = {
  */
 export function FeatureShowcase({
   showcase: s,
+  locale,
   size = 'row',
   priority,
   actions,
@@ -130,11 +133,14 @@ export function FeatureShowcase({
         </div>
         <div className={styles.text}>
           {intro}
+          <p className={styles.promptLabel} data-prompt-language={s.promptLanguage}>
+            {t('sheet.label', { language: languageName(s.promptLanguage, locale) })}
+          </p>
           <blockquote className={styles.quote} lang={s.promptLanguage} dir={textDirection(s.promptLanguage)}>
             <AnnotatedText text={s.quote} />
             {s.truncated && '…'}
           </blockquote>
-          <AnnotationCaption hint={captionHint} />
+          <AnnotationCaption hint={!s.cover.animation && s.annotations.length > 0 ? captionHint : undefined} />
           {/* Every note stays readable text, and describes its phrase (§11.1.9). */}
           <AnnotationNotes heading={t('annotations.heading')} promptLanguage={s.promptLanguage} visuallyHidden />
           {actions && <div className={styles.actions}>{actions}</div>}

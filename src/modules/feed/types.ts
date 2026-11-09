@@ -30,8 +30,9 @@ export type FeedCard = {
   verification: PromptSummary['verification'];
   lastTestedAt: string | null;
   promptLanguage: string;
-  /** First sentence of the prompt; replaces the facts line while the card is pointed at. */
-  promptOpening: string;
+  /** Published browsing text in the page language. */
+  locale: string;
+  description: string;
 };
 
 /** A template excerpt: plain text, and placeholders with their variable colour 1–6 (§11.1.1). */
@@ -43,7 +44,9 @@ export type FeedTemplate = {
   title: string;
   fieldCount: number;
   promptLanguage: string;
-  excerpt: ExcerptPart[];
+  locale: string;
+  description: string;
+  excerpt: ExcerptPart[] | null;
 };
 
 export type FeedCollection = {

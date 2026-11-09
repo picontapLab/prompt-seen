@@ -1,11 +1,10 @@
 /* A work in the justified rows (design doc §11.1.4, §11.8.2, §11.1.9). The parent sets the
    width (Gallery.module.css); the frame keeps the image's own ratio, so nothing is cropped and
-   no blank bands appear (§10.3). The label has a fixed height of two lines, so cards in a row
-   end level. */
+   no blank bands appear (§10.3). The summary stays visible in two lines above the test facts. */
 @layer components {
   .card {
     --r: calc(var(--w) / var(--h));
-    --_caption: calc(var(--space-4) + var(--leading-sm) + var(--space-4) + var(--leading-xs));
+    --_caption: calc(var(--space-4) * 3 + var(--leading-sm) * 3 + var(--leading-xs));
     position: relative;
     min-inline-size: 0;
   }
@@ -115,9 +114,7 @@
     margin-block-start: var(--space-4);
     min-inline-size: 0;
   }
-  .facts,
-  .opening {
-    grid-area: 1 / 1;
+  .facts {
     overflow: hidden;
     color: var(--text-secondary);
     font-family: var(--font-mono);
@@ -126,13 +123,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .opening {
-    visibility: hidden;
+  .summary {
+    font-family: var(--font-text);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    min-block-size: calc(var(--leading-sm) * 2);
+    margin-block-end: var(--space-4);
   }
 
   /* Pointing at a card (§11.8.2 悬停): it lifts 2 px, crop marks close in, the title underlines
-     and the facts give way to the prompt's opening. The image is never dimmed or scaled. Touch
-     screens skip all of this; the opening is on the detail page. */
+     while summary and test facts remain readable. The image is never dimmed or scaled. */
   @media (hover: hover) and (pointer: fine) {
     .modelBadge {
       display: block;
@@ -148,12 +154,6 @@
     }
     .link:hover .title {
       text-decoration: underline;
-    }
-    .link:hover .facts {
-      visibility: hidden;
-    }
-    .link:hover .opening {
-      visibility: visible;
     }
   }
   @media (prefers-reduced-motion: reduce) {

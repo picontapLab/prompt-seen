@@ -24,7 +24,8 @@ const card = (over: Partial<FeedCard> = {}): FeedCard => ({
   verification: 'verified',
   lastTestedAt: '2026-10-02',
   promptLanguage: 'en',
-  promptOpening: 'Flat vector poster for a late-night jazz club, navy ground with a mustard disc.',
+  locale: 'en',
+  description: 'Flat vector poster for a late-night jazz club, navy ground with a mustard disc.',
   ...over,
 });
 

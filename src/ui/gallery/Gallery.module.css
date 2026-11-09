@@ -80,7 +80,7 @@
     scale: -1 1;
   }
 
-  /* Template strip: each template shows its opening with variables in their colours. */
+  /* Template strip: localized uses, with variables only in same-language excerpts. */
   .strip {
     display: grid;
     gap: var(--space-16);
@@ -117,6 +117,13 @@
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     line-height: var(--leading-xs);
+  }
+  .templateSummary {
+    font-family: var(--font-text);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    overflow-wrap: anywhere;
   }
   .excerpt {
     display: -webkit-box;

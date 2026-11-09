@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 import { builtLocales, type LocaleEntry } from '@/config';
 import { getDetailModel, listEntries } from '@/modules/content';
 import type { TemplateSummary } from '@/modules/content/types';
-import { templateExcerpt } from '@/modules/feed/compose';
+import { toFeedTemplate } from '@/modules/feed/compose';
 import { getImage } from '@/modules/media';
 import { collectionStructuredData, pageMetadata } from '@/modules/seo';
 import { paths } from '@/modules/url';
@@ -44,7 +44,7 @@ export async function templateListStructuredData(locale: LocaleEntry) {
 
 /**
  * The template list at /{locale}/templates/ (design doc §9.1, §11.8): each template with the
- * image of its default sample at its own ratio, what it is for, and the opening of its prompt
+ * image of its default sample at its own ratio, localized uses, and same-language prompt excerpts
  * with every blank in its field's variable colour, so "fill in the blanks" reads before opening
  * one (§11.8.1 模板). Image and title are the card's one link (§11.7), stretched over the card.
  */
@@ -69,11 +69,9 @@ export async function TemplateList({ locale }: { locale: LocaleEntry }) {
       ) : (
         <ul className={styles.list}>
           {templates.map((template) => {
-            const fields = getDetailModel('template', template.id, locale.code)?.version.fields ?? [];
-            const excerpt = templateExcerpt(
-              template.bodyExcerpt,
-              fields.map((f) => f.name),
-            );
+            const preview = toFeedTemplate(template, getDetailModel('template', template.id, locale.code));
+            if (!preview) return null;
+            const excerpt = preview.excerpt;
             const img = template.cover && getImage(template.cover, 'card');
             return (
               <li key={template.id}>
@@ -104,22 +102,32 @@ export async function TemplateList({ locale }: { locale: LocaleEntry }) {
                       t('fields', { count: template.fieldCount }),
                     ].join(' · ')}
                   </p>
-                  <p className={styles.description}>{template.description}</p>
                   <p
-                    className={styles.excerpt}
-                    lang={template.promptLanguage}
-                    dir={textDirection(template.promptLanguage)}
+                    className={styles.description}
+                    data-template-summary=""
+                    lang={template.locale}
+                    dir={textDirection(template.locale)}
                   >
-                    {excerpt.map((part, i) =>
-                      typeof part === 'string' ? (
-                        part
-                      ) : (
-                        <span key={i} className={styles.variable} data-var={part.c}>
-                          {part.v}
-                        </span>
-                      ),
-                    )}
+                    {template.description}
                   </p>
+                  {excerpt && (
+                    <p
+                      data-template-excerpt=""
+                      className={styles.excerpt}
+                      lang={template.promptLanguage}
+                      dir={textDirection(template.promptLanguage)}
+                    >
+                      {excerpt.map((part, i) =>
+                        typeof part === 'string' ? (
+                          part
+                        ) : (
+                          <span key={i} className={styles.variable} data-var={part.c}>
+                            {part.v}
+                          </span>
+                        ),
+                      )}
+                    </p>
+                  )}
                   {/* Above the stretched link, in the card's top-end corner (§11.5, §11.8.2). */}
                   <div className={styles.actions}>
                     <FavoriteButton

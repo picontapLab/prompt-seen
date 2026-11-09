@@ -43,9 +43,13 @@ export async function PromptList({ locale, page }: { locale: LocaleEntry; page: 
         </p>
       </header>
       <ClientMessages namespaces={['feed', 'detail', 'popup', 'favorites', 'shortcuts', 'explore']}>
-        <ListProvider locale={{ code: locale.code, pathPrefix: locale.pathPrefix }} buildId={data.buildId}>
+        <ListProvider
+          key={`${locale.code}:${data.buildId}`}
+          locale={{ code: locale.code, pathPrefix: locale.pathPrefix }}
+          buildId={data.buildId}
+        >
           {/* Works open in the detail popup over the list (§11.3, step 4a). */}
-          <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+          <PopupHost key={locale.code} locale={popupLocale(locale)} siteName={config.siteName}>
             {band && (
               <HideWhenFiltered>
                 <ShowcaseBand band={band} locale={locale.code} />

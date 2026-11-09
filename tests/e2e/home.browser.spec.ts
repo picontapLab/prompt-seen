@@ -1,11 +1,8 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import { parse } from 'yaml';
-import { featuredOrder } from '../../src/modules/home/featured';
+import { worksOnShow } from './support/home';
 import { seriousViolations } from './support/a11y';
-import { BASE, BUILD, homePath, message, ROOT } from './support/artifact';
-import { feedIndex, localeIndex, promptDetail } from './support/content';
+import { BASE, BUILD, homePath, message } from './support/artifact';
+import { promptDetail } from './support/content';
 
 // The home page in real browsers (design doc §11.8.1, §11.1.9, §16.2 首屏展示, §16.5 首屏吸引力,
 // §17.3 step 4b): the work on show, its quote and "Copy prompt" on the first screen of a desktop
@@ -15,18 +12,7 @@ import { feedIndex, localeIndex, promptDetail } from './support/content';
 const locale = BUILD.locales[0]!;
 const code = locale.code;
 const url = `${BASE}${homePath(locale)}`;
-const site = parse(fs.readFileSync(path.join(ROOT, 'content/site.yaml'), 'utf8')) as {
-  home: { featured: { prompt: string; from?: string }[] };
-};
 
-function worksOnShow(c: string): string[] {
-  const prompts = new Map(localeIndex(c).prompts.map((p) => [p.id, p]));
-  const today = new Date().toISOString().slice(0, 10);
-  const configured = featuredOrder(site.home.featured, today).filter((id) => prompts.get(id)?.annotated);
-  if (configured.length) return configured;
-  const stand = feedIndex(c).featured.find((id) => prompts.get(id)?.annotated) ?? localeIndex(c).prompts[0]?.id;
-  return stand ? [stand] : [];
-}
 const onShow = worksOnShow(code);
 const work = promptDetail(code, onShow[0]!);
 

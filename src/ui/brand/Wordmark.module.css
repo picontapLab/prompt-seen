@@ -18,7 +18,7 @@
   .name {
     font-family:
       'Fira Sans Extra Condensed', var(--font-display-fallback, 'Fira Sans Extra Condensed'), var(--font-display);
-    font-size: var(--text-2xl);
+    font-size: var(--_wordmark-size, var(--text-2xl));
     font-weight: var(--weight-display);
     line-height: 1;
     letter-spacing: var(--tracking-wordmark);

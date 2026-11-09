@@ -27,6 +27,7 @@ export function ShowcaseBand({ band, locale }: { band: FeedBand; locale: string 
       <div className={styles.layout} data-works={band.works.length}>
         <div className={styles.lead}>
           <FeatureShowcase
+            locale={locale}
             showcase={lead}
             size="row"
             priority

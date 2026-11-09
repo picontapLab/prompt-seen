@@ -35,12 +35,13 @@ export async function ExploreBody({ locale }: { locale: LocaleEntry }) {
       </header>
       <ClientMessages namespaces={['feed', 'detail', 'popup', 'favorites', 'shortcuts', 'explore']}>
         <ListProvider
+          key={`${locale.code}:${config.buildId}`}
           locale={{ code: locale.code, pathPrefix: locale.pathPrefix }}
           buildId={data.buildId}
           listPath={paths.explore(locale.pathPrefix)}
           pageAddresses={false}
         >
-          <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+          <PopupHost key={locale.code} locale={popupLocale(locale)} siteName={config.siteName}>
             <div className={styles.layout}>
               <aside className={styles.aside}>
                 <ExploreFilters styleTerms={index.styles} useCases={index.useCases} initialCounts={initialCounts} />

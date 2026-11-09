@@ -94,7 +94,7 @@ export async function TopicBody({ detail, locale }: { detail: TopicDetail; local
         </div>
         {/* The works open in the detail popup, as in the list (§11.3, step 4a). */}
         <ClientMessages locale={locale.code} namespaces={['detail', 'popup', 'favorites', 'shortcuts']}>
-          <PopupHost locale={popupLocale(locale)} siteName={config.siteName}>
+          <PopupHost key={locale.code} locale={popupLocale(locale)} siteName={config.siteName}>
             <PopupWorks items={cards} />
             <WorkRows cards={cards} locale={locale.code} label={t('topic.works')} />
           </PopupHost>

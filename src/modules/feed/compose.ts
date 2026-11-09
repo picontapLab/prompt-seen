@@ -86,7 +86,8 @@ export function toCard(p: PromptSummary, ratioLabel: ComposeInput['ratioLabel'])
     verification: p.verification,
     lastTestedAt: p.lastTestedAt,
     promptLanguage: p.promptLanguage,
-    promptOpening: p.promptOpening,
+    locale: p.locale,
+    description: p.description,
   };
 }
 
@@ -95,6 +96,48 @@ export function templateExcerpt(excerpt: string, fieldOrder: readonly string[]):
   return parseTemplateBody(excerpt).segments.map((s) =>
     s.kind === 'text' ? s.text : { v: s.name, c: (Math.max(fieldOrder.indexOf(s.name), 0) % 6) + 1 },
   );
+}
+
+/** A browsing preview never borrows another locale's prose or field definitions. */
+export function toFeedTemplate(summary: TemplateSummary, detail: TemplateDetail | null): FeedTemplate | null {
+  if (!detail || detail.id !== summary.id || detail.locale !== summary.locale) return null;
+  return {
+    id: summary.id,
+    path: summary.path,
+    title: summary.title,
+    locale: summary.locale,
+    description: summary.description,
+    fieldCount: summary.fieldCount,
+    promptLanguage: summary.promptLanguage,
+    excerpt:
+      summary.promptLanguage === summary.locale
+        ? templateExcerpt(
+            summary.bodyExcerpt,
+            detail.version.fields.map((f) => f.name),
+          )
+        : null,
+  };
+}
+
+/** Stable language priority for automatic selections; missing details do not consume a slot. */
+export function pickFeedTemplates(
+  summaries: readonly TemplateSummary[],
+  detailOf: (id: string) => TemplateDetail | null,
+  locale: string,
+  limit: number,
+): FeedTemplate[] {
+  const visible = summaries.filter((t) => t.locale === locale);
+  const ordered = [
+    ...visible.filter((t) => t.promptLanguage === locale),
+    ...visible.filter((t) => t.promptLanguage !== locale),
+  ];
+  const items: FeedTemplate[] = [];
+  for (const summary of ordered) {
+    if (items.length >= limit) break;
+    const item = toFeedTemplate(summary, detailOf(summary.id));
+    if (item) items.push(item);
+  }
+  return items;
 }
 
 /** The showcase group in effect on `today`: the latest dated one that has started, else the first undated. */
@@ -134,26 +177,13 @@ export function composeFeed(input: ComposeInput): ComposedFeed {
       const feature = p && featureOf(p, 'editorial');
       if (feature) editorial.push({ ...feature, key: `editorial-${i}-${p.id}` });
     } else if (cfg.type === 'templates') {
-      const chosen = cfg.templates
-        ? cfg.templates.map((id) => input.templates.find((t) => t.id === id)).filter((t) => !!t)
-        : input.templates.slice(0, 3);
-      const items = chosen
-        .map((t): FeedTemplate | null => {
-          const detail = input.templateDetail(t.id);
-          if (!detail) return null;
-          return {
-            id: t.id,
-            path: t.path,
-            title: t.title,
-            fieldCount: t.fieldCount,
-            promptLanguage: t.promptLanguage,
-            excerpt: templateExcerpt(
-              t.bodyExcerpt,
-              detail.version.fields.map((f) => f.name),
-            ),
-          };
-        })
-        .filter((t) => !!t);
+      const items = cfg.templates
+        ? cfg.templates.flatMap((id) => {
+            const summary = input.templates.find((t) => t.id === id && t.locale === input.locale);
+            const item = summary && toFeedTemplate(summary, input.templateDetail(id));
+            return item ? [item] : [];
+          })
+        : pickFeedTemplates(input.templates, input.templateDetail, input.locale, 3);
       if (items.length >= 2) editorial.push({ t: 'templates', key: `templates-${i}`, items });
     } else if (input.collectionsLinked) {
       const c = input.collections.find((x) => x.id === cfg.collection);
