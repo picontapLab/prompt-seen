@@ -23,6 +23,7 @@ const LOCALES: LocaleEntry[] = [
   { code: 'en', pathPrefix: 'en', nativeName: 'English', htmlLang: 'en', direction: 'ltr', enabled: true, preview: false, phase: 1 },
   { code: 'zh-Hans', pathPrefix: 'zh-hans', nativeName: '简体中文', htmlLang: 'zh-Hans', direction: 'ltr', enabled: true, preview: false, phase: 1 },
   { code: 'ja', pathPrefix: 'ja', nativeName: '日本語', htmlLang: 'ja', direction: 'ltr', enabled: false, preview: true, phase: 1 },
+  { code: 'tr', pathPrefix: 'tr', nativeName: 'Türkçe', htmlLang: 'tr', direction: 'ltr', enabled: false, preview: false, phase: 2 },
 ];
 
 function configFor(buildMode: 'production' | 'preview'): ResolvedConfig {
@@ -593,6 +594,19 @@ describe('prompt body languages', () => {
     }));
     expect(blocking(result.findings.list)).toEqual([]);
     expect(detail<PromptDetail>(result, 'prompt', 'en', 'p_001')!.prompt).toMatchObject({ text: zh, language: 'zh-Hans' });
+  });
+
+  it('preserves Turkish source text in both page languages without enabling Turkish routes', () => {
+    const text = "Kedimiz Robin’in GIF'ini oluştur. Kameraya baksın ve gözünü kırpsın.";
+    const result = load(setup({
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait').replace('language: en', 'language: tr'),
+      'content/prompts/p_001/prompt.txt': text,
+    }), 'preview');
+    expect(blocking(result.findings.list)).toEqual([]);
+    for (const locale of ['en', 'zh-Hans']) {
+      expect(detail<PromptDetail>(result, 'prompt', locale, 'p_001')!.prompt).toMatchObject({ text, language: 'tr' });
+    }
+    expect(result.built!.locales.has('tr')).toBe(false);
   });
 
   it('renders localized templates with stable enum values and no borrowed generation evidence', () => {
