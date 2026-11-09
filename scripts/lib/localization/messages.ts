@@ -26,7 +26,8 @@ function argumentsOf(elements: MessageFormatElement[], names = new Set<string>()
 }
 
 export function validateMessages(root: string, defaultCode: string, codes: string[], findings: Findings) {
-  const report = (level: 'error' | 'warning', file: string, message: string) => findings.add({ level, file, message });
+  const report = (level: 'error' | 'warning', file: string, message: string, field?: string) =>
+    findings.add({ level, file, message, field });
   const read = (code: string): Messages => {
     const catalog: Messages = {};
     for (const ns of listNamespaces(root, code)) {
@@ -50,14 +51,14 @@ export function validateMessages(root: string, defaultCode: string, codes: strin
       }
       for (const [key, message] of Object.entries(flatten(tree))) {
         if (typeof message !== 'string' || !message.trim()) {
-          report('error', file, `${key}: messages must be nonempty strings`);
+          report('error', file, `${key}: messages must be nonempty strings`, key);
           continue;
         }
         let args: Set<string>;
         try {
           args = argumentsOf(parse(message));
         } catch (error) {
-          report('error', file, `${key}: invalid ICU message (${(error as Error).message})`);
+          report('error', file, `${key}: invalid ICU message (${(error as Error).message})`, key);
           continue;
         }
         if (code === defaultCode) {
@@ -72,6 +73,7 @@ export function validateMessages(root: string, defaultCode: string, codes: strin
             'error',
             file,
             `${key}: arguments {${[...args].join(', ')}} differ from ${defaultCode} {${[...expected].join(', ')}}`,
+            key,
           );
         }
       }
@@ -92,7 +94,7 @@ export function validateMessages(root: string, defaultCode: string, codes: strin
         continue;
       }
       const present = flatten(catalog[ns]);
-      for (const key of keys.keys()) if (!(key in present)) report('error', file, `${key}: missing translation`);
+      for (const key of keys.keys()) if (!(key in present)) report('error', file, `${key}: missing translation`, key);
     }
   }
 }

@@ -28,6 +28,7 @@ import {
   SLUG_PATTERN,
   taxonomyFileSchema,
   templateEntrySchema,
+  templateContractBaselineSchema,
   type CollectionEntrySource,
   type ExampleRunSource,
   type FieldSource,
@@ -76,6 +77,7 @@ export type TemplateVersion = {
   fieldsFile: string;
   fields: FieldSource[];
   fieldsLineOf: ParsedYaml['lineOf'];
+  contractBaseline?: z.infer<typeof templateContractBaselineSchema>;
   inputs?: InputRequirementsSource | null;
   /** name → values, `default` first. */
   samples: Map<string, { file: string; values: FieldValues }>;
@@ -331,6 +333,10 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
       const bodyFile = path.join(vdir, 'body.txt');
       const fieldsFile = path.join(vdir, 'fields.yaml');
       const fields = readYamlFile(fieldsFile, fieldsFileSchema, findings);
+      const baselineFile = path.join(vdir, 'contract-baseline.yaml');
+      const contractBaseline = fs.existsSync(baselineFile)
+        ? readYamlFile(baselineFile, templateContractBaselineSchema, findings)?.data
+        : undefined;
       const inputsFile = path.join(vdir, 'inputs.yaml');
       const inputs = fs.existsSync(inputsFile)
         ? (readYamlFile(inputsFile, inputRequirementsSchema, findings)?.data ?? null)
@@ -376,6 +382,7 @@ export function readContent(dir: string, registry: readonly LocaleEntry[], findi
         fieldsFile,
         fields: fields.data.fields,
         fieldsLineOf: fields.lineOf,
+        contractBaseline,
         inputs,
         samples,
         promptLocales,

@@ -11,7 +11,7 @@ import { localeStates, sourceLocaleOf } from '../content/rules';
 import { type Finding, Findings } from '../content/findings';
 import { type LocaleFile } from '../content/read';
 import { dependencyFields, unitsOf, type Field } from './dependencies';
-import { fingerprint } from './fingerprint';
+import { fingerprint, proseFingerprint } from './fingerprint';
 import { validateBuildMessages } from './messages';
 
 export type LocaleFinding = Finding & { code: string; reason: string; fix: string };
@@ -62,6 +62,7 @@ export type CheckItem = {
   sourceFingerprint: string;
   targetHash: string | null;
   pageStatus: string;
+  declaredStatus: string | null;
   reviewStatus: string;
   dependencies: string[];
   dependencyGaps: string[];
@@ -76,6 +77,7 @@ export type LocaleReport = {
   blocking: boolean;
   items: CheckItem[];
   fields: Field[];
+  publishedDependencies: string[];
   findings: LocaleFinding[];
   changes: {
     added: string[];
@@ -85,15 +87,7 @@ export type LocaleReport = {
   };
 };
 
-export const pageFingerprint = (file: LocaleFile) =>
-  fingerprint({
-    title: file.fm.title,
-    description: file.fm.description,
-    body: file.body,
-    seoTitle: file.fm.seoTitle ?? null,
-    seoDescription: file.fm.seoDescription ?? null,
-    reasons: file.fm.reasons ?? {},
-  });
+export const pageFingerprint = (file: LocaleFile) => proseFingerprint({ ...file.fm, body: file.body });
 
 /** Fresh production models, including a simulated enabled locale; never writes build output. */
 export function checkLocale(root: string, locale: string): LocaleReport {
@@ -120,7 +114,11 @@ export function checkLocale(root: string, locale: string): LocaleReport {
   const reviewed = (key: string, sourceHash: string, targetHash: string | null) => {
     const record = reviews.records
       .filter((r) => r.key === key)
-      .sort((a, b) => b.completedAt.localeCompare(a.completedAt))[0];
+      .sort(
+        (a, b) =>
+          Date.parse(b.completedAt) - Date.parse(a.completedAt) ||
+          (a.conclusion === 'changes-requested' ? -1 : b.conclusion === 'changes-requested' ? 1 : 0),
+      )[0];
     return (
       !!record &&
       record.conclusion === 'approved' &&
@@ -147,6 +145,17 @@ export function checkLocale(root: string, locale: string): LocaleReport {
   );
   const allFields = new Map<string, Field>();
   const items: CheckItem[] = [];
+  // A Japanese-only or outdated published consumer is still protected, even when it is
+  // outside the other locales' launch target union.
+  const publishedDependencies = [
+    ...new Set(
+      units
+        .filter((unit) => unit.locales.get(locale)?.fm.status === 'published')
+        .flatMap((unit) =>
+          dependencyFields(root, content, unit, locale, config.defaultLocale).map((field) => field.key),
+        ),
+    ),
+  ].sort();
   for (const unit of units.filter((u) => targetKeys.has(u.key)).sort((a, b) => a.key.localeCompare(b.key))) {
     const sourceLocale = sourceLocaleOf(unit.locales)!;
     const source = unit.locales.get(sourceLocale)!;
@@ -218,6 +227,7 @@ export function checkLocale(root: string, locale: string): LocaleReport {
       sourceFingerprint,
       targetHash,
       pageStatus,
+      declaredStatus: target?.fm.status ?? null,
       reviewStatus,
       dependencies: dependencies.map((f) => f.key),
       dependencyGaps: [],
@@ -367,6 +377,7 @@ export function checkLocale(root: string, locale: string): LocaleReport {
     ready: findings.length === 0,
     blocking: loaded.findings.blocking > 0,
     items,
+    publishedDependencies,
     fields: [...allFields.values()].sort((a, b) => a.key.localeCompare(b.key)),
     findings: findings.sort(
       (a, b) =>

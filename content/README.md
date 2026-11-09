@@ -294,5 +294,5 @@ Optional prompt `showcaseExampleId` selects the run shown with its reference ima
 It must belong to the prompt, include its cover among outputs and preserve the exact current
 prompt text. Older prompts may omit it. Localized input instructions are included in both
 HTML details and Markdown export. Templates store the input contract in `versions/vN/inputs.yaml`; prompts inherit that version.
-Recorded template runs freeze body, fields and inputs in `template.contractHash`. Changing any of them requires a new version.
+Recorded template runs freeze rendering semantics in `template.contractHash`: body, defaults, constraints, stable option values, separators and reference slots. Localized labels, help and instructions may change after text review. Legacy hashes that included this prose remain untouched; a strict, versioned `contract-baseline.yaml` records a verified legacy hash and its semantic equivalent. A baseline only accepts the legacy hash while the current semantics match. Generate it once from unchanged content after verifying all recorded hashes; never regenerate it during translation imports. Semantic changes require a new template version.
 See [the production workflow](../production/README.md) for preparing, reviewing and applying new cases.

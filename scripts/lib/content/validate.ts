@@ -20,7 +20,7 @@ import {
 } from './rules';
 import { validateFeedSettings } from './validate-feed';
 import { validateHomeSettings } from './validate-home';
-import { templateContractHash } from './template-contract';
+import { templateContractHash, legacyTemplateContractHash } from './template-contract';
 import { resolveTemplate, validatePromptVariants } from './prompt-variants';
 
 // Cross-file rules (design doc §14.2 steps 3–5, §14.3). Mode-independent: the same content
@@ -243,6 +243,8 @@ export function validateContent(
       });
 
     for (const version of rec.versions.values()) {
+      if (version.contractBaseline && version.contractBaseline.semanticHash !== templateContractHash(version.body, version.fields, version.inputs))
+        findings.error(path.join(version.dir, 'contract-baseline.yaml'), 'template contract changed from its recorded baseline; restore it and create a new version');
       const names = new Set<string>();
       version.fields.forEach((f, i) => {
         const line = version.fieldsLineOf(['fields', i]);
@@ -360,7 +362,10 @@ export function validateContent(
       if (brokenVersions.has(`${d.template.id}/${d.template.version}`)) continue;
       if (
         d.template.contractHash &&
-        d.template.contractHash !== templateContractHash(version.body, version.fields, version.inputs)
+        d.template.contractHash !== templateContractHash(version.body, version.fields, version.inputs) &&
+        d.template.contractHash !== legacyTemplateContractHash(version.body, version.fields, version.inputs) &&
+        !(version.contractBaseline?.legacyHash === d.template.contractHash &&
+          version.contractBaseline.semanticHash === templateContractHash(version.body, version.fields, version.inputs))
       )
         findings.error(
           run.file,

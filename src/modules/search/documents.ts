@@ -50,7 +50,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
       frame: p.frameNumber,
       thumb: thumbOf(p.cover),
       tags,
-      terms: [words, p.hasGifOutput || p.cover.mimeType === 'image/gif' ? 'GIF' : ''].join(' \n'),
+      terms: [p.id, p.frameNumber, words, p.hasGifOutput || p.cover.mimeType === 'image/gif' ? 'GIF' : ''].join(' \n'),
       model: [p.model.displayName, p.model.providerModelId].filter(Boolean).join(' \n'),
       body: detail?.prompt.text ?? p.promptOpening,
     });
@@ -74,6 +74,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
       thumb: thumbOf(t.cover),
       tags,
       terms: [
+        t.id,
         words,
         t.hasGifOutput || t.cover?.mimeType === 'image/gif' ? 'GIF' : '',
         ...(detail?.version.fields.map((f) => f.label) ?? []),
@@ -94,7 +95,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
         frame: null,
         thumb: thumbOf(c.cover),
         tags: [],
-        terms: '',
+        terms: c.id,
         model: '',
         body: '',
       });

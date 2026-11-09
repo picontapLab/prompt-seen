@@ -253,7 +253,7 @@ it.each(['png', 'gif'])(
     const inputFile = path.join(root, 'content/templates', plan.ids.template!, 'versions/v1/inputs.yaml');
     fs.writeFileSync(
       inputFile,
-      YAML.stringify({ referenceImage: 'none', instructions: { en: 'Changed after generation' } }),
+      YAML.stringify({ referenceImage: 'optional', instructions: { en: 'An optional reference image' } }),
     );
     const changed = loadContent({
       root,

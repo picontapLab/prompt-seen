@@ -14,3 +14,21 @@ export function fingerprint(value: unknown): string {
   };
   return `sha256:${sha256(JSON.stringify(normalize(value ?? null)))}`;
 }
+
+export function proseFingerprint(prose: {
+  title: string;
+  description: string;
+  body: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  reasons?: Record<string, string>;
+}): string {
+  return fingerprint({
+    title: prose.title,
+    description: prose.description,
+    body: prose.body,
+    seoTitle: prose.seoTitle ?? null,
+    seoDescription: prose.seoDescription ?? null,
+    reasons: prose.reasons ?? {},
+  });
+}

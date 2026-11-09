@@ -82,9 +82,12 @@ it.each([0, 1, 2])(
       values: {},
       inputRequirements: {
         referenceImage: count ? 'required' : 'none',
+        instructions: count
+          ? { en: 'Upload the reference images in slot order.', 'zh-Hans': '按槽位顺序上传参考图片。' }
+          : {},
         slots: references.map((reference) => ({
           id: reference.slotId,
-          labels: { en: reference.slotId },
+          labels: { en: reference.slotId, 'zh-Hans': `参考图片 ${reference.slotId}` },
           min: 1,
           max: 1,
         })),

@@ -19,7 +19,9 @@ export type Span = { term: string; start: number; end: number };
 
 const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}ー々]/u;
 const WORD = /[\p{L}\p{N}]/u;
-const MARK = /[\p{M}‌‍︀-️]/u;
+// Half-width dakuten/handakuten are modifier letters, but belong to the preceding kana.
+// Keep their original offsets and normalize the combined character, just like decomposed marks.
+const MARK = /[\p{M}‌‍︀-️ﾞﾟ]/u;
 /** Accents of these scripts fold away; others (kana voicing marks, Indic vowel signs) carry meaning. */
 const FOLD_SCRIPT = /[\p{Script=Latin}\p{Script=Greek}\p{Script=Cyrillic}]/u;
 

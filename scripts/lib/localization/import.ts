@@ -4,14 +4,15 @@ import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
 import YAML from 'yaml';
 import { loadConfig, contentDir } from '../../../src/config/load';
-import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
-import { loadContent } from '../content/load';
+import { readContent } from '../content/read';
+import { Findings } from '../content/findings';
+import { validateContent } from '../content/validate';
 import { acquireContentLock } from '../content-production/lock';
 import { applyChanges, type Change } from '../media-generation/transaction';
 import { within, atomicWrite } from '../media-generation/files';
 import { splitFrontmatter } from '../content/mdx';
 import { checkLocale, type LocaleReport } from './check';
-import { fingerprint } from './fingerprint';
+import { fingerprint, proseFingerprint } from './fingerprint';
 
 const fieldPath = z.array(z.union([z.string().min(1), z.number().int().nonnegative()])).min(1);
 const hash = z.string().regex(/^sha256:[a-f0-9]{16}(?:[a-f0-9]{48})?$/);
@@ -77,23 +78,22 @@ function plan(root: string, batch: TranslationBatch, report: LocaleReport): Impo
         const previous = read(file);
         const split = previous ? splitFrontmatter(previous) : null;
         const fm = split ? YAML.parse(split.frontmatter) : {};
-        const desiredHash = fingerprint({
-          title: translated.title,
-          description: translated.description,
-          body: translated.body,
-          seoTitle: translated.seoTitle ?? null,
-          seoDescription: translated.seoDescription ?? null,
-          reasons: translated.reasons ?? {},
-        });
+        const desiredHash = proseFingerprint(translated);
         if (desiredHash === item.targetHash) continue;
         if (op.expectedTargetHash !== item.targetHash) throw new Error('Target fingerprint changed');
         const { body, ...text } = translated;
         const next = {
           ...fm,
           ...text,
-          status: 'draft',
-          updatedAt: new Date().toISOString().slice(0, 10),
-          translation: { sourceLocale: item.sourceLocale, sourceHash: item.sourceHash, reviewStatus: 'machine-draft' },
+          status: fm.status === 'published' ? 'published' : 'draft',
+          updatedAt:
+            fm.updatedAt ??
+            YAML.parse(splitFrontmatter(fs.readFileSync(within(root, item.sourceFile), 'utf8'))!.frontmatter).updatedAt,
+          translation: {
+            sourceLocale: item.sourceLocale,
+            sourceHash: item.sourceHash,
+            reviewStatus: fm.status === 'published' ? 'outdated' : 'machine-draft',
+          },
         };
         // Omitted optional prose is removed, not accidentally inherited from an earlier revision.
         for (const name of ['seoTitle', 'seoDescription', 'reasons']) if (!(name in text)) delete next[name];
@@ -123,8 +123,7 @@ function plan(root: string, batch: TranslationBatch, report: LocaleReport): Impo
       doc.setIn(field.targetField, translation);
       changes.set(field.file, doc.toString());
       fields.push({ file: field.file, field: field.targetField });
-      if (report.items.some((i) => i.pageStatus === 'published' && i.dependencies.includes(field.key)))
-        pendingReview = true;
+      if (report.publishedDependencies.includes(field.key)) pendingReview = true;
     } catch (error) {
       conflicts.push(`${op.key}: ${(error as Error).message}`);
     }
@@ -151,8 +150,21 @@ export async function importTranslations(root: string, input: unknown, apply = f
       throw new Error('Imports require the repository content directory');
     fs.cpSync(dir, path.join(staging, 'content'), { recursive: true, dereference: false });
     for (const change of result.changes) atomicWrite(within(staging, change.file), change.after!);
-    const validate = (contentPath: string) => {
-      const loaded = loadContent({ root, config, dir: contentPath, url: createUrlModule(urlConfigOf(config)) });
+    const validate = (contentPath: string, pending = false) => {
+      const findings = new Findings(root);
+      const content = readContent(contentPath, config.locales, findings);
+      // A pending batch is a preparation tree, not a publication. Check all structure and
+      // references, but defer Japanese publication rules until separate reviewed promotion.
+      // Current public content was validated above; other languages keep their normal rules.
+      if (pending) {
+        for (const records of [content.prompts, content.templates, content.collections, content.pages, content.topics])
+          for (const record of records.values()) {
+            const file = record.locales.get(batch.locale);
+            if (file?.fm.status === 'published') file.fm.status = 'draft';
+          }
+      }
+      validateContent(content, config, findings, { mediaRoot: path.join(root, 'public') });
+      const loaded = { findings };
       if (loaded.findings.blocking)
         throw new Error(
           loaded.findings.list
@@ -161,13 +173,35 @@ export async function importTranslations(root: string, input: unknown, apply = f
             .join('\n'),
         );
     };
-    validate(path.join(staging, 'content'));
+    validate(path.join(staging, 'content'), result.pendingReview);
     if (result.pendingReview) {
       // Keep published files intact. A reviewer can inspect complete candidate files and the
       // explicit plan; promotion is a separate reviewed content change, never a status override.
       const pending = path.join(artifactRoot, 'pending', fingerprint(batch).slice(7));
-      for (const change of result.changes) atomicWrite(within(pending, change.file), change.after!);
-      atomicWrite(path.join(pending, 'batch.json'), JSON.stringify(batch, null, 2) + '\n');
+      const candidates = [
+        ...result.changes.map((change) => ({
+          file: path.relative(root, within(pending, change.file)),
+          after: change.after,
+        })),
+        { file: path.relative(root, path.join(pending, 'batch.json')), after: JSON.stringify(batch, null, 2) + '\n' },
+      ];
+      if (
+        candidates.every(
+          (candidate) =>
+            fs.existsSync(within(root, candidate.file)) &&
+            fs.readFileSync(within(root, candidate.file), 'utf8') === candidate.after,
+        )
+      )
+        return result;
+      if (
+        candidates.some(
+          (candidate) =>
+            fs.existsSync(within(root, candidate.file)) &&
+            fs.readFileSync(within(root, candidate.file), 'utf8') !== candidate.after,
+        )
+      )
+        throw new Error('Pending candidate conflict; preserve the reviewer’s edits and prepare a new batch');
+      await applyChanges(root, path.join(artifactRoot, 'transactions', `${randomUUID()}.json`), candidates, () => {});
       return result;
     }
     const journal = path.join(artifactRoot, 'transactions', `${randomUUID()}.json`);

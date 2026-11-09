@@ -39,7 +39,7 @@ No operation accepts a caller-selected filesystem path. Keys resolve against the
 
 Dry-run does not acquire a lock or create artifacts. Apply acquires the existing content writer lock, re-reads fingerprints, merges only selected YAML fields, validates a complete staged content tree, then applies with the existing journaled transaction and rollback. Duplicate operations and stale fingerprints are conflicts; an already-identical result is a no-op after verifying the source fingerprint.
 
-New or changed unpublished pages are `draft / machine-draft`. If a batch changes an already-published Japanese page or one of its dependencies, the entire candidate stays under `.artifacts/localization/ja/pending/<batch-fingerprint>/`. Published files remain intact. Inspect the candidate, perform the language review, and promote it as an explicit reviewed content change. The importer cannot promote a batch by accepting a status field.
+New or changed unpublished pages are `draft / machine-draft`. If a batch changes an already-published Japanese page or one of its dependencies, the entire candidate stays under `.artifacts/localization/ja/pending/<batch-fingerprint>/`. Published files remain intact. Existing published candidate pages retain their status with `reviewStatus: outdated`, so other published pages can still link to them during staging validation; this is not approval. Inspect the candidate, perform the language review, and promote it as an explicit reviewed content change. The importer cannot promote a batch by accepting a status field.
 
 ## Review records
 

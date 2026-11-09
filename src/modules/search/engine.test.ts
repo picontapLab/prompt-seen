@@ -88,6 +88,13 @@ describe('ranking and matching (§13.1)', () => {
 });
 
 describe('CJK', () => {
+  it('finds Japanese voiced kana in full-width, half-width and decomposed input after index serialization', () => {
+    const japanese = engineOf('ja', [doc('jazz', { title: 'ジャズクラブのポスター' })]);
+    expect(ids('ｼﾞｬｽﾞｸﾗﾌﾞ ﾎﾟｽﾀｰ', japanese)).toEqual(['jazz']);
+    expect(ids('ジャズクラブ', japanese)).toEqual(['jazz']);
+    expect(ids('ジャズクラブ', japanese)).toEqual(['jazz']);
+  });
+
   const zh = engineOf('zh-Hans', [
     doc('a', { title: '霓虹剪影肖像' }),
     doc('b', { title: '霓虹楼群', description: '夜晚的肖像' }),

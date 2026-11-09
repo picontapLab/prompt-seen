@@ -489,3 +489,10 @@ export const collectionLocalizedSchema = z
   .strict();
 /** Frontmatter of any locale file; `reasons` only exists in collections. */
 export type LocalizedSource = z.infer<typeof localizedSchema> & { reasons?: Record<string, string> };
+
+/** One-time evidence connecting immutable legacy run hashes to the semantic contract. */
+export const templateContractBaselineSchema = z.object({
+  schemaVersion: z.literal(1),
+  legacyHash: z.string().regex(/^[a-f0-9]{64}$/),
+  semanticHash: z.string().regex(/^[a-f0-9]{64}$/),
+}).strict();
