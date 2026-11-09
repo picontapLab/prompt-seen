@@ -1,0 +1,57 @@
+id: p_238
+slug: source-japanese-office-portrait
+createdAt: 2026-11-07
+updatedAt: 2026-11-07
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: ja
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_402
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: none
+  instructions:
+    en: Paste the complete original prompt without adding an input image.
+    zh-Hans: 直接使用完整原词，不需要参考图。
+  slots: []
+showcaseExampleId: x_302
+promptProvenance: source-prompt
+inspirationSources:
+  - candidateId: gpt26-social-s03
+    platform: X
+    author: buusk4
+    url: https://x.com/buusk4/status/2118543259257712714
+    publishedAt: null
+    metricObjectUrl: https://x.com/buusk4/status/2118543259257712714
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Whole original post or gallery; not this generated example
+      zh-Hans: 原帖或整组作品；不属于本站新生成示例
+    observedAt: 2026-11-07
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Saved public X snapshot; complete prompt from saved author post/reply mirror
+      zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118543259257712714&lang=en&token=1
+    sourcePromptStatus:
+      en: Complete author text, original language
+      zh-Hans: 完整作者原词，保留原语言
+    metrics:
+      - key: likes
+        value: 155
+        labels:
+          en: Source post likes
+          zh-Hans: 原帖点赞
+source:
+  author: buusk4
+  url: https://x.com/buusk4/status/2118543259257712714
+  license: null
+annotations: []
