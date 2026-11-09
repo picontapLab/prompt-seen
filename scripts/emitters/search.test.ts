@@ -98,7 +98,8 @@ describe('what goes into an index', () => {
       expect(docs.filter((d) => d.kind === 'prompt')).toHaveLength(index.prompts.length);
       expect(index.prompts.every((p) => p.visibility === 'published')).toBe(true);
     }
-    expect(production.built.locales.has('ja')).toBe(false);
+    const enabled = loadConfig(ROOT, { BUILD_MODE: 'production' }).locales.filter((locale) => locale.enabled);
+    expect([...production.built.locales.keys()].sort()).toEqual(enabled.map((locale) => locale.code).sort());
   });
 
   it('collections and topics only when their pages exist', () => {

@@ -8,7 +8,7 @@ import { builtReader, exportJson, EXPORT_VERSION } from './export';
 import { ROOT } from './paths';
 
 // Machine-readable documents and exports (design doc §9.10.4, §14.1) over the repository's sample
-// content in a preview build: it has drafts and preview-only locales (ja, ar), which must never
+// content in a preview build: it has drafts and preview-only locales from the registry, which must never
 // get a Markdown version, an llms.txt line or an export record.
 
 const config = loadConfig(ROOT, {
@@ -47,7 +47,7 @@ describe('Markdown versions', () => {
     const drafts = visible('en').prompts.filter((p) => p.visibility === 'draft');
     expect(drafts.length).toBeGreaterThan(0);
     for (const d of drafts) expect(entries.some((e) => e.id === d.id && e.locale.code === 'en')).toBe(false);
-    for (const code of ['ja', 'ar']) {
+    for (const { code } of config.builtLocales.filter((locale) => !locale.enabled)) {
       const shown = visible(code)?.prompts ?? [];
       expect(shown.length).toBeGreaterThan(0);
       expect(
@@ -69,7 +69,8 @@ describe('Markdown versions', () => {
   it('link other languages only where that version is public', () => {
     for (const entry of geo.markdownEntries('prompt')) {
       const md = geo.markdown(entry)!;
-      expect(md).not.toMatch(/\/(ja|ar)\/prompts\//);
+      for (const locale of config.builtLocales.filter((locale) => !locale.enabled))
+        expect(md).not.toContain(`/${locale.pathPrefix}/prompts/`);
     }
   });
 });
@@ -83,7 +84,9 @@ describe('llms.txt', () => {
       const line = url.absoluteUrl(url.paths.promptMarkdown('en', p.slug));
       expect(text.includes(line)).toBe(p.visibility === 'published');
     }
-    expect(text).not.toContain('/ja/');
+    for (const locale of config.builtLocales.filter((locale) => locale.code !== config.defaultLocale))
+      for (const prompt of visible(locale.code).prompts)
+        expect(text).not.toContain(url.absoluteUrl(url.paths.promptMarkdown(locale.pathPrefix, prompt.slug)));
     expect(text).toContain(url.absoluteUrl(url.paths.sitemapIndex()));
   });
 });
