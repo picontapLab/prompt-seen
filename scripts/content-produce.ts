@@ -3,7 +3,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { z } from 'zod';
 import { ROOT } from './lib/paths';
-import { planJob, claimJob, recordJob, reviewJob, jobStatus } from './lib/content-production/production';
+import { planJob, claimJob, recordJob, failJob, reviewJob, jobStatus } from './lib/content-production/production';
 import { prepareContent, applyPrepared, recipeReviewHash } from './lib/content-production/publish';
 import { campaignCoverage } from './lib/content-production/coverage';
 
@@ -52,6 +52,7 @@ async function main() {
             : 'not-prepared',
         fingerprint: job.fingerprint,
         review: job.review,
+        failure: job.failure ?? null,
       };
     });
     return campaign ? { coverage: campaignCoverage(root, campaign), jobs } : jobs;
@@ -77,11 +78,13 @@ async function main() {
       );
     case 'prepare':
       return prepareContent(root, jobRoot, key, read());
+    case 'fail':
+      return failJob(jobRoot, key, read());
     case 'apply':
       return applyPrepared(root, key, z.string().min(1).parse(values.hash));
     default:
       throw new Error(
-        'Usage: content:produce plan --file job.json | claim --key key | record|review|prepare --key key --file input.json | apply --key key --hash sha256 | recipe-hash --file recipe.json | status [--key key]',
+        'Usage: content:produce plan --file job.json | claim --key key | record|fail|review|prepare --key key --file input.json | apply --key key --hash sha256 | recipe-hash --file recipe.json | status [--key key]',
       );
   }
 }

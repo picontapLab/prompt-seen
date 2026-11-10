@@ -13,7 +13,7 @@ import { localStorage } from './storage';
 const roots: string[] = [];
 afterEach(() => roots.splice(0).forEach((root) => fs.rmSync(root, { recursive: true, force: true })));
 
-it.each([0, 3])('retains GIF frames, timing, transparency and loop=%i in every display size', async (loop) => {
+it.each([0, 1, 3])('retains GIF frames, timing, transparency and loop=%i in every display size', async (loop) => {
   const input = await animatedGif(640, 480, loop);
   const analysis = await analyze(input);
   expect(analysis).toMatchObject({

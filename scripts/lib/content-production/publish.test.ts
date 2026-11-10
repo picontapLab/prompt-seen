@@ -167,6 +167,25 @@ it.each(['png', 'gif'])(
       values: {},
       promptLanguage: 'zh-Hans',
       promptProvenance: 'source-prompt',
+      inspirationSources: [
+        {
+          candidateId: 'chinese-literal',
+          platform: 'X',
+          author: 'Original author',
+          url: 'https://example.com/prompt',
+          metricObjectUrl: 'https://example.com/prompt',
+          metricScope: { en: 'Source post' },
+          observedAt: '2026-11-07',
+          cacheTimestampKnown: false,
+          evidenceMethod: { en: 'Saved source' },
+          evidenceUrl: 'https://example.com/evidence',
+          sourcePromptStatus: { en: 'Complete' },
+          metrics: [],
+        },
+      ],
+      ...(format === 'png'
+        ? { source: { author: 'Explicit author', url: 'https://example.com/original', license: 'CC0' } }
+        : {}),
     };
     const literalPlan = await prepareContent(root, jobRoot, 'chinese-literal', {
       ...literalRecipe,
@@ -182,6 +201,11 @@ it.each(['png', 'gif'])(
     );
     expect(literalEntry.promptSource).toMatchObject({ type: 'literal', language: 'zh-Hans' });
     expect(literalEntry.promptProvenance).toBe('source-prompt');
+    expect(literalEntry.source).toEqual(
+      format === 'png'
+        ? literalRecipe.source
+        : { author: 'Original author', url: 'https://example.com/prompt', license: null },
+    );
 
     if (format === 'png') {
       const variantFiles = {

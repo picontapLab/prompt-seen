@@ -48,6 +48,7 @@ export const recipeSchema = z
     body: z.string().trim().min(1),
     promptLanguage: z.string().min(2).optional(),
     promptProvenance: z.enum(['unknown', 'original', 'independent-adaptation', 'source-prompt']).optional(),
+    source: promptEntrySchema.shape.source.removeDefault().optional(),
     fields: z.array(fieldSchema),
     values: z.record(z.string(), z.union([z.string(), z.array(z.string())])),
     inputRequirements: inputRequirementsSchema,
@@ -320,7 +321,15 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
         promptProvenance:
           recipe.promptProvenance ?? (recipe.inspirationSources.length ? 'independent-adaptation' : 'unknown'),
         inspirationSources: recipe.inspirationSources,
-        source: { author: 'Prompt Seen', url: null, license: 'CC BY 4.0' },
+        source:
+          recipe.source ??
+          (recipe.promptProvenance === 'source-prompt'
+            ? {
+                author: recipe.inspirationSources.length === 1 ? recipe.inspirationSources[0]!.author : null,
+                url: recipe.inspirationSources.length === 1 ? recipe.inspirationSources[0]!.url : null,
+                license: null,
+              }
+            : { author: 'Prompt Seen', url: null, license: 'CC BY 4.0' }),
         annotations: [],
       });
     if (!existing && !templateId) write(path.join(stageContent, `prompts/${promptId}/prompt.txt`), text + '\n');

@@ -20,11 +20,14 @@ npm run content:produce -- status --campaign top50-2026-10
 - Review: `accepted`, `notes`, `reviewer`. Review pixels, specified text, reference roles and small-image readability before accepting.
 - Editorial review: after checking the complete recipe in both languages, add `editorialReview: {reviewer, reviewedAt, contentHash}` using the hash from `recipe-hash`. This is separate from image review. Any recipe change invalidates the attestation.
 - Recipe: see the concrete files in `top50-2026-10/recipes/`. An additional run supplies `target: {promptId, sampleName}` and its actual `values`. Used template bodies, fields, input contracts and existing sample values are immutable. Create a new version for semantic changes.
+- A recipe may supply `source: {author, url, license}` for prompt attribution. For `source-prompt` without an explicit source, the publisher uses the sole inspiration source's author and URL (or leaves them unknown when ambiguous), and leaves the license unknown. It never assigns the site's license to a quoted author prompt by default.
 - `--root` and `--job-dir` allow isolated fixture libraries. Without a campaign, jobs live under `.artifacts/content-production/jobs`.
 
 `status` reports job state and prepared/applied state. A campaign's `campaign.json` supplies expected cases, outputs and the reviewed `acceptedExampleIds` for each case. Coverage reports recorded and accepted counts separately; only accepted runs count toward completion. Keep this acceptance list in sync with the editorial review and content map. Historical runs may include a weaker earlier result.
 
 ## Resume safely
+
+If the provider returned an error without an image, reconcile the claimed attempt with `content:produce fail --campaign <campaign> --key <key> --file failure.json`. The file contains `provider`, the actual `message`, and `requestId` (or `null` when absent). The job becomes `needs_attention` without an output receipt and cannot be reviewed, published, or silently reclaimed. Preserve the failure before deciding on a new attempt key.
 
 Frozen attempts live under `.artifacts/content-production/<campaign>/jobs/`. A running job must be reconciled against the returned image before another attempt. A changed prompt, input or setting needs a new key. This campaign limits a recipe/sample to three attempts before reconsidering the recipe; there is no automatic retry loop. Failed-attempt records may remain in the ignored local campaign workspace while a run is being diagnosed.
 

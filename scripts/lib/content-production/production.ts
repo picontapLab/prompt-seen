@@ -17,6 +17,9 @@ const definitionSchema = z
   })
   .strict();
 const fileSchema = z.object({ path: z.string(), sha256: z.string() });
+const failureSchema = z
+  .object({ provider: z.string().min(1), message: z.string().min(1), requestId: z.string().nullable() })
+  .strict();
 const stateSchema = z
   .object({
     definition: definitionSchema,
@@ -24,6 +27,7 @@ const stateSchema = z
     references: z.array(fileSchema.extend({ slotId: z.string() })),
     status: z.enum(['planned', 'running', 'generated', 'accepted', 'needs_attention']),
     claimedAt: z.string().nullable(),
+    failure: failureSchema.extend({ recordedAt: z.string() }).optional(),
     receipt: z
       .object({
         output: fileSchema,
@@ -144,6 +148,18 @@ export function recordJob(
       recordedAt: new Date().toISOString(),
     };
     job.status = 'generated';
+    save(root, job);
+    return job;
+  });
+}
+/** Reconcile a provider failure that returned no image, without inventing a receipt. */
+export function failJob(root: string, key: string, input: z.infer<typeof failureSchema>) {
+  const failure = failureSchema.parse(input);
+  return locked(root, key, () => {
+    const job = jobStatus(root, key);
+    if (job.status !== 'running' || job.receipt) throw new Error('Failure requires a running job without a result');
+    job.failure = { ...failure, recordedAt: new Date().toISOString() };
+    job.status = 'needs_attention';
     save(root, job);
     return job;
   });
