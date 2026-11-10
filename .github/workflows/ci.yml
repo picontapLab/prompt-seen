@@ -3,7 +3,7 @@
 #   and the Storybook build.
 # - secrets: gitleaks over the branch's history (§15.5.4).
 # - build-and-test: the same code built at the root and under /prompt-seen, each served by the
-#   reference nginx and tested with Playwright in Chromium, Firefox and WebKit.
+#   reference nginx and tested with Playwright in Chromium, Firefox and WebKit on separate runners.
 # - preview: uploads the tested /prompt-seen preview build to Cloudflare Pages (noindex). It is
 #   skipped until the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
 name: CI
@@ -67,6 +67,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        name: [root, subpath]
+        browser: [chromium, firefox, webkit]
         include:
           # Production build at the root of a host.
           - name: root
@@ -76,10 +78,13 @@ jobs:
           - name: subpath
             base_path: /prompt-seen
             build_mode: preview
-    name: build-and-test (${{ matrix.name }})
+    # Each browser starts with a fresh runner: long combined runs were interrupted by runner
+    # shutdowns shortly after starting WebKit. HTTP checks run once per build, with Chromium.
+    name: build-and-test (${{ matrix.name }}, ${{ matrix.browser }})
     env:
       BASE_PATH: ${{ matrix.base_path }}
       BUILD_MODE: ${{ matrix.build_mode }}
+      PW_BROWSERS: ${{ matrix.browser }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -89,13 +94,16 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium firefox webkit
+        run: npx playwright install --with-deps "${{ matrix.browser }}"
       - name: Disk space before the tests
         run: df -h .
       - name: End-to-end tests through the reference nginx
-        run: npm run test:e2e
-        env:
-          PW_BROWSERS: chromium,firefox,webkit
+        run: |
+          if [ "$PW_BROWSERS" = chromium ]; then
+            npm run test:e2e
+          else
+            npm run test:e2e -- --project="$PW_BROWSERS"
+          fi
       # Traces are recorded only for retries (playwright.config.ts): recording every test filled
       # the disk once. The free space left shows how close a run came, and the largest
       # directories what took it.
@@ -109,14 +117,14 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-${{ matrix.name }}
+          name: playwright-${{ matrix.name }}-${{ matrix.browser }}
           path: test-results/
           retention-days: 7
       - name: Keep the tested preview build for deployment
-        if: matrix.name == 'subpath'
+        if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         run: npm run deploy:cloudflare:prepare
       - uses: actions/upload-artifact@v7
-        if: matrix.name == 'subpath'
+        if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         with:
           name: cloudflare-preview
           path: .deploy/cloudflare/
