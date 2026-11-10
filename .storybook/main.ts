@@ -9,6 +9,11 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-a11y'],
   // Sample images (public/media/, committed) at the same addresses as on the site.
   staticDirs: [{ from: '../public', to: CONFIG.basePath || '/' }],
+  // Storybook copies staticDirs. Vite's second public copy can race that copy and fail with EEXIST.
+  viteFinal: async (viteConfig) => ({
+    ...viteConfig,
+    build: { ...viteConfig.build, copyPublicDir: false },
+  }),
   core: { disableTelemetry: true },
 };
 

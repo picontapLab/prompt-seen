@@ -94,17 +94,22 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Install Playwright browsers
+        # Playwright 1.65 fixes WebKit process retention, but its Firefox 159 crashes with
+        # SIGSEGV when closing the menu after an axe audit. Keep the complete Firefox suite
+        # on the validated 1.64.1 runtime until that browser regression is fixed.
+        if: matrix.browser != 'firefox'
         run: npx playwright install --with-deps "${{ matrix.browser }}"
+      - name: Install the validated Firefox runtime and browser
+        if: matrix.browser == 'firefox'
+        run: |
+          npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund @playwright/test@1.64.1
+          npx playwright install --with-deps firefox
       - name: Disk space before the tests
         run: df -h .
       - name: End-to-end tests through the reference nginx
         run: |
           if [ "$PW_BROWSERS" = chromium ]; then
             npm run test:e2e
-          elif [ "$PW_BROWSERS" = webkit ]; then
-            # Concurrent WebKit layout checks repeatedly shut down the hosted runner.
-            # Keep the complete suite, with one browser worker using the runner's resources.
-            npm run test:e2e -- --project=webkit --workers=1
           else
             npm run test:e2e -- --project="$PW_BROWSERS"
           fi
