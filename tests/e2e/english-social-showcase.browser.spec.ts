@@ -5,6 +5,7 @@ import YAML from 'yaml';
 import { featuredOrder } from '../../src/modules/home/featured';
 import { BASE, BUILD, homePath, message, ROOT } from './support/artifact';
 import { localeIndex, promptDetail, templateDetail } from './support/content';
+import { worksOnShow } from './support/home';
 
 // The campaign spec fixes the order; allocated IDs come from actual import receipts.
 const campaign = path.join(ROOT, 'production/english-social-showcase-v1');
@@ -40,10 +41,20 @@ for (const code of ['en', 'zh-Hans'])
         const hero = page.locator('[data-on-show]');
         const another = hero.getByRole('button', { name: message(code, 'home.hero.another') });
         const image = hero.locator('figure img[alt]:not([alt=""])');
-        const expected = [...order.map((id) => caseOf(id).promptId), ...oldOrder];
-        for (const [index, id] of expected.entries()) {
+        // The home-language spec prioritizes matching prompt languages while keeping the
+        // campaign's relative order and every previously configured work in the cycle.
+        const campaignOrder = order.map((id) => caseOf(id).promptId);
+        const expected = worksOnShow(code);
+        expect(expected.filter((id) => campaignOrder.includes(id))).toEqual(campaignOrder);
+        expect(expected).toEqual(expect.arrayContaining([...campaignOrder, ...oldOrder]));
+        expect(new Set(expected).size).toBe(expected.length);
+        for (const id of expected) {
           await expect(hero).toHaveAttribute('data-on-show', id);
-          if (index < 12) {
+          // Clicking a taller localized frame's controls can scroll the page. Measure each
+          // campaign image at the top of the page, independently of that interaction scroll.
+          await page.evaluate(() => window.scrollTo(0, 0));
+          const campaignCase = mapping.cases.find((item) => item.promptId === id);
+          if (campaignCase) {
             const detail = promptDetail(code, id);
             await expect(image).toHaveAttribute('alt', detail.cover.alt);
             await expect
@@ -58,7 +69,7 @@ for (const code of ['en', 'zh-Hans'])
             expect(bounds.y).toBeGreaterThanOrEqual(0);
             expect(bounds.y + bounds.height).toBeLessThanOrEqual(viewport.height);
             if (code === 'en' && scheme === 'light')
-              await page.screenshot({ path: testInfo.outputPath(`${order[index]}-${viewport.width}.png`) });
+              await page.screenshot({ path: testInfo.outputPath(`${campaignCase.id}-${viewport.width}.png`) });
           }
           await another.click();
           await expect(another).toBeFocused();
@@ -66,7 +77,7 @@ for (const code of ['en', 'zh-Hans'])
         await expect(hero).toHaveAttribute('data-on-show', expected[0]!);
       });
 
-test('the homepage copies the complete English prompt and links to the twelve-case collection', async ({
+test('the homepage copies the complete English prompt and reaches the twelve-case collection', async ({
   page,
   context,
   browserName,
@@ -82,6 +93,11 @@ test('the homepage copies the complete English prompt and links to the twelve-ca
     .click();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(detail.prompt.text.trim());
   const collection = localeIndex('en').collections.find((item) => item.id === mapping.collectionId)!;
+  // Newer collections may occupy the home page's two slots; §10.2 permits the collection list path.
+  await page
+    .getByRole('banner')
+    .getByRole('link', { name: message('en', 'shell.nav.collections'), exact: true })
+    .click();
   await page.locator(`a[href="${BASE}${collection.path}"]`).first().click();
   await expect(page.locator('h1')).toHaveText(collection.title);
   for (const item of mapping.cases)
