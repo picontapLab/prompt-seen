@@ -52,6 +52,17 @@ coverage/
 spikes/option-b/
 docs/screenshots/
 
+# Private deployment notes and account dashboard exports belong in .artifacts/.
+/docs/picontap-subpath-deployment-runbook.md
+/docs/private/
+/docs/research/**/evidence/**/cloudflare-*.json
+/docs/research/**/evidence/**/gsc-*.json
+/docs/research/**/evidence/**/gsc-*.txt
+/docs/research/**/evidence/**/bing-submission.json
+/docs/research/**/evidence/**/deployment.json
+/docs/research/**/evidence/**/deployment-log-excerpt.txt
+/docs/research/**/publication-redactions.json
+
 # Non-runtime content-production artifacts
 production/*/outputs/
 production/*/jobs/
@@ -64,6 +75,14 @@ production/*/reference-queue.json
 production/*/reference-generations.json
 production/*/badge-replacement.json
 
+# This campaign retains exact submitted text and receipts; raw accepted outputs
+# already live in public/media. Failed format probes are archived under audit/.
+!production/gpt-image-26-social-2026-11-07/jobs/
+!production/gpt-image-26-social-2026-11-07/jobs/**/
+!production/gpt-image-26-social-2026-11-07/jobs/**/*.json
+!production/gpt-image-26-social-2026-11-07/jobs/**/*.txt
+production/gpt-image-26-social-2026-11-07/jobs/**/output.*
+
 # Spike build and test output (spikes/*/ also keep their own .gitignore)
 spikes/*/.next/
 spikes/*/out/
@@ -74,3 +93,12 @@ spikes/*/playwright-report/
 
 # Storybook build
 storybook-static/
+
+# Social campaign source images and historical runtime snapshots are local audit inputs.
+# Accepted site originals and display variants are versioned only under public/media/.
+production/gpt-image-26-social-2026-11-07/**/*.png
+production/gpt-image-26-social-2026-11-07/**/*.gif
+production/gpt-image-26-social-2026-11-07/**/*.webp
+production/gpt-image-26-social-2026-11-07/**/*.jpg
+production/gpt-image-26-social-2026-11-07/**/*.jpeg
+production/gpt-image-26-social-2026-11-07/audit/withdrawn-composites/runtime/

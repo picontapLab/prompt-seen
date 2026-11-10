@@ -20,3 +20,10 @@ build or deploy workflows, and dependencies with known vulnerabilities that reac
 - Keep build dependencies up to date (`npm outdated`, Dependabot). There is no runtime to patch.
 - Cloudflare and object storage credentials belong in CI secrets and your own shell only
   (docs/operations.md, "Security").
+- Keep instance-specific deployment notes, account dashboard exports, raw request logs and
+  search-console submissions outside version control, for example under the ignored `.artifacts/`.
+  Public reports should contain technical findings and reproducible checks without account data
+  or private repository settings.
+- Use repository-relative paths in shared generation records. Remove local usernames, home
+  directories and tool session paths before committing; keep original receipts privately.
+  Secret scanning does not detect every kind of private operational information.

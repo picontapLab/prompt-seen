@@ -280,6 +280,7 @@ Project facts:
 - [`content/README.md`](content/README.md): how to write and publish content, for maintainers.
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
 - [Operations](docs/operations.md): production setup, deploying, rolling back, search engines, analytics.
+- [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses
