@@ -14,3 +14,11 @@ match, otherwise the source language. `PromptDetail.prompt.language` and
 locale. Full pages, popup JSON, search and exports consume these same models. Example runs keep
 their own optional `promptLanguage` (null when an older record's language cannot be inferred).
 Page MDX publication remains independent of optional `prompt-locales/` files.
+
+Library visibility is independent of translation coverage. The build shares prompts, templates,
+collections and topics across built interface locales, preferring their local descriptions and
+falling back to an eligible default-language, source or other published description. Preview
+builds also share drafts; explicitly archived versions remain unavailable. Summaries, detail
+models, local links, feed and search all use the requested interface locale. Supporting text
+(image alt, annotations, input instructions and field labels) uses available text when a
+translation is missing. Standalone editorial pages retain per-locale publication.

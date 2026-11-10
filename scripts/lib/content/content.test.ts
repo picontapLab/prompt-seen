@@ -216,7 +216,7 @@ describe('a valid content tree', () => {
     const en = r.built!.locales.get('en')!;
     expect(en.prompts.map((p) => p.id)).toEqual(['p_003', 'p_002', 'p_001']);
     expect(r.built!.locales.has('ja')).toBe(false);
-    expect(r.built!.locales.get('zh-Hans')!.prompts.map((p) => p.id)).toEqual(['p_001']);
+    expect(r.built!.locales.get('zh-Hans')!.prompts.map((p) => p.id)).toEqual(en.prompts.map((p) => p.id));
   });
 
   it('builds the serializable prompt detail model', () => {
@@ -234,7 +234,7 @@ describe('a valid content tree', () => {
       { locale: 'zh-Hans', path: '/zh-hans/prompts/ink-portrait/' },
     ]);
     expect(p.translation).toEqual({ sourceLocale: 'en', reviewStatus: 'reviewed' });
-    expect(p.taxonomy.category).toEqual({ kind: 'category', id: 'portrait', label: '肖像', path: null });
+    expect(p.taxonomy.category).toEqual({ kind: 'category', id: 'portrait', label: '肖像', path: '/zh-hans/categories/portrait/' });
     expect(p.body[0]).toMatchObject({ t: 'h2', id: 'how-to-adjust-it' });
     expect(JSON.parse(JSON.stringify(p))).toEqual(p);
   });
@@ -272,7 +272,9 @@ describe('build modes (§8.4, §15.1)', () => {
   it('preview builds also show drafts and preview locales', () => {
     const r = load(setup(), 'preview');
     const ja = r.built!.locales.get('ja')!;
-    expect(ja.prompts.map((p) => [p.id, p.visibility])).toEqual([['p_001', 'draft']]);
+    expect(ja.prompts.map((p) => [p.id, p.visibility])).toEqual([
+      ['p_003', 'published'], ['p_002', 'published'], ['p_001', 'draft'],
+    ]);
   });
 
   it('production builds never show drafts', () => {
@@ -297,7 +299,96 @@ describe('build modes (§8.4, §15.1)', () => {
   it('a collection keeps only the items visible in its locale', () => {
     const r = load(setup());
     expect(r.built!.locales.get('en')!.collections[0]).toMatchObject({ id: 'c_001', itemCount: 3 });
-    expect(r.built!.locales.get('zh-Hans')!.collections).toEqual([]);
+    expect(r.built!.locales.get('zh-Hans')!.collections[0]).toMatchObject({ id: 'c_001', itemCount: 3 });
+  });
+});
+
+describe('shared content across interface languages', () => {
+  it.each(['production', 'preview'] as const)('keeps the same library and local links without translation files in %s', (mode) => {
+    const r = load(setup({
+      'content/prompts/p_001/locales/zh-Hans.mdx': null,
+      'content/prompts/p_001/locales/ja.mdx': null,
+      'content/media/a_001.yaml': media('a_001', { en: 'An ink portrait' }),
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait',
+        'annotations:\n  - phrase: a single red seal stamp in the lower right\n    region: { x: 0.8, y: 0.8, w: 0.1, h: 0.1 }\n    note: { en: Sets the seal }\n'),
+    }), mode);
+    expect(blocking(r.findings.list)).toEqual([]);
+    const en = r.built!.locales.get('en')!;
+    for (const [code, index] of r.built!.locales) {
+      const prefix = LOCALES.find((l) => l.code === code)!.pathPrefix;
+      for (const kind of ['prompts', 'templates', 'collections', 'topics'] as const)
+        expect(index[kind].map((entry) => entry.id)).toEqual(en[kind].map((entry) => entry.id));
+      const p = detail<PromptDetail>(r, 'prompt', code, 'p_001')!;
+      expect(p).toMatchObject({ locale: code, title: 'Ink portrait', path: `/${prefix}/prompts/ink-portrait/` });
+      expect(p.cover.alt).toBe('An ink portrait');
+      expect(p.annotations[0]!.note).toBe('Sets the seal');
+      expect(p.examples[0]!.notes).toBe('Clean edges.');
+      expect(p.prompt).toMatchObject({ text: PROMPT, language: 'en' });
+      expect(p.alternates.map((a) => a.locale)).toEqual([...r.built!.locales.keys()]);
+      expect(toCard(p, aspectRatioLabel).path).toBe(p.path);
+      const second = detail<PromptDetail>(r, 'prompt', code, 'p_002')!;
+      expect(JSON.stringify(second.body)).toContain(`"href":"/${prefix}/prompts/ink-portrait/"`);
+      const template = detail<TemplateDetail>(r, 'template', code, 't_001')!;
+      expect(template.version.defaultPrompt).toBe('Poster for a mug in warm.');
+      expect(template.version.fields[0]!.label).toBe(code === 'zh-Hans' ? '产品' : 'Product');
+      const documents = searchDocuments({
+        index, prompt: (id) => detail<PromptDetail>(r, 'prompt', code, id) ?? null,
+        template: (id) => detail<TemplateDetail>(r, 'template', code, id) ?? null,
+        pages: { collections: true, topics: true },
+      });
+      expect(documents.filter((d) => d.kind === 'prompt').map((d) => d.id)).toHaveLength(en.prompts.length);
+      expect(documents.find((d) => d.id === 'prompt:p_001')).toMatchObject({ path: p.path, body: PROMPT });
+    }
+    // Standalone editorial pages retain their own publication rules.
+    expect(r.built!.locales.get('zh-Hans')!.pages).toEqual([]);
+  });
+
+  it('uses published original text while a translation is still a draft', () => {
+    const r = load(setup({
+      'content/prompts/p_001/locales/zh-Hans.mdx': zhFor('', enFm, 'machine-draft').replace('status: published', 'status: draft'),
+    }));
+    expect(blocking(r.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(r, 'prompt', 'zh-Hans', 'p_001')).toMatchObject({
+      title: enFm.title, visibility: 'published', translation: { sourceLocale: 'en', reviewStatus: 'source' },
+    });
+  });
+
+  it('shares a non-English source when no default-language file exists', () => {
+    const r = load(setup({
+      'content/prompts/p_003/locales/en.mdx': null,
+      'content/prompts/p_003/locales/zh-Hans.mdx': mdx({ ...enFm, title: '第三个案例' }),
+    }));
+    expect(blocking(r.findings.list)).toEqual([]);
+    expect(detail<PromptDetail>(r, 'prompt', 'en', 'p_003')).toMatchObject({
+      title: '第三个案例', path: '/en/prompts/third/', translation: { sourceLocale: 'zh-Hans', reviewStatus: 'source' },
+    });
+  });
+
+  it('allows a translated description to link to a shared case without that translation', () => {
+    const r = load(setup({
+      'content/prompts/p_001/locales/zh-Hans.mdx': zhFor('') + '\nSee [second](prompt:p_002).\n',
+    }));
+    expect(blocking(r.findings.list)).toEqual([]);
+    const p = detail<PromptDetail>(r, 'prompt', 'zh-Hans', 'p_001')!;
+    expect(p.title).toBe('水墨肖像');
+    expect(JSON.stringify(p.body)).toContain('"href":"/zh-hans/prompts/second/"');
+  });
+
+  it('shares preview-only drafts without publishing them in production', () => {
+    const root = setup({ 'content/prompts/p_003/locales/en.mdx': mdx({ ...enFm, status: 'draft' }) });
+    for (const index of load(root).built!.locales.values())
+      expect(index.prompts.map((p) => p.id)).not.toContain('p_003');
+    for (const index of load(root, 'preview').built!.locales.values())
+      expect(index.prompts.find((p) => p.id === 'p_003')?.visibility).toBe('draft');
+  });
+
+  it('respects explicit archival even if another language remains published', () => {
+    const r = load(setup({
+      'content/prompts/p_001/locales/zh-Hans.mdx': zhFor('').replace('status: published', 'status: archived'),
+    }));
+    expect(r.built!.locales.get('en')!.prompts.some((p) => p.id === 'p_001')).toBe(true);
+    expect(detail<PromptDetail>(r, 'prompt', 'zh-Hans', 'p_001')).toBeUndefined();
+    expect(r.built!.manifest.gone).toContainEqual({ path: '/zh-hans/prompts/ink-portrait/', locale: 'zh-Hans', reason: 'archived' });
   });
 });
 

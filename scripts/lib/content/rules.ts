@@ -211,10 +211,14 @@ export function publishProblems(p: PublishContext): Problem[] {
 
   for (const link of file.compiled.links) {
     const target = linkTargetLocales(content, link);
-    if (target && target.get(locale)?.fm.status !== 'published')
+    const local = target?.get(locale);
+    const published = (f: LocaleFile) => f.fm.status === 'published' && f.fm.translation?.reviewStatus !== 'machine-draft';
+    const available = local && published(local) ||
+      (link.kind !== 'page' && local?.fm.status !== 'archived' && [...(target?.values() ?? [])].some(published));
+    if (target && !available)
       problems.push({
         message: `links to ${link.kind}:${link.target}, which is not published in ${locale}`,
-        fix: 'publish the target in this language first, or remove the link',
+        fix: 'publish the target (a shared library version or a page in this language), or remove the link',
         line: link.line,
       });
   }

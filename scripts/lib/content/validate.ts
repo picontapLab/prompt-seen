@@ -562,7 +562,7 @@ export function validateContent(
       terms: [{ key: topic.taxonomy, id: topic.termId }],
     });
 
-  // --- Missing translations in enabled locales (§14.3: a warning, never an empty page) ----------
+  // --- Missing translations in enabled locales (shared content still uses published text) -----
   const missing = new Map<string, string[]>();
   const entries: [string, ReadonlyMap<string, LocaleFile>][] = [
     ...[...content.prompts.values()].map((r) => [r.data.id, r.locales] as [string, ReadonlyMap<string, LocaleFile>]),
@@ -582,7 +582,7 @@ export function validateContent(
       'content',
       `${ids.length} published entr${ids.length === 1 ? 'y has' : 'ies have'} no ${code} version: ${ids.join(', ')}`,
       {
-        fix: `translate them (§8.4); until then ${code} pages are not generated for these entries`,
+        fix: `translate them (§8.4); until then ${code} pages use an available published description`,
       },
     );
 

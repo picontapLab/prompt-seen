@@ -190,6 +190,38 @@ test('an unavailable translation keeps the favorite ID and returns when switchin
   await expect(page.locator('[data-card-summary]')).toHaveText(entry.description);
 });
 
+test('a case without a translated description stays available after switching languages', async ({ page, request }) => {
+  const candidate = BUILD.locales
+    .filter((l) => l.code !== defaultLocale.code)
+    .flatMap((locale) => localeIndex(locale.code).prompts.map((entry) => ({ locale, entry })))
+    .find(({ locale, entry }) => {
+      const detail = promptDetail(locale.code, entry.id);
+      return (
+        detail.translation.reviewStatus === 'source' &&
+        detail.translation.sourceLocale !== locale.code &&
+        localeIndex(defaultLocale.code).prompts.some((p) => p.id === entry.id)
+      );
+    });
+  expect(candidate, 'the library includes cases whose descriptions are not yet translated').toBeDefined();
+  const { locale, entry } = candidate!;
+  const original = promptDetail(defaultLocale.code, entry.id);
+  const fallback = promptDetail(locale.code, entry.id);
+  expect(localeIndex(locale.code).prompts.map((p) => p.id)).toEqual(
+    localeIndex(defaultLocale.code).prompts.map((p) => p.id),
+  );
+  await page.goto(`${BASE}${original.path}`);
+  await chooseLanguage(page, defaultLocale, locale);
+  await expect(page).toHaveURL(new RegExp(`${fallback.path}$`));
+  await expect(page.locator('h1')).toHaveText(fallback.title);
+  const popup = await request.get(`${BASE}/generated/${locale.code}/prompts/${entry.slug}.json`);
+  expect(popup.status()).toBe(200);
+  expect(await popup.json()).toMatchObject({ id: entry.id, locale: locale.code, path: fallback.path });
+  await page.reload();
+  await expect(page.locator('h1')).toHaveText(fallback.title);
+  await chooseLanguage(page, locale, defaultLocale);
+  await expect(page).toHaveURL(new RegExp(`${original.path}$`));
+});
+
 test('a delayed feed page cannot append source summaries after language navigation', async ({ page }) => {
   const target = BUILD.locales.find((l) => l.code !== defaultLocale.code)!;
   let release!: () => void;

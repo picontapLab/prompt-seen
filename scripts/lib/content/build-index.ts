@@ -50,7 +50,9 @@ import {
 // Production builds show a locale version when the locale is enabled, the file is published
 // and it meets every publishing rule (§8.4). Preview builds also show drafts, in enabled and
 // preview locales, so maintainers can check work in progress (§15.1); archived versions are
-// never shown. An entry is never shown in a locale it has no file for (§8.4: no fallback text).
+// never shown. Library entries share the same inventory across interface languages: when a
+// local description is unavailable, use an eligible version and keep links in the UI locale.
+// Standalone pages retain their per-locale publication rules.
 
 type Url = ReturnType<typeof createUrlModule>;
 
@@ -143,6 +145,18 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const enabled = config.locales.find((l) => l.code === code)!.enabled;
       if (publishable && enabled) map.set(code, { visibility: 'published', state, file });
       else if (preview) map.set(code, { visibility: publishable ? 'published' : 'draft', state, file });
+    }
+    if (kind !== 'page') {
+      // Choose from actual eligible versions before filling gaps, so fallback versions cannot
+      // become each other's source. Published content always wins over preview-only drafts.
+      const candidates = [...map.values()];
+      const preferred = (versions: Vis[]) =>
+        versions.find((v) => v.file.locale === config.defaultLocale) ??
+        versions.find((v) => v.state.isSource) ?? versions[0];
+      const fallback = preferred(candidates.filter((v) => v.visibility === 'published')) ?? preferred(candidates);
+      if (fallback)
+        for (const { code } of built)
+          if (!map.has(code) && locales.get(code)?.fm.status !== 'archived') map.set(code, fallback);
     }
     visible.set(owner, map);
   };
@@ -259,6 +273,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
 
   // ---- Images --------------------------------------------------------------------------------------
 
+  const localizedText = (values: Record<string, string>, code: string, source?: string): string | null =>
+    [values[code], source ? values[source] : null, values[config.defaultLocale], ...Object.values(values)]
+      .find((value) => value?.trim()) ?? null;
+
   const imageRef = (assetId: string, code: string, full: boolean): ImageRef => {
     const m = content.media.get(assetId)!.data;
     const ratio = m.width / m.height;
@@ -272,8 +290,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       ratio,
       extreme: ratio > 2 || ratio < 0.5,
       placeholder: m.placeholder.color,
-      alt: m.alt[code] ?? '',
-      caption: m.caption[code] ?? null,
+      alt: localizedText(m.alt, code) ?? '',
+      caption: localizedText(m.caption, code),
       variants: full
         ? {
             thumbnail: m.variants.thumbnail,
@@ -310,7 +328,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
 
   const termLabel = (key: TaxonomyKey, id: string, code: string) => {
     const labels = content.taxonomy[key].get(id)?.labels ?? {};
-    return labels[code] ?? labels[config.defaultLocale] ?? id;
+    return localizedText(labels, code) ?? id;
   };
   /** This locale's aliases first, then the label and aliases of every other locale (§13.2). */
   const termAliases = (term: { labels: Record<string, string>; aliases: Record<string, string[]> }, code: string) => {
@@ -484,7 +502,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           start,
           end: start + a.phrase.length,
           region: a.region,
-          note: a.note[code] ?? '',
+          note: localizedText(a.note, code, v.file.locale) ?? '',
         }));
       const examples = runsOfPrompt(r.data.id).map((x) => exampleView(x.data.id, code));
       const score = (p: PromptRecord) =>
@@ -522,12 +540,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         promptProvenance: r.data.promptProvenance,
         inspirationSources: r.data.inspirationSources.map((source) => ({
           ...source,
-          metricScope: source.metricScope[code] ?? '',
-          evidenceMethod: source.evidenceMethod[code] ?? '',
-          sourcePromptStatus: source.sourcePromptStatus[code] ?? '',
-          metrics: source.metrics.map(({ key, value, labels }) => ({ key, value, label: labels[code] ?? key })),
+          metricScope: localizedText(source.metricScope, code, v.file.locale) ?? '',
+          evidenceMethod: localizedText(source.evidenceMethod, code, v.file.locale) ?? '',
+          sourcePromptStatus: localizedText(source.sourcePromptStatus, code, v.file.locale) ?? '',
+          metrics: source.metrics.map(({ key, value, labels }) => ({ key, value, label: localizedText(labels, code, v.file.locale) ?? key })),
         })),
-        inputInstructions: inputRequirementsOf(content, r).instructions[code] ?? null,
+        inputInstructions: localizedText(inputRequirementsOf(content, r).instructions, code, v.file.locale),
         showcaseExampleId: r.data.showcaseExampleId,
         template:
           source.type === 'template' ? { id: source.templateId, version: source.version, values: selected.values! } : null,
@@ -557,11 +575,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const selected = resolveTemplate(r, version, code);
       const spec = selected.spec;
       const label = (labels: Record<string, string>) =>
-        labels[code] ?? labels[config.defaultLocale] ?? Object.values(labels)[0] ?? '';
+        localizedText(labels, code, v.file.locale) ?? '';
       const fields: LocalizedField[] = version.fields.map((f, i) => ({
         ...spec.fields[i]!,
         label: label(f.labels),
-        help: f.help[code] ?? null,
+        help: localizedText(f.help, code, v.file.locale),
         groupLabel: f.group ? label(content.fieldGroups.get(f.group)?.labels ?? {}) || null : null,
         optionLabels: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, label(o.labels)])) : {},
       }));
@@ -593,7 +611,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         })(),
         seo: seo(v.file),
         ...richBody(v.file, code),
-        inputInstructions: version.inputs?.instructions[code] ?? null,
+        inputInstructions: localizedText(version.inputs?.instructions ?? {}, code, v.file.locale),
         version: {
           id: version.id,
           body: spec.body,
@@ -737,11 +755,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       referenceLabels: d.referenceAssetIds.map((_, index) => {
         const binding = d.referenceBindings.find((b) => b.referenceIndex === index);
         const slot = runInputRequirements(content, d).slots.find((s) => s.id === binding?.slotId);
-        return slot ? (slot.labels[code] ?? '') : '';
+        return slot ? (localizedText(slot.labels, code) ?? '') : '';
       }),
       references: d.referenceAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
       outputs: d.outputAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
-      notes: d.notes[code] ?? null,
+      notes: localizedText(d.notes, code),
     };
   }
 

@@ -1,7 +1,8 @@
 # Locale registry (design doc §8.1–§8.2). Single source for routing, SEO, search and tooling.
 # enabled: meets the conditions to be public; production builds only these.
 # preview: also built in preview mode (PR previews), e.g. drafts used for layout testing.
-# Whether a single entry is published in a locale is decided by its locale file, not here.
+# Library entries share available content across built locales; locale files supply translations.
+# Standalone pages and explicitly archived versions retain per-locale publication rules.
 defaultLocale: en
 locales:
   # Phase 1

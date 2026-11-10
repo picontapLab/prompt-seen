@@ -121,8 +121,11 @@ Build-time code lives in `scripts/lib/content/`; the app reads only what the bui
   a plain `<a>`). Images go through `@/modules/media` (`getImage`, `srcSet`).
 - Template rendering is the pure `@/modules/template` (`renderTemplate`), shared by the build,
   the template page and the editor, so the default prompt, preview, copy and download agree.
-- Production builds show a locale version only when the locale is enabled and the version meets
-  every publishing rule; preview builds also show drafts and `preview: true` locales.
+- Production builds use descriptions that meet every publishing rule. Prompts, templates,
+  collections and topics share their inventory across built interface locales: a missing or
+  draft translation uses an eligible description (default language, source, then another
+  published version), with links in the requested locale. Preview builds also share drafts;
+  explicit archival still takes precedence. Standalone pages remain locale-specific.
 - Findings have four levels: `error` and `publish` block, `warning` and `info` do not (§14.3).
   A new content check goes in `validate.ts` (or a module it calls) and names the file, the line
   when known, the field and the fix.
