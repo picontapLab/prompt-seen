@@ -29,11 +29,16 @@ it.each([0, 1, 2])(
     await sharp({ create: { width: 320, height: 320, channels: 3, background: '#567890' } })
       .png()
       .toFile(output);
-    const references = Array.from({ length: count }, (_, index) => {
-      const file = path.join(root, `reference-${index}.png`);
-      fs.copyFileSync(output, file);
-      return { slotId: `subject${index}`, path: file };
-    });
+    // Distinct pixels: importMedia returns the existing record for bytes it already holds.
+    const references = await Promise.all(
+      Array.from({ length: count }, async (_, index) => {
+        const file = path.join(root, `reference-${index}.png`);
+        await sharp({ create: { width: 320, height: 320, channels: 3, background: `#90785${index}` } })
+          .png()
+          .toFile(file);
+        return { slotId: `subject${index}`, path: file };
+      }),
+    );
     const call = (command: string, input?: unknown, extra: string[] = []) => {
       const file = path.join(root, 'input.json');
       if (input) fs.writeFileSync(file, JSON.stringify(input));
@@ -112,6 +117,17 @@ it.each([0, 1, 2])(
     expect(fs.readdirSync(path.join(root, 'content/prompts'))).toHaveLength(1);
     const run = YAML.parse(fs.readFileSync(path.join(root, 'content/examples', first.example, 'run.yaml'), 'utf8'));
     expect(run.referenceAssetIds).toHaveLength(count);
+    // References are published images too: their detail and og files carry the §9.7 credit.
+    for (const id of run.referenceAssetIds) {
+      const media = YAML.parse(fs.readFileSync(path.join(root, 'content/media', `${id}.yaml`), 'utf8'));
+      expect(media.credit).toMatchObject({
+        creator: 'Prompt Seen',
+        creditText: 'AI-generated reference demonstration · Prompt Seen',
+        license: null,
+      });
+      for (const variant of [media.variants.detail, media.variants.og])
+        expect(fs.readFileSync(path.join(root, 'public', variant.key)).toString('latin1')).toContain('dc:creator');
+    }
     if (count) {
       fs.appendFileSync(references[0]!.path, 'changed');
       expect(() => call('plan', definition)).toThrow();
