@@ -28,3 +28,10 @@ id = "generic-api-key"
   paths = ['''^content/site\.yaml$''']
   regexTarget = "match"
   regexes = ['''^token:\s*dcd58318f5c74357907bb73747649618$''']
+
+  [[rules.allowlists]]
+  description = "Public article entity UUIDs in two archived source responses"
+  condition = "AND"
+  paths = ['^docs/research/gpt-image-2[.]6-evidence-2026-11-07/gifs/2118220485150535796[.]fx[.]json$', '^docs/research/gpt-image-2[.]6-multilingual-evidence-2026-11-07/gifs/2118677264414245119[.]fx[.]json$']
+  regexTarget = "match"
+  regexes = ['^entityKey":\s*"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"$']
