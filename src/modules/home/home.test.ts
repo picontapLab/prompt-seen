@@ -133,6 +133,21 @@ describe('composeHome', () => {
     expect(composeHome(input(prompts)).more).toHaveLength(HOME_LIMITS.more);
   });
 
+  it('puts works the latest row already shows last in the more row, and still fills it', () => {
+    // 20 works, newest first: the latest row holds p_020…p_009; the featured order starts with
+    // three of them, then older works.
+    const many = Array.from({ length: 20 }, (_, i) => prompt(20 - i));
+    const order = ['p_020', 'p_015', 'p_010', 'p_008', 'p_003', 'p_007', 'p_001', 'p_005', 'p_002'];
+    const home = composeHome(input(many, { featuredOrder: order }));
+    expect(home.latest).toHaveLength(HOME_LIMITS.latest);
+    expect(home.more).toEqual(['p_008', 'p_003', 'p_007', 'p_001', 'p_005', 'p_002']);
+    expect(home.more.filter((id) => home.latest.includes(id))).toEqual([]);
+    // Too few others: the row is still filled, latest works after the others.
+    const short = composeHome(input(many, { featuredOrder: ['p_020', 'p_015', 'p_010', 'p_008'] }));
+    expect(short.more.slice(0, 1)).toEqual(['p_008']);
+    expect(short.more).toEqual(['p_008', 'p_020', 'p_015', 'p_010'].filter((id) => id !== short.onShow[0]?.id));
+  });
+
   it('gives each use case a different cover where it can, and links the topic page or the filtered list', () => {
     const tagged = [
       prompt(3, { useCaseIds: ['poster', 'product'] }),

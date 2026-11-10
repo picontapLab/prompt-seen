@@ -134,11 +134,19 @@ export function composeHome(input: HomeInput): HomeModel {
   }
   const showcases = onShow.map((d): OnShow => ({ ...toShowcase(d), slug: d.slug }));
 
-  // More works: the other works on show, then the featured order; never the current one.
+  // More works: the other works on show, then the featured order; never the current one. Works
+  // the latest row already links come last, so the home page links as many works as it can;
+  // they still fill the row when there are not enough others.
   const current = showcases[0]?.id;
-  const more = [...showcases.slice(1).map((s) => s.id), ...input.featuredOrder]
-    .filter((id, i, all) => id !== current && byId.has(id) && all.indexOf(id) === i)
-    .slice(0, HOME_LIMITS.more);
+  const latest = input.prompts.slice(0, HOME_LIMITS.latest).map((p) => p.id);
+  const inLatest = new Set(latest);
+  const candidates = [...showcases.slice(1).map((s) => s.id), ...input.featuredOrder].filter(
+    (id, i, all) => id !== current && byId.has(id) && all.indexOf(id) === i,
+  );
+  const more = [...candidates.filter((id) => !inLatest.has(id)), ...candidates.filter((id) => inLatest.has(id))].slice(
+    0,
+    HOME_LIMITS.more,
+  );
 
   // Use cases with the most works first; each cover is a different work where there is one,
   // taken in the featured order so annotated and verified works come first.
@@ -172,7 +180,7 @@ export function composeHome(input: HomeInput): HomeModel {
     onShow: showcases,
     more,
     useCases,
-    latest: input.prompts.slice(0, HOME_LIMITS.latest).map((p) => p.id),
+    latest,
     templates,
     collections,
     total: input.prompts.length,

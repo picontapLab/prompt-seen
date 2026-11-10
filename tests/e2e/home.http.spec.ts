@@ -120,6 +120,16 @@ for (const locale of BUILD.locales) {
       expect(index.prompts.map((p) => p.description)).toContain(elementText(node, 'span'));
     }
     expect(html).toContain(message(locale.code, 'home.hero.intro'));
+    // The more row avoids works the latest row already links, when there are enough others.
+    const cards = [...html.matchAll(/aria-describedby="[^"]*-summary [^"]*"[^>]*\sdata-entry="([^"]+)"/g)].map(
+      (m) => m[1]!,
+    );
+    expect(cards).toHaveLength(summaries.length);
+    const moreCount = Math.min(6, Math.max(0, index.prompts.length - 1));
+    const [more, latest] = [cards.slice(0, moreCount), cards.slice(moreCount)];
+    expect(latest).toEqual(index.prompts.slice(0, 12).map((p) => p.id));
+    if (index.prompts.length >= moreCount + latest.length + 1)
+      expect(more.filter((id) => latest.includes(id))).toEqual([]);
     const chosen = [...index.templates]
       .sort((a, b) => Number(b.promptLanguage === locale.code) - Number(a.promptLanguage === locale.code))
       .slice(0, 3);
