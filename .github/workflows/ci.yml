@@ -101,6 +101,10 @@ jobs:
         run: |
           if [ "$PW_BROWSERS" = chromium ]; then
             npm run test:e2e
+          elif [ "$PW_BROWSERS" = webkit ]; then
+            # Concurrent WebKit layout checks repeatedly shut down the hosted runner.
+            # Keep the complete suite, with one browser worker using the runner's resources.
+            npm run test:e2e -- --project=webkit --workers=1
           else
             npm run test:e2e -- --project="$PW_BROWSERS"
           fi

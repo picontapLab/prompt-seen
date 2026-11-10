@@ -191,7 +191,12 @@ test('right-to-left: the page mirrors, the prompt and the image coordinates do n
   expect(stage.x).toBeGreaterThan(title.x);
   if (d.annotations.length) {
     const a = d.annotations[0]!;
-    const img = stage;
+    // Reference comparisons can make the image container narrow even on a desktop. Only the
+    // current annotation is shown there, so activate it before measuring its physical position.
+    await hydrated(page, `button[data-letter="${a.letter}"]`);
+    await phrase(page, a.letter).hover();
+    await expect(box(page, a.letter)).toBeVisible();
+    const img = (await page.locator('img[fetchpriority="high"]').boundingBox())!;
     const b = (await box(page, a.letter).boundingBox())!;
     // Regions are measured from the image's left edge in every direction (§8.6).
     expect(Math.abs(b.x - (img.x + a.region.x * img.width))).toBeLessThan(3);
