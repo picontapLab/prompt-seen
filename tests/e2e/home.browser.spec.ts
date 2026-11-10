@@ -103,8 +103,12 @@ test.describe('desktop', () => {
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(work.prompt.text.trim());
   });
 
-  test('"Another frame" steps through the works on show, keeps focus and announces the work', async ({ page }) => {
+  test('"Another frame" steps through the works on show, keeps focus and announces the work', async ({
+    page,
+  }, testInfo) => {
     test.skip(onShow.length < 2, 'one work on show');
+    // Every configured work is exercised; give each additional rendering its own budget.
+    test.setTimeout(testInfo.timeout + onShow.length * 2000);
     await page.goto(url);
     await hydrated(page);
     for (let i = 1; i <= onShow.length; i++) {

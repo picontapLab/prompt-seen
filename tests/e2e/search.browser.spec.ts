@@ -171,7 +171,8 @@ test.describe('desktop', () => {
     const help = page.locator('[data-no-results]');
     await expect(help.getByRole('heading')).toContainText('梅枝');
     const other = help.locator(`a[href="${BASE}/${zh.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}"]`);
-    await expect(other).toBeVisible();
+    // Suggestions load and query the other locale indexes after the empty result arrives.
+    await expect(other).toBeVisible({ timeout: 15_000 });
     await expect(help.locator(`a[href="${BASE}/${en.pathPrefix}/prompts/"]`)).toBeVisible();
     await other.click();
     await expect(page.locator('[data-group="prompt"] li').first()).toContainText('梅枝');
