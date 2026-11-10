@@ -330,11 +330,16 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
     test.skip(!overflows, 'the style tabs fit at this width');
     const forward = tabs.locator('xpath=..').getByRole('button', { name: message(code, 'primitives.scrollRow.next') });
     await expect(forward).toBeVisible();
-    await tabs.evaluate((el) => {
+    const end = await tabs.evaluate((el) => {
       (el as HTMLElement).style.scrollSnapType = 'none';
-      el.scrollTo({ left: el.scrollWidth - el.clientWidth - 3, behavior: 'instant' });
+      // scrollLeft can be fractional while scrollWidth and clientWidth are rounded.
+      // Measure the browser's clamped endpoint before placing the row three pixels short.
+      el.scrollTo({ left: el.scrollWidth, behavior: 'instant' });
+      const end = el.scrollLeft;
+      el.scrollTo({ left: end - 3, behavior: 'instant' });
+      return end;
     });
-    await expect.poll(() => tabs.evaluate((el) => el.scrollWidth - el.clientWidth - el.scrollLeft)).toBe(0);
+    await expect.poll(() => tabs.evaluate((el) => el.scrollLeft)).toBe(end);
     await expect(forward).toBeHidden();
   });
 
