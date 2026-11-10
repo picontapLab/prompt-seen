@@ -224,18 +224,10 @@ test.describe('desktop', () => {
   });
 
   test('a shared link fills the values once; a link for another version falls back with a notice', async ({ page }) => {
-    await open(page);
-    // The fragment as the editor's encodeShare writes it: base64url UTF-8 JSON after the version.
-    const fragment = await page.evaluate(
-      ([version, name]) => {
-        const json = JSON.stringify({ [name!]: 'from a link' });
-        const bytes = new TextEncoder().encode(json);
-        let binary = '';
-        for (const b of bytes) binary += String.fromCharCode(b);
-        return `${version}=${btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')}`;
-      },
-      [template.version.id, textField.name],
-    );
+    // Arrive at the shared URL as its recipient would. Opening the bare editor first can
+    // race its initial router effects against a second, same-document fragment navigation.
+    const payload = Buffer.from(JSON.stringify({ [textField.name]: 'from a link' }), 'utf8').toString('base64url');
+    const fragment = `${template.version.id}=${payload}`;
     await open(page, `#${fragment}`);
     await expect(input(page, textField.name)).toHaveValue('from a link');
     await expect(page.locator('[data-notice="shared"]')).toBeVisible();
