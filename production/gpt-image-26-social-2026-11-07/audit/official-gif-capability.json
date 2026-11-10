@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-11-09T02:39:09.337030+00:00",
+  "sources": [
+    "https://developers.openai.com/api/docs/guides/image-generation#generate-animated-gif-output",
+    "https://developers.openai.com/api/reference/resources/images/methods/generate"
+  ],
+  "officialCapability": {
+    "models": [
+      "gpt-image-2.6-sunburst",
+      "gpt-image-2.6-flare"
+    ],
+    "nativeAnimatedGif": true,
+    "endpoints": [
+      "POST /v1/images/generations",
+      "POST /v1/images/edits"
+    ],
+    "output_format": "gif",
+    "frame_count": {
+      "min": 2,
+      "max": 16,
+      "default": 9
+    },
+    "finishedAnimationField": "data[].b64_json"
+  },
+  "sessionInterface": {
+    "tools": [
+      "image_gen.imagegen"
+    ],
+    "parameters": [
+      "prompt",
+      "referenced_image_paths",
+      "num_last_images_to_include",
+      "transparent_background"
+    ],
+    "modelSelector": false,
+    "outputFormatSelector": false,
+    "actualProviderModelId": null,
+    "schemaEvidence": "../jobs/g17-direct-gif-v2/tool-response-inspection.json"
+  },
+  "fallbackReadiness": {
+    "openaiApiKeyInProcessEnvironment": false,
+    "bundledCliSupportsGif": false,
+    "apiRequestSubmitted": false
+  },
+  "latestRetry": {
+    "audit": "../jobs/g17-direct-gif-v2/audit.json",
+    "requestedModelInPromptOnly": true,
+    "actualFormat": "png",
+    "actualFrames": 1,
+    "accepted": false
+  },
+  "conclusion": "Official GPT Image 2.6 supports native animated GIF output. This session exposes one image generation wrapper without model or output_format selectors. Naming 2.6 in the prompt did not establish a model switch and returned a single PNG storyboard. Native GIF generation remains pending; no composition permitted."
+}

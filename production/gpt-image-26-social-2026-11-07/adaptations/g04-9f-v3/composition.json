@@ -1,0 +1,57 @@
+{
+  "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+  "sourceFolder": "adaptations/g04",
+  "sourceSheetSha256": "308d96e46f4fc00d422993c4fefa4ac7f8dd91e89154043e3d96698951b6cef0",
+  "sourceFrameCount": 10,
+  "sourceSize": [
+    392,
+    392
+  ],
+  "outputSize": [
+    392,
+    392
+  ],
+  "scale": 1,
+  "sequence": [
+    {
+      "from": 0
+    },
+    {
+      "from": 1
+    },
+    {
+      "from": 2
+    },
+    {
+      "from": 3
+    },
+    {
+      "from": 5
+    },
+    {
+      "from": 6
+    },
+    {
+      "from": 7
+    },
+    {
+      "from": 8
+    },
+    {
+      "from": 9
+    }
+  ],
+  "sourceReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Ten gray hallway frames show approach, mannequin appearance, camera turn and fall, approach and pass, then empty tilted hallway. Play once, ten 500 ms frames, 5 seconds. Camera tilt and geometry are approximate drawn keyframes rather than a measured 3D camera simulation; documented adaptation limitation. Removed only 2px panel borders during extraction.",
+    "reviewedAt": "2026-11-08T09:53:38.463Z"
+  },
+  "sourceClaim": {
+    "key": "gpt26-social-g04-adapted-v1",
+    "fingerprint": "eda69214c6561398f5d9d2d7922471708256d8f71df6ba254fce37924796f671",
+    "prompt": "Generate a 5-second animated GIF consisting of 10 evenly spaced animation frames. Make it look like a crude gray Blender viewport animation, not cinematic footage. A single continuous shot inside a rectangular hallway with a tiled floor and simple gray walls. The camera slowly advances toward a doorway. A black humanoid mannequin with unusually long arms emerges from behind the doorway. The camera suddenly whips right, falls onto its side, and stops. The mannequin slowly walks toward and past the fallen camera. Maintain consistent 3D geometry, character proportions, doorway placement, and spatial relationships. No cuts, no teleportation, no scene changes, no added props. Focus on exact camera movement, depth, and timing. The animation should play once as a complete sequence, not return to its starting pose.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 5 columns by 2 rows, 10 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward.\nThe 10 chronological views must be: approach distant doorway; approach closer; long-armed mannequin appears; camera whips right; camera tilts 45 degrees; camera lies 90 degrees sideways; figure approaches; figure passes close; figure passes beyond; empty tilted hallway. Never reset the ending. No frame numbers or labels.",
+    "references": [],
+    "targetAspectRatio": null
+  }
+}

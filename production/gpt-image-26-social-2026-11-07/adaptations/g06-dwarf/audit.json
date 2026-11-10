@@ -1,0 +1,134 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g06-dwarf/sheet.png",
+    "sheetSha256": "36887f361bf2102db2d1d04046cd0defa58a328a0060fa157a40b6daa5999dbe",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g06-dwarf/output.gif",
+    "outputSha256": "cf84e1521cb48be2fbeaa02f956429f6d3dcdfc95620edbd759c17f4f4f72858",
+    "width": 362,
+    "height": 362,
+    "frameCount": 12,
+    "durationMs": 1440,
+    "frameDelaysMs": [
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120,
+      120
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "f0910c8b0b34f7b0c3c1dff6da87419901faec49573c5198a96edec396f1902b",
+      "1ab6b045df0a53de3225505d32c0c9c5bb25c85c7174f6de21ca6b64e1b98275",
+      "bbb5cec1f4fe592b76c624f353cc07ea7ce951a27b95bbd1042e25a606b6a263",
+      "eb991c1f0fc0487401f7c2020e7d7ee0a93bd3f0ee9ed4f01174018c7a5a2d09",
+      "e18e804132eb8538402c14940897885bd1fb41f6b1ddaed21d37c3a591683ffe",
+      "48d189bd741831df8452a1fcf2ff743bb10baa83cdc7099f4ba70b9451d68bf1",
+      "6de5298d7b311a9b91c5b772eb089e8c7037617ff46cd7ab76386aa51bc92dbb",
+      "11ab8da7468d98455c794a6249881029a34074c31a6dfeef083749a5b57752eb",
+      "af5dc383d7f038050b65a16315eb0d86b2055557607e7c052a6bc26c7e52b325",
+      "624684fce993f8a7aa998a0228bbf95eeff9eb4d460a72ac79373457e417a582",
+      "e501e8c1a4a5e0b4e5df958208de4492ec8e989aec979eb59c38e52a31fbf675",
+      "1a45f159386d5f86194ed49ad83c9f9feca09c88f2729b8ace90d7e01cb5d822"
+    ],
+    "distinctFrameCount": 12,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve distinct views rotate from front through both sides and back to near-front, keeping the red-bearded dwarf, shoulder axe, fur and costume recognizable. Complete body within each frame. 1440 ms loop. Hand-drawn view spacing is approximate, not a true 3D mesh render.",
+    "reviewedAt": "2026-11-08T09:59:51.083Z"
+  }
+}

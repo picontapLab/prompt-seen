@@ -1,0 +1,169 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g17/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g17",
+    "sourceSheetSha256": "1d528f3af20fb90c437030bac08ed18bde4310e860f771e296d0b6b75ec6086e",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight recognizable pixel-art Johnny Bravo poses show alternating steps, arm pumps, hip shifts and crouch bounce. Entire character visible; no text. Actual 800 ms loop, silent. Sprite shapes have small redraw variation; no claim of source audio.",
+      "reviewedAt": "2026-11-08T10:06:38.573Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g17-adapted-v1",
+      "fingerprint": "8b167709ba9c43f43de2a2b264e9b222110a2aa02832294cee4d59cd4d10e585",
+      "prompt": "make a raving 8bit johnny bravo\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 2 rows, 8 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nA single muscular adult Johnny Bravo in a black tee, blue jeans, sunglasses and tall blond pompadour. Eight different pixel poses: left step, arm pump, right step, arm pump, hips left, hips right, crouch bounce, starting stance. Fixed white background, no writing.",
+      "references": [],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g17-9f-v3/sheet.png",
+    "sheetSha256": "a36945700789ed4c03c0b1627d6ab79f9410dead91c1cbf3ca2e3c4228277f49",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g17-9f-v3/output.gif",
+    "outputSha256": "4e13fccd9bfc4200223a1bed51f7dc22a821846d727c7b567b66a124072fe82b",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 800,
+    "frameDelaysMs": [
+      50,
+      50,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "e9ada18942dd53d565ae26362fb41b042b624c2f5b03dd7518715ff3179c3ddc",
+      "e9ada18942dd53d565ae26362fb41b042b624c2f5b03dd7518715ff3179c3ddc",
+      "02b6c0eff48e4da5b3ccf0f07d74804a244b62e9d983d40adc8939c5d27e5c96",
+      "e5cf44ae70b14e8c83d6aea39523793423fe460814f63b9c3820c704f9d7ba4b",
+      "fe117e45f639a2226a5c65494c42df55116616801c0ec489884fc7ffc0f346ef",
+      "b8133d3318132a1c724986cfdf55e5e372d938fff0188ddd70af498e4bc2540e",
+      "de614e71e44a308a4518bc84a11d974026b480a6efcbb6c4f7751f9868c2a5e4",
+      "91df9d81cc5cce2ed63a6bb0aa1e67af0bf4c1ce31903c0754b5d145b3c09f05",
+      "d5c666db263cda1c8afd9bc69d2253b09cceae129ba3de462b25a52ebad4197f"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight recognizable pixel-art Johnny Bravo poses show alternating steps, arm pumps, hip shifts and crouch bounce. Entire character visible; no text. Actual 800 ms loop, silent. Sprite shapes have small redraw variation; no claim of source audio.",
+    "reviewedAt": "2026-11-10T00:59:53.775Z"
+  }
+}

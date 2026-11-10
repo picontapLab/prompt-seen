@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g13-original",
+    "candidateId": "gpt26-social-g13",
+    "prompt": "まばたきしてるGIF作ってください！",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "9dd50a2ff94914b30900746c046c5b00e28d2ac74eecb68f85477265e3110665",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-08T01:34:47.430Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g13-original/output-1cfe2ae71c1e1b101bcfb8047671b1bdd90f3349e66d5993c51527db33cc3c12.png",
+      "sha256": "1cfe2ae71c1e1b101bcfb8047671b1bdd90f3349e66d5993c51527db33cc3c12"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T01:36:22.624Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Tool returned a single PNG of partially lowered eyelids, not a playable multi-frame GIF. Native source-prompt animation requirement failed; keep as failed capability evidence only.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:36:22.629Z"
+  }
+}

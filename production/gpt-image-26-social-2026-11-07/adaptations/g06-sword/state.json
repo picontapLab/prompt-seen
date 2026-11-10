@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-sword-adapted-v1",
+    "candidateId": "gpt26-social-g06-sword-adapted",
+    "prompt": "create a gif of a \"3d legendary sword in a stone game asset\" spinning full 360 degrees\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "3d1607489e059d088ebad73794caf0f0c2909096dd49557912fa352f50f052d0",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T09:59:49.978Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-sword-adapted-v1/output-dde3ec12004eda1b3f7c9f012d6b71c39e0bc99cd07ddb1066e82dedec88bc24.gif",
+      "sha256": "dde3ec12004eda1b3f7c9f012d6b71c39e0bc99cd07ddb1066e82dedec88bc24"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T10:01:08.942Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve front, side and rear views of the blue-and-gold sword embedded in a mossy stone form a complete turntable cycle. Subject remains centered and whole. 12 frames, 120 ms each. Generated views have approximate angular spacing and small geometry changes; no real 3D-model claim.",
+    "reviewedAt": "2026-11-08T10:01:08.945Z"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "verifiedAt": "2026-11-08T02:48:35.670702+00:00",
+  "status": "partially_implemented_with_generation_blocks",
+  "coverage": {
+    "plannedCases": 34,
+    "frozenBodies": 39,
+    "plannedBodies": 39,
+    "plannedOutputs": 42,
+    "acceptedCases": 10,
+    "acceptedOutputs": 10,
+    "acceptedGifs": 0,
+    "blockedCases": 24,
+    "sourceRecords": 136,
+    "researchBacklog": 87,
+    "acceptedReferenceGroups": 8,
+    "acceptedReferenceFiles": 9
+  },
+  "collection": {
+    "id": "c_013",
+    "slug": "gpt-image-26-social-original-prompts",
+    "items": 10
+  },
+  "checks": [
+    {
+      "name": "content-validation",
+      "status": "passed",
+      "command": "node --import tsx scripts/content-validate.ts",
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 12,
+      "note": "Warnings concern existing entries outside this import; existing unused media info: 102.",
+      "log": "audit/content-validation.txt"
+    },
+    {
+      "name": "typecheck",
+      "status": "passed",
+      "command": "npx tsc --noEmit",
+      "log": "audit/typecheck.txt"
+    },
+    {
+      "name": "lint",
+      "status": "passed",
+      "command": "npm run lint",
+      "log": "audit/lint.txt"
+    },
+    {
+      "name": "unit-tests",
+      "status": "passed",
+      "files": 4,
+      "tests": 63,
+      "command": "npx vitest run scripts/lib/content/content.test.ts scripts/lib/content-production/production.test.ts scripts/lib/content-production/publish.test.ts src/ui/media/gif.test.tsx",
+      "log": "audit/unit-tests.txt"
+    },
+    {
+      "name": "static-build",
+      "status": "passed",
+      "command": "npm run build",
+      "pages": 1373,
+      "mode": "preview",
+      "locales": [
+        "en",
+        "zh-Hans",
+        "ja",
+        "ar"
+      ],
+      "artifact": "dist/",
+      "log": "audit/build.txt"
+    },
+    {
+      "name": "browser-tests",
+      "status": "passed",
+      "command": "npx playwright test tests/e2e/prompt-languages.browser.spec.ts",
+      "browser": "Google Chrome (Chromium)",
+      "tests": 8,
+      "coverage": [
+        "Japanese and Chinese original text on English/Chinese pages at 1440px and 390px",
+        "Clipboard matches original text",
+        "Literal prompt Markdown alternate preserves original text",
+        "Existing translated-template text download and draft behavior"
+      ],
+      "log": "audit/browser-tests.txt"
+    },
+    {
+      "name": "page-layout-and-new-media",
+      "status": "passed",
+      "combinations": 6,
+      "entries": [
+        "p_236",
+        "p_237",
+        "c_013"
+      ],
+      "viewports": [
+        1440,
+        390
+      ],
+      "visualReview": "passed",
+      "report": "audit/page-qa.json",
+      "screenshots": "audit/page-screenshots/"
+    },
+    {
+      "name": "archive-and-import-integrity",
+      "status": "passed",
+      "command": "node production/gpt-image-26-social-2026-11-07/verify-import.mjs",
+      "report": "audit/import-integrity.json"
+    },
+    {
+      "name": "source-freeze-idempotence",
+      "status": "passed",
+      "command": "python3 production/gpt-image-26-social-2026-11-07/freeze-sources.py",
+      "bodies": 39,
+      "truncatedBodies": 0
+    },
+    {
+      "name": "changed-code-format-and-whitespace",
+      "status": "passed",
+      "note": "Prettier checked the changed TypeScript files and verify-import.mjs; git diff --check passed. No repository-wide historical research reformat."
+    }
+  ],
+  "notExecuted": [
+    {
+      "check": "Japanese GIF, Turkish GIF, workflow and multivariant pages on desktop/phone",
+      "reason": "No accepted imported outputs exist for these cases. Unit Turkish-language registration coverage does not replace these page checks."
+    },
+    {
+      "check": "Actual new GIF playback, timing, loop count, transparency and stable animated text",
+      "reason": "All four original-prompt GIF capability probes returned single-frame PNG files; zero GIFs accepted."
+    },
+    {
+      "check": "Literal prompt .txt download button",
+      "reason": "Existing literal detail UI exposes copying and a Markdown alternate; .txt download belongs to the template editor. Markdown content and template .txt behavior were tested."
+    },
+    {
+      "check": "Firefox and WebKit",
+      "reason": "This local browser run used installed Google Chrome only."
+    },
+    {
+      "check": "Production deployment",
+      "reason": "This implementation delivered local content and a verified preview build; no deployment performed."
+    }
+  ],
+  "blocked": {
+    "staticProviderRejections": [
+      "S01",
+      "S04",
+      "S07",
+      "S11",
+      "S14"
+    ],
+    "gifCases": 18,
+    "gifAttempted": [
+      "G13",
+      "G14",
+      "G04",
+      "G16"
+    ],
+    "gifNotAttemptedCases": 14,
+    "workflow": [
+      "W01"
+    ],
+    "details": "audit/capability.json"
+  },
+  "provenance": {
+    "knownModelFamily": "GPT Image",
+    "providerModelId": null,
+    "sourceModelClaim": "Image 2.6, separately attributed to original source posts",
+    "authorAttributionCorrections": "audit/attribution-corrections.json"
+  },
+  "limitations": [
+    "S06 lower miniature is generated, not a pixel-identical paste of the input.",
+    "S09 camera date is generated visual decoration, not generation metadata.",
+    "S13 missing right pupil is an explicit original-prompt requirement."
+  ],
+  "deployed": false
+}

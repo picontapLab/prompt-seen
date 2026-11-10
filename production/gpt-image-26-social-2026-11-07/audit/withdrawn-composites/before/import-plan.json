@@ -1,0 +1,2563 @@
+{
+  "plan_version": 1,
+  "date": "2026-11-07",
+  "timezone": "America/Los_Angeles",
+  "status": "original_retries_and_separate_adaptations_reconciled",
+  "campaign": "gpt-image-26-social-2026-11-07",
+  "scope": {
+    "planned_cases": 34,
+    "stills": 15,
+    "gif_cases": 18,
+    "workflow_cases": 1,
+    "source_ledger_counts": {
+      "research-backlog": 87,
+      "planned-case": 34,
+      "prompt-evidence": 15
+    }
+  },
+  "rules": {
+    "source_prompt_translation": false,
+    "original_text_and_working_prompt_separate": true,
+    "unknown_model_id": null,
+    "source_engagement_attached_to_new_output": false,
+    "publish_requires_accepted_generation": true
+  },
+  "reference_tasks": [
+    {
+      "id": "R01",
+      "planned_instruction_language": "ja",
+      "title": "少女持书插画及红蓝圈标注",
+      "generation_brief_zh": "先生成原创成年Q版女性半身插画，头部无遮挡、一只手拿清楚可辨的书。验收后用图像编辑工具在头部画红圈、书上画蓝圈，保存干净图及标注图；两圈不重叠。",
+      "expected_assets": "标注图1张；干净底图另留审计",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R01/audit.json"
+    },
+    {
+      "id": "R02",
+      "planned_instruction_language": "en",
+      "title": "雪人主体图",
+      "generation_brief_zh": "生成独立雪人造型，正面、全身、白底、轮廓明确；不带边框和文字。后续由原提示词执行金框海报转换。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R02/audit.json"
+    },
+    {
+      "id": "R03",
+      "planned_instruction_language": "en",
+      "title": "90年代人像身份底图",
+      "generation_brief_zh": "生成明确成年的虚构女性自然肖像，五官、发型清楚，无强烈修饰；固定同一张底图供原词的same unchanged face使用。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R03/audit.json"
+    },
+    {
+      "id": "R04",
+      "planned_instruction_language": "en",
+      "title": "圣诞贺卡人物照片",
+      "generation_brief_zh": "生成一张成年虚构足球运动员生活照，球衣和人物轮廓清晰；如要复现来源指定人物另建明确记录的样例，不把替换身份说成原图复现。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R04/audit.json"
+    },
+    {
+      "id": "R05",
+      "planned_instruction_language": "ja",
+      "title": "弹跳出场角色图",
+      "generation_brief_zh": "生成一个原创成年Q版女性全身角色，留出四周空白，白底、单一人物、鞋和发饰完整；后续日语短提示词只负责动作。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R05/audit.json"
+    },
+    {
+      "id": "R06",
+      "planned_instruction_language": "zh-Hans",
+      "title": "中文反应表情角色图",
+      "generation_brief_zh": "生成原创Q版草帽冒险者全身图，配色、草帽和服装标志清楚，白底无文字；主题变量单独记录，不在原模板中偷偷替换文字。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R06/audit.json"
+    },
+    {
+      "id": "R07",
+      "planned_instruction_language": "zh-Hans",
+      "title": "夏日人物与服装参考",
+      "generation_brief_zh": "生成22岁成年东亚女性全身参考照，短深棕波波头、蓝色泳装、黄色镂空罩衫及牛仔短裤，光线均匀、服装完整。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R07/audit.json"
+    },
+    {
+      "id": "R08",
+      "planned_instruction_language": "zh-Hans",
+      "title": "蓝发鲸鱼女仆角色两视图",
+      "generation_brief_zh": "自行生成Q版蓝白鲸鱼主题角色：蓝色渐变长发、呆毛、耳鳍、蓝蝴蝶结、白头饰、蓝白裙和鲸尾。先定正面全身，再以该图编辑生成四分之三侧面，保持身份一致；不是下载原作者底图。",
+      "expected_assets": "2张；G07用正面，G08用两张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R08/audit.json"
+    },
+    {
+      "id": "R09",
+      "planned_instruction_language": "zh-Hans",
+      "title": "篮球角色12帧动作表",
+      "generation_brief_zh": "先生成原创Q版球员全身白底图，再以同一图生成12格动作表：准备、屈膝、起跳、腾空、转身、举球、扣篮、挂框、松手、下落、落地、回到起始；固定镜头、大小与基线，逐格检查顺序。上游提示词是本项目新写，作者仅公开GIF阶段短词。",
+      "expected_assets": "角色底图1张＋12格动作表1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R09/audit.json"
+    },
+    {
+      "id": "R10",
+      "planned_instruction_language": "en",
+      "title": "藏狐锚点图",
+      "generation_brief_zh": "生成自然史插画风藏狐全身锚点：沙赭色毛、宽方脸、半闭无语眼、透明底；脸上不画文字、不带外白边。动画主题与浮空标签文字在原模板变量中填写。",
+      "expected_assets": "1张透明PNG",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R10/audit.json"
+    },
+    {
+      "id": "R11",
+      "planned_instruction_language": "ja",
+      "title": "企鹅角色图",
+      "generation_brief_zh": "生成原创企鹅吉祥物，全身正面、单一稳定轮廓和配色、无字白底。一个底图复用喜怒哀乐四个输出。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R11/audit.json"
+    },
+    {
+      "id": "R12",
+      "planned_instruction_language": "en",
+      "title": "像素招式角色输入",
+      "generation_brief_zh": "先生成独立绘制的剑士角色参考图，保留来源示例所选角色的发型、服装图案和武器；若改用原创剑士，明确标注参考图替换样例。不要预先做成帧图，像素化和动作由原词完成。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R12/audit.json"
+    },
+    {
+      "id": "R13",
+      "planned_instruction_language": "ja",
+      "title": "门镜角色图",
+      "generation_brief_zh": "生成原创成年和服女性全身参考图，脸、发型、红色和服及配饰清楚，白底；猫眼或室内门禁显示器只在原词变量中选择。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R13/audit.json"
+    },
+    {
+      "id": "R14",
+      "planned_instruction_language": "ja",
+      "title": "定时自拍角色登记图",
+      "generation_brief_zh": "生成原创成年角色肖像，正面、五官和服装完整、简洁背景；执行环境保存参照图名称并填入REFERENCE_NAME，CHARACTER单独保存。一次演示只运行一次，不创建真实定时任务。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R14/audit.json"
+    },
+    {
+      "id": "R15",
+      "planned_instruction_language": "ja",
+      "title": "微眨眼肖像",
+      "generation_brief_zh": "生成一个原创成年角色正面胸像，双眼无遮挡、头部端正、简洁背景，眼睛大小与视线易观察。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R15/audit.json"
+    },
+    {
+      "id": "R16",
+      "planned_instruction_language": "tr",
+      "title": "猫Robin照片",
+      "generation_brief_zh": "生成原创家猫正面照片，直视镜头，头顶留足帽子落下空间，纯净背景；名字Robin由后续土耳其语原词指定。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R16/audit.json"
+    },
+    {
+      "id": "R17",
+      "planned_instruction_language": "ja",
+      "title": "喜悦舞角色图",
+      "generation_brief_zh": "生成原创Q版角色全身图，双臂双脚完整，衣物简单，白底；用于动作示范，原帖未披露全部上下文，说明不保证同角色同结果。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R17/audit.json"
+    },
+    {
+      "id": "R18",
+      "planned_instruction_language": "en",
+      "title": "法师角色图",
+      "generation_brief_zh": "生成原创全身卡通法师，帽子、眼睛和一根法杖清晰，纯白底、画面四周留边、法杖不裁断；后续12帧动作使用同一输入。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R18/audit.json"
+    },
+    {
+      "id": "R19",
+      "planned_instruction_language": "en",
+      "title": "点头闭眼角色图",
+      "generation_brief_zh": "生成原创双丸子头动漫角色胸像，棕发、柔和表情、双眼睁开、头颈完整；保持轮廓与线条干净，供点头及闭眼动画使用。",
+      "expected_assets": "1张",
+      "brief_provenance": "project-authored-plan-not-source-prompt",
+      "status": "accepted",
+      "audit": "production/gpt-image-26-social-2026-11-07/references/R19/audit.json"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "S01",
+      "title": "卧室超广角俯拍自拍",
+      "source_post_id": "2118247837683044650",
+      "source_url": "https://x.com/johnAGI168/status/2118247837683044650",
+      "author": "johnAGI168",
+      "source_likes": 245,
+      "source_reposts_secondary": 15,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/johnAGI168/status/2118247837683044650",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118247837683044650-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118247837683044650.json"
+        ],
+        "source_excerpt": "A crisp, high-fidelity vertical POV selfie photograph captured from an extreme high angle with a 20mm ultra-wide lens perspective",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张竖版照片",
+      "acceptance": "俯拍超广角、伸出的手臂和自然接触阴影；不要用来源照片作输出。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s01",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖正文公开长提示词。",
+      "execution": {
+        "unit_ids": [
+          "S01"
+        ],
+        "status": "blocked",
+        "reason": "provider-rejected-original-prompt",
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S02",
+      "title": "翠鸟入水瞬间：2.6 与 Nano Banana 对照",
+      "source_post_id": "2118381855166881928",
+      "source_url": "https://x.com/NovaXCode/status/2118381855166881928",
+      "author": "NovaXCode",
+      "source_likes": 227,
+      "source_reposts_secondary": 8,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/NovaXCode/status/2118383239392075848",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118383239392075848.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118383239392075848-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118383239392075848.json"
+        ],
+        "source_excerpt": "An ultra-photorealistic wildlife photograph capturing the exact split second a vibrant blue-and-orange kingfisher dives vertically into a calm lake",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张翠鸟入水图",
+      "acceptance": "只生成2.6结果；不伪造与其他模型的对照图。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s02",
+        "prompt_id": "p_236",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "对比帖整体点赞，不能归因于其中单张图；提示词在作者回复。",
+      "execution": {
+        "unit_ids": [
+          "S02"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S03",
+      "title": "日本办公室自然人像",
+      "source_post_id": "2118543259257712714",
+      "source_url": "https://x.com/buusk4/status/2118543259257712714",
+      "author": "buusk4",
+      "source_likes": 155,
+      "source_reposts_secondary": 7,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/buusk4/status/2118543259257712714",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118543259257712714-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118543259257712714.json"
+        ],
+        "source_excerpt": "縦長9:16の超写実的な実写写真。成人日本人女性。日本の一般的なオフィス。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张9:16办公室人像",
+      "acceptance": "选用原帖第1/2张对应短词；其他手机随拍版本保留为额外变体。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s03",
+        "prompt_id": "p_238",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "一帖四张图；第3、4张另有手机随拍版本，见原帖。",
+      "execution": {
+        "unit_ids": [
+          "S03"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S04",
+      "title": "透过挡风玻璃拍摄的夜间人像",
+      "source_post_id": "2118307702657159331",
+      "source_url": "https://x.com/xyue13/status/2118307702657159331",
+      "author": "xyue13",
+      "source_likes": 111,
+      "source_reposts_secondary": 9,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/xyue13/status/2118307702657159331",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118307702657159331-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118307702657159331.json"
+        ],
+        "source_excerpt": "写实中景照片，通过豪华轿车挡风玻璃拍摄的夜晚场景。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张夜间车内人像",
+      "acceptance": "挡风玻璃与镜头位置正确，人物为成人。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s04",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖正文公开完整中文提示词。",
+      "execution": {
+        "unit_ids": [
+          "S04"
+        ],
+        "status": "blocked",
+        "reason": "provider-rejected-original-prompt",
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S05",
+      "title": "红蓝圈局部编辑：圣诞帽与礼物",
+      "source_post_id": "2118151619212890291",
+      "source_url": "https://x.com/IHayato/status/2118151619212890291",
+      "author": "IHayato",
+      "source_likes": 93,
+      "source_reposts_secondary": 7,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/IHayato/status/2118151619212890291",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118151619212890291-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118151619212890291.json"
+        ],
+        "source_excerpt": "赤丸にサンタ帽、青丸の本はプレゼントに",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R01",
+        "how_to_generate": "先生成原创成年Q版女性半身插画，头部无遮挡、一只手拿清楚可辨的书。验收后用图像编辑工具在头部画红圈、书上画蓝圈，保存干净图及标注图；两圈不重叠。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张局部改图成品",
+      "acceptance": "红圈变圣诞帽、蓝圈书变礼物；检查其他部位与输入一致。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s05",
+        "prompt_id": "p_237",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "同帖包含静态编辑结果与GIF；此处仅收静态局部编辑图，点赞为整帖。",
+      "execution": {
+        "unit_ids": [
+          "S05"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S06",
+      "title": "巴洛克金框雪人海报",
+      "source_post_id": "2118193088128745875",
+      "source_url": "https://x.com/Goodmanprotocol/status/2118193088128745875",
+      "author": "Goodmanprotocol",
+      "source_likes": 62,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/Goodmanprotocol/status/2118193088128745875",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118193088128745875-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118193088128745875.json"
+        ],
+        "source_excerpt": "Use the uploaded image as the sole visual reference. Create a seamless 3:4 vertical fine-art poster.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R02",
+        "how_to_generate": "生成独立雪人造型，正面、全身、白底、轮廓明确；不带边框和文字。后续由原提示词执行金框海报转换。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张3:4雪人金框海报",
+      "acceptance": "金框、装饰和主体关系按完整原词检查。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s06",
+        "prompt_id": "p_239",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "原帖公开完整海报布局提示词；与下一项同赞，同赞按发帖时间先后。",
+      "execution": {
+        "unit_ids": [
+          "S06"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S07",
+      "title": "棒球帽、耳机与牛仔服街拍",
+      "source_post_id": "2118581030781382805",
+      "source_url": "https://x.com/johnAGI168/status/2118581030781382805",
+      "author": "johnAGI168",
+      "source_likes": 62,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/johnAGI168/status/2118581030781382805",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118581030781382805-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118581030781382805.json"
+        ],
+        "source_excerpt": "A cinematic 35mm street-snap photograph captured at eye level",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张街拍",
+      "acceptance": "棒球帽、耳机与牛仔服；自然街头光线。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s07",
+        "prompt_id": "p_246",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "同作者另一独立作品，独立计帖。",
+      "execution": {
+        "unit_ids": [
+          "S07"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S08",
+      "title": "青色文字投影湿发人像",
+      "source_post_id": "2118561513879507399",
+      "source_url": "https://x.com/iamsofiaijaz/status/2118561513879507399",
+      "author": "iamsofiaijaz",
+      "source_likes": 42,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/iamsofiaijaz/status/2118561558511132918",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118561558511132918.json"
+        ],
+        "source_excerpt": "Glowing cyan handwritten text and symbols are projected across her face, neck, and shoulders",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张文字投影人像",
+      "acceptance": "青色投影落在皮肤表面；不把旧模型使用史当成本次生成证据。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s08",
+        "prompt_id": "p_240",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "原帖明确2.6；提示词在作者回复。该提示词过去也用于旧模型，本榜只计此2.6新帖。",
+      "execution": {
+        "unit_ids": [
+          "S08"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S09",
+      "title": "90年代胶片感卧室随拍",
+      "source_post_id": "2118202866448077182",
+      "source_url": "https://x.com/AIwithSarah_/status/2118202866448077182",
+      "author": "AIwithSarah_",
+      "source_likes": 39,
+      "source_reposts_secondary": 0,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/AIwithSarah_/status/2118202866448077182",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118202866448077182-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118202866448077182.json"
+        ],
+        "source_excerpt": "A young woman with the same unchanged face and soft natural complexion, captured in a spontaneous 90s film snapshot.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R03",
+        "how_to_generate": "生成明确成年的虚构女性自然肖像，五官、发型清楚，无强烈修饰；固定同一张底图供原词的same unchanged face使用。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张胶片卧室照片",
+      "acceptance": "原作者身份底图缺失，明确使用本项目合成输入；核查人物一致性。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s09",
+        "prompt_id": "p_241",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "原帖公开完整提示词；要保持同一人物需另有参考图。",
+      "execution": {
+        "unit_ids": [
+          "S09"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S10",
+      "title": "橘猫打工人十二格表情图",
+      "source_post_id": "2118156092865994837",
+      "source_url": "https://x.com/karanwithai/status/2118156092865994837",
+      "author": "karanwithai",
+      "source_likes": 36,
+      "source_reposts_secondary": 6,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/karanwithai/status/2118156317034693026",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118156317034693026.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118156317034693026-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118156317034693026.json"
+        ],
+        "source_excerpt": "画一套12款橘猫打工人表情包，圆脸胖橘戴蓝领带",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张十二格橘猫图",
+      "acceptance": "12格、原词短句逐字检查；与旧p_221是同源不同提示词。",
+      "import": {
+        "action": "new-source-version-keep-existing-adaptation",
+        "candidate_id": "gpt26-social-s10",
+        "prompt_id": "p_242",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts",
+        "related_existing_prompt_id": "p_221"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "收原帖的静态十二格图；同帖还含3个GIF，点赞不能拆分。 已核对旧正文与原提示词不同；不能用target附加运行绕过不可变正文检查。为作者原词建立独立条目，明确同源关系，合集仅收新原词版。",
+      "execution": {
+        "unit_ids": [
+          "S10"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S11",
+      "title": "月夜湖畔汉服人像",
+      "source_post_id": "2118269430014599535",
+      "source_url": "https://x.com/sandmrk/status/2118269430014599535",
+      "author": "sandmrk",
+      "source_likes": 30,
+      "source_reposts_secondary": 2,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/sandmrk/status/2118269433626124798",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118269433626124798.json"
+        ],
+        "source_excerpt": "9:16竖版，超写实人像摄影，月夜湖畔清冷氛围。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张月夜汉服人像",
+      "acceptance": "仅按2.6制作，保留月夜湖畔场景。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s11",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "左图为2.6 Sunburst，右图为2.5；按整帖点赞。",
+      "execution": {
+        "unit_ids": [
+          "S11"
+        ],
+        "status": "blocked",
+        "reason": "provider-rejected-original-prompt",
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S12",
+      "title": "照片转民俗手绘圣诞贺卡",
+      "source_post_id": "2118562099987398753",
+      "source_url": "https://x.com/Goodmanprotocol/status/2118562099987398753",
+      "author": "Goodmanprotocol",
+      "source_likes": 21,
+      "source_reposts_secondary": 2,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/Goodmanprotocol/status/2118562099987398753",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118562099987398753-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118562099987398753.json"
+        ],
+        "source_excerpt": "Transform the uploaded photograph into a beautiful, contemporary hand-drawn naïve Christmas illustration",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R04",
+        "how_to_generate": "生成一张成年虚构足球运动员生活照，球衣和人物轮廓清晰；如要复现来源指定人物另建明确记录的样例，不把替换身份说成原图复现。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张圣诞贺卡",
+      "acceptance": "参考人物身份及服装保留；记录替换参考人物的事实。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s12",
+        "prompt_id": "p_244",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "原帖公开完整风格转换提示词。",
+      "execution": {
+        "unit_ids": [
+          "S12"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "G01",
+      "title": "角色从画面外弹跳登场",
+      "source_post_id": "2118343700929753503",
+      "source_url": "https://x.com/YU_TAI2414/status/2118343700929753503",
+      "author": "YU_TAI2414",
+      "source_likes": 1117,
+      "source_reposts_secondary": 77,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/YU_TAI2414/status/2118343700929753503",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118343700929753503.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118343700929753503.json"
+        ],
+        "source_excerpt": "この画像の女の子を可愛く画面外から登場するGIFを作ってみて！",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R05",
+        "how_to_generate": "生成一个原创成年Q版女性全身角色，留出四周空白，白底、单一人物、鞋和发饰完整；后续日语短提示词只负责动作。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张首帧封面",
+      "acceptance": "角色从画面外出场；不把助手解释的动作自动加进原始用户请求。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g01",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "需角色参考图；原帖 animated_gif。",
+      "execution": {
+        "unit_ids": [
+          "G01"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G01",
+          "sourceCase": "G01",
+          "sourceUnit": "G01",
+          "language": "ja",
+          "titleEn": "Bouncing character entrance",
+          "titleZh": "角色从画面外弹跳登场",
+          "folder": "adaptations/g01",
+          "references": [
+            "R05"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g01-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_247",
+            "template": null,
+            "example": "x_311",
+            "media": [
+              "a_415",
+              "a_416"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g01/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G02",
+      "title": "Q版中文反应表情包",
+      "source_post_id": "2118235544459387112",
+      "source_url": "https://x.com/0xluffy_eth/status/2118235544459387112",
+      "author": "0xluffy_eth",
+      "source_likes": 1020,
+      "source_reposts_secondary": 102,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/0xluffy_eth/status/2118235547454083357",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118235547454083357.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118235547454083357.json"
+        ],
+        "source_excerpt": "请以我上传的角色图为参考，按「表情包主题」做一张可下载的动态 GIF。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R06",
+        "how_to_generate": "生成原创Q版草帽冒险者全身图，配色、草帽和服装标志清楚，白底无文字；主题变量单独记录，不在原模板中偷偷替换文字。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "表情主题变量有值、中文字稳定、主体一致。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g02",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "需角色参考图；原帖两张 animated_gif，共用帖子指标。",
+      "execution": {
+        "unit_ids": [
+          "G02"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G02",
+          "sourceCase": "G02",
+          "sourceUnit": "G02",
+          "language": "zh-Hans",
+          "titleEn": "Monday reaction sticker",
+          "titleZh": "Q版中文反应表情包",
+          "folder": "adaptations/g02",
+          "references": [
+            "R06"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g02-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_248",
+            "template": null,
+            "example": "x_312",
+            "media": [
+              "a_417",
+              "a_418"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g02/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G03",
+      "title": "金门大桥、斗兽场、富士山旅行海报循环",
+      "source_post_id": "2118308538564989025",
+      "source_url": "https://x.com/devteamdrew/status/2118308538564989025",
+      "author": "devteamdrew",
+      "source_likes": 557,
+      "source_reposts_secondary": 36,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/devteamdrew/status/2118538745175503130",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118538745175503130.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118538745175503130.json"
+        ],
+        "source_excerpt": "A living mid-century gouache travel-poster painting of the Golden Gate Bridge seen from a beach",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "3个GIF＋3张封面",
+      "acceptance": "同一作者公开金门大桥、斗兽场、富士山三条原词，拆3个生成任务；原帖只算一次热度。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g03",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "同帖3件作品只占1名；作者回复含3套完整提示词。",
+      "execution": {
+        "unit_ids": [
+          "G03-golden-gate",
+          "G03-colosseum",
+          "G03-fuji"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G03-golden-gate",
+          "sourceCase": "G03",
+          "sourceUnit": "G03-golden-gate",
+          "language": "en",
+          "titleEn": "Golden Gate gouache waves",
+          "titleZh": "金门大桥、斗兽场、富士山旅行海报循环 · gate",
+          "folder": "adaptations/g03-golden-gate",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g03-golden-gate-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_249",
+            "template": null,
+            "example": "x_313",
+            "media": [
+              "a_419"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g03-golden-gate/audit.json"
+        },
+        {
+          "unitId": "G03-colosseum",
+          "sourceCase": "G03",
+          "sourceUnit": "G03-colosseum",
+          "language": "en",
+          "titleEn": "Colosseum travel poster",
+          "titleZh": "金门大桥、斗兽场、富士山旅行海报循环 · colosseum",
+          "folder": "adaptations/g03-colosseum",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g03-colosseum-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_250",
+            "template": null,
+            "example": "x_314",
+            "media": [
+              "a_420"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g03-colosseum/audit.json"
+        },
+        {
+          "unitId": "G03-fuji",
+          "sourceCase": "G03",
+          "sourceUnit": "G03-fuji",
+          "language": "en",
+          "titleEn": "Mount Fuji travel poster",
+          "titleZh": "金门大桥、斗兽场、富士山旅行海报循环 · fuji",
+          "folder": "adaptations/g03-fuji",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g03-fuji-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_251",
+            "template": null,
+            "example": "x_315",
+            "media": [
+              "a_421"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g03-fuji/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G04",
+      "title": "灰色走廊与长臂人偶 GIF 原稿",
+      "source_post_id": "2118408795026043260",
+      "source_url": "https://x.com/cocktailpeanut/status/2118408795026043260",
+      "author": "cocktailpeanut",
+      "source_likes": 275,
+      "source_reposts_secondary": 17,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/cocktailpeanut/status/2118408801812643957",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118408801812643957.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118408801812643957.json"
+        ],
+        "source_excerpt": "Generate a 5-second animated GIF consisting of 10 evenly spaced animation frames.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "灰色走廊10帧/5秒目标，播放一次；不强制循环，不生成后续Minimax视频。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g04",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "作品帖是 GIF 与 Minimax H3 视频对比；只取作者明确标注的 GIF 原稿，排除 H3 视频成品。",
+      "execution": {
+        "unit_ids": [
+          "G04"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 1
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G04",
+          "sourceCase": "G04",
+          "sourceUnit": "G04",
+          "language": "en",
+          "titleEn": "Gray hallway encounter",
+          "titleZh": "灰色走廊与长臂人偶 GIF 原稿",
+          "folder": "adaptations/g04",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g04-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_252",
+            "template": null,
+            "example": "x_316",
+            "media": [
+              "a_422"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g04/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G05",
+      "title": "夏日花园喷水女孩",
+      "source_post_id": "2118150226330734787",
+      "source_url": "https://x.com/nima2qisi2/status/2118150226330734787",
+      "author": "nima2qisi2",
+      "source_likes": 175,
+      "source_reposts_secondary": 14,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/nima2qisi2/status/2118150229811920912",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118150229811920912.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118150229811920912.json"
+        ],
+        "source_excerpt": "请以这个内容创建一个 GIF，内容是： # JAPANESE SUMMER｜夏日元气少女",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R07",
+        "how_to_generate": "生成22岁成年东亚女性全身参考照，短深棕波波头、蓝色泳装、黄色镂空罩衫及牛仔短裤，光线均匀、服装完整。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "原词含10秒、30fps和音乐要求；保留原词，记录真实帧数时长，GIF不承诺音频；不静默降格为满足全部要求。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g05",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖 photo + 两张 animated_gif；提示词含10秒/30fps要求，不能当作实际输出参数。",
+      "execution": {
+        "unit_ids": [
+          "G05"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G05",
+          "sourceCase": "G05",
+          "sourceUnit": "G05",
+          "language": "zh-Hans",
+          "titleEn": "Summer garden water montage",
+          "titleZh": "夏日花园喷水女孩",
+          "folder": "adaptations/g05",
+          "references": [
+            "R07"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g05-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_253",
+            "template": null,
+            "example": "x_317",
+            "media": [
+              "a_423",
+              "a_424"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g05/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G06",
+      "title": "3D游戏资产360度旋转",
+      "source_post_id": "2118407355859878352",
+      "source_url": "https://x.com/xikhar/status/2118407355859878352",
+      "author": "xikhar",
+      "source_likes": 152,
+      "source_reposts_secondary": 8,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/xikhar/status/2118409026044403849",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118409026044403849.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118409026044403849.json"
+        ],
+        "source_excerpt": "create a gif of a \"3d dwarf game model carrying a huge axe on his shoulders\" spinning full 360 degrees",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "4个GIF＋4张封面",
+      "acceptance": "矮人、石中剑、摩托、猫四条原词分别执行，不将整帖152赞复制成四个独立排名。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g06",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "同帖4张 animated_gif；作者回复4条原提示词。",
+      "execution": {
+        "unit_ids": [
+          "G06-dwarf",
+          "G06-sword",
+          "G06-motorbike",
+          "G06-cat"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G06-dwarf",
+          "sourceCase": "G06",
+          "sourceUnit": "G06-dwarf",
+          "language": "en",
+          "titleEn": "Dwarf game asset turntable",
+          "titleZh": "3D游戏资产360度旋转 · dwarf",
+          "folder": "adaptations/g06-dwarf",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g06-dwarf-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_254",
+            "template": null,
+            "example": "x_318",
+            "media": [
+              "a_425"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g06-dwarf/audit.json"
+        },
+        {
+          "unitId": "G06-sword",
+          "sourceCase": "G06",
+          "sourceUnit": "G06-sword",
+          "language": "en",
+          "titleEn": "Sword in stone turntable",
+          "titleZh": "3D游戏资产360度旋转 · sword",
+          "folder": "adaptations/g06-sword",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g06-sword-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_255",
+            "template": null,
+            "example": "x_319",
+            "media": [
+              "a_426"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g06-sword/audit.json"
+        },
+        {
+          "unitId": "G06-motorbike",
+          "sourceCase": "G06",
+          "sourceUnit": "G06-motorbike",
+          "language": "en",
+          "titleEn": "Motorbike game asset turntable",
+          "titleZh": "3D游戏资产360度旋转 · motorbike",
+          "folder": "adaptations/g06-motorbike",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g06-motorbike-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_256",
+            "template": null,
+            "example": "x_320",
+            "media": [
+              "a_427"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g06-motorbike/audit.json"
+        },
+        {
+          "unitId": "G06-cat",
+          "sourceCase": "G06",
+          "sourceUnit": "G06-cat",
+          "language": "en",
+          "titleEn": "Cat game asset turntable",
+          "titleZh": "3D游戏资产360度旋转 · cat",
+          "folder": "adaptations/g06-cat",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g06-cat-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_257",
+            "template": null,
+            "example": "x_321",
+            "media": [
+              "a_428"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g06-cat/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G07",
+      "title": "蓝发角色吃饭“真香”",
+      "source_post_id": "2118166046175908016",
+      "source_url": "https://x.com/Gorden_Sun/status/2118166046175908016",
+      "author": "Gorden_Sun",
+      "source_likes": 152,
+      "source_reposts_secondary": 4,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/Gorden_Sun/status/2118166046175908016",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118166046175908016.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118166046175908016.json"
+        ],
+        "source_excerpt": "使用这个角色，生成一张GIF图，内容是她吃大白米饭，图片里有文字：真香！",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R08",
+        "how_to_generate": "自行生成Q版蓝白鲸鱼主题角色：蓝色渐变长发、呆毛、耳鳍、蓝蝴蝶结、白头饰、蓝白裙和鲸尾。先定正面全身，再以该图编辑生成四分之三侧面，保持身份一致；不是下载原作者底图。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "中文“真香！”稳定；与旧p_228的精灵图改写明确区分。",
+      "import": {
+        "action": "new-source-version-keep-existing-adaptation",
+        "candidate_id": "gpt26-social-g07",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts",
+        "related_existing_prompt_id": "p_228"
+      },
+      "generation_status": "blocked",
+      "notes": "需参考图；原帖公开一行提示词。 已核对旧正文与原提示词不同；不能用target附加运行绕过不可变正文检查。为作者原词建立独立条目，明确同源关系，合集仅收新原词版。",
+      "execution": {
+        "unit_ids": [
+          "G07"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G07",
+          "sourceCase": "G07",
+          "sourceUnit": "G07",
+          "language": "zh-Hans",
+          "titleEn": "Whale maid enjoys rice",
+          "titleZh": "蓝发角色吃饭“真香”",
+          "folder": "adaptations/g07",
+          "references": [
+            "R08"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g07-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_258",
+            "template": null,
+            "example": "x_322",
+            "media": [
+              "a_429",
+              "a_430"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g07/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G08",
+      "title": "大肥鱼反应表情包",
+      "source_post_id": "2118181775688241456",
+      "source_url": "https://x.com/op7418/status/2118181775688241456",
+      "author": "op7418",
+      "source_likes": 145,
+      "source_reposts_secondary": 7,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/op7418/status/2118181972451438662",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118181972451438662.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118181972451438662.json"
+        ],
+        "source_excerpt": "请以我上传的大肥鱼图片为角色和画风参考",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R08",
+        "how_to_generate": "自行生成Q版蓝白鲸鱼主题角色：蓝色渐变长发、呆毛、耳鳍、蓝蝴蝶结、白头饰、蓝白裙和鲸尾。先定正面全身，再以该图编辑生成四分之三侧面，保持身份一致；不是下载原作者底图。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "两张鲸鱼角色参考按槽位传入，主题值记录；文字和鲸尾一致。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g08",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "需参考图；作者回复完整模板；同帖4张 GIF。",
+      "execution": {
+        "unit_ids": [
+          "G08"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G08",
+          "sourceCase": "G08",
+          "sourceUnit": "G08",
+          "language": "zh-Hans",
+          "titleEn": "Whale maid after work",
+          "titleZh": "大肥鱼反应表情包",
+          "folder": "adaptations/g08",
+          "references": [
+            "R08",
+            "R08-side"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g08-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_259",
+            "template": null,
+            "example": "x_323",
+            "media": [
+              "a_431",
+              "a_430",
+              "a_432"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g08/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G09",
+      "title": "投篮表情 GIF",
+      "source_post_id": "2118186300339892472",
+      "source_url": "https://x.com/crayon1267/status/2118186300339892472",
+      "author": "crayon1267",
+      "source_likes": 124,
+      "source_reposts_secondary": 11,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/crayon1267/status/2118186300339892472",
+        "language": "zh-Hans",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118186300339892472.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118186300339892472.json"
+        ],
+        "source_excerpt": "创建一个gif，按照附图的动作顺序生成。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R09",
+        "how_to_generate": "先生成原创Q版球员全身白底图，再以同一图生成12格动作表：准备、屈膝、起跳、腾空、转身、举球、扣篮、挂框、松手、下落、落地、回到起始；固定镜头、大小与基线，逐格检查顺序。上游提示词是本项目新写，作者仅公开GIF阶段短词。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "输入是12格动作表；作者未公开的上游制作词单独记录为原创。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g09",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "需12帧动作参考图；原帖公开GIF合成指令，未取得参考图最初生成提示词。",
+      "execution": {
+        "unit_ids": [
+          "G09"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G09",
+          "sourceCase": "G09",
+          "sourceUnit": "G09",
+          "language": "zh-Hans",
+          "titleEn": "Basketball dunk sequence",
+          "titleZh": "投篮表情 GIF",
+          "folder": "adaptations/g09",
+          "references": [
+            "R09-action"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g09-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_260",
+            "template": null,
+            "example": "x_324",
+            "media": [
+              "a_433",
+              "a_434"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g09/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G10",
+      "title": "精神稳定藏狐与内阁打工人",
+      "source_post_id": "2118265895613346263",
+      "source_url": "https://x.com/vastxie/status/2118265895613346263",
+      "author": "vastxie",
+      "source_likes": 107,
+      "source_reposts_secondary": 10,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/vastxie/status/2118586752915095805",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118586752915095805.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118586752915095805.json"
+        ],
+        "source_excerpt": "Keep the exact same expressive semi-realistic natural history illustration of a square-faced Tibetan fox",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R10",
+        "how_to_generate": "生成自然史插画风藏狐全身锚点：沙赭色毛、宽方脸、半闭无语眼、透明底；脸上不画文字、不带外白边。动画主题与浮空标签文字在原模板变量中填写。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "英文为主含中文变量；脸不动、前爪动作、上方中文牌、透明无白边，9帧目标。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g10",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖两组GIF；作者回复给出藏狐edits原模板，需先制备角色锚点图。",
+      "execution": {
+        "unit_ids": [
+          "G10"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G10",
+          "sourceCase": "G10",
+          "sourceUnit": "G10",
+          "language": "en",
+          "titleEn": "Deadpan Tibetan fox applause",
+          "titleZh": "精神稳定藏狐与内阁打工人",
+          "folder": "adaptations/g10",
+          "references": [
+            "R10"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g10-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_261",
+            "template": null,
+            "example": "x_325",
+            "media": [
+              "a_435",
+              "a_436"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g10/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G11",
+      "title": "企鹅角色喜怒哀乐",
+      "source_post_id": "2118129204449697985",
+      "source_url": "https://x.com/tetumemo/status/2118129204449697985",
+      "author": "tetumemo",
+      "source_likes": 83,
+      "source_reposts_secondary": 9,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/tetumemo/status/2118129204449697985",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118129204449697985.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118129204449697985.json"
+        ],
+        "source_excerpt": "このキャラの喜怒哀楽のGIFよろ",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R11",
+        "how_to_generate": "生成原创企鹅吉祥物，全身正面、单一稳定轮廓和配色、无字白底。一个底图复用喜怒哀乐四个输出。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "4个情绪GIF＋4张封面",
+      "acceptance": "喜怒哀乐分别验收，同一prompt多次或多输出运行须记录实际方法。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g11",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "X保存为video；作者明确说用引用中的原提示词生成喜怒哀乐GIF，属于GIF演示视频。",
+      "execution": {
+        "unit_ids": [
+          "G11"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G11-joy",
+          "sourceCase": "G11",
+          "sourceUnit": "G11",
+          "language": "ja",
+          "titleEn": "Penguin joy",
+          "titleZh": "企鹅角色喜怒哀乐 · joy",
+          "folder": "adaptations/g11-joy",
+          "references": [
+            "R11"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g11-joy-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_262",
+            "template": null,
+            "example": "x_326",
+            "media": [
+              "a_437",
+              "a_438"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g11-joy/audit.json"
+        },
+        {
+          "unitId": "G11-anger",
+          "sourceCase": "G11",
+          "sourceUnit": "G11",
+          "language": "ja",
+          "titleEn": "Penguin anger",
+          "titleZh": "企鹅角色喜怒哀乐 · anger",
+          "folder": "adaptations/g11-anger",
+          "references": [
+            "R11"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g11-anger-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_263",
+            "template": null,
+            "example": "x_327",
+            "media": [
+              "a_439",
+              "a_438"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g11-anger/audit.json"
+        },
+        {
+          "unitId": "G11-sorrow",
+          "sourceCase": "G11",
+          "sourceUnit": "G11",
+          "language": "ja",
+          "titleEn": "Penguin sorrow",
+          "titleZh": "企鹅角色喜怒哀乐 · sorrow",
+          "folder": "adaptations/g11-sorrow",
+          "references": [
+            "R11"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g11-sorrow-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_264",
+            "template": null,
+            "example": "x_328",
+            "media": [
+              "a_440",
+              "a_438"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g11-sorrow/audit.json"
+        },
+        {
+          "unitId": "G11-delight",
+          "sourceCase": "G11",
+          "sourceUnit": "G11",
+          "language": "ja",
+          "titleEn": "Penguin delight",
+          "titleZh": "企鹅角色喜怒哀乐 · delight",
+          "folder": "adaptations/g11-delight",
+          "references": [
+            "R11"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g11-delight-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_265",
+            "template": null,
+            "example": "x_329",
+            "media": [
+              "a_441",
+              "a_438"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g11-delight/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G12",
+      "title": "炭治郎像素水之呼吸",
+      "source_post_id": "2118245929505669260",
+      "source_url": "https://x.com/Mayz1169/status/2118245929505669260",
+      "author": "Mayz1169",
+      "source_likes": 64,
+      "source_reposts_secondary": 8,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/Mayz1169/status/2118246507128541553",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118246507128541553.fx.json",
+          "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118246507128541553.json"
+        ],
+        "source_excerpt": "Use the character I uploaded as the reference and make a downloadable looping pixel-art GIF of them performing a signature move.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R12",
+        "how_to_generate": "先生成独立绘制的剑士角色参考图，保留来源示例所选角色的发型、服装图案和武器；若改用原创剑士，明确标注参考图替换样例。不要预先做成帧图，像素化和动作由原词完成。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "像素边缘清楚、完整招式、白底、12帧和1.5–2秒目标；角色输入替换要标识。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g12",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖GIF+角色参考图；作者回复完整像素动作原提示词。",
+      "execution": {
+        "unit_ids": [
+          "G12"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G12",
+          "sourceCase": "G12",
+          "sourceUnit": "G12",
+          "language": "en",
+          "titleEn": "Swordsman pixel water strike",
+          "titleZh": "炭治郎像素水之呼吸",
+          "folder": "adaptations/g12",
+          "references": [
+            "R12"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g12-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_266",
+            "template": null,
+            "example": "x_330",
+            "media": [
+              "a_442",
+              "a_443"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g12/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "W01",
+      "title": "角色定时自拍＋聊天消息",
+      "source_post_id": "2118293441751007660",
+      "source_url": "https://x.com/elle_elle_e/status/2118293441751007660",
+      "author": "elle_elle_e",
+      "source_likes": 966,
+      "source_reposts_secondary": 94,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/elle_elle_e/status/2118293607992238252",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118293607992238252-fx.json",
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118293607992238252-official.json"
+        ],
+        "source_excerpt": "参照画像「REFERENCE_NAME」を使用し、被写体から届いたような自然な自撮り画像1枚と、一言メッセージを届ける。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R14",
+        "how_to_generate": "生成原创成年角色肖像，正面、五官和服装完整、简洁背景；执行环境保存参照图名称并填入REFERENCE_NAME，CHARACTER单独保存。一次演示只运行一次，不创建真实定时任务。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张自拍＋独立消息文本",
+      "acceptance": "参考图名称和CHARACTER记录；定时功能只写使用说明，不在本站实现或启动。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-w01",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "966赞属于整个参考图＋定时任务工作流，不是单张作品；原图与设置截图混排。已核实作者完整模板，未独立运行；不并入纯静态作品榜。",
+      "execution": {
+        "unit_ids": [
+          "W01"
+        ],
+        "status": "blocked",
+        "reason": "named-reference-registry-and-separate-message-output-unavailable",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "W01",
+          "sourceCase": "W01",
+          "sourceUnit": "W01",
+          "language": "ja",
+          "titleEn": "A quiet selfie and a separate message",
+          "titleZh": "日常自拍与独立日语消息",
+          "folder": "adaptations/w01",
+          "references": [
+            "R14"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-w01-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_273",
+            "template": null,
+            "example": "x_337",
+            "media": [
+              "a_455",
+              "a_456"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/w01/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "S13",
+      "title": "电影质感与写实人像：第一张自拍",
+      "source_post_id": "2118143241119740039",
+      "source_url": "https://x.com/WolfRiccardo/status/2118143241119740039",
+      "author": "WolfRiccardo",
+      "source_likes": 133,
+      "source_reposts_secondary": 5,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/WolfRiccardo/status/2118153191388860764",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118153191388860764-fx.json",
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118153191388860764-official.json"
+        ],
+        "source_excerpt": "Selfie, taken with the front-facing camera___—00**iPhone 13 Pro Max**.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张自拍",
+      "acceptance": "仅选四图中第一张已核实原词，不据此编造其他三张制作词；保留原词缺失右瞳孔的明确要求。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s13",
+        "prompt_id": "p_243",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "133赞属于四图整帖；仅第一张的提示词在作者回复完整核实。其他图片不套用此词。第二张作者另指向 riccardowolf.com/prompt1，但本次页面显示提示词不可用。",
+      "execution": {
+        "unit_ids": [
+          "S13"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S14",
+      "title": "镜面电梯时装人像，2.5/2.6对照",
+      "source_post_id": "2118284291381875124",
+      "source_url": "https://x.com/tadasgedgaudas/status/2118284291381875124",
+      "author": "tadasgedgaudas",
+      "source_likes": 18,
+      "source_reposts_secondary": 1,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/tadasgedgaudas/status/2118284291381875124",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118284291381875124-fx.json",
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118284291381875124-official.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118284291381875124-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118284291381875124.json"
+        ],
+        "source_excerpt": "Standing in an elevator, looking at her reflection in the mirrored wall while holding a pair of black sunglasses.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1张电梯人像",
+      "acceptance": "只做原帖右侧2.6结果；JSON字段照录，保留原文内部衣物描述差异。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s14",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "仅18赞，为可复用补充，不称爆款。右图是2.6，左图2.5；JSON提示词在正文。",
+      "execution": {
+        "unit_ids": [
+          "S14"
+        ],
+        "status": "blocked",
+        "reason": "provider-rejected-original-prompt",
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "S15",
+      "title": "猫眼／门禁屏幕里的角色",
+      "source_post_id": "2118220107487051883",
+      "source_url": "https://x.com/kabumira862571/status/2118220107487051883",
+      "author": "kabumira862571",
+      "source_likes": 17,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/kabumira862571/status/2118220107487051883",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118220107487051883-fx.json",
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/evidence/2118220107487051883-official.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118220107487051883-fx.json",
+          "docs/research/gpt-image-2.6-top24-2026-11-07/evidence/2118220107487051883.json"
+        ],
+        "source_excerpt": "玄関先でこちらを見るキャラ。",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R13",
+        "how_to_generate": "生成原创成年和服女性全身参考图，脸、发型、红色和服及配饰清楚，白底；猫眼或室内门禁显示器只在原词变量中选择。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1张猫眼人像",
+      "acceptance": "先选择门猫眼样例，原文占位符用独立values记录，后续可再做门禁显示器。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-s15",
+        "prompt_id": "p_245",
+        "status": "applied",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "accepted_and_imported",
+      "notes": "仅17赞，为可复用补充。需要上传角色参考图，在模板中选择猫眼或室内门禁屏幕。",
+      "execution": {
+        "unit_ids": [
+          "S15"
+        ],
+        "status": "accepted",
+        "reason": null,
+        "attempted_units": 1
+      },
+      "adaptation_execution": []
+    },
+    {
+      "case_id": "G13",
+      "title": "角色微眨眼",
+      "source_post_id": "2118268865868362147",
+      "source_url": "https://x.com/magu_ai_h/status/2118268865868362147",
+      "author": "magu_ai_h",
+      "source_likes": 68,
+      "source_reposts_secondary": 5,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/magu_ai_h/status/2118288125873250766",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118288125873250766.fx.json",
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118288125873250766.json"
+        ],
+        "source_excerpt": "まばたきしてるGIF作ってください！",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R15",
+        "how_to_generate": "生成一个原创成年角色正面胸像，双眼无遮挡、头部端正、简洁背景，眼睛大小与视线易观察。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "微眨眼循环，头和背景稳定。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g13",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "上传原角色图；原帖animated_gif，作者回复直接说明仅用了这句。",
+      "execution": {
+        "unit_ids": [
+          "G13"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 1
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G13",
+          "sourceCase": "G13",
+          "sourceUnit": "G13",
+          "language": "ja",
+          "titleEn": "Gentle anime blink",
+          "titleZh": "角色微眨眼",
+          "folder": "adaptations/g13",
+          "references": [
+            "R15"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g13-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_267",
+            "template": null,
+            "example": "x_331",
+            "media": [
+              "a_444",
+              "a_445"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g13/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G14",
+      "title": "猫Robin眨眼，写名字的帽子落下",
+      "source_post_id": "2118238946412953985",
+      "source_url": "https://x.com/ozansihay/status/2118238946412953985",
+      "author": "ozansihay",
+      "source_likes": 37,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/ozansihay/status/2118238946412953985",
+        "language": "tr",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118238946412953985.fx.json",
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118238946412953985.json"
+        ],
+        "source_excerpt": "Kedimiz Robin’in GIF'ini oluştur. Kameraya baksın göz tek gözünü kırpsın ve kafasına Robin yazan bir şapka düşsün.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R16",
+        "how_to_generate": "生成原创家猫正面照片，直视镜头，头顶留足帽子落下空间，纯净背景；名字Robin由后续土耳其语原词指定。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "看镜头、单眼眨眼、Robin文字帽落下三动作；需要注册tr。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g14",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "上传作者的猫照片；土耳其语原词在主帖，官方媒体animated_gif。",
+      "execution": {
+        "unit_ids": [
+          "G14"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 1
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G14",
+          "sourceCase": "G14",
+          "sourceUnit": "G14",
+          "language": "tr",
+          "titleEn": "Robin cat wink and falling hat",
+          "titleZh": "猫Robin眨眼，写名字的帽子落下",
+          "folder": "adaptations/g14",
+          "references": [
+            "R16"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g14-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_268",
+            "template": null,
+            "example": "x_332",
+            "media": [
+              "a_446",
+              "a_447"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g14/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G15",
+      "title": "角色喜悦之舞",
+      "source_post_id": "2118136361584877622",
+      "source_url": "https://x.com/thibi_nanashi/status/2118136361584877622",
+      "author": "thibi_nanashi",
+      "source_likes": 25,
+      "source_reposts_secondary": 3,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/thibi_nanashi/status/2118136361584877622",
+        "language": "ja",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118136361584877622.fx.json",
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118136361584877622.json"
+        ],
+        "source_excerpt": "次の内容で GIF を作成して: 踊らせる、喜びの舞",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R17",
+        "how_to_generate": "生成原创Q版角色全身图，双臂双脚完整，衣物简单，白底；用于动作示范，原帖未披露全部上下文，说明不保证同角色同结果。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "喜悦舞动作明确、角色稳定；输入为项目自制替代图。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g15",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "原帖明示Image2.6和prompt配布；animated_gif。",
+      "execution": {
+        "unit_ids": [
+          "G15"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G15",
+          "sourceCase": "G15",
+          "sourceUnit": "G15",
+          "language": "ja",
+          "titleEn": "Chibi dance of joy",
+          "titleZh": "角色喜悦之舞",
+          "folder": "adaptations/g15",
+          "references": [
+            "R17"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g15-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_269",
+            "template": null,
+            "example": "x_333",
+            "media": [
+              "a_448",
+              "a_449"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g15/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G16",
+      "title": "法师转杖与火花，low/high/max比较",
+      "source_post_id": "2118750260549796019",
+      "source_url": "https://x.com/Voxyz_ai/status/2118750260549796019",
+      "author": "Voxyz_ai",
+      "source_likes": 22,
+      "source_reposts_secondary": 0,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/Voxyz_ai/status/2118750260549796019",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118750260549796019.fx.json",
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118750260549796019.json"
+        ],
+        "source_excerpt": "Turn this character image into a seamless looping GIF, 12 frames at 100 ms per frame.",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R18",
+        "how_to_generate": "生成原创全身卡通法师，帽子、眼睛和一根法杖清晰，纯白底、画面四周留边、法杖不裁断；后续12帧动作使用同一输入。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "12帧100ms/帧目标、法杖旋转与火花；成本和模型等级以实测为准。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g16",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "完整词在作者长帖；原帖animated_gif。作者成本与Codex免费说法非本调研核验范围。",
+      "execution": {
+        "unit_ids": [
+          "G16"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 1
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G16",
+          "sourceCase": "G16",
+          "sourceUnit": "G16",
+          "language": "en",
+          "titleEn": "Wizard staff spin and sparkles",
+          "titleZh": "法师转杖与火花，low/high/max比较",
+          "folder": "adaptations/g16",
+          "references": [
+            "R18"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g16-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_270",
+            "template": null,
+            "example": "x_334",
+            "media": [
+              "a_450",
+              "a_451"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g16/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G17",
+      "title": "8bit Johnny Bravo跳舞",
+      "source_post_id": "2118755226555490395",
+      "source_url": "https://x.com/thealexbanks/status/2118755226555490395",
+      "author": "thealexbanks",
+      "source_likes": 4,
+      "source_reposts_secondary": 0,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://x.com/thealexbanks/status/2118755226555490395",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118755226555490395.fx.json",
+          "docs/research/gpt-image-2.6-multilingual-evidence-2026-11-07/gifs/2118755226555490395.json"
+        ],
+        "source_excerpt": "make a raving 8bit johnny bravo",
+        "extraction_rule": "只提取作者明确作为输入的完整提示词，保留标点、大小写、语法、段落和混合语言；外层宣传语不作为输入，裁切边界写入审计。"
+      },
+      "reference": {
+        "requirement": "none",
+        "task_id": null,
+        "how_to_generate": "直接使用完整原提示词文生图／动画；不额外添参考图。",
+        "input_origin": null
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "8-bit Johnny Bravo跳舞；不添加原帖后配音乐，不把音频说成模型输出。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g17",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "主帖4赞，视频加入音乐；作者明确说明ChatGPT Images2.6 GIF生成。音乐/视频不是模型GIF原生输出。",
+      "execution": {
+        "unit_ids": [
+          "G17"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G17",
+          "sourceCase": "G17",
+          "sourceUnit": "G17",
+          "language": "en",
+          "titleEn": "Johnny Bravo eight-bit dance",
+          "titleZh": "8bit Johnny Bravo跳舞",
+          "folder": "adaptations/g17",
+          "references": [],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g17-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_271",
+            "template": null,
+            "example": "x_335",
+            "media": [
+              "a_452"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g17/audit.json"
+        }
+      ]
+    },
+    {
+      "case_id": "G18",
+      "title": "参考角色点头、闭眼",
+      "source_post_id": "reddit:1xoh2u0",
+      "source_url": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+      "author": "RumbleversePlayer",
+      "source_score_search_snapshot": 204,
+      "metric_observed_date": "2026-11-07",
+      "prompt": {
+        "source_url": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+        "language": "en",
+        "preserve_original_language": true,
+        "translate": false,
+        "complete_text_status": "full_original_text_frozen_with_sha256",
+        "evidence_files": [
+          "docs/research/gpt-image-2.6-multilingual-2026-11-07/REPORT.md"
+        ],
+        "source_excerpt": "You are animator",
+        "extraction_rule": "提取报告引用的作者完整原词，并对照原帖；保留原语法。"
+      },
+      "reference": {
+        "requirement": "required",
+        "task_id": "R19",
+        "how_to_generate": "生成原创双丸子头动漫角色胸像，棕发、柔和表情、双眼睁开、头颈完整；保持轮廓与线条干净，供点头及闭眼动画使用。",
+        "input_origin": "project-generated"
+      },
+      "expected_outputs": "1个GIF＋1张封面",
+      "acceptance": "按顺序缓慢抬头、快速低头、恢复并闭眼；保留英文原文语法。",
+      "import": {
+        "action": "new-source-prompt",
+        "candidate_id": "gpt26-social-g18",
+        "prompt_id": null,
+        "status": "blocked",
+        "collection": "gpt-image-26-social-original-prompts"
+      },
+      "generation_status": "blocked",
+      "notes": "204为搜索索引得分，非实时点赞；平台视频展示不等于原始GIF格式证据。",
+      "execution": {
+        "unit_ids": [
+          "G18"
+        ],
+        "status": "blocked",
+        "reason": "native-gif-not-returned-by-current-tool",
+        "attempted_units": 0
+      },
+      "adaptation_execution": [
+        {
+          "unitId": "G18",
+          "sourceCase": "G18",
+          "sourceUnit": "G18",
+          "language": "en",
+          "titleEn": "Anime nod and closed eyes",
+          "titleZh": "参考角色点头、闭眼",
+          "folder": "adaptations/g18",
+          "references": [
+            "R19"
+          ],
+          "provenance": "independent-adaptation",
+          "jobKey": "gpt26-social-g18-adapted-v1",
+          "status": "accepted",
+          "ids": {
+            "prompt": "p_272",
+            "template": null,
+            "example": "x_336",
+            "media": [
+              "a_453",
+              "a_454"
+            ]
+          },
+          "audit": "production/gpt-image-26-social-2026-11-07/adaptations/g18/audit.json"
+        }
+      ]
+    }
+  ]
+}

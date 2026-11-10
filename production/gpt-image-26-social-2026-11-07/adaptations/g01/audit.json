@@ -1,0 +1,108 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g01/sheet.png",
+    "sheetSha256": "cac2b65267006ef3d02989f1767880a6f3dbf3575b64fce8411c1b2210e36cba",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g01/output.gif",
+    "outputSha256": "4bf126c3048d13e8873d946f1b589b7030974290ab42b9370df862ca0a78b74f",
+    "width": 443,
+    "height": 443,
+    "frameCount": 8,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      250,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "f4f94f21d305b3cdb476a42924e4e167f8df3611d6f062cc15e13f8cb04eddad",
+      "a472b7c77b7599089831c6db4395318443dc2f09669b9d97cb64d608c59c860a",
+      "9921150c19eccd156d6d921bd5811f2d944779f2201efd59a86974e56372dcc4",
+      "629f8f5c9a82082fbf1941e0f14adfdf06185bd58542d2d257493d95eb2b69c6",
+      "a188f86766a8863e17fe660785b1c923e694d2a947fce957d91ae2f9ee29b5a5",
+      "4487104f6a484565d98485f0fef899240e4462920cb029a88e8da6cb060a83ef",
+      "d563eaf15f8c403b84b5b6abadd80d8b0fd8d69b4b1e13e341b541f9049f5bc8",
+      "cbd4a3e610b6750a6f3a2d661aad0932838fa31330f24d42ebbddde432b02cdb"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 2,
+    "trimmedBottomPixels": 1
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png",
+      "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+    "reviewedAt": "2026-11-08T10:09:02.888Z"
+  }
+}

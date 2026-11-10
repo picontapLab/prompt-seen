@@ -1,0 +1,15 @@
+{
+  "caseId": "G10",
+  "unitId": "G10",
+  "language": "en",
+  "author": "vastxie",
+  "sourceUrl": "https://x.com/vastxie/status/2118586752915095805",
+  "evidenceFile": "docs/research/gpt-image-2.6-evidence-2026-11-07/gifs/2118586752915095805.fx.json",
+  "evidenceSha256": "c85707d07872decd0c5141079e32bfa26bd3a4ff15564565391cee70f98a6a6c",
+  "jsonPointer": "/tweet/text",
+  "startCodepoint": 47,
+  "endCodepoint": 788,
+  "removedPrefix": "1️⃣ 喂 anchor.png 跑全套的 edits Prompt 模板（以藏狐为例）：\n\"",
+  "removedSuffix": "\"\n\n2️⃣ 微信 240×240 GIF89a 深色模式零白沫量化核心代码（Pillow）：\ndef save_wechat_gif(frames_rgba, out_path, duration_ms=110):\np_frames = []\nfor f in frames_rgba:\nrgba = f.convert(\"RGBA\")\nalpha = rgba.getchannel(\"A\")\n# 关键：千万别往白底上预乘！只保留 alpha>=145 的前景原始 RGB 参与调色板量化\nclean_rgb = http://Image.new(\"RGB\", rgba.size, (128, 128, 128))\nfg_mask = alpha.point(lambda a: 255 if a >= 145 else 0)\nclean_rgb.paste(rgba.convert(\"RGB\"), mask=fg_mask)\nquant = clean_rgb.quantize(colors=255, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.NONE)\n# 255 号色固定留给透明通道，深色模式下边缘绝对不泛白沫\ntrans_mask = alpha.point(lambda a: 255 if a < 145 else 0)\nquant.paste(255, mask=trans_mask)\np_frames.append(quant)\np_frames[0].save(out_path, save_all=True, append_images=p_frames[1:],\nloop=0, duration=duration_ms, disposal=2, transparency=255, optimize=True)",
+  "sha256": "31590dc205ae8d55941d1e37286c3ce6f8a33c50fef7e5116f6000ee273fb076"
+}

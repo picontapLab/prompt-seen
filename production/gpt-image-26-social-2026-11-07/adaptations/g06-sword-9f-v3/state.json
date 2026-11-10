@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-sword-adapted-9f-v3",
+    "candidateId": "gpt26-social-g06-sword-adapted-9f",
+    "prompt": "create a gif of a \"3d legendary sword in a stone game asset\" spinning full 360 degrees\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "234ce5118491c928f2092aa4c76665e310a09aa8de4309ce015b758660d393c9",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:03.304Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-sword-adapted-9f-v3/output-a19bf37dfaa5a65c48cd17414baf10d6ee5b35577d609d84e68c9f997c3a4fea.gif",
+      "sha256": "a19bf37dfaa5a65c48cd17414baf10d6ee5b35577d609d84e68c9f997c3a4fea"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:51.260Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve front, side and rear views of the blue-and-gold sword embedded in a mossy stone form a complete turntable cycle. Subject remains centered and whole. 12 frames, 120 ms each. Generated views have approximate angular spacing and small geometry changes; no real 3D-model claim.",
+    "reviewedAt": "2026-11-10T00:59:51.263Z"
+  }
+}

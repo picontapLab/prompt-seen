@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g11-anger/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g11-anger",
+    "sourceSheetSha256": "ed16399378db31f07dbea1347b7c94b8aba5746069bd8ef0411f3256bef53ddf",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight poses show furrowed brows, puffed cheeks and alternating foot stomps, preserving penguin and red scarf. 1600 ms loop; expression resets to neutral on first frame, so no seamless expression match is claimed.",
+      "reviewedAt": "2026-11-08T10:36:59.904Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g11-anger-adapted-v1",
+      "fingerprint": "473bfa87cb289c9c977527279beeaacec7c98fc7a0e5397dbba51c50f9f3b245",
+      "prompt": "このキャラの喜怒哀楽のGIFよろ\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n今回の感情は「怒」。8コマで頬を膨らませ、片足ずつ地団駄を踏み、怒った姿勢へ戻る。文字不要。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R11/output.png",
+          "sha256": "a9d36c83c024cc112188262f1efcd10ef502c51cebe1d1fddbfad9c6ac2b7c61",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g11-anger-9f-v3/sheet.png",
+    "sheetSha256": "675ac060f53db738a51b672787cf963ee4c382e5a82178abfa63a16af78bb26b",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g11-anger-9f-v3/output.gif",
+    "outputSha256": "2abc399c937753f4ea2dc8cca602c057ddf97ff5b3f8a4e5428e852ae26e3ff2",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 1600,
+    "frameDelaysMs": [
+      100,
+      100,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "d7716780c0a4959a7149d9ee41362330c066a77e945fd28b7e449e2a115eab17",
+      "d7716780c0a4959a7149d9ee41362330c066a77e945fd28b7e449e2a115eab17",
+      "c03febfeeea511fbec84cfd5af708785c45b56a063f9057cc77bc35c688204db",
+      "4b30c792c4615da030a72553b3095407a227094b1349181a6deae58bd71a6c90",
+      "84a6864aedc4e0661adc3f89a390a995ee8626426df1afea5af4ffbd1cf0910e",
+      "a245ccb275c837fcca05b7cd99350ec77b8189317e0509a3b3f37c8cff4f857a",
+      "eb8836d6cf3fb9039aaa70d7b80a34d00527b79b8dcca4c720e9ed9816ee72de",
+      "bedacd957d922b229627ed6ba68a346534a01f37cdcf97da0d2bb5a2a6f9d871",
+      "4410541cc9e0fbc15ae92146bd1606cf34a52252f603a3e4e074e4c7cb2e885c"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R11/output.png",
+      "sha256": "a9d36c83c024cc112188262f1efcd10ef502c51cebe1d1fddbfad9c6ac2b7c61",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight poses show furrowed brows, puffed cheeks and alternating foot stomps, preserving penguin and red scarf. 1600 ms loop; expression resets to neutral on first frame, so no seamless expression match is claimed.",
+    "reviewedAt": "2026-11-10T00:59:52.512Z"
+  }
+}

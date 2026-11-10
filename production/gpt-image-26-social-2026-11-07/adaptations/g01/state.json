@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g01-adapted-v1",
+    "candidateId": "gpt26-social-g01-adapted",
+    "prompt": "チャッピー！この画像の女の子を可愛く画面外から登場するGIFを作ってみて！\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n1コマ目は人物がまだ画面の外、2～4コマ目で左から弾んで入る、5～6コマ目は中央で可愛く着地、7～8コマ目で右へ出て空白に戻る。",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "36267db71ae19c50629ed8fd0cb41cee35d20d492b65e1c5d788e34e2ad5fafb",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png",
+      "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T10:07:46.238Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g01-adapted-v1/output-4bf126c3048d13e8873d946f1b589b7030974290ab42b9370df862ca0a78b74f.gif",
+      "sha256": "4bf126c3048d13e8873d946f1b589b7030974290ab42b9370df862ca0a78b74f"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T10:09:02.883Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+    "reviewedAt": "2026-11-08T10:09:02.888Z"
+  }
+}

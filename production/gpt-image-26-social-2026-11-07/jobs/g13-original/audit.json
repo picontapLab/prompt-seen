@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-ca9b6b17-8b50-4391-abc0-976437732213.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-original/output.png",
+  "outputSha256": "1cfe2ae71c1e1b101bcfb8047671b1bdd90f3349e66d5993c51527db33cc3c12",
+  "promptSha256": "62a1b2239475294dfcfbf5b81bb522fa9c230bb62a5308c00a4d438948792fc7",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1312,
+  "height": 1199,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "Tool returned a single PNG of partially lowered eyelids, not a playable multi-frame GIF. Native source-prompt animation requirement failed; keep as failed capability evidence only.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:36:22.629Z"
+  }
+}

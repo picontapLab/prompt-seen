@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-r09-action-v1",
+    "candidateId": "gpt26-social-r09-action",
+    "prompt": "以输入的原创Q版篮球运动员为唯一角色，生成四列三行共12格、从左到右从上到下按时间顺序的动作参考表，每格等大的正方形。固定镜头、角色大小、地面基线与画面右侧篮筐位置。动作依次为：1准备持球、2屈膝、3起跳、4腾空、5转身、6举球、7将球扣入筐、8挂框、9松手、10下落、11落地、12回到准备姿势。保留同一绿色无字球衣、棕色皮肤和黑色短卷发。纯白背景，清晰平涂线稿。每格人物、球和必要篮筐完整入镜，无编号、无文字、无格线、不画其它运动员。",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R09/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "02e0a774ae1c25859f559c7cf30435b6b3362f1684e44b0f7e060e015568ed86",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R09/output.png",
+      "sha256": "879cc8d28e6a8e9954f9f3eda565e2b2e835a2b43891c2ecd1771a84377bce33",
+      "slotId": "character"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T10:23:55.072Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-r09-action-v1/output-9f6e194166dc057af9649920c618dd2f92807a5c2ca45bb50086a264ac97b3d9.png",
+      "sha256": "9f6e194166dc057af9649920c618dd2f92807a5c2ca45bb50086a264ac97b3d9"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T10:25:41.909Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Twelve ordered action references show ready, bend, jump, airborne turn, ball raise, dunk, rim hang, release, descent, landing and ready. Same green-kit player and right-hand hoop; fixed baseline. Pose chart is project-authored reference, not an accepted GIF itself.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T10:25:41.915Z"
+  }
+}

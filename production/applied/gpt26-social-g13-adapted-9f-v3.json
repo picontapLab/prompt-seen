@@ -1,0 +1,34 @@
+{
+  "key": "gpt26-social-g13-adapted-9f-v3",
+  "candidateId": "gpt26-social-g13-adapted-9f",
+  "fingerprint": "cd302b55e1bef119dee62a293e30d624de8b252f91e82cf08a0019a85f47a263",
+  "ids": {
+    "prompt": "p_306",
+    "template": null,
+    "example": "x_370",
+    "media": [
+      "a_501",
+      "a_502"
+    ]
+  },
+  "provider": "OpenAI + local GIF encoding",
+  "model": "GPT Image",
+  "outputSha256": "b2c16864d95cdcc5f11de6829d1d566b4685a49adee6ee714d57b58a696836e4",
+  "referenceHashes": [
+    {
+      "slotId": "character",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight drawn frames show open, half-closed, closed and reopened eyelids in order. Face, clothing and framing stay consistent with minor frame-to-frame drawing variation. Encoded as a 2-second infinite loop; actual GIF metadata verified. This is a frame-sheet adaptation, not native GIF output from the source prompt.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:59:53.159Z"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T01:01:49.382Z",
+    "contentHash": "eafb0f5551fae0de96d527d793f910a846d06b8119c70b68a351fa97d41d7b0e"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g16-original-r2",
+    "candidateId": "gpt26-social-g16",
+    "prompt": "Turn this character image into a seamless looping GIF, 12 frames at 100 ms per frame. Action: the character spins the staff in their hand, releases a small burst of sparkles, then returns to the starting pose. Keep the design, colors, proportions and line art the same as the original in every frame. Full body in frame, fixed camera, plain pure white background, no text.",
+    "references": [
+      {
+        "slotId": "wizard",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "598ff4f06be0e6c14817e7178b0f0d1c821e045c211b9aa447c2e2ff56468e29",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png",
+      "sha256": "de2edda17fdf152a512dab439cc48be7285190c4540a18b92ffcee087449e0b3",
+      "slotId": "wizard"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-10T00:17:37.234Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g16-original-r2/output-d7ddcf456b03a7fc98269d5a96a36d82c30c1385872997c6f5b3f0278627a43f.png",
+      "sha256": "d7ddcf456b03a7fc98269d5a96a36d82c30c1385872997c6f5b3f0278627a43f"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:19:02.497Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "User-requested unchanged original retry on 2026-11-09. Returned single-frame PNG contact sheet with twelve labeled panels and timestamps; not an animated GIF and violates no-text request. Preserve as rejected native-output attempt.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:19:02.501Z"
+  }
+}

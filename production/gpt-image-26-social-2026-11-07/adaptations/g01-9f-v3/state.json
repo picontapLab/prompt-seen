@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g01-adapted-9f-v3",
+    "candidateId": "gpt26-social-g01-adapted-9f",
+    "prompt": "チャッピー！この画像の女の子を可愛く画面外から登場するGIFを作ってみて！\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n1コマ目は人物がまだ画面の外、2～4コマ目で左から弾んで入る、5～6コマ目は中央で可愛く着地、7～8コマ目で右へ出て空白に戻る。",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "3c61ff7d04b0018865709e6f78034f8810123a42a39525eb58a3a9ec658eaa10",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png",
+      "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:57:39.970Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g01-adapted-9f-v3/output-49049521d60608286145a236a0bb5a3f228f44c1fd2d55f543560bae6c275dbb.gif",
+      "sha256": "49049521d60608286145a236a0bb5a3f228f44c1fd2d55f543560bae6c275dbb"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:49.990Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+    "reviewedAt": "2026-11-10T00:59:49.994Z"
+  }
+}

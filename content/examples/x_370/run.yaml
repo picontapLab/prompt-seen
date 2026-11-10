@@ -1,0 +1,32 @@
+id: x_370
+promptId: p_306
+promptLanguage: ja
+template: null
+promptSha256: a049d070b8e07cf0266aad52e8f43b676491fc003c935fa0dfdb3b63f11df05c
+referenceAssetIds:
+  - a_502
+referenceBindings:
+  - slotId: character
+    referenceIndex: 0
+outputAssetIds:
+  - a_501
+provider: OpenAI + local GIF encoding
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-09
+parameters: {}
+notes:
+  en: "Reviewed all nine-frame sequences in four contact sheets: action order,
+    identity, captions and final poses retained. This output reuses archived GPT
+    Image source pixels; no new provider call. One held pose is split into two
+    frames; eight distinct source poses, nine encoded frames. Total duration and
+    playback count preserved. Original source review (frame counts describe
+    source only): Eight drawn frames show open, half-closed, closed and reopened
+    eyelids in order. Face, clothing and framing stay consistent with minor
+    frame-to-frame drawing variation. Encoded as a 2-second infinite loop;
+    actual GIF metadata verified. This is a frame-sheet adaptation, not native
+    GIF output from the source prompt."
+  zh-Hans: 动漫角色轻眨眼
+  ja: 4枚の一覧画像ですべての9フレームの順序、人物の特徴、字幕、最終姿態を確認しました。保存済みのGPT
+    Image素材を再利用し、新たな画像ツール呼び出しは行っていません。一つの姿態の停留を2フレームに分けています。異なる元姿態は8種類、符号化フレームは9枚です。総再生時間とループ回数は保持しています。元素材の確認記録（以下のコマ数は元素材のもの）：元の8コマは目を開く、半閉じ、閉じる、開き直す順です。顔、服、構図を保ちつつ小さな描画差があります。2秒の無限ループでGIFメタデータを検証済み。コマ画像からのアレンジであり、原文から直接返されたネイティブGIFではありません。

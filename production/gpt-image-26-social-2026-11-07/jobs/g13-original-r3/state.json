@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g13-original-r3",
+    "candidateId": "gpt26-social-g13",
+    "prompt": "まばたきしてるGIF作ってください！",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "9dd50a2ff94914b30900746c046c5b00e28d2ac74eecb68f85477265e3110665",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-10T00:16:37.486Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g13-original-r3/output-1873c6e05a8cbc6609a1bc2c65d240bc8a57e2875e41c76d334aff6f507f2e04.png",
+      "sha256": "1873c6e05a8cbc6609a1bc2c65d240bc8a57e2875e41c76d334aff6f507f2e04"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:17:36.928Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "User-requested unchanged original retry on 2026-11-09. Returned file has PNG signature and one decoded frame, showing partly closed eyelids. No animation timing or GIF payload returned; not accepted as native GIF.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:17:36.932Z"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-motorbike-adapted-v1",
+    "candidateId": "gpt26-social-g06-motorbike-adapted",
+    "prompt": "create a gif of a \"AAA 3d futuristic motorbike game asset\" spinning full 360 degrees\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "8b8a97febc5cb2c9d91eb1facac22fb1189996e01dc4033dafef2bc6742c15c5",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T10:01:07.919Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-motorbike-adapted-v1/output-163a21b6d1565980b08f33c97b7169228e183f54aeeac5e804237a87167d9a42.gif",
+      "sha256": "163a21b6d1565980b08f33c97b7169228e183f54aeeac5e804237a87167d9a42"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T10:02:43.136Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve distinguishable front, side and rear views of one dark futuristic motorbike with cyan wheels and red accents. Wheels and body remain visible. 1440 ms repeating turntable. Small generated geometry and scale drift are visible; this is an illustrated multi-view adaptation, not an exported 3D asset.",
+    "reviewedAt": "2026-11-08T10:02:43.140Z"
+  }
+}

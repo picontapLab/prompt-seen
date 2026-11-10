@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-dwarf-adapted-v1",
+    "candidateId": "gpt26-social-g06-dwarf-adapted",
+    "prompt": "create a gif of a \"3d dwarf game model carrying a huge axe on his shoulders\" spinning full 360 degrees\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "dc2eaaa16a1bf7a4faf39fdf259e81765510197d71e69244d578a63a0f3e2cba",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T09:58:33.800Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-dwarf-adapted-v1/output-cf84e1521cb48be2fbeaa02f956429f6d3dcdfc95620edbd759c17f4f4f72858.gif",
+      "sha256": "cf84e1521cb48be2fbeaa02f956429f6d3dcdfc95620edbd759c17f4f4f72858"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T09:59:51.080Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve distinct views rotate from front through both sides and back to near-front, keeping the red-bearded dwarf, shoulder axe, fur and costume recognizable. Complete body within each frame. 1440 ms loop. Hand-drawn view spacing is approximate, not a true 3D mesh render.",
+    "reviewedAt": "2026-11-08T09:59:51.083Z"
+  }
+}

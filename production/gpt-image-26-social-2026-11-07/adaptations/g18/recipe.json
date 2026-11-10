@@ -1,0 +1,93 @@
+{
+  "candidateId": "gpt26-social-g18-adapted",
+  "slug": "adapted-g18-frame-sheet-gif",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "You are animator\n\nCreate a gif of this character nods\n\nContext:\nI want you to animate this character so she nods and then close her eyes. The flow is at first she slowly nods up. Second, she quickly nods down. Finally, her head back to normal pose with frames in between the nods down to normal, she also closes her eyes. It is like typical anime girls nodding.\n\nFormat: Same art style & outline as given image's\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward.\nTwelve consecutive poses: frames 1–4 slowly tilt the head upward; 5–6 quickly nod downward; 7–10 recover to normal head position while the eyelids close; 11–12 settle with eyes fully closed. Play once, retain the final closed-eye pose. No writing.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen (adaptation)",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the 1 project-generated reference image(s) in the displayed order (R19), then use the complete adapted prompt.",
+      "zh-Hans": "按显示顺序上传 1 张本站生成的参考图（R19），使用完整改编词。"
+    },
+    "slots": [
+      {
+        "id": "reference1",
+        "labels": {
+          "en": "Project-generated character reference",
+          "zh-Hans": "本站生成的角色参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-g18-adapted",
+      "platform": "Reddit",
+      "author": "RumbleversePlayer",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post; shared across variants, not this adaptation",
+        "zh-Hans": "原帖整组统计；同帖变体共享，不属于本改编作品"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Saved research report and search-index score snapshot",
+        "zh-Hans": "保存的调研报告及搜索索引得分快照"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/",
+      "sourcePromptStatus": {
+        "en": "Independent adaptation; full original preserved separately",
+        "zh-Hans": "独立改编；完整原词另存档案"
+      },
+      "metrics": [
+        {
+          "key": "score",
+          "value": 204,
+          "labels": {
+            "en": "Search-index score snapshot",
+            "zh-Hans": "搜索索引得分快照"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Anime nod and closed eyes — composed GIF",
+      "description": "12 frames, 1.8 seconds, 362×362px; plays once. GPT Image frame-sheet + local GIF encoding.",
+      "body": "## How to use\n\nUpload the 1 project-generated reference image(s) in the displayed order (R19), then use the complete adapted prompt.\n\nGenerate one PNG sheet, extract 12 cells in row-major order, and encode them with the recorded delays and loop setting. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.\n\n## Result and limitations\n\n12 frames, 1.8 seconds, 362×362px; plays once. GPT Image frame-sheet + local GIF encoding.\n\nTwelve poses show upward tilt, quick downward nod and recovery with eyes closed. Plays once and holds final closed-eye frame. Fifth cell has drawn motion blur and small alignment drift.\n\n## Source\n\nAdapted by Prompt Seen from [@RumbleversePlayer's original prompt](https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. The Reddit score is a saved search-index snapshot, not live likes."
+    },
+    "zh-Hans": {
+      "title": "动漫角色点头闭眼 · 合成 GIF",
+      "description": "12 帧，1.8 秒，362×362 像素，播放一次；GPT Image 精灵图逐格裁切并在本地编码为 GIF。",
+      "body": "## 使用方法\n\n按显示顺序上传 1 张本站生成的参考图（R19），使用完整改编词。\n\n先生成单张 PNG 精灵图，按行优先提取 12 格，以记录的停留时长和循环设置编码为 GIF。生图工具返回静态 PNG；GIF 由本地合成。原精灵图、裁切坐标、逐帧时长与首帧封面均保存在批次档案。\n\n## 结果与限制\n\n12 帧，1.8 秒，362×362 像素，播放一次；GPT Image 精灵图逐格裁切并在本地编码为 GIF。\n\n12 帧抬头、快速点头和闭眼恢复，播放一次并保持末帧。第 5 格有绘制的运动模糊，位置略有漂移。\n\n## 来源\n\n由 Prompt Seen 根据 [@RumbleversePlayer 的原词](https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/)改编。来源作者称原作品使用 Image 2.6；本次仅确认 GPT Image 家族，精确型号未知。中英文页面保留同一实际提交正文。Reddit 得分来自保存的搜索索引快照，并非实时点赞。"
+    }
+  },
+  "alt": {
+    "en": "Anime nod and closed eyes",
+    "zh-Hans": "动漫角色点头闭眼"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T10:57:03.491Z",
+    "contentHash": "2da9cd00410b7fd3bf072b815bdfd1cc9faabc24a3c56352639c2a851c8e3f73"
+  }
+}

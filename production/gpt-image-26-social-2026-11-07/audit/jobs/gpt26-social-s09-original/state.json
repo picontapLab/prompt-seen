@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-s09-original",
+    "candidateId": "gpt26-social-s09",
+    "prompt": "A young woman with the same unchanged face and soft natural complexion, captured in a spontaneous 90s film snapshot. Her loose black hair falls over the shoulders of a baby-blue cropped zip-up sweatshirt worn over a white ribbed tank top. She looks directly into the camera with a relaxed expression and a faint smile. The dim beige wall behind her is covered with colorful polaroids, tiny stickers, music flyers, and handwritten messages. Bright on-camera flash, slightly cool color temperature, natural skin texture, subtle motion blur, authentic disposable-camera grain, imperfect vintage composition, nostalgic bedroom photography.",
+    "references": [
+      {
+        "slotId": "person",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R03/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "0d2405956ea4acaad7d148684342d22786209952a0d1907e5b8b17785b4407f6",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R03/output.png",
+      "sha256": "bc9f2b2d4b3307f95c1c0022dc9df9357ca5b2d419027e840b8a304f5d99f2dc",
+      "slotId": "person"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T02:11:37.232Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-s09-original/output-b676b47fe5e2c2f65d3b0a9fe44fd7e87cbfb483b18e8e1c73d771f2fa2b57c4.png",
+      "sha256": "b676b47fe5e2c2f65d3b0a9fe44fd7e87cbfb483b18e8e1c73d771f2fa2b57c4"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T02:12:40.099Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Compared with generated identity reference: facial features and black hair consistent; blue zip-up sweatshirt over white tank, flash lighting, film grain, wall Polaroids and music flyers. Camera-date decoration is model-generated, not generation metadata.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T02:12:40.105Z"
+  }
+}

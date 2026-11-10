@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g13/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g13",
+    "sourceSheetSha256": "a1050a5feb2e6e6ebc9f0e3631fc30f4796a76ff213534f5fc9406b03ee49664",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight drawn frames show open, half-closed, closed and reopened eyelids in order. Face, clothing and framing stay consistent with minor frame-to-frame drawing variation. Encoded as a 2-second infinite loop; actual GIF metadata verified. This is a frame-sheet adaptation, not native GIF output from the source prompt.",
+      "reviewedAt": "2026-11-08T09:46:28.889Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g13-adapted-v1",
+      "fingerprint": "926aabcea5a0b889e506c43f776edb8c57fee456b22fe475021155d1fa1754ff",
+      "prompt": "参照画像の成人女性が自然にまばたきするアニメーション用の連続フレームを描いてください。納品はGIFではなく、横4列×縦2行、合計8コマの単一スプライトシートPNGです。各コマは同じ大きさの正方形で、左上から右へ、次に下段へ読む順序。余白、区切り線、コマ番号、文字は一切不要です。各コマの顔、髪、服、背景、頭の大きさ、位置、カメラは完全に同一で固定し、両まぶたの開閉だけを変えます。1:両目を自然に開く。2:まぶたを半分閉じる。3:両目を完全に閉じる。4:閉じたまま。5:半分開く。6:完全に開く。7:開いたまま。8:最初と同じ。緑色の瞳、茶色のボブ、紺色のシャツ、淡いクリーム色の背景と参照のアニメ画風を忠実に維持。頭頂や顔が切れない胸像。同じ動きの順序が分かる実際に異なるまぶたの状態を描き、人物の頭や口を揺らさない。シート全体は横長2:1、推奨2048×1024。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+          "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+          "slotId": "character"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g13-9f-v3/sheet.png",
+    "sheetSha256": "7c39e3db87500795de668a39c5ed59e37add527afdec4ce06e09c6ee627784ae",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g13-9f-v3/output.gif",
+    "outputSha256": "b2c16864d95cdcc5f11de6829d1d566b4685a49adee6ee714d57b58a696836e4",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      350,
+      350,
+      90,
+      70,
+      100,
+      70,
+      90,
+      300,
+      580
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "3d039197b32e919b93d36b58f2599098517afabed7764471f18888a2d1d67a0f",
+      "3d039197b32e919b93d36b58f2599098517afabed7764471f18888a2d1d67a0f",
+      "2bdea0b57c9fde2ee2e2d9f123378303944871b7f95a77ed40625ade0580d211",
+      "058c86767c7f6fda5d6b128596b10d4f4ca6a29e27ace3be6eab93a3e090120e",
+      "d244a1f28517a4d2a39af3f99773c39c31f3b9066f70dc4dff4ff49a40408bb5",
+      "1ecd843eeb105208d5cb8b681c49ec034ce24577a03104877f7ac89829faa31e",
+      "eb2a6728709ca23585444267fa0811f96925c71adcfdf01b72c517cd3c1c7bbd",
+      "803d16467b7006219549dd6354bdceae5d59c36b460d25c26aa3638d40a5ec3f",
+      "ba36ce9ac0668bd8632d5be391176a45759811e8ca46b3acb111c85b4c849522"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight drawn frames show open, half-closed, closed and reopened eyelids in order. Face, clothing and framing stay consistent with minor frame-to-frame drawing variation. Encoded as a 2-second infinite loop; actual GIF metadata verified. This is a frame-sheet adaptation, not native GIF output from the source prompt.",
+    "reviewedAt": "2026-11-10T00:59:53.159Z"
+  }
+}

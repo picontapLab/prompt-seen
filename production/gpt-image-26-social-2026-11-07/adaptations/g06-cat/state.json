@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-cat-adapted-v1",
+    "candidateId": "gpt26-social-g06-cat-adapted",
+    "prompt": "create a gif of a cat spinning\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "cd9f970832ddcf8d3aea753f9c534bd86b59317dd40c9eb90f3193ef7ac7dd59",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T10:02:42.012Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-cat-adapted-v1/output-253b3adcd7de4b6ae894dd575baba674b17532d193e378ac8137b0d6ef031181.gif",
+      "sha256": "253b3adcd7de4b6ae894dd575baba674b17532d193e378ac8137b0d6ef031181"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T10:04:03.096Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve complete seated-tabby views progress from front around the back and return to near-front. White chest, paws and tabby coat remain recognizable. 1440 ms repeating GIF; angle intervals and fine fur markings vary slightly because views are generated images.",
+    "reviewedAt": "2026-11-08T10:04:03.100Z"
+  }
+}

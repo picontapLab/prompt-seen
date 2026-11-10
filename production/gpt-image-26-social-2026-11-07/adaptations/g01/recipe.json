@@ -1,0 +1,93 @@
+{
+  "candidateId": "gpt26-social-g01-adapted",
+  "slug": "adapted-g01-frame-sheet-gif",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "チャッピー！この画像の女の子を可愛く画面外から登場するGIFを作ってみて！\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n1コマ目は人物がまだ画面の外、2～4コマ目で左から弾んで入る、5～6コマ目は中央で可愛く着地、7～8コマ目で右へ出て空白に戻る。",
+  "promptLanguage": "ja",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen (adaptation)",
+    "url": "https://x.com/YU_TAI2414/status/2118343700929753503",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the 1 project-generated reference image(s) in the displayed order (R05), then use the complete adapted prompt.",
+      "zh-Hans": "按显示顺序上传 1 张本站生成的参考图（R05），使用完整改编词。"
+    },
+    "slots": [
+      {
+        "id": "reference1",
+        "labels": {
+          "en": "Project-generated character reference",
+          "zh-Hans": "本站生成的角色参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-g01-adapted",
+      "platform": "X",
+      "author": "YU_TAI2414",
+      "url": "https://x.com/YU_TAI2414/status/2118343700929753503",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/YU_TAI2414/status/2118343700929753503",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post; shared across variants, not this adaptation",
+        "zh-Hans": "原帖整组统计；同帖变体共享，不属于本改编作品"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Archived public X snapshot and complete author prompt",
+        "zh-Hans": "归档的 X 公开快照与完整作者原词"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2118343700929753503&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Independent adaptation; full original preserved separately",
+        "zh-Hans": "独立改编；完整原词另存档案"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 1117,
+          "labels": {
+            "en": "Source post likes",
+            "zh-Hans": "原帖点赞"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Bouncing character entrance — composed GIF",
+      "description": "8 frames, 2 seconds, 443×443px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.",
+      "body": "## How to use\n\nUpload the 1 project-generated reference image(s) in the displayed order (R05), then use the complete adapted prompt.\n\nGenerate one PNG sheet, extract 8 cells in row-major order, and encode them with the recorded delays and loop setting. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.\n\n## Result and limitations\n\n8 frames, 2 seconds, 443×443px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.\n\nEight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.\n\n## Source\n\nAdapted by Prompt Seen from [@YU_TAI2414's original prompt](https://x.com/YU_TAI2414/status/2118343700929753503). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. Likes describe the whole source post, shared by variants, and are not engagement for this example."
+    },
+    "zh-Hans": {
+      "title": "角色弹跳登场 · 合成 GIF",
+      "description": "8 帧，2 秒，443×443 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。",
+      "body": "## 使用方法\n\n按显示顺序上传 1 张本站生成的参考图（R05），使用完整改编词。\n\n先生成单张 PNG 精灵图，按行优先提取 8 格，以记录的停留时长和循环设置编码为 GIF。生图工具返回静态 PNG；GIF 由本地合成。原精灵图、裁切坐标、逐帧时长与首帧封面均保存在批次档案。\n\n## 结果与限制\n\n8 帧，2 秒，443×443 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。\n\n首帧为空白，角色从左侧进入、弹跳落地，末帧只部分退出；重绘和循环接点可见。\n\n## 来源\n\n由 Prompt Seen 根据 [@YU_TAI2414 的原词](https://x.com/YU_TAI2414/status/2118343700929753503)改编。来源作者称原作品使用 Image 2.6；本次仅确认 GPT Image 家族，精确型号未知。中英文页面保留同一实际提交正文。点赞属于整篇来源帖，同帖变体共享统计对象，不属于本站新作品。"
+    }
+  },
+  "alt": {
+    "en": "Bouncing character entrance",
+    "zh-Hans": "角色弹跳登场"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T10:53:08.889Z",
+    "contentHash": "511c2963e667d4a3f902c216f6ba90b63fc6922c680562f8f01ff1d95ea9ea4e"
+  }
+}

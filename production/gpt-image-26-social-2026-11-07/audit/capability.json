@@ -1,0 +1,335 @@
+{
+  "tool": "image_gen.imagegen",
+  "knownModelFamily": "GPT Image",
+  "providerModelId": null,
+  "probes": [
+    {
+      "caseId": "G13",
+      "tool": "image_gen.imagegen",
+      "sourcePath": "[local-generation-output]/exec-ca9b6b17-8b50-4391-abc0-976437732213.png",
+      "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-original/output.png",
+      "outputSha256": "1cfe2ae71c1e1b101bcfb8047671b1bdd90f3349e66d5993c51527db33cc3c12",
+      "promptSha256": "62a1b2239475294dfcfbf5b81bb522fa9c230bb62a5308c00a4d438948792fc7",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+          "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+          "slotId": "character"
+        }
+      ],
+      "provider": "OpenAI",
+      "modelFamily": "GPT Image",
+      "providerModelId": null,
+      "format": "png",
+      "width": 1312,
+      "height": 1199,
+      "frames": 1,
+      "delays": null,
+      "loop": null,
+      "review": {
+        "accepted": false,
+        "notes": "Tool returned a single PNG of partially lowered eyelids, not a playable multi-frame GIF. Native source-prompt animation requirement failed; keep as failed capability evidence only.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-08T01:36:22.629Z"
+      }
+    },
+    {
+      "caseId": "G14",
+      "tool": "image_gen.imagegen",
+      "sourcePath": "[local-generation-output]/exec-bde7a67f-ea0e-4850-903b-8d26c37d1a0f.png",
+      "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g14-original/output.png",
+      "outputSha256": "65bcd406881103676902480e56ae690a1ce31baee2531e1558fe77cea8c730ef",
+      "promptSha256": "cbbe7524abf40b581062770254c1cb95bee732f9829dd9bbb4be4e361b0e9b70",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+          "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+          "slotId": "cat"
+        }
+      ],
+      "provider": "OpenAI",
+      "modelFamily": "GPT Image",
+      "providerModelId": null,
+      "format": "png",
+      "width": 1254,
+      "height": 1254,
+      "frames": 1,
+      "delays": null,
+      "loop": null,
+      "review": {
+        "accepted": false,
+        "notes": "Actual return is a single 4 by 4 storyboard PNG with baked-in timestamps, not a multi-frame GIF. Cat wink and Robin hat are illustrated but animation delivery failed.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-08T01:38:59.361Z"
+      }
+    },
+    {
+      "caseId": "G04",
+      "tool": "image_gen.imagegen",
+      "sourcePath": "[local-generation-output]/exec-c13507cc-f602-4ee4-b2cf-f6308a7198f9.png",
+      "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g04-original/output.png",
+      "outputSha256": "a4835ebd9497ee2a742b54441d018f5de5260f957d2ab2ed9f438e13008f45c7",
+      "promptSha256": "aaf54093167c35b359cd3437df2cf21b65ad574a4c37212c390a25f8de1a7f7e",
+      "references": [],
+      "provider": "OpenAI",
+      "modelFamily": "GPT Image",
+      "providerModelId": null,
+      "format": "png",
+      "width": 1774,
+      "height": 887,
+      "frames": 1,
+      "delays": null,
+      "loop": null,
+      "review": {
+        "accepted": false,
+        "notes": "Returned one PNG containing 10 labeled storyboard panels. No actual 10-frame GIF, playback duration or play-once behavior exists in the file; not accepted as animation.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-08T01:46:40.698Z"
+      }
+    },
+    {
+      "caseId": "G16",
+      "tool": "image_gen.imagegen",
+      "sourcePath": "[local-generation-output]/exec-e7cc8897-d07a-4e07-8594-42be4be59261.png",
+      "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g16-original/output.png",
+      "outputSha256": "244e38381aaae086b89a4ea24ac892b7f38a9e5424dc24eecde6c353cb29a2e2",
+      "promptSha256": "ec365165bc36f479f864764ed6e3661cc73ae949af6c85be2391c22fc4f8f3ad",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png",
+          "sha256": "de2edda17fdf152a512dab439cc48be7285190c4540a18b92ffcee087449e0b3",
+          "slotId": "wizard"
+        }
+      ],
+      "provider": "OpenAI",
+      "modelFamily": "GPT Image",
+      "providerModelId": null,
+      "format": "png",
+      "width": 1310,
+      "height": 1200,
+      "frames": 1,
+      "delays": null,
+      "loop": null,
+      "review": {
+        "accepted": false,
+        "notes": "Actual return is one PNG with 12 timestamped panels, not a 12-frame 100 ms GIF. Text labels also violate no-text instruction. No native animation accepted.",
+        "reviewer": "Codex",
+        "reviewedAt": "2026-11-08T01:52:10.295Z"
+      }
+    }
+  ],
+  "conclusion": "All recorded original-prompt GIF probes and retries returned single-frame PNG files. No native GIF accepted in this campaign. This records observed results, not a universal model-capability claim. The explicit direct-GIF requests for reference-based G13 and text-only G17 also returned single-frame PNGs; the G17 response contained no separate animated attachment. Earlier composites remain withdrawn and archived. On 2026-11-09 the user authorized nine-frame local composition; new versions are tracked separately. These observations describe this tool session, not a universal GPT Image capability claim.",
+  "workflow": {
+    "caseId": "W01",
+    "status": "blocked",
+    "attempted": false,
+    "reason": "Available image tool accepts file paths but exposes no named-reference registry or separate chat-message output contract. No scheduled task created.",
+    "adaptation": "Direct upload via local name-to-file mapping, one image call and a separately assistant-authored Japanese message; see adaptations/w01/workflow.json"
+  },
+  "retryProbe": {
+    "tool": "image_gen.imagegen",
+    "sourcePath": "[local-generation-output]/exec-5af59300-f855-4d73-9a5f-dd0412dd4137.png",
+    "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-original-r2/output.png",
+    "outputSha256": "2dd6ac945867602df1443dc53cf378552f0ec2f8eccf129cff3eb41bea2c6c08",
+    "promptSha256": "62a1b2239475294dfcfbf5b81bb522fa9c230bb62a5308c00a4d438948792fc7",
+    "references": [
+      {
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+        "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+        "slotId": "character"
+      }
+    ],
+    "provider": "OpenAI",
+    "modelFamily": "GPT Image",
+    "providerModelId": null,
+    "format": "png",
+    "width": 1312,
+    "height": 1199,
+    "frames": 1,
+    "delays": null,
+    "loop": null,
+    "review": {
+      "accepted": false,
+      "notes": "Second unchanged original-prompt attempt returned a single PNG with lowered eyelids, not a playable GIF. Preserve original failure; any future frame-sheet composition is a separate adaptation.",
+      "reviewer": "Codex",
+      "reviewedAt": "2026-11-08T09:43:57.644Z"
+    }
+  },
+  "latestNativeOutputCheck": {
+    "date": "2026-11-09",
+    "timezone": "America/Los_Angeles",
+    "tool": "image_gen.imagegen",
+    "requestedOutput": "native multi-frame GIF",
+    "attempts": [
+      {
+        "jobKey": "gpt26-social-g13-original-r3",
+        "promptProvenance": "source-prompt",
+        "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g13-original-r3/prompt.txt",
+        "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g13-original-r3/returned.png",
+        "sha256": "1873c6e05a8cbc6609a1bc2c65d240bc8a57e2875e41c76d334aff6f507f2e04",
+        "signatureHex": "89504e470d0a1a0a",
+        "actualFormat": "png",
+        "frames": 1,
+        "delay": null,
+        "loop": null,
+        "accepted": false
+      },
+      {
+        "jobKey": "gpt26-social-g16-original-r2",
+        "promptProvenance": "source-prompt",
+        "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g16-original-r2/prompt.txt",
+        "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g16-original-r2/returned.png",
+        "sha256": "d7ddcf456b03a7fc98269d5a96a36d82c30c1385872997c6f5b3f0278627a43f",
+        "signatureHex": "89504e470d0a1a0a",
+        "actualFormat": "png",
+        "frames": 1,
+        "delay": null,
+        "loop": null,
+        "accepted": false
+      },
+      {
+        "jobKey": "gpt26-social-g18-native-format-check-v1",
+        "promptProvenance": "independent-adaptation",
+        "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g18-native-format-check-v1/prompt.txt",
+        "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g18-native-format-check-v1/returned.png",
+        "sha256": "8a9525f8a677440b1f8d53c79c45c3568ff53c31e69f093716cff6b2d0ce8d84",
+        "signatureHex": "89504e470d0a1a0a",
+        "actualFormat": "png",
+        "frames": 1,
+        "delay": null,
+        "loop": null,
+        "accepted": false
+      }
+    ],
+    "successfulNativeGifs": 0,
+    "conclusion": "All three current calls returned single-frame PNG bytes, including the explicit downloadable animated GIF request. This records observed output of this session, not a universal capability claim. Previously withdrawn composites remain archived and were not republished; current retained deliverables remain 12."
+  },
+  "directGifProbe": {
+    "tool": "image_gen.imagegen",
+    "sourcePath": "[local-generation-output]/exec-3b9ad278-9fcc-4317-ade3-2599519f5104.png",
+    "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-direct-gif-v1/output.png",
+    "outputSha256": "16a61d410cdb59dac040a657b29a606cb0569bcdd78abcbaba534c824fa98a96",
+    "promptSha256": "9776ccfef3d0251610594c00fe9d59d63b8cf880665406a632f59a8cd3da4638",
+    "references": [
+      {
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+        "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+        "slotId": "character"
+      }
+    ],
+    "provider": "OpenAI",
+    "modelFamily": "GPT Image",
+    "providerModelId": null,
+    "format": "png",
+    "width": 1312,
+    "height": 1199,
+    "frames": 1,
+    "delays": null,
+    "loop": null,
+    "review": {
+      "accepted": false,
+      "notes": "User requested native GIF only. Explicit direct multi-frame .gif request returned a single-frame PNG with half-closed eyes. No composition or transcoding performed; rejected as a GIF deliverable.",
+      "reviewer": "Codex",
+      "reviewedAt": "2026-11-08T14:30:46.657Z"
+    }
+  },
+  "directGifProbes": [
+    {
+      "sourceCase": "G13",
+      "jobKey": "gpt26-social-g13-direct-gif-v1",
+      "provenance": "independent-adaptation",
+      "accepted": false,
+      "format": "png",
+      "frames": 1,
+      "audit": "production/gpt-image-26-social-2026-11-07/jobs/g13-direct-gif-v1/audit.json"
+    },
+    {
+      "sourceCase": "G17",
+      "jobKey": "gpt26-social-g17-direct-gif-v1",
+      "provenance": "independent-adaptation",
+      "accepted": false,
+      "format": "png",
+      "frames": 1,
+      "audit": "production/gpt-image-26-social-2026-11-07/jobs/g17-direct-gif-v1/audit.json"
+    },
+    {
+      "sourceCase": "G17",
+      "jobKey": "gpt26-social-g17-direct-gif-v2",
+      "provenance": "independent-adaptation",
+      "accepted": false,
+      "format": "png",
+      "frames": 1,
+      "audit": "production/gpt-image-26-social-2026-11-07/jobs/g17-direct-gif-v2/audit.json"
+    },
+    {
+      "sourceCase": "G18",
+      "jobKey": "gpt26-social-g18-native-format-check-v1",
+      "provenance": "independent-adaptation",
+      "accepted": false,
+      "format": "png",
+      "frames": 1,
+      "audit": "production/gpt-image-26-social-2026-11-07/jobs/g18-native-format-check-v1/audit.json"
+    }
+  ],
+  "officialGifCapability": {
+    "checkedAt": "2026-11-09T02:39:09.337030+00:00",
+    "sources": [
+      "https://developers.openai.com/api/docs/guides/image-generation#generate-animated-gif-output",
+      "https://developers.openai.com/api/reference/resources/images/methods/generate"
+    ],
+    "officialCapability": {
+      "models": [
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-flare"
+      ],
+      "nativeAnimatedGif": true,
+      "endpoints": [
+        "POST /v1/images/generations",
+        "POST /v1/images/edits"
+      ],
+      "output_format": "gif",
+      "frame_count": {
+        "min": 2,
+        "max": 16,
+        "default": 9
+      },
+      "finishedAnimationField": "data[].b64_json"
+    },
+    "sessionInterface": {
+      "tools": [
+        "image_gen.imagegen"
+      ],
+      "parameters": [
+        "prompt",
+        "referenced_image_paths",
+        "num_last_images_to_include",
+        "transparent_background"
+      ],
+      "modelSelector": false,
+      "outputFormatSelector": false,
+      "actualProviderModelId": null,
+      "schemaEvidence": "../jobs/g17-direct-gif-v2/tool-response-inspection.json"
+    },
+    "fallbackReadiness": {
+      "openaiApiKeyInProcessEnvironment": false,
+      "bundledCliSupportsGif": false,
+      "apiRequestSubmitted": false
+    },
+    "latestRetry": {
+      "audit": "../jobs/g17-direct-gif-v2/audit.json",
+      "requestedModelInPromptOnly": true,
+      "actualFormat": "png",
+      "actualFrames": 1,
+      "accepted": false
+    },
+    "conclusion": "Official GPT Image 2.6 supports native animated GIF output. This session exposes one image generation wrapper without model or output_format selectors. Naming 2.6 in the prompt did not establish a model switch and returned a single PNG storyboard. Native GIF generation remains pending; no composition permitted."
+  },
+  "animationPolicy": {
+    "animationDelivery": "composed-nine-frame-gif",
+    "allowComposedGifs": true,
+    "userInstruction": "gif图直接采用合成(9帧), 其他的图片正常生成, 继续任务",
+    "withdrawalManifest": "audit/withdrawn-composites/withdrawal.json",
+    "frameCount": 9,
+    "updatedAt": "2026-11-09"
+  }
+}

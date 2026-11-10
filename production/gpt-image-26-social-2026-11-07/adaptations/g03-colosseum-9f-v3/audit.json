@@ -1,0 +1,169 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g03-colosseum/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g03-colosseum",
+    "sourceSheetSha256": "edeca6f007112f909c54afb76918dd5861a8fc7cefc131314c33e8065f99b082",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      360,
+      480
+    ],
+    "outputSize": [
+      360,
+      480
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight drawn gouache city frames show cyclists, scooter, people and birds moving against a recognizable Colosseum. Actual 3:4 center crop and 2-second repeating playback. Visible position reset at loop boundary and minor architectural redraw drift mean this is a stylized keyframe adaptation, not the seamless original-prompt target.",
+      "reviewedAt": "2026-11-08T09:57:06.017Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g03-colosseum-adapted-v1",
+      "fingerprint": "57f696ba606b889eea1a6fa9f601bebe28430a8de6719b304f4118e2cfdc7bd0",
+      "prompt": "A living mid-century gouache travel-poster painting of the Roman Colosseum, locked-off static camera, a seamless looping animation. The ruined amphitheater sits low in the frame in sun-bleached ochre, sand and travertine with dusty rose and pale blue-grey arches, painted in dry-brush gouache with flaky, speckled edges and worn-away patches. A tall Italian stone pine in dark green and bottle-green leans in from the right, a vintage teal street lamp on the left, rose-coral flowering shrubs at the base. Open warm cream paper-textured sky fills the upper two thirds with fine paper grain. Gentle motion only: a few tiny birds drift across the sky, a cyclist rides slowly along the piazza, a small scooter, a couple in coral and mustard strolling, pine foliage barely sways. Soft warm afternoon light, long pale shadows, flat matte shapes, vertical 3:4, perfect loop.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 2 rows, 8 equal portrait 3:4 cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.",
+      "references": [],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g03-colosseum-9f-v3/sheet.png",
+    "sheetSha256": "e73e7a833d8f9011011267862d5d73a1204966de0128b18655e8d86bc0ce778f",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g03-colosseum-9f-v3/output.gif",
+    "outputSha256": "89e6f76939b3d7ebb37fc892b674348cad487cfa5ae19e22fe82ff9ad9c269d7",
+    "width": 360,
+    "height": 480,
+    "frameCount": 9,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      130,
+      120,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 360,
+        "top": 0,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 720,
+        "top": 0,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 0,
+        "top": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 360,
+        "top": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 720,
+        "top": 480,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 0,
+        "top": 960,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 360,
+        "top": 960,
+        "width": 360,
+        "height": 480
+      },
+      {
+        "left": 720,
+        "top": 960,
+        "width": 360,
+        "height": 480
+      }
+    ],
+    "frameHashes": [
+      "4d63e99043202a2f404c5dd5e54cf245218941a4f3b6fcbba01ae954313182c4",
+      "4d63e99043202a2f404c5dd5e54cf245218941a4f3b6fcbba01ae954313182c4",
+      "9f6ced0fb990cf524faa3b8d8f1fa755eeac16f6d92be9f13d6a0254e3b3f298",
+      "e2aff90f551f18f9a6d5a8901f1e15963a5e2d63eb180d0c0520056b00c514c5",
+      "790741e0de73b5e075f5bf91d95b315a0711fce536550b532b5fae110af86519",
+      "bee214776c63deb32e7970233f631a3339a9c7a20f298335be581a4dfa200b72",
+      "0c5eaa27b65327984086dda5179a5fff9e94ab81941502a7b31043f20d8f3d7b",
+      "c0b26b727e482d874889efa70d5534e60d9de13589a54a822179f5a1601b7522",
+      "d137b473717b9cb01dec818bb8af6b16cc82008c93a27c2badc3083c9fa81fd1"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight drawn gouache city frames show cyclists, scooter, people and birds moving against a recognizable Colosseum. Actual 3:4 center crop and 2-second repeating playback. Visible position reset at loop boundary and minor architectural redraw drift mean this is a stylized keyframe adaptation, not the seamless original-prompt target.",
+    "reviewedAt": "2026-11-10T00:59:50.481Z"
+  }
+}

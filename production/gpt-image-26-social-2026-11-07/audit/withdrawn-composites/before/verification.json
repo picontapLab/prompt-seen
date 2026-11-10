@@ -1,0 +1,216 @@
+{
+  "verifiedAt": "2026-11-08T11:07:33.825271+00:00",
+  "status": "retry_and_adaptation_delivery_verified_with_four_provider_rejections",
+  "coverage": {
+    "plannedCases": 34,
+    "frozenBodies": 39,
+    "plannedBodies": 39,
+    "plannedOutputs": 42,
+    "acceptedCases": 11,
+    "acceptedOutputs": 11,
+    "acceptedGifs": 0,
+    "blockedCases": 23,
+    "sourceRecords": 136,
+    "researchBacklog": 87,
+    "acceptedReferenceGroups": 19,
+    "acceptedReferenceFiles": 22,
+    "adaptedGifs": 26,
+    "adaptedWorkflows": 1,
+    "practicalDeliverables": 38,
+    "casesWithOriginalOrAdaptedOutput": 30,
+    "providerRejectedStillCases": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "countsNote": "acceptedCases/Outputs/Gifs and blockedCases refer strictly to original-prompt requirements. Adaptations are counted separately and retain their documented limitations."
+  },
+  "collections": [
+    {
+      "id": "c_013",
+      "slug": "gpt-image-26-social-original-prompts",
+      "items": 11,
+      "provenance": "source-prompt"
+    },
+    {
+      "id": "c_014",
+      "slug": "gpt-image-social-animation-adaptations",
+      "items": 27,
+      "provenance": "independent-adaptation"
+    }
+  ],
+  "checks": [
+    {
+      "name": "content-validation",
+      "status": "passed",
+      "command": "node --import tsx scripts/content-validate.ts",
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 12,
+      "note": "Existing translation warnings outside this import; 102 existing unused media entries.",
+      "log": "audit/content-validation.txt"
+    },
+    {
+      "name": "typecheck",
+      "status": "passed",
+      "command": "npx tsc --noEmit",
+      "log": "audit/typecheck.txt"
+    },
+    {
+      "name": "lint",
+      "status": "passed",
+      "command": "npm run lint",
+      "log": "audit/lint.txt"
+    },
+    {
+      "name": "unit-tests",
+      "status": "passed",
+      "files": 5,
+      "tests": 69,
+      "command": "npx vitest run scripts/lib/content/content.test.ts scripts/lib/content-production/production.test.ts scripts/lib/content-production/publish.test.ts scripts/lib/media/gif.test.ts src/ui/media/gif.test.tsx",
+      "log": "audit/unit-tests.txt"
+    },
+    {
+      "name": "composer-tests",
+      "status": "passed",
+      "tests": 3,
+      "command": "node --test production/gpt-image-26-social-2026-11-07/compose-gif.test.mjs",
+      "log": "audit/composer-tests.txt"
+    },
+    {
+      "name": "static-build",
+      "status": "passed",
+      "command": "npm run build",
+      "pages": 1489,
+      "mode": "preview",
+      "locales": [
+        "en",
+        "zh-Hans",
+        "ja",
+        "ar"
+      ],
+      "artifact": "dist/",
+      "log": "audit/build.txt"
+    },
+    {
+      "name": "browser-tests",
+      "status": "passed",
+      "command": "npx playwright test tests/e2e/prompt-languages.browser.spec.ts tests/e2e/social-adaptations.browser.spec.ts",
+      "browser": "Google Chrome (Chromium)",
+      "tests": 26,
+      "log": "audit/browser-tests.txt",
+      "coverage": [
+        "Japanese, Chinese and Turkish submitted prompt text unchanged across English/Chinese pages, clipboard and Markdown export",
+        "Desktop 1440px and mobile 390px layout, loaded actual media and no runtime errors",
+        "G13 and G10 visibly animate; G14 settles after one play",
+        "Fetched WebP frame count, timing, loop, alpha and G05 native dimensions",
+        "Shared-post variants and separate original/adaptation collections",
+        "W01 separate Japanese message rendered"
+      ],
+      "screenshots": "audit/round2-screenshots/",
+      "visualReview": {
+        "status": "passed",
+        "manuallyInspected": [
+          "G10-390.png",
+          "G14-1440.png",
+          "W01-390.png",
+          "c014-1440.png"
+        ]
+      }
+    },
+    {
+      "name": "original-source-and-input-integrity",
+      "status": "passed",
+      "command": "node production/gpt-image-26-social-2026-11-07/verify-import.mjs",
+      "report": "audit/import-integrity.json",
+      "sourceBodies": 39,
+      "originalAttempts": 25,
+      "referenceFiles": 22,
+      "originalOutputs": 11
+    },
+    {
+      "name": "adaptation-and-animation-integrity",
+      "status": "passed",
+      "command": "node production/gpt-image-26-social-2026-11-07/verify-adaptations.mjs",
+      "report": "audit/adaptation-integrity.json",
+      "adaptedOutputs": 27,
+      "gifs": 26,
+      "checks": [
+        "submitted prompt and ordered reference hashes",
+        "actual row-major source crop hashes",
+        "original GIF and all display WebP frame counts, delays and loop settings",
+        "real alpha for transparent fox",
+        "poster equals decoded GIF first frame",
+        "W01 single image call, separate assistant message and no scheduler"
+      ]
+    },
+    {
+      "name": "format-and-whitespace",
+      "status": "passed",
+      "note": "Prettier formatted new campaign JavaScript and changed tests; git diff --check passed. Historical research and recipe attestations were not reformatted."
+    }
+  ],
+  "blocked": {
+    "staticProviderRejections": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "attemptsPerRejectedStatic": 2,
+    "nativeGifCases": 18,
+    "nativeGifAttemptedCases": [
+      "G04",
+      "G13",
+      "G14",
+      "G16"
+    ],
+    "nativeGifProbeCalls": 5,
+    "nativeGifAccepted": 0,
+    "originalWorkflowContract": [
+      "W01"
+    ],
+    "details": "audit/capability.json",
+    "note": "All 18 animation themes and W01 have separate reviewed adaptations; these do not satisfy original native-output contracts."
+  },
+  "notExecuted": [
+    {
+      "check": "Firefox and WebKit",
+      "reason": "Local browser run used installed Chrome."
+    },
+    {
+      "check": "Real scheduler or provider-side named-reference registry",
+      "reason": "W01 is a one-off direct-upload demonstration; no recurring task was requested."
+    },
+    {
+      "check": "Literal prompt .txt button",
+      "reason": "Existing literal UI offers copy and Markdown alternate; template .txt behavior remains tested."
+    },
+    {
+      "check": "Production deployment",
+      "reason": "Delivered local content and preview build; no deployment requested."
+    }
+  ],
+  "provenance": {
+    "knownModelFamily": "GPT Image",
+    "providerModelId": null,
+    "sourceModelClaim": "Image 2.6, separately attributed to original source posts",
+    "authorAttributionCorrections": "audit/attribution-corrections.json"
+  },
+  "limitations": [
+    "S06 lower miniature is generated, not a pixel-identical paste of the input.",
+    "S09 camera date is generated visual decoration, not generation metadata.",
+    "S13 missing right pupil is an explicit original-prompt requirement.",
+    "All 26 GIFs are generated frame-sheet adaptations encoded locally, not native image-tool GIF outputs.",
+    "G05 is a silent 16-keyframe 10-second 171×304 storyboard, not 30fps video or music.",
+    "G03/G06 show redraw drift and approximate motion; Colosseum visibly resets.",
+    "G09 lacks ball pickup transition; G10 has minor face redraw despite true alpha.",
+    "G12 substitutes an original swordsman.",
+    "G14 selects the first eight of twelve cells and plays once.",
+    "G16 does not establish quality-tier or cost comparisons.",
+    "W01 resolves a local reference mapping, uses one image call and separately assistant-authored message."
+  ],
+  "historicalRound1": "audit/round1/verification.json",
+  "deployed": false
+}

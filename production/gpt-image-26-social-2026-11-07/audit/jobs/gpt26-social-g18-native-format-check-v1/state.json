@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g18-native-format-check-v1",
+    "candidateId": "gpt26-social-g18-native-format-check",
+    "prompt": "You are animator\n\nCreate a gif of this character nods\n\nContext:\nI want you to animate this character so she nods and then close her eyes. The flow is at first she slowly nods up. Second, she quickly nods down. Finally, her head back to normal pose with frames in between the nods down to normal, she also closes her eyes. It is like typical anime girls nodding.\n\nFormat: Same art style & outline as given image's\n\nDelivery requirement: Return a downloadable animated GIF file with multiple encoded frames and frame timing, showing the motion over time. The requested deliverable is the animation itself. Do not return a still PNG, storyboard, contact sheet, sprite sheet, montage, or a diagram explaining the frames. No frame labels or timestamps. Use the attached reference as the character reference.",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R19/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "430b682ff923f8418f49827f98aac17e4a5b1314881e5a00af46ab7fd3eba208",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R19/output.png",
+      "sha256": "e0468f5d2943631d91e2721c5317562e2d15a60b925ba4ebabd84ebfd4635ff8",
+      "slotId": "character"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-10T00:19:02.779Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g18-native-format-check-v1/output-8a9525f8a677440b1f8d53c79c45c3568ff53c31e69f093716cff6b2d0ce8d84.png",
+      "sha256": "8a9525f8a677440b1f8d53c79c45c3568ff53c31e69f093716cff6b2d0ce8d84"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:20:26.574Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Explicit downloadable multi-frame GIF request on 2026-11-09 returned a single PNG portrait. No GIF payload, frame timing or animated output was supplied. Rejected as native GIF; this prompt includes an explicit delivery addendum and is an independent format check.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:20:26.578Z"
+  }
+}

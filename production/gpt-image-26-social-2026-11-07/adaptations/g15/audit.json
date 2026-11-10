@@ -1,0 +1,108 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g15/sheet.png",
+    "sheetSha256": "0986d00fdd7b01add31ec628121e6949ca43da8ab113e837851fee2cf26adbb1",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g15/output.gif",
+    "outputSha256": "5544af0869b2c0946fa8d735e0f3857b62cb149e19605378fe34bf336abf01cc",
+    "width": 443,
+    "height": 443,
+    "frameCount": 8,
+    "durationMs": 1200,
+    "frameDelaysMs": [
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "e7a5b4f499f6249403da4e47da8d040b2a2c482a51174e5c1adc78029a0aa636",
+      "3f3911f379c9c435308617cd04518e944835ff7c7feb91e75cf9b82773adf253",
+      "ab7bfb902e04ec7bfb58ac8bc1eabd946f6df6cbe82d38439af18c295802a56c",
+      "c23dbcf74333c8c595a457fe354dbe3774fe2d32e55533fc23a45b0f9f0856ef",
+      "6c7a08953adc6afa2b951cae0a65bc3cfd2325461af9376be00f1cf9648f744d",
+      "d11912e348a3ef0c9a78aa3dc886f5480991bb151b88c97f07c8c4f25c9fc42f",
+      "29da65401d58f481b91683d187fddcd2f5f88a58f3e6f14bb8c0fcf0e85913ff",
+      "4d71cfb6b8e4e7e5e20a5a0cada5d1ecd86101d09a97e3286ab44dec828b1441"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 2,
+    "trimmedBottomPixels": 1
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R17/output.png",
+      "sha256": "7e100d45b00c13ac8af2a31600b054c0560384c3a7dbe89b4542694b559c5d3c",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Eight poses show side steps, arm lift, jump, landing and return. Full body fits each cell. Small scale and ground-line variations remain visible.",
+    "reviewedAt": "2026-11-08T10:47:00.753Z"
+  }
+}

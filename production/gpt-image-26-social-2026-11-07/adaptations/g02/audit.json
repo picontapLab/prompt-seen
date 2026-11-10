@@ -1,0 +1,140 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g02/sheet.png",
+    "sheetSha256": "7b45b5ec0bedb0243165e9e7b1527b520de55f111699bd228095d077c15a3131",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g02/output.gif",
+    "outputSha256": "f23df96d89a1bda4432648da6557dc377cc8a9d621e43a052d2bd1d668386866",
+    "width": 362,
+    "height": 362,
+    "frameCount": 12,
+    "durationMs": 2400,
+    "frameDelaysMs": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "bffa08df1ce9407c91a8f59d3a922e7e803e6233638a5884561c8f00fb7196e1",
+      "6a303be417606ec8d2e52a4e10bb55039747cd29d1c98fd5b697b7bbe9c0172e",
+      "3b86f80ea4f80f66d7e22218481891b78920d231fb58ea76cf70cd6f6564d4f9",
+      "8b076c16959f66deb890fd8f73460fa309201f50c541f2bbcac5436ad61c9838",
+      "2aa322e42f69f98d2e5bcf828de5ceb223c91fe26b6b089ca682512dc8a9322c",
+      "9d8a1c3b307a37913ee4e42a39a9614d290d8f3e15eeda56049b838c02a39b9e",
+      "1b14c372684fc232f555193e494e6748774f05b240a6c14a3773b00fa25fbfc0",
+      "5ad26359701cf5945c073cae5dbc917eb84523dacf29677ff02a412c633816b0",
+      "09483e4fbe02e2e22b7a7b90c2316761073b138876fd8f81829c8365d50d341f",
+      "ea9cf68fa8c0e1317ed4f4c132b2621244301c3c0288878bb5bb89ad8462c41c",
+      "51c740327e11c7ccae356c64e1152bc37fe39300480603b09f6c3da03bfe0e71",
+      "192352d1e8d6f82a117d7b970815881ba37faac38d0f5afeab3ae37fc6d5bf2d"
+    ],
+    "distinctFrameCount": 12,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R06/output.png",
+      "sha256": "a13534b6b6d5df90a73b9cec252ee1f2d2e49dd4fab317265e695a3a84ffea8e",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "All twelve cells spell 周一不想上班 correctly. Straw hat, blue band and orange vest stay recognizable while character yawns, sinks to the floor and stands again. 2400 ms loop. Subtitle position and outlines have slight generated jitter; disclose this rather than claim pixel-locked lettering.",
+    "reviewedAt": "2026-11-08T10:12:42.138Z"
+  }
+}

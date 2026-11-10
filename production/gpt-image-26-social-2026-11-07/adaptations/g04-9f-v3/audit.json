@@ -1,0 +1,168 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g04/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g04",
+    "sourceSheetSha256": "308d96e46f4fc00d422993c4fefa4ac7f8dd91e89154043e3d96698951b6cef0",
+    "sourceFrameCount": 10,
+    "sourceSize": [
+      392,
+      392
+    ],
+    "outputSize": [
+      392,
+      392
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 8
+      },
+      {
+        "from": 9
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Ten gray hallway frames show approach, mannequin appearance, camera turn and fall, approach and pass, then empty tilted hallway. Play once, ten 500 ms frames, 5 seconds. Camera tilt and geometry are approximate drawn keyframes rather than a measured 3D camera simulation; documented adaptation limitation. Removed only 2px panel borders during extraction.",
+      "reviewedAt": "2026-11-08T09:53:38.463Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g04-adapted-v1",
+      "fingerprint": "eda69214c6561398f5d9d2d7922471708256d8f71df6ba254fce37924796f671",
+      "prompt": "Generate a 5-second animated GIF consisting of 10 evenly spaced animation frames. Make it look like a crude gray Blender viewport animation, not cinematic footage. A single continuous shot inside a rectangular hallway with a tiled floor and simple gray walls. The camera slowly advances toward a doorway. A black humanoid mannequin with unusually long arms emerges from behind the doorway. The camera suddenly whips right, falls onto its side, and stops. The mannequin slowly walks toward and past the fallen camera. Maintain consistent 3D geometry, character proportions, doorway placement, and spatial relationships. No cuts, no teleportation, no scene changes, no added props. Focus on exact camera movement, depth, and timing. The animation should play once as a complete sequence, not return to its starting pose.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 5 columns by 2 rows, 10 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward.\nThe 10 chronological views must be: approach distant doorway; approach closer; long-armed mannequin appears; camera whips right; camera tilts 45 degrees; camera lies 90 degrees sideways; figure approaches; figure passes close; figure passes beyond; empty tilted hallway. Never reset the ending. No frame numbers or labels.",
+      "references": [],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g04-9f-v3/sheet.png",
+    "sheetSha256": "7d78bd125a952ac80d318b648f2f27f81d7c9b40d219e6307351aba7436430c4",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g04-9f-v3/output.gif",
+    "outputSha256": "f74a21e95e7d20abed74b08c8f0f3207ad5091d7f41542580e50649dcd82eead",
+    "width": 392,
+    "height": 392,
+    "frameCount": 9,
+    "durationMs": 5000,
+    "frameDelaysMs": [
+      500,
+      500,
+      500,
+      1000,
+      500,
+      500,
+      500,
+      500,
+      500
+    ],
+    "loop": 1,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 392,
+        "top": 0,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 784,
+        "top": 0,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 0,
+        "top": 392,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 392,
+        "top": 392,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 784,
+        "top": 392,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 0,
+        "top": 784,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 392,
+        "top": 784,
+        "width": 392,
+        "height": 392
+      },
+      {
+        "left": 784,
+        "top": 784,
+        "width": 392,
+        "height": 392
+      }
+    ],
+    "frameHashes": [
+      "f0e3506407a5ed750b56362e204bca156d8e210a3c3a996f3fd59cfaf2528180",
+      "a8c4dc80e789f180c4d02ffe31b142a0fcd9150a67c56a37b3acb6bde3bf55bd",
+      "ca3b8e5e0e02fcd9c4b39e9ac947d90e03398cc2930d92575640a6f60bb8ccdf",
+      "a010bf9f408c06c6d8a66eb724854223e8356add603570b72d85844a8d491227",
+      "a757bca1ceabe6cb3663cb335b88d0412860e32897be5ca870f90869457698fb",
+      "7cc14f2ff402df81bd9a50f2bf4f01e1ba5385e9d50bc6c68e05615fd9381ebd",
+      "21f0674f61c69f2c911203bdbeb7866bae8da45506c911a61bcba3a39c6fbe60",
+      "2a194167f7a6d450c6e3d836a0af46400325b87e75059772e27307de277b0da5",
+      "5239281c12390517cc0b12cdd7a0f58d39d7ed1f8f844cd8e856c44990a472d9"
+    ],
+    "distinctFrameCount": 9,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Ten gray hallway frames show approach, mannequin appearance, camera turn and fall, approach and pass, then empty tilted hallway. Play once, ten 500 ms frames, 5 seconds. Camera tilt and geometry are approximate drawn keyframes rather than a measured 3D camera simulation; documented adaptation limitation. Removed only 2px panel borders during extraction.",
+    "reviewedAt": "2026-11-10T00:59:50.788Z"
+  }
+}

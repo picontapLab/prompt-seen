@@ -1,0 +1,180 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g10/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g10",
+    "sourceSheetSha256": "74eb3339d952946a2ffd1736c2ab49d3882bed642fd69783ea40c4cec5094710",
+    "sourceFrameCount": 9,
+    "sourceSize": [
+      415,
+      420
+    ],
+    "outputSize": [
+      415,
+      420
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 8
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Nine actual transparent GIF frames show front paws clapping while half-closed deadpan eyes remain stable. All labels correctly read 好棒棒 and float above the ears without supports. Inspected encoded GIF against light and dark backgrounds: real alpha and no white outline. Slight face redraw variation remains; 100-percent pixel locking is not claimed.",
+      "reviewedAt": "2026-11-08T10:34:12.453Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g10-adapted-v1",
+      "fingerprint": "d6abc53f422a40ba4b79f26fda59e5bddb91d5484cb7bead209610f2f30689a1",
+      "prompt": "Keep the exact same expressive semi-realistic natural history illustration of a square-faced Tibetan fox with its iconic wide boxy head, sandy-ochre fur, and utterly deadpan half-closed unimpressed eyes. Comedy contrast: the fox's giant square face and deadpan unblinking eyes remain 100% motionless across all frames, while its two front paws slowly clap together. Floating cleanly in the air ABOVE the head (with a wide empty transparent gap between the sign and the ears, NO sticks, NO poles), a flat rectangular white label with a crisp black border and bold black Chinese text reads '好棒棒'. Isolated on a pure transparent background. Strictly NO white sticker border, NO white outline. Smooth 9-frame looping animation.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 3 columns by 3 rows, 9 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nThe exact floating text in every cell is '好棒棒'. Nine poses show the front paws slowly approaching, touching, separating, and returning. Keep the fox face and half-closed eyes absolutely unchanged. Preserve true transparent pixels, including the gap under the floating sign.",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R10/output.png",
+          "sha256": "d9929f3a5ebd7f61e3daf8679cbc5d8809b334769fd3f7b66df7cd61b4c754d0",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": true,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g10-9f-v3/sheet.png",
+    "sheetSha256": "1120d2f0508fbb1b8799633e1dbe66dad778521ada80a945304962b403f329ae",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g10-9f-v3/output.gif",
+    "outputSha256": "fbde554968eb6903fbcf2d0bfc84f2417e44b1d3ff76a3dcafa1110383242915",
+    "width": 415,
+    "height": 420,
+    "frameCount": 9,
+    "durationMs": 1800,
+    "frameDelaysMs": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": true,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 415,
+        "top": 0,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 830,
+        "top": 0,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 0,
+        "top": 420,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 415,
+        "top": 420,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 830,
+        "top": 420,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 0,
+        "top": 840,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 415,
+        "top": 840,
+        "width": 415,
+        "height": 420
+      },
+      {
+        "left": 830,
+        "top": 840,
+        "width": 415,
+        "height": 420
+      }
+    ],
+    "frameHashes": [
+      "72743ee3aea476070e5ddc8b284b2fb3653a520be05e7591f0ceb73efdfcc024",
+      "a2753e53311905ad2bf7fba1a4f045d4ffb9248d10933b6b4759a0df390b1bc0",
+      "ebe1a2edd4d6990131e7b0632db74222154f336b2b05d2ad3401cddea7a4c745",
+      "1fee29c42764d10071ec4f372abea666f2234a355f1b83bfa5eb3143604678bf",
+      "63fb08ceef7ac36d589d8b8919fc9771b74066debf6a6456d49af44fc9a3d276",
+      "df2e461bdd3d9da612d50785b73a4ba7dc89dc5b7ba8b653fe8b38b2a0879cda",
+      "2fbc0efa1c2823c3ff27268cab2223c83d3330496ee13890f9b8d06459bd59b6",
+      "9d0d21398996ad090bdc933e4ebe0e063de8fced6e07f7a82302afd5cd2b42e8",
+      "23f2efc000837e53787cf97990c7b743cafef21a7d9befcc81040bc0cf9f3d05"
+    ],
+    "distinctFrameCount": 9,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R10/output.png",
+      "sha256": "d9929f3a5ebd7f61e3daf8679cbc5d8809b334769fd3f7b66df7cd61b4c754d0",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Nine actual transparent GIF frames show front paws clapping while half-closed deadpan eyes remain stable. All labels correctly read 好棒棒 and float above the ears without supports. Inspected encoded GIF against light and dark backgrounds: real alpha and no white outline. Slight face redraw variation remains; 100-percent pixel locking is not claimed.",
+    "reviewedAt": "2026-11-10T00:59:52.202Z"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-2f843151-206a-4503-8455-8d24f6c560c2.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g18-native-format-check-v1/output.png",
+  "outputSha256": "8a9525f8a677440b1f8d53c79c45c3568ff53c31e69f093716cff6b2d0ce8d84",
+  "promptSha256": "d8cd2c40f5c9ec96d7972084a0e367337dea9fd50e9bd1302d7c6774902e10fc",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R19/output.png",
+      "sha256": "e0468f5d2943631d91e2721c5317562e2d15a60b925ba4ebabd84ebfd4635ff8",
+      "slotId": "character"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1219,
+  "height": 1290,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "Explicit downloadable multi-frame GIF request on 2026-11-09 returned a single PNG portrait. No GIF payload, frame timing or animated output was supplied. Rejected as native GIF; this prompt includes an explicit delivery addendum and is an independent format check.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:20:26.578Z"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g17-adapted-9f-v3",
+    "candidateId": "gpt26-social-g17-adapted-9f",
+    "prompt": "make a raving 8bit johnny bravo\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 2 rows, 8 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nA single muscular adult Johnny Bravo in a black tee, blue jeans, sunglasses and tall blond pompadour. Eight different pixel poses: left step, arm pump, right step, arm pump, hips left, hips right, crouch bounce, starting stance. Fixed white background, no writing.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "a0edbe8203f7bd673306a5a55551c32a7b0b927bf3b620035f1e9c5f632466e3",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:31.417Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g17-adapted-9f-v3/output-4e13fccd9bfc4200223a1bed51f7dc22a821846d727c7b567b66a124072fe82b.gif",
+      "sha256": "4e13fccd9bfc4200223a1bed51f7dc22a821846d727c7b567b66a124072fe82b"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:53.772Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight recognizable pixel-art Johnny Bravo poses show alternating steps, arm pumps, hip shifts and crouch bounce. Entire character visible; no text. Actual 800 ms loop, silent. Sprite shapes have small redraw variation; no claim of source audio.",
+    "reviewedAt": "2026-11-10T00:59:53.775Z"
+  }
+}

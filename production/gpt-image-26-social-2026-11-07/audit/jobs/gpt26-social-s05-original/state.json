@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-s05-original",
+    "candidateId": "gpt26-social-s05",
+    "prompt": "赤丸にサンタ帽、青丸の本はプレゼントに",
+    "references": [
+      {
+        "slotId": "marked",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R01-annotated/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "91ac1bf152464124778a37366d0db1744080db407a6f54bb16237f28ccbf56f2",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R01-annotated/output.png",
+      "sha256": "8c0051c93d5f396632471f5f7e7126604fe437943acb6020137b77f857f114b4",
+      "slotId": "marked"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T01:41:50.819Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-s05-original/output-d075ffc8c8083981aefebb129c5bec237d254b5dbd2ad43c65ce1406ef901cd1.png",
+      "sha256": "d075ffc8c8083981aefebb129c5bec237d254b5dbd2ad43c65ce1406ef901cd1"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T01:42:55.487Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Red circle replaced by Santa hat and blue book by wrapped red gift; annotation rings removed; face, star clip, green cardigan, hands, pose and background visually consistent.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:42:55.493Z"
+  }
+}

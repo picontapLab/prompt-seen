@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g17-direct-gif-v2",
+    "candidateId": "gpt26-social-g17-direct-gif",
+    "prompt": "make a raving 8bit johnny bravo\n\nGenerate a native animated GIF of the character dancing in a seamless loop. Use the latest GPT Image 2.6 Sunburst native GIF capability if available. Requested delivery: output_format gif, 9 frames, 200 milliseconds per frame. Return the finished multi-frame GIF file directly. Do not return a sprite sheet or storyboard; do not provide code or compose frames locally.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "4bc406f4f22d798f689fc832b237fdda4aaca20513fd1f9bcf35566cc1efd920",
+  "references": [],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-09T02:37:22.343Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g17-direct-gif-v2/output-927bf6d0c53c7714cb38e376cfefc78e37487cb22afafaf735f178d6a168dbb7.png",
+      "sha256": "927bf6d0c53c7714cb38e376cfefc78e37487cb22afafaf735f178d6a168dbb7"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-09T02:38:07.949Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Explicit GPT Image 2.6 Sunburst native GIF request in prompt returned a single PNG containing nine storyboard panels. No model selection parameter was available, so actual model version remains unknown. No native GIF attachment, composition or publication.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-09T02:38:07.952Z"
+  }
+}

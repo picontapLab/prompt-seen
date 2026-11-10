@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "tool": "image_gen.imagegen",
+  "requestedOutput": "native multi-frame GIF",
+  "attempts": [
+    {
+      "jobKey": "gpt26-social-g13-original-r3",
+      "promptProvenance": "source-prompt",
+      "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g13-original-r3/prompt.txt",
+      "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g13-original-r3/returned.png",
+      "sha256": "1873c6e05a8cbc6609a1bc2c65d240bc8a57e2875e41c76d334aff6f507f2e04",
+      "signatureHex": "89504e470d0a1a0a",
+      "actualFormat": "png",
+      "frames": 1,
+      "delay": null,
+      "loop": null,
+      "accepted": false
+    },
+    {
+      "jobKey": "gpt26-social-g16-original-r2",
+      "promptProvenance": "source-prompt",
+      "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g16-original-r2/prompt.txt",
+      "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g16-original-r2/returned.png",
+      "sha256": "d7ddcf456b03a7fc98269d5a96a36d82c30c1385872997c6f5b3f0278627a43f",
+      "signatureHex": "89504e470d0a1a0a",
+      "actualFormat": "png",
+      "frames": 1,
+      "delay": null,
+      "loop": null,
+      "accepted": false
+    },
+    {
+      "jobKey": "gpt26-social-g18-native-format-check-v1",
+      "promptProvenance": "independent-adaptation",
+      "prompt": "production/gpt-image-26-social-2026-11-07/jobs/g18-native-format-check-v1/prompt.txt",
+      "file": "production/gpt-image-26-social-2026-11-07/audit/jobs/gpt26-social-g18-native-format-check-v1/returned.png",
+      "sha256": "8a9525f8a677440b1f8d53c79c45c3568ff53c31e69f093716cff6b2d0ce8d84",
+      "signatureHex": "89504e470d0a1a0a",
+      "actualFormat": "png",
+      "frames": 1,
+      "delay": null,
+      "loop": null,
+      "accepted": false
+    }
+  ],
+  "successfulNativeGifs": 0,
+  "conclusion": "All three current calls returned single-frame PNG bytes, including the explicit downloadable animated GIF request. This records observed output of this session, not a universal capability claim. Previously withdrawn composites remain archived and were not republished; current retained deliverables remain 12."
+}

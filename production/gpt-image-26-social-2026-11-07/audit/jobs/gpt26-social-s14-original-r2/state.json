@@ -1,0 +1,21 @@
+{
+  "definition": {
+    "key": "gpt26-social-s14-original-r2",
+    "candidateId": "gpt26-social-s14",
+    "prompt": "{\"subject\": {\"description\": \"A beautiful young woman with long straight dark brown hair, tanned skin, and a confident expression. She has a toned, curvaceous figure.\", \"pose\": \"Standing in an elevator, looking at her reflection in the mirrored wall while holding a pair of black sunglasses. Her body is slightly turned toward the mirror.\", \"clothing\": {\"main\": \"Black leather-style crop top with deep V-neck, black mini skirt with chain details, black arm sleeves/gloves with cut-outs, black thigh-high stockings, and black high heels stilettos. Black choker necklace.\", \"modifications\": \"Add a small, elegant 'Keor' embroidery in refined script on the border or hem of her black top or skirt, subtly visible.\"}}, \"setting\": {\"environment\": \"Modern elevator interior with mirrored walls, metal panels, and a digital display.\", \"lighting\": \"Bright indoor elevator lighting creating reflections on the metal and mirrors.\"}, \"style\": {\"photography\": \"Realistic, high-resolution candid-style photograph with sharp details on skin, hair, leather textures, and reflections.\", \"mood\": \"Edgy, confident, and stylish.\", \"composition\": \"Medium full-body shot capturing the subject and her mirror reflection.\"}, \"full_prompt\": \"Photorealistic image of a beautiful woman with long dark hair in a black leather crop top, mini skirt, thigh-high stockings, and boots, standing in an elevator looking at her reflection while holding sunglasses. Add small elegant 'Keor' embroidery on the border of her outfit. Bright elevator lighting with mirror reflections, highly detailed skin, hair, and fabric textures.\"}",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "058631325a6c9785c470bcdb4b9474536616820162ba45c66bdbb6737912d527",
+  "references": [],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-08T09:41:49.921Z",
+  "failure": {
+    "provider": "OpenAI image_gen.imagegen",
+    "message": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID e3a994ef-9bfd-4065-a138-14ea5d22b67e. safety_violations=[sexual].\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"sexual\\\"\\n      ]\\n    }\\n  }\\n}\")",
+    "requestId": "e3a994ef-9bfd-4065-a138-14ea5d22b67e",
+    "recordedAt": "2026-11-08T09:42:37.148Z"
+  },
+  "receipt": null,
+  "review": null
+}

@@ -1,0 +1,168 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g06-dwarf/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g06-dwarf",
+    "sourceSheetSha256": "36887f361bf2102db2d1d04046cd0defa58a328a0060fa157a40b6daa5999dbe",
+    "sourceFrameCount": 12,
+    "sourceSize": [
+      362,
+      362
+    ],
+    "outputSize": [
+      362,
+      362
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 8
+      },
+      {
+        "from": 10
+      },
+      {
+        "from": 11
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Twelve distinct views rotate from front through both sides and back to near-front, keeping the red-bearded dwarf, shoulder axe, fur and costume recognizable. Complete body within each frame. 1440 ms loop. Hand-drawn view spacing is approximate, not a true 3D mesh render.",
+      "reviewedAt": "2026-11-08T09:59:51.083Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g06-dwarf-adapted-v1",
+      "fingerprint": "dc2eaaa16a1bf7a4faf39fdf259e81765510197d71e69244d578a63a0f3e2cba",
+      "prompt": "create a gif of a \"3d dwarf game model carrying a huge axe on his shoulders\" spinning full 360 degrees\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+      "references": [],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g06-dwarf-9f-v3/sheet.png",
+    "sheetSha256": "147287c4288ea57f3f866e63f19111592a68521d394c8ff099e6eb39ac4d3f40",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g06-dwarf-9f-v3/output.gif",
+    "outputSha256": "4a63b3e2aed7fcc7ab6e637a697d53d4f3599fa2c0e09bd071509d2ea7ffa711",
+    "width": 362,
+    "height": 362,
+    "frameCount": 9,
+    "durationMs": 1440,
+    "frameDelaysMs": [
+      120,
+      240,
+      120,
+      240,
+      120,
+      120,
+      240,
+      120,
+      120
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "f0910c8b0b34f7b0c3c1dff6da87419901faec49573c5198a96edec396f1902b",
+      "1ab6b045df0a53de3225505d32c0c9c5bb25c85c7174f6de21ca6b64e1b98275",
+      "eb991c1f0fc0487401f7c2020e7d7ee0a93bd3f0ee9ed4f01174018c7a5a2d09",
+      "e18e804132eb8538402c14940897885bd1fb41f6b1ddaed21d37c3a591683ffe",
+      "6de5298d7b311a9b91c5b772eb089e8c7037617ff46cd7ab76386aa51bc92dbb",
+      "11ab8da7468d98455c794a6249881029a34074c31a6dfeef083749a5b57752eb",
+      "af5dc383d7f038050b65a16315eb0d86b2055557607e7c052a6bc26c7e52b325",
+      "e501e8c1a4a5e0b4e5df958208de4492ec8e989aec979eb59c38e52a31fbf675",
+      "1a45f159386d5f86194ed49ad83c9f9feca09c88f2729b8ace90d7e01cb5d822"
+    ],
+    "distinctFrameCount": 9,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve distinct views rotate from front through both sides and back to near-front, keeping the red-bearded dwarf, shoulder axe, fur and costume recognizable. Complete body within each frame. 1440 ms loop. Hand-drawn view spacing is approximate, not a true 3D mesh render.",
+    "reviewedAt": "2026-11-10T00:59:51.114Z"
+  }
+}

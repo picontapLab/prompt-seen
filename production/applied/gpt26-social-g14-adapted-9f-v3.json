@@ -1,0 +1,34 @@
+{
+  "key": "gpt26-social-g14-adapted-9f-v3",
+  "candidateId": "gpt26-social-g14-adapted-9f",
+  "fingerprint": "6f5ba7b6362abea8758f7a4251b408c12076eddb3c375b15579b13b0aa705078",
+  "ids": {
+    "prompt": "p_307",
+    "template": null,
+    "example": "x_371",
+    "media": [
+      "a_503",
+      "a_504"
+    ]
+  },
+  "provider": "OpenAI + local GIF encoding",
+  "model": "GPT Image",
+  "outputSha256": "f272ba3c0f977a8a3ae0af68a8e5767850370696fa6ac7e3eeb63736fad367c7",
+  "referenceHashes": [
+    {
+      "slotId": "reference1",
+      "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Selected first eight cells: cat looks at camera, winks one eye, then green Robin-labelled hat falls and settles. Discarded final four cells because cat jumps/disappears. Final eight-frame GIF plays once for 2 seconds; no false seamless-loop claim. Text Robin is legible on settled hat.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:59:53.314Z"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T01:01:55.394Z",
+    "contentHash": "fe47dad18a026938ddf13d4bf558ac5b3157647b676064a1b224077522841fc5"
+  }
+}

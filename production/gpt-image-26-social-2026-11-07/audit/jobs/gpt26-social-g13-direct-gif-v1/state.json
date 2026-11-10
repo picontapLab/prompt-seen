@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g13-direct-gif-v1",
+    "candidateId": "gpt26-social-g13-direct-gif",
+    "prompt": "まばたきしてるGIF作ってください！\n\n出力形式の指定：実際に再生できる複数フレームの .gif ファイルを直接出力してください。人物が一度まばたきして目を開く短いループです。静止画、PNG、コマ割り、スプライトシートは出力しないでください。コードによる後処理やローカル合成は使用しません。",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "b3fb72714ff74d225584a3fd3f29b36dcc5c504117020485146d5c2fbb68b551",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-08T14:29:27.124Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g13-direct-gif-v1/output-16a61d410cdb59dac040a657b29a606cb0569bcdd78abcbaba534c824fa98a96.png",
+      "sha256": "16a61d410cdb59dac040a657b29a606cb0569bcdd78abcbaba534c824fa98a96"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T14:30:46.651Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "User requested native GIF only. Explicit direct multi-frame .gif request returned a single-frame PNG with half-closed eyes. No composition or transcoding performed; rejected as a GIF deliverable.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T14:30:46.657Z"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g11-joy/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g11-joy",
+    "sourceSheetSha256": "7bbcb33e9f11fd39e6a737db572d5cee49c7d4e83c83f82b197bb4b4ec1e0266",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight penguin joy poses progress through smile, wing lift, happy hop, landing and neutral pose; red scarf and colors consistent. Full figure and no written text. 1600 ms infinite loop; small generated outline and scale variation.",
+      "reviewedAt": "2026-11-08T10:35:11.033Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g11-joy-adapted-v1",
+      "fingerprint": "e8d01ba113765572cb651e82f8d52491b4f4a826502372eeb590b327b84a6846",
+      "prompt": "このキャラの喜怒哀楽のGIFよろ\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n今回の感情は「喜」。8コマで嬉しく両翼を広げて小さく跳び、着地して最初の姿勢へ戻る。文字不要。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R11/output.png",
+          "sha256": "a9d36c83c024cc112188262f1efcd10ef502c51cebe1d1fddbfad9c6ac2b7c61",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g11-joy-9f-v3/sheet.png",
+    "sheetSha256": "3ffacefc57a9d1ab4e1d95a25c5a7c90c0551ec5fb6ca273a620344d2a9fae28",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g11-joy-9f-v3/output.gif",
+    "outputSha256": "e3575340c524da095f543a1a605ab3fcb28ed1c8f6c61e0f3a395d2d5216adc8",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 1600,
+    "frameDelaysMs": [
+      100,
+      100,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "f38d8ccc0efde5228b0027de7f7a96a3ecc86f62a19d349df46c3b0ba26e51d4",
+      "f38d8ccc0efde5228b0027de7f7a96a3ecc86f62a19d349df46c3b0ba26e51d4",
+      "1ce1f4606c5438e249f0ffe7bf80d910559bce651419e02b1a34be6c713c5f97",
+      "b78e638687df6e3d2ebeb1183cf8363627c0c0e4489bad99dc1c1fea56f8e50f",
+      "f64abfe7b38c75d1438bd7991f6e504de40d0843631b049a0dad87b7e6acf99e",
+      "ad3ba1f5ef8f8a2483b51f747e524b3aa173fb61ab48710a3adf31ede5fdaeed",
+      "181dc4421ad60b2dd0fde6ef763909cb81741477f1774c6a4d7c0cacbdfa9d5f",
+      "6df34038575487734e4e74e3ffbc7c74d4e8784fdf9e2a8a3484e4a804ccf83d",
+      "88c38f0b9dd4a17c2649302ae2fe5ea091716127754891a09ab96bae9816b716"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R11/output.png",
+      "sha256": "a9d36c83c024cc112188262f1efcd10ef502c51cebe1d1fddbfad9c6ac2b7c61",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight penguin joy poses progress through smile, wing lift, happy hop, landing and neutral pose; red scarf and colors consistent. Full figure and no written text. 1600 ms infinite loop; small generated outline and scale variation.",
+    "reviewedAt": "2026-11-10T00:59:52.354Z"
+  }
+}

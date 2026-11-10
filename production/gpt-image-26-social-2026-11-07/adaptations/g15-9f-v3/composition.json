@@ -1,0 +1,64 @@
+{
+  "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+  "sourceFolder": "adaptations/g15",
+  "sourceSheetSha256": "0986d00fdd7b01add31ec628121e6949ca43da8ab113e837851fee2cf26adbb1",
+  "sourceFrameCount": 8,
+  "sourceSize": [
+    443,
+    443
+  ],
+  "outputSize": [
+    443,
+    443
+  ],
+  "scale": 1,
+  "sequence": [
+    {
+      "from": 0
+    },
+    {
+      "from": 0,
+      "holdFraction": 0.5
+    },
+    {
+      "from": 1
+    },
+    {
+      "from": 2
+    },
+    {
+      "from": 3
+    },
+    {
+      "from": 4
+    },
+    {
+      "from": 5
+    },
+    {
+      "from": 6
+    },
+    {
+      "from": 7
+    }
+  ],
+  "sourceReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Eight poses show side steps, arm lift, jump, landing and return. Full body fits each cell. Small scale and ground-line variations remain visible.",
+    "reviewedAt": "2026-11-08T10:47:00.753Z"
+  },
+  "sourceClaim": {
+    "key": "gpt26-social-g15-adapted-v1",
+    "fingerprint": "d9f76c629cb4b08e7fd59f84f9d58dedb8301efa2db576bffd0faca8001a7520",
+    "prompt": "次の内容で GIF を作成して: 踊らせる、喜びの舞\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n8コマで左右のステップ、腕を上げる、体をひねる、小さく跳ぶ、着地、元の姿勢。全身と足元をすべてのコマに収める。",
+    "references": [
+      {
+        "path": "production/gpt-image-26-social-2026-11-07/references/R17/output.png",
+        "sha256": "7e100d45b00c13ac8af2a31600b054c0560384c3a7dbe89b4542694b559c5d3c",
+        "slotId": "reference1"
+      }
+    ],
+    "targetAspectRatio": null
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "candidateId": "gpt26-social-g12-adapted-9f",
+  "slug": "adapted-g12-nine-frame-composed-gif",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Use the character I uploaded as the reference and make a downloadable looping pixel-art GIF of them performing a signature move.\n\n[Keep the character consistent]\nStudy the reference and keep every key feature: hairstyle and hair color, face and eye color, marks or scars, outfit colors and patterns, accessories, and their weapon or prop. Same proportions and same look in every frame.\n\n[Pixel art style]\nHighly detailed HD pixel art, like premium 2D fighting game sprites: crisp hard-edged pixels, rich palette with pixel shading and highlights, visible fabric folds and hair strands, no anti-aliasing.\nFull body, side 3/4 view, same size and same ground line in every frame.\n\n[Design the move]\nPick a move that fits the character's personality, power or weapon (or use the one I give below).\nMake it a short, punchy attack anyone can read at a glance: ready stance → wind-up → strike → follow-through → back to ready.\nAdd an elemental or energy effect that matches the character, rendered as pixel art (e.g. water waves, fire, lightning, petals).\nHair, clothes and effects react naturally to the motion. First and last frame match so it loops seamlessly.\n\n[Output]\nPure white background, fixed camera, character centered with enough margin. No text.\nAbout 12 frames, 1.5–2 seconds, infinite loop.\nDeliver an actual multi-frame GIF file I can download.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nUse the project-original swordsman in the reference, not an existing anime character. Across 12 cells show ready, windup, water-edged sword sweep, flowing follow-through, then ready. Pixel edges, stable ground line, no text.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen (adaptation)",
+    "url": "https://x.com/Mayz1169/status/2118246507128541553",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the 1 project-generated reference image(s) in the displayed order (R12), then use the complete adapted prompt.",
+      "zh-Hans": "按显示顺序上传 1 张本站生成的参考图（R12），使用完整改编词。"
+    },
+    "slots": [
+      {
+        "id": "reference1",
+        "labels": {
+          "en": "Project-generated character reference",
+          "zh-Hans": "本站生成的角色参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-g12-adapted-9f",
+      "platform": "X",
+      "author": "Mayz1169",
+      "url": "https://x.com/Mayz1169/status/2118246507128541553",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/Mayz1169/status/2118245929505669260",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post; shared across variants, not this adaptation",
+        "zh-Hans": "原帖整组统计；同帖变体共享，不属于本改编作品"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Archived public X snapshot and complete author prompt",
+        "zh-Hans": "归档的 X 公开快照与完整作者原词"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2118245929505669260&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Independent adaptation; full original preserved separately",
+        "zh-Hans": "独立改编；完整原词另存档案"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 64,
+          "labels": {
+            "en": "Source post likes",
+            "zh-Hans": "原帖点赞"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Swordsman pixel water strike — composed GIF",
+      "description": "9 frames, 1.8 seconds, 362×362px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.",
+      "body": "## How to use\n\nUpload the 1 project-generated reference image(s) in the displayed order (R12), then use the complete adapted prompt.\n\nReuse the archived GPT Image sheet and resample its action to nine frames. Sources with eight poses split one held pose across two encoded frames without adding a new pose; longer sequences select nine chronological poses. Preserve total duration and loop settings. Small source cells are enlarged for display without adding detail. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.\n\n## Result and limitations\n\n9 frames, 1.8 seconds, 362×362px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.\n\nReviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve pixel-style poses show draw, windup, water sweep and recovery. Uses an original swordsman rather than Tanjiro. Wave approaches cell edges, with minor shape drift and a visible final-to-first stance change; not a perfectly seamless game sprite.\n\n## Source\n\nAdapted by Prompt Seen from [@Mayz1169's original prompt](https://x.com/Mayz1169/status/2118246507128541553). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. Likes describe the whole source post, shared by variants, and are not engagement for this example."
+    },
+    "zh-Hans": {
+      "title": "原创剑士像素水斩 · 合成 GIF",
+      "description": "9 帧，1.8 秒，362×362 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。",
+      "body": "## 使用方法\n\n按显示顺序上传 1 张本站生成的参考图（R12），使用完整改编词。\n\n复用已生成的 GPT Image 精灵图，统一合成 9 帧：8 姿态素材将一次停留拆成两个编码帧，不新增姿态，较长序列按顺序选取 9 帧。保留总时长与循环设置，小尺寸素材仅放大显示，不增加细节。生图工具返回静态 PNG；GIF 由本地合成。原精灵图、裁切坐标、逐帧时长与首帧封面均保存在批次档案。\n\n## 结果与限制\n\n9 帧，1.8 秒，362×362 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。\n\n原始素材审核说明（以下帧数和尺寸指原始版本；当前交付统一为 9 帧）：使用本站原创剑士替代来源角色炭治郎。12 帧出鞘、水刃横扫与收势，水花贴近格边；末帧到首帧姿态有变化，不是完全无缝的游戏素材。\n\n## 来源\n\n由 Prompt Seen 根据 [@Mayz1169 的原词](https://x.com/Mayz1169/status/2118246507128541553)改编。来源作者称原作品使用 Image 2.6；本次仅确认 GPT Image 家族，精确型号未知。中英文页面保留同一实际提交正文。点赞属于整篇来源帖，同帖变体共享统计对象，不属于本站新作品。"
+    }
+  },
+  "alt": {
+    "en": "Swordsman pixel water strike",
+    "zh-Hans": "原创剑士像素水斩"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T01:01:43.457Z",
+    "contentHash": "b52a2a4c16118931e6b35e2fb9192254165f00f1a693a5c4edd067a7b08efb2e"
+  }
+}

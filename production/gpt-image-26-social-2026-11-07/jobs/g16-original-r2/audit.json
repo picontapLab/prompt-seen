@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-b1a30665-4647-4336-80c3-47945c2efe76.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g16-original-r2/output.png",
+  "outputSha256": "d7ddcf456b03a7fc98269d5a96a36d82c30c1385872997c6f5b3f0278627a43f",
+  "promptSha256": "ec365165bc36f479f864764ed6e3661cc73ae949af6c85be2391c22fc4f8f3ad",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png",
+      "sha256": "de2edda17fdf152a512dab439cc48be7285190c4540a18b92ffcee087449e0b3",
+      "slotId": "wizard"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1312,
+  "height": 1199,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "User-requested unchanged original retry on 2026-11-09. Returned single-frame PNG contact sheet with twelve labeled panels and timestamps; not an animated GIF and violates no-text request. Preserve as rejected native-output attempt.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:19:02.501Z"
+  }
+}

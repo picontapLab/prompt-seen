@@ -1,0 +1,172 @@
+{
+  "verifiedAt": "2026-11-10T02:07:15.575446+00:00",
+  "status": "local-delivery-complete-with-independent-adaptations",
+  "userConstraint": "GIF local composition authorized, nine encoded frames; other images use normal built-in GPT Image generation.",
+  "coverage": {
+    "plannedCases": 34,
+    "frozenBodies": 39,
+    "plannedBodies": 39,
+    "plannedOutputs": 42,
+    "acceptedCases": 11,
+    "acceptedOutputs": 11,
+    "acceptedGifs": 0,
+    "blockedCases": 23,
+    "sourceRecords": 136,
+    "researchBacklog": 87,
+    "acceptedReferenceGroups": 19,
+    "acceptedReferenceFiles": 22,
+    "withdrawnComposedGifs": 26,
+    "adaptedGifs": 26,
+    "adaptedStills": 4,
+    "adaptedWorkflows": 1,
+    "practicalDeliverables": 42,
+    "casesWithOriginalOrAdaptedOutput": 34,
+    "providerRejectedStillCases": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "countsNote": "acceptedCases/Outputs/Gifs and blockedCases refer strictly to original-prompt requirements. Adaptations are counted separately and retain their documented limitations."
+  },
+  "collections": [
+    {
+      "id": "c_013",
+      "items": 11,
+      "provenance": "source-prompt"
+    },
+    {
+      "id": "c_016",
+      "items": 26,
+      "provenance": "independent-adaptation"
+    },
+    {
+      "id": "c_017",
+      "items": 4,
+      "provenance": "independent-adaptation"
+    }
+  ],
+  "currentComposedVersions": {
+    "prompts": [
+      "p_286",
+      "p_287",
+      "p_288",
+      "p_289",
+      "p_290",
+      "p_291",
+      "p_292",
+      "p_293",
+      "p_294",
+      "p_295",
+      "p_296",
+      "p_297",
+      "p_298",
+      "p_299",
+      "p_300",
+      "p_301",
+      "p_302",
+      "p_303",
+      "p_304",
+      "p_305",
+      "p_306",
+      "p_307",
+      "p_308",
+      "p_309",
+      "p_310",
+      "p_311"
+    ],
+    "framesPerGif": 9,
+    "method": "Reuse actual GPT Image source cells; eight-pose sequences split a held pose, longer sequences select nine chronological poses. Preserve duration and loop. No new provider call for composition.",
+    "displayVariants": "WebP may merge identical held poses; durations remain equal.",
+    "smallSource": "G05 enlarged from 171x304 to 320x569 without new detail."
+  },
+  "staticRetry": {
+    "cases": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "attempt": "original-r3",
+    "tool": "image_gen.imagegen",
+    "actualCalls": 4,
+    "accepted": 0,
+    "result": "All four returned moderation_blocked at output stage, category sexual; request IDs archived. No returned image or API fallback."
+  },
+  "validation": {
+    "sourceBodies": 39,
+    "originalAttempts": 31,
+    "referenceFiles": 22,
+    "retainedOriginals": 11,
+    "adaptations": 31,
+    "gifMetadataAndHashes": "passed for all 26 originals and animated display variants",
+    "withdrawnArchiveFilesVerified": 399,
+    "compositionTests": "4 passed",
+    "contentValidation": {
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 10,
+      "note": "Existing warnings; no content or publication errors."
+    },
+    "build": "passed: config generation, content build, Next.js static export, packaging (preview; four locales)",
+    "browserTests": "17 passed: existing prompt-language tests and expanded adaptation browser tests",
+    "languages": {
+      "pagesTranslatedAndReviewed": 28,
+      "sharedFieldsTranslatedAndReviewed": 214,
+      "locale": "ja"
+    },
+    "lint": "passed, zero warnings",
+    "typecheck": "passed",
+    "newStaticLocalization": {
+      "pages": 5,
+      "fields": 28,
+      "locale": "ja"
+    }
+  },
+  "historicalVerification": "audit/before-nine-frame/verification.json",
+  "oldVersions": "Old 26 withdrawn compositions remain archived and absent from content; discarded crossfade v2 is not imported.",
+  "committed": false,
+  "deployed": false,
+  "completionAudit": {
+    "report": "audit/followup-completion-2026-11-09.json",
+    "practicalDeliveryComplete": true,
+    "strictOriginalReproductionComplete": false,
+    "remainingOriginalPromptFailures": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "openEngineeringFindings": []
+  },
+  "currentStaticAdaptations": {
+    "id": "F1",
+    "resolution": "Four source scenes now have separately attributed rewritten stills, generated with four real built-in image_gen calls. Original-prompt failures remain failures, not converted into successes.",
+    "promptIds": [
+      "p_312",
+      "p_313",
+      "p_314",
+      "p_315"
+    ],
+    "exampleIds": [
+      "x_376",
+      "x_377",
+      "x_378",
+      "x_379"
+    ],
+    "collection": "c_017",
+    "sourceCases": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "sourcePromptStatus": "original prompts and their three failed attempts preserved unchanged",
+    "newPromptLocations": [
+      "adaptations/s01-still-v1/prompt.txt",
+      "adaptations/s04-still-v1/prompt.txt",
+      "adaptations/s11-still-v1/prompt.txt",
+      "adaptations/s14-still-v1/prompt.txt"
+    ]
+  }
+}

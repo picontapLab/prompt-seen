@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-r01-annotated-v1",
+    "candidateId": "gpt26-social-r01-annotated",
+    "prompt": "この画像をそのまま保持し、手描き風の細い注釈の輪を2つだけ追加してください。赤い輪を頭頂の髪の部分に描く。青い輪で手に持っている本全体を囲む。2つの輪は重ならない。人物の顔、星の髪飾り、髪、服、本、ポーズ、背景、構図は一切変更しない。文字や矢印を追加しない。",
+    "references": [
+      {
+        "slotId": "clean",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R01/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "31ef186f8de3a4577ca70273715e4e5d2de1f9370921eb3f121306d075f1ec8e",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R01/output.png",
+      "sha256": "556ff4488be449acf277d084b7cb59b67fbbf4e559ec43b3480b6db7c1ab7783",
+      "slotId": "clean"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T01:40:18.888Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-r01-annotated-v1/output-8c0051c93d5f396632471f5f7e7126604fe437943acb6020137b77f857f114b4.png",
+      "sha256": "8c0051c93d5f396632471f5f7e7126604fe437943acb6020137b77f857f114b4"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T01:41:50.608Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Red annotation encloses top of head; blue annotation encloses book; circles do not overlap. Character, star clip, clothing and background visually preserved.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:41:50.629Z"
+  }
+}

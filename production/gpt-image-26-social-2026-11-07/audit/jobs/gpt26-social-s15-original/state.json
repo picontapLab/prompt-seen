@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-s15-original",
+    "candidateId": "gpt26-social-s15",
+    "prompt": "玄関先でこちらを見るキャラ。\n[ドアスコープ]\nキャラは、アップロード画像を参照。\n顔・髪型・服装まで忠実に再現。\n晴れた住宅街、自然光。\nアスペクト比縦4:5。",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R13/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "fe4c70d7708232988647a42e861afba7a1fd2a2228413788104590332dcfcb6b",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R13/output.png",
+      "sha256": "fcd9a76ba548cecb542f20e8a0664377993a7886d39ca8bb4f6f11c5d8b83a68",
+      "slotId": "character"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-08T02:18:03.681Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-s15-original/output-4ab0ccc009ecedf8efeb71c9472e1ced53667ad79d3379cb19b737cf4eb8d3a2.png",
+      "sha256": "4ab0ccc009ecedf8efeb71c9472e1ced53667ad79d3379cb19b737cf4eb8d3a2"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T02:21:55.943Z"
+  },
+  "review": {
+    "accepted": true,
+    "notes": "Door-peephole perspective with visible circular rim, sunny residential street, consistent adult character face, low bun, gold hairpin, red kimono and cream obi. Original Japanese option filled as ドアスコープ and preserved in values.json. Portrait 4:5.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T02:21:55.965Z"
+  }
+}

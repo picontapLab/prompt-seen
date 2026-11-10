@@ -1,0 +1,110 @@
+{
+  "auditedAt": "2026-11-10T01:35:41.223130+00:00",
+  "localDate": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "complete": false,
+  "basis": "Original plan with latest user override: GIFs may be locally composed with nine encoded frames. Native GIF delivery is no longer a blocker. Deployment is outside this plan completion scope.",
+  "delivery": {
+    "plannedOutputs": 42,
+    "importedOutputs": 38,
+    "coveredSourceCases": 30,
+    "plannedSourceCases": 34,
+    "originalStills": 11,
+    "plannedOriginalStills": 15,
+    "composedGifs": 26,
+    "plannedGifs": 26,
+    "adaptedWorkflow": 1,
+    "plannedWorkflow": 1
+  },
+  "completed": [
+    {
+      "requirement": "Source ledger",
+      "actual": 136,
+      "expected": 136,
+      "note": "34 planned cases, 15 prompt evidence rows, 87 research leads; all have disposition. Research leads are deferred by design, not empty published cards."
+    },
+    {
+      "requirement": "Frozen complete original prompt bodies",
+      "actual": 39,
+      "expected": 39
+    },
+    {
+      "requirement": "Generated reference files",
+      "actual": 22,
+      "expected": 22,
+      "groups": 19
+    },
+    {
+      "requirement": "GIF metadata, pixels, input hashes, posters and withdrawal archive",
+      "status": "passed",
+      "gifs": 26,
+      "archivedFiles": 399
+    },
+    {
+      "requirement": "Locales and provenance",
+      "status": "passed",
+      "note": "English, Chinese and Japanese display text; submitted prompt language preserved. Turkish registered without route. Exact provider model remains unknown. Original p_221, p_228 and p_232 hashes unchanged."
+    }
+  ],
+  "openFindings": [
+    {
+      "id": "F1",
+      "kind": "missing-deliverables",
+      "cases": [
+        "S01",
+        "S04",
+        "S11",
+        "S14"
+      ],
+      "details": "Four original stills have no output. Each reached three unchanged-prompt attempts; last errors are moderation_blocked at output stage. They cannot be counted as completed.",
+      "evidence": [
+        "jobs/s01-original-r3/failure.json",
+        "jobs/s04-original-r3/failure.json",
+        "jobs/s11-original-r3/failure.json",
+        "jobs/s14-original-r3/failure.json"
+      ]
+    },
+    {
+      "id": "F2",
+      "kind": "quality-gate-failure",
+      "details": "eslint --max-warnings=0 fails on one unused variable recipe at localize-nine-frame.mjs:45. No code correction was made during this audit.",
+      "evidence": "audit/plan-audit-lint.log"
+    },
+    {
+      "id": "F3",
+      "kind": "missing-plan-behavior",
+      "details": "G06 and G11 sibling variants are named as plain text but lack sibling navigation links. Confirmed against exported HTML on 24 pages (8 units × 3 languages). G03 links happen to exist in generated recommendations. Stage D explicitly requires related-case links.",
+      "evidence": "audit/plan-audit-variant-links.json"
+    }
+  ],
+  "qualifications": [
+    "All 26 GIF originals have nine encoded frames. Thirteen contain eight distinct source poses and one split hold; thirteen have nine distinct poses. This satisfies the recorded encoding interpretation, not a claim of nine newly generated poses.",
+    "Composed GIFs and W01 remain independent adaptations, not strict original-prompt success. Source-prompt accepted count is 11; this does not mean the authorized GIF deliveries are missing.",
+    "G05 retains low-resolution source detail and montage motion; small cells were enlarged. Redraw drift or loop discontinuities in other GIFs remain documented quality limitations.",
+    "No commit or deployment has been performed; neither is needed to establish local plan completion."
+  ],
+  "checksThisAudit": {
+    "contentValidation": {
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 10
+    },
+    "typecheck": "passed",
+    "lint": "failed: one unused-variable warning under --max-warnings=0",
+    "unitTests": {
+      "files": 5,
+      "passed": 68
+    },
+    "existingBrowserTests": {
+      "passed": 13
+    },
+    "supplementalBrowserTests": {
+      "passed": 8,
+      "coverage": "p_236 direct still, p_237 referenced edit, p_306 Japanese GIF, p_307 Turkish GIF; English/Chinese pages, mobile/desktop, clipboard, Markdown export, images, playback count and duration."
+    },
+    "sourceImportIntegrity": "passed",
+    "adaptationIntegrity": "passed",
+    "build": "Not rerun in audit; last final local build and package from previous implementation passed. No runtime source/content was modified in this audit."
+  },
+  "conclusion": "38 deliverables exist, but the entire plan is not complete: four static outputs, one lint failure and missing sibling links remain. The previously untested language/media acceptance cases were verified in this audit."
+}

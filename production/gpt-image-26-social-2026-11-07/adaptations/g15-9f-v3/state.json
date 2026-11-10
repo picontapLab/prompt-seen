@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g15-adapted-9f-v3",
+    "candidateId": "gpt26-social-g15-adapted-9f",
+    "prompt": "次の内容で GIF を作成して: 踊らせる、喜びの舞\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n8コマで左右のステップ、腕を上げる、体をひねる、小さく跳ぶ、着地、元の姿勢。全身と足元をすべてのコマに収める。",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R17/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "f3b1c0b478e034ff3260e697234f1fe802efe4b86dd42e8edbb7219e5d08a588",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R17/output.png",
+      "sha256": "7e100d45b00c13ac8af2a31600b054c0560384c3a7dbe89b4542694b559c5d3c",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:28.048Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g15-adapted-9f-v3/output-b846583045bb344676311410839d9824083d9aa3b3742134b1000802d3d74181.gif",
+      "sha256": "b846583045bb344676311410839d9824083d9aa3b3742134b1000802d3d74181"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:53.464Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight poses show side steps, arm lift, jump, landing and return. Full body fits each cell. Small scale and ground-line variations remain visible.",
+    "reviewedAt": "2026-11-10T00:59:53.468Z"
+  }
+}

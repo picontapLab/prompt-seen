@@ -1,0 +1,63 @@
+id: p_312
+slug: adapted-s01-everyday-portrait
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_512
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: none
+  instructions:
+    en: Use the complete rewritten prompt without an input image.
+    zh-Hans: 使用完整改编提示词，不需要参考图。
+    ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
+  slots: []
+showcaseExampleId: x_376
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: gpt26-social-s01
+    platform: X
+    author: johnAGI168
+    url: https://x.com/johnAGI168/status/2118247837683044650
+    publishedAt: null
+    metricObjectUrl: https://x.com/johnAGI168/status/2118247837683044650
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Whole original post or gallery; not this generated example
+      zh-Hans: 原帖或整组作品；不属于本站新生成示例
+      ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
+    observedAt: 2026-11-07
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Saved public X snapshot; complete prompt from saved author post/reply mirror
+      zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
+      ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
+    evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118247837683044650&lang=en&token=1
+    sourcePromptStatus:
+      en: Independent adaptation; original prompt failed three attempts and is
+        archived separately.
+      zh-Hans: 独立改编；原词三次尝试失败并另行归档。
+      ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
+    metrics:
+      - key: likes
+        value: 245
+        labels:
+          en: Source post likes
+          zh-Hans: 原帖点赞
+          ja: 元投稿のいいね数
+source:
+  author: Prompt Seen (adaptation)
+  url: https://x.com/johnAGI168/status/2118247837683044650
+  license: null
+annotations: []

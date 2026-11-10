@@ -1,0 +1,93 @@
+{
+  "candidateId": "gpt26-social-g10-adapted-9f",
+  "slug": "adapted-g10-nine-frame-composed-gif",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Keep the exact same expressive semi-realistic natural history illustration of a square-faced Tibetan fox with its iconic wide boxy head, sandy-ochre fur, and utterly deadpan half-closed unimpressed eyes. Comedy contrast: the fox's giant square face and deadpan unblinking eyes remain 100% motionless across all frames, while its two front paws slowly clap together. Floating cleanly in the air ABOVE the head (with a wide empty transparent gap between the sign and the ears, NO sticks, NO poles), a flat rectangular white label with a crisp black border and bold black Chinese text reads '好棒棒'. Isolated on a pure transparent background. Strictly NO white sticker border, NO white outline. Smooth 9-frame looping animation.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 3 columns by 3 rows, 9 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nThe exact floating text in every cell is '好棒棒'. Nine poses show the front paws slowly approaching, touching, separating, and returning. Keep the fox face and half-closed eyes absolutely unchanged. Preserve true transparent pixels, including the gap under the floating sign.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen (adaptation)",
+    "url": "https://x.com/vastxie/status/2118586752915095805",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the 1 project-generated reference image(s) in the displayed order (R10), then use the complete adapted prompt.",
+      "zh-Hans": "按显示顺序上传 1 张本站生成的参考图（R10），使用完整改编词。"
+    },
+    "slots": [
+      {
+        "id": "reference1",
+        "labels": {
+          "en": "Transparent fox reference",
+          "zh-Hans": "透明藏狐参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-g10-adapted-9f",
+      "platform": "X",
+      "author": "vastxie",
+      "url": "https://x.com/vastxie/status/2118586752915095805",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/vastxie/status/2118265895613346263",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post; shared across variants, not this adaptation",
+        "zh-Hans": "原帖整组统计；同帖变体共享，不属于本改编作品"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Archived public X snapshot and complete author prompt",
+        "zh-Hans": "归档的 X 公开快照与完整作者原词"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2118265895613346263&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Independent adaptation; full original preserved separately",
+        "zh-Hans": "独立改编；完整原词另存档案"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 107,
+          "labels": {
+            "en": "Source post likes",
+            "zh-Hans": "原帖点赞"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Deadpan Tibetan fox applause — composed GIF",
+      "description": "9 frames, 1.8 seconds, 415×420px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.",
+      "body": "## How to use\n\nUpload the 1 project-generated reference image(s) in the displayed order (R10), then use the complete adapted prompt.\n\nReuse the archived GPT Image sheet and resample its action to nine frames. Sources with eight poses split one held pose across two encoded frames without adding a new pose; longer sequences select nine chronological poses. Preserve total duration and loop settings. Small source cells are enlarged for display without adding detail. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.\n\n## Result and limitations\n\n9 frames, 1.8 seconds, 415×420px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.\n\nReviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Nine actual transparent GIF frames show front paws clapping while half-closed deadpan eyes remain stable. All labels correctly read 好棒棒 and float above the ears without supports. Inspected encoded GIF against light and dark backgrounds: real alpha and no white outline. Slight face redraw variation remains; 100-percent pixel locking is not claimed.\n\n## Source\n\nAdapted by Prompt Seen from [@vastxie's original prompt](https://x.com/vastxie/status/2118586752915095805). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. Likes describe the whole source post, shared by variants, and are not engagement for this example."
+    },
+    "zh-Hans": {
+      "title": "藏狐鼓掌：好棒棒 · 合成 GIF",
+      "description": "9 帧，1.8 秒，415×420 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。",
+      "body": "## 使用方法\n\n按显示顺序上传 1 张本站生成的参考图（R10），使用完整改编词。\n\n复用已生成的 GPT Image 精灵图，统一合成 9 帧：8 姿态素材将一次停留拆成两个编码帧，不新增姿态，较长序列按顺序选取 9 帧。保留总时长与循环设置，小尺寸素材仅放大显示，不增加细节。生图工具返回静态 PNG；GIF 由本地合成。原精灵图、裁切坐标、逐帧时长与首帧封面均保存在批次档案。\n\n## 结果与限制\n\n9 帧，1.8 秒，415×420 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。\n\n原始素材审核说明（以下帧数和尺寸指原始版本；当前交付统一为 9 帧）：9 帧保留真实透明背景，前爪鼓掌，悬浮字牌“好棒棒”正确。深浅背景检查未见白边；脸部仍有轻微重绘差异，不能视为逐像素锁定。\n\n## 来源\n\n由 Prompt Seen 根据 [@vastxie 的原词](https://x.com/vastxie/status/2118586752915095805)改编。来源作者称原作品使用 Image 2.6；本次仅确认 GPT Image 家族，精确型号未知。中英文页面保留同一实际提交正文。点赞属于整篇来源帖，同帖变体共享统计对象，不属于本站新作品。"
+    }
+  },
+  "alt": {
+    "en": "Deadpan Tibetan fox applause",
+    "zh-Hans": "藏狐鼓掌：好棒棒"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T01:01:13.192Z",
+    "contentHash": "68601e308885c91a2a789010470d26fc13b2ebb41d4859a60fad206afb61dde5"
+  }
+}

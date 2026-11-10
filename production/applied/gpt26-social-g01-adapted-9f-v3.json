@@ -1,0 +1,34 @@
+{
+  "key": "gpt26-social-g01-adapted-9f-v3",
+  "candidateId": "gpt26-social-g01-adapted-9f",
+  "fingerprint": "3c61ff7d04b0018865709e6f78034f8810123a42a39525eb58a3a9ec658eaa10",
+  "ids": {
+    "prompt": "p_286",
+    "template": null,
+    "example": "x_350",
+    "media": [
+      "a_472",
+      "a_473"
+    ]
+  },
+  "provider": "OpenAI + local GIF encoding",
+  "model": "GPT Image",
+  "outputSha256": "49049521d60608286145a236a0bb5a3f228f44c1fd2d55f543560bae6c275dbb",
+  "referenceHashes": [
+    {
+      "slotId": "reference1",
+      "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:59:49.994Z"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T00:59:54.435Z",
+    "contentHash": "da918ed82c4fd3f86816b7c40e3a4e81905937ac4d3961e5c723f27b208fac16"
+  }
+}

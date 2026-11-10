@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g07/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g07",
+    "sourceSheetSha256": "755544fbb9644d5d06ef335fb198f412f2db7109a22f277a01e6d5c67fca1d1e",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight chest-up frames show holding rice, lifting chopsticks, eating, chewing and a satisfied smile, with correct 真香！ lettering throughout. Blue whale maid features follow reference. Two-second repeating GIF; slight redrawn subtitle and hair movement remains.",
+      "reviewedAt": "2026-11-08T10:20:56.322Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g07-adapted-v1",
+      "fingerprint": "f6aa55698c4a071793240bb193de7a26a4515ece319a7830f35c86d19a8584d4",
+      "prompt": "使用这个角色，生成一张GIF图，内容是她吃大白米饭，图片里有文字：真香！\n\n【制作适配：本次输出】上文只定义动作和造型。本次只输出一张PNG精灵图，严格4列×2行，共8格，左到右、上到下按时间排列，每格同样大小。不是GIF文件。不要边框、格线、边距、序号、时间码；除指定字幕外不要新增文字。所有格固定机位、角色大小、地面基线和配色，角色和动作不超出单格。连续帧有清晰不同的姿态，之后逐格编码为GIF。\n8格动作：端碗、夹饭、抬筷、送入口、咀嚼、满足微笑、再夹饭、回到端碗。每格顶部固定准确中文“真香！”。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R08/output.png",
+          "sha256": "fc0f6195d17d82ab51bbf74f8b51f227baebb537bbe7f43a2f4c7757ac56edc5",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g07-9f-v3/sheet.png",
+    "sheetSha256": "33fbe40c533e8e7e820535e0e6cf551c7c80178ebd28e3ea3dd97ad8c8b025ea",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g07-9f-v3/output.gif",
+    "outputSha256": "913fe4063f2feed1e8ed46869ba54a745e8ae9623c2fc61f48412f2ea71539ee",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      130,
+      120,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "107b3e0f04964e8f96fd852c7e3a89717af9a634a751f6e08b66c5c811222243",
+      "107b3e0f04964e8f96fd852c7e3a89717af9a634a751f6e08b66c5c811222243",
+      "855842af35f299351b783428d46258556640ccfbbcdc1beed0ea32e2c570dae0",
+      "39bd940b4c3900a22bd2e9d096b42c7cc304199131e35441162b4dd5162192d3",
+      "7af1795edb06dfbdc8d726e3ef8c9f5b5a3a812ac73f6616baee1d8a702ec096",
+      "8859abcd36cd9af259af038afdf48b7ae5cfbcdf1f62a748597a7ec37131d861",
+      "b91e2d00ba127de38b27b372356e63456f4734b56ab45f2d4c2cf123d2667f92",
+      "c3273ea38d89f65c9e2230a3ce14765557d4a75d12185499d55b9525df329865",
+      "ec816d8eec5a2f2481060e824b2422012c7834892dead4bba98b72eed3b463db"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R08/output.png",
+      "sha256": "fc0f6195d17d82ab51bbf74f8b51f227baebb537bbe7f43a2f4c7757ac56edc5",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight chest-up frames show holding rice, lifting chopsticks, eating, chewing and a satisfied smile, with correct 真香！ lettering throughout. Blue whale maid features follow reference. Two-second repeating GIF; slight redrawn subtitle and hair movement remains.",
+    "reviewedAt": "2026-11-10T00:59:51.722Z"
+  }
+}

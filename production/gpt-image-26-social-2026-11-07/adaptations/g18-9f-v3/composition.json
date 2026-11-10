@@ -1,0 +1,63 @@
+{
+  "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+  "sourceFolder": "adaptations/g18",
+  "sourceSheetSha256": "e948a7d4543e7bf46770959d33381f19bc3f7a379c6a9ebf4bfb7539b6fcf831",
+  "sourceFrameCount": 12,
+  "sourceSize": [
+    362,
+    362
+  ],
+  "outputSize": [
+    362,
+    362
+  ],
+  "scale": 1,
+  "sequence": [
+    {
+      "from": 0
+    },
+    {
+      "from": 1
+    },
+    {
+      "from": 3
+    },
+    {
+      "from": 4
+    },
+    {
+      "from": 6
+    },
+    {
+      "from": 7
+    },
+    {
+      "from": 8
+    },
+    {
+      "from": 10
+    },
+    {
+      "from": 11
+    }
+  ],
+  "sourceReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve poses show upward tilt, quick downward nod and recovery with eyes closed. Plays once and holds final closed-eye frame. Fifth cell has drawn motion blur and small alignment drift.",
+    "reviewedAt": "2026-11-08T10:48:39.378Z"
+  },
+  "sourceClaim": {
+    "key": "gpt26-social-g18-adapted-v1",
+    "fingerprint": "301d87e72083fde7d353d771b5f5446559ac6525c60c90792294928e144f32c2",
+    "prompt": "You are animator\n\nCreate a gif of this character nods\n\nContext:\nI want you to animate this character so she nods and then close her eyes. The flow is at first she slowly nods up. Second, she quickly nods down. Finally, her head back to normal pose with frames in between the nods down to normal, she also closes her eyes. It is like typical anime girls nodding.\n\nFormat: Same art style & outline as given image's\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward.\nTwelve consecutive poses: frames 1–4 slowly tilt the head upward; 5–6 quickly nod downward; 7–10 recover to normal head position while the eyelids close; 11–12 settle with eyes fully closed. Play once, retain the final closed-eye pose. No writing.",
+    "references": [
+      {
+        "path": "production/gpt-image-26-social-2026-11-07/references/R19/output.png",
+        "sha256": "e0468f5d2943631d91e2721c5317562e2d15a60b925ba4ebabd84ebfd4635ff8",
+        "slotId": "reference1"
+      }
+    ],
+    "targetAspectRatio": null
+  }
+}

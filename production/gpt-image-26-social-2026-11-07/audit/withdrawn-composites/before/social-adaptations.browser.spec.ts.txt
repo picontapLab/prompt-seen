@@ -1,0 +1,101 @@
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
+import sharp from 'sharp';
+import { expect, test } from '@playwright/test';
+import { BASE, ROOT } from './support/artifact';
+import { localeIndex, promptDetail } from './support/content';
+
+const campaign = path.join(ROOT, 'production/gpt-image-26-social-2026-11-07');
+const mapping: { unitId: string; ids: { prompt: string }; folder: string; language: string }[] = JSON.parse(
+  fs.readFileSync(path.join(campaign, 'adaptations/content-map.json'), 'utf8'),
+);
+const hash = (data: Buffer) => crypto.createHash('sha256').update(data).digest('hex');
+for (const viewport of [
+  { width: 1440, height: 1000 },
+  { width: 390, height: 844 },
+]) {
+  for (const unitId of ['G13', 'G14', 'G04', 'G05', 'G10', 'W01']) {
+    test(`${unitId} actual media and layout at ${viewport.width}px`, async ({ page }) => {
+      const item = mapping.find((a) => a.unitId === unitId)!;
+      const detail = promptDetail('en', item.ids.prompt);
+      const errors: string[] = [];
+      page.on('pageerror', (error) => errors.push(error.message));
+      await page.setViewportSize(viewport);
+      await page.goto(`${BASE}${detail.path}`);
+      await expect(page.locator('[id$="-prompt"]').first()).toHaveText(detail.prompt.text);
+      await expect(page.locator('[id$="-prompt"]').first()).toHaveAttribute('lang', item.language);
+      const hero = page.locator('[data-stage-picture] img').first();
+      await expect(hero).toBeVisible();
+      await expect
+        .poll(() => hero.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+        .toBe(true);
+      const currentSrc = await hero.evaluate((img: HTMLImageElement) => img.currentSrc);
+      const response = await page.request.get(currentSrc);
+      expect(response.ok()).toBe(true);
+      const metadata = await sharp(await response.body(), { animated: true }).metadata();
+      if (unitId === 'W01') {
+        expect(metadata.pages ?? 1).toBe(1);
+        const message = fs.readFileSync(path.join(campaign, item.folder, 'message-ja.txt'), 'utf8').trim();
+        await expect(page.getByText(message, { exact: true })).toBeVisible();
+      } else {
+        const encoding = JSON.parse(fs.readFileSync(path.join(campaign, item.folder, 'output-encoding.json'), 'utf8'));
+        expect(metadata.pages).toBe(encoding.frameCount);
+        expect(metadata.delay).toEqual(encoding.frameDelaysMs);
+        expect(metadata.loop).toBe(encoding.loop);
+        await expect(page.locator('[data-media-badge="gif"]').first()).toBeVisible();
+        if (unitId === 'G10') expect(metadata.hasAlpha).toBe(true);
+        if (unitId === 'G05') expect(metadata.width).toBe(171);
+        if (unitId === 'G13' || unitId === 'G10') {
+          await hero.scrollIntoViewIfNeeded();
+          const initial = hash(await hero.screenshot());
+          await expect.poll(async () => hash(await hero.screenshot()), { timeout: 4000 }).not.toBe(initial);
+        }
+        if (unitId === 'G14') {
+          await hero.scrollIntoViewIfNeeded();
+          await page.waitForTimeout(encoding.durationMs + 250);
+          const settled = hash(await hero.screenshot());
+          await page.waitForTimeout(400);
+          expect(hash(await hero.screenshot())).toBe(settled);
+        }
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+      expect(errors).toEqual([]);
+      const screenshot = path.join(campaign, 'audit/round2-screenshots', `${unitId}-${viewport.width}.png`);
+      fs.mkdirSync(path.dirname(screenshot), { recursive: true });
+      await page.screenshot({ path: screenshot });
+    });
+  }
+  test(`adaptation collection preserves shared variants and separate original collection at ${viewport.width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport);
+    const collection = localeIndex('en').collections.find((c) => c.id === 'c_014')!;
+    await page.goto(`${BASE}${collection.path}`);
+    await expect(page.locator('h1')).toHaveText(collection.title);
+    for (const unitId of [
+      'G03-golden-gate',
+      'G03-colosseum',
+      'G03-fuji',
+      'G06-dwarf',
+      'G06-sword',
+      'G06-motorbike',
+      'G06-cat',
+      'G11-joy',
+      'G11-anger',
+      'G11-sorrow',
+      'G11-delight',
+    ]) {
+      const item = mapping.find((a) => a.unitId === unitId)!;
+      const detail = promptDetail('en', item.ids.prompt);
+      expect(await page.locator(`a[href="${BASE}${detail.path}"]`).count()).toBeGreaterThan(0);
+    }
+    const original = localeIndex('en').collections.find((c) => c.id === 'c_013')!;
+    await expect(page.locator(`a[href="${BASE}${original.path}"]`).first()).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    const screenshot = path.join(campaign, 'audit/round2-screenshots', `c014-${viewport.width}.png`);
+    fs.mkdirSync(path.dirname(screenshot), { recursive: true });
+    await page.screenshot({ path: screenshot });
+  });
+}

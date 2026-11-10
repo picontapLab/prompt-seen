@@ -1,0 +1,102 @@
+{
+  "candidateId": "gpt26-social-g08-adapted-9f",
+  "slug": "adapted-g08-nine-frame-composed-gif",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "请以我上传的大肥鱼图片为角色和画风参考，根据最后一行的「表情包主题」，直接制作一张可下载的动态 GIF 表情包。\n\n【角色保持一致】\n保留参考图中的蓝色渐变长发、呆毛、鲸鱼耳鳍、蓝色蝴蝶结、白色女仆头饰、蓝白女仆裙和大鲸鱼尾巴。\n保持原图的大头小身体 Q 版比例、圆脸和可爱画风，人物外观在所有帧中保持一致。\n\n【自动设计动作】\n理解我想表达的情绪或梗，将它设计成一个简单、有趣、一眼能看懂的短动作。\n突出一个核心笑点，用夸张表情、动作反差和轻微的压缩回弹增加喜感。头发、呆毛、耳鳍和尾巴自然跟随动作。\n根据主题添加必要的少量道具，保持画面简洁。\n主动设计首尾衔接，让动画能够自然循环播放。\n\n【自动配字】\n根据主题提炼一句简短、有网感的中文配字，优先控制在 2～8 个字。\n如果主题中用引号指定了台词，直接使用该台词。\n字幕放在顶部，使用粗圆体、深蓝字、白色描边；文字、字形和位置全程稳定，角色与道具不遮挡字幕。\n\n【画面与输出】\n正方形画面，纯白背景，固定镜头，主体居中并保留足够边距。\n动画约 2～3 秒，无限循环，动作清晰，适合聊天时作为表情包发送。\n最终交付实际会播放的多帧 GIF 文件，并提供下载。\n\n表情包主题：终于下班，开心地挥手，台词“下班！”\n\n【制作适配：本次输出】上文只定义动作和造型。本次只输出一张PNG精灵图，严格4列×3行，共12格，左到右、上到下按时间排列，每格同样大小。不是GIF文件。不要边框、格线、边距、序号、时间码；除指定字幕外不要新增文字。所有格固定机位、角色大小、地面基线和配色，角色和动作不超出单格。连续帧有清晰不同的姿态，之后逐格编码为GIF。\n主题是终于下班，开心地挥手。顶部字幕严格固定为“下班！”。12格动作从疲惫低头到抬头、欢呼、摆尾挥手，再回到起点。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen (adaptation)",
+    "url": "https://x.com/op7418/status/2118181972451438662",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the 2 project-generated reference image(s) in the displayed order (R08, R08-side), then use the complete adapted prompt.",
+      "zh-Hans": "按显示顺序上传 2 张本站生成的参考图（R08、R08-side），使用完整改编词。"
+    },
+    "slots": [
+      {
+        "id": "reference1",
+        "labels": {
+          "en": "Front character view",
+          "zh-Hans": "角色正面图"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "reference2",
+        "labels": {
+          "en": "Side character view",
+          "zh-Hans": "角色侧视图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-g08-adapted-9f",
+      "platform": "X",
+      "author": "op7418",
+      "url": "https://x.com/op7418/status/2118181972451438662",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/op7418/status/2118181775688241456",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post; shared across variants, not this adaptation",
+        "zh-Hans": "原帖整组统计；同帖变体共享，不属于本改编作品"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Archived public X snapshot and complete author prompt",
+        "zh-Hans": "归档的 X 公开快照与完整作者原词"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2118181775688241456&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Independent adaptation; full original preserved separately",
+        "zh-Hans": "独立改编；完整原词另存档案"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 145,
+          "labels": {
+            "en": "Source post likes",
+            "zh-Hans": "原帖点赞"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Whale maid after work — composed GIF",
+      "description": "9 frames, 2.4 seconds, 362×362px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.",
+      "body": "## How to use\n\nUpload the 2 project-generated reference image(s) in the displayed order (R08, R08-side), then use the complete adapted prompt.\n\nReuse the archived GPT Image sheet and resample its action to nine frames. Sources with eight poses split one held pose across two encoded frames without adding a new pose; longer sequences select nine chronological poses. Preserve total duration and loop settings. Small source cells are enlarged for display without adding detail. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.\n\n## Result and limitations\n\n9 frames, 2.4 seconds, 362×362px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.\n\nReviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve cells retain whale maid design from the two ordered reference views, moving from tired to cheerful waving and back. Every caption is 下班！ with no missing characters. 2400 ms loop. Small position/letterform and hair redraw jitter remains, disclosed in adaptation notes.\n\n## Source\n\nAdapted by Prompt Seen from [@op7418's original prompt](https://x.com/op7418/status/2118181972451438662). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. Likes describe the whole source post, shared by variants, and are not engagement for this example."
+    },
+    "zh-Hans": {
+      "title": "鲸鱼女仆：下班 · 合成 GIF",
+      "description": "9 帧，2.4 秒，362×362 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。",
+      "body": "## 使用方法\n\n按显示顺序上传 2 张本站生成的参考图（R08、R08-side），使用完整改编词。\n\n复用已生成的 GPT Image 精灵图，统一合成 9 帧：8 姿态素材将一次停留拆成两个编码帧，不新增姿态，较长序列按顺序选取 9 帧。保留总时长与循环设置，小尺寸素材仅放大显示，不增加细节。生图工具返回静态 PNG；GIF 由本地合成。原精灵图、裁切坐标、逐帧时长与首帧封面均保存在批次档案。\n\n## 结果与限制\n\n9 帧，2.4 秒，362×362 像素，无限循环；GPT Image 精灵图逐格裁切并在本地编码为 GIF。\n\n原始素材审核说明（以下帧数和尺寸指原始版本；当前交付统一为 9 帧）：正面、侧面两张参考图按顺序传入；12 帧欢呼挥手与“下班！”字幕正确，人物细节略有变化。\n\n## 来源\n\n由 Prompt Seen 根据 [@op7418 的原词](https://x.com/op7418/status/2118181972451438662)改编。来源作者称原作品使用 Image 2.6；本次仅确认 GPT Image 家族，精确型号未知。中英文页面保留同一实际提交正文。点赞属于整篇来源帖，同帖变体共享统计对象，不属于本站新作品。"
+    }
+  },
+  "alt": {
+    "en": "Whale maid after work",
+    "zh-Hans": "鲸鱼女仆：下班"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-10T01:01:01.016Z",
+    "contentHash": "087142f676fc9c3977a26c42f462d60525ce42c4e23fc0797958bf4baf2769b1"
+  }
+}

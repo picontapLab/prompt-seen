@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g01/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g01",
+    "sourceSheetSha256": "cac2b65267006ef3d02989f1767880a6f3dbf3575b64fce8411c1b2210e36cba",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      443,
+      443
+    ],
+    "outputSize": [
+      443,
+      443
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 0,
+        "holdFraction": 0.5
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+      "reviewedAt": "2026-11-08T10:09:02.888Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g01-adapted-v1",
+      "fingerprint": "36267db71ae19c50629ed8fd0cb41cee35d20d492b65e1c5d788e34e2ad5fafb",
+      "prompt": "チャッピー！この画像の女の子を可愛く画面外から登場するGIFを作ってみて！\n\n【制作適応：今回の出力】上記は動きの意図です。この呼び出しではGIFファイルではなく、横4列×縦2行、合計8コマの単一PNGスプライトシートだけを描いてください。左上から右へ、次に下の段へ進む順序。各コマは同じ正方形で、区切り線、余白、番号、時刻、文字は不要。固定カメラ、固定の大きさと地面線、十分な余白、コマ間でキャラクターの同一性を維持し、実際に異なる連続動作を描く。純白背景。後で各コマを切り出してGIFにします。\n1コマ目は人物がまだ画面の外、2～4コマ目で左から弾んで入る、5～6コマ目は中央で可愛く着地、7～8コマ目で右へ出て空白に戻る。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png",
+          "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g01-9f-v3/sheet.png",
+    "sheetSha256": "10b477d248de91851c83f6f88928461a19963e721431e120eb519ac5e7fba240",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g01-9f-v3/output.gif",
+    "outputSha256": "49049521d60608286145a236a0bb5a3f228f44c1fd2d55f543560bae6c275dbb",
+    "width": 443,
+    "height": 443,
+    "frameCount": 9,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      130,
+      120,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250,
+      250
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 886,
+        "top": 886,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "f4f94f21d305b3cdb476a42924e4e167f8df3611d6f062cc15e13f8cb04eddad",
+      "f4f94f21d305b3cdb476a42924e4e167f8df3611d6f062cc15e13f8cb04eddad",
+      "a472b7c77b7599089831c6db4395318443dc2f09669b9d97cb64d608c59c860a",
+      "9921150c19eccd156d6d921bd5811f2d944779f2201efd59a86974e56372dcc4",
+      "629f8f5c9a82082fbf1941e0f14adfdf06185bd58542d2d257493d95eb2b69c6",
+      "a188f86766a8863e17fe660785b1c923e694d2a947fce957d91ae2f9ee29b5a5",
+      "4487104f6a484565d98485f0fef899240e4462920cb029a88e8da6cb060a83ef",
+      "d563eaf15f8c403b84b5b6abadd80d8b0fd8d69b4b1e13e341b541f9049f5bc8",
+      "cbd4a3e610b6750a6f3a2d661aad0932838fa31330f24d42ebbddde432b02cdb"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R05/output.png",
+      "sha256": "241c12667d2211592298a2b9e768f1542ad450da3cd8331b76ed8086a99ce029",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+    "reviewedAt": "2026-11-10T00:59:49.994Z"
+  }
+}

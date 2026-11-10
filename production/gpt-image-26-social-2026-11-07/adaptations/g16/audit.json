@@ -1,0 +1,139 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g16/sheet.png",
+    "sheetSha256": "b5ac5c7b423fdc1720e18f49e951bc330be2dc785c2e294633eead35d521356b",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g16/output.gif",
+    "outputSha256": "a8378c3737906bc2274e23c934a2d8ebbc2ddf20b0658e3eca443ddcb1f13138",
+    "width": 362,
+    "height": 362,
+    "frameCount": 12,
+    "durationMs": 1200,
+    "frameDelaysMs": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "f8858b969d09c0b6cc418760c671b4e6c0bfcfa92db6dfdca198a6b1f9b99a22",
+      "feb1ab0e21dd95c8c9f828c7e744387137e150bf3288bdac5e9b81a761be4e43",
+      "742453a7c9a6e51f013d77d185518f3551b9be170453eb86ad0a08c4c427557a",
+      "bac5742af3409ca10a3e5462a6fcaffa703d5bba8664a26a909388e8edfac25c",
+      "6cfcf290d7b649bfe4477c1dcee846dba6c55ec0c640fec2d285d395476ce770",
+      "2c31f09f59d54a4ac61e496b818a5cfbba80f8a04e5d8cb2fbd8d1d47237699e",
+      "847189d5de68bb1326ae1e374901ac69836a1deb4cfb1d96b333f9854b2e3bff",
+      "c9958819682e2f13b624aa96626ef5414c9f26ddb12b2270ceb117b2cdf88333",
+      "4bd3822e24000fc77f347e4bbe55ad6d39133745dbe5271c62c3fb81caa74905",
+      "9cbfd9138b59bcbab4d14738cd1d7bb5136349c39f81e4b92cc9ea3821aada2b",
+      "7fcaeff2af694da2bfe58c332ac35cfae7e44da0a76ad7d5c79e0a45be1bc125",
+      "2de6806c7ce46707f087e3e0bf859a1dd6d5b7d8d650bf1dfe4738473d42368d"
+    ],
+    "distinctFrameCount": 12,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png",
+      "sha256": "de2edda17fdf152a512dab439cc48be7285190c4540a18b92ffcee087449e0b3",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve distinct staff orientations and sparkle phases are drawn in chronological order. Full body and staff remain within each cell; no timestamps or text. Minor redraw variation in staff length is visible. Encoded 12 frames at 100 ms, infinite loop, 1200 ms total.",
+    "reviewedAt": "2026-11-08T09:50:41.039Z"
+  }
+}

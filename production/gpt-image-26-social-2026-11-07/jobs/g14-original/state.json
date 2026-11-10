@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g14-original",
+    "candidateId": "gpt26-social-g14",
+    "prompt": "Kedimiz Robin’in GIF'ini oluştur. Kameraya baksın göz tek gözünü kırpsın ve kafasına Robin yazan bir şapka düşsün.",
+    "references": [
+      {
+        "slotId": "cat",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "0cc1f48c0a9928888383d78f9e0b748e249380716afa3b90a88295f33a2a9e5f",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+      "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+      "slotId": "cat"
+    }
+  ],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-08T01:37:25.084Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g14-original/output-65bcd406881103676902480e56ae690a1ce31baee2531e1558fe77cea8c730ef.png",
+      "sha256": "65bcd406881103676902480e56ae690a1ce31baee2531e1558fe77cea8c730ef"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T01:38:59.355Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Actual return is a single 4 by 4 storyboard PNG with baked-in timestamps, not a multi-frame GIF. Cat wink and Robin hat are illustrated but animation delivery failed.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:38:59.361Z"
+  }
+}

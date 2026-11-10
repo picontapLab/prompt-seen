@@ -1,0 +1,24 @@
+{
+  "tool": "image_gen.imagegen",
+  "availableParameters": [
+    "prompt",
+    "referenced_image_paths",
+    "num_last_images_to_include",
+    "transparent_background"
+  ],
+  "formatParameterExposed": false,
+  "invocation": {
+    "promptFile": "jobs/g17-direct-gif-v1/prompt.txt",
+    "transparent_background": false,
+    "referenceInputOmitted": true
+  },
+  "returnedKeys": [
+    "image_url",
+    "output_hint"
+  ],
+  "imageUrlMimeType": "image/png",
+  "outputHint": "Generated images are saved to [local-generation-output] as [local-generation-output]/exec-8425ec04-a621-4f58-8cb1-c656aa993b28.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "separateAnimationLinkReturned": false,
+  "localCompositionPerformed": false,
+  "conclusion": "This invocation returned a PNG and no separate GIF. This is an observed session result, not a universal GPT Image capability claim."
+}

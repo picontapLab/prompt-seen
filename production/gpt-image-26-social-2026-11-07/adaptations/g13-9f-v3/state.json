@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g13-adapted-9f-v3",
+    "candidateId": "gpt26-social-g13-adapted-9f",
+    "prompt": "参照画像の成人女性が自然にまばたきするアニメーション用の連続フレームを描いてください。納品はGIFではなく、横4列×縦2行、合計8コマの単一スプライトシートPNGです。各コマは同じ大きさの正方形で、左上から右へ、次に下段へ読む順序。余白、区切り線、コマ番号、文字は一切不要です。各コマの顔、髪、服、背景、頭の大きさ、位置、カメラは完全に同一で固定し、両まぶたの開閉だけを変えます。1:両目を自然に開く。2:まぶたを半分閉じる。3:両目を完全に閉じる。4:閉じたまま。5:半分開く。6:完全に開く。7:開いたまま。8:最初と同じ。緑色の瞳、茶色のボブ、紺色のシャツ、淡いクリーム色の背景と参照のアニメ画風を忠実に維持。頭頂や顔が切れない胸像。同じ動きの順序が分かる実際に異なるまぶたの状態を描き、人物の頭や口を揺らさない。シート全体は横長2:1、推奨2048×1024。",
+    "references": [
+      {
+        "slotId": "character",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "cd302b55e1bef119dee62a293e30d624de8b252f91e82cf08a0019a85f47a263",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:24.384Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g13-adapted-9f-v3/output-b2c16864d95cdcc5f11de6829d1d566b4685a49adee6ee714d57b58a696836e4.gif",
+      "sha256": "b2c16864d95cdcc5f11de6829d1d566b4685a49adee6ee714d57b58a696836e4"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:53.155Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight drawn frames show open, half-closed, closed and reopened eyelids in order. Face, clothing and framing stay consistent with minor frame-to-frame drawing variation. Encoded as a 2-second infinite loop; actual GIF metadata verified. This is a frame-sheet adaptation, not native GIF output from the source prompt.",
+    "reviewedAt": "2026-11-10T00:59:53.159Z"
+  }
+}

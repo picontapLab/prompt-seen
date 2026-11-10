@@ -1,0 +1,13 @@
+{
+  "key": "gpt26-social-g09-adapted-v1",
+  "fingerprint": "f8495f647a886ca27d0f69965bc2e89c8bc443595cb86d11b8a6c88b1ce843ef",
+  "prompt": "创建一个gif，按照附图的动作顺序生成。\n\n【制作适配：本次输出】上文只定义动作和造型。本次只输出一张PNG精灵图，严格4列×3行，共12格，左到右、上到下按时间排列，每格同样大小。不是GIF文件。不要边框、格线、边距、序号、时间码；除指定字幕外不要新增文字。所有格固定机位、角色大小、地面基线和配色，角色和动作不超出单格。连续帧有清晰不同的姿态，之后逐格编码为GIF。\n遵循输入动作表的12个动作顺序，固定角色大小、地面线和篮筐位置。不能把动作表本身画在某一格里。每格只有完整场景的一帧。",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R09-action/output.png",
+      "sha256": "9f6e194166dc057af9649920c618dd2f92807a5c2ca45bb50086a264ac97b3d9",
+      "slotId": "reference1"
+    }
+  ],
+  "targetAspectRatio": null
+}

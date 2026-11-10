@@ -1,0 +1,140 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g12/sheet.png",
+    "sheetSha256": "813832cf928aab9c35f9cdd5835799386c4edd65063882a5cdd86abe745b2204",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g12/output.gif",
+    "outputSha256": "6c383a07c9d38b9441ef13d8e9236c6b9b730cf63f9317b79bd4676ecf5770be",
+    "width": 362,
+    "height": 362,
+    "frameCount": 12,
+    "durationMs": 1800,
+    "frameDelaysMs": [
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 1086,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "74e63695d67d8d6792a6a863ad8a7d2592d01504c4d17994fe8e77e75ca72d70",
+      "cf79db9ffa9c7c24d55c8f3c1f5a63f79914e8437fab078e5cb7d9af2cc90cbd",
+      "b184262eef6609990479ced0e49c0a69625d841f2373306bc1f05616d7fd1c70",
+      "ac0a3771940db2836419c87261c2399d95273b5f4f5309629e17f1b0aea05223",
+      "772858217f9a380693985be542682a27a928ebcdf7a83f97d0739bd072e53ddb",
+      "e821155c490fb4a77f6004942a3bcfa28d05ae1e96302345db4267e1672ac59b",
+      "213a9acf84bf543f46ddcd65c4b3a927e9839a46c49efcc5b65ca9a9e0ee9a17",
+      "dd73f24c0954db519e993fe6374ca00f49ced3d819627146a400cd66d0124846",
+      "507d10fc731ee846da8c02209734df527ffa45e77d38119e9e7c41c39f145505",
+      "d5bf1950199efba3a33b0448e0bffc251ce49a5d54ee0d500ba47b6c391bc8e2",
+      "5379e07d55032ef96fc63d0c83340d99e83bd3881af3c2b65e3157160b361428",
+      "41a1fcd0a4830553924da37822fae0b07f0e612e2eee310a25704533975ed029"
+    ],
+    "distinctFrameCount": 12,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R12/output.png",
+      "sha256": "5db4a0259204d951d8d7ac5da76517e3da732fd2923ea457aeabf47106e3f512",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve pixel-style poses show draw, windup, water sweep and recovery. Uses an original swordsman rather than Tanjiro. Wave approaches cell edges, with minor shape drift and a visible final-to-first stance change; not a perfectly seamless game sprite.",
+    "reviewedAt": "2026-11-08T10:45:31.906Z"
+  }
+}

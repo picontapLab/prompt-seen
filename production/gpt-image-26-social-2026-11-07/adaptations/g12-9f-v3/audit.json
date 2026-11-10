@@ -1,0 +1,180 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g12/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g12",
+    "sourceSheetSha256": "813832cf928aab9c35f9cdd5835799386c4edd65063882a5cdd86abe745b2204",
+    "sourceFrameCount": 12,
+    "sourceSize": [
+      362,
+      362
+    ],
+    "outputSize": [
+      362,
+      362
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 8
+      },
+      {
+        "from": 10
+      },
+      {
+        "from": 11
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Twelve pixel-style poses show draw, windup, water sweep and recovery. Uses an original swordsman rather than Tanjiro. Wave approaches cell edges, with minor shape drift and a visible final-to-first stance change; not a perfectly seamless game sprite.",
+      "reviewedAt": "2026-11-08T10:45:31.906Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g12-adapted-v1",
+      "fingerprint": "7691167ee0c22a5193e5eee08bde44503da34c83219af4357854aff718d5f07b",
+      "prompt": "Use the character I uploaded as the reference and make a downloadable looping pixel-art GIF of them performing a signature move.\n\n[Keep the character consistent]\nStudy the reference and keep every key feature: hairstyle and hair color, face and eye color, marks or scars, outfit colors and patterns, accessories, and their weapon or prop. Same proportions and same look in every frame.\n\n[Pixel art style]\nHighly detailed HD pixel art, like premium 2D fighting game sprites: crisp hard-edged pixels, rich palette with pixel shading and highlights, visible fabric folds and hair strands, no anti-aliasing.\nFull body, side 3/4 view, same size and same ground line in every frame.\n\n[Design the move]\nPick a move that fits the character's personality, power or weapon (or use the one I give below).\nMake it a short, punchy attack anyone can read at a glance: ready stance → wind-up → strike → follow-through → back to ready.\nAdd an elemental or energy effect that matches the character, rendered as pixel art (e.g. water waves, fire, lightning, petals).\nHair, clothes and effects react naturally to the motion. First and last frame match so it loops seamlessly.\n\n[Output]\nPure white background, fixed camera, character centered with enough margin. No text.\nAbout 12 frames, 1.5–2 seconds, infinite loop.\nDeliver an actual multi-frame GIF file I can download.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nUse the project-original swordsman in the reference, not an existing anime character. Across 12 cells show ready, windup, water-edged sword sweep, flowing follow-through, then ready. Pixel edges, stable ground line, no text.",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R12/output.png",
+          "sha256": "5db4a0259204d951d8d7ac5da76517e3da732fd2923ea457aeabf47106e3f512",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g12-9f-v3/sheet.png",
+    "sheetSha256": "5ddfb3b9b42222509a2abe17697b0da8961b2ba7f88de95dd498df392cc7da5c",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g12-9f-v3/output.gif",
+    "outputSha256": "ea9610d788c3b6c978d415c13f865a1cc3f504122fd52e1d9b8eb90170c80aa2",
+    "width": 362,
+    "height": 362,
+    "frameCount": 9,
+    "durationMs": 1800,
+    "frameDelaysMs": [
+      150,
+      300,
+      150,
+      300,
+      150,
+      150,
+      300,
+      150,
+      150
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "74e63695d67d8d6792a6a863ad8a7d2592d01504c4d17994fe8e77e75ca72d70",
+      "cf79db9ffa9c7c24d55c8f3c1f5a63f79914e8437fab078e5cb7d9af2cc90cbd",
+      "ac0a3771940db2836419c87261c2399d95273b5f4f5309629e17f1b0aea05223",
+      "772858217f9a380693985be542682a27a928ebcdf7a83f97d0739bd072e53ddb",
+      "213a9acf84bf543f46ddcd65c4b3a927e9839a46c49efcc5b65ca9a9e0ee9a17",
+      "dd73f24c0954db519e993fe6374ca00f49ced3d819627146a400cd66d0124846",
+      "507d10fc731ee846da8c02209734df527ffa45e77d38119e9e7c41c39f145505",
+      "5379e07d55032ef96fc63d0c83340d99e83bd3881af3c2b65e3157160b361428",
+      "41a1fcd0a4830553924da37822fae0b07f0e612e2eee310a25704533975ed029"
+    ],
+    "distinctFrameCount": 9,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R12/output.png",
+      "sha256": "5db4a0259204d951d8d7ac5da76517e3da732fd2923ea457aeabf47106e3f512",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve pixel-style poses show draw, windup, water sweep and recovery. Uses an original swordsman rather than Tanjiro. Wave approaches cell edges, with minor shape drift and a visible final-to-first stance change; not a perfectly seamless game sprite.",
+    "reviewedAt": "2026-11-10T00:59:53.002Z"
+  }
+}

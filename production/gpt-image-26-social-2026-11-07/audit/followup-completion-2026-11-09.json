@@ -1,0 +1,107 @@
+{
+  "completedAt": "2026-11-10T02:07:15.575446+00:00",
+  "localDate": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "status": "local-delivery-complete-with-independent-adaptations",
+  "practicalDeliveryComplete": true,
+  "strictOriginalReproductionComplete": false,
+  "coverage": {
+    "plannedCases": 34,
+    "frozenBodies": 39,
+    "plannedBodies": 39,
+    "plannedOutputs": 42,
+    "acceptedCases": 11,
+    "acceptedOutputs": 11,
+    "acceptedGifs": 0,
+    "blockedCases": 23,
+    "sourceRecords": 136,
+    "researchBacklog": 87,
+    "acceptedReferenceGroups": 19,
+    "acceptedReferenceFiles": 22,
+    "withdrawnComposedGifs": 26,
+    "adaptedGifs": 26,
+    "adaptedStills": 4,
+    "adaptedWorkflows": 1,
+    "practicalDeliverables": 42,
+    "casesWithOriginalOrAdaptedOutput": 34,
+    "providerRejectedStillCases": [
+      "S01",
+      "S04",
+      "S11",
+      "S14"
+    ],
+    "countsNote": "acceptedCases/Outputs/Gifs and blockedCases refer strictly to original-prompt requirements. Adaptations are counted separately and retain their documented limitations."
+  },
+  "resolvedFindings": [
+    {
+      "id": "F1",
+      "resolution": "Four source scenes now have separately attributed rewritten stills, generated with four real built-in image_gen calls. Original-prompt failures remain failures, not converted into successes.",
+      "promptIds": [
+        "p_312",
+        "p_313",
+        "p_314",
+        "p_315"
+      ],
+      "exampleIds": [
+        "x_376",
+        "x_377",
+        "x_378",
+        "x_379"
+      ],
+      "collection": "c_017",
+      "sourceCases": [
+        "S01",
+        "S04",
+        "S11",
+        "S14"
+      ],
+      "sourcePromptStatus": "original prompts and their three failed attempts preserved unchanged",
+      "newPromptLocations": [
+        "adaptations/s01-still-v1/prompt.txt",
+        "adaptations/s04-still-v1/prompt.txt",
+        "adaptations/s11-still-v1/prompt.txt",
+        "adaptations/s14-still-v1/prompt.txt"
+      ]
+    },
+    {
+      "id": "F2",
+      "resolution": "Removed unused recipe variable; whole-repository ESLint passes with max-warnings=0.",
+      "log": "audit/followup-lint.log"
+    },
+    {
+      "id": "F3",
+      "resolution": "Added explicit sibling prompt links in English, Chinese and Japanese. All 33 variant pages and 90 directed sibling links verified in export; browser tests exercise links on mobile/desktop.",
+      "report": "audit/sibling-links-final.json"
+    }
+  ],
+  "checks": {
+    "contentValidation": {
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 10
+    },
+    "typecheck": "passed",
+    "lint": "passed, zero warnings",
+    "sourceAndInputIntegrity": "39 source bodies, 31 original attempts and 22 reference files verified; 11 original outputs unchanged",
+    "adaptationIntegrity": "31 adaptations verified: 26 nine-frame GIFs, 4 new stills, 1 workflow",
+    "build": "passed: content build, Next.js export, package",
+    "browserTests": {
+      "passed": 17,
+      "coverage": "original language behavior, retained workflow, withdrawn 404s, transparent GIFs, sibling navigation, four adapted stills and c_017 in English/Chinese/Japanese on mobile and desktop"
+    },
+    "priorUnchangedChecks": {
+      "unitTests": 68,
+      "supplementalLanguageBrowserTests": 8,
+      "note": "Passed in preceding audit; not rerun because their underlying code and original test subjects were not changed."
+    }
+  },
+  "knownLimitations": [
+    "The four originally rejected static prompts still have no successful exact reproduction. Their scene adaptations use ordinary adult clothing and changed poses with explicit attribution.",
+    "GIF delivery uses nine encoded frames. Thirteen GIFs have eight source poses with a split hold, not nine newly generated poses.",
+    "G05 and other redrawn animation limitations remain disclosed. W01 uses local reference mapping rather than a provider-side registry.",
+    "Exact provider model version is unknown; source authors’ Image 2.6 claims are not used as our provider receipt."
+  ],
+  "commitCreated": false,
+  "deployed": false,
+  "supersedesCurrentFindings": "audit/plan-completion-audit.json"
+}

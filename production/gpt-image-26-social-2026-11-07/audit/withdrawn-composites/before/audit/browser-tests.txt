@@ -1,0 +1,99 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker processes
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/08 11:01:37 [notice] 1#1: start worker process 29
+
+Running 26 tests using 5 workers
+
+(node:5678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5681) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5682) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:35:1 › a literal prompt switches and copies the displayed language (3.1s)
+  ✓   2 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_267 ja prompt survives page language changes, copy and Markdown export at 1440px (3.1s)
+  ✓   4 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_268 tr prompt survives page language changes, copy and Markdown export at 1440px (3.2s)
+  ✓   1 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_237 ja prompt survives page language changes, copy and Markdown export at 1440px (3.2s)
+  ✓   5 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_242 zh-Hans prompt survives page language changes, copy and Markdown export at 1440px (3.3s)
+  ✓  10 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:95:1 › translated annotations retain their phrase and image interaction (2.4s)
+  ✓   9 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_268 tr prompt survives page language changes, copy and Markdown export at 390px (2.7s)
+  ✓   7 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_242 zh-Hans prompt survives page language changes, copy and Markdown export at 390px (2.8s)
+  ✓   8 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_267 ja prompt survives page language changes, copy and Markdown export at 390px (2.9s)
+  ✓   6 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:63:5 › submitted p_237 ja prompt survives page language changes, copy and Markdown export at 390px (3.0s)
+  ✓  14 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G04 actual media and layout at 1440px (2.1s)
+  ✓  15 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G13 actual media and layout at 1440px (3.4s)
+  ✓  12 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:144:1 › shared parameters keep stable enum values across translations and source fallback (3.7s)
+  ✓  16 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G05 actual media and layout at 1440px (2.2s)
+  ✓  11 [chrome] › tests/e2e/prompt-languages.browser.spec.ts:107:1 › template language changes preserve the latest input, stable options, drafts, copy and download (5.7s)
+  ✓  13 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G14 actual media and layout at 1440px (5.5s)
+  ✓  17 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G10 actual media and layout at 1440px (2.1s)
+  ✓  18 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › W01 actual media and layout at 1440px (2.2s)
+  ✓  19 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:70:3 › adaptation collection preserves shared variants and separate original collection at 1440px (1.7s)
+  ✓  22 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G04 actual media and layout at 390px (1.4s)
+  ✓  20 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G13 actual media and layout at 390px (1.9s)
+  ✓  23 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G05 actual media and layout at 390px (1.8s)
+  ✓  24 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G10 actual media and layout at 390px (1.9s)
+  ✓  25 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › W01 actual media and layout at 390px (1.4s)
+  ✓  26 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:70:3 › adaptation collection preserves shared variants and separate original collection at 390px (1.1s)
+  ✓  21 [chrome] › tests/e2e/social-adaptations.browser.spec.ts:19:5 › G14 actual media and layout at 390px (4.4s)
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 20#20: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 22#22: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 23#23: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 21#21: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 24#24: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 25#25: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 26#26: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 25#25: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 20#20: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 22#22: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 23#23: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 24#24: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 21#21: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 27#27: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 26#26: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 29#29: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 27#27: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 29#29: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 28#28: exiting
+[WebServer] 2026/11/08 11:01:59 [notice] 28#28: exit
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: signal 17 (SIGCHLD) received from 21
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/08 11:01:59 [notice] 1#1: exit
+
+  26 passed (22.4s)

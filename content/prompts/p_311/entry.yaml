@@ -1,0 +1,70 @@
+id: p_311
+slug: adapted-g18-nine-frame-composed-gif
+createdAt: 2026-11-09
+updatedAt: 2026-11-09
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_510
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the 1 project-generated reference image(s) in the displayed order
+      (R19), then use the complete adapted prompt.
+    zh-Hans: 按显示顺序上传 1 张本站生成的参考图（R19），使用完整改编词。
+    ja: 表示順に本プロジェクトで生成した参照画像1枚（R19）をアップロードし、完全なアレンジ済みプロンプトを使用してください。
+  slots:
+    - id: reference1
+      labels:
+        en: Project-generated character reference
+        zh-Hans: 本站生成的角色参考图
+        ja: 本プロジェクトで生成したキャラクター参照画像
+      min: 1
+      max: 1
+showcaseExampleId: x_375
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: gpt26-social-g18-adapted-9f
+    platform: Reddit
+    author: RumbleversePlayer
+    url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
+    publishedAt: null
+    metricObjectUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Whole original post; shared across variants, not this adaptation
+      zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
+      ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
+    observedAt: 2026-11-07
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Saved research report and search-index score snapshot
+      zh-Hans: 保存的调研报告及搜索索引得分快照
+      ja: 保存された調査レポートと検索インデックスのスコアのスナップショット
+    evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
+    sourcePromptStatus:
+      en: Independent adaptation; full original preserved separately
+      zh-Hans: 独立改编；完整原词另存档案
+      ja: 独自アレンジ。完全な原文は別途保存
+    metrics:
+      - key: score
+        value: 204
+        labels:
+          en: Search-index score snapshot
+          zh-Hans: 搜索索引得分快照
+          ja: 検索インデックスのスコアのスナップショット
+source:
+  author: Prompt Seen (adaptation)
+  url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
+  license: null
+annotations: []

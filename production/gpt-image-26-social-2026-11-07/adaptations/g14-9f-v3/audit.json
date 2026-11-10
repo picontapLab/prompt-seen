@@ -1,0 +1,181 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g14/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g14",
+    "sourceSheetSha256": "924f686406e628aad1aeb1d1591eacf7a6a51fbe62cab0cc1c20eebd985c325b",
+    "sourceFrameCount": 8,
+    "sourceSize": [
+      362,
+      362
+    ],
+    "outputSize": [
+      362,
+      362
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 2
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 5
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 7,
+        "holdFraction": 0.5
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Selected first eight cells: cat looks at camera, winks one eye, then green Robin-labelled hat falls and settles. Discarded final four cells because cat jumps/disappears. Final eight-frame GIF plays once for 2 seconds; no false seamless-loop claim. Text Robin is legible on settled hat.",
+      "reviewedAt": "2026-11-08T09:52:11.077Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g14-adapted-v1",
+      "fingerprint": "847be028bccf94f68e9b52941bce0d6fcd17c6c707419f593c18e61f31a3c40e",
+      "prompt": "Kedimiz Robin’in GIF'ini oluştur. Kameraya baksın göz tek gözünü kırpsın ve kafasına Robin yazan bir şapka düşsün.\n\nÜretim uyarlaması: Bu çağrıda GIF değil, 4 sütun ve 3 satırdan oluşan tek PNG sprite sayfası üret. Toplam 12 eşit kare, zaman sırası soldan sağa ve üstten alta. Kenarlık, ayraç çizgisi, boş oluk, zaman etiketi veya kare numarası yok. Sabit kamera, aynı karakter boyutu, aynı arka plan ve renkler. Her karede gerçek ve farklı ardışık hareket. Kareler daha sonra GIF olarak kodlanacak.\n12 karede: Robin kameraya bakar; tek gözünü kırpar; tekrar açar; yukarıdan üzerinde tam olarak 'Robin' yazan küçük yeşil şapka iner; başına konar; sonra hafifçe yukarı sıçrayıp kadraj dışına çıkar ve ilk duruma döner. Şapka üzerindeki yazı dışında hiçbir yazı veya kare numarası yok.",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+          "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+          "slotId": "reference1"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g14-9f-v3/sheet.png",
+    "sheetSha256": "68864e17df46b6363ca4364d18740c7c69e0fb6afdcc5a63700770745484da52",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g14-9f-v3/output.gif",
+    "outputSha256": "f272ba3c0f977a8a3ae0af68a8e5767850370696fa6ac7e3eeb63736fad367c7",
+    "width": 362,
+    "height": 362,
+    "frameCount": 9,
+    "durationMs": 2000,
+    "frameDelaysMs": [
+      350,
+      100,
+      150,
+      150,
+      150,
+      150,
+      150,
+      400,
+      400
+    ],
+    "loop": 1,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "61f20ca6a12e1c2e2d5576e9e70095c2d0ac44dd6c9fd0f5099be6019e441e18",
+      "a1592d3b6ace6421939ff4c8f183ea192191cdc2b82f770a492b02a39ac0c06a",
+      "721e6c33af94503414bc20ee2b69703c9ba2b82fe7c9e17e1434e2b266c23ea8",
+      "20ce9b607fc2e45d6bf5acf046adbe12c0ed3cb1122e374d7376709ab6dd186d",
+      "38be09b5de90396b6e9093e1ea61294fd2c6166103ce9919cd16fd609769b651",
+      "d32d0b89c2c11722a77ceac762d8c0f00f7e71e9ab95d3b92efe4998708c59f2",
+      "42703deecfd1da6f69bfe784ca405dfe796b377b0e9f465987aa5a8f434655c5",
+      "70e769ce106531b28a04a0111072df812e9fbff0fd910a76c086c91df0cea159",
+      "70e769ce106531b28a04a0111072df812e9fbff0fd910a76c086c91df0cea159"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+      "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Selected first eight cells: cat looks at camera, winks one eye, then green Robin-labelled hat falls and settles. Discarded final four cells because cat jumps/disappears. Final eight-frame GIF plays once for 2 seconds; no false seamless-loop claim. Text Robin is legible on settled hat.",
+    "reviewedAt": "2026-11-10T00:59:53.314Z"
+  }
+}

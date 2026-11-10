@@ -1,0 +1,240 @@
+[
+  {
+    "id": "2118381855166881928",
+    "likes": 227,
+    "reposts": 8,
+    "text": "ChatGPT Image 2.6 vs Nano Banana 2.1\n\n(the difference is clear)",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118154925654131146",
+    "likes": 1297,
+    "reposts": 84,
+    "text": "このアイコンを作ったプロンプトを見て「あぁ、これだわ」と思った一文がある。\n\n「髪は少数の大きな色面で構成し、細かな毛束や髪の線は極力描かない。」\n\nGPTに限らずStable Diffusionの頃からそうなんだけど、AI生成のイラストってどうしても髪の毛がモサモサしがちなんよね。\n\nこの一文を入れるだけで結構マシになる気がしている。\n\nBefore / Afterと実際に使ったプロンプトを貼っておく。\n\n```\n# 顔のパーツ・表情\n* 元のキャラクターの目の色や形、特徴的な表情を維持する。\n* 顔のパーツは適度に簡略化し、目は太めの黒い線とシンプルな色面で表現する。\n* 口はできるだけ簡素に描き、鼻は省略してもよい。\n頬にはピンク色のチークをラフに少し加える。\n* 元のキャラクターらしい表情や雰囲気を保ち、性格や印象が変わるような表情の改変はしない。\n\n# 髪型・服装\n* 元のキャラクターを識別するうえで重要な髪型と髪色を忠実に再現する。\n* 髪は少数の大きな色面で構成し、細かな毛束や髪の線は極力描かない。\n* 服装は元の配色やシルエット、特徴的なアクセサリーを維持する。\n* 服のシワや装飾は大胆に簡略化し、必要最小限の線と色面で表現する。\n* 服装を独自に変更したり、元のイラストにないアクセサリーを追加したりしない。\n```",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118284291381875124",
+    "likes": 18,
+    "reposts": 1,
+    "text": "ChatGPT Images 2.5 (left) vs ChatGPT Images 2.6 (right)\n\nprompt: {\"subject\": {\"description\": \"A beautiful young woman with long straight dark brown hair, tanned skin, and a confident expression. She has a toned, curvaceous figure.\", \"pose\": \"Standing in an elevator, looking at her reflection in the mirrored wall while holding a pair of black sunglasses. Her body is slightly turned toward the mirror.\", \"clothing\": {\"main\": \"Black leather-style crop top with deep V-neck, black mini skirt with chain details, black arm sleeves/gloves with cut-outs, black thigh-high stockings, and black high heels stilettos. Black choker necklace.\", \"modifications\": \"Add a small, elegant 'Keor' embroidery in refined script on the border or hem of her black top or skirt, subtly visible.\"}}, \"setting\": {\"environment\": \"Modern elevator interior with mirrored walls, metal panels, and a digital display.\", \"lighting\": \"Bright indoor elevator lighting creating reflections on the metal and mirrors.\"}, \"style\": {\"photography\": \"Realistic, high-resolution candid-style photograph with sharp details on skin, hair, leather textures, and reflections.\", \"mood\": \"Edgy, confident, and stylish.\", \"composition\": \"Medium full-body shot capturing the subject and her mirror reflection.\"}, \"full_prompt\": \"Photorealistic image of a beautiful woman with long dark hair in a black leather crop top, mini skirt, thigh-high stockings, and boots, standing in an elevator looking at her reflection while holding sunglasses. Add small elegant 'Keor' embroidery on the border of her outfit. Bright elevator lighting with mirror reflections, highly detailed skin, hair, and fabric textures.\"}\n\n2.6 is much much more conservative",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118265895613346263",
+    "likes": 107,
+    "reposts": 10,
+    "text": "拿pro订阅送的API额度，试了下刚出的gpt-image-2.6，一口气跑完两套微信动态表情包——《内阁打工人》和《精神稳定的藏狐》\n\n加上前期测试，全流程一共也就4刀出头的赠金，四舍五入等于白嫖，分享下摸索出来的4步极简工作流：\n\n1. 先抽1号锚点图锁人设：调generations接口先跑每套的第1张，参数开 output_format=\"gif\" + size=\"320x320\" + background=\"transparent\"，底层会按3×3母版直出9帧透明动图。确认人设和印章/标牌比例OK后，抽出第0帧存成 anchor.png\n\n2. 喂锚点图并发跑齐整套：剩下15张直接把 anchor.png 喂给 edits 接口并发跑，只改动作描述和配字。古风方印尽量固定用2×2四字词，现代标牌用粗体短词，两套32张下来零错字\n\n3. 微信深色模式去白沫避坑：prompt里千万别惯性加 white sticker border（白色贴纸描边）或者标牌连接杆，不然帽翅和耳朵缝隙里全是抠不干净的白沫，切微信深色背景直接没法看。强制写死 strictly NO white sticker border, NO white outline，让印章和标牌直接悬空就OK\n\n4. 脚本一键合规打包：最后用python按9帧联合包围盒居中缩放到240×240，保留前景原始RGB做GIF89a透明量化（不向白底预乘），顺手裁好cover和icon就能直接丢微信表情后台了",
+    "media": [
+      "gif",
+      "gif"
+    ]
+  },
+  {
+    "id": "2118581030781382805",
+    "likes": 62,
+    "reposts": 3,
+    "text": "ChatGPT Images 2.6 📷 prompt 👇\n\nA cinematic 35mm street-snap photograph captured at eye level — a three-quarter medium portrait of a cool, stylish young East Asian woman on a sunlit urban sidewalk, turning in profile toward camera-left.\n\nShe possesses top-tier model beauty with sharp facial features, defined cheekbones, amber-tinted eyes, and dark hair falling from beneath a clean white baseball cap as her right hand lifts the brim. She wears retro green metallic over-ear wired headphones, a silver dog-tag necklace, and a fitted white cropped tank top displaying athletic toned abs. An oversized light-wash blue denim trucker jacket drapes loosely off her shoulders, paired with low-rise baggy jeans and a black belt, her left hand casually tucked into her pocket.\n\nThe setting is a vibrant metropolitan avenue in bright daylight. Natural afternoon sun creates soft rim lighting along her hair strands and denim fabric, with the bustling street and modern architecture softly blurred into natural depth of field behind her.\n\nShot on a 35mm prime lens at f/2.2 with gentle highlight halation and fine organic film grain in an M1 street narrative register. Real human skin with visible fine pores, subtle natural warmth, and authentic heavy cotton denim weave — strictly no CGI, no 3D render, no plastic skin, no artificial smoothing, no waxy AI look.",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118193088128745875",
+    "likes": 62,
+    "reposts": 3,
+    "text": "Winter is coming 🏂\n\nGPT Image 2.6\n\nPrompt:\nPREMIUM BAROQUE FRAMED ARTWORK - PHOTOREALISTIC GALLERY POSTER\n\nUse the uploaded image as the sole visual reference. Create a seamless 3:4 vertical fine-art poster.\n\nTOP SECTION (75%): Display the original scene as a beautiful painting inside an ornate antique gold Baroque frame, mounted on a subtly textured plaster wall. Preserve the original scene and its defining details. Select 1–3 prominent elements already present in the image and extend them beyond the frame in realistic 3D, with natural depth, perspective and cast shadows. Do not introduce any new objects, flowers, plants or decorative elements that are not present in the source image. Choose a muted wall color derived from the original image's palette. Match the lighting, atmosphere and time of day of the original scene. Photorealistic rendering with a sophisticated fine-art gallery aesthetic.\n\nBOTTOM SECTION (25%): Continue the same plaster wall and lighting seamlessly. Place a small, clean thumbnail of the original unedited image slightly left of center, without a white border and with a subtle natural shadow. Beside it, add a refined 2–3-word ALL-CAPS serif title and a single-line italic subtitle inspired by the original scene. Keep the typography minimal, elegant and clearly contrasted against the wall.\n\nCOMPOSITION & QUALITY: The entire poster must appear as one continuous image. No divider lines, white bands, gaps, separate panels or outer borders. Ensure seamless transitions, balanced spacing, realistic materials, sophisticated typography and premium editorial art direction. Preserve the original subject's identity and visual character without altering the source scene.",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118307702657159331",
+    "likes": 111,
+    "reposts": 9,
+    "text": "探秘ChatGPT极限尺度系列\n\n测试ChatGPT Images 2.6 出图效果和尺度。\n\n提示词：写实中景照片，通过豪华轿车挡风玻璃拍摄的夜晚场景。东亚女性，长波浪深棕色头发，穿米色罗纹长袖上衣，从后座区域身体前倾，低头看，表情柔和。后座可见一位年轻男性的部分身影。\n\n光线：温暖的车内顶灯与环境光，在面部、头发与皮肤上形成轻柔高光，车身有反光，黑暗背景中可见城市灯光光斑。\n\n环境：现代轿车内部，米色皮革座椅，可见头枕与后视镜，窗外是夜间都市环境。浅景深，人物清晰。\n\n风格：照片级写实，布料纹理与皮肤高度细腻，肢体语言自然，电影感夜间氛围，8k。",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118156092865994837",
+    "likes": 36,
+    "reposts": 6,
+    "text": "ChatGPT Images 2.6 居然能直接出 GIF 表情包了。\n\n不用先出静图再转动态，我直接生成了 12 张同一只橘猫的动态表情。\n\n提示词放评论区了。\n\n怎么保持角色不变形：\n① 先定一张满意的角色参考图\n② 每张生成都带上参考图，只改动作和情绪\n\n你最想要哪一张？",
+    "media": [
+      "photo",
+      "gif",
+      "gif",
+      "gif"
+    ]
+  },
+  {
+    "id": "2118202866448077182",
+    "likes": 39,
+    "reposts": 0,
+    "text": "GPT Image 2.6 Prompt:\n\nA young woman with the same unchanged face and soft natural complexion, captured in a spontaneous 90s film snapshot. Her loose black hair falls over the shoulders of a baby-blue cropped zip-up sweatshirt worn over a white ribbed tank top. She looks directly into the camera with a relaxed expression and a faint smile. The dim beige wall behind her is covered with colorful polaroids, tiny stickers, music flyers, and handwritten messages. Bright on-camera flash, slightly cool color temperature, natural skin texture, subtle motion blur, authentic disposable-camera grain, imperfect vintage composition, nostalgic bedroom photography.",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118366200459915715",
+    "likes": 16,
+    "reposts": 0,
+    "text": "GPT Image 2.6 发布了，OpenAI 的生图指南里，有不少可以直接用在日常工作中的方法。\n\n我整理了 8 个场景：从海报、信息图到局部改图、多图参考，每个都附了一条可直接修改的提示词。\n\n建议先收藏，用到时把方括号里的内容换成自己的需求。或者口喷需求，让 AI 帮忙填充这些要求。\n\n1/8\n\n① 做一张带准确文字的海报\n\n提示词：\n\n制作一张关于［活动或产品］的海报，面向［目标人群］。画面采用［视觉风格］，主体位于［位置］。\n\n标题使用“［标题原文］”，放在［位置］，清晰易读。只出现一次，不要添加其他文字或水印。\n\n技巧：需要准确出现的文字，用引号单独标出；生成后记得检查拼写和小字。",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118262039873196485",
+    "likes": 44,
+    "reposts": 6,
+    "text": "ChatGPT 现在唯一没人敢黑的，就是生图了！\n\n刚上线的 Images 2.6，出图快了 50%，新模型 Sunburst 一出来就拿了 Design Arena 第一！\n\n一句话，或者扔一张图进去，直接出GIF 图。还能调速度，单独改某一帧。\n\n我自己做了一个GIF图，效果感觉真不错\n\n说白了，表情包、动态头像、带货动图，以后都是一句话的事\n\n提示词在评论区",
+    "media": [
+      "photo",
+      "gif"
+    ]
+  },
+  {
+    "id": "2118561513879507399",
+    "likes": 42,
+    "reposts": 3,
+    "text": "Image created with the new \"Gpt image 2.6\". @SocialSight \n\nPrompt 👇",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118245102409908571",
+    "likes": 20,
+    "reposts": 2,
+    "text": "ChatGPT Images 2.6 が登場しました🩵\n\n大きな変更点としてはGIF機能の登場です！🎉\n\nとはいえ、\n\n😺「どうやって使ったらいいの？」\n\nという感じだと思うので簡単に検証してみました。(Proプラン/ Instant)\n\nまず公式ドキュメントにはこんなことが書いてありました↓\nhttps://developers.openai.com/api/docs/guides/image-prompting?model=gpt-image-2.6&utm_source=chatgpt.com\n\nつまりGIFに関して設定できることは\n・サイズ\n・フレーム数(枚数): 2~64フレーム\n・表示間隔: 20-2000ms / 10ms刻み\nのようです。\n\n画像①〉ですから、以下のプロンプトで試してみました。\n『\n\n3:4.\nGIF生成\nframe_count = 64\nframe_duration_ms = 30\n3:4で木からりんごが落ちる差分\n\n　　　　　　　　　　　　　　　　　』\n\n【結果】解像度は荒いものの滑らかに描写された。\n\n画像②〉次に、枚数を減らして表示間隔を伸ばしてみました。\nframe_count = 32\nframe_duration_ms = 60\n\n【結果】解像度が少し良くなり、なめらかさは普通。\n\n画像③〉最後に枚数を少なく、間隔を長くしました。\nframe_count = 8\nframe_duration_ms = 120\n\n【結果】 解像度は一番良いが、なめらかさはカクカク。\n\n《結局なに？》\nここからわかることは、生成枚数と解像度はトレードオフだということです。\n\n理由は(画像④)のように、生成時にChatGPTは一枚の画像に複数枚の画像をグリッド生成し、その中から切り取って並べるようにGIFを生成していると思われるためです。\n\nおそらく、画像の一貫性を保つための仕様だと思われます。\n(複数枚を別々に生成するより、一枚の中でグリッドした方が同じ顔やものが生成されやすい)\n\nつまりフレーム枚数が増えれば増えるほど、一枚の画像の中のグリッドされた区画は小さくなりますから、解像度が低くなるということに注意すべきということです。\n\n《わたしのおもったこと》\nまだ検証が浅いのであくまで私の意見となりますが、GIF生成する時は\n「フレーム数と解像度のトレードオフ」\nに注意しながら\nframe_count =\nframe_duration_ms = \nを設定するといいのではないかということです。\n\n※ちなみに画像④は9枚にした方が余白ができず、よかったみたいですね。",
+    "media": [
+      "gif",
+      "gif",
+      "gif",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118247837683044650",
+    "likes": 245,
+    "reposts": 15,
+    "text": "雷霆视角📷\n\nChatGPT Images 2.6 prompt 👇\n\nA crisp, high-fidelity vertical POV selfie photograph captured from an extreme high angle with a 20mm ultra-wide lens perspective — looking straight down at an exceptionally gorgeous young East Asian woman standing in her bedroom, her outstretched arm framing the upper corner.\n\nShe possesses elite influencer beauty, wavy dark brown hair with see-through air bangs, light gray-green contact lenses, a tiny beauty mark beneath her right eye, igari-style pink blushed cheeks, and glossy lips. She has a slender hourglass figure, wearing a tight white scoop-neck cropped short-sleeve tee, black retro dolphin shorts with white piped edges and a front drawstring, and glossy black patent leather pointed-toe stiletto pumps on her bare feet.\n\nThe room features light oak hardwood flooring, soft cream curtains, and a white bed edge softly blurred in the background. Clean, diffuse indoor overhead ambient lighting illuminates her features naturally, casting gentle, physically accurate contact shadows beneath her heels.\n\nCaptured with natural wide-angle perspective stretching height from head to feet, with deep depth of field and fine organic 35mm grain. Authentic skin texture with delicate pores, biological warmth, realistic cotton fabric stretch, and crisp patent leather reflections — strictly no CGI, no 3D render, no plastic skin, no artificial smoothing, no waxy AI look.",
+    "media": [
+      "photo"
+    ]
+  },
+  {
+    "id": "2118220107487051883",
+    "likes": 17,
+    "reposts": 3,
+    "text": "GPT-Image 2.6\n#PromptShare\n遊んでね😸\n\n＊＊＊を“ドアスコープ”か“インターホン室内モニター”にしてください\n\nPrompt（画像アップロード）：\n玄関先でこちらを見るキャラ。\n[＊＊＊]\nキャラは、アップロード画像を参照。\n顔・髪型・服装まで忠実に再現。\n晴れた住宅街、自然光。\nアスペクト比縦4:5。",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118562099987398753",
+    "likes": 21,
+    "reposts": 2,
+    "text": "GPT Image 2.6\n\nPrompt:\nTransform the uploaded photograph into a beautiful, contemporary hand-drawn naïve Christmas illustration, inspired by premium vintage holiday greeting cards and modern folk-art poster design.\n\nART STYLE:\n\n- Authentic hand-drawn illustration with a charming, playful naïve-art aesthetic.\n- Slightly exaggerated, whimsical proportions.\n- Imperfect, irregular outlines and organic hand-drawn contours.\n- Simplified shapes with carefully selected decorative details.\n- Flat, bold, contrasting colours with a warm Christmas palette.\n- Subtle vintage paper texture with a refined printed-card finish.\n- Delicate hand-drawn decorative marks, patterns and festive accents.\n- Minimalist yet visually rich composition.\n\nCOLOUR PALETTE:\nUse traditional Christmas colours: deep forest green, warm red, cream, muted beige, golden yellow and earthy brown. Maintain strong colour contrast and a cohesive vintage aesthetic.\n\nPRESERVE THE ORIGINAL PHOTOGRAPH:\nRetain the person's recognisable facial features, hairstyle, clothing, pose, expression and body proportions. Preserve the main objects, their arrangement and the essential details of the original environment. Translate everything into the illustrated style rather than replacing it with unrelated elements.\n\nDESIGN & COMPOSITION:\nCreate an elegant, charming Christmas postcard illustration. Simplify the background into tasteful decorative shapes while retaining recognizable elements from the original photograph. Add small festive decorative details only where they naturally complement the existing scene.\n\nSTRICT VISUAL RULES:\n\n- No photorealism.\n- No 3D rendering.\n- No realistic lighting or shadows.\n- No gradients.\n- No glossy or metallic effects.\n- No artificial digital painting appearance.\n- No excessive detail or visual clutter.\n\nThe final result should look like an authentic, professionally illustrated Christmas greeting card, with the charm of handmade folk art and the sophistication of a premium designer postcard.\n\nFORMAT: A6 portrait orientation, 2:3 aspect ratio, print-ready composition.",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118269430014599535",
+    "likes": 30,
+    "reposts": 2,
+    "text": "继续来对比哦\n提示词评论区\n\n左图：gpt-image-2.6-sunburst\n右图：gpt-image-2.5-sunburst",
+    "media": [
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118213713761292432",
+    "likes": 19,
+    "reposts": 2,
+    "text": "今日から使えるようになったGPT Image 2.6でGIFを作ってみたよ🍁\n\nChatGPTのChatから、サイズとフレーム数を変えて4パターン検証！\n\n・16枚指定→267×358px\n・32枚指定→217×217px\n・全て指定どおり3.2秒でループ\n・288×512／576×1024pxの指定は反映されず\n\n今回は枚数を増やすと画像が小さくなる結果に。顔は比較的安定してる☺️\n\nプロンプトはコメント欄に貼っておきます\n\n#GPTImage2_6",
+    "media": [
+      "gif",
+      "gif"
+    ]
+  },
+  {
+    "id": "2118543259257712714",
+    "likes": 155,
+    "reposts": 7,
+    "text": "なんかGPT image2.6のtipsみたいなのが流行ってたけど、もはや細かい指示とか要らないんだよね🙄\n\nプロンプト💡\n1,2枚目:縦長9:16の超写実的な実写写真。\n成人日本人女性。日本の一般的なオフィス。\n\n3,4枚目:縦長9:16の超写実的な実写写真スマホ画質のスナップショット。\n成人日本人女性。日本の一般的なオフィス。",
+    "media": [
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118383239392075848",
+    "likes": 7,
+    "reposts": 0,
+    "text": "prompt:\n\nAn ultra-photorealistic wildlife photograph capturing the exact split second a vibrant blue-and-orange kingfisher dives vertically into a calm lake to catch a small fish.\n\nIts long, sharp beak has just broken through the water surface, creating a tiny circular splash with delicate water droplets suspended in mid-air.\n\nThe kingfisher's wings are fully extended symmetrically, revealing hundreds of individually detailed feathers. Its reflection is visible beneath the water, slightly distorted by expanding ripples.\n\nWarm golden-hour sunlight illuminates the feathers from behind, creating beautiful translucent feather edges. Dark, creamy green and golden bokeh background.\n\nExtreme wildlife photography, shot on a professional 600mm telephoto lens, incredibly sharp subject, realistic water physics, natural anatomy, precise details, cinematic depth of field.\n\nThe exact instant of impact, not before or after. No illustration, no CGI appearance.\n\nRatio: 1:1",
+    "media": []
+  },
+  {
+    "id": "2118156317034693026",
+    "likes": 1,
+    "reposts": 0,
+    "text": "提示词：\n画一套12款橘猫打工人表情包，圆脸胖橘戴蓝领带，粗黑蜡笔线条、橙蓝配色、米白底，表情夸张搞笑，角色保持一致。按3列×4行排列，分别配字：开心、气成河豚、委屈巴巴、笑不活了、收到、啊？、累瘫了、我裂开了、先装死、蹲个后续、没眼看、下班！",
+    "media": []
+  },
+  {
+    "id": "2118282184821784645",
+    "likes": 367,
+    "reposts": 43,
+    "text": "🆕プロンプト配布\n\nキャラクターをイメージした『シェアライフ』を生成\n\n📖使い方\n①リプ欄のプロンプトをChatGPTに送る。\n②キャラクター画像を送る。\n③自動で生成が開始。\n\n完成した画像は引用で共有していただけると嬉しいです！フォローもぜひ…🙇\n\n#A5画像生成プロンプト",
+    "media": [
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118293441751007660",
+    "likes": 966,
+    "reposts": 94,
+    "text": "ChatGPT Images 2.6になって、参照画像の登録ができるようになったんですよ！！\nChatGPTには元々\"スケジュール\"機能で何かを定期実行する仕組みがあるんですよ！！\n\nつまりそれらを組み合わせて、定期的にキャラ付けしたキャラが画像付きメッセージ送ってくれるようにできるのですよ！！！\n\n▼手順\n①登録したい画像を登録(2枚目)\n②りぷにあるぷろんぷとをChatGPTのスケジュールに登録(3枚目)\n⚠️ぷろんぷと内の2項目は各自変更してね\nREFERENCE_NAME = 「参考画像の登録名」\nCHARACTER = 「関係性や口調とかのキャラ設定」",
+    "media": [
+      "photo",
+      "photo",
+      "photo"
+    ]
+  },
+  {
+    "id": "2118151619212890291",
+    "likes": 93,
+    "reposts": 7,
+    "text": "GPT Image 2.6が出たので、さっそく試してみました。\n\nまず「丸を描いて直す」機能。\n\n元の絵に赤丸と青丸を描いて\n「赤丸にサンタ帽、青丸の本はプレゼントに」\nと頼むだけ。\n\n顔も髪飾りも服もそのままで、丸の中だけ描き変わりました。20秒ちょっと。\n\n1回の編集、小さい素材であれば、劣化感もほとんどないですね！\n\nもうひとつが、GIFアニメ。\n\nキャラの絵を1枚渡して「まばたきして、ふわっと揺れて」と頼むと、そのキャラのまま動きます。\n\n季節衣装の差分も、ちょっとした動く素材も、AIで一発です。\n\nゲームづくりがまたラクになりますね。\n\nほかにも\n\n・SVG（ベクター）で書き出せる\n・描く前に「どこまで考えるか」を選べる\n・生成が約50%速い（OpenAI発表）\n\nといった新機能が入っています。\n\nコストもざっくりまとめました。\n\n2.5と変わらず、low品質なら1枚4円程度！\n\n2.5から純粋なアプデなので、2.5を使ってる方は、今後は2.6にするといいと思います。",
+    "media": [
+      "photo",
+      "gif",
+      "photo"
+    ]
+  }
+]

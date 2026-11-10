@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g09-adapted-9f-v3",
+    "candidateId": "gpt26-social-g09-adapted-9f",
+    "prompt": "创建一个gif，按照附图的动作顺序生成。\n\n【制作适配：本次输出】上文只定义动作和造型。本次只输出一张PNG精灵图，严格4列×3行，共12格，左到右、上到下按时间排列，每格同样大小。不是GIF文件。不要边框、格线、边距、序号、时间码；除指定字幕外不要新增文字。所有格固定机位、角色大小、地面基线和配色，角色和动作不超出单格。连续帧有清晰不同的姿态，之后逐格编码为GIF。\n遵循输入动作表的12个动作顺序，固定角色大小、地面线和篮筐位置。不能把动作表本身画在某一格里。每格只有完整场景的一帧。",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R09-action/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "8444a0cbad488096c9915d2cc0bf310e63ad517b1173bca8952eb705c8a89101",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R09-action/output.png",
+      "sha256": "9f6e194166dc057af9649920c618dd2f92807a5c2ca45bb50086a264ac97b3d9",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:13.235Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g09-adapted-9f-v3/output-4896af30c90ec29a60c866e117f4d436befce189e6e852cf99b7604220ca0c25.gif",
+      "sha256": "4896af30c90ec29a60c866e117f4d436befce189e6e852cf99b7604220ca0c25"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:52.036Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve returned poses follow the ordered input chart: preparation, jump, turn, raise, dunk, hang, release and landing. Character and hoop positions stay readable; actual 1800 ms loop. The ball returns to the ready hand at the loop reset without a separate pickup transition; document this keyframe limitation.",
+    "reviewedAt": "2026-11-10T00:59:52.043Z"
+  }
+}

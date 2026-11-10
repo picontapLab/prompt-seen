@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-3b9ad278-9fcc-4317-ade3-2599519f5104.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-direct-gif-v1/output.png",
+  "outputSha256": "16a61d410cdb59dac040a657b29a606cb0569bcdd78abcbaba534c824fa98a96",
+  "promptSha256": "9776ccfef3d0251610594c00fe9d59d63b8cf880665406a632f59a8cd3da4638",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1312,
+  "height": 1199,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "User requested native GIF only. Explicit direct multi-frame .gif request returned a single-frame PNG with half-closed eyes. No composition or transcoding performed; rejected as a GIF deliverable.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T14:30:46.657Z"
+  }
+}

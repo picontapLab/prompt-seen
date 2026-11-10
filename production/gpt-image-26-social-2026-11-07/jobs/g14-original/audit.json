@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-bde7a67f-ea0e-4850-903b-8d26c37d1a0f.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g14-original/output.png",
+  "outputSha256": "65bcd406881103676902480e56ae690a1ce31baee2531e1558fe77cea8c730ef",
+  "promptSha256": "cbbe7524abf40b581062770254c1cb95bee732f9829dd9bbb4be4e361b0e9b70",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+      "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+      "slotId": "cat"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1254,
+  "height": 1254,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "Actual return is a single 4 by 4 storyboard PNG with baked-in timestamps, not a multi-frame GIF. Cat wink and Robin hat are illustrated but animation delivery failed.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T01:38:59.361Z"
+  }
+}

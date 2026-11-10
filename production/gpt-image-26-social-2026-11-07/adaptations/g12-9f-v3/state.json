@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g12-adapted-9f-v3",
+    "candidateId": "gpt26-social-g12-adapted-9f",
+    "prompt": "Use the character I uploaded as the reference and make a downloadable looping pixel-art GIF of them performing a signature move.\n\n[Keep the character consistent]\nStudy the reference and keep every key feature: hairstyle and hair color, face and eye color, marks or scars, outfit colors and patterns, accessories, and their weapon or prop. Same proportions and same look in every frame.\n\n[Pixel art style]\nHighly detailed HD pixel art, like premium 2D fighting game sprites: crisp hard-edged pixels, rich palette with pixel shading and highlights, visible fabric folds and hair strands, no anti-aliasing.\nFull body, side 3/4 view, same size and same ground line in every frame.\n\n[Design the move]\nPick a move that fits the character's personality, power or weapon (or use the one I give below).\nMake it a short, punchy attack anyone can read at a glance: ready stance → wind-up → strike → follow-through → back to ready.\nAdd an elemental or energy effect that matches the character, rendered as pixel art (e.g. water waves, fire, lightning, petals).\nHair, clothes and effects react naturally to the motion. First and last frame match so it loops seamlessly.\n\n[Output]\nPure white background, fixed camera, character centered with enough margin. No text.\nAbout 12 frames, 1.5–2 seconds, infinite loop.\nDeliver an actual multi-frame GIF file I can download.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nUse the project-original swordsman in the reference, not an existing anime character. Across 12 cells show ready, windup, water-edged sword sweep, flowing follow-through, then ready. Pixel edges, stable ground line, no text.",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R12/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "6f99201e25fab272dab9852151ac3e3b5f1d7120dab307476717a19c67c901dd",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R12/output.png",
+      "sha256": "5db4a0259204d951d8d7ac5da76517e3da732fd2923ea457aeabf47106e3f512",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:22.394Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g12-adapted-9f-v3/output-ea9610d788c3b6c978d415c13f865a1cc3f504122fd52e1d9b8eb90170c80aa2.gif",
+      "sha256": "ea9610d788c3b6c978d415c13f865a1cc3f504122fd52e1d9b8eb90170c80aa2"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:52.998Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve pixel-style poses show draw, windup, water sweep and recovery. Uses an original swordsman rather than Tanjiro. Wave approaches cell edges, with minor shape drift and a visible final-to-first stance change; not a perfectly seamless game sprite.",
+    "reviewedAt": "2026-11-10T00:59:53.002Z"
+  }
+}

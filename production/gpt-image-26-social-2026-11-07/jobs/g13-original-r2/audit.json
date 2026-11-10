@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen.imagegen",
+  "sourcePath": "[local-generation-output]/exec-5af59300-f855-4d73-9a5f-dd0412dd4137.png",
+  "outputPath": "production/gpt-image-26-social-2026-11-07/jobs/g13-original-r2/output.png",
+  "outputSha256": "2dd6ac945867602df1443dc53cf378552f0ec2f8eccf129cff3eb41bea2c6c08",
+  "promptSha256": "62a1b2239475294dfcfbf5b81bb522fa9c230bb62a5308c00a4d438948792fc7",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R15/output.png",
+      "sha256": "fefed19a4ae357bb2f605a53db4f552ed9addaa9f645143b1bc23dd99b991a01",
+      "slotId": "character"
+    }
+  ],
+  "provider": "OpenAI",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "format": "png",
+  "width": 1312,
+  "height": 1199,
+  "frames": 1,
+  "delays": null,
+  "loop": null,
+  "review": {
+    "accepted": false,
+    "notes": "Second unchanged original-prompt attempt returned a single PNG with lowered eyelids, not a playable GIF. Preserve original failure; any future frame-sheet composition is a separate adaptation.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T09:43:57.644Z"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g17-direct-gif-v1",
+    "candidateId": "gpt26-social-g17-direct-gif",
+    "prompt": "make a raving 8bit johnny bravo\n\nCreate this as a short, looping animated GIF of the character dancing. Return the actual downloadable multi-frame .gif animation directly, including the animated file if the preview is a still image. Keep the whole character visible. No sprite sheet, storyboard, code, or local frame composition.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "42e2f699ba2392422f004ec2e7364c79909d211406d3996267db5cd58381b2dc",
+  "references": [],
+  "status": "needs_attention",
+  "claimedAt": "2026-11-08T14:44:08.657Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g17-direct-gif-v1/output-15a29e2a26ab009e28f166a6e74ced64c73947acb15f3bd3a06c7d778ca21203.png",
+      "sha256": "15a29e2a26ab009e28f166a6e74ced64c73947acb15f3bd3a06c7d778ca21203"
+    },
+    "provider": "OpenAI",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-08T14:45:32.700Z"
+  },
+  "review": {
+    "accepted": false,
+    "notes": "Text-only native GIF request returned one PNG. Complete tool response contains only image_url (data:image/png) and output_hint pointing to that PNG; no separate GIF link or animation attachment. Pixel art shows a single dance pose. No composition, transcoding or import performed.",
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T14:45:32.703Z"
+  }
+}

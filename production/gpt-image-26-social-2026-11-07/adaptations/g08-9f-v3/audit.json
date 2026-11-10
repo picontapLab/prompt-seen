@@ -1,0 +1,190 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "adaptations/g08/sheet.png",
+  "localComposition": {
+    "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+    "sourceFolder": "adaptations/g08",
+    "sourceSheetSha256": "f23c46a8da550608eb2d31d0e39725dabe545e74a1f674d94f9a24810953da87",
+    "sourceFrameCount": 12,
+    "sourceSize": [
+      362,
+      362
+    ],
+    "outputSize": [
+      362,
+      362
+    ],
+    "scale": 1,
+    "sequence": [
+      {
+        "from": 0
+      },
+      {
+        "from": 1
+      },
+      {
+        "from": 3
+      },
+      {
+        "from": 4
+      },
+      {
+        "from": 6
+      },
+      {
+        "from": 7
+      },
+      {
+        "from": 8
+      },
+      {
+        "from": 10
+      },
+      {
+        "from": 11
+      }
+    ],
+    "sourceReview": {
+      "accepted": true,
+      "reviewer": "Codex",
+      "notes": "Twelve cells retain whale maid design from the two ordered reference views, moving from tired to cheerful waving and back. Every caption is 下班！ with no missing characters. 2400 ms loop. Small position/letterform and hair redraw jitter remains, disclosed in adaptation notes.",
+      "reviewedAt": "2026-11-08T10:22:38.673Z"
+    },
+    "sourceClaim": {
+      "key": "gpt26-social-g08-adapted-v1",
+      "fingerprint": "e1d2b7350821f6753cddc1c457f1785835cb7d6d597e52eb393e4e85e901944b",
+      "prompt": "请以我上传的大肥鱼图片为角色和画风参考，根据最后一行的「表情包主题」，直接制作一张可下载的动态 GIF 表情包。\n\n【角色保持一致】\n保留参考图中的蓝色渐变长发、呆毛、鲸鱼耳鳍、蓝色蝴蝶结、白色女仆头饰、蓝白女仆裙和大鲸鱼尾巴。\n保持原图的大头小身体 Q 版比例、圆脸和可爱画风，人物外观在所有帧中保持一致。\n\n【自动设计动作】\n理解我想表达的情绪或梗，将它设计成一个简单、有趣、一眼能看懂的短动作。\n突出一个核心笑点，用夸张表情、动作反差和轻微的压缩回弹增加喜感。头发、呆毛、耳鳍和尾巴自然跟随动作。\n根据主题添加必要的少量道具，保持画面简洁。\n主动设计首尾衔接，让动画能够自然循环播放。\n\n【自动配字】\n根据主题提炼一句简短、有网感的中文配字，优先控制在 2～8 个字。\n如果主题中用引号指定了台词，直接使用该台词。\n字幕放在顶部，使用粗圆体、深蓝字、白色描边；文字、字形和位置全程稳定，角色与道具不遮挡字幕。\n\n【画面与输出】\n正方形画面，纯白背景，固定镜头，主体居中并保留足够边距。\n动画约 2～3 秒，无限循环，动作清晰，适合聊天时作为表情包发送。\n最终交付实际会播放的多帧 GIF 文件，并提供下载。\n\n表情包主题：终于下班，开心地挥手，台词“下班！”\n\n【制作适配：本次输出】上文只定义动作和造型。本次只输出一张PNG精灵图，严格4列×3行，共12格，左到右、上到下按时间排列，每格同样大小。不是GIF文件。不要边框、格线、边距、序号、时间码；除指定字幕外不要新增文字。所有格固定机位、角色大小、地面基线和配色，角色和动作不超出单格。连续帧有清晰不同的姿态，之后逐格编码为GIF。\n主题是终于下班，开心地挥手。顶部字幕严格固定为“下班！”。12格动作从疲惫低头到抬头、欢呼、摆尾挥手，再回到起点。",
+      "references": [
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R08/output.png",
+          "sha256": "fc0f6195d17d82ab51bbf74f8b51f227baebb537bbe7f43a2f4c7757ac56edc5",
+          "slotId": "reference1"
+        },
+        {
+          "path": "production/gpt-image-26-social-2026-11-07/references/R08-side/output.png",
+          "sha256": "a31063ca51b2cf32ff149a0b02ac073e7ac161534543518cb4cd8606ab5c5cab",
+          "slotId": "reference2"
+        }
+      ],
+      "targetAspectRatio": null
+    }
+  },
+  "newImageToolCall": false,
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g08-9f-v3/sheet.png",
+    "sheetSha256": "4df4b0350972d5856dfaf52af29c4dbcc14896fdd78bf45a00e75fcccd9d1e48",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g08-9f-v3/output.gif",
+    "outputSha256": "34640966ea5ab01eefdacbf754891e977d51d447664655e0a8aee2d1bcb581da",
+    "width": 362,
+    "height": 362,
+    "frameCount": 9,
+    "durationMs": 2400,
+    "frameDelaysMs": [
+      200,
+      400,
+      200,
+      400,
+      200,
+      200,
+      400,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      },
+      {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    ],
+    "frameHashes": [
+      "bc5bf3ec71660a21c4e023a23d1f0e4dc8b940a0a3152591d9f7f865503774b6",
+      "27b6ba9c41fdb59eeffa53fc4236efbf60a196f07da8a0e20cefd15e05fdb273",
+      "3beb00b5203a2af854d7a9293faf92e579d5cc53dd84c336bf716185bfbc9993",
+      "fe62b600822657fd1e3fbcf99fe90d832206c73b5d2d3de2701dbb517181b6f7",
+      "f10559efaf90a5e6f921e9611268e2fadc3a4333dc44222c9d302b2c0177c008",
+      "3aed170132be25b62d0959e72be84545ee5fca049ff9bf81952a7b6a92cd927d",
+      "df22da698dba1ced0d2ff2ec0e5fbd3978f769efdd981b342c55a6804873face",
+      "d55cd51f36c12c9a5ecf16afcccb9cbfab538d86b03956d659cafcfd7c5b6706",
+      "be3a1ccb0679ee5eea14b0241bf92d125f0caf02203d6467142b4b150051f3da"
+    ],
+    "distinctFrameCount": 9,
+    "cellInset": 0,
+    "trimmedRightPixels": 0,
+    "trimmedBottomPixels": 0
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R08/output.png",
+      "sha256": "fc0f6195d17d82ab51bbf74f8b51f227baebb537bbe7f43a2f4c7757ac56edc5",
+      "slotId": "reference1"
+    },
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R08-side/output.png",
+      "sha256": "a31063ca51b2cf32ff149a0b02ac073e7ac161534543518cb4cd8606ab5c5cab",
+      "slotId": "reference2"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve cells retain whale maid design from the two ordered reference views, moving from tired to cheerful waving and back. Every caption is 下班！ with no missing characters. 2400 ms loop. Small position/letterform and hair redraw jitter remains, disclosed in adaptation notes.",
+    "reviewedAt": "2026-11-10T00:59:51.884Z"
+  }
+}

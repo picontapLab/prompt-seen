@@ -1,0 +1,108 @@
+{
+  "tool": "image_gen.imagegen",
+  "provenance": "independent-adaptation",
+  "actualToolOutput": "sheet.png",
+  "modelFamily": "GPT Image",
+  "providerModelId": null,
+  "transparentBackground": false,
+  "encoding": {
+    "method": "GPT Image sequential sprite sheet, row-major cell extraction, local GIF encoding",
+    "sheet": "production/gpt-image-26-social-2026-11-07/adaptations/g11-joy/sheet.png",
+    "sheetSha256": "7bbcb33e9f11fd39e6a737db572d5cee49c7d4e83c83f82b197bb4b4ec1e0266",
+    "output": "production/gpt-image-26-social-2026-11-07/adaptations/g11-joy/output.gif",
+    "outputSha256": "694745705e81a28c6df5b37f254dd9f0ce52d5518a031374c1dac2215a482898",
+    "width": 443,
+    "height": 443,
+    "frameCount": 8,
+    "durationMs": 1600,
+    "frameDelaysMs": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "loop": 0,
+    "hasTransparency": false,
+    "rectangles": [
+      {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 0,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 0,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 443,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 887,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      },
+      {
+        "left": 1330,
+        "top": 443,
+        "width": 443,
+        "height": 443
+      }
+    ],
+    "frameHashes": [
+      "f38d8ccc0efde5228b0027de7f7a96a3ecc86f62a19d349df46c3b0ba26e51d4",
+      "1ce1f4606c5438e249f0ffe7bf80d910559bce651419e02b1a34be6c713c5f97",
+      "b78e638687df6e3d2ebeb1183cf8363627c0c0e4489bad99dc1c1fea56f8e50f",
+      "f64abfe7b38c75d1438bd7991f6e504de40d0843631b049a0dad87b7e6acf99e",
+      "ad3ba1f5ef8f8a2483b51f747e524b3aa173fb61ab48710a3adf31ede5fdaeed",
+      "181dc4421ad60b2dd0fde6ef763909cb81741477f1774c6a4d7c0cacbdfa9d5f",
+      "6df34038575487734e4e74e3ffbc7c74d4e8784fdf9e2a8a3484e4a804ccf83d",
+      "88c38f0b9dd4a17c2649302ae2fe5ea091716127754891a09ab96bae9816b716"
+    ],
+    "distinctFrameCount": 8,
+    "cellInset": 0,
+    "trimmedRightPixels": 2,
+    "trimmedBottomPixels": 1
+  },
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R11/output.png",
+      "sha256": "a9d36c83c024cc112188262f1efcd10ef502c51cebe1d1fddbfad9c6ac2b7c61",
+      "slotId": "reference1"
+    }
+  ],
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Eight penguin joy poses progress through smile, wing lift, happy hop, landing and neutral pose; red scarf and colors consistent. Full figure and no written text. 1600 ms infinite loop; small generated outline and scale variation.",
+    "reviewedAt": "2026-11-08T10:35:11.033Z"
+  }
+}

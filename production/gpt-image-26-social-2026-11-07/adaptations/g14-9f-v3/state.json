@@ -1,0 +1,39 @@
+{
+  "definition": {
+    "key": "gpt26-social-g14-adapted-9f-v3",
+    "candidateId": "gpt26-social-g14-adapted-9f",
+    "prompt": "Kedimiz Robin’in GIF'ini oluştur. Kameraya baksın göz tek gözünü kırpsın ve kafasına Robin yazan bir şapka düşsün.\n\nÜretim uyarlaması: Bu çağrıda GIF değil, 4 sütun ve 3 satırdan oluşan tek PNG sprite sayfası üret. Toplam 12 eşit kare, zaman sırası soldan sağa ve üstten alta. Kenarlık, ayraç çizgisi, boş oluk, zaman etiketi veya kare numarası yok. Sabit kamera, aynı karakter boyutu, aynı arka plan ve renkler. Her karede gerçek ve farklı ardışık hareket. Kareler daha sonra GIF olarak kodlanacak.\n12 karede: Robin kameraya bakar; tek gözünü kırpar; tekrar açar; yukarıdan üzerinde tam olarak 'Robin' yazan küçük yeşil şapka iner; başına konar; sonra hafifçe yukarı sıçrayıp kadraj dışına çıkar ve ilk duruma döner. Şapka üzerindeki yazı dışında hiçbir yazı veya kare numarası yok.",
+    "references": [
+      {
+        "slotId": "reference1",
+        "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png"
+      }
+    ],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "6f5ba7b6362abea8758f7a4251b408c12076eddb3c375b15579b13b0aa705078",
+  "references": [
+    {
+      "path": "production/gpt-image-26-social-2026-11-07/references/R16/output.png",
+      "sha256": "c570eb6bb553c89f320e4e7ef21814762691fdbbc219bacab694dca39de6143d",
+      "slotId": "reference1"
+    }
+  ],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:26.219Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g14-adapted-9f-v3/output-f272ba3c0f977a8a3ae0af68a8e5767850370696fa6ac7e3eeb63736fad367c7.gif",
+      "sha256": "f272ba3c0f977a8a3ae0af68a8e5767850370696fa6ac7e3eeb63736fad367c7"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:53.310Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Selected first eight cells: cat looks at camera, winks one eye, then green Robin-labelled hat falls and settles. Discarded final four cells because cat jumps/disappears. Final eight-frame GIF plays once for 2 seconds; no false seamless-loop claim. Text Robin is legible on settled hat.",
+    "reviewedAt": "2026-11-10T00:59:53.314Z"
+  }
+}

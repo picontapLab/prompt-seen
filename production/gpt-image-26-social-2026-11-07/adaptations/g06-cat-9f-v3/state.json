@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g06-cat-adapted-9f-v3",
+    "candidateId": "gpt26-social-g06-cat-adapted-9f",
+    "prompt": "create a gif of a cat spinning\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Show twelve successive views at 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300 and 330 degrees. Lock the camera, floor, pivot and light; rotate the object itself. No writing. Make the motion return naturally from the final cell to the first.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "dbf3ddc47982c2bb9bfd873b9faa259837b190d8158852ee666c5ae7558dcbb5",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:58:06.911Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g06-cat-adapted-9f-v3/output-d1605122d5e33857d0f88314a6812d77f6f885f64a31986e41012eb2ea636936.gif",
+      "sha256": "d1605122d5e33857d0f88314a6812d77f6f885f64a31986e41012eb2ea636936"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:51.567Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve complete seated-tabby views progress from front around the back and return to near-front. White chest, paws and tabby coat remain recognizable. 1440 ms repeating GIF; angle intervals and fine fur markings vary slightly because views are generated images.",
+    "reviewedAt": "2026-11-10T00:59:51.570Z"
+  }
+}

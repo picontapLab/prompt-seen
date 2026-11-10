@@ -1,0 +1,28 @@
+{
+  "definition": {
+    "key": "gpt26-social-g04-adapted-9f-v3",
+    "candidateId": "gpt26-social-g04-adapted-9f",
+    "prompt": "Generate a 5-second animated GIF consisting of 10 evenly spaced animation frames. Make it look like a crude gray Blender viewport animation, not cinematic footage. A single continuous shot inside a rectangular hallway with a tiled floor and simple gray walls. The camera slowly advances toward a doorway. A black humanoid mannequin with unusually long arms emerges from behind the doorway. The camera suddenly whips right, falls onto its side, and stops. The mannequin slowly walks toward and past the fallen camera. Maintain consistent 3D geometry, character proportions, doorway placement, and spatial relationships. No cuts, no teleportation, no scene changes, no added props. Focus on exact camera movement, depth, and timing. The animation should play once as a complete sequence, not return to its starting pose.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 5 columns by 2 rows, 10 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward.\nThe 10 chronological views must be: approach distant doorway; approach closer; long-armed mannequin appears; camera whips right; camera tilts 45 degrees; camera lies 90 degrees sideways; figure approaches; figure passes close; figure passes beyond; empty tilted hallway. Never reset the ending. No frame numbers or labels.",
+    "references": [],
+    "targetAspectRatio": null
+  },
+  "fingerprint": "263ffe6bc4b689f48615368d6a9284e3f7f80046438c79056d49ef5ac241b3e1",
+  "references": [],
+  "status": "accepted",
+  "claimedAt": "2026-11-10T00:57:53.932Z",
+  "receipt": {
+    "output": {
+      "path": ".artifacts/content-production/gpt-image-26-social-2026-11-07/jobs/gpt26-social-g04-adapted-9f-v3/output-f74a21e95e7d20abed74b08c8f0f3207ad5091d7f41542580e50649dcd82eead.gif",
+      "sha256": "f74a21e95e7d20abed74b08c8f0f3207ad5091d7f41542580e50649dcd82eead"
+    },
+    "provider": "OpenAI + local GIF encoding",
+    "model": "GPT Image",
+    "recordedAt": "2026-11-10T00:59:50.786Z"
+  },
+  "review": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Ten gray hallway frames show approach, mannequin appearance, camera turn and fall, approach and pass, then empty tilted hallway. Play once, ten 500 ms frames, 5 seconds. Camera tilt and geometry are approximate drawn keyframes rather than a measured 3D camera simulation; documented adaptation limitation. Removed only 2px panel borders during extraction.",
+    "reviewedAt": "2026-11-10T00:59:50.788Z"
+  }
+}

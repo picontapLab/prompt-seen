@@ -1,0 +1,88 @@
+{
+  "candidateId": "gpt26-social-s09",
+  "slug": "source-nineties-bedroom-snapshot",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "A young woman with the same unchanged face and soft natural complexion, captured in a spontaneous 90s film snapshot. Her loose black hair falls over the shoulders of a baby-blue cropped zip-up sweatshirt worn over a white ribbed tank top. She looks directly into the camera with a relaxed expression and a faint smile. The dim beige wall behind her is covered with colorful polaroids, tiny stickers, music flyers, and handwritten messages. Bright on-camera flash, slightly cool color temperature, natural skin texture, subtle motion blur, authentic disposable-camera grain, imperfect vintage composition, nostalgic bedroom photography.",
+  "promptLanguage": "en",
+  "promptProvenance": "source-prompt",
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload one adult portrait as the identity reference. Our reference is a fictional adult generated for this example, replacing the unavailable author input.",
+      "zh-Hans": "上传一张成人肖像作为身份参考。本例以本站生成的虚构成人代替未公开的作者底图。"
+    },
+    "slots": [
+      {
+        "id": "person",
+        "labels": {
+          "en": "Project-generated reference",
+          "zh-Hans": "本站生成的示例参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-social-s09",
+      "platform": "X",
+      "author": "AIwithSarah_",
+      "url": "https://x.com/AIwithSarah_/status/2118202866448077182",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/AIwithSarah_/status/2118202866448077182",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Whole original post or gallery; not this generated example",
+        "zh-Hans": "原帖或整组作品；不属于本站新生成示例"
+      },
+      "observedAt": "2026-11-07",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Saved public X snapshot; complete prompt from saved author post/reply mirror",
+        "zh-Hans": "保存的 X 公开快照；完整原词取自作者主帖或回复镜像"
+      },
+      "evidenceUrl": "https://cdn.syndication.twimg.com/tweet-result?id=2118202866448077182&lang=en&token=1",
+      "sourcePromptStatus": {
+        "en": "Complete author text, original language",
+        "zh-Hans": "完整作者原词，保留原语言"
+      },
+      "metrics": [
+        {
+          "key": "likes",
+          "value": 39,
+          "labels": {
+            "en": "Source post likes",
+            "zh-Hans": "原帖点赞"
+          }
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Nineties bedroom snapshot — author prompt",
+      "description": "A flash-lit bedroom snapshot with a blue sweatshirt, wall photos and disposable-camera grain.",
+      "body": "## How to use\n\nUpload one adult portrait as the identity reference. Our reference is a fictional adult generated for this example, replacing the unavailable author input.\n\n## Source and generation\n\n[Original prompt by @AIwithSarah_](https://x.com/AIwithSarah_/status/2118202866448077182). The prompt stays in its original language on both language editions. The author identifies the source work as Image 2.6. This new example was generated with GPT Image; the tool did not return an exact model version. Source-post engagement is recorded separately.\n\nThe camera-date imprint is a decorative part of the generated image, not the actual generation date."
+    },
+    "zh-Hans": {
+      "title": "90年代胶片感卧室随拍 · 作者原词",
+      "description": "闪光灯下的卧室胶片随拍，包含蓝色卫衣、墙上照片与颗粒质感。",
+      "body": "## 使用方法\n\n上传一张成人肖像作为身份参考。本例以本站生成的虚构成人代替未公开的作者底图。\n\n## 来源与生成记录\n\n[作者 @AIwithSarah_ 的原始提示词](https://x.com/AIwithSarah_/status/2118202866448077182)。中英文页面均保留同一原语言正文。作者称来源作品使用 Image 2.6；本站新示例使用 GPT Image，工具未返回精确版本。原帖互动数据单独保存。\n\n画面中的胶片日期为模型生成的装饰，不是本次实际生成日期。"
+    }
+  },
+  "alt": {
+    "en": "A flash-lit bedroom snapshot with a blue sweatshirt, wall photos and disposable-camera grain.",
+    "zh-Hans": "闪光灯下的卧室胶片随拍，包含蓝色卫衣、墙上照片与颗粒质感。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-08T02:12:40.504Z",
+    "contentHash": "471336dd6d2d3f7dd074c595062b29931728e3037b8d45cab421baa4d3f14352"
+  }
+}

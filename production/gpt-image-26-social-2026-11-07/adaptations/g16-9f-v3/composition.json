@@ -1,0 +1,63 @@
+{
+  "method": "Nine-frame local adaptation of previously generated and reviewed source cells; no new image tool call",
+  "sourceFolder": "adaptations/g16",
+  "sourceSheetSha256": "b5ac5c7b423fdc1720e18f49e951bc330be2dc785c2e294633eead35d521356b",
+  "sourceFrameCount": 12,
+  "sourceSize": [
+    362,
+    362
+  ],
+  "outputSize": [
+    362,
+    362
+  ],
+  "scale": 1,
+  "sequence": [
+    {
+      "from": 0
+    },
+    {
+      "from": 1
+    },
+    {
+      "from": 3
+    },
+    {
+      "from": 4
+    },
+    {
+      "from": 6
+    },
+    {
+      "from": 7
+    },
+    {
+      "from": 8
+    },
+    {
+      "from": 10
+    },
+    {
+      "from": 11
+    }
+  ],
+  "sourceReview": {
+    "accepted": true,
+    "reviewer": "Codex",
+    "notes": "Twelve distinct staff orientations and sparkle phases are drawn in chronological order. Full body and staff remain within each cell; no timestamps or text. Minor redraw variation in staff length is visible. Encoded 12 frames at 100 ms, infinite loop, 1200 ms total.",
+    "reviewedAt": "2026-11-08T09:50:41.039Z"
+  },
+  "sourceClaim": {
+    "key": "gpt26-social-g16-adapted-v1",
+    "fingerprint": "a96505ddf134e8b7fb08030dd7ff416df22383f5ad6482a0bd27a1703fac6ef1",
+    "prompt": "Turn this character image into a seamless looping GIF, 12 frames at 100 ms per frame. Action: the character spins the staff in their hand, releases a small burst of sparkles, then returns to the starting pose. Keep the design, colors, proportions and line art the same as the original in every frame. Full body in frame, fixed camera, plain pure white background, no text.\n\nProduction adaptation: The text above defines the visual idea and action. For this call output only ONE PNG SPRITE SHEET, NOT a GIF file: exactly 4 columns by 3 rows, 12 equal square cells, chronological row-major order. No border, grid lines, gutters, frame numbers, timestamps, or extra text. Fixed camera and ground line unless the action explicitly moves the camera. Keep scale, character identity, palette and geometry consistent; each cell is one distinctly different consecutive animation pose with nothing crossing cell boundaries. Cells will be extracted and encoded locally afterward. Make the motion return naturally from the final cell to the first.\nExactly twelve distinct chronological poses: staff rotates in the hand through a full turn over frames 1–8, sparkles appear at 9–10, fade at 11, ready pose at 12. No timecodes, no numbers, no written text.",
+    "references": [
+      {
+        "path": "production/gpt-image-26-social-2026-11-07/references/R18/output.png",
+        "sha256": "de2edda17fdf152a512dab439cc48be7285190c4540a18b92ffcee087449e0b3",
+        "slotId": "reference1"
+      }
+    ],
+    "targetAspectRatio": null
+  }
+}
