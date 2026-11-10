@@ -285,18 +285,9 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
         storage: localStorage(path.join(root, 'public')),
         input: fs.readFileSync(reference.path),
         slug: `${recipe.slug}-reference`,
-        metadata: {
-          alt: slot.labels,
-          credit: {
-            creator: 'Prompt Seen',
-            creditText: 'AI-generated reference demonstration · Prompt Seen',
-            copyrightNotice: null,
-            sourceUrl: null,
-            license: null,
-            licenseUrl: null,
-            acquireLicenseUrl: null,
-          },
-        },
+        // A local input path does not establish authorship (§9.7). Previously imported
+        // references retain their declared credit; new inputs keep unknown fields null.
+        metadata: { alt: slot.labels },
       });
       referenceIds.push(ref.id);
     }

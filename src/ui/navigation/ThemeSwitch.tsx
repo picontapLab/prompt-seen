@@ -10,7 +10,8 @@ import { SegmentedControl } from '@/ui/primitives/SegmentedControl';
 /**
  * Header theme button (§11.8): switches between light and dark from whatever is showing. Its
  * icon and name follow the resolved theme through CSS (.when-dark / .when-light), so server
- * HTML and hydration agree whatever is stored. "System" is chosen in the footer or the menu.
+ * HTML and hydration agree whatever is stored. "System" is chosen in the footer or the menu,
+ * which is also where the theme is below 480 px, where the bar has no room for this button.
  */
 export function ThemeToggle() {
   const t = useTranslations('shell.theme');

@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { settle } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { cancelledFetch } from './support/errors';
+import { layoutProblems } from './support/layout';
 
 // The page shell and theme of step 1c (design doc §11.6.3, §11.9, §15.5.2), in a real browser
 // against the packaged site.
@@ -196,6 +197,68 @@ test.describe('narrow screens', () => {
     await expect(dialog).toBeHidden();
     await expect(open).toBeFocused();
     expect(errors).toEqual([]);
+  });
+});
+
+/** Header controls smaller than `--target-min` or past an edge of the viewport. */
+const headerTargetProblems = (page: Page) =>
+  page.getByRole('banner').evaluate((header) => {
+    const min = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--target-min'));
+    return [...header.querySelectorAll('a, button')].flatMap((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.width === 0) return [];
+      const fits = r.width >= min && r.height >= min && r.left >= 0 && r.right <= innerWidth;
+      return fits ? [] : [`${el.getAttribute('aria-label') ?? el.textContent}: ${r.left}–${r.right} × ${r.height}`];
+    });
+  });
+
+test.describe('the narrowest screens', () => {
+  test.use({ viewport: { width: 320, height: 640 } });
+
+  for (const locale of BUILD.locales) {
+    test(`${locale.code}: the header fits at 320 px and nothing leaves reach`, async ({ page }) => {
+      const t = (key: string) => message(locale.code, key);
+      await page.goto(home(locale.pathPrefix));
+      await page.evaluate(() => document.fonts.ready);
+      expect(await layoutProblems(page)).toEqual([]);
+      expect(await headerTargetProblems(page)).toEqual([]);
+      const bar = page.getByRole('banner').locator('.container');
+      expect(await bar.evaluate((el) => el.scrollWidth - el.clientWidth)).toBe(0);
+      await expect(page.getByRole('banner').getByRole('link', { name: t('search.open') })).toBeInViewport({ ratio: 1 });
+
+      // The theme button gives up its place in the bar; the menu has the theme, language and
+      // saved works.
+      const open = page.getByRole('button', { name: t('shell.menu.open') });
+      await expect(open).toBeInViewport({ ratio: 1 });
+      await open.click();
+      const dialog = page.getByRole('dialog', { name: t('shell.menu.title') });
+      await expect(dialog.getByRole('combobox')).toBeVisible();
+      await expect(dialog.getByRole('link', { name: message(locale.code, 'favorites.link') })).toBeVisible();
+      await settle(page);
+      expect(await layoutProblems(page, '[role="dialog"]')).toEqual([]);
+      await dialog.getByRole('radio', { name: t('shell.theme.dark') }).click();
+      await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    });
+  }
+
+  test('the header still fits before the display font arrives', async ({ page }) => {
+    await page.route(/\.woff2(\?|$)/, (route) => route.abort());
+    await page.goto(home());
+    await page.evaluate(() => document.fonts.ready);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
+    expect(await headerTargetProblems(page)).toEqual([]);
+  });
+
+  test('the theme button stays where there is no menu, and comes back at 480 px', async ({ page }) => {
+    const toggle = page.getByRole('banner').getByRole('button', { name: message(first!.code, 'shell.theme.toDark') });
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.goto(`${BASE}/no-such-page-at-all/`);
+    await expect(page.getByRole('button', { name: message(first!.code, 'shell.menu.open') })).toHaveCount(0);
+    await expect(toggle).toBeVisible();
+    await page.goto(home());
+    await expect(toggle).toBeHidden();
+    await page.setViewportSize({ width: 480, height: 640 });
+    await expect(toggle).toBeVisible();
   });
 });
 

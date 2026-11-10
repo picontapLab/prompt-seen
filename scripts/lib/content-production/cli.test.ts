@@ -5,6 +5,8 @@ import { execFileSync } from 'node:child_process';
 import sharp from 'sharp';
 import YAML from 'yaml';
 import { afterEach, expect, it } from 'vitest';
+import { importMedia } from '../media/import';
+import { localStorage } from '../media/storage';
 import { recipeReviewHash } from './publish';
 
 const roots: string[] = [];
@@ -39,6 +41,23 @@ it.each([0, 1, 2])(
         return { slotId: `subject${index}`, path: file };
       }),
     );
+    const declaredCredit = {
+      creator: 'Reference photographer',
+      creditText: 'Licensed reference photo',
+      copyrightNotice: null,
+      sourceUrl: 'https://example.org/reference',
+      license: 'CC BY 4.0',
+      licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+      acquireLicenseUrl: null,
+    };
+    if (references[0])
+      await importMedia({
+        dir: path.join(root, 'content'),
+        storage: localStorage(path.join(root, 'public')),
+        input: fs.readFileSync(references[0].path),
+        slug: 'licensed-reference',
+        metadata: { alt: { en: 'Reference photo', 'zh-Hans': '参考照片' }, credit: declaredCredit },
+      });
     const call = (command: string, input?: unknown, extra: string[] = []) => {
       const file = path.join(root, 'input.json');
       if (input) fs.writeFileSync(file, JSON.stringify(input));
@@ -117,16 +136,17 @@ it.each([0, 1, 2])(
     expect(fs.readdirSync(path.join(root, 'content/prompts'))).toHaveLength(1);
     const run = YAML.parse(fs.readFileSync(path.join(root, 'content/examples', first.example, 'run.yaml'), 'utf8'));
     expect(run.referenceAssetIds).toHaveLength(count);
-    // References are published images too: their detail and og files carry the §9.7 credit.
-    for (const id of run.referenceAssetIds) {
+    // Preserve declared credits and IPTC (§9.7); never infer a new input's author from its path.
+    for (const [index, id] of run.referenceAssetIds.entries()) {
       const media = YAML.parse(fs.readFileSync(path.join(root, 'content/media', `${id}.yaml`), 'utf8'));
-      expect(media.credit).toMatchObject({
-        creator: 'Prompt Seen',
-        creditText: 'AI-generated reference demonstration · Prompt Seen',
-        license: null,
-      });
-      for (const variant of [media.variants.detail, media.variants.og])
-        expect(fs.readFileSync(path.join(root, 'public', variant.key)).toString('latin1')).toContain('dc:creator');
+      expect(media.credit).toMatchObject(
+        index === 0 ? declaredCredit : { creator: null, creditText: null, license: null },
+      );
+      for (const variant of [media.variants.detail, media.variants.og]) {
+        const bytes = fs.readFileSync(path.join(root, 'public', variant.key)).toString('latin1');
+        if (index === 0) expect(bytes).toContain(declaredCredit.creator);
+        else expect(bytes).not.toContain('dc:creator');
+      }
     }
     if (count) {
       fs.appendFileSync(references[0]!.path, 'changed');
