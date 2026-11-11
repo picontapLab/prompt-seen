@@ -21,3 +21,11 @@ No media or animation description is approved in B0. References to historical im
 `PW_BROWSERS=chromium,firefox,webkit npm run test:e2e -- tests/e2e/spanish.browser.spec.ts --workers=2`: 24 passed. About and License were checked at widths 360, 768, 1024, 1440 in both light and dark themes; language/direction, actual Spanish headings/navigation, layout, serious/critical axe findings and uncaught page errors passed. No screenshot-only or native-zoom claim is made. Log: `.artifacts/localization/es/foundation-browser.log`.
 
 43 focused search/tokenization/Worker/highlight tests and the 32 real German search scenarios passed. ESLint, changed-code formatting and typecheck passed. Full-corpus Spanish, browser search, native zoom, performance and release checks remain pending.
+
+## B1 pilot — 2026-11-11
+
+Text evidence: `evidence/pilot-text-review.json` (28 pages and 235 fields). Visual evidence: `evidence/pilot-visual-review.json` (43 original assets and all six GIF frames; asset hashes retained). Review corrections remove an inaccurate bamboo count, describe the actual frontal grayscale guide portrait, and use farol for the lantern. Original Prompt text and model/usage uncertainty are preserved.
+
+25 standalone pages and 235 fields promoted through hash-bound approvals. c_001, c_017 and topic/style/ink remain draft until B4 member completion. Including foundation pages, the report has 27 current of 381 targets and 696 current of 2,220 fields, with zero unreviewed/outdated/invalid entries. B1 CLI IDs are retained in batch-plan.json.
+
+Subpath preview rebuild passed. Complete pilot browser run: 96 passed across Chromium, Firefox and WebKit, four widths and both themes, with actual controls, template clipboard/download, favorites, popup and available frozen Worker scenarios. Log: `.artifacts/localization/es/pilot-browser-final.log`. A prior failure reproduced a WebKit Intl.DisplayNames hydration mismatch (`Prompt · inglés` versus `Prompt · Inglés`); Spanish display names now normalize only the initial localized letter. The browser home-label assertion and uncaught-error collection exercise the regression. Typecheck and serialized-corpus unit acceptance passed. Native zoom, full corpus and release acceptance remain pending.

@@ -14,7 +14,13 @@ export const textDirection = (lang: string): 'rtl' | 'ltr' =>
 /** The name of a prompt's language in the page language, e.g. "English" or "英语" (§11.8.3). */
 export function languageName(language: string, pageLang: string): string {
   try {
-    return new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
+    const name = new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
+    // CLDR versions disagree on Spanish display-name casing (inglés/Inglés). Language
+    // names are lowercase in Spanish; normalize the initial so WebKit hydrates Node's HTML.
+    // Preserve internal proper-name casing, and leave unknown language tags unchanged.
+    return pageLang.split('-')[0]!.toLowerCase() === 'es' && name !== language
+      ? name.charAt(0).toLocaleLowerCase(pageLang) + name.slice(1)
+      : name;
   } catch {
     return language;
   }
