@@ -1,0 +1,120 @@
+{
+  "label": "root",
+  "commit": "c82dc12570e1af52bd7d4a967601fa84b061bbb7",
+  "summarizedAt": "2026-11-11T14:23:18.021Z",
+  "runs": [
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-root-complete.json",
+      "stats": {
+        "startTime": "2026-11-11T14:02:05.301Z",
+        "duration": 1083741.746,
+        "expected": 1497,
+        "skipped": 97,
+        "unexpected": 4,
+        "flaky": 0
+      }
+    },
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-root-retry.json",
+      "stats": {
+        "startTime": "2026-11-11T14:21:50.688Z",
+        "duration": 13814.121,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "byProject": {
+    "http": {
+      "expected": 226,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chromium": {
+      "expected": 439,
+      "skipped": 18,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "firefox": {
+      "expected": 418,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "expected": 418,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "initialFailures": [
+    {
+      "key": "chromium|acceptance.browser.spec.ts|70|ja light desktop",
+      "file": "acceptance.browser.spec.ts",
+      "title": "acceptance.browser.spec.ts > every built language, both themes, four widths: nothing cut off or overlapping > ja light desktop",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 41783
+        }
+      ]
+    },
+    {
+      "key": "chromium|home-language.browser.spec.ts|232|a delayed feed page cannot append source summaries after language navigation",
+      "file": "home-language.browser.spec.ts",
+      "title": "home-language.browser.spec.ts > a delayed feed page cannot append source summaries after language navigation",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 11581
+        }
+      ]
+    },
+    {
+      "key": "chromium|home-language.browser.spec.ts|267|a late popup request stays isolated when the same work opens in another locale",
+      "file": "home-language.browser.spec.ts",
+      "title": "home-language.browser.spec.ts > a late popup request stays isolated when the same work opens in another locale",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 8191
+        }
+      ]
+    },
+    {
+      "key": "chromium|pages.browser.spec.ts|122|de: pages of step 3e pass axe (dark)",
+      "file": "pages.browser.spec.ts",
+      "title": "pages.browser.spec.ts > de: pages of step 3e pass axe (dark)",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 42934
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "portuguese": {
+    "expected": 165,
+    "skipped": 0,
+    "unexpected": 0
+  },
+  "passed": true
+}

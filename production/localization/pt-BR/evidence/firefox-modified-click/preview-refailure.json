@@ -1,0 +1,500 @@
+[
+  {
+    "archive": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/.artifacts/localization/pt-BR/final-preview-results/popup.browser-desktop-modi-fd7d0-aScript-reach-the-full-page-firefox/trace.zip",
+    "context": {
+      "version": 10,
+      "type": "context-options",
+      "origin": "library",
+      "browserName": "firefox",
+      "playwrightVersion": "1.64.1",
+      "options": {
+        "noDefaultViewport": false,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "screen": {
+          "width": 1920,
+          "height": 1080
+        },
+        "ignoreHTTPSErrors": false,
+        "javaScriptEnabled": true,
+        "bypassCSP": false,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+        "locale": "en-US",
+        "offline": false,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false,
+        "colorScheme": "light",
+        "reducedMotion": "no-preference",
+        "forcedColors": "none",
+        "acceptDownloads": "accept",
+        "contrast": "no-preference",
+        "baseURL": "http://127.0.0.1:8097",
+        "serviceWorkers": "allow",
+        "selectorEngines": [],
+        "testIdAttributeName": "data-testid"
+      },
+      "platform": "darwin",
+      "wallTime": 1794411006460,
+      "monotonicTime": 1065840.26,
+      "sdkLanguage": "javascript",
+      "testIdAttributeName": "data-testid",
+      "title": "popup.browser.spec.ts:546 \u203a desktop \u203a modified clicks and pages without JavaScript reach the full page"
+    },
+    "frontCompletedAt": 1066829.021,
+    "clickDispatchedAt": 1067072.06,
+    "activationToDispatchMs": 243.03900000010617,
+    "clickCompletedAt": 1067233.38,
+    "pageEventCount": 1,
+    "lastSnapshotUrl": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+    "lastSnapshotTimestamp": 1067241.005,
+    "archiveSha256": "9bcc7fe5baad0fe89e139ca5337dc0ec66b7e7ec6abfef53d7ced540d233e3cb",
+    "retainedTraceEvents": [
+      {
+        "source": "test.trace",
+        "event": {
+          "type": "error",
+          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "stack": []
+        }
+      },
+      {
+        "source": "test.trace",
+        "event": {
+          "type": "error",
+          "message": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.",
+          "stack": [
+            {
+              "file": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts",
+              "line": 559,
+              "column": 15
+            }
+          ]
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "event",
+          "time": 1066175.83,
+          "class": "BrowserContext",
+          "method": "page",
+          "params": {
+            "pageId": "page@c02fc32118ecd68567766786a18a45a1"
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "before",
+          "callId": "nvgd@20629",
+          "startTime": 1066828.34,
+          "class": "Page",
+          "method": "bringToFront",
+          "params": {}
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "after",
+          "callId": "nvgd@20629",
+          "endTime": 1066829.021
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "before",
+          "callId": "nvgd@20633",
+          "startTime": 1066830.944,
+          "class": "Frame",
+          "method": "click",
+          "params": {
+            "selector": "[role=\"feed\"] a[href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\"] >> nth=0",
+            "strict": true,
+            "modifiers": [
+              "Meta"
+            ]
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1066847.86,
+          "message": "waiting for locator('[role=\"feed\"] a[href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\"]').first()"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1066934.178,
+          "message": "  locator resolved to <a class=\"mmMLuq_link\" data-crop-target=\"\" href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\" data-prefetch=\"/prompt-seen/generated/en/prompts/adapted-s14-everyday-portrait.json\">\u2026</a>"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1066940.395,
+          "message": "attempting click action"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1066940.426,
+          "message": "  waiting for element to be visible, enabled and stable"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067011.592,
+          "message": "  element is visible, enabled and stable"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067011.6,
+          "message": "  scrolling into view if needed"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067040.443,
+          "message": "  done scrolling"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "input",
+          "callId": "nvgd@20633",
+          "point": {
+            "x": 124,
+            "y": 486
+          },
+          "box": {
+            "x": 40,
+            "y": 291.51666259765625,
+            "width": 169.4499969482422,
+            "height": 389.58331298828125
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067072.06,
+          "message": "  performing click action"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067233.227,
+          "message": "  click action done"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067233.237,
+          "message": "  waiting for scheduled navigations to finish"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "nvgd@20633",
+          "time": 1067233.342,
+          "message": "  navigations have finished"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "after",
+          "callId": "nvgd@20633",
+          "endTime": 1067233.38
+        }
+      }
+    ]
+  },
+  {
+    "archive": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/.artifacts/localization/pt-BR/final-preview-results/popup.browser-desktop-modi-fd7d0-aScript-reach-the-full-page-firefox-retry1/trace.zip",
+    "context": {
+      "version": 10,
+      "type": "context-options",
+      "origin": "library",
+      "browserName": "firefox",
+      "playwrightVersion": "1.64.1",
+      "options": {
+        "noDefaultViewport": false,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "screen": {
+          "width": 1920,
+          "height": 1080
+        },
+        "ignoreHTTPSErrors": false,
+        "javaScriptEnabled": true,
+        "bypassCSP": false,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+        "locale": "en-US",
+        "offline": false,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false,
+        "colorScheme": "light",
+        "reducedMotion": "no-preference",
+        "forcedColors": "none",
+        "acceptDownloads": "accept",
+        "contrast": "no-preference",
+        "baseURL": "http://127.0.0.1:8097",
+        "serviceWorkers": "allow",
+        "selectorEngines": [],
+        "testIdAttributeName": "data-testid"
+      },
+      "platform": "darwin",
+      "wallTime": 1794411044444,
+      "monotonicTime": 1103824.144,
+      "sdkLanguage": "javascript",
+      "testIdAttributeName": "data-testid",
+      "title": "popup.browser.spec.ts:546 \u203a desktop \u203a modified clicks and pages without JavaScript reach the full page"
+    },
+    "frontCompletedAt": 1105096.103,
+    "clickDispatchedAt": 1105402.315,
+    "activationToDispatchMs": 306.21200000005774,
+    "clickCompletedAt": 1105515.518,
+    "pageEventCount": 1,
+    "lastSnapshotUrl": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+    "lastSnapshotTimestamp": 1105538.348,
+    "archiveSha256": "74784d48eb0aea69c00e29e9ad3353f3f80f05bb6da36e8659e69e53ad66f3f3",
+    "retainedTraceEvents": [
+      {
+        "source": "test.trace",
+        "event": {
+          "type": "error",
+          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "stack": []
+        }
+      },
+      {
+        "source": "test.trace",
+        "event": {
+          "type": "error",
+          "message": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.",
+          "stack": [
+            {
+              "file": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts",
+              "line": 559,
+              "column": 15
+            }
+          ]
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "event",
+          "time": 1104512.298,
+          "class": "BrowserContext",
+          "method": "page",
+          "params": {
+            "pageId": "page@384092d8446d8edf50af93d95edfcd4d"
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "before",
+          "callId": "rwfk@52",
+          "startTime": 1105093.059,
+          "class": "Page",
+          "method": "bringToFront",
+          "params": {}
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "after",
+          "callId": "rwfk@52",
+          "endTime": 1105096.103
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "before",
+          "callId": "rwfk@56",
+          "startTime": 1105099.969,
+          "class": "Frame",
+          "method": "click",
+          "params": {
+            "selector": "[role=\"feed\"] a[href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\"] >> nth=0",
+            "strict": true,
+            "modifiers": [
+              "Meta"
+            ]
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105107.608,
+          "message": "waiting for locator('[role=\"feed\"] a[href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\"]').first()"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105183.828,
+          "message": "  locator resolved to <a class=\"mmMLuq_link\" data-crop-target=\"\" href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\" data-prefetch=\"/prompt-seen/generated/en/prompts/adapted-s14-everyday-portrait.json\">\u2026</a>"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105209.876,
+          "message": "attempting click action"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105210.084,
+          "message": "  waiting for element to be visible, enabled and stable"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105243.887,
+          "message": "  element is visible, enabled and stable"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105243.9,
+          "message": "  scrolling into view if needed"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105261.469,
+          "message": "  done scrolling"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "input",
+          "callId": "rwfk@56",
+          "point": {
+            "x": 124,
+            "y": 486
+          },
+          "box": {
+            "x": 40,
+            "y": 291.51666259765625,
+            "width": 169.4499969482422,
+            "height": 389.58331298828125
+          }
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105402.315,
+          "message": "  performing click action"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105514.723,
+          "message": "  click action done"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105514.733,
+          "message": "  waiting for scheduled navigations to finish"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "log",
+          "callId": "rwfk@56",
+          "time": 1105515.29,
+          "message": "  navigations have finished"
+        }
+      },
+      {
+        "source": "1-trace.trace",
+        "event": {
+          "type": "after",
+          "callId": "rwfk@56",
+          "endTime": 1105515.518
+        }
+      }
+    ]
+  }
+]

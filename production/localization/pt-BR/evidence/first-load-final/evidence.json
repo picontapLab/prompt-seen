@@ -1,0 +1,43 @@
+{
+  "buildId": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75",
+  "startedAt": "2026-11-11T16:29:03.025Z",
+  "completedAt": "2026-11-11T16:29:40.500Z",
+  "origin": "http://127.0.0.1:8097",
+  "buildMode": "production",
+  "basePath": "",
+  "preflight": [
+    {
+      "route": "/",
+      "status": 200,
+      "htmlLang": "en",
+      "url": "http://127.0.0.1:8097/"
+    },
+    {
+      "route": "/en/search/",
+      "status": 200,
+      "htmlLang": "en",
+      "url": "http://127.0.0.1:8097/en/search/"
+    },
+    {
+      "route": "/pt-br/",
+      "status": 200,
+      "htmlLang": "pt-BR",
+      "url": "http://127.0.0.1:8097/pt-br/"
+    },
+    {
+      "route": "/pt-br/prompts/plum-branch-in-ink/",
+      "status": 200,
+      "htmlLang": "pt-BR",
+      "url": "http://127.0.0.1:8097/pt-br/prompts/plum-branch-in-ink/"
+    },
+    {
+      "route": "/pt-br/templates/product-poster/",
+      "status": 200,
+      "htmlLang": "pt-BR",
+      "url": "http://127.0.0.1:8097/pt-br/templates/product-poster/"
+    }
+  ],
+  "exitCode": 0,
+  "servedBuildIdAfter": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75",
+  "method": "scripts/measure-first-load.ts --no-prefetch; gzip level 6; 6 seconds idle; one cold context per route"
+}

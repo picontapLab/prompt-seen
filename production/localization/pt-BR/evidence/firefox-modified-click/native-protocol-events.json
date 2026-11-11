@@ -1,0 +1,953 @@
+[
+  {
+    "source": "/private/tmp/pt-br-localization-20261111/diagnosis/native-protocol-debug.txt",
+    "sha256": "566d0b0a6c07096cdf5ccb4d3e4b7c308c89243275c2e11afe1047173880e708",
+    "events": [
+      {
+        "time": "2026-11-11T15:50:01.090Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a",
+            "targetInfo": {
+              "targetId": "5f0f0d21-157c-403a-ad3f-e5fc67901b4f",
+              "type": "page",
+              "browserContextId": "168b1d3b-3127-41e8-969e-391584e87c15"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:01.261Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20"
+          },
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:01.281Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20",
+            "url": "about:blank",
+            "name": ""
+          },
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:01.282Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:01.343Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21"
+          },
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:01.427Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+            "name": ""
+          },
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.117Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keydown",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "key": "Meta",
+            "repeat": false,
+            "location": 1,
+            "text": ""
+          },
+          "id": 134,
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.138Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousemove",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8
+          },
+          "id": 141,
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.138Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousedown",
+            "button": 0,
+            "buttons": 1,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 142,
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.138Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mouseup",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 143,
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.262Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "817a6d12-7c49-4dcf-9610-ff57fb0ec735",
+            "targetInfo": {
+              "targetId": "25740591-ae91-40bf-8786-a27a2706bfb2",
+              "type": "page",
+              "browserContextId": "168b1d3b-3127-41e8-969e-391584e87c15",
+              "openerId": "5f0f0d21-157c-403a-ad3f-e5fc67901b4f"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:02.270Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keyup",
+            "key": "Meta",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "location": 1,
+            "repeat": false
+          },
+          "id": 147,
+          "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:03.278Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23"
+          },
+          "sessionId": "817a6d12-7c49-4dcf-9610-ff57fb0ec735"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:07.189Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/adapted-s14-everyday-portrait/",
+            "name": ""
+          },
+          "sessionId": "817a6d12-7c49-4dcf-9610-ff57fb0ec735"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:07.418Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "817a6d12-7c49-4dcf-9610-ff57fb0ec735"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:07.703Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "2f4de73e-66aa-4567-aa5f-0738d594275a",
+            "targetId": "5f0f0d21-157c-403a-ad3f-e5fc67901b4f"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:07.722Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "817a6d12-7c49-4dcf-9610-ff57fb0ec735",
+            "targetId": "25740591-ae91-40bf-8786-a27a2706bfb2"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.320Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e",
+            "targetInfo": {
+              "targetId": "e1639b61-65e0-4126-9597-30709eb0d648",
+              "type": "page",
+              "browserContextId": "4c2b3be4-5777-4656-b9b4-85ebe0618c66"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.521Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20"
+          },
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.546Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20",
+            "url": "about:blank",
+            "name": ""
+          },
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.547Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.613Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21"
+          },
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:09.706Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+            "name": ""
+          },
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.451Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keydown",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "key": "Meta",
+            "repeat": false,
+            "location": 1,
+            "text": ""
+          },
+          "id": 136,
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.453Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousemove",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8
+          },
+          "id": 137,
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.453Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousedown",
+            "button": 0,
+            "buttons": 1,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 138,
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.453Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mouseup",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 139,
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.541Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "b343115a-cb02-4408-92df-ee3563b1ca0d",
+            "targetInfo": {
+              "targetId": "7d4cdbdb-1b31-44b1-9ace-c3eb6d5778cd",
+              "type": "page",
+              "browserContextId": "4c2b3be4-5777-4656-b9b4-85ebe0618c66",
+              "openerId": "e1639b61-65e0-4126-9597-30709eb0d648"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.573Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keyup",
+            "key": "Meta",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "location": 1,
+            "repeat": false
+          },
+          "id": 141,
+          "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.622Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23"
+          },
+          "sessionId": "b343115a-cb02-4408-92df-ee3563b1ca0d"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.637Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/adapted-s14-everyday-portrait/",
+            "name": ""
+          },
+          "sessionId": "b343115a-cb02-4408-92df-ee3563b1ca0d"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:10.637Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "b343115a-cb02-4408-92df-ee3563b1ca0d"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:16.428Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "4f8ff8ac-caae-4d44-9950-732a690cad1e",
+            "targetId": "e1639b61-65e0-4126-9597-30709eb0d648"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:16.435Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "b343115a-cb02-4408-92df-ee3563b1ca0d",
+            "targetId": "7d4cdbdb-1b31-44b1-9ace-c3eb6d5778cd"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.332Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19",
+            "targetInfo": {
+              "targetId": "2b2abce2-25df-4499-9f38-28ab41943364",
+              "type": "page",
+              "browserContextId": "66842963-feff-4fdc-96c5-2bb011141ff6"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.510Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20"
+          },
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.529Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20",
+            "url": "about:blank",
+            "name": ""
+          },
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.530Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.585Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21"
+          },
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:18.669Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+            "name": ""
+          },
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.181Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keydown",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "key": "Meta",
+            "repeat": false,
+            "location": 1,
+            "text": ""
+          },
+          "id": 131,
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.184Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousemove",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8
+          },
+          "id": 132,
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.184Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousedown",
+            "button": 0,
+            "buttons": 1,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 133,
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.184Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mouseup",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 134,
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.282Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "4f02e14b-9728-4d3b-aeec-7215011b91a2",
+            "targetInfo": {
+              "targetId": "9e8a26f5-da61-4cfb-9406-6ce46c6a1b30",
+              "type": "page",
+              "browserContextId": "66842963-feff-4fdc-96c5-2bb011141ff6",
+              "openerId": "2b2abce2-25df-4499-9f38-28ab41943364"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.288Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keyup",
+            "key": "Meta",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "location": 1,
+            "repeat": false
+          },
+          "id": 143,
+          "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:19.569Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23"
+          },
+          "sessionId": "4f02e14b-9728-4d3b-aeec-7215011b91a2"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:20.262Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/adapted-s14-everyday-portrait/",
+            "name": ""
+          },
+          "sessionId": "4f02e14b-9728-4d3b-aeec-7215011b91a2"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:20.303Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "4f02e14b-9728-4d3b-aeec-7215011b91a2"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:20.494Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "70ae767e-1a6f-4a52-b263-4528fc464a19",
+            "targetId": "2b2abce2-25df-4499-9f38-28ab41943364"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:20.503Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "4f02e14b-9728-4d3b-aeec-7215011b91a2",
+            "targetId": "9e8a26f5-da61-4cfb-9406-6ce46c6a1b30"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.168Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad",
+            "targetInfo": {
+              "targetId": "35900bd9-b63f-4714-80eb-f957d83ca0e9",
+              "type": "page",
+              "browserContextId": "94a5b2fc-7bd9-4722-bb09-9f227a1bf06e"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.312Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20"
+          },
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.330Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-20",
+            "url": "about:blank",
+            "name": ""
+          },
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.331Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.384Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21"
+          },
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:22.478Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-10",
+            "navigationId": "nav-21",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/",
+            "name": ""
+          },
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.006Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keydown",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "key": "Meta",
+            "repeat": false,
+            "location": 1,
+            "text": ""
+          },
+          "id": 131,
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.030Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousemove",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8
+          },
+          "id": 139,
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.030Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mousedown",
+            "button": 0,
+            "buttons": 1,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 140,
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.030Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchMouseEvent",
+          "params": {
+            "type": "mouseup",
+            "button": 0,
+            "buttons": 0,
+            "x": 124,
+            "y": 486,
+            "modifiers": 8,
+            "clickCount": 1
+          },
+          "id": 141,
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.191Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.attachedToTarget",
+          "params": {
+            "sessionId": "8e3d87d0-8cc6-47d7-a0ec-08c95cf24eb4",
+            "targetInfo": {
+              "targetId": "49d7f71c-7e69-4707-bb08-15b34ba5fb90",
+              "type": "page",
+              "browserContextId": "94a5b2fc-7bd9-4722-bb09-9f227a1bf06e",
+              "openerId": "35900bd9-b63f-4714-80eb-f957d83ca0e9"
+            }
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.208Z",
+        "direction": "send",
+        "event": {
+          "method": "Page.dispatchKeyEvent",
+          "params": {
+            "type": "keyup",
+            "key": "Meta",
+            "keyCode": 91,
+            "code": "MetaLeft",
+            "location": 1,
+            "repeat": false
+          },
+          "id": 144,
+          "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.278Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationStarted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23"
+          },
+          "sessionId": "8e3d87d0-8cc6-47d7-a0ec-08c95cf24eb4"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.290Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.navigationCommitted",
+          "params": {
+            "frameId": "mainframe-11",
+            "navigationId": "nav-23",
+            "url": "http://127.0.0.1:8097/prompt-seen/en/prompts/adapted-s14-everyday-portrait/",
+            "name": ""
+          },
+          "sessionId": "8e3d87d0-8cc6-47d7-a0ec-08c95cf24eb4"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:23.290Z",
+        "direction": "receive",
+        "event": {
+          "method": "Page.ready",
+          "sessionId": "8e3d87d0-8cc6-47d7-a0ec-08c95cf24eb4"
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:30.167Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "d6e48faa-fa22-4577-a5f0-01e8a2e58cad",
+            "targetId": "35900bd9-b63f-4714-80eb-f957d83ca0e9"
+          }
+        }
+      },
+      {
+        "time": "2026-11-11T15:50:30.175Z",
+        "direction": "receive",
+        "event": {
+          "method": "Browser.detachedFromTarget",
+          "params": {
+            "sessionId": "8e3d87d0-8cc6-47d7-a0ec-08c95cf24eb4",
+            "targetId": "49d7f71c-7e69-4707-bb08-15b34ba5fb90"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "source": "/private/tmp/pt-br-localization-20261111/diagnosis/native-real-protocol-debug.txt",
+    "sha256": "5d612af22e52a60f8bd07d220aa5d6c05ddbe2f284d46d947a1b257839cae61d",
+    "events": []
+  }
+]

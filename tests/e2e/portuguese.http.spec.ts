@@ -197,8 +197,9 @@ if (portuguese) {
     expect(entries.length).toBeGreaterThan(0);
     const sitemap = await request.get(`${BASE}${prefix}/sitemap-pages.xml`);
     if (!production) {
-      expect(sitemap.status()).toBe(portuguese.enabled ? 200 : 404);
-      expect(xmlLocations(await sitemap.text())).toEqual([]);
+      // Preview packaging omits every per-language sitemap, even for enabled locales.
+      expect(sitemap.status()).toBe(404);
+      expect(xmlLocations(await (await get(request, '/sitemap.xml')).text())).toEqual([]);
       expect(await (await get(request, '/llms.txt')).text()).toBe('');
     } else {
       expect(sitemap.status()).toBe(200);

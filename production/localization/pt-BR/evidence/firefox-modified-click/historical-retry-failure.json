@@ -1,0 +1,40 @@
+{
+  "source": ".artifacts/localization/pt-BR/e2e-production-subpath-retry.json",
+  "stats": {
+    "startTime": "2026-11-11T14:57:10.081Z",
+    "duration": 34932.962,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "file": "popup.browser.spec.ts",
+      "line": 546,
+      "title": "modified clicks and pages without JavaScript reach the full page",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 30805,
+          "retry": 0,
+          "errors": [
+            {
+              "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+            },
+            {
+              "location": {
+                "file": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts",
+                "column": 15,
+                "line": 555
+              },
+              "message": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.\n\n  553 |     const modifier = process.platform === 'darwin' ? 'Meta' : 'Control';\n  554 |     const [tab] = await Promise.all([\n> 555 |       context.waitForEvent('page'),\n      |               ^\n  556 |       card(page, first.slug).click({ modifiers: [modifier] }),\n  557 |     ]);\n  558 |     // Assert the page after selecting the newly opened background tab, as a visitor would.\n    at /Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts:555:15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

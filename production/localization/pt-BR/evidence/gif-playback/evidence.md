@@ -16,20 +16,20 @@ The first a_509 screenshot was delayed to frame 4 (22–314 ms capture interval)
 
 ## Reviewed sheets
 
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-01.jpg: a_382, a_384, a_385
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-02.jpg: a_386, a_387, a_389
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-03.jpg: a_390, a_391, a_393
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-04.jpg: a_394, a_396, a_397
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-05.jpg: a_472, a_474, a_476
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-06.jpg: a_477, a_478, a_479
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-07.jpg: a_480, a_482, a_483
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-08.jpg: a_484, a_485, a_486
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-09.jpg: a_488, a_490, a_492
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-10.jpg: a_494, a_496, a_497
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-11.jpg: a_498, a_499, a_501
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-12.jpg: a_503, a_505, a_507
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/sheet-13.jpg: a_509, a_510
-- /private/tmp/pt-br-localization-20261111/gif-browser-playback/supplement/sheet-01.jpg: a_384, a_385, a_393, a_394, a_397, a_472, a_501, a_503, a_507, a_509
+- [sheet-01.jpg](sheet-01.jpg): a_382, a_384, a_385
+- [sheet-02.jpg](sheet-02.jpg): a_386, a_387, a_389
+- [sheet-03.jpg](sheet-03.jpg): a_390, a_391, a_393
+- [sheet-04.jpg](sheet-04.jpg): a_394, a_396, a_397
+- [sheet-05.jpg](sheet-05.jpg): a_472, a_474, a_476
+- [sheet-06.jpg](sheet-06.jpg): a_477, a_478, a_479
+- [sheet-07.jpg](sheet-07.jpg): a_480, a_482, a_483
+- [sheet-08.jpg](sheet-08.jpg): a_484, a_485, a_486
+- [sheet-09.jpg](sheet-09.jpg): a_488, a_490, a_492
+- [sheet-10.jpg](sheet-10.jpg): a_494, a_496, a_497
+- [sheet-11.jpg](sheet-11.jpg): a_498, a_499, a_501
+- [sheet-12.jpg](sheet-12.jpg): a_503, a_505, a_507
+- [sheet-13.jpg](sheet-13.jpg): a_509, a_510
+- [supplement/sheet-01.jpg](supplement/sheet-01.jpg): a_384, a_385, a_393, a_394, a_397, a_472, a_501, a_503, a_507, a_509
 
 ## Per-asset observed playback
 

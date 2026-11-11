@@ -1,0 +1,155 @@
+{
+  "label": "final-preview",
+  "commit": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75",
+  "summarizedAt": "2026-11-11T15:56:02.363Z",
+  "runs": [
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-preview.json",
+      "stats": {
+        "startTime": "2026-11-11T15:12:20.996Z",
+        "duration": 1744658.195,
+        "expected": 1720,
+        "skipped": 56,
+        "unexpected": 2,
+        "flaky": 2
+      }
+    },
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-preview-retry.json",
+      "stats": {
+        "startTime": "2026-11-11T15:41:48.070Z",
+        "duration": 92589.23800000001,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-preview-native.json",
+      "stats": {
+        "startTime": "2026-11-11T15:54:02.551Z",
+        "duration": 44671.39,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "byProject": {
+    "http": {
+      "expected": 277,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chromium": {
+      "expected": 498,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "firefox": {
+      "expected": 475,
+      "skipped": 26,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "expected": 474,
+      "skipped": 27,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "initialFailures": [
+    {
+      "key": "http|portuguese.http.spec.ts|194|pt-BR: machine-readable coverage includes every public target and no system page",
+      "file": "portuguese.http.spec.ts",
+      "title": "portuguese.http.spec.ts > pt-BR: machine-readable coverage includes every public target and no system page",
+      "project": "http",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 45
+        },
+        {
+          "status": "failed",
+          "retry": 1,
+          "duration": 114
+        }
+      ]
+    },
+    {
+      "key": "chromium|german.browser.spec.ts|19|Produktfoto Studio",
+      "file": "german.browser.spec.ts",
+      "title": "german.browser.spec.ts > frozen German search scenarios in the real Worker > Produktfoto Studio",
+      "project": "chromium",
+      "status": "flaky",
+      "results": [
+        {
+          "status": "failed",
+          "retry": 0,
+          "duration": 16472
+        },
+        {
+          "status": "passed",
+          "retry": 1,
+          "duration": 570
+        }
+      ]
+    },
+    {
+      "key": "firefox|popup.browser.spec.ts|546|modified clicks and pages without JavaScript reach the full page",
+      "file": "popup.browser.spec.ts",
+      "title": "popup.browser.spec.ts > desktop > modified clicks and pages without JavaScript reach the full page",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 32009
+        },
+        {
+          "status": "timedOut",
+          "retry": 1,
+          "duration": 31197
+        }
+      ]
+    },
+    {
+      "key": "chromium|portuguese.browser.spec.ts|109|768px dark: reviewed descriptions and controls fit",
+      "file": "portuguese.browser.spec.ts",
+      "title": "portuguese.browser.spec.ts > actual Portuguese artifact samples > 768px dark: reviewed descriptions and controls fit",
+      "project": "chromium",
+      "status": "flaky",
+      "results": [
+        {
+          "status": "timedOut",
+          "retry": 0,
+          "duration": 131454
+        },
+        {
+          "status": "passed",
+          "retry": 1,
+          "duration": 8875
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "portuguese": {
+    "expected": 165,
+    "flaky": 0,
+    "skipped": 0,
+    "unexpected": 0
+  },
+  "passed": true,
+  "testSourceNote": "Application/content at b8e0e7e; preview sitemap expectation corrected in validation-only working-tree change. Raw attempt results retained.",
+  "commandsAndLimitations": "evidence/validation-commands.md",
+  "validationCommandNote": "See the command record for the complete suite, serial native partition, and exact retained retries; do not treat the aggregate as a first-attempt all-green run."
+}

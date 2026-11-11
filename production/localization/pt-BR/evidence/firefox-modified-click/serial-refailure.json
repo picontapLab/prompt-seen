@@ -1,0 +1,68 @@
+[
+  {
+    "source": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/.artifacts/localization/pt-BR/final-preview-retry-results/popup.browser-desktop-modi-fd7d0-aScript-reach-the-full-page-firefox/trace.zip",
+    "sha256": "416daf81dba5b9abb904d1b6f4b5b70473b7aede2a705349363bb09344cb2db0",
+    "events": [
+      {
+        "type": "error",
+        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+        "stack": []
+      },
+      {
+        "type": "after",
+        "callId": "ccnk@309",
+        "endTime": 60570.097,
+        "annotations": [],
+        "error": {
+          "name": "",
+          "message": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.",
+          "stack": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.\n    at /Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts:559:15"
+        }
+      },
+      {
+        "type": "error",
+        "message": "Error: browserContext.waitForEvent: Test timeout of 30000ms exceeded.",
+        "stack": [
+          {
+            "file": "/Users/hp/.codex/worktrees/portuguese-localization/prompt-seen/tests/e2e/popup.browser.spec.ts",
+            "line": 559,
+            "column": 15
+          }
+        ]
+      },
+      {
+        "type": "before",
+        "callId": "ccnk@303",
+        "startTime": 29919.497,
+        "class": "Frame",
+        "method": "goto",
+        "params": {
+          "url": "/prompt-seen/en/prompts/",
+          "waitUntil": "load"
+        }
+      },
+      {
+        "type": "before",
+        "callId": "ccnk@307",
+        "startTime": 30201.921,
+        "class": "Page",
+        "method": "bringToFront",
+        "params": {}
+      },
+      {
+        "type": "before",
+        "callId": "ccnk@311",
+        "startTime": 30205.078,
+        "class": "Frame",
+        "method": "click",
+        "params": {
+          "selector": "[role=\"feed\"] a[href=\"/prompt-seen/en/prompts/adapted-s14-everyday-portrait/\"] >> nth=0",
+          "strict": true,
+          "modifiers": [
+            "Meta"
+          ]
+        }
+      }
+    ]
+  }
+]

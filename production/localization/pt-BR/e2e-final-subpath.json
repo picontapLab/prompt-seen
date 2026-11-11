@@ -1,0 +1,67 @@
+{
+  "label": "final-subpath",
+  "commit": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75",
+  "summarizedAt": "2026-11-11T16:54:10.919Z",
+  "runs": [
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-subpath.json",
+      "stats": {
+        "startTime": "2026-11-11T16:31:52.287Z",
+        "duration": 1280852.572,
+        "expected": 1498,
+        "skipped": 97,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-subpath-native.json",
+      "stats": {
+        "startTime": "2026-11-11T16:53:14.075Z",
+        "duration": 35029.97,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "byProject": {
+    "http": {
+      "expected": 226,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chromium": {
+      "expected": 439,
+      "skipped": 18,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "firefox": {
+      "expected": 418,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "expected": 418,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "initialFailures": [],
+  "unresolved": [],
+  "portuguese": {
+    "expected": 165,
+    "flaky": 0,
+    "skipped": 0,
+    "unexpected": 0
+  },
+  "passed": true,
+  "testSourceNote": "Application/content at b8e0e7e; preview sitemap expectation corrected in validation-only working-tree change. Raw attempt results retained.",
+  "commandsAndLimitations": "evidence/validation-commands.md",
+  "validationCommandNote": "Complete ordinary/native partition with original assertions; all subpath selected cases passed without actual retries."
+}

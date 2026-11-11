@@ -1,0 +1,93 @@
+{
+  "label": "final-disabled",
+  "measuredAt": "2026-11-11T15:57:59.616Z",
+  "build": {
+    "buildId": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75-disabled",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "files": 16858,
+  "htmlBytes": 181801682,
+  "jsonBytes": 33371447,
+  "searchIndexes": [
+    {
+      "path": "generated/de/search/index.json",
+      "bytes": 1255011,
+      "gzipBytes": 230615
+    },
+    {
+      "path": "generated/en/search/index.json",
+      "bytes": 1129260,
+      "gzipBytes": 208157
+    },
+    {
+      "path": "generated/ja/search/index.json",
+      "bytes": 2107376,
+      "gzipBytes": 371592
+    },
+    {
+      "path": "generated/zh-Hans/search/index.json",
+      "bytes": 1690775,
+      "gzipBytes": 292815
+    }
+  ]
+}

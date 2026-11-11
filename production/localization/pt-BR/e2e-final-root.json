@@ -1,0 +1,67 @@
+{
+  "label": "final-root",
+  "commit": "b8e0e7e392ff8fd259a8ef91aa40817de35bca75",
+  "summarizedAt": "2026-11-11T16:25:05.679Z",
+  "runs": [
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-root.json",
+      "stats": {
+        "startTime": "2026-11-11T16:00:14.631Z",
+        "duration": 1346376.302,
+        "expected": 1498,
+        "skipped": 97,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "file": ".artifacts/localization/pt-BR/e2e-final-root-native.json",
+      "stats": {
+        "startTime": "2026-11-11T16:22:42.133Z",
+        "duration": 95113.765,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 1
+      }
+    }
+  ],
+  "byProject": {
+    "http": {
+      "expected": 226,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chromium": {
+      "expected": 439,
+      "skipped": 18,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "firefox": {
+      "expected": 417,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 1
+    },
+    "webkit": {
+      "expected": 418,
+      "skipped": 39,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "initialFailures": [],
+  "unresolved": [],
+  "portuguese": {
+    "expected": 165,
+    "flaky": 0,
+    "skipped": 0,
+    "unexpected": 0
+  },
+  "passed": true,
+  "testSourceNote": "Application/content at b8e0e7e; preview sitemap expectation corrected in validation-only working-tree change. Raw attempt results retained.",
+  "commandsAndLimitations": "evidence/validation-commands.md",
+  "validationCommandNote": "See the command record for the complete suite, serial native partition, and exact retained retries; do not treat the aggregate as a first-attempt all-green run."
+}

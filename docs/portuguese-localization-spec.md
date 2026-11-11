@@ -1,6 +1,6 @@
 # 巴西葡萄牙语完整接入实施规格
 
-状态：实施与验收中；实际进度见 [acceptance.md](../production/localization/pt-BR/acceptance.md)。日期：2026-11-11（America/Los_Angeles）。首发范围已确认：全部公开内容完成葡语翻译和审校后再启用。工程基线为 `ec6051f3ac7c` 及当前工作区；下述数量来自本地只读覆盖检查，不代表线上状态。
+状态：worktree 内实现与本地技术验收完成；P5 发布前回滚目标确认及 P6 发布、线上核验待执行。实际证据见 [acceptance.md](../production/localization/pt-BR/acceptance.md)。日期：2026-11-11（America/Los_Angeles）。首发范围已确认：全部公开内容完成葡语翻译和审校后再启用。工程基线为 `ec6051f3ac7c` 及当前工作区；下述数量来自本地只读覆盖检查，不代表线上状态。
 
 交付 `pt-BR` 巴西葡语站点，使用 `/pt-br/` 路径与 `Português (Brasil)` 名称。界面、内容说明、操作指导、搜索和对外元数据完整本地化，分批准备，整体上线。沿用日语和德语的正文策略：实际可复制的 Prompt 保留原始正文及真实语言，首版不新增葡语 Prompt 变体。
 
