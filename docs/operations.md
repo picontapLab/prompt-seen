@@ -84,9 +84,11 @@ workflow reports a notice and does nothing.
 | `MEDIA_BASE_URL` | variable (optional) | CDN address of the bucket |
 | `S3_ENDPOINT`, `S3_BUCKET`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` | secret (optional) | `media:sync` in Deploy |
 | `INDEXNOW_KEY` | secret (optional) | key file in the build, submission after the deploy |
+| `PRODUCTION_DEPLOY_HOOK` | secret in the `production` environment (optional) | private artifact customization after Pages preparation, before upload |
 
-Verification tags and analytics are public values and live in `content/site.yaml`
-(`searchEngines`, `analytics`). `site.example.yaml` documents every key.
+Verification tags and shared analytics settings can live in `content/site.yaml`
+(`searchEngines`, `analytics`). `site.example.yaml` documents every key. To keep an instance's
+integration code and configuration out of the repository, use the private production step below.
 
 ## Deploying
 
@@ -96,18 +98,41 @@ the same commit:
 1. production build with the instance's settings (`BUILD_MODE=production`);
 2. `media:sync` and `media:check` when images live in R2;
 3. `indexnow snapshot`: the live sitemaps before the change;
-4. upload to Pages as the production branch;
-5. `check:live --platform` on the new deployment's own `*.pages.dev` address: content, statuses
+4. prepare `.deploy/cloudflare/`, then apply the private production customization when configured;
+5. upload to Pages as the production branch;
+6. `check:live --platform` on the new deployment's own `*.pages.dev` address: content, statuses
    and `X-Robots-Tag: noindex`;
-6. `check:live --expect-build` on the canonical site, after waiting up to three minutes for the
+7. `check:live --expect-build` on the canonical site, after waiting up to three minutes for the
    host to serve the new build;
-7. `indexnow submit`: the difference of the sitemaps.
+8. `indexnow submit`: the difference of the sitemaps.
 
 Run it by hand from _Actions › Deploy › Run workflow_ to deploy a specific commit or tag. One
 production change runs at a time; a deploy is never cancelled half-way.
 
-Step 6 requires the custom domain to serve the Pages project (or the optional subpath proxy
+Step 7 requires the custom domain to serve the Pages project (or the optional subpath proxy
 to forward requests). Configure that connection before checking the canonical site.
+
+### Private production customization
+
+The existing `npm run deploy:cloudflare:prepare` command runs an optional private JavaScript
+module after assembling all pages and host files, and before the workflow uploads them:
+
+- Locally, save the module as `.artifacts/deploy/prepare.mjs`, which Git already ignores.
+- In GitHub Actions, store the same self-contained module as the `PRODUCTION_DEPLOY_HOOK`
+  secret in the `production` environment. A nonempty secret takes precedence over the local file.
+- The module runs from the repository root with `BUILD_MODE=production` and
+  `DEPLOY_ARTIFACT_DIR` pointing to the prepared upload directory. Include any private settings
+  in that module; do not copy it into the upload directory.
+- Preview preparation never executes this step. A clone without the private file or secret
+  follows the normal preparation process. The public preview workflow receives no hook secret.
+- A failed hook fails preparation and stops the production workflow before upload. Its source
+  and output are kept out of the logs; reproduce a failure locally to inspect it.
+
+Keep `analytics.provider` disabled when the private step installs analytics. The private code
+should also restrict execution in the browser to the canonical production origin, because the
+same production artifact is served on `*.pages.dev`. Browser-delivered scripts remain visible
+to visitors even when their deployment source is private. Any subsequent preparation reruns
+the hook, so the ordinary build, preparation and upload order stays the same.
 
 ## Rolling back
 

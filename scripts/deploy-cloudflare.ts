@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
+import { runProductionDeployHook } from './lib/deploy-hook';
 import { OUTPUT_DIRS, ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -31,6 +32,10 @@ for (const l of config.builtLocales) {
     path.join(targetSite, l.pathPrefix, '404/index.html'),
     path.join(targetSite, l.pathPrefix, '404.html'),
   );
+}
+
+if (runProductionDeployHook({ root: ROOT, artifactDir: target, buildMode: config.buildMode })) {
+  console.log('deploy:cloudflare: private production customization applied');
 }
 
 console.log(`deploy:cloudflare: ${path.relative(ROOT, target)}/ ready (${config.buildMode}, build ${config.buildId})`);
