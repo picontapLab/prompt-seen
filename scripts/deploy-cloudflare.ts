@@ -54,7 +54,7 @@ if (!proxyRules.every((rule) => preparedRules.includes(rule))) {
   throw new Error('cloudflare: required full RSC proxy rules are missing; rebuild and check the private hook');
 }
 const fullPayloads = fs
-  .readdirSync(targetSite, { recursive: true })
+  .readdirSync(targetSite, { recursive: true, encoding: 'utf8' })
   .filter((file) => path.basename(file) === '__next._full.txt')
   .map((file) => path.join(targetSite, file));
 for (const file of fullPayloads) {
