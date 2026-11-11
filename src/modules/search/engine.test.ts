@@ -106,7 +106,7 @@ describe('ranking and matching (§13.1)', () => {
   it('finds a Spanish city map without treating an ordinary camera shot as a map', () => {
     const engine = engineOf('es', [
       doc('map', { title: 'Retrato con un plano urbano' }),
-      doc('shot', { title: 'Retrato en primer plano' }),
+      doc('shot', { title: 'Retrato en primer plano con fondo urbano' }),
     ]);
     expect(ids('retrato mapa', engine)).toEqual(['map']);
   });

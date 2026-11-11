@@ -1,4 +1,4 @@
-import { queryTerms } from './tokenize';
+import { normalizeTerm, queryTerms } from './tokenize';
 import type { SearchKind } from './types';
 
 // Maintained domain vocabulary, deliberately not an arbitrary compound-word splitter.
@@ -94,7 +94,12 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
     .map(([, words]) => words);
   const extra = [...compounds, ...(kind ? [profile.kinds[kind]] : [])];
   for (const word of queryTerms(extra.join(' '), locale)) terms.add(word);
-  const contains = (word: string) => queryTerms(word, locale).every((term) => terms.has(term));
+  const contains = (word: string) => {
+    // Separate mentions of «primer plano» and «fondo urbano» do not describe a city map.
+    if (language === 'es' && word === 'plano urbano')
+      return /(?:^|[^\p{L}\p{N}])plano[ \t]+urbano(?=$|[^\p{L}\p{N}])/u.test(normalizeTerm(text, locale));
+    return queryTerms(word, locale).every((term) => terms.has(term));
+  };
   const synonyms = profile.terms.filter((group) => group.some(contains)).flat();
   // Product photography is photography; the reverse would turn family portraits into packshots.
   const photography = profile.productPhotography.some(contains)
