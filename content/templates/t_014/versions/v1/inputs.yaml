@@ -6,6 +6,7 @@ instructions:
   ja: 登場するキャラクターを説明し、物語の展開を順番にちょうど 4 つ指定してください。キャラクター設定画の使用は任意です。
   de: Beschreibe die Figuren und gib genau vier geordnete Handlungsschritte vor;
     ein Figurenblatt ist optional.
+  ko: 등장인물을 설명하고 순서가 있는 이야기 장면을 정확히 네 개 제공하세요. 캐릭터 시트는 선택 사항입니다.
 slots:
   - id: character
     labels:
@@ -13,5 +14,6 @@ slots:
       zh-Hans: 角色设定图
       ja: 人物
       de: Figur
+      ko: 캐릭터
     min: 0
     max: 1

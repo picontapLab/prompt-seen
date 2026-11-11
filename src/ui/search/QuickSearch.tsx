@@ -50,12 +50,12 @@ export function QuickSearch({
 }) {
   const t = useTranslations('search');
   const [value, setValue] = useState('');
-  const { query, inputProps } = useCommittedQuery(value);
+  const { query, inputProps, isComposing, isCompositionActive } = useCommittedQuery(value);
   const search = useSearch(locale, query, { limit: PANEL_LIMIT, enabled: isOpen });
   const popular = usePopular(locale, isOpen);
   const [recent, setRecent] = useState(() => recentSearches(locale.code));
 
-  const trimmed = value.trim();
+  const trimmed = query.trim();
   // Results of an older query stay visible until the current one is answered (§12.5).
   const results = trimmed ? search.results : null;
   const items = panelSections({
@@ -70,7 +70,7 @@ export function QuickSearch({
 
   const searchPage = withBasePath(paths.search(locale.pathPrefix, trimmed));
   const remember = () => {
-    if (trimmed) rememberSearch(locale.code, trimmed);
+    if (!isCompositionActive() && trimmed) rememberSearch(locale.code, trimmed);
   };
   const onAction = (key: Key) => {
     const item = items.flatMap((s) => s.items).find((i) => i.id === key);
@@ -93,7 +93,13 @@ export function QuickSearch({
   const noResults = !!trimmed && search.status === 'success' && results?.total === 0;
 
   return (
-    <ModalOverlay isOpen={isOpen} onOpenChange={onOpenChange} isDismissable className={styles.overlay}>
+    <ModalOverlay
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+      isDismissable
+      isKeyboardDismissDisabled={isComposing}
+      className={styles.overlay}
+    >
       <Modal className={styles.modal}>
         <Dialog aria-label={t('panel.label')} className={styles.dialog} data-quick-search="">
           {/* Nothing is chosen until ↑ ↓: results arrive after typing, so focusing "the first item"
@@ -112,7 +118,14 @@ export function QuickSearch({
                   autoComplete="off"
                   onKeyDown={(e) => {
                     // Enter with nothing chosen opens the search page with this query.
-                    if (e.key !== 'Enter' || e.nativeEvent.isComposing || !trimmed) return;
+                    if (
+                      e.key !== 'Enter' ||
+                      isCompositionActive() ||
+                      e.nativeEvent.isComposing ||
+                      e.keyCode === 229 ||
+                      !trimmed
+                    )
+                      return;
                     if (e.currentTarget.getAttribute('aria-activedescendant')) return;
                     remember();
                     window.location.assign(searchPage);

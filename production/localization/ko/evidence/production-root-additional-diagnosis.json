@@ -1,0 +1,126 @@
+{
+  "reviewedAt": "2026-11-11",
+  "candidateBuildId": "ko-candidate-root-20261111",
+  "candidateBuildMode": "production",
+  "candidateBasePath": "",
+  "baselineRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "baselineBuildId": "ko-baseline-0306b74",
+  "baselineBuildMode": "preview",
+  "baselineBasePath": "/prompt-seen",
+  "method": "Unchanged focused tests on isolated nginx ports; original baseline source and tests. No product/test changes or relaxed timeouts. Baseline differs in build mode and base path, but reproduces both precise failure symptoms.",
+  "findings": [
+    {
+      "id": "firefox-modified-click-new-tab",
+      "test": "tests/e2e/popup.browser.spec.ts:546",
+      "failureLocation": "tests/e2e/popup.browser.spec.ts:555",
+      "originalRun": "production root full suite test #1042: timeout after 30.4s",
+      "observed": "context.waitForEvent(page) times out after Meta+click. bringToFront and the no-JavaScript branch have not been reached.",
+      "candidateFocused": {
+        "repetitions": 3,
+        "passed": 0,
+        "failed": 3
+      },
+      "baselineFocused": {
+        "repetitions": 3,
+        "passed": 0,
+        "failed": 3
+      },
+      "classification": "reproduced on original baseline; also observable without application code",
+      "nativeProbe": {
+        "method": "Headless Firefox; route-fulfilled plain HTML at http://native.local/ with a native link to /detail/; no application scripts. A new context for each case.",
+        "metaClick": "No page event within 3000ms; captured trusted click with metaKey=true and defaultPrevented=false; source URL unchanged.",
+        "middleClick": "No page event within 3000ms; source URL unchanged.",
+        "targetBlank": "Normal click on target=_blank emitted page event and opened /detail/.",
+        "limit": "Supports a browser/environment-level symptom. Does not establish its specific root cause; the shortened 3000ms window belongs only to this separate diagnostic probe, not to the unchanged acceptance test."
+      },
+      "priorPreview": "The same Firefox test passed in 4.0s in full ko-preview-20261111 suite.",
+      "sourceComparison": "PopupHost.tsx, logic.ts and popup.browser.spec.ts match baseline."
+    },
+    {
+      "id": "webkit-popup-loading-timing",
+      "test": "tests/e2e/details.browser.spec.ts:454",
+      "failureLocation": "tests/e2e/details.browser.spec.ts:493",
+      "originalRun": "production root full suite: 3000ms delayed request case measured 294ms, assertion requires >=300ms.",
+      "candidateFocused": {
+        "repetitions": 3,
+        "passed": 3,
+        "failed": 0,
+        "duration": "28.7s",
+        "performedBy": "ko_pages_a"
+      },
+      "baselineFocused": {
+        "repetitions": 3,
+        "passed": 2,
+        "failed": 1,
+        "duration": "26.6s",
+        "failureMeasuredMs": 283
+      },
+      "classification": "intermittent timing failure reproduced on original baseline",
+      "measurementNote": "The test stores a requestAnimationFrame timestamp inside a deferred setTimeout visibility check. A stale frame timestamp can undercount elapsed visibility time; this is a plausible mechanism, not a proven product-level cause.",
+      "sourceComparison": "details.browser.spec.ts, Pending.tsx and PendingDialog.tsx match baseline."
+    },
+    {
+      "id": "webkit-clear-filter-position",
+      "test": "tests/e2e/motion.browser.spec.ts:183",
+      "failureLocation": "tests/e2e/motion.browser.spec.ts:202",
+      "originalRun": "production root full suite test #1450: Clear filters bounding box changed during deferred filter chip loading.",
+      "before": {
+        "x": 131.203125,
+        "y": 329.875,
+        "width": 111.0625,
+        "height": 44
+      },
+      "after": {
+        "x": 124,
+        "y": 329.875,
+        "width": 111.0625,
+        "height": 44
+      },
+      "candidateFocused": {
+        "repetitions": 3,
+        "passed": 2,
+        "failed": 1,
+        "performedBy": "ko_pages_a",
+        "note": "Combined run also includes the previously diagnosed foreign-history popup case; motion-specific counts shown here."
+      },
+      "baselineFocused": {
+        "repetitions": 3,
+        "passed": 3,
+        "failed": 0,
+        "workers": 1,
+        "duration": "12.2s"
+      },
+      "baselineExpandedRepeat": {
+        "repetitions": 10,
+        "passed": 9,
+        "failed": 1,
+        "workers": 2,
+        "duration": "21.2s",
+        "observed": "Exactly the same bounding boxes as the candidate failure."
+      },
+      "classification": "intermittent layout-position failure reproduced on original baseline",
+      "cause": "Not further isolated. Clear filters follows a live result-count span; the exact source of the transient horizontal offset remains unproven.",
+      "sourceComparison": "motion.browser.spec.ts, FilterBar.tsx, FilterBar.module.css and Button.module.css match baseline."
+    }
+  ],
+  "logs": {
+    "candidateFirefox": ".artifacts/localization/ko/candidate-firefox-popup-retry.log",
+    "baselineFirefox": ".artifacts/localization/ko/baseline-firefox-popup.log",
+    "nativeFirefox": ".artifacts/localization/ko/firefox-native-click-probe.json",
+    "candidateLoading": ".artifacts/localization/ko/candidate-root-loading.log",
+    "baselineLoading": ".artifacts/localization/ko/baseline-loading.log",
+    "candidateMotion": ".artifacts/localization/ko/candidate-root-motion-popup.log",
+    "baselineMotion": ".artifacts/localization/ko/baseline-motion.log",
+    "baselineMotionExpanded": ".artifacts/localization/ko/baseline-motion-repeat.log"
+  },
+  "failureArtifacts": [
+    ".artifacts/localization/ko/candidate-firefox-popup-original/",
+    ".artifacts/localization/ko/candidate-firefox-popup-retry-results/",
+    ".artifacts/localization/ko/baseline-firefox-popup-results/",
+    ".artifacts/localization/ko/candidate-loading-original/",
+    ".artifacts/localization/ko/baseline-loading-results/",
+    ".artifacts/localization/ko/candidate-motion-original/",
+    ".artifacts/localization/ko/baseline-motion-repeat-results/"
+  ],
+  "scope": "Keep the original full-suite failures visible; focused passes do not overwrite them. All three additional symptoms were reproduced on the original baseline. No claim that existing defects are fixed."
+}

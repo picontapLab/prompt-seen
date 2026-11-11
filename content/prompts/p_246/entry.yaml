@@ -24,6 +24,7 @@ inputRequirements:
     ja: 入力画像を追加せず、元のプロンプト全文を貼り付けてください。
     de: Füge den vollständigen Originalprompt ein, ohne ein Eingabebild
       hinzuzufügen.
+    ko: 입력 이미지를 추가하지 않고 전체 원본 프롬프트를 붙여 넣으세요.
   slots: []
 showcaseExampleId: x_310
 promptProvenance: source-prompt
@@ -41,6 +42,7 @@ inspirationSources:
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -49,12 +51,14 @@ inspirationSources:
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118581030781382805&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
+      ko: 작성자의 전체 원문, 원래 언어
     metrics:
       - key: likes
         value: 62
@@ -63,6 +67,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
+          ko: 출처 게시물 좋아요
 source:
   author: johnAGI168
   url: https://x.com/johnAGI168/status/2118581030781382805

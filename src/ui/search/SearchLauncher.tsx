@@ -59,7 +59,7 @@ export function SearchLauncher() {
       setOpen(true);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.defaultPrevented || e.isComposing || e.repeat) return;
+      if (e.defaultPrevented || e.isComposing || e.keyCode === 229 || e.repeat) return;
       const mod = e.metaKey || e.ctrlKey;
       if (mod && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {
         e.preventDefault();

@@ -25,6 +25,7 @@ inputRequirements:
     ja: 独自に生成した参照画像を表示順に使ってください。公式の画像や SNS の出典画像は使わないでください。
     de: Verwende die unabhängig erzeugten Referenzdateien in der angezeigten
       Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
+    ko: 표시된 순서대로 독립적으로 생성한 참조 자산을 사용하세요. 공식 이미지나 소셜 출처 이미지는 사용하지 마세요.
   slots:
     - id: reference
       labels:
@@ -32,6 +33,7 @@ inputRequirements:
         zh-Hans: 原创生成参考图
         ja: 元となる生成参照画像
         de: Ursprüngliche künstlich erzeugte Referenz
+        ko: 원본 합성 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_299
@@ -49,8 +51,9 @@ inspirationSources:
         post share the metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
-      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis.
-        Mehrere Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
+        Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,6 +63,7 @@ inspirationSources:
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
       de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
         Zahlen wurden nicht aktualisiert."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -67,6 +71,7 @@ inspirationSources:
       ja: 元のプロンプトは見つかりませんでした。これは独自に推定したプロンプトです。
       de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig
         abgeleiteter Prompt.
+      ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
     metrics: []
 source:
   author: Prompt Seen

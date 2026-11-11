@@ -6,6 +6,7 @@ instructions:
   ja: ポートレートを 1 枚アップロードし、短い挨拶をちょうど 9 個指定してください。作例の人物は生成したものです。
   de: Lade ein Porträt hoch und gib genau neun kurze Grüße an. Die Person im
     Beispiel wurde künstlich erzeugt.
+  ko: 인물 사진 한 장을 업로드하고 짧은 인사말을 정확히 아홉 개 입력하세요. 예시의 인물은 합성 이미지입니다.
 slots:
   - id: person
     labels:
@@ -13,5 +14,6 @@ slots:
       zh-Hans: 人物肖像
       ja: 人物
       de: Person
+      ko: 인물
     min: 1
     max: 1

@@ -38,6 +38,7 @@ annotations:
       ja: ひとつのガラス球がミニチュアの世界を囲み、明確な境界を与えています。
       de: Eine einzelne Glaskugel rahmt die Miniaturwelt und gibt ihr eine klare
         Grenze.
+      ko: 유리 구 하나가 작은 세계를 감싸며 명확한 경계를 만듭니다.
   - phrase: cascades over the table edge
     region:
       x: 0.56
@@ -48,8 +49,8 @@ annotations:
       en: The waterfall crosses the tabletop and joins the two scales.
       zh-Hans: 瀑布越过桌边，把微缩景观与房间连接起来。
       ja: 滝がテーブルの上を横切り、2 つのスケールの世界をつないでいます。
-      de: Der Wasserfall überquert die Tischplatte und verbindet die beiden
-        Maßstäbe.
+      de: Der Wasserfall überquert die Tischplatte und verbindet die beiden Maßstäbe.
+      ko: 폭포가 탁자를 가로질러 두 크기의 세계를 연결합니다.
 showcaseExampleId: x_146
 promptProvenance: independent-adaptation
 inspirationSources:
@@ -65,6 +66,7 @@ inspirationSources:
       zh-Hans: 单张社区图片
       ja: 元の画像ページ
       de: Ursprüngliche Bildseite
+      ko: 원본 이미지 페이지
     observedAt: 2026-10-28T23:12:22-07:00
     cacheTimestampKnown: false
     evidenceMethod:
@@ -72,12 +74,14 @@ inspirationSources:
       zh-Hans: Civitai 官方公开 images API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://civitai.com/api/v1/images?imageId=64517382&withMeta=true
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
     metrics:
       - key: cryCount
         value: 1362
@@ -86,6 +90,7 @@ inspirationSources:
           zh-Hans: 哭泣反应
           ja: 泣くリアクション
           de: „Weinen“-Reaktionen
+          ko: 울음 반응
       - key: laughCount
         value: 1899
         labels:
@@ -93,6 +98,7 @@ inspirationSources:
           zh-Hans: 大笑反应
           ja: 笑うリアクション
           de: Lachreaktionen
+          ko: 웃음 반응
       - key: likeCount
         value: 14162
         labels:
@@ -100,6 +106,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          ko: 좋아요
       - key: dislikeCount
         value: 0
         labels:
@@ -107,6 +114,7 @@ inspirationSources:
           zh-Hans: 踩
           ja: 低評価
           de: Dislikes
+          ko: 싫어요
       - key: heartCount
         value: 5068
         labels:
@@ -114,6 +122,7 @@ inspirationSources:
           zh-Hans: 爱心
           ja: ハート
           de: Herzen
+          ko: 하트
       - key: commentCount
         value: 2
         labels:
@@ -121,3 +130,4 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          ko: 댓글

@@ -23,6 +23,7 @@ inputRequirements:
     zh-Hans: 使用完整改编提示词，不需要参考图。
     ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
     de: Verwende den vollständigen umgeschriebenen Prompt ohne Eingabebild.
+    ko: 입력 이미지 없이 전체 재작성 프롬프트를 사용하세요.
   slots: []
 showcaseExampleId: x_378
 promptProvenance: independent-adaptation
@@ -40,6 +41,7 @@ inspirationSources:
       ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -48,14 +50,16 @@ inspirationSources:
       ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118269430014599535&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is
         archived separately.
       zh-Hans: 独立改编；原词三次尝试失败并另行归档。
       ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
-      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen
-        und ist separat archiviert.
+      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen und
+        ist separat archiviert.
+      ko: 독립적인 각색; 원본 프롬프트는 세 번의 시도에 실패했으며 별도로 보관되어 있습니다.
     metrics:
       - key: likes
         value: 30
@@ -64,6 +68,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
+          ko: 출처 게시물 좋아요
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/sandmrk/status/2118269433626124798

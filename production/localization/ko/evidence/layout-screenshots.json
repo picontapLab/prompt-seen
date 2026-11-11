@@ -1,0 +1,139 @@
+{
+  "recordedAt": "2026-11-11",
+  "executor": "AI Codex root",
+  "buildId": "ko-preview-20261111-ime",
+  "mode": "preview",
+  "basePath": "/prompt-seen",
+  "change": "Test-only evidence improvement: wait for final Korean search status and at least one prompt result before layout checking/screenshot; include browser name in screenshot paths to avoid overwrites. Runtime source unchanged.",
+  "test": "tests/e2e/korean.browser.spec.ts --grep \"Korean descriptions and controls fit\"",
+  "passed": 24,
+  "failed": 0,
+  "skipped": 0,
+  "duration": "1.6m",
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "widths": [
+    360,
+    768,
+    1024,
+    1440
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "log": {
+    "path": ".artifacts/localization/ko/layout-final.log",
+    "sha256": "7b343a7ab4741b3acc0244fad3c43ce32a997a14ba7906d69207c7f8776451ca"
+  },
+  "screenshots": [
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-1024-dark.png",
+      "sha256": "b3f93ee0c468d902fa39b2362de99c0b1d3872d51c24f02552539548c737c614"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-1024-light.png",
+      "sha256": "82cda3a6b0056b7092a661a84b78c291642f39b67ad98d4614b10dc20a0cd635"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-1440-dark.png",
+      "sha256": "0df128c39cbe9c12d8195eeea2e38c546de86c96a321ef37d82a9f9d6d0ebe8d"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-1440-light.png",
+      "sha256": "ad817b7cac49e114fb76ffbb0bde838c54d2574fc2c36883f9a5d995ecd321f5"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-360-dark.png",
+      "sha256": "a2730bacc7e1661a4d6052a5edceb61919c55dc98856396693180a579727ee2c"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-360-light.png",
+      "sha256": "79b0d86b38336c0f20da1b8ded2cf07baf6801f6e6fb27f1c9ac3a718c33167d"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-768-dark.png",
+      "sha256": "60dfcddb5bedd9a83d4679902b338d37d9de0c965606f12b17a3078a073685fe"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-chromium-768-light.png",
+      "sha256": "ed5f5b4b1d21859673dbdadfaa80291592e7dee1a48de4f9c10b930d39259f79"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-1024-dark.png",
+      "sha256": "73d960f28e6e653ca883b22b3a047d2e369dda95bd8900076086efcd81bdb578"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-1024-light.png",
+      "sha256": "6a839c3a02e14fea9c1a0fc1108c2de73b59df81d7af192a4459bae4bb9ed517"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-1440-dark.png",
+      "sha256": "4f7f6758964fbe2c7b76cf9f09ebe12f8b1723889c656d9433457e40f3a862cc"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-1440-light.png",
+      "sha256": "b25fd1b639cb4f07b1a12841fe4e8789f6be47e7cf74cec1bdbc055a57eab7b3"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-360-dark.png",
+      "sha256": "7b24977aef378935f8c2a121a86b73a9e2ed23854a4a713e6ca1eed5477e1bfa"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-360-light.png",
+      "sha256": "df17475e95bb6cd00bc4eef1dd5544f169ce5997bb49a369ef42a3c60e304a5f"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-768-dark.png",
+      "sha256": "4adc9b2dea709629e631cf4cf0c8f5b5bfd944743baa452f97a990f1e257927a"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-firefox-768-light.png",
+      "sha256": "38686759afc05b1699eea839240c3baaf6aef8b60e8ec1727582dd6382a40af2"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-1024-dark.png",
+      "sha256": "fb4a8a9a5e39d4baaf238e703dbf2dd69fde4f1eecd885bcaa7197262cadb3f4"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-1024-light.png",
+      "sha256": "adaaa265a56d99ea673f42ffa58243e1cfafd7e29d7103048f6bdadfdb350458"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-1440-dark.png",
+      "sha256": "afd219a5f0c84784aa029167c6b3192b4727c0dd6fdbc3c3baaf7c870313e332"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-1440-light.png",
+      "sha256": "f237f5343029347843d46d1e683d10b2a6899204bd9f4bec668865c9c42c3439"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-360-dark.png",
+      "sha256": "528b4d371d40eccfcaa833975a7132e31e3b26daef4a462b77291b16ec3e3aa2"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-360-light.png",
+      "sha256": "43f22ec15c9754abfab56389b3e0aefcbe1daa41bde748166f702048379f1dda"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-768-dark.png",
+      "sha256": "e356666c4f40dc57d29ddf7f29fcc5a15e284c7a3a57c1726d90e8ce95691238"
+    },
+    {
+      "path": ".artifacts/localization/ko/screenshots/search-webkit-768-light.png",
+      "sha256": "cf5527101a18cbb270fbb0cf976ebd9ba7968e318c4b0e6c8255ae6a7aa99db0"
+    }
+  ],
+  "visualSpotCheck": {
+    "reviewer": "AI Codex root",
+    "images": [
+      "search-webkit-360-light.png",
+      "search-webkit-1440-dark.png"
+    ],
+    "observed": "Actual Korean search results, grouped counts, images, Hangul highlights, navigation and footer are visible; no observed missing glyph or control overlap. Mobile summaries use the existing intentional truncation.",
+    "limits": "Only these two screenshots were visually inspected. Automated layout assertions cover all 24 cases; this does not replace actual OS IME, native zoom or screen-reader checks."
+  }
+}

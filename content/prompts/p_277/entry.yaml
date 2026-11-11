@@ -23,8 +23,9 @@ inputRequirements:
       Keep all lettering in English.
     zh-Hans: 上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。
     ja: 犬の鮮明な写真を1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
-    de: Lade ein klares Hundefoto hoch. Das Referenzbild der Demonstration wurde
-      mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    de: Lade ein klares Hundefoto hoch. Das Referenzbild der Demonstration wurde mit
+      KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    ko: 선명한 개 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
   slots:
     - id: pet
       labels:
@@ -32,6 +33,7 @@ inputRequirements:
         zh-Hans: 狗狗照片
         ja: 犬の写真
         de: Hundefoto
+        ko: 개 사진
       min: 1
       max: 1
 showcaseExampleId: x_341
@@ -53,6 +55,7 @@ annotations:
       zh-Hans: 一张主照片让宠物故事一眼可懂。
       ja: 大きなペットの写真を1枚置くことで、話の内容がすぐに伝わります。
       de: Ein dominantes Haustierfoto macht die Geschichte sofort verständlich.
+      ko: 반려동물 사진 한 장을 크게 배치해 이야기를 즉시 알아볼 수 있게 합니다.
   - phrase: bold black serif typography
     region:
       x: 0.034
@@ -64,3 +67,4 @@ annotations:
       zh-Hans: 粗衬线字体形成报纸头条感。
       ja: 太いセリフ体が、新聞の見出しらしさを生んでいます。
       de: Kräftige Serifenschrift verleiht der Überschrift Zeitungscharakter.
+      ko: 굵은 세리프 글자가 제목에 신문 같은 느낌을 줍니다.

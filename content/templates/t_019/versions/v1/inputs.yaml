@@ -6,6 +6,7 @@ instructions:
   ja: 商品コンセプト、アクセントカラー、デザインの特徴を指定してください。外観の参照画像の使用は任意です。
   de: Gib Produktkonzept, Akzentfarbe und Designmerkmale an; eine Referenz der
     Außenansicht ist optional.
+  ko: 제품 콘셉트, 포인트 색과 디자인 특징을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
 slots:
   - id: product
     labels:
@@ -13,5 +14,6 @@ slots:
       zh-Hans: 产品外观
       ja: 商品
       de: Produkt
+      ko: 제품
     min: 0
     max: 1

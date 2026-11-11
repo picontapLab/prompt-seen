@@ -9,12 +9,14 @@ fields:
       zh-Hans: 人物
       ja: 人物
       de: Figur
+      ko: 캐릭터
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
       ja: 人物とポーズをひとつ指定します。例：「回転中のダンサー」。
       de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in
         einer Drehung“.
+      ko: "누구인지와 자세 하나를 적으세요. 예: “회전 중인 무용수”."
   - name: rimLight
     type: enum
     required: true
@@ -25,6 +27,7 @@ fields:
       zh-Hans: 轮廓光
       ja: リムライト
       de: Konturlicht
+      ko: 윤곽광
     options:
       - value: cyan and magenta
         swatch:
@@ -35,6 +38,7 @@ fields:
           zh-Hans: 青与洋红
           ja: シアンとマゼンタ
           de: Cyan und Magenta
+          ko: 청록색과 마젠타색
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -44,6 +48,7 @@ fields:
           zh-Hans: 琥珀与青绿
           ja: 琥珀色と青緑
           de: Bernstein und Petrol
+          ko: 호박색과 청록색
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -53,6 +58,7 @@ fields:
           zh-Hans: 紫与青
           ja: バイオレットとシアン
           de: Violett und Cyan
+          ko: 보라색과 청록색
   - name: background
     type: enum
     required: true
@@ -63,6 +69,7 @@ fields:
       zh-Hans: 背景
       ja: 背景
       de: Hintergrund
+      ko: 배경
     options:
       - value: soft bokeh lights
         labels:
@@ -70,18 +77,21 @@ fields:
           zh-Hans: 柔和的虚化光点
           ja: やわらかな玉ぼけ
           de: Sanfte Bokeh-Lichter
+          ko: 부드러운 보케 불빛
       - value: a blurred night city
         labels:
           en: Blurred night city
           zh-Hans: 虚化的夜城
           ja: ぼけた夜の街
           de: Unscharfe nächtliche Stadt
+          ko: 흐릿한 밤의 도시
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
           zh-Hans: 平涂暗色渐变
           ja: 平面的な暗いグラデーション
           de: Flächiger dunkler Farbverlauf
+          ko: 단순한 어두운 그라데이션
   - name: mood
     type: string
     required: false
@@ -92,6 +102,7 @@ fields:
       zh-Hans: 情绪
       ja: ムード
       de: Stimmung
+      ko: 분위기
   - name: aspectRatio
     type: enum
     required: true
@@ -103,6 +114,7 @@ fields:
       ja: アスペクト比
       ar: نسبة الأبعاد
       de: Seitenverhältnis
+      ko: 화면 비율
     options:
       - value: 4:5
         labels:
@@ -111,6 +123,7 @@ fields:
           ja: 4:5
           ar: 4:5
           de: 4:5
+          ko: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -118,6 +131,7 @@ fields:
           ja: 1:1
           ar: 1:1
           de: 1:1
+          ko: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -125,6 +139,7 @@ fields:
           ja: 2:3
           ar: 2:3
           de: 2:3
+          ko: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -132,3 +147,4 @@ fields:
           ja: 9:16
           ar: 9:16
           de: 9:16
+          ko: 9:16

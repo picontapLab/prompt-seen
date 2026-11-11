@@ -5,6 +5,7 @@ instructions:
   ja: 確認済みの地図をアップロードし、確認済みの目的地と経路の説明を指定してください。
   de: Lade eine überprüfte Karte hoch und gib geprüfte Reiseziele und
     Routenhinweise an.
+  ko: 검증된 지도를 업로드하고 확인한 목적지와 경로 설명을 제공하세요.
 slots:
   - id: map
     labels:
@@ -12,5 +13,6 @@ slots:
       zh-Hans: 核对后的地图
       ja: 地図
       de: Karte
+      ko: 지도
     min: 1
     max: 1

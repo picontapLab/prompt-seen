@@ -27,6 +27,8 @@ inputRequirements:
     de: Lade eine Illustration mit einem roten Kreis am Kopf und einem separaten
       blauen Kreis um ein Buch hoch. Die hier gezeigte Referenz wurde von Prompt
       Seen generiert.
+    ko: 머리에 빨간 원이 있고 책 주위에 별도의 파란 원이 있는 일러스트를 업로드하세요. 여기 표시된 참조 이미지는 Prompt Seen에서
+      생성했습니다.
   slots:
     - id: marked
       labels:
@@ -34,6 +36,7 @@ inputRequirements:
         zh-Hans: 本站生成的示例参考图
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
+        ko: 프로젝트에서 생성한 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_301
@@ -52,6 +55,7 @@ inspirationSources:
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,12 +64,14 @@ inspirationSources:
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118151619212890291&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
+      ko: 작성자의 전체 원문, 원래 언어
     metrics:
       - key: likes
         value: 93
@@ -74,6 +80,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
+          ko: 출처 게시물 좋아요
 source:
   author: IHayato
   url: https://x.com/IHayato/status/2118151619212890291

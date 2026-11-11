@@ -9,11 +9,13 @@ fields:
       zh-Hans: 题材
       ja: 題材
       de: Motiv
+      ko: 주제
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
       ja: 「竹林」のように、主な題材をひとつ指定します。
       de: Ein Hauptmotiv, etwa „ein Bambushain“.
+      ko: “대나무 숲”처럼 주요 대상 하나를 적으세요.
   - name: season
     type: enum
     required: true
@@ -24,6 +26,7 @@ fields:
       zh-Hans: 季节
       ja: 季節
       de: Jahreszeit
+      ko: 계절
     options:
       - value: spring
         labels:
@@ -31,24 +34,28 @@ fields:
           zh-Hans: 春
           ja: 春
           de: Frühling
+          ko: 봄
       - value: summer
         labels:
           en: Summer
           zh-Hans: 夏
           ja: 夏
           de: Sommer
+          ko: 여름
       - value: autumn
         labels:
           en: Autumn
           zh-Hans: 秋
           ja: 秋
           de: Herbst
+          ko: 가을
       - value: winter
         labels:
           en: Winter
           zh-Hans: 冬
           ja: 冬
           de: Winter
+          ko: 겨울
   - name: brushwork
     type: enum
     required: true
@@ -59,6 +66,7 @@ fields:
       zh-Hans: 笔法
       ja: 筆致
       de: Pinselführung
+      ko: 붓 표현
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -66,18 +74,21 @@ fields:
           zh-Hans: 淡墨晕染，节点清晰
           ja: 淡い墨と鋭い節
           de: Sanfte Verläufe, klare Knoten
+          ko: 부드러운 번짐과 선명한 마디
       - value: loose wet washes
         labels:
           en: Loose wet washes
           zh-Hans: 湿笔晕染
           ja: ゆったりとにじむ墨
           de: Lockere nasse Verläufe
+          ko: 자유로운 젖은 붓 번짐
       - value: dry brush with visible texture
         labels:
           en: Dry brush
           zh-Hans: 枯笔
           ja: かすれ
           de: Trockener Pinsel
+          ko: 마른 붓
   - name: elements
     type: string-list
     required: false
@@ -90,11 +101,13 @@ fields:
       zh-Hans: 细节
       ja: 細部
       de: Details
+      ko: 세부 사항
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
       ja: 数えられるものが効果的です。例：「背の高い茎 5 本」。
       de: Zählbare Dinge funktionieren am besten, etwa „fünf hohe Halme“.
+      ko: “키 큰 줄기 다섯 개”처럼 셀 수 있는 대상을 적으면 좋습니다.
   - name: aspectRatio
     type: enum
     required: true
@@ -106,6 +119,7 @@ fields:
       ja: アスペクト比
       ar: نسبة الأبعاد
       de: Seitenverhältnis
+      ko: 화면 비율
     options:
       - value: 21:9
         labels:
@@ -114,6 +128,7 @@ fields:
           ja: 21:9
           ar: 21:9
           de: 21:9
+          ko: 21:9
       - value: 16:9
         labels:
           en: 16:9
@@ -121,6 +136,7 @@ fields:
           ja: 16:9
           ar: 16:9
           de: 16:9
+          ko: 16:9
       - value: 3:4
         labels:
           en: 3:4
@@ -128,6 +144,7 @@ fields:
           ja: 3:4
           ar: 3:4
           de: 3:4
+          ko: 3:4
       - value: 1:3
         labels:
           en: 1:3
@@ -135,3 +152,4 @@ fields:
           ja: 1:3
           ar: 1:3
           de: 1:3
+          ko: 1:3

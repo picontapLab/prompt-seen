@@ -35,8 +35,9 @@ inspirationSources:
         post share the metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
-      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis.
-        Mehrere Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
+        Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -46,6 +47,7 @@ inspirationSources:
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
       de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
         Zahlen wurden nicht aktualisiert."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://x.com/gabrielchua/status/2118135343354720648
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -53,6 +55,7 @@ inspirationSources:
       ja: 元のプロンプトは見つかりませんでした。これは独自に推定したプロンプトです。
       de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig
         abgeleiteter Prompt.
+      ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
     metrics:
       - key: likes
         value: 132
@@ -61,6 +64,7 @@ inspirationSources:
           zh-Hans: 点赞
           ja: いいね
           de: Gefällt mir
+          ko: 좋아요
       - key: reposts
         value: 15
         labels:
@@ -68,6 +72,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          ko: 재게시
 source:
   author: Prompt Seen
   url: null

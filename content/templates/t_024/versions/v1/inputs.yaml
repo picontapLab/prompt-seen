@@ -5,6 +5,7 @@ instructions:
   ja: キャラクターと場面を説明してください。オリジナルキャラクターの参照画像の使用は任意です。
   de: Beschreibe eine Figur und eine Szene; eine Referenz für eine eigene Figur
     ist optional.
+  ko: 캐릭터와 장면을 설명하세요. 독창적인 캐릭터 참조 이미지는 선택 사항입니다.
 slots:
   - id: character
     labels:
@@ -12,5 +13,6 @@ slots:
       zh-Hans: 角色或人物参考
       ja: 人物
       de: Figur
+      ko: 캐릭터
     min: 0
     max: 1

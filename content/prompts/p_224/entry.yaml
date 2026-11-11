@@ -23,6 +23,7 @@ inputRequirements:
     zh-Hans: 使用本次原创生成的小猴子参考图。
     ja: 独自に生成した猿の参照画像を使ってください。
     de: Verwende das unabhängig generierte Referenzbild des Affen.
+    ko: 독립적으로 생성한 원숭이 참조 이미지를 사용하세요.
   slots:
     - id: reference
       labels:
@@ -30,6 +31,7 @@ inputRequirements:
         zh-Hans: 原创小猴子参考图
         ja: 元の猿の参照画像
         de: Ursprüngliches Referenzbild des Affen
+        ko: 원본 원숭이 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_288
@@ -49,6 +51,7 @@ inspirationSources:
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
       de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -58,6 +61,7 @@ inspirationSources:
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
       de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
         Zahlen wurden nicht aktualisiert."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -66,6 +70,7 @@ inspirationSources:
       ja: 出典に元のプロンプトがありますが、この制作では別途記録した作業用プロンプトを使っています。
       de: Die Quelle stellt einen Originalprompt bereit; diese Produktion verwendet
         den separat dokumentierten Arbeitsprompt.
+      ko: 출처에는 원본 프롬프트가 있으며, 이번 제작은 별도로 기록한 작업용 프롬프트를 사용합니다.
     metrics: []
 source:
   author: Prompt Seen

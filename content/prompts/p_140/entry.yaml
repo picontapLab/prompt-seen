@@ -23,8 +23,9 @@ inputRequirements:
       emblem.
     zh-Hans: 简单Emoji或图标图像
     ja: シンプルなアイコンを 1 枚アップロードしてください。この作例では、オリジナルの架空の山のエンブレムを使っています。
-    de: Lade ein einfaches Icon hoch. Unser Beispiel verwendet ein eigenes
-      fiktives Bergemblem.
+    de: Lade ein einfaches Icon hoch. Unser Beispiel verwendet ein eigenes fiktives
+      Bergemblem.
+    ko: 단순한 아이콘 하나를 업로드하세요. 예시는 직접 만든 가상의 산 엠블럼입니다.
   slots:
     - id: icon
       labels:
@@ -32,6 +33,7 @@ inputRequirements:
         zh-Hans: 图标轮廓
         ja: アイコン
         de: Icon
+        ko: 아이콘
       min: 1
       max: 1
 showcaseExampleId: x_185
@@ -49,6 +51,7 @@ inspirationSources:
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
+      ko: 전체 게시물 또는 이미지 갤러리
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -56,12 +59,14 @@ inspirationSources:
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1911075302941622512&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 称prompt在回复中，未读取回复全文
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: likes
         value: 2527
@@ -70,6 +75,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          ko: 좋아요
       - key: conversation_count
         value: 63
         labels:
@@ -77,6 +83,7 @@ inspirationSources:
           zh-Hans: 回复
           ja: 返信数
           de: Antworten
+          ko: 답글
       - key: views
         value: null
         labels:
@@ -84,6 +91,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          ko: 조회수
       - key: reposts
         value: null
         labels:
@@ -91,6 +99,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          ko: 재게시
       - key: bookmarks
         value: null
         labels:
@@ -98,6 +107,7 @@ inspirationSources:
           zh-Hans: 书签
           ja: ブックマーク数
           de: Lesezeichen
+          ko: 북마크
 source:
   author: Prompt Seen
   url: null

@@ -1,0 +1,4445 @@
+{
+  "timestamp": "2026-11-11T14:29:18.947Z",
+  "buildId": "ko-preview-20261111-ime",
+  "buildMode": "preview",
+  "basePath": "/prompt-seen",
+  "origin": "http://127.0.0.1:8101",
+  "node": "v24.19.0",
+  "platform": "darwin",
+  "cpus": 10,
+  "loadavg": [91.8046875, 64.28369140625, 71.021484375],
+  "method": {
+    "cache": "Fresh context and Network.setCacheDisabled for every page",
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "phone": false,
+        "cpuRate": 1
+      },
+      {
+        "name": "phone-slow4g",
+        "width": 390,
+        "height": 844,
+        "phone": true,
+        "cpuRate": 4
+      }
+    ],
+    "slow4g": {
+      "latencyMs": 150,
+      "downloadBytesPerSecond": 209715.2,
+      "uploadBytesPerSecond": 96000
+    },
+    "sampleCount": "One cold visit per route/profile; three rounds of four warm queries per profile",
+    "workerTiming": "Native Worker postMessage to corresponding message event; includes startup/fetch/parse for cold request, messaging + search for warm request",
+    "renderTiming": "input event to MutationObserver seeing committed query in search status; includes React scheduling and DOM update, not paint or real-user INP",
+    "labLimit": "Single-host lab diagnostics; field p75 and production budgets remain unverified",
+    "budgetSource": "docs/prompt-library-website-design.md §16.1: field p75 LCP<=2500 ms, INP<=200 ms, CLS<=0.1; initial JS approximately200 KiB, first-screen images approximately600 KiB; no numerical search-index/latency budget"
+  },
+  "profiles": [
+    {
+      "name": "desktop",
+      "pages": [
+        {
+          "route": "/ko/",
+          "metrics": {
+            "lcp": 180,
+            "cls": 0,
+            "longestTask": 61,
+            "blockingMs": 11,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 5,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 15,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_457/everyday-reaction-stickers-card-bd9b1bda2fc8.webp",
+              "initiatorType": "link",
+              "duration": 20.600000023841858,
+              "encodedBodySize": 186402,
+              "decodedBodySize": 186402,
+              "transferSize": 186702
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_457/everyday-reaction-stickers-thumbnail-3cc8015b36c7.webp",
+              "initiatorType": "link",
+              "duration": 20,
+              "encodedBodySize": 51756,
+              "decodedBodySize": 51756,
+              "transferSize": 52056
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 10.099999994039536,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 11.5,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 14.599999994039536,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 11.199999988079071,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 11.299999982118607,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 24.19999998807907,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 23.19999998807907,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 31.80000001192093,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 24.80000001192093,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 31.700000017881393,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 24,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 32.60000002384186,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 33.20000001788139,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 26.80000001192093,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 29.80000001192093,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 30.80000001192093,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 33.400000005960464,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 34,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 34.39999997615814,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 4.899999976158142,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 5.600000023841858,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 1.800000011920929,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 2.600000023841858,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.600000023841858,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 3.300000011920929,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 3.0999999940395355,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-109-821be0bf60cf.woff2",
+              "initiatorType": "css",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 2572,
+              "decodedBodySize": 2572,
+              "transferSize": 2872
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1.5,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1.4000000059604645,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_459/dog-mood-reaction-stickers-thumbnail-f18f83be8baa.webp",
+              "initiatorType": "img",
+              "duration": 5.299999982118607,
+              "encodedBodySize": 35658,
+              "decodedBodySize": 35658,
+              "transferSize": 35958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_461/bestie-photo-booth-thumbnail-e596d5d9eb34.webp",
+              "initiatorType": "img",
+              "duration": 6.299999982118607,
+              "encodedBodySize": 20874,
+              "decodedBodySize": 20874,
+              "transferSize": 21174
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_463/daily-woof-pet-newspaper-thumbnail-763e83c667d7.webp",
+              "initiatorType": "img",
+              "duration": 6.299999982118607,
+              "encodedBodySize": 39630,
+              "decodedBodySize": 39630,
+              "transferSize": 39930
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_464/office-cat-reaction-stickers-thumbnail-319fb28172f6.webp",
+              "initiatorType": "img",
+              "duration": 6,
+              "encodedBodySize": 46820,
+              "decodedBodySize": 46820,
+              "transferSize": 47120
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_469/weekend-starter-pack-collage-thumbnail-7bfeba7ce50b.webp",
+              "initiatorType": "img",
+              "duration": 6.300000011920929,
+              "encodedBodySize": 27386,
+              "decodedBodySize": 27386,
+              "transferSize": 27686
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_465/social-battery-raccoon-stickers-thumbnail-ed520e33c56d.webp",
+              "initiatorType": "img",
+              "duration": 6.5999999940395355,
+              "encodedBodySize": 43168,
+              "decodedBodySize": 43168,
+              "transferSize": 43468
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-thumbnail-ab48a81d50c2.webp",
+              "initiatorType": "img",
+              "duration": 7.0999999940395355,
+              "encodedBodySize": 22062,
+              "decodedBodySize": 22062,
+              "transferSize": 22362
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+              "initiatorType": "img",
+              "duration": 16.200000017881393,
+              "encodedBodySize": 21002,
+              "decodedBodySize": 21002,
+              "transferSize": 21302
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+              "initiatorType": "img",
+              "duration": 15.900000005960464,
+              "encodedBodySize": 2244,
+              "decodedBodySize": 2244,
+              "transferSize": 2544
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_116/bamboo-grove-scroll-thumbnail-594752f0bd7b.webp",
+              "initiatorType": "img",
+              "duration": 16.900000005960464,
+              "encodedBodySize": 16790,
+              "decodedBodySize": 16790,
+              "transferSize": 17090
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_151/neon-silhouette-portrait-thumbnail-6f0ba8710964.webp",
+              "initiatorType": "img",
+              "duration": 16.5,
+              "encodedBodySize": 10640,
+              "decodedBodySize": 10640,
+              "transferSize": 10940
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_125/green-tea-tin-poster-thumbnail-1aba1006cbc5.webp",
+              "initiatorType": "img",
+              "duration": 18.100000023841858,
+              "encodedBodySize": 15124,
+              "decodedBodySize": 15124,
+              "transferSize": 15424
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_146/jazz-club-poster-thumbnail-5545b08d210c.webp",
+              "initiatorType": "img",
+              "duration": 12.5,
+              "encodedBodySize": 8318,
+              "decodedBodySize": 8318,
+              "transferSize": 8618
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_239/layered-paper-story-thumbnail-fd5f9ea7df76.webp",
+              "initiatorType": "img",
+              "duration": 18.099999994039536,
+              "encodedBodySize": 32390,
+              "decodedBodySize": 32390,
+              "transferSize": 32690
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_515/adapted-s14-everyday-portrait-card-702fec4024fb.webp",
+              "initiatorType": "img",
+              "duration": 22.69999998807907,
+              "encodedBodySize": 48006,
+              "decodedBodySize": 48006,
+              "transferSize": 48306
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_514/adapted-s11-everyday-portrait-card-38e5de549b1f.webp",
+              "initiatorType": "img",
+              "duration": 22.69999998807907,
+              "encodedBodySize": 55048,
+              "decodedBodySize": 55048,
+              "transferSize": 55348
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_513/adapted-s04-everyday-portrait-card-f548258892c9.webp",
+              "initiatorType": "img",
+              "duration": 22.400000005960464,
+              "encodedBodySize": 30182,
+              "decodedBodySize": 30182,
+              "transferSize": 30482
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-card-fa4a19989a09.webp",
+              "initiatorType": "img",
+              "duration": 22.5,
+              "encodedBodySize": 48288,
+              "decodedBodySize": 48288,
+              "transferSize": 48588
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_510/adapted-g18-nine-frame-composed-gif-thumbnail-a3bb15233067.webp",
+              "initiatorType": "img",
+              "duration": 22.900000005960464,
+              "encodedBodySize": 87548,
+              "decodedBodySize": 87548,
+              "transferSize": 87848
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_509/adapted-g17-nine-frame-composed-gif-thumbnail-4af6933b0fe9.webp",
+              "initiatorType": "img",
+              "duration": 22.69999998807907,
+              "encodedBodySize": 65386,
+              "decodedBodySize": 65386,
+              "transferSize": 65686
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_507/adapted-g16-nine-frame-composed-gif-thumbnail-f62cda50e3ef.webp",
+              "initiatorType": "img",
+              "duration": 32.80000001192093,
+              "encodedBodySize": 105922,
+              "decodedBodySize": 105922,
+              "transferSize": 106222
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_503/adapted-g14-nine-frame-composed-gif-thumbnail-aa2d616e260b.webp",
+              "initiatorType": "img",
+              "duration": 33.099999994039536,
+              "encodedBodySize": 72774,
+              "decodedBodySize": 72774,
+              "transferSize": 73074
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_501/adapted-g13-nine-frame-composed-gif-thumbnail-e4b713cf8d4c.webp",
+              "initiatorType": "img",
+              "duration": 33.19999998807907,
+              "encodedBodySize": 89080,
+              "decodedBodySize": 89080,
+              "transferSize": 89380
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_505/adapted-g15-nine-frame-composed-gif-thumbnail-f5c3496de553.webp",
+              "initiatorType": "img",
+              "duration": 33.30000001192093,
+              "encodedBodySize": 106594,
+              "decodedBodySize": 106594,
+              "transferSize": 106894
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 4.799999982118607,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2a85f73is9evr.js",
+              "initiatorType": "script",
+              "duration": 2.600000023841858,
+              "encodedBodySize": 5878,
+              "decodedBodySize": 15338,
+              "transferSize": 6178
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0ug-z5mrljw92.js",
+              "initiatorType": "script",
+              "duration": 4.300000011920929,
+              "encodedBodySize": 8792,
+              "decodedBodySize": 26981,
+              "transferSize": 9092
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 8.799999982118607,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/",
+              "initiatorType": "fetch",
+              "duration": 8.400000005960464,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/",
+              "initiatorType": "fetch",
+              "duration": 8.400000005960464,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/",
+              "initiatorType": "fetch",
+              "duration": 6.5,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 9.800000011920929,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 9.800000011920929,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 9.700000017881393,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 12.199999988079071,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 7.5,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 6.4000000059604645,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next._tree.txt?_rsc=Q2QNahrvyMJbSvAi",
+              "initiatorType": "fetch",
+              "duration": 12.100000023841858,
+              "encodedBodySize": 595,
+              "decodedBodySize": 1380,
+              "transferSize": 895
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next._tree.txt?_rsc=Q2QNahrvyMJbSvAi",
+              "initiatorType": "fetch",
+              "duration": 12.599999994039536,
+              "encodedBodySize": 936,
+              "decodedBodySize": 936,
+              "transferSize": 1236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next._tree.txt?_rsc=Q2QNahrvyMJbSvAi",
+              "initiatorType": "fetch",
+              "duration": 11,
+              "encodedBodySize": 938,
+              "decodedBodySize": 938,
+              "transferSize": 1238
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=Q2QNahrvyMJbSvAi",
+              "initiatorType": "fetch",
+              "duration": 12.099999994039536,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next._index.txt?_rsc=fF4uLlot60flNmn4",
+              "initiatorType": "fetch",
+              "duration": 8.400000005960464,
+              "encodedBodySize": 2766,
+              "decodedBodySize": 8796,
+              "transferSize": 3066
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-detail-99552d71518e.webp",
+              "initiatorType": "img",
+              "duration": 8.399999976158142,
+              "encodedBodySize": 110166,
+              "decodedBodySize": 110166,
+              "transferSize": 110466
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next.$d$locale.txt?_rsc=ZAhI9-hnCmuqWOM9",
+              "initiatorType": "fetch",
+              "duration": 3.300000011920929,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=PZ7fOFPnz6MpYsG2",
+              "initiatorType": "fetch",
+              "duration": 3,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=_6XCDKvqO-1MHTIJ",
+              "initiatorType": "fetch",
+              "duration": 6.199999988079071,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next.$d$locale.!KHB1YmxpYyk.prompts.__PAGE__.txt?_rsc=kfe82tHrZI_rC2pm",
+              "initiatorType": "fetch",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 13388,
+              "decodedBodySize": 61992,
+              "transferSize": 13688
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next.$d$locale.!KHB1YmxpYyk.templates.__PAGE__.txt?_rsc=XnM0cRfIqSh9D-OW",
+              "initiatorType": "fetch",
+              "duration": 4.9000000059604645,
+              "encodedBodySize": 15795,
+              "decodedBodySize": 109417,
+              "transferSize": 16095
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next.$d$locale.!KHB1YmxpYyk.collections.__PAGE__.txt?_rsc=LZfZ3reftCc3IkfW",
+              "initiatorType": "fetch",
+              "duration": 5,
+              "encodedBodySize": 6302,
+              "decodedBodySize": 28555,
+              "transferSize": 6602
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0voj-zpaxas-1.js",
+              "initiatorType": "script",
+              "duration": 3.7999999821186066,
+              "encodedBodySize": 1044,
+              "decodedBodySize": 2326,
+              "transferSize": 1344
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3g-qk3swnze9n.js",
+              "initiatorType": "script",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 683,
+              "decodedBodySize": 1624,
+              "transferSize": 983
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2_1ihh6nrh7l_.js",
+              "initiatorType": "script",
+              "duration": 5.4000000059604645,
+              "encodedBodySize": 20432,
+              "decodedBodySize": 62223,
+              "transferSize": 20732
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0f6b_538vf4rj.js",
+              "initiatorType": "script",
+              "duration": 4.9000000059604645,
+              "encodedBodySize": 2809,
+              "decodedBodySize": 7143,
+              "transferSize": 3109
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/00h0lix4qf-h7.js",
+              "initiatorType": "script",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 1697,
+              "decodedBodySize": 3125,
+              "transferSize": 1997
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_457/everyday-reaction-stickers-card-bd9b1bda2fc8.webp",
+              "width": 720,
+              "height": 720,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_459/dog-mood-reaction-stickers-thumbnail-f18f83be8baa.webp",
+              "width": 374,
+              "height": 374,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_461/bestie-photo-booth-thumbnail-e596d5d9eb34.webp",
+              "width": 374,
+              "height": 467,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_463/daily-woof-pet-newspaper-thumbnail-763e83c667d7.webp",
+              "width": 374,
+              "height": 374,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_465/social-battery-raccoon-stickers-thumbnail-ed520e33c56d.webp",
+              "width": 374,
+              "height": 374,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_469/weekend-starter-pack-collage-thumbnail-7bfeba7ce50b.webp",
+              "width": 374,
+              "height": 374,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_464/office-cat-reaction-stickers-thumbnail-319fb28172f6.webp",
+              "width": 374,
+              "height": 374,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 399938,
+          "initialJavaScript": {
+            "scripts": 15,
+            "gzipLevel": 6,
+            "bytes": 238384
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 5,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 15,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 4.899999976158142,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 5.600000023841858,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 1.800000011920929,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 2.600000023841858,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.600000023841858,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 3.300000011920929,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 3.0999999940395355,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-109-821be0bf60cf.woff2",
+              "initiatorType": "css",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 2572,
+              "decodedBodySize": 2572,
+              "transferSize": 2872
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1.5,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1.4000000059604645,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            }
+          ]
+        },
+        {
+          "route": "/ko/prompts/",
+          "metrics": {
+            "lcp": 160,
+            "cls": 0,
+            "longestTask": 61,
+            "blockingMs": 11,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 2.5999999940395355,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-thumbnail-ab48a81d50c2.webp",
+              "initiatorType": "link",
+              "duration": 10.099999994039536,
+              "encodedBodySize": 22062,
+              "decodedBodySize": 22062,
+              "transferSize": 22362
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 8.5,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-card-af6fa61f21cb.webp",
+              "initiatorType": "link",
+              "duration": 10.5,
+              "encodedBodySize": 92776,
+              "decodedBodySize": 92776,
+              "transferSize": 93076
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_515/adapted-s14-everyday-portrait-card-702fec4024fb.webp",
+              "initiatorType": "link",
+              "duration": 11.199999988079071,
+              "encodedBodySize": 48006,
+              "decodedBodySize": 48006,
+              "transferSize": 48306
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_514/adapted-s11-everyday-portrait-card-38e5de549b1f.webp",
+              "initiatorType": "link",
+              "duration": 12.799999982118607,
+              "encodedBodySize": 55048,
+              "decodedBodySize": 55048,
+              "transferSize": 55348
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_513/adapted-s04-everyday-portrait-card-f548258892c9.webp",
+              "initiatorType": "link",
+              "duration": 17.5,
+              "encodedBodySize": 30182,
+              "decodedBodySize": 30182,
+              "transferSize": 30482
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 9.699999988079071,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_509/adapted-g17-nine-frame-composed-gif-thumbnail-4af6933b0fe9.webp",
+              "initiatorType": "link",
+              "duration": 25.30000001192093,
+              "encodedBodySize": 65386,
+              "decodedBodySize": 65386,
+              "transferSize": 65686
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_510/adapted-g18-nine-frame-composed-gif-thumbnail-a3bb15233067.webp",
+              "initiatorType": "link",
+              "duration": 22.599999994039536,
+              "encodedBodySize": 87548,
+              "decodedBodySize": 87548,
+              "transferSize": 87848
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-card-fa4a19989a09.webp",
+              "initiatorType": "link",
+              "duration": 22.5,
+              "encodedBodySize": 48288,
+              "decodedBodySize": 48288,
+              "transferSize": 48588
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 6.200000017881393,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 8.300000011920929,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 9.599999994039536,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 6,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 17.099999994039536,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 18.399999976158142,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 28.899999976158142,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 33.599999994039536,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 22.799999982118607,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 26.299999982118607,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 32.5,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 32.69999998807907,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 33.599999994039536,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 36.79999998211861,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 36.900000005960464,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 39,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3g-qk3swnze9n.js",
+              "initiatorType": "script",
+              "duration": 39.400000005960464,
+              "encodedBodySize": 683,
+              "decodedBodySize": 1624,
+              "transferSize": 983
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2_1ihh6nrh7l_.js",
+              "initiatorType": "script",
+              "duration": 39.599999994039536,
+              "encodedBodySize": 20432,
+              "decodedBodySize": 62223,
+              "transferSize": 20732
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 5.700000017881393,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 2.199999988079071,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 1.5,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-115-0e46c9256641.woff2",
+              "initiatorType": "css",
+              "duration": 2.899999976158142,
+              "encodedBodySize": 5152,
+              "decodedBodySize": 5152,
+              "transferSize": 5452
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 4.199999988079071,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 2.7999999821186066,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 3.5,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 4,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 4.0999999940395355,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_260/character-chinese-sticker-sheet-thumbnail-88be4983d0c8.webp",
+              "initiatorType": "img",
+              "duration": 8.099999994039536,
+              "encodedBodySize": 52752,
+              "decodedBodySize": 52752,
+              "transferSize": 53052
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_507/adapted-g16-nine-frame-composed-gif-thumbnail-f62cda50e3ef.webp",
+              "initiatorType": "img",
+              "duration": 8.900000005960464,
+              "encodedBodySize": 105922,
+              "decodedBodySize": 105922,
+              "transferSize": 106222
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_203/crystal-sphere-waterfall-thumbnail-8277c6c35a13.webp",
+              "initiatorType": "img",
+              "duration": 10,
+              "encodedBodySize": 42916,
+              "decodedBodySize": 42916,
+              "transferSize": 43216
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_501/adapted-g13-nine-frame-composed-gif-thumbnail-e4b713cf8d4c.webp",
+              "initiatorType": "img",
+              "duration": 9.099999994039536,
+              "encodedBodySize": 89080,
+              "decodedBodySize": 89080,
+              "transferSize": 89380
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_505/adapted-g15-nine-frame-composed-gif-thumbnail-f5c3496de553.webp",
+              "initiatorType": "img",
+              "duration": 9.399999976158142,
+              "encodedBodySize": 106594,
+              "decodedBodySize": 106594,
+              "transferSize": 106894
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_503/adapted-g14-nine-frame-composed-gif-thumbnail-aa2d616e260b.webp",
+              "initiatorType": "img",
+              "duration": 9.5,
+              "encodedBodySize": 72774,
+              "decodedBodySize": 72774,
+              "transferSize": 73074
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_499/adapted-g12-nine-frame-composed-gif-thumbnail-4af5315d58a3.webp",
+              "initiatorType": "img",
+              "duration": 20.299999982118607,
+              "encodedBodySize": 119016,
+              "decodedBodySize": 119016,
+              "transferSize": 119316
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_498/adapted-g11-delight-nine-frame-composed-gif-thumbnail-ae3ea2fa1fdf.webp",
+              "initiatorType": "img",
+              "duration": 20.19999998807907,
+              "encodedBodySize": 69754,
+              "decodedBodySize": 69754,
+              "transferSize": 70054
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/10h7j_x20fx4k.js",
+              "initiatorType": "script",
+              "duration": 2.2999999821186066,
+              "encodedBodySize": 4449,
+              "decodedBodySize": 11355,
+              "transferSize": 4749
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0ug-z5mrljw92.js",
+              "initiatorType": "script",
+              "duration": 3.100000023841858,
+              "encodedBodySize": 8792,
+              "decodedBodySize": 26981,
+              "transferSize": 9092
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 1.7999999821186066,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 2,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/",
+              "initiatorType": "fetch",
+              "duration": 1.7999999821186066,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/",
+              "initiatorType": "fetch",
+              "duration": 1.5,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/",
+              "initiatorType": "fetch",
+              "duration": 1.4000000059604645,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=beAdT7DxEogXVD-l",
+              "initiatorType": "fetch",
+              "duration": 3.300000011920929,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next._tree.txt?_rsc=beAdT7DxEogXVD-l",
+              "initiatorType": "fetch",
+              "duration": 2.7999999821186066,
+              "encodedBodySize": 936,
+              "decodedBodySize": 936,
+              "transferSize": 1236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next._tree.txt?_rsc=beAdT7DxEogXVD-l",
+              "initiatorType": "fetch",
+              "duration": 3,
+              "encodedBodySize": 938,
+              "decodedBodySize": 938,
+              "transferSize": 1238
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next._tree.txt?_rsc=beAdT7DxEogXVD-l",
+              "initiatorType": "fetch",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 595,
+              "decodedBodySize": 1380,
+              "transferSize": 895
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._index.txt?_rsc=2ryXcvSbvoX5bOd1",
+              "initiatorType": "fetch",
+              "duration": 2.5,
+              "encodedBodySize": 2782,
+              "decodedBodySize": 8857,
+              "transferSize": 3082
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.txt?_rsc=nC72CfUvFjhe99Ta",
+              "initiatorType": "fetch",
+              "duration": 2.7000000178813934,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=SJJIMOHirhB2KQ9r",
+              "initiatorType": "fetch",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-detail-99552d71518e.webp",
+              "initiatorType": "link",
+              "duration": 2.5,
+              "encodedBodySize": 110166,
+              "decodedBodySize": 110166,
+              "transferSize": 110466
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=84uEjYg_5GykU7vd",
+              "initiatorType": "fetch",
+              "duration": 7.5999999940395355,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 6.699999988079071,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 12.400000005960464,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 10.599999994039536,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/ko/feed/index.json",
+              "initiatorType": "fetch",
+              "duration": 10.300000011920929,
+              "encodedBodySize": 6878,
+              "decodedBodySize": 42679,
+              "transferSize": 7178
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 14.699999988079071,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 8.200000017881393,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 7,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 11,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next.$d$locale.!KHB1YmxpYyk.prompts.__PAGE__.txt?_rsc=QJg8RllLs4Dvl_-f",
+              "initiatorType": "fetch",
+              "duration": 12.300000011920929,
+              "encodedBodySize": 13388,
+              "decodedBodySize": 61992,
+              "transferSize": 13688
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next.$d$locale.!KHB1YmxpYyk.templates.__PAGE__.txt?_rsc=Nf-wb8Olrfv8Up5S",
+              "initiatorType": "fetch",
+              "duration": 9.800000011920929,
+              "encodedBodySize": 15795,
+              "decodedBodySize": 109417,
+              "transferSize": 16095
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next.$d$locale.!KHB1YmxpYyk.collections.__PAGE__.txt?_rsc=Ii_FvIYuFpr6DHOm",
+              "initiatorType": "fetch",
+              "duration": 5,
+              "encodedBodySize": 6302,
+              "decodedBodySize": 28555,
+              "transferSize": 6602
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0voj-zpaxas-1.js",
+              "initiatorType": "script",
+              "duration": 2.5,
+              "encodedBodySize": 1044,
+              "decodedBodySize": 2326,
+              "transferSize": 1344
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0f6b_538vf4rj.js",
+              "initiatorType": "script",
+              "duration": 2.2999999821186066,
+              "encodedBodySize": 2809,
+              "decodedBodySize": 7143,
+              "transferSize": 3109
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/00h0lix4qf-h7.js",
+              "initiatorType": "script",
+              "duration": 1.5999999940395355,
+              "encodedBodySize": 1697,
+              "decodedBodySize": 3125,
+              "transferSize": 1997
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-card-af6fa61f21cb.webp",
+              "width": 633,
+              "height": 792,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_260/character-chinese-sticker-sheet-thumbnail-88be4983d0c8.webp",
+              "width": 316,
+              "height": 316,
+              "complete": true
+            },
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_203/crystal-sphere-waterfall-thumbnail-8277c6c35a13.webp",
+              "width": 316,
+              "height": 289,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 188444,
+          "initialJavaScript": {
+            "scripts": 15,
+            "gzipLevel": 6,
+            "bytes": 246952
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 2.5999999940395355,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 8.5,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 5.700000017881393,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 2.199999988079071,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 1.5,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.4000000059604645,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-115-0e46c9256641.woff2",
+              "initiatorType": "css",
+              "duration": 2.899999976158142,
+              "encodedBodySize": 5152,
+              "decodedBodySize": 5152,
+              "transferSize": 5452
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 4.199999988079071,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 2.7999999821186066,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 3.5,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 4,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 4.0999999940395355,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            }
+          ]
+        },
+        {
+          "route": "/ko/prompts/design-top60-01/",
+          "metrics": {
+            "lcp": 148,
+            "cls": 0,
+            "longestTask": 98,
+            "blockingMs": 48,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 3.5999999940395355,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 7,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_305/design-top60-01-card-05767773737c.webp",
+              "initiatorType": "link",
+              "duration": 9.799999982118607,
+              "encodedBodySize": 16076,
+              "decodedBodySize": 16076,
+              "transferSize": 16376
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 5.5,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 5.5999999940395355,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 8.699999988079071,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 6.4000000059604645,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 27.19999998807907,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 14.599999994039536,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 14.5,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 18.900000005960464,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 25.80000001192093,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 27.200000017881393,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 27.700000017881393,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 22.100000023841858,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 22.900000005960464,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 25.200000017881393,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 28.600000023841858,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2vlwtep_jaa_h.js",
+              "initiatorType": "script",
+              "duration": 28.599999994039536,
+              "encodedBodySize": 9253,
+              "decodedBodySize": 27085,
+              "transferSize": 9553
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 28.899999976158142,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 2.2000000178813934,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 1.300000011920929,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 1.0999999940395355,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 2,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.300000011920929,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 2.100000023841858,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 2.2000000178813934,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 2,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1.7000000178813934,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_305/design-top60-01-thumbnail-3082d6d53bde.webp",
+              "initiatorType": "img",
+              "duration": 2.300000011920929,
+              "encodedBodySize": 5256,
+              "decodedBodySize": 5256,
+              "transferSize": 5556
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 1.300000011920929,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 2.5,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/",
+              "initiatorType": "fetch",
+              "duration": 2.0999999940395355,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/",
+              "initiatorType": "fetch",
+              "duration": 2.300000011920929,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/",
+              "initiatorType": "fetch",
+              "duration": 2.800000011920929,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next._tree.txt?_rsc=CYgFsMTPcBUuLBWL",
+              "initiatorType": "fetch",
+              "duration": 1.5,
+              "encodedBodySize": 936,
+              "decodedBodySize": 936,
+              "transferSize": 1236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=CYgFsMTPcBUuLBWL",
+              "initiatorType": "fetch",
+              "duration": 1.899999976158142,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next._tree.txt?_rsc=CYgFsMTPcBUuLBWL",
+              "initiatorType": "fetch",
+              "duration": 1.800000011920929,
+              "encodedBodySize": 595,
+              "decodedBodySize": 1380,
+              "transferSize": 895
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next._tree.txt?_rsc=CYgFsMTPcBUuLBWL",
+              "initiatorType": "fetch",
+              "duration": 1.2000000178813934,
+              "encodedBodySize": 938,
+              "decodedBodySize": 938,
+              "transferSize": 1238
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 4.699999988079071,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 9,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 4.0999999940395355,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 4,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next._index.txt?_rsc=-9jSEuYGW0GQjUpR",
+              "initiatorType": "fetch",
+              "duration": 7.5,
+              "encodedBodySize": 2749,
+              "decodedBodySize": 8735,
+              "transferSize": 3049
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next.$d$locale.txt?_rsc=-iyNFxWPYEN9_4Za",
+              "initiatorType": "fetch",
+              "duration": 1.800000011920929,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=VLpWydLkQWjFG5vf",
+              "initiatorType": "fetch",
+              "duration": 7.5,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-detail-99552d71518e.webp",
+              "initiatorType": "link",
+              "duration": 3.9000000059604645,
+              "encodedBodySize": 110166,
+              "decodedBodySize": 110166,
+              "transferSize": 110466
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=-DzTzcjvkrAwOIqz",
+              "initiatorType": "fetch",
+              "duration": 10,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 2.9000000059604645,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 4.5,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/prompts/__next.$d$locale.!KHB1YmxpYyk.prompts.__PAGE__.txt?_rsc=b5mk2NLrdzR8-_EY",
+              "initiatorType": "fetch",
+              "duration": 4,
+              "encodedBodySize": 13388,
+              "decodedBodySize": 61992,
+              "transferSize": 13688
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/templates/__next.$d$locale.!KHB1YmxpYyk.templates.__PAGE__.txt?_rsc=QR-ib5zLnx5oGHPA",
+              "initiatorType": "fetch",
+              "duration": 4.199999988079071,
+              "encodedBodySize": 15795,
+              "decodedBodySize": 109417,
+              "transferSize": 16095
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 3.5999999940395355,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 3.5,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/collections/__next.$d$locale.!KHB1YmxpYyk.collections.__PAGE__.txt?_rsc=hlDK-xUvx44fPlD6",
+              "initiatorType": "fetch",
+              "duration": 1.7999999821186066,
+              "encodedBodySize": 6302,
+              "decodedBodySize": 28555,
+              "transferSize": 6602
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3g-qk3swnze9n.js",
+              "initiatorType": "script",
+              "duration": 3.699999988079071,
+              "encodedBodySize": 683,
+              "decodedBodySize": 1624,
+              "transferSize": 983
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2_1ihh6nrh7l_.js",
+              "initiatorType": "script",
+              "duration": 2.699999988079071,
+              "encodedBodySize": 20432,
+              "decodedBodySize": 62223,
+              "transferSize": 20732
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0voj-zpaxas-1.js",
+              "initiatorType": "script",
+              "duration": 1.2999999821186066,
+              "encodedBodySize": 1044,
+              "decodedBodySize": 2326,
+              "transferSize": 1344
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0f6b_538vf4rj.js",
+              "initiatorType": "script",
+              "duration": 1.399999976158142,
+              "encodedBodySize": 2809,
+              "decodedBodySize": 7143,
+              "transferSize": 3109
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/00h0lix4qf-h7.js",
+              "initiatorType": "script",
+              "duration": 1.399999976158142,
+              "encodedBodySize": 1697,
+              "decodedBodySize": 3125,
+              "transferSize": 1997
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_305/design-top60-01-card-05767773737c.webp",
+              "width": 835,
+              "height": 696,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 16076,
+          "initialJavaScript": {
+            "scripts": 14,
+            "gzipLevel": 6,
+            "bytes": 235089
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 3.5999999940395355,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 7,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 2.2000000178813934,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 1.300000011920929,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 1.0999999940395355,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 2,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 2.300000011920929,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 2.100000023841858,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 2.2000000178813934,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 2,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1.7000000178813934,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            }
+          ]
+        }
+      ],
+      "search": {
+        "worker": [
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 1,
+            "start": 168.7999999821186,
+            "responseType": "results",
+            "elapsedMs": 231.5,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 2,
+            "start": 445.7999999821186,
+            "responseType": "results",
+            "elapsedMs": 1.2000000178813934,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 3,
+            "start": 460,
+            "responseType": "results",
+            "elapsedMs": 0.7999999821186066,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 4,
+            "start": 482.59999999403954,
+            "responseType": "results",
+            "elapsedMs": 2.800000011920929,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 5,
+            "start": 501.69999998807907,
+            "responseType": "results",
+            "elapsedMs": 3.5,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 6,
+            "start": 524,
+            "responseType": "results",
+            "elapsedMs": 0.4000000059604645,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 7,
+            "start": 531.1999999880791,
+            "responseType": "results",
+            "elapsedMs": 0.4000000059604645,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 8,
+            "start": 543.6999999880791,
+            "responseType": "results",
+            "elapsedMs": 0.5,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 9,
+            "start": 560.0999999940395,
+            "responseType": "results",
+            "elapsedMs": 0.699999988079071,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 10,
+            "start": 570.7999999821186,
+            "responseType": "results",
+            "elapsedMs": 0.4000000059604645,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 11,
+            "start": 577.5999999940395,
+            "responseType": "results",
+            "elapsedMs": 0.4000000059604645,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 12,
+            "start": 588.5999999940395,
+            "responseType": "results",
+            "elapsedMs": 0.5,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 13,
+            "start": 601.0999999940395,
+            "responseType": "results",
+            "elapsedMs": 2.5,
+            "total": 8
+          }
+        ],
+        "renders": [
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 5.699999988079071
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 3.9000000059604645
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 8.099999994039536
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 8.599999994039536
+          },
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 2.5
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 3.0999999940395355
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 5.5
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 4.300000011920929
+          },
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 2.100000023841858
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 2.5
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 4.399999976158142
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 6.300000011920929
+          }
+        ],
+        "resources": [],
+        "coldRequests": [
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 1,
+            "start": 168.7999999821186,
+            "responseType": "results",
+            "elapsedMs": 231.5,
+            "total": 8
+          }
+        ],
+        "indexRequestCount": 1,
+        "warmSummary": {
+          "count": 12,
+          "minMs": 0.4000000059604645,
+          "medianMs": 0.699999988079071,
+          "maxMs": 3.5
+        }
+      }
+    },
+    {
+      "name": "phone-slow4g",
+      "pages": [
+        {
+          "route": "/ko/",
+          "metrics": {
+            "lcp": 1796,
+            "cls": 0,
+            "longestTask": 219,
+            "blockingMs": 260,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 617.1999999880791,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 595.9000000059605,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_457/everyday-reaction-stickers-thumbnail-3cc8015b36c7.webp",
+              "initiatorType": "link",
+              "duration": 1574.300000011921,
+              "encodedBodySize": 51756,
+              "decodedBodySize": 51756,
+              "transferSize": 52056
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 186.59999999403954,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 286.59999999403954,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 444.90000000596046,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 508.40000000596046,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 523.4000000059605,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 750.7999999821186,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 844.2999999821186,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 2038.199999988079,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 1815.7000000178814,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 2094.5999999940395,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 2109.800000011921,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 2180,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 2193.100000023842,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 2229.5999999940395,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 2351,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 2495.5999999940395,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 2387.800000011921,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 2437.800000011921,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 2515.2999999821186,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 524.8000000119209,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 945.5999999940395,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 831.7999999821186,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1198.199999988079,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 1069.199999988079,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 1219.4000000059605,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 1225.9000000059605,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 1254.5,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-109-821be0bf60cf.woff2",
+              "initiatorType": "css",
+              "duration": 1325.699999988079,
+              "encodedBodySize": 2572,
+              "decodedBodySize": 2572,
+              "transferSize": 2872
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 1373.0999999940395,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1378.5999999940395,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_459/dog-mood-reaction-stickers-thumbnail-f18f83be8baa.webp",
+              "initiatorType": "img",
+              "duration": 2317.699999988079,
+              "encodedBodySize": 35658,
+              "decodedBodySize": 35658,
+              "transferSize": 35958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_461/bestie-photo-booth-thumbnail-e596d5d9eb34.webp",
+              "initiatorType": "img",
+              "duration": 2153.199999988079,
+              "encodedBodySize": 20874,
+              "decodedBodySize": 20874,
+              "transferSize": 21174
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_469/weekend-starter-pack-collage-thumbnail-7bfeba7ce50b.webp",
+              "initiatorType": "img",
+              "duration": 2517.0999999940395,
+              "encodedBodySize": 27386,
+              "decodedBodySize": 27386,
+              "transferSize": 27686
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_463/daily-woof-pet-newspaper-thumbnail-763e83c667d7.webp",
+              "initiatorType": "img",
+              "duration": 2611.5,
+              "encodedBodySize": 39630,
+              "decodedBodySize": 39630,
+              "transferSize": 39930
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_465/social-battery-raccoon-stickers-thumbnail-ed520e33c56d.webp",
+              "initiatorType": "img",
+              "duration": 2753.199999988079,
+              "encodedBodySize": 43168,
+              "decodedBodySize": 43168,
+              "transferSize": 43468
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_199/lavender-twilight-hills-thumbnail-842a96349cec.webp",
+              "initiatorType": "img",
+              "duration": 2740.5999999940395,
+              "encodedBodySize": 2244,
+              "decodedBodySize": 2244,
+              "transferSize": 2544
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_464/office-cat-reaction-stickers-thumbnail-319fb28172f6.webp",
+              "initiatorType": "img",
+              "duration": 2911.2999999821186,
+              "encodedBodySize": 46820,
+              "decodedBodySize": 46820,
+              "transferSize": 47120
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-thumbnail-ab48a81d50c2.webp",
+              "initiatorType": "img",
+              "duration": 2932.699999988079,
+              "encodedBodySize": 22062,
+              "decodedBodySize": 22062,
+              "transferSize": 22362
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_168/ramen-from-above-thumbnail-5acc30e6caa0.webp",
+              "initiatorType": "img",
+              "duration": 3055.0999999940395,
+              "encodedBodySize": 21002,
+              "decodedBodySize": 21002,
+              "transferSize": 21302
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2a85f73is9evr.js",
+              "initiatorType": "script",
+              "duration": 1041.300000011921,
+              "encodedBodySize": 5878,
+              "decodedBodySize": 15338,
+              "transferSize": 6178
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0ug-z5mrljw92.js",
+              "initiatorType": "script",
+              "duration": 1196.7999999821186,
+              "encodedBodySize": 8792,
+              "decodedBodySize": 26981,
+              "transferSize": 9092
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 503.59999999403954,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 1028.5,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 1214.0999999940395,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 1287.1000000238419,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 1270.5999999940395,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 1283.2000000178814,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 316.5,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=Q2QNahrvyMJbSvAi",
+              "initiatorType": "fetch",
+              "duration": 733.0999999940395,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._index.txt?_rsc=fF4uLlot60flNmn4",
+              "initiatorType": "fetch",
+              "duration": 205.80000001192093,
+              "encodedBodySize": 2782,
+              "decodedBodySize": 8857,
+              "transferSize": 3082
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.txt?_rsc=ZAhI9-hnCmuqWOM9",
+              "initiatorType": "fetch",
+              "duration": 195.69999998807907,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=PZ7fOFPnz6MpYsG2",
+              "initiatorType": "fetch",
+              "duration": 224.2000000178814,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=_6XCDKvqO-1MHTIJ",
+              "initiatorType": "fetch",
+              "duration": 390.10000002384186,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 158.59999999403954,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_457/everyday-reaction-stickers-thumbnail-3cc8015b36c7.webp",
+              "width": 389,
+              "height": 389,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 51756,
+          "initialJavaScript": {
+            "scripts": 15,
+            "gzipLevel": 6,
+            "bytes": 238384
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 617.1999999880791,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 595.9000000059605,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 524.8000000119209,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 945.5999999940395,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 831.7999999821186,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1198.199999988079,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 1069.199999988079,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 1219.4000000059605,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 1225.9000000059605,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 1254.5,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-109-821be0bf60cf.woff2",
+              "initiatorType": "css",
+              "duration": 1325.699999988079,
+              "encodedBodySize": 2572,
+              "decodedBodySize": 2572,
+              "transferSize": 2872
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 1373.0999999940395,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1378.5999999940395,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            }
+          ]
+        },
+        {
+          "route": "/ko/prompts/",
+          "metrics": {
+            "lcp": 1112,
+            "cls": 0,
+            "longestTask": 184,
+            "blockingMs": 215,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 715.5,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 643.2999999821186,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-thumbnail-ab48a81d50c2.webp",
+              "initiatorType": "link",
+              "duration": 1059.0999999940395,
+              "encodedBodySize": 22062,
+              "decodedBodySize": 22062,
+              "transferSize": 22362
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-card-af6fa61f21cb.webp",
+              "initiatorType": "link",
+              "duration": 1909.699999988079,
+              "encodedBodySize": 92776,
+              "decodedBodySize": 92776,
+              "transferSize": 93076
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_515/adapted-s14-everyday-portrait-thumbnail-a49f4018ce92.webp",
+              "initiatorType": "link",
+              "duration": 913.8000000119209,
+              "encodedBodySize": 12322,
+              "decodedBodySize": 12322,
+              "transferSize": 12622
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_513/adapted-s04-everyday-portrait-thumbnail-7afe7e530850.webp",
+              "initiatorType": "link",
+              "duration": 1042.9000000059605,
+              "encodedBodySize": 10184,
+              "decodedBodySize": 10184,
+              "transferSize": 10484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_514/adapted-s11-everyday-portrait-thumbnail-de6980cddca1.webp",
+              "initiatorType": "link",
+              "duration": 1130.4000000059605,
+              "encodedBodySize": 13910,
+              "decodedBodySize": 13910,
+              "transferSize": 14210
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_512/adapted-s01-everyday-portrait-thumbnail-930b0d6dbb38.webp",
+              "initiatorType": "link",
+              "duration": 2051.2000000178814,
+              "encodedBodySize": 11416,
+              "decodedBodySize": 11416,
+              "transferSize": 11716
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_510/adapted-g18-nine-frame-composed-gif-thumbnail-a3bb15233067.webp",
+              "initiatorType": "link",
+              "duration": 3782.5999999940395,
+              "encodedBodySize": 87548,
+              "decodedBodySize": 87548,
+              "transferSize": 87848
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 277.5,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_509/adapted-g17-nine-frame-composed-gif-thumbnail-4af6933b0fe9.webp",
+              "initiatorType": "link",
+              "duration": 3461.199999988079,
+              "encodedBodySize": 65386,
+              "decodedBodySize": 65386,
+              "transferSize": 65686
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 184.2000000178814,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 633.4000000059605,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 433.19999998807907,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 504.5,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 2108.0999999940395,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 2222.5,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 3651.7000000178814,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 2365.800000011921,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 2478.800000011921,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 2700.7000000178814,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 3252.300000011921,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 2665.899999976158,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 3023.2999999821186,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 3130.399999976158,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3g-qk3swnze9n.js",
+              "initiatorType": "script",
+              "duration": 3444.7999999821186,
+              "encodedBodySize": 683,
+              "decodedBodySize": 1624,
+              "transferSize": 983
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 3524,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 3544.7999999821186,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2_1ihh6nrh7l_.js",
+              "initiatorType": "script",
+              "duration": 4058.5999999940395,
+              "encodedBodySize": 20432,
+              "decodedBodySize": 62223,
+              "transferSize": 20732
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 496.40000000596046,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 832.2999999821186,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 609.2000000178814,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 682.9000000059605,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 884.5,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1050.0999999940395,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 803.2999999821186,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-115-0e46c9256641.woff2",
+              "initiatorType": "css",
+              "duration": 895.1999999880791,
+              "encodedBodySize": 5152,
+              "decodedBodySize": 5152,
+              "transferSize": 5452
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 1009.1999999880791,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 1032.2999999821186,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 1077.5999999940395,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1098.7000000178814,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_260/character-chinese-sticker-sheet-thumbnail-88be4983d0c8.webp",
+              "initiatorType": "img",
+              "duration": 4063.699999988079,
+              "encodedBodySize": 52752,
+              "decodedBodySize": 52752,
+              "transferSize": 53052
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_203/crystal-sphere-waterfall-thumbnail-8277c6c35a13.webp",
+              "initiatorType": "img",
+              "duration": 3913.300000011921,
+              "encodedBodySize": 42916,
+              "decodedBodySize": 42916,
+              "transferSize": 43216
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_503/adapted-g14-nine-frame-composed-gif-thumbnail-aa2d616e260b.webp",
+              "initiatorType": "img",
+              "duration": 4871.200000017881,
+              "encodedBodySize": 72774,
+              "decodedBodySize": 72774,
+              "transferSize": 73074
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_507/adapted-g16-nine-frame-composed-gif-thumbnail-f62cda50e3ef.webp",
+              "initiatorType": "img",
+              "duration": 5438,
+              "encodedBodySize": 105922,
+              "decodedBodySize": 105922,
+              "transferSize": 106222
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_501/adapted-g13-nine-frame-composed-gif-thumbnail-e4b713cf8d4c.webp",
+              "initiatorType": "img",
+              "duration": 5487.4000000059605,
+              "encodedBodySize": 89080,
+              "decodedBodySize": 89080,
+              "transferSize": 89380
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_505/adapted-g15-nine-frame-composed-gif-thumbnail-f5c3496de553.webp",
+              "initiatorType": "img",
+              "duration": 5501,
+              "encodedBodySize": 106594,
+              "decodedBodySize": 106594,
+              "transferSize": 106894
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/10h7j_x20fx4k.js",
+              "initiatorType": "script",
+              "duration": 1049.4000000059605,
+              "encodedBodySize": 4449,
+              "decodedBodySize": 11355,
+              "transferSize": 4749
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0ug-z5mrljw92.js",
+              "initiatorType": "script",
+              "duration": 1315,
+              "encodedBodySize": 8792,
+              "decodedBodySize": 26981,
+              "transferSize": 9092
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 840.2000000178814,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 1368.7000000178814,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 1719.199999988079,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 1939.5999999940395,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 1966.4000000059605,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/ko/feed/index.json",
+              "initiatorType": "fetch",
+              "duration": 2044.4000000059605,
+              "encodedBodySize": 6878,
+              "decodedBodySize": 42679,
+              "transferSize": 7178
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 2119.199999988079,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 681.3000000119209,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=beAdT7DxEogXVD-l",
+              "initiatorType": "fetch",
+              "duration": 1298.800000011921,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.txt?_rsc=nC72CfUvFjhe99Ta",
+              "initiatorType": "fetch",
+              "duration": 202.09999999403954,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._index.txt?_rsc=2ryXcvSbvoX5bOd1",
+              "initiatorType": "fetch",
+              "duration": 239.09999999403954,
+              "encodedBodySize": 2782,
+              "decodedBodySize": 8857,
+              "transferSize": 3082
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=SJJIMOHirhB2KQ9r",
+              "initiatorType": "fetch",
+              "duration": 251.5,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=84uEjYg_5GykU7vd",
+              "initiatorType": "fetch",
+              "duration": 393.5,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 185.30000001192093,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 173.69999998807907,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 216,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_228/product-brand-story-grid-card-af6fa61f21cb.webp",
+              "width": 390,
+              "height": 487,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 92776,
+          "initialJavaScript": {
+            "scripts": 15,
+            "gzipLevel": 6,
+            "bytes": 246952
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 715.5,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 643.2999999821186,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 496.40000000596046,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 832.2999999821186,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 609.2000000178814,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 682.9000000059605,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 884.5,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1050.0999999940395,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 803.2999999821186,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-115-0e46c9256641.woff2",
+              "initiatorType": "css",
+              "duration": 895.1999999880791,
+              "encodedBodySize": 5152,
+              "decodedBodySize": 5152,
+              "transferSize": 5452
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 1009.1999999880791,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 1032.2999999821186,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-114-c412e27ca8e8.woff2",
+              "initiatorType": "css",
+              "duration": 1077.5999999940395,
+              "encodedBodySize": 3932,
+              "decodedBodySize": 3932,
+              "transferSize": 4232
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-113-cb916b4b3631.woff2",
+              "initiatorType": "css",
+              "duration": 1098.7000000178814,
+              "encodedBodySize": 3040,
+              "decodedBodySize": 3040,
+              "transferSize": 3340
+            }
+          ]
+        },
+        {
+          "route": "/ko/prompts/design-top60-01/",
+          "metrics": {
+            "lcp": 984,
+            "cls": 0,
+            "longestTask": 240,
+            "blockingMs": 273,
+            "worker": [],
+            "renders": [],
+            "inputStarted": null
+          },
+          "resources": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 576.5999999940395,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 556,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/media/a_305/design-top60-01-thumbnail-3082d6d53bde.webp",
+              "initiatorType": "link",
+              "duration": 527.5999999940395,
+              "encodedBodySize": 5256,
+              "decodedBodySize": 5256,
+              "transferSize": 5556
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1n-lk2r4b278y.css",
+              "initiatorType": "link",
+              "duration": 275.30000001192093,
+              "encodedBodySize": 4941,
+              "decodedBodySize": 24981,
+              "transferSize": 5241
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0lg2z0vraa7s2.css",
+              "initiatorType": "link",
+              "duration": 170.80000001192093,
+              "encodedBodySize": 658,
+              "decodedBodySize": 658,
+              "transferSize": 958
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0o608qfr405-_.css",
+              "initiatorType": "link",
+              "duration": 324.90000000596046,
+              "encodedBodySize": 3996,
+              "decodedBodySize": 18220,
+              "transferSize": 4296
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/07g_5d4hjyew3.css",
+              "initiatorType": "link",
+              "duration": 468.7000000178814,
+              "encodedBodySize": 15403,
+              "decodedBodySize": 101095,
+              "transferSize": 15703
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko.css",
+              "initiatorType": "link",
+              "duration": 385.10000002384186,
+              "encodedBodySize": 1738,
+              "decodedBodySize": 6938,
+              "transferSize": 2038
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0-o74znen4827.js",
+              "initiatorType": "link",
+              "duration": 682.6000000238419,
+              "encodedBodySize": 3682,
+              "decodedBodySize": 13269,
+              "transferSize": 3982
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3srfjz42u14tx.js",
+              "initiatorType": "script",
+              "duration": 774.5,
+              "encodedBodySize": 8135,
+              "decodedBodySize": 29981,
+              "transferSize": 8435
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/298te05mwqbgo.js",
+              "initiatorType": "script",
+              "duration": 1547.5,
+              "encodedBodySize": 44461,
+              "decodedBodySize": 159851,
+              "transferSize": 44761
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/turbopack-2vxup6eq8ciay.js",
+              "initiatorType": "script",
+              "duration": 1671.0999999940395,
+              "encodedBodySize": 3954,
+              "decodedBodySize": 10042,
+              "transferSize": 4254
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0umf92h1sb77c.js",
+              "initiatorType": "script",
+              "duration": 1692.0999999940395,
+              "encodedBodySize": 3529,
+              "decodedBodySize": 13822,
+              "transferSize": 3829
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2khxl0v1q4i6n.js",
+              "initiatorType": "script",
+              "duration": 1940.5,
+              "encodedBodySize": 71962,
+              "decodedBodySize": 229820,
+              "transferSize": 72262
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/33mj_pfsa05fw.js",
+              "initiatorType": "script",
+              "duration": 1747.5999999940395,
+              "encodedBodySize": 420,
+              "decodedBodySize": 1316,
+              "transferSize": 720
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1rxpqd9h5z8qi.js",
+              "initiatorType": "script",
+              "duration": 1812.9000000059605,
+              "encodedBodySize": 7125,
+              "decodedBodySize": 18585,
+              "transferSize": 7425
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3bryvay3xr678.js",
+              "initiatorType": "script",
+              "duration": 1954.0999999940395,
+              "encodedBodySize": 6500,
+              "decodedBodySize": 20378,
+              "transferSize": 6800
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/03b1vkutds1pg.js",
+              "initiatorType": "script",
+              "duration": 2035.199999988079,
+              "encodedBodySize": 10163,
+              "decodedBodySize": 26822,
+              "transferSize": 10463
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/215-28yqpgoll.js",
+              "initiatorType": "script",
+              "duration": 2093.699999988079,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28838,
+              "transferSize": 10379
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1w3irdixv9gb4.js",
+              "initiatorType": "script",
+              "duration": 2112.5,
+              "encodedBodySize": 16019,
+              "decodedBodySize": 46693,
+              "transferSize": 16319
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/2vlwtep_jaa_h.js",
+              "initiatorType": "script",
+              "duration": 2154.899999976158,
+              "encodedBodySize": 9253,
+              "decodedBodySize": 27085,
+              "transferSize": 9553
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 514.8000000119209,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 562.5,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 839.9000000059605,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 443,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 778.5999999940395,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 834.7999999821186,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 849.2999999821186,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 968.7000000178814,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1336.699999988079,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/icon.svg?icon.20wvufuhjghy3.svg",
+              "initiatorType": "other",
+              "duration": 164.39999997615814,
+              "encodedBodySize": 324,
+              "decodedBodySize": 324,
+              "transferSize": 624
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/",
+              "initiatorType": "fetch",
+              "duration": 169.80000001192093,
+              "encodedBodySize": 0,
+              "decodedBodySize": 0,
+              "transferSize": 300
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/19jwdtm53_s2t.js",
+              "initiatorType": "script",
+              "duration": 349.19999998807907,
+              "encodedBodySize": 8671,
+              "decodedBodySize": 24296,
+              "transferSize": 8971
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3y31yyvbbonia.js",
+              "initiatorType": "script",
+              "duration": 414.40000000596046,
+              "encodedBodySize": 11901,
+              "decodedBodySize": 33541,
+              "transferSize": 12201
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/1g95ejp3gaijl.js",
+              "initiatorType": "script",
+              "duration": 443.7000000178814,
+              "encodedBodySize": 15075,
+              "decodedBodySize": 51975,
+              "transferSize": 15375
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0vrwhc0ptzo0q.js",
+              "initiatorType": "script",
+              "duration": 426.30000001192093,
+              "encodedBodySize": 13127,
+              "decodedBodySize": 34596,
+              "transferSize": 13427
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0jayp71ryojxm.js",
+              "initiatorType": "script",
+              "duration": 336.59999999403954,
+              "encodedBodySize": 6430,
+              "decodedBodySize": 20679,
+              "transferSize": 6730
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/29nx7tfqew89z.css",
+              "initiatorType": "link",
+              "duration": 327.69999998807907,
+              "encodedBodySize": 791,
+              "decodedBodySize": 2375,
+              "transferSize": 1091
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._tree.txt?_rsc=CYgFsMTPcBUuLBWL",
+              "initiatorType": "fetch",
+              "duration": 350.19999998807907,
+              "encodedBodySize": 886,
+              "decodedBodySize": 886,
+              "transferSize": 1186
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next._index.txt?_rsc=-9jSEuYGW0GQjUpR",
+              "initiatorType": "fetch",
+              "duration": 228.09999999403954,
+              "encodedBodySize": 2782,
+              "decodedBodySize": 8857,
+              "transferSize": 3082
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.txt?_rsc=-iyNFxWPYEN9_4Za",
+              "initiatorType": "fetch",
+              "duration": 196.7999999821186,
+              "encodedBodySize": 2045,
+              "decodedBodySize": 3807,
+              "transferSize": 2345
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.txt?_rsc=VLpWydLkQWjFG5vf",
+              "initiatorType": "fetch",
+              "duration": 238.69999998807907,
+              "encodedBodySize": 4968,
+              "decodedBodySize": 15751,
+              "transferSize": 5268
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/ko/__next.$d$locale.!KHB1YmxpYyk.__PAGE__.txt?_rsc=-DzTzcjvkrAwOIqz",
+              "initiatorType": "fetch",
+              "duration": 383,
+              "encodedBodySize": 32936,
+              "decodedBodySize": 190234,
+              "transferSize": 33236
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/3lkby8aa2nqxf.js",
+              "initiatorType": "script",
+              "duration": 173.90000000596046,
+              "encodedBodySize": 2460,
+              "decodedBodySize": 6051,
+              "transferSize": 2760
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/chunks/0wqoe_aohxe-d.js",
+              "initiatorType": "script",
+              "duration": 218.30000001192093,
+              "encodedBodySize": 10079,
+              "decodedBodySize": 28660,
+              "transferSize": 10379
+            }
+          ],
+          "visibleImages": [
+            {
+              "src": "http://127.0.0.1:8101/prompt-seen/media/a_305/design-top60-01-thumbnail-3082d6d53bde.webp",
+              "width": 389,
+              "height": 324,
+              "complete": true
+            }
+          ],
+          "visibleImageEncodedBytes": 5256,
+          "initialJavaScript": {
+            "scripts": 14,
+            "gzipLevel": 6,
+            "bytes": 235089
+          },
+          "unexpectedSearchIndexRequests": [],
+          "fontRequests": [
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+              "initiatorType": "link",
+              "duration": 576.5999999940395,
+              "encodedBodySize": 25400,
+              "decodedBodySize": 25400,
+              "transferSize": 25700
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+              "initiatorType": "link",
+              "duration": 556,
+              "encodedBodySize": 22588,
+              "decodedBodySize": 22588,
+              "transferSize": 22888
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+              "initiatorType": "css",
+              "duration": 514.8000000119209,
+              "encodedBodySize": 14708,
+              "decodedBodySize": 14708,
+              "transferSize": 15008
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+              "initiatorType": "css",
+              "duration": 562.5,
+              "encodedBodySize": 14888,
+              "decodedBodySize": 14888,
+              "transferSize": 15188
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+              "initiatorType": "css",
+              "duration": 839.9000000059605,
+              "encodedBodySize": 24184,
+              "decodedBodySize": 24184,
+              "transferSize": 24484
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-112-478de395a026.woff2",
+              "initiatorType": "css",
+              "duration": 443,
+              "encodedBodySize": 3072,
+              "decodedBodySize": 3072,
+              "transferSize": 3372
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-117-b3405595ffef.woff2",
+              "initiatorType": "css",
+              "duration": 778.5999999940395,
+              "encodedBodySize": 6592,
+              "decodedBodySize": 6592,
+              "transferSize": 6892
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-118-aab88fbf3d61.woff2",
+              "initiatorType": "css",
+              "duration": 834.7999999821186,
+              "encodedBodySize": 7284,
+              "decodedBodySize": 7284,
+              "transferSize": 7584
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-116-c9b40928100b.woff2",
+              "initiatorType": "css",
+              "duration": 849.2999999821186,
+              "encodedBodySize": 5992,
+              "decodedBodySize": 5992,
+              "transferSize": 6292
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/generated/fonts/ko/noto-sans-kr-119-d112d6f8eb2f.woff2",
+              "initiatorType": "css",
+              "duration": 968.7000000178814,
+              "encodedBodySize": 2032,
+              "decodedBodySize": 2032,
+              "transferSize": 2332
+            },
+            {
+              "name": "http://127.0.0.1:8101/prompt-seen/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+              "initiatorType": "css",
+              "duration": 1336.699999988079,
+              "encodedBodySize": 24252,
+              "decodedBodySize": 24252,
+              "transferSize": 24552
+            }
+          ]
+        }
+      ],
+      "search": {
+        "worker": [
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 1,
+            "start": 2491.0999999940395,
+            "responseType": "results",
+            "elapsedMs": 2730.300000011921,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 2,
+            "start": 5365.5,
+            "responseType": "results",
+            "elapsedMs": 9.799999982118607,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 3,
+            "start": 5427.299999982119,
+            "responseType": "results",
+            "elapsedMs": 7.5,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 4,
+            "start": 5523.9000000059605,
+            "responseType": "results",
+            "elapsedMs": 9.899999976158142,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 5,
+            "start": 5623.9000000059605,
+            "responseType": "results",
+            "elapsedMs": 11.399999976158142,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 6,
+            "start": 5699.9000000059605,
+            "responseType": "results",
+            "elapsedMs": 4.0999999940395355,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 7,
+            "start": 5746.9000000059605,
+            "responseType": "results",
+            "elapsedMs": 3.399999976158142,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 8,
+            "start": 5806,
+            "responseType": "results",
+            "elapsedMs": 9.400000005960464,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 9,
+            "start": 5894.799999982119,
+            "responseType": "results",
+            "elapsedMs": 10.900000005960464,
+            "total": 8
+          },
+          {
+            "type": "search",
+            "query": "수묵화 매화",
+            "seq": 10,
+            "start": 5961.5,
+            "responseType": "results",
+            "elapsedMs": 9,
+            "total": 3
+          },
+          {
+            "type": "search",
+            "query": "네온 포트레이트",
+            "seq": 11,
+            "start": 6020.199999988079,
+            "responseType": "results",
+            "elapsedMs": 9.5,
+            "total": 12
+          },
+          {
+            "type": "search",
+            "query": "제품 포스터",
+            "seq": 12,
+            "start": 6101.799999982119,
+            "responseType": "results",
+            "elapsedMs": 2.300000011920929,
+            "total": 22
+          },
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 13,
+            "start": 6194,
+            "responseType": "results",
+            "elapsedMs": 12.799999982118607,
+            "total": 8
+          }
+        ],
+        "renders": [
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 32.19999998807907
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 26.400000005960464
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 38
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 34.5
+          },
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 21.19999998807907
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 17.600000023841858
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 37.099999994039536
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 34.5
+          },
+          {
+            "query": "수묵화 매화",
+            "elapsedMs": 24.700000017881393
+          },
+          {
+            "query": "네온 포트레이트",
+            "elapsedMs": 24.900000005960464
+          },
+          {
+            "query": "제품 포스터",
+            "elapsedMs": 26.19999998807907
+          },
+          {
+            "query": "제품사진 스튜디오",
+            "elapsedMs": 29.599999994039536
+          }
+        ],
+        "resources": [],
+        "coldRequests": [
+          {
+            "type": "search",
+            "query": "제품사진 스튜디오",
+            "seq": 1,
+            "start": 2491.0999999940395,
+            "responseType": "results",
+            "elapsedMs": 2730.300000011921,
+            "total": 8
+          }
+        ],
+        "indexRequestCount": 1,
+        "warmSummary": {
+          "count": 12,
+          "minMs": 2.300000011920929,
+          "medianMs": 9.5,
+          "maxMs": 12.799999982118607
+        }
+      }
+    }
+  ],
+  "browserVersion": "157.0.8103.50",
+  "completedAt": "2026-11-11T14:29:59.783Z",
+  "finalLoadavg": [59.44970703125, 59.72119140625, 69.00341796875]
+}

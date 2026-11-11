@@ -5,6 +5,7 @@ instructions:
   ja: 物体の参照画像をアップロードし、確認済みの説明と正確な中国語ラベルを指定してください。
   de: Lade eine Objektreferenz hoch und gib überprüfte Angaben sowie genaue
     chinesische Beschriftungen an.
+  ko: 물체 참조 이미지를 업로드하고 확인한 설명과 정확한 중국어 라벨을 제공하세요.
 slots:
   - id: object
     labels:
@@ -12,5 +13,6 @@ slots:
       zh-Hans: 服饰或器物参考
       ja: 物体
       de: Objekt
+      ko: 물체
     min: 1
     max: 1

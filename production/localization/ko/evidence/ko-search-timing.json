@@ -1,0 +1,559 @@
+{
+  "timestamp": "2026-11-11T13:40:01.787Z",
+  "node": "v24.19.0",
+  "steps": [
+    {
+      "label": "loadConfig",
+      "wallMs": 43,
+      "cpuMs": 33,
+      "rssMB": 114
+    },
+    {
+      "label": "loadContent",
+      "wallMs": 11510,
+      "cpuMs": 8861,
+      "rssMB": 475
+    },
+    {
+      "label": "ko:details",
+      "wallMs": 1,
+      "cpuMs": 0,
+      "rssMB": 475
+    },
+    {
+      "label": "ko:searchDocuments",
+      "wallMs": 5,
+      "cpuMs": 6,
+      "rssMB": 475
+    },
+    {
+      "label": "ko:createIndex",
+      "wallMs": 1750,
+      "cpuMs": 1190,
+      "rssMB": 452
+    },
+    {
+      "label": "ko:JSONserialize",
+      "wallMs": 116,
+      "cpuMs": 155,
+      "rssMB": 516
+    },
+    {
+      "label": "ko:loadEngine",
+      "wallMs": 253,
+      "cpuMs": 208,
+      "rssMB": 516
+    },
+    {
+      "label": "ko:allQueries",
+      "wallMs": 42,
+      "cpuMs": 58,
+      "rssMB": 517
+    },
+    {
+      "label": "de:details",
+      "wallMs": 0,
+      "cpuMs": 0,
+      "rssMB": 517
+    },
+    {
+      "label": "de:searchDocuments",
+      "wallMs": 4,
+      "cpuMs": 4,
+      "rssMB": 517
+    },
+    {
+      "label": "de:createIndex",
+      "wallMs": 1299,
+      "cpuMs": 946,
+      "rssMB": 566
+    },
+    {
+      "label": "de:JSONserialize",
+      "wallMs": 66,
+      "cpuMs": 100,
+      "rssMB": 574
+    },
+    {
+      "label": "de:loadEngine",
+      "wallMs": 133,
+      "cpuMs": 136,
+      "rssMB": 574
+    },
+    {
+      "label": "de:allQueries",
+      "wallMs": 64,
+      "cpuMs": 66,
+      "rssMB": 574
+    }
+  ],
+  "searches": {
+    "ko": [
+      {
+        "query": "제품 사진 스튜디오",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_153",
+          "prompt/p_152",
+          "prompt/p_105",
+          "template/t_035",
+          "template/t_036",
+          "template/t_008",
+          "template/t_037"
+        ]
+      },
+      {
+        "query": "제품사진 스튜디오",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_153",
+          "prompt/p_152",
+          "prompt/p_105",
+          "template/t_035",
+          "template/t_036",
+          "template/t_008",
+          "template/t_037"
+        ]
+      },
+      {
+        "query": "제품 사진을 스튜디오",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_153",
+          "prompt/p_152",
+          "prompt/p_105",
+          "template/t_035",
+          "template/t_036",
+          "template/t_008",
+          "template/t_037"
+        ]
+      },
+      {
+        "query": "제품 사진 스튜디오",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_153",
+          "prompt/p_152",
+          "prompt/p_105",
+          "template/t_035",
+          "template/t_036",
+          "template/t_008",
+          "template/t_037"
+        ]
+      },
+      {
+        "query": "product photography studio",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_152",
+          "prompt/p_153",
+          "prompt/p_105",
+          "prompt/p_130",
+          "template/t_035",
+          "template/t_036",
+          "template/t_037",
+          "template/t_008",
+          "template/t_022"
+        ]
+      },
+      {
+        "query": "네온 인물 사진",
+        "keys": [
+          "prompt/p_050",
+          "prompt/p_036",
+          "prompt/p_005",
+          "prompt/p_061",
+          "prompt/p_071",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "네온 인물사진",
+        "keys": [
+          "prompt/p_050",
+          "prompt/p_036",
+          "prompt/p_005",
+          "prompt/p_061",
+          "prompt/p_071",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "네온 포트레이트",
+        "keys": [
+          "prompt/p_050",
+          "prompt/p_036",
+          "prompt/p_005",
+          "prompt/p_061",
+          "prompt/p_071",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "neon portrait",
+        "keys": [
+          "prompt/p_036",
+          "prompt/p_005",
+          "prompt/p_071",
+          "prompt/p_019",
+          "prompt/p_050",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "수묵화 매화",
+        "keys": [
+          "prompt/p_012",
+          "prompt/p_092",
+          "prompt/p_056"
+        ]
+      },
+      {
+        "query": "수묵화 매화",
+        "keys": [
+          "prompt/p_012",
+          "prompt/p_092",
+          "prompt/p_056"
+        ]
+      },
+      {
+        "query": "제품 포스터 템플릿",
+        "keys": [
+          "prompt/p_024",
+          "prompt/p_037",
+          "prompt/p_017",
+          "prompt/p_010",
+          "prompt/p_090",
+          "template/t_001",
+          "template/t_029",
+          "template/t_044",
+          "template/t_028",
+          "template/t_045"
+        ]
+      },
+      {
+        "query": "제품포스터 템플릿",
+        "keys": [
+          "prompt/p_024",
+          "prompt/p_037",
+          "prompt/p_017",
+          "prompt/p_010",
+          "prompt/p_090",
+          "template/t_001",
+          "template/t_029",
+          "template/t_044",
+          "template/t_028",
+          "template/t_045"
+        ]
+      },
+      {
+        "query": "제품 포스터를 템플릿",
+        "keys": [
+          "prompt/p_024",
+          "prompt/p_037",
+          "prompt/p_017",
+          "prompt/p_010",
+          "prompt/p_090",
+          "template/t_001",
+          "template/t_029",
+          "template/t_044",
+          "template/t_028",
+          "template/t_045"
+        ]
+      },
+      {
+        "query": "수묵화 템플릿",
+        "keys": [
+          "prompt/p_012",
+          "prompt/p_031",
+          "prompt/p_092",
+          "prompt/p_063",
+          "prompt/p_056",
+          "template/t_002"
+        ]
+      },
+      {
+        "query": "p_151",
+        "keys": [
+          "prompt/p_151"
+        ]
+      },
+      {
+        "query": "GPT Image p_151",
+        "keys": [
+          "prompt/p_151"
+        ]
+      },
+      {
+        "query": "ＧＰＴ Image p_151",
+        "keys": [
+          "prompt/p_151"
+        ]
+      }
+    ],
+    "de": [
+      {
+        "query": "Straße Japan",
+        "keys": [
+          "prompt/p_107"
+        ]
+      },
+      {
+        "query": "Strasse Japan",
+        "keys": [
+          "prompt/p_107"
+        ]
+      },
+      {
+        "query": "STRASSE JAPAN",
+        "keys": [
+          "prompt/p_107"
+        ]
+      },
+      {
+        "query": "Porträt Magazincover",
+        "keys": [
+          "prompt/p_111"
+        ]
+      },
+      {
+        "query": "Portraet Magazincover",
+        "keys": [
+          "prompt/p_111"
+        ]
+      },
+      {
+        "query": "Porträt Magazincover",
+        "keys": [
+          "prompt/p_111"
+        ]
+      },
+      {
+        "query": "Produktfotografie Studio",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_140",
+          "prompt/p_152",
+          "prompt/p_153",
+          "template/t_035",
+          "template/t_037",
+          "template/t_036"
+        ]
+      },
+      {
+        "query": "Produktfoto Studio",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_140",
+          "prompt/p_152",
+          "prompt/p_153",
+          "template/t_035",
+          "template/t_037",
+          "template/t_036"
+        ]
+      },
+      {
+        "query": "Fotografie Produkt Studio",
+        "keys": [
+          "prompt/p_151",
+          "prompt/p_105",
+          "prompt/p_153",
+          "prompt/p_152",
+          "prompt/p_140",
+          "template/t_035",
+          "template/t_008",
+          "template/t_036",
+          "template/t_037"
+        ]
+      },
+      {
+        "query": "Produktfoto schwebend",
+        "keys": [
+          "prompt/p_154",
+          "template/t_038"
+        ]
+      },
+      {
+        "query": "Produkt Detail Draufsicht",
+        "keys": [
+          "prompt/p_156",
+          "template/t_040"
+        ]
+      },
+      {
+        "query": "Produkt Alltag",
+        "keys": [
+          "prompt/p_158",
+          "prompt/p_157",
+          "template/t_042",
+          "template/t_041"
+        ]
+      },
+      {
+        "query": "Porträt Aufzug Anzug",
+        "keys": [
+          "prompt/p_315"
+        ]
+      },
+      {
+        "query": "Porträt See Mondlicht",
+        "keys": [
+          "prompt/p_314"
+        ]
+      },
+      {
+        "query": "Porträt Windschutzscheibe Stadtplan",
+        "keys": [
+          "prompt/p_313"
+        ]
+      },
+      {
+        "query": "Poster Fuji",
+        "keys": [
+          "prompt/p_290",
+          "prompt/p_288",
+          "prompt/p_289"
+        ]
+      },
+      {
+        "query": "Plakat Fuji",
+        "keys": [
+          "prompt/p_290",
+          "prompt/p_288",
+          "prompt/p_289"
+        ]
+      },
+      {
+        "query": "Sticker Montag",
+        "keys": [
+          "prompt/p_287"
+        ]
+      },
+      {
+        "query": "Aufkleber Montag",
+        "keys": [
+          "prompt/p_287"
+        ]
+      },
+      {
+        "query": "Poster Kolosseum",
+        "keys": [
+          "prompt/p_289",
+          "prompt/p_288",
+          "prompt/p_290"
+        ]
+      },
+      {
+        "query": "Poster Lissabon",
+        "keys": [
+          "prompt/p_170",
+          "template/t_054"
+        ]
+      },
+      {
+        "query": "Poster Schneemann Barock",
+        "keys": [
+          "prompt/p_239"
+        ]
+      },
+      {
+        "query": "Katze Büro Sticker",
+        "keys": [
+          "prompt/p_221",
+          "prompt/p_278",
+          "template/t_071"
+        ]
+      },
+      {
+        "query": "Beleuchtung Neon Porträt",
+        "keys": [
+          "prompt/p_005",
+          "prompt/p_036",
+          "prompt/p_071",
+          "prompt/p_050",
+          "prompt/p_019",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "Licht Neon Porträt",
+        "keys": [
+          "prompt/p_005",
+          "prompt/p_036",
+          "prompt/p_071",
+          "prompt/p_050",
+          "prompt/p_019",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "Hintergrund Salbei Tee",
+        "keys": [
+          "prompt/p_003",
+          "prompt/p_024"
+        ]
+      },
+      {
+        "query": "Bildkomposition Konzert",
+        "keys": [
+          "prompt/p_002",
+          "prompt/p_156",
+          "template/t_040"
+        ]
+      },
+      {
+        "query": "Vorlage Produktposter",
+        "keys": [
+          "prompt/p_053",
+          "prompt/p_029",
+          "prompt/p_072",
+          "prompt/p_043",
+          "prompt/p_082",
+          "template/t_001"
+        ]
+      },
+      {
+        "query": "Vorlage Tusche",
+        "keys": [
+          "prompt/p_012",
+          "prompt/p_031",
+          "prompt/p_063",
+          "prompt/p_056",
+          "prompt/p_092",
+          "template/t_002",
+          "template/t_008"
+        ]
+      },
+      {
+        "query": "Vorlage Neon Porträt",
+        "keys": [
+          "prompt/p_005",
+          "prompt/p_036",
+          "prompt/p_071",
+          "prompt/p_050",
+          "prompt/p_019",
+          "template/t_003",
+          "template/t_052"
+        ]
+      },
+      {
+        "query": "GPT Image p_111",
+        "keys": [
+          "prompt/p_111"
+        ]
+      },
+      {
+        "query": "p_217",
+        "keys": [
+          "prompt/p_217"
+        ]
+      }
+    ]
+  }
+}

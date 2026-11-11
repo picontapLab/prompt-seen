@@ -25,6 +25,7 @@ inputRequirements:
     ja: 参照画像を記載順にアップロードしてください。この作例では、生成した入力画像を使っています。
     de: Lade die Referenzbilder in der angegebenen Reihenfolge hoch. Das Beispiel
       verwendet künstlich erzeugte Eingabebilder.
+    ko: 표시된 순서대로 참조 이미지를 업로드하세요. 예시는 합성 입력 이미지를 사용합니다.
   slots:
     - id: subject
       labels:
@@ -32,6 +33,7 @@ inputRequirements:
         zh-Hans: 主体参考
         ja: 被写体の参照画像
         de: Motivreferenz
+        ko: 대상 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_257

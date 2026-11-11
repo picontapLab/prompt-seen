@@ -6,6 +6,7 @@ instructions:
   ja: 商品写真を 1 枚アップロードし、見出し、補足文、行動を促す誘導文、配色を指定してください。
   de: Lade ein Produktfoto hoch und gib Überschrift, Unterzeile,
     Handlungsaufforderung und Farbpalette an.
+  ko: 제품 사진 한 장을 업로드하고 제목, 보조 문구, 행동 유도 문구와 팔레트를 제공하세요.
 slots:
   - id: product
     labels:
@@ -13,5 +14,6 @@ slots:
       zh-Hans: 产品照片
       ja: 商品
       de: Produkt
+      ko: 제품
     min: 1
     max: 1

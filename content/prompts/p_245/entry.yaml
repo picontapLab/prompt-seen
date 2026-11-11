@@ -24,9 +24,10 @@ inputRequirements:
     zh-Hans: 上传一张角色参考图，原模板选项填写为「ドアスコープ」（门猫眼）。示例成年和服角色由本站生成。
     ja: キャラクターの参照画像を 1 枚アップロードしてください。元の選択肢には「ドアスコープ」を指定しています。この成人の着物姿のキャラクターは、Prompt
       Seen が生成したものです。
-    de: Lade ein Figurenreferenzbild hoch. Die Quelloption ist mit ドアスコープ
-      (Türspion) ausgefüllt. Unsere erwachsene Kimonofigur wurde von Prompt Seen
-      generiert.
+    de: Lade ein Figurenreferenzbild hoch. Die Quelloption ist mit ドアスコープ (Türspion)
+      ausgefüllt. Unsere erwachsene Kimonofigur wurde von Prompt Seen generiert.
+    ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 원문의 선택 항목은 ドアスコープ(현관문 렌즈)로 채웠습니다. 성인 기모노 캐릭터는 Prompt
+      Seen에서 생성했습니다.
   slots:
     - id: character
       labels:
@@ -34,6 +35,7 @@ inputRequirements:
         zh-Hans: 本站生成的示例参考图
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
+        ko: 프로젝트에서 생성한 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_309
@@ -52,6 +54,7 @@ inspirationSources:
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,6 +63,7 @@ inspirationSources:
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118220107487051883&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language; option filled and recorded
@@ -67,6 +71,7 @@ inspirationSources:
       ja: 作者の全文を原文の言語で掲載。選択肢を指定し、記録しています。
       de: Vollständiger Autorentext, Originalsprache; Option ausgefüllt und
         dokumentiert
+      ko: 작성자의 전체 원문, 원래 언어; 선택 항목을 채우고 기록함
     metrics:
       - key: likes
         value: 17
@@ -75,6 +80,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
+          ko: 출처 게시물 좋아요
 source:
   author: kabumira862571
   url: https://x.com/kabumira862571/status/2118220107487051883

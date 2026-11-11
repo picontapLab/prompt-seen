@@ -53,6 +53,35 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('finds Korean domain phrases, spacing and known particles without inventing product photographs', () => {
+    const engine = engineOf('ko', [
+      doc('product', { title: '제품 사진 스튜디오' }),
+      doc('family', { title: '가족 인물 사진', body: 'photography' }),
+      doc('unrelated', { title: '제품 설명과 사진 전시' }),
+      doc('paper', { title: '종이' }),
+      doc('template', { kind: 'template', title: '제품 포스터' }),
+    ]);
+    for (const query of [
+      '제품사진 스튜디오',
+      '제품 사진을 스튜디오',
+      '제품사진을 스튜디오',
+      'product photography studio',
+    ])
+      expect(ids(query, engine)).toEqual(['product']);
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('제품 포스터를 템플릿', engine)).toEqual(['template']);
+    expect(ids('종이', engine)).toEqual(['paper']);
+    expect(ids('포트레이트', engine)).toEqual(['family']);
+    expect(ids('zxqvnonexistent', engine)).toEqual([]);
+  });
+
+  it('finds the same Korean syllables in composed and decomposed queries and documents', () => {
+    const engine = engineOf('ko', [doc('composed', { title: '한글 빛' }), doc('decomposed', { title: '한글 빛' })]);
+    expect(ids('한글', engine)).toEqual(['composed', 'decomposed']);
+    expect(ids('한글', engine)).toEqual(['composed', 'decomposed']);
+    expect(ids('빛', engine)).toEqual(['composed', 'decomposed']);
+  });
+
   it('folds Spanish vowels and punctuation while retaining the exact displayed title', () => {
     const title = '¿Retrato? ¡Póster de un pingüino! Fotografi\u0301a';
     const engine = engineOf('es', [doc('accented', { title })]);
