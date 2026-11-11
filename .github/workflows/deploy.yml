@@ -6,6 +6,7 @@
 # Skipped with a notice until the production settings exist (docs/operations.md):
 #   secrets  CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
 #            INDEXNOW_KEY (optional), S3_ENDPOINT, S3_BUCKET, S3_ACCESS_KEY_ID, S3_SECRET_ACCESS_KEY (optional)
+#            PRODUCTION_DEPLOY_HOOK (optional private artifact customization, production environment only)
 #   vars     SITE_ORIGIN (the canonical host, e.g. https://xxx.com)
 #            BASE_PATH (optional; "/" for a root deployment; default: content/site.yaml)
 #            MEDIA_BASE_URL (optional; the CDN of the bucket), CLOUDFLARE_PAGES_PROJECT (default prompt-seen)
@@ -93,8 +94,11 @@ jobs:
       - name: Live addresses before the deploy (IndexNow)
         if: env.READY == 'true'
         run: npm run indexnow -- snapshot --out .deploy/urls-before.json
-      - if: env.READY == 'true'
+      - name: Prepare production artifact and apply private customization
+        if: env.READY == 'true'
         run: npm run deploy:cloudflare:prepare
+        env:
+          PRODUCTION_DEPLOY_HOOK: ${{ secrets.PRODUCTION_DEPLOY_HOOK }}
       - name: Deploy to Cloudflare Pages
         if: env.READY == 'true'
         id: deploy
