@@ -22,6 +22,7 @@ import styles from './Field.module.css';
 export type Option = {
   id: Key;
   label: string;
+  lang?: string;
   /** Secondary text in the list, e.g. a count or a native name. */
   detail?: ReactNode;
   isDisabled?: boolean;
@@ -49,7 +50,11 @@ export function Select({ label, options, description, errorMessage, placeholder,
             data-invalid={isInvalid || undefined}
             data-disabled={isDisabled || undefined}
           >
-            <SelectValue className={styles.input} />
+            <SelectValue
+              className={styles.input}
+              lang={options.find((option) => option.id === props.selectedKey)?.lang}
+              dir="auto"
+            />
             <span className={styles.trigger} aria-hidden="true">
               <ChevronDown />
             </span>
@@ -79,7 +84,9 @@ export function OptionItem({ option }: { option: Option }) {
     <ListBoxItem id={option.id} textValue={option.label} isDisabled={option.isDisabled} className={styles.option}>
       {({ isSelected }) => (
         <>
-          <span>{option.label}</span>
+          <span lang={option.lang} dir="auto">
+            {option.label}
+          </span>
           {option.detail && <span className={styles.optionDetail}>{option.detail}</span>}
           {isSelected && <Check className={styles.check} aria-hidden="true" />}
         </>

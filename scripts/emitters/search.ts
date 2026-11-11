@@ -30,6 +30,8 @@ export default defineEmitter({
         SEARCH_KINDS.map((k) => [k, documents.filter((d) => d.kind === k).length]),
       ) as Record<SearchKind, number>;
       const file: SearchIndexFile = {
+        schemaVersion: 2,
+        analyzerVersion: 2,
         buildId: config.buildId,
         locale: locale.code,
         counts,

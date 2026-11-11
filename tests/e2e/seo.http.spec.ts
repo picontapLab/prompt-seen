@@ -1,9 +1,11 @@
+import { homeIsIndexable } from './support/home';
 import fs from 'node:fs';
 import path from 'node:path';
 import { expect, test, type APIRequestContext } from '@playwright/test';
 import type { PromptDetail, TemplateDetail } from '../../src/modules/content/types';
 import { BASE, BUILD, homePath, ROOT, message, publicUrl } from './support/artifact';
 import {
+  listIsIndexable,
   feedIndex,
   feedPage,
   localeIndex,
@@ -20,7 +22,7 @@ import { alternates, canonical, elementText } from './support/html';
 // page and nothing else, structured data and Markdown versions say what the visible page says,
 // and drafts and preview-only locales never reach a sitemap, index.md or llms.txt.
 
-const publicLocales = BUILD.locales.filter((l) => l.enabled);
+const publicLocales = BUILD.buildMode === 'production' ? BUILD.locales.filter((l) => l.enabled) : [];
 const previewOnly = BUILD.locales.filter((l) => !l.enabled);
 const origin = `${BUILD.origin}${BASE}/`;
 
@@ -115,14 +117,14 @@ for (const locale of publicLocales) {
     const entries = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
     const byLoc = new Map(entries.map((e) => [e.loc, e]));
     expect(byLoc.size, 'no address twice').toBe(entries.length);
-    expect(byLoc.has(publicUrl(homePath(locale)))).toBe(true);
+    expect(byLoc.has(publicUrl(homePath(locale)))).toBe(homeIsIndexable(locale.code));
     if (locale.code === BUILD.defaultLocale) expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
 
     // Every published prompt and template is there, with its date and main image; no draft is.
     const index = localeIndex(locale.code);
     for (const e of [...index.prompts, ...index.templates]) {
       const entry = byLoc.get(publicUrl(e.path));
-      if (e.visibility !== 'published') {
+      if (!e.localization.indexable) {
         expect(entry, `draft ${e.id}`).toBeUndefined();
         continue;
       }
@@ -134,7 +136,7 @@ for (const locale of publicLocales) {
     for (let n = 1; n <= feedIndex(locale.code).pageCount; n++)
       expect(
         byLoc.has(publicUrl(n === 1 ? `/${locale.pathPrefix}/prompts/` : `/${locale.pathPrefix}/prompts/page/${n}/`)),
-      ).toBe(true);
+      ).toBe(listIsIndexable(locale.code, n));
   });
 
   test(`${locale.code}: every sitemap address is a page whose canonical is that address`, async ({ request }) => {
@@ -237,7 +239,7 @@ test('drafts and preview-only locales have no index.md and no Markdown alternate
   const hidden: { path: string }[] = [];
   for (const l of BUILD.locales) {
     const index = localeIndex(l.code);
-    hidden.push(...[...index.prompts, ...index.templates].filter((e) => !l.enabled || e.visibility !== 'published'));
+    hidden.push(...[...index.prompts, ...index.templates].filter((e) => !e.localization.indexable));
   }
   test.skip(!hidden.length, 'this build has no drafts');
   for (const e of hidden.slice(0, 12)) {
@@ -254,6 +256,10 @@ test('llms.txt links only published, reachable content', async ({ request }) => 
   const res = await get(request, `${BASE}/llms.txt`);
   expect(res.headers()['content-type']).toMatch(/^text\/plain/);
   const text = await res.text();
+  if (BUILD.buildMode === 'preview') {
+    expect(text).toBe('');
+    return;
+  }
   expect(text.startsWith(`# ${BUILD.siteName}\n\n> `)).toBe(true);
   const links = [...text.matchAll(/\]\((https?:[^)\s]+)\)/g)].map((m) => m[1]!);
   expect(links.length).toBeGreaterThan(0);
@@ -274,6 +280,10 @@ for (const locale of BUILD.locales) {
     const d: PromptDetail = samplePrompt(locale.code);
     const html = await (await get(request, `${BASE}${d.path}`)).text();
     const work = node(html, 'CreativeWork');
+    if (!d.localization.indexable) {
+      expect(work).toBeUndefined();
+      return;
+    }
     expect(work).toMatchObject({
       url: publicUrl(d.path),
       name: elementText(html, 'h1'),
@@ -309,6 +319,10 @@ for (const locale of BUILD.locales) {
     const t: TemplateDetail | null = sampleTemplate(locale.code);
     test.skip(!t, 'no template in this locale');
     const html = await (await get(request, `${BASE}${t!.path}`)).text();
+    if (!t!.localization.indexable) {
+      expect(node(html, 'CreativeWork')).toBeUndefined();
+      return;
+    }
     expect(node(html, 'CreativeWork')).toMatchObject({
       name: elementText(html, 'h1'),
       text: promptText(html),
@@ -327,6 +341,11 @@ for (const locale of BUILD.locales) {
           n === 1 ? `${BASE}/${locale.pathPrefix}/prompts/` : `${BASE}/${locale.pathPrefix}/prompts/page/${n}/`,
         )
       ).text();
+      if (!listIsIndexable(locale.code, n)) {
+        expect(node(html, 'CollectionPage')).toBeUndefined();
+        expect(html).toMatch(/<meta name="robots" content="noindex/);
+        continue;
+      }
       const collection = node(html, 'CollectionPage');
       expect(collection.url).toBe(canonical(html));
       const items = collection.mainEntity.itemListElement as { position: number; url: string }[];
@@ -338,6 +357,10 @@ for (const locale of BUILD.locales) {
 
   test(`${locale.code}: the home page names the site and its publisher`, async ({ request }) => {
     const html = await (await get(request, `${BASE}/${locale.pathPrefix}/`)).text();
+    if (!homeIsIndexable(locale.code)) {
+      expect(node(html, 'WebSite')).toBeUndefined();
+      return;
+    }
     expect(node(html, 'WebSite')).toMatchObject({
       url: publicUrl(homePath(locale)),
       inLanguage: locale.htmlLang,
@@ -367,13 +390,17 @@ for (const code of ['en', 'zh-Hans']) {
       const html = await (await get(request, `${BASE}${detail.path}`)).text();
       expect(promptText(html)).toBe(detail.prompt.text);
       const work = node(html, 'CreativeWork');
-      expect(work.text).toBe(detail.prompt.text);
-      expect(work.inLanguage).toBe(detail.prompt.language);
+      if (detail.localization.indexable) {
+        expect(work.text).toBe(detail.prompt.text);
+        expect(work.inLanguage).toBe(detail.prompt.language);
+      } else expect(work).toBeUndefined();
       const popup = await (await get(request, `${BASE}/generated/${code}/prompts/${detail.slug}.json`)).json();
       expect(popup.prompt).toEqual(detail.prompt);
       expect(popup.annotations).toEqual(detail.annotations);
-      const md = await (await get(request, `${BASE}${detail.path}index.md`)).text();
-      expect(firstCodeBlock(md)).toBe(detail.prompt.text);
+      if (detail.localization.indexable) {
+        const md = await (await get(request, `${BASE}${detail.path}index.md`)).text();
+        expect(firstCodeBlock(md)).toBe(detail.prompt.text);
+      } else expect((await request.get(`${BASE}${detail.path}index.md`)).status()).toBe(404);
     }
   });
 }

@@ -1,3 +1,4 @@
+import { LanguageLinks } from '@/ui/navigation/LanguageLinks';
 import 'server-only';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -42,6 +43,7 @@ export function topicMetadata(detail: TopicDetail, locale: LocaleEntry) {
     title: detail.seo.title,
     description: detail.seo.description,
     alternates: detail.alternates,
+    noindex: !detail.localization.indexable,
   });
 }
 
@@ -72,7 +74,9 @@ export async function TopicBody({ detail, locale }: { detail: TopicDetail; local
       data-topic={`${detail.taxonomy}/${detail.id}`}
       data-locale={locale.code}
     >
+      <LanguageLinks links={detail.languageLinks} />
       <PageHead
+        contentLocale={detail.localization.contentLocale}
         crumbs={crumbs}
         crumbLabel={t('breadcrumb.label')}
         eyebrow={`${t(`topic.kinds.${detail.taxonomy}`)} · ${t('topic.count', { count: detail.promptCount })}`}
@@ -80,7 +84,12 @@ export async function TopicBody({ detail, locale }: { detail: TopicDetail; local
         lead={detail.description}
         media={detail.cover && <Cover image={detail.cover} priority sizes="(min-width: 1024px) 45vw, 100vw" />}
       />
-      <Article body={detail.body} toc={detail.toc} tocLabel={t('toc')} />
+      <Article
+        contentLocale={detail.localization.contentLocale}
+        body={detail.body}
+        toc={detail.toc}
+        tocLabel={t('toc')}
+      />
       <section className={styles.section} aria-labelledby="topic-works">
         <div className={styles.sectionHead}>
           <h2 id="topic-works" className={styles.sectionTitle}>
@@ -122,6 +131,7 @@ export async function topicStructuredData(detail: TopicDetail, locale: LocaleEnt
     {
       path: detail.path,
       locale,
+      indexable: detail.localization.indexable,
       name: detail.title,
       description: detail.description,
       items: cardsFor(

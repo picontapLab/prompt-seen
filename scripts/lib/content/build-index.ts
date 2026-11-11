@@ -25,11 +25,13 @@ import type {
   TopicDetail,
   TranslationInfo,
   Visibility,
+  LocalizationState,
 } from '../../../src/modules/content/types';
 import { graphemeLength, renderTemplate, resolveValues } from '../../../src/modules/template/render';
 import type { createUrlModule } from '../../../src/modules/url/create';
 import { compileMdx, type ContentLink } from './mdx';
 import type { Content, LocaleFile, PromptRecord, TaxonomyKey, TemplateRecord } from './read';
+import { classifyLocalization, selectDescription, type LocalStatus } from './localization';
 import { TAXONOMY_FILES, sha256 } from './read';
 import { matchingPromptRuns, resolvePrompt, resolveTemplate, runPromptLanguage, sourcePromptLanguage } from './prompt-variants';
 import {
@@ -112,15 +114,14 @@ export function openingOf(text: string, max = 160): string {
 
 const TAXONOMY_KIND: Record<TaxonomyKey, TaxonomyKind> = { category: 'category', style: 'style', useCase: 'useCase' };
 
-export function buildIndex(content: Content, config: ResolvedConfig, url: Url): BuiltContent {
+export function buildIndex(content: Content, config: ResolvedConfig, url: Url, statuses?: ReadonlyMap<string, ReadonlyMap<string, LocalStatus>>): BuiltContent {
   const built = config.builtLocales;
-  const builtCodes = new Set(built.map((l) => l.code));
   const prefixOf = new Map(config.locales.map((l) => [l.code, l.pathPrefix]));
   const preview = config.buildMode === 'preview';
 
   // ---- Visibility ------------------------------------------------------------------------------
 
-  type Vis = { visibility: Visibility; state: LocaleState; file: LocaleFile };
+  type Vis = { visibility: Visibility; state: LocaleState; file: LocaleFile; localization: LocalizationState };
   /** visible[owner][locale] */
   const visible = new Map<string, Map<string, Vis>>();
 
@@ -133,30 +134,20 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
   ) => {
     const states = localeStates(locales);
     const map = new Map<string, Vis>();
-    for (const [code, file] of locales) {
-      if (!builtCodes.has(code) || !eligible) continue;
-      const state = states.get(code)!;
-      const status = file.fm.status;
-      if (status === 'archived') continue;
-      const publishable =
-        status === 'published' &&
-        state.review !== 'machine-draft' &&
-        publishProblems({ content, kind, locale: code, file, state, ...extra }).length === 0;
-      const enabled = config.locales.find((l) => l.code === code)!.enabled;
-      if (publishable && enabled) map.set(code, { visibility: 'published', state, file });
-      else if (preview) map.set(code, { visibility: publishable ? 'published' : 'draft', state, file });
+    const versions = new Map<string, { status: LocalStatus; published: boolean }>();
+    const key = kind === 'page' ? `page/${owner.slice(5)}` : kind === 'topic' ? `topic/${owner.slice(6).replace(':', '/')}` : `${kind}/${owner}`;
+    for (const entry of config.locales) {
+      const file = locales.get(entry.code);
+      const state = states.get(entry.code);
+      const publishable = !!file && !!state && publishProblems({ content, kind, locale: entry.code, file, state, ...extra }).length === 0;
+      const status = statuses?.get(entry.code)?.get(key) ?? classifyLocalization({ declaredStatus: file?.fm.status ?? null, publishable, review: state?.review === 'machine-draft' ? 'unreviewed' : state?.outdated ? 'outdated' : 'current', dependencies: [] });
+      versions.set(entry.code, { status, published: file?.fm.status === 'published' && publishable });
     }
-    if (kind !== 'page') {
-      // Choose from actual eligible versions before filling gaps, so fallback versions cannot
-      // become each other's source. Published content always wins over preview-only drafts.
-      const candidates = [...map.values()];
-      const preferred = (versions: Vis[]) =>
-        versions.find((v) => v.file.locale === config.defaultLocale) ??
-        versions.find((v) => v.state.isSource) ?? versions[0];
-      const fallback = preferred(candidates.filter((v) => v.visibility === 'published')) ?? preferred(candidates);
-      if (fallback)
-        for (const { code } of built)
-          if (!map.has(code) && locales.get(code)?.fm.status !== 'archived') map.set(code, fallback);
+    if (eligible) for (const entry of built) {
+      const selected = selectDescription({ locale: entry.code, defaultLocale: config.defaultLocale, sourceLocale: [...states.values()].find((state) => state.isSource)?.sourceLocale ?? null, registry: config.locales.map((entry) => entry.code), preview, standalone: kind === 'page', versions });
+      if (!selected) continue;
+      const file = locales.get(selected.contentLocale)!;
+      map.set(entry.code, { file, state: states.get(selected.contentLocale)!, visibility: selected.presentation === 'draft' ? 'draft' : 'published', localization: { ...selected, indexable: !preview && entry.enabled && selected.localStatus === 'current' && selected.presentation === 'local' } });
     }
     visible.set(owner, map);
   };
@@ -210,6 +201,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     const map = visible.get(r.data.id)!;
     for (const code of [...map.keys()])
       if (r.data.items.filter((id) => vis(id, code)).length < COLLECTION_MIN_ITEMS) map.delete(code);
+      else if (r.data.items.some((id) => vis(id, code) && !vis(id, code)!.localization.indexable)) map.get(code)!.localization.indexable = false;
   }
   const promptsOfTerm = (key: TaxonomyKey, id: string, locale: string) =>
     [...content.prompts.values()].filter(
@@ -231,6 +223,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     const map = visible.get(owner)!;
     for (const code of [...map.keys()])
       if (promptsOfTerm(t.taxonomy, t.termId, code).length < TOPIC_MIN_PROMPTS) map.delete(code);
+      else if (promptsOfTerm(t.taxonomy, t.termId, code).some((p) => !vis(p.data.id, code)!.localization.indexable)) map.get(code)!.localization.indexable = false;
   }
 
   // ---- Addresses ---------------------------------------------------------------------------------
@@ -245,10 +238,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     page: (code: string, slug: string) => url.paths.page(prefix(code), slug),
   };
 
-  const alternates = (owner: string, path: (code: string) => string): Alternate[] =>
-    [...(visible.get(owner)?.keys() ?? [])]
-      .sort((a, b) => built.findIndex((l) => l.code === a) - built.findIndex((l) => l.code === b))
-      .map((code) => ({ locale: code, path: path(code) }));
+  const languageLinks = (owner: string, path: (code: string) => string) =>
+    [...(visible.get(owner)?.entries() ?? [])]
+      .sort(([a], [b]) => built.findIndex((l) => l.code === a) - built.findIndex((l) => l.code === b))
+      .map(([code, version]) => ({ locale: code, path: path(code), contentLocale: version.file.locale }));
+  const alternates = (owner: string, code: string, path: (code: string) => string): Alternate[] =>
+    vis(owner, code)?.localization.indexable ? languageLinks(owner, path).filter((link) => vis(owner, link.locale)?.localization.indexable).map(({ locale, path }) => ({ locale, path })) : [];
 
   const linkPath = (link: ContentLink, code: string): string | null => {
     switch (link.kind) {
@@ -273,11 +268,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
 
   // ---- Images --------------------------------------------------------------------------------------
 
-  const localizedText = (values: Record<string, string>, code: string, source?: string): string | null =>
-    [values[code], source ? values[source] : null, values[config.defaultLocale], ...Object.values(values)]
-      .find((value) => value?.trim()) ?? null;
+  const selectText = (values: Record<string, string>, code: string, source?: string): { value: string; locale: string } | null => {
+    for (const locale of new Set([code, source, config.defaultLocale, ...config.locales.map((entry) => entry.code)])) {
+      if (locale && values[locale]?.trim()) return { value: values[locale]!, locale };
+    }
+    return null;
+  };
+  const localizedText = (values: Record<string, string>, code: string, source?: string) => selectText(values, code, source)?.value ?? null;
+  const textLocale = (values: Record<string, string>, code: string, source?: string) => selectText(values, code, source)?.locale ?? null;
 
-  const imageRef = (assetId: string, code: string, full: boolean): ImageRef => {
+  const imageRef = (assetId: string, code: string, full: boolean, source?: string): ImageRef => {
     const m = content.media.get(assetId)!.data;
     const ratio = m.width / m.height;
     const original: ImageVariant = { key: m.original.key, width: m.width, height: m.height, mimeType: m.mimeType };
@@ -290,8 +290,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       ratio,
       extreme: ratio > 2 || ratio < 0.5,
       placeholder: m.placeholder.color,
-      alt: localizedText(m.alt, code) ?? '',
-      caption: localizedText(m.caption, code),
+      alt: localizedText(m.alt, code, source) ?? '',
+      altLocale: textLocale(m.alt, code, source),
+      caption: localizedText(m.caption, code, source),
+      captionLocale: textLocale(m.caption, code, source),
       variants: full
         ? {
             thumbnail: m.variants.thumbnail,
@@ -311,7 +313,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       file: file.file,
       resolve: {
         link: (l) => linkPath(l, code),
-        figure: (id) => (content.media.has(id) ? imageRef(id, code, true) : null),
+        figure: (id) => (content.media.has(id) ? imageRef(id, code, true, file.locale) : null),
       },
     });
     return { body: compiled.blocks, toc: compiled.toc };
@@ -348,6 +350,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
     kind: TAXONOMY_KIND[key],
     id,
     label: termLabel(key, id, code),
+    labelLocale: textLocale(content.taxonomy[key].get(id)?.labels ?? {}, code),
     path: topicPath(key, id, code),
   });
 
@@ -378,10 +381,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       title: v.file.fm.title,
       description: v.file.fm.description,
       visibility: v.visibility,
+      localization: v.localization,
       createdAt: r.data.createdAt,
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
       frameNumber: frameNumber(r.data.id),
-      cover: imageRef(r.data.coverAssetId!, code, false),
+      cover: imageRef(r.data.coverAssetId!, code, false, v.file.locale),
       hasGifOutput: runsOfPrompt(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       categoryId: r.data.categoryId,
       styleIds: r.data.styleIds,
@@ -418,9 +422,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       title: v.file.fm.title,
       description: v.file.fm.description,
       visibility: v.visibility,
+      localization: v.localization,
       createdAt: r.data.createdAt,
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
-      cover: cover && content.media.has(cover) ? imageRef(cover, code, false) : null,
+      cover: cover && content.media.has(cover) ? imageRef(cover, code, false, v.file.locale) : null,
       hasGifOutput: runsOfTemplate(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       currentVersion: r.data.currentVersion,
       fieldCount: version.fields.length,
@@ -441,9 +446,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       title: v.file.fm.title,
       description: v.file.fm.description,
       visibility: v.visibility,
+      localization: v.localization,
       createdAt: r.data.createdAt,
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
-      cover: imageRef(r.data.coverAssetId, code, false),
+      cover: imageRef(r.data.coverAssetId, code, false, v.file.locale),
       itemCount: r.data.items.filter((item) => vis(item, code)).length,
     };
   };
@@ -480,6 +486,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           kind: TAXONOMY_KIND[key],
           id: term.id,
           label: termLabel(key, term.id, code),
+          labelLocale: textLocale(term.labels, code),
           aliases: termAliases(term, code),
           count: promptsOfTerm(key, term.id, code).length,
           path: topicPath(key, term.id, code),
@@ -503,6 +510,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           end: start + a.phrase.length,
           region: a.region,
           note: localizedText(a.note, code, v.file.locale) ?? '',
+          noteLocale: textLocale(a.note, code, v.file.locale),
         }));
       const examples = runsOfPrompt(r.data.id).map((x) => exampleView(x.data.id, code));
       const score = (p: PromptRecord) =>
@@ -517,7 +525,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const source = r.data.promptSource;
       const model: PromptDetail = {
         ...summary,
-        cover: imageRef(r.data.coverAssetId!, code, true),
+        cover: imageRef(r.data.coverAssetId!, code, true, v.file.locale),
         seo: seo(v.file),
         ...richBody(v.file, code),
         prompt: {
@@ -540,12 +548,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         promptProvenance: r.data.promptProvenance,
         inspirationSources: r.data.inspirationSources.map((source) => ({
           ...source,
+          metricScopeLocale: textLocale(source.metricScope, code, v.file.locale),
           metricScope: localizedText(source.metricScope, code, v.file.locale) ?? '',
+          evidenceMethodLocale: textLocale(source.evidenceMethod, code, v.file.locale),
           evidenceMethod: localizedText(source.evidenceMethod, code, v.file.locale) ?? '',
+          sourcePromptStatusLocale: textLocale(source.sourcePromptStatus, code, v.file.locale),
           sourcePromptStatus: localizedText(source.sourcePromptStatus, code, v.file.locale) ?? '',
-          metrics: source.metrics.map(({ key, value, labels }) => ({ key, value, label: localizedText(labels, code, v.file.locale) ?? key })),
+          metrics: source.metrics.map(({ key, value, labels }) => ({ key, value, labelLocale: textLocale(labels, code, v.file.locale), label: localizedText(labels, code, v.file.locale) ?? key })),
         })),
         inputInstructions: localizedText(inputRequirementsOf(content, r).instructions, code, v.file.locale),
+        inputInstructionsLocale: textLocale(inputRequirementsOf(content, r).instructions, code, v.file.locale),
         showcaseExampleId: r.data.showcaseExampleId,
         template:
           source.type === 'template' ? { id: source.templateId, version: source.version, values: selected.values! } : null,
@@ -561,7 +573,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           .filter((t): t is TemplateSummary => !!t),
         similar,
         collections: collections.filter((c) => content.collections.get(c.id)!.data.items.includes(r.data.id)),
-        alternates: alternates(r.data.id, (c) => pathOf.prompt(c, r.data.slug)),
+        alternates: alternates(r.data.id, code, (c) => pathOf.prompt(c, r.data.slug)),
+        languageLinks: languageLinks(r.data.id, (c) => pathOf.prompt(c, r.data.slug)),
         translation: translation(v),
       };
       details.push({ kind: 'prompt', locale: code, key: r.data.id, model });
@@ -579,8 +592,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       const fields: LocalizedField[] = version.fields.map((f, i) => ({
         ...spec.fields[i]!,
         label: label(f.labels),
+        labelLocale: textLocale(f.labels, code, v.file.locale),
         help: localizedText(f.help, code, v.file.locale),
+        helpLocale: textLocale(f.help, code, v.file.locale),
+        groupLabelLocale: f.group ? textLocale(content.fieldGroups.get(f.group)?.labels ?? {}, code, v.file.locale) : null,
         groupLabel: f.group ? label(content.fieldGroups.get(f.group)?.labels ?? {}) || null : null,
+        optionLabelLocales: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, textLocale(o.labels, code, v.file.locale)])) : {},
         optionLabels: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, label(o.labels)])) : {},
       }));
       const samples = [...selected.samples].map(([name, s]) => ({
@@ -607,11 +624,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         ...templateById.get(r.data.id)!,
         cover: (() => {
           const id = templateCover(r);
-          return id && content.media.has(id) ? imageRef(id, code, true) : null;
+          return id && content.media.has(id) ? imageRef(id, code, true, v.file.locale) : null;
         })(),
         seo: seo(v.file),
         ...richBody(v.file, code),
         inputInstructions: localizedText(version.inputs?.instructions ?? {}, code, v.file.locale),
+        inputInstructionsLocale: textLocale(version.inputs?.instructions ?? {}, code, v.file.locale),
         version: {
           id: version.id,
           body: spec.body,
@@ -633,7 +651,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
           styles: r.data.styleIds.map((id) => termRef('style', id, code)),
           useCases: r.data.useCaseIds.map((id) => termRef('useCase', id, code)),
         },
-        alternates: alternates(r.data.id, (c) => pathOf.template(c, r.data.slug)),
+        alternates: alternates(r.data.id, code, (c) => pathOf.template(c, r.data.slug)),
+        languageLinks: languageLinks(r.data.id, (c) => pathOf.template(c, r.data.slug)),
         translation: translation(v),
       };
       details.push({ kind: 'template', locale: code, key: r.data.id, model });
@@ -653,11 +672,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       }
       const model: CollectionDetail = {
         ...collectionSummary(r.data.id, code),
-        cover: imageRef(r.data.coverAssetId, code, true),
+        cover: imageRef(r.data.coverAssetId, code, true, v.file.locale),
         seo: seo(v.file),
         ...richBody(v.file, code),
         items,
-        alternates: alternates(r.data.id, (c) => pathOf.collection(c, r.data.slug)),
+        alternates: alternates(r.data.id, code, (c) => pathOf.collection(c, r.data.slug)),
+        languageLinks: languageLinks(r.data.id, (c) => pathOf.collection(c, r.data.slug)),
         translation: translation(v),
       };
       details.push({ kind: 'collection', locale: code, key: r.data.id, model });
@@ -683,14 +703,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         title: v.file.fm.title,
         description: v.file.fm.description,
         visibility: v.visibility,
+      localization: v.localization,
         createdAt: v.file.fm.updatedAt,
         updatedAt: v.file.fm.updatedAt,
-        cover: termPrompts[0] ? imageRef(termPrompts[0].cover.assetId, code, true) : null,
+        cover: termPrompts[0] ? imageRef(termPrompts[0].cover.assetId, code, true, v.file.locale) : null,
         promptCount: termPrompts.length,
         seo: seo(v.file),
         ...richBody(v.file, code),
         prompts: termPrompts,
-        alternates: alternates(owner, (c) => topicPath(t.taxonomy, t.termId, c)!),
+        alternates: alternates(owner, code, (c) => topicPath(t.taxonomy, t.termId, c)!),
+        languageLinks: languageLinks(owner, (c) => topicPath(t.taxonomy, t.termId, c)!),
         translation: translation(v),
       };
       topics.push(model);
@@ -712,11 +734,13 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
         title: v.file.fm.title,
         description: v.file.fm.description,
         visibility: v.visibility,
+      localization: v.localization,
         createdAt: v.file.fm.updatedAt,
         updatedAt: v.file.fm.updatedAt,
         seo: seo(v.file),
         ...richBody(v.file, code),
-        alternates: alternates(owner, (c) => pathOf.page(c, page.slug)),
+        alternates: alternates(owner, code, (c) => pathOf.page(c, page.slug)),
+        languageLinks: languageLinks(owner, (c) => pathOf.page(c, page.slug)),
         translation: translation(v),
       };
       pages.push(model);
@@ -752,6 +776,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       promptLanguage: runPromptLanguage(content, x),
       promptSha256: d.promptSha256,
       parameters: Object.entries(d.parameters).map(([name, value]) => ({ name, value })),
+      referenceLabelLocales: d.referenceAssetIds.map((_, index) => {
+        const binding = d.referenceBindings.find((binding) => binding.referenceIndex === index);
+        const slot = runInputRequirements(content, d).slots.find((slot) => slot.id === binding?.slotId);
+        return slot ? textLocale(slot.labels, code) : null;
+      }),
       referenceLabels: d.referenceAssetIds.map((_, index) => {
         const binding = d.referenceBindings.find((b) => b.referenceIndex === index);
         const slot = runInputRequirements(content, d).slots.find((s) => s.id === binding?.slotId);
@@ -760,6 +789,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url): 
       references: d.referenceAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
       outputs: d.outputAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
       notes: localizedText(d.notes, code),
+      notesLocale: textLocale(d.notes, code),
     };
   }
 

@@ -1,3 +1,4 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import 'server-only';
 import { ArrowRight, Search } from 'lucide-react';
 import Link from 'next/link';
@@ -5,11 +6,9 @@ import { getTranslations } from 'next-intl/server';
 import type { CSSProperties } from 'react';
 import { config, type LocaleEntry } from '@/config';
 import { ClientMessages } from '@/i18n/client-messages';
-import { getDetailModel, localeIndex } from '@/modules/content';
-import { feedIndex } from '@/modules/feed';
-import { EMPTY_QUERY, formatQuery } from '@/modules/feed/query';
 import type { FeedCard } from '@/modules/feed/types';
-import { composeHome, type HomeModel } from '@/modules/home/compose';
+import type { HomeModel } from '@/modules/home/compose';
+export { homeModel } from '@/modules/home/server';
 import { getImage } from '@/modules/media';
 import { paths, withBasePath } from '@/modules/url';
 import { popupLocale } from '@/ui/detail-popup/logic';
@@ -28,26 +27,6 @@ import { HomeHero } from './HomeHero';
 
 /** Use cases linked from the first screen, beside the search field (§11.8.1: 3–5). */
 const FIRST_SCREEN_USES = 4;
-
-/** The home model of a locale, from the content model, the list's featured order and site.yaml. */
-export function homeModel(locale: LocaleEntry): HomeModel {
-  const index = localeIndex(locale.code);
-  return composeHome({
-    locale: locale.code,
-    // The build date, as for the list's showcase band: works scheduled later wait.
-    today: new Date().toISOString().slice(0, 10),
-    prompts: index.prompts,
-    promptDetail: (id) => getDetailModel('prompt', id, locale.code),
-    featuredOrder: feedIndex(locale.code).featured,
-    templates: index.templates,
-    templateDetail: (id) => getDetailModel('template', id, locale.code),
-    collections: index.collections,
-    collectionsLinked: pageSections().collections,
-    terms: index.terms,
-    settings: config.home,
-    useCaseList: (id) => paths.promptsFiltered(locale.pathPrefix, formatQuery({ ...EMPTY_QUERY, use: [id] })),
-  });
-}
 
 export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: HomeModel }) {
   const t = await getTranslations({ locale: locale.code, namespace: 'home' });
@@ -91,7 +70,7 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
             {model.useCases.slice(0, FIRST_SCREEN_USES).map((u) => (
               <li key={u.id}>
                 <Link href={u.href} prefetch={false}>
-                  {u.label}
+                  <span {...languageAttributes(u.labelLocale)}>{u.label}</span>
                 </Link>
               </li>
             ))}
@@ -173,7 +152,9 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
                             decoding="async"
                           />
                         </span>
-                        <span className={styles.tileName}>{u.label}</span>
+                        <span className={styles.tileName}>
+                          <span {...languageAttributes(u.labelLocale)}>{u.label}</span>
+                        </span>
                         <span className={pages.count}>{t('useCases.count', { count: u.count })}</span>
                       </Link>
                     </li>

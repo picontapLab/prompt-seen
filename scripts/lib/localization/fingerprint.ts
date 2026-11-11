@@ -32,3 +32,18 @@ export function proseFingerprint(prose: {
     reasons: prose.reasons ?? {},
   });
 }
+
+/** Owners at numeric paths survive text equality, but not a move to another entity. */
+export function entityFingerprint(file: string, document: unknown, parts: (string | number)[]): string {
+  let value = document;
+  const owners: unknown[] = [file];
+  for (const part of parts.slice(0, -1)) {
+    if (!value || typeof value !== 'object') break;
+    value = (value as Record<string | number, unknown>)[part];
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      const record = value as Record<string, unknown>;
+      for (const key of ['id', 'name', 'value']) if (typeof record[key] === 'string') owners.push([key, record[key]]);
+    }
+  }
+  return fingerprint(owners);
+}

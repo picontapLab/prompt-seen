@@ -30,6 +30,8 @@ const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
 /** The search form of one word or character run: compatibility forms, case and accents folded. */
 export function normalizeTerm(text: string, locale: string): string {
   let s = text.normalize('NFKC').toLocaleLowerCase(locale);
+  if (locale.split('-')[0] === 'de')
+    s = s.replace(/ß/g, 'ss').replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u');
   if (FOLD_SCRIPT.test(s)) {
     s = s
       .normalize('NFD')

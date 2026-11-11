@@ -170,6 +170,20 @@ export const siteSchema = z
   })
   .strict();
 
+export const localizationPolicySchema = z
+  .object({
+    coverage: z.enum(['incremental', 'complete']),
+    review: z.enum(['metadata', 'fingerprint']),
+    promptBodies: z.enum(['optional', 'source-only']),
+  })
+  .strict()
+  .refine((policy) => policy.coverage !== 'complete' || policy.review === 'fingerprint', {
+    message: 'complete coverage requires fingerprint review',
+    path: ['review'],
+  });
+
+export type LocalizationPolicy = z.infer<typeof localizationPolicySchema>;
+
 export const localeSchema = z
   .object({
     code: z
@@ -184,6 +198,7 @@ export const localeSchema = z
     // Also built in preview mode, e.g. the Arabic draft used for layout testing (§17.3 step 2).
     preview: z.boolean().default(false),
     phase: z.union([z.literal(1), z.literal(2)]),
+    localization: localizationPolicySchema,
   })
   .strict()
   .refine((l) => l.pathPrefix === l.code.toLowerCase(), {

@@ -29,8 +29,12 @@ async function checkCards(page: Page, locale: Locale) {
     const summary = nodes.nth(i);
     const id = await summary.locator('xpath=ancestor::*[@data-entry][1]').getAttribute('data-entry');
     expect(await summary.textContent()).toBe(localeIndex(locale.code).prompts.find((p) => p.id === id)!.description);
-    await expect(summary).toHaveAttribute('lang', locale.code);
-    await expect(summary).toHaveAttribute('dir', locale.direction);
+    const actual = localeIndex(locale.code).prompts.find((prompt) => prompt.id === id)!.localization.contentLocale;
+    await expect(summary).toHaveAttribute('lang', actual);
+    await expect(summary).toHaveAttribute(
+      'dir',
+      BUILD.locales.find((entry) => entry.code === actual)?.direction ?? 'ltr',
+    );
     await expect(summary).not.toHaveAttribute('aria-hidden');
     expect(await summary.evaluate((el) => getComputedStyle(el).webkitLineClamp)).toBe('2');
   }
@@ -206,9 +210,12 @@ test('a case without a translated description stays available after switching la
   const { locale, entry } = candidate!;
   const original = promptDetail(defaultLocale.code, entry.id);
   const fallback = promptDetail(locale.code, entry.id);
-  expect(localeIndex(locale.code).prompts.map((p) => p.id)).toEqual(
-    localeIndex(defaultLocale.code).prompts.map((p) => p.id),
-  );
+  expect(fallback.localization).toMatchObject({
+    contentLocale: fallback.translation.sourceLocale,
+    localStatus: 'missing',
+    presentation: 'fallback',
+    indexable: false,
+  });
   await page.goto(`${BASE}${original.path}`);
   await chooseLanguage(page, defaultLocale, locale);
   await expect(page).toHaveURL(new RegExp(`${fallback.path}$`));

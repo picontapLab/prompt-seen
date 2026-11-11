@@ -50,6 +50,11 @@ for (const l of config.builtLocales)
   for (const kind of ['prompts', 'templates'])
     fs.rmSync(path.join(target, l.pathPrefix, kind, NO_MARKDOWN), { recursive: true, force: true });
 
+// Preview has no per-language sitemap; remove the static-export placeholder.
+if (config.buildMode === 'preview')
+  for (const locale of config.builtLocales)
+    fs.rmSync(path.join(target, url.paths.sitemap(locale.pathPrefix)), { force: true });
+
 // Placeholder pages of locales with no topics, collections or content pages (EMPTY_PARAM): static
 // export needs one param per route; the address must answer 404.
 for (const l of config.builtLocales)

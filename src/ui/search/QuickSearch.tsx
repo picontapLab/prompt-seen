@@ -1,5 +1,7 @@
 'use client';
 
+import { languageAttributes } from '@/ui/prompt-detail/language';
+
 import { CornerDownLeft, History, Search, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState, type Key } from 'react';
@@ -209,7 +211,7 @@ function PanelEntry({ item, locale, searchPage }: { item: PanelItem; locale: Loc
     case 'popular':
       return (
         <ListBoxItem id={item.id} textValue={item.label} href={item.href} className={`${styles.item} ${styles.plain}`}>
-          <span>{item.label}</span>
+          <span {...languageAttributes(item.labelLocale)}>{item.label}</span>
         </ListBoxItem>
       );
   }

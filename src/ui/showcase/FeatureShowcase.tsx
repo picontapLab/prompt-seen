@@ -120,7 +120,13 @@ export function FeatureShowcase({
           )}
           <figcaption className={styles.label}>
             <FrameNumber n={Number(s.frameNumber)} />
-            <Heading className={styles.title}>{s.title}</Heading>
+            <Heading
+              lang={s.localization.contentLocale}
+              dir={textDirection(s.localization.contentLocale)}
+              className={styles.title}
+            >
+              {s.title}
+            </Heading>
             <span className={styles.facts}>
               {[
                 s.model ?? t('test.notVerified'),

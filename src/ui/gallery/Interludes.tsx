@@ -96,8 +96,8 @@ export function TemplateCards({ items }: { items: readonly FeedTemplate[] }) {
             <span
               className={styles.templateSummary}
               data-template-summary=""
-              lang={tpl.locale}
-              dir={textDirection(tpl.locale)}
+              lang={tpl.localization.contentLocale}
+              dir={textDirection(tpl.localization.contentLocale)}
             >
               {tpl.description}
             </span>
@@ -178,6 +178,7 @@ export function CollectionBanner({ block, posinset, setsize, ...rest }: { block:
           width={img.width}
           height={img.height}
           alt={img.alt}
+          lang={img.lang}
           loading="lazy"
           decoding="async"
         />

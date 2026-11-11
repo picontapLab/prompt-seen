@@ -3,9 +3,12 @@ import path from 'node:path';
 import YAML from 'yaml';
 import type { Content, LocaleFile } from '../content/read';
 import type { EntryKind } from '../../../src/modules/content/types';
-import { fingerprint } from './fingerprint';
+import { fingerprint, entityFingerprint } from './fingerprint';
+import { localeStates, publishProblems } from '../content/rules';
 
 export type Field = {
+  reviewStatus?: string;
+  identity?: string;
   key: string;
   file: string;
   sourceFile: string;
@@ -18,6 +21,37 @@ export type Field = {
   targetHash: string | null;
 };
 export type Unit = { key: string; kind: EntryKind; id: string; dir: string; locales: Map<string, LocaleFile> };
+
+/** Uses the same publication contract as validation, without relying on a fallback route. */
+export function unitPublishProblems(content: Content, unit: Unit, locale: string) {
+  const file = unit.locales.get(locale);
+  if (!file) return [];
+  const prompt = unit.kind === 'prompt' ? content.prompts.get(unit.id) : undefined;
+  const template = unit.kind === 'template' ? content.templates.get(unit.id) : undefined;
+  const collection = unit.kind === 'collection' ? content.collections.get(unit.id) : undefined;
+  const topic = unit.kind === 'topic' ? content.topics.find((t) => `${t.taxonomy}/${t.termId}` === unit.id) : undefined;
+  const data = prompt?.data ?? template?.data;
+  const terms = data
+    ? [
+        ...(data.categoryId ? [{ key: 'category' as const, id: data.categoryId }] : []),
+        ...data.styleIds.map((id) => ({ key: 'style' as const, id })),
+        ...data.useCaseIds.map((id) => ({ key: 'useCase' as const, id })),
+      ]
+    : topic
+      ? [{ key: topic.taxonomy, id: topic.termId }]
+      : [];
+  return publishProblems({
+    content,
+    kind: unit.kind,
+    locale,
+    file,
+    state: localeStates(unit.locales).get(locale)!,
+    coverAssetId: prompt?.data.coverAssetId ?? collection?.data.coverAssetId ?? null,
+    terms,
+    annotationNotes: prompt?.data.annotations.map((a) => a.note),
+    fields: template?.versions.get(template.data.currentVersion)?.fields,
+  });
+}
 
 export function unitsOf(content: Content): Unit[] {
   return [
@@ -44,6 +78,8 @@ const TEXT_MAPS = new Set([
   'sourcePromptStatus',
   'aliases',
 ]);
+
+const documents = new WeakMap<Content, Map<string, unknown>>();
 
 export function dependencyFields(
   root: string,
@@ -124,9 +160,33 @@ export function dependencyFields(
       if (owner) add(owner.file);
     }
   }
+  return fieldsFromFiles(root, content, files, locale, defaultLocale);
+}
+
+/** Taxonomy labels and aliases are visible in global filters/search even without a member. */
+export function globalDependencyFields(root: string, content: Content, locale: string, defaultLocale: string): Field[] {
+  const files = new Map<string, Set<string> | null>();
+  for (const terms of [...Object.values(content.taxonomy), content.fieldGroups])
+    for (const term of terms.values()) files.set(term.file, null);
+  return fieldsFromFiles(root, content, files, locale, defaultLocale);
+}
+
+function fieldsFromFiles(
+  root: string,
+  content: Content,
+  files: Map<string, Set<string> | null>,
+  locale: string,
+  defaultLocale: string,
+): Field[] {
   const result: Field[] = [];
+  let cached = documents.get(content);
+  if (!cached) {
+    cached = new Map();
+    documents.set(content, cached);
+  }
   for (const [file, termIds] of [...files].sort(([a], [b]) => a.localeCompare(b))) {
-    const raw: unknown = YAML.parse(fs.readFileSync(file, 'utf8'));
+    if (!cached.has(file)) cached.set(file, YAML.parse(fs.readFileSync(file, 'utf8')));
+    const raw = cached.get(file);
     const relative = path.relative(root, file);
     const walk = (value: unknown, parts: (string | number)[]) => {
       if (Array.isArray(value)) {
@@ -138,17 +198,14 @@ export function dependencyFields(
       const name = String(parts.at(-1));
       if (TEXT_MAPS.has(name)) {
         // Shared text has one deterministic source, independent of the referring page language.
-        const sourceLocale = Object.hasOwn(record, defaultLocale)
-          ? defaultLocale
-          : (Object.keys(record)
-              .filter((c) => c !== locale)
-              .sort()[0] ?? (Object.hasOwn(record, locale) ? locale : undefined));
+        const sourceLocale = Object.hasOwn(record, defaultLocale) ? defaultLocale : Object.keys(record).sort()[0];
         if (!sourceLocale) return;
         const source = record[sourceLocale];
         if (source === null || source === '' || (Array.isArray(source) && !source.length)) return;
         const target = record[locale] ?? null;
         result.push({
           key: `${relative}#${parts.join('.')}`,
+          identity: entityFingerprint(relative, raw, [...parts, locale]),
           file: relative,
           sourceFile: relative,
           sourceField: [...parts, sourceLocale],

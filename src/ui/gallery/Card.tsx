@@ -107,6 +107,7 @@ export function Card({
             width={img.width}
             height={img.height}
             alt={img.alt}
+            lang={img.lang}
             loading={priority ? undefined : 'lazy'}
             decoding={priority ? undefined : 'async'}
           />
@@ -125,7 +126,12 @@ export function Card({
             <FrameNumber n={Number(card.frameNumber)} />
             <CircleMark />
           </span>
-          <span id={`${id}-title`} className={styles.title}>
+          <span
+            lang={card.localization.contentLocale}
+            dir={textDirection(card.localization.contentLocale)}
+            id={`${id}-title`}
+            className={styles.title}
+          >
             {card.title}
           </span>
         </span>
@@ -134,8 +140,8 @@ export function Card({
             id={`${id}-summary`}
             className={styles.summary}
             data-card-summary=""
-            lang={card.locale}
-            dir={textDirection(card.locale)}
+            lang={card.localization.contentLocale}
+            dir={textDirection(card.localization.contentLocale)}
           >
             {card.description}
           </span>

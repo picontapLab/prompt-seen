@@ -1,3 +1,4 @@
+import { writeRequiredPages } from '../../../tests/support/localization-pages';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -23,6 +24,11 @@ it.each([0, 1, 2])(
     fs.mkdirSync(path.join(root, 'content/taxonomy'));
     for (const name of fs.readdirSync('content/taxonomy').filter((name) => name.endsWith('.yaml')))
       fs.copyFileSync(path.join('content/taxonomy', name), path.join(root, 'content/taxonomy', name));
+    const registryFile = path.join(root, 'content/locales.yaml');
+    const registry = YAML.parse(fs.readFileSync(registryFile, 'utf8'));
+    for (const locale of registry.locales) locale.enabled = ['en', 'zh-Hans'].includes(locale.code);
+    fs.writeFileSync(registryFile, YAML.stringify(registry));
+    writeRequiredPages(root, ['en', 'zh-Hans']);
     const site = YAML.parse(fs.readFileSync(path.join(root, 'content/site.yaml'), 'utf8'));
     site.home = { featured: [] };
     site.feed = { showcase: [], interludes: [] };

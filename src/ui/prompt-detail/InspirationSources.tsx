@@ -1,3 +1,4 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { ArrowUpRight } from 'lucide-react';
 import { useId } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -37,15 +38,23 @@ export function InspirationSources({
           <div>
             <dt>{t('snapshot')}</dt>
             <dd className="tabular">
-              <a className={styles.external} href={source.metricObjectUrl}>
+              <a
+                className={styles.external}
+                href={source.metricObjectUrl}
+                {...languageAttributes(source.metricScopeLocale)}
+              >
                 {source.metricScope}
                 <ArrowUpRight aria-hidden="true" />
               </a>
               <span>
                 {source.metrics
                   .filter((m) => m.value !== null)
-                  .map((m) => `${m.label}: ${new Intl.NumberFormat(locale).format(m.value!)}`)
-                  .join(' · ')}
+                  .map((m, i) => (
+                    <span key={m.key} {...languageAttributes(m.labelLocale)}>
+                      {i > 0 ? ' · ' : ''}
+                      {m.label}: {new Intl.NumberFormat(locale).format(m.value!)}
+                    </span>
+                  ))}
               </span>
               <span>{t('observed', { date: source.observedAt })}</span>
             </dd>
@@ -53,11 +62,15 @@ export function InspirationSources({
           <div>
             <dt>{t('evidence')}</dt>
             <dd className="tabular">
-              <a className={styles.external} href={source.evidenceUrl}>
+              <a
+                className={styles.external}
+                href={source.evidenceUrl}
+                {...languageAttributes(source.evidenceMethodLocale)}
+              >
                 {source.evidenceMethod}
                 <ArrowUpRight aria-hidden="true" />
               </a>
-              <span>{source.sourcePromptStatus}</span>
+              <span {...languageAttributes(source.sourcePromptStatusLocale)}>{source.sourcePromptStatus}</span>
             </dd>
           </div>
         </dl>

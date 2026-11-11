@@ -1,3 +1,4 @@
+import { writeRequiredPages } from '../../../tests/support/localization-pages';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -20,10 +21,10 @@ import { templateContractHash } from './template-contract';
 // small content trees written to a temporary directory.
 
 const LOCALES: LocaleEntry[] = [
-  { code: 'en', pathPrefix: 'en', nativeName: 'English', htmlLang: 'en', direction: 'ltr', enabled: true, preview: false, phase: 1 },
-  { code: 'zh-Hans', pathPrefix: 'zh-hans', nativeName: '简体中文', htmlLang: 'zh-Hans', direction: 'ltr', enabled: true, preview: false, phase: 1 },
-  { code: 'ja', pathPrefix: 'ja', nativeName: '日本語', htmlLang: 'ja', direction: 'ltr', enabled: false, preview: true, phase: 1 },
-  { code: 'tr', pathPrefix: 'tr', nativeName: 'Türkçe', htmlLang: 'tr', direction: 'ltr', enabled: false, preview: false, phase: 2 },
+  { code: 'en', pathPrefix: 'en', nativeName: 'English', htmlLang: 'en', direction: 'ltr', enabled: true, preview: false, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } },
+  { code: 'zh-Hans', pathPrefix: 'zh-hans', nativeName: '简体中文', htmlLang: 'zh-Hans', direction: 'ltr', enabled: true, preview: false, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } },
+  { code: 'ja', pathPrefix: 'ja', nativeName: '日本語', htmlLang: 'ja', direction: 'ltr', enabled: false, preview: true, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } },
+  { code: 'tr', pathPrefix: 'tr', nativeName: 'Türkçe', htmlLang: 'tr', direction: 'ltr', enabled: false, preview: false, phase: 2, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } },
 ];
 
 function configFor(buildMode: 'production' | 'preview'): ResolvedConfig {
@@ -148,6 +149,7 @@ function setup(patch: Record<string, string | null> = {}) {
     'content/collections/c_001/entry.yaml': 'id: c_001\nslug: ink\ncreatedAt: 2026-10-01\nupdatedAt: 2026-10-01\ncoverAssetId: a_001\nitems: [p_001, p_002, t_001]\n',
     'content/collections/c_001/locales/en.mdx': mdx({ ...enFm, title: 'Ink', reasons: { p_001: 'The seal.' } }, 'A collection.\n'),
     'content/pages/about/locales/en.mdx': mdx({ ...enFm, title: 'About' }, 'About us.\n'),
+    'content/pages/about/locales/zh-Hans.mdx': zhFor('About us.\n', { ...enFm, title: 'About' }),
     'content/redirects.yaml':
       'redirects:\n  - { kind: prompt, from: old-portrait, to: p_001 }\n  - { from: /zh/, to: /zh-hans/ }\ngone:\n  - { kind: prompt, slug: removed-one, reason: license }\n',
     ...patch,
@@ -164,6 +166,7 @@ function setup(patch: Record<string, string | null> = {}) {
       fs.mkdirSync(path.dirname(f), { recursive: true });
       fs.writeFileSync(f, 'x');
     }
+  writeRequiredPages(root, ['en', 'zh-Hans'], ['license']);
   return root;
 }
 
@@ -203,7 +206,7 @@ it.each(['output', 'reference'])('derives GIF case badges from %s assets through
     template: (id) => detail<TemplateDetail>(result, 'template', 'en', id) ?? null,
     pages: { collections: true, topics: true },
   });
-  const engine = loadEngine({ buildId: 'gif-test', locale: 'en', counts: { prompt: 3, template: 1, collection: 1, topic: 1 }, popular: [], terms: [], index: JSON.parse(JSON.stringify(createIndex(documents, 'en'))) });
+  const engine = loadEngine({ schemaVersion: 2, analyzerVersion: 2, buildId: 'gif-test', locale: 'en', counts: { prompt: 3, template: 1, collection: 1, topic: 1 }, popular: [], terms: [], index: JSON.parse(JSON.stringify(createIndex(documents, 'en'))) });
   const hits = search(engine, 'GIF').groups.flatMap((group) => group.hits);
   expect(hits.some((hit) => hit.id === 'prompt:p_001' && hit.hasGifOutput)).toBe(role === 'output');
   expect(hits.find((hit) => hit.id === 'prompt:p_002')?.thumb?.mimeType).toBe('image/gif');
@@ -234,7 +237,7 @@ describe('a valid content tree', () => {
       { locale: 'zh-Hans', path: '/zh-hans/prompts/ink-portrait/' },
     ]);
     expect(p.translation).toEqual({ sourceLocale: 'en', reviewStatus: 'reviewed' });
-    expect(p.taxonomy.category).toEqual({ kind: 'category', id: 'portrait', label: '肖像', path: '/zh-hans/categories/portrait/' });
+    expect(p.taxonomy.category).toEqual({ kind: 'category', id: 'portrait', label: '肖像', labelLocale: 'zh-Hans', path: '/zh-hans/categories/portrait/' });
     expect(p.body[0]).toMatchObject({ t: 'h2', id: 'how-to-adjust-it' });
     expect(JSON.parse(JSON.stringify(p))).toEqual(p);
   });
@@ -306,6 +309,7 @@ describe('build modes (§8.4, §15.1)', () => {
 describe('shared content across interface languages', () => {
   it.each(['production', 'preview'] as const)('keeps the same library and local links without translation files in %s', (mode) => {
     const r = load(setup({
+      'content/pages/editorial/locales/en.mdx': mdx({ ...enFm, title: 'Editorial' }, 'Editorial notes.\n'),
       'content/prompts/p_001/locales/zh-Hans.mdx': null,
       'content/prompts/p_001/locales/ja.mdx': null,
       'content/media/a_001.yaml': media('a_001', { en: 'An ink portrait' }),
@@ -324,7 +328,9 @@ describe('shared content across interface languages', () => {
       expect(p.annotations[0]!.note).toBe('Sets the seal');
       expect(p.examples[0]!.notes).toBe('Clean edges.');
       expect(p.prompt).toMatchObject({ text: PROMPT, language: 'en' });
-      expect(p.alternates.map((a) => a.locale)).toEqual([...r.built!.locales.keys()]);
+      expect(p.languageLinks.map((a) => a.locale)).toEqual([...r.built!.locales.keys()]);
+      expect(p.localization).toMatchObject({ contentLocale: 'en', localStatus: code === 'en' ? 'current' : 'missing', presentation: code === 'en' ? 'local' : 'fallback', indexable: mode === 'production' && code === 'en' });
+      expect(p.alternates.map((a) => a.locale)).toEqual(mode === 'production' && code === 'en' ? ['en'] : []);
       expect(toCard(p, aspectRatioLabel).path).toBe(p.path);
       const second = detail<PromptDetail>(r, 'prompt', code, 'p_002')!;
       expect(JSON.stringify(second.body)).toContain(`"href":"/${prefix}/prompts/ink-portrait/"`);
@@ -340,7 +346,7 @@ describe('shared content across interface languages', () => {
       expect(documents.find((d) => d.id === 'prompt:p_001')).toMatchObject({ path: p.path, body: PROMPT });
     }
     // Standalone editorial pages retain their own publication rules.
-    expect(r.built!.locales.get('zh-Hans')!.pages).toEqual([]);
+    expect(r.built!.locales.get('zh-Hans')!.pages.map((page) => page.slug)).not.toContain('editorial');
   });
 
   it('uses published original text while a translation is still a draft', () => {
@@ -374,12 +380,12 @@ describe('shared content across interface languages', () => {
     expect(JSON.stringify(p.body)).toContain('"href":"/zh-hans/prompts/second/"');
   });
 
-  it('shares preview-only drafts without publishing them in production', () => {
+  it('shows preview drafts only in their actual language without using them as fallback', () => {
     const root = setup({ 'content/prompts/p_003/locales/en.mdx': mdx({ ...enFm, status: 'draft' }) });
     for (const index of load(root).built!.locales.values())
       expect(index.prompts.map((p) => p.id)).not.toContain('p_003');
-    for (const index of load(root, 'preview').built!.locales.values())
-      expect(index.prompts.find((p) => p.id === 'p_003')?.visibility).toBe('draft');
+    for (const [code, index] of load(root, 'preview').built!.locales)
+      expect(index.prompts.find((p) => p.id === 'p_003')?.visibility).toBe(code === 'en' ? 'draft' : undefined);
   });
 
   it('respects explicit archival even if another language remains published', () => {
@@ -637,7 +643,7 @@ it('localizes source evidence without turning source metrics into site ratings',
   expect(blocking(r.findings.list)).toEqual([]);
   const p = detail<PromptDetail>(r, 'prompt', 'zh-Hans', 'p_001');
   expect(p?.inspirationSources?.[0]?.metricScope).toBe('整篇帖子');
-  expect(p?.inspirationSources?.[0]?.metrics).toEqual([{ key: 'likes', value: 42, label: '赞' }]);
+  expect(p?.inspirationSources?.[0]?.metrics).toEqual([{ key: 'likes', value: 42, label: '赞', labelLocale: 'zh-Hans' }]);
   expect(p?.promptProvenance).toBe('independent-adaptation');
 });
 

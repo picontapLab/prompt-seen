@@ -1,4 +1,5 @@
 'use client';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 
 import { useTranslations } from 'next-intl';
 import { REF_OPTIONS, type FacetCounts, type FeedQuery, type RefOption } from '@/modules/feed/query';
@@ -6,7 +7,7 @@ import { SHAPES, type Shape } from '@/modules/feed/types';
 import { FilterChip } from '@/ui/primitives/Chip';
 import styles from './FilterBar.module.css';
 
-type Term = { id: string; label: string };
+type Term = { id: string; label: string; labelLocale?: string | null };
 
 /**
  * The counted filter chips by dimension (design doc §11.7, §11.8.2): style (one at a time), use,
@@ -53,7 +54,7 @@ export function FilterGroups({
                 count={shown(query.style === s.id, counts.style[s.id] ?? 0)}
                 disabledReason={noMatch}
               >
-                {s.label}
+                <span {...languageAttributes(s.labelLocale)}>{s.label}</span>
               </FilterChip>
             ))}
           </div>
@@ -70,7 +71,7 @@ export function FilterGroups({
               count={shown(query.use.includes(u.id), counts.use[u.id] ?? 0)}
               disabledReason={noMatch}
             >
-              {u.label}
+              <span {...languageAttributes(u.labelLocale)}>{u.label}</span>
             </FilterChip>
           ))}
         </div>

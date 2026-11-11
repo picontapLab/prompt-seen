@@ -1,5 +1,7 @@
 'use client';
 
+import { languageAttributes } from '@/ui/prompt-detail/language';
+
 import { X } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useId, type ReactNode } from 'react';
@@ -63,7 +65,7 @@ export type RemovableChipsProps = {
   /** Names the group, e.g. "Active filters". */
   label: ReactNode;
   labelHidden?: boolean;
-  items: readonly { id: Key; label: string }[];
+  items: readonly { id: Key; label: string; labelLocale?: string | null }[];
   onRemove: (keys: Set<Key>) => void;
   className?: string;
 };
@@ -80,7 +82,7 @@ export function RemovableChips({ label, labelHidden, items, onRemove, className 
       <TagList items={items} className={styles.list}>
         {(item) => (
           <Tag id={item.id} textValue={item.label} className={cx(styles.chip, styles.removable)}>
-            <span>{item.label}</span>
+            <span {...languageAttributes(item.labelLocale)}>{item.label}</span>
             <AriaButton slot="remove" className={styles.remove} aria-label={t('remove', { label: item.label })}>
               <X aria-hidden="true" />
             </AriaButton>

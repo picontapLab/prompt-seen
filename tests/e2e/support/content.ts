@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { ContentManifest, LocaleIndex, PromptDetail, TemplateDetail } from '../../../src/modules/content/types';
 import { feedBandFile, feedIndexFile, feedPageFile } from '../../../src/modules/feed/files';
-import type { FeedIndex, FeedPage } from '../../../src/modules/feed/types';
+import type { FeedIndex, FeedPage, FeedBand } from '../../../src/modules/feed/types';
 import { ROOT } from './artifact';
 
 // The content model of the build under test (.generated/content/, written by content:build in
@@ -41,3 +41,15 @@ export const pagePromptIds = (page: FeedPage) =>
   page.blocks.flatMap((b) =>
     b.t === 'cards' ? b.items.map((c) => c.id) : b.t === 'feature' && b.reason === 'extreme' ? [b.card.id] : [],
   );
+
+export function listIsIndexable(code: string, n: number): boolean {
+  const page = feedPage(code, n);
+  const entries = page.blocks.flatMap((block): { localization: { indexable: boolean } }[] =>
+    block.t === 'cards' || block.t === 'templates' ? block.items : block.t === 'feature' ? [block.card] : [block.item],
+  );
+  if (n === 1 && hasBand(code)) {
+    const band = JSON.parse(fs.readFileSync(path.join(ROOT, '.generated', feedBandFile(code)), 'utf8')) as FeedBand;
+    entries.push(band.lead, ...band.works);
+  }
+  return entries.length > 0 && entries.every((entry) => entry.localization.indexable);
+}

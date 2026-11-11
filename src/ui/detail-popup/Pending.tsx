@@ -34,7 +34,13 @@ export function Pending({
           className={styles.pendingFrame}
           style={{ '--w': card.cover.width, '--h': card.cover.height, background: img.placeholder } as CSSProperties}
         >
-          <img src={img.src} srcSet={img.srcSet} sizes="(min-width: 1024px) 58vw, 100vw" alt={img.alt} />
+          <img
+            src={img.src}
+            srcSet={img.srcSet}
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            alt={img.alt}
+            lang={img.lang}
+          />
         </span>
       )}
       <div className={styles.pendingText}>

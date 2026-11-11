@@ -21,7 +21,7 @@ import { getImage } from '@/modules/media';
 import { graphemeLength, renderTemplate, type FieldError, type FieldValues } from '@/modules/template';
 import { absoluteUrl } from '@/modules/url';
 import { ShareButton } from '@/ui/feedback/ShareButton';
-import { textDirection } from '@/ui/prompt-detail/language';
+import { languageAttributes, textDirection } from '@/ui/prompt-detail/language';
 import { PromptSheet } from '@/ui/prompt-detail/PromptSheet';
 import { BottomSheet } from '@/ui/primitives/BottomSheet';
 import { Button } from '@/ui/primitives/Button';
@@ -366,7 +366,12 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
         >
           {groups.map((group) => (
             <fieldset key={group.id ?? '_'} className={styles.group}>
-              <legend className={group.label ? styles.legend : 'visually-hidden'}>{group.label ?? t('other')}</legend>
+              <legend
+                {...languageAttributes(group.labelLocale)}
+                className={group.label ? styles.legend : 'visually-hidden'}
+              >
+                {group.label ?? t('other')}
+              </legend>
               {group.fields.map(({ field, index }) => {
                 const errors = shown.filter((e) => e.field === field.name);
                 const value = state.values[field.name];
@@ -521,6 +526,7 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                       width={img.width}
                       height={img.height}
                       alt={img.alt}
+                      lang={img.lang}
                       decoding="async"
                     />
                   </span>
@@ -555,15 +561,22 @@ type FieldControlProps = {
 function FieldControl({ field, value, necessity, lang, errorMessage, invalidItems, onChange }: FieldControlProps) {
   const kind = controlFor(field);
   const invalid = errorMessage !== '';
-  const help = field.help ?? undefined;
+  const label = <span {...languageAttributes(field.labelLocale)}>{field.label}</span>;
+  const help = field.help ? <span {...languageAttributes(field.helpLocale)}>{field.help}</span> : undefined;
   const options =
-    field.type === 'enum' ? field.options.map((o) => ({ ...o, label: field.optionLabels[o.value] ?? o.value })) : [];
+    field.type === 'enum'
+      ? field.options.map((o) => ({
+          ...o,
+          label: field.optionLabels[o.value] ?? o.value,
+          lang: field.optionLabelLocales?.[o.value] ?? undefined,
+        }))
+      : [];
   const text = typeof value === 'string' ? value : '';
 
   if (field.type === 'string-list')
     return (
       <TokenInput
-        label={field.label}
+        label={label}
         necessity={necessity}
         description={help}
         value={Array.isArray(value) ? value : []}
@@ -582,7 +595,7 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
     const Picker = kind === 'ratio' ? AspectRatioPicker : SwatchPicker;
     return (
       <Picker
-        label={field.label}
+        label={label}
         necessity={necessity}
         description={help}
         options={options}
@@ -594,8 +607,8 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
   if (kind === 'segments')
     return (
       <SegmentedControl
-        label={field.label}
-        segments={options.map((o) => ({ id: o.value, label: o.label }))}
+        label={label}
+        segments={options.map((o) => ({ id: o.value, label: <span {...languageAttributes(o.lang)}>{o.label}</span> }))}
         value={text}
         onChange={(next) => onChange(String(next))}
         description={help}
@@ -606,9 +619,9 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
     return (
       <Suspense>
         <Select
-          label={field.label}
+          label={label}
           description={help}
-          options={options.map((o) => ({ id: o.value, label: o.label }))}
+          options={options.map((o) => ({ id: o.value, label: o.label, lang: o.lang }))}
           selectedKey={text}
           onSelectionChange={(next) => next !== null && onChange(String(next))}
         />
@@ -617,7 +630,7 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
 
   return (
     <TextField
-      label={field.label}
+      label={label}
       necessity={necessity}
       description={help}
       multiline={kind === 'textarea'}

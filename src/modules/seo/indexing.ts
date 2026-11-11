@@ -1,5 +1,5 @@
 import type { LocaleEntry } from '@/config/schema';
-import type { Visibility } from '@/modules/content/types';
+import type { LocalizationState } from '@/modules/content/types';
 
 // What search engines and AI tools are given (design doc §8.4, §9.3, §9.10.4). Pure, so the
 // sitemaps, the Markdown versions, llms.txt and `content:export` apply the same rule.
@@ -26,6 +26,13 @@ export type PageSections = {
  * llms.txt, exports). In preview builds `published` alone is not enough: a preview-only locale's
  * versions pass the content rules, but the locale itself is not public (§8.2).
  */
-export function isIndexable(locale: Pick<LocaleEntry, 'enabled'>, visibility: Visibility): boolean {
-  return locale.enabled && visibility === 'published';
+export function isIndexable(locale: Pick<LocaleEntry, 'enabled'>, localization: LocalizationState): boolean {
+  return locale.enabled && localization.indexable;
+}
+
+export function isAggregateIndexable(
+  locale: Pick<LocaleEntry, 'enabled'>,
+  items: readonly { localization: LocalizationState }[],
+): boolean {
+  return locale.enabled && items.length > 0 && items.every((item) => item.localization.indexable);
 }

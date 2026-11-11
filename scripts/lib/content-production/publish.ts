@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { loadConfig } from '../../../src/config/load';
 import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
 import { renderTemplate } from '../../../src/modules/template/render';
-import { loadContent } from '../content/load';
+import { loadContent, readValidatedContent } from '../content/load';
 import { readContent, sha256, sourceHashOf } from '../content/read';
 import { Findings } from '../content/findings';
 import { resolvePrompt, resolveTemplate, sourcePromptLanguage } from '../content/prompt-variants';
@@ -393,7 +393,15 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
       notes: { en: job.review.notes, 'zh-Hans': recipe.alt['zh-Hans'] },
     });
     write(path.join(stageContent, `examples/${exampleId}/prompt.txt`), text + '\n');
-    validate(root, stageContent);
+    const prepared = readValidatedContent({ root, config: loadConfig(root, {}), dir: stageContent });
+    if (prepared.findings.blocking)
+      throw new Error(
+        prepared.findings.list
+          .filter((finding) => finding.level === 'error' || finding.level === 'publish')
+          .map((finding) => `${finding.file}: ${finding.message}`)
+          .join('\n'),
+      );
+
     const changes: Change[] = [];
     const before: Record<string, string | null> = {};
     for (const file of files(stageContent)) {

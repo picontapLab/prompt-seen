@@ -25,6 +25,13 @@ this page covers _how_ it fits together. A change to these conventions goes in i
 - `BUILD_MODE=preview` (the default) builds enabled locales plus those marked `preview: true` and
   marks every page `noindex`. `BUILD_MODE=production` builds enabled locales only.
 
+Localization policy is explicit for every registered language. `complete` requires
+fingerprint review; preparation never changes an enabled language's policy to make a
+build pass. The pure content classifier distinguishes browse visibility from translation
+completion and indexability. Build-side localization analysis reads one content snapshot,
+and all publication entry points retain the enabled-locale gate. CLI contracts and
+candidate promotion are documented in [Localization workflow](localization-workflow.md).
+
 ## Addresses
 
 All addresses come from `@/modules/url` (lint-enforced for `config.origin`, `config.basePath` and

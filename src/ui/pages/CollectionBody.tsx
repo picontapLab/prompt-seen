@@ -1,3 +1,6 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
+import { isAggregateIndexable } from '@/modules/seo/indexing';
+import { LanguageLinks } from '@/ui/navigation/LanguageLinks';
 import 'server-only';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -25,6 +28,7 @@ export function collectionMetadata(detail: CollectionDetail, locale: LocaleEntry
     title: detail.seo.title,
     description: detail.seo.description,
     alternates: detail.alternates,
+    noindex: !detail.localization.indexable,
   });
 }
 
@@ -37,7 +41,9 @@ export async function CollectionBody({ detail, locale }: { detail: CollectionDet
 
   return (
     <div className="container" data-page="collection" data-entry={detail.id} data-locale={locale.code}>
+      <LanguageLinks links={detail.languageLinks} />
       <PageHead
+        contentLocale={detail.localization.contentLocale}
         crumbs={crumbs}
         crumbLabel={t('breadcrumb.label')}
         eyebrow={`${t('collection.eyebrow')} · ${t('collection.count', { count: detail.items.length })}`}
@@ -45,7 +51,12 @@ export async function CollectionBody({ detail, locale }: { detail: CollectionDet
         lead={detail.description}
         media={<Cover image={detail.cover} priority sizes="(min-width: 1024px) 45vw, 100vw" />}
       />
-      <Article body={detail.body} toc={detail.toc} tocLabel={t('toc')} />
+      <Article
+        contentLocale={detail.localization.contentLocale}
+        body={detail.body}
+        toc={detail.toc}
+        tocLabel={t('toc')}
+      />
       <ol className={styles.items}>
         {detail.items.map((item, i) => {
           const entry = item.entry;
@@ -66,12 +77,19 @@ export async function CollectionBody({ detail, locale }: { detail: CollectionDet
                     <span>{t('collection.template')}</span>
                   )}
                 </p>
-                <h2 className={styles.itemTitle}>
+                <h2 {...languageAttributes(entry.localization.contentLocale)} className={styles.itemTitle}>
                   <Link href={entry.path} prefetch={false}>
                     {entry.title}
                   </Link>
                 </h2>
-                <p className={styles.itemReason}>{item.reason ?? entry.description}</p>
+                <p
+                  {...languageAttributes(
+                    item.reason ? detail.localization.contentLocale : entry.localization.contentLocale,
+                  )}
+                  className={styles.itemReason}
+                >
+                  {item.reason ?? entry.description}
+                </p>
                 <p>
                   <Link
                     href={entry.path}
@@ -108,6 +126,7 @@ export async function collectionPageStructuredData(detail: CollectionDetail, loc
     {
       path: detail.path,
       locale,
+      indexable: detail.localization.indexable,
       name: detail.title,
       description: detail.description,
       items: detail.items.map((i) => ({ path: i.entry.path, name: i.entry.title })),
@@ -127,9 +146,9 @@ export async function collectionIndexMetadata(locale: LocaleEntry) {
     title: t('documentTitle'),
     description: t('description'),
     alternates: builtLocales
-      .filter((l) => collectionsOf(l.code).length > 0)
+      .filter((l) => isAggregateIndexable(l, collectionsOf(l.code)))
       .map((l) => ({ locale: l.code, path: paths.collections(l.pathPrefix) })),
-    noindex: collectionsOf(locale.code).length === 0,
+    noindex: !isAggregateIndexable(locale, collectionsOf(locale.code)),
   });
 }
 
@@ -141,6 +160,7 @@ export async function collectionIndexStructuredData(locale: LocaleEntry) {
       locale,
       name: t('collections.title'),
       description: t('collections.description'),
+      indexable: isAggregateIndexable(locale, collectionsOf(locale.code)),
       items: collectionsOf(locale.code).map((c) => ({ path: c.path, name: c.title })),
     },
     collectionCrumbs(null, locale.pathPrefix, (key) => t(`breadcrumb.${key}`)),
@@ -170,9 +190,13 @@ export async function CollectionIndex({ locale }: { locale: LocaleEntry }) {
                 <span className={styles.itemNumber}>
                   {two(i + 1)} · {t('collection.count', { count: c.itemCount })}
                 </span>
-                <span className={styles.indexTitle}>{c.title}</span>
+                <span {...languageAttributes(c.localization.contentLocale)} className={styles.indexTitle}>
+                  {c.title}
+                </span>
               </Link>
-              <p className={styles.itemReason}>{c.description}</p>
+              <p {...languageAttributes(c.localization.contentLocale)} className={styles.itemReason}>
+                {c.description}
+              </p>
             </li>
           ))}
         </ul>

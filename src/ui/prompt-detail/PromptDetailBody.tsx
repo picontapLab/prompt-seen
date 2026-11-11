@@ -1,3 +1,5 @@
+import { LanguageLinks } from '@/ui/navigation/LanguageLinks';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { SlidersHorizontal } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
@@ -69,6 +71,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
         data-entry={detail.id}
         data-save-scope=""
       >
+        <LanguageLinks links={detail.languageLinks} />
         <div className={`${styles.top} ${styles.promptTop}`}>
           <div className={`${styles.info} ${styles.promptIntro}`}>
             <Breadcrumb
@@ -81,26 +84,37 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
                 <CircleMark />
               </span>
               {heading ? (
-                <h2 id={heading.id} className={styles.title}>
+                <h2 {...languageAttributes(detail.localization.contentLocale)} id={heading.id} className={styles.title}>
                   {detail.title}
                 </h2>
               ) : (
-                <h1 className={styles.title}>{detail.title}</h1>
+                <h1 {...languageAttributes(detail.localization.contentLocale)} className={styles.title}>
+                  {detail.title}
+                </h1>
               )}
-              <p className={styles.summary}>{detail.description}</p>
+              <p {...languageAttributes(detail.localization.contentLocale)} className={styles.summary}>
+                {detail.description}
+              </p>
               <TestInfo detail={detail} />
-              {detail.inputInstructions && <p className={styles.summary}>{detail.inputInstructions}</p>}
+              {detail.inputInstructions && (
+                <p {...languageAttributes(detail.inputInstructionsLocale)} className={styles.summary}>
+                  {detail.inputInstructions}
+                </p>
+              )}
             </header>
           </div>
           <RecordedShowcase
-            runs={detail.examples.map(({ id, outputs, references, referenceLabels, prompt, promptLanguage }) => ({
-              id,
-              outputs,
-              references,
-              referenceLabels,
-              prompt,
-              promptLanguage,
-            }))}
+            runs={detail.examples.map(
+              ({ id, outputs, references, referenceLabels, referenceLabelLocales, prompt, promptLanguage }) => ({
+                id,
+                outputs,
+                references,
+                referenceLabels,
+                referenceLabelLocales,
+                prompt,
+                promptLanguage,
+              }),
+            )}
             defaultId={detail.showcaseExampleId ?? undefined}
             cover={detail.cover}
             currentPrompt={detail.prompt.text}
@@ -161,7 +175,9 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
 
             <AnnotationNotes heading={t('annotations.heading')} promptLanguage={detail.prompt.language} />
 
-            {detail.body.length > 0 && <RichText blocks={detail.body} className={styles.body} />}
+            {detail.body.length > 0 && (
+              <RichText locale={detail.localization.contentLocale} blocks={detail.body} className={styles.body} />
+            )}
 
             <ExampleRuns
               runs={detail.examples}

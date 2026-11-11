@@ -68,6 +68,7 @@ describe('url module', () => {
           enabled: true,
           preview: false,
           phase: 1,
+          localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' },
         },
         {
           code: 'zh-Hans',
@@ -78,6 +79,7 @@ describe('url module', () => {
           enabled: true,
           preview: false,
           phase: 1,
+          localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' },
         },
       ],
       media: { baseUrl: null },

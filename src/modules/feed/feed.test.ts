@@ -49,6 +49,7 @@ function prompt(n: number, opts: Partial<PromptSummary> & { w?: number; h?: numb
     title: `T${n}`,
     description: '',
     visibility: 'published',
+    localization: { contentLocale: 'en', localStatus: 'current', presentation: 'local', indexable: true },
     createdAt: '2026-10-01',
     updatedAt: '2026-10-01',
     frameNumber: String(n).padStart(4, '0'),

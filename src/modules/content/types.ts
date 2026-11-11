@@ -10,6 +10,13 @@ export type EntryKind = 'prompt' | 'template' | 'collection' | 'page' | 'topic';
 export type TaxonomyKind = 'category' | 'style' | 'useCase';
 
 /** draft: visible only in preview builds; published: passes every publishing rule (§8.4). */
+export type LocalizationState = {
+  contentLocale: string;
+  localStatus: 'current' | 'missing' | 'draft' | 'unreviewed' | 'outdated';
+  presentation: 'local' | 'fallback' | 'draft';
+  indexable: boolean;
+};
+
 export type Visibility = 'published' | 'draft';
 export type ReviewStatus = 'source' | 'machine-draft' | 'reviewed' | 'outdated';
 
@@ -71,7 +78,9 @@ export type ImageRef = {
   placeholder: string;
   /** In the page's locale; empty only in preview builds of unpublished pages. */
   alt: string;
+  altLocale?: string | null;
   caption: string | null;
+  captionLocale?: string | null;
   variants: Partial<Record<ImageVariantName, ImageVariant>>;
   credit: ImageCredit;
   digitalSourceType: string;
@@ -88,7 +97,7 @@ export type TranslationInfo = {
   reviewStatus: ReviewStatus;
 };
 
-export type TermRef = { kind: TaxonomyKind; id: string; label: string; path: string | null };
+export type TermRef = { kind: TaxonomyKind; id: string; label: string; labelLocale?: string | null; path: string | null };
 
 export type ModelInfo = { displayName: string | null; providerModelId: string | null };
 
@@ -102,6 +111,7 @@ type Localized = {
   title: string;
   description: string;
   visibility: Visibility;
+  localization: LocalizationState;
   createdAt: string;
   updatedAt: string;
 };
@@ -160,6 +170,7 @@ export type Term = {
   kind: TaxonomyKind;
   id: string;
   label: string;
+  labelLocale?: string | null;
   /**
    * Other words that find this term in search (§13.2): its aliases in this locale, then its
    * labels and aliases in every other locale, so "poster" also finds 海报.
@@ -184,6 +195,7 @@ export type Annotation = {
   /** Relative to the original image: 0–1 (§5.2). */
   region: { x: number; y: number; w: number; h: number };
   note: string;
+  noteLocale?: string | null;
 };
 
 export type ExampleRunView = {
@@ -200,8 +212,10 @@ export type ExampleRunView = {
   parameters: { name: string; value: string | number | boolean | null }[];
   references: ImageRef[];
   referenceLabels?: string[];
+  referenceLabelLocales?: (string | null)[];
   outputs: ImageRef[];
   notes: string | null;
+  notesLocale?: string | null;
 };
 
 export type SourceInfo = { author: string | null; url: string | null; license: string | null };
@@ -223,6 +237,7 @@ export type PromptDetail = PromptSummary & {
   };
   examples: ExampleRunView[];
   inputInstructions?: string | null;
+  inputInstructionsLocale?: string | null;
   showcaseExampleId?: string | null;
   promptProvenance?: 'unknown' | 'original' | 'independent-adaptation' | 'source-prompt';
   inspirationSources?: InspirationSource[];
@@ -233,15 +248,20 @@ export type PromptDetail = PromptSummary & {
   similar: PromptSummary[];
   collections: CollectionSummary[];
   alternates: Alternate[];
+  languageLinks: (Alternate & { contentLocale: string })[];
   translation: TranslationInfo;
 };
 
 /** A template field with labels in the page's locale (§8.5, §11.8.4). */
 export type LocalizedField = FieldSpec & {
   label: string;
+  labelLocale?: string | null;
   help: string | null;
+  helpLocale?: string | null;
   groupLabel: string | null;
+  groupLabelLocale?: string | null;
   optionLabels: Record<string, string>;
+  optionLabelLocales?: Record<string, string | null>;
 };
 
 export type InspirationSource = {
@@ -253,18 +273,22 @@ export type InspirationSource = {
   metricObjectUrl: string;
   metricObjectPublishedAt: string | null;
   metricScope: string;
+  metricScopeLocale?: string | null;
   observedAt: string;
   cacheTimestampKnown: boolean;
   evidenceMethod: string;
+  evidenceMethodLocale?: string | null;
   evidenceUrl: string;
   sourcePromptStatus: string;
-  metrics: { key: string; value: number | null; label: string }[];
+  sourcePromptStatusLocale?: string | null;
+  metrics: { key: string; value: number | null; label: string; labelLocale?: string | null }[];
 };
 
 export type TemplateSample = { name: string; values: FieldValues; exampleIds?: string[] };
 
 export type TemplateDetail = TemplateSummary & {
   inputInstructions?: string | null;
+  inputInstructionsLocale?: string | null;
   seo: SeoText;
   body: RichBlock[];
   toc: TocItem[];
@@ -282,6 +306,7 @@ export type TemplateDetail = TemplateSummary & {
   relatedPrompts: PromptSummary[];
   taxonomy: { category: TermRef | null; styles: TermRef[]; useCases: TermRef[] };
   alternates: Alternate[];
+  languageLinks: (Alternate & { contentLocale: string })[];
   translation: TranslationInfo;
 };
 
@@ -296,6 +321,7 @@ export type CollectionDetail = CollectionSummary & {
   /** In editorial order; entries not visible in this locale are left out. */
   items: CollectionItem[];
   alternates: Alternate[];
+  languageLinks: (Alternate & { contentLocale: string })[];
   translation: TranslationInfo;
 };
 
@@ -305,6 +331,7 @@ export type TopicDetail = TopicSummary & {
   toc: TocItem[];
   prompts: PromptSummary[];
   alternates: Alternate[];
+  languageLinks: (Alternate & { contentLocale: string })[];
   translation: TranslationInfo;
 };
 
@@ -313,6 +340,7 @@ export type PageDetail = PageSummary & {
   body: RichBlock[];
   toc: TocItem[];
   alternates: Alternate[];
+  languageLinks: (Alternate & { contentLocale: string })[];
   translation: TranslationInfo;
 };
 

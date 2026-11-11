@@ -17,6 +17,7 @@ const card = (over: Partial<FeedCard> = {}): FeedCard => ({
   slug: 'jazz-club-poster',
   path: '/en/prompts/jazz-club-poster/',
   title: 'Jazz club poster',
+  localization: { contentLocale: 'en', localStatus: 'current', presentation: 'local', indexable: true },
   frameNumber: '0045',
   cover: slimImage(jazzCover),
   ratio: '3:4',

@@ -1,4 +1,5 @@
 'use client';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 
 import { ArrowUpRight, RotateCw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -95,6 +96,7 @@ export function ImageStage({
               width={props.width}
               height={props.height}
               alt={props.alt}
+              lang={props.lang}
               className={styles.image}
               fetchPriority={priority && index === 0 ? 'high' : 'auto'}
               decoding={index === 0 ? undefined : 'async'}
@@ -125,7 +127,11 @@ export function ImageStage({
       </FilmStrip>
 
       <div className={styles.captionRow}>
-        {image.caption && <span className={styles.caption}>{image.caption}</span>}
+        {image.caption && (
+          <span {...languageAttributes(image.captionLocale)} className={styles.caption}>
+            {image.caption}
+          </span>
+        )}
         <span className={styles.meta}>
           <GifBadge image={image} />
           <span className="tabular">{t('dimensions', { width: image.width, height: image.height })}</span>

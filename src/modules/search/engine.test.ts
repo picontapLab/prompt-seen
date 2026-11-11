@@ -9,6 +9,7 @@ import { createSearchCore } from './worker-core';
 const doc = (id: string, fields: Partial<SearchDocument>): SearchDocument => ({
   id,
   kind: 'prompt',
+  contentLocale: 'en',
   title: '',
   description: '',
   path: `/en/prompts/${id}/`,
@@ -23,6 +24,8 @@ const doc = (id: string, fields: Partial<SearchDocument>): SearchDocument => ({
 
 function engineOf(locale: string, docs: SearchDocument[], extra: Partial<SearchIndexFile> = {}): Engine {
   const file: SearchIndexFile = {
+    schemaVersion: 2,
+    analyzerVersion: 2,
     buildId: 'b1',
     locale,
     counts: { prompt: docs.length, template: 0, collection: 0, topic: 0 },
@@ -50,6 +53,27 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('retains the actual language of each taxonomy label through the serialized index', () => {
+    const engine = engineOf('de', [
+      doc('mixed', {
+        title: 'Poster',
+        tags: ['Tusche', 'Editorial'],
+        tagLocales: ['de', 'en'],
+      }),
+    ]);
+    expect(search(engine, 'Poster').groups[0]!.hits[0]).toMatchObject({
+      tags: ['Tusche', 'Editorial'],
+      tagLocales: ['de', 'en'],
+    });
+  });
+  it('finds maintained German compounds and ranks the original word above an alias', () => {
+    const engine = engineOf('de', [
+      doc('compound', { title: 'Produktfotografie' }),
+      doc('literal', { title: 'Fotografie' }),
+    ]);
+    expect(ids('Fotografie', engine)).toEqual(['literal', 'compound']);
+    expect(ids('Produktfoto', engine)).toContain('compound');
+  });
   it('ranks title matches above prompt text', () => {
     expect(ids('neon')).toEqual(['neon-title', 'neon-body']);
   });
@@ -129,6 +153,8 @@ describe('no results (§11.8.6)', () => {
 
 describe('worker requests (§11.6.4, §13.3)', () => {
   const file = (buildId: string): SearchIndexFile => ({
+    schemaVersion: 2,
+    analyzerVersion: 2,
     buildId,
     locale: 'en',
     counts: { prompt: 1, template: 0, collection: 0, topic: 0 },
@@ -165,6 +191,16 @@ describe('worker requests (§11.6.4, §13.3)', () => {
     });
     expect((await handle({ type: 'load', seq: 1, buildId: 'b1', source })).type).toBe('error');
     expect((await handle({ type: 'load', seq: 2, buildId: 'b1', source })).type).toBe('loaded');
+  });
+
+  it('rejects incompatible analyzer and schema versions before loading an index', async () => {
+    for (const extra of [{ analyzerVersion: -1 }, { schemaVersion: -1 }]) {
+      const handle = createSearchCore(async () => ({ ...file('b1'), ...extra }));
+      expect(await handle({ type: 'load', seq: 1, buildId: 'b1', source })).toMatchObject({
+        type: 'error',
+        error: 'stale',
+      });
+    }
   });
 
   it('leaves out other languages that fail to load', async () => {

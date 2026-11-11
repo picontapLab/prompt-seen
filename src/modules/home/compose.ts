@@ -43,6 +43,7 @@ export type HomeInput = {
 export type HomeUseCase = {
   id: string;
   label: string;
+  labelLocale?: string | null;
   count: number;
   /** Its topic page when published (§9.1), else the list filtered by it. */
   href: string;
@@ -164,6 +165,7 @@ export function composeHome(input: HomeInput): HomeModel {
         {
           id: term.id,
           label: term.label,
+          labelLocale: term.labelLocale,
           count: term.count,
           href: term.path ?? input.useCaseList(term.id),
           work,

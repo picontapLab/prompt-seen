@@ -20,13 +20,14 @@ export default defineEmitter({
       defaultLocale: config.defaultLocale,
       // `enabled`: public; a built locale that is not is a preview-only draft (§8.2), which gets no
       // sitemap, Markdown versions or llms.txt lines (§9.10.4).
-      locales: locales.map(({ code, pathPrefix, nativeName, htmlLang, direction, enabled }) => ({
+      locales: locales.map(({ code, pathPrefix, nativeName, htmlLang, direction, enabled, localization }) => ({
         code,
         pathPrefix,
         nativeName,
         htmlLang,
         direction,
         enabled,
+        localization,
       })),
     };
     write('public', 'build.json', `${JSON.stringify(info, null, 2)}\n`);

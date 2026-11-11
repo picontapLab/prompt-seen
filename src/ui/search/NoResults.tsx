@@ -1,5 +1,7 @@
 'use client';
 
+import { languageAttributes } from '@/ui/prompt-detail/language';
+
 import { useLocale, useTranslations } from 'next-intl';
 import { localeByCode, type LocaleEntry } from '@/config';
 import type { NoResultHelp } from '@/modules/search/types';
@@ -58,7 +60,9 @@ export function NoResults({
           {help.terms.map((term) => (
             <li key={term.label}>
               <button type="button" className={styles.suggestion} onClick={() => onQuery(term.label)}>
-                {t('suggestion', { label: term.label, count: term.total })}
+                <span {...languageAttributes(term.labelLocale)}>
+                  {t('suggestion', { label: term.label, count: term.total })}
+                </span>
               </button>
             </li>
           ))}

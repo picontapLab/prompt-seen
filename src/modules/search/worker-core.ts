@@ -1,5 +1,6 @@
 import { loadEngine, noResultHelp, search, type Engine } from './engine';
 import type { IndexSource, SearchIndexFile, WorkerRequest, WorkerResponse } from './types';
+import { SEARCH_SCHEMA_VERSION, SEARCH_ANALYZER_VERSION } from './types';
 
 // What the search Worker does with a request (design doc §13.3), without the Worker itself, so
 // the same code answers on the main thread when Workers are unavailable, and in unit tests.
@@ -28,16 +29,23 @@ export function createSearchCore(fetchJson: FetchJson = defaultFetchJson) {
   const engines = new Map<string, Promise<Engine>>();
 
   function engine(source: IndexSource, buildId: string): Promise<Engine> {
-    let pending = engines.get(source.url);
+    const cacheKey = `${buildId}:${source.locale}:${source.url}`;
+    let pending = engines.get(cacheKey);
     if (!pending) {
       pending = fetchJson(source.url).then((data) => {
         const file = data as SearchIndexFile;
         // An index from another deployment would not match this page's addresses (§13.3).
-        if (file.buildId !== buildId) throw new SearchError('stale');
+        if (
+          file.buildId !== buildId ||
+          file.locale !== source.locale ||
+          file.schemaVersion !== SEARCH_SCHEMA_VERSION ||
+          file.analyzerVersion !== SEARCH_ANALYZER_VERSION
+        )
+          throw new SearchError('stale');
         return loadEngine(file);
       });
-      pending.catch(() => engines.delete(source.url));
-      engines.set(source.url, pending);
+      pending.catch(() => engines.delete(cacheKey));
+      engines.set(cacheKey, pending);
     }
     return pending;
   }

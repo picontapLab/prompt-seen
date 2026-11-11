@@ -12,7 +12,7 @@ import { applyChanges, type Change } from '../media-generation/transaction';
 import { within, atomicWrite } from '../media-generation/files';
 import { splitFrontmatter } from '../content/mdx';
 import { checkLocale, type LocaleReport } from './check';
-import { fingerprint, proseFingerprint } from './fingerprint';
+import { fingerprint, proseFingerprint, entityFingerprint } from './fingerprint';
 
 const fieldPath = z.array(z.union([z.string().min(1), z.number().int().nonnegative()])).min(1);
 const hash = z.string().regex(/^sha256:[a-f0-9]{16}(?:[a-f0-9]{48})?$/);
@@ -29,7 +29,7 @@ const pageText = z
 export const batchSchema = z
   .object({
     schemaVersion: z.literal(1),
-    locale: z.literal('ja'),
+    locale: z.string().min(1),
     operations: z
       .array(
         z
@@ -39,6 +39,7 @@ export const batchSchema = z
             targetField: fieldPath,
             expectedSourceHash: hash,
             expectedTargetHash: hash.nullable(),
+            expectedIdentity: hash.optional(),
             translation: z.union([z.string().trim().min(1), z.array(z.string().trim().min(1)).min(1), pageText]),
           })
           .strict(),
@@ -48,12 +49,75 @@ export const batchSchema = z
   .strict();
 export type TranslationBatch = z.infer<typeof batchSchema>;
 export type ImportPlan = {
+  batchId?: string;
   changes: Change[];
   conflicts: string[];
   pendingReview: boolean;
   fields: { file: string; field: (string | number)[] }[];
 };
 const samePath = (a: (string | number)[], b: (string | number)[]) => JSON.stringify(a) === JSON.stringify(b);
+
+export type BatchManifest = {
+  schemaVersion: 1;
+  locale: string;
+  batchId: string;
+  mode: 'pending' | 'applied-draft';
+  batch: TranslationBatch;
+  operations: {
+    key: string;
+    file: string;
+    identity: string;
+    sourceHash: string;
+    beforeHash: string | null;
+    candidateHash: string;
+    expectedTargetHash: string | null;
+    lifecycle: string | null;
+    candidateLifecycle: string | null;
+  }[];
+};
+
+export function lifecycle(text: string | null): string {
+  const split = text && splitFrontmatter(text);
+  const fm = split ? YAML.parse(split.frontmatter) : null;
+  return fingerprint(fm ? { status: fm.status, translation: fm.translation ?? null, updatedAt: fm.updatedAt } : null);
+}
+
+/** Stable owners of array paths, independent of the prose at the selected numeric index. */
+export function fieldIdentity(root: string, file: string, parts: (string | number)[]): string {
+  return entityFingerprint(file, YAML.parse(fs.readFileSync(within(root, file), 'utf8')), parts);
+}
+
+function manifestOf(root: string, batch: TranslationBatch, report: LocaleReport, result: ImportPlan): BatchManifest {
+  const batchId = fingerprint(batch).slice(7);
+  return {
+    schemaVersion: 1,
+    locale: batch.locale,
+    batchId,
+    mode: result.pendingReview ? 'pending' : 'applied-draft',
+    batch,
+    operations: batch.operations.map((op) => {
+      const item = report.items.find((item) => item.key === op.key);
+      const field = report.fields.find((field) => field.key === op.key);
+      const file = item?.targetFile ?? field!.file;
+      const before = fs.existsSync(within(root, file)) ? fs.readFileSync(within(root, file), 'utf8') : null;
+      const after = result.changes.find((change) => change.file === file)?.after ?? before;
+      const candidateHash = item
+        ? proseFingerprint(pageText.parse(op.translation))
+        : fingerprint({ field: op.targetField, value: op.translation });
+      return {
+        key: op.key,
+        file,
+        identity: item ? item.key : fieldIdentity(root, file, op.targetField),
+        sourceHash: op.expectedSourceHash,
+        beforeHash: item?.targetHash ?? field?.targetHash ?? null,
+        candidateHash,
+        expectedTargetHash: result.pendingReview ? (item?.targetHash ?? field?.targetHash ?? null) : candidateHash,
+        lifecycle: item ? lifecycle(result.pendingReview ? before : after) : null,
+        candidateLifecycle: item ? lifecycle(after) : null,
+      };
+    }),
+  };
+}
 
 function plan(root: string, batch: TranslationBatch, report: LocaleReport): ImportPlan {
   const changes = new Map<string, string>();
@@ -70,6 +134,7 @@ function plan(root: string, batch: TranslationBatch, report: LocaleReport): Impo
       used.add(identity);
       const item = report.items.find((i) => i.key === op.key);
       if (item) {
+        if (item.sourceLocale === batch.locale) throw new Error('Translation import cannot edit its own source page');
         if (!samePath(op.sourceField, ['$page']) || !samePath(op.targetField, ['$page']))
           throw new Error('Page translations must address $page');
         const translated = pageText.parse(op.translation);
@@ -105,6 +170,9 @@ function plan(root: string, batch: TranslationBatch, report: LocaleReport): Impo
       const field = report.fields.find((f) => f.key === op.key);
       if (!field || !field.file.startsWith('content/') || !field.file.endsWith('.yaml'))
         throw new Error('Target is not an allowed content dependency');
+      if (field.sourceLocale === batch.locale) throw new Error('Translation import cannot edit its own source field');
+      if (field.targetField.some((part) => typeof part === 'number') && op.expectedIdentity !== field.identity)
+        throw new Error('Stable entity identity changed or is absent; prepare a new plan from the current report');
       if (
         !samePath(op.sourceField, field.sourceField) ||
         !samePath(op.targetField, field.targetField) ||
@@ -132,16 +200,49 @@ function plan(root: string, batch: TranslationBatch, report: LocaleReport): Impo
 }
 
 /** Dry-run is read-only; apply re-reads under the shared content writer lock. */
-export async function importTranslations(root: string, input: unknown, apply = false): Promise<ImportPlan> {
+export async function importTranslations(
+  root: string,
+  input: unknown,
+  apply = false,
+  options: { migrateLegacy?: boolean } = {},
+): Promise<ImportPlan> {
   const batch = batchSchema.parse(input);
+  if (!loadConfig(root).locales.some((locale) => locale.code === batch.locale))
+    throw new Error(`Unknown locale: ${batch.locale}`);
+  if (contentDir(root) !== path.join(path.resolve(root), 'content'))
+    throw new Error('Imports require the repository content directory');
   if (!apply) return plan(root, batch, checkLocale(root, batch.locale));
   const release = acquireContentLock(root);
   let staging: string | undefined;
   try {
     const report = checkLocale(root, batch.locale);
-    if (report.blocking) throw new Error('Fix existing content errors before importing');
+    if (report.findings.some((finding) => finding.code === 'content.invalid'))
+      throw new Error('Fix existing content errors before importing');
     const result = plan(root, batch, report);
-    if (result.conflicts.length || !result.changes.length) return result;
+    if (result.conflicts.length) return result;
+    const batchId = fingerprint(batch).slice(7);
+    if (
+      !result.changes.length &&
+      fs.existsSync(within(root, `.artifacts/localization/${batch.locale}/pending/${batchId}/manifest.json`))
+    )
+      return { ...result, batchId };
+    const manifest = manifestOf(root, batch, report, result);
+    result.batchId = manifest.batchId;
+    const manifestChange: Change = {
+      file: `.artifacts/localization/${batch.locale}/pending/${manifest.batchId}/manifest.json`,
+      after: JSON.stringify(manifest, null, 2) + '\n',
+    };
+    if (
+      fs.existsSync(within(root, manifestChange.file)) &&
+      fs.readFileSync(within(root, manifestChange.file), 'utf8') !== manifestChange.after
+    )
+      throw new Error('Pending manifest conflict; prepare a new batch without overwriting the candidate');
+    if (
+      fs.existsSync(path.dirname(within(root, manifestChange.file))) &&
+      !fs.existsSync(within(root, manifestChange.file)) &&
+      !options.migrateLegacy
+    )
+      throw new Error('Legacy pending candidate requires explicit --migrate; its content must match a fresh plan');
     const artifactRoot = within(root, `.artifacts/localization/${batch.locale}`);
     staging = path.join(artifactRoot, `validate-${randomUUID()}`);
     const config = loadConfig(root);
@@ -154,7 +255,7 @@ export async function importTranslations(root: string, input: unknown, apply = f
       const findings = new Findings(root);
       const content = readContent(contentPath, config.locales, findings);
       // A pending batch is a preparation tree, not a publication. Check all structure and
-      // references, but defer Japanese publication rules until separate reviewed promotion.
+      // references, but defer target-language publication rules until separate reviewed promotion.
       // Current public content was validated above; other languages keep their normal rules.
       if (pending) {
         for (const records of [content.prompts, content.templates, content.collections, content.pages, content.topics])
@@ -179,9 +280,11 @@ export async function importTranslations(root: string, input: unknown, apply = f
       // explicit plan; promotion is a separate reviewed content change, never a status override.
       const pending = path.join(artifactRoot, 'pending', fingerprint(batch).slice(7));
       const candidates = [
-        ...result.changes.map((change) => ({
-          file: path.relative(root, within(pending, change.file)),
-          after: change.after,
+        manifestChange,
+        ...[...new Set(manifest.operations.map((operation) => operation.file))].map((file) => ({
+          file: path.relative(root, within(pending, file)),
+          after:
+            result.changes.find((change) => change.file === file)?.after ?? fs.readFileSync(within(root, file), 'utf8'),
         })),
         { file: path.relative(root, path.join(pending, 'batch.json')), after: JSON.stringify(batch, null, 2) + '\n' },
       ];
@@ -205,7 +308,7 @@ export async function importTranslations(root: string, input: unknown, apply = f
       return result;
     }
     const journal = path.join(artifactRoot, 'transactions', `${randomUUID()}.json`);
-    await applyChanges(root, journal, result.changes, () => validate(dir));
+    await applyChanges(root, journal, [...result.changes, manifestChange], () => validate(dir));
     return result;
   } finally {
     if (staging) fs.rmSync(staging, { recursive: true, force: true });

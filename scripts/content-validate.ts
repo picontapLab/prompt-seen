@@ -6,7 +6,6 @@
 //   npm run content:validate -- --quiet  without info-level maintenance hints
 import { ConfigError, loadConfig } from '../src/config/load';
 import { validateBuildMessages } from './lib/localization/messages';
-import { validateEnabledLocale } from './lib/localization/check';
 import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { Findings, printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
@@ -17,7 +16,6 @@ const findings = new Findings(ROOT);
 try {
   const config = loadConfig(ROOT);
   validateBuildMessages(ROOT, config, findings);
-  validateEnabledLocale(ROOT, findings);
 
   // Content (step 1b). Findings do not depend on the build mode; what each build shows does.
   const url = createUrlModule(urlConfigOf(config));

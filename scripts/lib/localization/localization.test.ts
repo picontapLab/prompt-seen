@@ -1,3 +1,4 @@
+import { writeRequiredPages } from '../../../tests/support/localization-pages';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -6,6 +7,9 @@ import YAML from 'yaml';
 import { afterEach, expect, it, vi } from 'vitest';
 import { checkLocale } from './check';
 import { importTranslations } from './import';
+import { updateScope } from './scope';
+import { promoteTranslations } from './promote';
+import { fingerprint } from './fingerprint';
 import { templateContractHash } from '../content/template-contract';
 
 const roots: string[] = [];
@@ -32,6 +36,7 @@ function fixture() {
           direction: 'ltr',
           enabled: true,
           phase: 1,
+          localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' },
         },
         {
           code: 'ja',
@@ -42,6 +47,7 @@ function fixture() {
           enabled: false,
           preview: true,
           phase: 1,
+          localization: { coverage: 'complete', review: 'fingerprint', promptBodies: 'source-only' },
         },
       ],
     }),
@@ -55,6 +61,7 @@ function fixture() {
   );
   write(root, 'src/i18n/messages/en/common.json', JSON.stringify({ copy: 'Copy {name}' }));
   write(root, 'src/i18n/messages/ja/common.json', JSON.stringify({ copy: '{name}をコピー' }));
+  writeRequiredPages(root, ['en', 'ja'], ['license']);
   return root;
 }
 
@@ -62,12 +69,42 @@ it('reports the exact missing message field while retaining the disabled Japanes
   const root = fixture();
   write(root, 'src/i18n/messages/ja/common.json', '{}');
   const report = checkLocale(root, 'ja');
-  expect(report.items.map((item) => item.key)).toEqual(['page/about']);
+  expect(report.items.map((item) => item.key)).toEqual(['page/about', 'page/license']);
   expect(report.ready).toBe(false);
   expect(report.blocking).toBe(true);
   expect(report.findings).toContainEqual(
     expect.objectContaining({ code: 'content.invalid', file: 'src/i18n/messages/ja/common.json', field: 'copy' }),
   );
+});
+
+it('reports missing real files even when browsing can fall back, and retains candidate-only publications', () => {
+  const root = fixture();
+  const source = fs.readFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), 'utf8');
+  fs.rmSync(path.join(root, 'content/pages/license/locales/en.mdx'));
+  write(root, 'content/pages/license/locales/ja.mdx', source);
+  const report = checkLocale(root, 'ja');
+  expect(report.schemaVersion).toBe(2);
+  expect(report.items.map((item) => item.key)).toEqual(['page/about', 'page/license']);
+  expect(report.items.find((item) => item.key === 'page/about')).toMatchObject({ localStatus: 'missing' });
+  expect(report.findings).toContainEqual(
+    expect.objectContaining({ code: 'locale.page-missing', key: 'page/about', blockingForRelease: true }),
+  );
+  expect(report.counts.missing).toBe(1);
+});
+
+it('allows incremental missing library text without relaxing required pages or published reviews', async () => {
+  const root = fixture();
+  await publishedPage(root);
+  reviewCurrent(root);
+  const file = path.join(root, 'content/locales.yaml');
+  const registry = YAML.parse(fs.readFileSync(file, 'utf8'));
+  registry.locales[1].localization.coverage = 'incremental';
+  fs.writeFileSync(file, YAML.stringify(registry));
+  expect(checkLocale(root, 'ja').ready).toBe(true);
+  fs.appendFileSync(path.join(root, 'content/pages/about/locales/ja.mdx'), '\n未承認の変更。\n');
+  const report = checkLocale(root, 'ja');
+  expect(report.ready).toBe(false);
+  expect(report.blocking).toBe(true);
 });
 
 async function publishedPage(root: string) {
@@ -124,6 +161,135 @@ it('imports a missing page as a draft, is read-only by default, and retries with
   expect(item.reviewStatus).toBe('unreviewed');
   expect(fs.readFileSync(path.join(root, item.targetFile), 'utf8')).toContain('reviewStatus: machine-draft');
   expect((await importTranslations(root, batch, true)).changes).toEqual([]);
+});
+
+it('imports any registered locale and rejects editing its own source through a translation batch', async () => {
+  const root = fixture();
+  const registryFile = path.join(root, 'content/locales.yaml');
+  const registry = YAML.parse(fs.readFileSync(registryFile, 'utf8'));
+  registry.locales.push({
+    ...registry.locales[1],
+    code: 'de',
+    pathPrefix: 'de',
+    nativeName: 'Deutsch',
+    htmlLang: 'de',
+    preview: false,
+  });
+  fs.writeFileSync(registryFile, YAML.stringify(registry));
+  const batch = { ...pageBatch(root), locale: 'de' };
+  expect((await importTranslations(root, batch, true)).conflicts).toEqual([]);
+  expect(checkLocale(root, 'de').items[0]).toMatchObject({ localStatus: 'draft' });
+  const source = checkLocale(root, 'en').items[0]!;
+  const sourceBatch = {
+    ...batch,
+    locale: 'en',
+    operations: [
+      { ...batch.operations[0], expectedSourceHash: source.sourceFingerprint, expectedTargetHash: source.targetHash },
+    ],
+  };
+  expect((await importTranslations(root, sourceBatch)).conflicts).toEqual([expect.stringMatching(/source/i)]);
+});
+
+it('promotes an applied draft with matching approval and retries without overwriting later edits', async () => {
+  const root = fixture();
+  const imported = await importTranslations(root, pageBatch(root), true);
+  expect(imported.batchId).toMatch(/^[a-f0-9]{64}$/);
+  const report = checkLocale(root, 'ja');
+  const item = report.items[0]!;
+  const reviews = {
+    schemaVersion: 1,
+    locale: 'ja',
+    records: [
+      {
+        key: item.key,
+        sourceHash: item.sourceFingerprint,
+        targetHash: item.targetHash,
+        reviewer: 'fixture',
+        completedAt: '2026-01-02T00:00:00Z',
+        conclusion: 'approved',
+      },
+    ],
+  };
+  await expect(promoteTranslations(root, 'ja', imported.batchId!, { ...reviews, records: [] }, true)).rejects.toThrow(
+    /approval/i,
+  );
+  expect((await promoteTranslations(root, 'ja', imported.batchId!, reviews)).changes.length).toBeGreaterThan(0);
+  expect(checkLocale(root, 'ja').items[0]!.declaredStatus).toBe('draft');
+  await promoteTranslations(root, 'ja', imported.batchId!, reviews, true);
+  expect(checkLocale(root, 'ja').items[0]).toMatchObject({ declaredStatus: 'published', localStatus: 'current' });
+  expect((await promoteTranslations(root, 'ja', imported.batchId!, reviews, true)).changes).toEqual([]);
+  fs.appendFileSync(path.join(root, item.targetFile), '\nNew editorial text.\n');
+  await expect(promoteTranslations(root, 'ja', imported.batchId!, reviews, true)).rejects.toThrow(/conflict/i);
+});
+
+it('promotes a page with real media dependencies and validates candidate edits on retry', async () => {
+  const root = fixture();
+  figure(root);
+  fs.appendFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), '\n<Figure asset="a_001" />\n');
+  await publishedPage(root);
+  reviewCurrent(root);
+  const batch = pageBatch(root);
+  batch.operations[0]!.translation.body += '\n\n<Figure asset="a_001" />';
+  const imported = await importTranslations(root, batch, true);
+  const manifest = JSON.parse(
+    fs.readFileSync(path.join(root, `.artifacts/localization/ja/pending/${imported.batchId}/manifest.json`), 'utf8'),
+  );
+  const operation = manifest.operations[0];
+  const records = [
+    {
+      key: operation.key,
+      sourceHash: operation.sourceHash,
+      targetHash: operation.candidateHash,
+      reviewer: 'fixture',
+      completedAt: '2026-01-03T00:00:00Z',
+      conclusion: 'approved',
+    },
+  ];
+  await promoteTranslations(root, 'ja', imported.batchId!, { schemaVersion: 1, locale: 'ja', records }, true);
+  expect(checkLocale(root, 'ja').items.find((item) => item.key === operation.key)?.localStatus).toBe('current');
+  fs.appendFileSync(
+    path.join(root, `.artifacts/localization/ja/pending/${imported.batchId}/${operation.file}`),
+    '\nChanged candidate.\n',
+  );
+  await expect(
+    promoteTranslations(root, 'ja', imported.batchId!, { schemaVersion: 1, locale: 'ja', records }, true),
+  ).rejects.toThrow(/candidate/i);
+});
+
+it('rejects candidate edits and concurrent archival when promoting pending page changes', async () => {
+  const root = fixture();
+  await publishedPage(root);
+  reviewCurrent(root);
+  const imported = await importTranslations(root, pageBatch(root), true);
+  const dir = `.artifacts/localization/ja/pending/${imported.batchId}`;
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, dir, 'manifest.json'), 'utf8'));
+  const op = manifest.operations[0];
+  const reviews = {
+    schemaVersion: 1,
+    locale: 'ja',
+    records: [
+      {
+        key: op.key,
+        sourceHash: op.sourceHash,
+        targetHash: op.candidateHash,
+        reviewer: 'fixture',
+        completedAt: '2026-01-03T00:00:00Z',
+        conclusion: 'approved',
+      },
+    ],
+  };
+  const candidateFile = path.join(root, dir, op.file);
+  const candidate = fs.readFileSync(candidateFile, 'utf8');
+  fs.appendFileSync(candidateFile, '\nReviewer edits.\n');
+  await expect(promoteTranslations(root, 'ja', imported.batchId!, reviews, true)).rejects.toThrow(/candidate/i);
+  fs.writeFileSync(candidateFile, candidate);
+  const target = path.join(root, op.file);
+  const before = fs.readFileSync(target, 'utf8').replace('status: published', 'status: archived');
+  fs.writeFileSync(target, before);
+  await expect(promoteTranslations(root, 'ja', imported.batchId!, reviews, true)).rejects.toThrow(
+    /lifecycle conflict/i,
+  );
+  expect(fs.readFileSync(target, 'utf8')).toBe(before);
 });
 
 it('rejects stale source and target fingerprints, duplicate operations and status overrides without writing a batch', async () => {
@@ -229,12 +395,13 @@ it('invalidates only changed prose or message reviews, including independent SEO
     fs.readFileSync(source, 'utf8').replace('status: published', 'seoTitle: About our library\nstatus: published'),
   );
   const seoChange = checkLocale(root, 'ja');
-  expect(seoChange.items[0]!.reviewStatus).toBe('unreviewed');
+  expect(seoChange.items[0]!.reviewStatus).toBe('outdated');
   expect(seoChange.findings).toContainEqual(expect.objectContaining({ code: 'locale.seo', field: 'seoTitle' }));
 });
 
 it('rolls back the entire import after a filesystem failure and can then retry successfully', async () => {
   const root = fixture();
+  fs.rmSync(path.join(root, 'content/pages/license/locales/ja.mdx'));
   write(
     root,
     'content/pages/license/locales/en.mdx',
@@ -311,8 +478,8 @@ it('stages shared text used by an outdated Japanese-only published page and pres
   write(root, 'content/pages/license/locales/en.mdx', fs.readFileSync(source, 'utf8'));
   fs.writeFileSync(source, fs.readFileSync(source, 'utf8').replace('status: published', 'status: draft'));
   const report = checkLocale(root, 'ja');
-  expect(report.blocking).toBe(false);
-  expect(report.items.map((i) => i.key)).toEqual(['page/license']);
+  expect(report.findings.filter((finding) => finding.code === 'content.invalid')).toEqual([]);
+  expect(report.items.map((i) => i.key)).toEqual(['page/about', 'page/license']);
   const field = report.fields.find((f) => f.key === 'content/media/a_001.yaml#caption')!;
   expect(field).toBeDefined();
   const batch = {
@@ -324,6 +491,7 @@ it('stages shared text used by an outdated Japanese-only published page and pres
         sourceField: field.sourceField,
         targetField: field.targetField,
         expectedSourceHash: field.sourceHash,
+        expectedIdentity: field.identity,
         expectedTargetHash: field.targetHash,
         translation: '使い方を確認します。',
       },
@@ -342,6 +510,46 @@ it.each(['', '{other}', '{name, plural, one {a}}'])('blocks empty or incompatibl
   expect(report.findings).toContainEqual(expect.objectContaining({ code: 'content.invalid', field: 'copy' }));
 });
 
+it('stages changes to enabled global filter labels even without a translated library consumer', async () => {
+  const root = fixture();
+  const registryFile = path.join(root, 'content/locales.yaml');
+  const registry = YAML.parse(fs.readFileSync(registryFile, 'utf8'));
+  registry.locales[1].enabled = true;
+  registry.locales[1].localization.coverage = 'incremental';
+  fs.writeFileSync(registryFile, YAML.stringify(registry));
+  write(
+    root,
+    'content/taxonomy/styles.yaml',
+    YAML.stringify([{ id: 'minimal', labels: { en: 'Minimal', ja: 'ミニマル' } }]),
+  );
+  const report = checkLocale(root, 'ja');
+  const field = report.fields.find((value) => value.key === 'content/taxonomy/styles.yaml#0.labels')!;
+  expect(field).toBeDefined();
+  const before = fs.readFileSync(path.join(root, field.file), 'utf8');
+  const result = await importTranslations(
+    root,
+    {
+      schemaVersion: 1,
+      locale: 'ja',
+      operations: [
+        {
+          key: field.key,
+          sourceField: field.sourceField,
+          targetField: field.targetField,
+          expectedSourceHash: field.sourceHash,
+          expectedTargetHash: field.targetHash,
+          expectedIdentity: field.identity,
+          translation: 'ミニマルな表現',
+        },
+      ],
+    },
+    true,
+  );
+  expect(result.pendingReview).toBe(true);
+  expect(result.conflicts).toEqual([]);
+  expect(fs.readFileSync(path.join(root, field.file), 'utf8')).toBe(before);
+});
+
 it('reports additions and unexplained removals instead of silently shrinking the launch scope', async () => {
   const root = fixture();
   await publishedPage(root);
@@ -351,12 +559,29 @@ it('reports additions and unexplained removals instead of silently shrinking the
     'content/pages/license/locales/en.mdx',
     fs.readFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), 'utf8'),
   );
-  expect(checkLocale(root, 'ja').changes.added).toEqual(['page/license']);
+  expect(checkLocale(root, 'ja').changes.changed).toContain('page/license');
   const source = path.join(root, 'content/pages/about/locales/en.mdx');
   fs.writeFileSync(source, fs.readFileSync(source, 'utf8').replace('status: published', 'status: draft'));
+  const target = path.join(root, 'content/pages/about/locales/ja.mdx');
+  fs.writeFileSync(target, fs.readFileSync(target, 'utf8').replace('status: published', 'status: draft'));
   const removed = checkLocale(root, 'ja');
   expect(removed.changes.removed).toEqual([{ key: 'page/about', reason: null }]);
   expect(removed.findings).toContainEqual(expect.objectContaining({ code: 'locale.scope-removal' }));
+});
+
+it('writes scope v2 only on apply and refuses to erase unpublished historical targets', async () => {
+  const root = fixture();
+  const file = path.join(root, 'production/localization/ja/scope.json');
+  await updateScope(root, 'ja');
+  expect(fs.existsSync(file)).toBe(false);
+  await updateScope(root, 'ja', true);
+  const before = fs.readFileSync(file, 'utf8');
+  expect(JSON.parse(before)).toMatchObject({ schemaVersion: 2, policyFingerprint: expect.stringMatching(/^sha256:/) });
+  const source = path.join(root, 'content/pages/about/locales/en.mdx');
+  fs.writeFileSync(source, fs.readFileSync(source, 'utf8').replace('status: published', 'status: draft'));
+  await expect(updateScope(root, 'ja', true)).rejects.toThrow(/removal/i);
+  expect(fs.readFileSync(file, 'utf8')).toBe(before);
+  expect(checkLocale(root, 'ja').items.map((item) => item.key)).toContain('page/about');
 });
 
 it('merges only the selected Japanese YAML field and ignores unrelated YAML key order in source fingerprints', async () => {
@@ -374,6 +599,7 @@ it('merges only the selected Japanese YAML field and ignores unrelated YAML key 
         sourceField: field.sourceField,
         targetField: field.targetField,
         expectedSourceHash: field.sourceHash,
+        expectedIdentity: field.identity,
         expectedTargetHash: field.targetHash,
         translation: '使い方を確認します。',
       },
@@ -403,6 +629,7 @@ it('follows a Chinese source rather than assuming English when importing a Japan
     direction: 'ltr',
     enabled: true,
     phase: 1,
+    localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' },
   });
   fs.writeFileSync(registryPath, YAML.stringify(registry));
   write(root, 'src/i18n/messages/zh-Hans/common.json', JSON.stringify({ copy: '复制{name}' }));
@@ -460,7 +687,12 @@ it('stages an edit to a published page without breaking incoming Japanese links 
 
 function referencePrompt(root: string) {
   fs.copyFileSync('content/locales.yaml', path.join(root, 'content/locales.yaml'));
-  for (const locale of ['zh-Hans', 'ar'])
+  for (const { code: locale } of YAML.parse(
+    fs.readFileSync(path.join(root, 'content/locales.yaml'), 'utf8'),
+  ).locales.filter(
+    (locale: { code: string; enabled: boolean; preview?: boolean }) =>
+      (locale.enabled || locale.preview) && !['en', 'ja'].includes(locale.code),
+  ))
     write(root, `src/i18n/messages/${locale}/common.json`, JSON.stringify({ copy: 'Copy {name}' }));
   for (const name of fs.readdirSync('content/taxonomy').filter((name) => name.endsWith('.yaml')))
     fs.copyFileSync(path.join('content/taxonomy', name), path.join(root, 'content/taxonomy', name));
@@ -501,7 +733,7 @@ it.each([
 ] as const)('blocks a real reference-image prompt when %s loses %s', (file, field, findingField) => {
   const root = fixture();
   referencePrompt(root);
-  expect(checkLocale(root, 'ja').blocking).toBe(false);
+  expect(checkLocale(root, 'ja').findings.filter((finding) => finding.code === 'content.invalid')).toEqual([]);
   const target = path.join(root, file);
   const doc = YAML.parseDocument(fs.readFileSync(target, 'utf8'));
   doc.deleteIn(field);
@@ -514,18 +746,30 @@ it.each([
 
 it('keeps CLI JSON parseable and distinguishes preparation gaps, strict failures and argument errors', () => {
   const root = fixture();
+  const registryFile = path.join(root, 'content/locales.yaml');
+  fs.writeFileSync(registryFile, fs.readFileSync(registryFile, 'utf8').replaceAll('ja', 'ar'));
+  fs.renameSync(
+    path.join(root, 'content/pages/license/locales/ja.mdx'),
+    path.join(root, 'content/pages/license/locales/ar.mdx'),
+  );
+  const license = path.join(root, 'content/pages/license/locales/ar.mdx');
+  fs.writeFileSync(license, fs.readFileSync(license, 'utf8').replace('status: published', 'status: draft'));
+  // CONTENT_DIR is read-only; use a locale without repository scope/review evidence.
   const invoke = (...args: string[]) =>
     spawnSync(process.execPath, ['--import', 'tsx', path.resolve('scripts/locale-check.ts'), ...args], {
       encoding: 'utf8',
       env: { ...process.env, CONTENT_DIR: path.join(root, 'content') },
     });
-  const ordinary = invoke('--locale', 'ja', '--json');
+  const ordinary = invoke('--locale', 'ar', '--json');
   expect(ordinary.status).toBe(0);
   expect(JSON.parse(ordinary.stdout).ready).toBe(false);
-  const strict = invoke('--locale', 'ja', '--strict', '--json');
+  const strict = invoke('--locale', 'ar', '--strict', '--json');
   expect(strict.status).toBe(1);
-  expect(JSON.parse(strict.stdout).items.map((i: { key: string }) => i.key)).toEqual(['page/about']);
+  expect(JSON.parse(strict.stdout).items.map((i: { key: string }) => i.key)).toEqual(['page/about', 'page/license']);
   expect(invoke('--locale', 'not-registered').status).toBe(2);
+  expect(invoke('--locale', 'ar', '--all').status).toBe(2);
+  const all = invoke('--all', '--json');
+  expect(JSON.parse(all.stdout)).toMatchObject({ schemaVersion: 2, reports: expect.any(Array) });
 });
 
 it('stops a normal build with missing buildable-locale messages before replacing generated artifacts', () => {
@@ -540,6 +784,7 @@ it('stops a normal build with missing buildable-locale messages before replacing
     direction: 'ltr',
     enabled: true,
     phase: 1,
+    localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' },
   });
   fs.writeFileSync(registryPath, YAML.stringify(registry));
   const marker = path.resolve(`public/generated/.locale-check-${process.pid}`);
@@ -561,7 +806,12 @@ it('stops a normal build with missing buildable-locale messages before replacing
 it('localizes labels without changing historical template contracts, while still rejecting semantic changes', async () => {
   const root = fixture();
   fs.copyFileSync('content/locales.yaml', path.join(root, 'content/locales.yaml'));
-  for (const locale of ['zh-Hans', 'ar'])
+  for (const { code: locale } of YAML.parse(
+    fs.readFileSync(path.join(root, 'content/locales.yaml'), 'utf8'),
+  ).locales.filter(
+    (locale: { code: string; enabled: boolean; preview?: boolean }) =>
+      (locale.enabled || locale.preview) && !['en', 'ja'].includes(locale.code),
+  ))
     write(root, `src/i18n/messages/${locale}/common.json`, JSON.stringify({ copy: 'Copy {name}' }));
   for (const name of fs.readdirSync('content/taxonomy').filter((name) => name.endsWith('.yaml')))
     fs.copyFileSync(path.join('content/taxonomy', name), path.join(root, 'content/taxonomy', name));
@@ -586,7 +836,7 @@ it('localizes labels without changing historical template contracts, while still
     }),
   );
   const report = checkLocale(root, 'ja');
-  expect(report.blocking).toBe(false);
+  expect(report.findings.filter((finding) => finding.code === 'content.invalid')).toEqual([]);
   const field = report.fields.find((f) => f.key === `${version}/fields.yaml#fields.0.labels`)!;
   const runBefore = fs.readFileSync(path.join(root, 'content/examples/x_146/run.yaml'), 'utf8');
   await importTranslations(
@@ -600,6 +850,7 @@ it('localizes labels without changing historical template contracts, while still
           sourceField: field.sourceField,
           targetField: field.targetField,
           expectedSourceHash: field.sourceHash,
+          expectedIdentity: field.identity,
           expectedTargetHash: field.targetHash,
           translation: '球内の風景',
         },
@@ -607,7 +858,7 @@ it('localizes labels without changing historical template contracts, while still
     },
     true,
   );
-  expect(checkLocale(root, 'ja').blocking).toBe(false);
+  expect(checkLocale(root, 'ja').findings.filter((finding) => finding.code === 'content.invalid')).toEqual([]);
   expect(fs.readFileSync(path.join(root, 'content/examples/x_146/run.yaml'), 'utf8')).toBe(runBefore);
   const changed = YAML.parse(fs.readFileSync(fieldsFile, 'utf8'));
   changed.fields[0].default = 'a new default landscape';
@@ -619,6 +870,7 @@ it('localizes labels without changing historical template contracts, while still
 
 it('stages a reviewed publication set with new draft link targets, but still rejects missing targets', async () => {
   const root = fixture();
+  fs.rmSync(path.join(root, 'content/pages/license/locales/ja.mdx'));
   await publishedPage(root);
   write(
     root,
@@ -648,4 +900,157 @@ it('stages a reviewed publication set with new draft link targets, but still rej
   expect(fs.existsSync(path.join(root, 'content/pages/license/locales/ja.mdx'))).toBe(false);
   batch.operations[0]!.translation.body = '## 案内\n\n[リンク](page:missing)';
   await expect(importTranslations(root, batch, true)).rejects.toThrow('does not exist');
+});
+
+it('promotes mixed pending page, array and unchanged operations, respecting later rejection', async () => {
+  const root = fixture();
+  await publishedPage(root);
+  write(
+    root,
+    'content/taxonomy/categories.yaml',
+    YAML.stringify([
+      { id: 'product', labels: { en: 'Product', ja: '製品' }, aliases: { en: ['Product photo'], ja: ['製品写真'] } },
+    ]),
+  );
+  reviewCurrent(root);
+  const report = checkLocale(root, 'ja');
+  const field = report.fields.find((field) => field.key.endsWith('#0.aliases'))!;
+  const unchanged = report.fields.find((field) => field.key.endsWith('#0.labels'))!;
+  const batch = {
+    ...pageBatch(root),
+    operations: [
+      ...pageBatch(root).operations,
+      ...[field, unchanged].map((field, i) => ({
+        key: field.key,
+        sourceField: field.sourceField,
+        targetField: field.targetField,
+        expectedIdentity: field.identity,
+        expectedSourceHash: field.sourceHash,
+        expectedTargetHash: field.targetHash,
+        translation: i === 0 ? ['商品写真', '製品写真'] : field.target,
+      })),
+    ],
+  };
+  const imported = await importTranslations(root, batch, true);
+  expect(imported.pendingReview).toBe(true);
+  const manifest = JSON.parse(
+    fs.readFileSync(path.join(root, `.artifacts/localization/ja/pending/${imported.batchId}/manifest.json`), 'utf8'),
+  );
+  const records = manifest.operations.map((operation: { key: string; sourceHash: string; candidateHash: string }) => ({
+    key: operation.key,
+    sourceHash: operation.sourceHash,
+    targetHash: operation.candidateHash,
+    reviewer: 'fixture',
+    completedAt: '2026-01-03T00:00:00Z',
+    conclusion: 'approved',
+  }));
+  const reviewFile = path.join(root, 'production/localization/ja/reviews.json');
+  const stored = JSON.parse(fs.readFileSync(reviewFile, 'utf8'));
+  const accepted = stored.records;
+  stored.records = [
+    ...accepted,
+    {
+      ...records.find((record: { key: string }) => record.key === field.key),
+      completedAt: '2026-01-04T00:00:00Z',
+      conclusion: 'changes-requested',
+    },
+  ];
+  fs.writeFileSync(reviewFile, JSON.stringify(stored));
+  await expect(
+    promoteTranslations(root, 'ja', imported.batchId!, { schemaVersion: 1, locale: 'ja', records }, true),
+  ).rejects.toThrow(/approval/i);
+  stored.records = accepted;
+  fs.writeFileSync(reviewFile, JSON.stringify(stored));
+  await promoteTranslations(root, 'ja', imported.batchId!, { schemaVersion: 1, locale: 'ja', records }, true);
+  expect(YAML.parse(fs.readFileSync(path.join(root, field.file), 'utf8'))[0].aliases.ja).toEqual([
+    '商品写真',
+    '製品写真',
+  ]);
+  expect(
+    (await promoteTranslations(root, 'ja', imported.batchId!, { schemaVersion: 1, locale: 'ja', records }, true))
+      .changes,
+  ).toEqual([]);
+});
+
+it('retains deleted scope targets until a matching removal manifest supplies evidence', async () => {
+  const root = fixture();
+  await publishedPage(root);
+  reviewCurrent(root);
+  // An extra page can be formally removed; required About and License cannot.
+  const about = fs.readFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), 'utf8');
+  write(root, 'content/pages/retired/locales/en.mdx', about);
+  await updateScope(root, 'ja', true);
+  fs.rmSync(path.join(root, 'content/pages/retired'), { recursive: true });
+  const scopeFile = path.join(root, 'production/localization/ja/scope.json');
+  const scope = JSON.parse(fs.readFileSync(scopeFile, 'utf8'));
+  const evidenceFile = 'production/localization/ja/removals.json';
+  const evidence = JSON.stringify({
+    schemaVersion: 1,
+    removals: [{ key: 'page/retired', reason: 'Retired editorial page' }],
+  });
+  write(root, evidenceFile, evidence);
+  scope.removals = [
+    {
+      key: 'page/retired',
+      reason: 'Retired editorial page',
+      evidence: { file: evidenceFile, key: 'page/retired', fingerprint: fingerprint('forged') },
+    },
+  ];
+  fs.writeFileSync(scopeFile, JSON.stringify(scope));
+  await expect(updateScope(root, 'ja', true)).rejects.toThrow(/removal/i);
+  expect(checkLocale(root, 'ja').items.find((item) => item.key === 'page/retired')?.localStatus).toBe('invalid');
+  scope.removals[0].evidence.fingerprint = fingerprint(evidence);
+  fs.writeFileSync(scopeFile, JSON.stringify(scope));
+  await updateScope(root, 'ja', true);
+  expect(checkLocale(root, 'ja').items.some((item) => item.key === 'page/retired')).toBe(false);
+});
+
+it('keeps an approved incremental translation browsable when only a shared source field changes', async () => {
+  const root = fixture();
+  figure(root);
+  fs.appendFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), '\n<Figure asset="a_001" />\n');
+  await publishedPage(root);
+  reviewCurrent(root);
+  const file = path.join(root, 'content/locales.yaml');
+  const registry = YAML.parse(fs.readFileSync(file, 'utf8'));
+  registry.locales[1].localization.coverage = 'incremental';
+  fs.writeFileSync(file, YAML.stringify(registry));
+  const mediaFile = path.join(root, 'content/media/a_001.yaml');
+  const media = YAML.parseDocument(fs.readFileSync(mediaFile, 'utf8'));
+  media.setIn(['caption', 'en'], 'Updated caption describing the same source image.');
+  fs.writeFileSync(mediaFile, media.toString());
+  const report = checkLocale(root, 'ja');
+  expect(report.items.find((item) => item.key === 'page/about')).toMatchObject({
+    localStatus: 'outdated',
+    presentation: 'local',
+    indexable: false,
+  });
+  expect(report.ready).toBe(true);
+  fs.appendFileSync(path.join(root, 'content/pages/about/locales/en.mdx'), '\nSource prose changed too.\n');
+  media.setIn(['caption', 'ja'], '未承認の新しい説明。');
+  fs.writeFileSync(mediaFile, media.toString());
+  expect(checkLocale(root, 'ja').items.find((item) => item.key === 'page/about')?.localStatus).toBe('unreviewed');
+});
+
+it('explicitly migrates an unchanged legacy pending candidate without replacing its content', async () => {
+  const root = fixture();
+  await publishedPage(root);
+  const batch = pageBatch(root);
+  const first = await importTranslations(root, batch, true);
+  fs.rmSync(path.join(root, `.artifacts/localization/ja/pending/${first.batchId}/manifest.json`));
+  await expect(importTranslations(root, batch, true)).rejects.toThrow(/migrat/i);
+  expect((await importTranslations(root, batch, true, { migrateLegacy: true })).batchId).toBe(first.batchId);
+});
+
+it('retains required editorial pages as targets even when every version is drafted', () => {
+  const root = fixture();
+  for (const slug of ['about', 'license'])
+    for (const locale of ['en', 'ja']) {
+      const file = path.join(root, `content/pages/${slug}/locales/${locale}.mdx`);
+      if (fs.existsSync(file))
+        fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replace('status: published', 'status: draft'));
+    }
+  const report = checkLocale(root, 'ja');
+  expect(report.items.map((item) => item.key)).toEqual(['page/about', 'page/license']);
+  expect(report.ready).toBe(false);
 });

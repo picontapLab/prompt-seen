@@ -43,6 +43,7 @@ const prompt =
   'Bauhaus-style jazz club poster on a deep navy background: a large mustard sun disc in the upper right, a thin teal arc sweeping behind it, a red half circle resting on the left, a grid of small grey dots in the lower right, two cream title bars at the bottom left, flat colours with fine paper grain, 3:4 aspect ratio.';
 
 export const jazzShowcase: Showcase = {
+  localization: { contentLocale: 'en', localStatus: 'current', presentation: 'local', indexable: true },
   id: 'p_045',
   path: '/en/prompts/jazz-club-poster/',
   title: 'Jazz club poster',

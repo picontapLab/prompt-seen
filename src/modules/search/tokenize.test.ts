@@ -4,6 +4,25 @@ import { normalizeTerm, queryTerms, spans, tokenize } from './tokenize';
 // Tokenisation (design doc §13.2): one implementation for the index and the query.
 
 describe('words in alphabetic scripts', () => {
+  it('unifies German spelling variants while retaining whole original UTF-16 spans', () => {
+    expect(['Straße', 'Strasse', 'STRASSE'].map((text) => normalizeTerm(text, 'de'))).toEqual([
+      'strasse',
+      'strasse',
+      'strasse',
+    ]);
+    expect(['Größe', 'Groesse', 'Grosse'].map((text) => normalizeTerm(text, 'de'))).toEqual([
+      'grosse',
+      'grosse',
+      'grosse',
+    ]);
+    expect(['Porträt', 'Portraet', 'Portrat', 'Portra\u0308t'].map((text) => normalizeTerm(text, 'de'))).toEqual([
+      'portrat',
+      'portrat',
+      'portrat',
+      'portrat',
+    ]);
+    expect(spans('🖼 Straße!', 'de')).toEqual([{ term: 'strasse', start: 3, end: 9 }]);
+  });
   it('folds case and accents, and splits on punctuation', () => {
     expect(tokenize('Café NOIR, gpt-image-2', 'en')).toEqual(['cafe', 'noir', 'gpt', 'image', '2']);
     expect(tokenize('Kühlschrank-Poster', 'de')).toEqual(['kuhlschrank', 'poster']);

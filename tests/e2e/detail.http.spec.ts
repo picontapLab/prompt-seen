@@ -16,7 +16,6 @@ import {
 // §17.3 step 2): the full content and every address are in the HTML before any JavaScript, and
 // addresses are absolute on the canonical host with the base path.
 
-const isPreview = BUILD.buildMode === 'preview';
 const built = new Map(BUILD.locales.map((l) => [l.code, l]));
 
 const decode = (text: string) =>
@@ -85,8 +84,7 @@ for (const locale of BUILD.locales) {
     expect(meta(html, 'og:url')).toBe(publicUrl(d.path));
     expect(meta(html, 'og:image')).toMatch(new RegExp(`^${publicUrl('/media/').replace(/[.?]/g, '\\$&')}`));
     expect(meta(html, 'twitter:card')).toBe('summary_large_image');
-    if (isPreview) expect(robots(html)).toContain('noindex, nofollow');
-    else expect(robots(html).filter((r) => r.includes('noindex'))).toEqual([]);
+    expect(robots(html).some((value) => value.includes('noindex'))).toBe(!d.localization.indexable);
     expectPrefixedReferences(html);
   });
 

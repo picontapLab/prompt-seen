@@ -1,5 +1,7 @@
 'use client';
 
+import { languageAttributes } from '@/ui/prompt-detail/language';
+
 import { Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
@@ -135,7 +137,8 @@ export function SearchPage({ locale }: { locale: LocaleEntry }) {
                   <a
                     href={withBasePath(paths.prompts(locale.pathPrefix)) + formatQuery({ ...EMPTY_QUERY, use: [p.id] })}
                   >
-                    {p.label} <span className={styles.count}>{p.count}</span>
+                    <span {...languageAttributes(p.labelLocale)}>{p.label}</span>{' '}
+                    <span className={styles.count}>{p.count}</span>
                   </a>
                 </li>
               ))}

@@ -1,6 +1,8 @@
 # Japanese localization tooling
 
-This implements the preparation workflow in [the launch specification](japanese-localization-spec.md). A passing engineering check does not mean the Japanese launch is approved. Keep `ja.enabled: false` until the content, review, browser, production artifact and live checks pass.
+> 2026-11-10 工具与发布合同更新：本地化策略、覆盖检查、导入／发布、回退浏览及 SEO 输出以[通用本地化流程](localization-workflow.md)为准。本文的历史日期、验收与审校事实保留；后文旧有的日语专用门禁、缺译即无详情页、所有 published 地址均可收录等描述不再作为当前工具合同。
+
+This implements the preparation workflow in [the launch specification](japanese-localization-spec.md). A passing engineering check does not mean the Japanese launch is approved. The original launch preparation required Japanese to remain disabled until acceptance; its current enabled state is preserved by the general-policy migration.
 
 ## Coverage
 

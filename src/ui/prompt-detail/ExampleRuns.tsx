@@ -28,6 +28,7 @@ function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string 
                 width={p.width}
                 height={p.height}
                 alt={p.alt}
+                lang={p.lang}
                 loading="lazy"
                 decoding="async"
               />
@@ -112,7 +113,9 @@ export function ExampleRuns({
             {run.notes && (
               <p className={styles.runNotes}>
                 <span className={styles.runLabel}>{t('notes')}: </span>
-                {run.notes}
+                <span lang={run.notesLocale ?? undefined} dir="auto">
+                  {run.notes}
+                </span>
               </p>
             )}
             <div className={styles.runImagesRow}>

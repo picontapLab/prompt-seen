@@ -71,11 +71,11 @@ export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: 
 function targetPath(pathname: string, target: LocaleEntry): string {
   const [, first = '', ...rest] = pathname.split('/');
   const onLocalePage = builtLocales.some((l) => l.pathPrefix === first);
-  const alternates = new Set(
-    [...document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]')]
-      .map((l) => l.hreflang)
-      .filter((h) => h !== 'x-default'),
-  );
+  const marker =
+    document.querySelector('dialog[open] [data-language-links]') ?? document.querySelector('[data-language-links]');
+  const links: { locale: string; path: string }[] | null = marker
+    ? JSON.parse(marker.getAttribute('data-language-links')!)
+    : null;
   if (!onLocalePage || rest.every((segment) => !segment)) return paths.home(target.pathPrefix);
   // On the missing-translation page itself, carry on with the page the visitor came from.
   if (rest[0] === 'translation-missing') {
@@ -85,10 +85,11 @@ function targetPath(pathname: string, target: LocaleEntry): string {
       ? pathInLocale(info.from, target.pathPrefix)
       : paths.missingTranslation(target.pathPrefix, missingTranslationFragment(info));
   }
-  if (alternates.has(target.htmlLang)) return `/${[target.pathPrefix, ...rest].join('/')}`;
-  if (alternates.size > 0) {
-    const have = builtLocales.filter((l) => alternates.has(l.htmlLang)).map((l) => l.code);
+  const available = links?.find((link) => link.locale === target.code);
+  if (available) return available.path;
+  if (links) {
+    const have = links.map((link) => link.locale);
     return paths.missingTranslation(target.pathPrefix, missingTranslationFragment({ from: pathname, have }));
   }
-  return paths.home(target.pathPrefix);
+  return pathInLocale(pathname, target.pathPrefix);
 }

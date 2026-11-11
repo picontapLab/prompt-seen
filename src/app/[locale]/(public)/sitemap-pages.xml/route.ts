@@ -1,4 +1,4 @@
-import { localeByPrefix } from '@/config';
+import { builtLocales, localeByPrefix } from '@/config';
 import { indexableLocales, localeSitemapUrls } from '@/modules/seo/sitemaps';
 import { urlsetXml } from '@/modules/seo/sitemap';
 import { pageSections } from '@/ui/navigation/sections';
@@ -11,7 +11,12 @@ export const dynamic = 'force-static';
 export const dynamicParams = false;
 
 // Route handlers are outside the [locale] layout and get no parent params.
-export const generateStaticParams = () => indexableLocales().map((l) => ({ locale: l.pathPrefix }));
+export const generateStaticParams = () => {
+  const locales = indexableLocales();
+  // Static export needs a param even when every external output is excluded in preview.
+  // Packaging removes this empty placeholder sitemap.
+  return (locales.length ? locales : builtLocales.slice(0, 1)).map((locale) => ({ locale: locale.pathPrefix }));
+};
 
 export async function GET(_request: Request, { params }: { params: Promise<{ locale: string }> }) {
   const locale = localeByPrefix((await params).locale)!;

@@ -1,4 +1,5 @@
 import MiniSearch, { type Options, type SearchResult } from 'minisearch';
+import { domainAliases } from './profiles';
 import { cjkRuns, isCjkTerm, normalizeTerm, queryTerms, tokenize } from './tokenize';
 import {
   SEARCH_KINDS,
@@ -16,15 +17,17 @@ import {
 // emitter that builds the indexes and the Worker that queries them. Index and query must use the
 // same options, so both come from `engineOptions`.
 
-const FIELDS = ['title', 'terms', 'model', 'description', 'body'] as const;
+const FIELDS = ['title', 'terms', 'model', 'description', 'body', 'aliases'] as const;
 const STORED: (keyof SearchStored)[] = [
   'kind',
+  'contentLocale',
   'title',
   'description',
   'path',
   'frame',
   'thumb',
   'tags',
+  'tagLocales',
   'hasGifOutput',
 ];
 
@@ -38,6 +41,7 @@ export const FIELD_BOOST: Record<(typeof FIELDS)[number], number> = {
   model: 2,
   description: 1.5,
   body: 0.5,
+  aliases: 0.1,
 };
 
 /** Whole-word matches rank above prefix and fuzzy ones. */
@@ -70,7 +74,12 @@ export type Engine = { locale: string; mini: MiniSearch<SearchDocument>; file: S
 /** Build time: an index of the documents of one locale. */
 export function createIndex(documents: readonly SearchDocument[], locale: string): MiniSearch<SearchDocument> {
   const mini = new MiniSearch<SearchDocument>(engineOptions(locale));
-  mini.addAll(documents);
+  mini.addAll(
+    documents.map((document) => ({
+      ...document,
+      aliases: domainAliases([document.title, document.terms, document.description].join(' '), locale),
+    })),
+  );
   return mini;
 }
 
@@ -111,12 +120,14 @@ export function search(engine: Engine, query: string, limit = Infinity): SearchR
       score: r.score,
       matched: highlightTerms(r, runs),
       kind: r.kind as SearchKind,
+      contentLocale: r.contentLocale as string,
       title: r.title as string,
       description: r.description as string,
       path: r.path as string,
       frame: (r.frame as string | null) ?? null,
       thumb: (r.thumb as SearchStored['thumb']) ?? null,
       tags: (r.tags as string[]) ?? [],
+      tagLocales: r.tagLocales as SearchStored['tagLocales'],
       hasGifOutput: r.hasGifOutput === true,
     });
   }
@@ -173,7 +184,7 @@ export function noResultHelp(engine: Engine, others: readonly Engine[], query: s
   const broader =
     words.length > 1 ? words.map((word) => ({ word, total: countHits(engine, word) })).filter((w) => w.total > 0) : [];
   const terms = closeTerms(engine.file.terms, q, engine.locale)
-    .map((t) => ({ label: t.label, total: countHits(engine, t.label) }))
+    .map((t) => ({ label: t.label, labelLocale: t.labelLocale, total: countHits(engine, t.label) }))
     .filter((t) => t.total > 0 && normalizeTerm(t.label, engine.locale) !== normalizeTerm(q, engine.locale))
     .slice(0, 3);
   const otherLocales = others.map((e) => ({ locale: e.locale, total: countHits(e, q) })).filter((o) => o.total > 0);

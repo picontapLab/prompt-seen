@@ -2,6 +2,7 @@ import 'server-only';
 import { builtLocales, config } from '@/config';
 import { catalogTranslator } from '@/i18n/translator';
 import { getDetailModel, getEntry, localeIndex } from '@/modules/content';
+import { homeIndexable } from '@/modules/home/server';
 import { absoluteImageUrl } from '@/modules/media';
 import { absoluteUrl, paths, withBasePath } from '@/modules/url';
 import { pageSections } from '@/ui/navigation/sections';
@@ -20,9 +21,11 @@ const translator = (code: string) => {
 };
 
 export const geo = createGeoDocuments({
+  buildMode: config.buildMode,
   siteName: config.siteName,
   defaultLocale: config.defaultLocale,
   locales: builtLocales,
+  languageEntry: (locale) => (homeIndexable(locale) ? paths.home(locale.pathPrefix) : null),
   reader: { localeIndex, getEntry, getDetailModel },
   url: { absoluteUrl, paths },
   absoluteImageUrl,

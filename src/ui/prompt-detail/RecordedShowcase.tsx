@@ -8,7 +8,10 @@ import { CopyButton } from '@/ui/feedback/CopyButton';
 import { ImageStage } from './ImageStage';
 import styles from './Detail.module.css';
 
-type Run = Pick<ExampleRunView, 'id' | 'outputs' | 'references' | 'referenceLabels' | 'prompt' | 'promptLanguage'>;
+type Run = Pick<
+  ExampleRunView,
+  'id' | 'outputs' | 'references' | 'referenceLabels' | 'referenceLabelLocales' | 'prompt' | 'promptLanguage'
+>;
 
 /** Keep the selected run's inputs, output and immutable prompt together. */
 export function RecordedShowcase({
@@ -73,6 +76,9 @@ export function RecordedShowcase({
                 images={run.references.map((image, index) => ({
                   ...image,
                   caption: run.referenceLabels?.[index] || image.caption,
+                  captionLocale: run.referenceLabels?.[index]
+                    ? run.referenceLabelLocales?.[index]
+                    : image.captionLocale,
                 }))}
                 startPrint={frameNumber}
                 endPrint={t('examples.references')}

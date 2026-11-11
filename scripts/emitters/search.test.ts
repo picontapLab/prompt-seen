@@ -32,6 +32,8 @@ function build(mode: 'production' | 'preview') {
       pages,
     });
     const file: SearchIndexFile = {
+      schemaVersion: 2,
+      analyzerVersion: 2,
       buildId: config.buildId,
       locale: code,
       counts: { prompt: 0, template: 0, collection: 0, topic: 0 },

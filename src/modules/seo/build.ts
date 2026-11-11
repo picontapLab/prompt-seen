@@ -73,10 +73,10 @@ export function buildPageMetadata(page: PageSeo, ctx: SeoContext): Metadata {
 
   // hreflang lists the versions this build publishes, this page included, so every version
   // points at every other one (§8.4, §9.3). Versions in locales outside this build are dropped.
-  const versions = page.alternates
+  const versions = (page.noindex ? [] : page.alternates)
     .map((a) => ({ locale: byCode.get(a.locale), path: a.path }))
     .filter((a): a is { locale: SeoLocale; path: string } => !!a.locale);
-  if (!versions.some((v) => v.locale.code === page.locale.code))
+  if (!page.noindex && !versions.some((v) => v.locale.code === page.locale.code))
     versions.unshift({ locale: page.locale, path: page.path });
   const languages: Record<string, string> = {};
   for (const v of versions) languages[v.locale.htmlLang] = ctx.absoluteUrl(v.path);
@@ -95,7 +95,7 @@ export function buildPageMetadata(page: PageSeo, ctx: SeoContext): Metadata {
     ...(page.noindex && { robots: { index: false, follow: true } }),
     alternates: {
       canonical,
-      languages,
+      ...(!page.noindex && { languages }),
       ...(page.markdownPath && { types: { 'text/markdown': ctx.absoluteUrl(page.markdownPath) } }),
     },
     openGraph: {

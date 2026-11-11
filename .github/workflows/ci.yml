@@ -35,15 +35,29 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run content:validate
-      - name: Japanese localization coverage
+      - name: Localization coverage
+        if: always()
         run: |
-          mkdir -p .artifacts/localization/ja
-          npm run --silent locale:check -- --locale ja --json > .artifacts/localization/ja/report.json
+          mkdir -p .artifacts/localization
+          npm run --silent locale:check -- --all --json > .artifacts/localization/report.json
+      - name: Save reports by locale
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const file = '.artifacts/localization/report.json';
+          if (fs.existsSync(file) && fs.statSync(file).size) {
+            for (const report of JSON.parse(fs.readFileSync(file, 'utf8')).reports) {
+              fs.mkdirSync(`.artifacts/localization/${report.locale}`, { recursive: true });
+              fs.writeFileSync(`.artifacts/localization/${report.locale}/report.json`, JSON.stringify(report, null, 2));
+            }
+          }
+          JS
       - uses: actions/upload-artifact@v6
         if: always()
         with:
-          name: japanese-localization-coverage
-          path: .artifacts/localization/ja/report.json
+          name: localization-coverage
+          path: .artifacts/localization/**/report.json
       - run: npm run tokens:check
       - run: npm run typecheck
       - run: npm run lint

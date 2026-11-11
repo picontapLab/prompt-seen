@@ -36,6 +36,12 @@ const page = {
 };
 
 describe('buildPageMetadata', () => {
+  it('keeps noindex pages crawlable with a self canonical and no hreflang associations', () => {
+    const metadata = buildPageMetadata({ ...page, noindex: true }, ctx);
+    expect(metadata.robots).toEqual({ index: false, follow: true });
+    expect(metadata.alternates?.canonical).toBe('https://example.com/prompt-seen/zh-hans/prompts/plum/');
+    expect(metadata.alternates?.languages).toBeUndefined();
+  });
   it('uses a self-referencing absolute canonical and the full document title', () => {
     const m = buildPageMetadata(page, ctx);
     expect(m.alternates?.canonical).toBe('https://example.com/prompt-seen/zh-hans/prompts/plum/');

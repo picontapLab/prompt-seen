@@ -12,9 +12,9 @@ basePath: /prompt-seen
 `;
 const LOCALES = `defaultLocale: en
 locales:
-  - { code: en, pathPrefix: en, nativeName: English, htmlLang: en, direction: ltr, enabled: true, phase: 1 }
-  - { code: zh-Hans, pathPrefix: zh-hans, nativeName: 简体中文, htmlLang: zh-Hans, direction: ltr, enabled: false, phase: 1 }
-  - { code: ar, pathPrefix: ar, nativeName: العربية, htmlLang: ar, direction: rtl, enabled: false, preview: true, phase: 2 }
+  - { code: en, pathPrefix: en, nativeName: English, htmlLang: en, direction: ltr, enabled: true, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } }
+  - { code: zh-Hans, pathPrefix: zh-hans, nativeName: 简体中文, htmlLang: zh-Hans, direction: ltr, enabled: false, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } }
+  - { code: ar, pathPrefix: ar, nativeName: العربية, htmlLang: ar, direction: rtl, enabled: false, preview: true, phase: 2, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } }
 `;
 
 const dirs: string[] = [];
@@ -60,6 +60,22 @@ const issues = (fn: () => unknown) => {
 };
 
 describe('loadConfig', () => {
+  it('requires an explicit localization policy and fingerprint review for complete coverage', () => {
+    const registry = YAML.parse(LOCALES);
+    for (const locale of registry.locales)
+      locale.localization = { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' };
+    registry.locales[1].localization = { coverage: 'complete', review: 'fingerprint', promptBodies: 'source-only' };
+    const read = () => loadConfig(fixture(SITE, YAML.stringify(registry)), { BUILD_MODE: 'production' });
+    expect(read().locales[1]).toMatchObject({ localization: registry.locales[1].localization });
+    registry.locales[1].localization.review = 'metadata';
+    expect(issues(read)).toMatch(/complete.*fingerprint/);
+    registry.locales[1].localization.review = 'fingerprint';
+    registry.locales[1].localization.typo = true;
+    expect(issues(read)).toMatch(/typo/);
+    delete registry.locales[1].localization;
+    expect(issues(read)).toMatch(/localization/);
+  });
+
   it('applies defaults and defaults to a preview build', () => {
     const config = loadConfig(fixture(), { BUILD_ID: 'test' });
     expect(config.buildMode).toBe('preview');
@@ -142,7 +158,7 @@ describe('loadConfig', () => {
     expect(issues(() => loadConfig(fixture(SITE, disabledDefault)))).toMatch(/defaultLocale must be enabled/);
     const badPrefix = LOCALES.replace('pathPrefix: zh-hans', 'pathPrefix: zh');
     expect(issues(() => loadConfig(fixture(SITE, badPrefix)))).toMatch(/lowercase form of code/);
-    const duplicate = `${LOCALES}  - { code: en, pathPrefix: en, nativeName: E, htmlLang: en, direction: ltr, enabled: true, phase: 1 }\n`;
+    const duplicate = `${LOCALES}  - { code: en, pathPrefix: en, nativeName: E, htmlLang: en, direction: ltr, enabled: true, phase: 1, localization: { coverage: 'incremental', review: 'metadata', promptBodies: 'optional' } }\n`;
     expect(issues(() => loadConfig(fixture(SITE, duplicate)))).toMatch(/duplicate locale code "en"/);
   });
 

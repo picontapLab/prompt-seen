@@ -1,3 +1,4 @@
+import { homeAlternates, homeIsIndexable } from './support/home';
 import { expect, test } from '@playwright/test';
 import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
 import {
@@ -16,14 +17,9 @@ import {
 // an absolute URL with the base path; nothing is requested outside the base path.
 
 const isPreview = BUILD.buildMode === 'preview';
-const expectedAlternates = {
-  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(homePath(l))])),
-  'x-default': publicUrl('/'),
-};
-
-function expectIndexing(html: string) {
-  if (isPreview) expect(robots(html)).toContain('noindex, nofollow');
-  else expect(robots(html).filter((r) => r.includes('noindex'))).toEqual([]);
+function expectIndexing(html: string, code = BUILD.defaultLocale) {
+  expect(robots(html).some((value) => value.includes('noindex'))).toBe(!homeIsIndexable(code));
+  if (!isPreview && !homeIsIndexable(code)) expect(robots(html)).toContain('noindex, follow');
 }
 
 function expectPrefixedReferences(html: string) {
@@ -38,7 +34,7 @@ test('default home at the base path is the x-default', async ({ request }) => {
   const html = await res.text();
   expect(dataAttr(html, 'page')).toBe('home');
   expect(canonical(html)).toBe(publicUrl('/'));
-  expect(alternates(html)).toEqual(expectedAlternates);
+  expect(alternates(html)).toEqual(homeAlternates(BUILD.defaultLocale));
   expectIndexing(html);
   expectPrefixedReferences(html);
 });
@@ -55,8 +51,8 @@ for (const locale of BUILD.locales) {
     expect(title(html)).toBe(message(locale.code, 'home.documentTitle', { siteName: BUILD.siteName }));
     expect(canonical(html)).toBe(publicUrl(homePath(locale)));
     expect(canonical(html)).toMatch(new RegExp(`^${BUILD.origin}${BASE}/`));
-    expect(alternates(html)).toEqual(expectedAlternates);
-    expectIndexing(html);
+    expect(alternates(html)).toEqual(homeAlternates(locale.code));
+    expectIndexing(html, locale.code);
     expectPrefixedReferences(html);
   });
 

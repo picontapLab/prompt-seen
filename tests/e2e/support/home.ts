@@ -1,8 +1,9 @@
+import { composeHome } from '../../../src/modules/home/compose';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
-import { ROOT } from './artifact';
-import { feedIndex, localeIndex, promptDetail } from './content';
+import { BUILD, publicUrl, homePath, ROOT } from './artifact';
+import { feedIndex, localeIndex, promptDetail, templateDetail } from './content';
 
 /** Independent acceptance oracle. Unit cases S01–S08 also assert literal expected IDs. */
 export function worksOnShow(code: string): string[] {
@@ -32,4 +33,44 @@ export function worksOnShow(code: string): string[] {
   if (fallback.length) return [fallback[0]!.id];
   const last = usable.find((d) => d.prompt.language === code) ?? usable[0];
   return last ? [last.id] : [];
+}
+
+/** Compare rendered metadata with the public home model of this exact build. */
+export function homeIsIndexable(code: string): boolean {
+  if (BUILD.buildMode !== 'production' || !BUILD.locales.find((locale) => locale.code === code)?.enabled) return false;
+  const index = localeIndex(code);
+  const model = composeHome({
+    locale: code,
+    today: new Date().toISOString().slice(0, 10),
+    prompts: index.prompts,
+    promptDetail: (id) => promptDetail(code, id),
+    featuredOrder: feedIndex(code).featured,
+    templates: index.templates,
+    templateDetail: (id) => templateDetail(code, id),
+    collections: index.collections,
+    collectionsLinked: true,
+    terms: index.terms,
+    settings: parse(fs.readFileSync(path.join(ROOT, 'content/site.yaml'), 'utf8')).home,
+    useCaseList: () => '/',
+  });
+  const ids = new Set([
+    ...model.onShow.map((item) => item.id),
+    ...model.more,
+    ...model.latest,
+    ...model.useCases.map((item) => item.work),
+  ]);
+  return [...index.prompts.filter((item) => ids.has(item.id)), ...model.templates, ...model.collections].every(
+    (item) => item.localization.indexable,
+  );
+}
+export function homeAlternates(code: string) {
+  if (!homeIsIndexable(code)) return {};
+  return {
+    ...Object.fromEntries(
+      BUILD.locales
+        .filter((locale) => homeIsIndexable(locale.code))
+        .map((locale) => [locale.htmlLang, publicUrl(homePath(locale))]),
+    ),
+    ...(homeIsIndexable(BUILD.defaultLocale) ? { 'x-default': publicUrl('/') } : {}),
+  };
 }

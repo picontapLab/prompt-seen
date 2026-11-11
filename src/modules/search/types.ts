@@ -3,6 +3,8 @@
 
 /** Groups in the order the panel and the search page show them (§11.8.6). */
 export const SEARCH_KINDS = ['prompt', 'template', 'collection', 'topic'] as const;
+export const SEARCH_SCHEMA_VERSION = 2;
+export const SEARCH_ANALYZER_VERSION = 2;
 export type SearchKind = (typeof SEARCH_KINDS)[number];
 
 /** A small picture beside a result: the work's thumbnail at its original ratio. */
@@ -12,6 +14,7 @@ export type SearchThumb = { key: string; width: number; height: number; placehol
 export type SearchStored = {
   hasGifOutput?: boolean;
   kind: SearchKind;
+  contentLocale: string;
   title: string;
   description: string;
   /** Internal path of the page. */
@@ -21,6 +24,7 @@ export type SearchStored = {
   thumb: SearchThumb | null;
   /** Labels of the entry's terms, shown under the title. */
   tags: string[];
+  tagLocales?: (string | null)[];
 };
 
 /** One indexed entry. Fields are searched in the order of §13.1: title, terms, description, body. */
@@ -35,13 +39,21 @@ export type SearchDocument = SearchStored & {
 };
 
 /** A use case suggested when the query is empty (§11.8.6 "热门用途"). */
-export type PopularTerm = { id: string; label: string; count: number };
+export type PopularTerm = { id: string; label: string; labelLocale?: string | null; count: number };
 
 /** A taxonomy term offered when nothing is found (§11.8.6 "术语表中的相近标签"). */
-export type SuggestTerm = { kind: 'category' | 'style' | 'useCase'; id: string; label: string; words: string[] };
+export type SuggestTerm = {
+  kind: 'category' | 'style' | 'useCase';
+  id: string;
+  label: string;
+  labelLocale?: string | null;
+  words: string[];
+};
 
 /** public/generated/{locale}/search/index.json */
 export type SearchIndexFile = {
+  schemaVersion: number;
+  analyzerVersion: number;
   buildId: string;
   locale: string;
   /** Entries per kind. */
@@ -68,7 +80,7 @@ export type NoResultHelp = {
   /** Single words of the query that find something on their own ("broader"). */
   broader: { word: string; total: number }[];
   /** Taxonomy labels close to the query. */
-  terms: { label: string; total: number }[];
+  terms: { label: string; labelLocale?: string | null; total: number }[];
   /** Results of the same query in other languages, for the user to switch to. */
   otherLocales: { locale: string; total: number }[];
 };

@@ -69,6 +69,7 @@ export const slimImage = (image: ImageRef): FeedImage => ({
   height: image.height,
   placeholder: image.placeholder,
   alt: image.alt,
+  altLocale: image.altLocale,
   variants: { thumbnail: image.variants.thumbnail, card: image.variants.card, detail: image.variants.detail },
 });
 
@@ -79,6 +80,7 @@ export function toCard(p: PromptSummary, ratioLabel: ComposeInput['ratioLabel'])
     slug: p.slug,
     path: p.path,
     title: p.title,
+    localization: p.localization,
     frameNumber: p.frameNumber,
     cover: slimImage(p.cover),
     ratio: ratioLabel(p.cover.width, p.cover.height),
@@ -105,6 +107,7 @@ export function toFeedTemplate(summary: TemplateSummary, detail: TemplateDetail 
     id: summary.id,
     path: summary.path,
     title: summary.title,
+    localization: summary.localization,
     locale: summary.locale,
     description: summary.description,
     fieldCount: summary.fieldCount,
@@ -195,6 +198,7 @@ export function composeFeed(input: ComposeInput): ComposedFeed {
             id: c.id,
             path: c.path,
             title: c.title,
+            localization: c.localization,
             description: c.description,
             cover: slimImage(c.cover),
             itemCount: c.itemCount,
@@ -263,7 +267,9 @@ export function composeFeed(input: ComposeInput): ComposedFeed {
 
   const pageOf = new Map(prompts.map((p, i) => [p.id, Math.floor(i / size) + 1]));
   const terms = (kind: Term['kind']) =>
-    input.terms.filter((t) => t.kind === kind && t.count > 0).map((t) => ({ id: t.id, label: t.label }));
+    input.terms
+      .filter((t) => t.kind === kind && t.count > 0)
+      .map((t) => ({ id: t.id, label: t.label, labelLocale: t.labelLocale }));
 
   const index: FeedIndex = {
     buildId: input.buildId,

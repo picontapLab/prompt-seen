@@ -1,3 +1,4 @@
+import { homeAlternates } from './support/home';
 import { expect, test } from '@playwright/test';
 import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
 import { localeIndex, manifest } from './support/content';
@@ -40,7 +41,7 @@ test('the root serves the default home for every Accept-Language and links every
     expect(html).not.toContain('data-page="language-entry"');
     for (const l of BUILD.locales) expect(html, l.code).toContain(`href="${BASE}${homePath(l)}"`);
     expect(canonical(html)).toBe(publicUrl('/'));
-    expect(alternates(html)['x-default']).toBe(publicUrl('/'));
+    expect(alternates(html)).toEqual(homeAlternates(BUILD.defaultLocale));
   }
 });
 
@@ -60,6 +61,11 @@ for (const locale of BUILD.locales) {
       expect(htmlElement(html)).toEqual({ lang: locale.htmlLang, dir: locale.direction });
       expect(decode(elementText(html, 'h1')!)).toBe(topic.title);
       expect(canonical(html)).toBe(publicUrl(topic.path));
+      if (!topic.localization.indexable) {
+        expect(graphNode(html, 'CollectionPage')).toBeUndefined();
+        expect(robots(html).some((value) => value.includes('noindex'))).toBe(true);
+        continue;
+      }
       const list = graphNode(html, 'CollectionPage')!;
       expect(list.url).toBe(publicUrl(topic.path));
       const links = new Set(hrefs(html));
@@ -94,13 +100,20 @@ for (const locale of BUILD.locales) {
     expect(elementText(html, 'h1')).toBe(message(locale.code, 'pages.collections.title'));
     // An index with nothing in it stays out of search results.
     expect(robots(html).some((r) => r.includes('noindex'))).toBe(
-      BUILD.buildMode === 'preview' || index.collections.length === 0,
+      BUILD.buildMode === 'preview' ||
+        index.collections.length === 0 ||
+        index.collections.some((item) => !item.localization.indexable),
     );
     for (const c of index.collections) {
       expect(hrefs(html)).toContain(`${BASE}${c.path}`);
       const page = await (await request.get(`${BASE}${c.path}`)).text();
       expect(dataAttr(page, 'page')).toBe('collection');
       expect(decode(elementText(page, 'h1')!)).toBe(c.title);
+      if (!c.localization.indexable) {
+        expect(graphNode(page, 'CollectionPage')).toBeUndefined();
+        expect(robots(page).some((value) => value.includes('noindex'))).toBe(true);
+        continue;
+      }
       const items = graphNode(page, 'CollectionPage')!.mainEntity.itemListElement;
       expect(items.length).toBe(c.itemCount);
       // The page shows the entries in the order of the structured data.
@@ -120,7 +133,10 @@ for (const locale of BUILD.locales) {
       if (!slugs.has(slug)) continue;
       const html = await res.text();
       expect(dataAttr(html, 'page')).toBe('content-page');
-      if (slug === 'about') expect(graphNode(html, 'AboutPage')).toBeTruthy();
+      if (slug === 'about')
+        expect(!!graphNode(html, 'AboutPage')).toBe(
+          index.pages.find((page) => page.slug === slug)!.localization.indexable,
+        );
     }
     // The footer links exactly the pages this locale has.
     const home = await (await request.get(`${BASE}/${locale.pathPrefix}/`)).text();

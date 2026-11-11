@@ -11,6 +11,7 @@ export type Showcase = {
   id: string;
   path: string;
   title: string;
+  localization: PromptDetail['localization'];
   frameNumber: string;
   cover: ImageRef;
   model: string | null;
@@ -31,6 +32,7 @@ export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
     id: detail.id,
     path: detail.path,
     title: detail.title,
+    localization: detail.localization,
     frameNumber: detail.frameNumber,
     cover: detail.cover,
     model: detail.test.model.displayName ?? detail.test.model.providerModelId,

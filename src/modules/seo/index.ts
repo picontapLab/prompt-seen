@@ -6,6 +6,7 @@ import type { Alternate, ImageRef, PromptDetail, TemplateDetail } from '@/module
 import { absoluteImageUrl } from '@/modules/media';
 import { absoluteUrl, paths } from '@/modules/url';
 import { buildPageMetadata, type PageSeo, type SeoContext } from './build';
+import { homeIndexable } from '@/modules/home/server';
 import { isIndexable } from './indexing';
 import {
   aboutPage,
@@ -95,11 +96,12 @@ export async function promptMetadata(detail: PromptDetail, locale: LocaleEntry):
       title: detail.seo.title,
       description: detail.seo.description,
       alternates: detail.alternates,
+      noindex: !detail.localization.indexable,
       image: detail.cover,
       type: 'article',
       publishedTime: detail.createdAt,
       modifiedTime: detail.updatedAt,
-      markdownPath: isIndexable(locale, detail.visibility)
+      markdownPath: isIndexable(locale, detail.localization)
         ? paths.promptMarkdown(locale.pathPrefix, detail.slug)
         : null,
     },
@@ -117,11 +119,12 @@ export async function templateMetadata(detail: TemplateDetail, locale: LocaleEnt
       title: detail.seo.title,
       description: detail.seo.description,
       alternates: detail.alternates,
+      noindex: !detail.localization.indexable,
       image: detail.cover,
       type: 'article',
       publishedTime: detail.createdAt,
       modifiedTime: detail.updatedAt,
-      markdownPath: isIndexable(locale, detail.visibility)
+      markdownPath: isIndexable(locale, detail.localization)
         ? paths.templateMarkdown(locale.pathPrefix, detail.slug)
         : null,
     },
@@ -141,6 +144,7 @@ export function pageMetadata(page: {
   return buildPageMetadata(
     {
       ...page,
+      noindex: config.buildMode === 'preview' || page.noindex,
       documentTitle: page.title.includes(config.siteName) ? page.title : `${page.title} · ${config.siteName}`,
     } satisfies PageSeo,
     context,
@@ -153,14 +157,15 @@ export function pageMetadata(page: {
  */
 export function homeMetadata(
   locale: LocaleEntry,
-  page: { documentTitle: string; title: string; description: string; image?: ImageRef | null },
+  page: { documentTitle: string; title: string; description: string; image?: ImageRef | null; noindex?: boolean },
 ): Metadata {
   const metadata = buildPageMetadata(
     {
       ...page,
       path: paths.home(locale.pathPrefix),
+      noindex: !homeIndexable(locale) || page.noindex,
       locale,
-      alternates: builtLocales.map((l) => ({ locale: l.code, path: paths.home(l.pathPrefix) })),
+      alternates: builtLocales.filter(homeIndexable).map((l) => ({ locale: l.code, path: paths.home(l.pathPrefix) })),
     },
     context,
   );
@@ -168,7 +173,9 @@ export function homeMetadata(
     ...metadata,
     alternates: {
       ...metadata.alternates,
-      languages: { ...metadata.alternates?.languages, 'x-default': absoluteUrl(paths.siteRoot()) },
+      ...(metadata.alternates?.languages && {
+        languages: { ...metadata.alternates.languages, 'x-default': absoluteUrl(paths.siteRoot()) },
+      }),
     },
   };
 }
@@ -182,6 +189,7 @@ export function promptStructuredData(
   locale: LocaleEntry,
   crumbs: readonly LdCrumb[],
 ): JsonLdNode {
+  if (!detail.localization.indexable) return graph();
   return graph(promptWork(detail, locale, ld), breadcrumbList(crumbs, ld));
 }
 
@@ -191,11 +199,13 @@ export function templateStructuredData(
   locale: LocaleEntry,
   crumbs: readonly LdCrumb[],
 ): JsonLdNode {
+  if (!detail.localization.indexable) return graph();
   return graph(templateWork(detail, locale, ld), breadcrumbList(crumbs, ld));
 }
 
 /** A locale's home page: the site in that language and the Organization behind it. */
 export function homeStructuredData(locale: LocaleEntry): JsonLdNode {
+  if (!homeIndexable(locale)) return graph();
   return graph(website({ path: paths.home(locale.pathPrefix), locale }, ld), organization(ld));
 }
 
@@ -211,9 +221,11 @@ export function collectionStructuredData(
     description: string;
     items: readonly ListItemInput[];
     offset?: number;
+    indexable?: boolean;
   },
   crumbs: readonly LdCrumb[] = [],
 ): JsonLdNode {
+  if (config.buildMode !== 'production' || !page.locale.enabled || page.indexable === false) return graph();
   return graph(collectionPage(page, ld), breadcrumbList(crumbs, ld));
 }
 
@@ -222,6 +234,7 @@ export function aboutStructuredData(
   page: { path: string; locale: LocaleEntry; name: string; description: string },
   crumbs: readonly LdCrumb[] = [],
 ): JsonLdNode {
+  if (config.buildMode !== 'production' || !page.locale.enabled) return graph();
   return graph(aboutPage(page, ld), organization(ld), breadcrumbList(crumbs, ld));
 }
 

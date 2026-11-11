@@ -17,6 +17,20 @@ function workspace() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'prompt-generation-'));
   roots.push(root);
   fs.cpSync(path.resolve('content'), path.join(root, 'content'), { recursive: true });
+  // Later translations refer to the replacement images, not this archived en/zh corpus.
+  // Keep the migration fixture independent of languages published after that snapshot.
+  for (const file of fs.readdirSync(path.join(root, 'content'), { recursive: true, encoding: 'utf8' })) {
+    if (
+      file.includes(`${path.sep}locales${path.sep}`) &&
+      file.endsWith('.mdx') &&
+      !['en.mdx', 'zh-Hans.mdx'].includes(path.basename(file))
+    )
+      fs.rmSync(path.join(root, 'content', file));
+  }
+  const registryFile = path.join(root, 'content/locales.yaml');
+  const registry = YAML.parse(fs.readFileSync(registryFile, 'utf8'));
+  for (const locale of registry.locales) locale.enabled = ['en', 'zh-Hans'].includes(locale.code);
+  fs.writeFileSync(registryFile, YAML.stringify(registry));
   // This migration tests the original corpus, not later editorial additions.
   for (const [kind, limit] of [
     ['prompts', 100],

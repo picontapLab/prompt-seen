@@ -1,3 +1,4 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import type { CSSProperties } from 'react';
 import type { SearchHit } from '@/modules/search/types';
 import { mediaUrl } from '@/modules/url';
@@ -36,19 +37,28 @@ export function ResultRow({ hit, locale, description }: { hit: SearchHit; locale
         )}
       </span>
       <span className={styles.text}>
-        <span className={styles.title}>
+        <span {...languageAttributes(hit.contentLocale)} className={styles.title}>
           <Highlight text={hit.title} locale={locale} terms={hit.matched} />{' '}
           <GifBadge image={thumb} hasGifOutput={hit.hasGifOutput} />
         </span>
         {description && hit.description && (
-          <span className={styles.description}>
+          <span {...languageAttributes(hit.contentLocale)} className={styles.description}>
             <Highlight text={hit.description} locale={locale} terms={hit.matched} />
           </span>
         )}
         {(hit.frame || hit.tags.length > 0) && (
           <span className={styles.facts}>
             {hit.frame && <FrameNumber n={Number(hit.frame)} />}
-            {hit.tags.length > 0 && <span className={styles.tags}>{hit.tags.join(' · ')}</span>}
+            {hit.tags.length > 0 && (
+              <span className={styles.tags}>
+                {hit.tags.map((tag, index) => (
+                  <span key={tag}>
+                    {index > 0 && ' · '}
+                    <span {...languageAttributes(hit.tagLocales?.[index])}>{tag}</span>
+                  </span>
+                ))}
+              </span>
+            )}
           </span>
         )}
       </span>

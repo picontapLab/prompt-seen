@@ -1,3 +1,4 @@
+import { isAggregateIndexable } from '@/modules/seo/indexing';
 import 'server-only';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -24,8 +25,9 @@ export async function templateListMetadata(locale: LocaleEntry) {
     locale,
     title: t('documentTitle'),
     description: t('description'),
+    noindex: !isAggregateIndexable(locale, templatesOf(locale.code)),
     alternates: builtLocales
-      .filter((l) => templatesOf(l.code).length > 0)
+      .filter((l) => isAggregateIndexable(l, templatesOf(l.code)))
       .map((l) => ({ locale: l.code, path: paths.templates(l.pathPrefix) })),
   });
 }
@@ -38,6 +40,7 @@ export async function templateListStructuredData(locale: LocaleEntry) {
     locale,
     name: t('title'),
     description: t('description'),
+    indexable: isAggregateIndexable(locale, templatesOf(locale.code)),
     items: templatesOf(locale.code).map((x) => ({ path: x.path, name: x.title })),
   });
 }

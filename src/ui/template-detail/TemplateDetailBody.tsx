@@ -1,3 +1,5 @@
+import { LanguageLinks } from '@/ui/navigation/LanguageLinks';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { useTranslations } from 'next-intl';
 import type { LocaleEntry } from '@/config';
 import type { TemplateDetail } from '@/modules/content/types';
@@ -61,11 +63,16 @@ export function TemplateDetailBody({
 
   return (
     <article className={detailStyles.detail} data-detail="template" data-entry={detail.id}>
+      <LanguageLinks links={detail.languageLinks} />
       <div className={styles.top}>
         <Breadcrumb label={t('breadcrumb.label')} items={templateCrumbs(prefix, (key) => t(`breadcrumb.${key}`))} />
         <header className={detailStyles.header}>
-          <h1 className={detailStyles.title}>{detail.title}</h1>
-          <p className={detailStyles.summary}>{detail.description}</p>
+          <h1 {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.title}>
+            {detail.title}
+          </h1>
+          <p {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.summary}>
+            {detail.description}
+          </p>
           {detail.inputInstructions && <p className={detailStyles.summary}>{detail.inputInstructions}</p>}
           <div className={detailStyles.actions}>
             {/* Saving (§11.5) and `S` (§11.10). */}
@@ -89,7 +96,9 @@ export function TemplateDetailBody({
 
       {(detail.body.length > 0 || detail.examples.length > 0) && (
         <div className={styles.reading}>
-          {detail.body.length > 0 && <RichText blocks={detail.body} className={detailStyles.body} />}
+          {detail.body.length > 0 && (
+            <RichText locale={detail.localization.contentLocale} blocks={detail.body} className={detailStyles.body} />
+          )}
           <ExampleRuns
             runs={detail.examples}
             frameNumber={detail.id.replace(/^t_/, 'T')}

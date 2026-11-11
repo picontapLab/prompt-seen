@@ -11,7 +11,7 @@ export type PanelItem =
   | { id: string; type: 'all'; total: number }
   | { id: string; type: 'recent'; query: string }
   | { id: 'clear-recent'; type: 'clear' }
-  | { id: string; type: 'popular'; label: string; href: string };
+  | { id: string; type: 'popular'; label: string; labelLocale?: string | null; href: string };
 
 export type PanelSection = { key: string; title: string; items: PanelItem[] };
 
@@ -61,6 +61,7 @@ export function panelSections({ query, results, recent, popular, title, popularH
           id: `popular:${p.id}`,
           type: 'popular',
           label: p.label,
+          labelLocale: p.labelLocale,
           href: popularHref(p.id),
         })),
       });

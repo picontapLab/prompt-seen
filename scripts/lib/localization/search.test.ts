@@ -24,6 +24,8 @@ it('finds public prompts and templates by their stable identifiers after seriali
     pages: { collections: true, topics: true },
   });
   const engine = loadEngine({
+    schemaVersion: 2,
+    analyzerVersion: 2,
     buildId: 'fixture',
     locale: 'en',
     counts: content.manifest.counts.en!,

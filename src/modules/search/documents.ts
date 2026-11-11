@@ -28,14 +28,19 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
   const term = (kind: Term['kind'], id: string) => terms.get(`${kind}:${id}`) ?? null;
   const collect = (refs: (Term | null)[]) => {
     const found = refs.filter((t): t is Term => t !== null);
-    return { tags: [...new Set(found.map((t) => t.label))], words: [...new Set(found.flatMap(termWords))].join(' \n') };
+    const unique = [...new Map(found.map((t) => [t.label, t])).values()];
+    return {
+      tags: unique.map((t) => t.label),
+      tagLocales: unique.map((t) => t.labelLocale ?? null),
+      words: [...new Set(found.flatMap(termWords))].join(' \n'),
+    };
   };
 
   const docs: SearchDocument[] = [];
 
   for (const p of index.prompts) {
     const detail = prompt(p.id);
-    const { tags, words } = collect([
+    const { tags, tagLocales, words } = collect([
       term('category', p.categoryId),
       ...p.styleIds.map((id) => term('style', id)),
       ...p.useCaseIds.map((id) => term('useCase', id)),
@@ -45,11 +50,13 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
       kind: 'prompt',
       hasGifOutput: p.hasGifOutput,
       title: p.title,
+      contentLocale: p.localization.contentLocale,
       description: p.description,
       path: p.path,
       frame: p.frameNumber,
       thumb: thumbOf(p.cover),
       tags,
+      tagLocales,
       terms: [p.id, p.frameNumber, words, p.hasGifOutput || p.cover.mimeType === 'image/gif' ? 'GIF' : ''].join(' \n'),
       model: [p.model.displayName, p.model.providerModelId].filter(Boolean).join(' \n'),
       body: detail?.prompt.text ?? p.promptOpening,
@@ -58,7 +65,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
 
   for (const t of index.templates) {
     const detail = template(t.id);
-    const { tags, words } = collect([
+    const { tags, tagLocales, words } = collect([
       ...(detail?.taxonomy.category ? [term('category', detail.taxonomy.category.id)] : []),
       ...(detail?.taxonomy.styles ?? []).map((s) => term('style', s.id)),
       ...(detail?.taxonomy.useCases ?? []).map((u) => term('useCase', u.id)),
@@ -68,11 +75,13 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
       kind: 'template',
       hasGifOutput: t.hasGifOutput,
       title: t.title,
+      contentLocale: t.localization.contentLocale,
       description: t.description,
       path: t.path,
       frame: null,
       thumb: thumbOf(t.cover),
       tags,
+      tagLocales,
       terms: [
         t.id,
         words,
@@ -90,6 +99,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
         id: `collection:${c.id}`,
         kind: 'collection',
         title: c.title,
+        contentLocale: c.localization.contentLocale,
         description: c.description,
         path: c.path,
         frame: null,
@@ -107,6 +117,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
         id: `topic:${t.taxonomy}:${t.id}`,
         kind: 'topic',
         title: t.title,
+        contentLocale: t.localization.contentLocale,
         description: t.description,
         path: t.path,
         frame: null,
@@ -127,12 +138,12 @@ export function popularUseCases(index: LocaleIndex, limit = 6): PopularTerm[] {
     .filter((t) => t.kind === 'useCase' && t.count > 0)
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, index.locale))
     .slice(0, limit)
-    .map((t) => ({ id: t.id, label: t.label, count: t.count }));
+    .map((t) => ({ id: t.id, label: t.label, labelLocale: t.labelLocale, count: t.count }));
 }
 
 /** Terms with prompts, offered as close labels when a query finds nothing. */
 export function suggestTerms(index: LocaleIndex): SuggestTerm[] {
   return index.terms
     .filter((t) => t.count > 0)
-    .map((t) => ({ kind: t.kind, id: t.id, label: t.label, words: t.aliases }));
+    .map((t) => ({ kind: t.kind, id: t.id, label: t.label, labelLocale: t.labelLocale, words: t.aliases }));
 }

@@ -35,8 +35,7 @@ for (const locale of BUILD.locales) {
     const withQuery = await (await request.get(`${BASE}${path}?q=neon`)).text();
     expect(withQuery.replace(/\s+/g, '')).toBe(html.replace(/\s+/g, ''));
     // Every built language has a search page; hreflang lets the language switch stay on it.
-    for (const other of BUILD.locales)
-      expect(html).toContain(`hrefLang="${other.htmlLang}" href="${publicUrl(`/${other.pathPrefix}/search/`)}"`);
+    expect(html).not.toMatch(/<link[^>]+hrefLang=/);
   });
 
   test(`${locale.code}: ordinary pages do not refer to the search index (§16.4)`, async ({ request }) => {

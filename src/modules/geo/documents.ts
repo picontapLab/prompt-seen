@@ -1,6 +1,6 @@
 import type { LocaleEntry } from '@/config/schema';
 import type { ContentReader } from '@/modules/content/reader';
-import type { EntryKind, ImageVariant, PromptDetail, TemplateDetail } from '@/modules/content/types';
+import type { EntryKind, ImageVariant, LocalizationState, PromptDetail, TemplateDetail } from '@/modules/content/types';
 import { isIndexable, type PageSections } from '@/modules/seo/indexing';
 import type { createUrlModule } from '@/modules/url/create';
 import { languageName } from '@/ui/prompt-detail/language';
@@ -14,6 +14,9 @@ import { promptMarkdown, templateMarkdown, type MarkdownContext, type Translate 
 type UrlModule = ReturnType<typeof createUrlModule>;
 
 export type GeoSources = {
+  buildMode: 'production' | 'preview';
+  /** Addresses already accepted by the same aggregate rules as HTML/sitemap. */
+  languageEntry?: (locale: LocaleEntry) => string | null;
   siteName: string;
   defaultLocale: string;
   /** Locales built in this run, in registry order. */
@@ -58,12 +61,13 @@ export function createGeoDocuments(src: GeoSources) {
 
   /** Every published version of a kind in the public locales (§9.10.4: drafts never get one). */
   function markdownEntries(kind: MarkdownKind): MarkdownEntry[] {
+    if (src.buildMode !== 'production') return [];
     return src.locales
       .filter((l) => l.enabled)
       .flatMap((locale) => {
         const index = src.reader.localeIndex(locale.code);
         return (kind === 'prompt' ? index.prompts : index.templates)
-          .filter((e) => isIndexable(locale, e.visibility))
+          .filter((e) => isIndexable(locale, e.localization))
           .map((e) => ({
             kind,
             locale,
@@ -82,7 +86,7 @@ export function createGeoDocuments(src: GeoSources) {
     const otherVersions = detail.alternates.flatMap((a) => {
       const other = byCode.get(a.locale);
       const entry = other && a.locale !== locale.code ? src.reader.getEntry(detail.id, a.locale) : null;
-      return other && entry && isIndexable(other, entry.visibility)
+      return other && entry && isIndexable(other, entry.localization)
         ? [{ name: other.nativeName, url: absoluteUrl(markdownPath(kind, other.pathPrefix, entry.slug)) }]
         : [];
     });
@@ -97,27 +101,29 @@ export function createGeoDocuments(src: GeoSources) {
 
   /** The Markdown version of a published entry, or null when it has none. */
   function markdown(entry: Pick<MarkdownEntry, 'kind' | 'locale' | 'id'>): string | null {
+    if (src.buildMode !== 'production') return null;
     const { kind, locale, id } = entry;
     if (kind === 'prompt') {
       const detail = src.reader.getDetailModel('prompt', id, locale.code);
-      return detail && isIndexable(locale, detail.visibility)
+      return detail && isIndexable(locale, detail.localization)
         ? promptMarkdown(detail, context(kind, detail, locale))
         : null;
     }
     const detail = src.reader.getDetailModel('template', id, locale.code);
-    return detail && isIndexable(locale, detail.visibility)
+    return detail && isIndexable(locale, detail.localization)
       ? templateMarkdown(detail, context(kind, detail, locale))
       : null;
   }
 
   /** llms.txt: the site in the default locale, with links to every language and Markdown version. */
   function llms(): string {
+    if (src.buildMode !== 'production') return '';
     const def = byCode.get(src.defaultLocale);
     if (!def) throw new Error(`default locale ${src.defaultLocale} is not built`);
     const t = src.translator(def.code);
     const index = src.reader.localeIndex(def.code);
-    const published = <T extends { visibility: 'published' | 'draft' }>(xs: readonly T[]) =>
-      xs.filter((x) => isIndexable(def, x.visibility));
+    const published = <T extends { localization: LocalizationState }>(xs: readonly T[]) =>
+      xs.filter((x) => isIndexable(def, x.localization));
     const toMarkdown = (kind: MarkdownKind) =>
       markdownEntries(kind)
         .filter((e) => e.locale.code === def.code)
@@ -134,10 +140,10 @@ export function createGeoDocuments(src: GeoSources) {
           heading: t('geo.llms.languages'),
           links: src.locales
             .filter((l) => l.enabled)
-            .map((l) => ({
-              title: l.nativeName,
-              url: absoluteUrl(src.sections.prompts ? paths.prompts(l.pathPrefix) : paths.home(l.pathPrefix)),
-            })),
+            .flatMap((l) => {
+              const path = src.languageEntry?.(l);
+              return path ? [{ title: l.nativeName, url: absoluteUrl(path) }] : [];
+            }),
         },
         { heading: t('geo.llms.templates'), links: toMarkdown('template') },
         { heading: t('geo.llms.prompts'), links: toMarkdown('prompt') },

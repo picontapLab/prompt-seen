@@ -11,7 +11,7 @@ export const FEED_PAGE_SIZE = 24;
 /** The image fields a card needs; full credits stay in the detail model. */
 export type FeedImage = Pick<
   ImageRef,
-  'width' | 'height' | 'placeholder' | 'alt' | 'variants' | 'mimeType' | 'animation'
+  'width' | 'height' | 'placeholder' | 'altLocale' | 'alt' | 'variants' | 'mimeType' | 'animation'
 >;
 
 /** One work in the justified rows (§11.1.4, §11.8.2). */
@@ -21,6 +21,7 @@ export type FeedCard = {
   slug: string;
   path: string;
   title: string;
+  localization: PromptSummary['localization'];
   frameNumber: string;
   cover: FeedImage;
   /** "4:5", "16:9" (§9.2). */
@@ -42,6 +43,7 @@ export type FeedTemplate = {
   id: string;
   path: string;
   title: string;
+  localization: PromptSummary['localization'];
   fieldCount: number;
   promptLanguage: string;
   locale: string;
@@ -53,6 +55,7 @@ export type FeedCollection = {
   id: string;
   path: string;
   title: string;
+  localization: PromptSummary['localization'];
   description: string;
   cover: FeedImage;
   itemCount: number;
@@ -118,8 +121,8 @@ export type FeedIndex = {
   items: FeedFacts[];
   /** Prompt IDs in "featured" order (§11.8.2): showcase picks, annotated, verified, the rest. */
   featured: string[];
-  styles: { id: string; label: string }[];
-  useCases: { id: string; label: string }[];
+  styles: { id: string; label: string; labelLocale?: string | null }[];
+  useCases: { id: string; label: string; labelLocale?: string | null }[];
   /** Editorial interludes in rotation order, resolved for this locale. */
   editorial: Interlude[];
 };

@@ -1,3 +1,4 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import type { CSSProperties, ReactNode } from 'react';
 import type { ImageRef, RichBlock, TocItem } from '@/modules/content/types';
 import type { FeedCard } from '@/modules/feed/types';
@@ -39,6 +40,7 @@ export function Cover({
           width={img.width}
           height={img.height}
           alt={img.alt}
+          lang={img.lang}
           loading={priority ? undefined : 'lazy'}
           decoding={priority ? undefined : 'async'}
           fetchPriority={priority ? 'high' : undefined}
@@ -54,6 +56,7 @@ export function Cover({
 export function PageHead({
   crumbs,
   crumbLabel,
+  contentLocale,
   eyebrow,
   title,
   lead,
@@ -61,6 +64,7 @@ export function PageHead({
 }: {
   crumbs: readonly Crumb[];
   crumbLabel: string;
+  contentLocale?: string;
   eyebrow?: ReactNode;
   title: string;
   lead?: string;
@@ -71,8 +75,14 @@ export function PageHead({
       <div className={styles.titles}>
         <Breadcrumb items={crumbs} label={crumbLabel} />
         {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
-        <h1 className={styles.title}>{title}</h1>
-        {lead && <p className={styles.lead}>{lead}</p>}
+        <h1 {...languageAttributes(contentLocale)} className={styles.title}>
+          {title}
+        </h1>
+        {lead && (
+          <p {...languageAttributes(contentLocale)} className={styles.lead}>
+            {lead}
+          </p>
+        )}
       </div>
       {media}
     </header>
@@ -84,18 +94,20 @@ export function Article({
   body,
   toc,
   tocLabel,
+  contentLocale,
 }: {
   body: readonly RichBlock[];
   toc: readonly TocItem[];
   tocLabel: string;
+  contentLocale?: string;
 }) {
   if (body.length === 0) return null;
   return (
     <div className={styles.article} data-has-toc={toc.length >= 2 ? '' : undefined}>
-      <RichText blocks={body} className={styles.body} />
+      <RichText locale={contentLocale} blocks={body} className={styles.body} />
       {toc.length >= 2 && (
         <aside className={styles.aside}>
-          <TableOfContents items={toc} label={tocLabel} />
+          <TableOfContents contentLocale={contentLocale} items={toc} label={tocLabel} />
         </aside>
       )}
     </div>

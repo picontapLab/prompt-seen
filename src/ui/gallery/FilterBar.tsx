@@ -1,4 +1,5 @@
 'use client';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 
 import { Compass, SlidersHorizontal } from 'lucide-react';
 import Link from 'next/link';
@@ -35,7 +36,7 @@ const FilterPanel = lazy(loadPanel);
 const loadChips = () => import('@/ui/primitives/Chip');
 const RemovableChips = lazy(() => loadChips().then((m) => ({ default: m.RemovableChips })));
 
-type Term = { id: string; label: string };
+type Term = { id: string; label: string; labelLocale?: string | null };
 
 export type FilterBarProps = {
   styles: readonly Term[];
@@ -73,8 +74,20 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
   const styleLabel = (id: string) => styleTerms.find((s) => s.id === id)?.label ?? id;
   const labelOfUse = (id: string) => useCases.find((u) => u.id === id)?.label ?? id;
   const active = [
-    ...(query.style ? [{ id: `style:${query.style}`, label: styleLabel(query.style) }] : []),
-    ...query.use.map((u) => ({ id: `use:${u}`, label: labelOfUse(u) })),
+    ...(query.style
+      ? [
+          {
+            id: `style:${query.style}`,
+            label: styleLabel(query.style),
+            labelLocale: styleTerms.find((s) => s.id === query.style)?.labelLocale,
+          },
+        ]
+      : []),
+    ...query.use.map((u) => ({
+      id: `use:${u}`,
+      label: labelOfUse(u),
+      labelLocale: useCases.find((s) => s.id === u)?.labelLocale,
+    })),
     ...query.shape.map((s) => ({ id: `shape:${s}`, label: t(`shapes.${s}`) })),
     ...query.ref.map((r) => ({ id: `ref:${r}`, label: t(`refs.${r}`) })),
   ];
@@ -118,7 +131,8 @@ export function FilterBar({ styles: styleTerms, useCases, initialCounts }: Filte
                 title={!selected && count === 0 ? noMatch : undefined}
                 onClick={() => set({ style: selected ? null : s.id })}
               >
-                {s.label} <span className={styles.count}>{format.number(count)}</span>
+                <span {...languageAttributes(s.labelLocale)}>{s.label}</span>{' '}
+                <span className={styles.count}>{format.number(count)}</span>
               </button>
             );
           })}

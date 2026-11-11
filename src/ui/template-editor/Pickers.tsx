@@ -8,7 +8,7 @@ import fieldStyles from '@/ui/primitives/Field.module.css';
 import { ratioOf } from './values';
 import styles from './Pickers.module.css';
 
-export type PickerOption = { value: string; label: string; swatch?: readonly string[] | null };
+export type PickerOption = { value: string; label: string; lang?: string; swatch?: readonly string[] | null };
 
 type PickerProps = {
   label: ReactNode;
@@ -49,7 +49,9 @@ function Picker({
         {options.map((option) => (
           <Radio key={option.value} value={option.value} className={styles.option}>
             {kind === 'ratio' ? <Frame value={option.value} /> : <Swatch colors={option.swatch ?? []} />}
-            <span className={styles.optionLabel}>{option.label}</span>
+            <span lang={option.lang} dir="auto" className={styles.optionLabel}>
+              {option.label}
+            </span>
           </Radio>
         ))}
       </div>

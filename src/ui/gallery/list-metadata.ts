@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { builtLocales, type LocaleEntry } from '@/config';
 import { feedIndex, feedPage } from '@/modules/feed';
 import { collectionStructuredData, pageMetadata } from '@/modules/seo';
-import { listPageWorks } from '@/modules/seo/sitemaps';
+import { listPageWorks, listPageIndexable } from '@/modules/seo/sitemaps';
 import { paths } from '@/modules/url';
 
 /**
@@ -18,8 +18,9 @@ export async function listMetadata(locale: LocaleEntry, page: number): Promise<M
     locale,
     title: page > 1 ? t('documentTitlePage', { page }) : t('documentTitle'),
     description: t('description'),
+    noindex: !listPageIndexable(locale, feedPage(locale.code, page)),
     alternates: builtLocales
-      .filter((l) => feedIndex(l.code).pageCount >= page)
+      .filter((l) => feedIndex(l.code).pageCount >= page && listPageIndexable(l, feedPage(l.code, page)))
       .map((l) => ({ locale: l.code, path: paths.promptsPage(l.pathPrefix, page) })),
   });
 }
@@ -38,5 +39,6 @@ export async function listStructuredData(locale: LocaleEntry, page: number) {
     description: t('description'),
     items: listPageWorks(data).map((w) => ({ path: w.path, name: w.title })),
     offset: data.offset,
+    indexable: listPageIndexable(locale, data),
   });
 }

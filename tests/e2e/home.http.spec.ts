@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { worksOnShow } from './support/home';
+import { worksOnShow, homeAlternates } from './support/home';
 import { BASE, BUILD, homePath, message, publicUrl } from './support/artifact';
 import { localeIndex, promptDetail } from './support/content';
 import { alternates, canonical, dataAttr, elementText, title } from './support/html';
@@ -9,10 +9,6 @@ import { alternates, canonical, dataAttr, elementText, title } from './support/h
 // its own title, canonical and hreflang with the default home as x-default; every work and
 // section below links to a page of this build.
 
-const expectedAlternates = {
-  ...Object.fromEntries(BUILD.locales.map((l) => [l.htmlLang, publicUrl(homePath(l))])),
-  'x-default': publicUrl('/'),
-};
 const meta = (html: string, property: string) =>
   new RegExp(`<meta property="${property}" content="([^"]*)"`).exec(html)?.[1] ?? null;
 const hrefs = (html: string) =>
@@ -72,7 +68,7 @@ for (const locale of BUILD.locales) {
   }) => {
     const html = await (await request.get(url)).text();
     expect(canonical(html)).toBe(publicUrl(homePath(locale)));
-    expect(alternates(html)).toEqual(expectedAlternates);
+    expect(alternates(html)).toEqual(homeAlternates(code));
     const first = worksOnShow(code)[0];
     if (!first) {
       expect(meta(html, 'og:image')).toBeNull();
@@ -115,7 +111,8 @@ for (const locale of BUILD.locales) {
       Math.min(6, Math.max(0, index.prompts.length - 1)) + Math.min(12, index.prompts.length),
     );
     for (const [node] of summaries) {
-      expect(node).toContain(`lang="${locale.code}"`);
+      const entry = index.prompts.find((prompt) => prompt.description === elementText(node, 'span'))!;
+      expect(node).toContain(`lang="${entry.localization.contentLocale}"`);
       expect(node).not.toContain('aria-hidden');
       expect(index.prompts.map((p) => p.description)).toContain(elementText(node, 'span'));
     }

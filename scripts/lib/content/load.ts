@@ -6,6 +6,7 @@ import { buildIndex, type BuiltContent } from './build-index';
 import { Findings } from './findings';
 import { readContent, type Content } from './read';
 import { validateContent } from './validate';
+import { analyzeLocale, type LocaleReport } from '../localization/check';
 
 // One entry point for content:validate and content:build: read, validate and (when there are
 // no blocking findings) build the index for this configuration.
@@ -15,6 +16,7 @@ export type LoadResult = {
   content: Content;
   /** Null when there are errors or publish errors. */
   built: BuiltContent | null;
+  localization: LocaleReport[];
 };
 
 export type LoadOptions = {
@@ -27,10 +29,24 @@ export type LoadOptions = {
   mediaRoot?: string;
 };
 
-export function loadContent({ root, config, url, dir, mediaRoot }: LoadOptions): LoadResult {
+/** Preparation validates content contracts without asserting locale release completeness. */
+export function readValidatedContent({ root, config, dir, mediaRoot }: Omit<LoadOptions, 'url'>) {
   const findings = new Findings(root);
   const content = readContent(dir ?? contentDir(root), config.locales, findings);
   validateContent(content, config, findings, { mediaRoot: mediaRoot ?? path.join(root, 'public') });
-  const built = findings.blocking ? null : buildIndex(content, config, url);
-  return { findings, content, built };
+  return { content, findings };
+}
+
+export function loadContent({ root, config, url, dir, mediaRoot }: LoadOptions): LoadResult {
+  const { content, findings } = readValidatedContent({ root, config, dir, mediaRoot });
+  const snapshot = { root, config, content, findings };
+  const localization = config.locales.map((locale) => analyzeLocale(snapshot, locale.code));
+  for (const report of localization) {
+    if (!config.locales.some((locale) => locale.code === report.locale && locale.enabled)) continue;
+    for (const finding of report.findings)
+      if (finding.blockingForRelease && !findings.list.some((existing) => existing.file === finding.file && existing.field === finding.field && existing.message === finding.message)) findings.add({ ...finding, level: 'publish' });
+  }
+  const statuses = new Map(localization.map((report) => [report.locale, new Map(report.items.map((item) => [item.key, item.localStatus]))]));
+  const built = findings.blocking ? null : buildIndex(content, config, url, statuses);
+  return { findings, content, built, localization };
 }

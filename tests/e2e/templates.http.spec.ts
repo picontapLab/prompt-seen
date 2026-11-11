@@ -40,6 +40,11 @@ for (const locale of BUILD.locales) {
     expect(canonical(html)).toBe(publicUrl(`/${locale.pathPrefix}/templates/`));
     const links = hrefs(html);
     for (const t of templates) expect(links).toContain(`${BASE}${t.path}`);
+    if (!templates.every((template) => template.localization.indexable) || !templates.length) {
+      expect(collection(html)).toBeUndefined();
+      expect(html).toMatch(/<meta name="robots" content="noindex/);
+      return;
+    }
     const items = collection(html)!.mainEntity.itemListElement;
     expect(items.map((i) => i.url)).toEqual(templates.map((t) => publicUrl(t.path)));
     expect(items.map((i) => i.position)).toEqual(templates.map((_, i) => i + 1));

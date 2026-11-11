@@ -9,7 +9,7 @@ import { absoluteMediaUrl, mediaUrl } from '@/modules/url';
 const LADDER: ImageVariantName[] = ['thumbnail', 'card', 'detail'];
 
 /** What image helpers read from an image: full ImageRefs and the slim card images of lists both fit. */
-export type ImageSource = Pick<ImageRef, 'variants' | 'width' | 'height' | 'alt' | 'placeholder'>;
+export type ImageSource = Pick<ImageRef, 'variants' | 'width' | 'height' | 'alt' | 'altLocale' | 'placeholder'>;
 
 /** Address for `<img src>` and fetches. */
 export const imageUrl = (variant: ImageVariant) => mediaUrl(variant.key);
@@ -34,6 +34,7 @@ export type ImageProps = {
   width: number;
   height: number;
   alt: string;
+  lang?: string;
   /** Frame colour before the image loads (§11.9). */
   placeholder: string;
 };
@@ -55,6 +56,7 @@ export function getImage(image: ImageSource, preset: Exclude<ImageVariantName, '
     width: image.width,
     height: image.height,
     alt: image.alt,
+    lang: image.altLocale ?? undefined,
     placeholder: image.placeholder,
   };
 }

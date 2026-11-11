@@ -8,11 +8,10 @@ import { builtReader, exportJson, EXPORT_VERSION } from './export';
 import { ROOT } from './paths';
 
 // Machine-readable documents and exports (design doc §9.10.4, §14.1) over the repository's sample
-// content in a preview build: it has drafts and preview-only locales from the registry, which must never
-// get a Markdown version, an llms.txt line or an export record.
+// content in a production build. External outputs only include indexable local versions.
 
 const config = loadConfig(ROOT, {
-  BUILD_MODE: 'preview',
+  BUILD_MODE: 'production',
   BASE_PATH: '/prompt-seen',
   SITE_ORIGIN: 'https://example.com',
 });
@@ -26,6 +25,7 @@ const { built } = loadContent({ root: ROOT, config, url });
 if (!built) throw new Error('the sample content must build');
 
 const sources: GeoSources = {
+  buildMode: config.buildMode,
   siteName: config.siteName,
   defaultLocale: config.defaultLocale,
   locales: config.builtLocales,
@@ -45,7 +45,6 @@ describe('Markdown versions', () => {
       new Set(config.builtLocales.filter((l) => l.enabled).map((l) => l.code)),
     );
     const drafts = visible('en').prompts.filter((p) => p.visibility === 'draft');
-    expect(drafts.length).toBeGreaterThan(0);
     for (const d of drafts) expect(entries.some((e) => e.id === d.id && e.locale.code === 'en')).toBe(false);
     for (const { code } of config.builtLocales.filter((locale) => !locale.enabled)) {
       const shown = visible(code)?.prompts ?? [];
@@ -82,7 +81,7 @@ describe('llms.txt', () => {
     const en = visible('en');
     for (const p of en.prompts) {
       const line = url.absoluteUrl(url.paths.promptMarkdown('en', p.slug));
-      expect(text.includes(line)).toBe(p.visibility === 'published');
+      expect(text.includes(line)).toBe(p.localization.indexable);
     }
     for (const locale of config.builtLocales.filter((locale) => locale.code !== config.defaultLocale))
       for (const prompt of visible(locale.code).prompts)
@@ -97,15 +96,15 @@ describe('content:export JSON', () => {
       const locale = config.builtLocales.find((l) => l.code === code)!;
       const data = exportJson(sources, config.buildId, locale, ['prompt', 'template']);
       expect(data.version).toBe(2);
-      const prompt = data.prompts.find((p) => p.id === 'p_217')!;
+      const prompt = data.prompts.find((p) => p.kind === 'prompt' && p.prompt.language === code)!;
       expect(prompt.kind === 'prompt' && prompt.prompt).toEqual({
-        text: sources.reader.getDetailModel('prompt', 'p_217', code)!.prompt.text,
+        text: sources.reader.getDetailModel('prompt', prompt.id, code)!.prompt.text,
         language: code,
       });
-      const template = data.templates.find((t) => t.id === 't_001')!;
+      const template = data.templates.find((t) => t.kind === 'template' && t.promptLanguage === code)!;
       expect(template.kind === 'template' && template.promptLanguage).toBe(code);
       expect(template.kind === 'template' && template.defaultPrompt).toBe(
-        sources.reader.getDetailModel('template', 't_001', code)!.version.defaultPrompt,
+        sources.reader.getDetailModel('template', template.id, code)!.version.defaultPrompt,
       );
     }
   });
@@ -114,11 +113,19 @@ describe('content:export JSON', () => {
     const locale = config.builtLocales.find((l) => l.code === 'en')!;
     const data = exportJson(sources, config.buildId, locale, ['prompt', 'template']);
     expect(data).toMatchObject({ format: 'prompt-seen/content-export', version: EXPORT_VERSION, locale: 'en' });
-    const published = visible('en').prompts.filter((p) => p.visibility === 'published');
+    const published = visible('en').prompts.filter((p) => p.localization.indexable);
     expect(data.prompts.map((p) => p.id).sort()).toEqual(published.map((p) => p.id).sort());
     const record = data.prompts.find((p) => p.kind === 'prompt' && p.source.license)!;
     expect(record).toMatchObject({ markdownUrl: expect.stringMatching(/\/index\.md$/) });
     expect(record.kind === 'prompt' && record.source.licenseUrl).toBe('https://creativecommons.org/licenses/by/4.0/');
     expect(data.templates.length).toBeGreaterThan(0);
   });
+});
+
+it('excludes every external output in preview, including enabled languages', () => {
+  const preview = { ...sources, buildMode: 'preview' as const };
+  const documents = createGeoDocuments(preview);
+  expect(documents.llms()).toBe('');
+  expect(documents.markdownEntries('prompt')).toEqual([]);
+  expect(exportJson(preview, config.buildId, config.builtLocales[0]!, ['prompt']).prompts).toEqual([]);
 });

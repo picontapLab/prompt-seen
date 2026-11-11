@@ -16,6 +16,7 @@ const thumb = jazzCover.variants.thumbnail!;
 const hit = (over: Partial<SearchHit> = {}): SearchHit => ({
   id: 'prompt:p_045',
   kind: 'prompt',
+  contentLocale: 'en',
   score: 1,
   matched: ['jazz', 'poster'],
   title: 'Jazz club poster',

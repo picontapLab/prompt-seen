@@ -84,6 +84,7 @@ export function fieldsWithErrors(fields: readonly FieldSpec[], errors: readonly 
 export type FieldGroup = {
   id: string | null;
   label: string | null;
+  labelLocale?: string | null;
   fields: { field: LocalizedField; index: number }[];
 };
 
@@ -102,7 +103,15 @@ export function groupFields(fields: readonly LocalizedField[]): FieldGroup[] {
       return;
     }
     let group = groups.find((g) => g.id === field.group);
-    if (!group) groups.push((group = { id: field.group, label: field.groupLabel ?? field.group, fields: [] }));
+    if (!group)
+      groups.push(
+        (group = {
+          id: field.group,
+          label: field.groupLabel ?? field.group,
+          labelLocale: field.groupLabelLocale,
+          fields: [],
+        }),
+      );
     group.fields.push({ field, index });
   });
   return ungrouped ? [...groups, ungrouped] : groups;

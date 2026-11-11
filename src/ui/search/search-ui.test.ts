@@ -80,6 +80,7 @@ describe('quick search panel sections (§11.8.6)', () => {
   const hit = (kind: 'prompt' | 'template', id: string) => ({
     id: `${kind}:${id}`,
     kind,
+    contentLocale: 'en',
     title: id,
     description: '',
     path: `/en/${kind}s/${id}/`,

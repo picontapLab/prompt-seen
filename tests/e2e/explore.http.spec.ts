@@ -18,8 +18,7 @@ for (const locale of BUILD.locales) {
     expect(html).toContain(`>${message(locale.code, 'explore.title')}</h1>`);
     for (const id of pagePromptIds(feedPage(locale.code, 1)).slice(0, 6)) expect(html).toContain(`data-entry="${id}"`);
     // The same page serves every combination of conditions (fragment only).
-    for (const other of BUILD.locales)
-      expect(html).toContain(`hrefLang="${other.htmlLang}" href="${publicUrl(`/${other.pathPrefix}/explore/`)}"`);
+    expect(html).not.toMatch(/<link[^>]+hrefLang=/);
   });
 
   test(`${locale.code}: favourites is static, noindex and says that saving stays on this device`, async ({

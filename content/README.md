@@ -1,5 +1,7 @@
 # Content
 
+> 本地化合同更新（2026-11-10）：语言策略、全语言检查、scope、通用 import/promote 和审校规则见[本地化流程](../docs/localization-workflow.md)。内容可跨语言回退浏览；localization 独立记录实际说明语言与收录资格。新公开内容必须补齐所有 enabled complete 语言；内容生产可先准备候选，正式 apply 仍执行发布门禁。
+
 Everything the site shows comes from the files in this directory (design doc §4, §5, §6). They
 are edited by hand, reviewed in pull requests and checked by `npm run content:validate`. Pages,
 search data and host configuration are generated from them by `npm run content:build`; nothing

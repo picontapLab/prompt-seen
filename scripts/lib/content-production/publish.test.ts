@@ -1,3 +1,4 @@
+import { writeRequiredPages } from '../../../tests/support/localization-pages';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -23,6 +24,11 @@ it.each(['png', 'gif'])(
     fs.mkdirSync(path.join(root, 'content/taxonomy'));
     for (const name of fs.readdirSync('content/taxonomy').filter((n) => n.endsWith('.yaml')))
       fs.copyFileSync(path.resolve('content/taxonomy', name), path.join(root, 'content/taxonomy', name));
+    const registryFile = path.join(root, 'content/locales.yaml');
+    const registry = YAML.parse(fs.readFileSync(registryFile, 'utf8'));
+    for (const locale of registry.locales) locale.enabled = ['en', 'zh-Hans'].includes(locale.code);
+    fs.writeFileSync(registryFile, YAML.stringify(registry));
+    writeRequiredPages(root, ['en', 'zh-Hans']);
     const site = YAML.parse(fs.readFileSync(path.join(root, 'content/site.yaml'), 'utf8'));
     site.home = { featured: [] };
     site.feed = { showcase: [], interludes: [] };
@@ -78,7 +84,15 @@ it.each(['png', 'gif'])(
     const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'));
     state.receipt.recordedAt = '2026-10-21T02:00:00.000Z';
     fs.writeFileSync(stateFile, JSON.stringify(state));
+    // Preparation must remain usable while an enabled complete locale needs translations.
+    registry.locales.find((locale: { code: string }) => locale.code === 'ja').enabled = true;
+    fs.writeFileSync(registryFile, YAML.stringify(registry));
     const plan = await prepareContent(root, jobRoot, 'test-default', reviewed);
+    await expect(applyPrepared(root, 'test-default', plan.planHash)).rejects.toThrow();
+    expect(fs.existsSync(path.join(root, 'content/prompts', plan.ids.prompt))).toBe(false);
+    registry.locales.find((locale: { code: string }) => locale.code === 'ja').enabled = false;
+    fs.writeFileSync(registryFile, YAML.stringify(registry));
+
     expect(
       loadContent({
         root,
@@ -286,4 +300,5 @@ it.each(['png', 'gif'])(
     });
     expect(changed.findings.list.some((finding) => finding.message.includes('contract changed'))).toBe(true);
   },
+  30_000,
 );

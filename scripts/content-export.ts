@@ -17,6 +17,7 @@ import { printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
 import { builtReader, exportJson } from './lib/export';
 import { ROOT } from './lib/paths';
+import { validateBuildMessages } from './lib/localization/messages';
 
 const { values } = parseArgs({
   options: {
@@ -43,7 +44,8 @@ const kinds: MarkdownKind[] =
 const config = loadConfig(ROOT);
 const url = createUrlModule(urlConfigOf(config));
 const { findings, built } = loadContent({ root: ROOT, config, url });
-if (!built) {
+validateBuildMessages(ROOT, config, findings);
+if (!built || findings.blocking) {
   printFindings(
     findings.list.filter((f) => f.level === 'error' || f.level === 'publish'),
     'content:export stopped',
@@ -58,6 +60,7 @@ const locales = requested
   : publicLocales;
 
 const sources: GeoSources = {
+  buildMode: config.buildMode,
   siteName: config.siteName,
   defaultLocale: config.defaultLocale,
   locales: config.builtLocales,

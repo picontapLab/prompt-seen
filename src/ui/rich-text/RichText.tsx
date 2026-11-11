@@ -1,3 +1,4 @@
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import type { RichBlock, RichInline } from '@/modules/content/types';
@@ -143,6 +144,7 @@ function Block({ block }: { block: RichBlock }) {
             width={img.width}
             height={img.height}
             alt={img.alt}
+            lang={img.lang}
             loading="lazy"
             decoding="async"
             style={{ background: img.placeholder }}
@@ -170,9 +172,17 @@ function Block({ block }: { block: RichBlock }) {
 const logical = (a: 'left' | 'right' | 'center' | null | undefined) =>
   a === 'left' ? 'start' : a === 'right' ? 'end' : (a ?? undefined);
 
-export function RichText({ blocks, className }: { blocks: readonly RichBlock[]; className?: string }) {
+export function RichText({
+  blocks,
+  className,
+  locale,
+}: {
+  blocks: readonly RichBlock[];
+  className?: string;
+  locale?: string;
+}) {
   return (
-    <div className={[styles.rich, className].filter(Boolean).join(' ')}>
+    <div {...languageAttributes(locale)} className={[styles.rich, className].filter(Boolean).join(' ')}>
       {blocks.map((b, i) => (
         <Block key={i} block={b} />
       ))}

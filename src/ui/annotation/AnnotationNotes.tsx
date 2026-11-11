@@ -40,7 +40,9 @@ export function AnnotationNotes({
               <q className={styles.quoted} lang={promptLanguage}>
                 {a.phrase}
               </q>{' '}
-              {a.note}
+              <span lang={a.noteLocale ?? undefined} dir="auto">
+                {a.note}
+              </span>
             </span>
           </li>
         ))}
@@ -61,7 +63,11 @@ export function AnnotationCaption({ hint }: { hint?: string }) {
           <span className={styles.letter} data-solid="">
             {a.letter}
           </span>
-          <span>{a.note}</span>
+          <span>
+            <span lang={a.noteLocale ?? undefined} dir="auto">
+              {a.note}
+            </span>
+          </span>
         </>
       ) : (
         hint && <span className={styles.hint}>{hint}</span>

@@ -1,3 +1,5 @@
+import { graph } from '@/modules/seo/structured-data';
+import { LanguageLinks } from '@/ui/navigation/LanguageLinks';
 import 'server-only';
 import { getTranslations } from 'next-intl/server';
 import type { LocaleEntry } from '@/config';
@@ -22,10 +24,12 @@ export function contentPageMetadata(detail: PageDetail, locale: LocaleEntry) {
     title: detail.seo.title,
     description: detail.seo.description,
     alternates: detail.alternates,
+    noindex: !detail.localization.indexable,
   });
 }
 
 export async function contentPageStructuredData(detail: PageDetail, locale: LocaleEntry) {
+  if (!detail.localization.indexable) return graph();
   const t = await getTranslations({ locale: locale.code, namespace: 'pages.breadcrumb' });
   const crumbs = pageCrumbs(detail, locale.pathPrefix, (key) => t(key));
   // The about page describes the site's Organization (§9.6); other pages carry their breadcrumb.
@@ -38,13 +42,20 @@ export async function ContentPageBody({ detail, locale }: { detail: PageDetail; 
   const t = await getTranslations({ locale: locale.code, namespace: 'pages' });
   return (
     <div className="container" data-page="content-page" data-slug={detail.slug} data-locale={locale.code}>
+      <LanguageLinks links={detail.languageLinks} />
       <PageHead
+        contentLocale={detail.localization.contentLocale}
         crumbs={pageCrumbs(detail, locale.pathPrefix, (key) => t(`breadcrumb.${key}`))}
         crumbLabel={t('breadcrumb.label')}
         title={detail.title}
         lead={detail.description}
       />
-      <Article body={detail.body} toc={detail.toc} tocLabel={t('toc')} />
+      <Article
+        contentLocale={detail.localization.contentLocale}
+        body={detail.body}
+        toc={detail.toc}
+        tocLabel={t('toc')}
+      />
     </div>
   );
 }

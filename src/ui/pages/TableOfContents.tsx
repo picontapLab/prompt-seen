@@ -1,5 +1,6 @@
 'use client';
 
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { useEffect, useId, useState } from 'react';
 import type { TocItem } from '@/modules/content/types';
 import styles from './Pages.module.css';
@@ -9,7 +10,15 @@ import styles from './Pages.module.css';
  * being read marked by the `mark` underline (§11.1.9 当前位置下划线). The links work without
  * JavaScript; after hydration the current section follows scrolling. Hidden below 1024 px by CSS.
  */
-export function TableOfContents({ items, label }: { items: readonly TocItem[]; label: string }) {
+export function TableOfContents({
+  items,
+  label,
+  contentLocale,
+}: {
+  items: readonly TocItem[];
+  label: string;
+  contentLocale?: string;
+}) {
   const id = useId();
   const [current, setCurrent] = useState<string | null>(null);
 
@@ -59,7 +68,11 @@ export function TableOfContents({ items, label }: { items: readonly TocItem[]; l
       <ol>
         {items.map((item) => (
           <li key={item.id}>
-            <a href={`#${item.id}`} aria-current={current === item.id ? 'location' : undefined}>
+            <a
+              {...languageAttributes(contentLocale)}
+              href={`#${item.id}`}
+              aria-current={current === item.id ? 'location' : undefined}
+            >
               {item.text}
             </a>
           </li>

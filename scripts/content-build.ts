@@ -14,7 +14,6 @@ import type { EmitContext, Emitter } from './emitters/_types';
 import { printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
 import { validateBuildMessages } from './lib/localization/messages';
-import { validateEnabledLocale } from './lib/localization/check';
 import { OUTPUT_DIRS, ROOT, type OutputDir } from './lib/paths';
 
 async function build(emitters: Emitter[]): Promise<boolean> {
@@ -23,7 +22,6 @@ async function build(emitters: Emitter[]): Promise<boolean> {
 
   const { findings, built } = loadContent({ root: ROOT, config, url });
   validateBuildMessages(ROOT, config, findings);
-  validateEnabledLocale(ROOT, findings);
   // Warnings and info are for content:validate; the build only shows what blocks it.
   const blocking = findings.list.filter((f) => f.level === 'error' || f.level === 'publish');
   if (!built || findings.blocking) {

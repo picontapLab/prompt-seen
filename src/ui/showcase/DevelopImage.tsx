@@ -65,6 +65,7 @@ export function DevelopImage({ preview, src, ...img }: DevelopImageProps) {
         src={src}
         {...img}
         alt={img.alt}
+        lang={img.lang}
         className={styles.image}
         data-develop={phase === 'pending' || phase === 'developing' ? phase : undefined}
         onAnimationEnd={() => setPhase('settled')}
