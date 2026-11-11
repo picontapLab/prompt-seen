@@ -38,6 +38,8 @@ export async function Shell({
   children: React.ReactNode;
 }) {
   const t = await getTranslations({ locale: locale.code, namespace: 'shell' });
+  const entry = await getTranslations({ locale: locale.code, namespace: 'pages.entry' });
+  const suggestedLanguageLabel = entry('suggested');
   const host = config.shell.header === 'host';
   const sections = minimal
     ? []
@@ -95,7 +97,7 @@ export async function Shell({
             )}
             {!minimal && (
               <div className={styles.wide}>
-                <LanguageSwitch />
+                <LanguageSwitch suggestedLabel={suggestedLanguageLabel} />
               </div>
             )}
             {repository && !minimal && <RepositoryLink {...repository} className={styles.headerRepository} />}
@@ -106,7 +108,11 @@ export async function Shell({
             </div>
             {!minimal && (
               <div className={styles.narrow}>
-                <MobileMenu links={saved ? [...sections, saved] : sections} repository={repository} />
+                <MobileMenu
+                  links={saved ? [...sections, saved] : sections}
+                  repository={repository}
+                  suggestedLanguageLabel={suggestedLanguageLabel}
+                />
               </div>
             )}
           </div>

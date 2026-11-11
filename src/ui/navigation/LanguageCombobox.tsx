@@ -9,6 +9,7 @@ import { paths } from '@/modules/url';
 import { missingTranslationFragment, parseMissingFragment, pathInLocale } from '@/ui/pages/missing';
 import { Combobox, type ComboboxOption } from '@/ui/primitives/Combobox';
 import { preferencesStore } from '@/state/preferences/store';
+import { suggestLanguage } from '@/ui/pages/language-match';
 
 /**
  * Language selection (§11.1.7, §11.7): a searchable list of native names, never flags. Finds a
@@ -19,7 +20,15 @@ import { preferencesStore } from '@/state/preferences/store';
  * choice is remembered, but the root always opens in the default language.
  * Loaded on first use (LanguageSwitch).
  */
-export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: boolean; autoFocus?: boolean }) {
+export default function LanguageCombobox({
+  quiet = true,
+  autoFocus,
+  suggestedLabel,
+}: {
+  quiet?: boolean;
+  autoFocus?: boolean;
+  suggestedLabel: string;
+}) {
   const t = useTranslations('shell.language');
   const uiLocale = registryCode(useLocale());
   const pathname = usePathname();
@@ -35,16 +44,23 @@ export default function LanguageCombobox({ quiet = true, autoFocus }: { quiet?: 
     } catch {
       names = undefined;
     }
+    const suggested = suggestLanguage(
+      navigator.languages?.length ? navigator.languages : [navigator.language],
+      builtLocales,
+    );
     return builtLocales.map((l) => {
       const translated = names?.of(l.htmlLang);
       return {
         id: l.code,
         label: l.nativeName,
-        detail: translated && translated !== l.nativeName ? translated : undefined,
+        detail:
+          [translated && translated !== l.nativeName ? translated : null, l.code === suggested ? suggestedLabel : null]
+            .filter(Boolean)
+            .join(' · ') || undefined,
         keywords: `${l.code} ${new Intl.DisplayNames(['en'], { type: 'language' }).of(l.htmlLang) ?? ''}`,
       };
     });
-  }, [uiLocale]);
+  }, [uiLocale, suggestedLabel]);
 
   return (
     <Combobox

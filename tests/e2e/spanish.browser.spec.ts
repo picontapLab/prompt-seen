@@ -6,7 +6,7 @@ import { localeIndex, promptDetail, templateDetail } from './support/content';
 import { expect, test, type Page } from '@playwright/test';
 import { BASE, BUILD, ROOT, message } from './support/artifact';
 import { layoutProblems } from './support/layout';
-import { seriousViolations, scrollToTop } from './support/a11y';
+import { seriousViolations, scrollToTop, settle } from './support/a11y';
 import { cancelledFetch } from './support/errors';
 
 const spanish = BUILD.locales.find((locale) => locale.code === 'es');
@@ -248,3 +248,40 @@ test.describe('frozen Spanish search scenarios in the real Worker', () => {
     });
   }
 });
+
+for (const preference of ['es-ES', 'es-MX', 'es-AR', 'es-419']) {
+  test.describe(`Spanish browser preference ${preference}`, () => {
+    test.use({ locale: preference });
+    for (const width of [360, 1440]) {
+      test(`${width}px: recommends a built Spanish option without redirecting`, async ({ page }) => {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(`${BASE}/`);
+        await expect(page.locator('html')).toHaveAttribute('lang', BUILD.defaultLocale);
+        expect(new URL(page.url()).pathname).toBe(`${BASE}/`);
+        const buttonSelector =
+          width === 360 ? 'header button[aria-haspopup="dialog"]' : 'header button[aria-haspopup="listbox"]';
+        await page.waitForFunction((selector) => {
+          const element = document.querySelector(selector);
+          return element && Object.keys(element).some((key) => key.startsWith('__reactProps'));
+        }, buttonSelector);
+        await page.locator(buttonSelector).click();
+        if (width === 360) {
+          await expect(page.getByRole('dialog')).toBeVisible();
+          await settle(page);
+          await page.getByRole('combobox', { name: message(BUILD.defaultLocale, 'shell.language.label') }).focus();
+        }
+        const option = page.getByRole('option', { name: /Español/ });
+        if (!spanish) {
+          await expect(option).toHaveCount(0);
+          return;
+        }
+        await expect(option).toContainText(message(BUILD.defaultLocale, 'pages.entry.suggested'));
+        await settle(page);
+        expect(new URL(page.url()).pathname).toBe(`${BASE}/`);
+        await option.click();
+        await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+        expect(new URL(page.url()).pathname).toBe(`${BASE}/${spanish.pathPrefix}/`);
+      });
+    }
+  });
+}

@@ -19,9 +19,11 @@ export type RepositoryMenuLink = { href: string; label: string };
 export function MobileMenu({
   links,
   repository,
+  suggestedLanguageLabel,
 }: {
   links: readonly MenuLink[];
   repository?: RepositoryMenuLink | null;
+  suggestedLanguageLabel: string;
 }) {
   const t = useTranslations('shell.menu');
   const [open, setOpen] = useState(false);
@@ -43,7 +45,13 @@ export function MobileMenu({
       />
       {loaded && (
         <Suspense>
-          <MenuSheet links={links} repository={repository} isOpen={open} onOpenChange={setOpen} />
+          <MenuSheet
+            links={links}
+            repository={repository}
+            suggestedLanguageLabel={suggestedLanguageLabel}
+            isOpen={open}
+            onOpenChange={setOpen}
+          />
         </Suspense>
       )}
     </>
