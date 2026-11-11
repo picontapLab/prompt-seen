@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Vorlagen",
+    "documentTitle": "Vorlagen für Bild-Prompts",
+    "description": "Getestete Bild-Prompts mit Lücken: Fülle einige Felder aus und kopiere einen vollständigen Prompt mit dem Wortlaut der von uns getesteten Version.",
+    "intro": "Jede Vorlage ist ein getesteter Prompt mit einigen Lücken. Fülle sie aus: Der Prompt aktualisiert sich beim Tippen. Kopiere ihn oder lade ihn als Textdatei herunter.",
+    "introMore": "Mehr",
+    "introLess": "Weniger",
+    "count": "{count, plural, one {# Vorlage} other {# Vorlagen}}",
+    "fields": "{count, plural, one {# Feld} other {# Felder}}",
+    "version": "Version {version}",
+    "empty": "Es gibt noch keine Vorlagen in dieser Sprache."
+  },
+  "editor": {
+    "fields": "Felder",
+    "other": "Sonstiges",
+    "preview": "Prompt-Vorschau",
+    "expand": "VOLLSTÄNDIGEN PROMPT ANZEIGEN",
+    "collapse": "PROMPT EINKLAPPEN",
+    "reset": "Zurücksetzen",
+    "resetDone": "Standardbeispiel wiederhergestellt",
+    "anotherSample": "Anderes Beispiel",
+    "sampleDone": "Beispiel {n} von {total}",
+    "undo": "Rückgängig",
+    "download": ".txt herunterladen",
+    "downloaded": "Prompt als Textdatei heruntergeladen",
+    "share": "Diese Werte teilen",
+    "shareCopied": "Link mit deinen Werten kopiert",
+    "shareFailed": "Link konnte nicht kopiert werden",
+    "missing": "{count, plural, one {# Feld noch auszufüllen} other {# Felder noch auszufüllen}}",
+    "restored": "Deine letzten Eingaben wurden wiederhergestellt.",
+    "shared": "Werte aus einem geteilten Link übernommen.",
+    "mismatch": "Dieser Link wurde für Version {version} erstellt. Stattdessen wird das Standardbeispiel von Version {current} angezeigt.",
+    "errors": {
+      "required": "{label} ist leer. Fülle das Feld aus, um den Prompt zu vervollständigen.",
+      "too-short": "{label} benötigt mindestens {limit} Zeichen (aktuell {actual}).",
+      "too-long": "{label} darf höchstens {limit} Zeichen enthalten (aktuell {actual}).",
+      "too-few": "Füge mindestens {limit} Einträge zu {label} hinzu (aktuell {actual}).",
+      "too-many": "{label} erlaubt höchstens {limit} Einträge (aktuell {actual}). Entferne die überzähligen.",
+      "item-too-long": "Eintrag {item} darf höchstens {limit} Zeichen enthalten (aktuell {actual}).",
+      "empty-item": "Eintrag {item} ist leer. Entferne ihn oder fülle ihn aus.",
+      "invalid-option": "Wähle eine der Optionen für {label}.",
+      "wrong-type": "Dieser Wert ist für {label} nicht zulässig. Gib ihn erneut ein."
+    }
+  },
+  "tokens": {
+    "items": "Einträge",
+    "count": "{count} / {max}",
+    "placeholder": "Eingeben und Enter drücken",
+    "howTo": "Drücke Enter, um einen Eintrag hinzuzufügen.",
+    "remaining": "{count, plural, one {Noch # Eintrag möglich.} other {Noch # Einträge möglich.}}",
+    "full": "{max, plural, one {Dieses Feld erlaubt # Eintrag.} other {Dieses Feld erlaubt # Einträge.}} Entferne einen Eintrag, um einen anderen hinzuzufügen.",
+    "pendingTooLong": "Dieser Eintrag hat {count} Zeichen; erlaubt sind höchstens {max}.",
+    "remove": "{item} entfernen",
+    "added": "{item} hinzugefügt",
+    "removed": "{item} entfernt"
+  }
+}

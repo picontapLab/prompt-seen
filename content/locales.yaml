@@ -12,7 +12,7 @@ locales:
   - { code: pt-BR, pathPrefix: pt-br, nativeName: Português (Brasil), htmlLang: pt-BR, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
   - { code: ja, pathPrefix: ja, nativeName: 日本語, htmlLang: ja, direction: ltr, enabled: true, preview: true, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
   - { code: ko, pathPrefix: ko, nativeName: 한국어, htmlLang: ko, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: de, pathPrefix: de, nativeName: Deutsch, htmlLang: de, direction: ltr, enabled: false, preview: false, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
+  - { code: de, pathPrefix: de, nativeName: Deutsch, htmlLang: de, direction: ltr, enabled: false, preview: true, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
   - { code: fr, pathPrefix: fr, nativeName: Français, htmlLang: fr, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
   # Phase 2
   - { code: ru, pathPrefix: ru, nativeName: Русский, htmlLang: ru, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }

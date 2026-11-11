@@ -8,10 +8,12 @@ fields:
       en: Subject
       zh-Hans: 题材
       ja: 題材
+      de: Motiv
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
       ja: 「竹林」のように、主な題材をひとつ指定します。
+      de: Ein Hauptmotiv, etwa „ein Bambushain“.
   - name: season
     type: enum
     required: true
@@ -21,27 +23,32 @@ fields:
       en: Season
       zh-Hans: 季节
       ja: 季節
+      de: Jahreszeit
     options:
       - value: spring
         labels:
           en: Spring
           zh-Hans: 春
           ja: 春
+          de: Frühling
       - value: summer
         labels:
           en: Summer
           zh-Hans: 夏
           ja: 夏
+          de: Sommer
       - value: autumn
         labels:
           en: Autumn
           zh-Hans: 秋
           ja: 秋
+          de: Herbst
       - value: winter
         labels:
           en: Winter
           zh-Hans: 冬
           ja: 冬
+          de: Winter
   - name: brushwork
     type: enum
     required: true
@@ -51,22 +58,26 @@ fields:
       en: Brushwork
       zh-Hans: 笔法
       ja: 筆致
+      de: Pinselführung
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
           en: Soft washes, crisp nodes
           zh-Hans: 淡墨晕染，节点清晰
           ja: 淡い墨と鋭い節
+          de: Sanfte Verläufe, klare Knoten
       - value: loose wet washes
         labels:
           en: Loose wet washes
           zh-Hans: 湿笔晕染
           ja: ゆったりとにじむ墨
+          de: Lockere nasse Verläufe
       - value: dry brush with visible texture
         labels:
           en: Dry brush
           zh-Hans: 枯笔
           ja: かすれ
+          de: Trockener Pinsel
   - name: elements
     type: string-list
     required: false
@@ -78,10 +89,12 @@ fields:
       en: Details
       zh-Hans: 细节
       ja: 細部
+      de: Details
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
       ja: 数えられるものが効果的です。例：「背の高い茎 5 本」。
+      de: Zählbare Dinge funktionieren am besten, etwa „fünf hohe Halme“.
   - name: aspectRatio
     type: enum
     required: true
@@ -92,6 +105,7 @@ fields:
       zh-Hans: 画面比例
       ja: アスペクト比
       ar: نسبة الأبعاد
+      de: Seitenverhältnis
     options:
       - value: 21:9
         labels:
@@ -99,21 +113,25 @@ fields:
           zh-Hans: 21:9
           ja: 21:9
           ar: 21:9
+          de: 21:9
       - value: 16:9
         labels:
           en: 16:9
           zh-Hans: 16:9
           ja: 16:9
           ar: 16:9
+          de: 16:9
       - value: 3:4
         labels:
           en: 3:4
           zh-Hans: 3:4
           ja: 3:4
           ar: 3:4
+          de: 3:4
       - value: 1:3
         labels:
           en: 1:3
           zh-Hans: 1:3
           ja: 1:3
           ar: 1:3
+          de: 1:3

@@ -1,0 +1,101 @@
+{
+  "kinds": { "prompt": "Prompt", "template": "Vorlage" },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": { "label": "Seitenpfad", "home": "Startseite", "prompts": "Prompts", "templates": "Vorlagen" },
+  "test": {
+    "label": "Testnachweis",
+    "verifiedWith": "Getestet mit {model}",
+    "notVerified": "Nicht überprüft",
+    "lastTested": "Getestet am {date}",
+    "neverTested": "Noch nicht getestet",
+    "updated": "Aktualisiert am {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "Kein Referenzbild",
+      "optional": "Referenzbild optional",
+      "required": "Referenzbild erforderlich"
+    },
+    "recordedUnknownModel": "Dokumentiertes Ergebnis · Modell nicht überprüft"
+  },
+  "sheet": {
+    "label": "Prompt · {language}",
+    "languageNote": "Prompts bleiben in ihrer Originalsprache. Eine Übersetzung kann zu anderen Ergebnissen führen.",
+    "characters": "{count, plural, one {# Zeichen} other {# Zeichen}}",
+    "expand": "Alles anzeigen",
+    "expandLines": "Alles anzeigen ({lines, plural, one {# Zeile} other {# Zeilen}})",
+    "collapse": "Weniger anzeigen"
+  },
+  "copy": {
+    "label": "Prompt kopieren",
+    "done": "Kopiert",
+    "failed": "Kopieren fehlgeschlagen",
+    "failedHint": "Markiere den Prompt-Text und kopiere ihn mit der Tastatur oder über das Menü."
+  },
+  "share": { "label": "Teilen", "copied": "Link kopiert", "failed": "Link konnte nicht kopiert werden" },
+  "customize": "Anpassen",
+  "annotations": { "heading": "Wie einzelne Formulierungen wirken" },
+  "image": {
+    "original": "Bild in Originalgröße",
+    "dimensions": "{width} × {height}",
+    "show": "Bild {n} von {total} anzeigen",
+    "failed": "Das Bild konnte nicht geladen werden.",
+    "retry": "Erneut versuchen"
+  },
+  "examples": {
+    "heading": "Testergebnisse",
+    "recorded": "Aufgezeichnet",
+    "model": "Modell",
+    "provider": "Anbieter",
+    "notes": "Unsere Beobachtungen",
+    "parameters": "Parameter",
+    "parameter": "Parameter",
+    "value": "Wert",
+    "template": "Vorlage {version}",
+    "references": "Referenzbilder",
+    "outputs": "Ergebnis",
+    "promptUsed": "Für dieses Ergebnis verwendeter Prompt",
+    "unknown": "Nicht aufgezeichnet",
+    "selectRun": "Dokumentiertes Ergebnis",
+    "cover": "Titelbild"
+  },
+  "source": {
+    "heading": "Quelle und Lizenz",
+    "prompt": "Prompt",
+    "image": "Bild",
+    "unknown": "Quelle unbekannt",
+    "author": "Von {author}",
+    "licence": "Lizenz: {licence}",
+    "creator": "Urheber: {creator}",
+    "aiGenerated": "Generiertes Bild",
+    "algorithmic": "Von einem Programm erzeugt"
+  },
+  "related": { "templates": "Verwandte Vorlagen", "similar": "Ähnliche Prompts" },
+  "actions": { "label": "Prompt-Aktionen" },
+  "template": {
+    "fields": "Felder",
+    "field": "Feld",
+    "type": "Typ",
+    "value": "Im Standardbeispiel",
+    "optional": "Optional",
+    "required": "Erforderlich",
+    "types": { "string": "Text", "string-list": "Liste", "enum": "Auswahl" },
+    "listLimit": "{min}–{max} Einträge",
+    "maxLength": "Bis zu {max} Zeichen",
+    "choices": "{count, plural, one {# Option} other {# Optionen}}",
+    "version": "Version {version}",
+    "fieldCount": "{count, plural, one {# Feld} other {# Felder}}",
+    "sampleImage": "Dieses Bild stammt aus dem Standardbeispiel. Andere Werte führen zu anderen Ergebnissen.",
+    "examples": "Mit dieser Vorlage erstellt",
+    "testedImage": "Dokumentiertes Ergebnis für genau diese Werte.",
+    "unmatchedImage": "Für diese Werte liegt kein dokumentiertes Ergebnis vor. Das Bild zeigt ein anderes Beispiel."
+  },
+  "inspiration": {
+    "heading": "Inspiration und Quellennachweise",
+    "adaptation": "Dieser Prompt ist eine eigenständige Adaption. Das hier gezeigte Bild ist unser eigenes dokumentiertes Ergebnis.",
+    "original": "Originalinhalt",
+    "snapshot": "Stand der Quelldaten",
+    "observed": "Erfasst am {date}",
+    "evidence": "Nachweis",
+    "scope": "Diese Zahlen gehören zum ursprünglichen Beitrag oder Video. Sie zeigen einen datierten Stand und sind weder Live-Zähler noch Bewertungen unseres Bildes."
+  }
+}

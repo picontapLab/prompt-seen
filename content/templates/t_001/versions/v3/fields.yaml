@@ -9,11 +9,13 @@ fields:
       zh-Hans: 产品
       ja: 商品
       ar: المنتج
+      de: Produkt
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
       ja: 物と素材を書きます。例：「斑点模様の陶器のマグカップ」。
       ar: اذكر الشيء ومادته، مثل “كوب خزفي منقّط”.
+      de: Nenne das Objekt und sein Material, etwa „ein gesprenkelter Keramikbecher“.
   - name: sellingPoints
     type: string-list
     required: true
@@ -27,11 +29,13 @@ fields:
       zh-Hans: 核心卖点
       ja: セールスポイント
       ar: نقاط البيع
+      de: Verkaufsargumente
     help:
       en: Concrete details become visible; vague claims are ignored.
       zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
       ja: 具体的な点は絵になり、あいまいな言葉は無視されます。
       ar: التفاصيل الملموسة تظهر في الصورة، والعبارات العامة تُهمل.
+      de: Konkrete Details werden sichtbar; vage Aussagen werden ignoriert.
   - name: palette
     type: enum
     required: true
@@ -42,6 +46,7 @@ fields:
       zh-Hans: 配色
       ja: 配色
       ar: الألوان
+      de: Farbpalette
     options:
       - value: warm neutral
         swatch:
@@ -53,6 +58,7 @@ fields:
           zh-Hans: 暖色中性
           ja: ウォームニュートラル
           ar: محايد دافئ
+          de: Warme Neutraltöne
       - value: sage green
         swatch:
           - "#DCE6DD"
@@ -63,6 +69,7 @@ fields:
           zh-Hans: 鼠尾草绿
           ja: セージグリーン
           ar: أخضر مريمي
+          de: Salbeigrün
       - value: midnight blue
         swatch:
           - "#1F2A44"
@@ -73,6 +80,7 @@ fields:
           zh-Hans: 午夜蓝
           ja: ミッドナイトブルー
           ar: أزرق ليلي
+          de: Mitternachtsblau
       - value: soft grey
         swatch:
           - "#E2E2E0"
@@ -83,6 +91,7 @@ fields:
           zh-Hans: 柔和灰
           ja: ソフトグレー
           ar: رمادي ناعم
+          de: Sanftes Grau
       - value: coral pop
         swatch:
           - "#EE6C4D"
@@ -93,6 +102,7 @@ fields:
           zh-Hans: 珊瑚亮色
           ja: コーラルポップ
           ar: مرجاني
+          de: Kräftiges Korallrot
   - name: aspectRatio
     type: enum
     required: true
@@ -103,6 +113,7 @@ fields:
       zh-Hans: 画面比例
       ja: アスペクト比
       ar: نسبة الأبعاد
+      de: Seitenverhältnis
     options:
       - value: 4:5
         labels:
@@ -110,30 +121,35 @@ fields:
           zh-Hans: 4:5
           ja: 4:5
           ar: 4:5
+          de: 4:5
       - value: 5:4
         labels:
           en: 5:4
           zh-Hans: 5:4
           ja: 5:4
           ar: 5:4
+          de: 5:4
       - value: 1:1
         labels:
           en: 1:1
           zh-Hans: 1:1
           ja: 1:1
           ar: 1:1
+          de: 1:1
       - value: 3:4
         labels:
           en: 3:4
           zh-Hans: 3:4
           ja: 3:4
           ar: 3:4
+          de: 3:4
       - value: 16:9
         labels:
           en: 16:9
           zh-Hans: 16:9
           ja: 16:9
           ar: 16:9
+          de: 16:9
   - name: headline
     type: string
     required: false
@@ -144,8 +160,10 @@ fields:
       zh-Hans: 标题文字
       ja: 見出し
       ar: العنوان
+      de: Überschrift
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
       ja: 任意です。短い言葉ほど正確に描画されやすくなります。
       ar: اختياري. الكلمات القصيرة تظهر بدقة أكبر.
+      de: Optional. Kurze Wörter werden zuverlässiger dargestellt.

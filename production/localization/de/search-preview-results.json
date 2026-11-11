@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "locale": "de",
+  "evaluatedAt": "2026-11-11T04:13:41.976Z",
+  "stage": "partial-library-preview; not production acceptance",
+  "passed": 6,
+  "total": 32,
+  "results": [
+    {
+      "query": "Straße Japan",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Strasse Japan",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "STRASSE JAPAN",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Porträt Magazincover",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Portraet Magazincover",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Porträt Magazincover",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Produktfotografie Studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "actual": [
+        "template/t_008",
+        "prompt/p_105"
+      ],
+      "pass": false
+    },
+    {
+      "query": "Produktfoto Studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "actual": [
+        "template/t_008",
+        "prompt/p_105"
+      ],
+      "pass": false
+    },
+    {
+      "query": "Fotografie Produkt Studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "actual": [
+        "template/t_008",
+        "prompt/p_105"
+      ],
+      "pass": false
+    },
+    {
+      "query": "Produktfoto schwebend",
+      "expectedKeys": [
+        "prompt/p_154"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Produkt Detail Draufsicht",
+      "expectedKeys": [
+        "prompt/p_156"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Produkt Alltag",
+      "expectedKeys": [
+        "prompt/p_158"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Porträt Aufzug Anzug",
+      "expectedKeys": [
+        "prompt/p_315"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Porträt See Mondlicht",
+      "expectedKeys": [
+        "prompt/p_314"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Porträt Windschutzscheibe Stadtplan",
+      "expectedKeys": [
+        "prompt/p_313"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Poster Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "actual": [
+        "prompt/p_290"
+      ],
+      "pass": true
+    },
+    {
+      "query": "Plakat Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "actual": [
+        "prompt/p_290"
+      ],
+      "pass": true
+    },
+    {
+      "query": "Sticker Montag",
+      "expectedKeys": [
+        "prompt/p_287"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Aufkleber Montag",
+      "expectedKeys": [
+        "prompt/p_287"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Poster Kolosseum",
+      "expectedKeys": [
+        "prompt/p_289"
+      ],
+      "actual": [
+        "prompt/p_289"
+      ],
+      "pass": true
+    },
+    {
+      "query": "Poster Lissabon",
+      "expectedKeys": [
+        "prompt/p_170"
+      ],
+      "actual": [
+        "prompt/p_170",
+        "template/t_054"
+      ],
+      "pass": true
+    },
+    {
+      "query": "Poster Schneemann Barock",
+      "expectedKeys": [
+        "prompt/p_239"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Katze Büro Sticker",
+      "expectedKeys": [
+        "prompt/p_221"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Beleuchtung Neon Porträt",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Licht Neon Porträt",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "actual": [
+        "prompt/p_036",
+        "prompt/p_019",
+        "template/t_052",
+        "prompt/p_168"
+      ],
+      "pass": false
+    },
+    {
+      "query": "Hintergrund Salbei Tee",
+      "expectedKeys": [
+        "prompt/p_003"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Bildkomposition Konzert",
+      "expectedKeys": [
+        "prompt/p_002"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Vorlage Produktposter",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Vorlage Tusche",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "Vorlage Neon Porträt",
+      "expectedKeys": [
+        "template/t_003"
+      ],
+      "actual": [],
+      "pass": false
+    },
+    {
+      "query": "GPT Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "actual": [
+        "prompt/p_111"
+      ],
+      "pass": true
+    },
+    {
+      "query": "p_217",
+      "expectedKeys": [
+        "prompt/p_217"
+      ],
+      "actual": [
+        "prompt/p_217"
+      ],
+      "pass": true
+    }
+  ]
+}

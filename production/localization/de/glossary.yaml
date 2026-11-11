@@ -1,0 +1,29 @@
+schemaVersion: 1
+locale: de
+status: draft
+sourcePolicy: Shared YAML uses the explicit default-locale value, otherwise the first explicit locale in fixed order. Reports record the source file and field; a translation must never overwrite that source.
+terms:
+  - { source: Prompt, target: Prompt, sourceFile: src/i18n/messages/en/detail.json, note: Der Text für das Modell; von der Beschreibung auf der Seite unterscheiden. }
+  - { source: Template, target: Vorlage, sourceFile: src/i18n/messages/en/templates.json }
+  - { source: Collection, target: Sammlung, sourceFile: src/i18n/messages/en/pages.json }
+  - { source: Reference image, target: Referenzbild, sourceFile: scripts/lib/content/schemas.ts }
+  - { source: Output image, target: generiertes Bild, sourceFile: scripts/lib/content/schemas.ts }
+  - { source: Copy, target: Kopieren, sourceFile: src/i18n/messages/en/detail.json }
+  - { source: Download, target: Herunterladen, sourceFile: src/i18n/messages/en/detail.json }
+  - { source: Reset, target: Zurücksetzen, sourceFile: src/i18n/messages/en/templates.json }
+  - { source: Favorites, target: Favoriten, sourceFile: src/i18n/messages/en/favorites.json }
+  - { source: Not verified, target: Nicht überprüft, sourceFile: content/pages/about/locales/en.mdx }
+  - { source: Product photography, target: Produktfotografie, aliases: [Produktfoto, Produktfotos, Fotografie] }
+  - { source: Portrait, target: Porträt, aliases: [Portraet, Portrait] }
+  - { source: Poster, target: Poster, aliases: [Plakat] }
+  - { source: Sticker, target: Sticker, aliases: [Aufkleber] }
+  - { source: Composition, target: Bildkomposition, aliases: [Komposition, Bildaufbau] }
+  - { source: Background, target: Hintergrund }
+  - { source: Lighting, target: Beleuchtung, aliases: [Licht, Lichtgestaltung] }
+preservationRules:
+  - { fieldKind: prompt-body, reason: Originaltext für Anzeige, Kopieren und Herunterladen unverändert erhalten. }
+  - { fieldKind: template-value, reason: Variablen-IDs, Parametergrenzen, Ausgabewerte und Nutzereingaben gehören zum Vorlagenvertrag. }
+  - { fieldKind: generation-record, reason: Modellangaben, Hashes, tatsächliche Ergebnisse und Lizenzkennungen sind keine Übersetzungsfelder. }
+exceptions: []
+# These preservation rules do not approve untranslated prose. Any exception must name
+# an exact field and carry a real fingerprint-bound review with its reason.
