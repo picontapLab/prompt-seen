@@ -45,6 +45,10 @@ completed snapshot is 177/381 current targets and 1,086/2,220 current fields.
 There are 204 missing targets and 1,134 missing fields. Full-production acceptance
 and the browser results below have not been rerun against this larger corpus.
 
+The next 50 Prompt descriptions and 480 fields are now reviewed and current,
+with one matching template-description correction. Latest coverage: 227/381
+targets and 1,566/2,220 fields; 154 targets and 654 fields remain missing.
+
 ## Verification
 
 These checks ran against the working source tree, including the user's existing

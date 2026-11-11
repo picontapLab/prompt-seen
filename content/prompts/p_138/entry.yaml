@@ -23,12 +23,15 @@ inputRequirements:
       real family archive.
     zh-Hans: 待修复的旧照片
     ja: 古い写真を 1 枚アップロードしてください。この作例の修復前画像は、古びた写真として生成したもので、実際の家族の記録写真ではありません。
+    de: Lade ein altes Foto hoch. Unser Vorher-Bild ist ein künstlich gealtertes,
+      generiertes Foto, kein echtes Familienarchiv.
   slots:
     - id: oldPhoto
       labels:
         en: Old photo
         zh-Hans: 待修复旧照片
         ja: 古い写真
+        de: Altes Foto
       min: 1
       max: 1
 showcaseExampleId: x_183
@@ -45,17 +48,20 @@ inspirationSources:
       en: Whole tutorial or showcase video
       zh-Hans: 整条教程或作品展示视频
       ja: チュートリアルまたは作品紹介の動画全体
+      de: Gesamtes Tutorial- oder Präsentationsvideo
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: B站 官方公开只读 API
       ja: 公式の公開 API のスナップショット
+      de: Momentaufnahme der offiziellen öffentlichen API
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 未取得完整prompt；本次依据修复主题改编
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
+      de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
     metrics:
       - key: views
         value: 33334
@@ -63,42 +69,49 @@ inspirationSources:
           en: Views
           zh-Hans: 播放或浏览
           ja: 閲覧数
+          de: Aufrufe
       - key: likes
         value: 505
         labels:
           en: Likes
           zh-Hans: 赞
           ja: いいね
+          de: Gefällt mir
       - key: saves
         value: 1340
         labels:
           en: Saves
           zh-Hans: 收藏
           ja: 保存数
+          de: Gespeichert
       - key: comments
         value: 62
         labels:
           en: Comments
           zh-Hans: 评论
           ja: コメント
+          de: Kommentare
       - key: shares
         value: 139
         labels:
           en: Shares
           zh-Hans: 分享
           ja: 共有数
+          de: Geteilt
       - key: coins
         value: 211
         labels:
           en: Coins
           zh-Hans: 投币
           ja: コイン数
+          de: Coins
       - key: danmaku
         value: 112
         labels:
           en: Danmaku
           zh-Hans: 弹幕
           ja: 弾幕コメント数
+          de: Danmaku
 source:
   author: Prompt Seen
   url: null

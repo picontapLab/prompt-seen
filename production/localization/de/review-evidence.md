@@ -116,3 +116,27 @@ transactionally with 504 exact-hash approvals at 04:45:56 UTC. The snapshot now
 has all 75 template descriptions current: 177/381 targets and 1,086/2,220 fields.
 The template `t_008` description's matching singular-swimmer refinement is queued
 with the next reviewed Prompt batch. No full-library acceptance is implied.
+
+## Reference-image and social-inspiration Prompt descriptions
+
+AI Codex `spec_review` read all 50 pages `p_101`–`p_151` except the already
+reviewed `p_115` by 04:44:46 UTC on 2026-11-11. All 424 Prompt-entry fields
+were reviewed by 04:45:45 UTC: identical source/target pairs were read in 52
+groups, and every affected key, input contract and provenance scope was checked.
+Corrections include Prompt-specific instructions, fading versus color reduction,
+crying-reaction labels, whole-gallery metric scope and explicit sticker grid wording.
+All listed corrections were rechecked at 04:53:41 UTC.
+
+AI Codex `standards_review` opened all 31 new media images and compared all 25
+run notes by 04:46:52 UTC. Every asset was a still PNG. The actual `a_231` is a
+shaded frontal portrait, not a silhouette; `a_269` is an office miniature, not a
+living room. Their approvals record these source-description discrepancies.
+Inspected IDs: `a_209`–`a_210`, `a_212`–`a_213`, `a_215`–`a_217`,
+`a_226`–`a_227`, `a_230`–`a_233`, `a_241`–`a_242`, `a_245`–`a_246`,
+`a_248`–`a_249`, `a_252`, `a_257`, `a_259`, `a_264`–`a_266`,
+`a_269`–`a_270`, `a_272`, `a_274`, `a_276`, `a_284`.
+
+The 530 new operations and matching `t_008` singular-swimmer description correction
+were published with 531 fingerprint-bound approvals at 04:50:42 UTC. The snapshot
+is 227/381 current targets and 1,566/2,220 current fields. No other library material,
+new browser run or production candidate was certified by this batch.

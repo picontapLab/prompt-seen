@@ -23,12 +23,15 @@ inputRequirements:
       AI-generated adult.
     zh-Hans: 人物照片
     ja: ポーズがはっきり分かるポートレートを 1 枚アップロードしてください。この作例の参照画像は、AI で生成した架空の成人です。
+    de: Lade ein Porträt mit klarer Pose hoch. Unsere Referenz ist eine fiktive,
+      KI-generierte erwachsene Person.
   slots:
     - id: person
       labels:
         en: Person
         zh-Hans: 人物与姿态
         ja: 人物
+        de: Person
       min: 1
       max: 1
 showcaseExampleId: x_157
@@ -50,17 +53,20 @@ inspirationSources:
       en: Whole post or image gallery
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
+      de: Gesamter Beitrag oder gesamte Bildergalerie
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
+      de: Momentaufnahme der offiziellen öffentlichen API
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2020241008693506483&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 只取得原帖片段
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
+      de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
     metrics:
       - key: likes
         value: 3324
@@ -68,27 +74,32 @@ inspirationSources:
           en: Likes
           zh-Hans: 赞
           ja: いいね
+          de: Gefällt mir
       - key: conversation_count
         value: 29
         labels:
           en: Replies
           zh-Hans: 回复
           ja: 返信数
+          de: Antworten
       - key: views
         value: null
         labels:
           en: Views
           zh-Hans: 播放或浏览
           ja: 閲覧数
+          de: Aufrufe
       - key: reposts
         value: null
         labels:
           en: Reposts
           zh-Hans: 转发
           ja: リポスト数
+          de: Reposts
       - key: bookmarks
         value: null
         labels:
           en: Bookmarks
           zh-Hans: 书签
           ja: ブックマーク数
+          de: Lesezeichen

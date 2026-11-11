@@ -36,17 +36,20 @@ inspirationSources:
       en: Whole post or image gallery
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
+      de: Gesamter Beitrag oder gesamte Bildergalerie
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
       en: Official public API snapshot
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
+      de: Momentaufnahme der offiziellen öffentlichen API
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1968631874663891175&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 原帖文字或图片ALT可见
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
+      de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
     metrics:
       - key: likes
         value: 994
@@ -54,30 +57,35 @@ inspirationSources:
           en: Likes
           zh-Hans: 赞
           ja: いいね
+          de: Gefällt mir
       - key: conversation_count
         value: 47
         labels:
           en: Replies
           zh-Hans: 回复
           ja: 返信数
+          de: Antworten
       - key: views
         value: null
         labels:
           en: Views
           zh-Hans: 播放或浏览
           ja: 閲覧数
+          de: Aufrufe
       - key: reposts
         value: null
         labels:
           en: Reposts
           zh-Hans: 转发
           ja: リポスト数
+          de: Reposts
       - key: bookmarks
         value: null
         labels:
           en: Bookmarks
           zh-Hans: 书签
           ja: ブックマーク数
+          de: Lesezeichen
 source:
   author: Prompt Seen
   url: null
