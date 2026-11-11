@@ -46,6 +46,68 @@ test.describe('Portuguese locale policies in the packaged artifact', () => {
     });
   }
 
+  test('clipboard refusal keeps the original Prompt selectable with Portuguese recovery and restored focus', async ({
+    page,
+  }) => {
+    // Refuse both real browser API paths; this works without Chromium-only permissions.
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: async (text: string) => {
+            document.documentElement.dataset.refusedClipboardText = text;
+            throw new DOMException('Clipboard access denied', 'NotAllowedError');
+          },
+        },
+      });
+      document.execCommand = (command: string) => {
+        if (command === 'copy') {
+          document.documentElement.dataset.refusedLegacyCopies = String(
+            Number(document.documentElement.dataset.refusedLegacyCopies ?? 0) + 1,
+          );
+        }
+        return false;
+      };
+    });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(`${BASE}/${portuguese!.pathPrefix}/prompts/`);
+    await page.waitForFunction(() => {
+      const feed = document.querySelector('[role="feed"]');
+      return feed && Object.keys(feed).some((key) => key.startsWith('__reactProps'));
+    });
+    const card = page.locator('[role="feed"] > article[data-entry]:not([data-interlude])').first();
+    const detail = promptDetail('pt-BR', (await card.getAttribute('data-entry'))!);
+    const original = detail.prompt.text.replace(/\r\n?/g, '\n').trim();
+    const opener = card.locator('a').first();
+    const popup = page.locator('dialog[data-popup][open]');
+    let attempts = 0;
+    for (const closeWith of ['Escape', 'button'] as const) {
+      await opener.click();
+      await expect(popup.locator('h2').first()).toHaveText(detail.title);
+      const copy = popup.locator('[data-shortcut="copy"]');
+      await expect(copy).toHaveAccessibleName(message('pt-BR', 'detail.copy.label'));
+      await copy.click();
+      await expect(copy).toHaveAttribute('data-copy-state', 'failed');
+      await expect(copy).toHaveAccessibleName('Não foi possível copiar');
+      await expect(
+        popup.getByRole('status').filter({ hasText: message('pt-BR', 'detail.copy.failedHint') }),
+      ).toHaveText('Selecione o texto do prompt e copie pelo teclado ou pelo menu.');
+      await expect(page.locator('html')).toHaveAttribute('data-refused-clipboard-text', original);
+      await expect(page.locator('html')).toHaveAttribute('data-refused-legacy-copies', String(++attempts));
+      // Range selection is the application's manual-copy recovery, including annotated text.
+      await expect.poll(() => page.evaluate(() => window.getSelection()?.toString())).toBe(original);
+      const close = popup.locator('[data-popup-close]');
+      await expect(close).toHaveAccessibleName(message('pt-BR', 'popup.close'));
+      await close.focus();
+      await expect(close).toBeFocused();
+      if (closeWith === 'Escape') await page.keyboard.press('Escape');
+      else await close.click();
+      await expect(popup).toHaveCount(0);
+      await expect(opener).toBeFocused();
+    }
+  });
+
   test.describe('European Portuguese browser preference', () => {
     test.use({ locale: 'pt-PT' });
 

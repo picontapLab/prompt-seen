@@ -123,7 +123,7 @@ test.describe('desktop', () => {
       .getByRole('banner')
       .getByRole('button', { name: `${label}: ${first!.nativeName}` })
       .click();
-    await page.getByRole('option', { name: new RegExp(target!.nativeName) }).click();
+    await page.getByRole('option', { name: target!.nativeName }).click();
     const alt = detail.alternates.find((a) => a.locale === target!.code)!;
     await expect(page).toHaveURL(`${BASE}${alt.path}`);
     await expect(page.locator('html')).toHaveAttribute('lang', target!.htmlLang);

@@ -1,4 +1,4 @@
-import { queryTerms } from './tokenize';
+import { queryTerms, tokenize } from './tokenize';
 import type { SearchKind } from './types';
 
 // Maintained domain vocabulary, deliberately not an arbitrary compound-word splitter.
@@ -127,7 +127,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
     .map(([, words]) => words);
   const extra = [...compounds, ...(kind ? [profile.kinds[kind]] : [])];
   for (const word of queryTerms(extra.join(' '), locale)) terms.add(word);
-  const phraseText = ` ${queryTerms(text, locale).join(' ')} `;
+  const phraseText = ` ${tokenize(text, locale).join(' ')} `;
   const contains = (word: string) => {
     const words = queryTerms(word, locale);
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"

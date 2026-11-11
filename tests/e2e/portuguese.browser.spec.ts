@@ -232,41 +232,53 @@ test.describe('actual Portuguese artifact samples', () => {
     });
   }
 
-  test('Portuguese search supports keyboard navigation, Escape and focus restoration', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto(`${BASE}/${portuguese!.pathPrefix}/prompts/`);
-    await page.waitForFunction(() => {
-      const launcher = document.querySelector('[data-search-launcher]');
-      return launcher && Object.keys(launcher).some((key) => key.startsWith('__reactProps'));
+  for (const theme of ['light', 'dark'] as const) {
+    test(`${theme}: Portuguese search supports keyboard navigation, Escape and focus restoration`, async ({ page }) => {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.emulateMedia({ colorScheme: theme, reducedMotion: 'reduce' });
+      await page.goto(`${BASE}/${portuguese!.pathPrefix}/prompts/`);
+      await page.waitForFunction(() => {
+        const launcher = document.querySelector('[data-search-launcher]');
+        return launcher && Object.keys(launcher).some((key) => key.startsWith('__reactProps'));
+      });
+      const launcher = page.locator('[data-search-launcher]');
+      await launcher.focus();
+      await page.keyboard.press('Enter');
+      const panel = page.locator('[data-quick-search]');
+      const input = panel.getByRole('textbox');
+      await expect(input).toHaveAccessibleName(message('pt-BR', 'search.panel.field'));
+      await expect(input).toBeFocused();
+      await input.fill('p_012');
+      const option = panel.getByRole('option').first();
+      await expect(option).toBeVisible();
+      await option.hover();
+      await expect(option).toHaveAttribute('data-hovered', 'true');
+      expect(await seriousViolations(page, '[data-quick-search]')).toEqual([]);
+      await page.mouse.move(0, 0);
+      await expect(option).not.toHaveAttribute('data-hovered', 'true');
+      await input.press('ArrowDown');
+      await expect(option).toHaveAttribute('data-focused', 'true');
+      expect(await seriousViolations(page, '[data-quick-search]')).toEqual([]);
+      await page.keyboard.press('Escape');
+      await expect(panel).toHaveCount(0);
+      await expect(launcher).toBeFocused();
+      await page.keyboard.press('/');
+      await expect(input).toBeFocused();
+      await input.fill('p_012');
+      await expect(option).toBeVisible();
+      const href = await option.getAttribute('href');
+      await option.hover();
+      await expect(option).toHaveAttribute('data-hovered', 'true');
+      expect(await seriousViolations(page, '[data-quick-search]')).toEqual([]);
+      await page.mouse.move(0, 0);
+      await expect(option).not.toHaveAttribute('data-hovered', 'true');
+      await input.press('ArrowDown');
+      await input.press('Enter');
+      await page.waitForURL((url) => url.pathname === href);
+      await expect(page.locator('h1')).toHaveText(promptDetail('pt-BR', 'p_012').title);
+      await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
     });
-    const launcher = page.locator('[data-search-launcher]');
-    await launcher.focus();
-    await page.keyboard.press('Enter');
-    const panel = page.locator('[data-quick-search]');
-    const input = panel.getByRole('textbox');
-    await expect(input).toHaveAccessibleName(message('pt-BR', 'search.panel.field'));
-    await expect(input).toBeFocused();
-    await input.fill('p_012');
-    const option = panel.getByRole('option').first();
-    await expect(option).toBeVisible();
-    await input.press('ArrowDown');
-    await expect(option).toHaveAttribute('data-focused', 'true');
-    expect(await seriousViolations(page, '[data-quick-search]')).toEqual([]);
-    await page.keyboard.press('Escape');
-    await expect(panel).toHaveCount(0);
-    await expect(launcher).toBeFocused();
-    await page.keyboard.press('/');
-    await expect(input).toBeFocused();
-    await input.fill('p_012');
-    await expect(option).toBeVisible();
-    const href = await option.getAttribute('href');
-    await input.press('ArrowDown');
-    await input.press('Enter');
-    await page.waitForURL((url) => url.pathname === href);
-    await expect(page.locator('h1')).toHaveText(promptDetail('pt-BR', 'p_012').title);
-    await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
-  });
+  }
 
   test('Portuguese template reflows at the 720 CSS-pixel viewport of a 1440px display zoomed to 200%', async ({
     page,

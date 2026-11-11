@@ -138,6 +138,7 @@
   }
   .item[data-focused],
   .item[data-hovered] {
+    --mark: var(--text-primary);
     background: var(--accent-subtle);
   }
   .item[data-focus-visible] {

@@ -72,6 +72,16 @@ describe('ranking and matching (§13.1)', () => {
     expect(ids('template', engine)).not.toContain('model');
   });
 
+  it('keeps repeated words in real Portuguese phrases when expanding aliases', () => {
+    const engine = engineOf('pt-BR', [
+      doc('product', { title: 'Guia de iluminação. Fotografia de produto em estúdio.' }),
+      doc('template', { title: 'Modelo de IA: use este modelo de prompt para retratos.' }),
+      doc('model', { title: 'Modelo de IA para fotografia' }),
+    ]);
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('template', engine)).toEqual(['template']);
+  });
+
   it('folds Spanish vowels and punctuation while retaining the exact displayed title', () => {
     const title = '¿Retrato? ¡Póster de un pingüino! Fotografi\u0301a';
     const engine = engineOf('es', [doc('accented', { title })]);

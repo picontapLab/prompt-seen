@@ -19,7 +19,7 @@ async function chooseLanguage(page: Page, from: Locale, to: Locale) {
         .click();
     await input.fill(to.nativeName);
   }
-  await page.getByRole('option', { name: new RegExp(to.nativeName) }).click();
+  await page.getByRole('option', { name: to.nativeName }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', to.htmlLang);
   await expect(page.locator('html')).toHaveAttribute('dir', to.direction);
 }

@@ -170,7 +170,7 @@ test('the language switch finds a language by its English name and keeps the pag
   await expect(combobox).toBeFocused();
   await expect(page.getByRole('listbox')).toBeVisible();
   await combobox.fill(englishName.slice(0, 4));
-  await page.getByRole('option', { name: new RegExp(target!.nativeName) }).click();
+  await page.getByRole('option', { name: target!.nativeName }).click();
   await expect(page).toHaveURL(new RegExp(`${BASE}/${target!.pathPrefix}/$`));
   await expect(page.locator('html')).toHaveAttribute('lang', target!.htmlLang);
 });

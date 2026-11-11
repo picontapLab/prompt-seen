@@ -27,7 +27,7 @@ async function chooseLanguage(page: Page, from: string, to: string) {
         .click();
     await combobox.fill(target.nativeName);
   }
-  await page.getByRole('option', { name: new RegExp(target.nativeName) }).click();
+  await page.getByRole('option', { name: target.nativeName }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', target.htmlLang);
   if (await page.getByRole('dialog').isVisible()) await page.keyboard.press('Escape');
 }

@@ -53,7 +53,7 @@ test.describe('default home', () => {
       .getByRole('button', { name: new RegExp(message(BUILD.defaultLocale, 'shell.language.label')) })
       .first()
       .click();
-    await page.getByRole('option', { name: new RegExp(second!.nativeName) }).click();
+    await page.getByRole('option', { name: second!.nativeName }).click();
     await page.waitForURL(`**${BASE}/${second!.pathPrefix}/`);
     await expect(page.locator('[data-page="home"]')).toHaveAttribute('data-locale', second!.code);
     expect(JSON.parse((await page.evaluate((k) => localStorage.getItem(k), KEY))!).language).toBe(second!.code);
@@ -63,7 +63,7 @@ test.describe('default home', () => {
       .getByRole('button', { name: new RegExp(message(second!.code, 'shell.language.label')) })
       .first()
       .click();
-    await page.getByRole('option', { name: new RegExp(first!.nativeName) }).click();
+    await page.getByRole('option', { name: first!.nativeName }).click();
     await page.waitForURL((url) => url.pathname === `${BASE}/`);
     await expect(page.locator('html')).toHaveAttribute('lang', first!.htmlLang);
     expect(errors).toEqual([]);
@@ -80,7 +80,7 @@ test('the language menu explains a missing translation and offers the versions t
   const trigger = page.getByRole('button', { name: new RegExp(message(first!.code, 'shell.language.label')) });
   await hydrated(page, 'header button[aria-haspopup="listbox"]');
   await trigger.first().click();
-  await page.getByRole('option', { name: new RegExp(second!.nativeName) }).click();
+  await page.getByRole('option', { name: second!.nativeName }).click();
   await page.waitForURL(`**${BASE}/${second!.pathPrefix}/translation-missing/**`);
   await expect(page.locator('h1')).toHaveText(
     message(second!.code, 'pages.missing.title', { language: second!.nativeName }),
