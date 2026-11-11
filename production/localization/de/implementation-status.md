@@ -123,6 +123,29 @@ TypeScript, ESLint and repository formatting checks passed. Standards and spec
 reviews have no remaining actionable findings. Earlier 44/44 token contrast and
 Storybook checks remain applicable; release CI repeats them on the release commit.
 
+## Live-check contract correction
+
+Commit `83ffa0312781415da63c3c2dddf8c832d1c5ab0c` passed the full CI matrix:
+2,566 tests passed directly, four passed on the configured retry and 123 were
+conditionally skipped. CI run `42976992704` is successful. Deployment run
+`42979407992` uploaded the exact commit to
+https://5d23641c.prompt-seen-dkj.pages.dev and passed platform validation. Its
+canonical check failed only because it still required every enabled home to be
+indexable. The Chinese home intentionally contains non-indexable displayed content:
+its HTML is noindex and its sitemap omits it, as required by localization §5.2.
+Local, immutable-platform and canonical HTML all showed the same metadata; this
+was not a stale cache or forwarded platform header.
+
+The live checker now compares home metadata with the served sitemap. An incremental
+home absent from that sitemap must carry noindex. A complete locale home must still
+be listed; sitemap-listed pages must be indexable, and canonical hosts still reject
+platform noindex headers. Platform checks also verify the page metadata separately.
+Eight real-CLI HTTP fixture cases cover root and subpath, both indexing directions,
+complete coverage and host-header isolation. With the corrected checker, the live
+`83ffa031` deployment passes 27 checks with zero failures. Its two existing warnings
+are the host's removed-page 404 instead of 410 and directly accessible noindex 404
+page. The superseding commit must repeat the normal accepted-commit release flow.
+
 ## Release procedure and rollback
 
 Release `b1e181d87d67ad97fae6779fff4a574757de1855` was rebuilt and passed

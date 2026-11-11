@@ -602,5 +602,23 @@
       "standards": "pass",
       "spec": "pass"
     }
+  },
+  "liveCheckCorrection": {
+    "deployedCommit": "83ffa0312781415da63c3c2dddf8c832d1c5ab0c",
+    "ciRun": "https://github.com/picontapLab/prompt-seen/actions/runs/42976992704",
+    "deployRun": "https://github.com/picontapLab/prompt-seen/actions/runs/42979407992",
+    "immutableDeployment": "https://5d23641c.prompt-seen-dkj.pages.dev",
+    "ci": {
+      "passed": 2566,
+      "retryPassed": 4,
+      "skipped": 123
+    },
+    "initialCanonicalResult": "Failed: incremental Chinese home was intentionally noindex, but the checker assumed every enabled home indexable.",
+    "correctedCanonicalResult": {
+      "passed": 27,
+      "warnings": 2,
+      "failed": 0
+    },
+    "cliRegressionTests": 8
   }
 }

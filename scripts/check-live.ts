@@ -86,7 +86,7 @@ async function main() {
     urlPattern: string;
     defaultLocale: string;
     mediaBaseUrl?: string | null;
-    locales: { code: string; pathPrefix: string; enabled: boolean }[];
+    locales: { code: string; pathPrefix: string; enabled: boolean; localization?: { coverage: string } }[];
   };
   const url = createUrlModule(
     urlConfigOf({
@@ -110,10 +110,10 @@ async function main() {
       `serves build ${values['expect-build']}${build.buildId === values['expect-build'] ? '' : ` (found ${build.buildId})`}`,
     );
 
-  /** A page: 200, HTML, the canonical address, indexable on the canonical host and noindex on a platform host. */
-  async function page(internal: string, label: string, opts: { agent?: string; quiet?: boolean } = {}) {
+  /** Page metadata must agree with its sitemap eligibility; platform headers always prevent indexing. */
+  async function page(internal: string, label: string, opts: { quiet?: boolean; indexable?: boolean } = {}) {
     const address = fetchUrl(internal);
-    const res = await get(address, { agent: opts.agent });
+    const res = await get(address);
     if (res.status !== 200) return (report('fail', `${label}: ${res.status} ${address}`), null);
     const html = await res.text();
     const problems: string[] = [];
@@ -123,19 +123,21 @@ async function main() {
     if (canonical !== url.absoluteUrl(internal)) problems.push(`canonical ${canonical ?? 'missing'}`);
     const header = (res.headers.get('x-robots-tag') ?? '').toLowerCase();
     const meta = metaRobots(html);
+    const indexable = opts.indexable !== false;
     if (platform && !header.includes('noindex')) problems.push('no X-Robots-Tag: noindex on the platform address');
-    if (!platform && (header.includes('noindex') || meta.includes('noindex')))
-      problems.push(
-        `noindex on the canonical host (${header || meta}); does the host forward X-Robots-Tag from the platform?`,
-      );
+    if (!platform && header.includes('noindex'))
+      problems.push(`X-Robots-Tag: ${header} on the canonical host; does the host forward the platform header?`);
+    if (indexable && meta.includes('noindex')) problems.push('noindex metadata on a sitemap-listed page');
+    if (!indexable && !meta.includes('noindex'))
+      problems.push('missing noindex metadata on a home outside its sitemap');
     if (problems.length) report('fail', `${label}: ${problems.join('; ')} (${address})`);
-    else if (!opts.quiet) report('pass', `${label}: 200, canonical, ${platform ? 'noindex' : 'indexable'}`);
+    else if (!opts.quiet)
+      report('pass', `${label}: 200, canonical, ${platform || !indexable ? 'noindex' : 'indexable'}`);
     return problems.length ? null : html;
   }
 
   const publicLocales = build.locales.filter((l) => l.enabled);
-  await page(url.paths.siteRoot(), 'default-language home');
-  for (const l of publicLocales) await page(url.paths.home(l.pathPrefix), `${l.code} home`);
+  const homeEligibility = new Map<string, boolean>();
 
   // Sitemaps: index, one per public locale; representative pages from them.
   const indexAddress = fetchUrl(url.paths.sitemapIndex());
@@ -166,6 +168,14 @@ async function main() {
     for (const l of publicLocales) {
       const res = await get(fetchUrl(url.paths.sitemap(l.pathPrefix)));
       const entries = res.ok ? sitemapEntries(await res.text()) : [];
+      // Incremental locales can have a browsable, non-indexable home (§5.2). Its
+      // metadata must match the served sitemap, not merely the enabled flag.
+      homeEligibility.set(
+        l.code,
+        entries.some((entry) => entry.loc === url.absoluteUrl(url.paths.home(l.pathPrefix))),
+      );
+      if (l.localization?.coverage === 'complete' && !homeEligibility.get(l.code))
+        report('fail', `${l.code}: complete locale home is absent from its sitemap`);
       const internal = (loc: string) => url.stripBasePath(new URL(loc).pathname) ?? new URL(loc).pathname;
       const prompt = entries.find((e) => /\/prompts\/(?!page\/)[^/]+\/$/.test(e.loc));
       const template = entries.find((e) => /\/templates\/[^/]+\/$/.test(e.loc));
@@ -175,6 +185,9 @@ async function main() {
       if (listPage) samples.push({ label: `${l.code} list page 2`, internal: internal(listPage.loc) });
     }
   }
+  await page(url.paths.siteRoot(), 'default-language home', { indexable: homeEligibility.get(build.defaultLocale) });
+  for (const l of publicLocales)
+    await page(url.paths.home(l.pathPrefix), `${l.code} home`, { indexable: homeEligibility.get(l.code) });
   let detailHtml: string | null = null;
   for (const s of samples) {
     const html = await page(s.internal, s.label);
