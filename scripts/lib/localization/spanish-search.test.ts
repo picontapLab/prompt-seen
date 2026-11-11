@@ -51,7 +51,7 @@ it('finds frozen Spanish queries for current targets; enabled Spanish requires t
     const keys = search(engine, query, topK).groups.flatMap((group) =>
       group.hits.map((hit) => hit.id.replaceAll(':', '/')),
     );
-    for (const key of expectedKeys) expect(keys, query).toContain(key);
-    for (const key of excludedKeys ?? []) expect(keys, query).not.toContain(key);
+    for (const key of expectedKeys) expect.soft(keys, query).toContain(key);
+    for (const key of excludedKeys ?? []) expect.soft(keys, query).not.toContain(key);
   }
 }, 30_000);

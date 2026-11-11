@@ -37,3 +37,25 @@ All 70 remaining template pages and 410 dependency fields were read against comp
 P2 review follow-up: the Standards axis requested a hydration readiness wait before the preview-toggle click, as required by engineering-conventions.md. The shared browser helper now waits for the actual toggle before clicking. The Spec axis found no blocking issue in the localized display-name fix. These findings do not certify remaining release gates.
 
 B2 validation: subpath preview build, typecheck and serialized Spanish corpus check passed; all 27 affected cross-browser layout/reflow checks passed after the hydration-wait change. Logs: `.artifacts/localization/es/B2-{build,typecheck,unit,browser}.log`. These are preparation checks, not production release certification.
+
+## B3 late series — 2026-11-11
+
+77 pages and 535 fields were textually reviewed (`evidence/late-text-review.json`, `evidence/late-fields-text-review.json`). A separate actual asset pass inspected 59 new stills and every frame of 37 GIFs (300 decoded frames); 11 assets reuse existing inspections only after matching their current hashes. `evidence/late-visual-review.json` records 107 assets, 77 runs, playback timing/counts, and source/candidate hashes. The fox GIF was also checked against light and dark backgrounds for real alpha. The translated dwarf description was corrected to specify a red beard and fur garments. No original Prompt, image, frame count or playback setting was changed.
+
+This batch could promote before early/middle because all shared dependencies are already current or owned by this batch. Fields promoted first, then pages; coverage is now 174/381 pages and 1,641/2,220 fields. Current sequence is a scheduling change only; every target and field still has exactly one owner in batch-plan.json.
+
+## B3 early/middle and B4 completion — 2026-11-11
+
+Early review covers 91 pages, 95 fields, 83 new original images and eight hash-verified reused pilot assets (`evidence/early-{text,visual}-review.json`). Middle review covers 97 pages, 484 fields, 54 new original stills and 84 reused assets (`evidence/middle-{text,visual}-review.json`); full-resolution checks include the coffee diagram, partner arrows, 24 text rows and 100 labels. a_269 actually shows a study, so its Spanish alt now says habitación rather than sala de estar. The p_125 main image is a living room and its separate description remains accurate.
+
+All 19 aggregates and 112 member reasons were read (`evidence/aggregate-text-review.json`) and promoted after all dependencies were current. Strict report: 381/381 targets and 2,220/2,220 fields current, with zero missing/draft/unreviewed/outdated/invalid. Scope was regenerated and every target and field has exactly one batch owner. The full report is `.artifacts/localization/es/full-current.json`; final candidate evidence will be regenerated from its actual commit.
+
+Real-corpus search exposed the missing mapa synonym for plano urbano. The profile now expands that explicit pair; a serialized-engine regression verifies that bare plano (as in primer plano) does not become a map. All 56 focused engine/Spanish/German corpus checks passed. The frozen queries were not changed.
+
+Menu recommendation code is in commit 4bbc6209. Standards review found no material issue: only built locales are selectable, the list remains in registry order, default selection and URL logic are unchanged, and the already-reviewed label crosses the server/client boundary as a single formatted string. Logs retain the two failing red tests, the Firefox animation timing failure, twelve repeated passing phone checks, and all 24 final passing region/browser/width checks. Native zoom and production release gates remain separate.
+
+## Complete-content validation
+
+All eleven required checks passed: es/ja/de strict checks, all-locales report, content validation, typecheck, full ESLint/Prettier, token contrast checks, the full 59-file/517-test unit suite and Storybook build. Details and warning inventory: `evidence/implementation-checks.json`. The Spanish real-corpus unit test now exercises all 32 frozen scenarios because every expected target is current.
+
+Content validation retains ten warnings in existing zh-Hans content (one missing-version group and nine stale source hashes) and one unused-media info item (102 assets). The all-locales report also retains the existing en/zh-Hans/ar missing-scope and Arabic draft/preparation findings. These are not Spanish failures and were not re-approved or removed by this change. Spanish, Japanese and German strict reports are ready and non-blocking. This working-tree evidence is not a production-candidate certificate.

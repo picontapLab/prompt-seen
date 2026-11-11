@@ -26,6 +26,8 @@ inputRequirements:
     de: Lade das eine projektintern generierte Referenzbild in der angezeigten
       Reihenfolge (R06) hoch und verwende dann den vollständigen adaptierten
       Prompt.
+    es: Sube la imagen de referencia generada por el proyecto en el orden indicado
+      (R06) y después usa el prompt adaptado completo.
   slots:
     - id: reference1
       labels:
@@ -33,6 +35,7 @@ inputRequirements:
         zh-Hans: 本站生成的角色参考图
         ja: 本プロジェクトで生成したキャラクター参照画像
         de: Projektintern generierte Figurenreferenz
+        es: Referencia de personaje generada para el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_351
@@ -49,8 +52,9 @@ inspirationSources:
       en: Whole original post; shared across variants, not this adaptation
       zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
       ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
-      de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese
-        Adaption
+      de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
+      es: Publicación original completa; compartida entre variantes, no esta
+        adaptación
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -58,12 +62,14 @@ inspirationSources:
       zh-Hans: 归档的 X 公开快照与完整作者原词
       ja: 保存されたXの公開スナップショットと作者の完全なプロンプト
       de: Archivierter öffentlicher X-Snapshot und vollständiger Autorenprompt
+      es: Captura pública archivada de X y prompt completo del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118235544459387112&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
       zh-Hans: 独立改编；完整原词另存档案
       ja: 独自アレンジ。完全な原文は別途保存
       de: Eigenständige Adaption; vollständiges Original separat erhalten
+      es: Adaptación independiente; original completo conservado por separado
     metrics:
       - key: likes
         value: 1020
@@ -72,6 +78,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
+          es: Me gusta de la publicación original
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/0xluffy_eth/status/2118235547454083357

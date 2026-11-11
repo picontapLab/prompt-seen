@@ -46,6 +46,7 @@ inspirationSources:
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -53,12 +54,14 @@ inspirationSources:
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      es: Captura de la API pública oficial
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2045504669401653414&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 只取得原帖片段
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: likes
         value: 1125
@@ -67,6 +70,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          es: Me gusta
       - key: conversation_count
         value: 52
         labels:
@@ -74,6 +78,7 @@ inspirationSources:
           zh-Hans: 回复
           ja: 返信数
           de: Antworten
+          es: Respuestas
       - key: views
         value: null
         labels:
@@ -81,6 +86,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          es: Visualizaciones
       - key: reposts
         value: null
         labels:
@@ -88,6 +94,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          es: Republicaciones
       - key: bookmarks
         value: null
         labels:
@@ -95,6 +102,7 @@ inspirationSources:
           zh-Hans: 书签
           ja: ブックマーク数
           de: Lesezeichen
+          es: Marcadores
 source:
   author: Prompt Seen
   url: null

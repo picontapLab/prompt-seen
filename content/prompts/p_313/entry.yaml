@@ -23,6 +23,7 @@ inputRequirements:
     zh-Hans: 使用完整改编提示词，不需要参考图。
     ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
     de: Verwende den vollständigen umgeschriebenen Prompt ohne Eingabebild.
+    es: Usa el prompt reescrito completo sin imagen de entrada.
   slots: []
 showcaseExampleId: x_377
 promptProvenance: independent-adaptation
@@ -40,6 +41,7 @@ inspirationSources:
       ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      es: Publicación o galería original completa; no este ejemplo generado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -48,14 +50,18 @@ inspirationSources:
       ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      es: Captura pública guardada de X; prompt completo de la copia guardada de
+        la publicación o respuesta del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118307702657159331&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is
         archived separately.
       zh-Hans: 独立改编；原词三次尝试失败并另行归档。
       ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
-      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen
-        und ist separat archiviert.
+      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen und
+        ist separat archiviert.
+      es: Adaptación independiente; el prompt original falló en tres intentos y se
+        archiva por separado.
     metrics:
       - key: likes
         value: 111
@@ -64,6 +70,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
+          es: Me gusta de la publicación original
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/xyue13/status/2118307702657159331

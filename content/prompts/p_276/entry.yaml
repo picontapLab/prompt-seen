@@ -25,9 +25,13 @@ inputRequirements:
     zh-Hans: 依次上传第一位和第二位成年人的肖像。图 1 保持在左，图 2 保持在右。示例采用 AI 生成的虚构人物。画面文字保持英文。
     ja: 1人目、2人目の順に成人のポートレートをアップロードしてください。画像1の人物は左、画像2の人物は右に配置します。作例の人物は AI
       で生成した架空の人物です。画像内の文字はすべて英語にしてください。
-    de: Lade zuerst das erste Erwachsenenporträt und danach das zweite hoch. Bild
-      1 bleibt links; Bild 2 bleibt rechts. Die Demonstration verwendet
+    de: Lade zuerst das erste Erwachsenenporträt und danach das zweite hoch. Bild 1
+      bleibt links; Bild 2 bleibt rechts. Die Demonstration verwendet
       KI-generierte fiktive Personen. Lass alle Schriftzüge auf Englisch.
+    es: Sube primero el retrato de la primera persona adulta y después el de la
+      segunda. La imagen 1 permanece a la izquierda y la imagen 2 a la derecha.
+      La demostración usa personas ficticias generadas por IA. Conserva todos
+      los textos en inglés.
   slots:
     - id: personA
       labels:
@@ -35,6 +39,7 @@ inputRequirements:
         zh-Hans: 第一位人物，左侧
         ja: 1人目・左側
         de: Erste Person, links
+        es: Primera persona, izquierda
       min: 1
       max: 1
     - id: personB
@@ -43,6 +48,7 @@ inputRequirements:
         zh-Hans: 第二位人物，右侧
         ja: 2人目・右側
         de: Zweite Person, rechts
+        es: Segunda persona, derecha
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -64,6 +70,7 @@ annotations:
       zh-Hans: 四帧组成完整照片亭拼图。
       ja: 4つのフレームで、コンパクトなフォトブースプリントを作っています。
       de: Vier Bilder bilden einen kompakten Fotoautomatenabzug.
+      es: Cuatro fotogramas forman una impresión compacta de cabina de fotos.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -75,3 +82,4 @@ annotations:
       zh-Hans: 闪光与颗粒共同形成摄影质感。
       ja: フラッシュと粒子感が、写真らしい仕上がりを生んでいます。
       de: Blitz und Körnung erzeugen den fotografischen Look.
+      es: El flash y el grano establecen el aspecto fotográfico.

@@ -46,6 +46,7 @@ inspirationSources:
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -53,12 +54,14 @@ inspirationSources:
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      es: Captura de la API pública oficial
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2013268963266904438&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 原帖指向的原prompt片段可见
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: likes
         value: 5179
@@ -67,6 +70,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          es: Me gusta
       - key: conversation_count
         value: 25
         labels:
@@ -74,6 +78,7 @@ inspirationSources:
           zh-Hans: 回复
           ja: 返信数
           de: Antworten
+          es: Respuestas
       - key: views
         value: null
         labels:
@@ -81,6 +86,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          es: Visualizaciones
       - key: reposts
         value: null
         labels:
@@ -88,6 +94,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          es: Republicaciones
       - key: bookmarks
         value: null
         labels:
@@ -95,6 +102,7 @@ inspirationSources:
           zh-Hans: 书签
           ja: ブックマーク数
           de: Lesezeichen
+          es: Marcadores
 source:
   author: Prompt Seen
   url: null
@@ -112,6 +120,8 @@ annotations:
       ja: 2 コマ目には、キャップの質感と読みやすい PINE マークのための領域を確保しています。
       de: Das zweite Bild hält Platz für die Verschlusstextur und den lesbaren
         PINE-Schriftzug frei.
+      es: La segunda viñeta reserva espacio para la textura del tapón y la marca
+        PINE legible.
   - phrase: three-bottle repeated arrangement
     region:
       x: 0.34
@@ -124,3 +134,4 @@ annotations:
       ja: 同じ商品を繰り返すことで、キャンペーン全体に一貫したリズムが生まれます。
       de: Die Wiederholung desselben Produkts erzeugt einen stimmigen
         Kampagnenrhythmus.
+      es: Repetir el mismo producto establece un ritmo coherente de campaña.

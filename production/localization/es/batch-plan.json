@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "sourceRevision": "ec6051f3ac7c0c066930eb49bc64d44dc619255c:ede91869f9ca05ad54b0ed59f15057d2d850e1b3dbbf2bbd3786af1678949415",
+  "sourceRevision": "4bbc620906f85e44dbd8e0d952e8f14b8b29f285:ee70bdffe24683093ebd80673978017330894381e1d4756d4ddea06bb75bf787",
   "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
   "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
   "schemaVersion": 1,
@@ -1548,9 +1548,12 @@
         "B1-pilot",
         "B2-templates"
       ],
-      "status": "draft",
-      "batchIds": [],
-      "notes": "Grouped by content series; page and dependency-field CLI batches are separate. Text review complete; visual verification pending."
+      "status": "promoted",
+      "batchIds": [
+        "6cac61579bc6e762b9cbc87cc08627856ad845d9edbb4a06d4bb87e3027591bb",
+        "71f4a711ff08b71f7821350b7f75b292143f5178f5c557875262adb3fe1b6b33"
+      ],
+      "notes": "Complete text and actual media review; current hash-bound approvals promoted with dependencies first."
     },
     {
       "name": "B3-middle",
@@ -2144,9 +2147,12 @@
         "B1-pilot",
         "B2-templates"
       ],
-      "status": "draft",
-      "batchIds": [],
-      "notes": "Grouped by content series; page and dependency-field CLI batches are separate. Text review complete; visual verification pending."
+      "status": "promoted",
+      "batchIds": [
+        "57b5380331454bebbf91332d2323d51c0e711436eaf6cff1409af85a7fb00b0c",
+        "df9a6b0300daeba5d27b6d09fd733e4d9880d1128703a0561f0aa9cab9f8f0a1"
+      ],
+      "notes": "Complete text and actual media review; current hash-bound approvals promoted with dependencies first."
     },
     {
       "name": "B3-late",
@@ -2771,9 +2777,12 @@
         "B1-pilot",
         "B2-templates"
       ],
-      "status": "draft",
-      "batchIds": [],
-      "notes": "Grouped by content series; page and dependency-field CLI batches are separate. Text review complete; visual verification pending."
+      "status": "promoted",
+      "batchIds": [
+        "31f9a99b2efcb2a2836f2b8cd814b72b84e1c48fcca7295ad550f9407576ac2f",
+        "382b20f6545b1ff7e5adf4ee09f61e6b528dd0ebdf0e7a3a0891a4d75289827e"
+      ],
+      "notes": "Complete text and actual media review; current hash-bound approvals promoted with dependencies first."
     },
     {
       "name": "B4-aggregates",
@@ -2807,9 +2816,11 @@
         "B3-middle",
         "B3-late"
       ],
-      "status": "reviewed",
-      "batchIds": [],
-      "notes": "Includes three B1 aggregate drafts. Full text and member reasons reviewed; promotion waits for current members."
+      "status": "promoted",
+      "batchIds": [
+        "24653dbaf078c09fd6fa812198b80190d793f8a89410c51e27017c30ba398cc5"
+      ],
+      "notes": "All 19 pages and 112 reasons reviewed; all actual member dependencies current before promotion."
     },
     {
       "name": "B5-reconciliation",
@@ -2818,8 +2829,9 @@
       "dependsOn": [
         "B4-aggregates"
       ],
-      "status": "planned",
-      "batchIds": []
+      "status": "reviewed",
+      "batchIds": [],
+      "notes": "Dynamic strict report: all targets and fields current; no reconciliation operations needed. Ownership equals the complete scope exactly once."
     }
   ]
 }

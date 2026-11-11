@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "stage": "complete-content-working-tree",
+  "sourceRevision": "4bbc620906f85e44dbd8e0d952e8f14b8b29f285:ee70bdffe24683093ebd80673978017330894381e1d4756d4ddea06bb75bf787",
+  "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
+  "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
+  "counts": {
+    "target": 381,
+    "visible": 381,
+    "fallback": 0,
+    "localCurrent": 381,
+    "indexable": 381,
+    "fieldsTotal": 2220,
+    "fieldsCurrent": 2220,
+    "total": 381,
+    "published": 381,
+    "approved": 381,
+    "fields": 2220,
+    "missing": 0,
+    "draft": 0,
+    "outdated": 0,
+    "unreviewed": 0,
+    "archived": 0,
+    "invalid": 0,
+    "collection": 16,
+    "page": 2,
+    "prompt": 285,
+    "template": 75,
+    "topic": 3
+  },
+  "checks": [
+    {
+      "name": "es-strict",
+      "command": [
+        "npm",
+        "run",
+        "locale:check",
+        "--",
+        "--locale",
+        "es",
+        "--strict"
+      ],
+      "startedAt": "2026-11-11T12:01:30.928994+00:00",
+      "exitCode": 0,
+      "seconds": 4.52,
+      "log": ".artifacts/localization/es/full-es-strict.log"
+    },
+    {
+      "name": "ja-strict",
+      "command": [
+        "npm",
+        "run",
+        "locale:check",
+        "--",
+        "--locale",
+        "ja",
+        "--strict"
+      ],
+      "startedAt": "2026-11-11T12:01:35.447686+00:00",
+      "exitCode": 0,
+      "seconds": 3.71,
+      "log": ".artifacts/localization/es/full-ja-strict.log"
+    },
+    {
+      "name": "de-strict",
+      "command": [
+        "npm",
+        "run",
+        "locale:check",
+        "--",
+        "--locale",
+        "de",
+        "--strict"
+      ],
+      "startedAt": "2026-11-11T12:01:39.162698+00:00",
+      "exitCode": 0,
+      "seconds": 3.74,
+      "log": ".artifacts/localization/es/full-de-strict.log"
+    },
+    {
+      "name": "all-locales",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/locale-check.ts",
+        "--all",
+        "--json"
+      ],
+      "startedAt": "2026-11-11T12:01:42.898324+00:00",
+      "exitCode": 0,
+      "seconds": 4.69,
+      "log": ".artifacts/localization/es/full-all-locales.log"
+    },
+    {
+      "name": "content-validate",
+      "command": [
+        "npm",
+        "run",
+        "content:validate"
+      ],
+      "startedAt": "2026-11-11T12:01:47.584426+00:00",
+      "exitCode": 0,
+      "seconds": 8.13,
+      "log": ".artifacts/localization/es/full-content-validate.log"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "startedAt": "2026-11-11T12:01:55.712756+00:00",
+      "exitCode": 0,
+      "seconds": 3.61,
+      "log": ".artifacts/localization/es/full-typecheck.log"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "startedAt": "2026-11-11T12:01:59.325943+00:00",
+      "exitCode": 0,
+      "seconds": 9.8,
+      "log": ".artifacts/localization/es/full-lint.log"
+    },
+    {
+      "name": "format",
+      "command": [
+        "npm",
+        "run",
+        "format:check"
+      ],
+      "startedAt": "2026-11-11T12:02:09.123718+00:00",
+      "exitCode": 0,
+      "seconds": 38.03,
+      "log": ".artifacts/localization/es/full-format.log"
+    },
+    {
+      "name": "tokens",
+      "command": [
+        "npm",
+        "run",
+        "tokens:check"
+      ],
+      "startedAt": "2026-11-11T12:02:47.154440+00:00",
+      "exitCode": 0,
+      "seconds": 0.34,
+      "log": ".artifacts/localization/es/full-tokens.log"
+    },
+    {
+      "name": "unit",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "startedAt": "2026-11-11T12:02:47.494142+00:00",
+      "exitCode": 0,
+      "seconds": 47.86,
+      "log": ".artifacts/localization/es/full-unit.log"
+    },
+    {
+      "name": "storybook",
+      "command": [
+        "npm",
+        "run",
+        "storybook:build"
+      ],
+      "startedAt": "2026-11-11T12:03:35.351105+00:00",
+      "exitCode": 0,
+      "seconds": 20.46,
+      "log": ".artifacts/localization/es/full-storybook.log"
+    }
+  ],
+  "contentWarnings": [
+    "WARNING content 15 published entries have no zh-Hans version: p_013, p_019, p_026, p_034, p_044, p_048, p_053, p_064, p_070, p_075, p_080, p_084, p_088, p_097, p_099",
+    "WARNING content/pages/about/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/pages/license/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/prompts/p_007/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/prompts/p_058/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/prompts/p_123/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/prompts/p_153/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/prompts/p_218/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/templates/t_001/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "WARNING content/templates/t_017/locales/zh-Hans.mdx translation.sourceHash: the en source changed after this translation was reviewed (§8.5)",
+    "INFO content/media 102 image(s) are not used by any entry: a_001, a_002, a_003, a_004, a_005, a_006, a_007, a_008, a_009, a_010, a_011, a_012, a_013, a_014, a_015, a_016, a_017, a_018, a_019, a_020, a_021, a_022, a_023, a_024, a_025, a_026, a_027, a_028, a_029, a_030, a_031, a_032, a_033, a_034, a_035, a_036, a_037, a_038, a_039, a_040, a_041, a_042, a_043, a_044, a_045, a_046, a_047, a_048, a_049, a_050, a_051, a_052, a_053, a_054, a_055, a_056, a_057, a_058, a_059, a_060, a_061, a_062, a_063, a_064, a_065, a_066, a_067, a_068, a_069, a_070, a_071, a_072, a_073, a_074, a_075, a_076, a_077, a_078, a_079, a_080, a_081, a_082, a_083, a_084, a_085, a_086, a_087, a_088, a_089, a_090, a_091, a_092, a_093, a_094, a_095, a_096, a_097, a_098, a_099, a_100, a_101, a_349"
+  ],
+  "unit": {
+    "files": 59,
+    "tests": 517
+  },
+  "releaseCertification": false
+}

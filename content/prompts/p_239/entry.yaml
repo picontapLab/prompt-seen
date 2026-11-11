@@ -25,6 +25,8 @@ inputRequirements:
     ja: 雪だるまがはっきり写った画像を 1 枚アップロードしてください。この作例では、Prompt Seen が生成した雪だるまを使っています。
     de: Lade ein klares Schneemannbild hoch. Dieses Beispiel verwendet einen von
       Prompt Seen generierten Schneemann.
+    es: Sube una imagen clara de un muñeco de nieve. Este ejemplo usa uno generado
+      por Prompt Seen.
   slots:
     - id: snowman
       labels:
@@ -32,6 +34,7 @@ inputRequirements:
         zh-Hans: 本站生成的示例参考图
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
+        es: Referencia generada por el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_303
@@ -50,6 +53,7 @@ inspirationSources:
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      es: Publicación o galería original completa; no este ejemplo generado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -58,12 +62,15 @@ inspirationSources:
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      es: Captura pública guardada de X; prompt completo de la copia guardada de
+        la publicación o respuesta del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118193088128745875&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
+      es: Texto completo del autor, idioma original
     metrics:
       - key: likes
         value: 62
@@ -72,6 +79,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
+          es: Me gusta de la publicación original
 source:
   author: Goodmanprotocol
   url: https://x.com/Goodmanprotocol/status/2118193088128745875

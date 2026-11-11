@@ -23,9 +23,10 @@ inputRequirements:
       AI-generated. Keep all lettering in English.
     zh-Hans: 上传一张清晰的成年人肖像。示例参考图由 AI 生成。画面文字保持英文。
     ja: 成人の鮮明なポートレートを1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
-    de: Lade ein klares Porträt einer erwachsenen Person hoch. Das Referenzbild
-      der Demonstration wurde mit KI erzeugt. Lass alle Schriftzüge auf
-      Englisch.
+    de: Lade ein klares Porträt einer erwachsenen Person hoch. Das Referenzbild der
+      Demonstration wurde mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    es: Sube un retrato claro de una persona adulta. La referencia de demostración
+      está generada por IA. Mantén todo el texto de la imagen en inglés.
   slots:
     - id: person
       labels:
@@ -33,6 +34,7 @@ inputRequirements:
         zh-Hans: 人物肖像
         ja: 人物のポートレート
         de: Personenporträt
+        es: Retrato de persona
       min: 1
       max: 1
 showcaseExampleId: x_346
@@ -54,6 +56,7 @@ annotations:
       zh-Hans: 上下两格形成铺垫和反差笑点。
       ja: 上下の2コマで、前振りとオチを作っています。
       de: Oben und unten bilden Einstieg und Pointe.
+      es: La parte superior e inferior crean el planteamiento y el remate.
   - phrase: expressive editorial illustration
     region:
       x: 0.36
@@ -65,3 +68,4 @@ annotations:
       zh-Hans: 鲜明表情帮助快速理解笑点。
       ja: 表情の違いによって、ひと目で冗談が伝わります。
       de: Die Gesichtsausdrücke vermitteln den Witz auf einen Blick.
+      es: Las expresiones transmiten la broma de un vistazo.

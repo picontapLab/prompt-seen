@@ -46,6 +46,8 @@ const SPANISH_TERMS = [
   ['pegatina', 'pegatinas', 'sticker', 'stickers'],
   ['plantilla', 'plantillas', 'template', 'templates'],
   ['retrato', 'retratos', 'portrait', 'portraits'],
+  // A city plan is a map; bare «plano» also means a camera shot and is not an alias.
+  ['mapa', 'plano urbano'],
 ] as const;
 
 const SPANISH_PRODUCT_PHOTOGRAPHY = [

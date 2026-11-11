@@ -41,6 +41,7 @@ inspirationSources:
       zh-Hans: 单张社区图片
       ja: 元の画像ページ
       de: Ursprüngliche Bildseite
+      es: Página de la imagen original
     observedAt: 2026-10-28T23:12:22-07:00
     cacheTimestampKnown: false
     evidenceMethod:
@@ -48,12 +49,14 @@ inspirationSources:
       zh-Hans: Civitai 官方公开 images API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      es: Captura de la API pública oficial
     evidenceUrl: https://civitai.com/api/v1/images?imageId=9517243&withMeta=true
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: cryCount
         value: 886
@@ -62,6 +65,7 @@ inspirationSources:
           zh-Hans: 哭泣反应
           ja: 泣くリアクション
           de: „Weinen“-Reaktionen
+          es: Reacciones de llanto
       - key: laughCount
         value: 2952
         labels:
@@ -69,6 +73,7 @@ inspirationSources:
           zh-Hans: 大笑反应
           ja: 笑うリアクション
           de: Lachreaktionen
+          es: Reacciones de risa
       - key: likeCount
         value: 13522
         labels:
@@ -76,6 +81,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          es: Me gusta
       - key: dislikeCount
         value: 0
         labels:
@@ -83,6 +89,7 @@ inspirationSources:
           zh-Hans: 踩
           ja: 低評価
           de: Dislikes
+          es: No me gusta
       - key: heartCount
         value: 5117
         labels:
@@ -90,6 +97,7 @@ inspirationSources:
           zh-Hans: 爱心
           ja: ハート
           de: Herzen
+          es: Corazones
       - key: commentCount
         value: 1
         labels:
@@ -97,3 +105,4 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          es: Comentarios
