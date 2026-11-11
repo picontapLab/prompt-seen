@@ -112,6 +112,22 @@ production change runs at a time; a deploy is never cancelled half-way.
 Step 7 requires the custom domain to serve the Pages project (or the optional subpath proxy
 to forward requests). Configure that connection before checking the canonical site.
 
+### Static payload file count
+
+The five-language export exceeds Pages Free's 20,000-file limit before upload preparation.
+`deploy:cloudflare:prepare` verifies that each `__next._full.txt` is byte-identical to the
+same directory's `index.txt`, after any private customization. It validates every pair before
+removing duplicate copies from the upload directory; differing or missing canonical payloads
+stop preparation. Two generated Pages 200 proxy rules preserve the original root and nested
+payload URLs, query strings and response bodies. Other hosts retain the complete export.
+Source content and media are unchanged. The initial five-language upload shrinks from about
+20,339 to 18,327 files; remeasure after content changes, since this is not a permanent capacity guarantee.
+
+These rules use documented [Pages proxying](https://developers.cloudflare.com/pages/configuration/redirects/#proxying).
+The [Pages file limits](https://developers.cloudflare.com/pages/platform/limits/#files) are 20,000
+for Free and 100,000 for eligible paid plans. Do not remove RSC files without preserving their
+HTTP contract; client navigation and prefetch need them.
+
 ### Private production customization
 
 The existing `npm run deploy:cloudflare:prepare` command runs an optional private JavaScript

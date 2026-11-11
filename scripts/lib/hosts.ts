@@ -60,6 +60,14 @@ export function nginxRules(rules: HostRules): string[] {
 /** Cloudflare Pages allows 2,000 static redirects per project; later ones are ignored. */
 export const CLOUDFLARE_REDIRECT_LIMIT = 2000;
 
+/** Original full RSC URLs after upload preparation removes their byte-identical copies. */
+export function cloudflarePayloadProxies(url: Pick<Url, 'withBasePath'>): readonly [string, string] {
+  return [
+    `${url.withBasePath('/__next._full.txt')} ${url.withBasePath('/index.txt')} 200`,
+    `${url.withBasePath('/')}*/__next._full.txt ${url.withBasePath('/')}:splat/index.txt 200`,
+  ];
+}
+
 /**
  * Cloudflare Pages `_redirects`. Pages cannot answer 410, so gone addresses fall back to the
  * nearest 404 page (the locale's, see scripts/deploy-cloudflare.ts); Google treats both alike.

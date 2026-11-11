@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "stage": "packaging-validation-before-final-candidate",
+  "recordedAt": "2026-11-11T14:37:55.302747+00:00",
+  "baseCommit": "7076ed2e35f69294e864c44a47d8196480dadf4d",
+  "patchSha256": "783e826348f898ef9688b1c56b099893763aa62f9bd1b72c5e87a413dc072b3b",
+  "releaseCertification": false,
+  "tool": {
+    "name": "Wrangler Pages local runtime",
+    "version": "4.160.0",
+    "compatibilityDate": "2026-11-10"
+  },
+  "sources": [
+    "https://developers.cloudflare.com/pages/platform/limits/#files",
+    "https://developers.cloudflare.com/pages/configuration/redirects/#proxying"
+  ],
+  "physicalFiles": {
+    "rawExport": 20332,
+    "hostFilesAdded": 7,
+    "identicalPayloadCopiesRemoved": 2012,
+    "preparedWithoutPrivateHook": 18327,
+    "note": "Includes _headers/_redirects; Wrangler does not upload those as ordinary assets. Final hook/customization inventory must be measured again."
+  },
+  "http": {
+    "recordedAt": "2026-11-11T14:22:03.730Z",
+    "checked": 2012,
+    "failures": [],
+    "samples": [
+      {
+        "file": "__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "879cdccb5a4cb2eef23e102c168f414f642bbffb93f28b750c05a13948201987"
+      },
+      {
+        "file": "_not-found/__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "b2b1c97a23375d32734f9ff8422528b715c6c4dc07d6ec6fc91976f80192631b"
+      },
+      {
+        "file": "de/__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "8bdc0963222d01caac3adc4ffcaccc1734e10f5fc113a06f21d5370b125ca065"
+      },
+      {
+        "file": "en/__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "3539e8168a469de2d5d6c5405fc83de0a232743515427c2a5031d217e05dd6a4"
+      },
+      {
+        "file": "es/__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "2fbd8a64a16763738cdb235bfe45c90ee4aeba4953c128b832c184886ea86260"
+      },
+      {
+        "file": "ja/__next._full.txt",
+        "status": 200,
+        "type": "text/plain; charset=utf-8",
+        "sha256": "878c209f95fb838595c6ed0e7738d1b84124e0323dccf7abc428a7a2df97ea9e"
+      }
+    ],
+    "unknownStatus": 404,
+    "artifactFiles": 18327
+  },
+  "guards": {
+    "recordedAt": "2026-11-11T14:31:52.302699+00:00",
+    "originalPayloads": 2012,
+    "results": [
+      {
+        "case": "compact-stale-rules",
+        "exitCode": 1,
+        "remainingFullPayloads": 2012
+      },
+      {
+        "case": "compact-missing-index",
+        "exitCode": 1,
+        "remainingFullPayloads": 2012
+      },
+      {
+        "case": "compact-changed-payload",
+        "exitCode": 1,
+        "remainingFullPayloads": 2012
+      },
+      {
+        "case": "compact-non-file-index",
+        "exitCode": 1,
+        "remainingFullPayloads": 2012
+      },
+      {
+        "case": "compact-hook-removed-rules",
+        "exitCode": 1,
+        "remainingFullPayloads": 2012
+      },
+      {
+        "case": "compact-valid",
+        "exitCode": 0,
+        "remainingFullPayloads": 0
+      }
+    ],
+    "distPreserved": true
+  },
+  "headers": {
+    "recordedAt": "2026-11-11T14:34:35.187Z",
+    "rows": [
+      {
+        "host": "promptseen.dev",
+        "route": "/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      },
+      {
+        "host": "promptseen.dev",
+        "route": "/es/prompts/plum-branch-in-ink/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      },
+      {
+        "host": "promptseen.dev",
+        "route": "/%65s/prompts/plum-branch-in-ink/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      },
+      {
+        "host": "candidate.prompt-seen-dkj.pages.dev",
+        "route": "/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      },
+      {
+        "host": "candidate.prompt-seen-dkj.pages.dev",
+        "route": "/es/prompts/plum-branch-in-ink/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      },
+      {
+        "host": "candidate.prompt-seen-dkj.pages.dev",
+        "route": "/%65s/prompts/plum-branch-in-ink/",
+        "status": 200,
+        "canonicalStatus": 200,
+        "redirected": false,
+        "equalBytes": true,
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        },
+        "canonicalHeaders": {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=0, must-revalidate",
+          "x-robots-tag": null
+        }
+      }
+    ]
+  },
+  "headerLimitations": "Local HTTP requests with a Host override do not certify HTTPS platform noindex. Platform headers remain a live P7 gate. Root Content-Type/cache and original/canonical equality are verified.",
+  "browser": {
+    "passed": 51,
+    "skipped": 3,
+    "failed": 0,
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "log": ".artifacts/localization/es/compact-prototype-browser.log",
+    "skipReason": "Existing missing-language test has no English-only page in this production artifact."
+  },
+  "relatedTests": {
+    "files": 3,
+    "passed": 19,
+    "log": ".artifacts/localization/es/compact-focused.log"
+  },
+  "review": "Standards and spec scope review approved; final root/subpath/preview prepared artifacts remain pending."
+}
