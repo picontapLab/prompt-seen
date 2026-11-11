@@ -15,9 +15,9 @@ export const textDirection = (lang: string): 'rtl' | 'ltr' =>
 export function languageName(language: string, pageLang: string): string {
   try {
     const name = new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
-    // ICU versions disagree on initial casing in Portuguese (Node: inglês, WebKit: Inglês).
-    // Portuguese language names are lowercase; preserve region/proper-name casing after the first letter.
-    return pageLang.split('-')[0]!.toLowerCase() === 'pt'
+    // ICU versions disagree on initial casing in Portuguese and Spanish (inglês/Inglês, inglés/Inglés).
+    // Their language names are lowercase; preserve region/proper-name casing after the first letter.
+    return ['pt', 'es'].includes(pageLang.split('-')[0]!.toLowerCase())
       ? name.charAt(0).toLocaleLowerCase(pageLang) + name.slice(1)
       : name;
   } catch {

@@ -23,3 +23,8 @@ it('keeps region names and other languages grammatical when normalizing Portugue
   display.mockReturnValue('Englisch');
   expect(languageName('en', 'de')).toBe('Englisch');
 });
+
+it('keeps the existing Spanish preview label stable across the same ICU casing difference', () => {
+  vi.spyOn(Intl.DisplayNames.prototype, 'of').mockReturnValue('Inglés');
+  expect(languageName('en', 'es')).toBe('inglés');
+});
