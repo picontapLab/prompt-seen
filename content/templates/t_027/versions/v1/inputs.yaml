@@ -4,11 +4,14 @@ instructions:
     color.
   zh-Hans: 动作照片、短词与主色
   ja: 動作中の写真を 1 枚アップロードし、大文字の短い単語と背景色を指定してください。
+  de: Lade ein Actionfoto hoch und gib ein kurzes Wort in Großbuchstaben sowie
+    eine Hintergrundfarbe an.
 slots:
   - id: action
     labels:
       en: Action
       zh-Hans: 动作照片
       ja: 動作中の写真
+      de: Action
     min: 1
     max: 1

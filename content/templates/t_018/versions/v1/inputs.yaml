@@ -3,11 +3,14 @@ instructions:
   en: Supply an object and short labels; an exterior reference is optional.
   zh-Hans: 物件名称、短标注；外观参考可选
   ja: 物体と短いラベルを指定してください。外観の参照画像の使用は任意です。
+  de: Gib ein Objekt und kurze Beschriftungen an; eine Referenz der Außenansicht
+    ist optional.
 slots:
   - id: object
     labels:
       en: Object
       zh-Hans: 物件外观
       ja: 物体
+      de: Objekt
     min: 0
     max: 1

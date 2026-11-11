@@ -4,11 +4,14 @@ instructions:
     palette.
   zh-Hans: 产品图、标题、副文案与行动文案
   ja: 商品写真を 1 枚アップロードし、見出し、補足文、行動を促す誘導文、配色を指定してください。
+  de: Lade ein Produktfoto hoch und gib Überschrift, Unterzeile,
+    Handlungsaufforderung und Farbpalette an.
 slots:
   - id: product
     labels:
       en: Product
       zh-Hans: 产品照片
       ja: 商品
+      de: Produkt
     min: 1
     max: 1

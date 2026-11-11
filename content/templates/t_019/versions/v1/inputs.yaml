@@ -4,11 +4,14 @@ instructions:
     reference is optional.
   zh-Hans: 产品概念、设计特征、配色；参考图可选
   ja: 商品コンセプト、アクセントカラー、デザインの特徴を指定してください。外観の参照画像の使用は任意です。
+  de: Gib Produktkonzept, Akzentfarbe und Designmerkmale an; eine Referenz der
+    Außenansicht ist optional.
 slots:
   - id: product
     labels:
       en: Product
       zh-Hans: 产品外观
       ja: 商品
+      de: Produkt
     min: 0
     max: 1

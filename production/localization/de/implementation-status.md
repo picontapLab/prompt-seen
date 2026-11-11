@@ -39,6 +39,12 @@ targets and 1,565 fields remain. The two sample collections are now indexable in
 candidate simulation because their members are current. The verification below
 remains the earlier 29-target snapshot; no new browser acceptance is claimed.
 
+All 75 template descriptions are now current after review of the remaining 72
+pages and 431 dependent fields, plus an early-alt grammar correction. The latest
+completed snapshot is 177/381 current targets and 1,086/2,220 current fields.
+There are 204 missing targets and 1,134 missing fields. Full-production acceptance
+and the browser results below have not been rerun against this larger corpus.
+
 ## Verification
 
 These checks ran against the working source tree, including the user's existing

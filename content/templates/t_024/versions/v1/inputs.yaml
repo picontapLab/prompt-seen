@@ -3,11 +3,14 @@ instructions:
   en: Describe a character and scene; an original character reference is optional.
   zh-Hans: 角色或场景；照片可选
   ja: キャラクターと場面を説明してください。オリジナルキャラクターの参照画像の使用は任意です。
+  de: Beschreibe eine Figur und eine Szene; eine Referenz für eine eigene Figur
+    ist optional.
 slots:
   - id: character
     labels:
       en: Character
       zh-Hans: 角色或人物参考
       ja: 人物
+      de: Figur
     min: 0
     max: 1

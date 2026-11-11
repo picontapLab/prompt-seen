@@ -4,11 +4,14 @@ instructions:
     reading order.
   zh-Hans: 一张角色参考图；16条短中文配文
   ja: キャラクターの参照画像を 1 枚アップロードしてください。短いキャプションを読む順にちょうど 16 個指定します。
+  de: Lade ein Figurenreferenzbild hoch. Gib genau sechzehn kurze Beschriftungen
+    in Leserichtung an.
 slots:
   - id: character
     labels:
       en: Character
       zh-Hans: 角色参考
       ja: 人物
+      de: Figur
     min: 1
     max: 1

@@ -4,11 +4,14 @@ instructions:
     example pet is synthetic.
   zh-Hans: 宠物照片；年龄范围和性格
   ja: ペットの写真を 1 枚アップロードし、成人の年齢層と性格を選んでください。作例のペットは生成したものです。
+  de: Lade ein Haustierfoto hoch und wähle eine erwachsene Altersgruppe sowie eine
+    Persönlichkeit. Das Haustier im Beispiel wurde künstlich erzeugt.
 slots:
   - id: pet
     labels:
       en: Pet
       zh-Hans: 宠物照片
       ja: ペット
+      de: Haustier
     min: 1
     max: 1

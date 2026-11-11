@@ -4,11 +4,14 @@ instructions:
     optional.
   zh-Hans: 品牌名称、配色、调性；已有Logo可选
   ja: 架空のブランド名、配色、ムードを指定してください。既存のロゴの使用は任意です。
+  de: Gib einen fiktiven Markennamen, eine Farbpalette und eine Stimmung an; ein
+    vorhandenes Logo ist optional.
 slots:
   - id: logo
     labels:
       en: Logo
       zh-Hans: 已有Logo
       ja: ロゴ
+      de: Logo
     min: 0
     max: 1

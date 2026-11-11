@@ -4,11 +4,14 @@ instructions:
     sheet is optional.
   zh-Hans: 角色描述和四个故事节点；角色参考图可选
   ja: 登場するキャラクターを説明し、物語の展開を順番にちょうど 4 つ指定してください。キャラクター設定画の使用は任意です。
+  de: Beschreibe die Figuren und gib genau vier geordnete Handlungsschritte vor;
+    ein Figurenblatt ist optional.
 slots:
   - id: character
     labels:
       en: Character
       zh-Hans: 角色设定图
       ja: 人物
+      de: Figur
     min: 0
     max: 1

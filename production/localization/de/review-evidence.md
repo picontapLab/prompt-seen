@@ -85,3 +85,34 @@ Corrections were applied by 04:34:21 UTC; the resulting exact texts and hashes
 are bound to 159 additional records. This brings the approved snapshot to
 105 current targets and 655 current fields. It does not certify the still-draft
 template batch or the rest of the library.
+
+## Complete template descriptions
+
+AI Codex `spec_review` compared all 72 remaining template pages (`t_004`–`t_075`)
+with their complete source text and links by 04:39:05 UTC, and all 256 parameter
+and input fields against their actual contracts by 04:40:58 UTC on 2026-11-11.
+Corrections cover natural phrasing, food color versus coloring additive, Chinese
+characters, campaign dates and the subheading label. The corrected text was
+rechecked at 04:44:46 UTC. Counts, required/optional inputs, input ordering and
+literal English/Chinese image lettering were preserved.
+
+AI Codex `standards_review` opened every one of the 94 media images and compared
+all 81 run-note translations by 04:44:13 UTC. All assets were still PNGs. The
+historical review notes remain translations of recorded observations, not claims
+that this localization review repeated their entire generation workflow. The
+Corgi marking uses Blesse, not Blässe. Actual `a_207` shows one swimmer and a
+lemon wedge; `a_280` and `a_282` each show only their respective cloud/glass
+variant, so their alts were refined with reasons in the exact-hash reviews.
+
+Inspected media: `a_203`–`a_208`, `a_211`, `a_220`–`a_225`, `a_228`–`a_229`,
+`a_234`–`a_240`, `a_243`–`a_244`, `a_247`, `a_250`–`a_251`,
+`a_253`–`a_256`, `a_258`, `a_260`–`a_263`, `a_267`–`a_268`, `a_271`,
+`a_273`, `a_275`, `a_277`–`a_283`, `a_291`–`a_314`, `a_317`–`a_319`,
+`a_324`, `a_332`, `a_350`, `a_356`–`a_359`, `a_361`–`a_362`,
+`a_457`–`a_460`, `a_462`, `a_464`–`a_467`, `a_470`.
+
+The 503 new operations and one early-alt grammar correction were published
+transactionally with 504 exact-hash approvals at 04:45:56 UTC. The snapshot now
+has all 75 template descriptions current: 177/381 targets and 1,086/2,220 fields.
+The template `t_008` description's matching singular-swimmer refinement is queued
+with the next reviewed Prompt batch. No full-library acceptance is implied.

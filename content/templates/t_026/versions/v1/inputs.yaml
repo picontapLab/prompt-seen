@@ -4,12 +4,15 @@ instructions:
     a name and accent color.
   zh-Hans: 清晰侧脸照、多张回忆或动作照片、姓名
   ja: 横顔の写真を 1 枚、その後に思い出の写真を 2〜4 枚アップロードし、名前とアクセントカラーを指定してください。
+  de: Lade zuerst ein Profilfoto von der Seite und anschließend zwei bis vier
+    Erinnerungsfotos hoch; gib einen Namen und eine Akzentfarbe an.
 slots:
   - id: profile
     labels:
       en: Profile
       zh-Hans: 侧脸轮廓
       ja: 横顔
+      de: Profil
     min: 1
     max: 1
   - id: memories
@@ -17,5 +20,6 @@ slots:
       en: Memories
       zh-Hans: 回忆或动作照片
       ja: 思い出の写真
+      de: Erinnerungen
     min: 2
     max: 4

@@ -6,11 +6,14 @@ fields:
       en: Product
       zh-Hans: 产品
       ja: 商品
+      de: Produkt
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
+      de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
+        zusammengehörige Inhalte konsistent.
     type: string
     default: a compact espresso maker
     minLength: 1
@@ -23,11 +26,14 @@ fields:
       en: Feature
       zh-Hans: 功能细节
       ja: 特徴
+      de: Merkmal
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
+      de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
+        zusammengehörige Inhalte konsistent.
     type: string
     default: the tactile control surface
     minLength: 1

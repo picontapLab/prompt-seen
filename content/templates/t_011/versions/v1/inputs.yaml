@@ -4,11 +4,14 @@ instructions:
     is optional.
   zh-Hans: 产品名称、准确结构资料与标注；外观照可选
   ja: 機器、確認済みの構造の説明、正確なラベルを指定してください。商品写真の使用は任意です。
+  de: Gib das Gerät, überprüfte Angaben zum Aufbau und genaue Beschriftungen an;
+    ein Produktfoto ist optional.
 slots:
   - id: product
     labels:
       en: Product
       zh-Hans: 产品外观
       ja: 商品
+      de: Produkt
     min: 0
     max: 1

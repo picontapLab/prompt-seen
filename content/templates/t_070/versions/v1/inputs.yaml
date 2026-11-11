@@ -1,13 +1,17 @@
 referenceImage: required
 instructions:
-  en: Upload one clear dog photo. The demonstration reference is AI-generated. Keep all lettering in English.
+  en: Upload one clear dog photo. The demonstration reference is AI-generated.
+    Keep all lettering in English.
   zh-Hans: 上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。
   ja: 犬の鮮明な写真を1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
+  de: Lade ein klares Hundefoto hoch. Das Referenzbild der Demonstration wurde mit
+    KI erzeugt. Lass alle Schriftzüge auf Englisch.
 slots:
   - id: pet
     labels:
       en: Dog photo
       zh-Hans: 狗狗照片
       ja: 犬の写真
+      de: Hundefoto
     min: 1
     max: 1

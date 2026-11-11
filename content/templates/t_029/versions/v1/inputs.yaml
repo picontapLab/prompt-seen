@@ -3,11 +3,14 @@ instructions:
   en: Upload one product or person photo and supply a brand name and palette.
   zh-Hans: 人物或产品照片、品牌配色
   ja: 商品または人物の写真を 1 枚アップロードし、ブランド名と配色を指定してください。
+  de: Lade ein Produkt- oder Personenfoto hoch und gib einen Markennamen sowie
+    eine Farbpalette an.
 slots:
   - id: subject
     labels:
       en: Subject
       zh-Hans: 人物或产品照片
       ja: 被写体
+      de: Motiv
     min: 1
     max: 1

@@ -6,11 +6,14 @@ fields:
       en: Four-letter word
       zh-Hans: 四字母单词
       ja: 4 文字の単語
+      de: Wort mit vier Buchstaben
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
+      de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
+        zusammengehörige Inhalte konsistent.
     type: string
     default: MELT
     minLength: 1
@@ -23,11 +26,14 @@ fields:
       en: Caption
       zh-Hans: 说明句
       ja: キャプション
+      de: Beschriftung
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
+      de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
+        zusammengehörige Inhalte konsistent.
     type: string
     default: Letters soften into motion.
     minLength: 1
