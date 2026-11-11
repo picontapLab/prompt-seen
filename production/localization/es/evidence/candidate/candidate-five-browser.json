@@ -1,0 +1,755 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T15:30:35.559Z",
+  "build": {
+    "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "cache": "fresh Chromium browser context per page; HTTP browser cache cold; existing nginx OS cache; default prefetch; idle 6s",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "results": [
+    {
+      "code": "en",
+      "url": "/",
+      "firstLoadGzipBytes": 198618,
+      "idleGzipBytes": 328922,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "en",
+      "url": "/en/prompts/",
+      "firstLoadGzipBytes": 207213,
+      "idleGzipBytes": 327581,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "en",
+      "url": "/en/prompts/plum-branch-in-ink/",
+      "firstLoadGzipBytes": 195345,
+      "idleGzipBytes": 323619,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "en",
+      "url": "/en/templates/product-poster/",
+      "firstLoadGzipBytes": 211208,
+      "idleGzipBytes": 339482,
+      "scripts": 15,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "en",
+      "url": "/en/about/",
+      "firstLoadGzipBytes": 188045,
+      "idleGzipBytes": 316319,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "es",
+      "url": "/es/",
+      "firstLoadGzipBytes": 198644,
+      "idleGzipBytes": 294787,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "es",
+      "url": "/es/prompts/",
+      "firstLoadGzipBytes": 207213,
+      "idleGzipBytes": 293361,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "es",
+      "url": "/es/prompts/plum-branch-in-ink/",
+      "firstLoadGzipBytes": 195345,
+      "idleGzipBytes": 289399,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "es",
+      "url": "/es/templates/product-poster/",
+      "firstLoadGzipBytes": 211208,
+      "idleGzipBytes": 305262,
+      "scripts": 15,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "es",
+      "url": "/es/about/",
+      "firstLoadGzipBytes": 188045,
+      "idleGzipBytes": 282099,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "ja",
+      "url": "/ja/",
+      "firstLoadGzipBytes": 198644,
+      "idleGzipBytes": 294787,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-118-d92becfe6dd1.woff2",
+          "bytes": 1336
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-119-844ddef102bc.woff2",
+          "bytes": 32240
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-109-0d47b0a84c3f.woff2",
+          "bytes": 4508
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-112-0974b0897910.woff2",
+          "bytes": 4204
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-107-413322a63fb4.woff2",
+          "bytes": 3208
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-115-f95106704379.woff2",
+          "bytes": 5704
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-114-b447813b08ff.woff2",
+          "bytes": 4624
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-116-f02a40d13cbd.woff2",
+          "bytes": 5768
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-117-dd85c8be60a5.woff2",
+          "bytes": 4808
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "ja",
+      "url": "/ja/prompts/",
+      "firstLoadGzipBytes": 207213,
+      "idleGzipBytes": 293361,
+      "scripts": 14,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-113-8088a8a592fb.woff2",
+          "bytes": 4140
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-106-cdb3c5af64c9.woff2",
+          "bytes": 3496
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-119-844ddef102bc.woff2",
+          "bytes": 32240
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-105-4e2f3d37f52a.woff2",
+          "bytes": 3796
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-115-f95106704379.woff2",
+          "bytes": 5704
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-116-f02a40d13cbd.woff2",
+          "bytes": 5768
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-112-0974b0897910.woff2",
+          "bytes": 4204
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-102-79c6d4d1c2f7.woff2",
+          "bytes": 3260
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-114-b447813b08ff.woff2",
+          "bytes": 4624
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-117-dd85c8be60a5.woff2",
+          "bytes": 4808
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "ja",
+      "url": "/ja/prompts/plum-branch-in-ink/",
+      "firstLoadGzipBytes": 195345,
+      "idleGzipBytes": 289399,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-115-f95106704379.woff2",
+          "bytes": 5704
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-80-efaf6f47abcb.woff2",
+          "bytes": 2036
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-119-844ddef102bc.woff2",
+          "bytes": 32240
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-87-8d652d736e6c.woff2",
+          "bytes": 1120
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-98-42d14462c378.woff2",
+          "bytes": 3748
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "ja",
+      "url": "/ja/templates/product-poster/",
+      "firstLoadGzipBytes": 211208,
+      "idleGzipBytes": 305262,
+      "scripts": 15,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-113-8088a8a592fb.woff2",
+          "bytes": 4140
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-119-844ddef102bc.woff2",
+          "bytes": 32240
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-116-f02a40d13cbd.woff2",
+          "bytes": 5768
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    },
+    {
+      "code": "ja",
+      "url": "/ja/about/",
+      "firstLoadGzipBytes": 188045,
+      "idleGzipBytes": 282099,
+      "scripts": 13,
+      "ignoredNoModule": 1,
+      "missingScripts": [],
+      "fontRequests": [
+        {
+          "url": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "bytes": 25400
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "bytes": 22588
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "bytes": 14708
+        },
+        {
+          "url": "/generated/fonts/ja/noto-sans-jp-119-844ddef102bc.woff2",
+          "bytes": 32240
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "bytes": 14888
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "bytes": 24184
+        },
+        {
+          "url": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "bytes": 24252
+        }
+      ],
+      "searchIndexes": [],
+      "errors": []
+    }
+  ]
+}

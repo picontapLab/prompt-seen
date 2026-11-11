@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T16:06:37.901Z",
+  "build": {
+    "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "api": "chrome.tabs.setZoom",
+  "factor": 2,
+  "before": {
+    "width": 1440,
+    "dpr": 1,
+    "scale": 1
+  },
+  "results": [
+    {
+      "theme": "light",
+      "url": "/es/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "light",
+      "url": "/es/prompts/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "light",
+      "url": "/es/prompts/plum-branch-in-ink/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "light",
+      "url": "/es/templates/product-poster/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "dark",
+      "url": "/es/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "dark",
+      "url": "/es/prompts/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "dark",
+      "url": "/es/prompts/plum-branch-in-ink/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    },
+    {
+      "theme": "dark",
+      "url": "/es/templates/product-poster/",
+      "state": {
+        "width": 720,
+        "dpr": 2,
+        "scale": 1
+      },
+      "layout": [],
+      "axe": []
+    }
+  ],
+  "errors": []
+}

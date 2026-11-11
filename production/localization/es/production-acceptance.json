@@ -1,36 +1,1023 @@
 {
   "schemaVersion": 1,
   "locale": "es",
-  "stage": "candidate-preparation",
-  "releaseCommit": null,
-  "sourceRevision": null,
+  "stage": "local-implementation-validated-with-browser-environment-limitation",
+  "releaseCommit": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+  "sourceRevision": "c73a2c9fc565f1faf38e16690c13050f29fae74f:ee70bdffe24683093ebd80673978017330894381e1d4756d4ddea06bb75bf787",
   "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
   "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
-  "recordedAt": "2026-11-11T13:50:37.232577+00:00",
+  "recordedAt": "2026-11-11T17:25:49.880230+00:00",
   "releaseCertification": false,
   "baselineCommit": "b01746abf04dadd19aaf037a7606e573bd97c06a",
   "rollbackCommit": "9f4cc71428b9baa97bc297df053d6a9c710f0690",
   "builds": [
     {
-      "buildId": null,
-      "buildMode": "preview",
-      "basePath": "/prompt-seen",
-      "status": "pending"
-    },
-    {
-      "buildId": null,
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
       "buildMode": "production",
       "basePath": "",
-      "status": "pending"
+      "status": "built",
+      "validationStatus": "passed with recorded retries; see browser configuration",
+      "artifacts": "evidence/candidate/candidate-root-artifacts.json",
+      "preparedInventory": "evidence/candidate/candidate-root-prepared-count.json",
+      "fullPayloadHttp": "evidence/candidate/candidate-root-pages-http.json",
+      "headers": "evidence/candidate/candidate-root-pages-headers.json"
     },
     {
-      "buildId": null,
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
       "buildMode": "production",
       "basePath": "/prompt-seen",
-      "status": "pending"
+      "status": "built",
+      "validationStatus": "recorded with default-profile failure and alternate-profile rerun",
+      "artifacts": "evidence/candidate/candidate-subpath-artifacts.json",
+      "preparedInventory": "evidence/candidate/candidate-subpath-prepared-count.json",
+      "fullPayloadHttp": "evidence/candidate/candidate-subpath-pages-http.json",
+      "headers": "evidence/candidate/candidate-subpath-pages-headers.json"
+    },
+    {
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "status": "built",
+      "validationStatus": "passed with recorded retries; see browser configuration",
+      "artifacts": "evidence/candidate/candidate-preview-artifacts.json",
+      "preparedInventory": "evidence/candidate/candidate-preview-prepared-count.json",
+      "fullPayloadHttp": "evidence/candidate/candidate-preview-pages-http.json",
+      "headers": "evidence/candidate/candidate-preview-pages-headers.json"
     }
   ],
-  "checks": [],
+  "checks": [
+    {
+      "name": "candidate-es-strict",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/locale-check.ts",
+        "--locale",
+        "es",
+        "--strict",
+        "--json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:30:36.873170+00:00",
+      "seconds": 6.37,
+      "log": ".artifacts/localization/es/candidate-es-strict.log",
+      "logSha256": "1c36412607a334c873700e07ab039fa94eb7efea5a201dcf2818f1bec20b7945",
+      "savedSummary": "evidence/candidate/coverage.json"
+    },
+    {
+      "name": "candidate-ja-strict",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/locale-check.ts",
+        "--locale",
+        "ja",
+        "--strict",
+        "--json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:30:43.247625+00:00",
+      "seconds": 4.22,
+      "log": ".artifacts/localization/es/candidate-ja-strict.log",
+      "logSha256": "b5954667b5e1135c4c6f9289d528e7768fe0b303d90d4cfaec175230f740e5bd",
+      "savedSummary": "evidence/candidate/coverage.json"
+    },
+    {
+      "name": "candidate-de-strict",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/locale-check.ts",
+        "--locale",
+        "de",
+        "--strict",
+        "--json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:30:47.470586+00:00",
+      "seconds": 3.79,
+      "log": ".artifacts/localization/es/candidate-de-strict.log",
+      "logSha256": "7e1e074f54f410381bf7b77509c71f2312a1e63ce6e3e1a8a0203afc94303b10",
+      "savedSummary": "evidence/candidate/coverage.json"
+    },
+    {
+      "name": "candidate-all-locales",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/locale-check.ts",
+        "--all",
+        "--json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:30:51.259231+00:00",
+      "seconds": 4.65,
+      "log": ".artifacts/localization/es/candidate-all-locales.log",
+      "logSha256": "ec01059dbece6ca7d0ad940f96a35ff4f070b945188124a05f996203eb8930d1",
+      "savedSummary": "evidence/candidate/all-locales-findings.json.gz"
+    },
+    {
+      "name": "candidate-content",
+      "command": [
+        "npm",
+        "run",
+        "content:validate"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:30:55.909641+00:00",
+      "seconds": 7.32,
+      "log": ".artifacts/localization/es/candidate-content.log",
+      "logSha256": "0507716fdfa35cf518b571a9e9878da76cc2b7d3781d5379d8e83fa4b04102ea",
+      "savedLog": "evidence/candidate/candidate-content.log.gz"
+    },
+    {
+      "name": "candidate-typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:31:03.230472+00:00",
+      "seconds": 4.1,
+      "log": ".artifacts/localization/es/candidate-typecheck.log",
+      "logSha256": "d720a0b0053eac32d2848ced27e2c96b6fe97697c1910855c68d9708ce5c56c4",
+      "savedLog": "evidence/candidate/candidate-typecheck.log.gz"
+    },
+    {
+      "name": "candidate-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:31:07.327698+00:00",
+      "seconds": 11.63,
+      "log": ".artifacts/localization/es/candidate-lint.log",
+      "logSha256": "fe7cb912277b831aad68694e64bb3388dd7dc58656a03f8d3c8d8d443770307a",
+      "savedLog": "evidence/candidate/candidate-lint.log.gz"
+    },
+    {
+      "name": "candidate-format",
+      "command": [
+        "npm",
+        "run",
+        "format:check"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:31:18.954619+00:00",
+      "seconds": 29.31,
+      "log": ".artifacts/localization/es/candidate-format.log",
+      "logSha256": "71797bb261a4f195ef55d0fa0fb455fc5121aa58596fffab248bf7c3f7565b24",
+      "savedLog": "evidence/candidate/candidate-format.log.gz"
+    },
+    {
+      "name": "candidate-tokens",
+      "command": [
+        "npm",
+        "run",
+        "tokens:check"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:31:48.269549+00:00",
+      "seconds": 0.4,
+      "log": ".artifacts/localization/es/candidate-tokens.log",
+      "logSha256": "dd7b01db033d56f99c882931f74e17114720cded18b67bf54b47a7d7c82ab27d",
+      "savedLog": "evidence/candidate/candidate-tokens.log.gz"
+    },
+    {
+      "name": "candidate-unit",
+      "command": [
+        "npm",
+        "test",
+        "--",
+        "--maxWorkers=1"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:31:48.670795+00:00",
+      "seconds": 236.27,
+      "log": ".artifacts/localization/es/candidate-unit.log",
+      "logSha256": "ace6a3838430a513b31f651c1f21f40bd628e91669d1653504a5c3512331edbc",
+      "savedLog": "evidence/candidate/candidate-unit.log.gz"
+    },
+    {
+      "name": "candidate-storybook",
+      "command": [
+        "npm",
+        "run",
+        "storybook:build"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:35:44.948137+00:00",
+      "seconds": 17.83,
+      "log": ".artifacts/localization/es/candidate-storybook.log",
+      "logSha256": "14aaf5ecb7a42261c51b8969f15e2c60d6597ae66ea018c0409fca8b38309bec",
+      "savedLog": "evidence/candidate/candidate-storybook.log.gz"
+    },
+    {
+      "name": "candidate-root-metrics",
+      "command": [
+        "node",
+        ".artifacts/localization/es/measure-artifacts.mjs",
+        ".artifacts/localization/es/candidate-root-artifacts.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:36:02.781395+00:00",
+      "seconds": 0.85,
+      "log": ".artifacts/localization/es/candidate-root-metrics.log",
+      "logSha256": "a40451106a800b159dec46761a61a37669b05b6a4f898ec0b991a605855125ab",
+      "savedLog": "evidence/candidate/candidate-root-metrics.log.gz"
+    },
+    {
+      "name": "candidate-root-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-root-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T15:36:03.627209+00:00",
+      "seconds": 1573.18,
+      "log": ".artifacts/localization/es/candidate-root-browser.log",
+      "logSha256": "a5acd025c26028c816951fc92f88d9a990631c54c50e3ce6d24b1c97915d38b8",
+      "savedLog": "evidence/candidate/candidate-root-browser.log.gz",
+      "results": {
+        "passed": 1586,
+        "skipped": 73,
+        "flaky": 2,
+        "failed": 0
+      },
+      "skippedTests": [
+        "-    28 [http] › tests/e2e/detail.http.spec.ts:138:1 › right-to-left pages keep the prompt left-to-right",
+        "-   269 [chromium] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-   270 [chromium] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-   271 [chromium] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-   299 [chromium] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-   328 [chromium] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   330 [chromium] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   420 [chromium] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-   421 [chromium] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-   514 [chromium] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-   550 [chromium] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-   748 [firefox] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-   749 [firefox] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-   750 [firefox] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-   751 [firefox] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-   752 [firefox] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-   747 [firefox] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-   767 [firefox] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-   768 [firefox] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-   769 [firefox] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-   771 [firefox] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-   780 [firefox] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-   784 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-   785 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-   786 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-   787 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-   788 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-   809 [firefox] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   811 [firefox] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   816 [firefox] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-   832 [firefox] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-   845 [firefox] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-   901 [firefox] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-   902 [firefox] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-   909 [firefox] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-   957 [firefox] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-   992 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-   993 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-   995 [firefox] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-  1031 [firefox] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-  1032 [firefox] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1052 [firefox] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)",
+        "-  1228 [webkit] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-  1229 [webkit] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-  1230 [webkit] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-  1231 [webkit] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-  1232 [webkit] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-  1227 [webkit] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-  1248 [webkit] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-  1247 [webkit] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-  1249 [webkit] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-  1251 [webkit] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-  1260 [webkit] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-  1264 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-  1265 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-  1266 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-  1267 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-  1268 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-  1289 [webkit] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-  1291 [webkit] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-  1296 [webkit] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-  1312 [webkit] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-  1325 [webkit] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-  1381 [webkit] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-  1382 [webkit] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-  1389 [webkit] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-  1437 [webkit] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-  1472 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1473 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1475 [webkit] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-  1511 [webkit] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-  1512 [webkit] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1532 [webkit] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)"
+      ]
+    },
+    {
+      "name": "candidate-root-prepare",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/deploy-cloudflare.ts"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:02:16.806877+00:00",
+      "seconds": 16.44,
+      "log": ".artifacts/localization/es/candidate-root-prepare.log",
+      "logSha256": "3771856df0b59730132a15ecffad50688f7ae397e1bef51372e06d8baab888fb",
+      "savedLog": "evidence/candidate/candidate-root-prepare.log.gz"
+    },
+    {
+      "name": "candidate-root-pages-http",
+      "command": [
+        "node",
+        ".artifacts/localization/es/verify-compact.mjs",
+        ".artifacts/localization/es/candidate-root-pages-http.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:02:42.640310+00:00",
+      "seconds": 7.51,
+      "log": ".artifacts/localization/es/candidate-root-pages-http.log",
+      "logSha256": "12b8652c214d85131865a89c299431d615922e93ec79c356d4077f87b772ceef",
+      "savedLog": "evidence/candidate/candidate-root-pages-http.log.gz"
+    },
+    {
+      "name": "candidate-root-pages-headers",
+      "command": [
+        "node",
+        ".artifacts/localization/es/compact-headers.mjs",
+        ".artifacts/localization/es/candidate-root-pages-headers.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:02:50.153080+00:00",
+      "seconds": 0.22,
+      "log": ".artifacts/localization/es/candidate-root-pages-headers.log",
+      "logSha256": "5b29297e0849d136986443dff074eb18abd15e88cb5595851eb22d5d9bbec96a",
+      "savedLog": "evidence/candidate/candidate-root-pages-headers.log.gz"
+    },
+    {
+      "name": "candidate-root-pages-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "tests/e2e/spanish.browser.spec.ts",
+        "--grep",
+        "translated template|Spanish popup|quick search and search page|frozen Spanish|Spanish browser preference",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-root-pages-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:02:50.377940+00:00",
+      "seconds": 194.83,
+      "log": ".artifacts/localization/es/candidate-root-pages-browser.log",
+      "logSha256": "ca6c6bd104ce2e47c9fa4d329bd9e48dc9fb66e84596dbe011d9a06dcf68e150",
+      "savedLog": "evidence/candidate/candidate-root-pages-browser.log.gz",
+      "results": {
+        "passed": 174,
+        "skipped": 0,
+        "flaky": 0,
+        "failed": 0
+      },
+      "skippedTests": []
+    },
+    {
+      "name": "candidate-native-zoom",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "tests/e2e/spanish-zoom-diagnostic.browser.spec.ts",
+        "--project=chromium",
+        "--workers=1",
+        "--output=.artifacts/localization/es/candidate-native-zoom"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:06:05.340220+00:00",
+      "seconds": 45.75,
+      "log": ".artifacts/localization/es/candidate-native-zoom.log",
+      "logSha256": "01ec997ba9ad85fac370b3f6abf843a3e885b3c2e6789a11823505526376fbaa",
+      "savedLog": "evidence/candidate/candidate-native-zoom.log.gz"
+    },
+    {
+      "name": "candidate-subpath-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:06:51.178918+00:00",
+      "seconds": 91.22,
+      "log": ".artifacts/localization/es/candidate-subpath-build.log",
+      "logSha256": "3a30c4166a3d157e3338a6dc6d2f74dcfb63ff6b489da368f2b83c04454f6c6b",
+      "savedLog": "evidence/candidate/candidate-subpath-build.log.gz"
+    },
+    {
+      "name": "candidate-subpath-metrics",
+      "command": [
+        "node",
+        ".artifacts/localization/es/measure-artifacts.mjs",
+        ".artifacts/localization/es/candidate-subpath-artifacts.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:08:22.405281+00:00",
+      "seconds": 0.43,
+      "log": ".artifacts/localization/es/candidate-subpath-metrics.log",
+      "logSha256": "a40451106a800b159dec46761a61a37669b05b6a4f898ec0b991a605855125ab",
+      "savedLog": "evidence/candidate/candidate-subpath-metrics.log.gz"
+    },
+    {
+      "name": "candidate-subpath-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-subpath-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 1,
+      "startedAt": "2026-11-11T16:08:22.833910+00:00",
+      "seconds": 1885.79,
+      "log": ".artifacts/localization/es/candidate-subpath-browser.log",
+      "resolvedBy": "candidate-subpath-modified-click-budget-rerun",
+      "resolution": "Firefox background-tab creation also failed for a plain native anchor. Setting browser.tabs.loadInBackground=false restored both plain and gallery native clicks; two foreground-profile repetitions passed, while a third exhausted the default30s during the native click; three isolated repetitions then passed with the documented profile and a scoped60s functional-test budget, retaining all assertions. Original full-run, initial isolated failures and flaky attempts are retained.",
+      "logSha256": "3704433b32e43001c2fd734a7abac4233926563142e0a998ced1e2ca88c6260c",
+      "savedLog": "evidence/candidate/candidate-subpath-browser.log.gz",
+      "results": {
+        "passed": 1583,
+        "skipped": 73,
+        "flaky": 4,
+        "failed": 1
+      },
+      "skippedTests": [
+        "-    28 [http] › tests/e2e/detail.http.spec.ts:138:1 › right-to-left pages keep the prompt left-to-right",
+        "-   269 [chromium] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-   270 [chromium] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-   271 [chromium] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-   299 [chromium] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-   328 [chromium] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   330 [chromium] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   420 [chromium] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-   421 [chromium] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-   514 [chromium] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-   553 [chromium] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-   750 [firefox] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-   751 [firefox] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-   752 [firefox] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-   753 [firefox] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-   754 [firefox] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-   755 [firefox] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-   771 [firefox] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-   772 [firefox] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-   770 [firefox] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-   774 [firefox] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-   783 [firefox] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-   787 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-   788 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-   789 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-   790 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-   791 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-   812 [firefox] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   814 [firefox] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   819 [firefox] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-   835 [firefox] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-   848 [firefox] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-   904 [firefox] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-   905 [firefox] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-   912 [firefox] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-   960 [firefox] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-   995 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-   996 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-   998 [firefox] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-  1034 [firefox] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-  1035 [firefox] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1056 [firefox] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)",
+        "-  1231 [webkit] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-  1232 [webkit] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-  1233 [webkit] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-  1234 [webkit] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-  1235 [webkit] › tests/e2e/acceptance.browser.spec.ts:212:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › typing in the search field starts at the right; Latin words keep their order",
+        "-  1236 [webkit] › tests/e2e/acceptance.browser.spec.ts:228:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the list, its filter tabs and the popup follow the reading direction",
+        "-  1251 [webkit] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-  1252 [webkit] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-  1253 [webkit] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-  1255 [webkit] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-  1264 [webkit] › tests/e2e/detail.browser.spec.ts:179:1 › right-to-left: the page mirrors, the prompt and the image coordinates do not",
+        "-  1268 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-  1269 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-  1270 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-  1271 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-  1272 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-  1293 [webkit] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-  1295 [webkit] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-  1300 [webkit] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-  1316 [webkit] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-  1329 [webkit] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-  1385 [webkit] › tests/e2e/home-language.browser.spec.ts:157:1 › preview navigation crosses Latin, CJK and RTL locales without stale summaries",
+        "-  1386 [webkit] › tests/e2e/home-language.browser.spec.ts:170:1 › an unavailable translation keeps the favorite ID and returns when switching back",
+        "-  1394 [webkit] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-  1441 [webkit] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-  1476 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1477 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1479 [webkit] › tests/e2e/pages.browser.spec.ts:73:1 › the language menu explains a missing translation and offers the versions there are",
+        "-  1515 [webkit] › tests/e2e/popup.browser.spec.ts:606:3 › right-to-left › ← goes to the next work in reading order (§11.3)",
+        "-  1516 [webkit] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1536 [webkit] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)"
+      ]
+    },
+    {
+      "name": "candidate-subpath-modified-click-rerun",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "tests/e2e/popup.browser.spec.ts",
+        "--grep",
+        "modified clicks and pages without JavaScript",
+        "--project=firefox",
+        "--workers=1",
+        "--repeat-each=3",
+        "--retries=0",
+        "--trace=retain-on-failure",
+        "--output=.artifacts/localization/es/candidate-subpath-modified-click-rerun"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 1,
+      "startedAt": "2026-11-11T16:40:17.805849+00:00",
+      "seconds": 118.54,
+      "log": ".artifacts/localization/es/candidate-subpath-modified-click-rerun.log",
+      "resolvedBy": "candidate-subpath-modified-click-budget-rerun",
+      "resolution": "Firefox background-tab creation also failed for a plain native anchor. Setting browser.tabs.loadInBackground=false restored both plain and gallery native clicks; two foreground-profile repetitions passed, while a third exhausted the default30s during the native click; three isolated repetitions then passed with the documented profile and a scoped60s functional-test budget, retaining all assertions. Original full-run, initial isolated failures and flaky attempts are retained.",
+      "logSha256": "845a65f2d2980a3fc42f1ef492c568878c013415ca90a23131de3722a6a3d7d8",
+      "savedLog": "evidence/candidate/candidate-subpath-modified-click-rerun.log.gz"
+    },
+    {
+      "name": "candidate-subpath-modified-click-foreground-rerun",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--config=.artifacts/localization/es/firefox-foreground.config.ts",
+        "tests/e2e/popup.browser.spec.ts",
+        "--grep",
+        "modified clicks and pages without JavaScript",
+        "--project=firefox",
+        "--workers=1",
+        "--repeat-each=3",
+        "--retries=0",
+        "--trace=retain-on-failure",
+        "--output=.artifacts/localization/es/candidate-subpath-modified-click-foreground-rerun"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 1,
+      "startedAt": "2026-11-11T16:49:30.555681+00:00",
+      "seconds": 119.47,
+      "log": ".artifacts/localization/es/candidate-subpath-modified-click-foreground-rerun.log",
+      "firefoxPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "resolvedBy": "candidate-subpath-modified-click-budget-rerun",
+      "resolution": "Firefox background-tab creation also failed for a plain native anchor. Setting browser.tabs.loadInBackground=false restored both plain and gallery native clicks; two foreground-profile repetitions passed, while a third exhausted the default30s during the native click; three isolated repetitions then passed with the documented profile and a scoped60s functional-test budget, retaining all assertions. Original full-run, initial isolated failures and flaky attempts are retained.",
+      "logSha256": "b6f09850a029455eafbc93af5e7f6866d571372e12a51fdce859cc017e6ba4e8",
+      "savedLog": "evidence/candidate/candidate-subpath-modified-click-foreground-rerun.log.gz"
+    },
+    {
+      "name": "candidate-subpath-modified-click-budget-rerun",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--config=.artifacts/localization/es/firefox-foreground.config.ts",
+        "tests/e2e/popup.browser.spec.ts",
+        "--grep",
+        "modified clicks and pages without JavaScript",
+        "--project=firefox",
+        "--workers=1",
+        "--repeat-each=3",
+        "--timeout=60000",
+        "--retries=0",
+        "--trace=retain-on-failure",
+        "--output=.artifacts/localization/es/candidate-subpath-modified-click-budget-rerun"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:53:16.795351+00:00",
+      "seconds": 46.6,
+      "log": ".artifacts/localization/es/candidate-subpath-modified-click-budget-rerun.log",
+      "firefoxPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "logSha256": "e712092179d4b1b69f7fbb08b81cc574ae3358eaa7a3d14e14813cb7be60939f",
+      "savedLog": "evidence/candidate/candidate-subpath-modified-click-budget-rerun.log.gz"
+    },
+    {
+      "name": "candidate-subpath-prepare",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/deploy-cloudflare.ts"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:54:03.396728+00:00",
+      "seconds": 15.35,
+      "log": ".artifacts/localization/es/candidate-subpath-prepare.log",
+      "firefoxPreference": null,
+      "logSha256": "3771856df0b59730132a15ecffad50688f7ae397e1bef51372e06d8baab888fb",
+      "savedLog": "evidence/candidate/candidate-subpath-prepare.log.gz"
+    },
+    {
+      "name": "candidate-subpath-pages-http",
+      "command": [
+        "node",
+        ".artifacts/localization/es/verify-compact.mjs",
+        ".artifacts/localization/es/candidate-subpath-pages-http.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:54:22.339493+00:00",
+      "seconds": 5.82,
+      "log": ".artifacts/localization/es/candidate-subpath-pages-http.log",
+      "firefoxPreference": null,
+      "logSha256": "71c845f11c062ed2f6aa0fe7de2d0f9d43d609363e4acc585af37f674627d601",
+      "savedLog": "evidence/candidate/candidate-subpath-pages-http.log.gz"
+    },
+    {
+      "name": "candidate-subpath-pages-headers",
+      "command": [
+        "node",
+        ".artifacts/localization/es/compact-headers.mjs",
+        ".artifacts/localization/es/candidate-subpath-pages-headers.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:54:28.159470+00:00",
+      "seconds": 0.15,
+      "log": ".artifacts/localization/es/candidate-subpath-pages-headers.log",
+      "firefoxPreference": null,
+      "logSha256": "5b29297e0849d136986443dff074eb18abd15e88cb5595851eb22d5d9bbec96a",
+      "savedLog": "evidence/candidate/candidate-subpath-pages-headers.log.gz"
+    },
+    {
+      "name": "candidate-subpath-pages-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--config=.artifacts/localization/es/firefox-foreground.config.ts",
+        "tests/e2e/spanish.browser.spec.ts",
+        "--grep",
+        "translated template|Spanish popup|quick search and search page|frozen Spanish|Spanish browser preference",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-subpath-pages-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:54:28.312401+00:00",
+      "seconds": 137.7,
+      "log": ".artifacts/localization/es/candidate-subpath-pages-browser.log",
+      "firefoxPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "logSha256": "8d507fe5da7c9ed178f4a9235b24dde6659ea327aa309918cff213da75fa0b29",
+      "savedLog": "evidence/candidate/candidate-subpath-pages-browser.log.gz",
+      "results": {
+        "passed": 174,
+        "skipped": 0,
+        "flaky": 0,
+        "failed": 0
+      },
+      "skippedTests": []
+    },
+    {
+      "name": "candidate-preview-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:56:46.093780+00:00",
+      "seconds": 63.06,
+      "log": ".artifacts/localization/es/candidate-preview-build.log",
+      "firefoxPreference": null,
+      "logSha256": "837434bf3cd80659ccacb5ab77d9f1d1622e54d9edbce186f60db5a8e9723a1f",
+      "savedLog": "evidence/candidate/candidate-preview-build.log.gz"
+    },
+    {
+      "name": "candidate-preview-metrics",
+      "command": [
+        "node",
+        ".artifacts/localization/es/measure-artifacts.mjs",
+        ".artifacts/localization/es/candidate-preview-artifacts.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:57:49.160383+00:00",
+      "seconds": 0.41,
+      "log": ".artifacts/localization/es/candidate-preview-metrics.log",
+      "firefoxPreference": null,
+      "logSha256": "0ab7a3df09fc394b554a82fd6775a6db334765a0727a466a5b66bf73598ada90",
+      "savedLog": "evidence/candidate/candidate-preview-metrics.log.gz"
+    },
+    {
+      "name": "candidate-preview-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--config=.artifacts/localization/es/firefox-foreground.config.ts",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-preview-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T16:57:49.575384+00:00",
+      "seconds": 1494.19,
+      "log": ".artifacts/localization/es/candidate-preview-browser.log",
+      "firefoxPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "logSha256": "a3d61881038c5a86d97f0b730ebdf651617b25c70e20dfaaa35d48150b618ee3",
+      "savedLog": "evidence/candidate/candidate-preview-browser.log.gz",
+      "results": {
+        "passed": 1685,
+        "skipped": 54,
+        "flaky": 3,
+        "failed": 0
+      },
+      "skippedTests": [
+        "-   319 [chromium] › tests/e2e/detail.browser.spec.ts:117:3 › desktop › the language switch keeps the prompt when it has a version in that language",
+        "-   354 [chromium] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   356 [chromium] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   793 [firefox] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-   794 [firefox] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-   792 [firefox] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-   814 [firefox] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-   815 [firefox] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-   816 [firefox] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-   818 [firefox] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-   822 [firefox] › tests/e2e/detail.browser.spec.ts:117:3 › desktop › the language switch keeps the prompt when it has a version in that language",
+        "-   831 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-   832 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-   833 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-   834 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-   835 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-   836 [firefox] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ar",
+        "-   857 [firefox] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-   859 [firefox] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-   864 [firefox] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-   880 [firefox] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-   893 [firefox] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-   959 [firefox] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-  1009 [firefox] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-  1045 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1046 [firefox] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1087 [firefox] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1108 [firefox] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)",
+        "-  1296 [webkit] › tests/e2e/acceptance.browser.spec.ts:149:3 › Japanese input (§16.5 日语输入) › the search page waits for the committed word, then finds it",
+        "-  1297 [webkit] › tests/e2e/acceptance.browser.spec.ts:171:3 › Japanese input (§16.5 日语输入) › a template field keeps its composition and the preview follows the committed text",
+        "-  1295 [webkit] › tests/e2e/acceptance.browser.spec.ts:104:3 › German long labels (§16.5 德语长标签) › copy and save keep their width when their state changes, with German labels (§11.9 按钮宽度稳定)",
+        "-  1298 [webkit] › tests/e2e/acceptance.browser.spec.ts:190:3 › Arabic right-to-left sample (§16.5 阿拉伯语 RTL) › the header reads from the right; Tab moves the way the eye does",
+        "-  1318 [webkit] › tests/e2e/acceptance.browser.spec.ts:442:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the detail page reads before its scripts arrive; links work meanwhile; no blank layer stays",
+        "-  1319 [webkit] › tests/e2e/acceptance.browser.spec.ts:478:3 › a cold cache on a slow network (§16.5 冷缓存与慢网) › the list loads its next batch with placeholders and no blank gap on a slow network",
+        "-  1317 [webkit] › tests/e2e/acceptance.browser.spec.ts:410:3 › keyboard (§16.5 键盘) › search, open, copy and close with the keyboard alone",
+        "-  1321 [webkit] › tests/e2e/detail.browser.spec.ts:60:3 › desktop › copy puts exactly the prompt on the clipboard and says so in place",
+        "-  1325 [webkit] › tests/e2e/detail.browser.spec.ts:117:3 › desktop › the language switch keeps the prompt when it has a version in that language",
+        "-  1334 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › en",
+        "-  1335 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › zh-Hans",
+        "-  1336 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › es",
+        "-  1337 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ja",
+        "-  1338 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › de",
+        "-  1339 [webkit] › tests/e2e/details.browser.spec.ts:140:5 › 按钮宽度稳定: copy and save keep their width in every built language › ar",
+        "-  1360 [webkit] › tests/e2e/editor.browser.spec.ts:134:3 › desktop › list fields: Enter and the separator add, Backspace removes, the limit holds",
+        "-  1362 [webkit] › tests/e2e/editor.browser.spec.ts:174:3 › desktop › another sample cycles in file order; reset restores the default and can be undone",
+        "-  1367 [webkit] › tests/e2e/editor.browser.spec.ts:264:3 › desktop › an input method keeps its composition: no reset, no item added mid-word (§11.6.4)",
+        "-  1383 [webkit] › tests/e2e/english-social-showcase.browser.spec.ts:80:1 › the homepage copies the complete English prompt and reaches the twelve-case collection",
+        "-  1396 [webkit] › tests/e2e/favorites.browser.spec.ts:295:3 › desktop › C copies the template editor preview (§11.10)",
+        "-  1462 [webkit] › tests/e2e/home.browser.spec.ts:96:3 › desktop › \"Copy prompt\" copies the whole prompt, not just the quote",
+        "-  1512 [webkit] › tests/e2e/japanese.browser.spec.ts:47:3 › Japanese localization search acceptance › quick search keeps Japanese composition and Enter does not open a result before confirmation",
+        "-  1548 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › desktop, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1549 [webkit] › tests/e2e/motion.browser.spec.ts:222:5 › §12.8-10: nothing moves once fonts and images have loaded › phone, cold cache on a slow network: layout shift stays under 0.1",
+        "-  1590 [webkit] › tests/e2e/popup.browser.spec.ts:655:3 › phone › swipe sideways switches works, down closes; edge swipes stay with the system (§11.3)",
+        "-  1611 [webkit] › tests/e2e/search.browser.spec.ts:217:3 › desktop › an input method composing pinyin does not search the syllables (§11.6.4)"
+      ]
+    },
+    {
+      "name": "candidate-preview-prepare",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/deploy-cloudflare.ts"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T17:22:43.763091+00:00",
+      "seconds": 14.34,
+      "log": ".artifacts/localization/es/candidate-preview-prepare.log",
+      "firefoxPreference": null,
+      "logSha256": "67496f129781b0d3232f6670c37603cee37541ab453bd78a47cb6507b10a7d1f",
+      "savedLog": "evidence/candidate/candidate-preview-prepare.log.gz"
+    },
+    {
+      "name": "candidate-preview-pages-http",
+      "command": [
+        "node",
+        ".artifacts/localization/es/verify-compact.mjs",
+        ".artifacts/localization/es/candidate-preview-pages-http.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T17:23:01.709511+00:00",
+      "seconds": 6.8,
+      "log": ".artifacts/localization/es/candidate-preview-pages-http.log",
+      "firefoxPreference": null,
+      "logSha256": "df558c76600ba2514df29a0bf0aa456ce5712fa8ccd1b264d0a705026c009993",
+      "savedLog": "evidence/candidate/candidate-preview-pages-http.log.gz"
+    },
+    {
+      "name": "candidate-preview-pages-headers",
+      "command": [
+        "node",
+        ".artifacts/localization/es/compact-headers.mjs",
+        ".artifacts/localization/es/candidate-preview-pages-headers.json"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T17:23:08.512394+00:00",
+      "seconds": 0.15,
+      "log": ".artifacts/localization/es/candidate-preview-pages-headers.log",
+      "firefoxPreference": null,
+      "logSha256": "e3ca4c8d4576fdbecaf72dbadb6e7a6d4bb4ef96e918314396437e3849d93d12",
+      "savedLog": "evidence/candidate/candidate-preview-pages-headers.log.gz"
+    },
+    {
+      "name": "candidate-preview-pages-browser",
+      "command": [
+        "npm",
+        "run",
+        "test:e2e",
+        "--",
+        "--config=.artifacts/localization/es/firefox-foreground.config.ts",
+        "tests/e2e/spanish.browser.spec.ts",
+        "--grep",
+        "translated template|Spanish popup|quick search and search page|frozen Spanish|Spanish browser preference",
+        "--workers=2",
+        "--retries=1",
+        "--trace=on-first-retry",
+        "--output=.artifacts/localization/es/candidate-preview-pages-browser"
+      ],
+      "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "exitCode": 0,
+      "startedAt": "2026-11-11T17:23:08.664901+00:00",
+      "seconds": 136.27,
+      "log": ".artifacts/localization/es/candidate-preview-pages-browser.log",
+      "firefoxPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "logSha256": "0d679e889911e0af556e7d1f257a9436cdffd1ee1152b2b7b75e04e8ab552da1",
+      "savedLog": "evidence/candidate/candidate-preview-pages-browser.log.gz",
+      "results": {
+        "passed": 174,
+        "skipped": 0,
+        "flaky": 0,
+        "failed": 0
+      },
+      "skippedTests": []
+    }
+  ],
   "browserMatrix": {
     "browsers": [
       "chromium",
@@ -47,15 +1034,61 @@
       "light",
       "dark"
     ],
-    "status": "pending"
+    "status": "completed-with-recorded-retries-and-alternate-profile-reruns",
+    "skipPolicy": "Existing skips for unavailable fixtures or browser-specific clipboard, CDP composition, touch and layout-shift APIs; every skipped test is listed per run. No Spanish acceptance test is skipped.",
+    "evidence": "evidence/candidate/",
+    "nativeZoom": "evidence/candidate/candidate-native-zoom.json",
+    "firefoxBackgroundTabDiagnostic": {
+      "defaultPreference": "Native Meta/middle clicks failed to produce a page even on a plain anchor without application code; click metaKey was true and defaultPrevented false.",
+      "foregroundPreference": {
+        "browser.tabs.loadInBackground": false
+      },
+      "controlEvidence": [
+        "evidence/candidate/modified-click-probe.json",
+        "evidence/candidate/modified-click-foreground-probe.json"
+      ],
+      "configSnapshot": "evidence/candidate/firefox-foreground.config.ts.txt",
+      "defaultProfileStatus": "The default-profile subpath full run retains one failed case. The alternate-profile rerun verifies foreground-tab behavior; it does not certify that the default background-tab issue is fixed. Native middle-click recovery was not tested with the foreground preference.",
+      "rootCause": "Browser/automation environment is implicated by the plain-anchor control; exact root cause not established.",
+      "applicationCodeChanged": false,
+      "testAssertionsChanged": false,
+      "appliesTo": [
+        "candidate-subpath-modified-click-foreground-rerun",
+        "candidate-subpath-modified-click-budget-rerun",
+        "candidate-subpath-pages-browser",
+        "candidate-preview-browser",
+        "candidate-preview-pages-browser"
+      ],
+      "probeSources": [
+        "evidence/candidate/modified-click-probe.mjs.txt",
+        "evidence/candidate/modified-click-foreground-probe.mjs.txt"
+      ]
+    }
   },
   "search": {
     "frozenQueries": 32,
-    "status": "pending"
+    "status": "passed in serialized engine and real Workers across all three configurations",
+    "evidence": "search-cases.json"
   },
   "performance": {
-    "status": "pending",
-    "evidence": ".artifacts/localization/es/"
+    "status": "measured",
+    "baselineCommit": "b01746abf04dadd19aaf037a7606e573bd97c06a",
+    "candidateCommit": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+    "baseline": {
+      "build": "evidence/candidate/baseline-four-build.json",
+      "artifacts": "evidence/candidate/baseline-four-artifacts.json",
+      "browser": "evidence/candidate/baseline-four-browser.json"
+    },
+    "candidate": {
+      "build": "evidence/candidate/candidate-five-build.json",
+      "artifacts": "evidence/candidate/candidate-five-artifacts.json",
+      "browser": "evidence/candidate/candidate-five-browser.json"
+    },
+    "caveats": [
+      "Next output/cache cleared for both root measurements; content/media/font caches retained; host load uncontrolled, so elapsed build time is not a regression benchmark.",
+      "Prompt list and template detail already exceed approximately 200 KiB in the four-language baseline. Existing budget context: docs/first-load-js.md.",
+      "Modern-browser first load excludes the intentionally unfetched noModule polyfill. Ordinary pages made no search-index requests."
+    ]
   },
   "deployment": {
     "status": "deferred-by-user-local-commit-only",
@@ -66,9 +1099,90 @@
     "liveChecks": []
   },
   "artifactPackaging": {
-    "status": "final candidate validation pending",
+    "status": "passed locally in all three configurations",
     "strategy": "complete static export; no RSC deduplication or payload proxies",
     "plan": "paid (owner confirmed)",
-    "documentedFileLimit": 100000
+    "documentedFileLimit": 100000,
+    "privateProductionHook": "preserved but not available/executed locally; final customized inventory remains a future deployment gate"
+  },
+  "localCandidateCertification": false,
+  "localValidationComplete": true,
+  "toolchain": {
+    "evidence": "evidence/candidate/candidate-toolchain.json",
+    "note": "Local Playwright 1.64.1 is the existing validated Firefox-compatible runtime. The committed dependency and CI matrix remain unchanged."
+  },
+  "remoteCI": {
+    "status": "not-run",
+    "reason": "User requested local commits only; no push or PR was made."
+  },
+  "delivery": {
+    "scope": "local commits only, explicitly requested by owner",
+    "published": false,
+    "auditNote": "This audit commit records the tested candidate SHA; it does not claim that a later documentation-only audit SHA was built or deployed."
+  },
+  "warningAssessment": {
+    "evidence": "evidence/candidate/all-locales-findings.json.gz",
+    "esJaDe": "No findings in strict reports.",
+    "en": "One scope-missing finding under existing incremental metadata policy.",
+    "zh-Hans": "Existing incremental coverage findings: nine outdated, sixteen missing pages, two draft pages and one missing scope; this task does not promote them.",
+    "ar": "Preview-only preparation gaps remain under existing policy; not part of production. Every detailed finding is saved.",
+    "contentValidation": "Zero errors and publish errors; ten pre-existing Simplified Chinese coverage/sourceHash warnings and one unused-media informational finding. Exact files and messages are retained in candidate-content.log.gz.",
+    "sourceComparison": "Other locales/content are unchanged from the four-language comparison baseline; only es enablement and maintenance documentation changed under content/."
+  },
+  "coverage": {
+    "sourceRevision": "c73a2c9fc565f1faf38e16690c13050f29fae74f:ee70bdffe24683093ebd80673978017330894381e1d4756d4ddea06bb75bf787",
+    "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
+    "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
+    "policy": {
+      "coverage": "complete",
+      "review": "fingerprint",
+      "promptBodies": "source-only"
+    },
+    "evaluationMode": "candidate-production",
+    "counts": {
+      "target": 381,
+      "visible": 381,
+      "fallback": 0,
+      "localCurrent": 381,
+      "indexable": 381,
+      "fieldsTotal": 2220,
+      "fieldsCurrent": 2220,
+      "total": 381,
+      "published": 381,
+      "approved": 381,
+      "fields": 2220,
+      "missing": 0,
+      "draft": 0,
+      "outdated": 0,
+      "unreviewed": 0,
+      "archived": 0,
+      "invalid": 0,
+      "collection": 16,
+      "page": 2,
+      "prompt": 285,
+      "template": 75,
+      "topic": 3
+    },
+    "ready": true,
+    "blocking": false
+  },
+  "unitResults": {
+    "files": 59,
+    "tests": 517,
+    "status": "passed",
+    "source": "evidence/candidate/candidate-unit.log.gz"
+  },
+  "reviews": {
+    "recordedAt": "2026-11-11T17:28:57.597121+00:00",
+    "scope": "Final documentation/evidence audit against tested c73a2c9f; implementation reviews are recorded in the implementation history.",
+    "standards": {
+      "reviewer": "Codex AI sub-agent /root/standards_review",
+      "actionableFindings": 0
+    },
+    "spec": {
+      "reviewer": "Codex AI sub-agent /root/spec_review",
+      "actionableFindings": 0
+    },
+    "notes": "Both reviewers independently verified saved-log hashes, matrix totals, Spanish case counts and qualified release status."
   }
 }

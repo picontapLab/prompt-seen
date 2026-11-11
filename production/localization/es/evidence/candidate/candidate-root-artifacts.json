@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T15:36:03.563Z",
+  "build": {
+    "buildId": "c73a2c9fc565f1faf38e16690c13050f29fae74f",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "fileCount": 20332,
+  "html": {
+    "files": 2014,
+    "bytes": 230553847
+  },
+  "json": {
+    "files": 1496,
+    "bytes": 41630377
+  },
+  "searchIndexes": {
+    "de": {
+      "rawBytes": 1243563,
+      "gzipBytes": 229606
+    },
+    "en": {
+      "rawBytes": 1117811,
+      "gzipBytes": 206642
+    },
+    "es": {
+      "rawBytes": 1224979,
+      "gzipBytes": 226602
+    },
+    "ja": {
+      "rawBytes": 2095928,
+      "gzipBytes": 370096
+    },
+    "zh-Hans": {
+      "rawBytes": 1679326,
+      "gzipBytes": 291268
+    }
+  }
+}
