@@ -66,3 +66,22 @@ These two batches add 138 fingerprint-bound approvals (27 pages and 111 shared
 fields). They do not certify the remaining library, the complete frozen search set,
 native browser zoom, production enablement or deployment. See implementation status
 for the exact automated checks and outstanding acceptance work.
+
+## Early library expansion
+
+AI Codex `spec_review` read all 159 operations in the next batch: 76 Prompt
+pages (`p_021`–`p_100`, excluding `p_049`, `p_094`–`p_096`), 69 media alt
+texts and 14 annotation notes. Source comparison completed at 04:30:32 UTC
+on 2026-11-11. Corrections clarified dune ridges, launch-poster wording and the
+paper-band annotation. AI Codex `standards_review` opened all 69 referenced
+card assets and completed visual comparison at 04:31:54 UTC. In `a_168`,
+the visible ramen topping is half an egg; its approval records that refinement
+of the broader English source. These are actual AI reviews, not human sign-off.
+
+The inspected media IDs are `a_122`–`a_124`, `a_126`–`a_137`,
+`a_139`–`a_142`, `a_144`–`a_145`, `a_147`–`a_149`, `a_152`–`a_163`,
+`a_165`–`a_171`, `a_173`–`a_194`, `a_198`–`a_201`.
+Corrections were applied by 04:34:21 UTC; the resulting exact texts and hashes
+are bound to 159 additional records. This brings the approved snapshot to
+105 current targets and 655 current fields. It does not certify the still-draft
+template batch or the rest of the library.

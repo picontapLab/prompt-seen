@@ -30,6 +30,15 @@ collections still contain fallback members, so only 27 targets are indexable und
 candidate-production simulation. Actual preview outputs are all noindex.
 `de.preview` is true and `de.enabled` remains false.
 
+## Subsequent content progress
+
+The early-library expansion adds 76 reviewed Prompt descriptions, 69 visually
+checked media descriptions and 14 annotation notes (159 approvals). The latest
+completed batch has 105/381 current targets and 655/2,220 current fields; 276
+targets and 1,565 fields remain. The two sample collections are now indexable in
+candidate simulation because their members are current. The verification below
+remains the earlier 29-target snapshot; no new browser acceptance is claimed.
+
 ## Verification
 
 These checks ran against the working source tree, including the user's existing
