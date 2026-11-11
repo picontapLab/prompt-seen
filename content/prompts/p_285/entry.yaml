@@ -23,8 +23,10 @@ inputRequirements:
       Keep all lettering in English.
     zh-Hans: 上传一张清晰的狗狗照片。示例参考图由 AI 生成。画面文字保持英文。
     ja: 犬の鮮明な写真を1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
-    de: Lade ein klares Hundefoto hoch. Das Referenzbild der Demonstration wurde
-      mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    de: Lade ein klares Hundefoto hoch. Das Referenzbild der Demonstration wurde mit
+      KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    pt-BR: Envie uma foto clara de um cachorro. A referência de demonstração foi
+      gerada por IA. Mantenha todos os textos em inglês.
   slots:
     - id: pet
       labels:
@@ -32,6 +34,7 @@ inputRequirements:
         zh-Hans: 狗狗照片
         ja: 犬の写真
         de: Hundefoto
+        pt-BR: Foto de cachorro
       min: 1
       max: 1
 showcaseExampleId: x_349
@@ -53,6 +56,7 @@ annotations:
       zh-Hans: 四格明确故事的阅读顺序。
       ja: 4つのコマが、物語を読む順序を明確にしています。
       de: Vier Bilder legen die Handlungsfolge fest.
+      pt-BR: Quatro quadros estabelecem a sequência da história.
   - phrase: warm storybook illustration
     region:
       x: 0.02
@@ -64,3 +68,4 @@ annotations:
       zh-Hans: 温暖插画让故事保持亲切感。
       ja: 温かい絵本風のイラストが、親しみやすい雰囲気を作っています。
       de: Warme Illustration gibt der Geschichte einen freundlichen Ton.
+      pt-BR: A ilustração em tons quentes dá à história um tom acolhedor.

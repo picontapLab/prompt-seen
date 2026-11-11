@@ -23,6 +23,7 @@ inputRequirements:
     zh-Hans: 使用完整改编提示词，不需要参考图。
     ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
     de: Verwende den vollständigen umgeschriebenen Prompt ohne Eingabebild.
+    pt-BR: Use o prompt reescrito completo sem imagem de entrada.
   slots: []
 showcaseExampleId: x_376
 promptProvenance: independent-adaptation
@@ -40,6 +41,7 @@ inspirationSources:
       ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -48,14 +50,18 @@ inspirationSources:
       ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo
+        da publicação/resposta do autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118247837683044650&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is
         archived separately.
       zh-Hans: 独立改编；原词三次尝试失败并另行归档。
       ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
-      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen
-        und ist separat archiviert.
+      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen und
+        ist separat archiviert.
+      pt-BR: Adaptação independente; o prompt original falhou em três tentativas e
+        está arquivado separadamente.
     metrics:
       - key: likes
         value: 245
@@ -64,6 +70,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
+          pt-BR: Curtidas da publicação de origem
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/johnAGI168/status/2118247837683044650

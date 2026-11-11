@@ -26,6 +26,8 @@ inputRequirements:
     de: Lade zuerst das Erwachsenenporträt und danach das Kostüm hoch. Beide
       Eingaben sind künstlich erzeugt; das Kostüm ist ein moderner fiktiver
       Entwurf.
+    pt-BR: Envie primeiro o retrato da pessoa adulta e depois o traje. As duas
+      entradas são sintéticas; o traje é um design fictício moderno.
   slots:
     - id: person
       labels:
@@ -33,6 +35,7 @@ inputRequirements:
         zh-Hans: 成年人物肖像
         ja: 人物
         de: Person
+        pt-BR: Pessoa
       min: 1
       max: 1
     - id: garment
@@ -41,6 +44,7 @@ inputRequirements:
         zh-Hans: 服饰参考
         ja: 衣装
         de: Kleidungsstück
+        pt-BR: Peça de roupa
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -58,6 +62,7 @@ inspirationSources:
       zh-Hans: 整条教程或作品展示视频
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
+      pt-BR: Tutorial inteiro ou vídeo de demonstração
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -65,12 +70,14 @@ inspirationSources:
       zh-Hans: B站 官方公开只读 API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      pt-BR: Registro da API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 未取得完整prompt；本次依据展示主题改编
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
+      pt-BR: Prompt original completo não recuperado; adaptado de forma independente
     metrics:
       - key: views
         value: 18638
@@ -79,6 +86,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          pt-BR: Visualizações
       - key: likes
         value: 477
         labels:
@@ -86,6 +94,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: saves
         value: 689
         labels:
@@ -93,6 +102,7 @@ inspirationSources:
           zh-Hans: 收藏
           ja: 保存数
           de: Gespeichert
+          pt-BR: Salvamentos
       - key: comments
         value: 116
         labels:
@@ -100,6 +110,7 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          pt-BR: Comentários
       - key: shares
         value: 98
         labels:
@@ -107,6 +118,7 @@ inspirationSources:
           zh-Hans: 分享
           ja: 共有数
           de: Geteilt
+          pt-BR: Compartilhamentos
       - key: coins
         value: 178
         labels:
@@ -114,6 +126,7 @@ inspirationSources:
           zh-Hans: 投币
           ja: コイン数
           de: Coins
+          pt-BR: Moedas
       - key: danmaku
         value: 14
         labels:
@@ -121,6 +134,7 @@ inspirationSources:
           zh-Hans: 弹幕
           ja: 弾幕コメント数
           de: Danmaku
+          pt-BR: Comentários sobrepostos (danmaku)
 source:
   author: Prompt Seen
   url: null

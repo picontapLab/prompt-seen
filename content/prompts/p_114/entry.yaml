@@ -24,6 +24,8 @@ inputRequirements:
     ja: 成人のポートレートを 1 枚アップロードしてください。この作例の参照画像は、AI で生成した架空の人物です。
     de: Lade ein Porträt einer erwachsenen Person hoch. Unsere Referenz ist eine
       fiktive, KI-generierte Person.
+    pt-BR: Envie um retrato de uma pessoa adulta. Nossa referência é uma pessoa
+      fictícia gerada por IA.
   slots:
     - id: person
       labels:
@@ -31,6 +33,7 @@ inputRequirements:
         zh-Hans: 成年人物肖像
         ja: 人物
         de: Person
+        pt-BR: Pessoa
       min: 1
       max: 1
 showcaseExampleId: x_159
@@ -53,6 +56,7 @@ inspirationSources:
       zh-Hans: 整条X帖子或图集
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
+      pt-BR: Publicação inteira ou galeria de imagens
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,12 +64,14 @@ inspirationSources:
       zh-Hans: X 官方公开嵌入接口
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      pt-BR: Registro da API pública oficial
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2011304086847832089&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 只取得原帖片段
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      pt-BR: Prompt original ou trecho disponível; adaptação independente
     metrics:
       - key: likes
         value: 2165
@@ -74,6 +80,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: conversation_count
         value: 58
         labels:
@@ -81,6 +88,7 @@ inspirationSources:
           zh-Hans: 回复
           ja: 返信数
           de: Antworten
+          pt-BR: Respostas
       - key: views
         value: null
         labels:
@@ -88,6 +96,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          pt-BR: Visualizações
       - key: reposts
         value: null
         labels:
@@ -95,6 +104,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          pt-BR: Republicações
       - key: bookmarks
         value: null
         labels:
@@ -102,3 +112,4 @@ inspirationSources:
           zh-Hans: 书签
           ja: ブックマーク数
           de: Lesezeichen
+          pt-BR: Itens salvos

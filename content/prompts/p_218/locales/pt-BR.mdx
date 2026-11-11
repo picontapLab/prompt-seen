@@ -1,0 +1,33 @@
+---
+title: Mudar a cor de um vaso usando uma foto e uma marcação
+description: Um prompt registrado de edição de cor por IA com duas referências
+  ordenadas, o vaso azul-cobalto resultante e a mudança observada no esmalte.
+status: published
+updatedAt: 2026-11-06
+translation:
+  sourceLocale: en
+  sourceHash: sha256:cb1800a78015b5f4
+  reviewStatus: reviewed
+---
+
+## Como usar
+
+Use o prompt exato registrado e os arquivos de referência originais exibidos, na ordem indicada. Alterações no prompt ou nas entradas criam uma variante não testada.
+
+Envie primeiro a foto sintética original do cômodo e depois a sobreposição separada com marcação em círculo vermelho. A sobreposição identifica o vaso; ela não é o resultado gerado. O prompt de trabalho registrado está em chinês e permanece inalterado aqui. Uma tradução para inglês seria um novo prompt ainda não testado.
+
+## Resultado observado
+
+O vaso mudou de creme para azul-cobalto, e a marcação vermelha foi removida. Jarra, hastes secas, azulejos e janela permanecem visualmente consistentes; o novo esmalte é mais brilhante.
+
+## Evidências de geração e limitações
+
+O [registro da execução](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml) vincula o hash do prompt às entradas a_373 e a_374, nessa ordem, e à saída a_372. O [comprovante da geração](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json) preserva os hashes das entradas e da saída. Seu horário corresponde a 5 de novembro em UTC e a 4 de novembro em Los Angeles, data exibida para esta execução.
+
+GPT Image 2.6 é a [versão atribuída pelo proprietário do projeto](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). A ferramenta não retornou um ID exato de modelo de API; seed e configurações de amostragem e qualidade não foram registrados. Esta única saída mostra uma mudança de cor com superfície mais brilhante, não uma prova de que a edição de cor preserva cada reflexo ou pixel. Verifique o acabamento do material e os objetos ao redor ao experimentar com sua própria imagem.
+
+## Fonte e geração
+
+A fonte fornece um prompt original; esta produção usa o prompt de trabalho registrado separadamente. [Fonte](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). O engajamento da publicação de origem não mede este exemplo recém-gerado.
+
+Gerado com GPT Image 2.6. Todas as imagens de referência usadas aqui foram geradas para este projeto.

@@ -25,6 +25,8 @@ inputRequirements:
     ja: 独自に生成した参照画像を表示順に使ってください。公式の画像や SNS の出典画像は使わないでください。
     de: Verwende die unabhängig erzeugten Referenzdateien in der angezeigten
       Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
+    pt-BR: Use os arquivos de referência gerados de forma independente na ordem
+      exibida. Não use as imagens das fontes oficiais ou das redes sociais.
   slots:
     - id: reference
       labels:
@@ -32,6 +34,7 @@ inputRequirements:
         zh-Hans: 原创生成参考图
         ja: 元となる生成参照画像
         de: Ursprüngliche künstlich erzeugte Referenz
+        pt-BR: Referência sintética original
       min: 1
       max: 1
 showcaseExampleId: x_297
@@ -49,8 +52,10 @@ inspirationSources:
         post share the metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
-      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis.
-        Mehrere Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
+        Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos da
+        mesma publicação compartilham as métricas.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,6 +65,8 @@ inspirationSources:
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
       de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
         Zahlen wurden nicht aktualisiert."
+      pt-BR: "Pesquisa anterior: consulta direta à página e revisão visual. As
+        contagens não foram atualizadas."
     evidenceUrl: https://x.com/798145343h/status/2118164732989608405
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -67,6 +74,8 @@ inspirationSources:
       ja: 元のプロンプトは見つかりませんでした。これは独自に推定したプロンプトです。
       de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig
         abgeleiteter Prompt.
+      pt-BR: O prompt original não foi encontrado. Este prompt foi inferido de forma
+        independente.
     metrics:
       - key: likes
         value: 53
@@ -75,6 +84,7 @@ inspirationSources:
           zh-Hans: 点赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: reposts
         value: 1
         labels:
@@ -82,6 +92,7 @@ inspirationSources:
           zh-Hans: 转发
           ja: リポスト数
           de: Reposts
+          pt-BR: Republicações
 source:
   author: Prompt Seen
   url: null

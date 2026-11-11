@@ -7,11 +7,13 @@ fields:
       zh-Hans: 生日年龄
       ja: 誕生日の年齢
       de: Geburtstagsalter
+      pt-BR: Idade no aniversário
     help:
       en: Use a short age such as 30.
       zh-Hans: 填写简短年龄，例如 30。
       ja: 30など、短い年齢表記を入力してください。
       de: Verwende eine kurze Altersangabe wie 30.
+      pt-BR: Informe a idade de forma breve, como 30.
     type: string
     default: "30"
     minLength: 1
@@ -25,11 +27,13 @@ fields:
       zh-Hans: 姓名
       ja: 名前
       de: Name
+      pt-BR: Nome
     help:
       en: Use a short display name.
       zh-Hans: 填写简短显示姓名。
       ja: 短い表示名を入力してください。
       de: Verwende einen kurzen Anzeigenamen.
+      pt-BR: Use um nome curto para exibição.
     type: string
     default: ALEX
     minLength: 1

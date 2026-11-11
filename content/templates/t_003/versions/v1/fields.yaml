@@ -9,12 +9,14 @@ fields:
       zh-Hans: 人物
       ja: 人物
       de: Figur
+      pt-BR: Personagem
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
       ja: 人物とポーズをひとつ指定します。例：「回転中のダンサー」。
       de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in
         einer Drehung“.
+      pt-BR: Quem é e uma pose, como “uma pessoa dançando durante um giro”.
   - name: rimLight
     type: enum
     required: true
@@ -25,6 +27,7 @@ fields:
       zh-Hans: 轮廓光
       ja: リムライト
       de: Konturlicht
+      pt-BR: Luz de contorno
     options:
       - value: cyan and magenta
         swatch:
@@ -35,6 +38,7 @@ fields:
           zh-Hans: 青与洋红
           ja: シアンとマゼンタ
           de: Cyan und Magenta
+          pt-BR: Ciano e magenta
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -44,6 +48,7 @@ fields:
           zh-Hans: 琥珀与青绿
           ja: 琥珀色と青緑
           de: Bernstein und Petrol
+          pt-BR: Âmbar e verde-azulado
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -53,6 +58,7 @@ fields:
           zh-Hans: 紫与青
           ja: バイオレットとシアン
           de: Violett und Cyan
+          pt-BR: Violeta e ciano
   - name: background
     type: enum
     required: true
@@ -63,6 +69,7 @@ fields:
       zh-Hans: 背景
       ja: 背景
       de: Hintergrund
+      pt-BR: Fundo
     options:
       - value: soft bokeh lights
         labels:
@@ -70,18 +77,21 @@ fields:
           zh-Hans: 柔和的虚化光点
           ja: やわらかな玉ぼけ
           de: Sanfte Bokeh-Lichter
+          pt-BR: Luzes de bokeh suaves
       - value: a blurred night city
         labels:
           en: Blurred night city
           zh-Hans: 虚化的夜城
           ja: ぼけた夜の街
           de: Unscharfe nächtliche Stadt
+          pt-BR: Cidade noturna desfocada
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
           zh-Hans: 平涂暗色渐变
           ja: 平面的な暗いグラデーション
           de: Flächiger dunkler Farbverlauf
+          pt-BR: Degradê escuro simples
   - name: mood
     type: string
     required: false
@@ -92,6 +102,7 @@ fields:
       zh-Hans: 情绪
       ja: ムード
       de: Stimmung
+      pt-BR: Clima
   - name: aspectRatio
     type: enum
     required: true
@@ -103,6 +114,7 @@ fields:
       ja: アスペクト比
       ar: نسبة الأبعاد
       de: Seitenverhältnis
+      pt-BR: Proporção
     options:
       - value: 4:5
         labels:
@@ -111,6 +123,7 @@ fields:
           ja: 4:5
           ar: 4:5
           de: 4:5
+          pt-BR: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -118,6 +131,7 @@ fields:
           ja: 1:1
           ar: 1:1
           de: 1:1
+          pt-BR: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -125,6 +139,7 @@ fields:
           ja: 2:3
           ar: 2:3
           de: 2:3
+          pt-BR: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -132,3 +147,4 @@ fields:
           ja: 9:16
           ar: 9:16
           de: 9:16
+          pt-BR: 9:16

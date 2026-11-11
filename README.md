@@ -312,6 +312,7 @@ Project facts:
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
 - [Operations](docs/operations.md): production setup, deploying, rolling back, search engines, analytics.
 - [General localization and German launch specification](docs/general-localization-spec.md): reusable locale policies, translation tooling, browsing and indexing rules, implementation steps and acceptance criteria.
+- [Portuguese localization specification](docs/portuguese-localization-spec.md): full Brazilian Portuguese coverage, translation and review workflow, search acceptance and release gates.
 - [Spanish localization specification](docs/spanish-localization-spec.md): staged rollout, translation batches, Spanish search behavior, review evidence and production acceptance.
 - [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).

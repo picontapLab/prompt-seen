@@ -6,6 +6,8 @@ instructions:
   ja: 成人の鮮明なポートレートを1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
   de: Lade ein klares Porträt einer erwachsenen Person hoch. Das Referenzbild der
     Demonstration wurde mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
+  pt-BR: Envie um retrato nítido de uma pessoa adulta. A referência da
+    demonstração foi gerada por IA. Mantenha todo o texto da imagem em inglês.
 slots:
   - id: person
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 人物肖像
       ja: 人物のポートレート
       de: Personenporträt
+      pt-BR: Retrato da pessoa
     min: 1
     max: 1

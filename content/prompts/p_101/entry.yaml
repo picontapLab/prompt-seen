@@ -38,6 +38,8 @@ annotations:
       ja: ひとつのガラス球がミニチュアの世界を囲み、明確な境界を与えています。
       de: Eine einzelne Glaskugel rahmt die Miniaturwelt und gibt ihr eine klare
         Grenze.
+      pt-BR: Uma única esfera de vidro emoldura o mundo em miniatura e lhe dá um
+        limite claro.
   - phrase: cascades over the table edge
     region:
       x: 0.56
@@ -48,8 +50,8 @@ annotations:
       en: The waterfall crosses the tabletop and joins the two scales.
       zh-Hans: 瀑布越过桌边，把微缩景观与房间连接起来。
       ja: 滝がテーブルの上を横切り、2 つのスケールの世界をつないでいます。
-      de: Der Wasserfall überquert die Tischplatte und verbindet die beiden
-        Maßstäbe.
+      de: Der Wasserfall überquert die Tischplatte und verbindet die beiden Maßstäbe.
+      pt-BR: A cachoeira atravessa o tampo da mesa e une as duas escalas.
 showcaseExampleId: x_146
 promptProvenance: independent-adaptation
 inspirationSources:
@@ -65,6 +67,7 @@ inspirationSources:
       zh-Hans: 单张社区图片
       ja: 元の画像ページ
       de: Ursprüngliche Bildseite
+      pt-BR: Página da imagem original
     observedAt: 2026-10-28T23:12:22-07:00
     cacheTimestampKnown: false
     evidenceMethod:
@@ -72,12 +75,14 @@ inspirationSources:
       zh-Hans: Civitai 官方公开 images API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      pt-BR: Registro da API pública oficial
     evidenceUrl: https://civitai.com/api/v1/images?imageId=64517382&withMeta=true
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: API公开原prompt；本次独立改写并移除模型专用触发词
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      pt-BR: Prompt ou trecho de origem disponível; adaptado de forma independente
     metrics:
       - key: cryCount
         value: 1362
@@ -86,6 +91,7 @@ inspirationSources:
           zh-Hans: 哭泣反应
           ja: 泣くリアクション
           de: „Weinen“-Reaktionen
+          pt-BR: Reações de choro
       - key: laughCount
         value: 1899
         labels:
@@ -93,6 +99,7 @@ inspirationSources:
           zh-Hans: 大笑反应
           ja: 笑うリアクション
           de: Lachreaktionen
+          pt-BR: Reações de riso
       - key: likeCount
         value: 14162
         labels:
@@ -100,6 +107,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: dislikeCount
         value: 0
         labels:
@@ -107,6 +115,7 @@ inspirationSources:
           zh-Hans: 踩
           ja: 低評価
           de: Dislikes
+          pt-BR: Não gostei
       - key: heartCount
         value: 5068
         labels:
@@ -114,6 +123,7 @@ inspirationSources:
           zh-Hans: 爱心
           ja: ハート
           de: Herzen
+          pt-BR: Corações
       - key: commentCount
         value: 2
         labels:
@@ -121,3 +131,4 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          pt-BR: Comentários

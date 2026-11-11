@@ -5,6 +5,8 @@ instructions:
   ja: 物体と短いラベルを指定してください。外観の参照画像の使用は任意です。
   de: Gib ein Objekt und kurze Beschriftungen an; eine Referenz der Außenansicht
     ist optional.
+  pt-BR: Forneça um objeto e rótulos curtos; uma referência da aparência externa é
+    opcional.
 slots:
   - id: object
     labels:
@@ -12,5 +14,6 @@ slots:
       zh-Hans: 物件外观
       ja: 物体
       de: Objekt
+      pt-BR: Objeto
     min: 0
     max: 1

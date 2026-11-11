@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "AI Codex translate_c — independent preservation audit",
+  "completedAt": "2026-11-11T12:42:33.135Z",
+  "base": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "head": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "readOnly": true,
+  "noGenOrBuild": true,
+  "passed": true,
+  "byteVerified": {
+    "content": 3612,
+    "media": 2377,
+    "mediaBytes": 774035072,
+    "immutablePromptAndBody": 601
+  },
+  "immutableCategories": {
+    "prompt.txt": 519,
+    "template body.txt": 82,
+    "template sample files": 101
+  },
+  "content": {
+    "baselineFiles": 3612,
+    "existingChangedFiles": 844,
+    "newFiles": 381,
+    "semanticChanges": 1806,
+    "portugueseFieldAdditions": 1793,
+    "sourceCorrectionChanges": [
+      {
+        "file": "content/media/a_269.yaml",
+        "path": [
+          "alt",
+          "en"
+        ],
+        "before": "A living room becomes an open miniature with its furniture arrangement preserved.",
+        "after": "A home office becomes an open miniature, showing a desk, chair, bookshelf and window.",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_269.yaml",
+        "path": [
+          "alt",
+          "zh-Hans"
+        ],
+        "before": "保留家具布局，把客厅转为敞开的等距微缩模型。",
+        "after": "家庭办公空间呈现为敞开的微缩模型，可见书桌、椅子、书架和窗户。",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_269.yaml",
+        "path": [
+          "alt",
+          "ja"
+        ],
+        "before": "居間の家具の配置を保ちながら、内部が見えるミニチュアに変えています。",
+        "after": "ホームオフィスを内部が見えるミニチュアにし、机、椅子、本棚、窓を描いています。",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_280.yaml",
+        "path": [
+          "alt",
+          "en"
+        ],
+        "before": "One original emblem explores two distinct materials while preserving its silhouette.",
+        "after": "A circular mountain emblem made of clouds against a blue sky.",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_280.yaml",
+        "path": [
+          "alt",
+          "zh-Hans"
+        ],
+        "before": "同一原创标志探索云朵和玻璃两种材质，并保持轮廓。",
+        "after": "蓝天下，由云朵构成的圆形山峰徽章。",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_280.yaml",
+        "path": [
+          "alt",
+          "ja"
+        ],
+        "before": "ひとつのオリジナルのエンブレムのシルエットを保ちながら、異なる 2 種類の素材を試しています。",
+        "after": "青空を背景に、雲でできた円形の山のエンブレムが浮かんでいます。",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_282.yaml",
+        "path": [
+          "alt",
+          "en"
+        ],
+        "before": "One original emblem explores two distinct materials while preserving its silhouette.",
+        "after": "A circular emblem with three mountain peaks and a small ring is made of clear, refractive glass against a blue sky.",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_282.yaml",
+        "path": [
+          "alt",
+          "zh-Hans"
+        ],
+        "before": "同一原创标志探索云朵和玻璃两种材质，并保持轮廓。",
+        "after": "蓝天下，一个由透明折射玻璃构成的圆形标志，内有三座山峰和一个小圆环。",
+        "reason": "documented actual-asset source correction"
+      },
+      {
+        "file": "content/media/a_282.yaml",
+        "path": [
+          "alt",
+          "ja"
+        ],
+        "before": "ひとつのオリジナルのエンブレムのシルエットを保ちながら、異なる 2 種類の素材を試しています。",
+        "after": "青空を背景に、3つの山頂と小さな輪を組み合わせた円形のエンブレムが、光を屈折させる透明なガラスで表現されています。",
+        "reason": "documented actual-asset source correction"
+      }
+    ],
+    "policyChanges": [
+      {
+        "file": "content/locales.yaml",
+        "path": [
+          "locales",
+          3,
+          "enabled"
+        ],
+        "before": false,
+        "after": true,
+        "reason": "authorized Portuguese rollout policy"
+      },
+      {
+        "file": "content/locales.yaml",
+        "path": [
+          "locales",
+          3,
+          "localization",
+          "coverage"
+        ],
+        "before": "incremental",
+        "after": "complete",
+        "reason": "authorized Portuguese rollout policy"
+      },
+      {
+        "file": "content/locales.yaml",
+        "path": [
+          "locales",
+          3,
+          "localization",
+          "promptBodies"
+        ],
+        "before": "optional",
+        "after": "source-only",
+        "reason": "authorized Portuguese rollout policy"
+      },
+      {
+        "file": "content/locales.yaml",
+        "path": [
+          "locales",
+          3,
+          "preview"
+        ],
+        "after": true,
+        "reason": "authorized Portuguese rollout policy"
+      }
+    ]
+  },
+  "coverage": {
+    "evaluationMode": "candidate-production",
+    "sourceRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325:41e353efdb82e73699afb41f02c78ff57907e27c8a261483012c1fd043d7c4bc",
+    "counts": {
+      "target": 381,
+      "visible": 381,
+      "fallback": 0,
+      "localCurrent": 381,
+      "indexable": 381,
+      "fieldsTotal": 2220,
+      "fieldsCurrent": 2220,
+      "total": 381,
+      "published": 381,
+      "approved": 381,
+      "fields": 2220,
+      "missing": 0,
+      "draft": 0,
+      "outdated": 0,
+      "unreviewed": 0,
+      "archived": 0,
+      "invalid": 0,
+      "collection": 16,
+      "page": 2,
+      "prompt": 285,
+      "template": 75,
+      "topic": 3
+    },
+    "scopeItems": 381,
+    "scopeFields": 2220,
+    "reviewRecords": 2601,
+    "scopeItemKeysMatch": true,
+    "scopeFieldKeysMatch": true,
+    "allCurrentReviewHashesMatch": true
+  },
+  "existingLanguageReviewChanges": [
+    {
+      "file": "production/localization/ja/reviews.json",
+      "key": "content/media/a_269.yaml#alt",
+      "before": {
+        "key": "content/media/a_269.yaml#alt",
+        "sourceHash": "sha256:95a4a4b37777390699dd7e156cb493b4a62884ea24464413d0714fa3c4933040",
+        "targetHash": "sha256:34a8b551ee64fe668bdf71b6f3062a0b5050322dee2b9da148bc2109d161a83c",
+        "reviewer": "Codex shared-field agent (AI text review)",
+        "completedAt": "2026-11-09T06:29:12.360Z",
+        "conclusion": "approved",
+        "reason": "Second-pass AI bilingual text review of the complete source and Japanese translation: checked Japanese wording, terminology, input roles, counts, source/provenance qualifications, and recorded image descriptions. Existing visual-review claims are translated from source records; no new visual inspection was performed."
+      },
+      "after": {
+        "key": "content/media/a_269.yaml#alt",
+        "sourceHash": "sha256:3149247ee25c6a37fcd0ec1790e5d99a1ec1f8bacbe4d04a14c918c6ec7f919f",
+        "targetHash": "sha256:02a6c9065a09cb2a39f28ba71dcb22f9af1d90a0d341305cc767e471e6f7bbae",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    },
+    {
+      "file": "production/localization/ja/reviews.json",
+      "key": "content/media/a_280.yaml#alt",
+      "before": {
+        "key": "content/media/a_280.yaml#alt",
+        "sourceHash": "sha256:9f17b20c360e720f0da2ee38181e529ba15dc2e499e46a1234c56918e6f655f1",
+        "targetHash": "sha256:51858a3c6661af8faf09da2cc9b810ae199f6c92b3667f120122afddd053f955",
+        "reviewer": "Codex shared-field agent (AI text review)",
+        "completedAt": "2026-11-09T06:29:12.360Z",
+        "conclusion": "approved",
+        "reason": "Second-pass AI bilingual text review of the complete source and Japanese translation: checked Japanese wording, terminology, input roles, counts, source/provenance qualifications, and recorded image descriptions. Existing visual-review claims are translated from source records; no new visual inspection was performed."
+      },
+      "after": {
+        "key": "content/media/a_280.yaml#alt",
+        "sourceHash": "sha256:9c609a9e4e70b431d2bbfb32de1b1d73b9df16c3e68236eda85ef30e5b8c8749",
+        "targetHash": "sha256:0bb8a7dbce9cdf8370cd4ef2513d5bd61accdfe33a27f156da4b2cf8df72f387",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    },
+    {
+      "file": "production/localization/ja/reviews.json",
+      "key": "content/media/a_282.yaml#alt",
+      "before": {
+        "key": "content/media/a_282.yaml#alt",
+        "sourceHash": "sha256:9f17b20c360e720f0da2ee38181e529ba15dc2e499e46a1234c56918e6f655f1",
+        "targetHash": "sha256:51858a3c6661af8faf09da2cc9b810ae199f6c92b3667f120122afddd053f955",
+        "reviewer": "Codex shared-field agent (AI text review)",
+        "completedAt": "2026-11-09T06:29:12.360Z",
+        "conclusion": "approved",
+        "reason": "Second-pass AI bilingual text review of the complete source and Japanese translation: checked Japanese wording, terminology, input roles, counts, source/provenance qualifications, and recorded image descriptions. Existing visual-review claims are translated from source records; no new visual inspection was performed."
+      },
+      "after": {
+        "key": "content/media/a_282.yaml#alt",
+        "sourceHash": "sha256:f8d88ab95adfd887caecdd5502f538fc24e0f3f3761375bc436a13465603c20c",
+        "targetHash": "sha256:90ef4d2bd3438723ec66696c12f3000d6c8d303d4ace4e568a01e3210574e49b",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    },
+    {
+      "file": "production/localization/de/reviews.json",
+      "key": "content/media/a_280.yaml#alt",
+      "before": {
+        "key": "content/media/a_280.yaml#alt",
+        "sourceHash": "sha256:9f17b20c360e720f0da2ee38181e529ba15dc2e499e46a1234c56918e6f655f1",
+        "targetHash": "sha256:9bc5bffadd68cbdbae1173f5d2ab56eb653ee692d7c5f85c4c589ba3a1628963",
+        "reviewer": "AI Codex: standards_review source and actual asset inspection; root corrections",
+        "completedAt": "2026-11-11T04:45:56Z",
+        "conclusion": "approved",
+        "reason": "Actual asset depicts only the cloud material; target describes this asset rather than both variants."
+      },
+      "after": {
+        "key": "content/media/a_280.yaml#alt",
+        "sourceHash": "sha256:9c609a9e4e70b431d2bbfb32de1b1d73b9df16c3e68236eda85ef30e5b8c8749",
+        "targetHash": "sha256:9bc5bffadd68cbdbae1173f5d2ab56eb653ee692d7c5f85c4c589ba3a1628963",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    },
+    {
+      "file": "production/localization/de/reviews.json",
+      "key": "content/media/a_282.yaml#alt",
+      "before": {
+        "key": "content/media/a_282.yaml#alt",
+        "sourceHash": "sha256:9f17b20c360e720f0da2ee38181e529ba15dc2e499e46a1234c56918e6f655f1",
+        "targetHash": "sha256:e82b0970339d72d212e0d6273c0551c460c80c84a7b96a7c6f32c6afc24d9b8f",
+        "reviewer": "AI Codex: standards_review source and actual asset inspection; root corrections",
+        "completedAt": "2026-11-11T04:45:56Z",
+        "conclusion": "approved",
+        "reason": "Actual asset depicts only the glass material; target describes this asset rather than both variants."
+      },
+      "after": {
+        "key": "content/media/a_282.yaml#alt",
+        "sourceHash": "sha256:f8d88ab95adfd887caecdd5502f538fc24e0f3f3761375bc436a13465603c20c",
+        "targetHash": "sha256:e82b0970339d72d212e0d6273c0551c460c80c84a7b96a7c6f32c6afc24d9b8f",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    },
+    {
+      "file": "production/localization/de/reviews.json",
+      "key": "content/media/a_269.yaml#alt",
+      "before": {
+        "key": "content/media/a_269.yaml#alt",
+        "sourceHash": "sha256:95a4a4b37777390699dd7e156cb493b4a62884ea24464413d0714fa3c4933040",
+        "targetHash": "sha256:370c1bb03e2e52245636346c98abace3e13e8b3e221b7cf6acc46b3626be6f4b",
+        "reviewer": "AI Codex: standards_review source and actual asset inspection; root corrections",
+        "completedAt": "2026-11-11T04:50:42Z",
+        "conclusion": "approved",
+        "reason": "Actual asset is an office miniature with long desk, mint chair and terracotta floor, rather than the living room stated by the generic source."
+      },
+      "after": {
+        "key": "content/media/a_269.yaml#alt",
+        "sourceHash": "sha256:3149247ee25c6a37fcd0ec1790e5d99a1ec1f8bacbe4d04a14c918c6ec7f919f",
+        "targetHash": "sha256:370c1bb03e2e52245636346c98abace3e13e8b3e221b7cf6acc46b3626be6f4b",
+        "reviewer": "AI Codex root — source correction and visual re-review",
+        "completedAt": "2026-11-11T11:57:03.050Z",
+        "conclusion": "approved",
+        "reason": "Reviewed the full original asset and exact EN/target wording after Portuguese independent visual review found the source error. Existing German text accurately describes the asset; Japanese now matches it. Evidence: production/localization/pt-BR/source-media-corrections.md."
+      }
+    }
+  ],
+  "anomalies": []
+}

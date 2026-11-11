@@ -23,6 +23,7 @@ inputRequirements:
     zh-Hans: 使用本次原创生成的小猴子参考图。
     ja: 独自に生成した猿の参照画像を使ってください。
     de: Verwende das unabhängig generierte Referenzbild des Affen.
+    pt-BR: Use a referência de macaco gerada de forma independente.
   slots:
     - id: reference
       labels:
@@ -30,6 +31,7 @@ inputRequirements:
         zh-Hans: 原创小猴子参考图
         ja: 元の猿の参照画像
         de: Ursprüngliches Referenzbild des Affen
+        pt-BR: Referência original de macaco
       min: 1
       max: 1
 showcaseExampleId: x_288
@@ -49,6 +51,8 @@ inspirationSources:
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
       de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
+      pt-BR: Publicação original de origem; não este novo resultado gerado. Vários
+        casos de uma mesma publicação compartilham as métricas.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -58,6 +62,8 @@ inspirationSources:
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
       de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
         Zahlen wurden nicht aktualisiert."
+      pt-BR: "Pesquisa anterior: revisão da página diretamente e revisão visual. As
+        contagens não foram atualizadas."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -66,6 +72,8 @@ inspirationSources:
       ja: 出典に元のプロンプトがありますが、この制作では別途記録した作業用プロンプトを使っています。
       de: Die Quelle stellt einen Originalprompt bereit; diese Produktion verwendet
         den separat dokumentierten Arbeitsprompt.
+      pt-BR: A fonte fornece um prompt original; esta produção usa o prompt de
+        trabalho registrado separadamente.
     metrics: []
 source:
   author: Prompt Seen

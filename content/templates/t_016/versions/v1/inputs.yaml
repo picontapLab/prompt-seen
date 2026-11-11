@@ -6,6 +6,8 @@ instructions:
   ja: 架空のブランド名、配色、ムードを指定してください。既存のロゴの使用は任意です。
   de: Gib einen fiktiven Markennamen, eine Farbpalette und eine Stimmung an; ein
     vorhandenes Logo ist optional.
+  pt-BR: Informe um nome de marca fictício, uma paleta e uma atmosfera; um
+    logotipo existente é opcional.
 slots:
   - id: logo
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 已有Logo
       ja: ロゴ
       de: Logo
+      pt-BR: Logotipo
     min: 0
     max: 1

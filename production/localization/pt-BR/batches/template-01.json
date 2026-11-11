@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "locale": "pt-BR",
+  "operations": [
+    {
+      "key": "template/t_001",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:a00891c4e6cd057e503a6b53adc304c2976680e715ce52ad59a40b48613e20e3",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Cartaz de produto",
+        "description": "Preencha um produto, até três diferenciais, uma paleta e uma proporção para criar um cartaz de produto limpo com aparência vetorial plana.",
+        "body": "## Para que serve?\n\nBanners de lojas, publicações de lançamento e mockups de embalagens em que a forma do produto precisa ser reconhecida imediatamente.\n\n## Como preencher?\n\n- **Produto**: indique o objeto e seu material, como “uma caneca de cerâmica salpicada”. O material determina a textura da superfície.\n- **Diferenciais**: até três frases curtas. Os concretos (“tampa hermética”) viram detalhes visíveis; os vagos (“premium”) são ignorados.\n- **Título**: opcional. A versão 3 solicita o título fornecido exatamente como escrito e deixa as barras vazias quando o campo está em branco. Confira as letras em cada resultado.\n\n## O que mudou na versão 2?\n\nA versão 2 acrescenta o título opcional, uma paleta cinza e uma coral, além de mais proporções. Os exemplos feitos com a versão 1 mantêm seu prompt original."
+      }
+    },
+    {
+      "key": "template/t_002",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:79d94491b072d6d494679cb894eb1435d0c51086825cc33752c90c6e93475806",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Pintura a tinta em rolo",
+        "description": "Preencha o tema, a estação, a pincelada e os detalhes para criar um prompt de pintura a tinta com bastante espaço em branco.",
+        "body": "## Onde usar?\n\nBanners, papéis de parede panorâmicos e capas que pedem uma estética oriental. Em formatos largos, o espaço em branco é mais importante que o próprio tema.\n\n## Como preencher?\n\n- **Tema**: basta um tema principal, como “bosque de bambu” ou “pinheiro solitário”. Quanto mais temas, menos espaço em branco.\n- **Pincelada**: determina a textura da imagem. O “esfumado com pincel úmido” é suave; o “pincel seco” é áspero.\n- **Detalhes**: no máximo quatro itens, de preferência contáveis, como “cinco hastes de bambu”.\n\nO corpo do prompt permanece em inglês porque, nos testes, as descrições de pinceladas em inglês foram mais estáveis."
+      }
+    },
+    {
+      "key": "template/t_003",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:78ca7cea5b80ddbcd8bd23da9dc10b9e0f7dac6173488e90a66cadc52345cee2",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Retrato com luz de contorno neon",
+        "description": "Descreva um personagem, duas cores de luz de contorno e um fundo para criar um retrato de silhueta com atmosfera marcante.",
+        "body": "## Para que serve?\n\nAvatares, capas de álbuns e prévias de personagens em que o contorno importa mais que o rosto.\n\n## Como preencher?\n\n- **Personagem**: quem é e uma pose, como “uma pessoa dançando durante um giro”.\n- **Luz de contorno**: duas cores, uma de cada lado. Uma única cor sugere um brilho, em vez de uma pessoa.\n- **Clima**: opcional; uma ou duas palavras bastam."
+      }
+    },
+    {
+      "key": "template/t_004",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:74d52905769ab966ea043648a4e2c4cc1ad7d40ffdcc143be1f8050b330ee722",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Um mundo dentro de uma esfera de cristal",
+        "description": "Um mundo alpino em miniatura faz uma cachoeira sair de uma esfera de vidro e cair sobre uma mesa de carvalho.",
+        "body": "## Como usar\n\nDescreva a paisagem dentro da esfera. Deixe explícito que a água atravessa o limite do vidro e a borda da mesa: essas duas transições criam a ilusão.\n\n## Resultado registrado\n\nA paisagem padrão foi gerada com a ferramenta de imagem integrada em 2026-10-29. O ID exato do modelo do provedor não foi informado. Alterações na paisagem ainda não foram testadas.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_101) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_005",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:5102739f1bdccaf7b6546ed5435d0e1c4c4681636aa19bd622cb0395e85130f2",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Animal de fruta em miniatura",
+        "description": "Um morango vira um gatinho minúsculo, com sementes e polpa formando o rosto e as patas.",
+        "body": "## Como usar\n\nMantenha o animal pequeno e o material da fruta contínuo. Mude o animal e a fruta juntos; preserve a fruta comum ao lado como referência de escala.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_102) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_006",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:3274dd66ed164776e9e9b34b59558acdb41382ca0533377b500ccb0375d8df2d",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Gato em um frasco de poção",
+        "description": "Um gatinho mal-humorado ocupa um frasco redondo de poção em uma loja de alquimista com iluminação acolhedora.",
+        "body": "## Como usar\n\nMude o animal, mantendo o frasco arredondado e a expressão legível. Esta é uma cena de fantasia: preserve a descrição explícita de conforto e ausência de ferimentos.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_103) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_007",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:2d26764614241a5c1ca120c253e5aa3278a15e630019c4e043b63f197b76df79",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Farol em uma falésia pintada",
+        "description": "Faixas pintadas de coral, turquesa e açafrão acompanham uma costa rochosa ao redor de um farol branco.",
+        "body": "## Como usar\n\nEscolha uma construção costeira compacta. Mantenha a vista aérea e faça a tinta acompanhar o terreno em vez de flutuar sobre ele.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_104) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_008",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:c45da25577232127ddfe95a697cc3970c9c7596b9a8f6331f1059d59cb97ca65",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Fotografia de bebida com rabiscos a tinta",
+        "description": "Uma limonada e uma mão de aparência realista se combinam com nadadores divertidos em tinta preta, bolhas e um limão sorridente.",
+        "body": "## Como usar\n\nMude a bebida, mas preserve a condensação e o contraste entre fotografia e tinta. Deixe o fundo livre se quiser acrescentar um título depois.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_105) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_009",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:41f1ad90be2018ef38951ddef9b59cf4c6b82e9316984bb463d4da7ca49885ae",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Gato na feira de peixes",
+        "description": "Um pequeno gato tigrado vendedor de peixe troca um peixe fresco por moedas à luz da manhã de uma feira.",
+        "body": "## Como usar\n\nMude o animal, preservando o peixe, a mão do cliente e as moedas: esses objetos explicam a interação. Mantenha as patas simples.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_106) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_010",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:0d041b1dab9b24cdb11ed36c956187c474cb477a6e0f78b29115e8e8f8e73804",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Mundo em miniatura na palma da mão",
+        "description": "Uma floresta com musgo e uma pequena cachoeira formam um ecossistema em miniatura em uma mão aberta.",
+        "body": "## Como usar\n\nDescreva uma pequena paisagem natural. Mantenha a mão e a paisagem em escalas diferentes e faça da miniatura o ponto focal nítido.\n\n## Resultado registrado\n\nO exemplo padrão foi gerado com a ferramenta de imagem integrada. O ID preciso do modelo do provedor não foi retornado. Outros valores ainda não foram testados.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_109) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_011",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:677ca7c6d3700a50c45c170e1a65151335d8d06f5f845ba7a547e067f1926262",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Explicação de produto em corte",
+        "description": "Uma carcaça transparente revela a disposição de componentes fornecida, com rótulos discretos.",
+        "body": "## Como usar\n\nForneça o dispositivo, notas verificadas sobre sua estrutura e os rótulos exatos; uma foto do produto é opcional.\n\nO exemplo padrão é um conceito fictício, não um desenho de engenharia certificado.\n\n## Resultado registrado\n\nO exemplo foi gerado com a ferramenta de imagem integrada. Seu ID exato de modelo não foi retornado. A execução registrada contém o prompt enviado e as entradas em ordem.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_116) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_012",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:17fb1b37929fb9664bb6a8ca50980a637abcc3a3e09d59b0f1a253b8f7d5b8cd",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Receita com ingredientes flutuantes",
+        "description": "Ingredientes flutuam acima de uma tigela pronta, com as quantidades exatas fornecidas.",
+        "body": "## Como usar\n\nForneça um prato e quantidades verificadas de ingredientes.\n\nUse sua própria receita conferida; examine cada rótulo de ingrediente.\n\n## Resultado registrado\n\nO exemplo foi gerado com a ferramenta de imagem integrada. Seu ID exato de modelo não foi retornado. A execução registrada contém o prompt enviado e as entradas em ordem.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_117) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_013",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:207e69a5dd862d0aa2f9222fd035a6c7d604fe9fffb6e71336be6969849ddeef",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Cartão meteorológico de cidade em miniatura",
+        "description": "Pontos turísticos com aparência de brinquedo ilustram um cenário de cartão meteorológico claramente identificado.",
+        "body": "## Como usar\n\nForneça a cidade, a data, a previsão e os pontos turísticos. A previsão do nosso exemplo é fictícia.\n\nSubstitua a previsão de demonstração por dados verificados antes de publicar um cartão com informações meteorológicas reais.\n\n## Resultado registrado\n\nO exemplo foi gerado com a ferramenta de imagem integrada. Seu ID exato de modelo não foi retornado. A execução registrada contém o prompt enviado e as entradas em ordem.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_118) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_014",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:404953095507200fb433075a84b9871263118143d81ab7deb579f94e5e9de023",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "História de personagem em quatro quadros",
+        "description": "Personagens originais consistentes encenam quatro momentos claros de uma história.",
+        "body": "## Como usar\n\nDescreva o elenco e forneça exatamente quatro acontecimentos em ordem; uma folha de referência dos personagens é opcional.\n\nLeia os quadros na ordem e confira se cada personagem continua reconhecível.\n\n## Resultado registrado\n\nO exemplo foi gerado com a ferramenta de imagem integrada. Seu ID exato de modelo não foi retornado. A execução registrada contém o prompt enviado e as entradas em ordem.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_119) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    },
+    {
+      "key": "template/t_015",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:a69159797c6b6dce8d977fbc00fbcae0da07099f1ae980efb9a5f063cb454784",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Conjunto tátil de nove ícones",
+        "description": "Nove objetos arredondados compartilham paleta, material e sistema de iluminação.",
+        "body": "## Como usar\n\nEscolha um tema, uma paleta e exatamente nove objetos distintos.\n\nConte os ícones e confira o espaçamento, as silhuetas e a consistência do material.\n\n## Resultado registrado\n\nO exemplo foi gerado com a ferramenta de imagem integrada. Seu ID exato de modelo não foi retornado. A execução registrada contém o prompt enviado e as entradas em ordem.\n\n## Inspiração\n\nVeja o [caso testado](prompt:p_120) para consultar as fontes originais e as métricas de atenção com data."
+      }
+    }
+  ]
+}

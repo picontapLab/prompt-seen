@@ -7,6 +7,7 @@ fields:
       zh-Hans: 旋转角度
       ja: 回転角度（度）
       de: Drehung in Grad
+      pt-BR: Rotação em graus
     help:
       en: Changing the angle also requires revising the room-position directions in
         the prompt. Only the default is demonstrated.
@@ -14,6 +15,8 @@ fields:
       ja: 角度を変える場合は、プロンプト内の部屋の位置関係の指示も修正する必要があります。実演しているのはデフォルト値だけです。
       de: Eine Änderung des Winkels erfordert auch eine Anpassung der Angaben zur
         Raumposition im Prompt. Nur der Standardwert wird demonstriert.
+      pt-BR: Mudar o ângulo também exige revisar no prompt as orientações de posição
+        dos cômodos. Somente o valor padrão é demonstrado.
     type: string
     default: "180"
     minLength: 1

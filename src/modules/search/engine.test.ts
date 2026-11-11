@@ -53,6 +53,25 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('finds Brazilian Portuguese aliases while keeping model and product meanings separate', () => {
+    const engine = engineOf('pt-BR', [
+      doc('poster', { title: 'Pôster Fuji' }),
+      doc('literal', { title: 'Cartaz Fuji' }),
+      doc('sticker', { title: 'Adesivo de segunda-feira' }),
+      doc('template', { kind: 'template', title: 'Retrato com néon' }),
+      doc('product', { title: 'Fotografia de produto em estúdio' }),
+      doc('family', { title: 'Fotografia de família' }),
+      doc('model', { title: 'Modelo de IA para fotografia' }),
+    ]);
+    expect(ids('cartaz Fuji', engine)).toEqual(['literal', 'poster']);
+    expect(ids('stickers segunda', engine)).toEqual(['sticker']);
+    expect(ids('modelo de prompt portrait', engine)).toEqual(['template']);
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('foto de produto estudio', engine)).toEqual(['product']);
+    expect(ids('fotografia', engine)).toContain('family');
+    expect(ids('template', engine)).not.toContain('model');
+  });
+
   it('folds Spanish vowels and punctuation while retaining the exact displayed title', () => {
     const title = '¿Retrato? ¡Póster de un pingüino! Fotografi\u0301a';
     const engine = engineOf('es', [doc('accented', { title })]);

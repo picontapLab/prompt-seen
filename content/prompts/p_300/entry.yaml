@@ -26,6 +26,8 @@ inputRequirements:
     de: Lade das eine projektintern generierte Referenzbild in der angezeigten
       Reihenfolge (R10) hoch und verwende dann den vollständigen adaptierten
       Prompt.
+    pt-BR: Envie 1 imagem de referência gerada pelo projeto na ordem exibida (R10) e
+      depois use o prompt adaptado completo.
   slots:
     - id: reference1
       labels:
@@ -33,6 +35,7 @@ inputRequirements:
         zh-Hans: 透明藏狐参考图
         ja: 背景が透明なキツネの参照画像
         de: Fuchsreferenz mit Transparenz
+        pt-BR: Referência de raposa com transparência
       min: 1
       max: 1
 showcaseExampleId: x_364
@@ -49,8 +52,9 @@ inspirationSources:
       en: Whole original post; shared across variants, not this adaptation
       zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
       ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
-      de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese
-        Adaption
+      de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
+      pt-BR: Publicação original inteira; compartilhada entre variantes, não esta
+        adaptação
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -58,12 +62,14 @@ inspirationSources:
       zh-Hans: 归档的 X 公开快照与完整作者原词
       ja: 保存されたXの公開スナップショットと作者の完全なプロンプト
       de: Archivierter öffentlicher X-Snapshot und vollständiger Autorenprompt
+      pt-BR: Captura pública arquivada do X e prompt completo do autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118265895613346263&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
       zh-Hans: 独立改编；完整原词另存档案
       ja: 独自アレンジ。完全な原文は別途保存
       de: Eigenständige Adaption; vollständiges Original separat erhalten
+      pt-BR: Adaptação independente; original completo preservado separadamente
     metrics:
       - key: likes
         value: 107
@@ -72,6 +78,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
+          pt-BR: Curtidas da publicação de origem
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/vastxie/status/2118586752915095805

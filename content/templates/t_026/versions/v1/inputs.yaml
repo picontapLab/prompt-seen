@@ -6,6 +6,8 @@ instructions:
   ja: 横顔の写真を 1 枚、その後に思い出の写真を 2〜4 枚アップロードし、名前とアクセントカラーを指定してください。
   de: Lade zuerst ein Profilfoto von der Seite und anschließend zwei bis vier
     Erinnerungsfotos hoch; gib einen Namen und eine Akzentfarbe an.
+  pt-BR: Envie uma foto de perfil lateral seguida de duas a quatro fotos de
+    lembranças; forneça um nome e uma cor de destaque.
 slots:
   - id: profile
     labels:
@@ -13,6 +15,7 @@ slots:
       zh-Hans: 侧脸轮廓
       ja: 横顔
       de: Profil
+      pt-BR: Perfil
     min: 1
     max: 1
   - id: memories
@@ -21,5 +24,6 @@ slots:
       zh-Hans: 回忆或动作照片
       ja: 思い出の写真
       de: Erinnerungen
+      pt-BR: Memórias
     min: 2
     max: 4

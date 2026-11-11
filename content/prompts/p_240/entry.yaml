@@ -24,6 +24,7 @@ inputRequirements:
     ja: 入力画像を追加せず、元のプロンプト全文を貼り付けてください。
     de: Füge den vollständigen Originalprompt ein, ohne ein Eingabebild
       hinzuzufügen.
+    pt-BR: Cole o prompt original completo sem adicionar uma imagem de entrada.
   slots: []
 showcaseExampleId: x_304
 promptProvenance: source-prompt
@@ -41,6 +42,7 @@ inspirationSources:
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
+      pt-BR: Publicação ou galeria original inteira; não este exemplo gerado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -49,12 +51,15 @@ inspirationSources:
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
       de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
+      pt-BR: Captura pública salva do X; prompt completo do espelho salvo da
+        publicação ou resposta do autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118561513879507399&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
       zh-Hans: 完整作者原词，保留原语言
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
+      pt-BR: Texto completo do autor, no idioma original
     metrics:
       - key: likes
         value: 42
@@ -63,6 +68,7 @@ inspirationSources:
           zh-Hans: 原帖点赞
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
+          pt-BR: Curtidas da publicação de origem
 source:
   author: iamsofiaijaz
   url: https://x.com/iamsofiaijaz/status/2118561558511132918

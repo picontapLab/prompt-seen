@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "locale": "pt-BR",
+  "operations": [
+    {
+      "key": "topic/category/landscape",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:e61f091c252faf0590fb8691f1f1a78f6242be672117043d8b767636208f0389",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Prompts de paisagem",
+        "description": "Paisagens em estilo vetorial plano e a tinta: montanhas, dunas e mares construídos com poucas formas em camadas.",
+        "body": "## Como essas paisagens são construídas?\n\nQuase toda paisagem aqui é uma pilha de formas ordenadas do claro ao escuro, com uma única fonte de luz. Os prompts indicam o número de camadas e o horário do dia, em vez de cores individuais.\n\n## Por qual devo começar?\n\n- Para papel de parede: [Névoa matinal sobre as colinas](prompt:p_016), que deixa o céu vazio.\n- Para uma impressão: [Dunas do deserto sob luz quente](prompt:p_006).\n- Para uma pintura a tinta: o [template de pintura a tinta em rolo](template:t_002)."
+      }
+    },
+    {
+      "key": "topic/category/poster",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:2560014b815c3052d4f53a357ed32080c2b01da912ed5ce08307568778bf4171",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Prompts de cartazes",
+        "description": "Cartazes geométricos e retrô que mantêm uma hierarquia clara sem texto legível.",
+        "body": "## Por que não usar letras?\n\nModelos de imagem ainda embaralham textos. Estes prompts reservam barras para títulos e datas, para que o layout se mantenha e as palavras possam ser inseridas depois.\n\nVeja a coleção [Cartazes com hierarquia clara](collection:c_001)."
+      }
+    },
+    {
+      "key": "topic/style/ink",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:702339951d97f634d735e1040a98d93797bcbf30c6bbfa1cf0550fd5806bd77e",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Prompts de pintura a tinta",
+        "description": "Prompts de pintura a tinta com galhos, bambuzais e montanhas, com foco nas pinceladas e no espaço em branco.",
+        "body": "## O que escrever em um prompt de pintura a tinta?\n\nDescreva as pinceladas em vez da espessura das linhas: “pincel seco” e “esfumado com pincel úmido” são mais confiáveis que “linha grossa” e “linha fina”. Depois, indique claramente a posição do selo, para que ele não acabe sobre o elemento principal.\n\nVocê pode começar por [Galho de ameixeira a tinta](prompt:p_012) ou usar diretamente o [template de pintura a tinta em rolo](template:t_002)."
+      }
+    }
+  ]
+}

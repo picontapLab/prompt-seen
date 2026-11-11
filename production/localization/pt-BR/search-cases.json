@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "locale": "pt-BR",
+  "cases": [
+    {
+      "query": "composição veleiro",
+      "expectedKeys": [
+        "prompt/p_004"
+      ],
+      "topK": 5,
+      "reason": "Source-grounded accented term and its unaccented spelling must find the same content."
+    },
+    {
+      "query": "composicao veleiro",
+      "expectedKeys": [
+        "prompt/p_004"
+      ],
+      "topK": 5,
+      "reason": "Unaccented spelling of the paired source-grounded query."
+    },
+    {
+      "query": "iluminação refeições",
+      "expectedKeys": [
+        "prompt/p_110"
+      ],
+      "topK": 5,
+      "reason": "Source-grounded accented term and its unaccented spelling must find the same content."
+    },
+    {
+      "query": "iluminacao refeicoes",
+      "expectedKeys": [
+        "prompt/p_110"
+      ],
+      "topK": 5,
+      "reason": "Unaccented spelling of the paired source-grounded query."
+    },
+    {
+      "query": "referência morango",
+      "expectedKeys": [
+        "prompt/p_102"
+      ],
+      "topK": 5,
+      "reason": "Source-grounded accented term and its unaccented spelling must find the same content."
+    },
+    {
+      "query": "referencia morango",
+      "expectedKeys": [
+        "prompt/p_102"
+      ],
+      "topK": 5,
+      "reason": "Unaccented spelling of the paired source-grounded query."
+    },
+    {
+      "query": "coleção hierarquia",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5,
+      "reason": "Source-grounded accented term and its unaccented spelling must find the same content."
+    },
+    {
+      "query": "colecao hierarquia",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5,
+      "reason": "Unaccented spelling of the paired source-grounded query."
+    },
+    {
+      "query": "RETRATO EDITORIAL",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Uppercase query for the editorial cover portrait."
+    },
+    {
+      "query": "PÔSTER JAZZ CORAL",
+      "expectedKeys": [
+        "prompt/p_022"
+      ],
+      "topK": 5,
+      "reason": "Uppercase poster synonym for the coral jazz poster."
+    },
+    {
+      "query": "composição veleiro",
+      "expectedKeys": [
+        "prompt/p_004"
+      ],
+      "topK": 5,
+      "reason": "Decomposed combining marks preserve composition recall."
+    },
+    {
+      "query": "iluminação refeições",
+      "expectedKeys": [
+        "prompt/p_110"
+      ],
+      "topK": 5,
+      "reason": "Decomposed combining marks preserve lighting recall."
+    },
+    {
+      "query": "fotografia de produto caixa som",
+      "expectedKeys": [
+        "prompt/p_152"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "cartaz coral jazz",
+      "expectedKeys": [
+        "prompt/p_022"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "portrait editorial",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "sticker gato laranja",
+      "expectedKeys": [
+        "prompt/p_221"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "fundo caixa som",
+      "expectedKeys": [
+        "prompt/p_152"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "lighting refeições",
+      "expectedKeys": [
+        "prompt/p_110"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "imagem de referência rabisco",
+      "expectedKeys": [
+        "prompt/p_122"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "GIF galinha dançando",
+      "expectedKeys": [
+        "prompt/p_227"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "template retrato neon",
+      "expectedKeys": [
+        "template/t_003"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "collection hierarquia",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "packshot flutuante",
+      "expectedKeys": [
+        "prompt/p_154"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "retrato marinheiro gpt-image-2.6",
+      "expectedKeys": [
+        "prompt/p_209"
+      ],
+      "topK": 5,
+      "reason": "Domain or mixed-language query supported by the source description, original prompt and content kind."
+    },
+    {
+      "query": "retrato editorial",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Singular/plural pair for the same subject; no arbitrary stemming."
+    },
+    {
+      "query": "retratos editorial",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Singular/plural pair for the same subject; no arbitrary stemming."
+    },
+    {
+      "query": "adesivo gato laranja",
+      "expectedKeys": [
+        "prompt/p_221"
+      ],
+      "topK": 5,
+      "reason": "Singular/plural pair for the same subject; no arbitrary stemming."
+    },
+    {
+      "query": "adesivos gato laranja",
+      "expectedKeys": [
+        "prompt/p_221"
+      ],
+      "topK": 5,
+      "reason": "Singular/plural pair for the same subject; no arbitrary stemming."
+    },
+    {
+      "query": "packshot branco",
+      "expectedKeys": [
+        "prompt/p_152"
+      ],
+      "topK": 5,
+      "reason": "Product photography must not expand generic people photography into packshots.",
+      "excludedKeys": [
+        "prompt/p_107",
+        "prompt/p_209"
+      ]
+    },
+    {
+      "query": "modelo IA retrato editorial",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "AI model discussion and source image context do not mean a reusable template.",
+      "excludedKeys": [
+        "template/t_001",
+        "template/t_003"
+      ]
+    },
+    {
+      "query": "p_209",
+      "expectedKeys": [
+        "prompt/p_209"
+      ],
+      "topK": 5,
+      "reason": "Stable identifiers remain searchable."
+    },
+    {
+      "query": "qxzvplm987654321",
+      "expectedKeys": [],
+      "topK": 5,
+      "reason": "Deliberately absent query: assert total and hits are zero, not a vacuous expected-key check."
+    }
+  ]
+}

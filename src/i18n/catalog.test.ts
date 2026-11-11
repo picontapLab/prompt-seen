@@ -30,6 +30,16 @@ function argumentsOf(elements: MessageFormatElement[], names = new Set<string>()
 }
 
 describe('compileMessages', () => {
+  it('formats Brazilian Portuguese zero, singular and plural UI messages', () => {
+    const t = catalogTranslator(ROOT, 'pt-BR');
+    expect(t('search.count', { count: 0 })).toBe('Nenhum resultado');
+    expect(t('search.count', { count: 1 })).toBe('1 resultado');
+    expect(t('search.count', { count: 2 })).toBe('2 resultados');
+    expect(t('detail.sheet.characters', { count: 0 })).toBe('0 caracteres');
+    expect(t('detail.sheet.characters', { count: 1 })).toBe('1 caractere');
+    expect(t('templates.tokens.remaining', { count: 0 })).toBe('Não é possível adicionar mais itens.');
+  });
+
   it('returns plain data, which client components accept as props', () => {
     const plain = (v: unknown): boolean =>
       v === null || typeof v !== 'object'

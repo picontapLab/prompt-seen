@@ -25,6 +25,8 @@ inputRequirements:
     ja: 参照画像を記載順にアップロードしてください。この作例では、生成した入力画像を使っています。
     de: Lade die Referenzbilder in der angegebenen Reihenfolge hoch. Das Beispiel
       verwendet künstlich erzeugte Eingabebilder.
+    pt-BR: Envie as imagens de referência na ordem listada. O exemplo usa imagens de
+      entrada sintéticas.
   slots:
     - id: materialSample
       labels:
@@ -32,6 +34,7 @@ inputRequirements:
         zh-Hans: 材质样本
         ja: 素材見本
         de: Materialmuster
+        pt-BR: Amostra de material
       min: 1
       max: 1
     - id: targetScene
@@ -40,6 +43,7 @@ inputRequirements:
         zh-Hans: 目标场景
         ja: 変更対象の場面
         de: Zielszene
+        pt-BR: Cena de destino
       min: 1
       max: 1
 showcaseExampleId: x_252

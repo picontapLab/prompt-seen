@@ -25,6 +25,8 @@ inputRequirements:
     ja: 古い写真を 1 枚アップロードしてください。この作例の修復前画像は、古びた写真として生成したもので、実際の家族の記録写真ではありません。
     de: Lade ein altes Foto hoch. Unser Vorher-Bild ist ein künstlich gealtertes,
       generiertes Foto, kein echtes Familienarchiv.
+    pt-BR: Envie uma foto antiga. Nossa imagem anterior à restauração é uma
+      fotografia envelhecida sinteticamente, não um arquivo familiar real.
   slots:
     - id: oldPhoto
       labels:
@@ -32,6 +34,7 @@ inputRequirements:
         zh-Hans: 待修复旧照片
         ja: 古い写真
         de: Altes Foto
+        pt-BR: Foto antiga
       min: 1
       max: 1
 showcaseExampleId: x_183
@@ -49,6 +52,7 @@ inspirationSources:
       zh-Hans: 整条教程或作品展示视频
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
+      pt-BR: Vídeo completo de tutorial ou demonstração
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -56,12 +60,14 @@ inspirationSources:
       zh-Hans: B站 官方公开只读 API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      pt-BR: Registro da API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
       zh-Hans: 未取得完整prompt；本次依据修复主题改编
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
+      pt-BR: Prompt original completo não recuperado; adaptado de forma independente
     metrics:
       - key: views
         value: 33334
@@ -70,6 +76,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          pt-BR: Visualizações
       - key: likes
         value: 505
         labels:
@@ -77,6 +84,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: saves
         value: 1340
         labels:
@@ -84,6 +92,7 @@ inspirationSources:
           zh-Hans: 收藏
           ja: 保存数
           de: Gespeichert
+          pt-BR: Salvamentos
       - key: comments
         value: 62
         labels:
@@ -91,6 +100,7 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          pt-BR: Comentários
       - key: shares
         value: 139
         labels:
@@ -98,6 +108,7 @@ inspirationSources:
           zh-Hans: 分享
           ja: 共有数
           de: Geteilt
+          pt-BR: Compartilhamentos
       - key: coins
         value: 211
         labels:
@@ -105,6 +116,7 @@ inspirationSources:
           zh-Hans: 投币
           ja: コイン数
           de: Coins
+          pt-BR: Moedas
       - key: danmaku
         value: 112
         labels:
@@ -112,6 +124,7 @@ inspirationSources:
           zh-Hans: 弹幕
           ja: 弾幕コメント数
           de: Danmaku
+          pt-BR: Comentários sobrepostos (danmaku)
 source:
   author: Prompt Seen
   url: null

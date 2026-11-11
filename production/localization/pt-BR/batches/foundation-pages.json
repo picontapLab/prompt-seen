@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "locale": "pt-BR",
+  "operations": [
+    {
+      "key": "page/about",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:9d82bee7055511e32b858e3819a35dbb3455440930e4e0c675dc048d93d57099",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Sobre o Prompt Seen",
+        "description": "O que é esta biblioteca, como os prompts são testados e o que são os exemplos de conteúdo.",
+        "body": "O Prompt Seen é uma biblioteca de prompts de imagem que você pode ler, copiar e adaptar. Cada item mostra a imagem produzida e indica quais frases do prompt alteraram quais aspectos do resultado.\n\n## Como os prompts são testados?\n\nCada prompt é executado com modelo, data e parâmetros registrados. O registro fica junto ao prompt como uma execução de exemplo, e a página mostra quando ele foi testado pela última vez. Os itens sem execução registrada são marcados como “Não verificado”.\n\n## O que são os exemplos de conteúdo?\n\nAs 101 imagens de conteúdo foram geradas com GPT Image usando os prompts exibidos nas respectivas páginas. Cada uma tem uma execução registrada e uma revisão visual. A ferramenta integrada não informa o snapshot exato do modelo nem os dados de uso. As imagens em tamanho original disponíveis para baixar podem passar por uma conversão de formato sem perdas; os tamanhos de exibição são comprimidos separadamente. As execuções anteriores de exemplos procedurais estão arquivadas.\n\n## Como relato um problema?\n\nAbra uma issue no repositório do projeto para informar dados incorretos, páginas com problemas ou dúvidas sobre licenciamento."
+      }
+    },
+    {
+      "key": "page/license",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:eb7db917372d912c150206d9ecc77e9d0363099944f928c645b7d37e20c2c831",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Licença",
+        "description": "Como reutilizar o código, os textos dos prompts e as imagens.",
+        "body": "## Código\n\nO código do site, os scripts e os componentes são disponibilizados sob a licença MIT.\n\n## Prompts e descrições\n\nOs textos dos prompts e as descrições de cada página são licenciados sob [Creative Commons Atribuição 4.0](https://creativecommons.org/licenses/by/4.0/). Ao reutilizá-los, dê os devidos créditos e inclua um link para a página.\n\n## Imagens\n\nAs imagens são licenciadas individualmente; a página de cada imagem informa sua licença. As imagens de conteúdo feitas com GPT Image neste repositório são disponibilizadas sob CC BY 4.0.\n\n## Nome e logotipo\n\nO nome Prompt Seen e seu logotipo não estão cobertos por essas licenças."
+      }
+    }
+  ]
+}

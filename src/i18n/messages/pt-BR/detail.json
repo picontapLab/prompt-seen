@@ -1,0 +1,124 @@
+{
+  "actions": {
+    "label": "Ações do prompt"
+  },
+  "annotations": {
+    "heading": "O que cada frase faz"
+  },
+  "breadcrumb": {
+    "home": "Início",
+    "label": "Caminho de navegação",
+    "prompts": "Prompts",
+    "templates": "Templates"
+  },
+  "copy": {
+    "done": "Copiado",
+    "failed": "Não foi possível copiar",
+    "failedHint": "Selecione o texto do prompt e copie pelo teclado ou pelo menu.",
+    "label": "Copiar prompt"
+  },
+  "customize": "Personalizar",
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "examples": {
+    "cover": "Capa",
+    "heading": "Resultados dos testes",
+    "model": "Modelo",
+    "notes": "O que observamos",
+    "outputs": "Resultado",
+    "parameter": "Parâmetro",
+    "parameters": "Parâmetros",
+    "promptUsed": "Prompt usado neste resultado",
+    "provider": "Provedor",
+    "recorded": "Registrado",
+    "references": "Imagens de referência",
+    "selectRun": "Resultado registrado",
+    "template": "Template {version}",
+    "unknown": "Não registrado",
+    "value": "Valor"
+  },
+  "image": {
+    "dimensions": "{width} × {height}",
+    "failed": "A imagem não carregou.",
+    "original": "Imagem em tamanho original",
+    "retry": "Tentar novamente",
+    "show": "Mostrar imagem {n} de {total}"
+  },
+  "inspiration": {
+    "adaptation": "Este prompt é uma adaptação independente. A imagem exibida aqui é um resultado nosso, registrado.",
+    "evidence": "Evidências",
+    "heading": "Inspiração e evidências da fonte",
+    "observed": "Observado em {date}",
+    "original": "Conteúdo original",
+    "scope": "Esses números pertencem à publicação ou ao vídeo original. São registros de uma data específica, não contadores em tempo real nem avaliações da nossa imagem.",
+    "snapshot": "Registro da fonte"
+  },
+  "kinds": {
+    "prompt": "Prompt",
+    "template": "Template"
+  },
+  "related": {
+    "similar": "Prompts semelhantes",
+    "templates": "Templates relacionados"
+  },
+  "share": {
+    "copied": "Link copiado",
+    "failed": "Não foi possível copiar o link",
+    "label": "Compartilhar"
+  },
+  "sheet": {
+    "characters": "{count, plural, =0 {0 caracteres} one {# caractere} other {# caracteres}}",
+    "collapse": "Mostrar menos",
+    "expand": "Mostrar tudo",
+    "expandLines": "Mostrar tudo ({lines, plural, =0 {0 linhas} one {# linha} other {# linhas}})",
+    "label": "Prompt · {language}",
+    "languageNote": "Os prompts mantêm seu idioma original. Um prompt traduzido pode gerar resultados diferentes."
+  },
+  "source": {
+    "aiGenerated": "Imagem gerada",
+    "algorithmic": "Gerada por um programa",
+    "author": "Por {author}",
+    "creator": "Criador: {creator}",
+    "heading": "Fonte e licença",
+    "image": "Imagem",
+    "licence": "Licença: {licence}",
+    "prompt": "Prompt",
+    "unknown": "Fonte desconhecida"
+  },
+  "template": {
+    "choices": "{count, plural, =0 {0 opções} one {# opção} other {# opções}}",
+    "examples": "Feito com este template",
+    "field": "Campo",
+    "fieldCount": "{count, plural, =0 {0 campos} one {# campo} other {# campos}}",
+    "fields": "Campos",
+    "listLimit": "{min}–{max} itens",
+    "maxLength": "Até {max} caracteres",
+    "optional": "Opcional",
+    "required": "Obrigatório",
+    "sampleImage": "Esta imagem vem do exemplo padrão. Outros valores geram outros resultados.",
+    "testedImage": "Resultado registrado para estes valores exatos.",
+    "type": "Tipo",
+    "types": {
+      "enum": "Opção",
+      "string": "Texto",
+      "string-list": "Lista"
+    },
+    "unmatchedImage": "Não há resultado registrado para estes valores. A imagem mostra outro exemplo.",
+    "value": "No exemplo padrão",
+    "version": "Versão {version}"
+  },
+  "test": {
+    "dimensions": "{width} × {height}",
+    "label": "Registro do teste",
+    "lastTested": "Testado em {date}",
+    "neverTested": "Ainda não testado",
+    "notVerified": "Não verificado",
+    "recordedUnknownModel": "Resultado registrado · modelo não verificado",
+    "reference": {
+      "none": "Sem imagem de referência",
+      "optional": "Imagem de referência opcional",
+      "required": "Imagem de referência obrigatória"
+    },
+    "updated": "Atualizado em {date}",
+    "verifiedWith": "Testado com {model}"
+  }
+}

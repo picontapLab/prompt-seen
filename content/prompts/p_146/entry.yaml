@@ -52,6 +52,7 @@ inspirationSources:
       zh-Hans: 整条教程或作品展示视频
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
+      pt-BR: Vídeo completo de tutorial ou demonstração
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -59,12 +60,14 @@ inspirationSources:
       zh-Hans: B站 官方公开只读 API
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
+      pt-BR: Registro da API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
       zh-Hans: 作者专栏公开完整prompt，原作者还标明改编来源
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
+      pt-BR: Prompt original ou trecho disponível; adaptação independente
     metrics:
       - key: views
         value: 344604
@@ -73,6 +76,7 @@ inspirationSources:
           zh-Hans: 播放或浏览
           ja: 閲覧数
           de: Aufrufe
+          pt-BR: Visualizações
       - key: likes
         value: 26934
         labels:
@@ -80,6 +84,7 @@ inspirationSources:
           zh-Hans: 赞
           ja: いいね
           de: Gefällt mir
+          pt-BR: Curtidas
       - key: saves
         value: 5872
         labels:
@@ -87,6 +92,7 @@ inspirationSources:
           zh-Hans: 收藏
           ja: 保存数
           de: Gespeichert
+          pt-BR: Salvamentos
       - key: comments
         value: 938
         labels:
@@ -94,6 +100,7 @@ inspirationSources:
           zh-Hans: 评论
           ja: コメント
           de: Kommentare
+          pt-BR: Comentários
       - key: shares
         value: 1029
         labels:
@@ -101,6 +108,7 @@ inspirationSources:
           zh-Hans: 分享
           ja: 共有数
           de: Geteilt
+          pt-BR: Compartilhamentos
       - key: coins
         value: 859
         labels:
@@ -108,6 +116,7 @@ inspirationSources:
           zh-Hans: 投币
           ja: コイン数
           de: Coins
+          pt-BR: Moedas
       - key: danmaku
         value: 73
         labels:
@@ -115,6 +124,7 @@ inspirationSources:
           zh-Hans: 弹幕
           ja: 弾幕コメント数
           de: Danmaku
+          pt-BR: Comentários sobrepostos (danmaku)
 source:
   author: Prompt Seen
   url: null
@@ -131,6 +141,7 @@ annotations:
       zh-Hans: 明确四行四列，控制贴纸数量和配文阅读顺序。
       ja: 明示したグリッドが、ステッカーの数と読む順番を決めています。
       de: Das explizit vorgegebene Raster legt Stickeranzahl und Leserichtung fest.
+      pt-BR: A grade explícita define a quantidade de figurinhas e a ordem de leitura.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -143,3 +154,5 @@ annotations:
       ja: 16 種類の感情を通して、人物の特徴と服装を統一しています。
       de: Identität und Kleidung bleiben über die sechzehn Emotionen hinweg
         konsistent.
+      pt-BR: A identidade e as roupas permanecem consistentes ao longo das dezesseis
+        emoções.

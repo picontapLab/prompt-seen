@@ -6,19 +6,150 @@
 defaultLocale: en
 locales:
   # Phase 1
-  - { code: en, pathPrefix: en, nativeName: English, htmlLang: en, direction: ltr, enabled: true, phase: 1, localization: { coverage: incremental, review: metadata, promptBodies: optional } }
-  - { code: zh-Hans, pathPrefix: zh-hans, nativeName: 简体中文, htmlLang: zh-Hans, direction: ltr, enabled: true, phase: 1, localization: { coverage: incremental, review: metadata, promptBodies: optional } }
-  - { code: es, pathPrefix: es, nativeName: Español, htmlLang: es, direction: ltr, enabled: false, preview: true, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
-  - { code: pt-BR, pathPrefix: pt-br, nativeName: Português (Brasil), htmlLang: pt-BR, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: ja, pathPrefix: ja, nativeName: 日本語, htmlLang: ja, direction: ltr, enabled: true, preview: true, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
-  - { code: ko, pathPrefix: ko, nativeName: 한국어, htmlLang: ko, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: de, pathPrefix: de, nativeName: Deutsch, htmlLang: de, direction: ltr, enabled: true, preview: true, phase: 1, localization: { coverage: complete, review: fingerprint, promptBodies: source-only } }
-  - { code: fr, pathPrefix: fr, nativeName: Français, htmlLang: fr, direction: ltr, enabled: false, phase: 1, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
+  - {
+      code: en,
+      pathPrefix: en,
+      nativeName: English,
+      htmlLang: en,
+      direction: ltr,
+      enabled: true,
+      phase: 1,
+      localization: { coverage: incremental, review: metadata, promptBodies: optional }
+    }
+  - {
+      code: zh-Hans,
+      pathPrefix: zh-hans,
+      nativeName: 简体中文,
+      htmlLang: zh-Hans,
+      direction: ltr,
+      enabled: true,
+      phase: 1,
+      localization: { coverage: incremental, review: metadata, promptBodies: optional }
+    }
+  - {
+      code: es,
+      pathPrefix: es,
+      nativeName: Español,
+      htmlLang: es,
+      direction: ltr,
+      enabled: false,
+      preview: true,
+      phase: 1,
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
+    }
+  - {
+      code: pt-BR,
+      pathPrefix: pt-br,
+      nativeName: Português (Brasil),
+      htmlLang: pt-BR,
+      direction: ltr,
+      enabled: true,
+      preview: true,
+      phase: 1,
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
+    }
+  - {
+      code: ja,
+      pathPrefix: ja,
+      nativeName: 日本語,
+      htmlLang: ja,
+      direction: ltr,
+      enabled: true,
+      preview: true,
+      phase: 1,
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
+    }
+  - {
+      code: ko,
+      pathPrefix: ko,
+      nativeName: 한국어,
+      htmlLang: ko,
+      direction: ltr,
+      enabled: false,
+      phase: 1,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
+  - {
+      code: de,
+      pathPrefix: de,
+      nativeName: Deutsch,
+      htmlLang: de,
+      direction: ltr,
+      enabled: true,
+      preview: true,
+      phase: 1,
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
+    }
+  - {
+      code: fr,
+      pathPrefix: fr,
+      nativeName: Français,
+      htmlLang: fr,
+      direction: ltr,
+      enabled: false,
+      phase: 1,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
   # Phase 2
-  - { code: ru, pathPrefix: ru, nativeName: Русский, htmlLang: ru, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: zh-Hant, pathPrefix: zh-hant, nativeName: 繁體中文, htmlLang: zh-Hant, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: it, pathPrefix: it, nativeName: Italiano, htmlLang: it, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: id, pathPrefix: id, nativeName: Bahasa Indonesia, htmlLang: id, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
-  - { code: tr, pathPrefix: tr, nativeName: Türkçe, htmlLang: tr, direction: ltr, enabled: false, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
+  - {
+      code: ru,
+      pathPrefix: ru,
+      nativeName: Русский,
+      htmlLang: ru,
+      direction: ltr,
+      enabled: false,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
+  - {
+      code: zh-Hant,
+      pathPrefix: zh-hant,
+      nativeName: 繁體中文,
+      htmlLang: zh-Hant,
+      direction: ltr,
+      enabled: false,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
+  - {
+      code: it,
+      pathPrefix: it,
+      nativeName: Italiano,
+      htmlLang: it,
+      direction: ltr,
+      enabled: false,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
+  - {
+      code: id,
+      pathPrefix: id,
+      nativeName: Bahasa Indonesia,
+      htmlLang: id,
+      direction: ltr,
+      enabled: false,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
+  - {
+      code: tr,
+      pathPrefix: tr,
+      nativeName: Türkçe,
+      htmlLang: tr,
+      direction: ltr,
+      enabled: false,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }
   # Arabic draft is built in preview mode only, for RTL testing (§17.3 step 2).
-  - { code: ar, pathPrefix: ar, nativeName: العربية, htmlLang: ar, direction: rtl, enabled: false, preview: true, phase: 2, localization: { coverage: incremental, review: fingerprint, promptBodies: optional } }
+  - {
+      code: ar,
+      pathPrefix: ar,
+      nativeName: العربية,
+      htmlLang: ar,
+      direction: rtl,
+      enabled: false,
+      preview: true,
+      phase: 2,
+      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+    }

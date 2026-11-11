@@ -1,0 +1,31 @@
+schemaVersion: 1
+locale: pt-BR
+status: reviewed
+reviewEvidence: ui-review-evidence.md
+sourcePolicy: Use the current report source locale, file and field; preserve source facts and original Prompt bytes.
+terms:
+  - { source: Prompt, target: prompt, aliases: [prompts] }
+  - { source: Template, target: template, aliases: [templates, modelo de prompt], note: Distinguish a reusable prompt template from an AI model. }
+  - { source: Model, target: modelo, note: AI provider model; not a template. }
+  - { source: Collection, target: coleção, aliases: [coleções] }
+  - { source: Reference image, target: imagem de referência }
+  - { source: Output image, target: imagem gerada }
+  - { source: Copy, target: Copiar }
+  - { source: Download, target: Baixar }
+  - { source: Search, target: Buscar }
+  - { source: Reset, target: Restaurar }
+  - { source: Favorites, target: Favoritos }
+  - { source: Not verified, target: não verificado }
+  - { source: Product photography, target: fotografia de produto, aliases: [foto de produto, packshot] }
+  - { source: Portrait, target: retrato, aliases: [retratos, portrait], note: Use vertical for image orientation. }
+  - { source: Landscape, target: paisagem, note: Use horizontal for image orientation. }
+  - { source: Poster, target: cartaz, aliases: [cartazes, pôster, pôsteres, poster] }
+  - { source: Sticker, target: adesivo, aliases: [adesivos, sticker] }
+  - { source: Lighting, target: iluminação }
+  - { source: Background, target: fundo }
+  - { source: Composition, target: composição }
+preservationRules:
+  - Preserve names, brands, model IDs, slugs, URLs, code, licensing identifiers and intentional in-image literal text.
+  - Preserve original prompt text, template values and recorded generation facts; translate only explanations.
+  - Image descriptions require actual asset review. Translation generation is not approval.
+exceptions: []

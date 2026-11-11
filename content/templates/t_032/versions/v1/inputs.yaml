@@ -6,6 +6,8 @@ instructions:
   ja: ポートレートを 1 枚アップロードし、短い挨拶をちょうど 9 個指定してください。作例の人物は生成したものです。
   de: Lade ein Porträt hoch und gib genau neun kurze Grüße an. Die Person im
     Beispiel wurde künstlich erzeugt.
+  pt-BR: Envie um retrato e exatamente nove saudações curtas. A pessoa do nosso
+    exemplo é sintética.
 slots:
   - id: person
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 人物肖像
       ja: 人物
       de: Person
+      pt-BR: Pessoa
     min: 1
     max: 1

@@ -9,11 +9,13 @@ fields:
       zh-Hans: 题材
       ja: 題材
       de: Motiv
+      pt-BR: Elemento principal
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
       ja: 「竹林」のように、主な題材をひとつ指定します。
       de: Ein Hauptmotiv, etwa „ein Bambushain“.
+      pt-BR: Um elemento principal, como “um bambuzal”.
   - name: season
     type: enum
     required: true
@@ -24,6 +26,7 @@ fields:
       zh-Hans: 季节
       ja: 季節
       de: Jahreszeit
+      pt-BR: Estação do ano
     options:
       - value: spring
         labels:
@@ -31,24 +34,28 @@ fields:
           zh-Hans: 春
           ja: 春
           de: Frühling
+          pt-BR: Primavera
       - value: summer
         labels:
           en: Summer
           zh-Hans: 夏
           ja: 夏
           de: Sommer
+          pt-BR: Verão
       - value: autumn
         labels:
           en: Autumn
           zh-Hans: 秋
           ja: 秋
           de: Herbst
+          pt-BR: Outono
       - value: winter
         labels:
           en: Winter
           zh-Hans: 冬
           ja: 冬
           de: Winter
+          pt-BR: Inverno
   - name: brushwork
     type: enum
     required: true
@@ -59,6 +66,7 @@ fields:
       zh-Hans: 笔法
       ja: 筆致
       de: Pinselführung
+      pt-BR: Pincelada
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -66,18 +74,21 @@ fields:
           zh-Hans: 淡墨晕染，节点清晰
           ja: 淡い墨と鋭い節
           de: Sanfte Verläufe, klare Knoten
+          pt-BR: Aguadas suaves, nós nítidos
       - value: loose wet washes
         labels:
           en: Loose wet washes
           zh-Hans: 湿笔晕染
           ja: ゆったりとにじむ墨
           de: Lockere nasse Verläufe
+          pt-BR: Aguadas úmidas e soltas
       - value: dry brush with visible texture
         labels:
           en: Dry brush
           zh-Hans: 枯笔
           ja: かすれ
           de: Trockener Pinsel
+          pt-BR: Pincel seco
   - name: elements
     type: string-list
     required: false
@@ -90,11 +101,14 @@ fields:
       zh-Hans: 细节
       ja: 細部
       de: Details
+      pt-BR: Detalhes
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
       ja: 数えられるものが効果的です。例：「背の高い茎 5 本」。
       de: Zählbare Dinge funktionieren am besten, etwa „fünf hohe Halme“.
+      pt-BR: Elementos que podem ser contados funcionam melhor, como “cinco hastes
+        altas”.
   - name: aspectRatio
     type: enum
     required: true
@@ -106,6 +120,7 @@ fields:
       ja: アスペクト比
       ar: نسبة الأبعاد
       de: Seitenverhältnis
+      pt-BR: Proporção
     options:
       - value: 21:9
         labels:
@@ -114,6 +129,7 @@ fields:
           ja: 21:9
           ar: 21:9
           de: 21:9
+          pt-BR: 21:9
       - value: 16:9
         labels:
           en: 16:9
@@ -121,6 +137,7 @@ fields:
           ja: 16:9
           ar: 16:9
           de: 16:9
+          pt-BR: 16:9
       - value: 3:4
         labels:
           en: 3:4
@@ -128,6 +145,7 @@ fields:
           ja: 3:4
           ar: 3:4
           de: 3:4
+          pt-BR: 3:4
       - value: 1:3
         labels:
           en: 1:3
@@ -135,3 +153,4 @@ fields:
           ja: 1:3
           ar: 1:3
           de: 1:3
+          pt-BR: 1:3
