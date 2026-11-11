@@ -9,6 +9,7 @@
   /* The native modal dialog covers the viewport and is the scroll container, so the panel
      scrolls as one page and nothing nests a second scroll area (§11.3.2). */
   .dialog {
+    --nav-height: 56px;
     position: fixed;
     inset: 0;
     inline-size: 100%;
@@ -22,6 +23,7 @@
     color: var(--text-primary);
     overflow-y: auto;
     overscroll-behavior: contain;
+    scroll-padding-block-start: calc(var(--nav-height) + var(--space-16));
   }
   .dialog::backdrop {
     background: var(--scrim);
@@ -41,8 +43,6 @@
 
   /* Phones: the full screen (§11.2). */
   .panel {
-    /* The popup's own bar replaces the site navigation for sticky offsets inside it. */
-    --nav-height: 56px;
     position: relative;
     min-block-size: 100%;
     background: var(--canvas);
@@ -53,10 +53,10 @@
   .bar {
     position: sticky;
     inset-block-start: 0;
-    z-index: 2;
+    z-index: var(--z-nav);
     display: flex;
     align-items: center;
-    gap: var(--space-8);
+    gap: var(--space-16);
     block-size: var(--nav-height);
     padding-inline: var(--space-8);
     border-block-end: 1px solid var(--border-subtle);
@@ -64,15 +64,26 @@
   }
   .steps {
     display: flex;
-    gap: var(--space-4);
+    flex: none;
+    gap: var(--space-8);
+  }
+  .barTitle {
+    flex: 1;
+    min-inline-size: 0;
+    overflow: hidden;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .close {
+    flex: none;
     margin-inline-start: auto;
   }
 
   .body {
     padding-inline: var(--page-margin);
-    padding-block-start: var(--space-16);
   }
   /* Content that arrives after the frame fades in; a prefetched one is there at once. */
   .body[data-ready] {
@@ -81,47 +92,36 @@
 
   @media (min-width: 768px) {
     .dialog {
-      padding: var(--space-24) var(--page-margin);
+      /* Keep the scrollport flush with the viewport: block padding leaves moving text
+         exposed above the sticky bar. The panel owns the outer spacing instead. */
+      padding-inline: var(--page-margin);
     }
     .panel {
       min-block-size: 0;
       max-inline-size: calc(var(--container-detail) + 2 * var(--page-margin));
-      margin-inline: auto;
+      margin: var(--space-24) auto;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-panel);
       box-shadow: var(--elevation-2);
-      /* Desktop opens by the shared image; the panel only fades, so the fixed side buttons keep
-         the viewport as their containing block (a transform would capture them). */
+      /* Desktop opens by the shared image; only the panel's opacity changes. */
       animation-name: fade;
     }
     .bar {
+      padding-inline: var(--space-16);
       border-start-start-radius: var(--radius-panel);
       border-start-end-radius: var(--radius-panel);
       background: var(--canvas);
-    }
-    /* Previous and next sit at both sides, vertically centred (§11.8.3 弹层版). */
-    .step {
-      position: fixed;
-      inset-block-start: 50%;
-      translate: 0 -50%;
-      z-index: 3;
-    }
-    .step[data-side='start'] {
-      inset-inline-start: max(var(--space-8), calc((100vw - var(--container-detail)) / 2 - var(--page-margin) - 52px));
-    }
-    .step[data-side='end'] {
-      inset-inline-end: max(var(--space-8), calc((100vw - var(--container-detail)) / 2 - var(--page-margin) - 52px));
     }
   }
 
   .pending {
     display: grid;
     gap: var(--space-24);
-    padding-block: var(--space-16);
+    padding-block: var(--space-24);
   }
   @media (min-width: 1024px) {
     .pending {
-      grid-template-columns: 7fr 5fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: start;
     }
   }
@@ -144,8 +144,8 @@
   }
   .pendingTitle {
     font-family: var(--font-display);
-    font-size: var(--text-page-title);
-    line-height: var(--leading-page-title);
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+    line-height: max(1.08, var(--leading-page-title));
   }
   .pendingStatus {
     color: var(--text-secondary);

@@ -6,6 +6,15 @@
     gap: var(--space-48);
     padding-block: var(--space-24) var(--space-64);
   }
+  /* The popup is a reading surface: reserve room for the summary and prompt alongside
+     the image, including entries with long titles. Full detail pages keep their display size. */
+  .detail.popup {
+    padding-block-start: var(--space-24);
+  }
+  .popup .title {
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+    line-height: max(1.08, var(--leading-page-title));
+  }
   /* Stage and text share their own grid, so the sticky stage stops where the text ends and
      never covers the related work below. */
   .top {
@@ -76,6 +85,12 @@
     }
     .info {
       grid-column: 8 / span 5;
+    }
+    .popup .media {
+      grid-column: 1 / span 6;
+    }
+    .popup .info {
+      grid-column: 7 / span 6;
     }
   }
   /* Room for the mobile action bar at the end of the page. */

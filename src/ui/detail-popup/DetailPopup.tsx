@@ -473,8 +473,6 @@ export function DetailPopup({
       <IconButton
         variant="secondary"
         tooltip={false}
-        className={styles.step}
-        data-side={prev ? 'start' : 'end'}
         data-popup-step={side}
         icon={<Icon aria-hidden="true" />}
         label={t(side)}
@@ -517,6 +515,7 @@ export function DetailPopup({
                     {nav('next')}
                   </div>
                 )}
+                <p className={styles.barTitle}>{detail?.title ?? card?.title ?? t('loading')}</p>
                 <IconButton
                   variant="ghost"
                   tooltip={false}

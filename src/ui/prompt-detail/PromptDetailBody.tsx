@@ -63,7 +63,12 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
 
   return (
     <AnnotationProvider annotations={detail.annotations}>
-      <article className={styles.detail} data-detail="prompt" data-entry={detail.id} data-save-scope="">
+      <article
+        className={`${styles.detail}${heading ? ` ${styles.popup}` : ''}`}
+        data-detail="prompt"
+        data-entry={detail.id}
+        data-save-scope=""
+      >
         <div className={`${styles.top} ${styles.promptTop}`}>
           <div className={`${styles.info} ${styles.promptIntro}`}>
             <Breadcrumb

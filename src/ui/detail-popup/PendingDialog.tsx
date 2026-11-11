@@ -129,6 +129,7 @@ export function PendingDialog({
       {slug && (
         <div className={styles.panel} lang={locale.htmlLang}>
           <div className={styles.bar}>
+            <p className={styles.barTitle}>{card?.title ?? t('loading')}</p>
             <IconButton
               variant="ghost"
               tooltip={false}
