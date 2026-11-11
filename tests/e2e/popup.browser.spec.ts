@@ -550,6 +550,10 @@ test.describe('desktop', () => {
     baseURL,
   }) => {
     await gotoList(page);
+    // This checks the browser's native new-tab action, not only the page's click handler.
+    // Select the gallery first: Firefox can dispatch a trusted modified click without
+    // opening its background tab when the originating browser window is not active.
+    await page.bringToFront();
     const modifier = process.platform === 'darwin' ? 'Meta' : 'Control';
     const [tab] = await Promise.all([
       context.waitForEvent('page'),
