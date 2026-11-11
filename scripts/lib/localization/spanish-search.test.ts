@@ -10,7 +10,7 @@ import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
 import { searchRecord, type LocalizationSearchCase } from '../../../tests/support/localization-search';
 import { loadContent } from '../content/load';
 
-it('finds frozen Spanish queries for current targets; enabled Spanish requires the entire frozen set', () => {
+it('finds every frozen Spanish query in the serialized and reloaded full corpus', () => {
   const root = path.resolve(import.meta.dirname, '../../..');
   const cases: LocalizationSearchCase[] = JSON.parse(
     fs.readFileSync(path.join(root, 'production/localization/es/search-cases.json'), 'utf8'),
@@ -45,9 +45,8 @@ it('finds frozen Spanish queries for current targets; enabled Spanish requires t
   const readyCases = cases.filter((example) =>
     example.expectedKeys.every((key) => searchRecord(index, key)?.localization.localStatus === 'current'),
   );
-  expect(readyCases.length).toBeGreaterThan(0);
-  if (config.locales.find((locale) => locale.code === 'es')!.enabled) expect(readyCases).toHaveLength(cases.length);
-  for (const { query, expectedKeys, excludedKeys, topK } of readyCases) {
+  expect(readyCases).toHaveLength(cases.length);
+  for (const { query, expectedKeys, excludedKeys, topK } of cases) {
     const keys = search(engine, query, topK).groups.flatMap((group) =>
       group.hits.map((hit) => hit.id.replaceAll(':', '/')),
     );

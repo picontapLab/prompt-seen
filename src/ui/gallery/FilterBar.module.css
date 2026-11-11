@@ -97,6 +97,8 @@
       display: none !important;
     }
     .tools {
+      flex-shrink: 1;
+      min-inline-size: 0;
       justify-content: space-between;
     }
   }

@@ -2,18 +2,19 @@
 
 Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing working tree. Language: universal `es`; complete/fingerprint/source-only. Production remains disabled. The user requested staged commits with continued implementation.
 
-| Stage | Status                | Evidence / remaining work                                                                                                                                                                                                                                               |
-| ----- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| P0    | Implemented           | Scope v2 and batch plan cover the dynamic target and field sets; current German status documented; original general-spec baseline marked historical.                                                                                                                    |
-| P1    | Complete              | 14 namespaces, 427 messages, two pages, 34 taxonomy fields, glossary/style guide reviewed; B0 promoted with 463 real approvals; preview enabled; subpath preview build passed and foundation pages passed 24 Chromium/Firefox/WebKit checks (four widths × two themes). |
-| P2    | Complete              | 30 pilot units: 27 standalone current, three aggregates remain draft pending members; 696/2,220 fields current. Text and actual media reviewed; 96 browser checks passed.                                                                                                                                                                       |
-| P3 | Complete | All dynamic targets and fields are current; actual text/media evidence saved, aggregate dependencies satisfied, strict check passed. |
-| P4    | Partially implemented | Spanish ñ distinction, accent folding, aliases, original-word ranking and photography boundary pass serialized-engine fixtures. Analyzer version 3 shared with emitter. Full corpus recall and browser evidence pending.                                                |
-| P5    | Pending               | Full preview/browser acceptance and performance evidence.                                                                                                                                                                                                               |
-| P6    | Pending               | Isolated enabled candidate and three build configurations.                                                                                                                                                                                                              |
-| P7    | Pending               | Deployment, live checks and rollback evidence.                                                                                                                                                                                                                          |
+| Stage | Status | Evidence / remaining work |
+| --- | --- | --- |
+| P0 | Complete | Dynamic scope and batch plan cover all current targets and fields. |
+| P1 | Complete | Reviewed UI, independent pages and taxonomy; preview enabled. |
+| P2 | Complete | Pilot accepted; dependent aggregates were subsequently promoted in B4. |
+| P3 | Complete | All targets and fields current; actual text/media evidence saved; strict gate passes. |
+| P4 | Complete | Analyzer v3, character/alias fixtures and all 32 real-corpus queries pass reloaded engine and three browser Workers. |
+| P5 | Complete | Expanded width/theme interactions, layout/axe, original Prompt, shared regressions and native Chromium 200% zoom. See evidence/preview-acceptance.json for first-run failures and isolated reruns. |
+| P6 | Pending | Isolated enabled candidate, three committed build configurations and four/five-language performance comparison. |
+| P7 | Pending | Deployment, live checks and rollback evidence. |
 
-All 32 search queries are frozen in `search-cases.json`. Fixture tests do not certify those corpus scenarios. Missing Spanish library descriptions continue to be counted as missing; preview fallback is not translation completion.
+
+All 32 search queries are frozen in `search-cases.json` and now required even in preview. Missing descriptions remain missing; preview fallback is never translation completion.
 
 Stage checks: subpath preview build passed (six built locales, production Spanish still disabled); all 24 foundation browser checks passed, including layout, serious/critical axe findings and uncaught page errors on About/License. The 32 frozen German corpus queries passed. These checks do not cover Spanish library interactions or full search acceptance.
 
@@ -30,3 +31,7 @@ B2: all 75 templates are current. The remaining 70 pages and 410 fields were pro
 P3 completed: all 381 dynamic targets and 2,220 fields are current; missing/draft/unreviewed/outdated/invalid are zero, ready=true and blocking=false. B4 promoted only after all members and dependencies were current. All media descriptions have actual inspection evidence; GIFs were checked frame by frame. Production is still disabled pending P5–P7.
 
 ES12 implementation: the old language-suggestion component was only mounted in Storybook. The existing on-demand language menu now reuses suggestLanguage and one already-reviewed server-formatted label. Four Spanish regional preferences passed 24 phone/desktop checks across three browsers, with no automatic redirect. Firefox needed the nested options animation to settle before a test click; twelve repeated mobile checks and the final complete matrix passed.
+
+P5 completed in isolated worktree `codex/spanish-release` because concurrent work replaced the shared build artifact. Two reproduced shared UI defects were fixed: mobile filter tools now shrink so Spanish sorting text wraps without horizontal overflow; light amber frame numbers now pass 4.55:1 on hovered search rows (formerly 4.46:1), with a supplementary token pair and an explicit hover regression. The first targeted run had 384 passes, two existing Chromium-only IME skips and seven timeouts; all seven passed single-worker reruns. The additional Spanish filter/sort matrix passed 24/24. Native Chromium zoom used chrome.tabs.setZoom(2), verified 1440/DPR1 → 720/DPR2, and passed eight page/theme checks. Source Prompt text, template values and user-data logic were not changed.
+
+Release preparation discovered public/main 9f4cc714 is already deployed and contains private artifact customization. P6 must retain that commit. The default local GitHub CLI identity has only read access to the public deployment repository; the release entry point is being clarified while local candidate work continues.
