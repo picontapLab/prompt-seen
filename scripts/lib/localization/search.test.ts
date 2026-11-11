@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { expect, it } from 'vitest';
+import { beforeAll, expect, it } from 'vitest';
 import { loadConfig } from '../../../src/config/load';
 import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/types';
 import { searchDocuments } from '../../../src/modules/search/documents';
@@ -7,10 +7,15 @@ import { createIndex, loadEngine, search } from '../../../src/modules/search/eng
 import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
 import { loadContent } from '../content/load';
 
-it('finds public prompts and templates by their stable identifiers after serializing the search index', () => {
+// Building the real multilingual corpus is fixture setup, separate from querying a reloaded index.
+let loaded: ReturnType<typeof loadContent>;
+beforeAll(() => {
   const root = path.resolve(import.meta.dirname, '../../..');
   const config = loadConfig(root, { BUILD_MODE: 'production' });
-  const loaded = loadContent({ root, config, url: createUrlModule(urlConfigOf(config)) });
+  loaded = loadContent({ root, config, url: createUrlModule(urlConfigOf(config)) });
+}, 30_000);
+
+it('finds public prompts and templates by their stable identifiers after serializing the search index', () => {
   expect(loaded.findings.blocking).toBe(0);
   const content = loaded.built!;
   const documents = searchDocuments({
