@@ -26,7 +26,8 @@
       border-color var(--duration-feedback) linear,
       background-color var(--duration-feedback) linear;
   }
-  .options[data-kind='ratio'] .option {
+  .options[data-kind='ratio'] .option,
+  .options[data-kind='ratio'] .optionLabel {
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }

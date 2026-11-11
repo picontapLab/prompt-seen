@@ -571,5 +571,36 @@
     "passed": 496,
     "workers": 2,
     "durationSeconds": 63.12
+  },
+  "ciCorrection": {
+    "failedRelease": "b1e181d87d67ad97fae6779fff4a574757de1855",
+    "ciRun": "https://github.com/picontapLab/prompt-seen/actions/runs/42971016324",
+    "deploymentBlocked": true,
+    "fixes": [
+      "Resolve language-boundary text fonts and preserve search/ratio mono roles and native language links.",
+      "Assert preview Markdown output absence and 404.",
+      "Bound cold Japanese Worker readiness and full-route popup closing waits at 15 seconds without changing behavior assertions."
+    ],
+    "previewTargeted": {
+      "passed": 117,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ]
+    },
+    "previewExpanded": {
+      "passed": 320,
+      "skipped": 13,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ]
+    },
+    "reviews": {
+      "standards": "pass",
+      "spec": "pass"
+    }
   }
 }

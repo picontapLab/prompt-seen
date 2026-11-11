@@ -20,6 +20,14 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* A language boundary changes the stack tokens, but an inherited font-family is
+     already resolved in the parent's language. Resolve it here for fallback labels
+     and prose (§8.6). Components retain display/mono roles on their language-bearing
+     elements. Native language links and their containers keep the page's face. */
+  :where(body [lang]:not([hreflang], :has(> [hreflang]))) {
+    font-family: var(--font-text);
+  }
+
   h1,
   h2,
   h3,

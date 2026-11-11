@@ -520,7 +520,9 @@ test.describe('desktop', () => {
     await expectOpen(page, second.slug);
     expect((await state(page)).ours).toBe(false);
     await page.keyboard.press('Escape');
-    await expect(popup(page)).not.toHaveAttribute('open', '');
+    // This foreign history entry needs a gallery navigation, not the cached popup
+    // history path. Include that full-route load in the bounded close wait.
+    await expect(popup(page)).not.toHaveAttribute('open', '', { timeout: 15_000 });
     expect(await state(page)).toMatchObject({ path: listUrl, historyLength: historyLength + 1, doc, locked: false });
   });
 

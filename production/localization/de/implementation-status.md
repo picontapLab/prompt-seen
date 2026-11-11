@@ -125,11 +125,31 @@ Storybook checks remain applicable; release CI repeats them on the release commi
 
 ## Release procedure and rollback
 
-The release-record commit adds documentation/evidence and test-only index-fixture
-reuse; application code and localized content remain identical. Rebuild it at root and
-subpath with its full SHA as BUILD_ID and rerun HTTP and German browser acceptance
-before updating the automatic deployment branch. Production deployment must use
-that exact commit; its workflow runs the production gates and live verification.
+Release `b1e181d87d67ad97fae6779fff4a574757de1855` was rebuilt and passed
+225 checks (one conditional skip) at each production base path, then pushed.
+Its CI run [42971016324](https://github.com/picontapLab/prompt-seen/actions/runs/42971016324)
+failed before deployment. The production gate correctly retained the previous live
+version; that release is not a successful deployment.
+
+The preview matrix exposed inherited Arabic fonts on English fallback labels.
+Language boundaries now resolve their own text stack while native language links
+keep their existing face; search taxonomy and aspect-ratio labels explicitly retain
+their mono role. Browser regressions reproduced the original fallback defect and
+the mono-role regression before the corrections. Preview Markdown assertions now
+require absent alternates and 404 responses, consistent with non-indexable output.
+Japanese search waits for the cold Worker result summary before unchanged ranking
+assertions; the foreign-history popup close allows the full gallery route load.
+Both waits remain bounded at 15 seconds and retain all behavior assertions.
+
+The corrected preview passed 117 targeted tests across Chromium, Firefox and
+WebKit, then 320 broader layout, mixed-font and actual German checks with 13 existing
+conditional skips. This includes five languages, four widths and both themes.
+Standards and spec re-reviews found no remaining actionable issues in these fixes.
+
+Rebuild the superseding commit at root and subpath with its full SHA as BUILD_ID,
+and rerun HTTP and German browser acceptance before updating the automatic
+deployment branch. Production must deploy that exact verified commit; CI and the
+deployment workflow retain every publication gate and live check.
 
 Immediately before release, both the canonical site's build endpoint and the
 immutable previous deployment served `5bdd4e7392d89d22a638761b6898e65903fa3bf1`.

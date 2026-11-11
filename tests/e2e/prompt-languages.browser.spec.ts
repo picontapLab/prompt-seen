@@ -73,13 +73,20 @@ for (const viewport of [
       await chooseLanguage(page, 'en', 'zh-Hans');
       await expect(preview(page)).toHaveText(english.prompt.text);
       await expect(preview(page)).toHaveAttribute('lang', language);
-      // Literal details expose a Markdown alternate; only template editors have a .txt button.
-      const alternate = await page.locator('link[rel="alternate"][type="text/markdown"]').getAttribute('href');
-      expect(alternate).toBeTruthy();
-      const exported = await page.request.get(new URL(alternate!).pathname);
-      expect(exported.ok()).toBe(true);
-      const body = /^(`{3,})text\n([\s\S]*?)\n\1$/m.exec(await exported.text())?.[2];
-      expect(body).toBe(english.prompt.text);
+      // External twins belong only to indexable versions; preview pages still show/copy
+      // the selected Prompt but must not expose Markdown (§5 localization outputs).
+      const alternate = page.locator('link[rel="alternate"][type="text/markdown"]');
+      if (BUILD.buildMode === 'production') {
+        const href = await alternate.getAttribute('href');
+        expect(href).toBeTruthy();
+        const exported = await page.request.get(new URL(href!).pathname);
+        expect(exported.ok()).toBe(true);
+        const body = /^(`{3,})text\n([\s\S]*?)\n\1$/m.exec(await exported.text())?.[2];
+        expect(body).toBe(english.prompt.text);
+      } else {
+        await expect(alternate).toHaveCount(0);
+        expect((await page.request.get(`${BASE}${chinese.path}index.md`)).status()).toBe(404);
+      }
       if (browserName === 'chromium') {
         await context.grantPermissions(['clipboard-read', 'clipboard-write']);
         await page.locator('[data-copy-state]:visible').first().click();

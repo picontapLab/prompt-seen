@@ -1,7 +1,15 @@
 import { expect, test, type Page } from '@playwright/test';
 import { DISPLAY_CJK } from '../../src/styles/fonts/display-cjk';
 import { BASE, BUILD, message } from './support/artifact';
-import { feedPage, localeIndex, pagePromptIds, promptDetail, samplePrompt, sampleTemplate } from './support/content';
+import {
+  feedPage,
+  localeIndex,
+  pagePromptIds,
+  promptDetail,
+  samplePrompt,
+  sampleTemplate,
+  templateDetail,
+} from './support/content';
 import { cancelledFetch } from './support/errors';
 import { layoutProblems, slowColdVisit, applyGermanLabels } from './support/layout';
 
@@ -256,6 +264,33 @@ test.describe('the size-adjusted fallback faces back the web fonts while they lo
 });
 
 test.describe('text in another language keeps its own type (§8.6, §11.1.2)', () => {
+  for (const { code, tag } of [
+    { code: 'en', tag: 'Portrait' },
+    { code: 'de', tag: 'Porträt' },
+  ]) {
+    test(`${code}: localized search tags keep their monospace metadata face`, async ({ page }) => {
+      test.skip(!BUILD.locales.some((locale) => locale.code === code), 'locale is not built');
+      await page.goto(`${BASE}/${code}/search/?q=p_111`);
+      const result = page.locator(`[data-group="prompt"] a[href="${BASE}${promptDetail(code, 'p_111').path}"]`);
+      const label = result.getByText(tag, { exact: true });
+      await expect(label).toBeVisible();
+      expect(
+        await label.evaluate((el) => getComputedStyle(el).fontFamily.split(',')[0]!.replace(/["']/g, '').trim()),
+      ).toBe('IBM Plex Mono');
+    });
+
+    test(`${code}: translated aspect-ratio labels keep their monospace metadata face`, async ({ page }) => {
+      test.skip(!BUILD.locales.some((locale) => locale.code === code), 'locale is not built');
+      await page.goto(`${BASE}${templateDetail(code, 't_001').path}`);
+      const labels = page.locator('[data-kind="ratio"] [lang]');
+      await expect(labels.first()).toBeVisible();
+      const families = await labels.evaluateAll((els) =>
+        els.map((el) => getComputedStyle(el).fontFamily.split(',')[0]!.replace(/["']/g, '').trim()),
+      );
+      expect([...new Set(families)]).toEqual(['IBM Plex Mono']);
+    });
+  }
+
   for (const locale of BUILD.locales.filter((l) => l.code !== 'en'))
     test(`${locale.code}: English prompts and other quoted text use their own font stack`, async ({ page }) => {
       const pages = [`/${locale.pathPrefix}/`, `/${locale.pathPrefix}/prompts/`, samplePrompt(locale.code).path];

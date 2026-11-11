@@ -77,10 +77,15 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .tags [lang] {
+    font-family: var(--font-mono);
+  }
 
   /* The monospaced face has no Arabic: words in labels use the text face there, which joins
      letters (§11.1.2); digits such as frame numbers stay monospaced. */
-  :global(:lang(ar)) .tags {
+  :global(:lang(ar)) .tags,
+  :global(:lang(ar)) .tags [lang],
+  .tags :global([lang]:lang(ar)) {
     font-family: var(--font-text);
   }
 }

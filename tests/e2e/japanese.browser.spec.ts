@@ -17,6 +17,9 @@ test.describe('Japanese localization search acceptance', () => {
   for (const example of cases) {
     test(`fixed query: ${example.id}`, async ({ page }) => {
       await page.goto(`${BASE}/${japanese!.pathPrefix}/search/?q=${encodeURIComponent(example.query)}`);
+      // Ranking starts after the cold Worker has loaded the full corpus. Its loading
+      // state is separate from query correctness, especially on Linux WebKit.
+      await expect(page.locator('[data-search-status]')).toContainText(example.query.trim(), { timeout: 15_000 });
       if (example.expectEmpty) {
         await expect(page.locator('[data-no-results]')).toBeVisible();
         await expect(page.locator('[data-group] li')).toHaveCount(0);
