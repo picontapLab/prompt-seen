@@ -1,6 +1,6 @@
 # Spanish implementation status
 
-Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing working tree. Language: universal `es`; complete/fingerprint/source-only. Production remains disabled. The user requested staged commits with continued implementation.
+Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing working tree. Language: universal `es`; complete/fingerprint/source-only. Spanish is enabled only on the isolated production candidate; live release remains pending. The user requested staged commits with continued implementation.
 
 | Stage | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -10,7 +10,7 @@ Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing worki
 | P3 | Complete | All targets and fields current; actual text/media evidence saved; strict gate passes. |
 | P4 | Complete | Analyzer v3, character/alias fixtures and all 32 real-corpus queries pass reloaded engine and three browser Workers. |
 | P5 | Complete | Expanded width/theme interactions, layout/axe, original Prompt, shared regressions and native Chromium 200% zoom. See evidence/preview-acceptance.json for first-run failures and isolated reruns. |
-| P6 | Pending | Isolated enabled candidate, three committed build configurations and four/five-language performance comparison. |
+| P6 | Validating | Isolated enabled candidate, three committed build configurations and four/five-language performance comparison. |
 | P7 | Pending | Deployment, live checks and rollback evidence. |
 
 
@@ -34,4 +34,4 @@ ES12 implementation: the old language-suggestion component was only mounted in S
 
 P5 completed in isolated worktree `codex/spanish-release` because concurrent work replaced the shared build artifact. Two reproduced shared UI defects were fixed: mobile filter tools now shrink so Spanish sorting text wraps without horizontal overflow; light amber frame numbers now pass 4.55:1 on hovered search rows (formerly 4.46:1), with a supplementary token pair and an explicit hover regression. The first targeted run had 384 passes, two existing Chromium-only IME skips and seven timeouts; all seven passed single-worker reruns. The additional Spanish filter/sort matrix passed 24/24. Native Chromium zoom used chrome.tabs.setZoom(2), verified 1440/DPR1 → 720/DPR2, and passed eight page/theme checks. Source Prompt text, template values and user-data logic were not changed.
 
-Release preparation discovered public/main 9f4cc714 is already deployed and contains private artifact customization. P6 must retain that commit. The default local GitHub CLI identity has only read access to the public deployment repository; the release entry point is being clarified while local candidate work continues.
+Release preparation discovered public/main 9f4cc714 is already deployed and contains private artifact customization. P6 must retain that commit. The default GitHub CLI identity is read-only, but the existing public SSH remote passed a push dry-run; the normal public main CI/Deploy workflow is the available publication route. No remote write has occurred.

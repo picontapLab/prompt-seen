@@ -828,7 +828,7 @@ locales:
     phase: 2
 ```
 
-上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。`preview: true` 的 locale 只在预览构建（`BUILD_MODE=preview`，第 4.1 节）中生成，用于尚未启用语言的版式与方向测试，如步骤 2 的阿拉伯语草稿；生产构建只生成 `enabled` 的 locale。步骤 1a 时注册表已填写全部 13 项：英语与简体中文已启用，日语与阿拉伯语为预览，其余待内容与审核就绪后启用。
+上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。`preview: true` 的 locale 只在预览构建（`BUILD_MODE=preview`，第 4.1 节）中生成，用于尚未启用语言的版式与方向测试，如步骤 2 的阿拉伯语草稿；生产构建只生成 `enabled` 的 locale。步骤 1a 时注册表已填写全部 13 项：英语与简体中文已启用，日语与阿拉伯语为预览，其余待内容与审核就绪后启用。 该句为步骤 1a 的历史状态；2026-11-11 西语候选的注册表启用集合为 `en`、`zh-Hans`、`es`、`ja`、`de`，预览另含 `ar`。日语、德语、西语采用 complete/fingerprint/source-only；实际部署状态以 `production/localization/es/production-acceptance.json` 为准。
 
 URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/ink-portrait`、`locales/zh-Hans.mdx`、`hreflang="zh-Hans"`。本文 1.0 的 `/zh/` 示例改为 `/zh-hans/`；项目尚未实施。如实施时已有 `/zh/` 链接，再配置永久重定向。非规范大小写的已知地址重定向到唯一小写地址；重定向由构建生成的宿主配置逐条列出，只覆盖已知地址，不对任意大小写做通配处理。
 

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "stage": "candidate-preparation",
+  "releaseCommit": null,
+  "sourceRevision": null,
+  "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
+  "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
+  "recordedAt": "2026-11-11T13:50:37.232577+00:00",
+  "releaseCertification": false,
+  "baselineCommit": "b01746abf04dadd19aaf037a7606e573bd97c06a",
+  "rollbackCommit": "9f4cc71428b9baa97bc297df053d6a9c710f0690",
+  "builds": [
+    {
+      "buildId": null,
+      "buildMode": "preview",
+      "basePath": "/prompt-seen",
+      "status": "pending"
+    },
+    {
+      "buildId": null,
+      "buildMode": "production",
+      "basePath": "",
+      "status": "pending"
+    },
+    {
+      "buildId": null,
+      "buildMode": "production",
+      "basePath": "/prompt-seen",
+      "status": "pending"
+    }
+  ],
+  "checks": [],
+  "browserMatrix": {
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "status": "pending"
+  },
+  "search": {
+    "frozenQueries": 32,
+    "status": "pending"
+  },
+  "performance": {
+    "status": "pending",
+    "evidence": ".artifacts/localization/es/"
+  },
+  "deployment": {
+    "status": "pending",
+    "repository": "picontapLab/prompt-seen",
+    "canonicalUrl": "https://promptseen.dev",
+    "platformUrl": null,
+    "servedBuildId": null,
+    "liveChecks": []
+  }
+}
