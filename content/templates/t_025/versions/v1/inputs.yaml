@@ -6,6 +6,8 @@ instructions:
   ja: ペットの写真を 1 枚アップロードし、成人の年齢層と性格を選んでください。作例のペットは生成したものです。
   de: Lade ein Haustierfoto hoch und wähle eine erwachsene Altersgruppe sowie eine
     Persönlichkeit. Das Haustier im Beispiel wurde künstlich erzeugt.
+  es: Sube una foto de mascota y elige un rango de edad adulta y una personalidad.
+    La mascota de ejemplo es sintética.
 slots:
   - id: pet
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 宠物照片
       ja: ペット
       de: Haustier
+      es: Mascota
     min: 1
     max: 1

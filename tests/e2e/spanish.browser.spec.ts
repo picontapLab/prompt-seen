@@ -3,13 +3,25 @@ import path from 'node:path';
 import { searchRecord, type LocalizationSearchCase } from '../support/localization-search';
 import { renderTemplate } from '../../src/modules/template';
 import { localeIndex, promptDetail, templateDetail } from './support/content';
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { BASE, BUILD, ROOT, message } from './support/artifact';
 import { layoutProblems } from './support/layout';
 import { seriousViolations, scrollToTop } from './support/a11y';
 import { cancelledFetch } from './support/errors';
 
 const spanish = BUILD.locales.find((locale) => locale.code === 'es');
+
+async function openPreview(page: Page) {
+  const selector = '[data-static-from="lg"] > button';
+  const preview = page.locator(selector);
+  if (!(await preview.isVisible())) return;
+  await page.waitForFunction((value) => {
+    const element = document.querySelector(value);
+    return element && Object.keys(element).some((key) => key.startsWith('__reactProps'));
+  }, selector);
+  await preview.click();
+  await expect(preview).toHaveAttribute('aria-expanded', 'true');
+}
 
 test.describe('Spanish foundation preview', () => {
   test.skip(!spanish, 'Spanish is disabled in this production artifact; this is not Spanish release acceptance');
@@ -73,11 +85,7 @@ test.describe('reviewed Spanish pilot samples', () => {
               page.locator('[data-group="prompt"] li').filter({ hasText: 'Lata de té sobre un fondo salvia' }),
             ).toBeVisible();
           }
-          const preview = page.locator('[data-static-from="lg"] > button');
-          if (await preview.isVisible()) {
-            await preview.click();
-            await expect(preview).toHaveAttribute('aria-expanded', 'true');
-          }
+          await openPreview(page);
           expect(await layoutProblems(page), path).toEqual([]);
         }
         await page.goto(`${BASE}${promptDetail('es', 'p_012').path}`);
@@ -179,20 +187,13 @@ test.describe('reviewed Spanish pilot samples', () => {
     // This checks equivalent reflow. Native browser zoom remains a separate manual check.
     await page.setViewportSize({ width: 720, height: 450 });
     await page.goto(`${BASE}${templateDetail('es', 't_001').path}`);
-    const preview = page.locator('[data-static-from="lg"] > button');
-    if (await preview.isVisible()) {
-      await preview.click();
-      await expect(preview).toHaveAttribute('aria-expanded', 'true');
-    }
+    await openPreview(page);
     const input = page.locator('[data-field-shell="product"] input');
     await page.keyboard.press('Escape');
     await input.focus();
     await page.keyboard.press('Tab');
     expect(await page.evaluate(() => document.activeElement?.tagName)).not.toBe('BODY');
-    if (await preview.isVisible()) {
-      await preview.click();
-      await expect(preview).toHaveAttribute('aria-expanded', 'true');
-    }
+    await openPreview(page);
     await scrollToTop(page);
     expect(await layoutProblems(page)).toEqual([]);
     expect(await seriousViolations(page)).toEqual([]);

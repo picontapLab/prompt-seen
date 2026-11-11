@@ -6,6 +6,8 @@ instructions:
   ja: 機器、確認済みの構造の説明、正確なラベルを指定してください。商品写真の使用は任意です。
   de: Gib das Gerät, überprüfte Angaben zum Aufbau und genaue Beschriftungen an;
     ein Produktfoto ist optional.
+  es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas;
+    la foto de producto es opcional.
 slots:
   - id: product
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 产品外观
       ja: 商品
       de: Produkt
+      es: Producto
     min: 0
     max: 1

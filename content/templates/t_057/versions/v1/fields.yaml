@@ -7,6 +7,7 @@ fields:
       zh-Hans: 四字母单词
       ja: 4 文字の単語
       de: Wort mit vier Buchstaben
+      es: Palabra de cuatro letras
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
@@ -14,6 +15,8 @@ fields:
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
       de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
         zusammengehörige Inhalte konsistent.
+      es: Cambiar este valor crea una variante sin probar. Mantén coherente el
+        contenido relacionado.
     type: string
     default: MELT
     minLength: 1
@@ -27,6 +30,7 @@ fields:
       zh-Hans: 说明句
       ja: キャプション
       de: Beschriftung
+      es: Texto
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
@@ -34,6 +38,8 @@ fields:
       ja: この値を変更すると、未検証の別案になります。関連する内容に一貫性を持たせてください。
       de: Eine Änderung dieses Werts erzeugt eine ungetestete Variante. Halte
         zusammengehörige Inhalte konsistent.
+      es: Cambiar este valor crea una variante sin probar. Mantén coherente el
+        contenido relacionado.
     type: string
     default: Letters soften into motion.
     minLength: 1

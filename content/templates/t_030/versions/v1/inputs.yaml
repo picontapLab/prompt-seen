@@ -6,6 +6,8 @@ instructions:
   ja: キャラクターの参照画像を 1 枚アップロードしてください。短いキャプションを読む順にちょうど 16 個指定します。
   de: Lade ein Figurenreferenzbild hoch. Gib genau sechzehn kurze Beschriftungen
     in Leserichtung an.
+  es: Sube una referencia de personaje. Aporta exactamente dieciséis textos cortos
+    en orden de lectura.
 slots:
   - id: character
     labels:
@@ -13,5 +15,6 @@ slots:
       zh-Hans: 角色参考
       ja: 人物
       de: Figur
+      es: Personaje
     min: 1
     max: 1
