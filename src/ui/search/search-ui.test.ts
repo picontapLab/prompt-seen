@@ -13,6 +13,15 @@ function memoryStorage(initial: Record<string, string> = {}) {
 }
 
 describe('highlighting (§11.8.6)', () => {
+  it('preserves Spanish accents and decomposed ñ without highlighting plain n', () => {
+    expect(highlightParts('🖼 ¡Fotografi\u0301a del an\u0303o! ano', 'es', ['fotografia', 'año'])).toEqual([
+      { text: '🖼 ¡', mark: false },
+      { text: 'Fotografi\u0301a', mark: true },
+      { text: ' del ', mark: false },
+      { text: 'an\u0303o', mark: true },
+      { text: '! ano', mark: false },
+    ]);
+  });
   it('preserves German whole words and UTF-16 ranges after spelling normalization', () => {
     expect(highlightParts('🖼 Straße, Größe und Porträt!', 'de', ['strasse', 'grosse', 'portrat'])).toEqual([
       { text: '🖼 ', mark: false },

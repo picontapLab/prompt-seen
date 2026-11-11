@@ -1,0 +1,101 @@
+{
+  "kinds": { "prompt": "Prompt", "template": "Plantilla" },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": { "label": "Ruta de navegación", "home": "Inicio", "prompts": "Prompts", "templates": "Plantillas" },
+  "test": {
+    "label": "Registro de prueba",
+    "verifiedWith": "Probado con {model}",
+    "notVerified": "Sin verificar",
+    "lastTested": "Probado el {date}",
+    "neverTested": "Aún sin probar",
+    "updated": "Actualizado el {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "Sin imagen de referencia",
+      "optional": "Imagen de referencia opcional",
+      "required": "Imagen de referencia obligatoria"
+    },
+    "recordedUnknownModel": "Resultado registrado · modelo sin verificar"
+  },
+  "sheet": {
+    "label": "Prompt · {language}",
+    "languageNote": "Los prompts conservan su idioma original. Un prompt traducido puede producir resultados diferentes.",
+    "characters": "{count, plural, one {# carácter} other {# caracteres}}",
+    "expand": "Mostrar todo",
+    "expandLines": "Mostrar todo ({lines, plural, one {# línea} other {# líneas}})",
+    "collapse": "Mostrar menos"
+  },
+  "copy": {
+    "label": "Copiar prompt",
+    "done": "Copiado",
+    "failed": "No se ha podido copiar",
+    "failedHint": "Selecciona el texto del prompt y cópialo con el teclado o el menú."
+  },
+  "share": { "label": "Compartir", "copied": "Enlace copiado", "failed": "No se ha podido copiar el enlace" },
+  "customize": "Personalizar",
+  "annotations": { "heading": "Qué hace cada frase" },
+  "image": {
+    "original": "Imagen a tamaño completo",
+    "dimensions": "{width} × {height}",
+    "show": "Mostrar imagen {n} de {total}",
+    "failed": "No se ha cargado la imagen.",
+    "retry": "Reintentar"
+  },
+  "examples": {
+    "heading": "Imágenes de prueba",
+    "recorded": "Registrado",
+    "model": "Modelo",
+    "provider": "Proveedor",
+    "notes": "Lo que observamos",
+    "parameters": "Parámetros",
+    "parameter": "Parámetro",
+    "value": "Valor",
+    "template": "Plantilla {version}",
+    "references": "Imágenes de referencia",
+    "outputs": "Resultado",
+    "promptUsed": "Prompt usado para esta imagen",
+    "unknown": "Sin registrar",
+    "selectRun": "Resultado registrado",
+    "cover": "Portada"
+  },
+  "source": {
+    "heading": "Fuente y licencia",
+    "prompt": "Prompt",
+    "image": "Imagen",
+    "unknown": "Fuente desconocida",
+    "author": "Por {author}",
+    "licence": "Licencia: {licence}",
+    "creator": "Autor: {creator}",
+    "aiGenerated": "Imagen generada",
+    "algorithmic": "Generado por un programa"
+  },
+  "related": { "templates": "Plantillas relacionadas", "similar": "Prompts similares" },
+  "actions": { "label": "Acciones del prompt" },
+  "template": {
+    "fields": "Campos",
+    "field": "Campo",
+    "type": "Tipo",
+    "value": "En el ejemplo predeterminado",
+    "optional": "Opcional",
+    "required": "Obligatorio",
+    "types": { "string": "Texto", "string-list": "Lista", "enum": "Selección" },
+    "listLimit": "{min}–{max} elementos",
+    "maxLength": "Hasta {max} caracteres",
+    "choices": "{count, plural, one {# opción} other {# opciones}}",
+    "version": "Versión {version}",
+    "fieldCount": "{count, plural, one {# campo} other {# campos}}",
+    "sampleImage": "Esta imagen procede del ejemplo predeterminado. Otros valores producen otros resultados.",
+    "examples": "Creados con esta plantilla",
+    "testedImage": "Resultado registrado para estos valores exactos.",
+    "unmatchedImage": "No hay un resultado registrado para estos valores. La imagen muestra un ejemplo diferente."
+  },
+  "inspiration": {
+    "heading": "Inspiración y pruebas de la fuente",
+    "adaptation": "Este prompt es una adaptación independiente. La imagen que se muestra aquí es nuestro propio resultado registrado.",
+    "original": "Contenido original",
+    "snapshot": "Captura de la fuente",
+    "observed": "Observado el {date}",
+    "evidence": "Pruebas",
+    "scope": "Estas cifras pertenecen a la publicación o al vídeo original. Son capturas fechadas, no contadores en directo ni valoraciones de nuestra imagen."
+  }
+}

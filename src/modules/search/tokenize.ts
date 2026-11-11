@@ -29,13 +29,18 @@ const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
 
 /** The search form of one word or character run: compatibility forms, case and accents folded. */
 export function normalizeTerm(text: string, locale: string): string {
+  const language = locale.split('-')[0]!.toLowerCase();
   let s = text.normalize('NFKC').toLocaleLowerCase(locale);
-  if (locale.split('-')[0] === 'de')
-    s = s.replace(/ß/g, 'ss').replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u');
+  if (language === 'de') s = s.replace(/ß/g, 'ss').replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u');
   if (FOLD_SCRIPT.test(s)) {
     s = s
       .normalize('NFD')
-      .replace(/(\p{Script=Latin}|\p{Script=Greek}|\p{Script=Cyrillic})\p{M}+/gu, '$1')
+      .replace(
+        /(\p{Script=Latin}|\p{Script=Greek}|\p{Script=Cyrillic})(\p{M}+)/gu,
+        (_match, base: string, marks: string) =>
+          // In Spanish ñ is a letter, not an accent variant of n (§9.1 Spanish spec).
+          language === 'es' && base === 'n' && marks.includes('\u0303') ? 'ñ' : base,
+      )
       .normalize('NFC');
   }
   if (/[؀-ۿ]/.test(s)) {

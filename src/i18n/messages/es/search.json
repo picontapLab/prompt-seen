@@ -1,0 +1,43 @@
+{
+  "open": "Buscar",
+  "tooltip": "Buscar ({key})",
+  "panel": {
+    "label": "Búsqueda",
+    "field": "Buscar prompts y plantillas",
+    "placeholder": "Buscar prompts, plantillas, estilos…",
+    "close": "Cerrar búsqueda",
+    "recent": "Búsquedas recientes",
+    "clearRecent": "Borrar búsquedas recientes",
+    "popular": "Usos populares",
+    "seeAll": "{count, plural, one {Ver # resultado} other {Ver los # resultados}}",
+    "openSearchPage": "Abrir la página de búsqueda",
+    "loading": "Cargando la búsqueda…",
+    "keys": "↑ ↓ para elegir · Intro para abrir · Esc para cerrar"
+  },
+  "groups": { "prompt": "Prompts", "template": "Plantillas", "collection": "Colecciones", "topic": "Temas" },
+  "count": "{count, plural, =0 {Sin resultados} one {# resultado} other {# resultados}}",
+  "error": {
+    "body": "No se ha podido cargar la búsqueda. Las listas y los enlaces siguen funcionando.",
+    "stale": "El sitio se ha actualizado mientras esta página estaba abierta. Recarga para buscar en la nueva versión.",
+    "retry": "Reintentar",
+    "reload": "Recargar"
+  },
+  "page": {
+    "documentTitle": "Buscar prompts y plantillas",
+    "title": "Búsqueda",
+    "description": "Busca prompts y plantillas de imágenes probados por título, uso, estilo y texto del prompt.",
+    "intro": "La búsqueda incluye títulos, usos, estilos, modelos y texto de los prompts.",
+    "summary": "{count, plural, one {# resultado} other {# resultados}} para «{query}»",
+    "updating": "Actualizando resultados…",
+    "more": "Se muestran {shown} de {total}"
+  },
+  "noResults": {
+    "title": "Sin resultados para «{query}»",
+    "broader": "Prueba con menos palabras",
+    "terms": "Etiquetas relacionadas",
+    "otherLocales": "En otros idiomas",
+    "otherLocale": "{count, plural, one {# resultado} other {# resultados}} en contenido en {language}",
+    "suggestion": "{label} ({count})",
+    "browse": "Explorar todos los prompts"
+  }
+}

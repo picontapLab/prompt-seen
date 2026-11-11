@@ -1,0 +1,30 @@
+schemaVersion: 1
+locale: es
+status: reviewed
+reviewer: AI Codex spec_review
+reviewedAt: 2026-11-11T09:46:16Z
+reviewScope: Foundation textual review only; not corpus, visual, browser or release approval.
+sourcePolicy: Use the source locale, file and field from the current report. Preserve original source text.
+terms:
+  - { source: Prompt, target: prompt, note: Instrucción para el modelo, distinta de la descripción de la página. }
+  - { source: Template, target: plantilla, aliases: [template, plantillas] }
+  - { source: Collection, target: colección }
+  - { source: Reference image, target: imagen de referencia }
+  - { source: Output image, target: imagen generada }
+  - { source: Copy, target: Copiar }
+  - { source: Download, target: Descargar }
+  - { source: Reset, target: Restablecer }
+  - { source: Favorites, target: Favoritos }
+  - { source: Not verified, target: sin verificar }
+  - { source: Product photography, target: fotografía de producto, aliases: [foto de producto, packshot] }
+  - { source: Portrait, target: retrato, aliases: [portrait, retratos], note: Para la orientación de una imagen, usar vertical. }
+  - { source: Poster, target: póster, aliases: [cartel, poster, pósteres, carteles] }
+  - { source: Sticker, target: pegatina, aliases: [sticker, pegatinas] }
+  - { source: Lighting, target: iluminación }
+  - { source: Background, target: fondo }
+  - { source: Composition, target: composición }
+preservationRules:
+  - Original Prompt bytes, including original Chinese and Japanese, remain unchanged.
+  - Preserve model and brand names, IDs, slugs, URLs, code, template values and licence identifiers.
+  - Image descriptions require actual asset inspection; generation is not approval.
+exceptions: []

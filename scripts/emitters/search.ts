@@ -2,7 +2,13 @@ import type { PromptDetail, TemplateDetail } from '../../src/modules/content/typ
 import { popularUseCases, searchDocuments, suggestTerms } from '../../src/modules/search/documents';
 import { createIndex } from '../../src/modules/search/engine';
 import { searchIndexFile } from '../../src/modules/search/files';
-import { SEARCH_KINDS, type SearchIndexFile, type SearchKind } from '../../src/modules/search/types';
+import {
+  SEARCH_ANALYZER_VERSION,
+  SEARCH_SCHEMA_VERSION,
+  SEARCH_KINDS,
+  type SearchIndexFile,
+  type SearchKind,
+} from '../../src/modules/search/types';
 import { pageSections } from '../../src/ui/navigation/sections';
 import { defineEmitter } from './_types';
 
@@ -30,8 +36,8 @@ export default defineEmitter({
         SEARCH_KINDS.map((k) => [k, documents.filter((d) => d.kind === k).length]),
       ) as Record<SearchKind, number>;
       const file: SearchIndexFile = {
-        schemaVersion: 2,
-        analyzerVersion: 2,
+        schemaVersion: SEARCH_SCHEMA_VERSION,
+        analyzerVersion: SEARCH_ANALYZER_VERSION,
         buildId: config.buildId,
         locale: locale.code,
         counts,

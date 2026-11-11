@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createIndex, loadEngine, noResultHelp, search, type Engine } from './engine';
-import type { SearchDocument, SearchIndexFile } from './types';
+import { SEARCH_ANALYZER_VERSION, SEARCH_SCHEMA_VERSION, type SearchDocument, type SearchIndexFile } from './types';
 import { createSearchCore } from './worker-core';
 
 // The engine over small fixtures (design doc §13.1–§13.2, §11.8.6). The index built from the
@@ -24,8 +24,8 @@ const doc = (id: string, fields: Partial<SearchDocument>): SearchDocument => ({
 
 function engineOf(locale: string, docs: SearchDocument[], extra: Partial<SearchIndexFile> = {}): Engine {
   const file: SearchIndexFile = {
-    schemaVersion: 2,
-    analyzerVersion: 2,
+    schemaVersion: SEARCH_SCHEMA_VERSION,
+    analyzerVersion: SEARCH_ANALYZER_VERSION,
     buildId: 'b1',
     locale,
     counts: { prompt: docs.length, template: 0, collection: 0, topic: 0 },
@@ -53,6 +53,56 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('folds Spanish vowels and punctuation while retaining the exact displayed title', () => {
+    const title = '¿Retrato? ¡Póster de un pingüino! Fotografi\u0301a';
+    const engine = engineOf('es', [doc('accented', { title })]);
+    for (const query of [
+      'retrato',
+      'poster',
+      'póster',
+      'pinguino',
+      'pingüino',
+      'FOTOGRAFÍA',
+      'fotografia',
+      'fotografi\u0301a',
+    ]) {
+      const hit = search(engine, query).groups[0]?.hits[0];
+      expect(hit?.id).toBe('accented');
+      expect(hit?.title).toBe(title);
+    }
+  });
+  it('finds Spanish domain aliases without turning family photography into packshots', () => {
+    const engine = engineOf('es', [
+      doc('poster', { title: 'Póster Fuji' }),
+      doc('literal', { title: 'Cartel Fuji' }),
+      doc('sticker', { title: 'Pegatina del lunes' }),
+      doc('template', { kind: 'template', title: 'Retrato con neón' }),
+      doc('product', { title: 'Fotografía de producto en estudio' }),
+      doc('family', { title: 'Fotografía familiar' }),
+    ]);
+    expect(ids('cartel Fuji', engine)).toEqual(['literal', 'poster']);
+    expect(ids('sticker lunes', engine)).toEqual(['sticker']);
+    expect(ids('plantilla retrato neón', engine)).toEqual(['template']);
+    expect(ids('template portrait', engine)).toEqual(['template']);
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('fotografía de producto estudio', engine)).toEqual(['product']);
+    expect(ids('fotografía', engine)).toContain('family');
+  });
+  it('keeps Spanish ñ distinct after serialization, including decomposed and regional queries', () => {
+    for (const locale of ['es', 'es-MX', 'es-419']) {
+      const engine = engineOf(locale, [
+        doc('year', { title: 'año' }),
+        doc('plain', { title: 'ano' }),
+        doc('cane', { title: 'caña' }),
+        doc('grey', { title: 'cana' }),
+      ]);
+      expect(ids('AÑO', engine)).toEqual(['year']);
+      expect(ids('an\u0303o', engine)).toEqual(['year']);
+      expect(ids('ano', engine)).toEqual(['plain']);
+      expect(ids('caña', engine)).toEqual(['cane']);
+      expect(ids('cana', engine)).toEqual(['grey']);
+    }
+  });
   it('retains the actual language of each taxonomy label through the serialized index', () => {
     const engine = engineOf('de', [
       doc('mixed', {
@@ -161,8 +211,8 @@ describe('no results (§11.8.6)', () => {
 
 describe('worker requests (§11.6.4, §13.3)', () => {
   const file = (buildId: string): SearchIndexFile => ({
-    schemaVersion: 2,
-    analyzerVersion: 2,
+    schemaVersion: SEARCH_SCHEMA_VERSION,
+    analyzerVersion: SEARCH_ANALYZER_VERSION,
     buildId,
     locale: 'en',
     counts: { prompt: 1, template: 0, collection: 0, topic: 0 },

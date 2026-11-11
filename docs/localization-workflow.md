@@ -6,9 +6,10 @@ The locale registry is the only policy source. Each registered language declares
 requires fingerprint review. `enabled` and `preview` retain their existing meaning.
 
 English and Simplified Chinese use incremental metadata review. Japanese and German
-use complete fingerprint review and original Prompt bodies. German is preview-only: its complete UI dictionary, required pages and global taxonomy
-text have AI textual reviews. Production remains disabled while library coverage is incomplete.
-Other registered locales use incremental fingerprint review.
+use complete fingerprint review and original Prompt bodies; both are enabled in the
+registry. Spanish is preparing complete fingerprint coverage with original Prompt
+bodies, and remains disabled with preview off. Other registered locales use
+incremental fingerprint review. Registry enablement alone is not deployment evidence.
 
 ## Inspect and record scope
 
@@ -113,10 +114,11 @@ outstanding. Application still enforces all enabled release policies and rolls b
 on failure. New public content expands complete-language coverage: prepare its
 translations and actual reviews before making a publishable commit.
 
-The registry and scope migration does not certify German content or deployment.
-German still needs the remaining library descriptions and shared text, their actual
-review evidence, frozen search acceptance cases, production candidate acceptance and
-verified deployment before it can be enabled.
+German is enabled in the current registry. Its historical preparation and review
+evidence remains under `production/localization/de/`; use a fresh strict report for
+current coverage and separate production acceptance evidence for deployment status.
+Spanish follows `docs/spanish-localization-spec.md`; its preparation state and
+remaining gates are recorded under `production/localization/es/`.
 
 ### Search acceptance with localized prose
 

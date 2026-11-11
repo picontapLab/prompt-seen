@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Plantillas",
+    "documentTitle": "Plantillas de prompts de imágenes",
+    "description": "Prompts de imágenes probados con espacios para completar: rellena unos campos y copia un prompt completo con la misma redacción que la versión probada.",
+    "intro": "Cada plantilla es un prompt probado con unos espacios para completar. Rellénalos y el prompt se actualizará mientras escribes; cópialo o descárgalo como archivo de texto.",
+    "introMore": "Más",
+    "introLess": "Menos",
+    "count": "{count, plural, one {# plantilla} other {# plantillas}}",
+    "fields": "{count, plural, one {# campo} other {# campos}}",
+    "version": "Versión {version}",
+    "empty": "Aún no hay plantillas en este idioma."
+  },
+  "editor": {
+    "fields": "Campos",
+    "other": "Otros",
+    "preview": "Vista previa del prompt",
+    "expand": "MOSTRAR EL PROMPT COMPLETO",
+    "collapse": "OCULTAR EL PROMPT",
+    "reset": "Restablecer",
+    "resetDone": "Se ha restablecido el ejemplo predeterminado",
+    "anotherSample": "Otro ejemplo",
+    "sampleDone": "Ejemplo {n} de {total}",
+    "undo": "Deshacer",
+    "download": "Descargar .txt",
+    "downloaded": "Prompt descargado como archivo de texto",
+    "share": "Compartir estos valores",
+    "shareCopied": "Enlace con tus valores copiado",
+    "shareFailed": "No se ha podido copiar el enlace",
+    "missing": "{count, plural, one {# campo por completar} other {# campos por completar}}",
+    "restored": "Se ha recuperado lo que introdujiste la última vez.",
+    "shared": "Se ha completado a partir de un enlace compartido.",
+    "mismatch": "Ese enlace se creó para la versión {version}. Se muestra el ejemplo predeterminado de la versión {current}.",
+    "errors": {
+      "required": "{label} está vacío. Complétalo para terminar el prompt.",
+      "too-short": "{label} necesita al menos {limit} caracteres (ahora tiene {actual}).",
+      "too-long": "{label} no puede superar los {limit} caracteres (ahora tiene {actual}).",
+      "too-few": "Añade al menos {limit} elementos a {label} (ahora tiene {actual}).",
+      "too-many": "{label} admite como máximo {limit} elementos (ahora tiene {actual}). Quita los que sobran.",
+      "item-too-long": "El elemento {item} no puede superar los {limit} caracteres (ahora tiene {actual}).",
+      "empty-item": "El elemento {item} está vacío. Quítalo o complétalo.",
+      "invalid-option": "Elige una de las opciones de {label}.",
+      "wrong-type": "Este valor no se puede usar para {label}. Introdúcelo de nuevo."
+    }
+  },
+  "tokens": {
+    "items": "Elementos",
+    "count": "{count} / {max}",
+    "placeholder": "Escribe y pulsa Intro",
+    "howTo": "Pulsa Intro para añadir un elemento.",
+    "remaining": "{count, plural, one {Puedes añadir # más.} other {Puedes añadir # más.}}",
+    "full": "{max, plural, one {Este campo admite # elemento.} other {Este campo admite # elementos.}} Quita uno para añadir otro.",
+    "pendingTooLong": "Este elemento tiene {count} caracteres; el límite es {max}.",
+    "remove": "Quitar {item}",
+    "added": "Se ha añadido {item}",
+    "removed": "Se ha quitado {item}"
+  }
+}

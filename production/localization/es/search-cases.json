@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "cases": [
+    {
+      "query": "calle Japón",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 01."
+    },
+    {
+      "query": "calle Japon",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 02."
+    },
+    {
+      "query": "CALLE JAPÓN",
+      "expectedKeys": [
+        "prompt/p_107"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 03."
+    },
+    {
+      "query": "fotografía de producto estudio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 04."
+    },
+    {
+      "query": "fotografia de producto estudio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 05."
+    },
+    {
+      "query": "fotografía de producto estudio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 06."
+    },
+    {
+      "query": "retrato portada revista",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 07."
+    },
+    {
+      "query": "retrato boda dos personas",
+      "expectedKeys": [
+        "prompt/p_115"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 08."
+    },
+    {
+      "query": "producto flotante",
+      "expectedKeys": [
+        "prompt/p_154"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 09."
+    },
+    {
+      "query": "producto vista cenital",
+      "expectedKeys": [
+        "prompt/p_156"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 10."
+    },
+    {
+      "query": "producto uso cotidiano",
+      "expectedKeys": [
+        "prompt/p_158"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 11."
+    },
+    {
+      "query": "retrato ascensor traje",
+      "expectedKeys": [
+        "prompt/p_315"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 12."
+    },
+    {
+      "query": "retrato lago luz de luna",
+      "expectedKeys": [
+        "prompt/p_314"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 13."
+    },
+    {
+      "query": "retrato parabrisas mapa",
+      "expectedKeys": [
+        "prompt/p_313"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 14."
+    },
+    {
+      "query": "póster Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 15."
+    },
+    {
+      "query": "poster Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 16."
+    },
+    {
+      "query": "cartel Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 17."
+    },
+    {
+      "query": "pegatina lunes",
+      "expectedKeys": [
+        "prompt/p_287"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 18."
+    },
+    {
+      "query": "sticker lunes",
+      "expectedKeys": [
+        "prompt/p_287"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 19."
+    },
+    {
+      "query": "póster Coliseo",
+      "expectedKeys": [
+        "prompt/p_289"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 20."
+    },
+    {
+      "query": "póster Lisboa",
+      "expectedKeys": [
+        "prompt/p_170"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 21."
+    },
+    {
+      "query": "muñeco de nieve barroco",
+      "expectedKeys": [
+        "prompt/p_239"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 22."
+    },
+    {
+      "query": "gato oficina pegatina",
+      "expectedKeys": [
+        "prompt/p_221"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 23."
+    },
+    {
+      "query": "iluminación neón retrato",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 24."
+    },
+    {
+      "query": "fondo salvia té",
+      "expectedKeys": [
+        "prompt/p_003"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 25."
+    },
+    {
+      "query": "plantilla póster producto",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 26."
+    },
+    {
+      "query": "plantilla tinta",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 27."
+    },
+    {
+      "query": "plantilla retrato neón",
+      "expectedKeys": [
+        "template/t_003"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 28."
+    },
+    {
+      "query": "GPT Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 29."
+    },
+    {
+      "query": "p_217",
+      "expectedKeys": [
+        "prompt/p_217"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 30."
+    },
+    {
+      "query": "colección cuatro retratos cotidianos",
+      "expectedKeys": [
+        "collection/c_017"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 31."
+    },
+    {
+      "query": "tinta",
+      "expectedKeys": [
+        "topic/style/ink"
+      ],
+      "topK": 5,
+      "reason": "Frozen Spanish specification §9.2 scenario 32."
+    }
+  ]
+}
