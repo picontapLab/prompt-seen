@@ -23,12 +23,16 @@ inputRequirements:
       (R11), then use the complete adapted prompt.
     zh-Hans: 按显示顺序上传 1 张本站生成的参考图（R11），使用完整改编词。
     ja: 表示順に本プロジェクトで生成した参照画像1枚（R11）をアップロードし、完全なアレンジ済みプロンプトを使用してください。
+    de: Lade das eine projektintern generierte Referenzbild in der angezeigten
+      Reihenfolge (R11) hoch und verwende dann den vollständigen adaptierten
+      Prompt.
   slots:
     - id: reference1
       labels:
         en: Project-generated character reference
         zh-Hans: 本站生成的角色参考图
         ja: 本プロジェクトで生成したキャラクター参照画像
+        de: Projektintern generierte Figurenreferenz
       min: 1
       max: 1
 showcaseExampleId: x_367
@@ -45,17 +49,21 @@ inspirationSources:
       en: Whole original post; shared across variants, not this adaptation
       zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
       ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
+      de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese
+        Adaption
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Archived public X snapshot and complete author prompt
       zh-Hans: 归档的 X 公开快照与完整作者原词
       ja: 保存されたXの公開スナップショットと作者の完全なプロンプト
+      de: Archivierter öffentlicher X-Snapshot und vollständiger Autorenprompt
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118129204449697985&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
       zh-Hans: 独立改编；完整原词另存档案
       ja: 独自アレンジ。完全な原文は別途保存
+      de: Eigenständige Adaption; vollständiges Original separat erhalten
     metrics:
       - key: likes
         value: 83
@@ -63,6 +71,7 @@ inspirationSources:
           en: Source post likes
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
+          de: Likes des Quellbeitrags
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/tetumemo/status/2118129204449697985

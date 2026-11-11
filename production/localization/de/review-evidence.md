@@ -162,3 +162,46 @@ Inspected assets: `a_315`–`a_316`, `a_320`–`a_323`, `a_325`–`a_331`,
 The 259 exact-hash approvals were bound after corrections at 04:56:10 UTC.
 This batch brings coverage to 299/381 targets and 1,753/2,220 fields; the remaining
 65 Prompt pages, 14 collections and 3 topics are separate review batches.
+
+## Final Prompt and aggregate content batches
+
+AI Codex `spec_review` completed all 65 remaining Prompt pages at 05:01:55 UTC
+on 2026-11-11 and all 327 Prompt-entry fields at 05:03:20 UTC. All 80 exact
+source/target groups and their 65 entry contexts were checked, including 24
+annotations, input ordering, dated metric scopes and original/adapted provenance.
+The Japanese assistant quotation remains unchanged. Six-frame historical outputs
+and current nine-frame adaptations retain their separate counts, durations,
+dimensions and playback settings. Corrections clarify water-kicking, expressionless
+applause, sword drawing, historical eight-frame output and original-audio claims.
+
+AI Codex `standards_review` completed comparison of all 82 alts and 58 run notes
+at 05:07:12 UTC. It opened all 45 PNGs and inspected all 300 decoded frames of
+37 GIFs, checking each GIF's dimensions, individual frame delays, total duration
+and playback metadata. This does not claim to repeat historical four-contact-sheet
+reviews quoted by the source records. The actual lower snowman miniature is
+redrawn (`a_403`), the selfie asset excludes the separate message (`a_455`),
+`a_489` is a three-quarter view, and the clapping fox's expression is motionless
+while its paws move (`a_492`). Exact-field review reasons preserve these distinctions.
+
+PNG assets: `a_388`, `a_392`, `a_395`, `a_398`–`a_414`, `a_455`–`a_456`,
+`a_461`, `a_463`, `a_468`–`a_469`, `a_471`, `a_473`, `a_475`, `a_481`,
+`a_487`, `a_489`, `a_491`, `a_493`, `a_495`, `a_500`, `a_502`, `a_504`,
+`a_506`, `a_508`, `a_511`–`a_515`.
+GIF assets: `a_384`–`a_387`, `a_389`–`a_391`, `a_393`–`a_394`,
+`a_396`–`a_397`, `a_472`, `a_474`, `a_476`–`a_480`, `a_482`–`a_486`,
+`a_488`, `a_490`, `a_492`, `a_494`, `a_496`–`a_499`, `a_501`, `a_503`,
+`a_505`, `a_507`, `a_509`–`a_510`. Inspection metadata is retained in
+`gif-review-metadata.json`; temporary contact sheets were individually viewed.
+The 532 operations were bound to approvals after corrections at 05:08:14 UTC.
+
+AI Codex `spec_review` reviewed all 14 remaining collections and 3 topics,
+including all 100 embedded recommendation reasons and membership counts, at
+04:55:06 UTC. Corrected text was rechecked at 05:03:54 UTC. The final
+18 operations also include the matching `p_143` description polish. Approvals
+were bound at 05:10:33 UTC after their required dependencies were current.
+
+The dynamic German report is now strict ready: 381/381 current and indexable
+targets, 2,220/2,220 current fields, no fallback, draft, unreviewed or outdated
+items. The 2,604 records include three superseding field/page corrections; no
+blanket approvals or human sign-offs were fabricated. Production enablement and
+browser acceptance remain separate from this content milestone.

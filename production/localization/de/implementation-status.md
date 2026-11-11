@@ -1,119 +1,86 @@
 # Localization implementation status
 
-Recorded 2026-11-11 UTC. This is a partial delivery against
-`docs/general-localization-spec.md`, not a German production-release approval.
+Recorded 2026-11-11 UTC. German content is complete and strict ready. Production
+candidate acceptance and deployment remain outstanding; `de.preview: true` and
+`de.enabled: false` are intentional at this stage.
 
-## Implemented
+## Implemented contracts
 
-Core commit: `995fa0f2` (policy-driven localization and publication workflow).
-P0–P4 contracts are implemented: explicit registry policy; shared pure classification;
-report v2 and evidence-backed scope migration; registered-language import and
-transactional promote; fingerprint review and concurrent-edit protection; browse/SEO
-separation; actual text language; German search normalization and index versions;
-shared build gates; all-language CI diagnostics; maintenance documentation.
+Core commit `995fa0f2` implements P0–P4: explicit locale policy, shared pure
+classification, report v2 and evidence-backed scope migration, registered-language
+import, transactional promotion, fingerprint/concurrent-edit protection, separate
+browse and SEO eligibility, actual text language, German search normalization,
+versioned indexes, shared build gates, all-language CI diagnostics and maintenance
+instructions. The original Prompt bodies, parameter values and generation facts
+remain unchanged by translation.
 
-The Japanese migration preserves the existing review history. Before and after
-migration its candidate-production report contains 381 current targets and 2,220
-current fields, with no blocking findings. No policy was weakened to obtain this result.
+Japanese policy and review history are preserved. Its strict report remains ready:
+381/381 current targets and 2,220/2,220 current fields. No policy was weakened.
 
-German preparation and representative content include all 427 messages in 14
-namespaces, About and License, 34 global taxonomy fields, 22 Prompt descriptions,
-3 templates, 2 collections and their 111 dependent fields. The sample includes
-English/Chinese sources, literal/template-derived Prompts, annotations, historical
-runs, two ordered reference inputs and a six-frame composed GIF. Actual review and
-asset evidence is recorded in `review-evidence.md`, with 601 exact-hash approvals in
-`reviews.json`. The original Prompt bodies and generation facts remain unchanged.
+## Completed German content
 
-The German candidate-production report now has 381 targets: 29 current and 352
-missing/fallback. Of 2,220 fields, 572 are current and 1,648 missing. Two translated
-collections still contain fallback members, so only 27 targets are indexable under
-candidate-production simulation. Actual preview outputs are all noindex.
-`de.preview` is true and `de.enabled` remains false.
+All dynamic targets are current and candidate-indexable: 285 Prompt descriptions,
+75 templates, 16 collections, 3 topics, About and License. All 2,220 fields are
+current, including 427 UI messages in 14 namespaces. There are no missing, draft,
+unreviewed or outdated targets. The 2,604 exact-hash records include three
+superseding corrections. Every approval represents an actual AI review; these
+records do not claim human review.
 
-## Subsequent content progress
+`review-evidence.md` records each batch, reviewer, time and scope. All media alts
+were checked against actual assets. The final animation batch includes all 300
+decoded frames of 37 GIFs; its dimensions, frame delays, durations, playback settings
+and source asset hashes are retained in `gif-review-metadata.json`. The earlier
+six-frame representative GIF was reviewed separately. Historical run-review claims
+remain historical, and all source uncertainties and adaptation limitations remain
+explicit. Glossary and style-guide terminology have been checked against the corpus.
 
-The early-library expansion adds 76 reviewed Prompt descriptions, 69 visually
-checked media descriptions and 14 annotation notes (159 approvals). The latest
-completed batch has 105/381 current targets and 655/2,220 current fields; 276
-targets and 1,565 fields remain. The two sample collections are now indexable in
-candidate simulation because their members are current. The verification below
-remains the earlier 29-target snapshot; no new browser acceptance is claimed.
+## Search acceptance
 
-All 75 template descriptions are now current after review of the remaining 72
-pages and 431 dependent fields, plus an early-alt grammar correction. The latest
-completed snapshot is 177/381 current targets and 1,086/2,220 current fields.
-There are 204 missing targets and 1,134 missing fields. Full-production acceptance
-and the browser results below have not been rerun against this larger corpus.
+All 32 frozen German cases pass through the public serialized search engine without
+changing their queries or expected targets. TopK means top results within each
+independently displayed content-kind group, matching the existing UI design and
+search API. `search-preview-results.json` records the actual group results.
 
-The next 50 Prompt descriptions and 480 fields are now reviewed and current,
-with one matching template-description correction. Latest coverage: 227/381
-targets and 1,566/2,220 fields; 154 targets and 654 fields remain missing.
+Search now includes visible explanatory prose at the existing secondary body weight,
+explicit maintained compounds, kind terms and directional product-photography aliases.
+A negative regression prevents generic family photography from matching Packshot.
+`search-index-cost.json` records the cost of prose indexing against the same current
+corpus/analyzer: roughly +18% German, +14% English, +29% Chinese and +46% Japanese
+gzip index size. These indexes remain loaded on demand; no new ordinary-page
+first-load dependency was added. Browser Worker acceptance is a separate check.
 
-The design/editing expansion adds 72 reviewed pages and 187 fields. Latest
-coverage: 299/381 current targets and 1,753/2,220 current fields. The remaining
-82 targets are 65 Prompt descriptions, 14 collections and 3 topics; 467 fields
-remain. Japanese strict coverage remains 381/381 and 2,220/2,220 current.
+## Verification history and current limits
 
-## Verification
+The earlier 29-target preview snapshot passed TypeScript, ESLint, 462 unit tests,
+content validation, 201 HTTP tests, 30 actual-German browser checks and 55 search
+browser checks (2 Chromium-only composition cases skipped in other browsers).
+The German checks covered Chromium, Firefox and WebKit, widths 360/768/1024/1440,
+both themes, multiple reference inputs, a GIF, template editing, clipboard/download
+agreement, keyboard handling and axe. A 720 CSS-pixel viewport tested reflow
+equivalent to 200% zoom; native browser zoom was not certified.
 
-These checks ran against the working source tree, including the user's existing
-content changes. They are implementation/preview checks, not an isolated de-enabled
-production candidate or a deployed-commit certification.
+Earlier three-locale production root/subpath builds and HTTP checks passed, as did
+five-locale preview home-language/RTL checks, Storybook and 44/44 token contrast
+checks. These are historical regression evidence, not certification of the final
+German production candidate. Content validation still reports 0 errors and
+0 publication errors, with 10 existing stale-translation warnings and 1 unused-media
+information finding retained.
 
-- TypeScript and ESLint: passed.
-- Full Vitest suite after final code/fixture changes: 55 files, 462 tests passed.
-- Content validation: 0 errors, 0 publication errors; 10 existing stale-translation
-  warnings and 1 unused-media information finding remain visible.
-- Japanese strict report: ready, 381/381 targets and 2,220/2,220 fields current.
-- Root production build/package and HTTP checks: 141 passed, 2 skipped.
-- `/prompt-seen` production build/package and HTTP checks: 142 passed, 1 skipped.
-  These three-locale production checks preceded the final search-label provenance
-  adjustment; the final five-locale preview rebuild includes that adjustment.
-- Earlier editor/search/home-language/page browser regression: 152 passed, 19 skipped.
-- Five-locale preview home-language/page checks: 87 passed across Chromium, Firefox
-  and WebKit, including real German UI and Arabic RTL.
-- Final reviewed-sample preview build/package: passed for en, zh-Hans, ja, de, ar.
-- Final reviewed-sample preview HTTP checks: 201 passed.
-- Real German sample browser checks: 30 passed across the three browsers. Widths
-  360/768/1024/1440 and both themes cover home, translated details, multiple inputs,
-  GIF, editor and search. Edited Prompt preview/download agree; Chromium clipboard
-  agrees too. Editor axe and keyboard checks pass. A 720 CSS-pixel viewport checks
-  reflow equivalent to 200% zoom on a 1440px display; native browser zoom is not claimed.
-- Search browser regression on the final preview: 55 passed, 2 skipped (the skipped
-  cases use Chromium-only CDP composition automation).
-- Token contrast: 44/44 passed. Storybook build passed.
-- Frozen German search set: 6/32 pass on the partial corpus. All original 32 cases
-  are retained. `search-preview-results.json` records actual top-five results and
-  failures; this is explicitly not search launch acceptance.
+The final full-corpus Vitest run passed 56 files and 495 tests. TypeScript and ESLint
+passed before the final browser-test additions; they are being rechecked with those
+additions. Regenerated preview HTTP/browser checks and the remaining sample
+favorites/popup flow are in progress. These working-tree checks include the
+user's pre-existing source edits; the eventual production candidate must be isolated.
 
-Playwright reports use separate output directories. Initial shared-directory trace
-errors were rerun independently. Layout checks expand the intentionally collapsed
-mobile preview before inspecting its controls, and use the repository's existing
-scroll-to-top and navigation-cancellation handling; no accessibility rule is disabled.
+## Remaining acceptance and release
 
-## Review
+P6 requires an isolated commit/workspace with `de.enabled: true`, complete root and
+`/prompt-seen` production builds, source and HTTP/SEO/output-set checks, actual German
+Worker search, full browser/axe coverage, keyboard and 200% zoom acceptance, plus
+comparable build time, file/byte counts, gzip search sizes, first-load JS and font
+requests with and without German. Existing CJK and Arabic RTL behavior must pass.
 
-Standards review found no remaining core violation after fixing a missed
-`tagLocales` copy in the public search result. A serialized-index regression first
-failed, then passed with that fix. Spec review prompted fixes for first-page featured
-content, collection/topic eligibility, and global taxonomy publication dependencies.
-Both reviews distinguish implemented mechanism from unfinished German rollout.
-The final browser-test review also required waiting for a known German Worker result
-before measuring the search layout; that wait is now explicit.
-
-## Still required
-
-P5 flow acceptance is partial: the representative content is translated and reviewed,
-but the complete sample path through favorites, popup, native zoom and every
-copy/download interaction has not been certified as a single acceptance run.
-
-P6 remains unfinished: translate/review the remaining 352 descriptions and 1,648
-fields, inspect their actual assets, pass all frozen search cases, complete the full
-browser/axe/performance matrix, and prepare an isolated full production candidate
-with `de.enabled: true`. Record comparable build time, file/byte counts, gzip search
-size, first-load JavaScript and font requests before approving that candidate.
-
-P7 has not started. No language-enabling production commit, push, deployment or live
-verification was performed. Deploy only the same fully accepted commit, verify its
+P7 has not started. No enabling production commit, push, deployment or live
+verification has been performed. Deploy the same fully accepted commit, verify its
 build ID with `check:live`, and retain the previous successful deployment for rollback.
-The current preview and disabled production build cannot substitute for those steps.
+Preview artifacts and disabled-German production builds do not replace these steps.

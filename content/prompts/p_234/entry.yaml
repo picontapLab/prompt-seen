@@ -23,12 +23,15 @@ inputRequirements:
       not use the official or social source images.
     zh-Hans: 按展示顺序使用原创生成底图；不使用官方或社交作者原图。
     ja: 独自に生成した参照画像を表示順に使ってください。公式の画像や SNS の出典画像は使わないでください。
+    de: Verwende die unabhängig erzeugten Referenzdateien in der angezeigten
+      Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
   slots:
     - id: reference
       labels:
         en: Original synthetic reference
         zh-Hans: 原创生成参考图
         ja: 元となる生成参照画像
+        de: Ursprüngliche künstlich erzeugte Referenz
       min: 1
       max: 1
 showcaseExampleId: x_298
@@ -46,6 +49,8 @@ inspirationSources:
         post share the metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis.
+        Mehrere Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -53,11 +58,15 @@ inspirationSources:
         refreshed."
       zh-Hans: 此前调研的原站页面及视觉核对，未刷新互动数。
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
+      de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
+        Zahlen wurden nicht aktualisiert."
     evidenceUrl: https://x.com/MinLiBuilds/status/2118138824673173569
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
       zh-Hans: 未取得原提示词，本次为独立推导方案。
       ja: 元のプロンプトは見つかりませんでした。これは独自に推定したプロンプトです。
+      de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig
+        abgeleiteter Prompt.
     metrics:
       - key: likes
         value: 21
@@ -65,12 +74,14 @@ inspirationSources:
           en: Likes
           zh-Hans: 点赞
           ja: いいね
+          de: Gefällt mir
       - key: reposts
         value: 1
         labels:
           en: Reposts
           zh-Hans: 转发
           ja: リポスト数
+          de: Reposts
 source:
   author: Prompt Seen
   url: null

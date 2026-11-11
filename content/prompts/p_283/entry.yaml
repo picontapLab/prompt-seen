@@ -19,9 +19,12 @@ model:
 inputRequirements:
   referenceImage: none
   instructions:
-    en: No reference image is required. Copy the prompt and generate one image. Keep all lettering in English.
+    en: No reference image is required. Copy the prompt and generate one image. Keep
+      all lettering in English.
     zh-Hans: 无需参考图，复制提示词后生成一张图片。画面文字保持英文。
     ja: 参照画像は不要です。プロンプトをコピーして、画像を1枚生成してください。画像内の文字はすべて英語にしてください。
+    de: Es ist kein Referenzbild erforderlich. Kopiere den Prompt und generiere
+      ein Bild. Lass alle Schriftzüge auf Englisch.
   slots: []
 showcaseExampleId: x_347
 promptProvenance: original
@@ -41,6 +44,7 @@ annotations:
       en: Six visual groups keep the collage simple.
       zh-Hans: 六组视觉元素让拼贴保持简洁。
       ja: 6つのまとまりに分けて、コラージュをシンプルに保っています。
+      de: Sechs visuelle Gruppen halten die Collage einfach.
   - phrase: tactile paper-cut shapes
     region:
       x: 0.34
@@ -51,3 +55,4 @@ annotations:
       en: Layered paper textures create the collage style.
       zh-Hans: 层叠纸张质感形成拼贴风格。
       ja: 重なった紙の質感が、コラージュのスタイルを作っています。
+      de: Geschichtete Papiertexturen erzeugen den Collagestil.

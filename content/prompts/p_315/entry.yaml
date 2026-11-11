@@ -22,6 +22,7 @@ inputRequirements:
     en: Use the complete rewritten prompt without an input image.
     zh-Hans: 使用完整改编提示词，不需要参考图。
     ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
+    de: Verwende den vollständigen umgeschriebenen Prompt ohne Eingabebild.
   slots: []
 showcaseExampleId: x_379
 promptProvenance: independent-adaptation
@@ -37,18 +38,24 @@ inspirationSources:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
       ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
+      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
+        Beispiel
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
       ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
+      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
+        gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118284291381875124&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is
         archived separately.
       zh-Hans: 独立改编；原词三次尝试失败并另行归档。
       ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
+      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen
+        und ist separat archiviert.
     metrics:
       - key: likes
         value: 18
@@ -56,6 +63,7 @@ inspirationSources:
           en: Source post likes
           zh-Hans: 原帖点赞
           ja: 元投稿のいいね数
+          de: Likes des Quellbeitrags
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/tadasgedgaudas/status/2118284291381875124

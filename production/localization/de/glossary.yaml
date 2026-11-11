@@ -1,6 +1,9 @@
 schemaVersion: 1
 locale: de
-status: draft
+status: reviewed
+reviewer: AI Codex root
+reviewedAt: 2026-11-11
+reviewScope: Terminology and preservation rules checked against the fully reviewed German corpus; not a browser or production approval.
 sourcePolicy: Shared YAML uses the explicit default-locale value, otherwise the first explicit locale in fixed order. Reports record the source file and field; a translation must never overwrite that source.
 terms:
   - { source: Prompt, target: Prompt, sourceFile: src/i18n/messages/en/detail.json, note: Der Text für das Modell; von der Beschreibung auf der Seite unterscheiden. }
