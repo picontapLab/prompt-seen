@@ -118,6 +118,7 @@
   }
   @media (hover: hover) and (pointer: fine) {
     .result:hover {
+      --mark: var(--text-primary);
       background: var(--accent-subtle);
     }
   }

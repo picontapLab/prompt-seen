@@ -14,7 +14,12 @@ export const textDirection = (lang: string): 'rtl' | 'ltr' =>
 /** The name of a prompt's language in the page language, e.g. "English" or "英语" (§11.8.3). */
 export function languageName(language: string, pageLang: string): string {
   try {
-    return new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
+    const name = new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
+    // ICU versions disagree on initial casing in Portuguese (Node: inglês, WebKit: Inglês).
+    // Portuguese language names are lowercase; preserve region/proper-name casing after the first letter.
+    return pageLang.split('-')[0]!.toLowerCase() === 'pt'
+      ? name.charAt(0).toLocaleLowerCase(pageLang) + name.slice(1)
+      : name;
   } catch {
     return language;
   }

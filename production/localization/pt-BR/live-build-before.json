@@ -1,0 +1,64 @@
+{
+  "buildId": "9f4cc71428b9baa97bc297df053d6a9c710f0690",
+  "siteName": "Prompt Seen",
+  "buildMode": "production",
+  "origin": "https://promptseen.dev",
+  "basePath": "",
+  "urlPattern": "{basePath}/{locale}/{path}",
+  "mediaBaseUrl": null,
+  "defaultLocale": "en",
+  "locales": [
+    {
+      "code": "en",
+      "pathPrefix": "en",
+      "nativeName": "English",
+      "htmlLang": "en",
+      "direction": "ltr",
+      "enabled": true,
+      "localization": {
+        "coverage": "incremental",
+        "review": "metadata",
+        "promptBodies": "optional"
+      }
+    },
+    {
+      "code": "zh-Hans",
+      "pathPrefix": "zh-hans",
+      "nativeName": "简体中文",
+      "htmlLang": "zh-Hans",
+      "direction": "ltr",
+      "enabled": true,
+      "localization": {
+        "coverage": "incremental",
+        "review": "metadata",
+        "promptBodies": "optional"
+      }
+    },
+    {
+      "code": "ja",
+      "pathPrefix": "ja",
+      "nativeName": "日本語",
+      "htmlLang": "ja",
+      "direction": "ltr",
+      "enabled": true,
+      "localization": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      }
+    },
+    {
+      "code": "de",
+      "pathPrefix": "de",
+      "nativeName": "Deutsch",
+      "htmlLang": "de",
+      "direction": "ltr",
+      "enabled": true,
+      "localization": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      }
+    }
+  ]
+}

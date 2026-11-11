@@ -1,0 +1,11 @@
+## Platform-fix Spec review appendix
+
+Read-only review of the follow-up changes to `src/ui/prompt-detail/language.ts`, `language.test.ts`, `src/ui/search/SearchPage.module.css` and the Portuguese browser samples after candidate 995d0d27.
+
+**No new actionable code finding.** The language-name fix is sufficient for the independently reproduced failure: Node produces `inglês`, WebKit produces `Inglês`, and normalizing only the initial character on Portuguese UI pages produces the same `inglês` in both environments. The rest of the name remains unchanged, preserving `Brasil` in `português (Brasil)`. The Portuguese-only condition leaves other-language grammar, including German `Englisch`, unchanged. The existing exception fallback is retained. This narrowly addresses the observed ICU casing difference without a new vocabulary table or suppressed hydration warning.
+
+The current unit test covers upper/lower initial variants for every actual Prompt/template source language in the Portuguese corpus (`en`, `ja`, `tr`, `zh-Hans`) and additionally checks regional proper-name casing and a non-Portuguese UI locale. The inspected TDD logs establish the original regression (2 failed, 1 passed) and its initial green run (3 passed). The test was then expanded to five cases; its final execution result must replace or supplement the earlier three-case log before acceptance.
+
+The search-page change applies the existing primary text color to frame labels on the same hover background that caused the contrast failure. It mirrors the previously reviewed quick-search correction. Portuguese sample tests now deliberately hover the actual search result before axe runs, across the existing widths and themes; inspection of the axe helper confirms it settles animation without moving the pointer. This retains the offending state in regression coverage.
+
+This appendix approves the reasoning and implementation scope, not an unperformed browser result. Rebuild the final candidate and rerun WebKit's actual homepage and the eight width/theme samples, plus the required three-browser matrix. Preserve exact final commit/build identifiers and separately update expanded unit-test and browser evidence. No additional vendor-translation divergence was observed or is asserted here.

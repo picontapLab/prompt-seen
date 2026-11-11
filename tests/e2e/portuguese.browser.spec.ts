@@ -132,6 +132,7 @@ test.describe('actual Portuguese artifact samples', () => {
             await expect(
               page.locator('[data-group="prompt"] li').filter({ hasText: promptDetail('pt-BR', 'p_012').title }),
             ).toBeVisible();
+            await page.locator('[data-group="prompt"] li a').first().hover();
           }
           const preview = page.locator('[data-static-from="lg"] > button');
           if ((await preview.isVisible()) && (await preview.getAttribute('aria-expanded')) !== 'true') {
