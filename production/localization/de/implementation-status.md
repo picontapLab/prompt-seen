@@ -66,11 +66,16 @@ German production candidate. Content validation still reports 0 errors and
 0 publication errors, with 10 existing stale-translation warnings and 1 unused-media
 information finding retained.
 
-The final full-corpus Vitest run passed 56 files and 495 tests. TypeScript and ESLint
-passed before the final browser-test additions; they are being rechecked with those
-additions. Regenerated preview HTTP/browser checks and the remaining sample
-favorites/popup flow are in progress. These working-tree checks include the
-user's pre-existing source edits; the eventual production candidate must be isolated.
+The full-corpus Vitest run passed 56 files and 495 tests; a subsequent German
+highlighting check adds one passing test. TypeScript and focused ESLint pass.
+The regenerated preview passed 201 HTTP checks and all 132 German browser cases
+across Chromium, Firefox and WebKit (126 initial passes, six browsing-flow passes
+after correcting test assumptions about popup navigation and saved-button labels).
+All nine explicit rendered umlaut/transliterated/decomposed highlighting checks
+pass. The multilingual run passed 202 checks, skipped four Chromium-only IME
+cases, and one Firefox navigation timeout passed on isolated rerun. These
+working-tree checks include the user's pre-existing source edits; the eventual
+production candidate must be isolated.
 
 ## Remaining acceptance and release
 

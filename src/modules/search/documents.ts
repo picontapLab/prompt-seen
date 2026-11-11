@@ -1,4 +1,12 @@
-import type { ImageRef, LocaleIndex, PromptDetail, TemplateDetail, Term } from '@/modules/content/types';
+import type {
+  ImageRef,
+  LocaleIndex,
+  PromptDetail,
+  RichBlock,
+  RichInline,
+  TemplateDetail,
+  Term,
+} from '@/modules/content/types';
 import type { PopularTerm, SearchDocument, SearchThumb, SuggestTerm } from './types';
 
 // Build time: the search documents of one locale (design doc §13.1), from the same content model
@@ -22,6 +30,38 @@ const thumbOf = (image: ImageRef | null): SearchThumb | null => {
 
 /** Every word that finds a term: its label, its aliases and its labels in other languages. */
 const termWords = (term: Term) => [term.label, ...term.aliases];
+
+const inlineText = (nodes: readonly RichInline[]): string =>
+  nodes.map((node) => ('v' in node ? node.v : 'c' in node ? inlineText(node.c) : ' ')).join('');
+
+/** Visible explanation text is searchable; link targets and image storage paths are not. */
+function explanationText(blocks: readonly RichBlock[]): string {
+  return blocks
+    .map((block): string => {
+      switch (block.t) {
+        case 'p':
+        case 'h2':
+        case 'h3':
+        case 'h4':
+          return inlineText(block.c);
+        case 'ul':
+        case 'ol':
+          return block.items.map(explanationText).join(' ');
+        case 'blockquote':
+        case 'callout':
+          return explanationText(block.c);
+        case 'pre':
+          return block.v;
+        case 'figure':
+          return block.caption ?? '';
+        case 'table':
+          return [...block.head, ...block.rows.flat()].map(inlineText).join(' ');
+        case 'hr':
+          return '';
+      }
+    })
+    .join(' ');
+}
 
 export function searchDocuments({ index, prompt, template, pages }: DocumentSources): SearchDocument[] {
   const terms = new Map(index.terms.map((t) => [`${t.kind}:${t.id}`, t]));
@@ -59,7 +99,7 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
       tagLocales,
       terms: [p.id, p.frameNumber, words, p.hasGifOutput || p.cover.mimeType === 'image/gif' ? 'GIF' : ''].join(' \n'),
       model: [p.model.displayName, p.model.providerModelId].filter(Boolean).join(' \n'),
-      body: detail?.prompt.text ?? p.promptOpening,
+      body: detail ? `${detail.prompt.text}\n${explanationText(detail.body)}` : p.promptOpening,
     });
   }
 
@@ -89,7 +129,9 @@ export function searchDocuments({ index, prompt, template, pages }: DocumentSour
         ...(detail?.version.fields.map((f) => f.label) ?? []),
       ].join(' \n'),
       model: '',
-      body: detail?.version.body.replace(/\{\{\s*\w+\s*\}\}/g, ' ') ?? t.bodyExcerpt,
+      body: detail
+        ? `${detail.version.body.replace(/\{\{\s*\w+\s*\}\}/g, ' ')}\n${explanationText(detail.body)}`
+        : t.bodyExcerpt,
     });
   }
 

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "evaluatedAt": "2026-11-11T05:16:58.670Z",
+  "method": "Same current content and final analyzer, with and without visible explanatory body text; serialized index metadata uses empty suggestions/popular arrays. This isolates prose cost, not a production before/after language build.",
+  "measurements": [
+    {
+      "locale": "en",
+      "documents": 383,
+      "withExplanation": {
+        "bytes": 1105468,
+        "gzipBytes": 204010
+      },
+      "withoutExplanation": {
+        "bytes": 945210,
+        "gzipBytes": 179217
+      }
+    },
+    {
+      "locale": "zh-Hans",
+      "documents": 379,
+      "withExplanation": {
+        "bytes": 1662303,
+        "gzipBytes": 287713
+      },
+      "withoutExplanation": {
+        "bytes": 1134260,
+        "gzipBytes": 222345
+      }
+    },
+    {
+      "locale": "ja",
+      "documents": 379,
+      "withExplanation": {
+        "bytes": 2077581,
+        "gzipBytes": 366092
+      },
+      "withoutExplanation": {
+        "bytes": 1283849,
+        "gzipBytes": 250430
+      }
+    },
+    {
+      "locale": "de",
+      "documents": 379,
+      "withExplanation": {
+        "bytes": 1225226,
+        "gzipBytes": 226585
+      },
+      "withoutExplanation": {
+        "bytes": 995558,
+        "gzipBytes": 191827
+      }
+    }
+  ]
+}

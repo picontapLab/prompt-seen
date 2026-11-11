@@ -77,7 +77,11 @@ export function createIndex(documents: readonly SearchDocument[], locale: string
   mini.addAll(
     documents.map((document) => ({
       ...document,
-      aliases: domainAliases([document.title, document.terms, document.description].join(' '), locale),
+      aliases: domainAliases(
+        [document.title, document.terms, document.description, document.body].join(' '),
+        locale,
+        document.kind,
+      ),
     })),
   );
   return mini;

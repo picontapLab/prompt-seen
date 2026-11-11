@@ -13,6 +13,17 @@ function memoryStorage(initial: Record<string, string> = {}) {
 }
 
 describe('highlighting (§11.8.6)', () => {
+  it('preserves German whole words and UTF-16 ranges after spelling normalization', () => {
+    expect(highlightParts('🖼 Straße, Größe und Porträt!', 'de', ['strasse', 'grosse', 'portrat'])).toEqual([
+      { text: '🖼 ', mark: false },
+      { text: 'Straße', mark: true },
+      { text: ', ', mark: false },
+      { text: 'Größe', mark: true },
+      { text: ' und ', mark: false },
+      { text: 'Porträt', mark: true },
+      { text: '!', mark: false },
+    ]);
+  });
   it('marks whole words, case and accents folded', () => {
     expect(highlightParts('Neon café, NEON sign', 'en', ['neon', 'cafe'])).toEqual([
       { text: 'Neon', mark: true },

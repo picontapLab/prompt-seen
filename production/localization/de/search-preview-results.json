@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
   "locale": "de",
-  "evaluatedAt": "2026-11-11T04:13:41.976Z",
-  "stage": "partial-library-preview; not production acceptance",
-  "passed": 6,
+  "evaluatedAt": "2026-11-11T05:16:58.669Z",
+  "stage": "complete-library source preview; browser and production candidate checks separate",
+  "ranking": "topK per displayed content-kind group, matching design section11.8.6 and search API",
+  "passed": 32,
   "total": 32,
   "results": [
     {
@@ -11,137 +12,327 @@
       "expectedKeys": [
         "prompt/p_107"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_107"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Strasse Japan",
       "expectedKeys": [
         "prompt/p_107"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_107"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "STRASSE JAPAN",
       "expectedKeys": [
         "prompt/p_107"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_107"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Porträt Magazincover",
       "expectedKeys": [
         "prompt/p_111"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_111"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Portraet Magazincover",
       "expectedKeys": [
         "prompt/p_111"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_111"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Porträt Magazincover",
       "expectedKeys": [
         "prompt/p_111"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_111"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Produktfotografie Studio",
       "expectedKeys": [
         "prompt/p_151"
       ],
-      "actual": [
-        "template/t_008",
-        "prompt/p_105"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_151",
+            "prompt/p_140",
+            "prompt/p_152",
+            "prompt/p_153"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_035",
+            "template/t_037",
+            "template/t_036"
+          ]
+        }
       ],
-      "pass": false
+      "pass": true
     },
     {
       "query": "Produktfoto Studio",
       "expectedKeys": [
         "prompt/p_151"
       ],
-      "actual": [
-        "template/t_008",
-        "prompt/p_105"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_151",
+            "prompt/p_140",
+            "prompt/p_152",
+            "prompt/p_153"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_035",
+            "template/t_037",
+            "template/t_036"
+          ]
+        }
       ],
-      "pass": false
+      "pass": true
     },
     {
       "query": "Fotografie Produkt Studio",
       "expectedKeys": [
         "prompt/p_151"
       ],
-      "actual": [
-        "template/t_008",
-        "prompt/p_105"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_151",
+            "prompt/p_105",
+            "prompt/p_153",
+            "prompt/p_152",
+            "prompt/p_140"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_035",
+            "template/t_008",
+            "template/t_036",
+            "template/t_037"
+          ]
+        }
       ],
-      "pass": false
+      "pass": true
     },
     {
       "query": "Produktfoto schwebend",
       "expectedKeys": [
         "prompt/p_154"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_154"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_038"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Produkt Detail Draufsicht",
       "expectedKeys": [
         "prompt/p_156"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_156"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_040"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Produkt Alltag",
       "expectedKeys": [
         "prompt/p_158"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_158",
+            "prompt/p_157"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_042",
+            "template/t_041"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Porträt Aufzug Anzug",
       "expectedKeys": [
         "prompt/p_315"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_315"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Porträt See Mondlicht",
       "expectedKeys": [
         "prompt/p_314"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_314"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Porträt Windschutzscheibe Stadtplan",
       "expectedKeys": [
         "prompt/p_313"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_313"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Poster Fuji",
       "expectedKeys": [
         "prompt/p_290"
       ],
-      "actual": [
-        "prompt/p_290"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_290",
+            "prompt/p_288",
+            "prompt/p_289"
+          ]
+        }
       ],
       "pass": true
     },
@@ -150,8 +341,17 @@
       "expectedKeys": [
         "prompt/p_290"
       ],
-      "actual": [
-        "prompt/p_290"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_290",
+            "prompt/p_288",
+            "prompt/p_289"
+          ]
+        }
       ],
       "pass": true
     },
@@ -160,24 +360,51 @@
       "expectedKeys": [
         "prompt/p_287"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_287"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Aufkleber Montag",
       "expectedKeys": [
         "prompt/p_287"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_287"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Poster Kolosseum",
       "expectedKeys": [
         "prompt/p_289"
       ],
-      "actual": [
-        "prompt/p_289"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_289",
+            "prompt/p_288",
+            "prompt/p_290"
+          ]
+        }
       ],
       "pass": true
     },
@@ -186,9 +413,21 @@
       "expectedKeys": [
         "prompt/p_170"
       ],
-      "actual": [
-        "prompt/p_170",
-        "template/t_054"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_170"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_054"
+          ]
+        }
       ],
       "pass": true
     },
@@ -197,85 +436,237 @@
       "expectedKeys": [
         "prompt/p_239"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_239"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Katze Büro Sticker",
       "expectedKeys": [
         "prompt/p_221"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_221",
+            "prompt/p_278"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_071"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Beleuchtung Neon Porträt",
       "expectedKeys": [
         "prompt/p_005"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_005",
+            "prompt/p_036",
+            "prompt/p_071",
+            "prompt/p_050",
+            "prompt/p_019"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_003",
+            "template/t_052"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Licht Neon Porträt",
       "expectedKeys": [
         "prompt/p_005"
       ],
-      "actual": [
-        "prompt/p_036",
-        "prompt/p_019",
-        "template/t_052",
-        "prompt/p_168"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_005",
+            "prompt/p_036",
+            "prompt/p_071",
+            "prompt/p_050",
+            "prompt/p_019"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_003",
+            "template/t_052"
+          ]
+        }
       ],
-      "pass": false
+      "pass": true
     },
     {
       "query": "Hintergrund Salbei Tee",
       "expectedKeys": [
         "prompt/p_003"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_003",
+            "prompt/p_024"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Bildkomposition Konzert",
       "expectedKeys": [
         "prompt/p_002"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_002",
+            "prompt/p_156"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_040"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Vorlage Produktposter",
       "expectedKeys": [
         "template/t_001"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_053",
+            "prompt/p_029",
+            "prompt/p_072",
+            "prompt/p_043",
+            "prompt/p_082"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_001"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Vorlage Tusche",
       "expectedKeys": [
         "template/t_002"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_012",
+            "prompt/p_031",
+            "prompt/p_063",
+            "prompt/p_056",
+            "prompt/p_092"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_002",
+            "template/t_008"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "Vorlage Neon Porträt",
       "expectedKeys": [
         "template/t_003"
       ],
-      "actual": [],
-      "pass": false
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_005",
+            "prompt/p_036",
+            "prompt/p_071",
+            "prompt/p_050",
+            "prompt/p_019"
+          ]
+        },
+        {
+          "kind": "template",
+          "keys": [
+            "template/t_003",
+            "template/t_052"
+          ]
+        }
+      ],
+      "pass": true
     },
     {
       "query": "GPT Image p_111",
       "expectedKeys": [
         "prompt/p_111"
       ],
-      "actual": [
-        "prompt/p_111"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_111"
+          ]
+        }
       ],
       "pass": true
     },
@@ -284,8 +675,15 @@
       "expectedKeys": [
         "prompt/p_217"
       ],
-      "actual": [
-        "prompt/p_217"
+      "topK": 5,
+      "reason": "Frozen source-grounded German launch scenario; evaluate after the referenced descriptions are localized.",
+      "groups": [
+        {
+          "kind": "prompt",
+          "keys": [
+            "prompt/p_217"
+          ]
+        }
       ],
       "pass": true
     }

@@ -343,7 +343,10 @@ describe('shared content across interface languages', () => {
         pages: { collections: true, topics: true },
       });
       expect(documents.filter((d) => d.kind === 'prompt').map((d) => d.id)).toHaveLength(en.prompts.length);
-      expect(documents.find((d) => d.id === 'prompt:p_001')).toMatchObject({ path: p.path, body: PROMPT });
+      expect(documents.find((d) => d.id === 'prompt:p_001')).toMatchObject({
+        path: p.path,
+        body: `${PROMPT}\nHow to adjust it Change the seal colour.`,
+      });
     }
     // Standalone editorial pages retain their own publication rules.
     expect(r.built!.locales.get('zh-Hans')!.pages.map((page) => page.slug)).not.toContain('editorial');
@@ -675,7 +678,7 @@ describe('prompt body languages', () => {
     for (const locale of ['en', 'ja']) expect(detail<PromptDetail>(result, 'prompt', locale, 'p_001')!.prompt).toMatchObject({ text: PROMPT, language: 'en' });
     const index = result.built!.locales.get('zh-Hans')!;
     const documents = searchDocuments({ index, prompt: () => chinese, template: () => null, pages: { collections: true, topics: true } });
-    expect(documents.find((d) => d.id === 'prompt:p_001')!.body).toBe(zh);
+    expect(documents.find((d) => d.id === 'prompt:p_001')!.body).toBe(`${zh}\nHow to adjust it Change the seal colour.`);
   });
 
   it('keeps a present translation after the source prompt changes', () => {

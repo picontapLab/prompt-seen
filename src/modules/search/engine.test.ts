@@ -74,6 +74,14 @@ describe('ranking and matching (§13.1)', () => {
     expect(ids('Fotografie', engine)).toEqual(['literal', 'compound']);
     expect(ids('Produktfoto', engine)).toContain('compound');
   });
+  it('does not turn generic photography into product photography through aliases', () => {
+    const engine = engineOf('de', [
+      doc('family', { title: 'Familienporträt', body: 'Diese Fotografie zeigt eine Familie.' }),
+      doc('product', { title: 'Produktfotografie' }),
+    ]);
+    expect(ids('Packshot', engine)).toEqual(['product']);
+    expect(ids('Fotografie', engine)).toContain('product');
+  });
   it('ranks title matches above prompt text', () => {
     expect(ids('neon')).toEqual(['neon-title', 'neon-body']);
   });

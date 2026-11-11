@@ -117,3 +117,17 @@ The registry and scope migration does not certify German content or deployment.
 German still needs the remaining library descriptions and shared text, their actual
 review evidence, frozen search acceptance cases, production candidate acceptance and
 verified deployment before it can be enabled.
+
+### Search acceptance with localized prose
+
+Prompt and template search documents include visible explanatory body text alongside
+the unchanged model Prompt at the secondary body weight. Link URLs and image storage
+paths are excluded. Maintained German compounds and domain aliases expand retrieval;
+product-photography terms may emit the broader Fotografie alias, while generic
+Fotografie does not imply a product image. Original-word matches retain higher weight.
+
+Frozen acceptance cases use `topK` per displayed content-kind group, matching the
+existing five-result quick-search groups and independently paginated search page.
+Keep every frozen query and expected key. Validate both serialized-engine results
+and the actual browser Worker. Record index-size changes for every affected locale;
+these indexes must remain loaded on demand.
