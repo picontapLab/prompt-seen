@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { loadConfig } from '../../src/config/load';
 import type { PromptDetail, TemplateDetail } from '../../src/modules/content/types';
 import { popularUseCases, searchDocuments, suggestTerms } from '../../src/modules/search/documents';
@@ -23,7 +23,7 @@ function build(mode: 'production' | 'preview') {
   const { built } = loadContent({ root: ROOT, config, url });
   if (!built) throw new Error('the sample content must build');
   const details = new Map(built.details.map((d) => [`${d.locale}/${d.kind}/${d.key}`, d.model]));
-  const engine = (code: string, pages = { collections: false, topics: false }) => {
+  const buildEngine = (code: string, pages = { collections: false, topics: false }) => {
     const index = built.locales.get(code)!;
     const docs = searchDocuments({
       index,
@@ -43,11 +43,29 @@ function build(mode: 'production' | 'preview') {
     };
     return { engine: loadEngine(file), docs, index };
   };
+  // A browser loads one index and reuses it for queries. Keep corpus-sized fixture
+  // construction out of repeated query assertions as the explanatory text grows.
+  const engines = new Map<string, ReturnType<typeof buildEngine>>();
+  const engine = (code: string, pages = { collections: false, topics: false }) => {
+    const key = `${code}:${pages.collections}:${pages.topics}`;
+    let result = engines.get(key);
+    if (!result) {
+      result = buildEngine(code, pages);
+      engines.set(key, result);
+    }
+    return result;
+  };
   return { built, engine };
 }
 
 const production = build('production');
 const preview = build('preview');
+
+beforeAll(() => {
+  production.engine('en');
+  production.engine('zh-Hans');
+  preview.engine('ja');
+}, 20_000);
 
 const titles = (code: string, q: string, b = production) =>
   search(b.engine(code).engine, q).groups.flatMap((g) => g.hits.map((h) => h.title));

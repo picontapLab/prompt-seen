@@ -1,8 +1,9 @@
 # Localization implementation status
 
-Recorded 2026-11-11 UTC. German content is complete and strict ready. Production
-candidate acceptance and deployment remain outstanding; `de.preview: true` and
-`de.enabled: false` are intentional at this stage.
+Recorded 2026-11-11 UTC before release. German content is complete and strict ready.
+The isolated production candidate enables German and has passed production
+acceptance. This document records pre-release evidence; deployment must publish
+the rebuilt, verified release commit and check its live build ID.
 
 ## Implemented contracts
 
@@ -77,15 +78,66 @@ cases, and one Firefox navigation timeout passed on isolated rerun. These
 working-tree checks include the user's pre-existing source edits; the eventual
 production candidate must be isolated.
 
-## Remaining acceptance and release
+## Production candidate acceptance
 
-P6 requires an isolated commit/workspace with `de.enabled: true`, complete root and
-`/prompt-seen` production builds, source and HTTP/SEO/output-set checks, actual German
-Worker search, full browser/axe coverage, keyboard and 200% zoom acceptance, plus
-comparable build time, file/byte counts, gzip search sizes, first-load JS and font
-requests with and without German. Existing CJK and Arabic RTL behavior must pass.
+Candidate `2450f6fdafb6df4c84cf8edcfc5d6cbcd9ab3d3d` was prepared on
+`codex/german-production-candidate`, separate from the automatic deployment branch.
+It differs from search/content commit `a66244882a690a37769a296eb5c3966588ea29e5`
+only by `de.enabled: true`. The isolated checkouts exclude the user's uncommitted
+source edits. Both German and Japanese remain strict ready: 381/381 current,
+indexable targets and 2,220/2,220 current fields.
 
-P7 has not started. No enabling production commit, push, deployment or live
-verification has been performed. Deploy the same fully accepted commit, verify its
-build ID with `check:live`, and retain the previous successful deployment for rollback.
-Preview artifacts and disabled-German production builds do not replace these steps.
+Root and `/prompt-seen` production artifacts were built from that same candidate.
+The root full suite accepted 1,221 HTTP/browser tests with 71 existing conditional
+skips; subpath HTTP, German, layout, search and navigation acceptance passed 536
+with 30 conditional skips. Chromium, Firefox and WebKit cover all four widths,
+both themes, actual German Worker queries and highlighting, popup/favorites,
+copy/download consistency, keyboard use, metadata/output sets and axe.
+
+The initial concurrently running suites timed out on seven root and two subpath
+cases. All passed in subsequent one-worker runs with unchanged code; the subpath
+rerun also checked both scenarios in both affected browsers. These are recorded
+as reruns, not hidden initial passes. Existing preview CJK/Arabic coverage is
+historical working-tree evidence from build `f85b29e611f1`; the release CI rebuilds
+its preview matrix from the release commit.
+
+Native Chromium zoom used `chrome.tabs.setZoom(tabId, 2)`, confirmed by the browser
+zoom API and 720 CSS-pixel layout viewport. Twelve page/theme combinations at each
+base path passed layout, keyboard and axe checks. Firefox and WebKit additionally
+passed the equivalent 720 CSS-pixel reflow checks; those are not labelled native
+browser zoom measurements.
+
+`production-acceptance.json` retains the same-configuration production comparison,
+strict counts and native-zoom results. Adding German increased output from 13,384
+to 16,858 files and HTML from 134,081,216 to 181,737,451 bytes. German's compressed
+search index is 228,043 bytes. English first-load gzip JavaScript changed by one
+byte on home, Prompt list and template detail; all measured English/German pages
+requested six fonts. Existing first-load budget exceptions remain unchanged.
+Ordinary-page lazy search behavior passed browser acceptance. Local build timings
+are descriptive single runs with different cache warmth, not a speed claim.
+
+Final isolated unit verification passed all 56 files and 496 tests. One corpus
+query test initially timed out rebuilding indexes; its fixture now caches engines
+by locale/page flags and warms them before assertions. All assertions are retained.
+TypeScript, ESLint and repository formatting checks passed. Standards and spec
+reviews have no remaining actionable findings. Earlier 44/44 token contrast and
+Storybook checks remain applicable; release CI repeats them on the release commit.
+
+## Release procedure and rollback
+
+The release-record commit adds documentation/evidence and test-only index-fixture
+reuse; application code and localized content remain identical. Rebuild it at root and
+subpath with its full SHA as BUILD_ID and rerun HTTP and German browser acceptance
+before updating the automatic deployment branch. Production deployment must use
+that exact commit; its workflow runs the production gates and live verification.
+
+Immediately before release, both the canonical site's build endpoint and the
+immutable previous deployment served `5bdd4e7392d89d22a638761b6898e65903fa3bf1`.
+The rollback artifact is https://f5ad7f21.prompt-seen-dkj.pages.dev; the existing
+Rollback workflow can select that commit. A rollback must also address the enabling
+commit on the deployment branch, as described in `docs/operations.md`.
+
+P7 is complete only after the release workflow and independent canonical
+`check:live --expect-build` pass. Keep the final deployment receipt with the local
+release artifacts and workflow run, rather than altering the already accepted
+release commit to insert its own hash.

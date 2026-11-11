@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "candidateCommit": "2450f6fdafb6df4c84cf8edcfc5d6cbcd9ab3d3d",
+  "baselineCommit": "a66244882a690a37769a296eb5c3966588ea29e5",
+  "configuration": {
+    "buildMode": "production",
+    "basePath": "",
+    "origin": "https://promptseen.dev",
+    "mediaBaseUrl": null
+  },
+  "measurementNotes": [
+    "Single local build runs; candidate reused a build cache, so timings are descriptive and do not demonstrate a speed improvement.",
+    "Cold browser contexts,1440x900 viewport,gzip level6,HTML-referenced first-load scripts and all font requests after6seconds idle.",
+    "Only the candidate enables German; source content and code are otherwise identical."
+  ],
+  "baseline": {
+    "label": "baseline-root",
+    "commit": "a66244882a690a37769a296eb5c3966588ea29e5",
+    "buildMode": "production",
+    "basePath": "",
+    "totalSeconds": 38.295230417,
+    "stages": [
+      {
+        "command": "--import tsx scripts/config-gen.ts",
+        "seconds": 0.26081174999999995,
+        "status": 0
+      },
+      {
+        "command": "--import tsx scripts/content-build.ts",
+        "seconds": 8.080963542000001,
+        "status": 0
+      },
+      {
+        "command": "node_modules/next/dist/bin/next build",
+        "seconds": 24.044201958000002,
+        "status": 0
+      },
+      {
+        "command": "--import tsx scripts/package.ts",
+        "seconds": 5.664035707999999,
+        "status": 0
+      }
+    ],
+    "files": 13384,
+    "bytes": 1167670479,
+    "html": {
+      "files": 1210,
+      "bytes": 134081216
+    },
+    "json": {
+      "files": 898,
+      "bytes": 25025210
+    },
+    "search": [
+      {
+        "path": "dist/generated/en/search/index.json",
+        "gzipBytes": 204586
+      },
+      {
+        "path": "dist/generated/ja/search/index.json",
+        "gzipBytes": 367898
+      },
+      {
+        "path": "dist/generated/zh-Hans/search/index.json",
+        "gzipBytes": 288918
+      }
+    ]
+  },
+  "candidate": {
+    "label": "candidate-root",
+    "commit": "2450f6fdafb6df4c84cf8edcfc5d6cbcd9ab3d3d",
+    "buildMode": "production",
+    "basePath": "",
+    "totalSeconds": 35.8194965,
+    "stages": [
+      {
+        "command": "--import tsx scripts/config-gen.ts",
+        "seconds": 0.203001583,
+        "status": 0
+      },
+      {
+        "command": "--import tsx scripts/content-build.ts",
+        "seconds": 8.942980291,
+        "status": 0
+      },
+      {
+        "command": "node_modules/next/dist/bin/next build",
+        "seconds": 21.168189083999998,
+        "status": 0
+      },
+      {
+        "command": "--import tsx scripts/package.ts",
+        "seconds": 5.153962124999998,
+        "status": 0
+      }
+    ],
+    "files": 16858,
+    "bytes": 1306227314,
+    "html": {
+      "files": 1612,
+      "bytes": 181737451
+    },
+    "json": {
+      "files": 1197,
+      "bytes": 33265292
+    },
+    "search": [
+      {
+        "path": "dist/generated/de/search/index.json",
+        "gzipBytes": 228043
+      },
+      {
+        "path": "dist/generated/en/search/index.json",
+        "gzipBytes": 204588
+      },
+      {
+        "path": "dist/generated/ja/search/index.json",
+        "gzipBytes": 367897
+      },
+      {
+        "path": "dist/generated/zh-Hans/search/index.json",
+        "gzipBytes": 288924
+      }
+    ]
+  },
+  "baselineRuntime": {
+    "basePath": "",
+    "records": [
+      {
+        "path": "/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 198518,
+        "idleGzipBytes": 328615,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/en/prompts/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 207115,
+        "idleGzipBytes": 327274,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/en/templates/product-poster/",
+        "firstLoadScripts": 16,
+        "firstLoadGzipBytes": 211114,
+        "idleGzipBytes": 339134,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      }
+    ]
+  },
+  "candidateRuntime": {
+    "basePath": "",
+    "records": [
+      {
+        "path": "/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 198519,
+        "idleGzipBytes": 328617,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/en/prompts/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 207116,
+        "idleGzipBytes": 327276,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/en/templates/product-poster/",
+        "firstLoadScripts": 16,
+        "firstLoadGzipBytes": 211115,
+        "idleGzipBytes": 339136,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/de/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 198548,
+        "idleGzipBytes": 294537,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/de/prompts/",
+        "firstLoadScripts": 15,
+        "firstLoadGzipBytes": 207116,
+        "idleGzipBytes": 293111,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      },
+      {
+        "path": "/de/templates/product-poster/",
+        "firstLoadScripts": 16,
+        "firstLoadGzipBytes": 211115,
+        "idleGzipBytes": 304971,
+        "fonts": [
+          "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2"
+        ]
+      }
+    ]
+  },
+  "nativeZoom": {
+    "method": "Chromium extension chrome.tabs.setZoom(tabId,2); native page zoom, not CSS zoom or pinch scaling.",
+    "root": {
+      "nativeZoom": 2,
+      "before": {
+        "width": 720,
+        "dpr": 2
+      },
+      "checks": [
+        {
+          "route": "/de/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/plum-branch-in-ink/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/two-person-wedding-editorial/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/image26-g01-monkey-raising-a-lantern/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/templates/product-poster/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/search/?q=Portraet",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/plum-branch-in-ink/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/two-person-wedding-editorial/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/image26-g01-monkey-raising-a-lantern/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/templates/product-poster/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/search/?q=Portraet",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        }
+      ]
+    },
+    "subpath": {
+      "nativeZoom": 2,
+      "before": {
+        "width": 720,
+        "dpr": 2
+      },
+      "checks": [
+        {
+          "route": "/de/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/plum-branch-in-ink/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/two-person-wedding-editorial/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/image26-g01-monkey-raising-a-lantern/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/templates/product-poster/",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/search/?q=Portraet",
+          "theme": "light",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/plum-branch-in-ink/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/two-person-wedding-editorial/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/prompts/image26-g01-monkey-raising-a-lantern/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/templates/product-poster/",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        },
+        {
+          "route": "/de/search/?q=Portraet",
+          "theme": "dark",
+          "layout": [],
+          "axe": [],
+          "width": 720
+        }
+      ]
+    }
+  },
+  "strict": {
+    "de": {
+      "ready": true,
+      "blocking": false,
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "sourceRevision": "a66244882a690a37769a296eb5c3966588ea29e5:495672b36caef1cd62f2831e8c2877aefeed4004ebc7d75787d559ad40c7f996"
+    },
+    "ja": {
+      "ready": true,
+      "blocking": false,
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "sourceRevision": "2450f6fdafb6df4c84cf8edcfc5d6cbcd9ab3d3d:1f254ca6baf362cc950f6802ebce6dce9cd014fd4d0e389d5188cd5c47aa82fc"
+    }
+  },
+  "initialE2E": {
+    "root": {
+      "total": 1292,
+      "passed": 1214,
+      "skipped": 71,
+      "timedOut": 7
+    },
+    "subpath": {
+      "total": 566,
+      "passed": 534,
+      "skipped": 30,
+      "timedOut": 2
+    }
+  },
+  "rollback": {
+    "commit": "5bdd4e7392d89d22a638761b6898e65903fa3bf1",
+    "immutableDeployment": "https://f5ad7f21.prompt-seen-dkj.pages.dev",
+    "liveBuildVerified": true,
+    "immutableBuildVerified": true
+  },
+  "e2eReruns": {
+    "root": {
+      "passed": 7,
+      "workers": 1
+    },
+    "subpath": {
+      "passed": 4,
+      "workers": 1,
+      "note": "Both previously timed-out scenarios passed in Chromium and Firefox."
+    }
+  },
+  "e2eAccepted": {
+    "root": {
+      "passed": 1221,
+      "skipped": 71
+    },
+    "subpath": {
+      "passed": 536,
+      "skipped": 30
+    }
+  },
+  "verificationNotes": [
+    "Initial full browser suites ran concurrently. All9timeout failures passed after those suites stopped, with one worker and unchanged code.",
+    "Initial isolated unit suite overlapped browser runs and hit only timeout limits; final unit run is sequential with at most2workers.",
+    "Skipped browser checks are existing platform-specific clipboard/IME cases and preview-only locale scenarios, not waived German failures.",
+    "After the browser runs stopped, one corpus search test still hit5seconds while repeatedly rebuilding indexes. Its fixture now reuses serialized engines and warms them in beforeAll; all assertions remain. Full56files/496tests then passed."
+  ],
+  "recordedAt": "2026-11-11T06:09:36.333188+00:00",
+  "unit": {
+    "files": 56,
+    "passed": 496,
+    "workers": 2,
+    "durationSeconds": 63.12
+  }
+}
