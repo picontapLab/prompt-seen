@@ -770,7 +770,8 @@ it('keeps CLI JSON parseable and distinguishes preparation gaps, strict failures
   expect(invoke('--locale', 'ar', '--all').status).toBe(2);
   const all = invoke('--all', '--json');
   expect(JSON.parse(all.stdout)).toMatchObject({ schemaVersion: 2, reports: expect.any(Array) });
-});
+  // Five fresh Node/tsx processes check CLI contracts, not a five-second latency budget.
+}, 20_000);
 
 it('stops a normal build with missing buildable-locale messages before replacing generated artifacts', () => {
   const root = fixture();

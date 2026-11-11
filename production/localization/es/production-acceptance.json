@@ -58,7 +58,7 @@
     "evidence": ".artifacts/localization/es/"
   },
   "deployment": {
-    "status": "pending",
+    "status": "deferred-by-user-local-commit-only",
     "repository": "picontapLab/prompt-seen",
     "canonicalUrl": "https://promptseen.dev",
     "platformUrl": null,
@@ -66,8 +66,9 @@
     "liveChecks": []
   },
   "artifactPackaging": {
-    "status": "implemented; final candidate validation pending",
-    "strategy": "byte-identical full RSC copies served through two static Pages proxy rules",
-    "evidence": "evidence/packaging-acceptance.json"
+    "status": "final candidate validation pending",
+    "strategy": "complete static export; no RSC deduplication or payload proxies",
+    "plan": "paid (owner confirmed)",
+    "documentedFileLimit": 100000
   }
 }

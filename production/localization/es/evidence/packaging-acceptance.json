@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "locale": "es",
-  "stage": "packaging-validation-before-final-candidate",
+  "stage": "historical-prototype-withdrawn",
   "recordedAt": "2026-11-11T14:37:55.302747+00:00",
   "baseCommit": "7076ed2e35f69294e864c44a47d8196480dadf4d",
   "patchSha256": "783e826348f898ef9688b1c56b099893763aa62f9bd1b72c5e87a413dc072b3b",
@@ -245,5 +245,6 @@
     "passed": 19,
     "log": ".artifacts/localization/es/compact-focused.log"
   },
-  "review": "Standards and spec scope review approved; final root/subpath/preview prepared artifacts remain pending."
+  "review": "Standards and spec scope review approved; final root/subpath/preview prepared artifacts remain pending.",
+  "withdrawalReason": "Owner confirmed paid Pages plan. Free-tier compaction removed from final candidate; original full static export retained. Historical prototype checks below do not certify the final candidate."
 }

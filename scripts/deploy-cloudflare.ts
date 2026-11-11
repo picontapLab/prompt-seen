@@ -5,9 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
-import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { runProductionDeployHook } from './lib/deploy-hook';
-import { cloudflarePayloadProxies } from './lib/hosts';
 import { OUTPUT_DIRS, ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -39,36 +37,5 @@ for (const l of config.builtLocales) {
 if (runProductionDeployHook({ root: ROOT, artifactDir: target, buildMode: config.buildMode })) {
   console.log('deploy:cloudflare: private production customization applied');
 }
-
-// Next's static export includes two byte-identical full RSC payloads per route. The fifth
-// public locale otherwise pushes this site above Pages Free's 20,000-file limit. The generated
-// 200 proxy rules keep the original URLs; source files and every other host's artifact stay intact.
-// Validate the final customized artifact before removing any copies. A future Next version or
-// private hook that changes this contract must stop preparation instead of serving wrong bytes.
-const proxyRules = cloudflarePayloadProxies(createUrlModule(urlConfigOf(config)));
-const preparedRules = fs
-  .readFileSync(path.join(target, '_redirects'), 'utf8')
-  .split('\n')
-  .map((line) => line.trim().replace(/\s+/g, ' '));
-if (!proxyRules.every((rule) => preparedRules.includes(rule))) {
-  throw new Error('cloudflare: required full RSC proxy rules are missing; rebuild and check the private hook');
-}
-const fullPayloads = fs
-  .readdirSync(targetSite, { recursive: true, encoding: 'utf8' })
-  .filter((file) => path.basename(file) === '__next._full.txt')
-  .map((file) => path.join(targetSite, file));
-for (const file of fullPayloads) {
-  const canonical = path.join(path.dirname(file), 'index.txt');
-  if (
-    !fs.lstatSync(file).isFile() ||
-    !fs.existsSync(canonical) ||
-    !fs.lstatSync(canonical).isFile() ||
-    !fs.readFileSync(file).equals(fs.readFileSync(canonical))
-  ) {
-    throw new Error(`cloudflare: full RSC payload differs from index.txt: ${path.relative(target, file)}`);
-  }
-}
-for (const file of fullPayloads) fs.unlinkSync(file);
-console.log(`deploy:cloudflare: reused ${fullPayloads.length} identical full RSC payloads through proxy rules`);
 
 console.log(`deploy:cloudflare: ${path.relative(ROOT, target)}/ ready (${config.buildMode}, build ${config.buildId})`);

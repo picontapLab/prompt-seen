@@ -1,6 +1,6 @@
 # Spanish implementation status
 
-Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing working tree. Language: universal `es`; complete/fingerprint/source-only. Spanish is enabled only on the isolated production candidate; live release remains pending. The user requested staged commits with continued implementation.
+Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing working tree. Language: universal `es`; complete/fingerprint/source-only. Spanish is enabled only on the isolated production candidate; live release remains pending. The user requested staged commits with continued implementation, then limited delivery to local commits; pushing and deployment are outside the final scope.
 
 | Stage | Status | Evidence / remaining work |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ Baseline: `ec6051f3ac7c0c066930eb49bc64d44dc619255c` plus the pre-existing worki
 | P4 | Complete | Analyzer v3, character/alias fixtures and all 32 real-corpus queries pass reloaded engine and three browser Workers. |
 | P5 | Complete | Expanded width/theme interactions, layout/axe, original Prompt, shared regressions and native Chromium 200% zoom. See evidence/preview-acceptance.json for first-run failures and isolated reruns. |
 | P6 | Validating | Isolated enabled candidate, three committed build configurations and four/five-language performance comparison. |
-| P7 | Pending | Deployment, live checks and rollback evidence. |
+| P7 | Deferred by user | Local commits only; no push or production deployment. Live checks and rollback remain a future release gate. |
 
 
 All 32 search queries are frozen in `search-cases.json` and now required even in preview. Missing descriptions remain missing; preview fallback is never translation completion.
@@ -36,6 +36,8 @@ P5 completed in isolated worktree `codex/spanish-release` because concurrent wor
 
 Release preparation discovered public/main 9f4cc714 is already deployed and contains private artifact customization. P6 must retain that commit. The default GitHub CLI identity is read-only, but the existing public SSH remote passed a push dry-run; the normal public main CI/Deploy workflow is the available publication route. No remote write has occurred.
 
-P6 packaging gap: the five-language raw export has 20,332 files, above the Pages Free limit. All 2,012 full RSC copies match their sibling index payloads. Pages 200 proxy rules preserve those URLs while upload preparation removes the duplicates only after checking the final private-hook output. Root prototype: all 2,012 URLs byte-equal/200, unknown404, 51 browser interactions passed and three existing missing-language checks skipped for absent production fixtures. Prepared count is 18,327 before the private hook's additional files. Fault probes retain all copies on any contract failure. See evidence/packaging-acceptance.json; final committed configurations and live platform headers are still pending.
+Historical withdrawn packaging prototype: the five-language raw export has 20,332 files, above the Pages Free limit. All 2,012 full RSC copies match their sibling index payloads. Pages 200 proxy rules preserve those URLs while upload preparation removes the duplicates only after checking the final private-hook output. Root prototype: all 2,012 URLs byte-equal/200, unknown404, 51 browser interactions passed and three existing missing-language checks skipped for absent production fixtures. Prepared count is 18,327 before the private hook's additional files. Fault probes retain all copies on any contract failure. See evidence/packaging-acceptance.json; final committed configurations and live platform headers are still pending.
 
 The first enabled-candidate unit run had 513 passes and four failures: one stale expected numeric contrast ratio after the token adjustment, plus three timeouts. The expected ratios and authoritative paragraph are now updated; all four files passed a serial rerun (57 tests). This failed attempt remains archived; the final candidate will run the full suite again.
+
+Final scope clarification: the owner confirmed a paid Pages plan and requested local commits only. The Free-tier payload compaction was withdrawn; the complete Next.js export and existing private deployment hook are retained. Historical prototype evidence is marked withdrawn. Candidate 72c724a0 passed 516/517 unit tests; the queue integration check exceeded its incidental five-second timeout. The three previously reproduced corpus/CLI timeout cases now receive scoped limits (20–30 seconds), retaining every behavior assertion and all other defaults. Final candidate validation is repeated after these changes.
