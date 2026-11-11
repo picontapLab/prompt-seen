@@ -35,6 +35,8 @@ inspirationSources:
         post share the metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis.
+        Mehrere Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -42,12 +44,16 @@ inspirationSources:
         refreshed."
       zh-Hans: 此前调研的原站页面及视觉核对，未刷新互动数。
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
+      de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
+        Zahlen wurden nicht aktualisiert."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#create-an-interface-preview
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
         recorded working prompt.
       zh-Hans: 来源公开原提示词；本次使用单独记录的制作提示词。
       ja: 出典に元のプロンプトがありますが、この制作では別途記録した作業用プロンプトを使っています。
+      de: Die Quelle stellt einen Originalprompt bereit; diese Produktion
+        verwendet den separat dokumentierten Arbeitsprompt.
     metrics: []
 source:
   author: Prompt Seen

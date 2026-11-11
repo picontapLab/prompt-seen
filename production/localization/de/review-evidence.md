@@ -140,3 +140,25 @@ The 530 new operations and matching `t_008` singular-swimmer description correct
 were published with 531 fingerprint-bound approvals at 04:50:42 UTC. The snapshot
 is 227/381 current targets and 1,566/2,220 current fields. No other library material,
 new browser run or production candidate was certified by this batch.
+
+## Design and editing cases
+
+AI Codex `spec_review` completed comparison of all 72 pages `p_152`–`p_223`
+and 93 Prompt-entry fields at 04:53:41 UTC on 2026-11-11. It checked complete
+page text, links and actual input/provenance contracts for 32 entry files. The
+24-line layout wording now explicitly distributes each line once across the title
+and columns. Architectural clay-render terminology describes a white 3D model,
+not a physical clay model. Original model uncertainty, generated-text limitations
+and input ordering remain unchanged.
+
+AI Codex `standards_review` opened all 54 media assets and compared all 40 run
+notes by 04:54:17 UTC. All were still PNGs. The white-model correction also
+applies to `a_341` and `x_255`; no other contradictions were found. Historical
+alpha verification in `x_276` remains a translated recorded claim, not a new
+alpha test performed by this localization review.
+
+Inspected assets: `a_315`–`a_316`, `a_320`–`a_323`, `a_325`–`a_331`,
+`a_333`–`a_348`, `a_351`–`a_355`, `a_360`, `a_363`–`a_381`.
+The 259 exact-hash approvals were bound after corrections at 04:56:10 UTC.
+This batch brings coverage to 299/381 targets and 1,753/2,220 fields; the remaining
+65 Prompt pages, 14 collections and 3 topics are separate review batches.

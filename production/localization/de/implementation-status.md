@@ -49,6 +49,11 @@ The next 50 Prompt descriptions and 480 fields are now reviewed and current,
 with one matching template-description correction. Latest coverage: 227/381
 targets and 1,566/2,220 fields; 154 targets and 654 fields remain missing.
 
+The design/editing expansion adds 72 reviewed pages and 187 fields. Latest
+coverage: 299/381 current targets and 1,753/2,220 current fields. The remaining
+82 targets are 65 Prompt descriptions, 14 collections and 3 topics; 467 fields
+remain. Japanese strict coverage remains 381/381 and 2,220/2,220 current.
+
 ## Verification
 
 These checks ran against the working source tree, including the user's existing
