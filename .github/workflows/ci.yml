@@ -2,8 +2,9 @@
 # - check: lint, format, types, content validation, colour contrast of the tokens, unit tests,
 #   and the Storybook build.
 # - secrets: gitleaks over the branch's history (§15.5.4).
-# - build-and-test: the same code built at the root and under /prompt-seen, each served by the
-#   reference nginx and tested with Playwright in Chromium, Firefox and WebKit on separate runners.
+# - build: one root production artifact and one /prompt-seen preview artifact.
+# - build-and-test: those artifacts served by reference nginx and tested with Playwright
+#   in Chromium, Firefox and WebKit on separate runners.
 # - preview: uploads the tested /prompt-seen preview build to Cloudflare Pages (noindex). It is
 #   skipped until the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
 name: CI
@@ -27,6 +28,7 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -69,6 +71,7 @@ jobs:
   # Committed secrets (design doc §15.5.4): every commit of the branch, with gitleaks' rules.
   secrets:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
         with:
@@ -76,29 +79,23 @@ jobs:
       - name: Scan the history for secrets (gitleaks)
         run: docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.30.1 git /repo --redact --no-banner --verbose
 
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
-        name: [root, subpath]
-        browser: [chromium, firefox, webkit]
         include:
-          # Production build at the root of a host.
           - name: root
             base_path: ''
             build_mode: production
-          # Preview build under the subpath, as PR previews and the host site use it.
           - name: subpath
             base_path: /prompt-seen
             build_mode: preview
-    # Each browser starts with a fresh runner: long combined runs were interrupted by runner
-    # shutdowns shortly after starting WebKit. HTTP checks run once per build, with Chromium.
-    name: build-and-test (${{ matrix.name }}, ${{ matrix.browser }})
+    name: build (${{ matrix.name }})
     env:
       BASE_PATH: ${{ matrix.base_path }}
       BUILD_MODE: ${{ matrix.build_mode }}
-      PW_BROWSERS: ${{ matrix.browser }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -107,6 +104,43 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # Preserve the build's test models and host configuration as well as its public files.
+      # A tar keeps hidden generated files and permissions intact during artifact transfer.
+      - name: Package the build and its test inputs
+        run: tar -cf build.tar dist .generated public/generated deploy/generated src/config/generated
+      - uses: actions/upload-artifact@v7
+        with:
+          name: build-${{ matrix.name }}
+          path: build.tar
+          compression-level: 1
+          retention-days: 7
+          if-no-files-found: error
+
+  build-and-test:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [root, subpath]
+        browser: [chromium, firefox, webkit]
+    # One isolated runner per browser; HTTP checks run once per artifact, with Chromium.
+    name: build-and-test (${{ matrix.name }}, ${{ matrix.browser }})
+    env:
+      PW_BROWSERS: ${{ matrix.browser }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v8
+        with:
+          name: build-${{ matrix.name }}
+      - name: Restore the exact build and its test inputs
+        run: tar -xf build.tar && rm build.tar
       - name: Install Playwright browsers
         # Playwright 1.65 fixes WebKit process retention, but its Firefox 159 crashes with
         # SIGSEGV when closing the menu after an axe audit. Keep the complete Firefox suite
@@ -141,11 +175,19 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: playwright-${{ matrix.name }}-${{ matrix.browser }}
-          path: test-results/
+          path: |
+            test-results/
+            playwright-report/
           retention-days: 7
       - name: Keep the tested preview build for deployment
         if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         run: npm run deploy:cloudflare:prepare
+        env:
+          BASE_PATH: /prompt-seen
+          BUILD_MODE: preview
+      - name: Smoke-test the prepared preview artifact
+        if: matrix.name == 'subpath' && matrix.browser == 'chromium'
+        run: npm run test:deploy
       - uses: actions/upload-artifact@v7
         if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         with:
@@ -155,8 +197,9 @@ jobs:
           retention-days: 7
 
   preview:
+    timeout-minutes: 10
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-    needs: [check, build-and-test]
+    needs: [check, secrets, build-and-test]
     runs-on: ubuntu-latest
     permissions:
       contents: read

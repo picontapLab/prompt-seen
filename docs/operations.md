@@ -92,25 +92,32 @@ integration code and configuration out of the repository, use the private produc
 
 ## Deploying
 
-Merging into `main` runs CI, then the **Deploy** workflow (`.github/workflows/deploy.yml`) on
-the same commit:
+Merging into `main` runs CI, then the **Deploy** workflow (`.github/workflows/deploy.yml`):
 
-1. production build with the instance's settings (`BUILD_MODE=production`);
-2. `media:sync` and `media:check` when images live in R2;
-3. `indexnow snapshot`: the live sitemaps before the change;
-4. prepare `.deploy/cloudflare/`, then apply the private production customization when configured;
-5. upload to Pages as the production branch;
-6. `check:live --platform` on the new deployment's own `*.pages.dev` address: content, statuses
-   and `X-Robots-Tag: noindex`;
-7. `check:live --expect-build` on the canonical site, after waiting up to three minutes for the
-   host to serve the new build;
-8. `indexnow submit`: the difference of the sitemaps.
+1. resolve the candidate ref to an immutable SHA using the trusted gate from `main`;
+2. require that SHA to still be `main` HEAD, with the latest push CI successful and all required
+   jobs successful (checks, secret scan, two builds, six browser jobs);
+3. compare it with Cloudflare's current canonical production commit: only the same commit or
+   a descendant may deploy; missing metadata, divergent history and API failures stop the job;
+4. check out that exact SHA, sync media when configured, build in production mode and check media;
+5. snapshot live sitemap URLs, prepare `.deploy/cloudflare/` and apply private customization;
+6. run Chromium smoke tests on that final directory at simulated canonical and `pages.dev`
+   origins: home, list and prompt detail hydrate, the list popup opens/closes, no runtime errors
+   or missing local files, and configured private integration scripts start only in production;
+7. recheck the pinned SHA's main HEAD, CI and live-production ancestry immediately before upload;
+8. upload to Pages, then run `check:live --platform` and canonical `check:live --expect-build`
+   (wait up to three minutes for the host), followed by IndexNow submission.
 
-Run it by hand from _Actions › Deploy › Run workflow_ to deploy a specific commit or tag. One
-production change runs at a time; a deploy is never cancelled half-way.
+Manual _Actions › Deploy › Run workflow_ uses exactly the same gate. A branch or tag must point
+at the current, CI-approved `main` HEAD. Older releases go through **Rollback**; there is no
+emergency CI-bypass switch. Emergency recovery uses the separately audited Rollback workflow.
+An old CI rerun cannot deploy over a newer release, including after a forced main-branch rewrite.
 
-Step 7 requires the custom domain to serve the Pages project (or the optional subpath proxy
-to forward requests). Configure that connection before checking the canonical site.
+Deploy (30 minutes) and Rollback (15 minutes) share the `production` concurrency group and are
+never cancelled halfway. Main is rechecked after the build while holding that lock. A main push
+in the small interval after the last check queues its own gated deploy; another production or
+rollback job cannot upload in that interval. Configure the custom domain/proxy before the live
+checks. The SHA and verified CI run are recorded in the Actions summary.
 
 ### Static payload file count
 
@@ -141,7 +148,21 @@ Keep `analytics.provider` disabled when the private step installs analytics. The
 should also restrict execution in the browser to the canonical production origin, because the
 same production artifact is served on `*.pages.dev`. Browser-delivered scripts remain visible
 to visitors even when their deployment source is private. Any subsequent preparation reruns
-the hook, so the ordinary build, preparation and upload order stays the same.
+the hook, so always run `npm run test:deploy` after the last preparation and before upload.
+
+`EXPECT_DEPLOY_INTEGRATION=true npm run test:deploy` requires an integration script to be
+requested and executed on each canonical smoke page, and absent on the Pages origin. Deploy
+sets this automatically when `PRODUCTION_DEPLOY_HOOK` exists. The current hook contract is a
+browser integration that loads a script; a hook used only for metadata must supply an equivalent
+smoke assertion before adopting this gate. Locally, set the flag when using the ignored hook.
+The preview Chromium job smokes the prepared preview bytes too; the hook's unit tests prove
+preview preparation ignores both local code and environment code.
+
+Smoke tests intercept requests and serve the exact artifact bytes. Third-party script responses
+are inert stubs, so no real analytics events are sent: this verifies the injected loader and its
+origin guard, not a vendor's service availability. Host headers/statuses still use the existing
+nginx and post-deploy checks. Smoke tests use no retries, traces, screenshots or public report
+uploads; diagnostics report counts so private source and URLs do not enter Actions logs.
 
 ## Rolling back
 
