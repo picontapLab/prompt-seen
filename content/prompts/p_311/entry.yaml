@@ -28,6 +28,7 @@ inputRequirements:
       Prompt.
     es: Sube la imagen de referencia generada por el proyecto en el orden indicado
       (R19) y después usa el prompt adaptado completo.
+    ko: 표시된 순서(R19)대로 프로젝트에서 생성한 참조 이미지 1장을 업로드한 뒤 전체 각색 프롬프트를 사용하세요.
   slots:
     - id: reference1
       labels:
@@ -36,6 +37,7 @@ inputRequirements:
         ja: 本プロジェクトで生成したキャラクター参照画像
         de: Projektintern generierte Figurenreferenz
         es: Referencia de personaje generada para el proyecto
+        ko: 프로젝트에서 생성한 캐릭터 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_375
@@ -55,6 +57,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
       es: Publicación original completa; compartida entre variantes, no esta
         adaptación
+      ko: 이 각색이 아닌 원본 게시물 전체; 여러 변형이 공유하는 수치
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -64,6 +67,7 @@ inspirationSources:
       de: Gespeicherter Recherchebericht und Snapshot der Suchindex-Bewertung
       es: Informe de investigación guardado y captura de puntuación del índice de
         búsqueda
+      ko: 저장된 조사 보고서와 검색 색인 점수 스냅샷
     evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -71,6 +75,7 @@ inspirationSources:
       ja: 独自アレンジ。完全な原文は別途保存
       de: Eigenständige Adaption; vollständiges Original separat erhalten
       es: Adaptación independiente; original completo conservado por separado
+      ko: 독립적인 각색; 전체 원문은 별도로 보존
     metrics:
       - key: score
         value: 204
@@ -80,6 +85,7 @@ inspirationSources:
           ja: 検索インデックスのスコアのスナップショット
           de: Snapshot der Suchindex-Bewertung
           es: Captura de puntuación del índice de búsqueda
+          ko: 검색 색인 점수 스냅샷
 source:
   author: Prompt Seen (adaptation)
   url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/

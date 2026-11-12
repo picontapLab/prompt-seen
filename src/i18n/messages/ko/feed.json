@@ -1,0 +1,80 @@
+{
+  "title": "프레임 모음",
+  "intro": "테스트한 프롬프트를 생성 결과와 함께 최신순으로 모았습니다. 작품에 포인터를 올리면 프롬프트의 첫 부분을 볼 수 있습니다. 작품을 열면 전체 프롬프트, 테스트 기록과 각 문구의 역할을 확인할 수 있습니다.",
+  "introMore": "더 보기",
+  "introLess": "접기",
+  "count": "{count, plural, other {프레임 #개}}",
+  "pageOf": "{pages}페이지 중 {page}페이지",
+  "documentTitle": "이미지 프롬프트",
+  "documentTitlePage": "이미지 프롬프트, {page}페이지",
+  "description": "테스트한 이미지 프롬프트를 최신순으로 살펴보세요. 생성된 이미지, 테스트 모델과 날짜, 각 문구의 역할을 함께 확인할 수 있습니다.",
+  "band": {
+    "label": "이번 주 추천"
+  },
+  "card": {
+    "byModel": "사용 모델: {model}",
+    "notVerified": "검증되지 않음"
+  },
+  "interlude": {
+    "feature": "특집: {title}",
+    "open": "프레임 열기",
+    "templates": "템플릿 · 빈칸을 채워 보세요",
+    "fields": "{count, plural, other {입력 항목 #개}}",
+    "collection": "컬렉션 · {count, plural, other {작품 #개}}",
+    "openCollection": "컬렉션 보기"
+  },
+  "feed": {
+    "label": "프롬프트",
+    "skip": "목록 건너뛰기"
+  },
+  "status": {
+    "shown": "전체 {total}개 중 {from}–{to}번 프레임 표시",
+    "developing": "{from}–{to}번 프레임을 불러오는 중…",
+    "developingEarlier": "이전 프레임을 불러오는 중…",
+    "loaded": "{count, plural, other {프레임 #개를 더 불러왔습니다}}",
+    "failed": "{from}–{to}번 프레임을 불러오지 못했습니다.",
+    "failedEarlier": "이전 프레임을 불러오지 못했습니다.",
+    "retry": "다시 시도",
+    "stale": "페이지를 연 뒤 목록이 변경되었습니다.",
+    "reload": "새로고침",
+    "end": "마지막 프레임 · 전체 {total}개 표시 완료",
+    "pages": "목록 페이지",
+    "page": "페이지",
+    "pageLink": "{page}페이지"
+  },
+  "filters": {
+    "style": "스타일",
+    "all": "전체",
+    "panel": "용도 · 비율",
+    "panelCount": "용도 · 비율 ({count})",
+    "panelTitle": "용도, 비율 및 참조 이미지",
+    "use": "용도",
+    "shape": "비율",
+    "shapes": {
+      "portrait": "세로형",
+      "square": "정사각형",
+      "landscape": "가로형",
+      "panorama": "파노라마"
+    },
+    "ref": "참조 이미지",
+    "refs": {
+      "none": "텍스트만 사용",
+      "required": "참조 이미지 필요"
+    },
+    "open": "필터",
+    "openCount": "필터 ({count})",
+    "show": "{count, plural, =0 {결과 없음} other {결과 #개 보기}}",
+    "results": "{count, plural, =0 {결과 없음} other {결과 #개}}",
+    "active": "적용된 필터",
+    "clear": "필터 해제",
+    "noMatch": "다른 필터와 함께 적용하면 결과가 없습니다",
+    "sort": "정렬",
+    "latest": "최신순",
+    "featured": "추천순",
+    "empty": {
+      "title": "조건에 맞는 프롬프트가 없습니다",
+      "body": "필터를 하나 해제하거나 모두 해제하여 모든 프롬프트를 확인하세요."
+    },
+    "failed": "필터를 적용하지 못했습니다."
+  }
+}

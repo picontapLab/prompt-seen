@@ -28,6 +28,7 @@ inputRequirements:
       Entwurf.
     es: Sube primero el retrato adulto y después el vestuario. Ambas entradas son
       sintéticas; el vestuario es un diseño moderno ficticio.
+    ko: 성인 인물 사진을 먼저, 의상 이미지를 다음에 업로드하세요. 두 입력 모두 합성 이미지이며 의상은 현대적인 가상 디자인입니다.
   slots:
     - id: person
       labels:
@@ -36,6 +37,7 @@ inputRequirements:
         ja: 人物
         de: Person
         es: Persona
+        ko: 인물
       min: 1
       max: 1
     - id: garment
@@ -45,6 +47,7 @@ inputRequirements:
         ja: 衣装
         de: Kleidungsstück
         es: Prenda
+        ko: 의상
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -63,6 +66,7 @@ inspirationSources:
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
       es: Vídeo completo del tutorial o la demostración
+      ko: 전체 튜토리얼 또는 쇼케이스 영상
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,6 +75,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       es: Captura de la API pública oficial
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -78,6 +83,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: views
         value: 18638
@@ -87,6 +93,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           es: Visualizaciones
+          ko: 조회수
       - key: likes
         value: 477
         labels:
@@ -95,6 +102,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           es: Me gusta
+          ko: 좋아요
       - key: saves
         value: 689
         labels:
@@ -103,6 +111,7 @@ inspirationSources:
           ja: 保存数
           de: Gespeichert
           es: Guardados
+          ko: 저장
       - key: comments
         value: 116
         labels:
@@ -111,6 +120,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           es: Comentarios
+          ko: 댓글
       - key: shares
         value: 98
         labels:
@@ -119,6 +129,7 @@ inspirationSources:
           ja: 共有数
           de: Geteilt
           es: Veces compartido
+          ko: 공유
       - key: coins
         value: 178
         labels:
@@ -127,6 +138,7 @@ inspirationSources:
           ja: コイン数
           de: Coins
           es: Monedas
+          ko: 코인
       - key: danmaku
         value: 14
         labels:
@@ -135,6 +147,7 @@ inspirationSources:
           ja: 弾幕コメント数
           de: Danmaku
           es: Comentarios danmaku
+          ko: 화면 댓글
 source:
   author: Prompt Seen
   url: null

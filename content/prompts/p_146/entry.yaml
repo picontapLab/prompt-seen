@@ -53,6 +53,7 @@ inspirationSources:
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
       es: Vídeo completo del tutorial o la demostración
+      ko: 전체 튜토리얼 또는 쇼케이스 영상
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +62,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       es: Captura de la API pública oficial
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -68,6 +70,7 @@ inspirationSources:
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
       es: Prompt original o fragmento disponible; adaptado de forma independiente
+      ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
     metrics:
       - key: views
         value: 344604
@@ -77,6 +80,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           es: Visualizaciones
+          ko: 조회수
       - key: likes
         value: 26934
         labels:
@@ -85,6 +89,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           es: Me gusta
+          ko: 좋아요
       - key: saves
         value: 5872
         labels:
@@ -93,6 +98,7 @@ inspirationSources:
           ja: 保存数
           de: Gespeichert
           es: Guardados
+          ko: 저장
       - key: comments
         value: 938
         labels:
@@ -101,6 +107,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           es: Comentarios
+          ko: 댓글
       - key: shares
         value: 1029
         labels:
@@ -109,6 +116,7 @@ inspirationSources:
           ja: 共有数
           de: Geteilt
           es: Veces compartido
+          ko: 공유
       - key: coins
         value: 859
         labels:
@@ -117,6 +125,7 @@ inspirationSources:
           ja: コイン数
           de: Coins
           es: Monedas
+          ko: 코인
       - key: danmaku
         value: 73
         labels:
@@ -125,6 +134,7 @@ inspirationSources:
           ja: 弾幕コメント数
           de: Danmaku
           es: Comentarios danmaku
+          ko: 화면 댓글
 source:
   author: Prompt Seen
   url: null
@@ -143,6 +153,7 @@ annotations:
       de: Das explizit vorgegebene Raster legt Stickeranzahl und Leserichtung fest.
       es: La cuadrícula explícita fija el número de pegatinas y el orden de
         lectura.
+      ko: 명시적인 격자가 스티커 개수와 읽는 순서를 고정합니다.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -157,3 +168,4 @@ annotations:
         konsistent.
       es: La identidad y la ropa se mantienen coherentes a través de las dieciséis
         emociones.
+      ko: 열여섯 감정에서 인물 정체성과 의상이 일관되게 유지됩니다.

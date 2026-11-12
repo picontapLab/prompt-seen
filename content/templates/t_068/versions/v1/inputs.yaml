@@ -5,6 +5,7 @@ instructions:
   ja: 作例 42 で最初に生成した青い軸測投影図をアップロードしてください。
   de: Lade das erste blaue axonometrische Ergebnis aus Beispiel 42 hoch.
   es: Sube el primer resultado axonométrico azul del caso 42.
+  ko: 사례 42의 첫 번째 파란색 축측도 결과를 업로드하세요.
 slots:
   - id: axonometric
     labels:
@@ -13,5 +14,6 @@ slots:
       ja: 最初に生成した軸測投影図
       de: Erstes axonometrisches Ergebnis
       es: Primer resultado axonométrico
+      ko: 첫 번째 축측도 결과
     min: 1
     max: 1

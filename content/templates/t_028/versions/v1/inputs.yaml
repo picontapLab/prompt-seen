@@ -8,6 +8,7 @@ instructions:
     Handlungsaufforderung und Farbpalette an.
   es: Sube una foto de producto e indica titular, texto secundario, llamada a la
     acción y paleta.
+  ko: 제품 사진 한 장을 업로드하고 제목, 보조 문구, 행동 유도 문구와 팔레트를 제공하세요.
 slots:
   - id: product
     labels:
@@ -16,5 +17,6 @@ slots:
       ja: 商品
       de: Produkt
       es: Producto
+      ko: 제품
     min: 1
     max: 1

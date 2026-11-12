@@ -10,12 +10,14 @@ fields:
       ja: 題材
       de: Motiv
       es: Sujeto
+      ko: 주제
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
       ja: 「竹林」のように、主な題材をひとつ指定します。
       de: Ein Hauptmotiv, etwa „ein Bambushain“.
       es: Un sujeto principal, como «un bosque de bambú».
+      ko: “대나무 숲”처럼 주요 대상 하나를 적으세요.
   - name: season
     type: enum
     required: true
@@ -27,6 +29,7 @@ fields:
       ja: 季節
       de: Jahreszeit
       es: Estación
+      ko: 계절
     options:
       - value: spring
         labels:
@@ -35,6 +38,7 @@ fields:
           ja: 春
           de: Frühling
           es: Primavera
+          ko: 봄
       - value: summer
         labels:
           en: Summer
@@ -42,6 +46,7 @@ fields:
           ja: 夏
           de: Sommer
           es: Verano
+          ko: 여름
       - value: autumn
         labels:
           en: Autumn
@@ -49,6 +54,7 @@ fields:
           ja: 秋
           de: Herbst
           es: Otoño
+          ko: 가을
       - value: winter
         labels:
           en: Winter
@@ -56,6 +62,7 @@ fields:
           ja: 冬
           de: Winter
           es: Invierno
+          ko: 겨울
   - name: brushwork
     type: enum
     required: true
@@ -67,6 +74,7 @@ fields:
       ja: 筆致
       de: Pinselführung
       es: Pincelada
+      ko: 붓 표현
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -75,6 +83,7 @@ fields:
           ja: 淡い墨と鋭い節
           de: Sanfte Verläufe, klare Knoten
           es: Aguadas suaves, nudos definidos
+          ko: 부드러운 번짐과 선명한 마디
       - value: loose wet washes
         labels:
           en: Loose wet washes
@@ -82,6 +91,7 @@ fields:
           ja: ゆったりとにじむ墨
           de: Lockere nasse Verläufe
           es: Aguadas húmedas sueltas
+          ko: 자유로운 젖은 붓 번짐
       - value: dry brush with visible texture
         labels:
           en: Dry brush
@@ -89,6 +99,7 @@ fields:
           ja: かすれ
           de: Trockener Pinsel
           es: Pincel seco
+          ko: 마른 붓
   - name: elements
     type: string-list
     required: false
@@ -102,6 +113,7 @@ fields:
       ja: 細部
       de: Details
       es: Detalles
+      ko: 세부 사항
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
@@ -109,6 +121,7 @@ fields:
       de: Zählbare Dinge funktionieren am besten, etwa „fünf hohe Halme“.
       es: Funcionan mejor los elementos contables, por ejemplo «cinco tallos
         altos».
+      ko: “키 큰 줄기 다섯 개”처럼 셀 수 있는 대상을 적으면 좋습니다.
   - name: aspectRatio
     type: enum
     required: true
@@ -121,6 +134,7 @@ fields:
       ar: نسبة الأبعاد
       de: Seitenverhältnis
       es: Relación de aspecto
+      ko: 화면 비율
     options:
       - value: 21:9
         labels:
@@ -130,6 +144,7 @@ fields:
           ar: 21:9
           de: 21:9
           es: 21:9
+          ko: 21:9
       - value: 16:9
         labels:
           en: 16:9
@@ -138,6 +153,7 @@ fields:
           ar: 16:9
           de: 16:9
           es: 16:9
+          ko: 16:9
       - value: 3:4
         labels:
           en: 3:4
@@ -146,6 +162,7 @@ fields:
           ar: 3:4
           de: 3:4
           es: 3:4
+          ko: 3:4
       - value: 1:3
         labels:
           en: 1:3
@@ -154,3 +171,4 @@ fields:
           ar: 1:3
           de: 1:3
           es: 1:3
+          ko: 1:3

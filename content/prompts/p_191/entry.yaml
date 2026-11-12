@@ -27,6 +27,7 @@ inputRequirements:
       verwendet künstlich erzeugte Eingabebilder.
     es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
       imágenes de entrada sintéticas.
+    ko: 표시된 순서대로 참조 이미지를 업로드하세요. 예시는 합성 입력 이미지를 사용합니다.
   slots:
     - id: materialSample
       labels:
@@ -35,6 +36,7 @@ inputRequirements:
         ja: 素材見本
         de: Materialmuster
         es: Muestra de material
+        ko: 소재 견본
       min: 1
       max: 1
     - id: targetScene
@@ -44,6 +46,7 @@ inputRequirements:
         ja: 変更対象の場面
         de: Zielszene
         es: Escena objetivo
+        ko: 적용할 장면
       min: 1
       max: 1
 showcaseExampleId: x_252

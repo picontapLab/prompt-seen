@@ -1,0 +1,2537 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T14:13:26.046239+00:00",
+  "baseCommit": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "currentSource": "Korean implementation worktree, staged and working source at measurement time",
+  "method": {
+    "baseline": "git archive to /tmp/ko-index-baseline-0306b74; shared read-only node_modules and unchanged public/media",
+    "comparison": "loadContent -> searchDocuments -> createIndex.toJSON -> complete emitter-shaped SearchIndexFile with popular/suggest terms and final newline",
+    "configuration": {
+      "BUILD_MODE": "preview",
+      "BASE_PATH": "/prompt-seen",
+      "SITE_ORIGIN": "https://promptseen.dev",
+      "MEDIA_BASE_URL": "",
+      "BUILD_ID": "ko-index-comparison"
+    },
+    "gzipLevel": 9,
+    "timing": "Single sequential measurement per locale, CPU contention present; timings are diagnostic, not a latency budget pass",
+    "sameCorpusControl": "Current analyzer creates indexes from baseline search documents and compares exact serialized indexes and full responses with baseline analyzer",
+    "fixedQueriesPerLocale": 8,
+    "resultLimitPerKind": 5,
+    "actualArtifactCheck": "All current generated index files exactly match reconstructed files after buildId normalization"
+  },
+  "blockingFindings": {
+    "baseline": 0,
+    "current": 0
+  },
+  "analyzerVersions": {
+    "baseline": 3,
+    "current": 4
+  },
+  "locales": {
+    "en": {
+      "documents": {
+        "baseline": 383,
+        "current": 383
+      },
+      "counts": {
+        "prompt": 288,
+        "template": 75,
+        "collection": 16,
+        "topic": 4
+      },
+      "changedDocumentFields": {
+        "terms": 367
+      },
+      "documentIdsAndOrderIdentical": true,
+      "documentContent": {
+        "baseline": {
+          "rawBytes": 704240,
+          "gzipBytes": 135630,
+          "sha256": "e77c98a2439a7b224954868a551736cdd3230cfa3ba4c6b9f3052e982592811a"
+        },
+        "current": {
+          "rawBytes": 723139,
+          "gzipBytes": 137839,
+          "sha256": "1da288dbdfcf833dd8bc002668d8a9ea1a53f9d9340940a79662e0c705d7499d"
+        }
+      },
+      "semanticIndex": {
+        "baseline": {
+          "rawBytes": 1118880,
+          "gzipBytes": 198232,
+          "sha256": "f2c50dc0c6ee98c76aea8fc29a2a9a8c2f36e2241a33554af19e02bdfe278822"
+        },
+        "current": {
+          "rawBytes": 1172288,
+          "gzipBytes": 201440,
+          "sha256": "10145b3079b3b2970ddc4e21468ef55d7f7b51da55f270f69db3f1ca996ad6b3"
+        }
+      },
+      "normalizedWireFile": {
+        "baseline": {
+          "rawBytes": 1123943,
+          "gzipBytes": 200320,
+          "sha256": "3a7ad8505c9873e38b165a97b49e6cdf7e1d71c584d1f93417cbd9332292ee29"
+        },
+        "current": {
+          "rawBytes": 1177864,
+          "gzipBytes": 203865,
+          "sha256": "42fadca477d214187780fc321652f99a9431bf0d464947b40f7be96486269e8e"
+        },
+        "rawBytesDelta": {
+          "bytes": 53921,
+          "percent": 4.7975
+        },
+        "gzipBytesDelta": {
+          "bytes": 3545,
+          "percent": 1.7697
+        }
+      },
+      "actualCurrentArtifact": {
+        "rawBytes": 1177864,
+        "gzipBytes": 203864,
+        "sha256": "da0734819e37a7017bacf20d8d557402ad9f2943f95af1455dad892affe2d5e3",
+        "normalizedMatchesReconstruction": true
+      },
+      "queries": [
+        {
+          "query": "product photography",
+          "baselineTotal": 22,
+          "currentTotal": 22,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_105",
+              "prompt:p_151",
+              "prompt:p_158",
+              "prompt:p_156",
+              "prompt:p_142"
+            ],
+            "template": [
+              "template:t_008",
+              "template:t_028",
+              "template:t_035",
+              "template:t_042",
+              "template:t_040"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_105",
+              "prompt:p_151",
+              "prompt:p_158",
+              "prompt:p_156",
+              "prompt:p_142"
+            ],
+            "template": [
+              "template:t_008",
+              "template:t_028",
+              "template:t_035",
+              "template:t_042",
+              "template:t_040"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              84.49100422235671,
+              65.67481986470149,
+              65.11526253227134,
+              61.273189969454684,
+              57.571598533326984
+            ],
+            "template": [
+              84.43281929626616,
+              69.3437782228153,
+              68.62218189153268,
+              67.9189323774076,
+              64.22055199628586
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              84.43278674955482,
+              65.6166023918996,
+              65.05704505946946,
+              61.2149724966528,
+              57.571598533326984
+            ],
+            "template": [
+              84.37460182346426,
+              69.34779663004804,
+              68.56966240690836,
+              67.89466972860596,
+              64.16803251166155
+            ]
+          }
+        },
+        {
+          "query": "ink wash",
+          "baselineTotal": 10,
+          "currentTotal": 10,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_031",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_031",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              152.94163915821903,
+              99.57950024339019,
+              99.26722141182493,
+              97.38453468788393,
+              97.34024078875888
+            ],
+            "template": [
+              127.6719003638995
+            ],
+            "topic": [
+              205.28757544777892
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              153.00555221917466,
+              99.57610728606039,
+              99.38293370771225,
+              97.20871446041266,
+              96.86591540240298
+            ],
+            "template": [
+              128.18902913950092
+            ],
+            "topic": [
+              205.2081980355446
+            ]
+          }
+        },
+        {
+          "query": "portrait",
+          "baselineTotal": 70,
+          "currentTotal": 70,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_036",
+              "prompt:p_050",
+              "prompt:p_111",
+              "prompt:p_144"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_025",
+              "template:t_075",
+              "template:t_069"
+            ],
+            "collection": [
+              "collection:c_017",
+              "collection:c_013"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_036",
+              "prompt:p_050",
+              "prompt:p_111",
+              "prompt:p_144"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_025",
+              "template:t_075",
+              "template:t_069"
+            ],
+            "collection": [
+              "collection:c_017",
+              "collection:c_013"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              39.8818336347293,
+              38.43682710553747,
+              37.92288301196564,
+              37.56254061703906,
+              36.87144456359318
+            ],
+            "template": [
+              34.42584491768435,
+              28.424011991261597,
+              9.749049029373992,
+              9.031763551107783,
+              8.461645348094148
+            ],
+            "collection": [
+              17.062138243570054,
+              6.38111718735568
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              39.90835492035375,
+              38.57449398571153,
+              37.98542339791042,
+              37.64663487513195,
+              36.95553882168606
+            ],
+            "template": [
+              34.523135532344725,
+              28.508106249354483,
+              9.790346655263432,
+              9.031763551107783,
+              8.461645348094148
+            ],
+            "collection": [
+              17.062138243570054,
+              6.38111718735568
+            ]
+          }
+        },
+        {
+          "query": "poster",
+          "baselineTotal": 100,
+          "currentTotal": 100,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_002",
+              "prompt:p_076",
+              "prompt:p_022"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_063",
+              "template:t_055",
+              "template:t_053",
+              "template:t_001"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_002",
+              "prompt:p_076",
+              "prompt:p_022"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_063",
+              "template:t_055",
+              "template:t_053",
+              "template:t_001"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              41.12620303818333,
+              40.881634540255234,
+              40.654591286881896,
+              39.73286046881475,
+              39.693754271883144
+            ],
+            "template": [
+              27.420374073383925,
+              24.91618133401293,
+              24.891625138050316,
+              24.891625138050316,
+              24.447190619784045
+            ],
+            "collection": [
+              18.075193895786462,
+              14.51588066202353
+            ],
+            "topic": [
+              30.765168975067304
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              41.12712034122546,
+              40.87561580051794,
+              40.648572547144596,
+              39.78343247597287,
+              39.69467157492527
+            ],
+            "template": [
+              27.47306196635557,
+              24.96307762032189,
+              24.94431303102196,
+              24.94431303102196,
+              24.447190619784045
+            ],
+            "collection": [
+              18.075193895786462,
+              14.51588066202353
+            ],
+            "topic": [
+              30.736035628067093
+            ]
+          }
+        },
+        {
+          "query": "sticker",
+          "baselineTotal": 19,
+          "currentTotal": 19,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_146",
+              "prompt:p_221",
+              "prompt:p_287",
+              "prompt:p_274",
+              "prompt:p_280"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_073",
+              "template:t_069",
+              "template:t_074",
+              "template:t_070"
+            ],
+            "collection": [
+              "collection:c_015"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_146",
+              "prompt:p_221",
+              "prompt:p_287",
+              "prompt:p_274",
+              "prompt:p_280"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_073",
+              "template:t_069",
+              "template:t_074",
+              "template:t_070"
+            ],
+            "collection": [
+              "collection:c_015"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              42.53270123836206,
+              30.940061496099787,
+              25.193863675795747,
+              9.161771949471078,
+              9.13093059324777
+            ],
+            "template": [
+              42.70957369556852,
+              9.225418289742226,
+              9.225418289742226,
+              4.578971380215482,
+              4.568020999145878
+            ],
+            "collection": [
+              4.351435103707997
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              42.53270123836206,
+              30.940061496099787,
+              25.193863675795747,
+              9.161771949471078,
+              9.13093059324777
+            ],
+            "template": [
+              42.70957369556852,
+              9.225418289742226,
+              9.225418289742226,
+              4.578971380215482,
+              4.568020999145878
+            ],
+            "collection": [
+              4.351435103707997
+            ]
+          }
+        },
+        {
+          "query": "gpt-image-2",
+          "baselineTotal": 301,
+          "currentTotal": 301,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_287",
+              "prompt:p_298",
+              "prompt:p_286",
+              "prompt:p_297",
+              "prompt:p_217"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056",
+              "template:t_052"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_287",
+              "prompt:p_298",
+              "prompt:p_286",
+              "prompt:p_297",
+              "prompt:p_217"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056",
+              "template:t_052"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              97.33915621825685,
+              96.37461901194345,
+              95.29168687002547,
+              95.27821893120726,
+              93.79468127692542
+            ],
+            "template": [
+              13.738898502075138,
+              10.069853034778909,
+              9.579451342354623,
+              9.313232964196185,
+              8.535012528982215
+            ],
+            "collection": [
+              67.87870656920944
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              97.02851565254721,
+              96.06397844623382,
+              94.98104630431584,
+              94.96757836549762,
+              93.61184962512479
+            ],
+            "template": [
+              13.738898502075138,
+              10.069853034778909,
+              9.579451342354623,
+              9.313232964196185,
+              8.535012528982215
+            ],
+            "collection": [
+              67.87870656920944
+            ]
+          }
+        },
+        {
+          "query": "p_151",
+          "baselineTotal": 1,
+          "currentTotal": 1,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              48.897818185021436
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              48.763930455862514
+            ]
+          }
+        },
+        {
+          "query": "zxqvnonexistent",
+          "baselineTotal": 0,
+          "currentTotal": 0,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {},
+          "currentTopK": {},
+          "baselineScores": {},
+          "currentScores": {}
+        }
+      ]
+    },
+    "zh-Hans": {
+      "documents": {
+        "baseline": 379,
+        "current": 379
+      },
+      "counts": {
+        "prompt": 285,
+        "template": 75,
+        "collection": 16,
+        "topic": 3
+      },
+      "changedDocumentFields": {
+        "terms": 363
+      },
+      "documentIdsAndOrderIdentical": true,
+      "documentContent": {
+        "baseline": {
+          "rawBytes": 667764,
+          "gzipBytes": 137338,
+          "sha256": "b250d84f8ec259dd5bee98bb4fb2e4bda85e35d4f43c421893ba6b442551841b"
+        },
+        "current": {
+          "rawBytes": 686441,
+          "gzipBytes": 139398,
+          "sha256": "f45e318e8532818360f49fd54cd842f1f17810077f460aaeb90a7439f71681f0"
+        }
+      },
+      "semanticIndex": {
+        "baseline": {
+          "rawBytes": 1675534,
+          "gzipBytes": 278908,
+          "sha256": "62d3d87281a371a9bca5f93c44baec812ea07d8162c4d74637720d3479120de0"
+        },
+        "current": {
+          "rawBytes": 1728360,
+          "gzipBytes": 282333,
+          "sha256": "4eef98d2fa8f0d5820a984d44ba012d51064527b688048cbaaa83ef527c6ac8b"
+        }
+      },
+      "normalizedWireFile": {
+        "baseline": {
+          "rawBytes": 1680762,
+          "gzipBytes": 280820,
+          "sha256": "e8f58067b644736a060703ce2cb996699c60646ed45c53cd764ed0558c18ec2a"
+        },
+        "current": {
+          "rawBytes": 1734101,
+          "gzipBytes": 285050,
+          "sha256": "3d767f19707344ea812a1f188eee793f6573f23be0aae6803704ec96ba182625"
+        },
+        "rawBytesDelta": {
+          "bytes": 53339,
+          "percent": 3.1735
+        },
+        "gzipBytesDelta": {
+          "bytes": 4230,
+          "percent": 1.5063
+        }
+      },
+      "actualCurrentArtifact": {
+        "rawBytes": 1734101,
+        "gzipBytes": 285048,
+        "sha256": "bc127b8715beb0e773a79327b0eecd33f344dae41d86a0be3f7887c4c627f802",
+        "normalizedMatchesReconstruction": true
+      },
+      "queries": [
+        {
+          "query": "产品摄影",
+          "baselineTotal": 12,
+          "currentTotal": 12,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_143",
+              "prompt:p_202",
+              "prompt:p_201",
+              "prompt:p_218",
+              "prompt:p_197"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_065",
+              "template:t_064"
+            ],
+            "collection": [
+              "collection:c_009"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_143",
+              "prompt:p_202",
+              "prompt:p_201",
+              "prompt:p_218",
+              "prompt:p_197"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_065",
+              "template:t_064"
+            ],
+            "collection": [
+              "collection:c_009"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              58.68295486928436,
+              21.664997108929494,
+              21.65555331706811,
+              18.353739523589585,
+              18.175371994991927
+            ],
+            "template": [
+              58.57761831295155,
+              21.415122840661148,
+              21.247877690355583
+            ],
+            "collection": [
+              88.65504816363627
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              58.68295486928436,
+              21.742808723998994,
+              21.709747039419764,
+              18.25701226667838,
+              18.253183610061427
+            ],
+            "template": [
+              58.57761831295155,
+              21.526445029571363,
+              21.37769037835436
+            ],
+            "collection": [
+              88.65504816363627
+            ]
+          }
+        },
+        {
+          "query": "水墨",
+          "baselineTotal": 11,
+          "currentTotal": 11,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_092",
+              "prompt:p_031",
+              "prompt:p_056"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink",
+              "topic:category:landscape"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_092",
+              "prompt:p_031",
+              "prompt:p_056"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink",
+              "topic:category:landscape"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              61.04314815572777,
+              26.833367854745486,
+              26.489136495058577,
+              26.254097952230836,
+              25.98847577047406
+            ],
+            "template": [
+              53.79218237622979
+            ],
+            "topic": [
+              54.952494936411654,
+              7.899153623685096
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              61.03030980575842,
+              26.804364897277782,
+              26.334676761156185,
+              26.254856998349247,
+              25.91260270297754
+            ],
+            "template": [
+              53.95865181315932
+            ],
+            "topic": [
+              54.91289333993092,
+              7.899153623685096
+            ]
+          }
+        },
+        {
+          "query": "肖像",
+          "baselineTotal": 41,
+          "currentTotal": 41,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_050",
+              "prompt:p_111",
+              "prompt:p_036",
+              "prompt:p_114"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_075",
+              "template:t_032",
+              "template:t_025",
+              "template:t_069"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_050",
+              "prompt:p_111",
+              "prompt:p_036",
+              "prompt:p_114"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_075",
+              "template:t_032",
+              "template:t_025",
+              "template:t_069"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              44.93882221499741,
+              43.61924170341741,
+              43.097990130716724,
+              41.79099079148908,
+              31.461339655179682
+            ],
+            "template": [
+              39.70371194787748,
+              10.333630341358809,
+              8.272912317477969,
+              7.5928504360766755,
+              2.546539146867205
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              44.94200880908493,
+              43.651459737009006,
+              43.14717821604505,
+              41.88288290535161,
+              31.463018396506527
+            ],
+            "template": [
+              39.80065038092605,
+              10.333630341358809,
+              8.38148472169609,
+              7.6664040166446625,
+              2.546539146867205
+            ]
+          }
+        },
+        {
+          "query": "海报",
+          "baselineTotal": 71,
+          "currentTotal": 71,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_076",
+              "prompt:p_002",
+              "prompt:p_141"
+            ],
+            "template": [
+              "template:t_027",
+              "template:t_055",
+              "template:t_001",
+              "template:t_044",
+              "template:t_056"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_076",
+              "prompt:p_002",
+              "prompt:p_141"
+            ],
+            "template": [
+              "template:t_027",
+              "template:t_055",
+              "template:t_001",
+              "template:t_044",
+              "template:t_056"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              32.13085503610229,
+              31.841406085568984,
+              31.537024588571093,
+              31.149911756005928,
+              30.920471647468187
+            ],
+            "template": [
+              30.415196320256687,
+              29.783177330405078,
+              23.9788811852218,
+              23.62248053145925,
+              23.35411173597489
+            ],
+            "collection": [
+              21.08508389840257,
+              14.19136126212284
+            ],
+            "topic": [
+              7.958608581850203
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              32.11734868186048,
+              31.818959999448005,
+              31.575711790774243,
+              31.12746566988495,
+              30.967319817473776
+            ],
+            "template": [
+              30.55719992333079,
+              29.896084246409,
+              23.9788811852218,
+              23.62248053145925,
+              23.441924600250985
+            ],
+            "collection": [
+              21.08508389840257,
+              14.19136126212284
+            ],
+            "topic": [
+              7.913588248824979
+            ]
+          }
+        },
+        {
+          "query": "贴纸",
+          "baselineTotal": 14,
+          "currentTotal": 14,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_146",
+              "prompt:p_280",
+              "prompt:p_274",
+              "prompt:p_281",
+              "prompt:p_278"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_073",
+              "template:t_069",
+              "template:t_074",
+              "template:t_071"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_146",
+              "prompt:p_280",
+              "prompt:p_274",
+              "prompt:p_281",
+              "prompt:p_278"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_073",
+              "template:t_069",
+              "template:t_074",
+              "template:t_071"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              39.20807942961996,
+              11.80685436382992,
+              11.648964774766824,
+              2.4848367403650227,
+              2.4753607489804206
+            ],
+            "template": [
+              39.21025529695407,
+              11.859133508987147,
+              11.679632967772829,
+              2.518872656362414,
+              2.511462844967997
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              39.20807942961996,
+              11.80685436382992,
+              11.648964774766824,
+              2.4848367403650227,
+              2.4753607489804206
+            ],
+            "template": [
+              39.21025529695407,
+              11.859133508987147,
+              11.679632967772829,
+              2.518872656362414,
+              2.511462844967997
+            ]
+          }
+        },
+        {
+          "query": "gpt-image-2",
+          "baselineTotal": 285,
+          "currentTotal": 285,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_236",
+              "prompt:p_217",
+              "prompt:p_230",
+              "prompt:p_297",
+              "prompt:p_286"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_236",
+              "prompt:p_217",
+              "prompt:p_230",
+              "prompt:p_297",
+              "prompt:p_286"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              123.28312607789951,
+              107.1327384248568,
+              105.02248215853925,
+              101.9555588947804,
+              101.63345627138433
+            ],
+            "collection": [
+              71.99254581020577
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              123.20551709990104,
+              106.90050212941321,
+              104.67111374721614,
+              101.60419048345726,
+              101.2820878600612
+            ],
+            "collection": [
+              71.99254581020577
+            ]
+          }
+        },
+        {
+          "query": "p_151",
+          "baselineTotal": 1,
+          "currentTotal": 1,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              49.08855157422109
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              48.88759618422659
+            ]
+          }
+        },
+        {
+          "query": "zxqvnonexistent",
+          "baselineTotal": 0,
+          "currentTotal": 0,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {},
+          "currentTopK": {},
+          "baselineScores": {},
+          "currentScores": {}
+        }
+      ]
+    },
+    "ja": {
+      "documents": {
+        "baseline": 379,
+        "current": 379
+      },
+      "counts": {
+        "prompt": 285,
+        "template": 75,
+        "collection": 16,
+        "topic": 3
+      },
+      "changedDocumentFields": {
+        "terms": 363
+      },
+      "documentIdsAndOrderIdentical": true,
+      "documentContent": {
+        "baseline": {
+          "rawBytes": 805264,
+          "gzipBytes": 153249,
+          "sha256": "1c6f288016afdb024b23785953fd20cfe780385044caa9ba4115040be4659764"
+        },
+        "current": {
+          "rawBytes": 823941,
+          "gzipBytes": 155682,
+          "sha256": "e0d0cf650b6592f1bc6f6e067bbcfeee2b4dc20e5e5fa9267de34a095be7ad81"
+        }
+      },
+      "semanticIndex": {
+        "baseline": {
+          "rawBytes": 2090818,
+          "gzipBytes": 352540,
+          "sha256": "c62423fae2dbdcbccac6d170e96b203b992b439f79c795bbe63ea7f908e92b86"
+        },
+        "current": {
+          "rawBytes": 2143643,
+          "gzipBytes": 356828,
+          "sha256": "b45309d3d0cd43cf4cca79718f7100ce1259c07ee55bec6bea082e205d546285"
+        }
+      },
+      "normalizedWireFile": {
+        "baseline": {
+          "rawBytes": 2095907,
+          "gzipBytes": 354696,
+          "sha256": "ad1ed9038ce918f94a6efcb5b123fec59615fd4ca4f1c89de6f06a580980fe1a"
+        },
+        "current": {
+          "rawBytes": 2149245,
+          "gzipBytes": 359187,
+          "sha256": "fb34fa7c54f27228d0e3df623402369283f5f910e870698035b6d7b55960bf69"
+        },
+        "rawBytesDelta": {
+          "bytes": 53338,
+          "percent": 2.5449
+        },
+        "gzipBytesDelta": {
+          "bytes": 4491,
+          "percent": 1.2662
+        }
+      },
+      "actualCurrentArtifact": {
+        "rawBytes": 2149245,
+        "gzipBytes": 359186,
+        "sha256": "1c6e9867d8e422251e1fdfebd35b855f1d536b1e22440f876d8fb7996b91d048",
+        "normalizedMatchesReconstruction": true
+      },
+      "queries": [
+        {
+          "query": "商品写真",
+          "baselineTotal": 22,
+          "currentTotal": 22,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_123",
+              "prompt:p_152",
+              "prompt:p_154",
+              "prompt:p_158",
+              "prompt:p_153"
+            ],
+            "template": [
+              "template:t_036",
+              "template:t_038",
+              "template:t_028",
+              "template:t_042",
+              "template:t_035"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_123",
+              "prompt:p_152",
+              "prompt:p_154",
+              "prompt:p_158",
+              "prompt:p_153"
+            ],
+            "template": [
+              "template:t_036",
+              "template:t_038",
+              "template:t_028",
+              "template:t_042",
+              "template:t_035"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              96.32307536483385,
+              88.94795270288151,
+              87.03350517487547,
+              82.04600020230782,
+              79.34358037796088
+            ],
+            "template": [
+              90.01860458433148,
+              86.28459801167676,
+              85.0027440671417,
+              84.31284623356558,
+              83.37615249221318
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              96.26585981633472,
+              88.89073715438238,
+              86.97628962637634,
+              81.9887846538087,
+              79.28636482946175
+            ],
+            "template": [
+              89.95328693811604,
+              86.4025299453302,
+              85.19303843398013,
+              84.41748625373268,
+              83.3607060871874
+            ]
+          }
+        },
+        {
+          "query": "水墨画",
+          "baselineTotal": 10,
+          "currentTotal": 10,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_031",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_012",
+              "prompt:p_063",
+              "prompt:p_031",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              162.92470731323058,
+              93.85765143130939,
+              93.17362854651822,
+              91.48995053730097,
+              91.215226349456
+            ],
+            "template": [
+              146.43156855305114
+            ],
+            "topic": [
+              228.56745137611966
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              162.87246092730206,
+              93.74113322949245,
+              93.17359742450694,
+              91.19842899764461,
+              90.62635228940022
+            ],
+            "template": [
+              147.0952329854788
+            ],
+            "topic": [
+              228.3972022608288
+            ]
+          }
+        },
+        {
+          "query": "ポートレート",
+          "baselineTotal": 44,
+          "currentTotal": 44,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_036",
+              "prompt:p_061",
+              "prompt:p_144",
+              "prompt:p_111",
+              "prompt:p_050"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_075",
+              "template:t_069",
+              "template:t_025"
+            ],
+            "collection": [
+              "collection:c_017",
+              "collection:c_013"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_036",
+              "prompt:p_061",
+              "prompt:p_144",
+              "prompt:p_111",
+              "prompt:p_050"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_075",
+              "template:t_069",
+              "template:t_025"
+            ],
+            "collection": [
+              "collection:c_017",
+              "collection:c_013"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              313.46580640985394,
+              310.0241462609021,
+              309.5666451822252,
+              302.0012577651729,
+              300.152659235266
+            ],
+            "template": [
+              268.17709866062546,
+              254.7437256534664,
+              68.57778956094435,
+              66.053749877293,
+              62.0474031497848
+            ],
+            "collection": [
+              158.17303865712682,
+              48.77956264156368
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              314.1705096352996,
+              310.04512560105024,
+              309.934966535081,
+              302.36957911802875,
+              300.40010104391155
+            ],
+            "template": [
+              269.07827066587714,
+              255.5654477531206,
+              68.57778956094435,
+              66.053749877293,
+              62.395819492473215
+            ],
+            "collection": [
+              158.17303865712682,
+              48.77956264156368
+            ]
+          }
+        },
+        {
+          "query": "ポスター",
+          "baselineTotal": 72,
+          "currentTotal": 72,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_076",
+              "prompt:p_085",
+              "prompt:p_069",
+              "prompt:p_002",
+              "prompt:p_022"
+            ],
+            "template": [
+              "template:t_001",
+              "template:t_054",
+              "template:t_056",
+              "template:t_029",
+              "template:t_061"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_076",
+              "prompt:p_085",
+              "prompt:p_069",
+              "prompt:p_002",
+              "prompt:p_022"
+            ],
+            "template": [
+              "template:t_001",
+              "template:t_054",
+              "template:t_056",
+              "template:t_029",
+              "template:t_061"
+            ],
+            "collection": [
+              "collection:c_001",
+              "collection:c_010"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              108.99434371993209,
+              107.5810098558479,
+              103.15335847292118,
+              102.97387344879127,
+              102.85708557386468
+            ],
+            "template": [
+              87.99669730149887,
+              80.7652513753207,
+              79.69371677142354,
+              77.0693458565252,
+              74.66624391658158
+            ],
+            "collection": [
+              68.21311680606243,
+              51.368357190271425
+            ],
+            "topic": [
+              98.6141040302086
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              109.11075896527316,
+              107.50886893495033,
+              103.10950154274428,
+              102.9017325278937,
+              102.81322864368778
+            ],
+            "template": [
+              88.10059018667013,
+              81.22976503254002,
+              80.01000791083213,
+              77.34537791116632,
+              75.04044761796541
+            ],
+            "collection": [
+              68.21311680606243,
+              51.368357190271425
+            ],
+            "topic": [
+              98.47096936151712
+            ]
+          }
+        },
+        {
+          "query": "ステッカー",
+          "baselineTotal": 3,
+          "currentTotal": 3,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_221",
+              "prompt:p_146"
+            ],
+            "template": [
+              "template:t_030"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_221",
+              "prompt:p_146"
+            ],
+            "template": [
+              "template:t_030"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              298.4924085418904,
+              265.51849114456513
+            ],
+            "template": [
+              267.0142154045964
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              298.4924085418904,
+              265.51849114456513
+            ],
+            "template": [
+              267.0142154045964
+            ]
+          }
+        },
+        {
+          "query": "gpt-image-2",
+          "baselineTotal": 299,
+          "currentTotal": 299,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_233",
+              "prompt:p_115",
+              "prompt:p_217",
+              "prompt:p_286",
+              "prompt:p_297"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_061",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_233",
+              "prompt:p_115",
+              "prompt:p_217",
+              "prompt:p_286",
+              "prompt:p_297"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_061",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              135.6911203688164,
+              114.05186399074597,
+              102.07538072297228,
+              97.42972678343321,
+              97.30179475654626
+            ],
+            "template": [
+              28.67016642633412,
+              21.905765174837676,
+              10.73694198452739,
+              10.382436766838344,
+              10.195483827116487
+            ],
+            "collection": [
+              72.99251972667247
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              135.33867549475607,
+              114.05186399074597,
+              101.8418361183133,
+              97.07728190937291,
+              96.94934988248593
+            ],
+            "template": [
+              28.67016642633412,
+              21.905765174837676,
+              10.73694198452739,
+              10.382436766838344,
+              10.195483827116487
+            ],
+            "collection": [
+              72.99251972667247
+            ]
+          }
+        },
+        {
+          "query": "p_151",
+          "baselineTotal": 1,
+          "currentTotal": 1,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              49.09612942205974
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              48.8934185362631
+            ]
+          }
+        },
+        {
+          "query": "zxqvnonexistent",
+          "baselineTotal": 0,
+          "currentTotal": 0,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {},
+          "currentTopK": {},
+          "baselineScores": {},
+          "currentScores": {}
+        }
+      ]
+    },
+    "de": {
+      "documents": {
+        "baseline": 379,
+        "current": 379
+      },
+      "counts": {
+        "prompt": 285,
+        "template": 75,
+        "collection": 16,
+        "topic": 3
+      },
+      "changedDocumentFields": {
+        "terms": 363
+      },
+      "documentIdsAndOrderIdentical": true,
+      "documentContent": {
+        "baseline": {
+          "rawBytes": 762127,
+          "gzipBytes": 151068,
+          "sha256": "4ffadba27a1a299a2c84cfeaa4067583e429d5ec91519793b2123c4892c9898d"
+        },
+        "current": {
+          "rawBytes": 780804,
+          "gzipBytes": 153409,
+          "sha256": "685a812fbda823aff9835ebfe4bd162998c7ed52b6a40d455c21bda01ed1bf58"
+        }
+      },
+      "semanticIndex": {
+        "baseline": {
+          "rawBytes": 1238450,
+          "gzipBytes": 219947,
+          "sha256": "8f83bbc6dd61a68f8e110e339417f63a6ec7beb13ac8bcf421523f1030d51372"
+        },
+        "current": {
+          "rawBytes": 1291274,
+          "gzipBytes": 223365,
+          "sha256": "4bedf26ae7575320dbb108aa1e5bc1f42db8466aa619089aac1b3e88660025e0"
+        }
+      },
+      "normalizedWireFile": {
+        "baseline": {
+          "rawBytes": 1243542,
+          "gzipBytes": 221618,
+          "sha256": "20e8ad2b4386deeb082c86c486718ebc33e4393332f7b18c2646c92a8dd8d2ec"
+        },
+        "current": {
+          "rawBytes": 1296879,
+          "gzipBytes": 225441,
+          "sha256": "8086d36504405da6945ad9f8f26602d88e735b210434899fdfc4c0d5710e0fc3"
+        },
+        "rawBytesDelta": {
+          "bytes": 53337,
+          "percent": 4.2891
+        },
+        "gzipBytesDelta": {
+          "bytes": 3823,
+          "percent": 1.725
+        }
+      },
+      "actualCurrentArtifact": {
+        "rawBytes": 1296879,
+        "gzipBytes": 225440,
+        "sha256": "dfb6f2a083a4c682e6949ea2c649ec9e6c4b8e45b6ce5a4ea16c6d927d97ae06",
+        "normalizedMatchesReconstruction": true
+      },
+      "queries": [
+        {
+          "query": "Produktfotografie",
+          "baselineTotal": 23,
+          "currentTotal": 23,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_143",
+              "prompt:p_116",
+              "prompt:p_153",
+              "prompt:p_154",
+              "prompt:p_142"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_037",
+              "template:t_011",
+              "template:t_028",
+              "template:t_038"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_143",
+              "prompt:p_116",
+              "prompt:p_153",
+              "prompt:p_154",
+              "prompt:p_142"
+            ],
+            "template": [
+              "template:t_029",
+              "template:t_037",
+              "template:t_011",
+              "template:t_028",
+              "template:t_038"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              12.879091208029088,
+              0.3791464958591034,
+              0.346823295098955,
+              0.32217359054372385,
+              0.32217359054372385
+            ],
+            "template": [
+              12.894818268764407,
+              0.356584773570179,
+              0.356584773570179,
+              0.33790065127904223,
+              0.3087530658841476
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              12.879091208029088,
+              0.3791464958591034,
+              0.346823295098955,
+              0.32217359054372385,
+              0.32217359054372385
+            ],
+            "template": [
+              12.894818268764407,
+              0.356584773570179,
+              0.356584773570179,
+              0.33790065127904223,
+              0.3087530658841476
+            ]
+          }
+        },
+        {
+          "query": "Tuschemalerei",
+          "baselineTotal": 10,
+          "currentTotal": 10,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_031",
+              "prompt:p_063",
+              "prompt:p_012",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_031",
+              "prompt:p_063",
+              "prompt:p_012",
+              "prompt:p_056",
+              "prompt:p_092"
+            ],
+            "template": [
+              "template:t_002"
+            ],
+            "topic": [
+              "topic:style:ink"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              20.259410700580446,
+              19.912780546739427,
+              19.74438363427007,
+              19.674921828381635,
+              19.639060180904202
+            ],
+            "template": [
+              17.722745675999015
+            ],
+            "topic": [
+              14.21079750243871
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              20.28880254671744,
+              19.913609374425935,
+              19.761233385795794,
+              19.635176199190916,
+              19.529359555406277
+            ],
+            "template": [
+              17.83536244829206
+            ],
+            "topic": [
+              14.191394138987338
+            ]
+          }
+        },
+        {
+          "query": "Porträt",
+          "baselineTotal": 68,
+          "currentTotal": 68,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_111",
+              "prompt:p_240",
+              "prompt:p_113",
+              "prompt:p_114"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_025",
+              "template:t_075",
+              "template:t_069"
+            ],
+            "collection": [
+              "collection:c_017"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_061",
+              "prompt:p_111",
+              "prompt:p_240",
+              "prompt:p_113",
+              "prompt:p_114"
+            ],
+            "template": [
+              "template:t_003",
+              "template:t_032",
+              "template:t_025",
+              "template:t_075",
+              "template:t_069"
+            ],
+            "collection": [
+              "collection:c_017"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              44.736686263653375,
+              43.4283692553378,
+              39.795875047877985,
+              36.48173781754096,
+              34.42440792055039
+            ],
+            "template": [
+              31.425000813916263,
+              18.017330229531648,
+              13.546094159074347,
+              11.220505235467591,
+              10.395327385896142
+            ],
+            "collection": [
+              14.14414485670376
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              44.77448423217632,
+              43.54419213200181,
+              39.91169792454199,
+              36.597560694204965,
+              34.459825599655076
+            ],
+            "template": [
+              31.543500982253263,
+              18.133153106195653,
+              13.592835052192301,
+              11.220505235467591,
+              10.395327385896142
+            ],
+            "collection": [
+              14.14414485670376
+            ]
+          }
+        },
+        {
+          "query": "Poster",
+          "baselineTotal": 76,
+          "currentTotal": 76,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_022",
+              "prompt:p_045",
+              "prompt:p_024"
+            ],
+            "template": [
+              "template:t_063",
+              "template:t_027",
+              "template:t_029",
+              "template:t_026",
+              "template:t_058"
+            ],
+            "collection": [
+              "collection:c_001"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_069",
+              "prompt:p_085",
+              "prompt:p_022",
+              "prompt:p_045",
+              "prompt:p_024"
+            ],
+            "template": [
+              "template:t_063",
+              "template:t_027",
+              "template:t_029",
+              "template:t_026",
+              "template:t_058"
+            ],
+            "collection": [
+              "collection:c_001"
+            ],
+            "topic": [
+              "topic:category:poster"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              45.06414474354371,
+              44.99141089870263,
+              43.333123263173,
+              35.549789873551994,
+              32.09038398580151
+            ],
+            "template": [
+              29.756558707637407,
+              18.888996468887708,
+              12.861844336848593,
+              11.18522200604629,
+              10.849629811104982
+            ],
+            "collection": [
+              27.96257203895419
+            ],
+            "topic": [
+              10.00472791099679
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              45.06578980741352,
+              44.9862111485912,
+              43.334768327042816,
+              35.544590123440564,
+              32.09038398580151
+            ],
+            "template": [
+              29.803905757029842,
+              18.942118789376366,
+              12.914966657337251,
+              11.158571223830986,
+              10.896976860497414
+            ],
+            "collection": [
+              27.96257203895419
+            ],
+            "topic": [
+              9.976375458500089
+            ]
+          }
+        },
+        {
+          "query": "Sticker",
+          "baselineTotal": 19,
+          "currentTotal": 19,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_221",
+              "prompt:p_146",
+              "prompt:p_274",
+              "prompt:p_281",
+              "prompt:p_279"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_069",
+              "template:t_073",
+              "template:t_074",
+              "template:t_072"
+            ],
+            "collection": [
+              "collection:c_015"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_221",
+              "prompt:p_146",
+              "prompt:p_274",
+              "prompt:p_281",
+              "prompt:p_279"
+            ],
+            "template": [
+              "template:t_030",
+              "template:t_069",
+              "template:t_073",
+              "template:t_074",
+              "template:t_072"
+            ],
+            "collection": [
+              "collection:c_015"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              25.63265236631711,
+              21.353919376717275,
+              15.389042768613063,
+              5.043564724234838,
+              5.001668108195886
+            ],
+            "template": [
+              21.50050983694395,
+              15.63163706011527,
+              15.395031591157341,
+              5.065879929193882,
+              5.041539361550571
+            ],
+            "collection": [
+              0.6639843898289484
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              25.63265236631711,
+              21.353919376717275,
+              15.389042768613063,
+              5.043564724234838,
+              5.001668108195886
+            ],
+            "template": [
+              21.50050983694395,
+              15.63163706011527,
+              15.395031591157341,
+              5.065879929193882,
+              5.041539361550571
+            ],
+            "collection": [
+              0.6639843898289484
+            ]
+          }
+        },
+        {
+          "query": "gpt-image-2",
+          "baselineTotal": 298,
+          "currentTotal": 298,
+          "orderedResultsUnchanged": false,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_287",
+              "prompt:p_298",
+              "prompt:p_297",
+              "prompt:p_286",
+              "prompt:p_217"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056",
+              "template:t_052"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_287",
+              "prompt:p_298",
+              "prompt:p_217",
+              "prompt:p_297",
+              "prompt:p_286"
+            ],
+            "template": [
+              "template:t_017",
+              "template:t_059",
+              "template:t_054",
+              "template:t_056",
+              "template:t_052"
+            ],
+            "collection": [
+              "collection:c_016"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              99.33517716726558,
+              98.23608803982017,
+              97.29913427092306,
+              97.22230795836795,
+              97.18273123211785
+            ],
+            "template": [
+              14.208860726787414,
+              10.943753434541678,
+              10.478171433387928,
+              10.13075699581105,
+              9.267109993065437
+            ],
+            "collection": [
+              66.50335729333507
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              99.02760399566407,
+              97.92851486821866,
+              97.00328738252959,
+              96.99156109932157,
+              96.91473478676646
+            ],
+            "template": [
+              14.208860726787414,
+              10.943753434541678,
+              10.478171433387928,
+              10.13075699581105,
+              9.267109993065437
+            ],
+            "collection": [
+              66.50335729333507
+            ]
+          }
+        },
+        {
+          "query": "p_151",
+          "baselineTotal": 1,
+          "currentTotal": 1,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "currentTopK": {
+            "prompt": [
+              "prompt:p_151"
+            ]
+          },
+          "baselineScores": {
+            "prompt": [
+              48.78616375877868
+            ]
+          },
+          "currentScores": {
+            "prompt": [
+              48.65665225503716
+            ]
+          }
+        },
+        {
+          "query": "zxqvnonexistent",
+          "baselineTotal": 0,
+          "currentTotal": 0,
+          "orderedResultsUnchanged": true,
+          "topKMembershipUnchanged": true,
+          "baselineTopK": {},
+          "currentTopK": {},
+          "baselineScores": {},
+          "currentScores": {}
+        }
+      ]
+    }
+  },
+  "timings": {
+    "baseline": [
+      {
+        "name": "loadContent",
+        "wallMs": 26914,
+        "cpuMs": 9033
+      },
+      {
+        "name": "en:createIndex",
+        "wallMs": 2042,
+        "cpuMs": 549
+      },
+      {
+        "name": "en:loadEngine",
+        "wallMs": 725,
+        "cpuMs": 156
+      },
+      {
+        "name": "en:queries",
+        "wallMs": 160,
+        "cpuMs": 33
+      },
+      {
+        "name": "zh-Hans:createIndex",
+        "wallMs": 3641,
+        "cpuMs": 1320
+      },
+      {
+        "name": "zh-Hans:loadEngine",
+        "wallMs": 1145,
+        "cpuMs": 243
+      },
+      {
+        "name": "zh-Hans:queries",
+        "wallMs": 8,
+        "cpuMs": 7
+      },
+      {
+        "name": "ja:createIndex",
+        "wallMs": 3565,
+        "cpuMs": 1120
+      },
+      {
+        "name": "ja:loadEngine",
+        "wallMs": 854,
+        "cpuMs": 237
+      },
+      {
+        "name": "ja:queries",
+        "wallMs": 31,
+        "cpuMs": 8
+      },
+      {
+        "name": "de:createIndex",
+        "wallMs": 2489,
+        "cpuMs": 804
+      },
+      {
+        "name": "de:loadEngine",
+        "wallMs": 326,
+        "cpuMs": 161
+      },
+      {
+        "name": "de:queries",
+        "wallMs": 33,
+        "cpuMs": 14
+      }
+    ],
+    "current": [
+      {
+        "name": "loadContent",
+        "wallMs": 20545,
+        "cpuMs": 10100
+      },
+      {
+        "name": "en:createIndex",
+        "wallMs": 1627,
+        "cpuMs": 672
+      },
+      {
+        "name": "en:loadEngine",
+        "wallMs": 262,
+        "cpuMs": 160
+      },
+      {
+        "name": "en:queries",
+        "wallMs": 26,
+        "cpuMs": 38
+      },
+      {
+        "name": "zh-Hans:createIndex",
+        "wallMs": 1319,
+        "cpuMs": 1072
+      },
+      {
+        "name": "zh-Hans:loadEngine",
+        "wallMs": 237,
+        "cpuMs": 192
+      },
+      {
+        "name": "zh-Hans:queries",
+        "wallMs": 5,
+        "cpuMs": 8
+      },
+      {
+        "name": "ja:createIndex",
+        "wallMs": 1114,
+        "cpuMs": 1004
+      },
+      {
+        "name": "ja:loadEngine",
+        "wallMs": 194,
+        "cpuMs": 202
+      },
+      {
+        "name": "ja:queries",
+        "wallMs": 5,
+        "cpuMs": 5
+      },
+      {
+        "name": "de:createIndex",
+        "wallMs": 849,
+        "cpuMs": 748
+      },
+      {
+        "name": "de:loadEngine",
+        "wallMs": 209,
+        "cpuMs": 161
+      },
+      {
+        "name": "de:queries",
+        "wallMs": 15,
+        "cpuMs": 14
+      },
+      {
+        "name": "ko:createIndex",
+        "wallMs": 1266,
+        "cpuMs": 1106
+      },
+      {
+        "name": "ko:loadEngine",
+        "wallMs": 205,
+        "cpuMs": 197
+      },
+      {
+        "name": "ko:queries",
+        "wallMs": 10,
+        "cpuMs": 8
+      }
+    ]
+  },
+  "sameCorpusAnalyzerControl": {
+    "en": {
+      "identicalSerializedIndex": true,
+      "identicalFullQueryResponses": true,
+      "sha256": "f2c50dc0c6ee98c76aea8fc29a2a9a8c2f36e2241a33554af19e02bdfe278822",
+      "elapsedMs": 1528
+    },
+    "zh-Hans": {
+      "identicalSerializedIndex": true,
+      "identicalFullQueryResponses": true,
+      "sha256": "62d3d87281a371a9bca5f93c44baec812ea07d8162c4d74637720d3479120de0",
+      "elapsedMs": 2361
+    },
+    "ja": {
+      "identicalSerializedIndex": true,
+      "identicalFullQueryResponses": true,
+      "sha256": "c62423fae2dbdcbccac6d170e96b203b992b439f79c795bbe63ea7f908e92b86",
+      "elapsedMs": 2361
+    },
+    "de": {
+      "identicalSerializedIndex": true,
+      "identicalFullQueryResponses": true,
+      "sha256": "8f83bbc6dd61a68f8e110e339417f63a6ec7beb13ac8bcf421523f1030d51372",
+      "elapsedMs": 2474
+    }
+  },
+  "korean": {
+    "documents": 379,
+    "counts": {
+      "prompt": 285,
+      "template": 75,
+      "collection": 16,
+      "topic": 3
+    },
+    "documentContent": {
+      "rawBytes": 798162,
+      "gzipBytes": 154631,
+      "sha256": "e4926f9ec399d63bf4812c88bd573d74c20fbf60caac67ba33123bf27a139b29"
+    },
+    "semanticIndex": {
+      "rawBytes": 1887696,
+      "gzipBytes": 307886,
+      "sha256": "8c49399c49d1fff997a8213043b8b43e6a36ce0f28cec6d64e593619e065a458"
+    },
+    "normalizedWireFile": {
+      "rawBytes": 1893296,
+      "gzipBytes": 310404,
+      "sha256": "79ac4f26d8f391c865ff33fa3a9505ff14e75e7cb6511dff9c785ea7da1e22a1"
+    },
+    "actualArtifact": {
+      "rawBytes": 1893296,
+      "gzipBytes": 310404,
+      "sha256": "61c194857ea54de7c2f490b8f2c5ef618e8255d98fa009e3d41a25f81e371517",
+      "normalizedMatchesReconstruction": true
+    }
+  },
+  "conclusion": {
+    "existingLocaleDocumentCountsUnchanged": true,
+    "existingLocaleQueries": 32,
+    "identicalOrderedTopK": 31,
+    "identicalTopKMembershipAndTotal": 32,
+    "growthExplanation": "Only search-document terms changed: 367 English documents and 363 each zh-Hans/ja/de documents gained Korean taxonomy labels/aliases through the pre-existing termAliases cross-language behavior (scripts/lib/content/build-index.ts:335-348). Existing titles, descriptions, bodies, paths, tags and identities are unchanged. Korean aliases add approximately 53 KB raw / 3.5–4.5 KB gzip per locale.",
+    "rankingDifference": "German gpt-image-2 returns the same 298 total and same top-5 members per kind; prompt order changes p_287,p_298,p_297,p_286,p_217 -> p_287,p_298,p_217,p_297,p_286. Same-corpus control reproduces baseline bytes and exact query responses for all four locales, isolating this to taxonomy corpus additions rather than analyzer changes for existing languages.",
+    "releaseScope": "Confirms bounded explained index growth and existing-language analyzer regression control; does not claim browser/network startup or production latency budgets are passed."
+  }
+}

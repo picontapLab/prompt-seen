@@ -27,6 +27,7 @@ inputRequirements:
       Prompt Seen generierten Schneemann.
     es: Sube una imagen clara de un muñeco de nieve. Este ejemplo usa uno generado
       por Prompt Seen.
+    ko: 선명한 눈사람 이미지 한 장을 업로드하세요. 이 예시는 Prompt Seen에서 생성한 눈사람을 사용합니다.
   slots:
     - id: snowman
       labels:
@@ -35,6 +36,7 @@ inputRequirements:
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
         es: Referencia generada por el proyecto
+        ko: 프로젝트에서 생성한 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_303
@@ -54,6 +56,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       es: Publicación o galería original completa; no este ejemplo generado
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -64,6 +67,7 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       es: Captura pública guardada de X; prompt completo de la copia guardada de
         la publicación o respuesta del autor
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118193088128745875&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -71,6 +75,7 @@ inspirationSources:
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
       es: Texto completo del autor, idioma original
+      ko: 작성자의 전체 원문, 원래 언어
     metrics:
       - key: likes
         value: 62
@@ -80,6 +85,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           es: Me gusta de la publicación original
+          ko: 출처 게시물 좋아요
 source:
   author: Goodmanprotocol
   url: https://x.com/Goodmanprotocol/status/2118193088128745875

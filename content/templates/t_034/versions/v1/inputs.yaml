@@ -7,6 +7,7 @@ instructions:
     chinesische Beschriftungen an.
   es: Sube una referencia de objeto y aporta notas verificadas y etiquetas exactas
     en chino.
+  ko: 물체 참조 이미지를 업로드하고 확인한 설명과 정확한 중국어 라벨을 제공하세요.
 slots:
   - id: object
     labels:
@@ -15,5 +16,6 @@ slots:
       ja: 物体
       de: Objekt
       es: Objeto
+      ko: 물체
     min: 1
     max: 1

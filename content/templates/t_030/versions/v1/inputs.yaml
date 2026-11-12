@@ -8,6 +8,7 @@ instructions:
     in Leserichtung an.
   es: Sube una referencia de personaje. Aporta exactamente dieciséis textos cortos
     en orden de lectura.
+  ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 읽는 순서대로 짧은 문구를 정확히 열여섯 개 제공하세요.
 slots:
   - id: character
     labels:
@@ -16,5 +17,6 @@ slots:
       ja: 人物
       de: Figur
       es: Personaje
+      ko: 캐릭터
     min: 1
     max: 1

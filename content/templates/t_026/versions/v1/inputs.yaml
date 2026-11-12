@@ -8,6 +8,7 @@ instructions:
     Erinnerungsfotos hoch; gib einen Namen und eine Akzentfarbe an.
   es: Sube una foto de una persona vista de perfil, seguida de dos a cuatro fotos
     de recuerdos; indica un nombre y un color de acento.
+  ko: 옆모습 사진 한 장을 먼저, 추억 사진 두 장에서 네 장을 다음에 업로드하고 이름과 포인트 색을 제공하세요.
 slots:
   - id: profile
     labels:
@@ -16,6 +17,7 @@ slots:
       ja: 横顔
       de: Profil
       es: Perfil
+      ko: 옆모습
     min: 1
     max: 1
   - id: memories
@@ -25,5 +27,6 @@ slots:
       ja: 思い出の写真
       de: Erinnerungen
       es: Recuerdos
+      ko: 추억
     min: 2
     max: 4

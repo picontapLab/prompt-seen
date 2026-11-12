@@ -24,6 +24,7 @@ inputRequirements:
     ja: 入力画像なしで、書き直した完全なプロンプトを使用してください。
     de: Verwende den vollständigen umgeschriebenen Prompt ohne Eingabebild.
     es: Usa el prompt reescrito completo sin imagen de entrada.
+    ko: 입력 이미지 없이 전체 재작성 프롬프트를 사용하세요.
   slots: []
 showcaseExampleId: x_376
 promptProvenance: independent-adaptation
@@ -42,6 +43,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       es: Publicación o galería original completa; no este ejemplo generado
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -52,6 +54,7 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       es: Captura pública guardada de X; prompt completo de la copia guardada de
         la publicación o respuesta del autor
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118247837683044650&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is
@@ -62,6 +65,7 @@ inspirationSources:
         ist separat archiviert.
       es: Adaptación independiente; el prompt original falló en tres intentos y se
         archiva por separado.
+      ko: 독립적인 각색; 원본 프롬프트는 세 번의 시도에 실패했으며 별도로 보관되어 있습니다.
     metrics:
       - key: likes
         value: 245
@@ -71,6 +75,7 @@ inspirationSources:
           ja: 元投稿のいいね数
           de: Likes des Quellbeitrags
           es: Me gusta de la publicación original
+          ko: 출처 게시물 좋아요
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/johnAGI168/status/2118247837683044650

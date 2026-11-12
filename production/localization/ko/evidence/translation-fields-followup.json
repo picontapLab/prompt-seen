@@ -1,0 +1,45 @@
+{
+  "reviewer": "AI Codex standards_review with shared_translation_check",
+  "coverage": {
+    "fields": 2220,
+    "uniqueSourceTargetPairs": 1101,
+    "categories": {
+      "examples": 206,
+      "media": 363,
+      "prompts": 882,
+      "taxonomy": 34,
+      "templates": 308,
+      "uiMessages": 427
+    },
+    "method": "Read every unique source-target pair; context-checked potentially ambiguous UI labels and reference-image slots. Text-only semantic review; no fresh asset inspection, no native-speaker claim."
+  },
+  "findings": [
+    {
+      "i": 464,
+      "keys": [
+        "content/prompts/p_133/entry.yaml#inputRequirements.slots.0.labels",
+        "content/prompts/p_134/entry.yaml#inputRequirements.slots.0.labels",
+        "content/templates/t_029/versions/v1/inputs.yaml#slots.0.labels"
+      ],
+      "source": "Subject",
+      "target": "주제",
+      "suggestedTarget": "대상",
+      "reason": "These are required reference-image slots for a person, pet or product. Subject means depicted subject, but 주제 means theme/topic. Adjacent Korean upload instructions already use 대상. Do not apply this change to the taxonomy field-group or ink-wash template subject field, where 주제 is appropriate.",
+      "severity": "P3",
+      "confidence": 0.94
+    }
+  ],
+  "notes": [
+    "All UI ICU branches and placeholders were compared in source-target pairs; formal parser validation is delegated to parent strict checks.",
+    "Two fixed language particles occur only with the current page nativeName 한국어, so no present runtime grammar error was identified.",
+    "a_269 alt source/target difference is an explicitly documented image-inspection correction."
+  ],
+  "reviewedSourceRevision": "dc3fc5e535312b5b35fb72ce73583a56d2425747:abb7cd9cf3c3477b4878e17949cc156a554c49f177d8ae3d2539a6cec834ecb2",
+  "reviewedBranchCommit": "dc3fc5e535312b5b35fb72ce73583a56d2425747",
+  "resolution": {
+    "status": "corrected",
+    "batchId": "463aba78dc581e1212545c9ee7a9c633c076538eefbd8053ab58fe89d3cd076a",
+    "reviewRecords": "../reviews.json",
+    "method": "Exact pending candidates separately compared with their sources by AI Codex root, then applied with locale:import and locale:promote dry-run/apply. Baseline hashes in this audit describe the pre-correction text."
+  }
+}

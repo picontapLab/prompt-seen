@@ -1,0 +1,48 @@
+{
+  "open": "검색",
+  "tooltip": "검색 ({key})",
+  "panel": {
+    "label": "검색",
+    "field": "프롬프트와 템플릿 검색",
+    "placeholder": "프롬프트, 템플릿, 스타일 검색…",
+    "close": "검색 닫기",
+    "recent": "최근 검색",
+    "clearRecent": "최근 검색 지우기",
+    "popular": "인기 용도",
+    "seeAll": "{count, plural, other {결과 #개 모두 보기}}",
+    "openSearchPage": "검색 페이지 열기",
+    "loading": "검색을 불러오는 중…",
+    "keys": "↑ ↓ 선택 · Enter 열기 · Esc 닫기"
+  },
+  "groups": {
+    "prompt": "프롬프트",
+    "template": "템플릿",
+    "collection": "컬렉션",
+    "topic": "주제"
+  },
+  "count": "{count, plural, =0 {결과 없음} other {결과 #개}}",
+  "error": {
+    "body": "검색을 불러오지 못했습니다. 목록과 링크는 계속 사용할 수 있습니다.",
+    "stale": "페이지를 연 뒤 사이트가 업데이트되었습니다. 새 버전을 검색하려면 새로고침하세요.",
+    "retry": "다시 시도",
+    "reload": "새로고침"
+  },
+  "page": {
+    "documentTitle": "프롬프트와 템플릿 검색",
+    "title": "검색",
+    "description": "제목, 용도, 스타일과 프롬프트 본문으로 테스트된 이미지 프롬프트와 템플릿을 검색하세요.",
+    "intro": "제목, 용도, 스타일, 모델과 프롬프트 본문을 검색합니다.",
+    "summary": "“{query}” 검색 결과: {count, plural, other {#개}}",
+    "updating": "검색 결과 업데이트 중…",
+    "more": "전체 {total}개 중 {shown}개 표시"
+  },
+  "noResults": {
+    "title": "“{query}” 검색 결과가 없습니다",
+    "broader": "검색어를 줄여 보세요",
+    "terms": "관련 태그",
+    "otherLocales": "다른 언어의 결과",
+    "otherLocale": "{language} 콘텐츠: {count, plural, other {결과 #개}}",
+    "suggestion": "{label} ({count})",
+    "browse": "모든 프롬프트 보기"
+  }
+}

@@ -27,6 +27,7 @@ inputRequirements:
       deinen Bildgenerator.
     es: No se necesita imagen de referencia. Copia el prompt completo en tu
       generador de imágenes.
+    ko: 참조 이미지가 필요하지 않습니다. 전체 프롬프트를 이미지 생성기에 복사하세요.
   slots: []
 showcaseExampleId: x_152
 source:
@@ -49,6 +50,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       es: Publicación o galería de imágenes completa
+      ko: 전체 게시물 또는 이미지 갤러리
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -57,6 +59,7 @@ inspirationSources:
       ja: 検索インデックス上の一次情報のスナップショット
       de: Snapshot einer indexierten Primärquelle
       es: Captura indexada de la fuente primaria
+      ko: 색인된 1차 출처 스냅샷
     evidenceUrl: https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -64,6 +67,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: post_score
         value: 2405
@@ -73,6 +77,7 @@ inspirationSources:
           ja: 投稿スコア
           de: Beitragsbewertung
           es: Puntuación de la publicación
+          ko: 게시물 점수
       - key: comments
         value: null
         labels:
@@ -81,3 +86,4 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           es: Comentarios
+          ko: 댓글

@@ -1,0 +1,90 @@
+{
+  "reviewedAt": "2026-11-11",
+  "previewBuildId": "ko-preview-20261111",
+  "baselineRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "baselineBuildId": "ko-baseline-0306b74",
+  "basePath": "/prompt-seen",
+  "baselineDirectory": "/tmp/ko-index-baseline-0306b74",
+  "method": "Archived baseline source, content, configuration and tests; isolated local dependency clone; independent preview dist and nginx port 8100. No product fixes applied.",
+  "previewFullSuite": {
+    "passed": 1683,
+    "skipped": 57,
+    "failed": 10,
+    "duration": "24.8m",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "koreanSpecific": {
+      "browserPassed": 93,
+      "interactionPassed": 36,
+      "httpPassed": 5,
+      "httpSkipped": 1
+    }
+  },
+  "previewFocusedRetry": {
+    "chromiumPopup": "failed",
+    "webkitPopup": "passed",
+    "webkitSpanishAcceptance": {
+      "failed": 8,
+      "passed": 0
+    }
+  },
+  "baselineFocusedSuite": {
+    "passed": 2,
+    "failed": 2,
+    "duration": "20.0s",
+    "cases": {
+      "chromiumSpanishLightDesktop": "passed",
+      "chromiumForeignHistoryPopup": "passed",
+      "webkitSpanishLightDesktop": "failed: React #418 text hydration mismatch",
+      "webkitForeignHistoryPopup": "failed: dialog remained open with data-closing for 15 seconds"
+    }
+  },
+  "baselineChromiumPopupRepeat": {
+    "repetitions": 5,
+    "passed": 3,
+    "failed": 2,
+    "duration": "39.4s",
+    "workers": 1
+  },
+  "findings": [
+    {
+      "id": "spanish-home-hydration",
+      "classification": "reproduced on baseline",
+      "route": "/prompt-seen/es/",
+      "serverText": "Prompt · inglés",
+      "webkitClientText": "Prompt · Inglés",
+      "error": "React minified #418; args[]=text",
+      "source": "src/ui/prompt-detail/language.ts:17",
+      "caller": "src/ui/showcase/FeatureShowcase.tsx:143",
+      "cause": "Intl.DisplayNames locale-data capitalization differs between Node and WebKit; the client-rendered showcase evaluates it during hydration.",
+      "probe": "Only homepage produced an error across the eight Spanish acceptance routes; all other compared text nodes were equal."
+    },
+    {
+      "id": "foreign-history-popup-close",
+      "classification": "intermittent failure reproduced on baseline in Chromium and WebKit",
+      "test": "tests/e2e/popup.browser.spec.ts:516",
+      "trigger": "Gallery -> history.pushState(null, empty title, second prompt detail URL) -> Escape",
+      "observed": "dialog[data-popup] retains open and data-closing after the 15-second close wait",
+      "cause": "Not further isolated; do not infer that the failure is a Korean regression."
+    }
+  ],
+  "sourceComparison": "git diff from baseline showed no changes in src/ui/detail-popup/, src/ui/showcase/FeatureShowcase.tsx, src/ui/prompt-detail/language.ts, tests/e2e/popup.browser.spec.ts or tests/e2e/acceptance.browser.spec.ts at diagnosis time.",
+  "logs": {
+    "previewFull": ".artifacts/localization/ko/full-preview-e2e.log",
+    "previewRetry": ".artifacts/localization/ko/preview-retry.log",
+    "hydrationProbe": ".artifacts/localization/ko/hydration-probe.json",
+    "baselineBuild": ".artifacts/localization/ko/baseline-build.log",
+    "baselineFocused": ".artifacts/localization/ko/baseline-e2e.log",
+    "baselineRepeated": ".artifacts/localization/ko/baseline-popup-repeat.log"
+  },
+  "failureArtifacts": {
+    "preview": ".artifacts/localization/ko/full-preview-failures/",
+    "previewRetry": ".artifacts/localization/ko/retry-results/",
+    "baseline": ".artifacts/localization/ko/baseline-e2e-results/",
+    "baselineRepeat": ".artifacts/localization/ko/baseline-popup-repeat-results/"
+  },
+  "scope": "The full preview suite is not all green. Its ten failures match two pre-existing failure classes reproduced on the original baseline; Korean-specific suites passed. This diagnosis does not waive future acceptance checks or claim the existing defects are fixed."
+}
