@@ -1,3 +1,5 @@
+import { hangulUnits, normalizeKoreanQuery } from './korean';
+
 // Tokenisation for search (design doc §13.2). One implementation, imported by the index emitter
 // at build time and by the Worker in the browser, so documents and queries are split the same
 // way everywhere.
@@ -6,7 +8,7 @@
 //   digits and combining marks; "gpt-image-2" is three words. Case folds with the locale's rules
 //   (Turkish İ/ı), Latin, Greek and Cyrillic accents fold away ("café" finds "cafe"), and Arabic
 //   drops diacritics and tatweel and unifies alef and yeh forms.
-// - Han, kana and Hangul have no spaces between words. Runs are split into overlapping character
+// - Han and kana runs, and Korean syllable runs, are split into overlapping character
 //   pairs (bigrams); documents also index single characters, so a one-character query matches.
 //   Queries use pairs that do not overlap (the last one overlaps when the run is odd): "霓虹肖像"
 //   becomes 霓虹 + 肖像, so two words typed together still match a document where they are apart.
@@ -65,11 +67,13 @@ function kindOf(char: string): Kind {
 type Run = { kind: Exclude<Kind, 'none'>; start: number; chars: { text: string; start: number }[] };
 
 /** Runs of word or CJK characters, with combining marks kept on the character before them. */
-function runs(text: string): Run[] {
+function runs(text: string, locale: string): Run[] {
   const out: Run[] = [];
   let run: Run | null = null;
   let index = 0;
-  for (const char of text) {
+  const characters =
+    locale.split('-')[0] === 'ko' ? hangulUnits(text).map((unit) => text.slice(unit.start, unit.end)) : text;
+  for (const char of characters) {
     const start = index;
     index += char.length;
     if (MARK.test(char)) {
@@ -101,7 +105,7 @@ const endOf = (c: { text: string; start: number }) => c.start + c.text.length;
  */
 export function spans(text: string, locale: string, mode: 'index' | 'query' = 'index'): Span[] {
   const out: Span[] = [];
-  for (const run of runs(text)) {
+  for (const run of runs(text, locale)) {
     if (run.kind === 'word') {
       const first = run.chars[0]!;
       const last = run.chars.at(-1)!;
@@ -129,12 +133,14 @@ export const tokenize = (text: string, locale: string): string[] => spans(text, 
 
 /** Terms of a query, in order, without repeats. */
 export const queryTerms = (text: string, locale: string): string[] => [
-  ...new Set(spans(text, locale, 'query').map((s) => s.term)),
+  ...new Set(
+    spans(locale.split('-')[0] === 'ko' ? normalizeKoreanQuery(text) : text, locale, 'query').map((s) => s.term),
+  ),
 ];
 
 /** The CJK runs of a query in search form, e.g. "ポスター" for "neon ポスター" (for highlighting). */
 export const cjkRuns = (text: string, locale: string): string[] =>
-  runs(text)
+  runs(text, locale)
     .filter((r) => r.kind === 'cjk')
     .map((r) => r.chars.map((c) => normalizeTerm(c.text, locale)).join(''));
 

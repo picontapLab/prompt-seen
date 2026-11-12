@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { builtLocales, config, type LocaleEntry } from '@/config';
 import { searchClient } from '@/modules/search/client';
 import { searchIndexFile } from '@/modules/search/files';
@@ -99,11 +99,38 @@ export function usePopular(locale: LocaleEntry, enabled = true): PopularTerm[] |
 export function useCommittedQuery(value: string) {
   // The value when composition started; null when not composing.
   const [frozen, setFrozen] = useState<string | null>(null);
+  const composing = useRef(false);
+  const composingKey = useRef(false);
   return {
     query: frozen ?? value,
+    isComposing: frozen !== null,
+    isCompositionActive: () => composing.current || composingKey.current,
     inputProps: {
-      onCompositionStart: () => setFrozen(value),
-      onCompositionEnd: () => setFrozen(null),
+      onCompositionStart: () => {
+        composing.current = true;
+        setFrozen(value);
+      },
+      onCompositionEnd: () => {
+        composing.current = false;
+        setFrozen(null);
+      },
+      onKeyDownCapture: (event: KeyboardEvent<HTMLInputElement>) => {
+        // Safari can end composition before delivering the confirming Enter as 229.
+        // Keep that event marked through its native implicit form submission; stopping
+        // propagation alone does not cancel the browser's default submit action.
+        composingKey.current = event.nativeEvent.isComposing || event.keyCode === 229;
+        if ((composing.current || composingKey.current) && (event.key === 'Enter' || event.key === 'Escape')) {
+          // Keep React Aria and app shortcuts from selecting a result or closing the dialog.
+          // Do not cancel the IME's native candidate-confirmation/cancellation action.
+          event.stopPropagation();
+        }
+      },
+      onKeyUpCapture: () => {
+        composingKey.current = false;
+      },
+      onBlur: () => {
+        composingKey.current = false;
+      },
     },
   };
 }

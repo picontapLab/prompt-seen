@@ -1,0 +1,109 @@
+{
+  "baseRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "recordedAt": "2026-11-11",
+  "environment": {
+    "node": "24.19.0",
+    "os": "macOS",
+    "executor": "AI Codex root"
+  },
+  "checks": [
+    {
+      "name": "content validation",
+      "command": "npm run content:validate",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/validate.log",
+      "sha256": "c07d21124f6d874cc28900b856645de44f8cb8adf0c116df6ca6e0e48e2ba950"
+    },
+    {
+      "name": "typecheck after final IME fix",
+      "command": "npm run typecheck",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/typecheck-ime-fix.log",
+      "sha256": "e3c62b03290c21d1ee8a0752a1a17891d14c4b8a3e394abb6f3bc79c56b58d1a"
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/lint-final.log",
+      "sha256": "fe7cb912277b831aad68694e64bb3388dd7dc58656a03f8d3c8d8d443770307a"
+    },
+    {
+      "name": "format",
+      "command": "npm run format:check",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/format-final.log",
+      "sha256": "71797bb261a4f195ef55d0fa0fb455fc5121aa58596fffab248bf7c3f7565b24"
+    },
+    {
+      "name": "design tokens",
+      "command": "npm run tokens:check",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/tokens.log",
+      "sha256": "ee50b6ba3b7ac82859b320caf27bed97d654e88d536426a8f127ad4c4884b4e8"
+    },
+    {
+      "name": "full unit suite",
+      "command": "npm test",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/full-unit.log",
+      "sha256": "613c294bb61c5d14dd26825cff6c1e179a337a74946994304c013c24209a2a89"
+    },
+    {
+      "name": "Storybook",
+      "command": "npm run storybook:build",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/storybook.log",
+      "sha256": "280c1dcf76c1771498b933f97563ebc6d3ae0c8cb3550c00f3a4d3d5cd562b81"
+    },
+    {
+      "name": "Korean strict",
+      "command": "npm run --silent locale:check -- --locale ko --strict",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/strict-final.log",
+      "sha256": "b52c9480b28c46e59ba41e62e06c5c3a9b6d7d226660d2ba574c13c9eff0d688"
+    },
+    {
+      "name": "focused IME search UI",
+      "command": "npx vitest run src/ui/search/search-ui.test.ts",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/ime-fix-unit.log",
+      "sha256": "29fca14aabb22a31236355e396a660b77ebcc7ad1bc3c936ea515680037fed5f"
+    },
+    {
+      "name": "final test-only change typecheck",
+      "command": "npm run typecheck",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/typecheck-final.log",
+      "sha256": "e3c62b03290c21d1ee8a0752a1a17891d14c4b8a3e394abb6f3bc79c56b58d1a"
+    },
+    {
+      "name": "final layout test lint",
+      "command": "npx eslint --max-warnings=0 tests/e2e/korean.browser.spec.ts",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/lint-layout-final.log",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "name": "final layout test and evidence formatting",
+      "command": "npx prettier --check tests/e2e/korean.browser.spec.ts production/localization/ko/acceptance.md production/localization/ko/evidence",
+      "result": "passed",
+      "log": ".artifacts/localization/ko/format-evidence-final.log",
+      "sha256": "2bdd454ef4f01d4193c0cf2391de8ea3ba79fec7bd5c9330da791983323d27b5"
+    }
+  ],
+  "fullUnitResult": {
+    "filesPassed": 58,
+    "testsPassed": 533,
+    "durationSeconds": 67.1
+  },
+  "koreanStrict": {
+    "pagesCurrent": 381,
+    "pagesTotal": 381,
+    "fieldsCurrent": 2220,
+    "fieldsTotal": 2220,
+    "fallback": 0,
+    "ready": true
+  },
+  "note": "Full unit suite executed once after content/search changes; final IME fix subsequently checked by typecheck, focused unit tests and rebuilt three-browser regression. Raw logs are local ignored artifacts, not included in this commit. Browser/candidate results have separate evidence records."
+}

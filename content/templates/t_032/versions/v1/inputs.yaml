@@ -10,6 +10,7 @@ instructions:
     exemplo é sintética.
   es: Sube un retrato y exactamente nueve saludos cortos. Nuestra persona es
     sintética.
+  ko: 인물 사진 한 장을 업로드하고 짧은 인사말을 정확히 아홉 개 입력하세요. 예시의 인물은 합성 이미지입니다.
 slots:
   - id: person
     labels:
@@ -19,5 +20,6 @@ slots:
       de: Person
       pt-BR: Pessoa
       es: Persona
+      ko: 인물
     min: 1
     max: 1

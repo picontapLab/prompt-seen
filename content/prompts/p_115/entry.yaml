@@ -29,6 +29,7 @@ inputRequirements:
       adultos fictícios gerados por IA.
     es: Sube primero a la persona A y después a la persona B. Ambas referencias
       son adultos ficticios generados por IA.
+    ko: 인물 A를 먼저, 인물 B를 다음에 업로드하세요. 두 참조 인물 모두 AI로 생성한 가상 성인입니다.
   slots:
     - id: personA
       labels:
@@ -38,6 +39,7 @@ inputRequirements:
         de: Person A
         pt-BR: Pessoa A
         es: Persona A
+        ko: 인물 A
       min: 1
       max: 1
     - id: personB
@@ -48,6 +50,7 @@ inputRequirements:
         de: Person B
         pt-BR: Pessoa B
         es: Persona B
+        ko: 인물 B
       min: 1
       max: 1
 showcaseExampleId: x_160
@@ -72,6 +75,7 @@ inspirationSources:
       de: Gesamtes Tutorial- oder Präsentationsvideo
       pt-BR: Vídeo completo de tutorial ou demonstração
       es: Vídeo completo del tutorial o la demostración
+      ko: 전체 튜토리얼 또는 쇼케이스 영상
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -81,6 +85,7 @@ inspirationSources:
       de: Momentaufnahme der offiziellen öffentlichen API
       pt-BR: Captura oficial da API pública
       es: Captura de la API pública oficial
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -89,6 +94,7 @@ inspirationSources:
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: views
         value: 9416
@@ -99,6 +105,7 @@ inspirationSources:
           de: Aufrufe
           pt-BR: Visualizações
           es: Visualizaciones
+          ko: 조회수
       - key: likes
         value: 231
         labels:
@@ -108,6 +115,7 @@ inspirationSources:
           de: Gefällt mir
           pt-BR: Curtidas
           es: Me gusta
+          ko: 좋아요
       - key: saves
         value: 345
         labels:
@@ -117,6 +125,7 @@ inspirationSources:
           de: Gespeichert
           pt-BR: Salvamentos
           es: Guardados
+          ko: 저장
       - key: comments
         value: 139
         labels:
@@ -126,6 +135,7 @@ inspirationSources:
           de: Kommentare
           pt-BR: Comentários
           es: Comentarios
+          ko: 댓글
       - key: shares
         value: 65
         labels:
@@ -135,6 +145,7 @@ inspirationSources:
           de: Geteilt
           pt-BR: Compartilhamentos
           es: Veces compartido
+          ko: 공유
       - key: coins
         value: 208
         labels:
@@ -144,6 +155,7 @@ inspirationSources:
           de: Coins
           pt-BR: Moedas
           es: Monedas
+          ko: 코인
       - key: danmaku
         value: 4
         labels:
@@ -153,3 +165,4 @@ inspirationSources:
           de: Danmaku
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
+          ko: 화면 댓글

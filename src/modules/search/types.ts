@@ -4,7 +4,7 @@
 /** Groups in the order the panel and the search page show them (§11.8.6). */
 export const SEARCH_KINDS = ['prompt', 'template', 'collection', 'topic'] as const;
 export const SEARCH_SCHEMA_VERSION = 2;
-export const SEARCH_ANALYZER_VERSION = 5;
+export const SEARCH_ANALYZER_VERSION = 6;
 export type SearchKind = (typeof SEARCH_KINDS)[number];
 
 /** A small picture beside a result: the work's thumbnail at its original ratio. */

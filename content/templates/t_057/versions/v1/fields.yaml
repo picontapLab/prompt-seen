@@ -9,6 +9,7 @@ fields:
       de: Wort mit vier Buchstaben
       pt-BR: Palavra de quatro letras
       es: Palabra de cuatro letras
+      ko: 네 글자 단어
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
@@ -20,6 +21,7 @@ fields:
         relacionado consistente.
       es: Cambiar este valor crea una variante sin probar. Mantén coherente el
         contenido relacionado.
+      ko: 이 값을 바꾸면 아직 테스트하지 않은 새 변형이 됩니다. 관련 내용의 일관성을 유지하세요.
     type: string
     default: MELT
     minLength: 1
@@ -35,6 +37,7 @@ fields:
       de: Beschriftung
       pt-BR: Legenda
       es: Texto
+      ko: 문구
     help:
       en: Changing this value creates an untested variant. Keep related content
         consistent.
@@ -46,6 +49,7 @@ fields:
         relacionado consistente.
       es: Cambiar este valor crea una variante sin probar. Mantén coherente el
         contenido relacionado.
+      ko: 이 값을 바꾸면 아직 테스트하지 않은 새 변형이 됩니다. 관련 내용의 일관성을 유지하세요.
     type: string
     default: Letters soften into motion.
     minLength: 1

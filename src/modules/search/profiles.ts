@@ -1,3 +1,4 @@
+import { koreanAliases } from './korean';
 import { normalizeTerm, queryTerms, tokenize } from './tokenize';
 import type { SearchKind } from './types';
 
@@ -121,6 +122,11 @@ const PROFILES = {
 
 export function domainAliases(text: string, locale: string, kind?: SearchKind): string {
   const language = locale.split('-')[0]!.toLowerCase();
+  if (language === 'ko')
+    return (
+      koreanAliases(text) +
+      (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
+    );
   if (language !== 'de' && language !== 'es' && language !== 'pt') return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));

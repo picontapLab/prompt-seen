@@ -10,6 +10,7 @@ instructions:
     adulta e uma personalidade. O animal do exemplo é sintético.
   es: Sube una foto de mascota y elige un rango de edad adulta y una personalidad.
     La mascota de ejemplo es sintética.
+  ko: 반려동물 사진 한 장을 업로드하고 성인 연령대와 성격을 선택하세요. 예시의 반려동물은 합성 이미지입니다.
 slots:
   - id: pet
     labels:
@@ -19,5 +20,6 @@ slots:
       de: Haustier
       pt-BR: Animal de estimação
       es: Mascota
+      ko: 반려동물
     min: 1
     max: 1

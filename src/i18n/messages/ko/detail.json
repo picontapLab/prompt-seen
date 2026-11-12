@@ -1,0 +1,124 @@
+{
+  "kinds": {
+    "prompt": "프롬프트",
+    "template": "템플릿"
+  },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": {
+    "label": "탐색 경로",
+    "home": "홈",
+    "prompts": "프롬프트",
+    "templates": "템플릿"
+  },
+  "test": {
+    "label": "테스트 기록",
+    "verifiedWith": "테스트에 사용한 모델: {model}",
+    "notVerified": "검증되지 않음",
+    "lastTested": "테스트 날짜: {date}",
+    "neverTested": "아직 테스트하지 않음",
+    "updated": "업데이트: {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "참조 이미지 없음",
+      "optional": "참조 이미지 선택 사항",
+      "required": "참조 이미지 필요"
+    },
+    "recordedUnknownModel": "결과 기록 있음 · 모델 검증되지 않음"
+  },
+  "sheet": {
+    "label": "프롬프트 · {language}",
+    "languageNote": "프롬프트는 원래 언어를 유지합니다. 번역한 프롬프트는 다른 결과를 만들 수 있습니다.",
+    "characters": "{count, plural, other {#자}}",
+    "expand": "전체 보기",
+    "expandLines": "전체 보기 ({lines, plural, other {#줄}})",
+    "collapse": "접기"
+  },
+  "copy": {
+    "label": "프롬프트 복사",
+    "done": "복사됨",
+    "failed": "복사하지 못했습니다",
+    "failedHint": "프롬프트 텍스트를 선택한 뒤 키보드나 메뉴로 복사하세요."
+  },
+  "share": {
+    "label": "공유",
+    "copied": "링크 복사됨",
+    "failed": "링크를 복사하지 못했습니다"
+  },
+  "customize": "맞춤 설정",
+  "annotations": {
+    "heading": "각 문구의 역할"
+  },
+  "image": {
+    "original": "원본 크기 이미지",
+    "dimensions": "{width} × {height}",
+    "show": "전체 {total}개 중 {n}번째 이미지 보기",
+    "failed": "이미지를 불러오지 못했습니다.",
+    "retry": "다시 시도"
+  },
+  "examples": {
+    "heading": "테스트 결과",
+    "recorded": "기록 날짜",
+    "model": "모델",
+    "provider": "제공업체",
+    "notes": "관찰 내용",
+    "parameters": "매개변수",
+    "parameter": "매개변수",
+    "value": "값",
+    "template": "템플릿 {version}",
+    "references": "참조 이미지",
+    "outputs": "생성 결과",
+    "promptUsed": "이 결과에 사용한 프롬프트",
+    "unknown": "기록 없음",
+    "selectRun": "기록된 결과",
+    "cover": "대표 이미지"
+  },
+  "source": {
+    "heading": "출처 및 라이선스",
+    "prompt": "프롬프트",
+    "image": "이미지",
+    "unknown": "출처 미상",
+    "author": "작성자: {author}",
+    "licence": "라이선스: {licence}",
+    "creator": "제작자: {creator}",
+    "aiGenerated": "생성된 이미지",
+    "algorithmic": "프로그램으로 생성됨"
+  },
+  "related": {
+    "templates": "관련 템플릿",
+    "similar": "비슷한 프롬프트"
+  },
+  "actions": {
+    "label": "프롬프트 작업"
+  },
+  "template": {
+    "fields": "입력 항목",
+    "field": "항목",
+    "type": "유형",
+    "value": "기본 예시의 값",
+    "optional": "선택 사항",
+    "required": "필수",
+    "types": {
+      "string": "텍스트",
+      "string-list": "목록",
+      "enum": "선택형"
+    },
+    "listLimit": "항목 {min}–{max}개",
+    "maxLength": "최대 {max}자",
+    "choices": "{count, plural, other {옵션 #개}}",
+    "version": "버전 {version}",
+    "fieldCount": "{count, plural, other {입력 항목 #개}}",
+    "sampleImage": "기본 예시로 생성한 이미지입니다. 값을 바꾸면 결과도 달라집니다.",
+    "examples": "이 템플릿으로 만든 작품",
+    "testedImage": "현재 값과 정확히 일치하는 입력으로 기록한 결과입니다.",
+    "unmatchedImage": "현재 값으로 기록된 결과가 없습니다. 이미지는 다른 예시의 결과입니다."
+  },
+  "inspiration": {
+    "heading": "아이디어 출처 및 근거",
+    "adaptation": "독립적으로 재구성한 프롬프트입니다. 여기에 표시된 이미지는 직접 생성하고 기록한 결과입니다.",
+    "original": "원본 콘텐츠",
+    "snapshot": "출처 스냅샷",
+    "observed": "확인 날짜: {date}",
+    "evidence": "근거",
+    "scope": "이 수치는 원본 게시물이나 영상의 수치입니다. 해당 날짜에 확인한 기록이며, 실시간 집계나 이 이미지의 평점이 아닙니다."
+  }
+}

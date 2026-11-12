@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11",
+  "reviewer": "AI Codex ko_pages_a",
+  "baseRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+  "artifact": {
+    "buildId": "ko-preview-20261111-ime",
+    "mode": "preview",
+    "basePath": "/prompt-seen",
+    "port": 8098
+  },
+  "environment": {
+    "node": "24.19.0",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "server": "reference Docker/nginx",
+    "trace": "off"
+  },
+  "finding": {
+    "spec": "KO-08, spec line 249",
+    "severity": "P2",
+    "status": "resolved",
+    "description": "Safari-style keyCode 229 Enter after compositionend saved recent-search history through native implicit form submission.",
+    "fix": "Track composition-key state through submit; clear on keyup/blur or next normal keydown without cancelling native IME confirmation."
+  },
+  "red": {
+    "test": "tests/e2e/korean-ime-submit.browser.spec.ts",
+    "passed": 0,
+    "failed": 3,
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ]
+  },
+  "green": {
+    "test": "tests/e2e/korean-ime-submit.browser.spec.ts",
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 13.6,
+    "workers": 1
+  },
+  "focusedRegression": {
+    "files": [
+      "tests/e2e/korean-ime-submit.browser.spec.ts",
+      "tests/e2e/korean.browser.spec.ts",
+      "tests/e2e/korean-interactions.browser.spec.ts",
+      "tests/e2e/search.browser.spec.ts"
+    ],
+    "passed": 193,
+    "failed": 0,
+    "skipped": 2,
+    "durationReported": "2.6m",
+    "workers": 2,
+    "skippedCases": [
+      {
+        "test": "search.browser.spec.ts:217 pinyin composition via CDP",
+        "browser": "firefox",
+        "reason": "Existing Chromium-only CDP test"
+      },
+      {
+        "test": "search.browser.spec.ts:217 pinyin composition via CDP",
+        "browser": "webkit",
+        "reason": "Existing Chromium-only CDP test"
+      }
+    ]
+  },
+  "limitations": [
+    "Synthetic events and modified real keypresses do not constitute actual Korean OS IME validation.",
+    "Preview verification does not constitute production activation, deployment, or live rollback validation."
+  ],
+  "logs": {
+    "ime-submit-red": {
+      "localPath": ".artifacts/localization/ko/ime-submit-red.log",
+      "sha256": "2e0fe51f6fa76f0418be8eeb7da6c7e3803f5ed96b79cef2394e2486874cbe13"
+    },
+    "ime-submit-green": {
+      "localPath": ".artifacts/localization/ko/ime-submit-green.log",
+      "sha256": "ee79215811207ce3e27bf150dd9ac5f99681a7a7dba1756e348eb8f8c01e2537"
+    },
+    "korean-search-green": {
+      "localPath": ".artifacts/localization/ko/korean-search-green.log",
+      "sha256": "72d15bc8711046108259560f41f38958362efb313086c3b022e024ac31bc6130"
+    }
+  }
+}

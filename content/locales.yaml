@@ -67,7 +67,8 @@ locales:
       direction: ltr,
       enabled: false,
       phase: 1,
-      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only },
+      preview: true
     }
   - {
       code: de,

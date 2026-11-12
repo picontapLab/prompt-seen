@@ -13,6 +13,14 @@ function memoryStorage(initial: Record<string, string> = {}) {
 }
 
 describe('highlighting (§11.8.6)', () => {
+  it('marks complete decomposed Hangul syllables without changing emoji or source text', () => {
+    expect(highlightParts('🖼 한글, 빛!', 'ko', ['한글'])).toEqual([
+      { text: '🖼 ', mark: false },
+      { text: '한글', mark: true },
+      { text: ', 빛!', mark: false },
+    ]);
+  });
+
   it('preserves Spanish accents and decomposed ñ without highlighting plain n', () => {
     expect(highlightParts('🖼 ¡Fotografi\u0301a del an\u0303o! ano', 'es', ['fotografia', 'año'])).toEqual([
       { text: '🖼 ¡', mark: false },

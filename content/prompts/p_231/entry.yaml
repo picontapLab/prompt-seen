@@ -30,6 +30,7 @@ inputRequirements:
     es: Usa los recursos de referencia generados de forma independiente en el
       orden mostrado. No uses las imágenes oficiales ni las de las fuentes
       sociales.
+    ko: 표시된 순서대로 독립적으로 생성한 참조 자산을 사용하세요. 공식 이미지나 소셜 출처 이미지는 사용하지 마세요.
   slots:
     - id: reference
       labels:
@@ -39,6 +40,7 @@ inputRequirements:
         de: Ursprüngliche künstlich erzeugte Referenz
         pt-BR: Referência sintética original
         es: Referencia sintética original
+        ko: 원본 합성 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_295
@@ -62,6 +64,7 @@ inspirationSources:
         casos de uma mesma publicação compartilham as métricas.
       es: Publicación original; no este nuevo resultado generado. Varios casos de
         una misma publicación comparten las métricas.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -75,6 +78,7 @@ inspirationSources:
         contagens não foram atualizadas."
       es: "Investigación previa: revisión directa de la página y revisión visual.
         Los recuentos no se han actualizado."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://x.com/maxthon_zx/status/2118162629613302085
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -87,6 +91,7 @@ inspirationSources:
         trabalho registrado separadamente.
       es: La fuente aporta un prompt original; esta producción usa el prompt de
         trabajo registrado por separado.
+      ko: 출처에는 원본 프롬프트가 있으며, 이번 제작은 별도로 기록한 작업용 프롬프트를 사용합니다.
     metrics:
       - key: likes
         value: 0
@@ -97,6 +102,7 @@ inspirationSources:
           de: Gefällt mir
           pt-BR: Curtidas
           es: Me gusta
+          ko: 좋아요
       - key: reposts
         value: 0
         labels:
@@ -106,6 +112,7 @@ inspirationSources:
           de: Reposts
           pt-BR: Republicações
           es: Republicaciones
+          ko: 재게시
 source:
   author: Prompt Seen
   url: null

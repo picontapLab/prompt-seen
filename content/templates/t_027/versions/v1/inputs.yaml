@@ -10,6 +10,7 @@ instructions:
     cor de fundo.
   es: Sube una foto de acción e indica una palabra corta en mayúsculas y un color
     de fondo.
+  ko: 동작 사진 한 장을 업로드하고 대문자로 된 짧은 단어와 배경색을 제공하세요.
 slots:
   - id: action
     labels:
@@ -19,5 +20,6 @@ slots:
       de: Action
       pt-BR: Ação
       es: Acción
+      ko: 동작
     min: 1
     max: 1

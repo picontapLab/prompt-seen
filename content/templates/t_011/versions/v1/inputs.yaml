@@ -10,6 +10,7 @@ instructions:
     exatos; uma foto do produto é opcional.
   es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas;
     la foto de producto es opcional.
+  ko: 기기, 확인한 구조 설명과 정확한 라벨을 제공하세요. 제품 사진은 선택 사항입니다.
 slots:
   - id: product
     labels:
@@ -19,5 +20,6 @@ slots:
       de: Produkt
       pt-BR: Produto
       es: Producto
+      ko: 제품
     min: 0
     max: 1

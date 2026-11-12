@@ -8,6 +8,7 @@ instructions:
   pt-BR: Forneça um objeto e rótulos curtos; uma referência da aparência externa é
     opcional.
   es: Indica un objeto y etiquetas cortas; la referencia del exterior es opcional.
+  ko: 물체와 짧은 라벨을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
 slots:
   - id: object
     labels:
@@ -17,5 +18,6 @@ slots:
       de: Objekt
       pt-BR: Objeto
       es: Objeto
+      ko: 물체
     min: 0
     max: 1

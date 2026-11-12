@@ -12,6 +12,7 @@ fields:
       de: Produkt
       pt-BR: Produto
       es: Producto
+      ko: 제품
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
@@ -22,6 +23,7 @@ fields:
         salpicada”.
       es: Indica el objeto y su material, por ejemplo «una taza de cerámica
         moteada».
+      ko: "물체와 소재를 적으세요. 예: “점박이 도자기 머그잔”."
   - name: sellingPoints
     type: string-list
     required: true
@@ -38,6 +40,7 @@ fields:
       de: Verkaufsargumente
       pt-BR: Diferenciais
       es: Ventajas
+      ko: 제품 특징
     help:
       en: Concrete details become visible; vague claims are ignored.
       zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
@@ -47,6 +50,7 @@ fields:
       pt-BR: Detalhes concretos se tornam visíveis; alegações vagas são ignoradas.
       es: Los detalles concretos se hacen visibles; las afirmaciones vagas se
         ignoran.
+      ko: 구체적인 특징은 이미지에 나타나지만 모호한 주장은 반영되지 않습니다.
   - name: palette
     type: enum
     required: true
@@ -60,6 +64,7 @@ fields:
       de: Farbpalette
       pt-BR: Paleta
       es: Paleta
+      ko: 팔레트
     options:
       - value: warm neutral
         swatch:
@@ -74,6 +79,7 @@ fields:
           de: Warme Neutraltöne
           pt-BR: Neutra quente
           es: Neutros cálidos
+          ko: 따뜻한 중성색
       - value: sage green
         swatch:
           - "#DCE6DD"
@@ -87,6 +93,7 @@ fields:
           de: Salbeigrün
           pt-BR: Verde-sálvia
           es: Verde salvia
+          ko: 세이지 그린
       - value: midnight blue
         swatch:
           - "#1F2A44"
@@ -100,6 +107,7 @@ fields:
           de: Mitternachtsblau
           pt-BR: Azul-meia-noite
           es: Azul medianoche
+          ko: 미드나이트 블루
       - value: soft grey
         swatch:
           - "#E2E2E0"
@@ -113,6 +121,7 @@ fields:
           de: Sanftes Grau
           pt-BR: Cinza suave
           es: Gris suave
+          ko: 부드러운 회색
       - value: coral pop
         swatch:
           - "#EE6C4D"
@@ -126,6 +135,7 @@ fields:
           de: Kräftiges Korallrot
           pt-BR: Coral vibrante
           es: Toque coral
+          ko: 선명한 코럴
   - name: aspectRatio
     type: enum
     required: true
@@ -139,6 +149,7 @@ fields:
       de: Seitenverhältnis
       pt-BR: Proporção
       es: Relación de aspecto
+      ko: 화면 비율
     options:
       - value: 4:5
         labels:
@@ -149,6 +160,7 @@ fields:
           de: 4:5
           pt-BR: 4:5
           es: 4:5
+          ko: 4:5
       - value: 5:4
         labels:
           en: 5:4
@@ -158,6 +170,7 @@ fields:
           de: 5:4
           pt-BR: 5:4
           es: 5:4
+          ko: 5:4
       - value: 1:1
         labels:
           en: 1:1
@@ -167,6 +180,7 @@ fields:
           de: 1:1
           pt-BR: 1:1
           es: 1:1
+          ko: 1:1
       - value: 3:4
         labels:
           en: 3:4
@@ -176,6 +190,7 @@ fields:
           de: 3:4
           pt-BR: 3:4
           es: 3:4
+          ko: 3:4
       - value: 16:9
         labels:
           en: 16:9
@@ -185,6 +200,7 @@ fields:
           de: 16:9
           pt-BR: 16:9
           es: 16:9
+          ko: 16:9
   - name: headline
     type: string
     required: false
@@ -198,6 +214,7 @@ fields:
       de: Überschrift
       pt-BR: Título
       es: Titular
+      ko: 제목
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
@@ -206,3 +223,4 @@ fields:
       de: Optional. Kurze Wörter werden zuverlässiger dargestellt.
       pt-BR: Opcional. Palavras curtas são reproduzidas com mais confiabilidade.
       es: Opcional. Las palabras cortas se representan con más fiabilidad.
+      ko: 선택 사항입니다. 짧은 단어가 더 안정적으로 표현됩니다.

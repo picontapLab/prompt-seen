@@ -64,3 +64,9 @@ notes:
     geometría de cámara son fotogramas clave dibujados aproximados, no una
     simulación medida de cámara 3D; limitación documentada de la adaptación.
     Durante la extracción solo se quitaron bordes de viñeta de 2px."
+  ko: "콘택트 시트 네 장에서 아홉 프레임으로 구성된 모든 시퀀스를 검토하여 동작 순서, 대상의 정체성, 문구와 마지막 자세가 유지됨을
+    확인했습니다. 이 결과는 보관된 GPT Image 원본 픽셀을 재사용하며 제공업체를 새로 호출하지 않았습니다. 시간순 원본 자세 아홉
+    개를 선택했습니다. 전체 길이와 재생 횟수를 유지했습니다. 원본 검토 기록(프레임 수는 원본에만 해당): 회색 복도 프레임 열 개에
+    접근, 마네킹 등장, 카메라 회전과 낙하, 접근과 통과, 마지막의 빈 기울어진 복도가 나타납니다. 500ms 프레임 열 개로 5초 동안
+    한 번 재생합니다. 카메라 기울기와 기하 구조는 측정된 3D 카메라 시뮬레이션이 아닌 대략적인 그림 키프레임이며, 이를 각색의 한계로
+    기록했습니다. 추출할 때는 2px 패널 테두리만 제거했습니다."

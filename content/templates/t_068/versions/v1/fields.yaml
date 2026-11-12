@@ -9,6 +9,7 @@ fields:
       de: Drehung in Grad
       pt-BR: Rotação em graus
       es: Rotación en grados
+      ko: 회전 각도(도)
     help:
       en: Changing the angle also requires revising the room-position directions in
         the prompt. Only the default is demonstrated.
@@ -21,6 +22,7 @@ fields:
       es: Cambiar el ángulo también requiere revisar las indicaciones de posición
         de las habitaciones en el prompt. Solo se demuestra la versión
         predeterminada.
+      ko: 각도를 바꾸면 프롬프트 안의 방 위치 지시도 수정해야 합니다. 기본값만 시연되어 있습니다.
     type: string
     default: "180"
     minLength: 1

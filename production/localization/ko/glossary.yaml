@@ -1,0 +1,28 @@
+schemaVersion: 1
+locale: ko
+status: reviewed
+reviewer: AI Codex root
+reviewScope: Korean terminology used in the translated corpus; not native-speaker certification
+terms:
+  - { source: Prompt, target: 프롬프트 }
+  - { source: Template, target: 템플릿 }
+  - { source: Collection, target: 컬렉션 }
+  - { source: Reference image, target: 참조 이미지 }
+  - { source: Output image, target: 생성 이미지 }
+  - { source: Copy, target: 복사 }
+  - { source: Download, target: 다운로드 }
+  - { source: Reset, target: 초기화 }
+  - { source: Favorites, target: 즐겨찾기 }
+  - { source: Not verified, target: 검증되지 않음 }
+  - { source: Product photography, target: 제품 사진, aliases: [제품사진, product photography, packshot] }
+  - { source: Portrait, target: 인물 사진, aliases: [인물사진, 포트레이트, portrait] }
+  - { source: Poster, target: 포스터 }
+  - { source: Sticker, target: 스티커 }
+  - { source: Background, target: 배경 }
+  - { source: Lighting, target: 조명 }
+  - { source: Ink wash, target: 수묵화 }
+preservationRules:
+  - Original Prompt bodies, model identifiers, hashes, licenses and run facts are unchanged.
+  - Template variable IDs, option values, constraints and user input are not translation fields.
+  - Text intentionally depicted in an image retains its original language and spelling.
+exceptions: []

@@ -29,6 +29,7 @@ inputRequirements:
       seu gerador de imagens.
     es: No se necesita imagen de referencia. Copia el prompt completo en tu
       generador de imágenes.
+    ko: 참조 이미지가 필요하지 않습니다. 전체 프롬프트를 이미지 생성기에 복사하세요.
   slots: []
 showcaseExampleId: x_153
 source:
@@ -52,6 +53,7 @@ inspirationSources:
       de: Gesamter Beitrag oder gesamte Bildergalerie
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
+      ko: 전체 게시물 또는 이미지 갤러리
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +63,7 @@ inspirationSources:
       de: Snapshot einer indexierten Primärquelle
       pt-BR: Registro indexado da fonte primária
       es: Captura indexada de la fuente primaria
+      ko: 색인된 1차 출처 스냅샷
     evidenceUrl: https://www.reddit.com/r/midjourney/comments/1ive0td/city_of_earth_in_2500s/
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -69,6 +72,7 @@ inspirationSources:
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       pt-BR: Prompt original completo não recuperado; adaptação independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: post_score
         value: 1237
@@ -79,6 +83,7 @@ inspirationSources:
           de: Beitragsbewertung
           pt-BR: Pontuação da publicação
           es: Puntuación de la publicación
+          ko: 게시물 점수
       - key: comments
         value: null
         labels:
@@ -88,3 +93,4 @@ inspirationSources:
           de: Kommentare
           pt-BR: Comentários
           es: Comentarios
+          ko: 댓글

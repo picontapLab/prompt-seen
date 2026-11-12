@@ -29,6 +29,7 @@ inputRequirements:
       gerada por IA. Mantenha todos os textos em inglês.
     es: Sube una foto clara de un perro. La referencia de demostración está
       generada por IA. Mantén todo el texto de la imagen en inglés.
+    ko: 선명한 개 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
   slots:
     - id: pet
       labels:
@@ -38,6 +39,7 @@ inputRequirements:
         de: Hundefoto
         pt-BR: Foto de cachorro
         es: Foto de perro
+        ko: 개 사진
       min: 1
       max: 1
 showcaseExampleId: x_341
@@ -63,6 +65,7 @@ annotations:
         imediato.
       es: Una foto dominante de la mascota hace que la historia se entienda al
         instante.
+      ko: 반려동물 사진 한 장을 크게 배치해 이야기를 즉시 알아볼 수 있게 합니다.
   - phrase: bold black serif typography
     region:
       x: 0.034
@@ -77,3 +80,4 @@ annotations:
       pt-BR: A tipografia serifada marcante dá à manchete aparência de jornal.
       es: La tipografía con serifa en negrita hace que el titular parezca de
         periódico.
+      ko: 굵은 세리프 글자가 제목에 신문 같은 느낌을 줍니다.

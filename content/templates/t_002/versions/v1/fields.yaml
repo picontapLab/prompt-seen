@@ -11,6 +11,7 @@ fields:
       de: Motiv
       pt-BR: Elemento principal
       es: Sujeto
+      ko: 주제
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
@@ -18,6 +19,7 @@ fields:
       de: Ein Hauptmotiv, etwa „ein Bambushain“.
       pt-BR: Um elemento principal, como “um bambuzal”.
       es: Un sujeto principal, como «un bosque de bambú».
+      ko: “대나무 숲”처럼 주요 대상 하나를 적으세요.
   - name: season
     type: enum
     required: true
@@ -30,6 +32,7 @@ fields:
       de: Jahreszeit
       pt-BR: Estação do ano
       es: Estación
+      ko: 계절
     options:
       - value: spring
         labels:
@@ -39,6 +42,7 @@ fields:
           de: Frühling
           pt-BR: Primavera
           es: Primavera
+          ko: 봄
       - value: summer
         labels:
           en: Summer
@@ -47,6 +51,7 @@ fields:
           de: Sommer
           pt-BR: Verão
           es: Verano
+          ko: 여름
       - value: autumn
         labels:
           en: Autumn
@@ -55,6 +60,7 @@ fields:
           de: Herbst
           pt-BR: Outono
           es: Otoño
+          ko: 가을
       - value: winter
         labels:
           en: Winter
@@ -63,6 +69,7 @@ fields:
           de: Winter
           pt-BR: Inverno
           es: Invierno
+          ko: 겨울
   - name: brushwork
     type: enum
     required: true
@@ -75,6 +82,7 @@ fields:
       de: Pinselführung
       pt-BR: Pincelada
       es: Pincelada
+      ko: 붓 표현
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -84,6 +92,7 @@ fields:
           de: Sanfte Verläufe, klare Knoten
           pt-BR: Aguadas suaves, nós nítidos
           es: Aguadas suaves, nudos definidos
+          ko: 부드러운 번짐과 선명한 마디
       - value: loose wet washes
         labels:
           en: Loose wet washes
@@ -92,6 +101,7 @@ fields:
           de: Lockere nasse Verläufe
           pt-BR: Aguadas úmidas e soltas
           es: Aguadas húmedas sueltas
+          ko: 자유로운 젖은 붓 번짐
       - value: dry brush with visible texture
         labels:
           en: Dry brush
@@ -100,6 +110,7 @@ fields:
           de: Trockener Pinsel
           pt-BR: Pincel seco
           es: Pincel seco
+          ko: 마른 붓
   - name: elements
     type: string-list
     required: false
@@ -114,6 +125,7 @@ fields:
       de: Details
       pt-BR: Detalhes
       es: Detalles
+      ko: 세부 사항
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
@@ -123,6 +135,7 @@ fields:
         altas”.
       es: Funcionan mejor los elementos contables, por ejemplo «cinco tallos
         altos».
+      ko: “키 큰 줄기 다섯 개”처럼 셀 수 있는 대상을 적으면 좋습니다.
   - name: aspectRatio
     type: enum
     required: true
@@ -136,6 +149,7 @@ fields:
       de: Seitenverhältnis
       pt-BR: Proporção
       es: Relación de aspecto
+      ko: 화면 비율
     options:
       - value: 21:9
         labels:
@@ -146,6 +160,7 @@ fields:
           de: 21:9
           pt-BR: 21:9
           es: 21:9
+          ko: 21:9
       - value: 16:9
         labels:
           en: 16:9
@@ -155,6 +170,7 @@ fields:
           de: 16:9
           pt-BR: 16:9
           es: 16:9
+          ko: 16:9
       - value: 3:4
         labels:
           en: 3:4
@@ -164,6 +180,7 @@ fields:
           de: 3:4
           pt-BR: 3:4
           es: 3:4
+          ko: 3:4
       - value: 1:3
         labels:
           en: 1:3
@@ -173,3 +190,4 @@ fields:
           de: 1:3
           pt-BR: 1:3
           es: 1:3
+          ko: 1:3

@@ -10,6 +10,7 @@ instructions:
     demonstração foi gerada por IA. Mantenha todo o texto da imagem em inglês.
   es: Sube un retrato claro de una persona adulta. La referencia de demostración
     está generada por IA. Mantén todo el texto de la imagen en inglés.
+  ko: 선명한 성인 인물 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
 slots:
   - id: person
     labels:
@@ -19,5 +20,6 @@ slots:
       de: Personenporträt
       pt-BR: Retrato de pessoa
       es: Retrato de persona
+      ko: 인물 사진
     min: 1
     max: 1

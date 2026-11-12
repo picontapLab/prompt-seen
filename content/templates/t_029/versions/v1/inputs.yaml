@@ -7,6 +7,7 @@ instructions:
     eine Farbpalette an.
   pt-BR: Envie uma foto de produto ou pessoa e informe um nome de marca e uma paleta.
   es: Sube una foto de producto o persona e indica un nombre de marca y una paleta.
+  ko: 제품 또는 인물 사진 한 장을 업로드하고 브랜드명과 팔레트를 제공하세요.
 slots:
   - id: subject
     labels:
@@ -16,5 +17,6 @@ slots:
       de: Motiv
       pt-BR: Elemento principal
       es: Sujeto
+      ko: 대상
     min: 1
     max: 1

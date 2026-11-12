@@ -9,6 +9,7 @@ instructions:
     é opcional.
   es: Describe un personaje y una escena; la referencia de un personaje original
     es opcional.
+  ko: 캐릭터와 장면을 설명하세요. 독창적인 캐릭터 참조 이미지는 선택 사항입니다.
 slots:
   - id: character
     labels:
@@ -18,5 +19,6 @@ slots:
       de: Figur
       pt-BR: Personagem
       es: Personaje
+      ko: 캐릭터
     min: 0
     max: 1
