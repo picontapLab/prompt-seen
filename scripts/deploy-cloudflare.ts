@@ -5,7 +5,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
+import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { runProductionDeployHook } from './lib/deploy-hook';
+import { CLOUDFLARE_SHARED_RSC_KINDS, cloudflarePayloadProxies, cloudflareSharedPayloadProxies } from './lib/hosts';
 import { OUTPUT_DIRS, ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -37,5 +39,59 @@ for (const l of config.builtLocales) {
 if (runProductionDeployHook({ root: ROOT, artifactDir: target, buildMode: config.buildMode })) {
   console.log('deploy:cloudflare: private production customization applied');
 }
+
+// The export includes a byte-identical full RSC copy beside each index.txt. Verify the
+// customized artifact and its proxy rules before removing copies to fit Pages' file limit.
+const url = createUrlModule(urlConfigOf(config));
+const proxyRules = [...cloudflarePayloadProxies(url), ...cloudflareSharedPayloadProxies(url)];
+const preparedRules = fs
+  .readFileSync(path.join(target, '_redirects'), 'utf8')
+  .split('\n')
+  .map((line) => line.trim().replace(/\s+/g, ' '));
+if (!proxyRules.every((rule) => preparedRules.includes(rule))) {
+  throw new Error('cloudflare: required full RSC proxy rules are missing; rebuild and check the private hook');
+}
+const files = fs.readdirSync(targetSite, { recursive: true, encoding: 'utf8' });
+const fullPayloads = files
+  .filter((file) => path.basename(file) === '__next._full.txt')
+  .map((file) => path.join(targetSite, file));
+for (const file of fullPayloads) {
+  const canonical = path.join(path.dirname(file), 'index.txt');
+  if (
+    !fs.lstatSync(file).isFile() ||
+    !fs.existsSync(canonical) ||
+    !fs.lstatSync(canonical).isFile() ||
+    !fs.readFileSync(file).equals(fs.readFileSync(canonical))
+  ) {
+    throw new Error(`cloudflare: full RSC payload differs from index.txt: ${path.relative(target, file)}`);
+  }
+}
+const sharedPayloads = CLOUDFLARE_SHARED_RSC_KINDS.map((kind) => {
+  const copies = files
+    .filter((file) => {
+      const parts = file.split(path.sep);
+      return parts.length === 4 && parts[1] === kind && parts[3] === '__next._index.txt';
+    })
+    .map((file) => path.join(targetSite, file));
+  const contents = copies.length ? fs.readFileSync(copies[0]!) : null;
+  for (const file of copies) {
+    if (!fs.lstatSync(file).isFile() || !fs.readFileSync(file).equals(contents!)) {
+      throw new Error(`cloudflare: shared RSC payload differs: ${path.relative(target, file)}`);
+    }
+  }
+  return { kind, copies, contents };
+});
+for (const file of fullPayloads) fs.unlinkSync(file);
+for (const { kind, copies, contents } of sharedPayloads) {
+  if (!contents) continue;
+  const canonical = path.join(targetSite, 'generated/rsc', `${kind}-index.txt`);
+  fs.mkdirSync(path.dirname(canonical), { recursive: true });
+  fs.writeFileSync(canonical, contents);
+  for (const file of copies) fs.unlinkSync(file);
+}
+console.log(`deploy:cloudflare: reused ${fullPayloads.length} identical full RSC payloads through proxy rules`);
+console.log(
+  `deploy:cloudflare: shared ${sharedPayloads.reduce((count, group) => count + group.copies.length, 0)} detail segment indexes`,
+);
 
 console.log(`deploy:cloudflare: ${path.relative(ROOT, target)}/ ready (${config.buildMode}, build ${config.buildId})`);

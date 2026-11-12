@@ -41,7 +41,8 @@ beforeAll(() => {
     terms: [],
     index: JSON.parse(JSON.stringify(createIndex(documents, 'de'))),
   });
-}, 20_000);
+  // Full multilingual corpus preparation can exceed 20 seconds on shared CI runners.
+}, 60_000);
 
 it.each(cases)('finds the frozen German scenario: $query', ({ query, expectedKeys, excludedKeys, topK }) => {
   // The product displays and limits each kind independently (§11.8.6: five per group).

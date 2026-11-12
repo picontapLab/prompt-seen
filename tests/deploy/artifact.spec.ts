@@ -12,6 +12,8 @@ const listHtml = fs.readFileSync(path.join(artifact, list, 'index.html'), 'utf8'
 const detail = listHtml.match(/href="([^"]*\/prompts\/[^/"?#]+\/)"/)?.[1];
 if (!detail) throw new Error('Prepared artifact has no prompt detail to smoke-test.');
 const expectedIntegration = process.env.EXPECT_DEPLOY_INTEGRATION === 'true';
+const fullPayloadSuffix = '/__next._full.txt';
+const payloadRules = fs.readFileSync(path.join(artifact, '_redirects'), 'utf8').split('\n');
 const mime: Record<string, string> = {
   '.html': 'text/html',
   '.js': 'application/javascript',
@@ -30,6 +32,33 @@ test('prepared build identity matches the release', () => {
   expect(fs.existsSync(path.join(site, '404.html'))).toBe(true);
   if (process.env.BUILD_ID) expect(build.buildId).toBe(process.env.BUILD_ID);
   if (process.env.BUILD_MODE) expect(build.buildMode).toBe(process.env.BUILD_MODE);
+});
+
+test('every compacted RSC address has a byte-identical payload and a Pages proxy rule', () => {
+  expect(payloadRules).toContain(`${build.basePath}/__next._full.txt ${build.basePath}/index.txt 200`);
+  expect(payloadRules).toContain(`${build.basePath}/*/__next._full.txt ${build.basePath}/:splat/index.txt 200`);
+  for (const kind of ['prompts', 'templates']) {
+    expect(payloadRules).toContain(
+      `${build.basePath}/:locale/${kind}/:slug/__next._index.txt ${build.basePath}/generated/rsc/${kind}-index.txt 200`,
+    );
+  }
+  const packagedSite = path.resolve('dist', `.${build.basePath}`);
+  const copies = fs.readdirSync(packagedSite, { recursive: true, encoding: 'utf8' }).filter((file) => {
+    const parts = file.split(path.sep);
+    return (
+      path.basename(file) === '__next._full.txt' ||
+      (parts.length === 4 && ['prompts', 'templates'].includes(parts[1]!) && parts[3] === '__next._index.txt')
+    );
+  });
+  expect(copies.length).toBeGreaterThan(0);
+  for (const file of copies) {
+    const payload =
+      path.basename(file) === '__next._full.txt'
+        ? path.join(site, path.dirname(file), 'index.txt')
+        : path.join(site, 'generated/rsc', `${file.split(path.sep)[1]}-index.txt`);
+    expect(fs.existsSync(path.join(site, file)), file).toBe(false);
+    expect(fs.readFileSync(payload).equals(fs.readFileSync(path.join(packagedSite, file))), file).toBe(true);
+  }
 });
 
 // Serve the actual upload bytes at the browser's canonical or Pages origin. No traffic reaches
@@ -72,7 +101,16 @@ for (const host of ['canonical', 'pages-preview'] as const) {
           });
           return;
         }
-        let file = path.resolve(artifact, `.${decodeURIComponent(url.pathname)}`);
+        // Apply the generated Pages 200 proxies when serving the compacted upload bytes.
+        const pathname = decodeURIComponent(url.pathname);
+        let payloadPath = pathname.endsWith(fullPayloadSuffix)
+          ? `${pathname.slice(0, -fullPayloadSuffix.length)}/index.txt`
+          : pathname;
+        const parts = pathname.slice(build.basePath.length + 1).split('/');
+        if (parts.length === 4 && ['prompts', 'templates'].includes(parts[1]!) && parts[3] === '__next._index.txt') {
+          payloadPath = `${build.basePath}/generated/rsc/${parts[1]}-index.txt`;
+        }
+        let file = path.resolve(artifact, `.${payloadPath}`);
         if (
           (file === artifact || file.startsWith(`${artifact}${path.sep}`)) &&
           fs.existsSync(file) &&

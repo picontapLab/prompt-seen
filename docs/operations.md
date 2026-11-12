@@ -121,11 +121,15 @@ checks. The SHA and verified CI run are recorded in the Actions summary.
 
 ### Static payload file count
 
-The five-language production export contains 20,332 files before host configuration and
-private customization. The project owner confirmed a paid Pages plan for this candidate;
-the documented limit is 100,000 files (Free: 20,000). Upload preparation keeps the complete
-Next.js static export, including both full RSC payload paths. Recount the prepared artifact
-after private customization before deployment and confirm the project's current limit.
+The six-language production package measured on 2026-11-11 contains 23,806 files before host
+configuration and private customization. The production upload returned a 20,000-file limit.
+Upload preparation compares each `__next._full.txt` with its adjacent `index.txt` after private
+customization, then removes byte-identical copies. Prompt and template detail segment indexes
+are also compared within each kind and shared through two files in `generated/rsc/`.
+Four generated Pages 200 proxy rules serve the original addresses. Preparation fails if a
+payload differs or a required rule is missing. This reduced the measured candidate to 19,242 files.
+`npm run test:deploy` checks every removed copy against the packaged export and exercises the
+prepared artifact in the browser. Recount after private customization and confirm the current limit.
 See [Pages file limits](https://developers.cloudflare.com/pages/platform/limits/#files).
 
 ### Private production customization

@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { createUrlModule } from '../../src/modules/url/create';
-import { cloudflareRedirects, hostRules, metaRefreshPage, netlifyRedirects, nginxRules, vercelConfig } from './hosts';
+import {
+  cloudflarePayloadProxies,
+  cloudflareRedirects,
+  cloudflareSharedPayloadProxies,
+  hostRules,
+  metaRefreshPage,
+  netlifyRedirects,
+  nginxRules,
+  vercelConfig,
+} from './hosts';
 
 const locales = [
   { code: 'en', pathPrefix: 'en' },
@@ -27,6 +36,17 @@ const manifest = {
 describe('host rules (§9.5)', () => {
   const url = urlFor('/prompt-seen');
   const rules = hostRules(manifest, url, locales);
+
+  it.each(['', '/prompt-seen'])('preserves full RSC addresses under %s', (basePath) => {
+    expect(cloudflarePayloadProxies(urlFor(basePath))).toEqual([
+      `${basePath}/__next._full.txt ${basePath}/index.txt 200`,
+      `${basePath}/*/__next._full.txt ${basePath}/:splat/index.txt 200`,
+    ]);
+    expect(cloudflareSharedPayloadProxies(urlFor(basePath))).toEqual([
+      `${basePath}/:locale/prompts/:slug/__next._index.txt ${basePath}/generated/rsc/prompts-index.txt 200`,
+      `${basePath}/:locale/templates/:slug/__next._index.txt ${basePath}/generated/rsc/templates-index.txt 200`,
+    ]);
+  });
 
   it('prefixes every address with the base path and finds each locale’s 410 page', () => {
     expect(rules.redirects).toEqual([
