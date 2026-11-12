@@ -13,3 +13,9 @@ All page prose, non-media fields and UI source/target pairs were read. Reviewers
 - [Sequential import/promotion results](batch-results.jsonl)
 
 All 363 media assets were inspected using contact sheets and selected full originals. All 38 GIF assets were decoded into their complete frame sequences and checked with timing/loop metadata. These are visual frame reviews, not claims of real-time browser playback. Browser checks are reported separately in acceptance.md. Scratch source paths in the detailed review logs identify the exact authoring inputs; retained batches and reviews.json hold the reproducible imported translations and approvals.
+
+## Focused translation corrections — 2026-11-11 (America/Los_Angeles)
+
+AI Codex corrected and then separately checked two complete source/target pairs against their original assets: `x_244#notes` now uses `leque` for the folding hand fan visible in `a_323`; `x_155#notes` now describes the tables and upholstered bench seating visible in `a_212`. This was an AI correction and quality-review pass by the same agent, not independent human/native-speaker approval. Existing source text, other language fields and all generation facts were verified unchanged.
+
+The retained batch is `batches/review-corrections-2026-11-11.json`, ID `0e74fe0c7c7962555a690e5503f51b603bc00d3380729fde1b384bd727dc4753`. It passed import dry-run, pending import and guarded promotion. The two new exact-hash approvals append to `reviews.json`, preserving the superseded reviews. A fresh strict Portuguese check passed: 381/381 pages, 2220/2220 fields, no fallback, ready=true. Historical browser acceptance predates these prose corrections; this entry does not claim a new deployment or browser matrix.
