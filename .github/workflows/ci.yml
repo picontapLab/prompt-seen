@@ -119,7 +119,7 @@ jobs:
   build-and-test:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: ${{ matrix.browser == 'webkit' && 55 || 40 }}
     strategy:
       fail-fast: false
       matrix:

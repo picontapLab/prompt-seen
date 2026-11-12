@@ -453,8 +453,9 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
    Each artifact includes `dist/`, `.generated/`, `public/generated/`, `deploy/generated/`, and
    `src/config/generated/`; browser jobs restore the same artifact without rebuilding.
 4. `build-and-test`: six isolated runners (two paths × Chromium, Firefox, WebKit), two workers
-   each. HTTP checks run with Chromium only. Playwright has a 30-minute overall timeout and the
-   job has a 40-minute timeout, including installation and report upload. `check` and `build`
+   each. HTTP checks run with Chromium only. Chromium and Firefox have 30-minute suite and
+   40-minute job budgets. WebKit has 45-minute suite and 55-minute job budgets, including
+   installation and report upload. `check` and `build`
    have 20-minute budgets; `secrets` and `preview` have 10 minutes.
    A failed test is retried once; only the retry records a trace to bound disk usage. Failed
    attempts retain screenshots and error context. Each job uploads `test-results/` and the HTML

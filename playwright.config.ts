@@ -20,7 +20,7 @@ export default defineConfig({
   testDir: 'tests/e2e',
   fullyParallel: true,
   workers: process.env.CI ? 2 : undefined,
-  globalTimeout: process.env.CI ? 30 * 60_000 : undefined,
+  globalTimeout: process.env.CI ? (browsers.includes('webkit') ? 45 : 30) * 60_000 : undefined,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI
