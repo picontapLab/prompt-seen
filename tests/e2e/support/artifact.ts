@@ -41,9 +41,9 @@ function findBuildInfo(dir: string, depth = 0): string | null {
   return null;
 }
 
-export function readBuildInfo(): BuildInfo {
-  const file = findBuildInfo(path.join(ROOT, 'dist'));
-  if (!file) throw new Error('dist/ has no generated/build.json: run `npm run build` before the end-to-end tests');
+export function readBuildInfo(directory = path.join(ROOT, 'dist')): BuildInfo {
+  const file = findBuildInfo(directory);
+  if (!file) throw new Error('Artifact has no generated/build.json: run `npm run build` before the browser tests');
   return JSON.parse(fs.readFileSync(file, 'utf8')) as BuildInfo;
 }
 
