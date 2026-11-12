@@ -8,6 +8,7 @@ instructions:
     Außenansicht ist optional.
   es: Indica el concepto de producto, el color de acento y las características de
     diseño; la referencia del exterior es opcional.
+  ko: 제품 콘셉트, 포인트 색과 디자인 특징을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
 slots:
   - id: product
     labels:
@@ -16,5 +17,6 @@ slots:
       ja: 商品
       de: Produkt
       es: Producto
+      ko: 제품
     min: 0
     max: 1

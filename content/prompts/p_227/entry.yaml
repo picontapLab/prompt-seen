@@ -39,6 +39,7 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       es: Publicación original; no este nuevo resultado generado. Varios casos de
         una misma publicación comparten las métricas.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -50,6 +51,7 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       es: "Investigación previa: revisión directa de la página y revisión visual.
         Los recuentos no se han actualizado."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://x.com/OpenAI/status/2118124953832935810
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -59,6 +61,7 @@ inspirationSources:
         abgeleiteter Prompt.
       es: No se encontró el prompt original. Este es un prompt inferido de forma
         independiente.
+      ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
     metrics:
       - key: likes
         value: 995
@@ -68,6 +71,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           es: Me gusta
+          ko: 좋아요
       - key: reposts
         value: 135
         labels:
@@ -76,6 +80,7 @@ inspirationSources:
           ja: リポスト数
           de: Reposts
           es: Republicaciones
+          ko: 재게시
 source:
   author: Prompt Seen
   url: null

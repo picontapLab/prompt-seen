@@ -8,6 +8,7 @@ instructions:
     verwendet künstlich erzeugte Eingabebilder.
   es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
     imágenes de entrada sintéticas.
+  ko: 표시된 순서대로 참조 이미지를 업로드하세요. 예시는 합성 입력 이미지를 사용합니다.
 slots:
   - id: product
     labels:
@@ -16,5 +17,6 @@ slots:
       ja: 商品の参照画像
       de: Produktreferenz
       es: Referencia de producto
+      ko: 제품 참조 이미지
     min: 1
     max: 1

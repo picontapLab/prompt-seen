@@ -28,6 +28,7 @@ inputRequirements:
     es: Usa los recursos de referencia generados de forma independiente en el
       orden mostrado. No uses las imágenes oficiales ni las de las fuentes
       sociales.
+    ko: 표시된 순서대로 독립적으로 생성한 참조 자산을 사용하세요. 공식 이미지나 소셜 출처 이미지는 사용하지 마세요.
   slots:
     - id: reference
       labels:
@@ -36,6 +37,7 @@ inputRequirements:
         ja: 元となる生成参照画像
         de: Ursprüngliche künstlich erzeugte Referenz
         es: Referencia sintética original
+        ko: 원본 합성 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_299
@@ -57,6 +59,7 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       es: Publicación original; no este nuevo resultado generado. Varios casos de
         una misma publicación comparten las métricas.
+      ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -68,6 +71,7 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       es: "Investigación previa: revisión directa de la página y revisión visual.
         Los recuentos no se han actualizado."
+      ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
     evidenceUrl: https://openai.com/index/introducing-images-2-6/#animate-your-ideas-with-gifs
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -77,6 +81,7 @@ inspirationSources:
         abgeleiteter Prompt.
       es: No se encontró el prompt original. Este es un prompt inferido de forma
         independiente.
+      ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
     metrics: []
 source:
   author: Prompt Seen

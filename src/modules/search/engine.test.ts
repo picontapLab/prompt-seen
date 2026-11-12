@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createIndex, loadEngine, noResultHelp, search, type Engine } from './engine';
 import { SEARCH_ANALYZER_VERSION, SEARCH_SCHEMA_VERSION, type SearchDocument, type SearchIndexFile } from './types';
 import { createSearchCore } from './worker-core';
+import { koreanFixtureCases, koreanSearchFixture } from '../../../tests/support/korean-search';
 
 // The engine over small fixtures (design doc §13.1–§13.2, §11.8.6). The index built from the
 // sample content is tested in documents.test.ts.
@@ -53,6 +54,10 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it.each(koreanFixtureCases)('matches the isolated Korean scenario: $query', ({ query, ids: expected }) => {
+    expect(ids(query, loadEngine(koreanSearchFixture('b1')))).toEqual(expected);
+  });
+
   it('folds Spanish vowels and punctuation while retaining the exact displayed title', () => {
     const title = '¿Retrato? ¡Póster de un pingüino! Fotografi\u0301a';
     const engine = engineOf('es', [doc('accented', { title })]);

@@ -314,6 +314,7 @@ Project facts:
 - [General localization and German launch specification](docs/general-localization-spec.md): reusable locale policies, translation tooling, browsing and indexing rules, implementation steps and acceptance criteria.
 - [Spanish localization specification](docs/spanish-localization-spec.md): staged rollout, translation batches, Spanish search behavior, review evidence and production acceptance.
 - [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
+- [Korean localization specification](docs/korean-localization-spec.md): complete content coverage, Korean search and input methods, acceptance and release gates.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses

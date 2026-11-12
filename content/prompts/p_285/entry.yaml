@@ -27,6 +27,7 @@ inputRequirements:
       KI erzeugt. Lass alle Schriftzüge auf Englisch.
     es: Sube una foto clara de un perro. La referencia de demostración está
       generada por IA. Mantén todo el texto de la imagen en inglés.
+    ko: 선명한 개 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
   slots:
     - id: pet
       labels:
@@ -35,6 +36,7 @@ inputRequirements:
         ja: 犬の写真
         de: Hundefoto
         es: Foto de perro
+        ko: 개 사진
       min: 1
       max: 1
 showcaseExampleId: x_349
@@ -57,6 +59,7 @@ annotations:
       ja: 4つのコマが、物語を読む順序を明確にしています。
       de: Vier Bilder legen die Handlungsfolge fest.
       es: Cuatro viñetas establecen la secuencia de la historia.
+      ko: 네 칸이 이야기의 순서를 만듭니다.
   - phrase: warm storybook illustration
     region:
       x: 0.02
@@ -69,3 +72,4 @@ annotations:
       ja: 温かい絵本風のイラストが、親しみやすい雰囲気を作っています。
       de: Warme Illustration gibt der Geschichte einen freundlichen Ton.
       es: La ilustración cálida da a la historia un tono amistoso.
+      ko: 따뜻한 일러스트가 이야기에 친근한 분위기를 줍니다.

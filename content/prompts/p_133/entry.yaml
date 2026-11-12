@@ -27,6 +27,7 @@ inputRequirements:
       KI-generierte erwachsene Person.
     es: Sube una foto clara del sujeto. El ejemplo usa un adulto ficticio generado
       por IA.
+    ko: 대상이 선명한 사진 한 장을 업로드하세요. 예시는 AI로 생성한 가상 성인을 사용합니다.
   slots:
     - id: subject
       labels:
@@ -35,6 +36,7 @@ inputRequirements:
         ja: 被写体
         de: Motiv
         es: Sujeto
+        ko: 대상
       min: 1
       max: 1
 showcaseExampleId: x_178
@@ -53,6 +55,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       es: Publicación o galería de imágenes completa
+      ko: 전체 게시물 또는 이미지 갤러리
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +64,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       es: Captura de la API pública oficial
+      ko: 공식 공개 API 스냅샷
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -68,6 +72,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
+      ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
     metrics:
       - key: likes
         value: 6338
@@ -77,6 +82,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           es: Me gusta
+          ko: 좋아요
       - key: conversation_count
         value: 365
         labels:
@@ -85,6 +91,7 @@ inspirationSources:
           ja: 返信数
           de: Antworten
           es: Respuestas
+          ko: 답글
       - key: views
         value: null
         labels:
@@ -93,6 +100,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           es: Visualizaciones
+          ko: 조회수
       - key: reposts
         value: null
         labels:
@@ -101,6 +109,7 @@ inspirationSources:
           ja: リポスト数
           de: Reposts
           es: Republicaciones
+          ko: 재게시
       - key: bookmarks
         value: null
         labels:
@@ -109,6 +118,7 @@ inspirationSources:
           ja: ブックマーク数
           de: Lesezeichen
           es: Marcadores
+          ko: 북마크
 source:
   author: Prompt Seen
   url: null

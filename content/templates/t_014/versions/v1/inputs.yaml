@@ -8,6 +8,7 @@ instructions:
     ein Figurenblatt ist optional.
   es: Describe el reparto y aporta exactamente cuatro momentos narrativos en
     orden; una hoja de personaje es opcional.
+  ko: 등장인물을 설명하고 순서가 있는 이야기 장면을 정확히 네 개 제공하세요. 캐릭터 시트는 선택 사항입니다.
 slots:
   - id: character
     labels:
@@ -16,5 +17,6 @@ slots:
       ja: 人物
       de: Figur
       es: Personaje
+      ko: 캐릭터
     min: 0
     max: 1

@@ -33,9 +33,9 @@ export function SearchPage({ locale }: { locale: LocaleEntry }) {
   const [value, setValue] = useState('');
   const [ready, setReady] = useState(false);
   const field = useRef<HTMLInputElement>(null);
-  const { query, inputProps } = useCommittedQuery(value);
+  const { query, inputProps, isComposing, isCompositionActive } = useCommittedQuery(value);
   const search = useSearch(locale, query, { enabled: ready });
-  const trimmed = value.trim();
+  const trimmed = query.trim();
   const popular = usePopular(locale, ready && !trimmed);
 
   useEffect(() => {
@@ -52,17 +52,17 @@ export function SearchPage({ locale }: { locale: LocaleEntry }) {
   }, []);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || isComposing) return;
     const timer = window.setTimeout(() => {
-      const next = withBasePath(paths.search(locale.pathPrefix, value));
+      const next = withBasePath(paths.search(locale.pathPrefix, query));
       if (next !== window.location.pathname + window.location.search)
         window.history.replaceState(window.history.state, '', next);
     }, URL_DELAY_MS);
     return () => window.clearTimeout(timer);
-  }, [value, ready, locale.pathPrefix]);
+  }, [query, ready, isComposing, locale.pathPrefix]);
 
   const remember = () => {
-    if (trimmed) rememberSearch(locale.code, trimmed);
+    if (!isCompositionActive() && trimmed) rememberSearch(locale.code, trimmed);
   };
 
   const results = trimmed ? search.results : null;

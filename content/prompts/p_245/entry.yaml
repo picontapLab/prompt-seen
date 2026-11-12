@@ -29,6 +29,8 @@ inputRequirements:
     es: Sube una referencia de personaje. La opción de origen se rellena con
       ドアスコープ (mirilla de puerta). Nuestro personaje adulto con kimono fue
       generado por Prompt Seen.
+    ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 원문의 선택 항목은 ドアスコープ(현관문 렌즈)로 채웠습니다. 성인 기모노 캐릭터는 Prompt
+      Seen에서 생성했습니다.
   slots:
     - id: character
       labels:
@@ -37,6 +39,7 @@ inputRequirements:
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
         es: Referencia generada por el proyecto
+        ko: 프로젝트에서 생성한 참조 이미지
       min: 1
       max: 1
 showcaseExampleId: x_309
@@ -56,6 +59,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       es: Publicación o galería original completa; no este ejemplo generado
+      ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -66,6 +70,7 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       es: Captura pública guardada de X; prompt completo de la copia guardada de
         la publicación o respuesta del autor
+      ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118220107487051883&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language; option filled and recorded
@@ -74,6 +79,7 @@ inspirationSources:
       de: Vollständiger Autorentext, Originalsprache; Option ausgefüllt und
         dokumentiert
       es: Texto completo del autor, idioma original; opción rellenada y registrada
+      ko: 작성자의 전체 원문, 원래 언어; 선택 항목을 채우고 기록함
     metrics:
       - key: likes
         value: 17
@@ -83,6 +89,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           es: Me gusta de la publicación original
+          ko: 출처 게시물 좋아요
 source:
   author: kabumira862571
   url: https://x.com/kabumira862571/status/2118220107487051883

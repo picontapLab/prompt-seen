@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T15:32:19.477760+00:00",
+  "reviewer": "AI Codex ko_pages_a",
+  "status": "Both production candidate paths built and full suites executed; original failures remain visible. This is not a deployed or fully accepted release.",
+  "candidate": {
+    "path": "/private/tmp/ko-production-candidate",
+    "gitState": "detached checkout plus uncommitted working snapshot; no candidate commit created or published",
+    "baseRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+    "koEnabled": true,
+    "retainedForInspection": true,
+    "deployed": false,
+    "committed": false
+  },
+  "sourceConsistency": {
+    "method": "Sorted git tracked + nonignored untracked paths in src/scripts/tests/content; tree SHA256 over path + NUL + SHA256(file bytes). Generated ignored files excluded.",
+    "fullSuiteSnapshot": {
+      "method": "Sorted git tracked + nonignored untracked paths in src/scripts/tests/content; tree SHA256 over path + NUL + SHA256(file bytes). Generated ignored files excluded.",
+      "rootPath": "/Users/hp/.codex/worktrees/korean-localization/prompt-seen",
+      "candidatePath": "/private/tmp/ko-production-candidate",
+      "baseRevision": "0306b74b66ab9bf1f76eb5061bc466c3ebf86325",
+      "candidateState": "detached checkout plus uncommitted working snapshot; not a published candidate commit",
+      "root": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "9d7d821609e05edb8eef3876c60c4ba893a8d37114d3e1b956aba0eeb5a1f2ce"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "021619e8038de22de54e8a0c902774b81e7a58866745ad317946768744eae927"
+        }
+      },
+      "candidate": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "9d7d821609e05edb8eef3876c60c4ba893a8d37114d3e1b956aba0eeb5a1f2ce"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "9ef730df5d1a8f28d6560e4da1f0dea0a362c564b45cdd6c5b0044310d47899a"
+        }
+      },
+      "candidateWithKoDisabled": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "9d7d821609e05edb8eef3876c60c4ba893a8d37114d3e1b956aba0eeb5a1f2ce"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "021619e8038de22de54e8a0c902774b81e7a58866745ad317946768744eae927"
+        }
+      },
+      "onlyRoot": [],
+      "onlyCandidate": [],
+      "differentPaths": [
+        "content/locales.yaml"
+      ],
+      "expectedDifference": "content/locales.yaml: ko.enabled false -> true; all remaining bytes must match",
+      "normalizedTreesMatch": true
+    },
+    "finalAfterTestOnlyStrengthening": {
+      "root": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "e75f167bf01841df66a6ed7e0fe04799de425911f083e9908a7422605a2e3903"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "021619e8038de22de54e8a0c902774b81e7a58866745ad317946768744eae927"
+        }
+      },
+      "candidate": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "e75f167bf01841df66a6ed7e0fe04799de425911f083e9908a7422605a2e3903"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "9ef730df5d1a8f28d6560e4da1f0dea0a362c564b45cdd6c5b0044310d47899a"
+        }
+      },
+      "candidateWithKoDisabled": {
+        "src": {
+          "fileCount": 477,
+          "sha256": "1bb184e9a3d0fb6742133ba1aa4e5ca41923506864fe75dd7d93599aaf40f58e"
+        },
+        "scripts": {
+          "fileCount": 117,
+          "sha256": "8effc2cca9deffabd8c69fb2a4dadc2533a95666ff50eb073d14629eabc9742f"
+        },
+        "tests": {
+          "fileCount": 49,
+          "sha256": "e75f167bf01841df66a6ed7e0fe04799de425911f083e9908a7422605a2e3903"
+        },
+        "content": {
+          "fileCount": 3993,
+          "sha256": "021619e8038de22de54e8a0c902774b81e7a58866745ad317946768744eae927"
+        }
+      },
+      "onlyRoot": [],
+      "onlyCandidate": [],
+      "differentPaths": [
+        "content/locales.yaml"
+      ],
+      "normalizedTreesMatch": true
+    },
+    "testOnlyChange": {
+      "path": "tests/e2e/korean.browser.spec.ts",
+      "description": "Wait for the Korean search status and first prompt result before layout checks; include browser name in screenshot filename. Applied after both full suites.",
+      "fullSuitesUseInitialTestsHash": "9d7d821609e05edb8eef3876c60c4ba893a8d37114d3e1b956aba0eeb5a1f2ce",
+      "layoutFocusedUsesFinalTestsHash": "e75f167bf01841df66a6ed7e0fe04799de425911f083e9908a7422605a2e3903",
+      "runtimeRebuiltAfterChange": false
+    },
+    "documentationAndEvidence": "Documentation/evidence updates are outside src/scripts/tests/content tree hashes and do not change the tested runtime."
+  },
+  "environment": {
+    "node": "24.19.0",
+    "platform": "macOS",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "server": "reference Docker/nginx",
+    "fullSuitePort": 8102,
+    "fullSuiteWorkers": 2,
+    "trace": "off",
+    "KO_ACCEPTANCE": "1"
+  },
+  "artifacts": [
+    {
+      "name": "production-root",
+      "build": {
+        "buildId": "ko-candidate-root-20261111",
+        "siteName": "Prompt Seen",
+        "buildMode": "production",
+        "origin": "https://promptseen.dev",
+        "basePath": "",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          }
+        ]
+      },
+      "buildInfoSha256": "2595f9c28f593c2a13d7189101b5fdb8959b89ec3544463b5c3e5cd7995aabf5",
+      "buildSucceeded": true,
+      "buildLog": {
+        "originalLocalPath": "/tmp/ko-candidate-root-build.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-root-build.log",
+        "sha256": "7fca14b0764ddbcea690656badab1dd1ba278865a8ec7ae169136e0450068781",
+        "bytes": 6857
+      },
+      "fullSuite": {
+        "summary": {
+          "passed": 1464,
+          "durationReported": "27.5m",
+          "failed": 4,
+          "skipped": 97,
+          "total": 1565
+        },
+        "summarySha256": "58e00d203e092553864cd3b18a9505a32fa0dd0fd0a06a6cae5adf769ab7eae2",
+        "byProject": {
+          "http": {
+            "passed": 226,
+            "failed": 0,
+            "skipped": 1
+          },
+          "chromium": {
+            "passed": 428,
+            "failed": 0,
+            "skipped": 18
+          },
+          "firefox": {
+            "passed": 406,
+            "failed": 1,
+            "skipped": 39
+          },
+          "webkit": {
+            "passed": 404,
+            "failed": 3,
+            "skipped": 39
+          }
+        },
+        "failures": [
+          {
+            "outcome": "failed",
+            "project": "firefox",
+            "case": "tests/e2e/popup.browser.spec.ts:546:3 › desktop › modified clicks and pages without JavaScript reach the full page (30.4s)"
+          },
+          {
+            "outcome": "failed",
+            "project": "webkit",
+            "case": "tests/e2e/details.browser.spec.ts:454:1 › 加载指示: the popup says it is loading only once loading has taken 300 ms (5.1s)"
+          },
+          {
+            "outcome": "failed",
+            "project": "webkit",
+            "case": "tests/e2e/motion.browser.spec.ts:183:1 › “Clear filters” stays where it first appears while the chosen filters load (2.8s)"
+          },
+          {
+            "outcome": "failed",
+            "project": "webkit",
+            "case": "tests/e2e/popup.browser.spec.ts:516:3 › desktop › an entry written by other code (no popup mark) closes by replacing it with the gallery (16.1s)"
+          }
+        ],
+        "koreanNamedSuiteCounts": {
+          "passed": 132,
+          "failed": 0,
+          "skipped": 0
+        },
+        "log": {
+          "originalLocalPath": "/tmp/ko-candidate-root-e2e.log",
+          "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-root-e2e.log",
+          "sha256": "effb6d3af112ee2765b601fbf576c148b2f9658b997fcbd25147875e3b7ffe60",
+          "bytes": 323838
+        }
+      }
+    },
+    {
+      "name": "production-subpath",
+      "build": {
+        "buildId": "ko-candidate-subpath-20261111",
+        "siteName": "Prompt Seen",
+        "buildMode": "production",
+        "origin": "https://promptseen.dev",
+        "basePath": "/prompt-seen",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          }
+        ]
+      },
+      "buildInfoSha256": "15b49549e96828f24f8561cca983c213823f1fc43d32f932644617f4f15b566f",
+      "buildSucceeded": true,
+      "buildLog": {
+        "originalLocalPath": "/tmp/ko-candidate-subpath-build.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-subpath-build.log",
+        "sha256": "3ffe139348e21c1b3f87d564acd76945a34bab48ed92fb907d738e6c6f95b610",
+        "bytes": 6888
+      },
+      "fullSuite": {
+        "summary": {
+          "passed": 1465,
+          "durationReported": "26.3m",
+          "failed": 3,
+          "skipped": 97,
+          "total": 1565
+        },
+        "summarySha256": "61baf1c08407b5b97b0ba61618922538a283c295d2c0360628db4b4f0d84582d",
+        "byProject": {
+          "http": {
+            "passed": 226,
+            "failed": 0,
+            "skipped": 1
+          },
+          "chromium": {
+            "passed": 428,
+            "failed": 0,
+            "skipped": 18
+          },
+          "firefox": {
+            "passed": 404,
+            "failed": 3,
+            "skipped": 39
+          },
+          "webkit": {
+            "passed": 407,
+            "failed": 0,
+            "skipped": 39
+          }
+        },
+        "failures": [
+          {
+            "outcome": "failed",
+            "project": "firefox",
+            "case": "tests/e2e/pages.browser.spec.ts:122:5 › ja: pages of step 3e pass axe (light) (31.0s)"
+          },
+          {
+            "outcome": "failed",
+            "project": "firefox",
+            "case": "tests/e2e/pages.browser.spec.ts:122:5 › ko: pages of step 3e pass axe (light) (31.5s)"
+          },
+          {
+            "outcome": "failed",
+            "project": "firefox",
+            "case": "tests/e2e/popup.browser.spec.ts:546:3 › desktop › modified clicks and pages without JavaScript reach the full page (30.4s)"
+          }
+        ],
+        "koreanNamedSuiteCounts": {
+          "passed": 132,
+          "failed": 0,
+          "skipped": 0
+        },
+        "log": {
+          "originalLocalPath": "/tmp/ko-candidate-subpath-e2e.log",
+          "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-subpath-e2e.log",
+          "sha256": "6c7c6baced8011ac52b4d677a8f590ae5d3cb2da117715827d7ecc8a6bb552bd",
+          "bytes": 327610
+        }
+      }
+    }
+  ],
+  "focusedChecks": {
+    "rootLoading": {
+      "summary": {
+        "passed": 3,
+        "durationReported": "28.7s",
+        "failed": 0,
+        "skipped": 0,
+        "total": 3
+      },
+      "summarySha256": "3215f6d2e122e6a1a4cd0a8684ccc5a994ada59216dad69a4069e47d50fe1b94",
+      "byProject": {
+        "webkit": {
+          "passed": 3,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "failures": [],
+      "koreanNamedSuiteCounts": {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0
+      },
+      "log": {
+        "originalLocalPath": "/tmp/ko-candidate-root-loading.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-root-loading.log",
+        "sha256": "e11c97ffbff028035fd3996853503f639054b91efc99ee7e6a8d337a1718055d",
+        "bytes": 5168
+      }
+    },
+    "rootMotionAndPopup": {
+      "summary": {
+        "passed": 4,
+        "durationReported": "32.8s",
+        "failed": 2,
+        "skipped": 0,
+        "total": 6
+      },
+      "summarySha256": "70a8cdd1dcfc5e55439e19b86ed013416d5d60a8a8320c3b7e6c316b08d67110",
+      "byProject": {
+        "webkit": {
+          "passed": 4,
+          "failed": 2,
+          "skipped": 0
+        }
+      },
+      "failures": [
+        {
+          "outcome": "failed",
+          "project": "webkit",
+          "case": "tests/e2e/popup.browser.spec.ts:516:3 › desktop › an entry written by other code (no popup mark) closes by replacing it with the gallery (16.1s)"
+        },
+        {
+          "outcome": "failed",
+          "project": "webkit",
+          "case": "tests/e2e/motion.browser.spec.ts:183:1 › “Clear filters” stays where it first appears while the chosen filters load (2.7s)"
+        }
+      ],
+      "koreanNamedSuiteCounts": {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0
+      },
+      "log": {
+        "originalLocalPath": "/tmp/ko-candidate-root-motion-popup.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-root-motion-popup.log",
+        "sha256": "b8844bce1d680264a95a546942f2d3d30822376b7c35dd211fa20fc2d66b7743",
+        "bytes": 10244
+      }
+    },
+    "subpathAxeRecovery": {
+      "summary": {
+        "passed": 2,
+        "durationReported": "26.2s",
+        "failed": 0,
+        "skipped": 0,
+        "total": 2
+      },
+      "summarySha256": "ad4ecc1a182ac9b9463a35ebd8f4823030d11db416a2a14d12ef6fca6fdbe9eb",
+      "byProject": {
+        "firefox": {
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "failures": [],
+      "koreanNamedSuiteCounts": {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0
+      },
+      "log": {
+        "originalLocalPath": "/tmp/ko-candidate-subpath-axe.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-subpath-axe.log",
+        "sha256": "8671028b002dbfbd28ca174b2d7b7e3cf396088e502f4bd8bb648ff25161d01e",
+        "bytes": 5704
+      },
+      "workers": 1,
+      "browsers": [
+        "firefox"
+      ],
+      "unchangedTests": true,
+      "classification": "Original ja/ko page.evaluate 30s timeouts retained. Same tests passed after full suite, without changed thresholds. No baseline attribution or proven root cause."
+    },
+    "subpathFinalLayout": {
+      "summary": {
+        "passed": 24,
+        "durationReported": "53.3s",
+        "failed": 0,
+        "skipped": 0,
+        "total": 24
+      },
+      "summarySha256": "49b08adba01a116b3258c8556c8d16a331325aa61952cd75e165677d4db865b5",
+      "byProject": {
+        "chromium": {
+          "passed": 8,
+          "failed": 0,
+          "skipped": 0
+        },
+        "firefox": {
+          "passed": 8,
+          "failed": 0,
+          "skipped": 0
+        },
+        "webkit": {
+          "passed": 8,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "failures": [],
+      "koreanNamedSuiteCounts": {
+        "passed": 24,
+        "failed": 0,
+        "skipped": 0
+      },
+      "log": {
+        "originalLocalPath": "/tmp/ko-candidate-subpath-layout.log",
+        "retainedLocalPath": ".artifacts/localization/ko/production-candidate/ko-candidate-subpath-layout.log",
+        "sha256": "1ec21ef92dae8f25035d5b0c9ec4b1bc910f7740bc86f836d2f5c0fdd2c57649",
+        "bytes": 9384
+      },
+      "workers": 2,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "finalTestSource": true,
+      "screenshots": [
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-1024-dark.png",
+          "sha256": "67b71f7fe8101887a5998dace3be0c6c3dfb34092b67d6d632fa6541e2825878"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-1024-light.png",
+          "sha256": "9d7cebec80bd4936561065ed3ed5171c21fce45498e0a227158d692a6ee4dfe5"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-1440-dark.png",
+          "sha256": "f8e423a3bb921e00c830a0742eba138536ae4ac04732f4aeab680ab0e9a05f01"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-1440-light.png",
+          "sha256": "8a41d215f5971deefe057d2e45b7085ee904f7e8f68428e48a287c23b5d184f9"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-360-dark.png",
+          "sha256": "dce9f7d4978c249cbcd0a5f0a708137ac248214fb789960ee45463cd128b6530"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-360-light.png",
+          "sha256": "d883019734e1e3328d22ef96b944065cacf0175d62bb6ab2fd610cd9e2940bc4"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-768-dark.png",
+          "sha256": "ae89e0c0c986f44c76f63d029c1dcef0d3f9898aeaacc9f661c9a0e988e75b74"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-chromium-768-light.png",
+          "sha256": "47646097d33c8ad0a5c9ca1244525f30ad5e8748f66e5b4edaaeead5d73f2b0b"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-1024-dark.png",
+          "sha256": "7d72482b83bf25ed2fd79608a71a4990733a7cb8f11330d60bf9293965b6134e"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-1024-light.png",
+          "sha256": "f255c73bc554bde39f77b597b1758bbd00a918a7599bf96681e36fa7d7ec770a"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-1440-dark.png",
+          "sha256": "7746cf393ada67297eda4369f24915da27f45f1297e9ab3cbcafe9e7eacf074f"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-1440-light.png",
+          "sha256": "1f959ffb67aab746054fce044cb0ba6e102d771d299fa451ee25de0e95f496a4"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-360-dark.png",
+          "sha256": "5e06c381798e89ad6efc63d74edf7e0bdb511f0180ce5168b4363e2a28a5323f"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-360-light.png",
+          "sha256": "3d3605694f08f16b53cf6950cf88bb21b88d1421812555c79cc95be9bede32e4"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-768-dark.png",
+          "sha256": "7c07a7a8e4cb51822fa357f150eefa75de0f2e0d3dda7be03d4e057d4d0c4ad6"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-firefox-768-light.png",
+          "sha256": "234629c45e864642cf97594d13f3decaf104e8399363abc2a4ae3ffe70fdb928"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-1024-dark.png",
+          "sha256": "799193f883561478306966308e5bb31d9d6b9f7e57018ccd4cc0028f1357a88e"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-1024-light.png",
+          "sha256": "c72d4c458bc95ab4023474fefae26c1ae68040cd6993f8a2280ebc56dc13a071"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-1440-dark.png",
+          "sha256": "6bbb3301952553c08ee2ccccbd0eab24807d3ae58401d53c9d80e67c5f59794f"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-1440-light.png",
+          "sha256": "5535ae75feb668c29c3ec55ce0cd8de52f7a8762597d3729266431c48a922674"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-360-dark.png",
+          "sha256": "3718637c8b735e33e55298fec0940bc2545b69f76d73676f62cf704716e4a4a7"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-360-light.png",
+          "sha256": "0aecc9ba2c13830f3309ad08c68ad0c47054ea8dbd4ef1c453f960f5704285f5"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-768-dark.png",
+          "sha256": "1198aa089b11eee849646c26eb4c96b0ee8c572438ea638e95100596354958a8"
+        },
+        {
+          "path": ".artifacts/localization/ko/production-candidate/screenshots/search-webkit-768-light.png",
+          "sha256": "4655e0b2085e0b1b33faa526774f0a11d189c264c0b616517170e6921cfe98be"
+        }
+      ],
+      "visualSpotCheck": {
+        "reviewer": "AI Codex ko_pages_a",
+        "files": [
+          "search-webkit-360-light.png",
+          "search-chromium-1440-dark.png"
+        ],
+        "observation": "Actual 11-result Korean search rendered; Hangul, highlighting, result groups and controls visible, with no observed overlap or clipping."
+      }
+    }
+  },
+  "failureDisposition": [
+    {
+      "case": "Firefox popup.browser.spec.ts:546 modified click",
+      "root": "failed",
+      "subpath": "failed",
+      "evidence": "production-root-additional-diagnosis.json",
+      "classification": "Reproduced on original baseline and native no-application link probe; not fixed by this work."
+    },
+    {
+      "case": "WebKit details.browser.spec.ts:454 loading timing",
+      "root": "failed: 294ms vs >=300ms",
+      "subpath": "passed",
+      "evidence": "production-root-additional-diagnosis.json",
+      "classification": "Intermittent symptom reproduced on original baseline; original root failure retained."
+    },
+    {
+      "case": "WebKit motion.browser.spec.ts:183 Clear filters position",
+      "root": "failed",
+      "subpath": "passed",
+      "evidence": "production-root-additional-diagnosis.json",
+      "classification": "Intermittent symptom reproduced on original baseline; original root failure retained."
+    },
+    {
+      "case": "WebKit popup.browser.spec.ts:516 other-code history close",
+      "root": "failed",
+      "subpath": "passed",
+      "evidence": "preview-baseline-diagnosis.json",
+      "classification": "Previously reproduced on original baseline; root focused 2 passed/1 failed; original root failure retained."
+    },
+    {
+      "case": "Firefox pages.browser.spec.ts:122 ja/ko light axe",
+      "root": "passed",
+      "subpath": "two initial page.evaluate 30s timeouts; unchanged single-worker focused 2 passed",
+      "classification": "Focused recovery, not a clean initial suite; no baseline attribution and no proven root cause."
+    }
+  ],
+  "limits": [
+    "Full suites are not all green; focused passes never replace their original counts.",
+    "Production enablement exists only in isolated candidate; implementation worktree keeps ko.enabled=false.",
+    "Actual Korean OS IME, native 200% zoom, screen-reader, production activation, deployment and live rollback checks remain pending.",
+    "No product code or test threshold changed during matrix validation.",
+    "Final strengthened layout tests were applied after full suites and rechecked in 24 focused cases without rebuilding runtime."
+  ]
+}

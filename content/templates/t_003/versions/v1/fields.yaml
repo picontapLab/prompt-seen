@@ -10,6 +10,7 @@ fields:
       ja: 人物
       de: Figur
       es: Personaje
+      ko: 캐릭터
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -17,6 +18,7 @@ fields:
       de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in
         einer Drehung“.
       es: Quién es y una pose, por ejemplo «una persona que baila en pleno giro».
+      ko: "누구인지와 자세 하나를 적으세요. 예: “회전 중인 무용수”."
   - name: rimLight
     type: enum
     required: true
@@ -28,6 +30,7 @@ fields:
       ja: リムライト
       de: Konturlicht
       es: Luz de contorno
+      ko: 윤곽광
     options:
       - value: cyan and magenta
         swatch:
@@ -39,6 +42,7 @@ fields:
           ja: シアンとマゼンタ
           de: Cyan und Magenta
           es: Cian y magenta
+          ko: 청록색과 마젠타색
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -49,6 +53,7 @@ fields:
           ja: 琥珀色と青緑
           de: Bernstein und Petrol
           es: Ámbar y verde azulado
+          ko: 호박색과 청록색
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -59,6 +64,7 @@ fields:
           ja: バイオレットとシアン
           de: Violett und Cyan
           es: Violeta y cian
+          ko: 보라색과 청록색
   - name: background
     type: enum
     required: true
@@ -70,6 +76,7 @@ fields:
       ja: 背景
       de: Hintergrund
       es: Fondo
+      ko: 배경
     options:
       - value: soft bokeh lights
         labels:
@@ -78,6 +85,7 @@ fields:
           ja: やわらかな玉ぼけ
           de: Sanfte Bokeh-Lichter
           es: Luces de bokeh suave
+          ko: 부드러운 보케 불빛
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -85,6 +93,7 @@ fields:
           ja: ぼけた夜の街
           de: Unscharfe nächtliche Stadt
           es: Ciudad nocturna desenfocada
+          ko: 흐릿한 밤의 도시
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -92,6 +101,7 @@ fields:
           ja: 平面的な暗いグラデーション
           de: Flächiger dunkler Farbverlauf
           es: Degradado plano oscuro
+          ko: 단순한 어두운 그라데이션
   - name: mood
     type: string
     required: false
@@ -103,6 +113,7 @@ fields:
       ja: ムード
       de: Stimmung
       es: Ambiente
+      ko: 분위기
   - name: aspectRatio
     type: enum
     required: true
@@ -115,6 +126,7 @@ fields:
       ar: نسبة الأبعاد
       de: Seitenverhältnis
       es: Relación de aspecto
+      ko: 화면 비율
     options:
       - value: 4:5
         labels:
@@ -124,6 +136,7 @@ fields:
           ar: 4:5
           de: 4:5
           es: 4:5
+          ko: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -132,6 +145,7 @@ fields:
           ar: 1:1
           de: 1:1
           es: 1:1
+          ko: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -140,6 +154,7 @@ fields:
           ar: 2:3
           de: 2:3
           es: 2:3
+          ko: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -148,3 +163,4 @@ fields:
           ar: 9:16
           de: 9:16
           es: 9:16
+          ko: 9:16
