@@ -9,3 +9,7 @@
 - **Release completeness remains partial.** Spec lines 298/368 require all release conditions and accepted deployment/rollback. Actual Korean OS IME, native 200% zoom, screen-reader, production activation, deployment and live rollback remain pending. Main worktree correctly keeps `enabled=false, preview=true`; no completed launch is claimed.
 
 No unrelated scope or additional confirmed Korean implementation defect identified. One reproduced defect is resolved; existing full-suite failures and manual release conditions remain explicit.
+
+### Subsequent review resolution
+
+The later KO-06 finding (missing real-Worker negative fixtures and complete NFC/NFD ordering assertions) is resolved by the shared fixture and actual Worker tests. All nine new cases passed across Chromium, Firefox and WebKit; see [follow-up evidence](worker-followup.json). A complete source/translation comparison also corrected p_124's supplied-silhouette relationship and three reference-image Subject labels through fingerprinted import/promote. The earlier execution records and pending manual release conditions remain historical and explicit.

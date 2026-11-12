@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-11-12T00:36:51.154784+00:00",
+  "reviewer": "AI Codex root",
+  "baseCommit": "dc3fc5e535312b5b35fb72ce73583a56d2425747",
+  "worker": {
+    "status": "passed",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "testsPassed": 9,
+    "fixtureCasesPerBrowser": 12,
+    "fullCorpusNormalizationPairsPerBrowser": 2,
+    "buildId": "ko-preview-20261111-ime",
+    "buildMode": "preview",
+    "basePath": "/prompt-seen",
+    "server": "Repository reference nginx on 127.0.0.1:8197",
+    "method": "Capture the Worker constructed by the application, preserving bundler constructor options. Send requests with isolated negative sequence numbers and collect actual Worker messages. Route only the synthetic index URL through the browser context; use the real built index for NFC/NFD full-order comparisons. Compare exact IDs and total for every fixture, including empty groups for zero results.",
+    "command": "PORT=8197 PW_BROWSERS=chromium,firefox,webkit KO_ACCEPTANCE=1 node node_modules/@playwright/test/cli.js test tests/e2e/korean.browser.spec.ts --grep \"Korean Worker semantic boundaries\" --workers=2 --trace=off",
+    "executionDirectory": "/private/tmp/ko-review-fix.UXlN4s",
+    "limitations": [
+      "This is an existing preview artifact, not a fresh build after the four text corrections. Runtime application/search sources were unchanged.",
+      "No full browser matrix rerun, new production artifact, deployment, or real-IME/manual-accessibility claim."
+    ]
+  },
+  "tests": {
+    "files": 4,
+    "passed": 76,
+    "command": "node node_modules/vitest/vitest.mjs run --configLoader runner --cache=false src/modules/search src/ui/search/search-ui.test.ts scripts/lib/localization/korean-search.test.ts"
+  },
+  "checks": {
+    "typecheck": "passed (--noEmit --incremental false)",
+    "targetedESLint": "passed",
+    "targetedPrettier": "passed",
+    "contentValidation": {
+      "errors": 0,
+      "publishErrors": 0,
+      "warnings": 10,
+      "warningScope": "Existing Simplified Chinese missing/outdated translations; no source or zh-Hans fields changed."
+    },
+    "koreanStrict": {
+      "ready": true,
+      "blocking": false,
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "sourceRevision": "dc3fc5e535312b5b35fb72ce73583a56d2425747:833fc87a74a30aab1da661c9aed2127854d8f20925401ed677c21593c0472389"
+    }
+  },
+  "testFileSha256": {
+    "src/modules/search/engine.test.ts": "0315fbfb498dbe1950951fbdc1908e325ca602b51de7722ea52469b07aeccee5",
+    "tests/support/korean-search.ts": "681ca0fdd3c0a6de503cbbf55983c90b9cbc6a0f4de24acd8c1f0766b4977bd8",
+    "tests/e2e/korean.browser.spec.ts": "796de355815a6453ca6e1dd8a63603022c6be885ab7e405dfb40d309b925aacf"
+  },
+  "logs": {
+    "worker-browser.log": {
+      "path": ".artifacts/localization/ko/followup/worker-browser.log",
+      "sha256": "ba956c2b794f587b18b3ea1f69015e6dc7a8607f98039a96e085b76e6d890760"
+    },
+    "unit.log": {
+      "path": ".artifacts/localization/ko/followup/unit.log",
+      "sha256": "aeca4a67cc4b4b7de38233b6f5b191745bbfed3f7301d8c4940d07b896c11826"
+    },
+    "content-validation.log": {
+      "path": ".artifacts/localization/ko/followup/content-validation.log",
+      "sha256": "cb51b431dd163faa24fbf6b67f1ca2ea9299a1353cfc81c323d8020a02a5ff2a"
+    },
+    "strict-report.json": {
+      "path": ".artifacts/localization/ko/followup/strict-report.json",
+      "sha256": "14e97c0b4660c602d33785de9c33cb8c34f0c630398e18e2b685e547fb47df03"
+    }
+  }
+}

@@ -21,7 +21,7 @@ The [source-invariant audit](evidence/source-invariants.json) verifies that 843 
 | KO-03 messages and formatting | passed for Korean | 427 current UI approvals; ICU validation; all Korean browser cases have no hydration errors |
 | KO-04 original bodies and facts | passed | `evidence/source-invariants.json`; template preview/download/copy checks |
 | KO-05 import/review/promote | passed | Both real batches used existing CLI dry-run/apply gates; no conflicts |
-| KO-06 frozen search corpus | passed | Full-corpus serialized engine 20/20, including 18 frozen cases and NFC/NFD order; actual Worker cases passed in Chromium, Firefox and WebKit |
+| KO-06 frozen search corpus | passed | Full-corpus serialized engine 20/20; 18 frozen Worker cases; follow-up adds 12 shared semantic fixtures and complete NFC/NFD result-order comparisons in all three browsers (see follow-up below) |
 | KO-07 Hangul highlighting | passed | `search-red.log`, `search-green.log`, `aliases-green.log` |
 | KO-08 IME | synthetic passed; real device pending | Three-browser composition transactions/cancellation; Safari-style compositionend → real Enter/keyCode229 regression reproduced red in all three browsers, then passed 3/3 after the submit guard fix; ordinary next Enter remains functional |
 | KO-09 layout and interaction | Korean-specific checks passed; full-suite exceptions below; manual pending | Completed Korean browser suite: 93 passed; additional interactions: 36 passed. Four widths × two themes, axe, templates, copy/download, favorites, history and lazy font/index loading; native zoom and screen reader pending |
@@ -66,3 +66,13 @@ Initial necessary JavaScript was 229.6–241.2 KiB, above the approximately 200 
 - Deploy only after all release conditions pass, retain prior artifact/build ID, run live checks on the canonical host, and record Naver submission status separately.
 
 These pending checks are release conditions. Full content readiness and synthetic browser passes do not constitute a deployed or fully accepted Korean launch.
+
+## Follow-up review — 2026-11-11 (America/Los_Angeles)
+
+The KO-06 review gap is fixed. A shared serialized fixture now covers 12 scenarios, including ordinary portrait photography and separated product/photo words that must not become packshots, intact 종이, the single syllable 빛, composed/decomposed document text, and a genuinely empty result. Node and the actual bundled Worker both assert the exact result IDs; browser tests also assert totals and empty groups. Two real-corpus NFC/NFD pairs compare every result key in every group, with no top-K truncation and a non-empty control. The three browsers passed **9/9** new tests. The captured Worker uses the application's constructor/options and its real message/fetch path, so a main-thread fallback cannot pass these tests. Details and source hashes: [Worker follow-up](evidence/worker-followup.json).
+
+A new source comparison covered all **381 pages** ([page audit](evidence/translation-pages-followup.json)) and **2,220 shared/UI fields**, including all 427 messages ([field audit](evidence/translation-fields-followup.json)). It identified and corrected four locations: p_124 now clearly describes the supplied silhouette as input to the built-in image tool; reference-image slot labels in p_133, p_134 and t_029 now use 대상 for the depicted subject instead of 주제 (theme). Other theme/subject fields remain unchanged. This is AI text review, not native-speaker certification or renewed image inspection.
+
+Correction batch `463aba78dc581e1212545c9ee7a9c633c076538eefbd8053ab58fe89d3cd076a` passed import and promotion dry-run/apply. Exact pending candidates were separately source-compared and four matching approvals appended to `reviews.json`. The final Korean strict report is ready: **381/381 pages, 2,220/2,220 fields**, no gaps. Content validation has zero errors/publish errors and ten existing Simplified Chinese warnings. Typecheck, targeted ESLint/Prettier and **76/76 search tests across four files** passed.
+
+The Worker checks used the existing `ko-preview-20261111-ime` artifact because runtime code did not change. The text corrections were validated against the final source tree; no newly built or deployed artifact is claimed. Earlier full-suite failures and required manual release checks above remain open.

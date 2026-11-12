@@ -1,5 +1,7 @@
 import { composingText } from './support/composition';
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+import type { WorkerRequest, WorkerResponse } from '../../src/modules/search/types';
+import { koreanFixtureCases, koreanSearchFixture } from '../support/korean-search';
 import fs from 'node:fs';
 import path from 'node:path';
 import { renderTemplate } from '../../src/modules/template';
@@ -118,6 +120,99 @@ test.describe('frozen Korean search scenarios in the real Worker', () => {
           })
           .toBe(true);
       }
+    });
+  }
+});
+
+// Talk to the bundled Worker itself, including its fetch/deserialize/message path.
+// Waiting for a real Worker also prevents a main-thread fallback from passing KO-06.
+async function workerResults(page: Page, queries: string[], indexUrl = `${BASE}/generated/ko/search/index.json`) {
+  await page.addInitScript(() => {
+    const NativeWorker = window.Worker;
+    window.Worker = class extends NativeWorker {
+      constructor(url: string | URL, options?: WorkerOptions) {
+        super(url, options);
+        (window as typeof window & { koreanSearchWorker?: Worker }).koreanSearchWorker = this;
+      }
+    };
+  });
+  const started = page.waitForEvent('worker');
+  await page.goto(`${BASE}/ko/search/`);
+  await started;
+  const requests: Extract<WorkerRequest, { type: 'search' }>[] = queries.map((query, seq) => ({
+    type: 'search',
+    seq: -(seq + 1), // Keep test messages separate from the application client’s positive sequence numbers.
+    buildId: BUILD.buildId,
+    source: { locale: 'ko', url: indexUrl },
+    query,
+    // Compare the entire result ordering, not just the first page or top K.
+    limit: Number.MAX_SAFE_INTEGER,
+  }));
+  return page.evaluate(async (requests) => {
+    const worker = (window as typeof window & { koreanSearchWorker?: Worker }).koreanSearchWorker;
+    if (!worker) throw new Error('The application did not start a real search Worker');
+    try {
+      return await Promise.all(
+        requests.map(
+          (request) =>
+            new Promise<Extract<WorkerResponse, { type: 'results' }>>((resolve, reject) => {
+              const timer = setTimeout(() => reject(new Error(`Worker timed out: ${request.query}`)), 15_000);
+              const onError = (event: ErrorEvent) => {
+                clearTimeout(timer);
+                reject(new Error(event.message));
+              };
+              const onMessage = (event: MessageEvent<WorkerResponse>) => {
+                if (event.data.seq !== request.seq) return;
+                clearTimeout(timer);
+                worker.removeEventListener('message', onMessage);
+                worker.removeEventListener('error', onError);
+                if (event.data.type !== 'results') reject(new Error(JSON.stringify(event.data)));
+                else resolve(event.data);
+              };
+              worker.addEventListener('message', onMessage);
+              worker.addEventListener('error', onError);
+              worker.postMessage(request);
+            }),
+        ),
+      );
+    } finally {
+      worker.terminate();
+    }
+  }, requests);
+}
+
+test.describe('Korean Worker semantic boundaries', () => {
+  test.skip(!korean, 'Korean is not part of this artifact');
+
+  test('isolated fixture excludes false aliases and returns a genuinely empty result', async ({ page, context }) => {
+    const indexUrl = `${BASE}/generated/ko/search/index.json?fixture=korean-semantics`;
+    // Worker network requests belong to the browser context, not the page route handler.
+    await context.route(`**${indexUrl}`, (route) => route.fulfill({ json: koreanSearchFixture(BUILD.buildId) }));
+    const responses = await workerResults(
+      page,
+      koreanFixtureCases.map((example) => example.query),
+      indexUrl,
+    );
+    for (const [i, example] of koreanFixtureCases.entries()) {
+      const result = responses[i]!.results;
+      expect(
+        result.groups.flatMap((group) => group.hits.map((hit) => hit.id)),
+        example.query,
+      ).toEqual(example.ids);
+      expect(result.total, example.query).toBe(example.ids.length);
+      if (!example.ids.length) expect(result.groups).toEqual([]);
+    }
+  });
+
+  for (const query of ['제품 사진 스튜디오', '수묵화 매화']) {
+    test(`NFC/NFD preserve the full corpus result order: ${query}`, async ({ page }) => {
+      const responses = await workerResults(page, [query, query.normalize('NFD')]);
+      const [nfc, nfd] = responses.map(({ results }) => ({
+        total: results.total,
+        groups: results.groups.map((group) => ({ kind: group.kind, ids: group.hits.map((hit) => hit.id) })),
+      }));
+      expect(nfc!.total).toBeGreaterThan(0);
+      expect(nfd).toEqual(nfc);
     });
   }
 });
