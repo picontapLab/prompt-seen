@@ -30,6 +30,11 @@ function argumentsOf(elements: MessageFormatElement[], names = new Set<string>()
 }
 
 describe('compileMessages', () => {
+  it.each(['Producto', 'Fruta', 'Etiquetas'])('formats Spanish required-field errors for %s', (label) => {
+    const message = catalogTranslator(ROOT, 'es')('templates.editor.errors.required', { label });
+    expect(message).toBe(`El campo «${label}» está vacío. Complétalo para terminar el prompt.`);
+  });
+
   it('returns plain data, which client components accept as props', () => {
     const plain = (v: unknown): boolean =>
       v === null || typeof v !== 'object'
