@@ -178,6 +178,32 @@ test.describe('desktop', () => {
     await expect(page.locator('[data-group="prompt"] li').first()).toContainText('梅枝');
   });
 
+  test('available language suggestions appear while another index is loading', async ({ page }) => {
+    const delayedLocale = BUILD.locales.find((locale) => locale.code !== en.code && locale.code !== zh.code);
+    test.skip(!delayedLocale, 'needs a third language index');
+    let releaseIndex!: () => void;
+    const waiting = new Promise<void>((resolve) => {
+      releaseIndex = resolve;
+    });
+    await page.route(
+      (url) => url.pathname === `${BASE}/generated/${delayedLocale!.code}/search/index.json`,
+      async (route) => {
+        await waiting;
+        await route.continue();
+      },
+    );
+    try {
+      await openPage(page, `/${en.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}`);
+      const other = page.locator(
+        `[data-no-results] a[href="${BASE}/${zh.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}"]`,
+      );
+      await expect(other).toBeVisible({ timeout: 15_000 });
+    } finally {
+      releaseIndex();
+      await page.unrouteAll({ behavior: 'wait' });
+    }
+  });
+
   test('a later query wins over an earlier one still on its way (§11.6.4)', async ({ page }) => {
     await page.route(INDEX, async (route) => {
       await new Promise((r) => setTimeout(r, 800));

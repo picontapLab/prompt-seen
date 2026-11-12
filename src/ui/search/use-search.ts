@@ -50,10 +50,25 @@ export function useSearch(locale: LocaleEntry, query: string, { limit = Infinity
       setAnswer({ key, results: res.results, help: null, error: null });
       if (res.results.total > 0) return;
       const others = builtLocales.filter((l) => l.code !== locale.code).map(indexSource);
-      void client.request({ type: 'help', buildId: config.buildId, source, others, query: q }).then((help) => {
-        if (id !== latest.current || help.type !== 'help') return;
-        setAnswer((a) => (a.key === key ? { ...a, help: help.help } : a));
-      });
+      // Publish each language's count as its own index finishes loading.
+      for (const sources of [[], ...others.map((other) => [other])]) {
+        void client
+          .request({ type: 'help', buildId: config.buildId, source, others: sources, query: q })
+          .then((help) => {
+            if (id !== latest.current || help.type !== 'help') return;
+            setAnswer((a) => {
+              if (a.key !== key) return a;
+              const byLocale = new Map(
+                [...(a.help?.otherLocales ?? []), ...help.help.otherLocales].map((match) => [match.locale, match]),
+              );
+              const otherLocales = others.flatMap((other) => {
+                const match = byLocale.get(other.locale);
+                return match ? [match] : [];
+              });
+              return { ...a, help: { ...help.help, otherLocales } };
+            });
+          });
+      }
     });
   }, [locale, q, limit, enabled, key]);
 
