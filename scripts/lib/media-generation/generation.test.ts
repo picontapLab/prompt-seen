@@ -256,7 +256,8 @@ it.each(['png', 'gif'])(
   20_000,
 );
 
-describe('generation queue', () => {
+// Uses the same real-corpus preparation as the manifest checks; this is not a latency budget.
+describe('generation queue', { timeout: 30_000 }, () => {
   it('persists a claim across restarts and never retries an unknown result automatically', async () => {
     const root = workspace();
     await planMigration(root);

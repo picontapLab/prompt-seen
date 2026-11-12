@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-11T13:45:39.612Z",
+  "build": {
+    "buildId": "b01746abf04dadd19aaf037a7606e573bd97c06a",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "fileCount": 16858,
+  "html": {
+    "files": 1612,
+    "bytes": 181983518
+  },
+  "json": {
+    "files": 1197,
+    "bytes": 33325379
+  },
+  "searchIndexes": {
+    "de": {
+      "rawBytes": 1243563,
+      "gzipBytes": 229605
+    },
+    "en": {
+      "rawBytes": 1117811,
+      "gzipBytes": 206643
+    },
+    "ja": {
+      "rawBytes": 2095928,
+      "gzipBytes": 370097
+    },
+    "zh-Hans": {
+      "rawBytes": 1679326,
+      "gzipBytes": 291268
+    }
+  }
+}

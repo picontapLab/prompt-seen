@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "locale": "es",
+  "stage": "P5-complete",
+  "recordedAt": "2026-11-11T13:43:08.669290+00:00",
+  "releaseCertification": false,
+  "artifactSource": {
+    "baseCommit": "82eaa70e3236e3d02d691774cc7f7ef4a37963e5",
+    "workingTreePatchSha256": "b69a5d42a0690465ff4969fbf12ad8343f4cf243ce45568acb8db8f4c416e9b3",
+    "files": [
+      "src/ui/gallery/FilterBar.module.css",
+      "src/styles/tokens/color.css",
+      "scripts/lib/tokens/check.ts",
+      "scripts/lib/localization/spanish-search.test.ts",
+      "tests/e2e/spanish.browser.spec.ts",
+      "docs/prompt-library-website-design.md"
+    ],
+    "note": "The preview artifact includes the uncommitted mobile layout and light mark-token fixes. P6 must rebuild and validate a committed enabled candidate."
+  },
+  "sourceRevision": "82eaa70e3236e3d02d691774cc7f7ef4a37963e5:ee70bdffe24683093ebd80673978017330894381e1d4756d4ddea06bb75bf787",
+  "scopeFingerprint": "sha256:8ec694d3f739b6f72454272dbb668cd5e861e21a9cc077c56e4219e102eda92b",
+  "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
+  "counts": {
+    "target": 381,
+    "visible": 381,
+    "fallback": 0,
+    "localCurrent": 381,
+    "indexable": 381,
+    "fieldsTotal": 2220,
+    "fieldsCurrent": 2220,
+    "total": 381,
+    "published": 381,
+    "approved": 381,
+    "fields": 2220,
+    "missing": 0,
+    "draft": 0,
+    "outdated": 0,
+    "unreviewed": 0,
+    "archived": 0,
+    "invalid": 0,
+    "collection": 16,
+    "page": 2,
+    "prompt": 285,
+    "template": 75,
+    "topic": 3
+  },
+  "browserChecks": [
+    {
+      "command": "PW_BROWSERS=chromium,firefox,webkit npm run test:e2e -- --workers=3",
+      "passed": 1611,
+      "skipped": 54,
+      "failed": 14,
+      "log": "original-workspace:.artifacts/localization/es/full-preview-browser.log",
+      "note": "Initial complete preview; failures retained. Six mobile overflow failures, three incorrect expected Chinese URL prefixes, one hovered mark contrast violation, one popup timeout and three missing trace files."
+    },
+    {
+      "command": "PORT=8093 PW_BROWSERS=chromium,firefox,webkit npm run test:e2e -- tests/e2e/spanish.browser.spec.ts tests/e2e/list.browser.spec.ts tests/e2e/search.browser.spec.ts tests/e2e/pages.browser.spec.ts --workers=3",
+      "passed": 384,
+      "skipped": 2,
+      "failed": 7,
+      "log": ".artifacts/localization/es/fixed-preview-browser.log",
+      "note": "After product fixes. All seven failures were timeouts; first-run failures are not rewritten as passes. Skips: existing Chromium-only IME composition checks in Firefox and WebKit."
+    },
+    {
+      "command": "PORT=8093 PW_BROWSERS=firefox npm run test:e2e -- tests/e2e/pages.browser.spec.ts --grep \"language menu explains\" --repeat-each=3 --workers=1",
+      "passed": 3,
+      "failed": 0,
+      "log": ".artifacts/localization/es/missing-menu-repro.log"
+    },
+    {
+      "command": "PORT=8093 PW_BROWSERS=webkit npm run test:e2e -- tests/e2e/spanish.browser.spec.ts tests/e2e/list.browser.spec.ts tests/e2e/pages.browser.spec.ts --grep \"fotografía de producto estudio|1440px (light|dark): reviewed|scrolling loads every|^(.*) (en|zh-Hans): pages of step 3e pass axe \\(light\\)\" --workers=1",
+      "passed": 6,
+      "failed": 0,
+      "log": ".artifacts/localization/es/webkit-failures-recheck.log"
+    },
+    {
+      "command": "PORT=8093 PW_BROWSERS=chromium,firefox,webkit npm run test:e2e -- tests/e2e/spanish.browser.spec.ts --grep \"sorting and filters\" --workers=1",
+      "passed": 24,
+      "failed": 0,
+      "log": ".artifacts/localization/es/filters-matrix.log"
+    },
+    {
+      "command": "PORT=8093 PW_BROWSERS=firefox npm run test:e2e -- tests/e2e/spanish.browser.spec.ts tests/e2e/popup.browser.spec.ts --grep \"768px light: reviewed|modified clicks\" --repeat-each=3 --workers=2",
+      "passed": 3,
+      "failed": 3,
+      "log": ".artifacts/localization/es/firefox-repro.log",
+      "note": "Before mark-token fix: three hover-contrast failures reproduced; unchanged modified-click popup check passed three times."
+    }
+  ],
+  "search": {
+    "frozenQueries": 32,
+    "engine": "All frozen queries passed through serialized/reloaded real corpus. Preview now requires full set.",
+    "worker": "All 32 passed in Chromium, Firefox and WebKit; WebKit product photography timeout passed isolated retry with unchanged implementation.",
+    "log": ".artifacts/localization/es/full-corpus-after-p5.log"
+  },
+  "nativeZoom": {
+    "schemaVersion": 1,
+    "recordedAt": "2026-11-11T13:41:21.880Z",
+    "build": {
+      "buildId": "82eaa70e3236e3d02d691774cc7f7ef4a37963e5",
+      "siteName": "Prompt Seen",
+      "buildMode": "preview",
+      "origin": "https://promptseen.dev",
+      "basePath": "/prompt-seen",
+      "urlPattern": "{basePath}/{locale}/{path}",
+      "mediaBaseUrl": null,
+      "defaultLocale": "en",
+      "locales": [
+        {
+          "code": "en",
+          "pathPrefix": "en",
+          "nativeName": "English",
+          "htmlLang": "en",
+          "direction": "ltr",
+          "enabled": true,
+          "localization": {
+            "coverage": "incremental",
+            "review": "metadata",
+            "promptBodies": "optional"
+          }
+        },
+        {
+          "code": "zh-Hans",
+          "pathPrefix": "zh-hans",
+          "nativeName": "简体中文",
+          "htmlLang": "zh-Hans",
+          "direction": "ltr",
+          "enabled": true,
+          "localization": {
+            "coverage": "incremental",
+            "review": "metadata",
+            "promptBodies": "optional"
+          }
+        },
+        {
+          "code": "es",
+          "pathPrefix": "es",
+          "nativeName": "Español",
+          "htmlLang": "es",
+          "direction": "ltr",
+          "enabled": false,
+          "localization": {
+            "coverage": "complete",
+            "review": "fingerprint",
+            "promptBodies": "source-only"
+          }
+        },
+        {
+          "code": "ja",
+          "pathPrefix": "ja",
+          "nativeName": "日本語",
+          "htmlLang": "ja",
+          "direction": "ltr",
+          "enabled": true,
+          "localization": {
+            "coverage": "complete",
+            "review": "fingerprint",
+            "promptBodies": "source-only"
+          }
+        },
+        {
+          "code": "de",
+          "pathPrefix": "de",
+          "nativeName": "Deutsch",
+          "htmlLang": "de",
+          "direction": "ltr",
+          "enabled": true,
+          "localization": {
+            "coverage": "complete",
+            "review": "fingerprint",
+            "promptBodies": "source-only"
+          }
+        },
+        {
+          "code": "ar",
+          "pathPrefix": "ar",
+          "nativeName": "العربية",
+          "htmlLang": "ar",
+          "direction": "rtl",
+          "enabled": false,
+          "localization": {
+            "coverage": "incremental",
+            "review": "fingerprint",
+            "promptBodies": "optional"
+          }
+        }
+      ]
+    },
+    "api": "chrome.tabs.setZoom",
+    "factor": 2,
+    "before": {
+      "width": 1440,
+      "dpr": 1,
+      "scale": 1
+    },
+    "results": [
+      {
+        "theme": "light",
+        "url": "/es/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "light",
+        "url": "/es/prompts/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "light",
+        "url": "/es/prompts/plum-branch-in-ink/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "light",
+        "url": "/es/templates/product-poster/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "dark",
+        "url": "/es/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "dark",
+        "url": "/es/prompts/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "dark",
+        "url": "/es/prompts/plum-branch-in-ink/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      },
+      {
+        "theme": "dark",
+        "url": "/es/templates/product-poster/",
+        "state": {
+          "width": 720,
+          "dpr": 2,
+          "scale": 1
+        },
+        "layout": [],
+        "axe": []
+      }
+    ],
+    "errors": []
+  },
+  "checks": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "log": ".artifacts/localization/es/p5-typecheck.log"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": ".artifacts/localization/es/p5-lint.log"
+    },
+    {
+      "command": "npm run format:check",
+      "exitCode": 0,
+      "log": ".artifacts/localization/es/p5-format.log"
+    },
+    {
+      "command": "node --import tsx scripts/tokens-check.ts",
+      "exitCode": 0,
+      "log": ".artifacts/localization/es/contrast-pair-green.log"
+    }
+  ],
+  "review": {
+    "standards": "No unresolved findings",
+    "spec": "No unresolved P5 findings after full frozen-set and interaction matrix changes"
+  },
+  "remaining": [
+    "P6 committed enabled candidate and three configurations",
+    "Comparable four/five-language production performance evidence",
+    "P7 deployment and live checks"
+  ]
+}

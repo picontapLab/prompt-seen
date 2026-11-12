@@ -41,9 +41,9 @@ describe('tokens-check', () => {
     expect(min('dark', 'border-control')).toBeCloseTo(3.7, 2);
     expect(min('light', 'border-control')).toBeCloseTo(3.26, 2);
     expect(min('dark', 'mark')).toBeCloseTo(9.88, 2);
-    expect(min('light', 'mark')).toBeCloseTo(4.55, 2);
+    expect(min('light', 'mark')).toBeCloseTo(4.64, 2);
     expect(min('dark', 'mark-text')).toBeCloseTo(10.55, 2);
-    expect(min('light', 'mark-text')).toBeCloseTo(6.11, 2);
+    expect(min('light', 'mark-text')).toBeCloseTo(6.23, 2);
     expect(min('dark', 'text-primary', 'mark-soft')).toBeCloseTo(9.8, 2);
     expect(min('light', 'text-primary', 'mark-soft')).toBeCloseTo(13.25, 2);
     expect(Math.min(min('dark', 'film-print'), min('light', 'film-print'))).toBeCloseTo(6.86, 2);

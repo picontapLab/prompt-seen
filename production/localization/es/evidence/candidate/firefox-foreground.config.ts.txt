@@ -1,0 +1,23 @@
+import path from 'node:path';
+import { defineConfig } from '@playwright/test';
+import base from '../../../playwright.config';
+
+// Local macOS acceptance: Firefox may not expose a new background tab within the test budget.
+// A plain-anchor control reproduces this independently of the application. Keep native
+// modified-click semantics while selecting Firefox's supported foreground-tab preference.
+export default defineConfig({
+  ...base,
+  testDir: path.resolve('tests/e2e'),
+  webServer: { ...base.webServer, command: 'sh scripts/nginx.sh', cwd: process.cwd() },
+  projects: base.projects?.map((project) =>
+    project.name === 'firefox'
+      ? {
+          ...project,
+          use: {
+            ...project.use,
+            launchOptions: { firefoxUserPrefs: { 'browser.tabs.loadInBackground': false } },
+          },
+        }
+      : project,
+  ),
+});

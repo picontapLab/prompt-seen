@@ -4,6 +4,14 @@ Status: **full-content implementation, code review and all three local technical
 
 The isolated worktree starts at `0306b74b66ab9bf1f76eb5061bc466c3ebf86325`; unrelated main-worktree edits are excluded. Latest reviewed code candidate: `b8e0e7e392ff8fd259a8ef91aa40817de35bca75`. The candidate has `pt-BR.enabled=true`, `preview=true`, and complete/fingerprint/source-only policy. Earlier disabled builds are preparation/performance controls, not the current candidate configuration. See [Spec](../../../docs/portuguese-localization-spec.md) §§9–12 for acceptance and release gates.
 
+## Local merge validation — 2026-11-11 (America/Los_Angeles)
+
+The follow-up fixes the two Portuguese run-note translations (`x_155`, `x_244`) with asset-backed review records, and integrates main through `21b08096d535d2275764d8ee4a94a7af1751197e`, including Korean localization and the Spanish release configuration. The three previously corrected source-media descriptions now also have aligned Spanish/Korean text and exact-hash reviews; see [source corrections](source-media-corrections.md). All language additions and search behavior are preserved; the combined analyzer version is 6. Corpus index construction is prepared in test setup so adding enabled languages does not exhaust the assertion timeout.
+
+Fresh checks after the final integration: content validation, typecheck, lint and format check passed; token contrast passed 44 required plus 30 supplementary pairs. The complete serial unit suite passed **65 files / 621 tests**, with no failures or skips (`npm test -- --maxWorkers=1 --no-cache --configLoader native`). Earlier integration attempts passed 584 and 618 tests; one initial corpus-index test exceeded its 5-second default, addressed by warming every enabled index in setup without removing assertions. Portuguese, Spanish, Korean, Japanese and German each report 381/381 current pages and 2220/2220 current fields, ready=true.
+
+This validates the local merge, not a new release artifact. The historical build/browser matrices below certify their recorded commits only; no new full build/browser matrix, push or deployment is claimed for this merge. Release and rollback requirements remain applicable.
+
 ## Content, review and preservation
 
 The completed content gate has **381/381 current pages** (285 Prompts, 75 templates, 16 collections, 3 topics, 2 standalone pages) and **2,220/2,220 current fields** (427 UI messages, 1,793 shared prose fields). All 2,601 approval records match their reviewed source/target hashes; missing, draft, outdated, unreviewed, invalid and fallback counts are zero. [ready-summary.json](ready-summary.json) records the fresh final application-candidate check with `ready=true`, `blocking=false`. The earlier checkpoint is retained separately in [ready-summary-preparation.json](ready-summary-preparation.json).

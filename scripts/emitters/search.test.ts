@@ -121,7 +121,8 @@ describe('what goes into an index', () => {
     }
     const enabled = loadConfig(ROOT, { BUILD_MODE: 'production' }).locales.filter((locale) => locale.enabled);
     expect([...production.built.locales.keys()].sort()).toEqual(enabled.map((locale) => locale.code).sort());
-  });
+    // Includes creating and reloading every enabled locale's corpus-sized index.
+  }, 20_000);
 
   it('collections and topics only when their pages exist', () => {
     const without = production.engine('en').docs;

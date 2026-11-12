@@ -828,7 +828,7 @@ locales:
     phase: 2
 ```
 
-上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。`preview: true` 的 locale 只在预览构建（`BUILD_MODE=preview`，第 4.1 节）中生成，用于尚未启用语言的版式与方向测试，如步骤 2 的阿拉伯语草稿；生产构建只生成 `enabled` 的 locale。步骤 1a 时注册表已填写全部 13 项：英语与简体中文已启用，日语与阿拉伯语为预览，其余待内容与审核就绪后启用。
+上例只展示三个注册项。完整实施应填写推荐范围内的全部项。`enabled` 表示具备对外启用条件；单条内容是否发布由该 locale 的说明文件决定，两者不能混为一谈。`preview: true` 的 locale 只在预览构建（`BUILD_MODE=preview`，第 4.1 节）中生成，用于尚未启用语言的版式与方向测试，如步骤 2 的阿拉伯语草稿；生产构建只生成 `enabled` 的 locale。步骤 1a 时注册表已填写全部 13 项：英语与简体中文已启用，日语与阿拉伯语为预览，其余待内容与审核就绪后启用。 该句为步骤 1a 的历史状态；2026-11-11 西语候选的注册表启用集合为 `en`、`zh-Hans`、`es`、`ja`、`de`，预览另含 `ar`。日语、德语、西语采用 complete/fingerprint/source-only；实际部署状态以 `production/localization/es/production-acceptance.json` 为准。
 
 URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/ink-portrait`、`locales/zh-Hans.mdx`、`hreflang="zh-Hans"`。本文 1.0 的 `/zh/` 示例改为 `/zh-hans/`；项目尚未实施。如实施时已有 `/zh/` 链接，再配置永久重定向。非规范大小写的已知地址重定向到唯一小写地址；重定向由构建生成的宿主配置逐条列出，只覆盖已知地址，不对任意大小写做通配处理。
 
@@ -989,7 +989,7 @@ RTL 规则依据 [W3C 的方向与结构标记说明](https://www.w3.org/Interna
 - 宿主配置设置 `absolute_redirect off`，使 `Location` 为带前缀的相对地址。否则 nginx 会用自身的协议与端口拼接地址，对外端口不同或位于 TLS 终止代理之后时，得到错误的 `Location`。
 - 每种语言的 404 与 410 页预生成为 `/{locale}/404/` 与 `/{locale}/410/`，宿主用 `error_page`（或等效规则）按路径前缀引用，未知语言使用根 `404.html`。这些错误页地址，以及导出附带的 `404/`、`_not-found/`，在宿主中设为内部地址，直接访问不返回 200。不支持按路径指定错误页的宿主（如 Cloudflare Pages）只能使用根 404。
 - 构建检查每条重定向的目标存在于产物中；CI 经参考 nginx 断言 301、410 与 404 状态码（第 15.1 节）。
-- 实施说明（1.16）：`content:build` 的宿主配置输出（`deploy/generated/`）：`nginx/prompt-seen.conf`（逐条 `location =`，301 与带该语言 410 页的 410）；`cloudflare/_redirects`（只有 301，超过 Pages 的 2,000 条上限时构建失败；410 退化为该语言的 404 页）；`netlify/_redirects`（301、已删除地址以 404 状态显示该语言的 410 页、按语言的 404 与根 404）；`vercel/vercel.json`（`trailingSlash` 与 301；410 退化为 404）；`static/`（无配置能力的宿主使用的 meta refresh 页面，目录结构与 `dist/` 相同，发布前覆盖到 `dist/` 上；不放入 `dist/`，以免可配置的宿主返回 200 而不是 301）。打包脚本检查每条重定向的目标在产物中存在，且旧地址与已删除地址在产物中没有文件。内部错误页位置也设置 `charset utf-8`，410 响应为 `text/html; charset=utf-8`。
+- 实施说明（1.16）：`content:build` 的宿主配置输出（`deploy/generated/`）：`nginx/prompt-seen.conf`（逐条 `location =`，301 与带该语言 410 页的 410）；`cloudflare/_redirects`（地址变更使用 301，子路径根入口使用 302；地址变更规则超过 Pages 的 2,000 条上限时构建失败；410 退化为该语言的 404 页）；`netlify/_redirects`（301、已删除地址以 404 状态显示该语言的 410 页、按语言的 404 与根 404）；`vercel/vercel.json`（`trailingSlash` 与 301；410 退化为 404）；`static/`（无配置能力的宿主使用的 meta refresh 页面，目录结构与 `dist/` 相同，发布前覆盖到 `dist/` 上；不放入 `dist/`，以免可配置的宿主返回 200 而不是 301）。打包脚本检查每条重定向的目标在产物中存在，且旧地址与已删除地址在产物中没有文件。内部错误页位置也设置 `charset utf-8`，410 响应为 `text/html; charset=utf-8`。
 
 ### 9.6 结构化数据映射
 
@@ -1496,7 +1496,7 @@ GIF 在列表、搜索、收藏、详情和案例中自动播放，无播放或�
 
 | token | 深色 | 浅色 | 用途 |
 | --- | --- | --- | --- |
-| `mark` | `#FFB547` | `#9A4D00` | 安全灯琥珀：帧号、字母标签、当前位置下划线、圈选记号 |
+| `mark` | `#FFB547` | `#984C00` | 安全灯琥珀：帧号、字母标签、当前位置下划线、圈选记号；浅色在搜索悬停背景 `accent-subtle` 上满足 4.5:1 |
 | `mark-text` | `#1A1206` | `#FFFFFF` | 实心字母标签上的文字 |
 | `mark-soft` | `#46351C` | `#F5D7A1` | 当前标注短语的高亮底色 |
 | `film` | `#0B0A09` | `#1A1917` | 胶片片边 |
@@ -1505,7 +1505,7 @@ GIF 在列表、搜索、收藏、详情和案例中自动播放，无播放或�
 | `film-print` | `#A8A196` | `#A8A196` | 片边印字 |
 | `overlay-outline` | `rgb(26 18 6 / 0.85)` | 同左 | 图片上标注元素的 1 px 深色描边 |
 
-以上组合按 WCAG 2.2 公式计算，深浅两套与片边共 44 组全部通过（实施细节（1.10）：每套主题 22 组——`text-primary`、`text-secondary`、`accent`（链接与焦点环）、`border-control`、`mark` 各自在 `canvas`、`surface-raised`、`surface-sunken` 上，`on-accent` / `accent`，`danger` / `danger-subtle`，`success` / `success-subtle`，`mark-text` / `mark`，`text-primary` / `mark-soft`，`film-mark` / `film`，`film-print` / `film`；文字与印字按 4.5:1，`border-control` 按 3:1。`tokens-check` 另外校验补充组合：悬停的主按钮、已选标签上的两级文字、三种背景上的字段错误、6 组变量色，以及白色作品区域上的标注描边与琥珀线；补充组合未通过同样阻止合并。两块深色 token 不一致时也失败）。关键结果（深色 / 浅色）：`text-secondary` 最低 6.78 / 5.68；`border-control` 最低 3.70 / 3.26；`mark` 作为文字最低 9.88 / 4.55；字母标签 10.55 / 6.11；高亮短语文字 9.80 / 13.25；片边上的琥珀与印字不低于 6.86。琥珀直接叠在作品的白色区域上只有 1.76:1，因此图片上的标注元素一律带 `overlay-outline` 描边（深色描边对白色 18.5:1）。
+以上组合按 WCAG 2.2 公式计算，深浅两套与片边共 44 组全部通过（实施细节（1.10）：每套主题 22 组——`text-primary`、`text-secondary`、`accent`（链接与焦点环）、`border-control`、`mark` 各自在 `canvas`、`surface-raised`、`surface-sunken` 上，`on-accent` / `accent`，`danger` / `danger-subtle`，`success` / `success-subtle`，`mark-text` / `mark`，`text-primary` / `mark-soft`，`film-mark` / `film`，`film-print` / `film`；文字与印字按 4.5:1，`border-control` 按 3:1。`tokens-check` 另外校验补充组合：悬停的主按钮、已选标签上的两级文字、搜索悬停背景上的帧号（浅色 4.55:1）、三种背景上的字段错误、6 组变量色，以及白色作品区域上的标注描边与琥珀线；补充组合未通过同样阻止合并。两块深色 token 不一致时也失败）。关键结果（深色 / 浅色）：`text-secondary` 最低 6.78 / 5.68；`border-control` 最低 3.70 / 3.26；`mark` 在三种基础表面作为文字最低 9.88 / 4.64；字母标签 10.55 / 6.23；高亮短语文字 9.80 / 13.25；片边上的琥珀与印字不低于 6.86。琥珀直接叠在作品的白色区域上只有 1.76:1，因此图片上的标注元素一律带 `overlay-outline` 描边（深色描边对白色 18.5:1）。
 
 **字体**（取代第 11.1.2 节的候选）：
 

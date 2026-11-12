@@ -47,6 +47,7 @@ export const SUPPLEMENTARY_PAIRS: readonly Pair[] = [
   { fg: 'on-accent', bg: 'accent-hover', min: TEXT, use: 'primary button, hovered' },
   { fg: 'text-primary', bg: 'accent-subtle', min: TEXT, use: 'selected chip, current item' },
   { fg: 'text-secondary', bg: 'accent-subtle', min: TEXT, use: 'count in a selected chip' },
+  { fg: 'mark', bg: 'accent-subtle', min: TEXT, use: 'frame number in a hovered or selected search result' },
   ...onSurfaces('danger', TEXT, 'field error under a control'),
   ...[1, 2, 3, 4, 5, 6].map((n) => ({
     fg: `var-${n}-fg`,

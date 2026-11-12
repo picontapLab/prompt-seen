@@ -23412,6 +23412,24 @@
       "reason": "Full aggregate text and member reasons reviewed; see evidence/aggregate-text-review.json. Member media were inspected in B1–B3; promotion separately checks current dependencies."
     },
     {
+      "key": "prompt/p_307",
+      "sourceHash": "sha256:8f3068ef5a9d3bf00bcf7a2e30879c7bd1cd6a62b85fa6fa2df4ceff66fa15ec",
+      "targetHash": "sha256:485d6ea9d3ed3f812d0281f357cd1e2843ba9c7845c204038e274df0653d6ec9",
+      "reviewer": "AI Codex",
+      "completedAt": "2026-11-12T01:16:10.548Z",
+      "conclusion": "approved",
+      "reason": "Compared the complete English and Spanish page and original Turkish prompt. The title now identifies Robin as the cat. Body, description, provenance, limitations and original Prompt are preserved."
+    },
+    {
+      "key": "src/i18n/messages/es/templates.json#editor.errors.required",
+      "sourceHash": "sha256:a3711d56c52792c66f1a17f725ba44eaaab81903dbc7f416a9f24c88cc84921b",
+      "targetHash": "sha256:5b9a620139a4cc96e575e7bfdda5884862dd3004bf0f42059a2237bdc51f4aa7",
+      "reviewer": "AI Codex",
+      "completedAt": "2026-11-12T01:16:10.548Z",
+      "conclusion": "approved",
+      "reason": "Reviewed against the English required-field error. El campo supplies a consistent masculine singular subject for Producto, Fruta and Etiquetas. The field label and completion instruction are preserved."
+    },
+    {
       "key": "content/media/a_269.yaml#alt",
       "sourceHash": "sha256:3149247ee25c6a37fcd0ec1790e5d99a1ec1f8bacbe4d04a14c918c6ec7f919f",
       "targetHash": "sha256:8da157d6350a92ed96d449f0b9552347631cdc975b72159f7a7074700771dfaa",

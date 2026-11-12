@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import {firefox} from 'playwright';
+const site='http://127.0.0.1:8093';const list=site+'/prompt-seen/en/prompts/';const results=[];
+for(const headless of [true,false]){
+ const browser=await firefox.launch({headless});
+ try{for(const fixture of ['plain','gallery'])for(const mode of ['Meta','middle']){
+  const context=await browser.newContext({viewport:{width:1440,height:900}});const page=await context.newPage();
+  try{
+   if(fixture==='plain')await page.setContent(`<a href="${list}">ordinary native anchor</a>`);
+   else {await page.goto(list);await page.waitForFunction(()=>{const f=document.querySelector('[role="feed"]');return f&&Object.keys(f).some(k=>k.startsWith('__reactProps'));});}
+   await page.bringToFront();
+   await page.evaluate(()=>{window.probeEvents=[];window.addEventListener('click',e=>{window.probeEvents.push({button:e.button,metaKey:e.metaKey,ctrlKey:e.ctrlKey,defaultPrevented:e.defaultPrevented,href:e.target.closest('a')?.getAttribute('href')});});});
+   const anchor=fixture==='plain'?page.locator('a'):page.locator('[role="feed"] article[data-entry] a[href*="/prompts/"]').first();
+   const href=await anchor.getAttribute('href');const opened=context.waitForEvent('page',{timeout:5000}).then(()=>true,()=>false);
+   await anchor.click(mode==='middle'?{button:'middle'}:{modifiers:['Meta']});const newTab=await opened;
+   const row={headless,fixture,mode,href,newTab,pageCount:context.pages().length,currentUrl:page.url(),events:await page.evaluate(()=>window.probeEvents)};results.push(row);console.log(JSON.stringify(row));
+  }finally{await context.close();}
+ }}finally{await browser.close();}
+}
+fs.writeFileSync('.artifacts/localization/es/modified-click-probe.json',JSON.stringify({recordedAt:new Date().toISOString(),results},null,2)+'\n');

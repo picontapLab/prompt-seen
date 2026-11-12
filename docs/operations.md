@@ -119,6 +119,15 @@ in the small interval after the last check queues its own gated deploy; another 
 rollback job cannot upload in that interval. Configure the custom domain/proxy before the live
 checks. The SHA and verified CI run are recorded in the Actions summary.
 
+### Static payload file count
+
+The five-language production export contains 20,332 files before host configuration and
+private customization. The project owner confirmed a paid Pages plan for this candidate;
+the documented limit is 100,000 files (Free: 20,000). Upload preparation keeps the complete
+Next.js static export, including both full RSC payload paths. Recount the prepared artifact
+after private customization before deployment and confirm the project's current limit.
+See [Pages file limits](https://developers.cloudflare.com/pages/platform/limits/#files).
+
 ### Private production customization
 
 The existing `npm run deploy:cloudflare:prepare` command runs an optional private JavaScript
