@@ -45,7 +45,8 @@ beforeAll(() => {
     terms: [],
     index: JSON.parse(JSON.stringify(createIndex(documents, 'pt-BR'))),
   });
-}, 20_000);
+  // Full multilingual corpus preparation can exceed 20 seconds on shared CI runners.
+}, 60_000);
 
 it.each(cases)('finds the frozen Portuguese scenario: $query', ({ query, expectedKeys, excludedKeys, topK }) => {
   const results = search(engine, query, topK);
