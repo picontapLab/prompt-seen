@@ -1,0 +1,34 @@
+---
+title: Cambiar el color de un jarrón mediante una foto y una marca
+description: Un prompt registrado de edición de color con IA, con dos
+  referencias ordenadas, el jarrón azul cobalto resultante y el cambio observado
+  en el esmalte.
+status: published
+updatedAt: 2026-11-06
+translation:
+  sourceLocale: en
+  sourceHash: sha256:cb1800a78015b5f4
+  reviewStatus: reviewed
+---
+
+## Cómo usarlo
+
+Usa el prompt exacto registrado y los recursos de referencia originales mostrados, en su orden. Los cambios en el prompt o las entradas crean una variante sin probar.
+
+Sube primero la foto sintética original de la habitación y después la capa separada con el círculo rojo. La capa identifica el jarrón; no es el resultado generado. El prompt de trabajo registrado está en chino y se conserva aquí sin cambios. Una traducción al inglés sería un prompt nuevo y sin probar.
+
+## Resultado observado
+
+El jarrón cambió de crema a azul cobalto y se eliminó la marca roja. La jarra, los tallos secos, los azulejos y la ventana siguen siendo visualmente coherentes; el nuevo esmalte es más brillante.
+
+## Pruebas de generación y límites
+
+El [registro de ejecución](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml) vincula el hash del prompt con las entradas a_373 y a_374, en ese orden, y el resultado a_372. El [comprobante de generación](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json) conserva los hashes de entradas y resultados. Su marca temporal es del 5 de noviembre UTC, correspondiente al 4 de noviembre en Los Ángeles, la fecha mostrada para esta ejecución.
+
+GPT Image 2.6 es la [atribución de versión del propietario del proyecto](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). La herramienta no devolvió un ID exacto de modelo de la API; no se registraron semilla ni ajustes de muestreo o calidad. Este único resultado muestra un cambio de color con una superficie más brillante, no demuestra que una edición de color conserve cada reflejo o píxel. Comprueba el acabado del material y los objetos circundantes al probar tu propia imagen.
+
+## Fuente y generación
+
+La fuente aporta un prompt original; esta producción usa el prompt de trabajo registrado por separado. [Fuente](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). La interacción con la publicación de origen no mide este ejemplo recién generado.
+
+Generado con GPT Image 2.6. Todas las imágenes de referencia usadas aquí se generaron para este proyecto.

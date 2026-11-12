@@ -27,6 +27,8 @@ inputRequirements:
       verwendet künstlich erzeugte Eingabebilder.
     pt-BR: Envie as imagens de referência na ordem listada. O exemplo usa imagens de
       entrada sintéticas.
+    es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
+      imágenes de entrada sintéticas.
   slots:
     - id: materialSample
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 素材見本
         de: Materialmuster
         pt-BR: Amostra de material
+        es: Muestra de material
       min: 1
       max: 1
     - id: targetScene
@@ -44,6 +47,7 @@ inputRequirements:
         ja: 変更対象の場面
         de: Zielszene
         pt-BR: Cena de destino
+        es: Escena objetivo
       min: 1
       max: 1
 showcaseExampleId: x_252

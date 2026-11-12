@@ -28,6 +28,8 @@ inputRequirements:
       Entwurf.
     pt-BR: Envie primeiro o retrato da pessoa adulta e depois o traje. As duas
       entradas são sintéticas; o traje é um design fictício moderno.
+    es: Sube primero el retrato adulto y después el vestuario. Ambas entradas son
+      sintéticas; el vestuario es un diseño moderno ficticio.
   slots:
     - id: person
       labels:
@@ -36,6 +38,7 @@ inputRequirements:
         ja: 人物
         de: Person
         pt-BR: Pessoa
+        es: Persona
       min: 1
       max: 1
     - id: garment
@@ -45,6 +48,7 @@ inputRequirements:
         ja: 衣装
         de: Kleidungsstück
         pt-BR: Peça de roupa
+        es: Prenda
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -63,6 +67,7 @@ inspirationSources:
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
       pt-BR: Tutorial inteiro ou vídeo de demonstração
+      es: Vídeo completo del tutorial o la demostración
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,6 +76,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       pt-BR: Registro da API pública oficial
+      es: Captura de la API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -78,6 +84,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
+      es: No se obtuvo el prompt original completo; adaptado de forma independiente
     metrics:
       - key: views
         value: 18638
@@ -87,6 +94,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           pt-BR: Visualizações
+          es: Visualizaciones
       - key: likes
         value: 477
         labels:
@@ -95,6 +103,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           pt-BR: Curtidas
+          es: Me gusta
       - key: saves
         value: 689
         labels:
@@ -103,6 +112,7 @@ inspirationSources:
           ja: 保存数
           de: Gespeichert
           pt-BR: Salvamentos
+          es: Guardados
       - key: comments
         value: 116
         labels:
@@ -111,6 +121,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
       - key: shares
         value: 98
         labels:
@@ -119,6 +130,7 @@ inspirationSources:
           ja: 共有数
           de: Geteilt
           pt-BR: Compartilhamentos
+          es: Veces compartido
       - key: coins
         value: 178
         labels:
@@ -127,6 +139,7 @@ inspirationSources:
           ja: コイン数
           de: Coins
           pt-BR: Moedas
+          es: Monedas
       - key: danmaku
         value: 14
         labels:
@@ -135,6 +148,7 @@ inspirationSources:
           ja: 弾幕コメント数
           de: Danmaku
           pt-BR: Comentários sobrepostos (danmaku)
+          es: Comentarios danmaku
 source:
   author: Prompt Seen
   url: null

@@ -8,6 +8,8 @@ instructions:
     ein Figurenblatt ist optional.
   pt-BR: Descreva os personagens e forneça exatamente quatro momentos da história
     em ordem; uma folha de personagens é opcional.
+  es: Describe el reparto y aporta exactamente cuatro momentos narrativos en
+    orden; una hoja de personaje es opcional.
 slots:
   - id: character
     labels:
@@ -16,5 +18,6 @@ slots:
       ja: 人物
       de: Figur
       pt-BR: Personagem
+      es: Personaje
     min: 0
     max: 1

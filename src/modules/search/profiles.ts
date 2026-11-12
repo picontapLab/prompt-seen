@@ -1,4 +1,4 @@
-import { queryTerms, tokenize } from './tokenize';
+import { normalizeTerm, queryTerms, tokenize } from './tokenize';
 import type { SearchKind } from './types';
 
 // Maintained domain vocabulary, deliberately not an arbitrary compound-word splitter.
@@ -46,6 +46,8 @@ const SPANISH_TERMS = [
   ['pegatina', 'pegatinas', 'sticker', 'stickers'],
   ['plantilla', 'plantillas', 'template', 'templates'],
   ['retrato', 'retratos', 'portrait', 'portraits'],
+  // A city plan is a map; bare «plano» also means a camera shot and is not an alias.
+  ['mapa', 'plano urbano'],
 ] as const;
 
 const SPANISH_PRODUCT_PHOTOGRAPHY = [
@@ -129,6 +131,9 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
   for (const word of queryTerms(extra.join(' '), locale)) terms.add(word);
   const phraseText = ` ${tokenize(text, locale).join(' ')} `;
   const contains = (word: string) => {
+    // Separate mentions of «primer plano» and «fondo urbano» do not describe a city map.
+    if (language === 'es' && word === 'plano urbano')
+      return /(?:^|[^\p{L}\p{N}])plano[ \t]+urbano(?=$|[^\p{L}\p{N}])/u.test(normalizeTerm(text, locale));
     const words = queryTerms(word, locale);
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).

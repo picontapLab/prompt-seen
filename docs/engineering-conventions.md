@@ -449,17 +449,23 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
 1. `check`: content validation, token contrast, typecheck, lint, format, unit tests, Storybook build.
 2. `secrets`: gitleaks over the branch's history. A test that needs a token-like value uses one
    that scanners ignore (a repeated character, or the documented `…EXAMPLE` keys).
-3. `build-and-test`: a production build at the root and a preview build under `/prompt-seen`,
-   each tested end to end in three browsers. A failed test is retried once, and only the retry
-   records a trace (`playwright.config.ts`): a worker keeps every trace it records until it exits,
-   passed tests included, and CI runs a build's tests in one worker, so tracing every test once
-   filled the runner's disk. A failed attempt leaves a screenshot and its error context, and
-   `test-results/` is uploaded after every run, so a flaky test's first failure can be read too.
-   The job prints the disk space before and after the tests, and the largest directories.
-4. `preview`: uploads the tested `/prompt-seen` build to Cloudflare Pages. Needs the repository
-   secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, and optionally the variable
-   `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`). Without them the job reports a notice and
-   skips.
+3. `build`: two builds only, production at the root and preview under `/prompt-seen`.
+   Each artifact includes `dist/`, `.generated/`, `public/generated/`, `deploy/generated/`, and
+   `src/config/generated/`; browser jobs restore the same artifact without rebuilding.
+4. `build-and-test`: six isolated runners (two paths × Chromium, Firefox, WebKit), two workers
+   each. HTTP checks run with Chromium only. Playwright has a 30-minute overall timeout and the
+   job has a 40-minute timeout, including installation and report upload. `check` and `build`
+   have 20-minute budgets; `secrets` and `preview` have 10 minutes.
+   A failed test is retried once; only the retry records a trace to bound disk usage. Failed
+   attempts retain screenshots and error context. Each job uploads `test-results/` and the HTML
+   report, writes stable test IDs and every attempt to `reliability.json`, and adds failed/flaky
+   cases, duration and worker count to its Actions summary. See [CI reliability](ci-reliability.md)
+   for the measured baseline, tracking and triage procedure. The validated Firefox 1.64.1
+   runtime remains in place until the upstream regression is resolved.
+5. The subpath Chromium job prepares and smoke-tests the preview upload directory. `preview`
+   uploads that artifact only after `check`, `secrets`, and all six browser jobs succeed. Fork PRs
+   cannot enter the upload job. Needs repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, optionally
+   `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`); without them upload is skipped.
 
 `.github/workflows/deploy.yml` runs after CI passes on `main`, and `rollback.yml` by hand; both
 are described in [`operations.md`](operations.md) and skip with a notice until the production

@@ -27,6 +27,8 @@ inputRequirements:
       KI-generierte erwachsene Person.
     pt-BR: Envie uma foto nítida da pessoa. O exemplo usa um adulto fictício gerado
       por IA.
+    es: Sube una foto clara del sujeto. El ejemplo usa un adulto ficticio generado
+      por IA.
   slots:
     - id: subject
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 被写体
         de: Motiv
         pt-BR: Elemento principal
+        es: Sujeto
       min: 1
       max: 1
 showcaseExampleId: x_178
@@ -53,6 +56,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       pt-BR: Publicação inteira ou galeria de imagens
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +65,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       pt-BR: Registro da API pública oficial
+      es: Captura de la API pública oficial
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -68,6 +73,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       pt-BR: Prompt original completo não recuperado; adaptação independente
+      es: No se obtuvo el prompt original completo; adaptado de forma independiente
     metrics:
       - key: likes
         value: 6338
@@ -77,6 +83,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           pt-BR: Curtidas
+          es: Me gusta
       - key: conversation_count
         value: 365
         labels:
@@ -85,6 +92,7 @@ inspirationSources:
           ja: 返信数
           de: Antworten
           pt-BR: Respostas
+          es: Respuestas
       - key: views
         value: null
         labels:
@@ -93,6 +101,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           pt-BR: Visualizações
+          es: Visualizaciones
       - key: reposts
         value: null
         labels:
@@ -101,6 +110,7 @@ inspirationSources:
           ja: リポスト数
           de: Reposts
           pt-BR: Republicações
+          es: Republicaciones
       - key: bookmarks
         value: null
         labels:
@@ -109,6 +119,7 @@ inspirationSources:
           ja: ブックマーク数
           de: Lesezeichen
           pt-BR: Itens salvos
+          es: Marcadores
 source:
   author: Prompt Seen
   url: null

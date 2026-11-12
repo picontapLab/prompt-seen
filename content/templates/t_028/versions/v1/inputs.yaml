@@ -8,6 +8,8 @@ instructions:
     Handlungsaufforderung und Farbpalette an.
   pt-BR: Envie uma foto do produto e forneça título, texto de apoio, chamada para
     ação e paleta.
+  es: Sube una foto de producto e indica titular, texto secundario, llamada a la
+    acción y paleta.
 slots:
   - id: product
     labels:
@@ -16,5 +18,6 @@ slots:
       ja: 商品
       de: Produkt
       pt-BR: Produto
+      es: Producto
     min: 1
     max: 1

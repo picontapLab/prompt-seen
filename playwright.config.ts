@@ -19,14 +19,18 @@ const browserProjects: Record<string, Project> = {
 export default defineConfig({
   testDir: 'tests/e2e',
   fullyParallel: true,
+  workers: process.env.CI ? 2 : undefined,
+  globalTimeout: process.env.CI ? 30 * 60_000 : undefined,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  reporter: process.env.CI ? [['github'], ['list']] : [['list']],
+  reporter: process.env.CI
+    ? [['github'], ['list'], ['html', { open: 'never' }], ['./scripts/lib/playwright-reporter.ts']]
+    : [['list']],
   use: {
     baseURL: `http://127.0.0.1:${PORT}`,
     // A worker keeps every recorded trace (screencast frames included) on disk until it exits, even
-    // for tests that pass, and CI runs a whole build's tests in one worker: recording every test
-    // filled the runner's disk (ENOSPC). CI records only the retry of a failed test.
+    // for tests that pass. Recording every test previously filled the runner disk (ENOSPC).
+    // CI records only the retry of a failed test; each browser job uses two workers.
     trace: process.env.CI ? 'on-first-retry' : 'retain-on-failure',
     // Written only for a failed attempt, so a flaky test's first failure leaves evidence too.
     screenshot: 'only-on-failure',

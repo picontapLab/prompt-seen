@@ -27,6 +27,9 @@ inputRequirements:
       Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
     pt-BR: Use os recursos de referência gerados de forma independente na ordem
       exibida. Não use as imagens oficiais ou das publicações sociais de origem.
+    es: Usa los recursos de referencia generados de forma independiente en el
+      orden mostrado. No uses las imágenes oficiales ni las de las fuentes
+      sociales.
   slots:
     - id: reference
       labels:
@@ -35,6 +38,7 @@ inputRequirements:
         ja: 元となる生成参照画像
         de: Ursprüngliche künstlich erzeugte Referenz
         pt-BR: Referência sintética original
+        es: Referencia sintética original
       min: 1
       max: 1
 showcaseExampleId: x_298
@@ -56,6 +60,8 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos de
         uma mesma publicação compartilham as métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de
+        una misma publicación comparten las métricas.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -67,6 +73,8 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: página direta e revisão visual. As contagens não
         foram atualizadas."
+      es: "Investigación previa: revisión directa de la página y revisión visual.
+        Los recuentos no se han actualizado."
     evidenceUrl: https://x.com/MinLiBuilds/status/2118138824673173569
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -76,6 +84,8 @@ inspirationSources:
         abgeleiteter Prompt.
       pt-BR: O prompt original não foi encontrado. Este é um prompt inferido de forma
         independente.
+      es: No se encontró el prompt original. Este es un prompt inferido de forma
+        independiente.
     metrics:
       - key: likes
         value: 21
@@ -85,6 +95,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           pt-BR: Curtidas
+          es: Me gusta
       - key: reposts
         value: 1
         labels:
@@ -93,6 +104,7 @@ inspirationSources:
           ja: リポスト数
           de: Reposts
           pt-BR: Republicações
+          es: Republicaciones
 source:
   author: Prompt Seen
   url: null

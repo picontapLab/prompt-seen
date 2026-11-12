@@ -24,6 +24,7 @@ inputRequirements:
     ja: 独自に生成した猿の参照画像を使ってください。
     de: Verwende das unabhängig generierte Referenzbild des Affen.
     pt-BR: Use a referência de macaco gerada de forma independente.
+    es: Usa la referencia del mono generada de forma independiente.
   slots:
     - id: reference
       labels:
@@ -32,6 +33,7 @@ inputRequirements:
         ja: 元の猿の参照画像
         de: Ursprüngliches Referenzbild des Affen
         pt-BR: Referência original de macaco
+        es: Referencia original del mono
       min: 1
       max: 1
 showcaseExampleId: x_288
@@ -53,6 +55,8 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original de origem; não este novo resultado gerado. Vários
         casos de uma mesma publicação compartilham as métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de
+        una misma publicación comparten las métricas.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -64,6 +68,8 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: revisão da página diretamente e revisão visual. As
         contagens não foram atualizadas."
+      es: "Investigación previa: revisión directa de la página y revisión visual.
+        Los recuentos no se han actualizado."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -74,6 +80,8 @@ inspirationSources:
         den separat dokumentierten Arbeitsprompt.
       pt-BR: A fonte fornece um prompt original; esta produção usa o prompt de
         trabalho registrado separadamente.
+      es: La fuente aporta un prompt original; esta producción usa el prompt de
+        trabajo registrado por separado.
     metrics: []
 source:
   author: Prompt Seen

@@ -25,6 +25,7 @@ inputRequirements:
     de: Lade ein Alltagsfoto hoch. Das Beispiel verwendet eine eigene künstlich
       erzeugte Szene.
     pt-BR: Envie uma foto do dia a dia. O exemplo usa uma cena sintética original.
+    es: Sube una foto cotidiana. El ejemplo usa una escena sintética original.
   slots:
     - id: scene
       labels:
@@ -33,6 +34,7 @@ inputRequirements:
         ja: 場面
         de: Szene
         pt-BR: Cena
+        es: Escena
       min: 1
       max: 1
 showcaseExampleId: x_182
@@ -51,6 +53,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       pt-BR: Publicação inteira ou galeria de imagens
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -59,6 +62,7 @@ inspirationSources:
       ja: 検索インデックス上の一次情報のスナップショット
       de: Snapshot einer indexierten Primärquelle
       pt-BR: Captura indexada da fonte primária
+      es: Captura indexada de la fuente primaria
     evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -66,6 +70,7 @@ inspirationSources:
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
       pt-BR: Prompt de origem ou trecho disponível; adaptação independente
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: post_score
         value: 10750
@@ -75,6 +80,7 @@ inspirationSources:
           ja: 投稿スコア
           de: Beitragsbewertung
           pt-BR: Pontuação da publicação
+          es: Puntuación de la publicación
       - key: comments
         value: null
         labels:
@@ -83,6 +89,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
 source:
   author: Prompt Seen
   url: null

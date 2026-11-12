@@ -27,6 +27,8 @@ inputRequirements:
       Prompt Seen generierten Schneemann.
     pt-BR: Envie uma imagem nítida de um boneco de neve. Este exemplo usa um boneco
       de neve gerado pelo Prompt Seen.
+    es: Sube una imagen clara de un muñeco de nieve. Este ejemplo usa uno generado
+      por Prompt Seen.
   slots:
     - id: snowman
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
         pt-BR: Referência gerada pelo projeto
+        es: Referencia generada por el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_303
@@ -54,6 +57,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
+      es: Publicación o galería original completa; no este ejemplo generado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -64,6 +68,8 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo de uma cópia salva da
         publicação ou resposta do autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de
+        la publicación o respuesta del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118193088128745875&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -71,6 +77,7 @@ inspirationSources:
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
       pt-BR: Texto completo do autor, no idioma original
+      es: Texto completo del autor, idioma original
     metrics:
       - key: likes
         value: 62
@@ -80,6 +87,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           pt-BR: Curtidas da publicação de origem
+          es: Me gusta de la publicación original
 source:
   author: Goodmanprotocol
   url: https://x.com/Goodmanprotocol/status/2118193088128745875

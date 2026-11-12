@@ -11,6 +11,7 @@ fields:
       ar: المنتج
       de: Produkt
       pt-BR: Produto
+      es: Producto
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
@@ -19,6 +20,8 @@ fields:
       de: Nenne das Objekt und sein Material, etwa „ein gesprenkelter Keramikbecher“.
       pt-BR: Diga qual é o objeto e seu material, por exemplo, “uma caneca de cerâmica
         salpicada”.
+      es: Indica el objeto y su material, por ejemplo «una taza de cerámica
+        moteada».
   - name: sellingPoints
     type: string-list
     required: true
@@ -34,6 +37,7 @@ fields:
       ar: نقاط البيع
       de: Verkaufsargumente
       pt-BR: Diferenciais
+      es: Ventajas
     help:
       en: Concrete details become visible; vague claims are ignored.
       zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
@@ -41,6 +45,8 @@ fields:
       ar: التفاصيل الملموسة تظهر في الصورة، والعبارات العامة تُهمل.
       de: Konkrete Details werden sichtbar; vage Aussagen werden ignoriert.
       pt-BR: Detalhes concretos se tornam visíveis; alegações vagas são ignoradas.
+      es: Los detalles concretos se hacen visibles; las afirmaciones vagas se
+        ignoran.
   - name: palette
     type: enum
     required: true
@@ -53,6 +59,7 @@ fields:
       ar: الألوان
       de: Farbpalette
       pt-BR: Paleta
+      es: Paleta
     options:
       - value: warm neutral
         swatch:
@@ -66,6 +73,7 @@ fields:
           ar: محايد دافئ
           de: Warme Neutraltöne
           pt-BR: Neutra quente
+          es: Neutros cálidos
       - value: sage green
         swatch:
           - "#DCE6DD"
@@ -78,6 +86,7 @@ fields:
           ar: أخضر مريمي
           de: Salbeigrün
           pt-BR: Verde-sálvia
+          es: Verde salvia
       - value: midnight blue
         swatch:
           - "#1F2A44"
@@ -90,6 +99,7 @@ fields:
           ar: أزرق ليلي
           de: Mitternachtsblau
           pt-BR: Azul-meia-noite
+          es: Azul medianoche
       - value: soft grey
         swatch:
           - "#E2E2E0"
@@ -102,6 +112,7 @@ fields:
           ar: رمادي ناعم
           de: Sanftes Grau
           pt-BR: Cinza suave
+          es: Gris suave
       - value: coral pop
         swatch:
           - "#EE6C4D"
@@ -114,6 +125,7 @@ fields:
           ar: مرجاني
           de: Kräftiges Korallrot
           pt-BR: Coral vibrante
+          es: Toque coral
   - name: aspectRatio
     type: enum
     required: true
@@ -126,6 +138,7 @@ fields:
       ar: نسبة الأبعاد
       de: Seitenverhältnis
       pt-BR: Proporção
+      es: Relación de aspecto
     options:
       - value: 4:5
         labels:
@@ -135,6 +148,7 @@ fields:
           ar: 4:5
           de: 4:5
           pt-BR: 4:5
+          es: 4:5
       - value: 5:4
         labels:
           en: 5:4
@@ -143,6 +157,7 @@ fields:
           ar: 5:4
           de: 5:4
           pt-BR: 5:4
+          es: 5:4
       - value: 1:1
         labels:
           en: 1:1
@@ -151,6 +166,7 @@ fields:
           ar: 1:1
           de: 1:1
           pt-BR: 1:1
+          es: 1:1
       - value: 3:4
         labels:
           en: 3:4
@@ -159,6 +175,7 @@ fields:
           ar: 3:4
           de: 3:4
           pt-BR: 3:4
+          es: 3:4
       - value: 16:9
         labels:
           en: 16:9
@@ -167,6 +184,7 @@ fields:
           ar: 16:9
           de: 16:9
           pt-BR: 16:9
+          es: 16:9
   - name: headline
     type: string
     required: false
@@ -179,6 +197,7 @@ fields:
       ar: العنوان
       de: Überschrift
       pt-BR: Título
+      es: Titular
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
@@ -186,3 +205,4 @@ fields:
       ar: اختياري. الكلمات القصيرة تظهر بدقة أكبر.
       de: Optional. Kurze Wörter werden zuverlässiger dargestellt.
       pt-BR: Opcional. Palavras curtas são reproduzidas com mais confiabilidade.
+      es: Opcional. Las palabras cortas se representan con más fiabilidad.

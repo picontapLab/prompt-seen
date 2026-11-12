@@ -26,6 +26,7 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "test:deploy": "playwright test --config playwright.deploy.config.ts",
     "storybook": "npm run gen && storybook dev -p 6006",
     "storybook:build": "npm run gen && storybook build --quiet -o storybook-static",
     "serve": "sh scripts/nginx.sh",

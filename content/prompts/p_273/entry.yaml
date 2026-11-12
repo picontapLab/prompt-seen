@@ -28,6 +28,8 @@ inputRequirements:
       Prompt.
     pt-BR: Envie a imagem de referência gerada pelo projeto na ordem exibida (R14) e
       use o prompt adaptado completo.
+    es: Sube la imagen de referencia generada para el proyecto en el orden
+      mostrado (R14) y después usa el prompt adaptado completo.
   slots:
     - id: reference1
       labels:
@@ -36,6 +38,7 @@ inputRequirements:
         ja: このプロジェクト用に生成したキャラクターの参照画像
         de: Projektintern generierte Figurenreferenz
         pt-BR: Referência de personagem gerada pelo projeto
+        es: Referencia de personaje generada para el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_337
@@ -55,6 +58,8 @@ inspirationSources:
       de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
       pt-BR: Publicação original inteira; compartilhada entre variantes, não esta
         adaptação
+      es: Publicación original completa; compartida entre variantes, no esta
+        adaptación
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -63,6 +68,7 @@ inspirationSources:
       ja: 保存した X の公開スナップショットと作者のプロンプト全文
       de: Archivierter öffentlicher X-Snapshot und vollständiger Autorenprompt
       pt-BR: Registro público do X arquivado e prompt completo do autor
+      es: Captura pública archivada de X y prompt completo del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118293441751007660&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -70,6 +76,7 @@ inspirationSources:
       ja: 独自の調整版。完全な原文は別途保存しています。
       de: Eigenständige Adaption; vollständiges Original separat erhalten
       pt-BR: Adaptação independente; original completo preservado separadamente
+      es: Adaptación independiente; original completo conservado por separado
     metrics:
       - key: likes
         value: 966
@@ -79,6 +86,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           pt-BR: Curtidas da publicação de origem
+          es: Me gusta de la publicación original
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/elle_elle_e/status/2118293607992238252

@@ -8,6 +8,7 @@ fields:
       ja: 回転角度（度）
       de: Drehung in Grad
       pt-BR: Rotação em graus
+      es: Rotación en grados
     help:
       en: Changing the angle also requires revising the room-position directions in
         the prompt. Only the default is demonstrated.
@@ -17,6 +18,9 @@ fields:
         Raumposition im Prompt. Nur der Standardwert wird demonstriert.
       pt-BR: Mudar o ângulo também exige revisar no prompt as orientações de posição
         dos cômodos. Somente o valor padrão é demonstrado.
+      es: Cambiar el ángulo también requiere revisar las indicaciones de posición
+        de las habitaciones en el prompt. Solo se demuestra la versión
+        predeterminada.
     type: string
     default: "180"
     minLength: 1

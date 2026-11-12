@@ -27,6 +27,9 @@ inputRequirements:
       eine starke Steuerung durch Referenz oder Struktur unterstützt.
     pt-BR: Envie um guia de retrato com alto contraste e use uma ferramenta capaz de
       aplicar forte condicionamento por referência ou estrutura.
+    es: Sube una guía de retrato con alto contraste y usa una herramienta capaz de
+      condicionar fuertemente el resultado mediante una referencia o una
+      estructura.
   slots:
     - id: silhouette
       labels:
@@ -35,6 +38,7 @@ inputRequirements:
         ja: シルエット
         de: Silhouette
         pt-BR: Silhueta
+        es: Retrato guía en blanco y negro
       min: 1
       max: 1
 promptProvenance: independent-adaptation
@@ -52,6 +56,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       pt-BR: Publicação inteira ou galeria de imagens
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,6 +65,7 @@ inspirationSources:
       ja: 検索インデックス上の一次情報のスナップショット
       de: Snapshot einer indexierten Primärquelle
       pt-BR: Registro indexado da fonte primária
+      es: Captura indexada de la fuente primaria
     evidenceUrl: https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -67,6 +73,7 @@ inspirationSources:
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
       pt-BR: Prompt de origem ou trecho disponível; adaptação independente
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: post_score
         value: 1032
@@ -76,6 +83,7 @@ inspirationSources:
           ja: 投稿スコア
           de: Beitragsbewertung
           pt-BR: Pontuação da publicação
+          es: Puntuación de la publicación
       - key: comments
         value: null
         labels:
@@ -84,6 +92,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
 source:
   author: Prompt Seen
   url: null

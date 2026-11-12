@@ -10,6 +10,7 @@ fields:
       ja: 人物
       de: Figur
       pt-BR: Personagem
+      es: Personaje
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -17,6 +18,7 @@ fields:
       de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in
         einer Drehung“.
       pt-BR: Quem é e uma pose, como “uma pessoa dançando durante um giro”.
+      es: Quién es y una pose, por ejemplo «una persona que baila en pleno giro».
   - name: rimLight
     type: enum
     required: true
@@ -28,6 +30,7 @@ fields:
       ja: リムライト
       de: Konturlicht
       pt-BR: Luz de contorno
+      es: Luz de contorno
     options:
       - value: cyan and magenta
         swatch:
@@ -39,6 +42,7 @@ fields:
           ja: シアンとマゼンタ
           de: Cyan und Magenta
           pt-BR: Ciano e magenta
+          es: Cian y magenta
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -49,6 +53,7 @@ fields:
           ja: 琥珀色と青緑
           de: Bernstein und Petrol
           pt-BR: Âmbar e verde-azulado
+          es: Ámbar y verde azulado
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -59,6 +64,7 @@ fields:
           ja: バイオレットとシアン
           de: Violett und Cyan
           pt-BR: Violeta e ciano
+          es: Violeta y cian
   - name: background
     type: enum
     required: true
@@ -70,6 +76,7 @@ fields:
       ja: 背景
       de: Hintergrund
       pt-BR: Fundo
+      es: Fondo
     options:
       - value: soft bokeh lights
         labels:
@@ -78,6 +85,7 @@ fields:
           ja: やわらかな玉ぼけ
           de: Sanfte Bokeh-Lichter
           pt-BR: Luzes de bokeh suaves
+          es: Luces de bokeh suave
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -85,6 +93,7 @@ fields:
           ja: ぼけた夜の街
           de: Unscharfe nächtliche Stadt
           pt-BR: Cidade noturna desfocada
+          es: Ciudad nocturna desenfocada
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -92,6 +101,7 @@ fields:
           ja: 平面的な暗いグラデーション
           de: Flächiger dunkler Farbverlauf
           pt-BR: Degradê escuro simples
+          es: Degradado plano oscuro
   - name: mood
     type: string
     required: false
@@ -103,6 +113,7 @@ fields:
       ja: ムード
       de: Stimmung
       pt-BR: Clima
+      es: Ambiente
   - name: aspectRatio
     type: enum
     required: true
@@ -115,6 +126,7 @@ fields:
       ar: نسبة الأبعاد
       de: Seitenverhältnis
       pt-BR: Proporção
+      es: Relación de aspecto
     options:
       - value: 4:5
         labels:
@@ -124,6 +136,7 @@ fields:
           ar: 4:5
           de: 4:5
           pt-BR: 4:5
+          es: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -132,6 +145,7 @@ fields:
           ar: 1:1
           de: 1:1
           pt-BR: 1:1
+          es: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -140,6 +154,7 @@ fields:
           ar: 2:3
           de: 2:3
           pt-BR: 2:3
+          es: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -148,3 +163,4 @@ fields:
           ar: 9:16
           de: 9:16
           pt-BR: 9:16
+          es: 9:16

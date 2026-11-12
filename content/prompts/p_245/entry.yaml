@@ -29,6 +29,9 @@ inputRequirements:
     pt-BR: Envie uma referência de personagem. A opção da fonte está preenchida com
       ドアスコープ (olho mágico de porta). Nosso personagem adulto de quimono foi
       gerado pelo Prompt Seen.
+    es: Sube una referencia de personaje. La opción de origen se rellena con
+      ドアスコープ (mirilla de puerta). Nuestro personaje adulto con kimono fue
+      generado por Prompt Seen.
   slots:
     - id: character
       labels:
@@ -37,6 +40,7 @@ inputRequirements:
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
         pt-BR: Referência gerada pelo projeto
+        es: Referencia generada por el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_309
@@ -56,6 +60,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       pt-BR: Publicação ou galeria original inteira; não este exemplo gerado
+      es: Publicación o galería original completa; no este ejemplo generado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -66,6 +71,8 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo de uma cópia salva da
         publicação ou resposta do autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de
+        la publicación o respuesta del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118220107487051883&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language; option filled and recorded
@@ -75,6 +82,7 @@ inspirationSources:
         dokumentiert
       pt-BR: Texto completo do autor, no idioma original; opção preenchida e
         registrada
+      es: Texto completo del autor, idioma original; opción rellenada y registrada
     metrics:
       - key: likes
         value: 17
@@ -84,6 +92,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           pt-BR: Curtidas da publicação de origem
+          es: Me gusta de la publicación original
 source:
   author: kabumira862571
   url: https://x.com/kabumira862571/status/2118220107487051883

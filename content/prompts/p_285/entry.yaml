@@ -27,6 +27,8 @@ inputRequirements:
       KI erzeugt. Lass alle Schriftzüge auf Englisch.
     pt-BR: Envie uma foto clara de um cachorro. A referência de demonstração foi
       gerada por IA. Mantenha todos os textos em inglês.
+    es: Sube una foto clara de un perro. La referencia de demostración está
+      generada por IA. Mantén todo el texto de la imagen en inglés.
   slots:
     - id: pet
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 犬の写真
         de: Hundefoto
         pt-BR: Foto de cachorro
+        es: Foto de perro
       min: 1
       max: 1
 showcaseExampleId: x_349
@@ -57,6 +60,7 @@ annotations:
       ja: 4つのコマが、物語を読む順序を明確にしています。
       de: Vier Bilder legen die Handlungsfolge fest.
       pt-BR: Quatro quadros estabelecem a sequência da história.
+      es: Cuatro viñetas establecen la secuencia de la historia.
   - phrase: warm storybook illustration
     region:
       x: 0.02
@@ -69,3 +73,4 @@ annotations:
       ja: 温かい絵本風のイラストが、親しみやすい雰囲気を作っています。
       de: Warme Illustration gibt der Geschichte einen freundlichen Ton.
       pt-BR: A ilustração em tons quentes dá à história um tom acolhedor.
+      es: La ilustración cálida da a la historia un tono amistoso.

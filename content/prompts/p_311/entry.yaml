@@ -28,6 +28,8 @@ inputRequirements:
       Prompt.
     pt-BR: Envie a imagem de referência gerada pelo projeto na ordem exibida (R19) e
       use o prompt adaptado completo.
+    es: Sube la imagen de referencia generada por el proyecto en el orden indicado
+      (R19) y después usa el prompt adaptado completo.
   slots:
     - id: reference1
       labels:
@@ -36,6 +38,7 @@ inputRequirements:
         ja: 本プロジェクトで生成したキャラクター参照画像
         de: Projektintern generierte Figurenreferenz
         pt-BR: Referência de personagem gerada pelo projeto
+        es: Referencia de personaje generada para el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_375
@@ -55,6 +58,8 @@ inspirationSources:
       de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
       pt-BR: Publicação original inteira; compartilhada entre variantes, não esta
         adaptação
+      es: Publicación original completa; compartida entre variantes, no esta
+        adaptación
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -63,6 +68,8 @@ inspirationSources:
       ja: 保存された調査レポートと検索インデックスのスコアのスナップショット
       de: Gespeicherter Recherchebericht und Snapshot der Suchindex-Bewertung
       pt-BR: Relatório de pesquisa salvo e registro da pontuação no índice de busca
+      es: Informe de investigación guardado y captura de puntuación del índice de
+        búsqueda
     evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -70,6 +77,7 @@ inspirationSources:
       ja: 独自アレンジ。完全な原文は別途保存
       de: Eigenständige Adaption; vollständiges Original separat erhalten
       pt-BR: Adaptação independente; original completo preservado separadamente
+      es: Adaptación independiente; original completo conservado por separado
     metrics:
       - key: score
         value: 204
@@ -79,6 +87,7 @@ inspirationSources:
           ja: 検索インデックスのスコアのスナップショット
           de: Snapshot der Suchindex-Bewertung
           pt-BR: Registro da pontuação do índice de busca
+          es: Captura de puntuación del índice de búsqueda
 source:
   author: Prompt Seen (adaptation)
   url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/

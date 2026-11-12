@@ -27,6 +27,8 @@ inputRequirements:
       verwendet ein eigenes generiertes Bild.
     pt-BR: Envie uma foto ou obra de arte que você possa usar. Nosso exemplo usa uma
       imagem gerada original.
+    es: Sube una foto u obra que puedas usar. Nuestro ejemplo usa una imagen
+      generada original.
   slots:
     - id: picture
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 画像
         de: Bild
         pt-BR: Imagem
+        es: Imagen
       min: 1
       max: 1
 showcaseExampleId: x_190
@@ -53,6 +56,7 @@ inspirationSources:
       ja: 投稿全体または画像ギャラリー全体
       de: Gesamter Beitrag oder gesamte Bildergalerie
       pt-BR: Publicação inteira ou galeria de imagens
+      es: Publicación o galería de imágenes completa
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +65,7 @@ inspirationSources:
       ja: 検索インデックス上の一次情報のスナップショット
       de: Snapshot einer indexierten Primärquelle
       pt-BR: Captura indexada da fonte primária
+      es: Captura indexada de la fuente primaria
     evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -68,6 +73,7 @@ inspirationSources:
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
       pt-BR: Prompt ou trecho de origem disponível; adaptado de forma independente
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: post_score
         value: 6188
@@ -77,6 +83,7 @@ inspirationSources:
           ja: 投稿スコア
           de: Beitragsbewertung
           pt-BR: Pontuação da publicação
+          es: Puntuación de la publicación
       - key: comments
         value: null
         labels:
@@ -85,6 +92,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
 source:
   author: Prompt Seen
   url: null

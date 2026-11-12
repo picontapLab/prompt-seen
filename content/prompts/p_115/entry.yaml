@@ -27,6 +27,8 @@ inputRequirements:
       fiktive, mit KI erzeugte Erwachsene.
     pt-BR: Envie primeiro a pessoa A e depois a pessoa B. As duas referências são
       adultos fictícios gerados por IA.
+    es: Sube primero a la persona A y después a la persona B. Ambas referencias
+      son adultos ficticios generados por IA.
   slots:
     - id: personA
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 人物 A
         de: Person A
         pt-BR: Pessoa A
+        es: Persona A
       min: 1
       max: 1
     - id: personB
@@ -44,6 +47,7 @@ inputRequirements:
         ja: 人物 B
         de: Person B
         pt-BR: Pessoa B
+        es: Persona B
       min: 1
       max: 1
 showcaseExampleId: x_160
@@ -67,6 +71,7 @@ inspirationSources:
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
       pt-BR: Vídeo completo de tutorial ou demonstração
+      es: Vídeo completo del tutorial o la demostración
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -75,6 +80,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       pt-BR: Captura oficial da API pública
+      es: Captura de la API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -82,6 +88,7 @@ inspirationSources:
       ja: 元のプロンプト全文は取得できていません。独自に調整しています。
       de: Vollständiger Originalprompt nicht abgerufen; eigenständig angepasst
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
+      es: No se obtuvo el prompt original completo; adaptado de forma independiente
     metrics:
       - key: views
         value: 9416
@@ -91,6 +98,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           pt-BR: Visualizações
+          es: Visualizaciones
       - key: likes
         value: 231
         labels:
@@ -99,6 +107,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           pt-BR: Curtidas
+          es: Me gusta
       - key: saves
         value: 345
         labels:
@@ -107,6 +116,7 @@ inspirationSources:
           ja: 保存数
           de: Gespeichert
           pt-BR: Salvamentos
+          es: Guardados
       - key: comments
         value: 139
         labels:
@@ -115,6 +125,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
       - key: shares
         value: 65
         labels:
@@ -123,6 +134,7 @@ inspirationSources:
           ja: 共有数
           de: Geteilt
           pt-BR: Compartilhamentos
+          es: Veces compartido
       - key: coins
         value: 208
         labels:
@@ -131,6 +143,7 @@ inspirationSources:
           ja: コイン数
           de: Coins
           pt-BR: Moedas
+          es: Monedas
       - key: danmaku
         value: 4
         labels:
@@ -139,3 +152,4 @@ inspirationSources:
           ja: 弾幕コメント数
           de: Danmaku
           pt-BR: Comentários sobrepostos (danmaku)
+          es: Comentarios danmaku

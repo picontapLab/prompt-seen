@@ -27,6 +27,8 @@ inputRequirements:
       verwendet künstlich erzeugte Eingabebilder.
     pt-BR: Envie as imagens de referência na ordem listada. O exemplo usa imagens de
       entrada sintéticas.
+    es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
+      imágenes de entrada sintéticas.
   slots:
     - id: styleReference
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: ボクセルのスタイル
         de: Voxel-Stil
         pt-BR: Estilo voxel
+        es: Estilo vóxel
       min: 1
       max: 1
     - id: targetIcon
@@ -44,6 +47,7 @@ inputRequirements:
         ja: 変更対象のアイコン
         de: Ziel-Icon
         pt-BR: Ícone de destino
+        es: Icono objetivo
       min: 1
       max: 1
 showcaseExampleId: x_266

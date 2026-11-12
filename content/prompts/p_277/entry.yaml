@@ -27,6 +27,8 @@ inputRequirements:
       KI erzeugt. Lass alle Schriftzüge auf Englisch.
     pt-BR: Envie uma foto clara de um cachorro. A referência de demonstração foi
       gerada por IA. Mantenha todos os textos em inglês.
+    es: Sube una foto clara de un perro. La referencia de demostración está
+      generada por IA. Mantén todo el texto de la imagen en inglés.
   slots:
     - id: pet
       labels:
@@ -35,6 +37,7 @@ inputRequirements:
         ja: 犬の写真
         de: Hundefoto
         pt-BR: Foto de cachorro
+        es: Foto de perro
       min: 1
       max: 1
 showcaseExampleId: x_341
@@ -58,6 +61,8 @@ annotations:
       de: Ein dominantes Haustierfoto macht die Geschichte sofort verständlich.
       pt-BR: Uma foto dominante do animal de estimação torna a história clara de
         imediato.
+      es: Una foto dominante de la mascota hace que la historia se entienda al
+        instante.
   - phrase: bold black serif typography
     region:
       x: 0.034
@@ -70,3 +75,5 @@ annotations:
       ja: 太いセリフ体が、新聞の見出しらしさを生んでいます。
       de: Kräftige Serifenschrift verleiht der Überschrift Zeitungscharakter.
       pt-BR: A tipografia serifada marcante dá à manchete aparência de jornal.
+      es: La tipografía con serifa en negrita hace que el titular parezca de
+        periódico.

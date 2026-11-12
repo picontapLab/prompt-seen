@@ -62,8 +62,9 @@ const production = build('production');
 const preview = build('preview');
 
 beforeAll(() => {
-  production.engine('en');
-  production.engine('zh-Hans');
+  // Build every enabled corpus in setup; adding a locale must not spend a test's
+  // five-second assertion budget on serial index construction.
+  for (const code of production.built.locales.keys()) production.engine(code);
   preview.engine('ja');
 }, 20_000);
 

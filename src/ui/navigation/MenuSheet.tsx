@@ -13,11 +13,13 @@ import { ThemeChooser } from './ThemeSwitch';
 export default function MenuSheet({
   links,
   repository,
+  suggestedLanguageLabel,
   isOpen,
   onOpenChange,
 }: {
   links: readonly MenuLink[];
   repository?: RepositoryMenuLink | null;
+  suggestedLanguageLabel: string;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
@@ -43,7 +45,7 @@ export default function MenuSheet({
             <span className={styles.menuLabel} aria-hidden="true">
               {t('language.label')}
             </span>
-            <LanguageCombobox quiet={false} />
+            <LanguageCombobox quiet={false} suggestedLabel={suggestedLanguageLabel} />
           </div>
           <ThemeChooser />
           {repository && <RepositoryLink {...repository} labelled />}

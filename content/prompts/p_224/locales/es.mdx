@@ -1,0 +1,29 @@
+---
+title: Mono que levanta un farol
+description: Seis poses generadas distintas muestran al mono subiendo y bajando
+  el farol y parpadeando
+status: published
+updatedAt: 2026-11-04
+translation:
+  sourceLocale: en
+  sourceHash: sha256:13eb0850594dd996
+  reviewStatus: reviewed
+---
+
+## Cómo usarlo
+
+Usa el prompt exacto registrado y los recursos de referencia originales mostrados, en su orden. Los cambios en el prompt o las entradas crean una variante sin probar.
+
+## Resultado observado
+
+Seis poses generadas distintas muestran al mono subiendo y bajando el farol y parpadeando. Se recortaron por filas en un GIF de 512 px, con 300 ms por fotograma y repetición infinita; hay un ligero desplazamiento del fondo entre poses. Es un GIF compuesto, no una salida GIF nativa.
+
+## Montaje del GIF
+
+El modelo generó una hoja de sprites PNG de 3 columnas por 2 filas. Recorta celdas iguales por filas y codifica seis fotogramas a 300 ms por fotograma con repetición infinita. El GIF resultante mide 512 × 512 píxeles y dura 1,8 segundos por ciclo. No se añadió interpolación. Es una animación compuesta, no un GIF nativo devuelto por el modelo.
+
+## Fuente y generación
+
+La fuente aporta un prompt original; esta producción usa el prompt de trabajo registrado por separado. [Fuente](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif). La interacción con la publicación original no mide este ejemplo recién generado.
+
+Generado con GPT Image 2.6. Todas las imágenes de referencia usadas aquí se generaron para este proyecto.

@@ -16,7 +16,7 @@ const LanguageCombobox = lazy(load);
  * download, pressing it swaps in the list with focus, already open (§16.4: interaction-only code
  * stays out of the first load). Looks the same before and after.
  */
-export function LanguageSwitch({ quiet = true }: { quiet?: boolean }) {
+export function LanguageSwitch({ quiet = true, suggestedLabel }: { quiet?: boolean; suggestedLabel: string }) {
   const t = useTranslations('shell.language');
   const uiLocale = registryCode(useLocale());
   const [active, setActive] = useState(false);
@@ -45,7 +45,7 @@ export function LanguageSwitch({ quiet = true }: { quiet?: boolean }) {
   if (!active) return placeholder;
   return (
     <Suspense fallback={placeholder}>
-      <LanguageCombobox quiet={quiet} autoFocus />
+      <LanguageCombobox quiet={quiet} suggestedLabel={suggestedLabel} autoFocus />
     </Suspense>
   );
 }

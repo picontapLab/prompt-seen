@@ -53,6 +53,7 @@ inspirationSources:
       ja: チュートリアルまたは作品紹介の動画全体
       de: Gesamtes Tutorial- oder Präsentationsvideo
       pt-BR: Vídeo completo de tutorial ou demonstração
+      es: Vídeo completo del tutorial o la demostración
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +62,7 @@ inspirationSources:
       ja: 公式の公開 API のスナップショット
       de: Momentaufnahme der offiziellen öffentlichen API
       pt-BR: Registro da API pública oficial
+      es: Captura de la API pública oficial
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -68,6 +70,7 @@ inspirationSources:
       ja: 元のプロンプトまたは抜粋を確認できます。独自に調整しています。
       de: Quellprompt oder Auszug verfügbar; eigenständig angepasst
       pt-BR: Prompt original ou trecho disponível; adaptação independente
+      es: Prompt original o fragmento disponible; adaptado de forma independiente
     metrics:
       - key: views
         value: 344604
@@ -77,6 +80,7 @@ inspirationSources:
           ja: 閲覧数
           de: Aufrufe
           pt-BR: Visualizações
+          es: Visualizaciones
       - key: likes
         value: 26934
         labels:
@@ -85,6 +89,7 @@ inspirationSources:
           ja: いいね
           de: Gefällt mir
           pt-BR: Curtidas
+          es: Me gusta
       - key: saves
         value: 5872
         labels:
@@ -93,6 +98,7 @@ inspirationSources:
           ja: 保存数
           de: Gespeichert
           pt-BR: Salvamentos
+          es: Guardados
       - key: comments
         value: 938
         labels:
@@ -101,6 +107,7 @@ inspirationSources:
           ja: コメント
           de: Kommentare
           pt-BR: Comentários
+          es: Comentarios
       - key: shares
         value: 1029
         labels:
@@ -109,6 +116,7 @@ inspirationSources:
           ja: 共有数
           de: Geteilt
           pt-BR: Compartilhamentos
+          es: Veces compartido
       - key: coins
         value: 859
         labels:
@@ -117,6 +125,7 @@ inspirationSources:
           ja: コイン数
           de: Coins
           pt-BR: Moedas
+          es: Monedas
       - key: danmaku
         value: 73
         labels:
@@ -125,6 +134,7 @@ inspirationSources:
           ja: 弾幕コメント数
           de: Danmaku
           pt-BR: Comentários sobrepostos (danmaku)
+          es: Comentarios danmaku
 source:
   author: Prompt Seen
   url: null
@@ -142,6 +152,8 @@ annotations:
       ja: 明示したグリッドが、ステッカーの数と読む順番を決めています。
       de: Das explizit vorgegebene Raster legt Stickeranzahl und Leserichtung fest.
       pt-BR: A grade explícita define a quantidade de figurinhas e a ordem de leitura.
+      es: La cuadrícula explícita fija el número de pegatinas y el orden de
+        lectura.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -156,3 +168,5 @@ annotations:
         konsistent.
       pt-BR: A identidade e as roupas permanecem consistentes ao longo das dezesseis
         emoções.
+      es: La identidad y la ropa se mantienen coherentes a través de las dieciséis
+        emociones.

@@ -8,6 +8,8 @@ instructions:
     ein Produktfoto ist optional.
   pt-BR: Forneça o dispositivo, notas verificadas sobre sua estrutura e os rótulos
     exatos; uma foto do produto é opcional.
+  es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas;
+    la foto de producto es opcional.
 slots:
   - id: product
     labels:
@@ -16,5 +18,6 @@ slots:
       ja: 商品
       de: Produkt
       pt-BR: Produto
+      es: Producto
     min: 0
     max: 1

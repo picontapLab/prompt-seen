@@ -32,6 +32,10 @@ inputRequirements:
       imagem 1 fica à esquerda; a imagem 2 fica à direita. A demonstração usa
       pessoas fictícias geradas por IA. Mantenha todo o texto da imagem em
       inglês.
+    es: Sube primero el retrato de la primera persona adulta y después el de la
+      segunda. La imagen 1 permanece a la izquierda y la imagen 2 a la derecha.
+      La demostración usa personas ficticias generadas por IA. Conserva todos
+      los textos en inglés.
   slots:
     - id: personA
       labels:
@@ -40,6 +44,7 @@ inputRequirements:
         ja: 1人目・左側
         de: Erste Person, links
         pt-BR: Primeira pessoa, à esquerda
+        es: Primera persona, izquierda
       min: 1
       max: 1
     - id: personB
@@ -49,6 +54,7 @@ inputRequirements:
         ja: 2人目・右側
         de: Zweite Person, rechts
         pt-BR: Segunda pessoa, à direita
+        es: Segunda persona, derecha
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -71,6 +77,7 @@ annotations:
       ja: 4つのフレームで、コンパクトなフォトブースプリントを作っています。
       de: Vier Bilder bilden einen kompakten Fotoautomatenabzug.
       pt-BR: Quatro quadros formam uma impressão compacta de cabine fotográfica.
+      es: Cuatro fotogramas forman una impresión compacta de cabina de fotos.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -83,3 +90,4 @@ annotations:
       ja: フラッシュと粒子感が、写真らしい仕上がりを生んでいます。
       de: Blitz und Körnung erzeugen den fotografischen Look.
       pt-BR: Flash e granulação estabelecem a aparência fotográfica.
+      es: El flash y el grano establecen el aspecto fotográfico.

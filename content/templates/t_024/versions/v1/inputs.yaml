@@ -7,6 +7,8 @@ instructions:
     ist optional.
   pt-BR: Descreva um personagem e uma cena; uma referência de personagem original
     é opcional.
+  es: Describe un personaje y una escena; la referencia de un personaje original
+    es opcional.
 slots:
   - id: character
     labels:
@@ -15,5 +17,6 @@ slots:
       ja: 人物
       de: Figur
       pt-BR: Personagem
+      es: Personaje
     min: 0
     max: 1

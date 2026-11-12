@@ -31,6 +31,9 @@ inputRequirements:
     pt-BR: Envie um retrato de uma pessoa adulta como referência de identidade.
       Nossa referência é uma pessoa adulta fictícia gerada para este exemplo,
       substituindo a entrada indisponível da autora.
+    es: Sube un retrato adulto como referencia de identidad. Nuestra referencia es
+      una persona adulta ficticia generada para este ejemplo, que sustituye a la
+      entrada no disponible del autor.
   slots:
     - id: person
       labels:
@@ -39,6 +42,7 @@ inputRequirements:
         ja: このプロジェクト用に生成した参照画像
         de: Projektintern generierte Referenz
         pt-BR: Referência gerada pelo projeto
+        es: Referencia generada por el proyecto
       min: 1
       max: 1
 showcaseExampleId: x_305
@@ -58,6 +62,7 @@ inspirationSources:
       de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
         Beispiel
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
+      es: Publicación o galería original completa; no este ejemplo generado
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -68,6 +73,8 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo
         da publicação/resposta do autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de
+        la publicación o respuesta del autor
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118202866448077182&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -75,6 +82,7 @@ inspirationSources:
       ja: 作者の全文を原文の言語で掲載
       de: Vollständiger Autorentext, Originalsprache
       pt-BR: Texto completo do autor, no idioma original
+      es: Texto completo del autor, idioma original
     metrics:
       - key: likes
         value: 39
@@ -84,6 +92,7 @@ inspirationSources:
           ja: 出典投稿のいいね数
           de: Likes des Quellbeitrags
           pt-BR: Curtidas da publicação de origem
+          es: Me gusta de la publicación original
 source:
   author: AIwithSarah_
   url: https://x.com/AIwithSarah_/status/2118202866448077182

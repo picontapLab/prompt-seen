@@ -8,6 +8,8 @@ instructions:
     Außenansicht ist optional.
   pt-BR: Forneça o conceito do produto, a cor de destaque e as características de
     design; uma referência do exterior é opcional.
+  es: Indica el concepto de producto, el color de acento y las características de
+    diseño; la referencia del exterior es opcional.
 slots:
   - id: product
     labels:
@@ -16,5 +18,6 @@ slots:
       ja: 商品
       de: Produkt
       pt-BR: Produto
+      es: Producto
     min: 0
     max: 1

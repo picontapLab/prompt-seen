@@ -27,6 +27,9 @@ inputRequirements:
       Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
     pt-BR: Use os recursos de referência gerados de forma independente na ordem
       exibida. Não use as imagens oficiais ou das publicações sociais de origem.
+    es: Usa los recursos de referencia generados de forma independiente en el
+      orden mostrado. No uses las imágenes oficiales ni las de las fuentes
+      sociales.
   slots:
     - id: reference
       labels:
@@ -35,6 +38,7 @@ inputRequirements:
         ja: 元となる生成参照画像
         de: Ursprüngliche künstlich erzeugte Referenz
         pt-BR: Referência sintética original
+        es: Referencia sintética original
       min: 1
       max: 1
 showcaseExampleId: x_284
@@ -56,6 +60,8 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos da
         mesma publicação compartilham as métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de
+        una misma publicación comparten las métricas.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -67,6 +73,8 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: revisão da página diretamente e revisão visual. As
         contagens não foram atualizadas."
+      es: "Investigación previa: revisión directa de la página y revisión visual.
+        Los recuentos no se han actualizado."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#turn-a-drawing-into-a-realistic-image
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -77,6 +85,8 @@ inspirationSources:
         den separat dokumentierten Arbeitsprompt.
       pt-BR: A fonte fornece um prompt original; esta produção usa o prompt de
         trabalho registrado separadamente.
+      es: La fuente aporta un prompt original; esta producción usa el prompt de
+        trabajo registrado por separado.
     metrics: []
 source:
   author: Prompt Seen
