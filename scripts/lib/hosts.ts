@@ -69,13 +69,14 @@ export function cloudflarePayloadProxies(url: Pick<Url, 'withBasePath'>): readon
 }
 
 export const CLOUDFLARE_SHARED_RSC_KINDS = ['prompts', 'templates'] as const;
+export const CLOUDFLARE_SHARED_LAYOUT_PAYLOAD = '__next.$d$locale.!KHB1YmxpYyk.txt';
 
-/** Detail routes share an identical segment index within each content kind. */
+/** Detail routes share segment indexes and, within each locale, public layouts. */
 export function cloudflareSharedPayloadProxies(url: Pick<Url, 'withBasePath'>): string[] {
-  return CLOUDFLARE_SHARED_RSC_KINDS.map(
-    (kind) =>
-      `${url.withBasePath(`/:locale/${kind}/:slug/__next._index.txt`)} ${url.withBasePath(`/generated/rsc/${kind}-index.txt`)} 200`,
-  );
+  return CLOUDFLARE_SHARED_RSC_KINDS.flatMap((kind) => [
+    `${url.withBasePath(`/:locale/${kind}/:slug/__next._index.txt`)} ${url.withBasePath(`/generated/rsc/${kind}-index.txt`)} 200`,
+    `${url.withBasePath(`/:locale/${kind}/:slug/${CLOUDFLARE_SHARED_LAYOUT_PAYLOAD}`)} ${url.withBasePath(`/generated/rsc/:locale/${kind}-layout.txt`)} 200`,
+  ]);
 }
 
 /**

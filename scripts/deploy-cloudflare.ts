@@ -7,7 +7,12 @@ import path from 'node:path';
 import { loadConfig } from '../src/config/load';
 import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { runProductionDeployHook } from './lib/deploy-hook';
-import { CLOUDFLARE_SHARED_RSC_KINDS, cloudflarePayloadProxies, cloudflareSharedPayloadProxies } from './lib/hosts';
+import {
+  CLOUDFLARE_SHARED_LAYOUT_PAYLOAD,
+  CLOUDFLARE_SHARED_RSC_KINDS,
+  cloudflarePayloadProxies,
+  cloudflareSharedPayloadProxies,
+} from './lib/hosts';
 import { OUTPUT_DIRS, ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -66,32 +71,50 @@ for (const file of fullPayloads) {
     throw new Error(`cloudflare: full RSC payload differs from index.txt: ${path.relative(target, file)}`);
   }
 }
-const sharedPayloads = CLOUDFLARE_SHARED_RSC_KINDS.map((kind) => {
-  const copies = files
-    .filter((file) => {
-      const parts = file.split(path.sep);
-      return parts.length === 4 && parts[1] === kind && parts[3] === '__next._index.txt';
-    })
-    .map((file) => path.join(targetSite, file));
+const sharedPayloadGroups = CLOUDFLARE_SHARED_RSC_KINDS.flatMap((kind) => {
+  const kindFiles = files.filter((file) => {
+    const parts = file.split(path.sep);
+    return parts.length === 4 && parts[1] === kind;
+  });
+  return [
+    {
+      canonical: path.join(targetSite, 'generated/rsc', `${kind}-index.txt`),
+      copies: kindFiles.filter((file) => path.basename(file) === '__next._index.txt'),
+    },
+    ...config.builtLocales.map((locale) => ({
+      canonical: path.join(targetSite, 'generated/rsc', locale.pathPrefix, `${kind}-layout.txt`),
+      copies: kindFiles.filter(
+        (file) =>
+          file.split(path.sep)[0] === locale.pathPrefix && path.basename(file) === CLOUDFLARE_SHARED_LAYOUT_PAYLOAD,
+      ),
+    })),
+  ];
+});
+const sharedPayloads = sharedPayloadGroups.map((group) => {
+  const copies = group.copies.map((file) => path.join(targetSite, file));
   const contents = copies.length ? fs.readFileSync(copies[0]!) : null;
   for (const file of copies) {
     if (!fs.lstatSync(file).isFile() || !fs.readFileSync(file).equals(contents!)) {
       throw new Error(`cloudflare: shared RSC payload differs: ${path.relative(target, file)}`);
     }
   }
-  return { kind, copies, contents };
+  return { canonical: group.canonical, copies, contents };
 });
 for (const file of fullPayloads) fs.unlinkSync(file);
-for (const { kind, copies, contents } of sharedPayloads) {
+for (const { canonical, copies, contents } of sharedPayloads) {
   if (!contents) continue;
-  const canonical = path.join(targetSite, 'generated/rsc', `${kind}-index.txt`);
   fs.mkdirSync(path.dirname(canonical), { recursive: true });
   fs.writeFileSync(canonical, contents);
   for (const file of copies) fs.unlinkSync(file);
 }
 console.log(`deploy:cloudflare: reused ${fullPayloads.length} identical full RSC payloads through proxy rules`);
 console.log(
-  `deploy:cloudflare: shared ${sharedPayloads.reduce((count, group) => count + group.copies.length, 0)} detail segment indexes`,
+  `deploy:cloudflare: shared ${sharedPayloads.reduce((count, group) => count + group.copies.length, 0)} detail segment payloads`,
 );
+
+const uploadFiles = fs.readdirSync(target, { recursive: true, withFileTypes: true }).filter((file) => file.isFile());
+if (uploadFiles.length > 20_000) {
+  throw new Error(`cloudflare: ${uploadFiles.length} files exceed the Pages limit of 20000`);
+}
 
 console.log(`deploy:cloudflare: ${path.relative(ROOT, target)}/ ready (${config.buildMode}, build ${config.buildId})`);

@@ -13,6 +13,7 @@ const detail = listHtml.match(/href="([^"]*\/prompts\/[^/"?#]+\/)"/)?.[1];
 if (!detail) throw new Error('Prepared artifact has no prompt detail to smoke-test.');
 const expectedIntegration = process.env.EXPECT_DEPLOY_INTEGRATION === 'true';
 const fullPayloadSuffix = '/__next._full.txt';
+const layoutPayloadName = '__next.$d$locale.!KHB1YmxpYyk.txt';
 const payloadRules = fs.readFileSync(path.join(artifact, '_redirects'), 'utf8').split('\n');
 const mime: Record<string, string> = {
   '.html': 'text/html',
@@ -34,6 +35,11 @@ test('prepared build identity matches the release', () => {
   if (process.env.BUILD_MODE) expect(build.buildMode).toBe(process.env.BUILD_MODE);
 });
 
+test('prepared upload fits the Cloudflare Pages file limit', () => {
+  const files = fs.readdirSync(artifact, { recursive: true, withFileTypes: true });
+  expect(files.filter((file) => file.isFile()).length).toBeLessThanOrEqual(20_000);
+});
+
 test('every compacted RSC address has a byte-identical payload and a Pages proxy rule', () => {
   expect(payloadRules).toContain(`${build.basePath}/__next._full.txt ${build.basePath}/index.txt 200`);
   expect(payloadRules).toContain(`${build.basePath}/*/__next._full.txt ${build.basePath}/:splat/index.txt 200`);
@@ -41,21 +47,29 @@ test('every compacted RSC address has a byte-identical payload and a Pages proxy
     expect(payloadRules).toContain(
       `${build.basePath}/:locale/${kind}/:slug/__next._index.txt ${build.basePath}/generated/rsc/${kind}-index.txt 200`,
     );
+    expect(payloadRules).toContain(
+      `${build.basePath}/:locale/${kind}/:slug/${layoutPayloadName} ${build.basePath}/generated/rsc/:locale/${kind}-layout.txt 200`,
+    );
   }
   const packagedSite = path.resolve('dist', `.${build.basePath}`);
   const copies = fs.readdirSync(packagedSite, { recursive: true, encoding: 'utf8' }).filter((file) => {
     const parts = file.split(path.sep);
     return (
       path.basename(file) === '__next._full.txt' ||
-      (parts.length === 4 && ['prompts', 'templates'].includes(parts[1]!) && parts[3] === '__next._index.txt')
+      (parts.length === 4 &&
+        ['prompts', 'templates'].includes(parts[1]!) &&
+        ['__next._index.txt', layoutPayloadName].includes(parts[3]!))
     );
   });
   expect(copies.length).toBeGreaterThan(0);
   for (const file of copies) {
+    const parts = file.split(path.sep);
     const payload =
       path.basename(file) === '__next._full.txt'
         ? path.join(site, path.dirname(file), 'index.txt')
-        : path.join(site, 'generated/rsc', `${file.split(path.sep)[1]}-index.txt`);
+        : path.basename(file) === layoutPayloadName
+          ? path.join(site, 'generated/rsc', parts[0]!, `${parts[1]}-layout.txt`)
+          : path.join(site, 'generated/rsc', `${parts[1]}-index.txt`);
     expect(fs.existsSync(path.join(site, file)), file).toBe(false);
     expect(fs.readFileSync(payload).equals(fs.readFileSync(path.join(packagedSite, file))), file).toBe(true);
   }
@@ -109,6 +123,9 @@ for (const host of ['canonical', 'pages-preview'] as const) {
         const parts = pathname.slice(build.basePath.length + 1).split('/');
         if (parts.length === 4 && ['prompts', 'templates'].includes(parts[1]!) && parts[3] === '__next._index.txt') {
           payloadPath = `${build.basePath}/generated/rsc/${parts[1]}-index.txt`;
+        }
+        if (parts.length === 4 && ['prompts', 'templates'].includes(parts[1]!) && parts[3] === layoutPayloadName) {
+          payloadPath = `${build.basePath}/generated/rsc/${parts[0]}/${parts[1]}-layout.txt`;
         }
         let file = path.resolve(artifact, `.${payloadPath}`);
         if (

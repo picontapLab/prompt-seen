@@ -44,7 +44,9 @@ describe('host rules (§9.5)', () => {
     ]);
     expect(cloudflareSharedPayloadProxies(urlFor(basePath))).toEqual([
       `${basePath}/:locale/prompts/:slug/__next._index.txt ${basePath}/generated/rsc/prompts-index.txt 200`,
+      `${basePath}/:locale/prompts/:slug/__next.$d$locale.!KHB1YmxpYyk.txt ${basePath}/generated/rsc/:locale/prompts-layout.txt 200`,
       `${basePath}/:locale/templates/:slug/__next._index.txt ${basePath}/generated/rsc/templates-index.txt 200`,
+      `${basePath}/:locale/templates/:slug/__next.$d$locale.!KHB1YmxpYyk.txt ${basePath}/generated/rsc/:locale/templates-layout.txt 200`,
     ]);
   });
 
