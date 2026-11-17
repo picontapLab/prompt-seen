@@ -1,0 +1,108 @@
+{
+  "reviewStatus": "approved",
+  "beforeBuild": "0af7dbe6-root",
+  "afterBuild": "8f4a44bc-root",
+  "sourceCommit": "8f4a44bca05e5aef68c1f4e0975e18798b2135a2",
+  "runtime": {
+    "playwrightVersion": "1.64.1",
+    "nodeVersion": "v24.19.0",
+    "capturedAt": "2026-11-17T20:50:42.059Z",
+    "browsers": {
+      "chromium": {
+        "version": "156.0.8078.4",
+        "executablePath": "/Users/hp/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+      },
+      "webkit": {
+        "version": "27.2",
+        "executablePath": "/Users/hp/Library/Caches/ms-playwright/webkit-2370/pw_run.sh"
+      }
+    }
+  },
+  "contextIsolation": "SSR and hydrated comparisons use separate newly created contexts. Within each context, eight main pages are visited sequentially, matching the existing acceptance mainPages flow; contexts are not recreated between the eight navigations.",
+  "before": {
+    "failedPages": [
+      "home"
+    ],
+    "ssrLanguageLabels": [
+      "Промпт · английский"
+    ],
+    "webkitLanguageLabels": [
+      "Промпт · Английский"
+    ]
+  },
+  "after": {
+    "pages": 8,
+    "pagesWithoutHydrationOrConsoleError": 8,
+    "ssrLanguageLabels": [
+      "Промпт · английский"
+    ],
+    "webkitLanguageLabels": [
+      "Промпт · английский"
+    ],
+    "homeAll327TextNodesIdentical": true,
+    "pageResults": [
+      {
+        "name": "home",
+        "path": "/ru/",
+        "errors": [],
+        "ssrNodes": 327,
+        "clientNodes": 327
+      },
+      {
+        "name": "list",
+        "path": "/ru/prompts/",
+        "errors": [],
+        "ssrNodes": 420,
+        "clientNodes": 421
+      },
+      {
+        "name": "prompt",
+        "path": "/ru/prompts/dog-home-alone-comic/",
+        "errors": [],
+        "ssrNodes": 139,
+        "clientNodes": 139
+      },
+      {
+        "name": "template",
+        "path": "/ru/templates/birthday-main-character-card/",
+        "errors": [],
+        "ssrNodes": 99,
+        "clientNodes": 99
+      },
+      {
+        "name": "templates",
+        "path": "/ru/templates/",
+        "errors": [],
+        "ssrNodes": 344,
+        "clientNodes": 344
+      },
+      {
+        "name": "search",
+        "path": "/ru/search/?q=%D0%9F%D1%8F%D1%82%D1%8C",
+        "errors": [],
+        "ssrNodes": 43,
+        "clientNodes": 44
+      },
+      {
+        "name": "explore",
+        "path": "/ru/explore/",
+        "errors": [],
+        "ssrNodes": 442,
+        "clientNodes": 442
+      },
+      {
+        "name": "favorites",
+        "path": "/ru/favorites/",
+        "errors": [],
+        "ssrNodes": 42,
+        "clientNodes": 46
+      }
+    ]
+  },
+  "limitations": [
+    "Focused desktop WebKit text/hydration comparison; parent owns both themes/four widths and full E2E.",
+    "Live search/favorites/client status output naturally differs from no-JavaScript SSR; only home is asserted to have identical entire text-node sequence.",
+    "Actual local Playwright is 1.64.1, WebKit 27.2; parent reports other-browser CI expects Playwright 1.65.",
+    "Browser versions captured with a separate launch of the same installed executables after the checks."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "approved",
+  "beforeArtifact": "58855cb2-subpath-production",
+  "afterArtifact": "790dc273-subpath-production",
+  "browser": "Firefox 157.0",
+  "playwright": "1.64.1",
+  "before": {
+    "controlledAttempts": 3,
+    "failed": 3,
+    "behavior": "Pending dialog captured page 2, but takeover replaced its separate ref; closing wrote root prompt list."
+  },
+  "after": {
+    "controlledAttempts": 3,
+    "passed": 3,
+    "checks": [
+      {
+        "iteration": 1,
+        "passed": true,
+        "sameDocument": true,
+        "oneHistoryEntry": true,
+        "returnedToPage2": true,
+        "closed": true,
+        "unlocked": true,
+        "noRootListReplacement": true,
+        "takeoverOccurred": true,
+        "errors": []
+      },
+      {
+        "iteration": 2,
+        "passed": true,
+        "sameDocument": true,
+        "oneHistoryEntry": true,
+        "returnedToPage2": true,
+        "closed": true,
+        "unlocked": true,
+        "noRootListReplacement": true,
+        "takeoverOccurred": true,
+        "errors": []
+      },
+      {
+        "iteration": 3,
+        "passed": true,
+        "sameDocument": true,
+        "oneHistoryEntry": true,
+        "returnedToPage2": true,
+        "closed": true,
+        "unlocked": true,
+        "noRootListReplacement": true,
+        "takeoverOccurred": true,
+        "errors": []
+      }
+    ]
+  },
+  "contextIsolation": "Every iteration creates and closes an independent browser context. Scripts outside the initial HTML are held until a foreign entry opens PendingDialog, then released; data-instant and the stage picture prove DetailPopup has taken over before Escape.",
+  "parentValidation": {
+    "log": "/tmp/prompt-seen-language-review/e2e-subpath-production-popup-final.log",
+    "sha256": "0acf398dccd0e848c6c3944ef519bdd123c23729bef91f1d54c3c6927fec9b89",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "plannedCases": 87,
+    "passed": 85,
+    "skipped": 2,
+    "failures": 0,
+    "flakyRetries": 0,
+    "skips": "Existing Chromium-only touch-swipe scenario skipped on Firefox and WebKit.",
+    "takeoverPaginationAndQueryHashRegression": "Passed on all three browsers."
+  }
+}

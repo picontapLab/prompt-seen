@@ -1,0 +1,294 @@
+[
+  {
+    "label": "e2e-root-initial",
+    "report": "e2e-root-initial-reliability.json.gz"
+  },
+  {
+    "label": "e2e-root-resume",
+    "report": "e2e-root-resume-reliability.json.gz",
+    "status": "failed",
+    "total": 2264,
+    "outcomes": {
+      "expected": 2079,
+      "skipped": 175,
+      "flaky": 2,
+      "unexpected": 8
+    },
+    "projects": {
+      "http": {
+        "expected": 39
+      },
+      "chromium": {
+        "expected": 262,
+        "skipped": 6,
+        "flaky": 1
+      },
+      "firefox": {
+        "expected": 893,
+        "skipped": 84,
+        "flaky": 1
+      },
+      "webkit": {
+        "expected": 885,
+        "unexpected": 8,
+        "skipped": 85
+      }
+    },
+    "durationMs": 1612796.699,
+    "workers": 4,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-root-final",
+    "report": "e2e-root-final-reliability.json.gz",
+    "status": "passed",
+    "total": 291,
+    "outcomes": {
+      "expected": 284,
+      "skipped": 5,
+      "flaky": 2
+    },
+    "projects": {
+      "chromium": {
+        "expected": 95,
+        "skipped": 1,
+        "flaky": 1
+      },
+      "firefox": {
+        "expected": 94,
+        "flaky": 1,
+        "skipped": 2
+      },
+      "webkit": {
+        "expected": 95,
+        "skipped": 2
+      }
+    },
+    "durationMs": 385767.858,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-popup-layout-repeat",
+    "report": "e2e-popup-layout-repeat-reliability.json.gz",
+    "status": "passed",
+    "total": 45,
+    "outcomes": {
+      "expected": 45
+    },
+    "projects": {
+      "chromium": {
+        "expected": 15
+      },
+      "firefox": {
+        "expected": 15
+      },
+      "webkit": {
+        "expected": 15
+      }
+    },
+    "durationMs": 46845.890999999996,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-language-roundtrip-final",
+    "report": "e2e-language-roundtrip-final-reliability.json.gz",
+    "status": "passed",
+    "total": 33,
+    "outcomes": {
+      "expected": 33
+    },
+    "projects": {
+      "chromium": {
+        "expected": 11
+      },
+      "firefox": {
+        "expected": 11
+      },
+      "webkit": {
+        "expected": 11
+      }
+    },
+    "durationMs": 73105.389,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-firefox-language-repeat",
+    "report": "e2e-firefox-language-repeat-reliability.json.gz",
+    "status": "passed",
+    "total": 10,
+    "outcomes": {
+      "expected": 10
+    },
+    "projects": {
+      "firefox": {
+        "expected": 10
+      }
+    },
+    "durationMs": 41471.028999999995,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-root-popup-takeover",
+    "report": "e2e-root-popup-takeover-reliability.json.gz",
+    "status": "passed",
+    "total": 87,
+    "outcomes": {
+      "expected": 85,
+      "skipped": 2
+    },
+    "projects": {
+      "chromium": {
+        "expected": 29
+      },
+      "firefox": {
+        "expected": 28,
+        "skipped": 1
+      },
+      "webkit": {
+        "expected": 28,
+        "skipped": 1
+      }
+    },
+    "durationMs": 78617.161,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-subpath-production",
+    "report": "e2e-subpath-production-reliability.json.gz",
+    "status": "passed",
+    "total": 1363,
+    "outcomes": {
+      "expected": 1358,
+      "flaky": 2,
+      "skipped": 3
+    },
+    "projects": {
+      "http": {
+        "expected": 535
+      },
+      "chromium": {
+        "expected": 276
+      },
+      "firefox": {
+        "expected": 274,
+        "flaky": 1,
+        "skipped": 1
+      },
+      "webkit": {
+        "expected": 273,
+        "skipped": 2,
+        "flaky": 1
+      }
+    },
+    "durationMs": 623580.098,
+    "workers": 4,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-subpath-production-popup-final",
+    "report": "e2e-subpath-production-popup-final-reliability.json.gz",
+    "status": "passed",
+    "total": 87,
+    "outcomes": {
+      "expected": 85,
+      "skipped": 2
+    },
+    "projects": {
+      "chromium": {
+        "expected": 29
+      },
+      "firefox": {
+        "expected": 28,
+        "skipped": 1
+      },
+      "webkit": {
+        "expected": 28,
+        "skipped": 1
+      }
+    },
+    "durationMs": 78657.116,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-subpath-preview",
+    "report": "e2e-subpath-preview-reliability.json.gz",
+    "status": "failed",
+    "total": 1318,
+    "outcomes": {
+      "expected": 1310,
+      "skipped": 6,
+      "unexpected": 2
+    },
+    "projects": {
+      "http": {
+        "expected": 484,
+        "skipped": 3
+      },
+      "chromium": {
+        "expected": 276,
+        "unexpected": 1
+      },
+      "firefox": {
+        "expected": 276,
+        "skipped": 1
+      },
+      "webkit": {
+        "expected": 274,
+        "skipped": 2,
+        "unexpected": 1
+      }
+    },
+    "durationMs": 593282.182,
+    "workers": 4,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-subpath-preview-final",
+    "report": "e2e-subpath-preview-final-reliability.json.gz",
+    "status": "passed",
+    "total": 165,
+    "outcomes": {
+      "expected": 163,
+      "skipped": 2
+    },
+    "projects": {
+      "chromium": {
+        "expected": 55
+      },
+      "firefox": {
+        "expected": 54,
+        "skipped": 1
+      },
+      "webkit": {
+        "expected": 54,
+        "skipped": 1
+      }
+    },
+    "durationMs": 133812.011,
+    "workers": 2,
+    "notRun": 0
+  },
+  {
+    "label": "e2e-pending-close-before",
+    "report": "e2e-pending-close-before-reliability.json.gz",
+    "status": "failed",
+    "total": 1,
+    "outcomes": {
+      "unexpected": 1
+    },
+    "projects": {
+      "chromium": {
+        "unexpected": 1
+      }
+    },
+    "durationMs": 2299.7999999999997,
+    "workers": 1,
+    "notRun": 0
+  }
+]

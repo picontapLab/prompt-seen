@@ -1,0 +1,206 @@
+{
+  "recordedAt": "2026-11-17",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "node": "v24.19.0",
+  "playwright": "1.64.1",
+  "next": "16.4.2",
+  "browsers": [
+    {
+      "name": "chromium",
+      "revision": "1248",
+      "installByDefault": true,
+      "browserVersion": "156.0.8078.4",
+      "title": "Chrome for Testing"
+    },
+    {
+      "name": "firefox",
+      "revision": "1555",
+      "installByDefault": true,
+      "browserVersion": "157.0",
+      "title": "Firefox"
+    },
+    {
+      "name": "webkit",
+      "revision": "2370",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "27.2",
+      "title": "WebKit"
+    }
+  ],
+  "build": {
+    "buildId": "8f4a44bc-root",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "\u7b80\u4f53\u4e2d\u6587",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Espa\u00f1ol",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "pt-BR",
+        "pathPrefix": "pt-br",
+        "nativeName": "Portugu\u00eas (Brasil)",
+        "htmlLang": "pt-BR",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "\u65e5\u672c\u8a9e",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ko",
+        "pathPrefix": "ko",
+        "nativeName": "\ud55c\uad6d\uc5b4",
+        "htmlLang": "ko",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "fr",
+        "pathPrefix": "fr",
+        "nativeName": "Fran\u00e7ais",
+        "htmlLang": "fr",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ru",
+        "pathPrefix": "ru",
+        "nativeName": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+        "htmlLang": "ru",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "zh-Hant",
+        "pathPrefix": "zh-hant",
+        "nativeName": "\u7e41\u9ad4\u4e2d\u6587",
+        "htmlLang": "zh-Hant",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "it",
+        "pathPrefix": "it",
+        "nativeName": "Italiano",
+        "htmlLang": "it",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ar",
+        "pathPrefix": "ar",
+        "nativeName": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        "htmlLang": "ar",
+        "direction": "rtl",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "buildCodeCommit": "8f4a44bca05e5aef68c1f4e0975e18798b2135a2",
+  "testCommit": "8f4a44bca05e5aef68c1f4e0975e18798b2135a2",
+  "browserVersionSource": "Installed Playwright browser manifest; independent browser probes record actual runtime versions separately."
+}

@@ -1,0 +1,78 @@
+{
+  "expectedUniqueTests": 1318,
+  "latestOutcomes": {
+    "expected": 1312,
+    "skipped": 6
+  },
+  "missing": [],
+  "unresolved": [],
+  "coverageMethod": "subpath-preview regression coverage assembled by stable test identity across the initial and resumed runs, followed by affected-test reruns on recorded candidates. The final pending-close fix is verified in the subpath-preview rerun. This is not a claim that all tests ran once against the final artifact.",
+  "sourceArtifacts": {
+    "initialSelectedRun": "790dc273-subpath-preview",
+    "finalAffectedRerun": "ff55596f-subpath-preview"
+  },
+  "reports": [
+    "e2e-subpath-preview",
+    "e2e-subpath-preview-final"
+  ],
+  "resolvedFailuresAndFlakes": [
+    {
+      "project": "chromium",
+      "file": "tests/e2e/popup.browser.spec.ts",
+      "title": "desktop › §12.8-3: a click before the popup has loaded opens its stand-in; Esc and Back close it; the popup takes over",
+      "attemptHistory": [
+        {
+          "report": "e2e-subpath-preview",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 5777
+            }
+          ]
+        },
+        {
+          "report": "e2e-subpath-preview-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 1091
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/french-search.browser.spec.ts",
+      "title": "fr search UI: 梅枝",
+      "attemptHistory": [
+        {
+          "report": "e2e-subpath-preview",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 6909
+            }
+          ]
+        },
+        {
+          "report": "e2e-subpath-preview-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 4153
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

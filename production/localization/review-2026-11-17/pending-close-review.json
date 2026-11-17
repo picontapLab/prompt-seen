@@ -1,0 +1,126 @@
+{
+  "status": "approved-controlled-regression",
+  "browser": "Chromium 156.0.8078.4",
+  "playwright": "1.64.1",
+  "baselineProvenance": "The unguarded PendingDialog onClose={leave} also exists in baseline 53cbc8efce854f8f067acef8372daf49be82f9c3. Discovered by this localization browser matrix; no claim that baseline itself was browser-reproduced.",
+  "reproduction": {
+    "independentContexts": 6,
+    "staleCloseScenarios": 3,
+    "staleCloseFailures": 3,
+    "nativeCloseScenarios": 3,
+    "nativeClosePasses": 3,
+    "checks": [
+      {
+        "iteration": 1,
+        "staleCloseFailed": true,
+        "nativeClosePassed": true,
+        "sameDialogReopened": true,
+        "realNativeCloseCaptured": true,
+        "extraBackCallsAfterReplay": 1,
+        "reopenedPath": "/prompt-seen/en/prompts/adapted-s11-everyday-portrait/",
+        "finalPath": "/prompt-seen/en/prompts/"
+      },
+      {
+        "iteration": 2,
+        "staleCloseFailed": true,
+        "nativeClosePassed": true,
+        "sameDialogReopened": true,
+        "realNativeCloseCaptured": true,
+        "extraBackCallsAfterReplay": 1,
+        "reopenedPath": "/prompt-seen/en/prompts/adapted-s11-everyday-portrait/",
+        "finalPath": "/prompt-seen/en/prompts/"
+      },
+      {
+        "iteration": 3,
+        "staleCloseFailed": true,
+        "nativeClosePassed": true,
+        "sameDialogReopened": true,
+        "realNativeCloseCaptured": true,
+        "extraBackCallsAfterReplay": 1,
+        "reopenedPath": "/prompt-seen/en/prompts/adapted-s11-everyday-portrait/",
+        "finalPath": "/prompt-seen/en/prompts/"
+      }
+    ]
+  },
+  "method": "Hold the lazy popup code so PendingDialog remains mounted. Open a real card, capture and hold the real native close event during Back without changing DOM closure/history, go Forward until the same dialog is open at the detail URL, then replay delivery on the same target. Record synchronous history.back calls. Each actual native-close scenario uses its own fresh context.",
+  "observedCause": "PendingDialog onClose unconditionally calls leave. A close event from the preceding Back delivered after Forward reopening observes shown=true/leaving=false and synchronously issues an extra history.back, closing the new popup. The loaded DetailPopup already guards this case with !dialogRef.current?.open.",
+  "recommendedFix": "Guard PendingDialog onClose with the current dialog open state, matching DetailPopup, and retain genuine native closure handling. Strengthen the existing held-code stand-in browser case with a deliberately delayed close delivery. Do not add sleep before Forward.",
+  "limits": "Captured native event is replayed with a synthetic Event(close), so the controlled check demonstrates the state/event ordering defect. The original uninstrumented preview matrix separately observed the same reopen-then-close symptom. Baseline code was inspected but baseline artifact itself was not run.",
+  "serverLifecycle": {
+    "port": 8198,
+    "container": "prompt-seen-nginx-8198",
+    "stopped": true,
+    "foregroundSessionExitCode": 0,
+    "finalRunStopped": true,
+    "finalForegroundSessionExitCode": 0
+  },
+  "files": [
+    "before-summary.json",
+    "before-stale-close-1.json",
+    "before-stale-close-2.json",
+    "before-stale-close-3.json",
+    "before-native-close-1.json",
+    "before-native-close-2.json",
+    "before-native-close-3.json",
+    "probe.cjs",
+    "fixed-summary.json",
+    "fixed-stale-close-1.json",
+    "fixed-native-close-1.json",
+    "fixed-stale-close-2.json",
+    "fixed-native-close-2.json",
+    "fixed-stale-close-3.json",
+    "fixed-native-close-3.json"
+  ],
+  "beforeArtifact": "790dc273-subpath-preview",
+  "afterArtifact": "ff55596f-subpath-preview",
+  "afterVerification": {
+    "browser": "Chromium 156.0.8078.4",
+    "playwright": "1.64.1",
+    "freshContexts": 6,
+    "staleCloseScenarios": 3,
+    "staleClosePasses": 3,
+    "nativeCloseScenarios": 3,
+    "nativeClosePasses": 3,
+    "checks": [
+      {
+        "iteration": 1,
+        "staleClosePassed": true,
+        "sameDialogReopened": true,
+        "extraBackCallsAfterStaleEvent": 0,
+        "staleEventLeavesDetailOpen": true,
+        "nativeClosePassed": true,
+        "nativeCloseBackCalls": 1,
+        "nativeCloseUnlocked": true,
+        "sameDocumentInBothCases": true,
+        "oneHistoryEntryInBothCases": true
+      },
+      {
+        "iteration": 2,
+        "staleClosePassed": true,
+        "sameDialogReopened": true,
+        "extraBackCallsAfterStaleEvent": 0,
+        "staleEventLeavesDetailOpen": true,
+        "nativeClosePassed": true,
+        "nativeCloseBackCalls": 1,
+        "nativeCloseUnlocked": true,
+        "sameDocumentInBothCases": true,
+        "oneHistoryEntryInBothCases": true
+      },
+      {
+        "iteration": 3,
+        "staleClosePassed": true,
+        "sameDialogReopened": true,
+        "extraBackCallsAfterStaleEvent": 0,
+        "staleEventLeavesDetailOpen": true,
+        "nativeClosePassed": true,
+        "nativeCloseBackCalls": 1,
+        "nativeCloseUnlocked": true,
+        "sameDocumentInBothCases": true,
+        "oneHistoryEntryInBothCases": true
+      }
+    ]
+  },
+  "implementedFix": "PendingDialog onClose only calls leave when event.currentTarget.open is false, ignoring close delivery after Forward has already reopened the dialog.",
+  "parentValidation": "Parent independently runs complete popup/popup-layout and French search suites in Chromium/Firefox/WebKit; this report records only the authorized six controlled Chromium cases.",
+  "probeSha256": "6f9d45acc0fc74debf8d7716d077b58d31a1d383ff216f49912a5d60bdc5fd4e"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "confirmed-product-bug",
+  "artifact": "58855cb2-subpath-production",
+  "browser": "157.0",
+  "playwright": "1.64.1",
+  "controlledReproduction": {
+    "runs": 3,
+    "failed": 3,
+    "freshContextPerRun": true,
+    "lazyScriptsHeldUntilPendingOpen": true,
+    "waitForTakeover": "dialog[data-popup][data-instant] and [data-stage-picture]",
+    "expectedReturn": "/prompt-seen/en/prompts/page/2/",
+    "actualReturn": "/prompt-seen/en/prompts/"
+  },
+  "cause": "PendingDialog captures the page 2 gallery URL in its own ref. DetailPopup replaces it while the current URL is already a detail URL, so its separate gallery ref starts empty and the live-path guard correctly refuses to capture the detail URL. Closing the foreign history entry therefore falls back to the root prompt list.",
+  "feedExcluded": "Every logged event has scrollY=0, pageMarker=2 and feedPages=[2]. The first incorrect replacement is issued by the DetailPopup exit-animation commit callback, not Feed page synchronization.",
+  "proposedFix": "Let the persistent PopupHost own one stable gallery URL ref passed to both PendingDialog and DetailPopup. Retain live pathname capture guards. Add the held-lazy-script foreign-entry takeover regression on page 2; also preserve query/hash returns.",
+  "scope": "Read-only diagnosis of existing artifact. Only temporary scripts/evidence were written. Await implementation and rebuilt-artifact verification."
+}

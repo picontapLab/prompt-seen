@@ -1,0 +1,54 @@
+{
+  "status": "diagnosed; minimal test fix approved",
+  "artifact": "790dc273-subpath-preview",
+  "reviewedTestFixCommit": "ff55596f25ff97b845df387d0f4ca55195e9867a",
+  "browser": "WebKit 27.2",
+  "playwright": "1.64.1",
+  "node": "24.19.0",
+  "groups": {
+    "baseline": {
+      "runs": 8,
+      "initialAssertionFailed": 0,
+      "recoveredSamePage": 0,
+      "maxLinkAfterEmptyMs": 4845,
+      "networkErrors": 0,
+      "workerErrors": 0
+    },
+    "concurrent": {
+      "runs": 8,
+      "initialAssertionFailed": 0,
+      "recoveredSamePage": 0,
+      "maxLinkAfterEmptyMs": 4361,
+      "networkErrors": 0,
+      "workerErrors": 0
+    },
+    "concurrent-long": {
+      "runs": 24,
+      "initialAssertionFailed": 7,
+      "recoveredSamePage": 7,
+      "maxLinkAfterEmptyMs": 9924,
+      "networkErrors": 0,
+      "workerErrors": 0
+    },
+    "budget15": {
+      "runs": 8,
+      "initialAssertionFailed": 0,
+      "recoveredSamePage": 0,
+      "maxLinkAfterEmptyMs": 10424,
+      "networkErrors": 0,
+      "workerErrors": 0,
+      "stableAfterAll12HelpResponses": 8
+    }
+  },
+  "cleanup": {
+    "allDiagnosticBrowsersClosed": true,
+    "server8199Stopped": true
+  },
+  "cause": "The default 5-second assertion expires while cold cross-language indexes are still being processed in the Worker after the local empty result is already shown. The correct zh-Hans help response and URL arrive later in the same page without retry.",
+  "minimalFix": "Use toBeVisible({ timeout: 15_000 }) for this cross-language help assertion, matching both shared search checks and the existing French interaction check.",
+  "limitations": [
+    "No product performance optimization claimed; this isolates assertion synchronization against the existing async help contract.",
+    "Network transfer and Worker reply timing localize the delay after download; the probe does not separately profile JSON deserialization versus MiniSearch loading.",
+    "Original archived matrix failure has no Worker trace; the unchanged artifact independently reproduces the identical symptom naturally."
+  ]
+}

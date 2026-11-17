@@ -1,17 +1,178 @@
 {
-  "schemaVersion": 1,
-  "recordedAt": "2026-11-17T19:48:39.782469+00:00",
+  "schemaVersion": 2,
+  "recordedAt": "2026-11-17T22:14:14.626380+00:00",
   "baseline": "53cbc8efce854f8f067acef8372daf49be82f9c3",
-  "state": "reviewed-integration-candidate",
-  "locales": [
-    "ar",
-    "fr",
-    "it",
-    "ru",
-    "zh-Hant"
-  ],
-  "mergeAuthorization": "User explicitly accepts independent AI subagent review for merging every locale; pending human acceptance and deployment are recorded separately.",
-  "registry": "All five candidates enabled with complete/fingerprint/source-only; not a deployment claim.",
+  "reviewedCodeCommit": "ff55596f25ff97b845df387d0f4ca55195e9867a",
+  "reviewedCodeTree": "85ffdc77a22ca593042b453bceb6bfea22b27a9d",
+  "state": "approved-for-local-main-merge",
+  "mergeAuthorization": "User explicitly accepts independent AI subagent review for every locale. Pending human acceptance and deployment are recorded separately and do not block this local merge.",
+  "locales": {
+    "fr": {
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "ready": true,
+      "blocking": false
+    },
+    "ru": {
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "ready": true,
+      "blocking": false
+    },
+    "zh-Hant": {
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "ready": true,
+      "blocking": false
+    },
+    "it": {
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "ready": true,
+      "blocking": false
+    },
+    "ar": {
+      "policy": {
+        "coverage": "complete",
+        "review": "fingerprint",
+        "promptBodies": "source-only"
+      },
+      "counts": {
+        "target": 381,
+        "visible": 381,
+        "fallback": 0,
+        "localCurrent": 381,
+        "indexable": 381,
+        "fieldsTotal": 2220,
+        "fieldsCurrent": 2220,
+        "total": 381,
+        "published": 381,
+        "approved": 381,
+        "fields": 2220,
+        "missing": 0,
+        "draft": 0,
+        "outdated": 0,
+        "unreviewed": 0,
+        "archived": 0,
+        "invalid": 0,
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "ready": true,
+      "blocking": false
+    }
+  },
   "translationReplacements": {
     "ar": 5,
     "fr": 100,
@@ -19,27 +180,130 @@
     "ru": 16,
     "zh-Hant": 13
   },
-  "checks": {
-    "contentValidation": "passed: 0 errors, 0 publish errors, 10 existing zh-Hans warnings",
-    "typecheck": "passed",
-    "unitTests": {
-      "files": 76,
-      "passed": 851,
-      "failed": 0
-    },
-    "lint": "passed",
-    "format": "passed",
-    "tokens": "passed",
-    "protectedContent": "2749 content differences checked; original Prompt/template bodies and media have no Git differences"
+  "independentReview": {
+    "arAndRu": "ru-ar-rereview.json",
+    "frAndIt": "fr-it-final-recheck.md",
+    "zhHantAndSharedContent": "traditional-chinese-integration-review.json",
+    "russianWebKit": "russian-webkit-diagnosis-review.json",
+    "popupHistoryRace": "popup-diagnosis-review.json",
+    "popupPaginationTakeover": "popup-takeover-review.json",
+    "pendingPopupQueuedClose": "pending-close-review.json",
+    "frenchColdIndexBudget": "french-empty-diagnosis.md",
+    "firefoxLanguageMenuTestTiming": "language-firefox-diagnosis.md"
   },
-  "matrices": [],
-  "deployed": false,
-  "pushed": false,
-  "pending": [
-    "Human native-language and assistive-technology acceptance where required by the original specifications",
-    "Native browser 200% zoom and real OS input-method acceptance",
-    "Remote CI",
-    "Production deployment, live build-ID verification and rollback target"
+  "checks": {
+    "contentValidation": "0 errors, 0 publish errors, 10 existing zh-Hans warnings",
+    "localeCoverage": "reviewed-final-locales.json.gz",
+    "typecheck": "passed, including final pending-popup close changes",
+    "unitTests": {
+      "codeCommit": "ff55596f25ff97b845df387d0f4ca55195e9867a",
+      "files": 76,
+      "passed": 853,
+      "failed": 0,
+      "maxWorkers": 2,
+      "log": "unit-tests-reviewed-final.log.gz"
+    },
+    "earlierUnitRun": "One run timed out under concurrent browser load; preserved in unit-tests-final.log.gz. Both subsequent isolated runs passed.",
+    "lintAndFormat": "Full checks passed before later scoped fixes; every later changed source/test file was checked again.",
+    "tokens": "passed",
+    "storybook": "passed",
+    "protectedContent": "2749 changed content files checked; 2978 protected files enumerated. Original Prompt/template bodies and media binaries preserved."
+  },
+  "matrices": [
+    {
+      "basePath": "",
+      "mode": "production",
+      "scope": "Full root suite by stable test identity across initial/resume runs and affected-case reruns through 790dc273-root. Final pending-close guard is validated separately in the preview matrix.",
+      "uniqueCases": 3478,
+      "latestOutcomes": {
+        "expected": 3303,
+        "skipped": 175
+      },
+      "missing": 0,
+      "unresolved": 0,
+      "evidence": "root-coverage-summary.json",
+      "limitation": "Layered regression coverage, not one full-suite run on the final artifact."
+    },
+    {
+      "basePath": "/prompt-seen",
+      "mode": "production",
+      "scope": "All HTTP checks, all five-language browser suites, shared locale/basePath/layout cases and popup suites.",
+      "uniqueCases": 1366,
+      "latestOutcomes": {
+        "expected": 1363,
+        "skipped": 3
+      },
+      "missing": 0,
+      "unresolved": 0,
+      "evidence": "subpath-production-coverage-summary.json",
+      "limitation": "Selected matrix; initial run plus 790dc273 popup rerun after fixing pagination takeover. Final pending-close guard is validated separately in the preview matrix."
+    },
+    {
+      "basePath": "/prompt-seen",
+      "mode": "preview",
+      "buildId": "ff55596f-subpath-preview",
+      "scope": "Same selection rules as subpath production, excluding 48 sitemap/Markdown checks registered only for production (12 locales × 4). Initial selected run plus final-artifact popup and French-search reruns after diagnosing the two failures.",
+      "uniqueCases": 1318,
+      "latestOutcomes": {
+        "expected": 1312,
+        "skipped": 6
+      },
+      "missing": 0,
+      "unresolved": 0,
+      "finalRerunRetries": 0,
+      "finalRerunWorkers": 2,
+      "evidence": "subpath-preview-coverage-summary.json"
+    }
   ],
-  "earlierEvidence": "Per-locale acceptance records describe their original separate candidates. Only this report and its logs describe the combined corrected candidate."
+  "localRuntime": {
+    "node": "24.19.0",
+    "next": "16.4.2",
+    "playwrightInstalled": "1.64.1",
+    "playwrightManifest": "1.65.0",
+    "browsers": {
+      "chromium": "156.0.8078.4",
+      "firefox": "157.0",
+      "webkit": "27.2"
+    },
+    "limitation": "Actual local versions are recorded. CI uses a dedicated Playwright 1.64.1 Firefox install; remote CI has not run."
+  },
+  "skips": {
+    "rootTotal": 175,
+    "categories": {
+      "unsupportedLayoutInstabilityAPI": 104,
+      "chromiumOnlyClipboard": 36,
+      "chromiumCDPIME": 10,
+      "CDPThrottling": 4,
+      "touchSwipe": 2,
+      "webkitMacArabicTab": 1,
+      "editorFixtureLimits": 6,
+      "noMissingTranslationFixture": 6,
+      "existingKoreanOptInGuard": 6
+    },
+    "previewTotal": 6,
+    "previewCategories": {
+      "noFallbackFixture": 3,
+      "touchSwipe": 2,
+      "webkitMacArabicTab": 1
+    },
+    "newLocales": "No Arabic, French, Italian, Russian or Traditional Chinese case skipped because the locale was absent."
+  },
+  "deployment": {
+    "pushed": false,
+    "deployed": false,
+    "cloudflare": "Existing local prepare gate remains 20000 files and fails after all 12 locales are built; initial production measurement 32483. Subscription capacity is unconfirmed; no gate weakened.",
+    "cloudflareSources": [
+      "https://developers.cloudflare.com/pages/platform/limits/",
+      "https://developers.cloudflare.com/changelog/post/2026-01-23-pages-file-limit-increase/"
+    ],
+    "nextSecurityNotice": "Next 16.4.2 reported a known security vulnerability and stopped initial builds with an upgrade reminder; normal retries succeeded. Upgrade remains a release concern; no unrelated dependency upgrade performed."
+  },
+  "pending": [
+    "Human native-language and assistive-technology acceptance required by original release specifications",
+    "Native browser 200% zoom and real operating-system IME acceptance",
+    "Remote CI; Cloudflare deployment capacity and successful preparation",
+    "Production deployment, live build-ID verification and rollback target",
+    "Existing Next.js security upgrade recommendation"
+  ],
+  "earlierEvidence": "Per-locale acceptance records retain their original candidate identities. This report and linked logs describe the combined corrected candidate; no historical result is relabeled as current."
 }

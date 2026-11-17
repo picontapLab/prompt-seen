@@ -1,0 +1,88 @@
+{
+  "expectedUniqueTests": 1366,
+  "latestOutcomes": {
+    "expected": 1363,
+    "skipped": 3
+  },
+  "missing": [],
+  "unresolved": [],
+  "coverageMethod": "subpath-production regression coverage assembled by stable test identity across the initial and resumed runs, followed by affected-test reruns on recorded candidates. The final pending-close fix is verified in the subpath-preview rerun. This is not a claim that all tests ran once against the final artifact.",
+  "sourceArtifacts": {
+    "initialSelectedRun": "58855cb2-subpath-production",
+    "finalAffectedRerun": "790dc273-subpath-production"
+  },
+  "reports": [
+    "e2e-subpath-production",
+    "e2e-subpath-production-popup-final"
+  ],
+  "resolvedFailuresAndFlakes": [
+    {
+      "project": "firefox",
+      "file": "tests/e2e/popup.browser.spec.ts",
+      "title": "desktop › a foreign popup entry returns to the gallery's pagination",
+      "attemptHistory": [
+        {
+          "report": "e2e-subpath-production",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 6685
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 3304
+            }
+          ]
+        },
+        {
+          "report": "e2e-subpath-production-popup-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 985
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/popup.browser.spec.ts",
+      "title": "desktop › a foreign popup entry returns to the gallery's pagination",
+      "attemptHistory": [
+        {
+          "report": "e2e-subpath-production",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 6727
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 2151
+            }
+          ]
+        },
+        {
+          "report": "e2e-subpath-production-popup-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 1442
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

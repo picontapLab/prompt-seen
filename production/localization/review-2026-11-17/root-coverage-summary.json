@@ -1,0 +1,683 @@
+{
+  "expectedUniqueTests": 3478,
+  "latestOutcomes": {
+    "expected": 3303,
+    "skipped": 175
+  },
+  "missing": [],
+  "unresolved": [],
+  "coverageMethod": "root regression coverage assembled by stable test identity across the initial and resumed runs, followed by affected-test reruns on recorded candidates. The final pending-close fix is verified in the subpath-preview rerun. This is not a claim that all tests ran once against the final artifact.",
+  "sourceArtifacts": {
+    "e2e-root-initial": "be25c47b-root",
+    "e2e-root-resume": "0af7dbe6-root",
+    "firstFinalAffectedReruns": "8f4a44bc-root",
+    "takeoverRerun": "790dc273-root"
+  },
+  "reports": [
+    "e2e-root-initial",
+    "e2e-root-resume",
+    "e2e-root-final",
+    "e2e-popup-layout-repeat",
+    "e2e-language-roundtrip-final",
+    "e2e-firefox-language-repeat",
+    "e2e-root-popup-takeover"
+  ],
+  "resolvedFailuresAndFlakes": [
+    {
+      "project": "chromium",
+      "file": "tests/e2e/home-language.browser.spec.ts",
+      "title": "ar: direct home, refresh, summaries, previews and first-screen layout",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-initial",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 1023
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 1795
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-resume",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 3024
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 3085
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "chromium",
+      "file": "tests/e2e/popup-layout.browser.spec.ts",
+      "title": "popup toolbar stays separate and covers scrolling content at 390px",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-initial",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 760
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 535
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 908
+            }
+          ]
+        },
+        {
+          "report": "e2e-popup-layout-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 829
+            }
+          ]
+        },
+        {
+          "report": "e2e-popup-layout-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 759
+            }
+          ]
+        },
+        {
+          "report": "e2e-popup-layout-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 1000
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-popup-takeover",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 837
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "chromium",
+      "file": "tests/e2e/popup.browser.spec.ts",
+      "title": "desktop › an entry written by other code (no popup mark) closes by replacing it with the gallery",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-initial",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 15498
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 1132
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-resume",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 15578
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 1639
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 807
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-popup-takeover",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 761
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "firefox",
+      "file": "tests/e2e/home-language.browser.spec.ts",
+      "title": "ru: home language round trip resets the showcase and browser history",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5605
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "timedOut",
+              "durationMs": 30198
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 8192
+            }
+          ]
+        },
+        {
+          "report": "e2e-language-roundtrip-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 4385
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5973
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5879
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5953
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5823
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 5894
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "firefox",
+      "file": "tests/e2e/home-language.browser.spec.ts",
+      "title": "ar: home language round trip resets the showcase and browser history",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "flaky",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "timedOut",
+              "durationMs": 30211
+            },
+            {
+              "retry": 1,
+              "status": "passed",
+              "durationMs": 14992
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 4481
+            }
+          ]
+        },
+        {
+          "report": "e2e-language-roundtrip-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 4350
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 6883
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 6750
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 6850
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 6783
+            }
+          ]
+        },
+        {
+          "report": "e2e-firefox-language-repeat",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 6365
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru light desktop",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3212
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 4726
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2666
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru light laptop",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3019
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 4573
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2629
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru light tablet",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3296
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 4114
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2661
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru light phone",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3123
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 3830
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2531
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru dark desktop",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3374
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 4902
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2593
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru dark laptop",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3445
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 4453
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2528
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru dark tablet",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3672
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 3989
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2603
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit",
+      "file": "tests/e2e/acceptance.browser.spec.ts",
+      "title": "every built language, both themes, four widths: nothing cut off or overlapping › ru dark phone",
+      "attemptHistory": [
+        {
+          "report": "e2e-root-resume",
+          "outcome": "unexpected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "failed",
+              "durationMs": 3450
+            },
+            {
+              "retry": 1,
+              "status": "failed",
+              "durationMs": 3817
+            }
+          ]
+        },
+        {
+          "report": "e2e-root-final",
+          "outcome": "expected",
+          "attempts": [
+            {
+              "retry": 0,
+              "status": "passed",
+              "durationMs": 2511
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
