@@ -54,6 +54,45 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('does not synthesize an Arabic phrase across fields, punctuation or the content kind', () => {
+    const engine = engineOf('ar', [
+      doc('split-fields', { title: 'تصوير', body: 'المنتجات' }),
+      doc('split-sentences', { title: 'تصوير. المنتجات' }),
+      doc('split-kind', { title: 'نصي' }),
+      doc('real-phrase', { title: 'تصوير المنتجات' }),
+    ]);
+    expect(ids('packshot', engine)).toEqual(['real-phrase']);
+  });
+
+  it('retrieves Arabic domain forms without confusing posters, stickers, products and AI models', () => {
+    const engine = engineOf('ar', [
+      doc('poster', { title: 'ملصق إعلاني لمقهى' }),
+      doc('sticker', { title: 'ملصق لاصق لقطة' }),
+      doc('product', { title: 'تصوير المنتجات في استوديو' }),
+      doc('family', { title: 'تصوير عائلي' }),
+      doc('unrelated', { title: 'وصف المنتجات', body: 'تصوير عائلي' }),
+      doc('template', { kind: 'template', title: 'بورتريه بإضاءة نيون' }),
+      doc('model', { title: 'نموذج ذكاء اصطناعي' }),
+    ]);
+    expect(ids('poster', engine)).toEqual(['poster']);
+    expect(ids('sticker', engine)).toEqual(['sticker']);
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('تصوير منتجات', engine)).toEqual(['product']);
+    expect(ids('القوالب portrait', engine)).toEqual(['template']);
+    expect(ids('تصوير', engine)).toContain('family');
+    expect(ids('template', engine)).not.toContain('model');
+  });
+
+  it('finds Arabic and Eastern Arabic digits without changing the displayed text', () => {
+    const title = 'فرصة سوق ٢٠٢٦';
+    const engine = engineOf('ar', [doc('market', { contentLocale: 'ar', title, model: 'GPT Image 2.6' })]);
+    for (const query of ['2026', '٢٠٢٦', '۲۰۲۶', 'GPT Image ٢.٦', 'GPT Image ۲.۶']) {
+      const hit = search(engine, query).groups[0]?.hits[0];
+      expect(hit?.id, query).toBe('market');
+      expect(hit?.title).toBe(title);
+    }
+  });
+
   it('finds Brazilian Portuguese aliases while keeping model and product meanings separate', () => {
     const engine = engineOf('pt-BR', [
       doc('poster', { title: 'Pôster Fuji' }),

@@ -78,7 +78,8 @@ export function createIndex(documents: readonly SearchDocument[], locale: string
     documents.map((document) => ({
       ...document,
       aliases: domainAliases(
-        [document.title, document.terms, document.description, document.body].join(' '),
+        // Newlines preserve field boundaries for profiles that require a contiguous phrase.
+        [document.title, document.terms, document.description, document.body].join('\n'),
         locale,
         document.kind,
       ),

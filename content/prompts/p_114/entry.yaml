@@ -29,6 +29,7 @@ inputRequirements:
     es: Sube un retrato de una persona adulta. Nuestra referencia es una persona
       ficticia generada por IA.
     ko: 성인 인물 사진 한 장을 업로드하세요. 참조 이미지는 AI로 생성한 가상 인물입니다.
+    ar: ارفع بورتريه واحدًا لشخص بالغ. مرجعنا لشخص خيالي مولّد بالذكاء الاصطناعي.
   slots:
     - id: person
       labels:
@@ -39,6 +40,7 @@ inputRequirements:
         pt-BR: Pessoa
         es: Persona
         ko: 인물
+        ar: شخص
       min: 1
       max: 1
 showcaseExampleId: x_159
@@ -64,6 +66,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      ar: المنشور أو معرض الصور بالكامل
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +77,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      ar: لقطة من واجهة API العامة الرسمية
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2011304086847832089&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -83,6 +87,7 @@ inspirationSources:
       pt-BR: Prompt original ou trecho disponível; adaptação independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      ar: الأمر الأصلي أو مقتطف منه متاح؛ أُعدّت صياغة مقتبسة بصورة مستقلة
     metrics:
       - key: likes
         value: 2165
@@ -94,6 +99,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ar: الإعجابات
       - key: conversation_count
         value: 58
         labels:
@@ -104,6 +110,7 @@ inspirationSources:
           pt-BR: Respostas
           es: Respuestas
           ko: 답글
+          ar: الردود
       - key: views
         value: null
         labels:
@@ -114,6 +121,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          ar: المشاهدات
       - key: reposts
         value: null
         labels:
@@ -124,6 +132,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          ar: إعادات النشر
       - key: bookmarks
         value: null
         labels:
@@ -134,3 +143,4 @@ inspirationSources:
           pt-BR: Itens salvos
           es: Marcadores
           ko: 북마크
+          ar: الإشارات المرجعية

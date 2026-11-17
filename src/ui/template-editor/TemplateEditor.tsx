@@ -21,13 +21,14 @@ import { getImage } from '@/modules/media';
 import { graphemeLength, renderTemplate, type FieldError, type FieldValues } from '@/modules/template';
 import { absoluteUrl } from '@/modules/url';
 import { ShareButton } from '@/ui/feedback/ShareButton';
-import { languageAttributes, textDirection } from '@/ui/prompt-detail/language';
+import { languageAttributes } from '@/ui/prompt-detail/language';
 import { PromptSheet } from '@/ui/prompt-detail/PromptSheet';
 import { BottomSheet } from '@/ui/primitives/BottomSheet';
 import { Button } from '@/ui/primitives/Button';
 import { SegmentedControl } from '@/ui/primitives/SegmentedControl';
 import { TextField } from '@/ui/primitives/TextField';
 import { showToast } from '@/ui/primitives/toast-queue';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 import { browserStorage, draftKey, readDraft, removeDraft, writeDraft } from './draft';
 import { editorReducer, initialEditorState, visibleErrors, type EditorState } from './editor-state';
 import { AspectRatioPicker, SwatchPicker } from './Pickers';
@@ -345,9 +346,9 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
     <div className={styles.editor} data-editor={model.templateId} data-version={version.id}>
       <div className={styles.toolbar}>
         <p className={styles.meta}>
-          {[d('template.version', { version: version.id }), d('template.fieldCount', { count: fields.length })].join(
-            ' · ',
-          )}
+          <IsolatedMessage format={(version) => d('template.version', { version })} value={version.id} dir="ltr" />
+          {' · '}
+          {d('template.fieldCount', { count: fields.length })}
         </p>
         <p className={styles.notice} role="status" data-notice={notice?.kind}>
           {noticeText}
@@ -398,7 +399,6 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                       field={field}
                       value={value}
                       necessity={field.required === (marker === 'required') ? marker : undefined}
-                      lang={model.promptLanguage}
                       errorMessage={message}
                       invalidItems={errors.flatMap((e) => (e.item !== undefined ? [e.item] : []))}
                       onChange={(next) => dispatch({ type: 'edit', field: field.name, value: next })}
@@ -455,7 +455,9 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                       data-pulse={pulse ? (pulse % 2 ? 'a' : 'b') : undefined}
                       onClick={onPreviewClick}
                     >
-                      {s.text}
+                      <bdi dir="auto" lang="">
+                        {s.text}
+                      </bdi>
                     </span>
                   );
                 })}
@@ -551,14 +553,13 @@ type FieldControlProps = {
   field: LocalizedField;
   value: string | string[] | undefined;
   necessity: 'optional' | 'required' | undefined;
-  lang: string;
   errorMessage: string;
   invalidItems: number[];
   onChange: (value: string | string[]) => void;
 };
 
 /** The control for one field (§11.8.4 控件选择); see controlFor. */
-function FieldControl({ field, value, necessity, lang, errorMessage, invalidItems, onChange }: FieldControlProps) {
+function FieldControl({ field, value, necessity, errorMessage, invalidItems, onChange }: FieldControlProps) {
   const kind = controlFor(field);
   const invalid = errorMessage !== '';
   const label = <span {...languageAttributes(field.labelLocale)}>{field.label}</span>;
@@ -587,7 +588,7 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
         isInvalid={invalid}
         errorMessage={errorMessage}
         invalidItems={invalidItems}
-        lang={lang}
+        lang=""
       />
     );
 
@@ -641,8 +642,8 @@ function FieldControl({ field, value, necessity, lang, errorMessage, invalidItem
       validationBehavior="aria"
       isInvalid={invalid}
       errorMessage={errorMessage}
-      inputLang={lang}
-      inputDir={textDirection(lang)}
+      inputLang=""
+      inputDir="auto"
     />
   );
 }

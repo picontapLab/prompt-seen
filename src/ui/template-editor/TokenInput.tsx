@@ -27,7 +27,7 @@ export type TokenInputProps = {
   errorMessage?: ReactNode;
   /** Items over the length limit, marked in place. */
   invalidItems?: readonly number[];
-  /** Language of the values (the prompt's language, §8.3). */
+  /** Known language of the values, or empty for unknown user text. */
   lang?: string;
   inputRef?: Ref<HTMLInputElement>;
   className?: string;
@@ -157,7 +157,9 @@ export function TokenInput({
                 data-invalid={invalidItems.includes(index) || undefined}
                 lang={lang}
               >
-                <span className={styles.tokenText}>{item}</span>
+                <bdi dir="auto" className={styles.tokenText}>
+                  {item}
+                </bdi>
                 <button
                   type="button"
                   className={styles.remove}
@@ -179,6 +181,7 @@ export function TokenInput({
           className={cx(fieldStyles.input, styles.input)}
           value={draft}
           lang={lang}
+          dir="auto"
           enterKeyHint="enter"
           autoComplete="off"
           aria-describedby={[maxItems !== null && countId, descriptionId, isInvalid && errorId]

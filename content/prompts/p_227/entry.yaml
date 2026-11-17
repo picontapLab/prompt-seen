@@ -39,9 +39,11 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original de origem; não este novo resultado gerado. Vários
         casos de uma mesma publicação compartilham as métricas.
-      es: Publicación original; no este nuevo resultado generado. Varios casos de
-        una misma publicación comparten las métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de una
+        misma publicación comparten las métricas.
       ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
+      ar: المنشور المصدر الأصلي؛ وليس هذه النتيجة المولّدة الجديدة. تتشارك حالات
+        متعددة من منشور واحد المقاييس نفسها.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -53,9 +55,10 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: revisão da página diretamente e revisão visual. As
         contagens não foram atualizadas."
-      es: "Investigación previa: revisión directa de la página y revisión visual.
-        Los recuentos no se han actualizado."
+      es: "Investigación previa: revisión directa de la página y revisión visual. Los
+        recuentos no se han actualizado."
       ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
+      ar: "بحث سابق: مراجعة مباشرة للصفحة وفحص بصري. لم تُحدَّث الأعداد."
     evidenceUrl: https://x.com/OpenAI/status/2118124953832935810
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -68,6 +71,7 @@ inspirationSources:
       es: No se encontró el prompt original. Este es un prompt inferido de forma
         independiente.
       ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
+      ar: لم يُعثَر على الأمر الأصلي. هذا أمر مستنتج بصورة مستقلة.
     metrics:
       - key: likes
         value: 995
@@ -79,6 +83,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ar: الإعجابات
       - key: reposts
         value: 135
         labels:
@@ -89,6 +94,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          ar: إعادات النشر
 source:
   author: Prompt Seen
   url: null

@@ -134,7 +134,9 @@ export function ImageStage({
         )}
         <span className={styles.meta}>
           <GifBadge image={image} />
-          <span className="tabular">{t('dimensions', { width: image.width, height: image.height })}</span>
+          <bdi dir="ltr" className="tabular">
+            {t('dimensions', { width: image.width, height: image.height })}
+          </bdi>
           {original && (
             <a href={imageUrl(original)} target="_blank" rel="noopener" className={styles.original}>
               {t('original')}

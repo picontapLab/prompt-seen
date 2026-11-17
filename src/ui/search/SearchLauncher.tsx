@@ -61,7 +61,7 @@ export function SearchLauncher() {
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented || e.isComposing || e.keyCode === 229 || e.repeat) return;
       const mod = e.metaKey || e.ctrlKey;
-      if (mod && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {
+      if (mod && !e.altKey && !e.shiftKey && (e.key.toLowerCase() === 'k' || e.code === 'KeyK')) {
         e.preventDefault();
         openSearch();
       } else if (

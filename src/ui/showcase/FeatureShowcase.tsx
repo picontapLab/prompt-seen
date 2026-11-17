@@ -128,12 +128,13 @@ export function FeatureShowcase({
               {s.title}
             </Heading>
             <span className={styles.facts}>
-              {[
-                s.model ?? t('test.notVerified'),
-                s.lastTestedAt && format.dateTime(isoDate(s.lastTestedAt), { dateStyle: 'medium' }),
-              ]
-                .filter(Boolean)
-                .join(' · ')}
+              <bdi dir={s.model ? 'ltr' : 'auto'}>{s.model ?? t('test.notVerified')}</bdi>
+              {s.lastTestedAt && (
+                <>
+                  {' · '}
+                  <bdi dir="auto">{format.dateTime(isoDate(s.lastTestedAt), { dateStyle: 'medium' })}</bdi>
+                </>
+              )}
             </span>
           </figcaption>
         </div>

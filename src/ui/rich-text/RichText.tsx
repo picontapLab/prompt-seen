@@ -38,7 +38,11 @@ function Inline({ nodes }: { nodes: readonly RichInline[] }) {
               </del>
             );
           case 'code':
-            return <code key={i}>{n.v}</code>;
+            return (
+              <code key={i}>
+                <bdi dir="ltr">{n.v}</bdi>
+              </code>
+            );
           case 'br':
             return <br key={i} />;
           case 'link':

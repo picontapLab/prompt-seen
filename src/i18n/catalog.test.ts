@@ -30,6 +30,29 @@ function argumentsOf(elements: MessageFormatElement[], names = new Set<string>()
 }
 
 describe('compileMessages', () => {
+  it('keeps Arabic messages free of hidden bidi controls and formats all six plural categories', () => {
+    const raw = readCatalog(ROOT, 'ar');
+    for (const [key, value] of leaves(raw))
+      expect(value, key).not.toMatch(/[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/u);
+    const t = catalogTranslator(ROOT, 'ar');
+    for (const [count, expected] of [
+      [0, 'لا نتائج'],
+      [1, 'نتيجة واحدة'],
+      [2, 'نتيجتان'],
+      [3, '3 نتائج'],
+      [10, '10 نتائج'],
+      [11, '11 نتيجة'],
+      [99, '99 نتيجة'],
+      [100, '100 نتيجة'],
+      [101, '101 نتيجة'],
+      [102, '102 نتيجة'],
+      [103, '103 نتائج'],
+      [111, '111 نتيجة'],
+      [1.5, '1.5 نتيجة'],
+    ] as const)
+      expect(t('search.count', { count })).toBe(expected);
+  });
+
   it('formats Brazilian Portuguese zero, singular and plural UI messages', () => {
     const t = catalogTranslator(ROOT, 'pt-BR');
     expect(t('search.count', { count: 0 })).toBe('Nenhum resultado');

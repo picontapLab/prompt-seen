@@ -54,7 +54,7 @@ export function ResultRow({ hit, locale, description }: { hit: SearchHit; locale
                 {hit.tags.map((tag, index) => (
                   <span key={tag}>
                     {index > 0 && ' · '}
-                    <span {...languageAttributes(hit.tagLocales?.[index])}>{tag}</span>
+                    <bdi {...languageAttributes(hit.tagLocales?.[index])}>{tag}</bdi>
                   </span>
                 ))}
               </span>

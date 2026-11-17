@@ -26,6 +26,7 @@ inputRequirements:
     pt-BR: Use a referência de macaco gerada de forma independente.
     es: Usa la referencia del mono generada de forma independiente.
     ko: 독립적으로 생성한 원숭이 참조 이미지를 사용하세요.
+    ar: استخدم مرجع القرد المولّد بصورة مستقلة.
   slots:
     - id: reference
       labels:
@@ -36,6 +37,7 @@ inputRequirements:
         pt-BR: Referência original de macaco
         es: Referencia original del mono
         ko: 원본 원숭이 참조 이미지
+        ar: المرجع الأصلي للقرد
       min: 1
       max: 1
 showcaseExampleId: x_288
@@ -57,9 +59,11 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original de origem; não este novo resultado gerado. Vários
         casos de uma mesma publicação compartilham as métricas.
-      es: Publicación original; no este nuevo resultado generado. Varios casos de
-        una misma publicación comparten las métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de una
+        misma publicación comparten las métricas.
       ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
+      ar: المنشور المصدر الأصلي؛ وليس هذه النتيجة المولّدة الجديدة. تتشارك حالات
+        متعددة من منشور واحد المقاييس نفسها.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,9 +75,10 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: revisão da página diretamente e revisão visual. As
         contagens não foram atualizadas."
-      es: "Investigación previa: revisión directa de la página y revisión visual.
-        Los recuentos no se han actualizado."
+      es: "Investigación previa: revisión directa de la página y revisión visual. Los
+        recuentos no se han actualizado."
       ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
+      ar: "بحث سابق: مراجعة مباشرة للصفحة وفحص بصري. لم تُحدَّث الأعداد."
     evidenceUrl: https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately
@@ -87,6 +92,8 @@ inspirationSources:
       es: La fuente aporta un prompt original; esta producción usa el prompt de
         trabajo registrado por separado.
       ko: 출처에는 원본 프롬프트가 있으며, 이번 제작은 별도로 기록한 작업용 프롬프트를 사용합니다.
+      ar: يوفّر المصدر أمرًا أصليًا؛ ويستخدم هذا الإنتاج أمر العمل المسجّل بصورة
+        منفصلة.
     metrics: []
 source:
   author: Prompt Seen

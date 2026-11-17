@@ -33,6 +33,9 @@ const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
 export function normalizeTerm(text: string, locale: string): string {
   const language = locale.split('-')[0]!.toLowerCase();
   let s = text.normalize('NFKC').toLocaleLowerCase(locale);
+  // Fold only the search copy: original titles, queries and template values retain their digits.
+  if (language === 'ar')
+    s = s.replace(/[٠-٩۰-۹]/g, (digit) => String(digit.charCodeAt(0) - (digit <= '٩' ? 0x660 : 0x6f0)));
   if (language === 'de') s = s.replace(/ß/g, 'ss').replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u');
   if (FOLD_SCRIPT.test(s)) {
     s = s

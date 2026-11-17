@@ -111,6 +111,7 @@ export function QuickSearch({
               <TextField aria-label={t('panel.field')} className={styles.field} autoFocus>
                 <Input
                   {...inputProps}
+                  dir="auto"
                   className={styles.input}
                   placeholder={t('panel.placeholder')}
                   enterKeyHint="search"
@@ -208,7 +209,7 @@ function PanelEntry({ item, locale, searchPage }: { item: PanelItem; locale: Loc
       return (
         <ListBoxItem id={item.id} textValue={item.query} className={`${styles.item} ${styles.plain}`}>
           <History aria-hidden="true" />
-          <span>{item.query}</span>
+          <bdi dir="auto">{item.query}</bdi>
         </ListBoxItem>
       );
     case 'clear':

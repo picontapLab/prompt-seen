@@ -746,28 +746,30 @@ it.each([
 
 it('keeps CLI JSON parseable and distinguishes preparation gaps, strict failures and argument errors', () => {
   const root = fixture();
-  const registryFile = path.join(root, 'content/locales.yaml');
-  fs.writeFileSync(registryFile, fs.readFileSync(registryFile, 'utf8').replaceAll('ja', 'ar'));
-  fs.renameSync(
-    path.join(root, 'content/pages/license/locales/ja.mdx'),
-    path.join(root, 'content/pages/license/locales/ar.mdx'),
-  );
-  const license = path.join(root, 'content/pages/license/locales/ar.mdx');
+  // CONTENT_DIR alone still reads repository catalogs/scope/reviews. Give the CLI its own
+  // root so adding a real language's launch evidence cannot change this preparation fixture.
+  fs.mkdirSync(path.join(root, 'scripts/lib'), { recursive: true });
+  fs.copyFileSync('scripts/locale-check.ts', path.join(root, 'scripts/locale-check.ts'));
+  fs.copyFileSync('scripts/lib/paths.ts', path.join(root, 'scripts/lib/paths.ts'));
+  fs.symlinkSync(path.resolve('scripts/lib/localization'), path.join(root, 'scripts/lib/localization'), 'dir');
+  fs.symlinkSync(path.resolve('src/config'), path.join(root, 'src/config'), 'dir');
+  fs.symlinkSync(path.resolve('node_modules'), path.join(root, 'node_modules'), 'dir');
+  const license = path.join(root, 'content/pages/license/locales/ja.mdx');
   fs.writeFileSync(license, fs.readFileSync(license, 'utf8').replace('status: published', 'status: draft'));
-  // CONTENT_DIR is read-only; use a locale without repository scope/review evidence.
   const invoke = (...args: string[]) =>
-    spawnSync(process.execPath, ['--import', 'tsx', path.resolve('scripts/locale-check.ts'), ...args], {
+    spawnSync(process.execPath, ['--import', 'tsx', path.join(root, 'scripts/locale-check.ts'), ...args], {
       encoding: 'utf8',
+      cwd: root,
       env: { ...process.env, CONTENT_DIR: path.join(root, 'content') },
     });
-  const ordinary = invoke('--locale', 'ar', '--json');
-  expect(ordinary.status).toBe(0);
+  const ordinary = invoke('--locale', 'ja', '--json');
+  expect(ordinary.status, ordinary.stderr).toBe(0);
   expect(JSON.parse(ordinary.stdout).ready).toBe(false);
-  const strict = invoke('--locale', 'ar', '--strict', '--json');
+  const strict = invoke('--locale', 'ja', '--strict', '--json');
   expect(strict.status).toBe(1);
   expect(JSON.parse(strict.stdout).items.map((i: { key: string }) => i.key)).toEqual(['page/about', 'page/license']);
   expect(invoke('--locale', 'not-registered').status).toBe(2);
-  expect(invoke('--locale', 'ar', '--all').status).toBe(2);
+  expect(invoke('--locale', 'ja', '--all').status).toBe(2);
   const all = invoke('--all', '--json');
   expect(JSON.parse(all.stdout)).toMatchObject({ schemaVersion: 2, reports: expect.any(Array) });
   // Five fresh Node/tsx processes check CLI contracts, not a five-second latency budget.

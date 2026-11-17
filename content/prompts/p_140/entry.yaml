@@ -27,9 +27,10 @@ inputRequirements:
       Bergemblem.
     pt-BR: Envie um ícone simples. Nosso exemplo usa um emblema fictício original de
       montanha.
-    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio
-      y original.
+    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio y
+      original.
     ko: 단순한 아이콘 하나를 업로드하세요. 예시는 직접 만든 가상의 산 엠블럼입니다.
+    ar: ارفع أيقونة بسيطة واحدة. يستخدم مثالنا شعار جبل أصليًا وخياليًا.
   slots:
     - id: icon
       labels:
@@ -40,6 +41,7 @@ inputRequirements:
         pt-BR: Ícone
         es: Icono
         ko: 아이콘
+        ar: أيقونة
       min: 1
       max: 1
 showcaseExampleId: x_185
@@ -60,6 +62,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      ar: المنشور أو معرض الصور بالكامل
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -70,6 +73,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      ar: لقطة من واجهة API العامة الرسمية
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1911075302941622512&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -79,6 +83,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptação independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      ar: لم يُسترجع الأمر الأصلي كاملًا؛ أُعدّت صياغة مقتبسة بصورة مستقلة
     metrics:
       - key: likes
         value: 2527
@@ -90,6 +95,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ar: الإعجابات
       - key: conversation_count
         value: 63
         labels:
@@ -100,6 +106,7 @@ inspirationSources:
           pt-BR: Respostas
           es: Respuestas
           ko: 답글
+          ar: الردود
       - key: views
         value: null
         labels:
@@ -110,6 +117,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          ar: المشاهدات
       - key: reposts
         value: null
         labels:
@@ -120,6 +128,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          ar: إعادات النشر
       - key: bookmarks
         value: null
         labels:
@@ -130,6 +139,7 @@ inspirationSources:
           pt-BR: Itens salvos
           es: Marcadores
           ko: 북마크
+          ar: الإشارات المرجعية
 source:
   author: Prompt Seen
   url: null
