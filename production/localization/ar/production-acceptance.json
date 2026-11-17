@@ -7,8 +7,79 @@
   "sourceBaseline": "53cbc8efce854f8f067acef8372daf49be82f9c3",
   "contentBatchId": "fb0d9ccf29f62abe75089199bae5e1ca1b8235ec9f85b2a2c3ba6ce43270fdd9",
   "editorialReview": "AI source/target fingerprint and visual review; see reviews.json and per-agent evidence",
-  "checks": [],
-  "pending": ["final artifact matrix", "native 200% browser zoom", "actual Arabic screen-reader acceptance", "human linguistic first-release signoff", "deployment/live build ID", "verified production rollback target"],
+  "checks": [
+    {
+      "mode": "production",
+      "basePath": "",
+      "arEnabled": false,
+      "passed": 86,
+      "skipped": 4,
+      "evidence": "evidence/final/disabled-root-http.log.gz"
+    },
+    {
+      "mode": "production",
+      "basePath": "/prompt-seen",
+      "arEnabled": false,
+      "passed": 86,
+      "skipped": 4,
+      "evidence": "evidence/final/disabled-subpath-http.log.gz"
+    },
+    {
+      "mode": "production",
+      "basePath": "",
+      "arEnabled": true,
+      "temporaryCandidateOnly": true,
+      "passed": 248,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "evidence": "evidence/final/candidate-root-e2e.log.gz"
+    },
+    {
+      "mode": "production",
+      "basePath": "/prompt-seen",
+      "arEnabled": true,
+      "temporaryCandidateOnly": true,
+      "passed": 247,
+      "failed": 1,
+      "failure": "German sitemap GET ECONNRESET; isolated rerun passed (1 test)",
+      "evidence": "evidence/final/candidate-subpath-e2e.log.gz",
+      "rerunEvidence": "evidence/final/candidate-subpath-retry.log.gz"
+    },
+    {
+      "mode": "preview",
+      "basePath": "/prompt-seen",
+      "arEnabled": false,
+      "passed": 216,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "evidence": "evidence/final/final-preview-e2e.log.gz"
+    }
+  ],
+  "pending": [
+    "native 200% browser zoom",
+    "actual Arabic screen-reader acceptance",
+    "human linguistic first-release signoff",
+    "deployment/live build ID",
+    "verified production rollback target"
+  ],
   "deployed": false,
-  "rollbackTarget": null
+  "rollbackTarget": null,
+  "testedCommit": "a87a434b1ef940ae23e20f88b7af8d1c4855ffe9",
+  "buildNote": "Each final build succeeded after one retry of the known build-end SecurityFatalError; no dependency changes. Registry restored byte-for-byte to disabled ar.",
+  "firstLoadJavaScript": {
+    "unit": "KiB gzip",
+    "prefetch": false,
+    "pages": {
+      "/ar/": 194.5,
+      "/ar/search/": 188.5,
+      "/ar/templates/product-poster/": 206.7
+    },
+    "evidence": "evidence/final/first-load.log.gz"
+  }
 }
