@@ -70,6 +70,11 @@
     .title {
       font-size: var(--text-display);
     }
+    /* Arabic keeps its generous line height for connected letters and marks. The page-title
+       scale leaves the prompt actions on the first screen (§11.8.1) even with a long heading. */
+    .title:lang(ar) {
+      font-size: var(--text-page-title);
+    }
   }
 
   .open,
