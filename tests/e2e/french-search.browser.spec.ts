@@ -115,12 +115,14 @@ if (french) {
             .first(),
         ).toBeVisible();
       }
+      // Cross-language help loads additional indexes after the local empty result. Use
+      // the same cold-index budget as the shared search and French interaction checks.
       if (example.query === '梅枝')
         await expect(
           page.locator(
             `[data-no-results] a[href="${BASE}/${BUILD.locales.find((locale) => locale.code === 'zh-Hans')!.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}"]`,
           ),
-        ).toBeVisible();
+        ).toBeVisible({ timeout: 15_000 });
     });
   }
 }
