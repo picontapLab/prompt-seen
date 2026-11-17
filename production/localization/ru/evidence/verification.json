@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-17T15:01:35.084Z",
+  "stage": "reviewed-pilot-preview",
+  "completeSpecification": false,
+  "build": {
+    "buildId": "ru-pilot-20261117",
+    "mode": "preview",
+    "basePath": "/prompt-seen",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ]
+  },
+  "coverage": {
+    "target": 381,
+    "visible": 381,
+    "fallback": 363,
+    "localCurrent": 18,
+    "indexable": 13,
+    "fieldsTotal": 2220,
+    "fieldsCurrent": 574,
+    "total": 381,
+    "published": 18,
+    "approved": 18,
+    "fields": 2220,
+    "missing": 363,
+    "draft": 0,
+    "outdated": 0,
+    "unreviewed": 0,
+    "archived": 0,
+    "invalid": 0,
+    "collection": 16,
+    "page": 2,
+    "prompt": 285,
+    "template": 75,
+    "topic": 3
+  },
+  "ready": false,
+  "enabledLocaleReadiness": [
+    {
+      "locale": "en",
+      "ready": true
+    },
+    {
+      "locale": "zh-Hans",
+      "ready": true
+    },
+    {
+      "locale": "es",
+      "ready": true
+    },
+    {
+      "locale": "pt-BR",
+      "ready": true
+    },
+    {
+      "locale": "ja",
+      "ready": true
+    },
+    {
+      "locale": "ko",
+      "ready": true
+    },
+    {
+      "locale": "de",
+      "ready": true
+    }
+  ],
+  "logs": [
+    {
+      "file": ".artifacts/localization/ru/all-unit.log",
+      "result": "67 files / 651 tests passed",
+      "sha256": "c67d0015f553c7058f211e8ed5ca6a57199a5887f9e63d69c605a221bc858890"
+    },
+    {
+      "file": ".artifacts/localization/ru/disabled-build.log",
+      "result": "root production build succeeded with ru excluded",
+      "sha256": "98a8174ac84c024256b334619d67f175576350a3c6aa212e2995d163aa3603f0"
+    },
+    {
+      "file": ".artifacts/localization/ru/disabled-e2e.log",
+      "result": "7 passed, 28 skipped (ru excluded)",
+      "sha256": "d389ba1ce38d49e2fdcd1c585a505a21fd48c3c93b8b3bba85d448c60af0c86c"
+    },
+    {
+      "file": ".artifacts/localization/ru/preview-build-retry.log",
+      "result": "subpath foundation preview build succeeded",
+      "sha256": "d0ca5922bbdf00d02f7f4b129be5a281c2b413fa6cc066954cdb4e78016f592e"
+    },
+    {
+      "file": ".artifacts/localization/ru/preview-e2e.log",
+      "result": "35 passed",
+      "sha256": "68dbaf6beab502cbd46f9d1f6b76ba5feed609024d54a37cf50b2d3090ba771a"
+    },
+    {
+      "file": ".artifacts/localization/ru/pilot-build-retry.log",
+      "result": "subpath pilot preview build succeeded",
+      "sha256": "91e451f37b5a5738ec5808ab4caac6b66bcbd9780c483b726b18020dd5b4a631"
+    },
+    {
+      "file": ".artifacts/localization/ru/pilot-verified-e2e.log",
+      "result": "41 passed",
+      "sha256": "7348fcad6123744c675c7496fcfe3a47099bc1dfa6cbac0f248753094c4724ef"
+    },
+    {
+      "file": ".artifacts/localization/ru/final-typecheck.log",
+      "result": "passed",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "file": ".artifacts/localization/ru/final-lint.log",
+      "result": "passed",
+      "sha256": "fe7cb912277b831aad68694e64bb3388dd7dc58656a03f8d3c8d8d443770307a"
+    },
+    {
+      "file": ".artifacts/localization/ru/pilot-strict.log",
+      "result": "expected failure: incomplete Russian coverage",
+      "sha256": "3790b4437e481f31996830c846f678fa0448162fc96a014624b84431d5788134"
+    }
+  ],
+  "limitations": [
+    "363 content units and 1646 fields remain missing.",
+    "No full-corpus production acceptance or performance certification.",
+    "Clipboard readback verified only in Chromium; preview/download verified in all three browsers.",
+    "No native-speaker review or human certification.",
+    "Next.js emitted a security-version warning; retries succeeded without dependency upgrades.",
+    "No production enablement, merge or deployment."
+  ]
+}

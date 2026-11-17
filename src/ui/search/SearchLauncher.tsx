@@ -8,7 +8,7 @@ import { registryCode } from '@/i18n/format-locale';
 import { preloadIndex } from '@/modules/search/client';
 import { paths, withBasePath } from '@/modules/url';
 import { preferencesStore } from '@/state/preferences/store';
-import { isEditable } from '@/ui/shortcuts/keys';
+import { isEditable, isSearchChord } from '@/ui/shortcuts/keys';
 import buttonStyles from '@/ui/primitives/Button.module.css';
 import { focusPageSearch } from './page-focus';
 import styles from './SearchLauncher.module.css';
@@ -61,7 +61,7 @@ export function SearchLauncher() {
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented || e.isComposing || e.keyCode === 229 || e.repeat) return;
       const mod = e.metaKey || e.ctrlKey;
-      if (mod && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {
+      if (isSearchChord(e)) {
         e.preventDefault();
         openSearch();
       } else if (

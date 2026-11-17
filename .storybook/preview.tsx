@@ -75,6 +75,7 @@ const preview: Preview = {
           { value: 'en', title: 'English (LTR)' },
           { value: 'zh-Hans', title: '简体中文' },
           { value: 'ja', title: '日本語' },
+          { value: 'ru', title: 'Русский' },
           { value: 'ar', title: 'العربية (RTL)' },
         ],
         dynamicTitle: true,

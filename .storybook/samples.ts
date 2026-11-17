@@ -3,6 +3,32 @@ import { registryCode } from '../src/i18n/format-locale';
 
 // Sample copy for stories, per toolbar locale, so RTL and CJK samples use real text (§16.5).
 const samples = {
+  ru: {
+    copy: 'Копировать промпт',
+    customize: 'Настроить',
+    share: 'Поделиться ссылкой',
+    save: 'Добавить в избранное',
+    reason: 'Заполните ещё 2 поля',
+    productName: 'Название товара',
+    productHelp: 'На постере, не более 40 символов.',
+    productError: 'Не более 40 символов в названии товара (сейчас 46).',
+    productValue: 'Керамическая кружка ручной работы с матовой глазурью',
+    notes: 'Примечания',
+    style: 'Стиль',
+    styles: ['Тушь', 'Пейзаж', 'Товар', 'Постер', 'Неон'],
+    aspect: 'Соотношение сторон',
+    filters: 'Активные фильтры',
+    language: 'Язык промпта',
+    dialogTitle: 'Восстановить пример по умолчанию?',
+    dialogBody: 'Текущие значения будут заменены. Отменить действие можно в течение нескольких секунд.',
+    cancel: 'Отмена',
+    reset: 'Сбросить',
+    saved: 'Сохранено на этом устройстве',
+    savedDetail: 'Избранное хранится в этом браузере.',
+    removed: 'Удалено из избранного',
+    undo: 'Отменить',
+    tooltip: 'Копировать (C)',
+  },
   en: {
     copy: 'Copy prompt',
     customize: 'Customize',

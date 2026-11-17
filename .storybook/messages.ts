@@ -30,10 +30,26 @@ import zhShell from '../src/i18n/messages/zh-Hans/shell.json';
 import zhSearch from '../src/i18n/messages/zh-Hans/search.json';
 import zhTemplates from '../src/i18n/messages/zh-Hans/templates.json';
 import { config } from '../src/config';
+import ruCommon from '../src/i18n/messages/ru/common.json';
+import ruDetail from '../src/i18n/messages/ru/detail.json';
+import ruFeed from '../src/i18n/messages/ru/feed.json';
+import ruPrimitives from '../src/i18n/messages/ru/primitives.json';
+import ruShell from '../src/i18n/messages/ru/shell.json';
+import ruSearch from '../src/i18n/messages/ru/search.json';
+import ruTemplates from '../src/i18n/messages/ru/templates.json';
 
-export type StoryLocale = 'en' | 'zh-Hans' | 'ja' | 'ar';
+export type StoryLocale = 'en' | 'zh-Hans' | 'ja' | 'ar' | 'ru';
 
 export const catalogs: Record<StoryLocale, Record<string, unknown>> = {
+  ru: {
+    common: ruCommon,
+    primitives: ruPrimitives,
+    shell: ruShell,
+    detail: ruDetail,
+    feed: ruFeed,
+    templates: ruTemplates,
+    search: ruSearch,
+  },
   en: {
     common: enCommon,
     primitives: enPrimitives,

@@ -1,0 +1,23 @@
+locale: ru
+terms:
+  - { concept: prompt, preferred: промпт, note: "Instruction to a model; distinct from the page description." }
+  - { concept: template, preferred: шаблон промпта, short: Шаблоны }
+  - { concept: ai-model, preferred: модель ИИ }
+  - { concept: collection, preferred: подборка }
+  - { concept: topic, preferred: тема }
+  - { concept: reference-image, preferred: референсное изображение }
+  - { concept: generated-image, preferred: сгенерированное изображение }
+  - { concept: product-photography, preferred: предметная съёмка, aliases: [packshot, "product photography"] }
+  - { concept: portrait, preferred: портрет, aliases: [портрета, портреты, портретов, portrait] }
+  - { concept: poster, preferred: постер, aliases: [постера, постеры, постеров, плакат, плакаты, poster] }
+  - { concept: sticker, preferred: стикер, aliases: [стикеры, наклейка, наклейки, sticker] }
+  - { concept: lighting, preferred: освещение, aliases: [освещения, lighting] }
+  - { concept: ink, preferred: тушь, aliases: [тушью, туши, ink] }
+  - { concept: copy, preferred: Копировать }
+  - { concept: download, preferred: Скачать }
+  - { concept: reset, preferred: Сбросить }
+  - { concept: not-verified, preferred: Не проверено }
+search:
+  inflections: "Finite corpus-backed groups in src/modules/search/profiles.ts, not arbitrary stemming."
+  normalization: "Fold ё/е and stress for retrieval; preserve й/и, ъ/ь and Latin/Cyrillic distinctions."
+  product_photography: "A complete phrase is required; generic photography does not imply a product."

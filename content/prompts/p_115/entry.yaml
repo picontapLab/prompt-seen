@@ -27,9 +27,11 @@ inputRequirements:
       fiktive, mit KI erzeugte Erwachsene.
     pt-BR: Envie primeiro a pessoa A e depois a pessoa B. As duas referências são
       adultos fictícios gerados por IA.
-    es: Sube primero a la persona A y después a la persona B. Ambas referencias
-      son adultos ficticios generados por IA.
+    es: Sube primero a la persona A y después a la persona B. Ambas referencias son
+      adultos ficticios generados por IA.
     ko: 인물 A를 먼저, 인물 B를 다음에 업로드하세요. 두 참조 인물 모두 AI로 생성한 가상 성인입니다.
+    ru: Сначала загрузите человека A, затем человека B. Оба референса — вымышленные
+      взрослые, созданные ИИ.
   slots:
     - id: personA
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Pessoa A
         es: Persona A
         ko: 인물 A
+        ru: Человек A
       min: 1
       max: 1
     - id: personB
@@ -51,6 +54,7 @@ inputRequirements:
         pt-BR: Pessoa B
         es: Persona B
         ko: 인물 B
+        ru: Человек B
       min: 1
       max: 1
 showcaseExampleId: x_160
@@ -76,6 +80,7 @@ inspirationSources:
       pt-BR: Vídeo completo de tutorial ou demonstração
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
+      ru: Весь обучающий или демонстрационный ролик
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -86,6 +91,7 @@ inspirationSources:
       pt-BR: Captura oficial da API pública
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -95,6 +101,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      ru: Полный оригинальный промпт не получен; самостоятельная адаптация
     metrics:
       - key: views
         value: 9416
@@ -106,6 +113,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          ru: Просмотры
       - key: likes
         value: 231
         labels:
@@ -116,6 +124,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ru: Лайки
       - key: saves
         value: 345
         labels:
@@ -126,6 +135,7 @@ inspirationSources:
           pt-BR: Salvamentos
           es: Guardados
           ko: 저장
+          ru: Сохранения
       - key: comments
         value: 139
         labels:
@@ -136,6 +146,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          ru: Комментарии
       - key: shares
         value: 65
         labels:
@@ -146,6 +157,7 @@ inspirationSources:
           pt-BR: Compartilhamentos
           es: Veces compartido
           ko: 공유
+          ru: Репосты
       - key: coins
         value: 208
         labels:
@@ -156,6 +168,7 @@ inspirationSources:
           pt-BR: Moedas
           es: Monedas
           ko: 코인
+          ru: Монеты
       - key: danmaku
         value: 4
         labels:
@@ -166,3 +179,4 @@ inspirationSources:
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
           ko: 화면 댓글
+          ru: Данмаку
