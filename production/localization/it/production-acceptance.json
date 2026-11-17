@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "status": "pending",
+  "recordedAt": "2026-11-17T16:46:48.648Z",
+  "implementationStatus": "passed",
+  "localCandidateStatus": "passed",
+  "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+  "candidateTree": "cae2b52c0b306947acf71c3c271bc487dedec158",
+  "branch": "codex/italian-localization",
+  "localEnvironment": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "next": "16.4.2",
+    "playwright": "1.64.1",
+    "browsers": [
+      {
+        "name": "chromium",
+        "revision": "1248",
+        "version": "156.0.8078.4"
+      },
+      {
+        "name": "firefox",
+        "revision": "1555",
+        "version": "157.0"
+      },
+      {
+        "name": "webkit",
+        "revision": "2370",
+        "version": "27.2"
+      }
+    ],
+    "note": "Local installed Playwright is 1.64.1. CI installs locked 1.65 for Chromium/WebKit and explicitly uses 1.64.1 for Firefox. Remote CI is still required; local results do not claim the different CI runtime was exercised."
+  },
+  "coverage": {
+    "evidence": "evidence/final-coverage.json",
+    "ready": true,
+    "blocking": false,
+    "sourceRevision": "223e2a43f4f3ebd39fff502f1e55923816bebea1:0688fbee830f77bc1212f9abd3cd35beb22972d0d7a39de817a3d1a8e65c7a11",
+    "scopeFingerprint": "sha256:ce69610862a5337435465b876b191198ae06aab4408ff75e6f5839e3b963bd86",
+    "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
+    "counts": {
+      "target": 381,
+      "visible": 381,
+      "fallback": 0,
+      "localCurrent": 381,
+      "indexable": 381,
+      "fieldsTotal": 2220,
+      "fieldsCurrent": 2220,
+      "total": 381,
+      "published": 381,
+      "approved": 381,
+      "fields": 2220,
+      "missing": 0,
+      "draft": 0,
+      "outdated": 0,
+      "unreviewed": 0,
+      "archived": 0,
+      "invalid": 0,
+      "collection": 16,
+      "page": 2,
+      "prompt": 285,
+      "template": 75,
+      "topic": 3
+    }
+  },
+  "allLocales": {
+    "evidence": "evidence/final-all-locales.json.gz",
+    "reports": [
+      {
+        "locale": "en",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "zh-Hans",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "es",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "pt-BR",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "ja",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "ko",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "de",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "it",
+        "ready": true,
+        "blocking": false
+      },
+      {
+        "locale": "ar",
+        "ready": false,
+        "blocking": false
+      }
+    ],
+    "note": "ar is a disabled preview locale and remains nonblocking; all eight enabled locales are ready."
+  },
+  "review": {
+    "reviewer": "same-agent AI Codex",
+    "independentHumanReview": false,
+    "nativeSpeakerReview": false,
+    "pages": 381,
+    "fields": 2220,
+    "normalizedSegments": 1520,
+    "promotedFullContentBatches": 37,
+    "evidence": [
+      "reviews.json",
+      "review-evidence.md",
+      "ui-review-evidence.md",
+      "batch-plan.json",
+      "media-review-provenance.json",
+      "preservation-audit.json"
+    ],
+    "preservation": true
+  },
+  "checks": {
+    "fullUnit": {
+      "files": 66,
+      "passed": 664,
+      "evidence": "evidence/full-unit.log",
+      "note": "Before the final ICU fix; final language-label regression rerun separately."
+    },
+    "finalLanguageRegression": {
+      "passed": 10,
+      "evidence": "evidence/italian-casing-green.log",
+      "preFixFailureEvidence": "evidence/italian-casing-red.log"
+    },
+    "frozenSearch": {
+      "passed": 25,
+      "evidence": "evidence/search-unit.log"
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "evidence": "evidence/final-typecheck.log"
+    },
+    "lint": {
+      "exitCode": 0,
+      "evidence": "evidence/final-lint.log"
+    },
+    "format": {
+      "exitCode": 0,
+      "evidence": "evidence/final-format.log"
+    },
+    "tokens": {
+      "exitCode": 0,
+      "evidence": "evidence/final-tokens.log"
+    }
+  },
+  "builds": [
+    {
+      "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+      "name": "disabled-comparison",
+      "mode": "production",
+      "base": "",
+      "disabled": true,
+      "build": {
+        "command": "npm run build",
+        "exitCode": 0,
+        "seconds": 76.888,
+        "evidence": "evidence/disabled-comparison-build.log"
+      },
+      "artifact": {
+        "buildId": "223e2a43f4f3",
+        "siteName": "Prompt Seen",
+        "buildMode": "production",
+        "origin": "https://promptseen.dev",
+        "basePath": "",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "es",
+            "pathPrefix": "es",
+            "nativeName": "Español",
+            "htmlLang": "es",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "pt-BR",
+            "pathPrefix": "pt-br",
+            "nativeName": "Português (Brasil)",
+            "htmlLang": "pt-BR",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          }
+        ]
+      },
+      "tests": {
+        "command": "npm run test:e2e -- italian\\.http\\.spec\\.ts$ --workers=1",
+        "exitCode": 0,
+        "seconds": 2.227,
+        "evidence": "evidence/disabled-comparison-e2e.log",
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0
+      },
+      "performance": {
+        "command": "node production/localization/it/measure-artifact.mjs",
+        "exitCode": 0,
+        "seconds": 41.683,
+        "evidence": "evidence/disabled-comparison-performance.json"
+      },
+      "status": "passed",
+      "search": null,
+      "performanceSummary": {
+        "files": 27704,
+        "totalBytes": 1743842023,
+        "htmlBytes": 331680971
+      }
+    },
+    {
+      "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+      "name": "root-production",
+      "mode": "production",
+      "base": "",
+      "build": {
+        "command": "npm run build",
+        "exitCode": 0,
+        "seconds": 78.496,
+        "evidence": "evidence/root-production-build.log"
+      },
+      "artifact": {
+        "buildId": "223e2a43f4f3",
+        "siteName": "Prompt Seen",
+        "buildMode": "production",
+        "origin": "https://promptseen.dev",
+        "basePath": "",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "es",
+            "pathPrefix": "es",
+            "nativeName": "Español",
+            "htmlLang": "es",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "pt-BR",
+            "pathPrefix": "pt-br",
+            "nativeName": "Português (Brasil)",
+            "htmlLang": "pt-BR",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "it",
+            "pathPrefix": "it",
+            "nativeName": "Italiano",
+            "htmlLang": "it",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          }
+        ]
+      },
+      "tests": {
+        "command": "npm run test:e2e -- italian[^/]*\\.spec\\.ts$ --workers=1",
+        "exitCode": 0,
+        "seconds": 262.758,
+        "evidence": "evidence/root-production-e2e.log",
+        "passed": 125,
+        "failed": 0,
+        "skipped": 0
+      },
+      "performance": {
+        "command": "node production/localization/it/measure-artifact.mjs",
+        "exitCode": 0,
+        "seconds": 81.987,
+        "evidence": "evidence/root-production-performance.json"
+      },
+      "status": "passed",
+      "search": {
+        "rawBytes": 1305463,
+        "gzipBytes": 233359,
+        "schemaVersion": 2,
+        "analyzerVersion": 7
+      },
+      "performanceSummary": {
+        "files": 31178,
+        "totalBytes": 1895145603,
+        "htmlBytes": 383724490
+      }
+    },
+    {
+      "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+      "name": "subpath-production",
+      "mode": "production",
+      "base": "/prompt-seen",
+      "build": {
+        "command": "npm run build",
+        "exitCode": 0,
+        "seconds": 55.439,
+        "evidence": "evidence/subpath-production-build.log"
+      },
+      "buildRetry": {
+        "command": "npm run build",
+        "exitCode": 1,
+        "seconds": 52.389,
+        "evidence": "evidence/subpath-production-build-security-stop.log",
+        "reason": "Next.js instructed retry of the identical command after its security upgrade notice; dependencies unchanged."
+      },
+      "artifact": {
+        "buildId": "223e2a43f4f3",
+        "siteName": "Prompt Seen",
+        "buildMode": "production",
+        "origin": "https://promptseen.dev",
+        "basePath": "/prompt-seen",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "es",
+            "pathPrefix": "es",
+            "nativeName": "Español",
+            "htmlLang": "es",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "pt-BR",
+            "pathPrefix": "pt-br",
+            "nativeName": "Português (Brasil)",
+            "htmlLang": "pt-BR",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "it",
+            "pathPrefix": "it",
+            "nativeName": "Italiano",
+            "htmlLang": "it",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          }
+        ]
+      },
+      "tests": {
+        "command": "npm run test:e2e -- italian[^/]*\\.spec\\.ts$ --workers=1",
+        "exitCode": 0,
+        "seconds": 258.561,
+        "evidence": "evidence/subpath-production-e2e.log",
+        "passed": 125,
+        "failed": 0,
+        "skipped": 0
+      },
+      "performance": {
+        "command": "node production/localization/it/measure-artifact.mjs",
+        "exitCode": 0,
+        "seconds": 82.01,
+        "evidence": "evidence/subpath-production-performance.json"
+      },
+      "status": "passed",
+      "search": {
+        "rawBytes": 1305463,
+        "gzipBytes": 233359,
+        "schemaVersion": 2,
+        "analyzerVersion": 7
+      },
+      "performanceSummary": {
+        "files": 31178,
+        "totalBytes": 1912022588,
+        "htmlBytes": 390556098
+      }
+    },
+    {
+      "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+      "name": "subpath-preview",
+      "mode": "preview",
+      "base": "/prompt-seen",
+      "build": {
+        "command": "npm run build",
+        "exitCode": 0,
+        "seconds": 54.471,
+        "evidence": "evidence/subpath-preview-build.log"
+      },
+      "buildRetry": {
+        "command": "npm run build",
+        "exitCode": 1,
+        "seconds": 50.015,
+        "evidence": "evidence/subpath-preview-build-security-stop.log",
+        "reason": "Next.js instructed retry of the identical command after its security upgrade notice; dependencies unchanged."
+      },
+      "artifact": {
+        "buildId": "223e2a43f4f3",
+        "siteName": "Prompt Seen",
+        "buildMode": "preview",
+        "origin": "https://promptseen.dev",
+        "basePath": "/prompt-seen",
+        "urlPattern": "{basePath}/{locale}/{path}",
+        "mediaBaseUrl": null,
+        "defaultLocale": "en",
+        "locales": [
+          {
+            "code": "en",
+            "pathPrefix": "en",
+            "nativeName": "English",
+            "htmlLang": "en",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "zh-Hans",
+            "pathPrefix": "zh-hans",
+            "nativeName": "简体中文",
+            "htmlLang": "zh-Hans",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "incremental",
+              "review": "metadata",
+              "promptBodies": "optional"
+            }
+          },
+          {
+            "code": "es",
+            "pathPrefix": "es",
+            "nativeName": "Español",
+            "htmlLang": "es",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "pt-BR",
+            "pathPrefix": "pt-br",
+            "nativeName": "Português (Brasil)",
+            "htmlLang": "pt-BR",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ja",
+            "pathPrefix": "ja",
+            "nativeName": "日本語",
+            "htmlLang": "ja",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ko",
+            "pathPrefix": "ko",
+            "nativeName": "한국어",
+            "htmlLang": "ko",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "de",
+            "pathPrefix": "de",
+            "nativeName": "Deutsch",
+            "htmlLang": "de",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "it",
+            "pathPrefix": "it",
+            "nativeName": "Italiano",
+            "htmlLang": "it",
+            "direction": "ltr",
+            "enabled": true,
+            "localization": {
+              "coverage": "complete",
+              "review": "fingerprint",
+              "promptBodies": "source-only"
+            }
+          },
+          {
+            "code": "ar",
+            "pathPrefix": "ar",
+            "nativeName": "العربية",
+            "htmlLang": "ar",
+            "direction": "rtl",
+            "enabled": false,
+            "localization": {
+              "coverage": "incremental",
+              "review": "fingerprint",
+              "promptBodies": "optional"
+            }
+          }
+        ]
+      },
+      "tests": {
+        "command": "npm run test:e2e -- italian[^/]*\\.spec\\.ts$ --workers=1",
+        "exitCode": 0,
+        "seconds": 255.865,
+        "evidence": "evidence/subpath-preview-e2e.log",
+        "passed": 125,
+        "failed": 0,
+        "skipped": 0
+      },
+      "performance": {
+        "command": "node production/localization/it/measure-artifact.mjs",
+        "exitCode": 0,
+        "seconds": 82.031,
+        "evidence": "evidence/subpath-preview-performance.json"
+      },
+      "status": "passed",
+      "search": {
+        "rawBytes": 1305463,
+        "gzipBytes": 233359,
+        "schemaVersion": 2,
+        "analyzerVersion": 7
+      },
+      "performanceSummary": {
+        "files": 31844,
+        "totalBytes": 1991581983,
+        "htmlBytes": 418496306
+      }
+    }
+  ],
+  "interactionCoverage": {
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "widths": [
+      360,
+      768,
+      1024,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "zoomEquivalentCssWidth": 720,
+    "clipboardReadback": "Chromium; Firefox/WebKit verify UI behavior without unavailable clipboard permissions.",
+    "screenshots": [
+      "evidence/screenshots/360-light.png",
+      "evidence/screenshots/360-dark.png",
+      "evidence/screenshots/1440-light.png",
+      "evidence/screenshots/1440-dark.png"
+    ],
+    "notes": "evidence/validation-notes.md"
+  },
+  "performance": {
+    "baseline": "evidence/disabled-comparison-performance.json",
+    "candidate": "evidence/root-production-performance.json",
+    "filesAdded": 3474,
+    "totalBytesAdded": 151303580,
+    "htmlBytesAdded": 52043519,
+    "italianSearch": {
+      "rawBytes": 1305463,
+      "gzipBytes": 233359,
+      "schemaVersion": 2,
+      "analyzerVersion": 7
+    },
+    "englishFirstLoadDeltaBytes": [
+      {
+        "path": "/",
+        "bytes": 9
+      },
+      {
+        "path": "/en/prompts/",
+        "bytes": 10
+      },
+      {
+        "path": "/en/templates/birthday-main-character-card/",
+        "bytes": 10
+      }
+    ],
+    "ordinaryPageSearchPreload": false,
+    "budgetAssessment": "Italian matches the English baseline: home about 194 KiB, list about 203 KiB, template about 206 KiB gzip. The list is already about 203 KiB with Italian disabled; the template retains its documented editor exception. No new budget relaxation. Each sampled page uses the same six font files (123.1 KiB). Local timings are single observations with warm caches, not controlled benchmarks or real-user Core Web Vitals."
+  },
+  "ci": {
+    "status": "pending",
+    "runId": null,
+    "url": null,
+    "note": "Three build configurations and nine browser jobs are configured with release-gate enforcement. Full repository-wide browser CI has not been executed remotely for this branch."
+  },
+  "deployment": {
+    "status": "not-performed",
+    "commit": null,
+    "deploymentId": null,
+    "buildId": null,
+    "liveSmoke": null,
+    "previousSuccessfulDeploymentId": null,
+    "previousSuccessfulBuildId": null
+  },
+  "remaining": [
+    "Run remote repository-wide CI on the eventual release commit.",
+    "Use the existing release process and record actual deployment/build IDs, live smoke checks and the prior rollback target."
+  ],
+  "maintenanceRisk": "Existing Next.js 16.4.2 emitted security upgrade notices during builds; identical retries succeeded. Dependencies were not upgraded in this localization task.",
+  "buildInterruptions": [
+    "evidence/disabled-comparison-build-first-attempt.log",
+    "evidence/root-production-build-first-attempt.log",
+    "evidence/subpath-preview-build-security-stop.log",
+    "evidence/subpath-production-build-security-stop.log"
+  ]
+}

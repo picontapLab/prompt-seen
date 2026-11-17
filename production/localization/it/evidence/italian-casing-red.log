@@ -1,0 +1,82 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+ RUN  v5.0.5 /Users/hp/.codex/worktrees/italian-localization/prompt-seen
+
+ ❯ src/ui/prompt-detail/language.test.ts (10 tests | 4 failed) 17ms
+   × keeps Italian en labels stable across Node and WebKit ICU versions 15ms
+   × keeps Italian zh-Hans labels stable across Node and WebKit ICU versions 1ms
+   × keeps Italian ja labels stable across Node and WebKit ICU versions 0ms
+   × keeps Italian pt-BR labels stable across Node and WebKit ICU versions 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/prompt-detail/language.test.ts > keeps Italian en labels stable across Node and WebKit ICU versions
+AssertionError: expected 'Inglese' to be 'inglese' // Object.is equality
+
+Expected: "inglese"
+Received: "Inglese"
+
+ ❯ src/ui/prompt-detail/language.test.ts:15:43
+     13|   for (const label of [expected!, expected!.charAt(0).toLocaleUpperCas…
+     14|     display.mockReturnValue(label);
+     15|     expect(languageName(language!, 'it')).toBe(expected);
+       |                                           ^
+     16|   }
+     17|   display.mockReturnValue(language);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/ui/prompt-detail/language.test.ts > keeps Italian zh-Hans labels stable across Node and WebKit ICU versions
+AssertionError: expected 'Cinese semplificato' to be 'cinese semplificato' // Object.is equality
+
+Expected: "cinese semplificato"
+Received: "Cinese semplificato"
+
+ ❯ src/ui/prompt-detail/language.test.ts:15:43
+     13|   for (const label of [expected!, expected!.charAt(0).toLocaleUpperCas…
+     14|     display.mockReturnValue(label);
+     15|     expect(languageName(language!, 'it')).toBe(expected);
+       |                                           ^
+     16|   }
+     17|   display.mockReturnValue(language);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/ui/prompt-detail/language.test.ts > keeps Italian ja labels stable across Node and WebKit ICU versions
+AssertionError: expected 'Giapponese' to be 'giapponese' // Object.is equality
+
+Expected: "giapponese"
+Received: "Giapponese"
+
+ ❯ src/ui/prompt-detail/language.test.ts:15:43
+     13|   for (const label of [expected!, expected!.charAt(0).toLocaleUpperCas…
+     14|     display.mockReturnValue(label);
+     15|     expect(languageName(language!, 'it')).toBe(expected);
+       |                                           ^
+     16|   }
+     17|   display.mockReturnValue(language);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/ui/prompt-detail/language.test.ts > keeps Italian pt-BR labels stable across Node and WebKit ICU versions
+AssertionError: expected 'Portoghese (Brasile)' to be 'portoghese (Brasile)' // Object.is equality
+
+Expected: "portoghese (Brasile)"
+Received: "Portoghese (Brasile)"
+
+ ❯ src/ui/prompt-detail/language.test.ts:15:43
+     13|   for (const label of [expected!, expected!.charAt(0).toLocaleUpperCas…
+     14|     display.mockReturnValue(label);
+     15|     expect(languageName(language!, 'it')).toBe(expected);
+       |                                           ^
+     16|   }
+     17|   display.mockReturnValue(language);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 6 passed (10)
+   Start at  08:16:18
+   Duration  133ms (tests 40%, transform 38%, import 17%, worker 6%)
+

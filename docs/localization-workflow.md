@@ -122,6 +122,14 @@ current coverage and separate production acceptance evidence for deployment stat
 Spanish follows `docs/spanish-localization-spec.md`; its preparation state and
 remaining gates are recorded under `production/localization/es/`.
 
+Italian is enabled in the implementation candidate with `complete/fingerprint/source-only`.
+The 2026-11-17 strict report covers 381 current pages and 2,220 current fields with no
+fallback. New public content and shared-message changes must maintain that complete
+coverage and current review fingerprints. Original Prompt bodies, template executable
+values and media bytes remain unchanged. See `docs/italian-localization-spec.md` and
+`production/localization/it/production-acceptance.json` for the candidate checks and
+remaining CI/deployment gates; a candidate registry flag does not certify a live deployment.
+
 ### Search acceptance with localized prose
 
 Prompt and template search documents include visible explanatory body text alongside

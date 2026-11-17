@@ -1,6 +1,6 @@
 # 意大利语接入实施规格
 
-状态：独立 worktree 已完成全量译文、指纹审校及搜索实现；候选启用，产物验收中，尚未部署。日期：2026-11-17（America/Los_Angeles）。工程基线：`53cbc8efce854f8f067acef8372daf49be82f9c3`。
+状态：独立 worktree 已完成实现及本地候选验收；候选启用，远程 CI 与正式部署待执行。日期：2026-11-17（America/Los_Angeles）。工程基线：`53cbc8efce854f8f067acef8372daf49be82f9c3`；已验收代码提交：`223e2a43f4f3ebd39fff502f1e55923816bebea1`。
 
 实现分支：`codex/italian-localization`。本地化证据位于 `production/localization/it/`。严格检查已达到 381 个 current 页面、2,220 个 current 字段和零回退；实际部署与最终验收以该目录的验收记录为准。下文第 2 节保留开工时的历史基线。
 
@@ -104,12 +104,13 @@ policyFingerprint: sha256:dcedc10f1845b90bbf4acfe68b922f6a9d9b88c80589fe6e6b6072
 | `src/modules/search/tokenize.test.ts`、`engine.test.ts` | 字符、spans、别名与负例；不依赖模糊搜索碰巧通过 |
 | 新增 `scripts/lib/localization/italian-search.test.ts` | 冻结真实语料检索，序列化再加载后的引擎验收 |
 | `src/i18n/catalog.test.ts`、`format-locale.test.ts`、`src/ui/pages/language-match.test.ts` | ICU 编译一致性、复数、数字日期和语言建议 |
-| 新增 `tests/e2e/italian.http.spec.ts`、`italian.browser.spec.ts`、`tests/e2e/support/italian.ts` | 状态、SEO、真实 Worker、交互和排版；HTTP/浏览器共用状态断言 |
+| `src/ui/prompt-detail/language.ts`、`language.test.ts` | 统一 Node/WebKit 对意大利语语言名称的首字母大小写，避免首页水合错误 |
+| 新增 `tests/e2e/italian.http.spec.ts`、`italian-content.http.spec.ts`、`italian.browser.spec.ts`、`tests/e2e/support/italian.ts` | 状态、SEO、真实 Worker、交互和排版；HTTP/浏览器共用状态断言 |
 | `tests/support/localization-search.ts` | 复用现有 case 类型和 `searchRecord`；需要时共享完整结果负例断言 |
-| `.github/workflows/ci.yml` | 候选及启用后显式要求 it 存在，留存报告与验收产物 |
+| `.github/workflows/ci.yml`、`scripts/deploy-gate.ts` 及测试 | 三份构建、九个浏览器任务，候选及启用后显式要求 it 存在，发布门禁同步要求新增任务 |
 | `README.md`、`docs/localization-workflow.md`、总体设计 §8 | 实施完成时同步实际状态与维护合同 |
 
-准备目录在实施时创建，以下文件不是本次已完成的翻译或验收证据：
+实施目录如下；已执行项及待执行的远程 CI、部署检查以 `production-acceptance.json` 为准：
 
 ```text
 production/localization/it/
@@ -446,13 +447,18 @@ IT_EXPECT_STATE=enabled PW_BROWSERS=chromium,firefox,webkit npm run test:e2e -- 
 
 ### 10.4 完成条件与证据
 
-- [ ] it 为 complete/fingerprint/source-only，scope 覆盖最新公开目标，移除均有证据。
-- [ ] 最新报告 ready=true、blocking=false；localCurrent=indexable=target；fieldsCurrent=fieldsTotal；missing/draft/outdated/unreviewed/archived/invalid/fallback 均为 0。
-- [ ] 页面、字段和消息均有当前指纹的真实审校；媒体、交互和事实保留项有可追溯证据。
-- [ ] 冻结搜索、重音、省音、别名负例和高亮通过，其他语言搜索及发布门禁未退化。
-- [ ] 第 8 节用户流程、浏览器/宽度/主题/缩放/无障碍验收完成，原始 Prompt 和生成事实保持一致。
-- [ ] root/subpath 生产及 subpath 预览通过，成本记录符合既有预算，CI 结果关联同一候选提交。
+- [x] it 为 complete/fingerprint/source-only，scope 覆盖最新公开目标，移除均有证据。
+- [x] 最新报告 ready=true、blocking=false；localCurrent=indexable=target；fieldsCurrent=fieldsTotal；missing/draft/outdated/unreviewed/archived/invalid/fallback 均为 0。
+- [x] 页面、字段和消息均有当前指纹的真实审校；媒体、交互和事实保留项有可追溯证据。审校为同一 AI 作者复审，非独立母语人工审校。
+- [x] 冻结搜索、重音、省音、别名负例和高亮通过，其他语言搜索单元回归及所有 enabled 语言的发布策略检查通过。
+- [x] 第 8 节本地用户流程、浏览器/宽度/主题/缩放等效视口/无障碍验收完成，原始 Prompt 和生成事实保持一致。
+- [x] root/subpath 生产及 subpath 预览本地验收通过，成本记录完成，候选代码提交固定。
+- [ ] 远程全仓库 CI 结果关联实际待发布提交；本地定向验收不能替代该门禁。
 - [ ] 正式部署的实际 build ID、线上冒烟、上一成功部署和文档状态均已记录。
+
+本地结果：三份候选分别通过 125 项 HTTP/浏览器测试，合计 375 项，零失败、零跳过；禁用对照另通过 1 项。完整单元回归 66 文件 / 664 项通过；随后为实际发现的 Node/WebKit 意大利语语言名称大小写差异新增 4 项失败→通过回归，最终语言标签套件 10 项通过。类型、lint、格式与 token 检查通过。实际浏览器运行时是本机 Playwright 1.64.1（Chromium 156、Firefox 157、WebKit 27.2）；CI 的 Chromium/WebKit 使用锁定的 1.65，Firefox 使用 1.64.1，需按 CI 配置再验证。详细失败诊断与重试见 `production/localization/it/evidence/validation-notes.md`。
+
+启用对照：英语首页/列表/模板首屏 JS 分别仅增加 9/10/10 字节；意大利语对应页面约 194.2/202.6/206.5 KiB gzip。列表在禁用态已约 202.6 KiB，模板沿用已有编辑器预算例外，未为新增语言放宽预算。英/意样本均使用相同六个字体文件，约 123.1 KiB；普通页面没有预载完整搜索索引。意大利语索引 raw 1,305,463 字节，gzip 233,359 字节（schema 2、analyzer 7）。根生产产物增加 3,474 个文件、151,303,580 字节，其中 HTML 增加 52,043,519 字节；构建时间是本机单次、含缓存的观测，不能作为稳定性能倍率。完整记录见 `production/localization/it/production-acceptance.json`。
 
 `production-acceptance.json` 是事实记录，顶层至少含 schemaVersion 1、locale it、status（pending/failed/passed）、实际时间和完整候选/发布 commit。每份构建记录 mode、origin、basePath、enabled locales、build ID、搜索 schema/analyzer 版本、命令/退出码、pass/fail/skip 数和证据位置；同时保存覆盖报告三个指纹、counts、译审台账、保留项对照、媒体与交互证据、性能对照、deployment ID、线上结果和上一成功 deployment/build ID。大型日志和 trace 可放 CI artifact，但摘要必须提供可追溯位置。
 
