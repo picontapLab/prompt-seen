@@ -15,6 +15,8 @@ instructions:
     référence extérieure est facultative.
   it: Fornisci il concept del prodotto, un colore d’accento e le caratteristiche del design; un
     riferimento dell’esterno è facoltativo.
+  ru: Укажите концепцию продукта, акцентный цвет и особенности дизайна; референс внешнего вида
+    необязателен.
 slots:
   - id: product
     labels:
@@ -28,5 +30,6 @@ slots:
       zh-Hant: 產品外觀
       fr: Produit
       it: Prodotto
+      ru: Товар
     min: 0
     max: 1

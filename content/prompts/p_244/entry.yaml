@@ -35,6 +35,8 @@ inputRequirements:
       un footballeur adulte fictif généré par Prompt Seen.
     it: Carica un ritratto con abiti e ambiente riconoscibili. Questo esempio usa un calciatore adulto
       immaginario generato da Prompt Seen.
+    ru: Загрузите портрет с узнаваемыми одеждой и окружением. В этом примере использован вымышленный
+      взрослый футболист, созданный Prompt Seen.
   slots:
     - id: person
       labels:
@@ -48,6 +50,7 @@ inputRequirements:
         zh-Hant: 本站生成的示例參考圖
         fr: Référence générée pour le projet
         it: Riferimento generato dal progetto
+        ru: Референс, созданный для проекта
       min: 1
       max: 1
 showcaseExampleId: x_308
@@ -71,6 +74,7 @@ inspirationSources:
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
       fr: Publication ou galerie originale entière ; pas cet exemple généré
       it: Intero post o galleria originale, non questo esempio generato
+      ru: Вся исходная публикация или галерея, а не этот сгенерированный пример
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -89,6 +93,8 @@ inspirationSources:
         réponse de l’auteur
       it: Istantanea pubblica X salvata; prompt completo dalla copia salvata del post o della risposta
         dell’autore
+      ru: Сохранённый снимок публичной публикации X; полный промпт из сохранённого зеркала авторской
+        публикации или ответа
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118562099987398753&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -101,6 +107,7 @@ inspirationSources:
       zh-Hant: 完整作者原詞，保留原語言
       fr: Texte complet de l’auteur, langue originale
       it: Testo completo dell’autore nella lingua originale
+      ru: Полный авторский текст на исходном языке
     metrics:
       - key: likes
         value: 21
@@ -115,6 +122,7 @@ inspirationSources:
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
           it: Mi piace del post originale
+          ru: Лайки исходной публикации
 source:
   author: Goodmanprotocol
   url: https://x.com/Goodmanprotocol/status/2118562099987398753

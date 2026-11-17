@@ -42,9 +42,12 @@ export function normalizeTerm(text: string, locale: string): string {
       .normalize('NFD')
       .replace(
         /(\p{Script=Latin}|\p{Script=Greek}|\p{Script=Cyrillic})(\p{M}+)/gu,
-        (_match, base: string, marks: string) =>
-          // In Spanish ñ is a letter, not an accent variant of n (§9.1 Spanish spec).
-          language === 'es' && base === 'n' && marks.includes('\u0303') ? 'ñ' : base,
+        (_match, base: string, marks: string) => {
+          // ñ and й are distinct letters; ё/е remain searchable spelling variants.
+          if (language === 'es' && base === 'n' && marks.includes('\u0303')) return 'ñ';
+          if (language === 'ru' && base === 'и' && marks.includes('\u0306')) return 'й';
+          return base;
+        },
       )
       .normalize('NFC');
   }

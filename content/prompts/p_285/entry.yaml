@@ -35,6 +35,8 @@ inputRequirements:
       les textes dans l’image en anglais.
     it: Carica una foto nitida di un cane. Il riferimento dimostrativo è generato con l’IA. Mantieni
       tutte le scritte in inglese.
+    ru: Загрузите одну чёткую фотографию собаки. Демонстрационный референс создан ИИ. Сохраните все
+      надписи на английском.
   slots:
     - id: pet
       labels:
@@ -48,6 +50,7 @@ inputRequirements:
         zh-Hant: 狗狗照片
         fr: Photo du chien
         it: Foto del cane
+        ru: Фотография собаки
       min: 1
       max: 1
 showcaseExampleId: x_349
@@ -75,6 +78,7 @@ annotations:
       zh-Hant: 四格明確故事的閱讀順序。
       fr: Quatre cases établissent la séquence de l’histoire.
       it: Quattro riquadri stabiliscono la sequenza della storia.
+      ru: Четыре панели задают последовательность истории.
   - phrase: warm storybook illustration
     region:
       x: 0.02
@@ -92,3 +96,4 @@ annotations:
       zh-Hant: 溫暖插畫讓故事保持親切感。
       fr: L’illustration chaleureuse donne à l’histoire un ton accueillant.
       it: L’illustrazione calda dà alla storia un tono amichevole.
+      ru: Тёплая иллюстрация придаёт истории дружелюбный тон.

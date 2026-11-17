@@ -35,6 +35,8 @@ inputRequirements:
       utilisez le prompt adapté complet.
     it: Carica le 1 immagini di riferimento generate dal progetto nell’ordine mostrato (R09-action), poi
       usa il prompt adattato completo.
+    ru: Загрузите 1 референсное изображение, созданное для проекта, в показанном порядке (R09-action),
+      затем используйте полный адаптированный промпт.
   slots:
     - id: reference1
       labels:
@@ -48,6 +50,7 @@ inputRequirements:
         zh-Hant: 十二格動作參考表
         fr: Planche d’action en douze poses
         it: Tavola d’azione in dodici pose
+        ru: Схема действия из двенадцати поз
       min: 1
       max: 1
 showcaseExampleId: x_363
@@ -72,6 +75,7 @@ inspirationSources:
       fr: Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de
         cette adaptation
       it: Intero post originale; condiviso dalle varianti, non questo adattamento
+      ru: Вся исходная публикация; показатели общие для вариантов и не относятся к этой адаптации
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -85,6 +89,7 @@ inspirationSources:
       zh-Hant: 歸檔的 X 公開快照與完整作者原詞
       fr: Relevé public X archivé et prompt complet de l’auteur
       it: Istantanea pubblica X archiviata e prompt completo dell’autore
+      ru: Архивный снимок публичной публикации X и полный авторский промпт
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118186300339892472&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -97,6 +102,7 @@ inspirationSources:
       zh-Hant: 獨立改編；完整原詞另存檔案
       fr: Adaptation indépendante ; original complet conservé séparément
       it: Adattamento indipendente; originale completo conservato separatamente
+      ru: Самостоятельная адаптация; полный оригинал сохранён отдельно
     metrics:
       - key: likes
         value: 124
@@ -111,6 +117,7 @@ inspirationSources:
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
           it: Mi piace del post originale
+          ru: Лайки исходной публикации
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/crayon1267/status/2118186300339892472

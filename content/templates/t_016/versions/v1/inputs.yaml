@@ -12,6 +12,7 @@ instructions:
   fr: Indiquez un nom de marque fictif, une palette et une ambiance ; un logo existant est facultatif.
   it: Fornisci un nome di marchio immaginario, una palette e un’atmosfera; un logo esistente è
     facoltativo.
+  ru: Укажите вымышленное название бренда, палитру и настроение; существующий логотип необязателен.
 slots:
   - id: logo
     labels:
@@ -25,5 +26,6 @@ slots:
       zh-Hant: 標誌
       fr: Logo
       it: Logo
+      ru: Логотип
     min: 0
     max: 1

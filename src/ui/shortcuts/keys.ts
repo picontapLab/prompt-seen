@@ -19,6 +19,12 @@ export type KeyLike = Pick<
   'key' | 'keyCode' | 'altKey' | 'ctrlKey' | 'metaKey' | 'shiftKey' | 'isComposing' | 'repeat' | 'defaultPrevented'
 >;
 
+/** Keep the search chord usable when the physical K key produces Cyrillic л. */
+export function isSearchChord(e: KeyLike & Pick<KeyboardEvent, 'code'>): boolean {
+  if (e.defaultPrevented || e.isComposing || e.keyCode === 229 || e.repeat) return false;
+  return (e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && (e.key.toLowerCase() === 'k' || e.code === 'KeyK');
+}
+
 /** The single-key shortcut a key press asks for, or null. `?` needs Shift on most layouts. */
 export function singleKeyAction(e: KeyLike): 'copy' | 'save' | 'help' | null {
   // 229: a key that an input method is processing (Safari reports it without isComposing).

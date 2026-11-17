@@ -10,6 +10,7 @@ instructions:
   zh-Hant: 上傳一張商品或人物照片，並提供品牌名稱與配色。
   fr: Importez une photo de produit ou de personne et indiquez un nom de marque et une palette.
   it: Carica una foto di un prodotto o di una persona e indica il nome della marca e la palette.
+  ru: Загрузите одну фотографию товара или человека и задайте название бренда и палитру.
 slots:
   - id: subject
     labels:
@@ -23,5 +24,6 @@ slots:
       zh-Hant: 人物或產品照片
       fr: Sujet
       it: Soggetto
+      ru: Объект
     min: 1
     max: 1

@@ -10,6 +10,7 @@ instructions:
   zh-Hant: 提供物件名稱與簡短標註；外觀參考圖片為選填。
   fr: Indiquez un objet et de courtes légendes ; une référence extérieure est facultative.
   it: Fornisci un oggetto e brevi etichette; un riferimento dell’esterno è facoltativo.
+  ru: Укажите предмет и короткие подписи; референс внешнего вида необязателен.
 slots:
   - id: object
     labels:
@@ -23,5 +24,6 @@ slots:
       zh-Hant: 物件外觀
       fr: Objet
       it: Oggetto
+      ru: Предмет
     min: 0
     max: 1

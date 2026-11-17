@@ -10,6 +10,7 @@ instructions:
   zh-Hant: 上傳已驗證的地圖，並提供已核對的目的地與路線說明。
   fr: Importez une carte vérifiée et fournissez des destinations et des notes d’itinéraire contrôlées.
   it: Carica una mappa verificata e indica destinazioni e note sull’itinerario controllate.
+  ru: Загрузите проверенную карту и задайте проверенные пункты назначения и описание маршрута.
 slots:
   - id: map
     labels:
@@ -23,5 +24,6 @@ slots:
       zh-Hant: 核對後的地圖
       fr: Carte
       it: Mappa
+      ru: Карта
     min: 1
     max: 1

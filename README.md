@@ -318,6 +318,7 @@ Project facts:
 - [Korean localization specification](docs/korean-localization-spec.md): complete content coverage, Korean search and input methods, acceptance and release gates.
 - [French localization specification](docs/french-localization-spec.md): complete coverage, fingerprint review, French search behavior and the three-build acceptance matrix. Implementation evidence and remaining release gates are in `production/localization/fr/`.
 - [Italian localization specification](docs/italian-localization-spec.md): complete source-only coverage, Italian search, fingerprint reviews and candidate acceptance.
+- [Russian localization specification](docs/russian-localization-spec.md): staged preparation, Russian search and keyboard support, translation review and release gates. [Implementation status](production/localization/ru/implementation-status.md).
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses

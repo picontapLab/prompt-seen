@@ -35,6 +35,8 @@ inputRequirements:
       pas les images des sources officielles ou des réseaux sociaux.
     it: Usa i riferimenti generati autonomamente nell’ordine mostrato. Non usare le immagini ufficiali o
       delle fonti social.
+    ru: Используйте независимо сгенерированные референсы в показанном порядке. Не используйте
+      изображения из официальных источников или соцсетей.
   slots:
     - id: reference
       labels:
@@ -48,6 +50,7 @@ inputRequirements:
         zh-Hant: 原創生成參考圖
         fr: Référence synthétique originale
         it: Riferimento sintetico originale
+        ru: Оригинальный синтетический референс
       min: 1
       max: 1
 showcaseExampleId: x_292
@@ -77,6 +80,8 @@ inspirationSources:
         publication partagent les mêmes indicateurs.
       it: Post originale, non questo nuovo risultato generato. Più casi dallo stesso post condividono le
         metriche.
+      ru: Исходная публикация, а не этот новый сгенерированный результат. У нескольких примеров из одной
+        публикации общие показатели.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -94,6 +99,8 @@ inspirationSources:
       fr: "Recherche antérieure : page consultée directement et examen visuel. Les compteurs n’ont pas été
         actualisés."
       it: "Ricerca precedente: pagina diretta e revisione visiva. I conteggi non sono stati aggiornati."
+      ru: "Предыдущее исследование: просмотр страницы источника и визуальная проверка. Счётчики не
+        обновлялись."
     evidenceUrl: https://x.com/Gorden_Sun/status/2118166046175908016
     sourcePromptStatus:
       en: The source provides an original prompt; this production uses the separately recorded working
@@ -112,6 +119,8 @@ inspirationSources:
         séparément.
       it: La fonte fornisce un prompt originale; questa produzione usa il prompt operativo registrato
         separatamente.
+      ru: Источник содержит оригинальный промпт; для этой работы использован отдельно записанный рабочий
+        промпт.
     metrics:
       - key: likes
         value: 14
@@ -126,6 +135,7 @@ inspirationSources:
           zh-Hant: 按讚
           fr: Mentions J’aime
           it: Mi piace
+          ru: Лайки
       - key: reposts
         value: 1
         labels:
@@ -139,6 +149,7 @@ inspirationSources:
           zh-Hant: 轉發
           fr: Republications
           it: Ripubblicazioni
+          ru: Репосты
 source:
   author: Prompt Seen
   url: null

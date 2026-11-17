@@ -13,6 +13,7 @@ fields:
       zh-Hant: 點綴色
       fr: Couleur d’accent
       it: Colore d’accento
+      ru: Акцентный цвет
     help:
       en: Changing this value creates an untested variant. Keep related content consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
@@ -26,6 +27,8 @@ fields:
       fr: Modifier cette valeur crée une variante non testée. Gardez les contenus associés cohérents.
       it: Cambiare questo valore crea una variante non verificata. Mantieni coerenti i contenuti
         correlati.
+      ru: Изменение этого значения создаёт непроверенный вариант. Сохраняйте согласованность связанного
+        содержимого.
     type: string
     default: orange
     minLength: 1

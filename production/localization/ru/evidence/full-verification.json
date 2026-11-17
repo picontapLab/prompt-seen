@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-17T16:27:05.009884+00:00",
+  "stage": "reviewed-full-content-preview",
+  "completeSpecification": false,
+  "build": {
+    "buildId": "ru-full-content-20261117",
+    "mode": "preview",
+    "basePath": "/prompt-seen",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ]
+  },
+  "coverage": {
+    "target": 381,
+    "visible": 381,
+    "fallback": 0,
+    "localCurrent": 381,
+    "indexable": 381,
+    "fieldsTotal": 2220,
+    "fieldsCurrent": 2220,
+    "total": 381,
+    "published": 381,
+    "approved": 381,
+    "fields": 2220,
+    "missing": 0,
+    "draft": 0,
+    "outdated": 0,
+    "unreviewed": 0,
+    "archived": 0,
+    "invalid": 0,
+    "collection": 16,
+    "page": 2,
+    "prompt": 285,
+    "template": 75,
+    "topic": 3
+  },
+  "ready": true,
+  "enabledLocaleReadiness": [
+    {
+      "locale": "en",
+      "ready": true
+    },
+    {
+      "locale": "zh-Hans",
+      "ready": true
+    },
+    {
+      "locale": "es",
+      "ready": true
+    },
+    {
+      "locale": "pt-BR",
+      "ready": true
+    },
+    {
+      "locale": "ja",
+      "ready": true
+    },
+    {
+      "locale": "ko",
+      "ready": true
+    },
+    {
+      "locale": "de",
+      "ready": true
+    }
+  ],
+  "importBatchId": "2acf3a8836ff82677767153584e6675631cd1258b9472be594243bf3c7ca9256",
+  "checks": [
+    {
+      "command": "npm run locale:check -- --locale ru --strict",
+      "result": "passed"
+    },
+    {
+      "command": "npm run content:validate",
+      "result": "passed",
+      "errors": 0,
+      "publishErrors": 0,
+      "existingWarnings": 10,
+      "unusedMediaNotices": 1
+    },
+    {
+      "command": "npx vitest run --maxWorkers=1",
+      "result": "passed",
+      "files": 67,
+      "tests": 651
+    },
+    {
+      "command": "BASE_PATH=/prompt-seen BUILD_MODE=preview BUILD_ID=ru-full-content-20261117 npm run build",
+      "result": "passed"
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "result": "passed"
+    },
+    {
+      "command": "npm run lint; npx eslint --max-warnings=0 tests/e2e/russian.http.spec.ts",
+      "result": "passed"
+    },
+    {
+      "command": "PW_BROWSERS=chromium,firefox,webkit RU_ACCEPTANCE=1 RU_FULL_ACCEPTANCE=1 RU_PILOT_ACCEPTANCE=1 PORT=8097 npx playwright test tests/e2e/russian.http.spec.ts tests/e2e/russian.browser.spec.ts tests/e2e/templates.http.spec.ts --grep 'Russian|ru:' --workers=3",
+      "result": "44 passed, 1 skipped, 1 failed before correcting test scope comparison",
+      "note": "All 36 browser checks and 4 Russian template HTTP checks passed; the one failing full-corpus HTTP check was corrected and rerun below."
+    },
+    {
+      "command": "PW_BROWSERS=chromium,firefox,webkit RU_ACCEPTANCE=1 RU_FULL_ACCEPTANCE=1 RU_PILOT_ACCEPTANCE=1 PORT=8097 npx playwright test tests/e2e/russian.http.spec.ts --project=http",
+      "result": "passed",
+      "passed": 5,
+      "skipped": 1,
+      "note": "Final full HTTP test checks all 381 pages and all 285 actual HTML/popup Prompt texts and languages against raw literal or rendered template sources. Fallback-only case intentionally skips because corpus has no fallback."
+    }
+  ],
+  "finalAcceptance": {
+    "passedDistinctTests": 45,
+    "skippedDistinctTests": 1,
+    "unresolvedFailures": 0
+  },
+  "logs": [
+    {
+      "path": ".artifacts/localization/ru/full-strict-final.log",
+      "sha256": "632278c2b030ef9e19debd9157358fdb4b9a54d96b3cf3e0aaca40ce3a4c3b05"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-content-validation.log",
+      "sha256": "289507d94c7dc0271a7d5a8428c0f577ac558afc5d46a519ceda37d7a8be6774"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-unit-serial.log",
+      "sha256": "4f73dafbbf983c164be8ee2ed66c9fa20b9e540b4444bd934a9a3ee29a1bc015"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-build-final.log",
+      "sha256": "dcbcebe0b558dad66f91bf6e48410914a057a635ac15ddd4f61e62ead7c8672b"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-typecheck-final.log",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-lint-final.log",
+      "sha256": "fe7cb912277b831aad68694e64bb3388dd7dc58656a03f8d3c8d8d443770307a"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-lint-test-final.log",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-e2e-final.log",
+      "sha256": "5dd062b9b7def0fe21fb6ab577982c51cb4a04cab58454d137fa22ae13793f6f"
+    },
+    {
+      "path": ".artifacts/localization/ru/full-http-final2.log",
+      "sha256": "3a7401fe8400afa786eb00782a7bd67ee87116c3df77f6a5bf1a9625a8d316bf"
+    }
+  ],
+  "reviewEvidence": [
+    "production/localization/ru/evidence/subagent-existing-review.json",
+    "production/localization/ru/evidence/subagent-full-a-review.json",
+    "production/localization/ru/evidence/subagent-full-b-review.json",
+    "production/localization/ru/evidence/subagent-full-c-review.json",
+    "production/localization/ru/evidence/subagent-full-d-review.json",
+    "production/localization/ru/evidence/subagent-integration-review.json",
+    "production/localization/ru/evidence/subagent-ui-review.json"
+  ],
+  "priorAttempts": [
+    "Concurrent unit runs hit existing timeout thresholds under machine contention; serial full suite passed without changing timeouts.",
+    "Initial build stopped for Next.js security advisory; a subsequent build caught strict TypeScript errors in the new test, which were fixed before successful final build.",
+    "First E2E run lacked a stable dedicated nginx server; rerun used this task’s manually started container on port 8097.",
+    "Initial full HTTP scope comparison incorrectly included English preview drafts and then misparsed composite topic keys; both test defects fixed and independently reviewed before final passing run."
+  ],
+  "limitations": [
+    "AI/subagent review is not human or native-speaker certification.",
+    "Current Next.js version emitted a known security vulnerability warning; dependency upgrade is outstanding and separate from localization.",
+    "Russian remains enabled=false, preview=true. No production enablement or deployment.",
+    "Full production build matrix and broader ranking/performance release acceptance remain separate release work."
+  ]
+}

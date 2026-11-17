@@ -16,6 +16,8 @@ instructions:
     les textes dans l’image en anglais.
   it: Carica un ritratto nitido di un adulto. Il riferimento dimostrativo è generato con l’IA.
     Mantieni tutte le scritte in inglese.
+  ru: Загрузите один чёткий портрет взрослого. Демонстрационный референс создан ИИ. Сохраните все
+    надписи на английском.
 slots:
   - id: person
     labels:
@@ -29,5 +31,6 @@ slots:
       zh-Hant: 人物肖像
       fr: Portrait de la personne
       it: Ritratto della persona
+      ru: Портрет человека
     min: 1
     max: 1

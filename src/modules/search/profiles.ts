@@ -147,6 +147,36 @@ const ITALIAN_KINDS: Record<SearchKind, string> = {
   topic: 'tema temi topic topics',
 };
 
+// Explicit inflections, not suffix stripping: arbitrary Russian words and model IDs stay intact.
+const RUSSIAN_TERMS = [
+  ['портрет', 'портрета', 'портреты', 'портретов', 'портретом', 'портрете', 'portrait', 'portraits'],
+  ['неоновый', 'неоновая', 'неоновое', 'неоновой', 'неонового', 'неоновым', 'неоновые', 'neon'],
+  ['шаблон', 'шаблона', 'шаблоны', 'шаблонов', 'template', 'templates'],
+  ['постер', 'постера', 'постеры', 'постеров', 'плакат', 'плакаты', 'плаката', 'poster', 'posters'],
+  ['стикер', 'стикеры', 'наклейка', 'наклейки', 'sticker', 'stickers'],
+  ['освещение', 'освещения', 'lighting'],
+  ['студия', 'студии', 'студийный', 'студийная', 'студийное', 'студийной', 'studio'],
+  ['подборка', 'подборки', 'подборок', 'collection', 'collections'],
+  ['тема', 'темы', 'topic', 'topics'],
+  ['тушь', 'тушью', 'туши', 'ink'],
+] as const;
+
+const RUSSIAN_PRODUCT_PHOTOGRAPHY = [
+  'предметная съёмка',
+  'предметной съёмки',
+  'предметную съёмку',
+  'съёмка товаров',
+  'packshot',
+  'product photography',
+] as const;
+
+const RUSSIAN_KINDS: Record<SearchKind, string> = {
+  prompt: 'промпт промпты',
+  template: 'шаблон',
+  collection: 'подборка',
+  topic: 'тема',
+};
+
 // Each language uses the same low-weight expansion contract; only vocabulary differs.
 const PROFILES = {
   fr: {
@@ -162,6 +192,13 @@ const PROFILES = {
     kinds: ITALIAN_KINDS,
     productPhotography: ITALIAN_PRODUCT_PHOTOGRAPHY,
     photography: 'fotografia',
+  },
+  ru: {
+    terms: RUSSIAN_TERMS,
+    compounds: [],
+    kinds: RUSSIAN_KINDS,
+    productPhotography: RUSSIAN_PRODUCT_PHOTOGRAPHY,
+    photography: 'фотография',
   },
   pt: {
     terms: PORTUGUESE_TERMS,
@@ -194,7 +231,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       koreanAliases(text) +
       (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
     );
-  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it') return '';
+  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it' && language !== 'ru') return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));
   const compounds = profile.compounds
@@ -216,7 +253,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       );
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).
-    return (language === 'pt' || language === 'fr') && words.length > 1
+    return (language === 'pt' || language === 'fr' || language === 'ru') && words.length > 1
       ? phraseText.includes(` ${words.join(' ')} `)
       : words.every((term) => terms.has(term));
   };

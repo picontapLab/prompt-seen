@@ -14,6 +14,8 @@ instructions:
     synthétiques.
   it: Carica le immagini di riferimento nell’ordine elencato. L’esempio usa immagini di input
     sintetiche.
+  ru: Загрузите референсные изображения в указанном порядке. В примере использованы синтетические
+    входные изображения.
 slots:
   - id: product
     labels:
@@ -27,5 +29,6 @@ slots:
       zh-Hant: 產品參考
       fr: Référence produit
       it: Riferimento del prodotto
+      ru: Референс товара
     min: 1
     max: 1

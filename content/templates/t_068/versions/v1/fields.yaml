@@ -13,6 +13,7 @@ fields:
       zh-Hant: 旋轉角度
       fr: Rotation en degrés
       it: Rotazione in gradi
+      ru: Поворот в градусах
     help:
       en: Changing the angle also requires revising the room-position directions in the prompt. Only the
         default is demonstrated.
@@ -30,6 +31,8 @@ fields:
         Seule la valeur par défaut est démontrée.
       it: Cambiare l’angolo richiede anche di aggiornare le indicazioni sulla posizione delle stanze nel
         prompt. È dimostrata solo l’impostazione predefinita.
+      ru: При изменении угла также нужно пересмотреть указания о положении комнат в промпте. Показан
+        только вариант по умолчанию.
     type: string
     default: "180"
     minLength: 1

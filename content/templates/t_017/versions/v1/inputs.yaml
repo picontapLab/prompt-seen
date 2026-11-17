@@ -10,6 +10,7 @@ instructions:
   zh-Hant: 上傳一張商品照片，並提供配色與恰好九個場景主題。
   fr: Importez une photo de produit ; fournissez une palette et exactement neuf thèmes de scène.
   it: Carica una foto di prodotto; fornisci una palette ed esattamente nove temi per le scene.
+  ru: Загрузите одну фотографию товара; задайте палитру и ровно девять тем сцен.
 slots:
   - id: product
     labels:
@@ -23,5 +24,6 @@ slots:
       zh-Hant: 產品正面照
       fr: Produit
       it: Prodotto
+      ru: Товар
     min: 1
     max: 1

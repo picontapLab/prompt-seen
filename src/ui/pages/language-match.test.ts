@@ -15,6 +15,15 @@ describe('suggestLanguage (§8.2)', () => {
     expect(suggestLanguage([preferred], locales)).toBeNull();
     expect(suggestLanguage(['ja-JP', preferred], [...locales, { code: 'it', htmlLang: 'it' }])).toBe('ja');
   });
+  it('suggests Russian regional preferences only when Russian is available', () => {
+    const available = [...locales, { code: 'ru', htmlLang: 'ru' }];
+    for (const tag of ['ru', 'ru-RU', 'ru-BY', 'ru-KZ']) {
+      expect(suggestLanguage([tag], available)).toBe('ru');
+      expect(suggestLanguage([tag], locales)).toBeNull();
+    }
+    expect(suggestLanguage(['uk', 'be'], available)).toBeNull();
+    expect(suggestLanguage(['en', 'ru'], available)).toBe('en');
+  });
   it('takes the first preferred language the site has', () => {
     expect(suggestLanguage(['fr-FR', 'ja-JP', 'en'], locales)).toBe('ja');
     expect(suggestLanguage(['en-GB'], locales)).toBe('en');

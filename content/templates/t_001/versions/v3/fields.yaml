@@ -16,6 +16,7 @@ fields:
       zh-Hant: 產品
       fr: Produit
       it: Prodotto
+      ru: Товар
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
@@ -28,6 +29,7 @@ fields:
       zh-Hant: 寫清物品和材質，如“帶斑點的陶瓷馬克杯”。
       fr: Nommez l’objet et son matériau, par exemple « une tasse en céramique mouchetée ».
       it: Indica oggetto e materiale, per esempio «una tazza di ceramica puntinata».
+      ru: Назовите предмет и его материал, например «керамическая кружка в крапинку».
   - name: sellingPoints
     type: string-list
     required: true
@@ -48,6 +50,7 @@ fields:
       zh-Hant: 核心賣點
       fr: Arguments de vente
       it: Punti di forza
+      ru: Преимущества
     help:
       en: Concrete details become visible; vague claims are ignored.
       zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
@@ -60,6 +63,7 @@ fields:
       zh-Hant: 具體的細節會被畫出來，空泛的說法會被忽略。
       fr: Les détails concrets deviennent visibles ; les affirmations vagues sont ignorées.
       it: I dettagli concreti diventano visibili; le affermazioni vaghe vengono ignorate.
+      ru: Конкретные детали становятся видимыми; расплывчатые утверждения игнорируются.
   - name: palette
     type: enum
     required: true
@@ -77,6 +81,7 @@ fields:
       zh-Hant: 配色
       fr: Palette
       it: Palette
+      ru: Палитра
     options:
       - value: warm neutral
         swatch:
@@ -95,6 +100,7 @@ fields:
           zh-Hant: 暖色中性
           fr: Neutres chauds
           it: Neutri caldi
+          ru: Тёплая нейтральная
       - value: sage green
         swatch:
           - "#DCE6DD"
@@ -112,6 +118,7 @@ fields:
           zh-Hant: 鼠尾草綠
           fr: Vert sauge
           it: Verde salvia
+          ru: Шалфейная зелёная
       - value: midnight blue
         swatch:
           - "#1F2A44"
@@ -129,6 +136,7 @@ fields:
           zh-Hant: 午夜藍
           fr: Bleu nuit
           it: Blu notte
+          ru: Полуночная синяя
       - value: soft grey
         swatch:
           - "#E2E2E0"
@@ -146,6 +154,7 @@ fields:
           zh-Hant: 柔和灰
           fr: Gris doux
           it: Grigio tenue
+          ru: Мягкая серая
       - value: coral pop
         swatch:
           - "#EE6C4D"
@@ -163,6 +172,7 @@ fields:
           zh-Hant: 珊瑚亮色
           fr: Éclat corail
           it: Corallo vivace
+          ru: Яркая коралловая
   - name: aspectRatio
     type: enum
     required: true
@@ -180,6 +190,7 @@ fields:
       zh-Hant: 畫面比例
       fr: Rapport largeur/hauteur
       it: Rapporto d’aspetto
+      ru: Соотношение сторон
     options:
       - value: 4:5
         labels:
@@ -194,6 +205,7 @@ fields:
           zh-Hant: 4:5
           fr: 4:5
           it: 4:5
+          ru: 4:5
       - value: 5:4
         labels:
           en: 5:4
@@ -207,6 +219,7 @@ fields:
           zh-Hant: 5:4
           fr: 5:4
           it: 5:4
+          ru: 5:4
       - value: 1:1
         labels:
           en: 1:1
@@ -220,6 +233,7 @@ fields:
           zh-Hant: 1:1
           fr: 1:1
           it: 1:1
+          ru: 1:1
       - value: 3:4
         labels:
           en: 3:4
@@ -233,6 +247,7 @@ fields:
           zh-Hant: 3:4
           fr: 3:4
           it: 3:4
+          ru: 3:4
       - value: 16:9
         labels:
           en: 16:9
@@ -246,6 +261,7 @@ fields:
           zh-Hant: 16:9
           fr: 16:9
           it: 16:9
+          ru: 16:9
   - name: headline
     type: string
     required: false
@@ -263,6 +279,7 @@ fields:
       zh-Hant: 標題文字
       fr: Titre
       it: Titolo
+      ru: Заголовок
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
@@ -275,3 +292,4 @@ fields:
       zh-Hant: 可選。字越少越容易正確生成。
       fr: Facultatif. Les mots courts sont reproduits plus fidèlement.
       it: Facoltativo. Le parole brevi vengono riprodotte più fedelmente.
+      ru: Необязательно. Короткие слова воспроизводятся надёжнее.

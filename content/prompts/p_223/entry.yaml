@@ -47,6 +47,8 @@ inspirationSources:
         publication partagent les mêmes indicateurs.
       it: Post originale, non questo nuovo risultato generato. Più casi dallo stesso post condividono le
         metriche.
+      ru: Исходная публикация, а не этот новый сгенерированный результат. У нескольких примеров из одной
+        публикации общие показатели.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -64,6 +66,8 @@ inspirationSources:
       fr: "Recherche antérieure : page consultée directement et examen visuel. Les compteurs n’ont pas été
         actualisés."
       it: "Ricerca precedente: pagina diretta e revisione visiva. I conteggi non sono stati aggiornati."
+      ru: "Предыдущее исследование: просмотр страницы источника и визуальная проверка. Счётчики не
+        обновлялись."
     evidenceUrl: https://x.com/zzjinmu/status/2118148465444450421
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -76,6 +80,7 @@ inspirationSources:
       zh-Hant: 未取得原提示詞，本次為獨立推導方案。
       fr: Le prompt original n’a pas été trouvé. Ce prompt a été déduit indépendamment.
       it: Il prompt originale non è stato trovato. Questo è un prompt dedotto autonomamente.
+      ru: Оригинальный промпт не найден. Этот промпт самостоятельно составлен на основе предположений.
     metrics:
       - key: likes
         value: 0
@@ -90,6 +95,7 @@ inspirationSources:
           zh-Hant: 按讚
           fr: Mentions J’aime
           it: Mi piace
+          ru: Лайки
       - key: reposts
         value: 0
         labels:
@@ -103,6 +109,7 @@ inspirationSources:
           zh-Hant: 轉發
           fr: Republications
           it: Ripubblicazioni
+          ru: Репосты
 source:
   author: Prompt Seen
   url: null

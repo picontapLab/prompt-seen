@@ -35,6 +35,8 @@ inputRequirements:
       costume est une création fictive moderne.
     it: Carica prima il ritratto dell’adulto e poi il costume. Entrambi gli input sono sintetici; il
       costume è un modello moderno immaginario.
+    ru: Сначала загрузите портрет взрослого, затем костюм. Оба изображения синтетические; костюм —
+      современный вымышленный дизайн.
   slots:
     - id: person
       labels:
@@ -48,6 +50,7 @@ inputRequirements:
         zh-Hant: 成年人物肖像
         fr: Personne
         it: Persona
+        ru: Человек
       min: 1
       max: 1
     - id: garment
@@ -62,6 +65,7 @@ inputRequirements:
         zh-Hant: 服飾參考
         fr: Vêtement
         it: Abito
+        ru: Предмет одежды
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -85,6 +89,7 @@ inspirationSources:
       zh-Hant: 整部教學或作品展示影片
       fr: Ensemble du tutoriel ou de la vidéo de présentation
       it: Intero video tutorial o dimostrativo
+      ru: Весь обучающий или демонстрационный ролик
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -98,6 +103,7 @@ inspirationSources:
       zh-Hant: 官方公開 API 快照
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -110,6 +116,7 @@ inspirationSources:
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
       fr: Prompt original complet non récupéré ; adaptation indépendante
       it: Prompt originale completo non recuperato; adattato autonomamente
+      ru: Полный оригинальный промпт не получен; самостоятельная адаптация
     metrics:
       - key: views
         value: 18638
@@ -124,6 +131,7 @@ inspirationSources:
           zh-Hant: 播放或瀏覽
           fr: Vues
           it: Visualizzazioni
+          ru: Просмотры
       - key: likes
         value: 477
         labels:
@@ -137,6 +145,7 @@ inspirationSources:
           zh-Hant: 按讚
           fr: Mentions J’aime
           it: Mi piace
+          ru: Лайки
       - key: saves
         value: 689
         labels:
@@ -150,6 +159,7 @@ inspirationSources:
           zh-Hant: 收藏
           fr: Enregistrements
           it: Salvataggi
+          ru: Сохранения
       - key: comments
         value: 116
         labels:
@@ -163,6 +173,7 @@ inspirationSources:
           zh-Hant: 留言
           fr: Commentaires
           it: Commenti
+          ru: Комментарии
       - key: shares
         value: 98
         labels:
@@ -176,6 +187,7 @@ inspirationSources:
           zh-Hant: 分享
           fr: Partages
           it: Condivisioni
+          ru: Репосты
       - key: coins
         value: 178
         labels:
@@ -189,6 +201,7 @@ inspirationSources:
           zh-Hant: 投幣
           fr: Pièces
           it: Monete
+          ru: Монеты
       - key: danmaku
         value: 14
         labels:
@@ -202,6 +215,7 @@ inspirationSources:
           zh-Hant: 彈幕
           fr: Commentaires défilants (danmaku)
           it: Commenti sovrapposti (danmaku)
+          ru: Данмаку
 source:
   author: Prompt Seen
   url: null

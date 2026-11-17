@@ -1,0 +1,3818 @@
+{
+  "schemaVersion": 1,
+  "locale": "ru",
+  "reviewer": "AI subagent /root/ru_batch_c",
+  "author": "AI parent /root",
+  "completedAt": "2026-11-17T15:30:56.557153+00:00",
+  "scope": "Independent source-comparison review of all 521 remaining B units (191 <= id < 852). Read every source/target pair, including original image lettering, uncertainty, source animation frame counts versus nine-frame local encoding, terminology and Russian prose. All approved conclusions concern translation only.",
+  "limitations": [
+    "Not a native-speaker or human review.",
+    "No new visual media inspection, metadata inspection, provenance certification or generation run took place in this review. Historical review statements are retained source claims.",
+    "Context-specific field override is required for unit 658; a shared source string does not imply one translation is correct for every owner."
+  ],
+  "inputDraftSha256": "sha256:df04c7ff2aea85469fad7730843e1b7a1b861a130d7841444841d0a7e977910e",
+  "outputDraftSha256": "sha256:bd3cc9ef1f7954e5d04408541f8e116eb5e2e806467bbe7fcfaf4960a1760a56",
+  "reviewedUnitCount": 521,
+  "corrections": [
+    {
+      "unitId": 200,
+      "before": "Повседневное селфи взрослого человека в спальне с высокой точки: видны вытянутая рука, непрозрачная синяя рубашка, бежевые брюки и обе белые туфли. Дубовый пол, кремовая штора и белая кровать соответствуют переработанному заданию. Умеренная естественная перспектива; без стилизации с акцентом на тело. Самостоятельная адаптация, а не воспроизведение исходного промпта.",
+      "after": "Повседневное селфи взрослого человека в спальне с высокой точки: видны вытянутая рука, непрозрачная синяя рубашка, бежевые брюки и белая обувь на обеих ногах. Дубовый пол, кремовая штора и белая кровать соответствуют переработанному заданию. Умеренная естественная перспектива; без стилизации с акцентом на тело. Самостоятельная адаптация, а не воспроизведение исходного промпта.",
+      "reason": "Shoes does not specify dress shoes; retain the generic footwear statement."
+    },
+    {
+      "unitId": 240,
+      "before": "Цветы лаванды и зелёные листья со светлыми прожилками в сливовом горшке на кремовом фоне.",
+      "after": "Цветы лаванды и зелёные листья со светлыми прожилками в горшке сливового цвета на кремовом фоне.",
+      "reason": "Make explicit that plum describes the pot color, not its material or contents."
+    },
+    {
+      "unitId": 248,
+      "before": "Вымышленная улица жилого района в сумерках, с велосипедами, обычными прохожими и тёплым светом реальных светильников.",
+      "after": "Вымышленная улица жилого района в сумерках, с велосипедами, обычными прохожими и тёплым светом светильников в сцене.",
+      "reason": "Practical lights are scene light sources, not a claim that this fictional generated scene contains real-world fixtures."
+    },
+    {
+      "unitId": 269,
+      "before": "Садовые свет и тень следуют заданной структуре лица при разных масштабах просмотра.",
+      "after": "Свет и тень в саду следуют заданной структуре лица при разных масштабах просмотра.",
+      "reason": "Use natural Russian syntax for garden light and shadow; retain scale-dependent face structure."
+    },
+    {
+      "unitId": 275,
+      "before": "Короткое слово становится глянцевым надутым объектом с продуманными интервалами.",
+      "after": "Короткое слово становится глянцевым надувным объектом с продуманными интервалами.",
+      "reason": "Use idiomatic terminology for an inflated object."
+    },
+    {
+      "unitId": 323,
+      "before": "Китайский интерфейс фермерского рынка включает поиск, карточки овощей и выпечки, две карточки продавцов, часы работы и четыре значка навигации.",
+      "after": "Китайский интерфейс фермерского рынка включает поиск, карточки свежих продуктов и выпечки, две карточки продавцов, часы работы и четыре значка навигации.",
+      "reason": "Produce is broader than vegetables; do not narrow the source category."
+    },
+    {
+      "unitId": 338,
+      "before": "Шесть танцевальных поз белой курицы чередуют ноги и крылья и заканчиваются улыбкой.",
+      "after": "В шести танцевальных позах белой курицы ноги и крылья движутся попеременно; последняя поза завершается улыбкой.",
+      "reason": "Make the action and actor grammatical without changing the six-pose sequence."
+    },
+    {
+      "unitId": 345,
+      "before": "Пеликан и красный велосипед сохраняют закатный референс.",
+      "after": "Пеликан и красный велосипед сохраняют облик с закатного референса.",
+      "reason": "Clarify that the depicted pelican and bicycle retain their reference appearance, rather than preserving a file."
+    },
+    {
+      "unitId": 352,
+      "before": "Голубые рукописные надписи и символы падают поверх портрета с мокрыми волосами на тёмном фоне.",
+      "after": "Голубые рукописные надписи и символы ложатся поверх портрета с мокрыми волосами на тёмном фоне.",
+      "reason": "Use a natural static overlay description; avoid suggesting literal falling animation."
+    },
+    {
+      "unitId": 425,
+      "before": "Указание количества не даёт начинке бесконтрольно размножаться в миске.",
+      "after": "Указание количества не даёт добавкам бесконтрольно множиться по всей миске.",
+      "reason": "Toppings are additions to a bowl, not filling inside an item."
+    },
+    {
+      "unitId": 462,
+      "before": "Загрузите высококонтрастный портретный ориентир и используйте инструмент с сильным управлением по референсу или структуре.",
+      "after": "Загрузите высококонтрастный портретный ориентир и используйте инструмент, способный строго учитывать референс или заданную структуру.",
+      "reason": "Replace an awkward conditioning calque with a clear description of strong reference/structure control."
+    },
+    {
+      "unitId": 483,
+      "before": "Оригинальный промпт не найден. Этот промпт самостоятельно восстановлен по предположению.",
+      "after": "Оригинальный промпт не найден. Этот промпт самостоятельно составлен на основе предположений.",
+      "reason": "An independently inferred prompt is not a recovered original; retain explicit uncertainty."
+    },
+    {
+      "unitId": 658,
+      "before": "Название",
+      "after": "Имя",
+      "reason": "Two of three owners are a personal-name field. The cafe-brand owner requires the exact-field context override recorded below."
+    },
+    {
+      "unitId": 713,
+      "before": "Жест использования",
+      "after": "Жест при использовании",
+      "reason": "Natural field label for a gesture while using a product."
+    },
+    {
+      "unitId": 802,
+      "before": "#25 · Короткое слово становится глянцевым надутым объектом с продуманными интервалами.",
+      "after": "#25 · Короткое слово становится глянцевым надувным объектом с продуманными интервалами.",
+      "reason": "Keep ranked collection reason aligned with corrected unit 275."
+    },
+    {
+      "unitId": 817,
+      "before": "#40 · Миниатюрный альпийский мир выпускает водопад из стеклянной сферы на дубовый стол.",
+      "after": "#40 · Водопад из миниатюрного альпийского мира вытекает из стеклянной сферы и переливается через край дубового стола.",
+      "reason": "Retain the waterfall crossing from the sphere over the table, consistent with the source scene and pilot description."
+    },
+    {
+      "unitId": 822,
+      "before": "#45 · Вымышленная улица жилого района в сумерках, с велосипедами, обычными прохожими и тёплым светом реальных светильников.",
+      "after": "#45 · Вымышленная улица жилого района в сумерках, с велосипедами, обычными прохожими и тёплым светом светильников в сцене.",
+      "reason": "Keep ranked collection reason aligned with corrected unit 248."
+    },
+    {
+      "unitId": 827,
+      "before": "#50 · Садовые свет и тень следуют заданной структуре лица при разных масштабах просмотра.",
+      "after": "#50 · Свет и тень в саду следуют заданной структуре лица при разных масштабах просмотра.",
+      "reason": "Keep ranked collection reason aligned with corrected unit 269."
+    },
+    {
+      "unitId": 845,
+      "before": "## Проверенные статичные промпты",
+      "after": "## Проверенные промпты для статических изображений",
+      "reason": "Static qualifies the image output, not the prompt itself."
+    },
+    {
+      "unitId": 850,
+      "before": "Социальные промпты Image 2.6 — тесты на исходном языке",
+      "after": "Промпты Image 2.6 из соцсетей — тесты на исходном языке",
+      "reason": "Social refers to social-media sources, not social-policy subject matter."
+    },
+    {
+      "unitId": 851,
+      "before": "Одиннадцать тестов статичных промптов на исходном языке, включая успешную повторную попытку уличного портрета, с референсами, созданными для проекта.",
+      "after": "Одиннадцать тестов промптов для статических изображений на исходном языке, включая успешную повторную попытку уличного портрета, с референсами, созданными для проекта.",
+      "reason": "Clarify static-image scope while preserving eleven tests, original language, retry and generated-reference limits."
+    }
+  ],
+  "contextOverrides": [
+    {
+      "key": "content/templates/t_016/versions/v1/fields.yaml#fields.0.labels",
+      "unitId": 658,
+      "source": "Name",
+      "target": "Название",
+      "sourceField": [
+        "fields",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "fields",
+        0,
+        "labels",
+        "ru"
+      ],
+      "sourceHash": "sha256:102128690f2dea433117614b26d1bd450ddbe257789c8a71c6252ec043ed7272",
+      "targetHash": "sha256:f8990365e26d35d486b86735da21eeae5b0e7ccffbfe21cfa6bdf9e69b9ae923",
+      "hashMethod": "repository fingerprint({field: sourceField/targetField, value: source/target}); unit record hashes are raw UTF-8",
+      "conclusion": "approved",
+      "reason": "Cafe identity template asks for a brand name; use Название here. Personal profile and birthday templates keep the corrected generic Имя."
+    }
+  ],
+  "records": [
+    {
+      "unitId": 191,
+      "sourceHash": "sha256:a46a4696c057aea7fe688f7a7af889606fa836827897823d36aad4e05c061874",
+      "targetHash": "sha256:9ec2d3163bab1917e6dcb12fa34523cdfcb743db072b6a94655840620469fcb0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 192,
+      "sourceHash": "sha256:e33a29104e02de7542d87ea8ae743e5fa25f55bf010c737e39dcc586f8f1dd85",
+      "targetHash": "sha256:3558c6f0452504d98fa8cd30aa7878dc0c31cebca9af9ce3ffff0873450cc5c2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 193,
+      "sourceHash": "sha256:66cb8d022538bdd5870884310dc24272c270264423ad7ae38f24c2a08b0e6a62",
+      "targetHash": "sha256:f6669d7086026724a1909696ba1015742b0ddaaf9f6f7cb5c05b4e49b3eab0f3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 194,
+      "sourceHash": "sha256:39974288e81157d5189d78d1ff12c9c7892020cd7e502128c5e4dbf166af6763",
+      "targetHash": "sha256:9021c491d359b7027ac8a9dea293b3ce11c763f36874661b3c789ce9de9aafcd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 195,
+      "sourceHash": "sha256:6875239a963b752bedd1eec9b9d9d391432729d8a74daabe866e4ae47f9da7b3",
+      "targetHash": "sha256:4173439d57c3839f1a0e0c9c63d531630c502256b787905fe0171abaa34d7452",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 196,
+      "sourceHash": "sha256:777f1ebaf0d55b49f674a0937155a66fa23ccf3fea6a804a82c5b3c813c392ff",
+      "targetHash": "sha256:45cc4372d1144d37890b288f84b14796161275b28eb9fd95858b055f88991c79",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 197,
+      "sourceHash": "sha256:ac9c9a1e3346e3e26a8b00d3cd60f2f118d560b0ab88acf7ae5538393b61f995",
+      "targetHash": "sha256:bb533b98d48acb13b1df82de870d2025e59a4a9a03a61d202b13640e5c959bfa",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 198,
+      "sourceHash": "sha256:e3530ba1895fa4d45eda747e95c4244549a37d53a3b6d8d4c90e8e335613dea6",
+      "targetHash": "sha256:970671ca3d6dd75a1d96ac0040a0a337fb9525e5003f93fc38cbc76ef451bf3d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 199,
+      "sourceHash": "sha256:598fbb26982f3ffb444be0cbac41fd245e2126d657ddbad7b3a86d4b8a706a6f",
+      "targetHash": "sha256:d4645e81d6c22a2d9001bd074c346642f84a286e77ce77a21936f968e1b5c5c8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 200,
+      "sourceHash": "sha256:796ba97477832c8bebfa099c5375ad736e20c439ffbaa799d9505c3efd05738b",
+      "targetHash": "sha256:3a7ed961b82dbbeb746ca090816ef2771b04d238d17153fa76be49434baf049a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 201,
+      "sourceHash": "sha256:783941d4cd4b238b4b3e9c37c5190750988f68016f36f103f28bf73846190242",
+      "targetHash": "sha256:8d034d20e4dc6b555c6288e0c3fc8748052e963b88723939a5753897b8afe443",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 202,
+      "sourceHash": "sha256:f4c78f2c94a8813dbdec4ad481d0c629277e89ee31f29977173118066a72ec6f",
+      "targetHash": "sha256:43e635b94b301e370653ae03968e0f3f412036a27b24aa72c20c748148a4db6e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 203,
+      "sourceHash": "sha256:c1007d9933918c10c65be64b8e6078493488c46ad5355064d94356f796d85749",
+      "targetHash": "sha256:af13689b7f784e5275f08254c3878a3f150ecc7b245a044b992b55fe4d5cb2b9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 204,
+      "sourceHash": "sha256:6a7944c0638078ea898d85bff5647620ed11a2e7e50eaf7dcf921297bfcc2c19",
+      "targetHash": "sha256:0d001d8d057c3b38dcd314cd9021364b9e3a2a25dfb29e0e6cd5e7c57f508fd6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 205,
+      "sourceHash": "sha256:5ca2a70ad21e44ad25c9ffa4889f90555120107a17a2394d85456b559b875f10",
+      "targetHash": "sha256:8e1aef8d51eee92ded037d2c91226a4360377e497d602652eb4bbb7391363ea6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 206,
+      "sourceHash": "sha256:13e9e48854f289383a619e0ea9d7e715f20dc7812b9d44925cb522095576de55",
+      "targetHash": "sha256:650ecb8a5b0f8aff363f1088440ca51960d357468de781669eeac2d5a76b1d45",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 207,
+      "sourceHash": "sha256:6c3dac1fea4bb42c94c4d28ca9f3321536ed355b002cfdbba3436238f39ab6f8",
+      "targetHash": "sha256:3ab4c53e4a143b11f5bf2d688e24db31312180d3a620a705e14a99fb66bf01c0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 209,
+      "sourceHash": "sha256:468d839e162fa681e80f6ad93d5af418ea2f616ee546a8989d62302d2b39a976",
+      "targetHash": "sha256:0b7d78c522e26c931f2fb9f272881a642c5e2f3d098a1cf48eb1fe8bfdb9aeaa",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 210,
+      "sourceHash": "sha256:df48b16ba549787aa66534d20386989697bca712f32fc2c7d10ba72dde5f2fba",
+      "targetHash": "sha256:87f8a3c20a46f3876bb3b79d08537d3941f518b854ca4a8402c58430d0ac51b7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 211,
+      "sourceHash": "sha256:3ec02f5cf8a4427a8a1a08e9bcdd5f606bcbaf03f212479e7f897105925a4c05",
+      "targetHash": "sha256:9c01d1ecc6378a01c9fe7133f23e9f46ee772cdbc66345783e6d9f33240bc17e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 212,
+      "sourceHash": "sha256:5f573d9c7ebeb807215586fcf46ef1270d41b23d8f39ee6b1cd67a6650191e14",
+      "targetHash": "sha256:097e44433467f8199859867f0f48757fe4a2f7ccf7d4218bcfbdc7b6ac07f8e6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 214,
+      "sourceHash": "sha256:263fefce29b5e20b1b3e75ff1bf8013bda4dcc264eed092be72be738863fce10",
+      "targetHash": "sha256:1b8908ddf5798105146b50dad48443b13d6760299279117e18a29886f21c6c0d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 216,
+      "sourceHash": "sha256:982b623f32a547ec6bfa9713e701618117f67316d97d3705455e989a4f7311ae",
+      "targetHash": "sha256:e2bdcddf68680c96535e0c9ba9eb420cc01c397e1c8583a525d4dddf717cb8df",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 217,
+      "sourceHash": "sha256:10fcdcfa37931274269bb3b0a9a4ac670f5717df24d09fdfd9e3666e68a61bba",
+      "targetHash": "sha256:5812f41aeac1a9311d2bb504c08cc7acdae2805238e212918d0c213564c8f34c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 219,
+      "sourceHash": "sha256:3e0a068c6cd72fd1905bcc474de983b726c0b7de02762a2515b003db14496230",
+      "targetHash": "sha256:8d83aff862e243988332df327e9e9d382add5be735ad197e9eae8685e295e43e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 220,
+      "sourceHash": "sha256:4c242d906350f4408166b4a63ab0f8ff1650c280af966a9d34f39a25e935e7b4",
+      "targetHash": "sha256:64b175d9c944a0bc264165afc42b625add0c4659416d1d6f2ac88399cbcdbbc4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 222,
+      "sourceHash": "sha256:c5d86579d5b8f97b86dc9cca88354ddb42907aac968d7253f288225e00c91589",
+      "targetHash": "sha256:5f2e87895583b2e787ac7ef1313379eda7ae1085e9a27bf272a7ef4063e4c1cb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 223,
+      "sourceHash": "sha256:e662a18b13d556bff294cac8d3a10309331dabaf4fe4d8f72087a58b34df7991",
+      "targetHash": "sha256:0d532b3b46ea9f7ac37c8e32055272b53edc39a1cf7a3dfb3ef03e4ba64f1858",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 224,
+      "sourceHash": "sha256:28f5eab3dc6e25293778832bc9a6f0899db1decad64b192ffca1a4df929b770d",
+      "targetHash": "sha256:3c456d4bf5d984aa8a8ac20b56eef5176c3ad2198a7b2be29ee1022dd5c961a8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 225,
+      "sourceHash": "sha256:1e5c9c16e8597c1046330d12338e38bf4b9404888a4d0816e5676d319b69d345",
+      "targetHash": "sha256:c38ab50df444f7a9ae827a56fd5fd3ac899aa520d84921dc42b9efad34cf4646",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 226,
+      "sourceHash": "sha256:fe54d9bc345092dd87093c5c94dd7a1389c0662bceff65edabdc273f14d86773",
+      "targetHash": "sha256:385ea58a02ddf0dbd6c69835f1de37b68c3ef9e45702bb0cfe9157a243be855d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 230,
+      "sourceHash": "sha256:c1f68837e9335e57c130a31022cf0e889d4a8d82e7e328ec2c0e0f7a9510317a",
+      "targetHash": "sha256:592ad5138ef93044a31c6b2c28e344cc77287019030fb4e33e2daa719d9a3938",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 231,
+      "sourceHash": "sha256:b39eb0ae8817437d35b2851fdd26586686c3317a56ea6eaa73bf6f8d04eb70d8",
+      "targetHash": "sha256:fc0bed4037f2e099f6d7d104ea72c98b6c10228440b212b82cd3484a5b6409de",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 232,
+      "sourceHash": "sha256:e2e31777d6e2a73ad5b80a533029a5d1146ff88840410ef95aabe855d8025284",
+      "targetHash": "sha256:b7667a479b4057c09f223f8ec1c3fd61abf5bc886a691d1fe278c84c3bd32853",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 234,
+      "sourceHash": "sha256:ecd17e4c5346d7290bb9bd821274437d125672afdb6cfc23f794f74acb46f2ea",
+      "targetHash": "sha256:dc45ea023ed55596237be6e1541e7236075c795e7eaf408b20dd4a744c71c12f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 235,
+      "sourceHash": "sha256:ce0d691781ea8cc908d5381fcb6443167ce2aa7f0f9fb34717e3f58961f7ef0c",
+      "targetHash": "sha256:4d968379d3eed8155a1419b35c898cb47840eafc849e82a0608baf8ac089cba8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 236,
+      "sourceHash": "sha256:6f889cefd391f30a90bc2f8dac70d75babd3ee07f85b6c7475cdcf88468f5617",
+      "targetHash": "sha256:348fdc63626368e84a30ac51a30c757b4f5ae66506b8ef81e50e14a76ff9977f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 237,
+      "sourceHash": "sha256:86a56885b243c769c20b7e4f4997ad2a58bcc510d4aff2433eebbf170217d595",
+      "targetHash": "sha256:19533b3b04a940b78c1f312957bd49a3f28c06c2599b8f1289cae4280d3afbf5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 238,
+      "sourceHash": "sha256:499a2e7d71f7c463e5bf23126136a1acb117ffe9cdf958470f53d5b73a45d27d",
+      "targetHash": "sha256:f3bc144cdd9c20392878cb4c7bb1c2b7898636faa772723d42d632e2f1e2b845",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 239,
+      "sourceHash": "sha256:95b352e09f31a2106e8cb0bb7da96dc6f8edfb1ace5dca1764599ba32f657050",
+      "targetHash": "sha256:bf1a3a9d8c84566810ce82ad8619ac0862e6aa7440a39f0932ab9f66532ed4b7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 240,
+      "sourceHash": "sha256:718ecc1f20dda038a1d9e5d56d9db84e944d4e53f8cff8343637a6c02930e5b4",
+      "targetHash": "sha256:073bda6d38d4a89d2202f254e2e70dee0552233e507657cf78885db39a6f86d3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 242,
+      "sourceHash": "sha256:fb636d2fc5713b8fe1b8953435b0cefc2202bf07f813f4e75989815b2b58546c",
+      "targetHash": "sha256:38f577f514ffae43156bf88b5dbda591ff8cce21e62e38b82b22e62dd8b656eb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 243,
+      "sourceHash": "sha256:24f2409b40bfb57b033850d7daf606985a1d6922579a0c8be53a64579a2113ea",
+      "targetHash": "sha256:d071782a0154e38c791cad3dbd0b05ede1c56416db124b049685a419dc88bceb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 244,
+      "sourceHash": "sha256:c8d31151921d34c92a3073ecaecf6459f42621df5be9ca79f22dde6e6ac9a343",
+      "targetHash": "sha256:82b3d708ab7de9e281c4adbff228cc0e7e65522547d5fe73cddc8236b6004bf3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 245,
+      "sourceHash": "sha256:c47ece78600b3198a8d9dca3ff6a8065078ef3f25c1b86501b443dde2a0cd150",
+      "targetHash": "sha256:0bec5af630992b51500d79639f09422ca6c98c060cd983cadd715fab324f788d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 246,
+      "sourceHash": "sha256:15bdb636077e2c86209d5307c316210539828d82703aaa731c50d2b73a69edbf",
+      "targetHash": "sha256:296724816c775a0c8eb2e76234974a9c3ab2e3fca4e3fad065075c02a9fd2979",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 247,
+      "sourceHash": "sha256:257080321a396bd9de058e6df8f4746715735478a38eb971acc2edff9f508998",
+      "targetHash": "sha256:9e5fcc7e58c36c3a85f391b3344ad25e9d9b18da6ba6f8e95f6c177adb43d429",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 248,
+      "sourceHash": "sha256:a3cabf20efb3ba3c93b924c7e0650feabf75916839759f21d7c9d10b6930bba6",
+      "targetHash": "sha256:b504ee8b914f1b3f72cddab671243b553b7086cdc9af31618c979eb3d873f1d9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 249,
+      "sourceHash": "sha256:689966f3c890b89ba4721c7d1a6eb927a2e37f68c384066a7b09531398b6edae",
+      "targetHash": "sha256:9f2ea35c01b94bd0e30d78d7a58ebd494fedd76e51418d7ce3e21f56fa596073",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 250,
+      "sourceHash": "sha256:f146eed460ad5e741886d0518eea0e5c53a37f0611910002c6e237460aa89354",
+      "targetHash": "sha256:8430c034969b44a0ab108669e5a57979d439878a2ee60daf54c7a785fd74af15",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 251,
+      "sourceHash": "sha256:dfac42222d4a206f56176e2d9b54f86cc43c2e13bbbf0b2ff87e5d3e3e584f34",
+      "targetHash": "sha256:7cd8e1d7891a0104cfa8341db8a313b3132fadef47af7e214883b7d09703cd8f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 254,
+      "sourceHash": "sha256:6437483215261c9dc22ace007cd93af1df440777e2afac237186bffd305b4303",
+      "targetHash": "sha256:a2226ff4f3be095974ec0b55e914d8a03a437916ca3ff5e79931dfce42536513",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 255,
+      "sourceHash": "sha256:f686fd8778d28d70ea58a81926d36c1514413f6fd3f7b88c3b5a2c4bebe2d4d1",
+      "targetHash": "sha256:c562e28aff1879958675a03404eb5a6c84c37b7d4f83261b0f80536f1485ab91",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 256,
+      "sourceHash": "sha256:f6fa2212d8415360d308784f5aa52b42db5df70dfb7876e1a81d4ce9d3a9b555",
+      "targetHash": "sha256:7eb1baaf741df1efc948fe6293d72a271291806c4e4b14f95384eb5b2542250e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 259,
+      "sourceHash": "sha256:21e1b7053099475dbea61f0da0b97b008c4a919c1da70cacf40dfe1a4a3d6507",
+      "targetHash": "sha256:0e9def620ce792f8d66e5a563d77be4d6afaeedebd7ea7ce5c8567e61c9859c4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 260,
+      "sourceHash": "sha256:17f07c2fabcc6f269fb0260b3334d5c4cbb50e902d29d2a05414b92913d2e5c2",
+      "targetHash": "sha256:8a62c78e1ec51a8c6ea541714740df27e255b2625611d5330e139e51af8cf4de",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 261,
+      "sourceHash": "sha256:0084c2414f173b7e559995238225098fd59a1d4c5c3cdc772f6721cfd5aeebf8",
+      "targetHash": "sha256:b802e1cb2aafdf8e5ebe979de89afd994923b18e78c86589c0bb0648cfbe5918",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 262,
+      "sourceHash": "sha256:86036a53005adb70bf1b166077cb117eea18086e6ff1d29482c06243efd3839a",
+      "targetHash": "sha256:3a94e6ce3e37ca4d0455d6b3b69f7558b9f930e8c1c26572b81dcead98ea5772",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 263,
+      "sourceHash": "sha256:baef244cb03ff8e10a9bf202ad45961d64dd9ba26e2afc97ff410cb7ae3c77a8",
+      "targetHash": "sha256:a412c5130aedbe45d5e6a0d5a9f5f411ff1b8e19534738d29fad1f51c884f51a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 264,
+      "sourceHash": "sha256:27fc425640e59fe25e00260c0b2c37dc79f3b468189719b64b5df4b6c0d65e19",
+      "targetHash": "sha256:0ff5e4900c0aab56b425437f285bd6a2c4e6b32347c19130e0fa00add6a61cb2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 265,
+      "sourceHash": "sha256:943cfbf8c8ec0d03ca14c073cfb5d96745cbfda11aa054f22b628e95845dfb13",
+      "targetHash": "sha256:0392de053469517880317e70a40a2f79236baa5d7e4acf9a589c056f48de1a6d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 266,
+      "sourceHash": "sha256:39de4731eedc9da7be9ee003807736c6866f5de81efb741c117ffa63f197f293",
+      "targetHash": "sha256:6c5aedae811e8084f1a3eb177c8750d660d76df50f65e443dc68cc446181c687",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 269,
+      "sourceHash": "sha256:c487d52e51268ffad1df5136ee3d614c314198aa7839d70c8483e97e4cfc4127",
+      "targetHash": "sha256:2577c18e3c35d2f3b700867b55a2738e9f29d5631fd4976a68c41f708f020359",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 270,
+      "sourceHash": "sha256:af465c1fd49a7f056ebf48e7b51825fde50448f04dacd583970be13344a80cd4",
+      "targetHash": "sha256:98fcaf4d87d35d061fda6a3d6896640f8390c4b04ac458a9b1dbae5942a4ac5c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 271,
+      "sourceHash": "sha256:e6cf9ba11828b58cace15d4970b5cab683b122f17f17fbff8a5f2b17e7add3c8",
+      "targetHash": "sha256:ac32403f170ced6686832f8c09bc5555cec4a8f3bbc81cf55080d8f19421b18d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 272,
+      "sourceHash": "sha256:911ea89c43d9dbb85f5f25fdebc52e6f20816903b5946e36a1163d94d74c2040",
+      "targetHash": "sha256:3a73248bdd79efe2e3270a030a6f2c4f39105cc5a7b7f23c6cf641c1b57e58d2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 273,
+      "sourceHash": "sha256:e3e35ce3bafac746c8633e5339b0ebe6d8f4d5f14a792d17c8b163ea8a351706",
+      "targetHash": "sha256:f6c38ceaae7e230cccc9d16dbc791b6a84785d39cdbadbd4962a5ead8550fbdc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 274,
+      "sourceHash": "sha256:8faa71559a7843a1c08e76b346ddf35a450403e2f1098ef22093c687fffd2a78",
+      "targetHash": "sha256:aff2d0db756eed9723949d74e5deb4f88704b76d1c0e3b61c63e25477ab748c5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 275,
+      "sourceHash": "sha256:ec0a7010beb3c7d8f5509a8ac12ce8da86f3e4d5b4b93d838f576ef5536f9f52",
+      "targetHash": "sha256:6d5ad55aec46e866323c66a8cbb6500c510cfa67036d1044798c94b79588de67",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 276,
+      "sourceHash": "sha256:69b00ef8e102b1df20f8ce96bd703225bb87d175c3c02dfddffb1446c1fc99b8",
+      "targetHash": "sha256:bf70592bc9ff5e758f37a75487ac15fbae572866e7aee7855c6c7e5389576f78",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 277,
+      "sourceHash": "sha256:538ae582ac2cd66f2dc8f1ab670bbef50fe06b404bb5435a1a05b40c475683e9",
+      "targetHash": "sha256:bb55c7b01ebb7723db7cb5ee47cb5b18d6e57ac158346165446bbd87169c6ea4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 278,
+      "sourceHash": "sha256:502ffb1abc6a965d53ef68c7e3980f646386b36321f19b7501b47a58d5c8848f",
+      "targetHash": "sha256:8c500a9d5233350277ccd42cc461ca41b07faff11a1e4d423ec0e0945119bd8d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 279,
+      "sourceHash": "sha256:296b0a695fae4377da210a0a1826bce0bd763fbdc2be659172cfacb154baca18",
+      "targetHash": "sha256:e21948d7aecbcb1adb7deb189fb6f5c60d7b431c23ef70af54c3ac95d0cbdbab",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 280,
+      "sourceHash": "sha256:5f232d8e1926e78964f2d62722d178efb8cf8b8badbdd824bdd23f08d6f20523",
+      "targetHash": "sha256:6d251f5d7776b907f92c4a55555bacfe94d2c9d58f437b3cd3df14323326db17",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 281,
+      "sourceHash": "sha256:a6c09d519b467a92f87082408b9164877497e236425c72600d7373074c715285",
+      "targetHash": "sha256:84b94c09a844d6ab2cd6c92de64af9681a4faf9d8a0df34a41df4d660198de33",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 282,
+      "sourceHash": "sha256:32c0d68f9ade4a550ef1d270ebe10d3c30ea0e38c8dbda76edf2c8425d888ca4",
+      "targetHash": "sha256:17741a9db14b210ec3973406f3b3adf4b7f7c4b4caa304c3ed2f48efcbc6f02b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 283,
+      "sourceHash": "sha256:8f0d1b30eba5742686a57f8305a2b0455e7148c428fc4b36743a23b97982e6e0",
+      "targetHash": "sha256:31cd9c459c2e28b97ffd77c90bc73b134733535c2cac2d1c17bcb30a6c902288",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 284,
+      "sourceHash": "sha256:2657e26a930e13823cec1f8f29a0affa1c1f42a062f198bd3c30059c4f54ec3f",
+      "targetHash": "sha256:fbd860098a8651812626c69eeffa01e06d8dd4e63301ecc7856ac3204e8abb68",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 285,
+      "sourceHash": "sha256:d57c2f13c80eab740b5621e099ebd4a5ac3d337b7883ce137f6b00b68f92d629",
+      "targetHash": "sha256:309a477cc0683f261082fd7efc0509207c2a10cdc498c30095b329cc9b119b9f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 286,
+      "sourceHash": "sha256:477e5af2fd7e4472aad3064654e4aa8bdd8653d826e8a6bfbd14f3537b072df8",
+      "targetHash": "sha256:48bc678152e832bfb67043ef3ccf0e13ccad59b10db7f9fbbb7594e52c9596fd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 287,
+      "sourceHash": "sha256:9ace6fb6c6b70b34297665603ce389eca669fa1f0bec819cd4d9be4491bfcfe3",
+      "targetHash": "sha256:f051071882a07b6b6e3de88fe17fff4cac1310d1d59c2aa86d8a1ecbacb99838",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 288,
+      "sourceHash": "sha256:4f9cb83c72ab539325258f2a62d6194b46c13b13495db03eeb04f4b81435d3d9",
+      "targetHash": "sha256:25860b300e9c988fe17e14f2b23f049bf98eb805cac9e7be98bbb059a7131c1c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 289,
+      "sourceHash": "sha256:4d8dbe32543fc8f51bc23098b585d8e6bba2e5cbb517bb79f7326e4e2b718ace",
+      "targetHash": "sha256:baa0903dfbf49c4f53baa629b686dd79f341a6d59660cdf639b138ed1667aa91",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 290,
+      "sourceHash": "sha256:d696a35bdd1883da07a8d6c41bb7a3153381b23aa197629ee273479a6eaa5a9c",
+      "targetHash": "sha256:359497aff53e7d5d7fc1fb9347bffc50a247fc861fbd021ce7e9400d741c1374",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 291,
+      "sourceHash": "sha256:64db9650c44d24b788d0c3ec20471458652b05db1c6c9db2b469a7e5b4beb9e9",
+      "targetHash": "sha256:29950c8f2d5e2be92955587d422ccfaa63f102b4aa18e1fdaedbd6583d5437dd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 292,
+      "sourceHash": "sha256:a35abcd6dac9a2e5c1d7d6a58b9bcd2e7b00cad33a8aa63b75766f1ba6ce207b",
+      "targetHash": "sha256:5a3d139a3992fde9ce622f8b9f3d9c76c8a7f4374154b24eed43cac8033abef1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 293,
+      "sourceHash": "sha256:39b5f7edb6f557c8c91999ce6a8e58962f4d17337acd7f7775b0d6dbc14d4805",
+      "targetHash": "sha256:20b1ed218b6970109944a4efe2127b39ffd5d72a62a8c4a5a5f1a1045678b965",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 294,
+      "sourceHash": "sha256:6747ab9f93597c3b10354e1bc234b1a985dab86ae055dbaa1ca4d7e23d4e1ae6",
+      "targetHash": "sha256:aeaea92333dc8479cb8f381765c4d1778dbf55f72e4a498338995880b2ba4ec2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 295,
+      "sourceHash": "sha256:34bd3cb00984fabc44b158729f8c8a44f216e66ab7235a8110bd30d0cf2ec1e6",
+      "targetHash": "sha256:bbbceeeb866d9167f1850c69ad4038053b205302d4945d116cfda3d76f548d04",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 296,
+      "sourceHash": "sha256:4cb749d0105b594cb06538e743acac849066f228ebdb078637f90ae312ebc50c",
+      "targetHash": "sha256:0a96f466e8f832b9042cc43ac557c692469b192a5a0945d5cf4e1778553c30da",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 297,
+      "sourceHash": "sha256:88a60710314472f2a96717e1464d244976401fe8c443e715cebb60fb067f3130",
+      "targetHash": "sha256:2d228c7774fdd4526ca62a672c4679a9514538de13ba7d7db1de7fc99c585d4c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 298,
+      "sourceHash": "sha256:3f97bc38e17f087243bb78a3c65e77985155c812089a2f4c0bbf6281b1ae8e34",
+      "targetHash": "sha256:95f7f1c10025c8cb1f6c77a6dbbe413e8b87b6eba3f7affcd2b6920612407fd6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 299,
+      "sourceHash": "sha256:64c747e21f067cde0b724ae7d6ec408f70cbc8e60c11ab674bd44d9581549e42",
+      "targetHash": "sha256:f205fe88bbc74839c1c431c3b62af470e5561278cc9079886c3f91fb15eb9edb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 300,
+      "sourceHash": "sha256:bee5ab3cde51c34134f4d893a99feaa7536b349ff3f2e9e8a8668d2de245c043",
+      "targetHash": "sha256:5e265f2e57c7213019de0a0a233105d9143ce4702fc3db4955a96e8f1e9dc3e3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 301,
+      "sourceHash": "sha256:be176b0015c424b78e9f343f8bc3014a7a701cc2eb9000b6acbc04d67dbecb8f",
+      "targetHash": "sha256:2751c910001823941e388ba560173f23db0a173d8651218335af48fd2878daea",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 302,
+      "sourceHash": "sha256:1f781379c97cb62fb8a1d3f04657629c74cba2f999a6bd5b6f0bd4e039f3cfec",
+      "targetHash": "sha256:1b6384055aa41ab5d4b2a262bf031a6613aaadca077724f887f5afa32341ab45",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 303,
+      "sourceHash": "sha256:43a4f9aface6ea32f1fd22f54c8dd87780fd29ead707a8589e8b36383ea3c6a7",
+      "targetHash": "sha256:42ab1c9933a6527c1bc1b7285482830c693e4f096c3f1c8ddccb731b59e5b0b0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 304,
+      "sourceHash": "sha256:8032f456ea2daddbc2d4b31ee2396f12705e3a66f63d0d110fc868e216e05326",
+      "targetHash": "sha256:6ec66a72e42142bd7c9f7fe805d2751412f02d3d026afcdbc13da96af4adec4a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 305,
+      "sourceHash": "sha256:76a137b98b3d7a6c6d960e2e52c252d6d0c017a712362b6b37852ed24e8bc0f9",
+      "targetHash": "sha256:f3c8d3d2a3cb21c2afc8dc06e48fb11d0e7f534ee86938e84b11b2009b31dee2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 306,
+      "sourceHash": "sha256:3afb2c4d3e81343ad33c0632dd4262ae9fdd10b0dc53e44b5aa5d5780d70845d",
+      "targetHash": "sha256:c05ef31ce6c6ed6a142d59ca0333f578d8e3be4a7a037206dfdbda321a61a332",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 307,
+      "sourceHash": "sha256:5e17cdaf65d504f9d64b4bf8b744c1a1db2b5d0fe67a59b72f47913373d13a2e",
+      "targetHash": "sha256:fb5f979ed52fa79c073a823dd1fff86b08561303b381f94ef072d4f0df41eb6c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 308,
+      "sourceHash": "sha256:024e63a0a8b20631bd3c4e02231e96c5378a92f276e160bb657fc20c4673d42d",
+      "targetHash": "sha256:9da78fd59a9d0b791991f6becfb9b5ff13eae68a884dedbb1f5c8f09179f0f84",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 309,
+      "sourceHash": "sha256:5e2fbd4ac8719f7c75d535c4c0af77d7a7be29b35753fe7028e19ce07e3e8c14",
+      "targetHash": "sha256:838b6d09750fb08a9938f961e14e1989f5613046bf88b93c8615077890f61885",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 310,
+      "sourceHash": "sha256:10c4ebce0f4aa7720340e562456a85b1a31c56656017bf09313aae3e6e2a6074",
+      "targetHash": "sha256:d14212dfd8095d12d09ff781ea81b196bd2f413b22fd69402ee94e6f1f4910b9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 311,
+      "sourceHash": "sha256:f11c431f00064e1f887d3f532e54981aea78f0d39468ee9015be36cf877d44b7",
+      "targetHash": "sha256:0abe0c01687d7d74118a23b4fe2c582ec0a599fa2fed82d7f9fdc75d8feb3606",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 312,
+      "sourceHash": "sha256:35b98daa1b172aff366c60d8e76c75d207046cc463230e10d281550caf659d5b",
+      "targetHash": "sha256:b8b836f4ad3a71b7ddfd4ee8f772dc78ca91a1630282610fd5d8cece91751da2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 313,
+      "sourceHash": "sha256:4ed948aed315045eb8d5ce7c0a4fcfcc36bd6bd9c086145bc7badfb2848e16f3",
+      "targetHash": "sha256:40a413908196ab37680d7acfdd0d3e085ed3bade62829798b6191407ce118b2d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 314,
+      "sourceHash": "sha256:c9cbf753c3baa47b3ef1e9ae2dfcd8d16f831c333c9be98faadda24fb2f06954",
+      "targetHash": "sha256:7dc17c6a785b19845c5f4f72ba16fdbb2148a92f1685a95412cfbd742173cdf5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 315,
+      "sourceHash": "sha256:db6d259dd30ae565fb650ea5043c9d89cb4a51e61ef880c6e4bd216fa471b067",
+      "targetHash": "sha256:067c3f5edd30d201de6ec8a8ba9201950456de8afefa5e37f7cfb48a40ec204f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 316,
+      "sourceHash": "sha256:ce0dc6ed16494b1ef2cd2e8873bc716c32bf68710aa5b55b46920e391baa1313",
+      "targetHash": "sha256:58a7ee06e7c894ce4b0ea2575503440401f95a46455cd29624419faaaae17cfe",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 317,
+      "sourceHash": "sha256:df465b9c6def47d651f540adf84fcabb8d289712be1d6c578f18172898fd9e44",
+      "targetHash": "sha256:9b676ea45c411f8da4ac0b15c998acb66dc64dbf1d1c7e08dab991db08ae7c3e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 318,
+      "sourceHash": "sha256:8c3a8297a17bf43e0c68d9bb54fafd7d1424b33bdb10f8454d399243a41323ce",
+      "targetHash": "sha256:400d2e632dcb0b47f403df5083e820fa8c7b420f491220a11534d75b3bf2cc1e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 319,
+      "sourceHash": "sha256:ceb74ca5b39fffae1cf0a2e6876f18b3623eab1211b4d2f30215045ffcfcb854",
+      "targetHash": "sha256:e3d5d968cc6772efee49d0665fe1d5110ea7830de04685a340e8667880a7777f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 320,
+      "sourceHash": "sha256:69bbb067736afed7bd39939d9d54c87b7a78c63c685e53e2528328eda86a4c8f",
+      "targetHash": "sha256:fcd701ee27dd53c81828e1d738a3697145d78defb1396f913b766e5c0d704c94",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 321,
+      "sourceHash": "sha256:82e7484ce012eb6a9d477087d5ba0a906d31e81ba361bea26ceb3e00fedf3742",
+      "targetHash": "sha256:f98cad72403d373c85887fa5a5dfb3683fae7d9f417f7b92a6af4c3a4f0543e8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 322,
+      "sourceHash": "sha256:26a9264fa079f872569dcc3f63c38b6acf389b7fe3eb7d5e4aeb93231ddb5ffb",
+      "targetHash": "sha256:aaaf093e468e25455067e6792e3dc274b0dcc913248b475ac7f282f50be0a1d9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 323,
+      "sourceHash": "sha256:546d84b7c40a4b220ab4f88100cc5241e900423de9f5a02e5d252616c4859724",
+      "targetHash": "sha256:216fac3ec52430b08f8d6de753ee94363e10bbdbb36ce8d33cd3478a69ebbaa4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 324,
+      "sourceHash": "sha256:2b23d6007a3ce6916c23c26ddea72070920f92cb429a172bd3ed3ec68e06cd41",
+      "targetHash": "sha256:2ddf553942cff4b5f159155a96c323307e720f284687949b5bcea108b8c71924",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 326,
+      "sourceHash": "sha256:863aba2c9b003f05b401ad88e70273665cfa1e86e0814f46e60856ae856d44a4",
+      "targetHash": "sha256:eb40f8122d9b6f401abe287ef92c587e05e201574fb32dcb02514ac7cea6db68",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 327,
+      "sourceHash": "sha256:5895ca000c68c8a2d58cf37bd620c1b1d5b02db40854dde07410c8d4ea7e2aca",
+      "targetHash": "sha256:5b12a4a088d04f45375406ade363c72762c4b5208849789febc75d50dcd21cee",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 328,
+      "sourceHash": "sha256:09664c840b92300bab3e6f5a6a1a1857d576d7e373f4e695daa04494ca7fb59a",
+      "targetHash": "sha256:647d460355c5bb54330a791f5691e1200dc8ef3437c344f8622fca5bb8965210",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 329,
+      "sourceHash": "sha256:47c53c7fe1aceb9ed0b17edeef8a351a571bfcbde8f78a87422c81cb001754b6",
+      "targetHash": "sha256:c1a0f4472224dabfe4a29355b904b7cbbd02a102720e5a60f0c0a5cb0a9d01db",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 330,
+      "sourceHash": "sha256:2e0b67eb75b500c45ab730cdd4cf55f9ca053616e122d109f1dfae3880538a8c",
+      "targetHash": "sha256:96ff63e5b0f4f6272b260310a7b13a914ec4a5338653d45f3eebb53188fa4a9c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 331,
+      "sourceHash": "sha256:93448cb17b7753ca0a5a6f10d7e4401e05798a0e357fd08b6228fec066eb193f",
+      "targetHash": "sha256:4addc7e9d054d277b484773d0c5744cb9630fb5e17cc270c2d7cfb4cfc035699",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 332,
+      "sourceHash": "sha256:a10cf760a6231e3b8a46e1e12ae4fcc1a1ceab346301f919a2fc7480b30676f3",
+      "targetHash": "sha256:1f3120818cf2c3bb67897d8725e604e5544f8121e033aa4b6c6abf9bc837e4e0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 333,
+      "sourceHash": "sha256:6567aa866504aca5dd04334b47b36876d70d0bc76ea56bcb0f74c1c5e52475aa",
+      "targetHash": "sha256:6eacb5c9cfec96ddd3f30b9ab19e8edf5e16936235527d4939ee36d4a1f7f31e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 336,
+      "sourceHash": "sha256:f016a8172336f1b84470118d7fe2006c6d19c1b21c911d4cd2b507d933807cd2",
+      "targetHash": "sha256:444f3a8219470c011758ee82b7fc2b09c3267d97b4a78fa76f7a54eb1fff4f06",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 337,
+      "sourceHash": "sha256:3a12dedbad7241237bc29d620f374694d5077778d92b4e93016e854d37c7e807",
+      "targetHash": "sha256:4d8b2245c3e955693be50ff797aa9004247a2d67318b5f87f83344485a85d8fc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 338,
+      "sourceHash": "sha256:f39961c4116db3fda61656c0d1e784c5f72c59dc4d90561e4017fa1393b5537f",
+      "targetHash": "sha256:63b476c937b58b2e0c08c36247c5c8d244f66a26dca7ff8094a51e5b33bdde54",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 339,
+      "sourceHash": "sha256:0c227e7a705518a164eafdfa415dafdbc0105e8c4d98da52b6a94c17efc0b3f9",
+      "targetHash": "sha256:24704688326501a8bafd864cd973a0b7e269b8fa359d981b20711326e8e32c6c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 340,
+      "sourceHash": "sha256:40a0045feff84549f308bd3f3c82e58cb8b1e0bb339bb58a0c8ecb48a373d675",
+      "targetHash": "sha256:7b35f26d5392d4558f1a91e9b7a370f377d23f8bb23c97e8ca5fd2c26c0d954f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 341,
+      "sourceHash": "sha256:f84dfc5c63452124461a8a8e1b9b3540cacb3acaf73733bcb4de91b685547c3e",
+      "targetHash": "sha256:102cbb93ede5fa651ea57c258cead4810d6b28e75cbb250123e28c86fcbc71bf",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 342,
+      "sourceHash": "sha256:5e43559b0673d6e51d3ad814824ee9e7162e28a0e586e156062665582a3ce66c",
+      "targetHash": "sha256:66fd99025a21f383a18b800d2d0a651784eea47b18d0bd2faf620cb8a061a8e1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 343,
+      "sourceHash": "sha256:1bb3c0dc96a6ec6361ab8412a6e8912681346dfef8aa8c03d93eedb5115d488b",
+      "targetHash": "sha256:b1902f573829e3c2741530b47058858e83a7ba695e3b88ef866fb43bc85ac1f8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 344,
+      "sourceHash": "sha256:b733e907bbda1c462ed3e22861013b882b233edc9e2c0842f2464e7859172868",
+      "targetHash": "sha256:5f83621aa6ed0893144dca0579c72d568d20d2d0f22435014c1f3c8957ee026e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 345,
+      "sourceHash": "sha256:68a8a8ad7d14da29edafbc4acabd770516bdc19b7491d7248e75fa38d7ae6076",
+      "targetHash": "sha256:4b094c96a64bfc35b7660b79261c195e90b5b96bdec772cdf15c0243821c8993",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 346,
+      "sourceHash": "sha256:235d8a8f81c836461596879bedd6cbf2244a1994f175eb41d97ca60d9c4309c6",
+      "targetHash": "sha256:cfcaba901843a5029eb0cdd325d6a755e80e25a2b1fdff77f30503274c1aba71",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 347,
+      "sourceHash": "sha256:f14115a94d13f15751b83df086869b581e6f3ead1e93d868f2995a4abdd2bf89",
+      "targetHash": "sha256:f1e35d750034df8dfe39e391dd25425b289058443e85dd2b4eeaa7dd78bbcde8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 348,
+      "sourceHash": "sha256:21bb65984a275b633fcd8e6b599bbbf6a44fc21fe8ec0beb206347cfc036ad8c",
+      "targetHash": "sha256:7cb4860983ebf2b62fdb2419d8385677cdc7c8de2b89d9a0b098940cba179245",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 349,
+      "sourceHash": "sha256:0d115edbb76889414946466d9c524a16da9303c45a31f72f6b3c7f681d5cff6b",
+      "targetHash": "sha256:11a47f77110974fc0ba3aa8cbaef996e49a7b69bd868b8f6407d286e11eddf74",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 350,
+      "sourceHash": "sha256:0e3c0acd65a4f6f5a48478c514ae70821213580e6f2456a12070163c41feafeb",
+      "targetHash": "sha256:d7dbe75bddb82d990477a80f8925d870cea7e882a47c38ffa917095490a639ff",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 351,
+      "sourceHash": "sha256:58d275590a419556efd5ffb6f7d00f4a6ad1b17396bf30afa9ca4dfab494aae2",
+      "targetHash": "sha256:c4a1324156fe320109878a180d97bcfaac3e3b1d717fb6ab2b4826ab20be8555",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 352,
+      "sourceHash": "sha256:f09f2044d091d757bd425f09e48a2342c55ef722291a67341c272c3a3d487ad2",
+      "targetHash": "sha256:ddbc451a103ae0f3aeabcf8188fe1d0c95bb2ccd65ecd627fc7f640337fe4856",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 353,
+      "sourceHash": "sha256:fbef798194dc5d790406a935a708b5df0dcf376e92fcdbad514570bc2dad70f6",
+      "targetHash": "sha256:c4f1d852dea3efb420363dd857fa069fbae00c0ccacfd3213d4b67d043a76022",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 354,
+      "sourceHash": "sha256:244de628230409a074e72b39de52e150962a774f90f2c0eb2a2b673a3c6b6938",
+      "targetHash": "sha256:a360a6b330b9949002ad02aeb1074f3be1adf204c7eccb3362ceb185198947ef",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 355,
+      "sourceHash": "sha256:4034a6e92e95ee57fe2e6298f964c4f4606bb090ae3f92260143d504b02ac8ff",
+      "targetHash": "sha256:b0ac61852b8d1b76fd9a52c522104bcadcbb5fdae5b235509c45a30b4fe66fd0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 356,
+      "sourceHash": "sha256:f983d5b20c825fcd39eee3b1a4d5905c27d3f2dde580d56bb41b2d9b02f9497e",
+      "targetHash": "sha256:150493b4dc0846a3922b8df37c3689a78e49fed95502bc11fd3adcd9a455072c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 357,
+      "sourceHash": "sha256:c02682b3074b378168633092e48e1a73f571a1416e70211c8bce54b8fa6e9617",
+      "targetHash": "sha256:a2fbf26bcea86be00969a28cb0f913ba04af0c9a05ab5f89a379ac275d64b928",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 358,
+      "sourceHash": "sha256:b3a128f76637e7d869c7fc525b26d46b23f319380ee38c4bd2e7687a7ec5ad68",
+      "targetHash": "sha256:ce5dcb6487dc6ee648edb994541cbe8b5cc84230215d5800a89d5c56b0198b75",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 359,
+      "sourceHash": "sha256:4c367b0554b9017b974802d685e44783047d06a04d3f90f28ada15229454d6a8",
+      "targetHash": "sha256:674a0517fe1a8f21e563117950fba2c2f5fe8a537b7ec7b62d5bde4fde4bf13b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 360,
+      "sourceHash": "sha256:ec51dddc1a37572b3ca4e7c718ceaa9189bbc067726289c441b69be75c2c8d04",
+      "targetHash": "sha256:a3517b3de3698a0044e29fdb6b89f820daadaf90e1da8f551da12454a807cb81",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 361,
+      "sourceHash": "sha256:7ffd068b61c9807cb1ee01c43bcebe737821db35df813869ff498e094e23a226",
+      "targetHash": "sha256:e93d78b7fb947c5321228c2188baa32caa3c2d0c6679bc56eaf69eaca1415345",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 362,
+      "sourceHash": "sha256:08962a17acfdebe81e8b16738edbe8ee87707155c74d3a7d5bcb859310deb999",
+      "targetHash": "sha256:e4cbc52dcfbe90a5523068bcede5a2a75baf314774f84425f0200d29c0e075cc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 363,
+      "sourceHash": "sha256:15707db7e20a0852390dcb3b5aabfc06a18d254bc527f0135dbdd214a355a730",
+      "targetHash": "sha256:5dfc802e14d2d6f697696b4ca25a0ead0e8c8d3aef6faf2d41d7a235ce10c304",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 364,
+      "sourceHash": "sha256:ff7d9cf053a4e8ab378b4c94c83ebf1d63a561589e47d78bd0e43fa71f5b0f9a",
+      "targetHash": "sha256:c0a8dcf14cb5b7386b0d04408317b4a26a33581cfa384662bc1d746ba14b9759",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 365,
+      "sourceHash": "sha256:b592cbcf441ea06044040040a5cf9bf27a010b01de5f9835b52f897c47e729d6",
+      "targetHash": "sha256:a9727480ba4206fe82190dfde429f2caa777668042c23947b6d067e0e7308c1c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 366,
+      "sourceHash": "sha256:045241f24f3dd231560844529cade046fe620115865ed1908e3301443478f7a3",
+      "targetHash": "sha256:81bd919ba681d7bf2bbb6a1979b997d110aa9a89802a62732b7ac52e9ef6b9df",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 367,
+      "sourceHash": "sha256:bc82dcecce8cebe0bb729b36317208e133dd6011d80260a0619e8a6dc5d00717",
+      "targetHash": "sha256:1ec4a039376a13c8f0d09442d2d11baf403748bc0781babec6b28397d555feab",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 368,
+      "sourceHash": "sha256:2105198f9b8bfd274feccd388ddb3b6aaee67e22872309a3ecefccf7d03376e8",
+      "targetHash": "sha256:1d1f626510236c3def7c252d35ebc5ea644e648791cf52dd00089deef4161717",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 369,
+      "sourceHash": "sha256:88d175db52460fe1402892130d3a54944389ef09ab69cd03de9466580d19bc11",
+      "targetHash": "sha256:b24e606fd74cc4a661f623f0a9d7ee4cb48fc7f19b188d4799f9b10be7f8133a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 370,
+      "sourceHash": "sha256:43dcf3d764252defa06d4815ac4a5e1498c4468f0090c6fd7f3ce8e46ccaff66",
+      "targetHash": "sha256:fb04a2bc9534922514a4838dfb019eeeb1751542102b7a8573aa2a21798df151",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 371,
+      "sourceHash": "sha256:f45428e84c419ca8c3623cb1979520d5a1e954a322ee711b92c4579dca2e6ce5",
+      "targetHash": "sha256:3ee421470ab15603792981d6a4e247064904d1e1265983782a885965ed11e335",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 372,
+      "sourceHash": "sha256:c6c6c71ff45c994ce185db605908b6f0db953dd03c054ac230f75a8803fcb84d",
+      "targetHash": "sha256:be4782d987337837af490c7f88d7c071d1fbb18e4366e787aa6bb4573d2b62f7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 373,
+      "sourceHash": "sha256:d94a039c886a64fdece90f4432a065b558afc9e50ee1b78720b067dcf4e5df89",
+      "targetHash": "sha256:f746c592bd0fe808bb47d12dbdc1c077f9a35a4dd759c65a1136084440f70321",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 374,
+      "sourceHash": "sha256:75569b8fb38053c01d6e6a55c0325e4689b7e68b29b2275b73ce1c3d4aec5f27",
+      "targetHash": "sha256:837dad632cd4da8039b97d75546f41aeeb3fb30a4311eb82002994148ead48aa",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 375,
+      "sourceHash": "sha256:2b4e2868191cbc385bb37e658ea638f9d4ddf99a2c2e6d97149fcf0d41b4ae84",
+      "targetHash": "sha256:166ef5303dbd037b808a0a3797b5ec3aafc65feccbc802de2ca12c292bb15c3a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 376,
+      "sourceHash": "sha256:ce9312a6985b16a09c74e9ca69d54c86fcb1b252f5b3f1287dbef9f1b92ed3cc",
+      "targetHash": "sha256:f0b264b3e52338e7205bc2396a48745129be3b30b1d7eec17b0c00e42e658fdf",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 377,
+      "sourceHash": "sha256:59fb8a27e4a644f9fd2072c1ebb09747f79ac478f8f26f6687d9e36707e9db3c",
+      "targetHash": "sha256:61b415038fac5ad0c0611c88cff806fc3d80d00682d20e7c26b6d9727949c834",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 378,
+      "sourceHash": "sha256:5df62d8200a706612b5c788a538a3fd4e1e39b93fd8db7a5c6b4b07e7e4ca2e6",
+      "targetHash": "sha256:0880a9c84dfad4ec68c35130e86bd0d12088723f80563c497a022c63d572125b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 379,
+      "sourceHash": "sha256:e9362974c95d2c6504f124f17d95ceeb9b0b789aa0a54726295221e69dc138a6",
+      "targetHash": "sha256:9de1484b44b7d0266a9757641313dc1eaaf2289ef75f7055a986c05f7a7ddfbd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 381,
+      "sourceHash": "sha256:3ef319c5a56e24e177cdd6aea2a8146cce14bc709792adfe76d201856deb7568",
+      "targetHash": "sha256:c85cca9f243fb9ece617e2ce4d8f40189cdd5196f02cf0356cf06a278f1be64a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 382,
+      "sourceHash": "sha256:f82f75dc8d99bccede0b5558adb9937eee40f5edebd1ac5259e3f1e568dc9ecd",
+      "targetHash": "sha256:3e28b5b8ad6bc5abe06b27309f67b7937151b9e97a8ec826a7d71e3b5b8c9a3d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 383,
+      "sourceHash": "sha256:ddfbd7c51c3dc7d2a53a4ecb8994ca8e1ada16dba5658ca216beba1c5a3d8eb4",
+      "targetHash": "sha256:359a2746bb042fe855af05437ded31b5ed0a5c1659568e648933ea43151b787d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 384,
+      "sourceHash": "sha256:4c17eb10974d714929cadbf70b39fc25e4bd573c25890ec16ca71bcbaf46943f",
+      "targetHash": "sha256:87eed51a251ea132bb217e1359d9d221c4b61ddb000a2160821a68a9738a7db4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 385,
+      "sourceHash": "sha256:5c74e78541cde6afb39e49217fb0345f715d7010e00b198c79a6fb8640d0b9e1",
+      "targetHash": "sha256:60e8773ea7482e405abd66ec3ef522b5fddb020378e39fd314492acbe4fed063",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 386,
+      "sourceHash": "sha256:9fb9a69fe5f3da36bc0c65db8c34aa5225f968221d7d0b67ac62e970b5a9fbe4",
+      "targetHash": "sha256:4573569942b8ca54d0b2ee6d3b5eecafa801f91a1a625228ffd8d1b074677c8c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 387,
+      "sourceHash": "sha256:2f55292e1841f12d93cce98006dbfe24b98fc71293e7546a6805a996d5953559",
+      "targetHash": "sha256:6595a350625de8033230f6244c9c69b721e997907d6ec00bdcd9f09bf489eb26",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 388,
+      "sourceHash": "sha256:508240fadfb07af747b2c9bedbfd3c337d0829abed4df7961d8e9bb4f30af2a2",
+      "targetHash": "sha256:fe1d5dfe997da6c55d64d845dd974cec005dc129d5409204aadd5c6ad4215ae1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 389,
+      "sourceHash": "sha256:14ffe1f363b0a9276c0f7fe16ef3eb332d71869bdeb0a828c628299442c63842",
+      "targetHash": "sha256:4dd0caed6aed3971c360002e717d827206a5e9ba8db4d88cd7b031893f03b5fa",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 390,
+      "sourceHash": "sha256:c55aadf1a8e84b19f7b942acfad0705f75c65cfa78aebd4be37f7d873acbdcdc",
+      "targetHash": "sha256:44ffd818b94e33557f61a3e743734e6bfdb10f51b963ef4bbd5d59bcba5ede20",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 391,
+      "sourceHash": "sha256:37036aed30dff4e237ef191d8ed255539cf29c950b5048bebc0f709339cda37c",
+      "targetHash": "sha256:41e5dd07f58b9d385b29a6a32163fbf8af01730646f880fd33ca88f23eef046d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 392,
+      "sourceHash": "sha256:f1ac5b47fc1aefc48c36c50817326a4e0891abedbaa8d30cb05ce87d315dc8e5",
+      "targetHash": "sha256:9d8fa712834b7873d5615a69f86214d06e87a4f009be668fe6c900faa2d8cb90",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 393,
+      "sourceHash": "sha256:4657ad357bb22936b7f139edbd2808f13092c19d63069c7c765f956f30054356",
+      "targetHash": "sha256:e0f6b2a87757e3a3f7111ddbe4c5a66d1dd2321b7d677cf4323d9268c7859584",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 394,
+      "sourceHash": "sha256:56ca30706659e8169818dcf4a60e5d9b658ba544bd017c5e6fa21822b641daf2",
+      "targetHash": "sha256:e1b91f5083c92ce23a23325c1b21565b9c2ecda6a9f428aa901b5d1375add656",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 395,
+      "sourceHash": "sha256:976115e5e402271529d8d06a8ccdce851838b83069daa25d6f28f7b260736a2a",
+      "targetHash": "sha256:cd6157dcf4b31dd824abda2c8fff4c793a5e13781a45a9003d864fe591000237",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 396,
+      "sourceHash": "sha256:8b9e781a8deade80c10402904b9333aa414b15ff02ef56ad6f2c252ea6691985",
+      "targetHash": "sha256:1ee1f69e50559ada85120fb8bfff7488fe7fd413072e0e2178568b099acaeb22",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 397,
+      "sourceHash": "sha256:0dc0a00607570c4b91b2fd913a3ecc384f80da322b639a2bf13fb38dd146dd2c",
+      "targetHash": "sha256:b4483d24c506e82822e3e24367d88733f56d4693c6d1f749a60b68064d3c882d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 398,
+      "sourceHash": "sha256:145281ab4d2a7657e16d3c7ea6af40370dfdc9d1536a24100f4bff57315837b5",
+      "targetHash": "sha256:e1d7485d88382cd928e7334e3845cc50c14d70e24c7762d816c21cce8ec019e7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 399,
+      "sourceHash": "sha256:2536f1bdcc057138e09786466d1a9519b81791effdb7abc0fbcdc3d8f726723e",
+      "targetHash": "sha256:19bf56470e65a0c814e64005cd063cb4c74a0ad100f46ea5c28f20920240e4b1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 400,
+      "sourceHash": "sha256:c44a3cdec51eac4380ed8d5996f583b9530128a2f5e3f6a1c675d0df017550e7",
+      "targetHash": "sha256:b6b081a082a3d268ec33d459facf117b2941aae8cf62bc1848bae28830ae7888",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 401,
+      "sourceHash": "sha256:09bd9b2c23a609ba9f2c47381e5394c6032c37c228e6f089806721e393d5ed6a",
+      "targetHash": "sha256:cfec7916867482b3d3349240438ada7a54e60ae2f1319fcaea771b76a1c40460",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 402,
+      "sourceHash": "sha256:166cddebaa4be3b7d24b38a265ada63917783e2aa5550b59e51a3f06c2fc4d6f",
+      "targetHash": "sha256:6bcded0341fcfd7ba4115afa92ad4382684bbeb2057002cccd4debc16221ecab",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 403,
+      "sourceHash": "sha256:e71c8a01250457e7fcfe7a9bff9de93b5c6b737c872b6c5773d0467a1aa37fcb",
+      "targetHash": "sha256:32e93c5f9302b707f852d8e6cde4e4edacb030c4dd7a5a7b8a42985023f43c7a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 404,
+      "sourceHash": "sha256:18c02de94e2d46347c5b148bb533685749fa5f5663366988a9574bfd3deb6130",
+      "targetHash": "sha256:2610b296ae8366ec815e99dcf63c877b622c8af949d538cb51b5e20a9db43037",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 405,
+      "sourceHash": "sha256:dbd5fb976df2110ffa0a77504b7533c1f16b26fcc81b91e00cedde0dc60bb778",
+      "targetHash": "sha256:58e544d5124efff573b0af7bc8ef228fc41761216c58071ed01755388f6efff4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 406,
+      "sourceHash": "sha256:d21a2c523da7a8a9f99a89ecb92eec9b00aaf7d05ce818110566fceb27695abb",
+      "targetHash": "sha256:3bdd021876cebd302b8bfe5e35d2492f4b8c59278d129e42c0dce47e407bb470",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 407,
+      "sourceHash": "sha256:d942b3c63be8b82fcef9ece867e389b0d14aad071dd023ddf0b7ab3aba26977c",
+      "targetHash": "sha256:91379633d981993f46c77c8736f305b75eb9db6b1760faaf69d90a7e0b6e8233",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 408,
+      "sourceHash": "sha256:52b46062b47f06ff9af66f1556532147af5e1b1916b8325711b8ed9f97e37d72",
+      "targetHash": "sha256:326976baafcb248f9b783a32a469e07fb95725d4e1bea59aa9ead944117f1fde",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 409,
+      "sourceHash": "sha256:67c9e819249ea3482f1206df7ee2da27edec2362345b32142f35e76a6294791c",
+      "targetHash": "sha256:989be8513331f0f84cad987a2dae0169b85090f758e319e15ca826a05470c64c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 413,
+      "sourceHash": "sha256:3714ff9d6ac39a1bb74922cebe9ea3b7461fcb4a60d8598c018a374da06a72e6",
+      "targetHash": "sha256:0c3515ff15629c22c49d0627ea4f74e86b8b1c5cf40f8c8ead4917b0c1ce332c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 414,
+      "sourceHash": "sha256:40dff9d421f73f2049e4acb38750d4a63a7af2b7fe521fec75a36bbd3ec58f02",
+      "targetHash": "sha256:3ee3e537aba9b81e95233da1bbae5c14b4a1d273d0a28a25857866079b1d1cae",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 415,
+      "sourceHash": "sha256:b1b7950b3f76648d6126b09cfff06b85276ab49a5df9993d8a158c7d97233290",
+      "targetHash": "sha256:60eadc313b133f011a079bcd5ecb29fa1bec8cdcc0a1c43e4b98dafc03a66ea1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 416,
+      "sourceHash": "sha256:6bada32f0df018849c151ec910521c049dc65e006121c38d9eb5b444ad9e10f2",
+      "targetHash": "sha256:94a4b03cc78a53d1acb81de680e655843e60a926a7baaaecee4498bc7e880536",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 417,
+      "sourceHash": "sha256:8b35cda606b3f9c51b9ebcb3daf8a12597eb2198105601d2fbeb198b93482172",
+      "targetHash": "sha256:5f0cff9f54a25ecf05452d6d67f31e34bf7a851ae482e770b77748ad1570a91e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 418,
+      "sourceHash": "sha256:f6e6c2a38f0b5e0d55c49dab1ded2a30e3d6fbdbd92c499b7d25302a65b2c445",
+      "targetHash": "sha256:e46bcca82098db875abc68517289c88fd24bf8b93ad6bb1304bbc954a0aacbb4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 419,
+      "sourceHash": "sha256:bfa368bb4c614ddb489aba35275882b583ac1b910959c6c68cab419398f7fa53",
+      "targetHash": "sha256:489d2cc8d46ec25d7d19dc32a030a80d01e3010b6ae0a0b28d9375456cf442b6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 420,
+      "sourceHash": "sha256:f06f1b383c01f65b9e15824b89fe007d3928d4a00d14da1d8a8e581e68228ad9",
+      "targetHash": "sha256:73bc3cdca8ba7863296e7d6a84f8e852fb54822bd387a1f4c4e607c54fc75a93",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 421,
+      "sourceHash": "sha256:d99d64185d078e7575cffef5208ea99c258a2bd6b8dda569ca572d50b5c54692",
+      "targetHash": "sha256:b7fa0b3e1e830e2e5e6c0cfb9465baf85f257667c4df9819aa2fbc9d439f6a98",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 422,
+      "sourceHash": "sha256:dc4cbdcd55cec6f834959fdf16b74d083fbcd223956fdfc97161680354735a90",
+      "targetHash": "sha256:8bf150e53cd3352b0835489aa7666eb6e18910cee03273fa4cf4a9ea6a4a78f3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 423,
+      "sourceHash": "sha256:e1d9bca3fd592238b626262bff5505273a101d0fb5be81a5ea6b0cf55d7b2ccf",
+      "targetHash": "sha256:ec391cd686cd223c00f52339dfb3dc461bcb3b4eaafa1ca2bb477f4f3178f8c0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 424,
+      "sourceHash": "sha256:3a3b3de488a25129bf1438bf78d13166adfbfc2ad378f2988ea9fded77261270",
+      "targetHash": "sha256:d1a3d34f6244e989cda5b8eff1725c1f0f56806cc19a015b514e875494cd80d5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 425,
+      "sourceHash": "sha256:92d15201c11db7843419035e72abc5f587d574f665af30bd5eabac3a2a38e8c7",
+      "targetHash": "sha256:56f5b34fd09defc0ea8cb84c58cecb13545b6562021d750314493ee79d475508",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 426,
+      "sourceHash": "sha256:ac76b67dd0a273b97fbee9be147981d0156880c017f69d34f1bde81a67f21d10",
+      "targetHash": "sha256:10a920c277eda4a3a9ae7b70c69a3e4466c358fb54d67a92b97585c5517c3c5d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 427,
+      "sourceHash": "sha256:503317aa65588f281379f1fc84b4fdced299ceff2d96303ede656883ceef5b56",
+      "targetHash": "sha256:adcffc4d2f1085438402828849aa056e89eb7e396096612ea6f1fdf41ff820b5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 428,
+      "sourceHash": "sha256:869201000fdd0658849d5772a48fe7dc52a5df94876f048c037b8b082979e57a",
+      "targetHash": "sha256:bcde204ab30cff3ccae1a8f58aee041a4054660c889002adeabf66475aa86a96",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 429,
+      "sourceHash": "sha256:085cd5090dd0349a7d5f6f02bdc25c2f9732256788badbeefc8acfed01bf5dfd",
+      "targetHash": "sha256:da65eaa3114a2d9aeee7904b442b32db4019fb34252e7bd9f21e803cbd7b5c43",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 430,
+      "sourceHash": "sha256:078cff99867764e9ccf2c19b6c95ce3c9974aaa650be822c6ff110de0a51c328",
+      "targetHash": "sha256:1218ce676bda18a95d08fbf31c6e057347946ce14599b6bdf45878a128990902",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 431,
+      "sourceHash": "sha256:4ecfca31580dc87dbbc027c69de19828266bde491858b584ba8b264888ebf381",
+      "targetHash": "sha256:dc2cc090c5c46d849e911bdf7d2a31eada3f8dc498aa34554da85e923a233ddb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 433,
+      "sourceHash": "sha256:4c41f0c077718ad84692050728e4fae3c1a604611296273a760549a85d5ebd2e",
+      "targetHash": "sha256:c39aa28c3136159bbfc02b6b4ae63c41682e6cf07462b65acd82892aca1d0566",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 434,
+      "sourceHash": "sha256:cd7c7dab90e891c8f217b4706c200e0eb69866d3e9cfe830b018ca4a013ba8ba",
+      "targetHash": "sha256:5083255418cb80209e8cc4393745b35ee9501add063369968fe9ff63e031d4a8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 436,
+      "sourceHash": "sha256:c9d5a333a6637f7f27fe3e260dc4e367ce8c702efdacdb31b2ad4385d3238afe",
+      "targetHash": "sha256:24e879c8ac210c5d21bbc3da94cf3dae4d46431679a32b8a8064bc21135d1c42",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 437,
+      "sourceHash": "sha256:a061d6997cde3cf8676d5eb64034563db5933c19a127184117db6d0b73b8058c",
+      "targetHash": "sha256:e8db5f2c77d7e4ecb35a33963787ff9a141f81b83b8ebfa83088474f3b567c20",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 439,
+      "sourceHash": "sha256:ed2159e78e015932dfeca29293c4e14a3239ae8802f80192f3d3d230c1b921a6",
+      "targetHash": "sha256:c8d4bbe9d5253446c18c8681115958cb3d5ad2b99b3bd96a55cbd02cb5d5ef85",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 440,
+      "sourceHash": "sha256:32c66fc544beece76d6f919a2cc228eaa2ce9b837d3e04b3cf2846f99843983f",
+      "targetHash": "sha256:50ebd9a4aa3c694819ae964d8fa957953dc786f6731bda7bd0f7fcfbb735cd5a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 441,
+      "sourceHash": "sha256:e750a19a7bdd3c99aac7355f624b4fb1f8a0592b0bc5674f110469613a7a39da",
+      "targetHash": "sha256:91f0ec3b93a97d786ca32b2462c0b937660d2ef893101f457db82fa6831f887a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 442,
+      "sourceHash": "sha256:d3c2036e14be1db909186bb0e6625326b808ad2aa9ea8ddefb60ba0bcf03f48a",
+      "targetHash": "sha256:ee7938a1ebefed29455629abbd05cd4183cf0fc2e9d8af5f920f1b5f635c7995",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 443,
+      "sourceHash": "sha256:ab89bf5f6cbf4decb0b509842d1be51c62f7e045e46352fcf0509bcb85c95bdc",
+      "targetHash": "sha256:b2f5e9cefab5655a7d5ab05f62491cce00df4683451966a34fdc1c16986013ad",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 444,
+      "sourceHash": "sha256:8cc813793c7db710a8afa47579c989f8b028904e0473bcab8d8a5d3f0953d74b",
+      "targetHash": "sha256:90111d236375f4b1414f69fc91c8707e3b8813ef9b67f18c94f8f0013972377c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 453,
+      "sourceHash": "sha256:5997dc758da8e52c42e669bf0d7303cdfd30a8d18277c438152c32301ff86cdd",
+      "targetHash": "sha256:fdcf737c84990f2b4401822a66194ec8eecbf267c989e9c97fdff137e8612e47",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 454,
+      "sourceHash": "sha256:31ecb5e00f95e54f5c59a11f6c60b293e54b6d522ff38ff54f5c92a126154f96",
+      "targetHash": "sha256:e3fa138ad417d5ab271987621d6dd23d1aa8f4418a26e8b6d3bea8e8f21759e5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 455,
+      "sourceHash": "sha256:13172e9767173ea33ab014794397735fbbd77bd58a34cf7a7bbd87a119c4cb30",
+      "targetHash": "sha256:c839d44e12b9834d5b2bc5c401bad7c7874a2f50dc63bc83bfdf66e424fd46d2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 456,
+      "sourceHash": "sha256:96316f0f6404dbe1655965995c00874f695fc1a4332bb8edf77c9821db111b0b",
+      "targetHash": "sha256:32aa6efe1bf74a9e9d2e71e2cc1de00b3b5a32e8092ec87569de3f6d57328132",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 459,
+      "sourceHash": "sha256:c2ea4164c70606327ba775e17ccd281f98c411a1eceea929650c43c4327ac3fe",
+      "targetHash": "sha256:c1103e16cda4c566cbb521cf891d8f71140c93cd77863ff2ae63b7a6c4ebae79",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 460,
+      "sourceHash": "sha256:ee9be75cd51fa84d19825fb367ca2d2080ba28fa593c84fd64b362f2733ae0e8",
+      "targetHash": "sha256:29fdd2e210400f52ea7eb529405fd38ae020d14741a7f28031d4752eda6f1551",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 461,
+      "sourceHash": "sha256:b2272a16465881462621f6dc47ca4655e88b672de1cd12f5026daa8fd81d9f80",
+      "targetHash": "sha256:823f7122e50a521d248b3bcea77b23238707b4134a11fe7c21925c6fd9541df0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 462,
+      "sourceHash": "sha256:9f25ed687e63d83fffac6af89170a00f280ead73942e4bbd16558f2a1732ae91",
+      "targetHash": "sha256:5595f5317ae3d82c26423fcd8f02de1cacfc5f38cc130c6cc9035f0134478826",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 463,
+      "sourceHash": "sha256:79ebac40f57b85a93318386f411c245205c52d2a7f2c53928556159510d99083",
+      "targetHash": "sha256:4d4dcfbf0e1e523f7ad6a64081a0d6c27a1e1e290a30d3c90244d8ab2fc4b909",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 464,
+      "sourceHash": "sha256:291090190ee683f313f7cad3d69b3f83d2b8a926d2706a018344b697099454d3",
+      "targetHash": "sha256:5b53c51951816d8a1ad04f748cafbea4884152e93411aa3294d4813528f18f1d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 466,
+      "sourceHash": "sha256:6865979da79e8b1341fee4b203c15973656dd854e8d1a657341209483146b3b3",
+      "targetHash": "sha256:02eacb7bdc815a0e81c5c4bfac3aa22bbb9ef5fd48a691cd81000ca298a3f314",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 467,
+      "sourceHash": "sha256:8cce310ce1b6f1546cc18e83d95bb6b8c07fbc20784863efe2c10554637e96a9",
+      "targetHash": "sha256:9d98fd0d8b65ae608e04c0267750dc011c3f8166badccc12ad118b3ff075e412",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 468,
+      "sourceHash": "sha256:9dce0d9799f71c06672289c3b663958a2766be2e995d2e9584820bdfc2ab10f9",
+      "targetHash": "sha256:ccb69253445ba8280bc2088c31237233997c5b38126e2dedea208db095555788",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 469,
+      "sourceHash": "sha256:9ded487d5c614527bf1351978d92bf5f98b134b768af150e71391c0bd7f7c543",
+      "targetHash": "sha256:4b22187aa07c1d89a640ef4fba7b7ba964c05178fb64318a379451d7efe31103",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 470,
+      "sourceHash": "sha256:5cc507374217ae471c28005ad17f795832b8d8360374e73d4e99578c3e8672be",
+      "targetHash": "sha256:d0634169aec22cdd73e62fa0b3ae3a00ae4033dc55824eb133e7124d4ade9775",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 471,
+      "sourceHash": "sha256:048d11cf593e06b6740f2089b62af6718b15a45bf446bd95414dd5b625246522",
+      "targetHash": "sha256:7b1feddc9cd1978f7f0c010fe68e190a606c57bf13b4687255c5cbf033696b2f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 472,
+      "sourceHash": "sha256:9a1c54f55e7cfb1cc2cdad2991525037bc475a509fa37262e123c44e958d2d36",
+      "targetHash": "sha256:e5f534734c3678afc54afd0879edf3ead4175d59d73e98536e9553dee617ae5a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 473,
+      "sourceHash": "sha256:00d0ced350743a93fb6026ba26b47199bfa307af213340d15747fa3ae6e71fd3",
+      "targetHash": "sha256:22ee684bfaab21ffd68012e42bf659f3807b7125ea63bd1669506b0403ad4918",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 474,
+      "sourceHash": "sha256:6090aabc26060140894e916578f2b9e5021a526480fe58462386aaa1b05bb8b2",
+      "targetHash": "sha256:a19a525820ec334afd39b756772da8180b39620348dd575d197beefddd5fa3c7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 475,
+      "sourceHash": "sha256:7e12a50e14986ba3e76179b522f4748d3418bd39d5b6385a7fc45db63dccb33c",
+      "targetHash": "sha256:79c4c5ab60ecd0545926d3e1c4276d918ef62d5d0247fd545b711b3e7a104755",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 476,
+      "sourceHash": "sha256:3460c0c2a90904b6b7d51d1375151c65e048c87ef7d0f738d7bacd008d1e0feb",
+      "targetHash": "sha256:f59a30953df1561fd2ba1293100874af44def8d19d333ea7da66a81b7de6b3e6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 477,
+      "sourceHash": "sha256:72e2685e251aeda0ee55878f1512c584134091670db81b5c0ca13c68db280e45",
+      "targetHash": "sha256:277e7072080e0736895182f382f6cf1742f95e692ced5ab1cdf8a5fadda36a88",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 481,
+      "sourceHash": "sha256:5d096cc8033dd99494dc206050e6f401cc0df6bddd05bfa185f19ddba8e86ba9",
+      "targetHash": "sha256:4573e014764bf5d51d2fb837ef8e37fc594740ff83f29f0145ab19ec34fc79b3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 482,
+      "sourceHash": "sha256:2c0fe6a28fc7ceebbf76cc8538f3673ba5dd140c1e703dbf8fef81c1d20bf6d9",
+      "targetHash": "sha256:ab1a490efff9313e6391fdb6e8815507e3b1a383b337ba79189fc237d0c07673",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 483,
+      "sourceHash": "sha256:54f48ad294f77ee5458e748b127467e340b8e614a842f7f13f6ad5c2ed49fa34",
+      "targetHash": "sha256:b095c43d725e4679990c00749c090f3c598e949a86cb37357281421968773d30",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 485,
+      "sourceHash": "sha256:1b1319da5ebcb34578fb76b040052b6ff9e76da3eea3453c4c68caa1a56b2cd1",
+      "targetHash": "sha256:412608077bd9e9c4c37a6988a8d3b44237336c1e1705777ee4f5a0cd86167c18",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 486,
+      "sourceHash": "sha256:19b1a39448244d636659de0c67de9640799ac50ac3d943f67c2cfcf30aa832f4",
+      "targetHash": "sha256:33fd100c1512cc198dda7e61d1b2beec9b20a66b1d15293afbe412d7b91abd7e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 488,
+      "sourceHash": "sha256:06abfb636a4d49eab4c51611c28e3b46102e09f7f9bfd3b6af531e218140eb07",
+      "targetHash": "sha256:523e41b3d5384d1b3e6885aaea429f40b59d1a3dde4203b06c3c9b94ffa84a2f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 489,
+      "sourceHash": "sha256:a89d3ba1765ff8bcbc10dbb53528c3dae2379c9b99455c09237d7e9b2fef920f",
+      "targetHash": "sha256:f386846a2ff2571aa0e72dd58ce7476410f880e93c02ec3990dba894a93894b3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 490,
+      "sourceHash": "sha256:4856ed5755a7c02dfd3a5ee1d563a55c9c9446cbf9701ba861ee7d1b0213ac93",
+      "targetHash": "sha256:b3a0f3029c9dca2aa59e663dfd0e66978b919c6c5903e3e335ff537caa3f4c0d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 491,
+      "sourceHash": "sha256:cb4c9152586324a336bc402527dd1ec67be3d2a6803012928238858e9d80a99c",
+      "targetHash": "sha256:9532ea6783b003527242ddd1791cbb415aa4bf6c9e9efa34c2a81f5f0516e1cf",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 492,
+      "sourceHash": "sha256:1575a71ff84a39cee44a64c1783f587e0a57f14e3d1f019bc8a64a0b4b8ed7bc",
+      "targetHash": "sha256:4525cb8087d8f0c17c36cc0199f94cb82ed98e74cbc0a0df47e866969c48970e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 493,
+      "sourceHash": "sha256:5c77686ca7e195dfdf0583f5199dca5c94253dc7c4a4ab4daf6e79da5cb02243",
+      "targetHash": "sha256:1625bb755bff7f5e6e5ed567bee30d93624e60f074b928537867402a24150972",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 494,
+      "sourceHash": "sha256:921526d6b54ddb874f454b8ddbaed2fcb5a6ec71225b6195241bf252cae9067f",
+      "targetHash": "sha256:5257d96db27fe3fcd348dfc2f3de78427e39efce3d2c98c2d4a68887d56e4015",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 495,
+      "sourceHash": "sha256:f7af4de79083ab97ed148a2c91c708c6c8d89be5b42c8313792fb7cb3e3842b8",
+      "targetHash": "sha256:07b9b467fb478b6beb29e2aab5058e931ca722d6f18cc41b02641a32e28a3671",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 496,
+      "sourceHash": "sha256:4b0ef43a0ca3cea73a38e44b101397aa52c1a3dc4c69f53b1545108dd3b3ba65",
+      "targetHash": "sha256:33a688a385caa1f15661eedd436332baf3e3bf0d7f11bb92ec36117efe91a2c0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 500,
+      "sourceHash": "sha256:53fb604fab0d3fad414cffa5d223af7b60195f25778e4797f11428fd755f5b8b",
+      "targetHash": "sha256:62631cc75503f8487391da3e47a427ce80ad5cc9900282e1dec1609006f4bbbd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 501,
+      "sourceHash": "sha256:98c9659ce5d1a85daef4ce0498074cb0bceab5da38d8b6adad580791f0c7b3e2",
+      "targetHash": "sha256:4a9a30dd12cca763fb355d9c4733a920f2d822a3552b68572bae5557f097204b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 502,
+      "sourceHash": "sha256:f2a0dfb51143323f8765bc6a826c281da27e3c335d36226094c78b82bc0da4c2",
+      "targetHash": "sha256:68547a148335950ef4fb535fdddf65c43203958b70e392da3d1363fc0c5575bd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 503,
+      "sourceHash": "sha256:4d5add99ea602e17c5bba503b6f6caed95b491df30c0cbe000469df8e6d11e5a",
+      "targetHash": "sha256:f8db105ba0fecb9218b1b5ae998d1e91db43f767bf70890e39b18ff880a5839f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 504,
+      "sourceHash": "sha256:e15bc7994d2f6dcf82c9d58fc82b388c95c40f767e723dec046fa601abb23c83",
+      "targetHash": "sha256:a99079c3fe39a8d602bc4f4f28b5eae3e8cd73fc65261708cfb5015977a4a59f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 505,
+      "sourceHash": "sha256:f34322995da0672928831f5daf5f1dfae2edd005819e422548d840b86dda300e",
+      "targetHash": "sha256:36098ffb6e7c8c316811ce04859b6b40386d1cbeb0e5a3c6cfb306f9088db70f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 506,
+      "sourceHash": "sha256:dbd2580c763439690e0eab77052f985ab796642e5e7c8c17e426368e29a119cc",
+      "targetHash": "sha256:bf8069b5d1cdde0f21d92fdcd9a83680e50857d101a50a3eb2359ab2d52f69fc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 507,
+      "sourceHash": "sha256:5604657a0a1c6318264b9ff03b5a781454f9e4758bb902e7275b7990c3dbfca4",
+      "targetHash": "sha256:14ef763a0a52de6a3525a88500dd68f2edee40d2aea9fd874f03746fcea02358",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 508,
+      "sourceHash": "sha256:aff9b59f3ff9a077b6a2aa39c7c53e4a2fd96ebcf1fbd09a1c3ada6fd6fce89f",
+      "targetHash": "sha256:9edb2f0f43cea7c3c4bc26bade0bd33380e7ffba57156be1d1a50d1000df7224",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 509,
+      "sourceHash": "sha256:cef249d9d0db566ed4e865c7098d72a6adf64cc348db1f1dc73c8e039da6cf21",
+      "targetHash": "sha256:bf4a6ea726d59a05d2d269ecfa6dc212d2dc87591c98375b6dfa4ee991b88226",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 510,
+      "sourceHash": "sha256:2c322b2e43e4ff9220b42eb3f44191afcc77d2ccd8d5d0db734af60f090262f6",
+      "targetHash": "sha256:6a6b378fe85fa8dcba4b39cd6658c36b1ace2a60c3a84ed171ba97d92d6f690e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 511,
+      "sourceHash": "sha256:921b9e11d95feefe08f0f9b2e8bb4dfde4cf4ef0422b242da09bbbb85c41bbf6",
+      "targetHash": "sha256:ac2f22f66efc962f5a69f76cc308fb6e6a2dffc79b66f244b4973bd6e30c5a81",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 512,
+      "sourceHash": "sha256:bda1bcefcbd320c3b8163d08222ebe89605db003eb5a16a9d3b6e5a2380ed640",
+      "targetHash": "sha256:9a047c86b9fed10a2ba0be0a5c0f2b9a3a5b8ac0a6f2a0289a8e13c37092b23b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 513,
+      "sourceHash": "sha256:4d68ce4cfc82017d0ea19d6abfbaac05fcbbbe1b55b7d7db031c53b7c185661f",
+      "targetHash": "sha256:92dd48cacea8ac3d94a89df2704abfe502ee909ba539f6cba0267bfe40cb111f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 514,
+      "sourceHash": "sha256:a86e810b30120065bbf98cac5158dbdc4896e99bb701faf73333c41c657ed8b2",
+      "targetHash": "sha256:d93127ec66358c4fb3e9c0aa693bda9ca8f528d59c9ceae2da7163db2bfcc110",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 515,
+      "sourceHash": "sha256:c4479c136021e271e91116277fa8aca2f9890d6824c22d6b41d4c3dfff057fd6",
+      "targetHash": "sha256:4994938182442382fe5ac4835d8d195dec5b93da16528afa1350d0d699417bc3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 516,
+      "sourceHash": "sha256:b00c79c5a0205cfaad854fcb7fa11abde534060644db73e070e8f80930245eec",
+      "targetHash": "sha256:0995e93f9cc7de764eb43da7b34c8cd3a99b9aabecf3aa22bc498a4143a51986",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 517,
+      "sourceHash": "sha256:0dbe7971a1c90cb1c61f6f944e2336c6be35f6d1fe3d6b2ca75b9329c326445a",
+      "targetHash": "sha256:6696cb75ae321619a6ec5e7a46260f4ccb7b20ba920a9c1b0329de78f4ca5105",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 518,
+      "sourceHash": "sha256:813946b0ef417c8f6ba0d40ad9378bb1d13c237962b3f469e7e38f65efee1b45",
+      "targetHash": "sha256:a3557cd8f155cda83f260bd7eedbb763e51b392cde67150fce6d1c316b06a0b8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 519,
+      "sourceHash": "sha256:b845fff52e3b24ab23c43b3c6419d276cc4f32cca69d392b7c69f3b091eeb8b1",
+      "targetHash": "sha256:fb1479aef0959aa638825b8720c7a15e995922f2f45b4f00dfea1686a44a3c9a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 520,
+      "sourceHash": "sha256:3f3b7195d89f42bec3113927c6ec6dcb2e7191337aac24b380b346dca4d74b57",
+      "targetHash": "sha256:c2a75c28f9c13cd169884fe4ef7f57d71d8b73a5f2aecbfc12aa6f50d8d7ab52",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 521,
+      "sourceHash": "sha256:66a0b5f2f18cf6566c2b726150cd08821426abfd2b389dbc385e4ad928eb3c20",
+      "targetHash": "sha256:eb10da99a38029824f8b6be65ecfba735a475841ca9a68299721352f53fd3aa0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 522,
+      "sourceHash": "sha256:387ed4b4483b20a3c434008a3b4fc6bc868b607f81d2fe84db6654fef1531916",
+      "targetHash": "sha256:8e332b46a041882f0120f2fadfff04b7f9d477cd467a61e7e445b9edb198a72a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 523,
+      "sourceHash": "sha256:0dfd8ac07638b392c61da998d71cec61c904fa7ca6cf601b3b82e5551f573f53",
+      "targetHash": "sha256:f120e06548db59ff0ca61988a6c2d8ea7bcd9f0c98fa01277b0c47cf6331b00b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 524,
+      "sourceHash": "sha256:63d6ae11aa98ac64b01fd412869ed3d6c1d3ab3b57042e1a0d8643f85cecc845",
+      "targetHash": "sha256:9036e736d9792e1b51cb46f4d4a158f9c234bc38012cec8d3d326fc5a2f8fc90",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 525,
+      "sourceHash": "sha256:667bdd1de79fb15b4956facdb565615a7097bb493dc2d785079fbc55d7751be1",
+      "targetHash": "sha256:851f3a8ef1e0adb8f1b22eaf73cb4d64944e2d25cf37ddfc8333370d6420f6d1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 526,
+      "sourceHash": "sha256:e6027da19340bd3d08860c22a25b07f375a410caf298fdbcd64e1ae8879be565",
+      "targetHash": "sha256:f4cf0eabd81d906d37ab3dc78da3b4851f82aee86f013e469a2297188d1d51d9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 527,
+      "sourceHash": "sha256:4748e284b14464a8239bf13ce5e9f6fd93c0552f7ba7fb90eef9acd27a3f627a",
+      "targetHash": "sha256:8d8e39c04d4c538eb5f0d456692b641560842db588a5c319b2aef77cbc5504d1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 528,
+      "sourceHash": "sha256:1791eaab06ed4e1af94f8963ec038838984edee1a34988a2e0ea3a3b80b18c5c",
+      "targetHash": "sha256:7406063957fe019a201679528da4131507f5146ffd8831c7dc616ab77f6b04a6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 529,
+      "sourceHash": "sha256:d1f5421e02581a629572cc1d2d0e3b59f828b56d2c44ce1e0c2f17c37179a91f",
+      "targetHash": "sha256:41c4bc2d60fcd68e0b6873b8498997180377f2e1b9668330bfa5e1bfd95fa4f6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 530,
+      "sourceHash": "sha256:fbfff70b89d49b8b2331dfeec4b4eeb9f360d1a4c518a1a40f21a816ccc4e9e5",
+      "targetHash": "sha256:782dce546adf4adf16472f53e7a2d46379e4bf6d0f6715686742b0ffeebb3f3a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 531,
+      "sourceHash": "sha256:1fe9552ab1e257a2dec6856991a9659e04fb9cb16d84965ff0ec90dccacdb121",
+      "targetHash": "sha256:4c1e78603bacf8666b724a609d22dac7ee82972e59a61bf28ba17cb2e23d0548",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 532,
+      "sourceHash": "sha256:6dbe0c126da2c8bf460b87ce1dfab9255a917e13b84f85dfa9fc68b5fb8e090b",
+      "targetHash": "sha256:cd3ac570758f9a7de9c9af96a3c8fea95cf33687fb2d9db5daffddf3b96a988b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 533,
+      "sourceHash": "sha256:14d06ed91052114fb06ff8b3e7cc3204b49fe5c969f0bae295dbbf941d07e990",
+      "targetHash": "sha256:19838056312ff3668e64bf197dd2b1cea6f57053b552d54b0ccdd4dec78ebad9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 535,
+      "sourceHash": "sha256:ce0e95c611cbdf4da75121de98a28479619cbd2f9bf521793624283170d7d62d",
+      "targetHash": "sha256:cd76d24bbe04ed5a424f3247ed003117847ee54cc8972a41912fd526685e4c64",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 536,
+      "sourceHash": "sha256:ed9ca1fc72680757f76ceaa6eac20649668b8d006114a96c727bcf68d6ff5fe1",
+      "targetHash": "sha256:d6f4ba738e4c3c28591c6afc84a6d55b2eeffc89fa3777b3904ebb989f95fbc3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 537,
+      "sourceHash": "sha256:50d94e677f673da2b2fd2efd907cc58ec97a0f8222ea67239ed3e1bf1ae36d7d",
+      "targetHash": "sha256:49d3ac8e00448f06daa5569053813bde03a73f6eb9dbf4f9f8f2a9103fa203d1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 538,
+      "sourceHash": "sha256:556f0bcb4bff3c3afea57cfdd5d6d42a89577ba9c44963cf287401aee633dae0",
+      "targetHash": "sha256:11bbac12af28981a89fb18e3e3fbc34cbd8b21f4bf31fbd455c76047a13d0b65",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 539,
+      "sourceHash": "sha256:8278a1df99689ac176e206309b9346a49984a2dd40bc65a5def5de228afc1812",
+      "targetHash": "sha256:c48c7fc41021d5a54bb0d78f76cbf6c82f3e20b94bf618828970a12dae8e3d22",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 540,
+      "sourceHash": "sha256:9a2ed28151cc61b2f661114c2862b0d9343ce2ea601679c15becf63942d2efd6",
+      "targetHash": "sha256:ac0c8d089b56fac1dc0fb808518823fe31bef2d6a1f75105ae7e12daff923d35",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 541,
+      "sourceHash": "sha256:7d38f23d8e72b33bfe0403687381e5f99cb0d03e70ff467d36545528a7ca81a2",
+      "targetHash": "sha256:550c3faa9ca74c8d21861ab2c12efde6c530af0d6980dce81fc0839a59b11117",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 542,
+      "sourceHash": "sha256:2f77c9acb7087c1aaba11c4fa3c777e5995a0e38fc9404de9c7a0917d901991d",
+      "targetHash": "sha256:823ea391b233113751cac3e4dd2959bc34454c58d6cb82ca6933335c071b9df2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 543,
+      "sourceHash": "sha256:d163f3781fdf8c8a01c6f1220807467d5f738c5c05827ba8932ee88fbba0df44",
+      "targetHash": "sha256:df707f6cb84b755ac286f52dad6ba093f8bc9707b931a259818fd8f775cddce7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 544,
+      "sourceHash": "sha256:88aa76771e2c09a7a56228034f649189045deec937be2c56337fc3b76db435fd",
+      "targetHash": "sha256:ed7f565ae39fd7debf612614903180628d43babaeca70f47c0fdad5d621cd477",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 545,
+      "sourceHash": "sha256:87b1fa0fd982b7f6869ad25fdb1d40874501b075c4e08512cb1d45925f1410c7",
+      "targetHash": "sha256:331394e5c1a98b4370d61bed47887cb082893dd4cfcd34f0b3fbb9dfa297eb81",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 546,
+      "sourceHash": "sha256:6326c1c66085d73da3ea049f008613a0764a9ce6cd5c0436e503a5f5bc0a842f",
+      "targetHash": "sha256:be565e35bf610ca969db227e113a38dcb3ddcfe4d00cf61f4348d71e9203b23c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 547,
+      "sourceHash": "sha256:ef9fd9df6d3410970d202dc38588019c014f316fce48628515153dfd679f1e7c",
+      "targetHash": "sha256:9a2462a4d68b4e1c0ecdc66eddc2468c76dada6072548da8c2a68256ef6f63c8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 548,
+      "sourceHash": "sha256:e55f4883a36d452a3c18b193b79a1f68f4e1023591472add4da11ff2afdcc61a",
+      "targetHash": "sha256:12021c844739920cab1a47bb8d8bb313581cbd9d897f1a8c2d2118645eb02409",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 549,
+      "sourceHash": "sha256:005116ca0b62ee31dd84bd73744d5fc442a1d9c856b037ecbb4c50f88f53b42b",
+      "targetHash": "sha256:51ed021b7487e39574c4ee8d20ec0cc2c1035da4128643f98034e91827e88590",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 550,
+      "sourceHash": "sha256:6ff96ae2d6a1cde6a7a713409e1023cc700f0b3eba2180f93e845061be9d65fe",
+      "targetHash": "sha256:fb48a7f1aca57d8ac74318d0b020b73cdb252cd08dfa5ef44d690cee3633cb6f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 620,
+      "sourceHash": "sha256:eb2d50a2e991f8bc129bc75a1559d441ba958979c23f29e4d8694724c53a3d29",
+      "targetHash": "sha256:d9280527b7ef59c7804639df6d8117f4b647e2eb1e6fc5ba44bc68dce3a01a41",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 621,
+      "sourceHash": "sha256:1405a63e8a78b85c1b035b3c5277e3cc39fa98621c110bc522c85547d8afab1a",
+      "targetHash": "sha256:3dd1cd10c9ad0c72ddc243e76d5c68006fcd5efb9f21e7e58a86ef64702de3b2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 622,
+      "sourceHash": "sha256:a58aa57a5fcc0ca4d0f4070bbc7baa6084cc2bbe46a4ea6cc5e7c86f3f72cf8a",
+      "targetHash": "sha256:24cca716ff9f274d29bfef3c3d7187044beb727e328357e189f89986ba83b693",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 623,
+      "sourceHash": "sha256:0a9b1182979586b3825f196e7dbe7406db25616d68d03bd2279fe542c4b7de87",
+      "targetHash": "sha256:761d952ed9a49c02d52c40e5ee3ddcc4c269df9156c948f79c2e01821dab40c0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 624,
+      "sourceHash": "sha256:1beba3cfc13fd21f9fd13cdb8b7f22462094d071efd87150cf3e7e4f75560335",
+      "targetHash": "sha256:6466af0e7eaaabb023454736943028ed3e83dc49de2e2961237d335794ad5cb5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 625,
+      "sourceHash": "sha256:36130f39fcba0c62ad5288dc27767f8ffbfa7d0b6460259a09a4c9b8058b63d0",
+      "targetHash": "sha256:94acbcf41e6d81ca98ec3b8db3f4838c045728404bde97fd1281dbb586bc1b46",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 626,
+      "sourceHash": "sha256:ea2b8a878841df5955c78edc6cae47446483b86e3f5ccb04e1a8d940cf7e59fd",
+      "targetHash": "sha256:2084425180ca5b3b353bbfbaae1b15dde29b21b4e72c923d3c04d094e759c40a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 627,
+      "sourceHash": "sha256:77c87d6631de3ef49da70d62503d51a9ca68ca1d6c0704c57307b8f503113c9d",
+      "targetHash": "sha256:8e1b9933046d851984225c9f4c68824c7407943d79012212a72d58fc1fccd941",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 628,
+      "sourceHash": "sha256:3f2cbc9b81d6ec38d383b2df5422acbf996ff1dddbc1b7b9bf21054f5392591e",
+      "targetHash": "sha256:ea7c614ea9c10c425de8badcfa1f48665a741106b446edeb515838045ebaa67f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 629,
+      "sourceHash": "sha256:8e69989f357c34b74c27d16eb1f5d96469877f7c29cee1d2123de780cc4ef110",
+      "targetHash": "sha256:b2a02889442e629a004589f017f1f622cdac9579117e14a390161c940463b0bb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 630,
+      "sourceHash": "sha256:780fe43f6e8bdc250db49ec311e992329b599e783c41ae8f9a5a43d90c37f9b6",
+      "targetHash": "sha256:11a74fed7e7848fbaaf52345d7df717b338f2f4b1e13c36e663c87c3d24bef53",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 631,
+      "sourceHash": "sha256:8e0375adfc1f456327247b91b11520cf9c2616e04503a43a71873485a07a6542",
+      "targetHash": "sha256:8e0375adfc1f456327247b91b11520cf9c2616e04503a43a71873485a07a6542",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 632,
+      "sourceHash": "sha256:1ac6f39e9f51dabaa2bb2a38df04b0172e923a69df0159ec506db64fd7c7fa9a",
+      "targetHash": "sha256:1ac6f39e9f51dabaa2bb2a38df04b0172e923a69df0159ec506db64fd7c7fa9a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 633,
+      "sourceHash": "sha256:89e419957b12eb1cb23ebf0be55606a42abdbbf4802d2711167c7ae1bb780dda",
+      "targetHash": "sha256:36aa4067e0e2f32085d2f4dadb0429bdc1b55fc1301755c64ab5b8d4bc990155",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 634,
+      "sourceHash": "sha256:c3bb50e88793fd8526e150aa1c47880825c6c20d01e1d5a2a5eb4c3a2be2b273",
+      "targetHash": "sha256:07575f50d00a0ba77f5e5368a5a6a8a15c1c46752e6d0ef967895df43383a22b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 635,
+      "sourceHash": "sha256:3f257e684a3beb0e303fe0572ab07e1de2950880f59821b6ff7449013ee3a063",
+      "targetHash": "sha256:cbf6037a35e6241b36009aaa996e7d9afdd6ab9d0cb9db02fd0eba4ee9d89956",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 636,
+      "sourceHash": "sha256:779089b3f75751620b9e35210fb5add8d685a5921c2971efbb61b356ef2a90b1",
+      "targetHash": "sha256:cade131f878c01d97864acc04bd920b10cf4db0d88077c371285aff05d71fcaf",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 637,
+      "sourceHash": "sha256:dc85c2e1e2c094ca832d0d188bd1feeec3c7d074e10fc343181216b6c71dd670",
+      "targetHash": "sha256:3fed6cdb63942a0006cea0f39a13cc02ba598769dc258a2731b7f3a2512fe54d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 638,
+      "sourceHash": "sha256:e4a060ef35b7525f217c580b759a12c4e52c2d52d14d522412d56576246aea7d",
+      "targetHash": "sha256:331ec778dea84c397cba06c5247a2cd6a5272d3f83bd4ef24fba575784c5457d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 639,
+      "sourceHash": "sha256:f7d35d17678b2e38432d701ac173bd3b8946db30ad0b21096408402d1ab101aa",
+      "targetHash": "sha256:18a334e8f42a0aa82c5d5d0dec6c635b13666154f3dde1981deece4861f64511",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 640,
+      "sourceHash": "sha256:6ba0bdeccb426d7b2ccb601c4e07015f50b6b427ec52c93a3b95f2245b67bdd4",
+      "targetHash": "sha256:dba20ab538018a6bd82622406ba8b3888bf667a6e181549ffe054ad79b2a8bc8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 641,
+      "sourceHash": "sha256:7140bbe5fb00c82bf7645087b92325f77a063e3590ef75114b56c46ea6a63bfa",
+      "targetHash": "sha256:494216f48dbdecb347d3e6f3addbf33c2c0fed1a21fa490db86c3037baaed342",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 642,
+      "sourceHash": "sha256:934b8899c3d918d4b40bbb3512aed9c4ecd639c4be8e2263106536922a423121",
+      "targetHash": "sha256:7179cc0143d5629ea5ccdfc03d98f708fcf8007476e4aaa20e74717bdad2c35b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 643,
+      "sourceHash": "sha256:ca44a9d809771ea34f6cc8d390aa13c85c07aa682c3bfa773120f41d083fc878",
+      "targetHash": "sha256:43ec92a5ba8c278ef9f6a6c67b8164ad0f62082eaf53c27ba084fbf8eb4c36b8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 644,
+      "sourceHash": "sha256:1aa1e2f13400f6e5c9470ccdb26ae3c8d2830b28f6b673d254a56d47901a48db",
+      "targetHash": "sha256:1d4c9630dfa8825ccb6b088d9dfa4614a9332cd42a79e7b6e569a1d6f33feda0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 645,
+      "sourceHash": "sha256:87675db83a32caa1966ce6c94b089aea788ac3635683d9e5827390d4526ef41d",
+      "targetHash": "sha256:e85c84c9b9d44d4b850e89d39b523a1619ddf9806086a91c489ab82e092356ec",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 646,
+      "sourceHash": "sha256:41f7e4bd428022606232d08b67329cfe431811bb8db673ab9a22b586483c7053",
+      "targetHash": "sha256:361fa202a241f4e086f6fb4740d661a27ce2446e27c572e8c47147800f1a653f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 647,
+      "sourceHash": "sha256:fc33f73246f48295702f404001e74d56f14d2f82689b2816422dc1a4c2ec4fb2",
+      "targetHash": "sha256:29ac06d87dcc485e9a3eeac42749958a008fa0cc285b2f9a816504c621324305",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 648,
+      "sourceHash": "sha256:7e08a93229cffc8b0b540fb800292f16d4e47378160cf0368b29733db718a85d",
+      "targetHash": "sha256:182714d5b944690e5e120854772937cc08afb2aa46c312fe12d4f0bdaf4af149",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 649,
+      "sourceHash": "sha256:75205de8b342f506fdd229684a517db210b7517337d734f11bfb7ac6d8b52cab",
+      "targetHash": "sha256:71ab0a0c00e631ecab6dba192152a88d109a945797dbec68f5d1afb9d543131b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 650,
+      "sourceHash": "sha256:2ae8aced0bae3dab26ac2ff7b3564e4b3690a39babfd9ab548483f648907ff4d",
+      "targetHash": "sha256:67d332b242faab3270cd05ce903c77683c4f6f601ea2d363d8e6076f0c2ac5a8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 651,
+      "sourceHash": "sha256:c15965fcdd614131c7ffc820b87fccb46f6573be06cd7c13c7fd39f32295dace",
+      "targetHash": "sha256:599edddbb1d26c9769f1f38a2de492d6d9edc0151315675c1b663ac9f3401cd6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 652,
+      "sourceHash": "sha256:6fac39e2845bb81253124d4d6b5e8c475020dac1851c68cd92129432e9e7de92",
+      "targetHash": "sha256:06f152c734c957740bb1585886e9f2b9385491b39c085045a90ba34241061474",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 653,
+      "sourceHash": "sha256:8bde78cf43ae11638acc2f288e938759be16b6782ceb1548de92e72114f88f42",
+      "targetHash": "sha256:6d8d61c967eda33c35ab63b7840e31b9b902f53c1e373cb8f36c0154b5952779",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 654,
+      "sourceHash": "sha256:8c3aa9325a122cf0d8153396c608947a017aee4e2e62824273fe90efa4ee412c",
+      "targetHash": "sha256:b6535e5419023e153da1926b6085b138b6614593b2bea70ab8ef5f2437b9894e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 655,
+      "sourceHash": "sha256:efb52e7172b77731d996ff4f51cd7b3dcfd55fc6f07392994619418d58d170dd",
+      "targetHash": "sha256:682f961a0751cc04c3404f37a6a66ea81fdaa1aa85ce239c443997d53cded6ba",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 656,
+      "sourceHash": "sha256:fb8e7a1a3cb7b25d262793159145759e97eb540a2b61dbbdf8f58841a81cf1a8",
+      "targetHash": "sha256:10e4fefa12e16635f9df3bda211ef34f907b689066d064a0871483f0afaa1a82",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 657,
+      "sourceHash": "sha256:62dbb585a2400c44c3784e1466d1ad4e1d2c2a5870ccaed2102ca8cb4b92ce05",
+      "targetHash": "sha256:caf3c416053ae1eae983814ab2d890f1b8fba41bd06eb52e507b1d0a3d33aedd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 658,
+      "sourceHash": "sha256:dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50",
+      "targetHash": "sha256:1da7e9372e2f45a27895aaa5f6bd05d1197c3b857ffa522fd01edb44efee0547",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 659,
+      "sourceHash": "sha256:515782fb47a0d1deb788bfb0355ce5d04a199558f42b9f7cccda9cf659f4ae93",
+      "targetHash": "sha256:93fde833a9be8d09dc9f4c74f4de5a92fc2c1484ab9221868e99cc4f8508aff7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 660,
+      "sourceHash": "sha256:d707dc2f1936efd8707060cbe7cdeaba8f250967ecd32fcd56e2491c7f18e52c",
+      "targetHash": "sha256:cc17a4f511f22203c68be8739a3e22837718d6a20ec4084e2b9d16add7209f61",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 664,
+      "sourceHash": "sha256:62a6da8735c18e2d66fe5de3dc5440252a1da49e3cbaa7c1d2d5068ad73ffba0",
+      "targetHash": "sha256:47703f98d33f8facd32eb3a6a758ecf7f18df6211f298cdd7feb929b93107e78",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 665,
+      "sourceHash": "sha256:4af406a3a6a0f4d7ba15e577495406bc0555c7f5cdb37d2dd9e0493047b50b8f",
+      "targetHash": "sha256:1ff6a0c22a3685c24480cdd2c60741c5b23d3426f92dbe76120c69342b796164",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 666,
+      "sourceHash": "sha256:6b73191a0a4b67420e61d51c9f207c35277eaf18fbbf5beb52a320a23fe09653",
+      "targetHash": "sha256:92ab62ad6f3c1e6b2ff616654f9d31f8e782b19dffa9300a7bc73f86cf997341",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 667,
+      "sourceHash": "sha256:5697d03daef4de9cf8db7cb11755f71358a32b4acca94909a9d449f71040d2dd",
+      "targetHash": "sha256:ddc5babd39df565a56772f2991cbb0dcdbe671f1c1775c7533c01378c1082866",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 668,
+      "sourceHash": "sha256:fd0483e4f22d1ddf53231ef57f7c3bdc78f03c997b1a37db7fd8ae01908223bf",
+      "targetHash": "sha256:ccf5fc4e8a040778b396deab237f6811f82b8c102952831448adfd6d74fe563e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 669,
+      "sourceHash": "sha256:3a2860ece5a4ee0b48b41ee96dd8054cf9bc6f113249ec601478b2582d72ead4",
+      "targetHash": "sha256:565c638624fdca3844c3eec1a711e3af2a3fc9effa27069723f2ef53418cf913",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 670,
+      "sourceHash": "sha256:d9992779c11f13e7b933729e90f0b3a752a83c214982a387771fa7f49484cdca",
+      "targetHash": "sha256:53a2ac70aa67a4cb11ddbdfb606fd413854a4892da598cf06e56f05fa2977a79",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 671,
+      "sourceHash": "sha256:9915bdfb4d7cc4fc2e2c3ebabf96bafb813e086785aa9245f694527cfabd3bc1",
+      "targetHash": "sha256:e9f88038a5ae53c0193d92387c2710d98bf63e7f84cb71676ac734693cc694e4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 672,
+      "sourceHash": "sha256:77d7cd99073bd654f4bc89d3231dcc74411ea08ce000218fda6220fd89a842fe",
+      "targetHash": "sha256:cada76b83de918b704c433638f8500c79a59c19dd6f8bde2f7ece3492fa2f68c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 673,
+      "sourceHash": "sha256:7e1695c4397359a5a6cf4e5feafd30c089e0b322023b5cfc72aadc82b4b6abff",
+      "targetHash": "sha256:1c582d10c4c9949472e3539b45fc14eb757cc8d1d03545f86de1ed76d40bd951",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 674,
+      "sourceHash": "sha256:b889fab01297f1646d774a70876400aeaa63d18e9f4caf59720facecf3c84171",
+      "targetHash": "sha256:ff93529e4a0598905e4eb304664845f0c19a213eb728797a0e98d511cb9039b1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 675,
+      "sourceHash": "sha256:0485ef3b47a29c1f1aa8f78230b5f5c57d8af82dc3a5c129523558f9e6ef38d1",
+      "targetHash": "sha256:4261414db07ec98a7833b3b345a77f3f9c2c1094958a939bca3ec31c1f89cb3a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 676,
+      "sourceHash": "sha256:1fed62cc3aa561b7cb047bd413b39e1c880b39e155e6cd51bdd140bc932565d5",
+      "targetHash": "sha256:92dbb1bb0b5b611fc210172d35a2cd5b2d0fcd0bb9e5fbab235f2306fc80eb5a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 677,
+      "sourceHash": "sha256:25f0c6f259ce283091c4ec380d5109dd608dbc35aa9ae984517b6c2ddd46a0aa",
+      "targetHash": "sha256:8ec1f136a67a4aac1628f55fec2488a75b5182a84beabe172b74a4d593b0ddbb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 678,
+      "sourceHash": "sha256:1cba3cc4efb2f1ad9e1944b2253bf49f2be5c00d495e2847e21c767a1bb12e84",
+      "targetHash": "sha256:9d6c9dec8c5c517b159f51c7fd29da95043f1d15679c658e57b3bbd75437a797",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 679,
+      "sourceHash": "sha256:95a295627e54e34ac6e7ff35ff01951dfdc4132172066f0444dacc69ca5add50",
+      "targetHash": "sha256:7cf06d03282f225287744b58d910a8e4c65a2bde9e71fd2497c712f59052fde5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 680,
+      "sourceHash": "sha256:be607d1ed6da745348a8096abe3fc40c2b09973ccca802701bff3bef3dd4e1f0",
+      "targetHash": "sha256:9a4496e85d2998de15d7a713bbc9d643ea1c9169d92f8a1e59ef96644c0a7963",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 681,
+      "sourceHash": "sha256:baeefbad50a33e7c7cc3b1cff2f645abf4d2f5c94509630d7bb1f5d0e879ae36",
+      "targetHash": "sha256:85323b23dfd42a709cbae403312386e3d5b08242edff5dacc470bc66e1fd7fc2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 682,
+      "sourceHash": "sha256:9b432586142af36df9ad7c4e5ffa027b95e8b3a288e8c9ddfb06837c730f76f8",
+      "targetHash": "sha256:d5d13cb4fa1b021ea0680097528fc1a42bfb89d3e48355beba4bf684f66bb3b7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 683,
+      "sourceHash": "sha256:e7218b5e4a56497509ef63bbad37e594d8f24ac90928ef6ce542b1142e5426fa",
+      "targetHash": "sha256:5bf432fe5dc72b9648ab4841b6bbc4fa15deedf2dc51b03bd8f5726451b2e74f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 684,
+      "sourceHash": "sha256:8a6d88832775a5361060dad47435351b5ce366957957e8be46ee39f25009f192",
+      "targetHash": "sha256:c8560561289121a8e01a65dfc4a6777dee45bd27c49a5ce5426b956987df3330",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 685,
+      "sourceHash": "sha256:64cff1319d2fd2cbb7a1e84ccecf22c1cc07b24435cdb522f8c0aa525d6002a6",
+      "targetHash": "sha256:6b53aafe28bdd5aae6d9bbbe939aa46987d3fbe900d54c7106e1fbd7e31caeff",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 686,
+      "sourceHash": "sha256:ffb3c9a7fcfb707ab75e985b6c201399b1bd40ebe9b3e506f054d5329cdc9a40",
+      "targetHash": "sha256:71489afceee54402b127db572b2526e3ae768d3194b2efa82213f1a1f2677b89",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 687,
+      "sourceHash": "sha256:b4f8e7c424eb78b992eee90a7c10d09c84a892cdd3547c19249ccf026f9ff183",
+      "targetHash": "sha256:a786639640dc780161d046c87b9a25a1d965c4b96b9cba2730f9e8a62cad75a5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 688,
+      "sourceHash": "sha256:b8a008d939de157aeb1231d0c89f07cb311d4fe95dd1387e17b0f38d16201184",
+      "targetHash": "sha256:7dcc2186ddcde5fcf7f5ed913b0d08e21649465f16f5a37223598233e59a91a7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 689,
+      "sourceHash": "sha256:090ed4316f1d99fd01dabfa175ba107c9cf9bb0f7c0a3feaa0b47d5bd3443fd3",
+      "targetHash": "sha256:8c3761153abda85b260e18ba494720bd205717a00396fd786baf6c9bfb50bc4e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 690,
+      "sourceHash": "sha256:451c8043a10e0271b6b85ed469b12507a719932ac918b182549ee7486f33c1c8",
+      "targetHash": "sha256:3ccd04456fc9e3ec72131d9e38a42fd81e6be33eb044318fde879fac94cb5252",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 691,
+      "sourceHash": "sha256:43bf6af8e2d9b895620783088525d4a4f20e3ea34508cea6e8171fb6c0abff21",
+      "targetHash": "sha256:7179cc0143d5629ea5ccdfc03d98f708fcf8007476e4aaa20e74717bdad2c35b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 692,
+      "sourceHash": "sha256:b4e7c9406b2022fd3f51b143528b330210b97fb10b7438e8752f0cef0dc8ee95",
+      "targetHash": "sha256:18b1bef51ae10b377e6951cae9162252e28e3f658f26d92a34259b304f6d05d6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 693,
+      "sourceHash": "sha256:701d021d08c54579f23343581e45b65ffb1150b2c99f94352fdac4b7036dbbd5",
+      "targetHash": "sha256:1ee15e9729755cc3c463a9b2f8e7fed5cc1305dbc2186f92f06b7da1142a2ba4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 694,
+      "sourceHash": "sha256:72eb63f032e47e349e8901353e08ba91cfb9d1f78d08d070c60bae0e9b4e038d",
+      "targetHash": "sha256:8d13ffa04758685b85c9cffb03adc798c265ac0566f542ee246e029f57503ee0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 695,
+      "sourceHash": "sha256:2198d0648583bb754ca2b1c5a9caa24969f8697cccba4505e8759c33e2d2d7fd",
+      "targetHash": "sha256:88762c6b7e7725f14ef1a6a3d1818ed95ab0da2dcc9a7ad7fcde80c91afb2721",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 696,
+      "sourceHash": "sha256:e1a1163bfcae162b4fc3893bffa7422d6ee972e42024c15623e78715274a4bb3",
+      "targetHash": "sha256:0089a888fbe6c518d3621f1b43daf9b0566b6cafe54fde8af526016a3b3c8256",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 697,
+      "sourceHash": "sha256:9eabb1416f00748823432e5316426992b80c61162e30a1b44c8e01247054c90c",
+      "targetHash": "sha256:31b44d7921c0e80060bd5ca1f32294da8e31de066bb25628a46e4f429053bb1a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 698,
+      "sourceHash": "sha256:69a4460b04fb873a5201a5889d82aa5e8fe258f375ddce0f9bd3f1b445913338",
+      "targetHash": "sha256:a3c6ce946b9ea06d807d4ec016795b1290b529bc5b8b752e9a056960e9a0c9f8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 699,
+      "sourceHash": "sha256:616cb218a65b982f61fd738e24ebe00d5a2ae039c0d386fed975a51d51b772f8",
+      "targetHash": "sha256:7e00703fc124af6b8137a8e837002c72f8c2134aa7e204488138b5abcb549be8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 700,
+      "sourceHash": "sha256:b977b950c1ae31e5aeb9ef778cc20a66fc034eb81e738e0206104b677962c465",
+      "targetHash": "sha256:02c76adb5ad9b905ce4e6f0e917cf386ab150dba0a21fa28c766185fdf50dd40",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 701,
+      "sourceHash": "sha256:82c268188cd665768bce0f6fd610a7c78d1e3991798c43aa6f1f41a2bf44cf84",
+      "targetHash": "sha256:405e328a61745e0693f6b1bfea9d0315272b25bf1fde396449d74ceaf7d112d6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 702,
+      "sourceHash": "sha256:1c5adb579524cc974bb6498d182745b155c1e0bed6549e3f09d331b2c6ef6dcb",
+      "targetHash": "sha256:323de0514d4a728351873e15d154cc1f01051686434d3e3d55ce26a58aff60ab",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 703,
+      "sourceHash": "sha256:3d8c511dd980106fbdb99833c6e11afee96ff6c32e50fb94dc5324f38655e908",
+      "targetHash": "sha256:28820feaa65ff3f26c8db1e6950dd06e4dde1d7fb57277da917023edb06eefc7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 704,
+      "sourceHash": "sha256:4b539d01a03ba67015f9e9fc2f3be849fc786bf87bd63b7f90f29068cbe6e930",
+      "targetHash": "sha256:93815b839306fa046bcef220bd339701946d7415f58a5d2341b10f6dce7089ce",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 705,
+      "sourceHash": "sha256:814d3bc47ef733c324153dac963f8a3352d53c9a5b87718859c3fa88e9c9b29b",
+      "targetHash": "sha256:56c5b9760d5eaa817e3429d5de0e1a5f8e788e37660f8ca50869832fb0bfb642",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 706,
+      "sourceHash": "sha256:f440507f2f99da246f120a463cbe563222fe1dd0e2217dc7cb9741ca3ebdcfc4",
+      "targetHash": "sha256:dbbc6b4aa82add74b4493d76eb4f1b9ac8f74e90daa9ed6b7c20841f2e2f118d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 707,
+      "sourceHash": "sha256:3778cadf579d81c27ed990615a699ba8b15bcf643f4de1efdaaaf16e3b9f9244",
+      "targetHash": "sha256:b98a39009d80345f299f3f23347a9de181176250afe18a3174f3814aaad84898",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 708,
+      "sourceHash": "sha256:de8b41ec84df8ebe9a6de2e6c731798682310f68b743ff7ba90396df99eaf96c",
+      "targetHash": "sha256:7412dda8004515bdddf5752ecb0ab3585e9f4a1c21477970220b962a17fc497c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 709,
+      "sourceHash": "sha256:be486cc2ddb31dbbc8765c57468e5d2cb7d3b69e32ffa9d56442d3bdbe0d58d0",
+      "targetHash": "sha256:4698480e93447837b1a51fb4e860a9aba6781f3d7be9643890bf2cc3ba0b49e6",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 710,
+      "sourceHash": "sha256:d10cff817cabafe7a0dc08ba4fb45c62581209014c74039958f320277c2ccdc7",
+      "targetHash": "sha256:f150d0d7124719c8a825ae0913256fecde0223350efc3571d68ded42fb0f7f76",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 711,
+      "sourceHash": "sha256:3d377ae910dce03ac324d1f4391c0d4d175825e630baf9c5b93d414d7106cfd8",
+      "targetHash": "sha256:f1f951a77e73c73eaec0a5578d2e5e01b3d897095e8bf1e0b438d942a2877722",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 712,
+      "sourceHash": "sha256:818cd8d91aea3a1689455f009f49e87fe7fa647fa2c4b9f09072dd1c33d52ca5",
+      "targetHash": "sha256:3049f4ddd3a0916c9adfdec2c512ad46742857bdcbfa9c0b65169a35641ec782",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 713,
+      "sourceHash": "sha256:add2a5cfd71953599164e83b90dcd240f3a2e7e7752c7eb5026ed6a1ab41fcbc",
+      "targetHash": "sha256:0ebb9c547c14c846408bb552bf324c45e150c7f5acaa9a51d53868c8e07b99cd",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 714,
+      "sourceHash": "sha256:bbab180b627261c351cbbaae3aaef9e65de97c61c1556fff92315d4b36473a7d",
+      "targetHash": "sha256:1cca2b714e2df4e46aafee7d867d03bbd2dae8d70acf598a43cdf6b6c108b40b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 715,
+      "sourceHash": "sha256:3e314dafdf7c6c5157796da7458b0bb85842d8a87eb0bd6cb233c6a5674fc3da",
+      "targetHash": "sha256:03449d9a17c34ab3a911d7577fcae5b3e35a66c6ed6899dc052bd52a3d224488",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 716,
+      "sourceHash": "sha256:79ecdd79912a92d97798094fea33533d5c777380ba13a1858175ebec249311e0",
+      "targetHash": "sha256:88540d68664be249029fe329e4359afc8f4596e69c4332128eaa14f33817ec1e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 717,
+      "sourceHash": "sha256:3b73187560111c7fa37226c2f4a1be6667e6947d84c87893c2edafcd059d1030",
+      "targetHash": "sha256:e2d6cd17a4245ae19d158d99c2ceac4d43c4737e11b547c802b578c13b30278c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 718,
+      "sourceHash": "sha256:77f7c9d5b7297c61d81a0dedd25ae2ca1b347199aeac186faa33231562fcb4a0",
+      "targetHash": "sha256:46bc780bb3a357f540b44de41af26d83c9f3cd57e097214bb791f723d5aa495d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 719,
+      "sourceHash": "sha256:455d8cf5faaf728ad8c8ff00ee5b0163ae0b6de924f3d94858792b53f23aff87",
+      "targetHash": "sha256:426536a9b2429cc3671c981c313d069305a3997440f5233f0c6b2e5bdf23c083",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 720,
+      "sourceHash": "sha256:84c4876250b8f2a9e48fcd2acf60dbe35b1e7f2ccca291d19a6a0688a54f31c1",
+      "targetHash": "sha256:056f5f902215283f17858b29b10980f548fb92e85fe9c43b0d3ddafe1dee251b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 721,
+      "sourceHash": "sha256:c6dfec8b7380a963550f76644a8bbabfc735c741a80c78ec2b971d86375c7ef4",
+      "targetHash": "sha256:6d8111ef777635aebf3be6e652dc452055b6e2258f084b36cfee5cef00e07748",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 722,
+      "sourceHash": "sha256:dddded8040e1b831c96fa4fb70eb248107c45de156f2f622dd0c0ae1f191fa7a",
+      "targetHash": "sha256:0d9b3b95247ae1db69f858631cb7dfdf67475f3a58b2f5e34b2313994c04a53f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 723,
+      "sourceHash": "sha256:df4e305e4a991fa175f9911924ddf4094f91fb19435c3ac462c0169079cf08df",
+      "targetHash": "sha256:759ab823560f33fd5c8779cdf8d82a558ecc39a0e92c0930366a973cb98e7ea0",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 724,
+      "sourceHash": "sha256:e83bc3f97e640223010075f96e754ab0d6c7a42e9e9f62f24a60413150705cf1",
+      "targetHash": "sha256:dfee27b4db8be5318587e42f06baf50cd1ec20a9db010a00c8860e37eb92b866",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 725,
+      "sourceHash": "sha256:3cdc410a9e2b40a225ffb0fdb04529e510b192d13189421ff2894d2b8d3fb978",
+      "targetHash": "sha256:724cde45605e919bdcb4b377f9a1c13a3e7c556d09a138f97c92aa4251bf24e7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 726,
+      "sourceHash": "sha256:020620132bbb140f692f006cd807e3ec2f5f6d0d301d62cf3afebc93cb5f5b9c",
+      "targetHash": "sha256:a786639640dc780161d046c87b9a25a1d965c4b96b9cba2730f9e8a62cad75a5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 727,
+      "sourceHash": "sha256:7af9bd48978604cc1609268bba74545a50e2e4510a4ac1ba8681722df9afc779",
+      "targetHash": "sha256:a47dae877d429a212473132c8b70efd958c7ddbd7fc61d1c44b013a03eecbc3c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 728,
+      "sourceHash": "sha256:74cf6aae09e0acec010bca8263d86f1cae4a8350d58fc4319cd88e608172ebbf",
+      "targetHash": "sha256:016d44b136d00f5a88650e6277bed54686fc498f67d02c479ae8118411bdb686",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 729,
+      "sourceHash": "sha256:87d296ec94898c86baf805dbcc47af48e618ec25df0441f7471c60a7d6b05b4e",
+      "targetHash": "sha256:2656ce5536a3ac8246eda10fbfa1a6678081c425ed892bd704a86d1cf716f010",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 730,
+      "sourceHash": "sha256:0c9d6078e0fe01099d3bb33969ab923d529c22757c3e4695be6873850a9c4d22",
+      "targetHash": "sha256:9177d2ceee7febcf169a6c9f4141be3058015fca79d4fd9cd8c93264d08c47ab",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 731,
+      "sourceHash": "sha256:39b7370f30a361390476a93a9e57c0654e35aefeda4c0c866aa1fd0dc05cdf19",
+      "targetHash": "sha256:35c7d5b1292d52391fa9ed59a3e6557fcac53d596fd7fdcdfc0364e5242ecf37",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 732,
+      "sourceHash": "sha256:29c817fabd43d5d1f1af7995d68e5b10182990c88340bf1c96656258da05c0ad",
+      "targetHash": "sha256:5dc393b3a17a9208f35573dbe151e448a51301e9c9143f785fdf578886e9499b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 733,
+      "sourceHash": "sha256:93c91c851e7acc17d881c9b89ea954be1183070254014be03a93d169cf52dbbd",
+      "targetHash": "sha256:be0e705ced81879032797bd0d3bf68816d708139be06072a331015cd343cf21c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 734,
+      "sourceHash": "sha256:0cf57c63eb976556a273198f34e8816a586471aefa434f80dab8b77667c0a981",
+      "targetHash": "sha256:c89eba90f1d8c201e401498d2f64202792190c32ad8a26c56d0974c6b12181bc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 735,
+      "sourceHash": "sha256:78963905f399ce6fe0e1b9ca063e591c314b3f5c944677a8bca89e3d3425c4b7",
+      "targetHash": "sha256:26a3ae77bfaa20ab213785249357e26a855be6d861598977cf08618c1a780c27",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 736,
+      "sourceHash": "sha256:7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674",
+      "targetHash": "sha256:5f77cb92e071835cdbcd0366f2e2a773f9877350251af59db41a37d1077dc1a5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 737,
+      "sourceHash": "sha256:fdab2c2f2be28eaff200bf5121b1b60a4b58890652fdc50609a8649a55d8b314",
+      "targetHash": "sha256:6d390fe280dbe27f06b8adfd6675b1d87f4b9aecdfec4bdd953e8240e7eb0d58",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 738,
+      "sourceHash": "sha256:07607d609f9a3592484e9a0eace33d5a5530379335466648e41279517f7d5859",
+      "targetHash": "sha256:55e754a5194977b1836fd71b53323bf921d4f57113c76464f581ac75f087a765",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 739,
+      "sourceHash": "sha256:ab59729fe00dac15321ec9b804f3a761bc06667a06077f963888d00926c29ab4",
+      "targetHash": "sha256:490b2e9844e8bea612798f466e0c5b788e9811c625437614d1b6472c3bf293e5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 740,
+      "sourceHash": "sha256:f37d82f8976ce72330c86fa316235a0eab1648bbb79f1b218959564a8e627f46",
+      "targetHash": "sha256:4aeeccd72afcd65da6ab65c942953fb51c5cbac2763ba3dccdcf3119f779fe46",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 741,
+      "sourceHash": "sha256:76242baa04332560a26024e30a8aa3ef8127b497d6ff1ba114b95e67ceacd3a2",
+      "targetHash": "sha256:8daab73de058705dabe7dd30704c2f3ec8bc262c3564314d81e3979de91cab4a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 742,
+      "sourceHash": "sha256:e98144febef38cd98a6961aaa9028825549ec9d775cefec30884d15c542224cf",
+      "targetHash": "sha256:b321090536a473e8819394f78ba54decbb9c8609734d133b7e6cd6b8cb6200bb",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 743,
+      "sourceHash": "sha256:623a4d50718c3bdb0a35eede6b3013086f3de235fc91b09331e3a6b6cc676411",
+      "targetHash": "sha256:49a743359f04565d62ab847df92826467fb7e1a76f046d9a083c8da542bd2c23",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 744,
+      "sourceHash": "sha256:e02e3a521f7d2ecc8f768eb98346765a1ca235c548b287b00b199e2ec61bf4b0",
+      "targetHash": "sha256:7d31951d74c35759b18976e9ffdf95720d900ee44ff21a10185aca1520867e8c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 745,
+      "sourceHash": "sha256:41921e0852233e36de70f2dcc46378f5c591695a248cb7bcde827c280664a542",
+      "targetHash": "sha256:3715d1798f7d9d5fec33a7f54ec37281afc5f26cd04458a5f1ddc4afc679cdef",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 746,
+      "sourceHash": "sha256:f4413b3fa3dd4ce0e61462a79cf9c4a60c24e10b12456e3f245cf33f7f7c1581",
+      "targetHash": "sha256:241f8376bbf2179cd0ca15f194d7f23787ca39ce38170a1c70ef28984dbeff99",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 747,
+      "sourceHash": "sha256:7a4309956306963d456392b62194d7b98931f2fbdc4a4b5aac9608adebdd8089",
+      "targetHash": "sha256:3bf21549bb0c23b616ddb23d30aaa98dec1a9633496e37de181c256f68222967",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 748,
+      "sourceHash": "sha256:4ca1eb702f48380eaeb08f6a30c529ddfefbc267b5c9386f7528eed6a109c29f",
+      "targetHash": "sha256:e2c4e23393043d47e18c6abe2d21e212928e604bfd45add842d999094f5db2c5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 771,
+      "sourceHash": "sha256:8ffad7de728f6bab3f59aab2abbd528a781427fd8afff7f6d13d0b2cc63c6210",
+      "targetHash": "sha256:c1ae04f358ad47c1afe8622b6746709a6100ab739bbd75b8b2800e3b4bcaccb1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 772,
+      "sourceHash": "sha256:ca946be9d8d8e9741586ac1cb6a21058e427b79f436f73b9c1880e10f1855b4f",
+      "targetHash": "sha256:480d6253f01f0abb598d9860134e0d5dea14b79785421dc345288164e7928b5d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 773,
+      "sourceHash": "sha256:306fc8211ed4beff97f3bad988fc45c058e8e7910cf86bbc13c1bc319fedffae",
+      "targetHash": "sha256:3222896d696b20942332dcc5e1b66e153b213ddb741a304f6ef7a7a0487f9d2e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 774,
+      "sourceHash": "sha256:7d7628ab98c1937c2391848b215872023b15e4b256591cd512ac7315a173c199",
+      "targetHash": "sha256:f1ce59585f36ff3c45493c41971ad18412dbdf0a2e9d1ddf900ca647e7ed6358",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 775,
+      "sourceHash": "sha256:8bc7abefd68717ecc185057afd3d20fc13831e5817bf61e71c7da095ea572b75",
+      "targetHash": "sha256:14cf8f8917c00c5c05cffd42481553b9935c8d5b96fbe4acf91e1c72b215a90e",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 776,
+      "sourceHash": "sha256:546f555ac031b1437f9a675759b6f536f7bc49be31754d9d1859f1f3a9c8d1c1",
+      "targetHash": "sha256:13492669349c0887babaae7ad881e9b00b9cfa292e3de8c72ba9fe969db0528d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 777,
+      "sourceHash": "sha256:670d926b3d18051a95340c5d706ee99e25d806b538ed256c306a70c4c3928a7d",
+      "targetHash": "sha256:0c9260140578ac2898c3f78e0b038cc72792a366fa1f831a169226820aa52545",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 778,
+      "sourceHash": "sha256:5560d433217a91b85058c52fda5941fa48c25204af01b08d54c120cc1225a2fc",
+      "targetHash": "sha256:f6f1d82c357e957f82ea82e4870fa2cabb20b1739671069227844ffa00d2d0b8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 779,
+      "sourceHash": "sha256:81bdc5d8fe907923b99dd5946549d698a89996f2ce194bd36f2531eda849e40b",
+      "targetHash": "sha256:54a438c40b0d1c9689a67efc80fe6e76a4664b93c26c212611b776c7214205ea",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 780,
+      "sourceHash": "sha256:7e65a237d482fd261bc78327d883920bd42ae6ed33223954e67634a65b773366",
+      "targetHash": "sha256:401bc154b00fca1ae3cd8de40d462a5cf52555c3b560992c07625bc5c7442b47",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 781,
+      "sourceHash": "sha256:865a809011a7e7222d9f37f760699c7ea883a3ff604fdd40d326cd0a56cfab3f",
+      "targetHash": "sha256:db58a9a87d9f3e02f864b8bed65c6c432cc5e6e0d4d9ed9202e09de3ce494f8c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 782,
+      "sourceHash": "sha256:d27b4408bad0363615a7897b9aa2f57a29f8cc61965081d9841d8345c5153fa6",
+      "targetHash": "sha256:53f3b1a4711de28eddd092dd9a2f183bbb81c9c077b19dce04889622b607e533",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 783,
+      "sourceHash": "sha256:3179df9d512d7741c9ca8152af39099e629d17470bb9bd8ebe970787bbb4b5ae",
+      "targetHash": "sha256:86efa813f011cbaaa3396e3cbfa3590eb7b1880e9a79d5d48ed2f13c08a83558",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 784,
+      "sourceHash": "sha256:9d2b0c8ba0755a4f5a4db84a9b5849b10ad82336f99eeb52089f7d65195f0a15",
+      "targetHash": "sha256:d25b4e22c8f670937836a96d3ebe4300e1e50e7c3cb04c77ae097e54b8029bee",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 785,
+      "sourceHash": "sha256:f10b854fbd1f2fc108c244ad2b2eed7677a23783b7b0e0768bfd6b9febb12f05",
+      "targetHash": "sha256:128d8f819f39bffc28041a2d87e69e04ec9fd38079a9923df52cda447e165670",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 786,
+      "sourceHash": "sha256:cb479cad559d6030d269a79335436525f47957d68f25830d7a0b6a66e04b2dbf",
+      "targetHash": "sha256:d76f25059e37ad7c32c329d3bdff0d445437d5080c3920c566436c1956c0d50d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 787,
+      "sourceHash": "sha256:0f435e264214b43901fc3313909cad0f4fc1d9c36f8339cc0aabf0040c21c144",
+      "targetHash": "sha256:5dc39190a426901de96354b6c076e7a9be27b367c2121f3749ab1f8a8d28e9c3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 788,
+      "sourceHash": "sha256:1f2fc0c6276dd5f81bd96b371b71db5e27d615c3e84f4c3c960a9de4a69b4717",
+      "targetHash": "sha256:53ec83b19a3b429d90b0159927ee2eb049f8c5a71e0e4f6208914be3f4b1d4b5",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 789,
+      "sourceHash": "sha256:a13fa8ac8de60500a1a6443e97cd5c6a3855e18e1fc9872ed20d80d5a3429f10",
+      "targetHash": "sha256:6689b47c14cc6657a4bd55b9238ded9b78412d2b2adefd84875f93781683deb8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 790,
+      "sourceHash": "sha256:e67ea876546d8339fff05eeaa6c552385c675b00f0eb07fe8f4154a6c19c964e",
+      "targetHash": "sha256:0a937cdbcdf66bc9c81a25ff7a6dc21a3814039f68261e05d4e85c95924b14af",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 791,
+      "sourceHash": "sha256:c219c9b079e0d357b059ed94bab2193a0d2e5d007d8b058940c8ea0e6ca9116f",
+      "targetHash": "sha256:977b0e1d228d5b3b702d77f5da083463d5690fb024670ec033f33468959ca056",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 792,
+      "sourceHash": "sha256:16e8b3a2eb4358ab374ee05b8ffcac2eec7a4f846bb213fd7b47fdb92c75fbb6",
+      "targetHash": "sha256:0f7b29dd3e5b9773e53b599a6a73bea8664f2f081e7bb005d5e9ccef5f9ee00b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 793,
+      "sourceHash": "sha256:f5182dc845d2ba253c4f2f6b76d20f493d0ecdf898b392097cd66987679db1b0",
+      "targetHash": "sha256:05adfa4a38f827c2bd26cc5dafc6761c950862a7d574689af5423c113d349e21",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 794,
+      "sourceHash": "sha256:ecf77b4460b4d77ca8b6ec2aebc5bf7562d460427c50923ce914e2f4da5c89e7",
+      "targetHash": "sha256:dc475688784738a1763e77356ab8e6b8c98d44ebe0b98369f33d5dd568432a40",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 795,
+      "sourceHash": "sha256:5c0481f86f2a4d66bc09008c1922ab16930c83a59db12c429193c91655bf780c",
+      "targetHash": "sha256:ce97e256ce3aa89fedb379065e39408a2b2e88079765573f0b85a2978c604aa7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 796,
+      "sourceHash": "sha256:f00187710195f30390b2184001f27be6bbb5445b87152ed151324353bf4838a4",
+      "targetHash": "sha256:285f20396eb3fcbe9be5973c3ad546e0a1ba9193118e2dd89fbb5c6b41904e60",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 797,
+      "sourceHash": "sha256:9a1d533763b1be5b51616014326c4c2176d1c3b2d3c1c49d49de66e4729f8179",
+      "targetHash": "sha256:245c1e3dc21a64b77f7f85333d35f1e7c661ef3be822b17d768688c278ff3d0f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 798,
+      "sourceHash": "sha256:96acb94073e67cbe893abd4f5b345320c8064807288fb9b25729e3b7e1bd8ec6",
+      "targetHash": "sha256:e9d1b3c529affae7af83ae3001f80a884a49c1d5ff3c96dd88eb30ccd5a19894",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 799,
+      "sourceHash": "sha256:5e9e238db6fd68ab1c8fbda7eb1c725e9e195629bb92b0b4e661441eafece2a6",
+      "targetHash": "sha256:eacfcf895e8cacb1c45cac2fd12098f35506db2913e494d5b9d45b567423c9b7",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 800,
+      "sourceHash": "sha256:e45f1a41e49bd44811aa81bc5b4c9addbe4713bea26993ec0dc43fd85558e459",
+      "targetHash": "sha256:f62edac42d52d8a4a252c71b10af85e0e29ad8e67320038375e749f87f32319c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 801,
+      "sourceHash": "sha256:10ff0aafc815b6273fa85a79cd70bc46775cb5279842256bb34608adcef8a9be",
+      "targetHash": "sha256:bbb11b0696567703bfcb25947180453e3a953fa1a868ff90c574115cf4a4b7e8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 802,
+      "sourceHash": "sha256:4ccab91a9a2b4167776c9650a459a9601d98e5ef61e0edf3bc96316b95205ad9",
+      "targetHash": "sha256:0cafbba8848e303de10c47c299b60f256b2a59481983d724a5501c92d9ea41fa",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 803,
+      "sourceHash": "sha256:d0d9f20856a40f66f96c34875cf0da0b6bcc3eed69786d36679768a55e3c40fb",
+      "targetHash": "sha256:ceee4401961142bc0abbe778b25a14fca1d34fae1f97e95bda1dea6aff34846a",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 804,
+      "sourceHash": "sha256:ce87d43cd231bf630bcb470f3c7bd4f93dde87af60887262f770ffd0782655df",
+      "targetHash": "sha256:ed3a80162eafe3d12411bf526ca363b4a0493a695336f74b9116ec0a7a3218b1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 805,
+      "sourceHash": "sha256:55f0d2819453800c240267d798059d0875fcb0dc19957277763a79891d5b77c9",
+      "targetHash": "sha256:8d2c0156c1c43bc687b2d2d5b3423e92e65a2d6131928e9d14b8c2c3144a0fcc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 806,
+      "sourceHash": "sha256:47d80052ccd4edb13ea841c22b507e43f33c9e8b503ad2135b9fb5ec990a5f78",
+      "targetHash": "sha256:4f7142bd8225a07450de96cd55c102b1e5b1ba0a6ef88c64d7b056d2beb934d3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 807,
+      "sourceHash": "sha256:cec3a9b2b148bc40c7d28d9da72bcf04ce2d53c9a20233dfc00c67f175be121b",
+      "targetHash": "sha256:63634279a7e043344a3e322c7b98ad9488ee2e93cdd88668296a7e1dbecf845c",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 808,
+      "sourceHash": "sha256:6eec235b56537909aa379c2df42779ace1672b62996feca2ac4b4870a3089073",
+      "targetHash": "sha256:1ff45ee3f3ea887a951c52c4b1953a06ec25710050a5d4f2691fcd5688993c36",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 809,
+      "sourceHash": "sha256:1196ea5eacc99814eb4fe98b871cb7c32f556281815c5a761d5992a815c93e86",
+      "targetHash": "sha256:e273b5c1897da946c8e4a4bf9bc4e0e4c1d7d3f8c0a17eaa623c1eb4f22953c8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 810,
+      "sourceHash": "sha256:40916d85d14fd834bfae001410a025f92806092115f52aeb8ddf36a30a5da890",
+      "targetHash": "sha256:61d692f5a2468c6400932a1d032da4692020399e4f37fa4e89806f7e8969efcc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 811,
+      "sourceHash": "sha256:a406a54b9757d668b6865b826c12c9da76ebd8686de40f5173df970eca37fd00",
+      "targetHash": "sha256:52d98db1c91cb3a34ffa15a64991c999e699ff71e2178d3d3b1cfc0b6d4282fc",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 812,
+      "sourceHash": "sha256:f166d33653e1108b2e26881a6a64193f11cea1b7eec5987d4f391483237f760e",
+      "targetHash": "sha256:030fe5ec27d4da08cd9938a487c2c430cc7231ceb1e3e94987e99ede4da27b3b",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 813,
+      "sourceHash": "sha256:9fceffa6b09599a174fa65b1403ec38decaca0bb2318a37c789135ed806ff9d9",
+      "targetHash": "sha256:d7a92793341676ce34830328784658e8e1c4e8aae97467d00e91ca4e74d662d2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 814,
+      "sourceHash": "sha256:1465c6fa0068c2f22260d55df94e217baf20174e608e2ff2d8521efe4e281b02",
+      "targetHash": "sha256:8757475f38b94d3b194d499b18578d2379b0f22c1f6db8cbee5484dff184b91d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 815,
+      "sourceHash": "sha256:3e6244c42e2f17387913bd4505a3c636a5cc273f82b7cb505bcdea344d97c443",
+      "targetHash": "sha256:a9dc98f1521b13fd07122a2a14e1da1236fd30b1d3d58a873cd6bf7279024ea4",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 816,
+      "sourceHash": "sha256:c9a01d1e70d9480ebb4f90dbb5f632f90d4c05290a3dd40587e6abe51fb8a43f",
+      "targetHash": "sha256:7fa3f57a585d955b1464de7f3553b99511db635773eff376d10fea5f2bcd2390",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 817,
+      "sourceHash": "sha256:c7099d1687d81559f21530d1721a62c01559923f51e1e0776ca9efd9e597cc1f",
+      "targetHash": "sha256:68defc56f057ae688610984f8ba719bbba0ba33a68f615c143a80f4c3d45aa48",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 818,
+      "sourceHash": "sha256:a61d9eb8c0299e78fe21e0740c5a431936d852fdf409deb8186c61ef63b387d4",
+      "targetHash": "sha256:a46cd4521ac530bc2255af19158ccae4b9c306ede35ab14d7f30840814572544",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 819,
+      "sourceHash": "sha256:402fc3865dea196f84d8b7dfc4d9d9f23e29f0aa532e5ff0b5074f8044bd7869",
+      "targetHash": "sha256:8ab49ae941cc71ca96133eac708da362f53dd82a8b4289177274453f1784840d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 820,
+      "sourceHash": "sha256:81a4996305a8998d5ef257fe8ae3a96bf323eec121da93073d2451c8e0d94e13",
+      "targetHash": "sha256:9ee2102140051edd4986ea719419fcee6d8504b8cdf02c6fcf66119e3aa504e8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 821,
+      "sourceHash": "sha256:b4f03c67194b703693467c67c28f439b06b801d891b1a40845f1cad9a4cdb5ec",
+      "targetHash": "sha256:510f7939d5a41ea9794f1b8ca70049a8d455bcecc1484c7e8af6fb620bad994f",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 822,
+      "sourceHash": "sha256:240727c18e13eadb7afc5382ced53dd93693c56385ac58e510386e5fa4d380fb",
+      "targetHash": "sha256:ef2399d58085b7506dc5d5c568568b28aae385f5835d355e36699c092919614d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 823,
+      "sourceHash": "sha256:209d6813e0e07e8ee00bd8485c06a6271f8ff50bdcab9c72d61dcde4e112929b",
+      "targetHash": "sha256:2475eb81ebf5d4da12d80f9e55ce383f10a3dc2cb383b03daf56d950be8a1441",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 824,
+      "sourceHash": "sha256:9b8ed95450b190b5c21fefe28be7a30f91057155afb0b33c32aed09a042171e0",
+      "targetHash": "sha256:2bfb172c168db0e95849ec73a9583cc0b153280339bd345e751ba2a6088c3b42",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 825,
+      "sourceHash": "sha256:d83b704a8c228276500ed31eadce7ca1f11313025d2adb4c79b28d0ce929eddc",
+      "targetHash": "sha256:f6b9fd8ac0419e306f460318ea8dfa025fade4900d5b60ff78391f5513d2e672",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 826,
+      "sourceHash": "sha256:8687c29996feb3cf8b2b313a29cfa9fd4202307d553d3b9118adb146f3649e5c",
+      "targetHash": "sha256:423f136cf0fe714e3c8baf852837f42c4e51a7aa6dbb95c2a09d55bd103a76d2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 827,
+      "sourceHash": "sha256:14f493e6bc63d8fd0ae118e3057d8211ca95ba97277239e425c6f85be30207c8",
+      "targetHash": "sha256:ef33ccef6252eff40e54a33a4c70e36d301b0d5e4aee61cc5dc913a709110665",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 828,
+      "sourceHash": "sha256:b272fff9dcda9480aea97f2e1b84aa7bf53d4335203351933cad6fa07709b60b",
+      "targetHash": "sha256:c35b452d3497d779a985a5eb517ae2bf69d1f37b2ced3a8084092d2c73e337b2",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 829,
+      "sourceHash": "sha256:c8c329eb87e6f11284665cdee6b152e169dd5c697c211bae8f7a7f60d50f6a44",
+      "targetHash": "sha256:94545edf7a8890461301ba4d131b0a5dc470e3ff20c904052147bc404f743017",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 830,
+      "sourceHash": "sha256:7b1b2d79d4392fdf6d71456d7ff076a8d5adb6b421ad320927c9c4e5934f0ade",
+      "targetHash": "sha256:e69ad0a48aea7e4cbde25763ca3f00757b33949e24c162870fc6e7e1bf883e93",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 831,
+      "sourceHash": "sha256:ba92e9c218a78ce2131e5128ff71641ae31a9eac7e0a3ab1e215c894c7e21c4a",
+      "targetHash": "sha256:25fae3d5a4cc1e2c653204eec9afbc03e33abac108f20cc2778839cc982ea425",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 832,
+      "sourceHash": "sha256:d20c3b11dd054b1aa1f41e074a20e306b5b21e4322541225c80ec6b908ffa91e",
+      "targetHash": "sha256:24122d964ff7929b69f839eb885b18d2d661515c155d8f6ba8c9e45150b70aa1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 833,
+      "sourceHash": "sha256:f5be233ad26da95d35830e630b0c590b66497ffe164af2b903d88febab1a7462",
+      "targetHash": "sha256:effe329ea620f34a6234de82cd9fd9eecc665c11e2ecdee2afb9d3bc2a1a3110",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 834,
+      "sourceHash": "sha256:b2f802ff8718f9f664fb4a4b4a3fe2a8cb61fc491683085e8e34bceb119ad122",
+      "targetHash": "sha256:1e8879fd69571deb9540971ec23ae821ca67f9ad63322648f2f7d411d1010fb3",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 835,
+      "sourceHash": "sha256:dfab1a2104ef47335e7c458db11e04b4c7923f6da68a8cf2ddc01177a9b429dc",
+      "targetHash": "sha256:bcdd89bd0e241893e03f972c804b2b7f271bc6de63bcbf5191a68a9af3bedfae",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 836,
+      "sourceHash": "sha256:cad1bfc57844b61a0a23b655f66000f96d6a464676ce9dc0f201e6e67ddc279c",
+      "targetHash": "sha256:ac9bb9155462ea0f29a26ade4cd55e1f3c5787ee11f8eba7166bb854c1578fa1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 837,
+      "sourceHash": "sha256:8cacace36fecdf6569294628c75f867a1e3d7ceb2d13c180b1f90717e07215eb",
+      "targetHash": "sha256:17ca32e909cd791eaa5ad3330aa028006e6c13f773fe4f02a71bd39dc501cd59",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 838,
+      "sourceHash": "sha256:d4e98a565d446ba4c4d8b240401ef60b9512e647c62d7e5315334a26396342f5",
+      "targetHash": "sha256:45e5f2d273433e83d9d04bd42c1013676383e537f4355bd1a3fa52cc11c02f99",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 839,
+      "sourceHash": "sha256:20cd9aa4ca9b4bc2f15a70d1a777aacdd648c039366bc60c4d8e24016a44cdbb",
+      "targetHash": "sha256:786c4a3d2ac99bf7a3fb3187266a21a64e77ca464a0e1f7a1912685b3a5da875",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 840,
+      "sourceHash": "sha256:d58dec86397306c23a5f8b37f0ccf7c3052a5e18134fc9ed6e89d642f8d44238",
+      "targetHash": "sha256:1136abed502835c9abbb513b32e8f72fde0340237f7b792c26ca18ac0a7933f9",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 841,
+      "sourceHash": "sha256:780bb91d64a4adebd3fda66002de544be5562ccc2c29e62d8b3b5c80313015eb",
+      "targetHash": "sha256:9eaeb0d6f12100c6726171ef914db4a7c4a898237d8f8389784b598d055931f1",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 842,
+      "sourceHash": "sha256:8397430c1130fec888eb036e1d3b1ea2f8aec0a442a44a991a2db257c2985441",
+      "targetHash": "sha256:50ed8de305b71e15328e1d660a76428a292b9750643c057d40a5bc2c44e95f69",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 843,
+      "sourceHash": "sha256:863cdcf5e1eeb3f7f02a0f0a8029df6c6a9f05eb90028ff25d23194e6b19d1a8",
+      "targetHash": "sha256:1118b50bebb4bba3f0592c976dc2d51d102f0888747c3606fd628db6851d2681",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 844,
+      "sourceHash": "sha256:0a13ecbe8e2ff16f876b91cb9654d07eae5931837384224ebdbaf7397c183044",
+      "targetHash": "sha256:647e3fd0bc7e7d6380b67a62c8904460d34ffee7617f434bd942fe74c2c2ff82",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 845,
+      "sourceHash": "sha256:d5e315abe46a5c31fdf22329cf676e933f592c37ddc752b68ffcd39683de6878",
+      "targetHash": "sha256:443a12cc63127093778326cc77ef23780e14859e5f9a127bfbfd96507c80d103",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 846,
+      "sourceHash": "sha256:ef4be0c91cb38bc2f6377e0f0c055ac9a0f40836cf64f70bff07303efde2df86",
+      "targetHash": "sha256:944888682b5a9bafb61ca2e6c3521f0da2244f972936237d519a2f3c5ed3cbf8",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 847,
+      "sourceHash": "sha256:9769e0c509061a7d6795d8e746640dd769bf6aaf56a4664913ebebd1abc3a89b",
+      "targetHash": "sha256:1e93e200d449795d4f31093c44cf178207d1ddeb122e450eec01994bba4b1673",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 848,
+      "sourceHash": "sha256:d15e7837326acdc588e9aeb98808b99691befa622be834f0000c7995e5d94238",
+      "targetHash": "sha256:315d6344a9d9cfd56fbb1b797826d504054951cfe051ab712df43a5e147f602d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 849,
+      "sourceHash": "sha256:1a87c3d791edb7332ec51fa3dc6b32a1460faca5252929586683b1792f19e2de",
+      "targetHash": "sha256:fb073ec756547f3ce8bc0aee1f57f469b2c5b07282cf269e97ab82ceba01d158",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 850,
+      "sourceHash": "sha256:042fdf6561986ac786b4f96a4bdf7a466ca1b67ca2da662764e1ac2b5422b3a6",
+      "targetHash": "sha256:fda94e6f7b79cd3cf1a7b58c81d6d38d6d03ec1c91bf4b27c95458285eecaf4d",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    },
+    {
+      "unitId": 851,
+      "sourceHash": "sha256:c9bc13e62561c9bdcbbd94af3e589842e30823075bba48ba2f5226077cb8374a",
+      "targetHash": "sha256:49349e9062e9261b033267db6ecbfa30b4982f63d28a6296877c47574bb1ac49",
+      "conclusion": "approved",
+      "reason": "Independently source-compared; source claims and protected literals retained."
+    }
+  ]
+}

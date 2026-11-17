@@ -43,6 +43,9 @@ inputRequirements:
     it: Carica il primo ritratto adulto, poi il secondo. L’immagine 1 resta a sinistra; l’immagine 2
       resta a destra. La dimostrazione usa persone immaginarie generate con l’IA. Mantieni tutte le
       scritte in inglese.
+    ru: Загрузите первый портрет взрослого, затем второй. Изображение 1 остаётся слева, изображение 2 —
+      справа. В демонстрации использованы вымышленные люди, созданные ИИ. Сохраните все надписи на
+      английском.
   slots:
     - id: personA
       labels:
@@ -56,6 +59,7 @@ inputRequirements:
         zh-Hant: 第一位人物，左側
         fr: Première personne, à gauche
         it: Prima persona, a sinistra
+        ru: Первый человек, слева
       min: 1
       max: 1
     - id: personB
@@ -70,6 +74,7 @@ inputRequirements:
         zh-Hant: 第二位人物，右側
         fr: Deuxième personne, à droite
         it: Seconda persona, a destra
+        ru: Второй человек, справа
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -97,6 +102,7 @@ annotations:
       zh-Hant: 四幀組成完整照片亭拼圖。
       fr: Quatre images forment un tirage de photomaton compact.
       it: Quattro riquadri formano una stampa compatta da cabina fotografica.
+      ru: Четыре кадра образуют один компактный отпечаток фотобудки.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -114,3 +120,4 @@ annotations:
       zh-Hant: 閃光與顆粒共同形成攝影質感。
       fr: Le flash et le grain créent le rendu photographique.
       it: Flash e grana stabiliscono l’aspetto fotografico.
+      ru: Вспышка и зерно задают фотографический вид.

@@ -55,6 +55,18 @@ describe('compileMessages', () => {
       'Il campo «L’immagine» è vuoto. Compilalo per completare il prompt.',
     );
   });
+  it('formats Russian cardinal forms and zero with the actual compiled UI messages', () => {
+    const t = catalogTranslator(ROOT, 'ru');
+    for (const n of [1, 21, 101]) expect(t('search.count', { count: n })).toBe(`${n} результат`);
+    for (const n of [2, 4, 22]) expect(t('search.count', { count: n })).toBe(`${n} результата`);
+    for (const n of [5, 11, 12, 14, 25, 111]) expect(t('search.count', { count: n })).toBe(`${n} результатов`);
+    expect(t('search.count', { count: 0 })).toBe('Нет результатов');
+    expect(t('search.count', { count: 1.5 })).toBe('1,5 результата');
+    expect(t('templates.editor.missing', { count: 21 })).toBe('Осталось заполнить 21 поле');
+    expect(t('templates.editor.missing', { count: 22 })).toBe('Осталось заполнить 22 поля');
+    expect(t('templates.editor.missing', { count: 11 })).toBe('Осталось заполнить 11 полей');
+    expect(t('favorites.page.count', { count: 22 })).toBe('22 сохранённые работы');
+  });
   it('formats Brazilian Portuguese zero, singular and plural UI messages', () => {
     const t = catalogTranslator(ROOT, 'pt-BR');
     expect(t('search.count', { count: 0 })).toBe('Nenhum resultado');
@@ -89,7 +101,11 @@ describe('compileMessages', () => {
       for (const [key, message] of leaves(raw)) {
         const names = [...argumentsOf(parse(message))];
         // Plural forms and selects by count: one, few and other in every catalog's languages.
-        for (const n of names.length ? [1, 3, 12] : [0]) {
+        for (const n of names.length
+          ? code === 'ru'
+            ? [0, 1, 2, 4, 5, 11, 14, 21, 22, 101, 111, 1.5]
+            : [1, 3, 12]
+          : [0]) {
           const values = Object.fromEntries(names.map((name) => [name, n]));
           expect(compiled(key, values), `${key} ${n}`).toBe(runtime(key, values));
         }

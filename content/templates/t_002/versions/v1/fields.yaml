@@ -15,6 +15,7 @@ fields:
       zh-Hant: 題材
       fr: Sujet
       it: Soggetto
+      ru: Объект
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
@@ -26,6 +27,7 @@ fields:
       zh-Hant: 一個主體即可，如“竹林”。
       fr: Un seul sujet principal, comme « une bambouseraie ».
       it: Un soggetto principale, come «un boschetto di bambù».
+      ru: Один главный объект, например «бамбуковая роща».
   - name: season
     type: enum
     required: true
@@ -42,6 +44,7 @@ fields:
       zh-Hant: 季節
       fr: Saison
       it: Stagione
+      ru: Сезон
     options:
       - value: spring
         labels:
@@ -55,6 +58,7 @@ fields:
           zh-Hant: 春
           fr: Printemps
           it: Primavera
+          ru: Весна
       - value: summer
         labels:
           en: Summer
@@ -67,6 +71,7 @@ fields:
           zh-Hant: 夏
           fr: Été
           it: Estate
+          ru: Лето
       - value: autumn
         labels:
           en: Autumn
@@ -79,6 +84,7 @@ fields:
           zh-Hant: 秋
           fr: Automne
           it: Autunno
+          ru: Осень
       - value: winter
         labels:
           en: Winter
@@ -91,6 +97,7 @@ fields:
           zh-Hant: 冬
           fr: Hiver
           it: Inverno
+          ru: Зима
   - name: brushwork
     type: enum
     required: true
@@ -107,6 +114,7 @@ fields:
       zh-Hant: 筆法
       fr: Technique de pinceau
       it: Tecnica pittorica
+      ru: Техника кисти
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -120,6 +128,7 @@ fields:
           zh-Hant: 淡墨暈染，節點清晰
           fr: Lavis doux, nœuds nets
           it: Sfumature morbide, nodi netti
+          ru: Мягкие размывки, чёткие узлы
       - value: loose wet washes
         labels:
           en: Loose wet washes
@@ -132,6 +141,7 @@ fields:
           zh-Hant: 濕筆暈染
           fr: Lavis humides libres
           it: Sfumature libere a pennello bagnato
+          ru: Свободные влажные размывки
       - value: dry brush with visible texture
         labels:
           en: Dry brush
@@ -144,6 +154,7 @@ fields:
           zh-Hant: 枯筆
           fr: Pinceau sec
           it: Pennello secco
+          ru: Сухая кисть
   - name: elements
     type: string-list
     required: false
@@ -162,6 +173,7 @@ fields:
       zh-Hant: 細節
       fr: Détails
       it: Dettagli
+      ru: Детали
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
@@ -173,6 +185,7 @@ fields:
       zh-Hant: 寫可數的東西效果最好，如“五根竹竿”。
       fr: Les éléments dénombrables fonctionnent mieux, par exemple « cinq grandes tiges ».
       it: Gli elementi numerabili funzionano meglio, per esempio «cinque steli alti».
+      ru: Лучше всего работают детали, которые можно посчитать, например «пять высоких стеблей».
   - name: aspectRatio
     type: enum
     required: true
@@ -190,6 +203,7 @@ fields:
       zh-Hant: 畫面比例
       fr: Rapport largeur/hauteur
       it: Rapporto d’aspetto
+      ru: Соотношение сторон
     options:
       - value: 21:9
         labels:
@@ -204,6 +218,7 @@ fields:
           zh-Hant: 21:9
           fr: 21:9
           it: 21:9
+          ru: 21:9
       - value: 16:9
         labels:
           en: 16:9
@@ -217,6 +232,7 @@ fields:
           zh-Hant: 16:9
           fr: 16:9
           it: 16:9
+          ru: 16:9
       - value: 3:4
         labels:
           en: 3:4
@@ -230,6 +246,7 @@ fields:
           zh-Hant: 3:4
           fr: 3:4
           it: 3:4
+          ru: 3:4
       - value: 1:3
         labels:
           en: 1:3
@@ -243,3 +260,4 @@ fields:
           zh-Hant: 1:3
           fr: 1:3
           it: 1:3
+          ru: 1:3

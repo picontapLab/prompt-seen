@@ -34,6 +34,7 @@ inputRequirements:
       synthétique.
     it: Carica una foto della stanza in cui siano visibili gli arredi importanti. La stanza dell’esempio
       è sintetica.
+    ru: Загрузите одну фотографию комнаты с видимой важной мебелью. Комната в примере синтетическая.
   slots:
     - id: room
       labels:
@@ -47,6 +48,7 @@ inputRequirements:
         zh-Hant: 房間照片
         fr: Pièce
         it: Stanza
+        ru: Комната
       min: 1
       max: 1
 showcaseExampleId: x_170
@@ -70,6 +72,7 @@ inspirationSources:
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
       it: Intero post o galleria di immagini
+      ru: Вся публикация или галерея изображений
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -83,6 +86,7 @@ inspirationSources:
       zh-Hant: 一手帖搜尋索引快照
       fr: Instantané indexé de la source primaire
       it: Istantanea indicizzata della fonte primaria
+      ru: Проиндексированный снимок первоисточника
     evidenceUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -95,6 +99,7 @@ inspirationSources:
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
       it: Prompt originale o estratto disponibile; adattato autonomamente
+      ru: Доступен исходный промпт или отрывок; самостоятельная адаптация
     metrics:
       - key: post_score
         value: 2746
@@ -109,6 +114,7 @@ inspirationSources:
           zh-Hant: 貼文分數
           fr: Score de la publication
           it: Punteggio del post
+          ru: Рейтинг публикации
       - key: comments
         value: null
         labels:
@@ -122,6 +128,7 @@ inspirationSources:
           zh-Hant: 留言
           fr: Commentaires
           it: Commenti
+          ru: Комментарии
 source:
   author: Prompt Seen
   url: null

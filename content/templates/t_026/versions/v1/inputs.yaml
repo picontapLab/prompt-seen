@@ -16,6 +16,8 @@ instructions:
     couleur d’accent.
   it: Carica una foto di profilo seguita da due a quattro foto di ricordi; indica un nome e un colore
     d’accento.
+  ru: Загрузите одну фотографию в профиль, затем от двух до четырёх памятных фотографий; укажите имя и
+    акцентный цвет.
 slots:
   - id: profile
     labels:
@@ -29,6 +31,7 @@ slots:
       zh-Hant: 側臉輪廓
       fr: Profil
       it: Profilo
+      ru: Профиль
     min: 1
     max: 1
   - id: memories
@@ -43,5 +46,6 @@ slots:
       zh-Hant: 回憶或動作照片
       fr: Souvenirs
       it: Ricordi
+      ru: Воспоминания
     min: 2
     max: 4

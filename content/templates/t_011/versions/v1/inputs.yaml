@@ -15,6 +15,8 @@ instructions:
     produit est facultative.
   it: Fornisci il dispositivo, note strutturali verificate e le etichette esatte; la foto del prodotto
     è facoltativa.
+  ru: Укажите устройство, проверенное описание конструкции и точные подписи; фотография товара
+    необязательна.
 slots:
   - id: product
     labels:
@@ -28,5 +30,6 @@ slots:
       zh-Hant: 產品外觀
       fr: Produit
       it: Prodotto
+      ru: Товар
     min: 0
     max: 1

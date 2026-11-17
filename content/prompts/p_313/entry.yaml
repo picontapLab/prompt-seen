@@ -29,6 +29,7 @@ inputRequirements:
     zh-Hant: 使用完整改編提示詞，不需要參考圖。
     fr: Utilisez le prompt réécrit complet sans image d’entrée.
     it: Usa il prompt riscritto completo senza immagine di input.
+    ru: Используйте полный переписанный промпт без входного изображения.
   slots: []
 showcaseExampleId: x_377
 promptProvenance: independent-adaptation
@@ -51,6 +52,7 @@ inspirationSources:
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
       fr: Publication ou galerie originale entière ; pas cet exemple généré
       it: Intero post o galleria originale, non questo esempio generato
+      ru: Вся исходная публикация или галерея, а не этот сгенерированный пример
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -69,6 +71,8 @@ inspirationSources:
         réponse de l’auteur
       it: Istantanea pubblica X salvata; prompt completo dalla copia salvata del post o della risposta
         dell’autore
+      ru: Сохранённый снимок публичной публикации X; полный промпт из сохранённого зеркала авторской
+        публикации или ответа
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118307702657159331&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is archived separately.
@@ -85,6 +89,8 @@ inspirationSources:
         séparément.
       it: Adattamento indipendente; il prompt originale è fallito in tre tentativi ed è archiviato
         separatamente.
+      ru: Самостоятельная адаптация; три попытки с оригинальным промптом оказались неудачными, он сохранён
+        отдельно в архиве.
     metrics:
       - key: likes
         value: 111
@@ -99,6 +105,7 @@ inspirationSources:
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
           it: Mi piace del post originale
+          ru: Лайки исходной публикации
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/xyue13/status/2118307702657159331

@@ -15,6 +15,7 @@ fields:
       zh-Hant: 人物
       fr: Personnage
       it: Personaggio
+      ru: Персонаж
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -26,6 +27,7 @@ fields:
       zh-Hant: 人物身分與一個姿勢，例如「正在轉身的舞者」。
       fr: Indiquez qui est le sujet et une pose, par exemple « un danseur en pleine rotation ».
       it: Chi è e una posa, per esempio «una ballerina a metà giro».
+      ru: Кто это и одна поза, например «танцор в середине поворота».
   - name: rimLight
     type: enum
     required: true
@@ -42,6 +44,7 @@ fields:
       zh-Hant: 輪廓光
       fr: Éclairage de contour
       it: Luce sui bordi
+      ru: Контровый свет
     options:
       - value: cyan and magenta
         swatch:
@@ -58,6 +61,7 @@ fields:
           zh-Hant: 青與洋紅
           fr: Cyan et magenta
           it: Ciano e magenta
+          ru: Голубой и пурпурный
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -73,6 +77,7 @@ fields:
           zh-Hant: 琥珀與青綠
           fr: Ambre et sarcelle
           it: Ambra e petrolio
+          ru: Янтарный и бирюзовый
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -88,6 +93,7 @@ fields:
           zh-Hant: 紫與青
           fr: Violet et cyan
           it: Viola e ciano
+          ru: Фиолетовый и голубой
   - name: background
     type: enum
     required: true
@@ -104,6 +110,7 @@ fields:
       zh-Hant: 背景
       fr: Arrière-plan
       it: Sfondo
+      ru: Фон
     options:
       - value: soft bokeh lights
         labels:
@@ -117,6 +124,7 @@ fields:
           zh-Hant: 柔和的虛化光點
           fr: Lumières en bokeh doux
           it: Luci bokeh morbide
+          ru: Мягкие огни боке
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -129,6 +137,7 @@ fields:
           zh-Hant: 虛化的夜城
           fr: Ville nocturne floue
           it: Città notturna sfocata
+          ru: Размытый ночной город
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -141,6 +150,7 @@ fields:
           zh-Hant: 平坦的深色漸層
           fr: Dégradé sombre uniforme
           it: Sfumatura scura piatta
+          ru: Плоский тёмный градиент
   - name: mood
     type: string
     required: false
@@ -157,6 +167,7 @@ fields:
       zh-Hant: 情緒
       fr: Ambiance
       it: Atmosfera
+      ru: Настроение
   - name: aspectRatio
     type: enum
     required: true
@@ -174,6 +185,7 @@ fields:
       zh-Hant: 畫面比例
       fr: Rapport largeur/hauteur
       it: Rapporto d’aspetto
+      ru: Соотношение сторон
     options:
       - value: 4:5
         labels:
@@ -188,6 +200,7 @@ fields:
           zh-Hant: 4:5
           fr: 4:5
           it: 4:5
+          ru: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -201,6 +214,7 @@ fields:
           zh-Hant: 1:1
           fr: 1:1
           it: 1:1
+          ru: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -214,6 +228,7 @@ fields:
           zh-Hant: 2:3
           fr: 2:3
           it: 2:3
+          ru: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -227,3 +242,4 @@ fields:
           zh-Hant: 9:16
           fr: 9:16
           it: 9:16
+          ru: 9:16

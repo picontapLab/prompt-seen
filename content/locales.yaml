@@ -100,8 +100,9 @@ locales:
       htmlLang: ru,
       direction: ltr,
       enabled: false,
+      preview: true,
       phase: 2,
-      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
     }
   - {
       code: zh-Hant,

@@ -11,6 +11,7 @@ instructions:
   zh-Hant: 上傳一張動作照片，並提供一個簡短的大寫單字與背景顏色。
   fr: Importez une photo d’action et indiquez un mot court en majuscules ainsi qu’une couleur de fond.
   it: Carica una foto d’azione e indica una parola breve in maiuscolo e un colore di sfondo.
+  ru: Загрузите одну фотографию действия и задайте короткое слово прописными буквами и цвет фона.
 slots:
   - id: action
     labels:
@@ -24,5 +25,6 @@ slots:
       zh-Hant: 動作照片
       fr: Action
       it: Azione
+      ru: Действие
     min: 1
     max: 1

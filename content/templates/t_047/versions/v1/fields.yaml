@@ -13,6 +13,7 @@ fields:
       zh-Hant: 飲料
       fr: Boisson
       it: Bevanda
+      ru: Напиток
     help:
       en: Changing this value creates an untested variant. Keep related content consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
@@ -26,6 +27,8 @@ fields:
       fr: Modifier cette valeur crée une variante non testée. Gardez les contenus associés cohérents.
       it: Cambiare questo valore crea una variante non verificata. Mantieni coerenti i contenuti
         correlati.
+      ru: Изменение этого значения создаёт непроверенный вариант. Сохраняйте согласованность связанного
+        содержимого.
     type: string
     default: amber iced tea
     minLength: 1
@@ -45,6 +48,7 @@ fields:
       zh-Hant: 背景顏色
       fr: Couleur de fond
       it: Colore dello sfondo
+      ru: Цвет фона
     help:
       en: Changing this value creates an untested variant. Keep related content consistent.
       zh-Hans: 修改后属于未验证的新变体，请同时保持相关内容一致。
@@ -59,6 +63,8 @@ fields:
       fr: Modifier cette valeur crée une variante non testée. Gardez les contenus associés cohérents.
       it: Cambiare questo valore crea una variante non verificata. Mantieni coerenti i contenuti
         correlati.
+      ru: Изменение этого значения создаёт непроверенный вариант. Сохраняйте согласованность связанного
+        содержимого.
     type: string
     default: teal
     minLength: 1

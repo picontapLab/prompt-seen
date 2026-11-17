@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "locale": "ru",
+  "reviewer": "AI subagent /root/ru_batch_c",
+  "completedAt": "2026-11-17T15:46:55.720Z",
+  "scope": "Read-only independent audit of final translation assembly, review bindings, actual source field extraction and MDX preservation. No import/promote or source-content mutation was performed.",
+  "conclusion": "approved-for-import-dry-run",
+  "counts": {
+    "units": 1666,
+    "pages": 381,
+    "sharedFields": 1793,
+    "operations": 2174,
+    "arrayFields": 6,
+    "boundUnitReferences": 4769,
+    "contextOverrides": 1
+  },
+  "artifacts": {
+    "corpus": {
+      "file": "production/localization/ru/evidence/translation-units.json",
+      "sha256": "sha256:c0e7ef4135bbfeb0d3eed76bb580ac46201541bdc747dfe2de4643b484c9a058",
+      "originalReviewedFile": ".artifacts/localization/ru/corpus.json",
+      "verification": "Exact byte equality with the originally reviewed corpus, not regenerated text."
+    },
+    "report": {
+      "file": ".artifacts/localization/ru/full-before-report.json",
+      "sha256": "sha256:9b12e63e482573fe5fc6b168c65916c7bb4b97f60b8e721918c79d3467e9b1a2"
+    },
+    "batch": {
+      "file": "production/localization/ru/batches/full.json",
+      "sha256": "sha256:1f0b1599ecf626def3bccb25a7c63dcd2477464b335303e6beab17847518388a"
+    },
+    "bindings": {
+      "file": "production/localization/ru/evidence/full-review-bindings.json",
+      "sha256": "sha256:59c6477b542d736c4e0759d8bd90660426ee5c10a826c44ef6ce512292bdad1f"
+    },
+    "assembler": {
+      "file": ".artifacts/localization/ru/assemble-full.mjs",
+      "sha256": "sha256:679ea35240cb19087b9707fb04e16e2a858785a0e91ddbac864d0cac928eb578"
+    }
+  },
+  "checks": [
+    {
+      "name": "All units have exact independent source/target approval",
+      "result": "passed"
+    },
+    {
+      "name": "Full dynamic page/shared-field scope and unique operation/binding keys",
+      "result": "passed"
+    },
+    {
+      "name": "Actual source YAML equals corpus; source and target optimistic locks and actual owner identities match",
+      "result": "passed"
+    },
+    {
+      "name": "Six array fields preserve ordered independently reviewed elements",
+      "result": "passed"
+    },
+    {
+      "name": "Exact Name override: t_016 brand label Название; personal-name labels Имя; approved field fingerprint matches",
+      "result": "passed"
+    },
+    {
+      "name": "All shared writes restricted to ru explanatory leaves, never original Prompt bodies, actual enum/default/user values, source URLs, model IDs, media or run parameters",
+      "result": "passed"
+    },
+    {
+      "name": "All 381 original MDX ASTs equal corpus-reconstructed ASTs, including normalized source text",
+      "result": "passed"
+    },
+    {
+      "name": "Target structure preserves headings, paragraphs, list items, strong text structure, blockquote, and exact ordered link destinations",
+      "result": "passed"
+    }
+  ],
+  "sourceMdxNodeCounts": {
+    "root": 381,
+    "paragraph": 1285,
+    "text": 2804,
+    "heading": 956,
+    "list": 102,
+    "listItem": 245,
+    "link": 289,
+    "blockquote": 1,
+    "strong": 9
+  },
+  "observations": [
+    "No code block, inline code, JSX, raw HTML, image node or MDX expression exists in the actual 381 source bodies; there is no such structure for the paragraph extraction to lose.",
+    "Four translated paragraphs begin directly with a source link where English begins with The. Removing the English article changes a plain-text node count but preserves paragraph/link structure and meaning; checked p_123, p_153, p_218 and t_017.",
+    "The parent added an explicit override targetHash === repository fingerprint({field: targetField, value: translation}) assertion to the assembler. The final batch byte hash is unchanged; regenerated bindings were reread and their exact approvals and override hash revalidated.",
+    "The reviewed 1666-unit corpus is now retained at production/localization/ru/evidence/translation-units.json with identical bytes. The assembler reads that durable path; the full batch byte hash remains unchanged."
+  ],
+  "findings": [],
+  "limitations": [
+    "This is a planned-batch audit, not proof that an import or promotion subsequently preserved the repository. Perform post-import source invariants and localization gates.",
+    "No browser, build, layout, performance, runtime or visual-media testing is claimed by this record.",
+    "The 427 UI messages are outside this 1793-shared-field batch and outside this integration audit. Their own review and release gates remain necessary.",
+    "Review evidence is AI/subagent source comparison, not human or native-speaker certification."
+  ],
+  "bindingRevalidationAt": "2026-11-17T15:48:11.565424+00:00",
+  "durableCorpusVerificationAt": "2026-11-17T16:14:36.600231+00:00",
+  "fullCorpusHttpStaticReview": {
+    "reviewer": "AI subagent /root/ru_batch_c",
+    "completedAt": "2026-11-17T16:26:55.156298+00:00",
+    "file": "tests/e2e/russian.http.spec.ts",
+    "sha256": "sha256:1b955bccd2f5ae6a4344030c968122ccc6cca59ac752047ff8ce443a9e1333a5",
+    "conclusion": "approved-for-execution",
+    "resolvedFindings": [
+      "RU_ACCEPTANCE, RU_FULL_ACCEPTANCE or RU_PILOT_ACCEPTANCE independently requires a Russian artifact, preventing a missing locale from silently passing by skipping the suite.",
+      "Frozen scope must contain 381 pages and each source/scoped category must be nonempty. English must contain every scoped ID; Russian IDs must exactly equal scoped IDs, excluding unrelated unpublished English-preview drafts.",
+      "Every original literal and template-backed Prompt is reconstructed from validated source files, template version and original values; invalid or null template rendering fails.",
+      "Every actual served Prompt HTML body and language is compared to its source, and every popup JSON Prompt is fetched and checked against both detail data and source."
+    ],
+    "supportingInspection": [
+      "PromptSheet renders the identified Prompt container with its original language.",
+      "AnnotatedText renders plain spans and phrase buttons without nested divs or extra textual markers; current HTML extraction preserves text and decodes entities after removing tags.",
+      "Nullable rendered text is explicitly rejected and regex captures use non-null assertions after the matching assertion."
+    ],
+    "findings": [],
+    "limitations": [
+      "No HTTP/E2E execution or passing build is claimed here. Static inspection was supplemented only by local generated-index scope comparisons; parent owns final build and E2E execution."
+    ],
+    "scopeCorrectionReview": {
+      "file": "production/localization/ru/scope.json",
+      "counts": {
+        "collection": 16,
+        "page": 2,
+        "prompt": 285,
+        "template": 75,
+        "topic": 3
+      },
+      "uniqueKeys": 381,
+      "excludedEnglishDrafts": [
+        "p_094",
+        "p_095",
+        "p_096"
+      ],
+      "conclusion": "Scope-based comparison matches the frozen localization release boundary; all actual Russian page and original-Prompt assertions remain intact.",
+      "topicCompositeKeys": {
+        "verifiedKeys": [
+          "category/landscape",
+          "category/poster",
+          "style/ink"
+        ],
+        "mapping": "Preserve the full scope key suffix after topic/ and compare with generated topic taxonomy/id. Non-topic entries use id.",
+        "validation": "Executed the same comparison against actual .generated/content/en/index.json and ru/index.json for all five kinds: English includes every scoped key and Russian exactly matches every scoped key. Confirmed build-index.ts emits topic taxonomy and term id separately. English also has useCase/wallpaper outside this frozen scope."
+      }
+    }
+  }
+}

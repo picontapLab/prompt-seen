@@ -1,0 +1,2542 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "AI Codex ru_batch_d — independent of R0/R1 author",
+  "completedAt": "2026-11-17T15:25:08.492953+00:00",
+  "scope": "Independent source-comparison review of every one of 249 pre-existing R0/R1 corpus units. Excludes UI catalogs, which are not represented by these maps. No new visual inspection or provenance certification; historical source-review claims remain attributed source claims. No native-speaker or human certification.",
+  "counts": {
+    "reviewed": 249,
+    "approved": 248,
+    "changesRequested": 1
+  },
+  "changes": [
+    {
+      "id": 1620,
+      "file": "production/localization/ru/batches/pilot-text-drafts.json",
+      "before": "У этого шаблона есть два записанных примера с одним и тем же синтетическим референсом бутылки PINE. Значения по умолчанию дают отправленный текст для кампании в шалфейных, кремовых и серебристых тонах; альтернативные значения используют угольный и янтарный цвета и сцены на открытом воздухе. [Проверенный пример кампании](prompt:p_123) объясняет наблюдения для каждого результата.",
+      "after": "У этого шаблона есть два записанных примера с одним и тем же синтетическим референсом бутылки PINE. Значения по умолчанию дают отправленный текст для кампании в шалфейных и серебристых тонах и цвете слоновой кости; альтернативные значения используют угольный и янтарный цвета и сцены на открытом воздухе. [Проверенный пример кампании](prompt:p_123) объясняет наблюдения для каждого результата.",
+      "issue": "Source palette says ivory, not cream. Preserve the named palette colour explicitly.",
+      "resolution": "Changed кремовых to цвете слоновой кости; other content unchanged."
+    }
+  ],
+  "records": [
+    {
+      "id": 9,
+      "sourceHash": "sha256:b0fa6e84990d8329e931fa49e597303baed7b16bea436d7995665daabc94a99c",
+      "targetHash": "sha256:1c01b9425c9a8ed2752cf8e408dc7eaff2646c389e49d6f860a95631b51d9a01",
+      "source": "Identity, hair and natural skin are recognizable; black jacket, warm-gray backdrop and clean headroom match the prompt.",
+      "target": "Человек, причёска и естественная кожа узнаваемы; чёрный жакет, тёплый серый фон и свободное пространство над головой соответствуют промпту.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 13,
+      "sourceHash": "sha256:c306798e968e2f73f45cd5452284e5905df25f15dd867115d4d61d6078d4725e",
+      "targetHash": "sha256:154d7a0fc8d0077c1968b226dbc257a0a060536e3dc192e4135408a76c6aa648",
+      "source": "Both synthetic adults remain recognizable; wedding outfit and charcoal suit, natural hand placement and consistent garden lighting pass visual review.",
+      "target": "Оба синтетических взрослых остаются узнаваемыми; свадебный наряд и угольно-серый костюм, естественное положение рук и согласованное освещение сада прошли визуальную проверку.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 21,
+      "sourceHash": "sha256:9c91b2b563ea1364973781dee9b0a66c8a04eb60699129d443d7b92ed729853b",
+      "targetHash": "sha256:7851e410d742d1d2373d239d7fdc56e5b7254bf14319138324ffd98aa0140f22",
+      "source": "Exactly nine panels preserve the sage bottle, silver cap and PINE label. The specified hero, close-up, hand interaction, material, repeated arrangement, floating, paint macro, leaves and picnic scenes are present.",
+      "target": "Ровно девять ячеек сохраняют шалфейный цвет бутылки, серебристую крышку и этикетку PINE. Присутствуют заданные сцены: главный снимок, крупный план, взаимодействие с рукой, материал, повторяющаяся композиция, парение, макросъёмка краски, листья и пикник.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 48,
+      "sourceHash": "sha256:d3daf0304471809b32f6008c51460df79a73df8c6311be266069fad6a7ab38c4",
+      "targetHash": "sha256:3f5818d0a0ebe7a4b52b55a7a12a646c5a5d7cf8ce987c32c642cbd6a0e42e13",
+      "source": "Nine panels, repeated PINE bottle and requested outdoor/metal/macro compositions; lettering retained.",
+      "target": "Девять ячеек, повторяющаяся бутылка PINE и запрошенные композиции на открытом воздухе, с металлом и макросъёмкой; надписи сохранены.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 56,
+      "sourceHash": "sha256:c4796f62c64aad375143a58b96f19648bcc9d3db5f3561dedb36f5d3c9e80ebb",
+      "targetHash": "sha256:fbbd239cd2d0779a530a9811f0e185d5618c7ee9ccc1f0c3dfca75bd5fc2da3a",
+      "source": "Adult B identity retained, editorial charcoal suit portrait with uncluttered negative space.",
+      "target": "Взрослый B остаётся узнаваемым; журнальный портрет в угольно-сером костюме с незагромождённым свободным пространством.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 78,
+      "sourceHash": "sha256:4bc157582261e77ed7f056a75913f201075f3e5dddef1ad0f1445d0c559033a9",
+      "targetHash": "sha256:3c8117b1f3bb531d0a7eb6d4fe8911284d4f19e79012cc5e8293b9fd728455d2",
+      "source": "A single cobalt dropper bottle is crisp on a warm gradient, with soft shadow and restrained reflection.",
+      "target": "Один флакон с пипеткой кобальтового цвета чётко выделяется на тёплом градиентном фоне; тень мягкая, отражение сдержанное.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 131,
+      "sourceHash": "sha256:a09194c77eecb4cb8b0e7606f112f6d2173c02c3ca714b24529d062b93936a89",
+      "targetHash": "sha256:8082d7a73d143e16438b8426cfd8c88c9d519028b0cd8592c3791ced0ec9731e",
+      "source": "Fictional market slide has 2026/2027/2028 bars of 10/14/19 and visible illustrative-data disclaimer. The model added fictional market sizes 1000/320/80 and a 37.8 percent CAGR; nested circles are not concentric.",
+      "target": "На слайде о вымышленном рынке показаны столбцы за 2026/2027/2028 годы со значениями 10/14/19 и видимое предупреждение об иллюстративном характере данных. Модель добавила вымышленные размеры рынка 1000/320/80 и CAGR 37,8 процента; вложенные круги не концентрические.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 138,
+      "sourceHash": "sha256:ef02fce4dcd7b355a36ecf35931a4417413c4f9bc64f20803600a15046a4e39a",
+      "targetHash": "sha256:6531a223244fbe704c8e9853955b8a48408335cf0f24cb613288d53eb46869a3",
+      "source": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking. Cropped row-major into a 512px GIF, 300ms per frame, infinite loop; slight background drift between poses. This is a composed GIF, not native GIF output.",
+      "target": "Шесть разных сгенерированных поз показывают, как обезьянка поднимает и опускает фонарь и моргает. Ячейки вырезаны построчно и собраны в GIF размером 512 пикселей, по 300 мс на кадр, с бесконечным повторением; между позами фон немного смещается. Это собранный GIF, а не GIF, напрямую выданный моделью.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 178,
+      "sourceHash": "sha256:120f322c1b873b97845650df24155a920083c55649bd8ff1f7220c5e33048d02",
+      "targetHash": "sha256:56a97d44265a4bbdc3c5590aae40a880c93ce12a52b8ecba3fc5c895e08cadcb",
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight gouache frames show falling cherry petals and subtle visitor motion around the pagoda and Fuji. 3:4 center crop; two-second repeating GIF. Mild building and landscape drift across redrawn frames remains and must be described as an adaptation limitation.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь гуашевых кадров показывают падающие лепестки вишни и едва заметное движение посетителей у пагоды и Фудзи. Центральное кадрирование 3:4; повторяющийся GIF длительностью две секунды. Небольшие изменения зданий и пейзажа между перерисованными кадрами сохраняются и должны быть указаны как ограничение адаптации.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 208,
+      "sourceHash": "sha256:77a54a85bd685b3c9dcd4ef4e3d42e072812c3acc7eed6124c22c19fe0a44f2f",
+      "targetHash": "sha256:0a503df5d3a4279f67d5d8d02ca00d94d86735c355d0e33a25fd272dfc739c54",
+      "source": "A dark head-and-shoulders silhouette outlined in two rim-light colours over blurred lights.",
+      "target": "Тёмный силуэт головы и плеч с двухцветным контровым светом на фоне размытых огней.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 213,
+      "sourceHash": "sha256:1d597111619b23dfbde2c9558523486bf17ed41e30038a6bea8e88044559d893",
+      "targetHash": "sha256:30880dd249a04bc1cc510dcf3afd05cd0e512bddb9d6fbfcf325a84e3707e016",
+      "source": "An illustrated speckled ceramic mug against a warm circular backdrop, with hand-glazing and coffee-warmth callouts.",
+      "target": "Нарисованная керамическая кружка в крапинку на тёплом круглом фоне, с выносками о ручном глазуровании и тепле кофе.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 215,
+      "sourceHash": "sha256:7ac9bd14a4c91348ab6b42a5e83b1a7970a59aded04cd608e998d9c545cae51f",
+      "targetHash": "sha256:827d464a04f0892f09f122d5d6b8f7d16be5dd4436ec31852a116790cbbb47b5",
+      "source": "An ink branch rising from the lower left on warm paper, with a small red seal.",
+      "target": "Ветка тушью поднимается из нижнего левого угла на бумаге тёплого оттенка; рядом небольшая красная печать.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 218,
+      "sourceHash": "sha256:fe47eabec256139b1c7d8c605e6b982ee83f247636212cca62cb15f2053e175d",
+      "targetHash": "sha256:63f22cc9a8497ad50d2ee6bcbd42236fa27ba0d8793574ad9ff7bd6b3710ea8d",
+      "source": "Five grey bamboo stalks and drifting leaves on warm paper, with a red seal at lower right.",
+      "target": "Пять серых стеблей бамбука и летящие листья на бумаге тёплого оттенка, с красной печатью внизу справа.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 221,
+      "sourceHash": "sha256:38ce70c2d00ca532acec008da53968a421f7e15c479d9ccbc1b6c9cfe9a70206",
+      "targetHash": "sha256:5486b49217b52e4f50f8d00e330ec6837e93183659be1fc61af41ed734b1c342",
+      "source": "Green tea tin with a single-estate label and lid callout before a circular landscape backdrop.",
+      "target": "Банка зелёного чая с этикеткой о происхождении с одной плантации и выноской у крышки на фоне пейзажа в круге.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 227,
+      "sourceHash": "sha256:2bbaf4a2c1404676e0ddca74d197c147172843a192fda59315a8dfaa60f24d86",
+      "targetHash": "sha256:8492bffe3888efbbaa9ee1f50ee8e836333e8c95856986684b397958408b09ef",
+      "source": "A dark knit sneaker on a white sole in front of a circular backdrop, with headline bars above.",
+      "target": "Тёмный трикотажный кроссовок на белой подошве перед круглым фоном; сверху полосы для заголовка.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 228,
+      "sourceHash": "sha256:2f9fe3c66a2d47ed75e421ca72e67df4f95936c4a1fced4b83c96d9a3b548fbf",
+      "targetHash": "sha256:5e0cbce3c64fa99f18476922ab5c4652dae1453cb3cdf9302e195cf8f9e9705f",
+      "source": "Grey-blue ridges fading into mist, with a pale sun behind the far range.",
+      "target": "Серо-голубые хребты растворяются в тумане; бледное солнце за дальним хребтом.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 229,
+      "sourceHash": "sha256:dd3b2d0a3ff84f65bb76d17794a540747c89b084a6f65b26a601c88bf38d68dc",
+      "targetHash": "sha256:6e131c637a85472fc2d75cb359f1a9a57b70ea04d696af96e774c4082addeb1a",
+      "source": "Navy poster with a mustard disc, a teal arc, a red half circle, a grey dot grid and two cream bars.",
+      "target": "Тёмно-синий постер с горчичным диском, бирюзовой дугой, красным полукругом, серой сеткой точек и двумя кремовыми полосами.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 233,
+      "sourceHash": "sha256:df60defe23039e37428bb6f680f0969f4a7affaa2057b8b3f6a895f0ce488391",
+      "targetHash": "sha256:ca3f7dc5a6d8a0953b8ba6e37f5a2bd887eaf814c40c44b06e9333a5ae9f2776",
+      "source": "Lone leaning pine on a winter cliff in textured ink on a tall warm-paper scroll, with a small red seal.",
+      "target": "Одинокая наклонённая сосна на зимнем утёсе, написанная фактурной тушью на высоком свитке из бумаги тёплого оттенка, с небольшой красной печатью.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 241,
+      "sourceHash": "sha256:be1c18d76907aba6b77a350e41bae53d02a6fe876dc556cb2a8be5f15ec89f88",
+      "targetHash": "sha256:1a8512f343fc8aab25b05155f4b5f8bd28b5361c05011c69f876e17c4fa1054e",
+      "source": "Speckled handmade mug beneath Made slowly lettering, with hand-glazing and warmth illustrations.",
+      "target": "Кружка ручной работы в крапинку под надписью Made slowly, с иллюстрациями ручного глазурования и тепла.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 252,
+      "sourceHash": "sha256:3032166efe7922d009a56750a77c513c8f4dab54403f61fdb2dd7351aa892206",
+      "targetHash": "sha256:095ae338eee5251c81ae26377d4b35b0ed7ff47c8e18657798ad6a13911a7f95",
+      "source": "Soft directional light and a sculptural jacket create a portrait with room for cover typography.",
+      "target": "Мягкий направленный свет и скульптурная форма жакета создают портрет с местом для текста обложки.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 253,
+      "sourceHash": "sha256:6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d",
+      "targetHash": "sha256:bcb4b765448b1377056a89f2ef261c9efef20d20a11b8036bf19996726cfb89a",
+      "source": "Person",
+      "target": "Человек",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 257,
+      "sourceHash": "sha256:c8fd2bd52d33017e78cc209600e1b9a6e8e9bad4166684d238a9b60e8128965c",
+      "targetHash": "sha256:3f542f535e96485f3ca9fd420ebde9cc2a1fd5fd8bc54b01fd5b93e4df8c558d",
+      "source": "Two supplied adult portraits become a warm garden wedding photograph.",
+      "target": "Два предоставленных портрета взрослых превращаются в тёплый свадебный снимок в саду.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 258,
+      "sourceHash": "sha256:893bcffecad5f80f95cf673d5413aefd89ab786f7ec5346614ab85b9341122d0",
+      "targetHash": "sha256:0f36ba5ee624dd266a8e16344a45a57e3998b028df35e6788410b731aa35a59c",
+      "source": "Person b",
+      "target": "Человек B",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 267,
+      "sourceHash": "sha256:6f4670c8e6236d0746a446f6543822d45483094e71a75790b25486a5d0e22785",
+      "targetHash": "sha256:3076d49ff78b139dab6c64fd52fa45b032bebc3a6a163afb50b3bf24e19aa8d8",
+      "source": "One product photo becomes nine coordinated campaign compositions.",
+      "target": "Одна фотография товара превращается в девять согласованных композиций для кампании.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 268,
+      "sourceHash": "sha256:fb9ef894175c327470f768d95ca7bee65e19853a0eaace3805f8a7b8a12270da",
+      "targetHash": "sha256:4fb40f52fb5a8d6e0544838cd1a0f72b99ee3949bbcba9ddfe4041040234b881",
+      "source": "Product",
+      "target": "Товар",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 325,
+      "sourceHash": "sha256:65013699865d34e4f728d609a2bbb25ecc134b45f678ac26ff230e3701433558",
+      "targetHash": "sha256:c4ff04c7eb5ed28f708a6606fcdc4323130f7cd27bfc51f3e57f0b04c4f5ef9f",
+      "source": "Fictional market slide has 2026/2027/2028 bars of 10/14/19 and visible illustrative-data disclaimer.",
+      "target": "Слайд о вымышленном рынке со столбцами за 2026/2027/2028 годы со значениями 10/14/19 и видимым предупреждением об иллюстративном характере данных.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 334,
+      "sourceHash": "sha256:91b6047d46b700692a26bcd1d08c3d04218c68167f7d04c8e12d956961fc04b4",
+      "targetHash": "sha256:ead52ace231780a184975bdd88c725f7a5e80bf1183407f5df35cf7f6000ab4d",
+      "source": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking.",
+      "target": "Шесть разных сгенерированных поз показывают, как обезьянка поднимает и опускает фонарь и моргает.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 335,
+      "sourceHash": "sha256:5df882f5ea2edd92baec268d1909c68074642bad17a0945b22e0f802ff594177",
+      "targetHash": "sha256:a266a57d7b0eda5b956761324262bcd95b97d0f9f9d4a68405dd9c269334fade",
+      "source": "Original monkey reference",
+      "target": "Оригинальный референс обезьянки",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 380,
+      "sourceHash": "sha256:472d9d44dbf4b35d9478be0a599a6ab35c1f67baf1a4c0493a1f94d31b561280",
+      "targetHash": "sha256:082b37d2ca62d8621c08b43d7944b3c6a34348046424bc7e59cf094d62c51c6f",
+      "source": "Mount Fuji travel poster",
+      "target": "Туристический постер с Фудзи",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 410,
+      "sourceHash": "sha256:a3a3b9f51b9e1b66717c2ffff5447dff2f955a8c48ad59605f45e23db330bc45",
+      "targetHash": "sha256:235d465693735631d0c4006c0a70f33734628dff1ed27c938084cb81ae24506f",
+      "source": "Dry brush gives the branch its rough, broken edge.",
+      "target": "Сухая кисть придаёт краю ветки шероховатость и прерывистость.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 411,
+      "sourceHash": "sha256:10d7bdb0bb34ba457870922ae8ec9f4b1e38ce9753030ff5c55998622e6c2fd4",
+      "targetHash": "sha256:b87bdda5d007e61f4bf903b1bc49af75ba7485566ae34b81a8640a7082b8ad32",
+      "source": "Placing the blossoms along the branch keeps them off the empty paper.",
+      "target": "Размещение цветков вдоль ветки не даёт им занять пустую бумагу.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 412,
+      "sourceHash": "sha256:04c117cc42b56f608b9f8c838559b23572a335283741d4db5dc7b7786c4ef86e",
+      "targetHash": "sha256:6e3c7fc3c8522d7b63cdf6eadaf836109e208b61e2ba511fe5b255ece0da28ad",
+      "source": "Naming the corner keeps the seal away from the branch.",
+      "target": "Указание угла удерживает печать вдали от ветки.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 432,
+      "sourceHash": "sha256:878113c3419dbad8027f47ff6c94f9edfee1f237ad490c13bc539da24cd93b17",
+      "targetHash": "sha256:c6eb67f3d18133c4d68003cd3de932b5f807eecd9bf3b5a1eefe9672b24dd3f1",
+      "source": "Official public API snapshot",
+      "target": "Снимок данных официального публичного API",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 435,
+      "sourceHash": "sha256:cca0662f9dddbc70caeec46f4e8f915b5156823ce87e880abab9b0ad1918ccbd",
+      "targetHash": "sha256:30fc9afd000378505d95cc30e5ca4daf13e262bdd98a37ad1c132bf69e470f91",
+      "source": "Likes",
+      "target": "Лайки",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 438,
+      "sourceHash": "sha256:355f79f29d7d3c2df917ad07f7441e3ce4b0ac48892b778076dbdca401851712",
+      "targetHash": "sha256:497d1e50001d2630382f39ad9e231dee5863ee704cdd3bec4bfd737486ef0b8d",
+      "source": "Comments",
+      "target": "Комментарии",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 445,
+      "sourceHash": "sha256:be4cf2e8a44602fb73c532d08066319b229c39c05519a62758e6934576d56cb8",
+      "targetHash": "sha256:86a25d2bd1ed794445d8a9860603bc89700d4808103bde8552b332d9d7cbdd27",
+      "source": "Complete original prompt not retrieved; independently adapted",
+      "target": "Полный оригинальный промпт не получен; самостоятельная адаптация",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 446,
+      "sourceHash": "sha256:8c3601b9ce49291e29d8d2e22f0764e569dad57379fb13bb3f04f6f222691bf1",
+      "targetHash": "sha256:f94cb315e654faff8cb3462e25b7311677f81b383ccc423e2d475d27b8c0229f",
+      "source": "Upload one adult portrait. Our reference is a fictional AI-generated person.",
+      "target": "Загрузите один портрет взрослого человека. Наш референс — вымышленный человек, созданный ИИ.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 447,
+      "sourceHash": "sha256:69c404591e99d86fd11f5ae1b15ebd246d4836aaa88a29f75f3f3d61c028357a",
+      "targetHash": "sha256:840692008c198048a132e3206ef886c023d9a05822a510e20f7a3090f4ded965",
+      "source": "Views",
+      "target": "Просмотры",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 448,
+      "sourceHash": "sha256:989716267f5c4d56032376d285575ae1f6972d5d660f3406a0c8f0b9458bcc7e",
+      "targetHash": "sha256:500d4fe19e4a7c203235f5734e11a6b077333281dd72790bff0b5362576ea6d7",
+      "source": "Saves",
+      "target": "Сохранения",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 449,
+      "sourceHash": "sha256:d4ea333d8b1f432c73d97d81947536c714ae300328c6191c4d690b488c899e9f",
+      "targetHash": "sha256:c839d44e12b9834d5b2bc5c401bad7c7874a2f50dc63bc83bfdf66e424fd46d2",
+      "source": "Shares",
+      "target": "Репосты",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 450,
+      "sourceHash": "sha256:7ae57d9d0e8c44f9756c2b5531af3a47f624de1067be52dd373688ba7a8ab2a8",
+      "targetHash": "sha256:a54143865c0ddb067ad1267745d13d8743b52aa59e346cb9a5a6e92198f0dd73",
+      "source": "Coins",
+      "target": "Монеты",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 451,
+      "sourceHash": "sha256:9d4f03a5ddc7869ec5b0f3e429c27caba6258d759f0a752a9fd14f5c02c250e7",
+      "targetHash": "sha256:3a9591b246ef1bccb991fd3be719a63f375df19087b0aa857c85b27bcad32370",
+      "source": "Danmaku",
+      "target": "Данмаку",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 452,
+      "sourceHash": "sha256:1ea578439197ef9a2b042dcb6c411ccb58b5b8788c77195e9ad98cce306cf56d",
+      "targetHash": "sha256:322eda54bb543c056cb0a9c576528294a40237c171ca5e6126a0d9452cfe1a6f",
+      "source": "Whole tutorial or showcase video",
+      "target": "Весь обучающий или демонстрационный ролик",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 457,
+      "sourceHash": "sha256:d466ca37e3f25b622dfebdf457bbff49bb24922df3b5fb9d20e257acf2dedc00",
+      "targetHash": "sha256:d1bdd37a8237f2009aba1185c3a774cef42162fc10476ab730ae0f1e906354ab",
+      "source": "Upload person A first, then person B. Both references are fictional AI-generated adults.",
+      "target": "Сначала загрузите человека A, затем человека B. Оба референса — вымышленные взрослые, созданные ИИ.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 458,
+      "sourceHash": "sha256:5b485fcf8a93fab3e876a0e3f6def5a84ae20a98328286a623336332ad2bbb7d",
+      "targetHash": "sha256:5bc2a18eae26dc7631b119566210081ce197d4c8ac4ef52eb347edbe3242249e",
+      "source": "Person a",
+      "target": "Человек A",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 465,
+      "sourceHash": "sha256:68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2",
+      "targetHash": "sha256:cedecb919c3a57ff18eb6f3eb4a34671eb87105efa4f59de7563978ed2103b8d",
+      "source": "Subject",
+      "target": "Объект",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 478,
+      "sourceHash": "sha256:5aa3a5668c7723326419bb884c71e7999b4aa0d6f7948e6de41213604e752325",
+      "targetHash": "sha256:5c45e41e2866182df516f8665f15127215fe5080a378aacf35cd0e68a60b6ff3",
+      "source": "Prior research: direct page and visual review. Counts have not been refreshed.",
+      "target": "Предыдущее исследование: просмотр страницы источника и визуальная проверка. Счётчики не обновлялись.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 479,
+      "sourceHash": "sha256:b6818fd75831a65a507f6dc28a1a3493345b0964107b8aa8271995be949f621b",
+      "targetHash": "sha256:71317f41a4ab4bec4b9f6a5f13330dcd62430e1b7105837dcea127c5f8eebae7",
+      "source": "Original source post; not this new generated output. Multiple cases from one post share the metrics.",
+      "target": "Исходная публикация, а не этот новый сгенерированный результат. У нескольких примеров из одной публикации общие показатели.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 480,
+      "sourceHash": "sha256:8d614c2a98800a267fabce605b74fcd059f665343c327a9e54e082353365be4e",
+      "targetHash": "sha256:dc2449d907d4cbe90fe8d582431faf2c8097768a40215f36523df01c77622ef3",
+      "source": "The source provides an original prompt; this production uses the separately recorded working prompt.",
+      "target": "Источник содержит оригинальный промпт; для этой работы использован отдельно записанный рабочий промпт.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 484,
+      "sourceHash": "sha256:5618c964a6d8c24a86b6e3c99846fe29c4589e733ab8657b1a30d60913ee1ece",
+      "targetHash": "sha256:243d576168c7f5a2d7f0ebb3110a62b6e542de9b7b013035095582058a35ed80",
+      "source": "Use the independently generated monkey reference.",
+      "target": "Используйте отдельно сгенерированный референс обезьянки.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 487,
+      "sourceHash": "sha256:73d07102253a3e30594538cbc237af95127ca0b0db4e0558be74796b1e5777d9",
+      "targetHash": "sha256:17ade8bd21c17acd4a57aef26235738a9d6300abb058096131326496b940e377",
+      "source": "Source post likes",
+      "target": "Лайки исходной публикации",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 497,
+      "sourceHash": "sha256:8075ea8fcb426f4aec4ee1a916662a0b313a9553cb8ea42be2982fe2171627b9",
+      "targetHash": "sha256:0e5adfec8625ccc4c9b7e83d3775fdfc8e831ada4c8e35a39e8c11dd16850a7c",
+      "source": "Archived public X snapshot and complete author prompt",
+      "target": "Архивный снимок публичной публикации X и полный авторский промпт",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 498,
+      "sourceHash": "sha256:7596900e5aa3c9b0ffe9bbaa05b597e344c30bfb63f7b23eaed294d781566dac",
+      "targetHash": "sha256:d048d11a9458b7a13d0d3804528a8400d90778f05294872c6ad19814abd8e7c0",
+      "source": "Whole original post; shared across variants, not this adaptation",
+      "target": "Вся исходная публикация; показатели общие для вариантов и не относятся к этой адаптации",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 499,
+      "sourceHash": "sha256:88f4b6139c16bad8c1db4cae2da1afaf232af5581e2ad678fc69a582dc6f1cd5",
+      "targetHash": "sha256:d68a6bceb4510171f714792c9de7ffb93c070c15102ef02d4eae33ff7eb73981",
+      "source": "Independent adaptation; full original preserved separately",
+      "target": "Самостоятельная адаптация; полный оригинал сохранён отдельно",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 534,
+      "sourceHash": "sha256:209e0c1967564883f42ab975cf4fbc385c0c0bb5608488382b31952df3bcff56",
+      "targetHash": "sha256:fc300615e842376fce817c0da467d8062c4b9e25a314f973a9206da9cb129802",
+      "source": "Use the complete adapted prompt without a reference image.",
+      "target": "Используйте полный адаптированный промпт без референсного изображения.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 551,
+      "sourceHash": "sha256:e658d3ae034a3dcf77eafffab7e7f78f5734e83eca41c698ed6e5fcc7e146a59",
+      "targetHash": "sha256:e9a2b0aafbcc48e1ae18619871337276d7127d37df5e7d053d76c6f44c32f854",
+      "source": "Landscape",
+      "target": "Пейзаж",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 552,
+      "sourceHash": "sha256:f7a241127b76ea41742a840e18e32b13811260932d281ebb5ff99f1e36932110",
+      "targetHash": "sha256:1353d19a7b13a2793ee87f21e8275e6e22bc97663ecdb891a32a1b6c5f144be9",
+      "source": "flyer",
+      "target": "листовка",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 553,
+      "sourceHash": "sha256:18d6d5cb4bb42a00d9f2a11bfcb621c1203ee70499c95940307eacb503550b56",
+      "targetHash": "sha256:f1a65a68bf06b44b63f2f49d87e867f9019a766abf15fa23302f0f18804a3bec",
+      "source": "placard",
+      "target": "афиша",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 554,
+      "sourceHash": "sha256:1ba76ea7e3d93cee9e70650745106b06607f22cab22e63dc433eba5ee8b8119a",
+      "targetHash": "sha256:b73405006b9a76db2b4935ad9643cb2062c8282dcfd1d035fafb31675c618d24",
+      "source": "Poster",
+      "target": "Постер",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 555,
+      "sourceHash": "sha256:5c1bb02822887b9990ad1e199b312f3b32a9c7ae2c1862b0f31e84db444b3b53",
+      "targetHash": "sha256:ea3d6a2123a3ffdeb36e54afd12b8ce9e524e6be7a2735db22eee6a4574e8394",
+      "source": "headshot",
+      "target": "погрудный портрет",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 556,
+      "sourceHash": "sha256:f71094c30160d155c9b29fd67e3b6f86ad254003a163da4c24d1f0061b0ed0ad",
+      "targetHash": "sha256:00bac7993964d3d17edbdbc48fc4184fa736612b5ea14175684104a7629389fe",
+      "source": "Portrait",
+      "target": "Портрет",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 557,
+      "sourceHash": "sha256:c659a0d0edc26cd3f94c4cd097b65ffd1bd0fbcaa291fbb09604749dc2c5122c",
+      "targetHash": "sha256:524c2d2663e6df4579c7645766d9321a979c83c2b9bafb984ccb8cdf8ab83797",
+      "source": "Illustration",
+      "target": "Иллюстрация",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 558,
+      "sourceHash": "sha256:cd74053c54816e473883dede0ad3b152f38a41995409eade6b42704919bb1359",
+      "targetHash": "sha256:9fe78c578deeabc5bf338d2536cde350531bf2451fc7ab88e45a5102615dc3cd",
+      "source": "Architecture",
+      "target": "Архитектура",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 559,
+      "sourceHash": "sha256:e4eb18069d65aaa901cecb66371155f389643796428e9d54c5f5127c91ab3fdc",
+      "targetHash": "sha256:eb03759ba1aaa270009079cda3f2ad181007a348dc24e4b2590352f9f3c0342e",
+      "source": "Food",
+      "target": "Еда",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 560,
+      "sourceHash": "sha256:4288ade73ff9d32824e931c858f11acab4e0a323e6b1da9bfbe124473a13ac5a",
+      "targetHash": "sha256:5efceac5012a88cf178f8b693be00e5b6eb367f4e2b1797096435d50e2afaac9",
+      "source": "Pattern",
+      "target": "Узор",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 561,
+      "sourceHash": "sha256:7e744141b40ea5501412e42c8b40fd0b05f1608aa2e4073944ccccbd82f24ee8",
+      "targetHash": "sha256:be33a2316ee6ce95c471eaad604e3efc4239a90b25abc9a6d8ea0751a19c5773",
+      "source": "Style",
+      "target": "Стиль",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 562,
+      "sourceHash": "sha256:47fca483c89cad3593886ae858a87248c4c66b1dab6f8267972df3c9cd652f5d",
+      "targetHash": "sha256:daad6ca4f2514a1f539bacfc268dc351e9e269b4cb21c35427781821d1e8f4a7",
+      "source": "Composition",
+      "target": "Композиция",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 563,
+      "sourceHash": "sha256:71988c4d8e0803ba4519f0b2864c1331c14a1890bf8694e251379177bfedb5c3",
+      "targetHash": "sha256:3091aca226efa497ca300ff750c02c9b6bc79d5c292e21b4fbb4a0a1add5485c",
+      "source": "Text",
+      "target": "Текст",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 564,
+      "sourceHash": "sha256:050e3bd7244f789b4c7a0b05ae26568e3c6271b3ec12dcf1cce7803aa653e3c9",
+      "targetHash": "sha256:4d1e7f186a906d993e2f370e45b65bd0d9aef3dca1cd942c5cdfec9b273fd5fc",
+      "source": "sumi-e",
+      "target": "суми-э",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 565,
+      "sourceHash": "sha256:dbb642b30572d82022bbc65809542e1fa16765a840014686116ee871da948997",
+      "targetHash": "sha256:78a56db4f5ea759433ed199a02f053c9abb720bc85babeaa5c751af455b95802",
+      "source": "ink painting",
+      "target": "живопись тушью",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 566,
+      "sourceHash": "sha256:cbc1633815169b6af0a7fb49faa67bf06ee0809508fa6e6c9dfba234bf838c39",
+      "targetHash": "sha256:59e56721253073eb414a01a9f6cefadff45b184c1d355c5773c82d5e089273c0",
+      "source": "brush painting",
+      "target": "живопись кистью",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 567,
+      "sourceHash": "sha256:6f0c4f5c5ff21cc976224a7c93b9ffa6fcf313cc6ada3a71d80820749ab9e63b",
+      "targetHash": "sha256:2f4a4c77d553ab53c0187e300b07c72c36712a63080bc81a5c25486c6dc52823",
+      "source": "Ink wash",
+      "target": "Размывы тушью",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 568,
+      "sourceHash": "sha256:55c934f4e7da9fa1379c3d7287e4fc41df2dc6f999881ad8273e572b12099b02",
+      "targetHash": "sha256:6190de7e25a57ec6f3c43f759ad52867d685dae8a1dccc1504f27261c4edd76f",
+      "source": "flat design",
+      "target": "плоский дизайн",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 569,
+      "sourceHash": "sha256:bbf98d12047b424122f5ae0c29250dac23771c71ba565848cb979809f35813b6",
+      "targetHash": "sha256:26486697ef4b0ce0960f0efc7c9381ae7ed45ff7e7efa4c133586c7bdea37b1c",
+      "source": "vector art",
+      "target": "векторная графика",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 570,
+      "sourceHash": "sha256:4d9fcc84442d2bde681983ddbadacf282ac499e4d22e33315d86e99af4742eaa",
+      "targetHash": "sha256:f9ececdb8b90830f0dd499e9a2a64d5533b2f45b3afc317fc6b4718f9c5a8f70",
+      "source": "Flat vector",
+      "target": "Плоская векторная графика",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 571,
+      "sourceHash": "sha256:12271235b7139598d1b6d9cf98b074323de6eb5ccc9bb192f860917e56d18fea",
+      "targetHash": "sha256:882b3a6272c4550190e12123acdaf7efb52cc41d541c7ad2ba270a84ac8eaf16",
+      "source": "Bauhaus",
+      "target": "Баухаус",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 572,
+      "sourceHash": "sha256:618484e2c549451830e2b2c19b498d90b4fc8d206174f13c43ed058e6470ee2f",
+      "targetHash": "sha256:6c767fcd96fb8f10d6d22b0dfc19a1c09b40add9a85e70805de9d44b9d071b1b",
+      "source": "Neon",
+      "target": "Неон",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 573,
+      "sourceHash": "sha256:057b5de48d7b90f123ec28d7e15f65d99b508d6b7cc2958c39472070f0f0f6bb",
+      "targetHash": "sha256:8b9430fd2e33fce69f3a8f71e29720e9d18c9a68c1125066838bef36620ac6c5",
+      "source": "Minimal",
+      "target": "Минимализм",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 574,
+      "sourceHash": "sha256:2523561c32e9d8dfe5ec6d2e640936e871c0d14f7da0841bd0209943630cb7b6",
+      "targetHash": "sha256:d6ec39034d2757f0f29a487599609ef50d110cc94dc2e5018672eaac67dfb8c0",
+      "source": "Gradient",
+      "target": "Градиент",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 575,
+      "sourceHash": "sha256:5506501f682223134c2b67eafec7c1f134bc97f0643c74ce1b868a8be4c0027d",
+      "targetHash": "sha256:a1f00b2e10f31b1e52c716ac52d3a223793da3abfb5b820881d7611d51094945",
+      "source": "Geometric",
+      "target": "Геометрия",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 576,
+      "sourceHash": "sha256:ad74d165202ba5f2f9425c6809a293171da4a1438b7e93724fe48320ea7ee0a9",
+      "targetHash": "sha256:28c6315880299b1df17167c9b0e33170e1abe639dfd175504ba9b0387e7edf1d",
+      "source": "Cyanotype",
+      "target": "Цианотипия",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 577,
+      "sourceHash": "sha256:89b91df19d9d75d4cf36d9033d0789e7ecae0c233160c3be0d56e81027ab965a",
+      "targetHash": "sha256:52146a8fdb100abfc227ccc162c621f92d7fb328bfa29e5273a5a72226aa0a93",
+      "source": "background",
+      "target": "фон",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 578,
+      "sourceHash": "sha256:7b3b551425df1370f665494647041f0122aeb9ac0d7f6bafe73dd24a3dc6739f",
+      "targetHash": "sha256:7eea80d4f80bbe20c394472185dd72c5a242196f21e38f080d65ff8e1a0908cc",
+      "source": "lock screen",
+      "target": "экран блокировки",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 579,
+      "sourceHash": "sha256:a7f173cdaae49a03443ed62db8c0e34857d8c6b11281e6da7af7377309772153",
+      "targetHash": "sha256:4940b189b4fc3f31014eadd40d7cbcb006b3114526d478d1fbc6c60516e6d69b",
+      "source": "Wallpaper",
+      "target": "Обои",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 580,
+      "sourceHash": "sha256:71f2f9b75ae308eb5be1a37f0f38047691339cd1299523b9ddf306f67496dd01",
+      "targetHash": "sha256:07fd95a7768a6278036479cb94351cd35d335f08b7592d658f55592a3e9ce0b9",
+      "source": "Art print",
+      "target": "Художественный принт",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 581,
+      "sourceHash": "sha256:acb6bb845259619b83a8c074622d0aa119cf30f6d02832e1c549e97f38483e27",
+      "targetHash": "sha256:3d04a404499ecb0e7817281b0781ab69cdc8371fa486698d0ef6c51471bfbeff",
+      "source": "Social post",
+      "target": "Публикация в соцсетях",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 582,
+      "sourceHash": "sha256:0d62bb01df4edd9592050745c6ec8d6f399ef4dc24f6336cd4d8978b89593ff2",
+      "targetHash": "sha256:aed083277bdcc2586f9df18a8789989c4874f14275a8d08803c2854cbaf4cf00",
+      "source": "Packaging",
+      "target": "Упаковка",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 583,
+      "sourceHash": "sha256:b90ba0778f13cb11de038cf31c17fb13b741193b119bd299f5c0854573a630ca",
+      "targetHash": "sha256:02c32809d3352fb7cf1157d0798681e585dae71a37402cbcc97b97f853427e0b",
+      "source": "Book cover",
+      "target": "Обложка книги",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 584,
+      "sourceHash": "sha256:5fbc0fc92a9723d277a61a092885ee8c7cb8434bf04394965c6596cc0499b397",
+      "targetHash": "sha256:ba3a806fa9b75a27e642c362ceb72957e0987cdd1dfefb076b40d7bb50f3bf2b",
+      "source": "Event poster",
+      "target": "Афиша мероприятия",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 585,
+      "sourceHash": "sha256:3f5e0bdd1cb3e2abf961beb4012c81b394080b475fbe70ecd4a449756e969dd1",
+      "targetHash": "sha256:0d8fdad44f8be1ca025f6707391fa16e733d9c965c775297484e573e7f0dbf13",
+      "source": "profile picture",
+      "target": "фото профиля",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 586,
+      "sourceHash": "sha256:d751014adf15f57acc223ae8999906398bee87fdc4b4f6d8286ab8c5393639bb",
+      "targetHash": "sha256:e21aa8249cdbf23085f51588dfeb4ae573a802a1c3c0674396e0d5d4f3b8f75a",
+      "source": "pfp",
+      "target": "аватар профиля",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 587,
+      "sourceHash": "sha256:ca8e826d9c2ec401e9ac82cd0aa710cf234d5cac4e6ee967b3588c63fce9681b",
+      "targetHash": "sha256:67e4f61096e7611221f857fa2b27b3ff429d72abf1eabde98c94485300cb9e12",
+      "source": "Avatar",
+      "target": "Аватар",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 588,
+      "sourceHash": "sha256:5ad6a405f686225dd432f0463257b835962e54111f7764edc2400eeeea23c32b",
+      "targetHash": "sha256:894484f0908662d1daf8e98b2cd74c22be1da2c007b60a0a1a5b9f2b6d782e8d",
+      "source": "Editorial",
+      "target": "Редакционная иллюстрация",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "changes-requested",
+      "reason": "Editorial is a broad use-case label that also includes photography. Редакционная иллюстрация incorrectly narrows it to illustration.",
+      "suggestedTranslation": "Редакционные материалы",
+      "priority": 2
+    },
+    {
+      "id": 589,
+      "sourceHash": "sha256:9a591ec04ed0298006892359a6df82c70e865fcbb141420024f01e0a2663f370",
+      "targetHash": "sha256:80914c33f97d62a24dc617ee211cf7c2c9312477ed85a7c56093985e33580e5b",
+      "source": "Name the object and its material, e.g. “a speckled ceramic mug”.",
+      "target": "Назовите предмет и его материал, например «керамическая кружка в крапинку».",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 590,
+      "sourceHash": "sha256:7bd7a3b51f247587d741d87aead4efb1875ada7077d15624edb25785e8e48ce0",
+      "targetHash": "sha256:f285f8acc655d1b21e0e0689c9e0fb32127f639fb281b788261a466244050419",
+      "source": "Concrete details become visible; vague claims are ignored.",
+      "target": "Конкретные детали становятся видимыми; расплывчатые утверждения игнорируются.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 591,
+      "sourceHash": "sha256:41e94ceca93cf18acc41dddbc29fea84d5289745757e462173ca5506fdfa9ee3",
+      "targetHash": "sha256:0891fa53422875775f9aba1c9f724557359e7553167cc37d2ecc1a72fd6c3e04",
+      "source": "Selling points",
+      "target": "Преимущества",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 592,
+      "sourceHash": "sha256:85794effd6e85e5612a80a6fcbf2e613e534500eb2ca2f312bd16c76f44082bf",
+      "targetHash": "sha256:c5f0893afd676a1276e40cf65e75be7cad02df2fa5f0f2074986b3d37ded2d0a",
+      "source": "Palette",
+      "target": "Палитра",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 593,
+      "sourceHash": "sha256:e4062d9f2b4a1a472c2a54f82179f41757f826f49c127e8793543adc3994e87e",
+      "targetHash": "sha256:ce28ce2a9a0f425877ba2abd028b5e0307b24687c2979913f2c83a8a696bb621",
+      "source": "Warm neutral",
+      "target": "Тёплая нейтральная",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 594,
+      "sourceHash": "sha256:a35df4534538fba2990c380cdc517814d5a9ab314beb5feab19981e43c75387f",
+      "targetHash": "sha256:5df6aa08732f773b1da96ef68ecfba2470866893ec6cbec838b8c1aa3871aa18",
+      "source": "Sage green",
+      "target": "Шалфейная зелёная",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 595,
+      "sourceHash": "sha256:0b31ed2ae604fb450df2f589cf82334c91a35344b8b7f963d20f0ca8b02c01ec",
+      "targetHash": "sha256:515b43109ceabdacedf08b9a445f552fab0b2458a8a4fc18d5e0ad13717808da",
+      "source": "Midnight blue",
+      "target": "Полуночная синяя",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 596,
+      "sourceHash": "sha256:087beb396c4992cc857fe805dda681bd3a431badf8a0edb325b4e9f8354ff1ed",
+      "targetHash": "sha256:632c0e9ba8d06ad7786005828beeb5ef8204f61ae437b79dbe9465e04d583098",
+      "source": "Soft grey",
+      "target": "Мягкая серая",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 597,
+      "sourceHash": "sha256:11d266a8298643e3b9d15b44323723f6832174c016a6e06d6ab223261ae875f5",
+      "targetHash": "sha256:becf3fb3b46efa2d96f39e68d44df131fef43fdeea78192df36218080acd18d0",
+      "source": "Coral pop",
+      "target": "Яркая коралловая",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 598,
+      "sourceHash": "sha256:d7ad336f35e1e6853b230bb077b557455ead80a703cc934abfc373cedf72dc6d",
+      "targetHash": "sha256:83d11f188f5d7ae420dbec1b6dcbdba5b3bdecb23da612d4cd387d2e7eeff92a",
+      "source": "Aspect ratio",
+      "target": "Соотношение сторон",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 599,
+      "sourceHash": "sha256:5a23e96a12312c41555013ed2a5b40cbce5cb9ba180ec0a2d1cc77cbe0e39f72",
+      "targetHash": "sha256:5a23e96a12312c41555013ed2a5b40cbce5cb9ba180ec0a2d1cc77cbe0e39f72",
+      "source": "4:5",
+      "target": "4:5",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 600,
+      "sourceHash": "sha256:0896689755fffe7746aba6b7a17810d43424ca3ad99683549291b2660967b91c",
+      "targetHash": "sha256:0896689755fffe7746aba6b7a17810d43424ca3ad99683549291b2660967b91c",
+      "source": "5:4",
+      "target": "5:4",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 601,
+      "sourceHash": "sha256:d6b5915c46057bcb005f46f6433df65609dd3a7a57af75ac1a5a4a7c299ebffb",
+      "targetHash": "sha256:d6b5915c46057bcb005f46f6433df65609dd3a7a57af75ac1a5a4a7c299ebffb",
+      "source": "1:1",
+      "target": "1:1",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 602,
+      "sourceHash": "sha256:3adf4e63cc74037434c465d9c496622f3ce0032a18a0fa328857858c33933dbb",
+      "targetHash": "sha256:3adf4e63cc74037434c465d9c496622f3ce0032a18a0fa328857858c33933dbb",
+      "source": "3:4",
+      "target": "3:4",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 603,
+      "sourceHash": "sha256:cb140f95f8a88c27fc464e08c2e4627de234c89cfbec1feb903e8733ff04f073",
+      "targetHash": "sha256:cb140f95f8a88c27fc464e08c2e4627de234c89cfbec1feb903e8733ff04f073",
+      "source": "16:9",
+      "target": "16:9",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 604,
+      "sourceHash": "sha256:b0066a15932ab78a9d68eb0fd0a11bc5b9333042f29b2dad3654d2063fe91683",
+      "targetHash": "sha256:d01f76552fe5973e3f007308b2465e8f18f1e898c53d98d6346922feca23bc37",
+      "source": "Optional. Short words render more reliably.",
+      "target": "Необязательно. Короткие слова воспроизводятся надёжнее.",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 605,
+      "sourceHash": "sha256:c5f5a4c8157584ec42ddc5dfef59ceaef61f841c60e379bbf7ce3c9db577716b",
+      "targetHash": "sha256:5f77cb92e071835cdbcd0366f2e2a773f9877350251af59db41a37d1077dc1a5",
+      "source": "Headline",
+      "target": "Заголовок",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 606,
+      "sourceHash": "sha256:3e493ba839ace8df2736f25fcae8437413acd6508b0e01c7dcab53051ee35ec6",
+      "targetHash": "sha256:399bff5f74faf59825ddc9bb1a8404bd3971ed7b20111eaf9e7d4f3a399f9424",
+      "source": "One main subject, such as “a bamboo grove”.",
+      "target": "Один главный объект, например «бамбуковая роща».",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 607,
+      "sourceHash": "sha256:bad2b893e5a466919e6513c50ff6623b1d3a115ee0d2db5f0baa650357dac2d7",
+      "targetHash": "sha256:f06e05e59a0910d245b67eab49b5c07a610a7ffcf5759118a7bfe7df62d99fdf",
+      "source": "Season",
+      "target": "Сезон",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 608,
+      "sourceHash": "sha256:db29e82a9287fc2834d8596af212c2da01149ebab1f0a48437b1f0c990af7647",
+      "targetHash": "sha256:494bfa5c6501ca26d448b30772c3871e06a736ac92aaeca8a757d06fc01d8c15",
+      "source": "Spring",
+      "target": "Весна",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 609,
+      "sourceHash": "sha256:c0de243c407c0e98ed0364e1d0c636d542318867862aac7e8ae2446d4a328dd6",
+      "targetHash": "sha256:f5aedeeab4367e5461033acd0372320f6a34b01fddaec5fdc47fdfc73f7347cd",
+      "source": "Summer",
+      "target": "Лето",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 610,
+      "sourceHash": "sha256:e0906c2d6dc6d5263762d7ee5895e0544c326c26fb7f4f3163cde2d20b8f068f",
+      "targetHash": "sha256:a45dfce81cd5dba671e7911dec5a151afd6315b5f8c9e7cb950ea71f80e3ae16",
+      "source": "Autumn",
+      "target": "Осень",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 611,
+      "sourceHash": "sha256:1b17869e03ecc1b0f86b003c199606eb68eaceb18927e3843a935cf7f6157152",
+      "targetHash": "sha256:ed5c0dfc17e07fd2b3994d9a145b5b7fb827f98a7d349219ec0c94cc3834622d",
+      "source": "Winter",
+      "target": "Зима",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 612,
+      "sourceHash": "sha256:7271eac9fdb23e9be2ab8c6d135581e3e5057e10cc25d6872d37f67563238db3",
+      "targetHash": "sha256:6719c9db07fcb426f04254ed66e4d3e8bce514dd0aa648f83203e420df013e7b",
+      "source": "Brushwork",
+      "target": "Техника кисти",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 613,
+      "sourceHash": "sha256:093c7db6d18584dd0ebd9b6a4eac5fdb75c2041e0cfd8a7e1ad0872d7ba288dd",
+      "targetHash": "sha256:306d07e6ac120fef3dd68fc5a347ce7b0a46c81bf6a10702112a7abb404649f5",
+      "source": "Soft washes, crisp nodes",
+      "target": "Мягкие размывки, чёткие узлы",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 614,
+      "sourceHash": "sha256:1de74c7d02df11355e990edc93e5f736b558ceb533708f2ce86121299776e8f4",
+      "targetHash": "sha256:9b311d42b279c8f3f9c41b29731fae18205d43d6227676a5c9fe7c6556620ab5",
+      "source": "Loose wet washes",
+      "target": "Свободные влажные размывки",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 615,
+      "sourceHash": "sha256:cdc9ec028ab18a708593e701d36681bfdd75ed3dfd95b6bbae19b1f7acfe79b9",
+      "targetHash": "sha256:84a06565b9cedc90fc4aeb163f0981402b164893cdc8fa67be31f00a3886173c",
+      "source": "Dry brush",
+      "target": "Сухая кисть",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 616,
+      "sourceHash": "sha256:530f60cc467b7de44c96bc92fc1e053ede38fbe04e1d3715b65761c6931d4ca6",
+      "targetHash": "sha256:d9ebac8e76c28a37c9160f2e64e8bd34c3d9fe2c2df99fc2d3f4c4a68a2d520b",
+      "source": "Things you can count work best, e.g. “five tall stalks”.",
+      "target": "Лучше всего работают детали, которые можно посчитать, например «пять высоких стеблей».",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 617,
+      "sourceHash": "sha256:45989de49fb7f66dfe17a8fc26f3a02c7abcd74f7e8e6cf9f39fa0e3775780df",
+      "targetHash": "sha256:773190d8a02615fcd63c02a5de974da6ab2f97a28f1002f5e1b1a6a8c5378257",
+      "source": "Details",
+      "target": "Детали",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 618,
+      "sourceHash": "sha256:7a5af662ae76d508689737c511e9ede859717a0bd42ea6dd5cb1cf21e7fedbcc",
+      "targetHash": "sha256:7a5af662ae76d508689737c511e9ede859717a0bd42ea6dd5cb1cf21e7fedbcc",
+      "source": "21:9",
+      "target": "21:9",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 619,
+      "sourceHash": "sha256:85f2ef987b76f4c3fc081acef84e0a730f5df8a2488a5bb7ddae4f7dee721ed8",
+      "targetHash": "sha256:85f2ef987b76f4c3fc081acef84e0a730f5df8a2488a5bb7ddae4f7dee721ed8",
+      "source": "1:3",
+      "target": "1:3",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Aspect-ratio label is language-neutral numeric notation; preserve it exactly."
+    },
+    {
+      "id": 661,
+      "sourceHash": "sha256:e5fd10e0b43318bc6b23bb8fead981df1caa6b4ad8f9b7441772c753b0dd9268",
+      "targetHash": "sha256:2eeb4787aab5b6c52de0ec66d3fbc9ab8d1e8d06875636add7e7b34a7abd894e",
+      "source": "Brand palette",
+      "target": "Палитра бренда",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 662,
+      "sourceHash": "sha256:160c0535e5c3c13771b883aa5f1ded0a0a1078fb2ba0e4b49c02abe0aceb17a3",
+      "targetHash": "sha256:2a7fbe45846076aab8cfa2b15de4a5d7f7b4d5aeb5dc54f9fba56da957d48a73",
+      "source": "Scenes",
+      "target": "Сцены",
+      "origin": "production/localization/ru/batches/pilot-field-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 663,
+      "sourceHash": "sha256:11ef7134700087578c101ecd5bbcd068d3a356008b328bb5eeaf54c2811c77d9",
+      "targetHash": "sha256:022c424a2f12d7050a9ab92bbd01cedf0d6f410a80c2e32133cbd2b4a13f0227",
+      "source": "Upload one product photo; supply a palette and exactly nine scene themes.",
+      "target": "Загрузите одну фотографию товара; задайте палитру и ровно девять тем сцен.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 749,
+      "sourceHash": "sha256:673a5271ed205cb56af254ae88bf3d1e171b4d8f70ed613715fd9d324cd09ca7",
+      "targetHash": "sha256:3c9287fbd529e84cd375884b3ac851782047015b0663186cd3d86947232802f6",
+      "source": "Each of these prompts says where its shapes go. That single habit keeps flat posters from turning into confetti.",
+      "target": "В каждом из этих промптов указано, где расположить фигуры. Этот простой приём не даёт плоским постерам превратиться в конфетти.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 750,
+      "sourceHash": "sha256:232ff92743abcd3eeeb66cce33ea5e0bde4b1c106efd3082128ac9e009cb4f89",
+      "targetHash": "sha256:d9578dcfcccc679f367de7ec37f183a35d739a6ed5f07536a308e6e7875a37d8",
+      "source": "## What do they have in common?",
+      "target": "## Что у них общего?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 751,
+      "sourceHash": "sha256:107de9a57cb6bf3a1cc1c63e00886c38ca49bb641b862abb1b08ed9023dfc5b9",
+      "targetHash": "sha256:2f813cb7d8ad4e8854ea3030dd872eed9d267f71560cfbba0d8b550889262a3d",
+      "source": "- One dominant shape, named first and given a position.\n- Bars instead of lettering, so the layout survives without readable text.\n- Four colours at most, plus the background.",
+      "target": "- Одна главная фигура: она названа первой, и ей задано место.\n- Полосы вместо надписей, чтобы композиция сохранялась без читаемого текста.\n- Не более четырёх цветов плюс фон.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 752,
+      "sourceHash": "sha256:efd85f4bc3f78941b787addc08d24b899db99ffb8459786ebe3c45c0092ed5bf",
+      "targetHash": "sha256:934820a37e23aa9585d57e6bff82263a008d98b1d1e3c3ea659d40dbb3df4708",
+      "source": "Posters with a clear hierarchy",
+      "target": "Постеры с чёткой иерархией",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 753,
+      "sourceHash": "sha256:25babc0b8949318b98bd020eb69871ecc798694d12858208a4c10f3f65055476",
+      "targetHash": "sha256:89236005669228b578f063e3a60bf2f7d99ce13a3bee1885c59876f5ab93e150",
+      "source": "Posters where one shape leads and every other element has a stated place.",
+      "target": "Постеры, в которых одна фигура главная, а каждому другому элементу отведено своё место.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 754,
+      "sourceHash": "sha256:58caabee8c56cbe065596c0fae81db24069d294b4db911a45849685f8d07ee21",
+      "targetHash": "sha256:25de7825dc524ad1eb0ad0b8f37541895861bd3c5df203750991ceefd110391a",
+      "source": "Five annotated phrases show which words placed which shape.",
+      "target": "Пять фраз с пояснениями показывают, какие слова задают положение каждой фигуры.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 755,
+      "sourceHash": "sha256:dafccb716a4b514e16d2865534006a54475f47df188caff6a609897e789b4a03",
+      "targetHash": "sha256:10d684bc6a488f6a181eaa9cb749d9d7c86a790b5bf0929eb911b8e21be7dd41",
+      "source": "The same structure as the jazz poster, with the disc and the half circle swapped.",
+      "target": "Та же структура, что у джазового постера, но диск и полукруг поменяны местами.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 756,
+      "sourceHash": "sha256:fb5d2932512823c257db48fb12d6cff79da4e3b11590a914df13e2077d42982d",
+      "targetHash": "sha256:90c6f573f996041747ecf68dbbfd7dfa9b0eb72e1699d53359c9aaf209d4c77c",
+      "source": "Coral on cream: the hierarchy holds even with a light background.",
+      "target": "Коралловый на кремовом: иерархия сохраняется даже на светлом фоне.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 757,
+      "sourceHash": "sha256:83920f3a67652973d771af7e86fab5b5722317de24aa8d7b64b02bf5e20e3277",
+      "targetHash": "sha256:f05ab87ecc63c56de5b13f2223ed84e630c0714bba6372c287e7b09500f7e725",
+      "source": "The same idea for products: the template reserves the headline area.",
+      "target": "Та же идея для товаров: шаблон оставляет место для заголовка.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 758,
+      "sourceHash": "sha256:6a8cf53e0287d4d5fd98d9da5c02cfe28629b2a473bb09feea33cde49a92092b",
+      "targetHash": "sha256:fc922d2b25a786abd0803135381b7c40d01cc4b26c818b577044a22c904d4262",
+      "source": "A travel poster that uses stripes in the sky as its hierarchy.",
+      "target": "Туристический постер, в котором полосы на небе задают иерархию.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 759,
+      "sourceHash": "sha256:95a98a13deabb19ca9e21b45438fe394a43ee1f8e424c1771818ac9d5d2ac0b3",
+      "targetHash": "sha256:91c17614b64e9ccd495097a5c9f09c7e71913e7d4c128a7e414a5fdb99e62acd",
+      "source": "Headline bars above, product below: the simplest two-level layout.",
+      "target": "Полосы заголовка сверху, товар снизу: простейшая двухуровневая композиция.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 760,
+      "sourceHash": "sha256:3b8662a127a22b36d7125f30522bd9459d0869557b2173692c6c44490b90cd3a",
+      "targetHash": "sha256:2619091d6696ae9b3253238b678382ee9a0ee59d444b33fb68ae85f26e294ff8",
+      "source": "Landscapes built from a few layered shapes. They work behind text because nothing in them asks for attention.",
+      "target": "Пейзажи из нескольких слоёв фигур. Они подходят для фона под текст, потому что ничто в них не перетягивает внимание.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 761,
+      "sourceHash": "sha256:5c5753fcdec9e522ceb2da681bdc623971ebb7b241250e07b413a732e2db9cb3",
+      "targetHash": "sha256:e02b34e702873d422fb37bab5ee5cae1eb0e5538d82196b4241058c5d64a503c",
+      "source": "## How do I keep a landscape quiet?",
+      "target": "## Как сделать пейзаж спокойным?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 762,
+      "sourceHash": "sha256:9123491fc21b6bcd639cdfe383a53e33926d86c55267e3f14a8de6d3d539c7e9",
+      "targetHash": "sha256:b619de725f69cbcfa4094a667f5d3ba4c3e687104559376bd34d9d709da7afda",
+      "source": "- Order the layers from light to dark instead of adding detail.\n- Name one light source and its position.\n- Leave the sky empty; it is where the text goes.",
+      "target": "- Расположите слои от светлого к тёмному вместо добавления деталей.\n- Укажите один источник света и его положение.\n- Оставьте небо пустым: там будет текст.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 763,
+      "sourceHash": "sha256:030f5332602dc9a1c3f533c7da98b1438f6deed93ecc498bafc9bd30fd32c631",
+      "targetHash": "sha256:f3a748672600d2d39d6d6ff51566cb1dd4d6fb52d5fe1e65df2fd200ab038bd5",
+      "source": "Quiet landscapes",
+      "target": "Спокойные пейзажи",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 764,
+      "sourceHash": "sha256:afd654bb31a124c3a29e49357e302551801dae26cc82089e32291ade72522d77",
+      "targetHash": "sha256:37575dd31bb60c88802f81de2c08094205be461f32e93f8c42fcc6d38119cce5",
+      "source": "Layered ridges, still water and plenty of empty sky, for backgrounds that stay out of the way.",
+      "target": "Слои горных хребтов, неподвижная вода и много пустого неба — для фонов, которые не отвлекают.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 765,
+      "sourceHash": "sha256:81fdd000ac31350fb8b4e4e2407387d920caf1e9c4171148c9bbc738065c5e0b",
+      "targetHash": "sha256:2751827d42010ae87bce486bb00a5793ecf03be39ed258dfbf5cca4b00758534",
+      "source": "Mist does the work that detail would otherwise do.",
+      "target": "Туман выполняет работу, которую иначе пришлось бы делать деталями.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 766,
+      "sourceHash": "sha256:d32543f1d9118514abc7ef3d3ced1dd4967f23317a4cc5995c18fce5a7db5ac7",
+      "targetHash": "sha256:3d33b4e61819ce13285a06ae8b723cc7a2ccaf4cc155e10b0c9d74b67fc6205e",
+      "source": "Five layers fading into fog: the most depth with the least drawing.",
+      "target": "Пять слоёв, растворяющихся в тумане: максимум глубины при минимуме рисунка.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 767,
+      "sourceHash": "sha256:1373babd8d1e24e5ce9dc4e3bab97e0f10ce5bee1d0b14f1c321fbb26736e5fd",
+      "targetHash": "sha256:d6d49084c8b5bfc436b7ee2682bdb509cd898957c47e674f638ea956ee78c242",
+      "source": "A warmer version with a low sun between the ridges.",
+      "target": "Более тёплая версия с низким солнцем между хребтами.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 768,
+      "sourceHash": "sha256:202039038dc2181ebf3c65f7efe4a50dc1f9471b5252cc33fb88a236f6a045ad",
+      "targetHash": "sha256:0bc362eea9501ceb7a65b59ed7aed4bea1834221ab19e889da173f20583eecf5",
+      "source": "Turn any of these into an ink painting with the scroll template.",
+      "target": "Превратите любой из этих пейзажей в рисунок тушью с помощью шаблона свитка.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 769,
+      "sourceHash": "sha256:eef24e038d82b5d92da746c2243a0a206dbc3304d21312c9d649d4c1843a924b",
+      "targetHash": "sha256:38c75686c1b71d633249744570df6ec911bf22e66dde480cd1075c627ffcecc1",
+      "source": "At 3:1 the horizon alone is the subject.",
+      "target": "При формате 3:1 сам горизонт становится главным объектом.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 770,
+      "sourceHash": "sha256:f1873b516e2cd1a6342d70747d1da24842ec2652d7bdf44262ad9c1ade9f4a56",
+      "targetHash": "sha256:dadd4dd0582aa596d07ac481854b399d8e36c28f174ac481e3175dd573224e5d",
+      "source": "Two annotated phrases show how the moon and the dark foreground were placed.",
+      "target": "Две фразы с пояснениями показывают, как заданы положение луны и тёмный передний план.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 864,
+      "sourceHash": "sha256:269e22bac37ee798bdd07c687241755bc6f339d8af3e53e9e508a90a55942fee",
+      "targetHash": "sha256:9ae66555c8f0914430d4dab7e34eff0c989d7d84d1b7992538b18eb72fe0fe67",
+      "source": "Prompt Seen is a library of image prompts you can read, copy and adapt. Every entry shows the image it produced and marks which phrases in the prompt changed what.",
+      "target": "Prompt Seen — библиотека промптов для изображений, которые можно читать, копировать и адаптировать. Каждый материал показывает полученное изображение и отмечает, какие фразы промпта повлияли на конкретные детали.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 865,
+      "sourceHash": "sha256:e187b6042d63f83b768eb82799440415093ccfe0cf16ee87a503754c69aa71e2",
+      "targetHash": "sha256:fc8cc64629ecc88f445f3b81bebd37c26c51a65d130e87a3a93ab5c7aa80aaac",
+      "source": "## How are prompts tested?",
+      "target": "## Как проверяются промпты?",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 866,
+      "sourceHash": "sha256:e6bf035af3aa2c6d8a005f728ced5bdde468f4b429b08873c32ebf1419f4214d",
+      "targetHash": "sha256:d9eacd12c76b7aa4bd67592d10710fd23672d9ec829166015a8050cf559dd8b0",
+      "source": "Each prompt is run with a recorded model, date and parameters. The record is kept with the prompt as an example run, and the page shows when it was last tested. Entries with no recorded run are marked “Not verified”.",
+      "target": "Каждый промпт запускают с записью модели, даты и параметров. Запись хранится вместе с промптом как пример запуска, а на странице указана дата последней проверки. Материалы без записанного запуска помечены «Не проверено».",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 867,
+      "sourceHash": "sha256:7af07f35821972d31677ee920fd8de45a399165d904dc4c12d15e6040bf5a2a8",
+      "targetHash": "sha256:23795693f077055ab1f1481950cb958a48c4330389789b86f52ed860223a4ced",
+      "source": "## What are the sample entries?",
+      "target": "## Что представляют собой примеры?",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 868,
+      "sourceHash": "sha256:fe5a9ffbaa6601b58fd8a1b5fb1248efa1aba312fc89fc3dbf7d59899b92ee1f",
+      "targetHash": "sha256:b36386aca352c8dfbef1c2cd7ce8845335b720297884a26470368e594409e50e",
+      "source": "The 101 content images were generated with GPT Image using the prompts shown on their pages. Each has a recorded run and a visual review. The built-in tool does not expose the exact model snapshot or usage. Downloadable full-size images may use a lossless format conversion; display sizes are compressed separately. The earlier procedural sample runs are archived.",
+      "target": "101 изображение материалов было создано с помощью GPT Image по промптам, показанным на соответствующих страницах. Для каждого сохранена запись запуска и выполнена визуальная проверка. Встроенный инструмент не раскрывает точный снимок версии модели или данные об использовании ресурсов. Полноразмерные изображения для скачивания могут быть преобразованы в другой формат без потерь; размеры для отображения сжимаются отдельно. Более ранние процедурно созданные примеры запусков находятся в архиве.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 869,
+      "sourceHash": "sha256:2cb625ac50f2e04aeb98ce99512442f5b2aa5b51cd8b89b13ea3ecba9dd36b2f",
+      "targetHash": "sha256:25858bc6460d91eaebd2f33ac4af61df8fbb9dfffc3cd40117e15798b200644f",
+      "source": "## How do I report a problem?",
+      "target": "## Как сообщить о проблеме?",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 870,
+      "sourceHash": "sha256:af0106631b72081fe32d05b4f61266ab20f39324a8c5fc1e2ddc11ddbfcc9316",
+      "targetHash": "sha256:df1075fb6f0e302b30885b6f63aa7059c2fc924e77c836258ee8716348f5687a",
+      "source": "Open an issue in the project's repository for wrong information, broken pages or a licensing concern.",
+      "target": "Создайте issue в репозитории проекта, если заметили неверные сведения, неработающие страницы или проблему с лицензией.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 871,
+      "sourceHash": "sha256:f6ad66ab2aafa32488389502791079a8d7f685256cb042c1329a274b958c0227",
+      "targetHash": "sha256:c6997da96475ffac17c02f0875b6ed2af9249362acd5d041fa0cec91e0820cca",
+      "source": "About Prompt Seen",
+      "target": "О Prompt Seen",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 872,
+      "sourceHash": "sha256:f829c2a592c029d4ee81f6ce50d348ac7e12bbcdd42031c329c3fd61a0b257e4",
+      "targetHash": "sha256:282943615a8be2b04bfa9e5d31d525945197bd8fbe856ab4b5968def2cc05f17",
+      "source": "What this library is, how prompts are tested, and what the sample entries are.",
+      "target": "Что это за библиотека, как проверяются промпты и что представляют собой примеры материалов.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 873,
+      "sourceHash": "sha256:e2478b56493dca9bdedf10ced1b54792e5674114d812ffcb8e60cef1236b6fb5",
+      "targetHash": "sha256:b69c2449405a2132530a6b85471e2262f234501c1892d455811b0df9f9886e50",
+      "source": "## Code",
+      "target": "## Код",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 874,
+      "sourceHash": "sha256:ced5382e0d2d24eeb654bda1a75248ba152a057ab90f4c84739807713af65e2d",
+      "targetHash": "sha256:f07ab4369bf9d454da18baed4f75834894168b4c56fd4247af3eef8f5e0abd61",
+      "source": "The website code, scripts and components are released under the MIT License.",
+      "target": "Код сайта, скрипты и компоненты распространяются по лицензии MIT.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 875,
+      "sourceHash": "sha256:24118483fcaa8142ba75510ac2e9c0dbe33f3f12a31500234f63eb79969a9516",
+      "targetHash": "sha256:cc4cb0bd2929c3432f8f2f4c4b546cc2c56a6b5cc4339c51919777d97e04f82e",
+      "source": "## Prompts and descriptions",
+      "target": "## Промпты и описания",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 876,
+      "sourceHash": "sha256:a44fcee96473fe9446120314186edf2ed2170bbfdc4b4409516170ba7891bb90",
+      "targetHash": "sha256:be4d30c172dc44d77fe6724848f51c6a2a7f1d86557a5928d3a96124403e4e61",
+      "source": "Prompt text and the descriptions on each page are licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Reuse them with a credit and a link to the page.",
+      "target": "Тексты промптов и описания на каждой странице распространяются по лицензии [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). При повторном использовании укажите авторство и ссылку на страницу.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 877,
+      "sourceHash": "sha256:a543e293c615aa544f0eddfe7c2a5ce1621376987585e646f7a54eb3d6e4a5f6",
+      "targetHash": "sha256:670cab1351d9a4401a2242e9d0eaab87116840db860b5bf0834b08dd45628509",
+      "source": "## Images",
+      "target": "## Изображения",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 878,
+      "sourceHash": "sha256:9f8aa292c42204d92207caaf312a98a047b4ff8367f2d635bbe128248e2baabd",
+      "targetHash": "sha256:8395ba1aa85265a6d930129d53bb7d75129c24140f61c80aaf9ce24a131f3116",
+      "source": "Images are licensed per file; each image page names its license. The GPT Image content images in this repository are released under CC BY 4.0.",
+      "target": "Лицензия определяется для каждого файла отдельно; она указана на странице изображения. Изображения материалов, созданные с помощью GPT Image в этом репозитории, распространяются по CC BY 4.0.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 879,
+      "sourceHash": "sha256:b868957b591df56527998ee1b8179236b46e27d5f345b679b9287f9cd45dbbef",
+      "targetHash": "sha256:95e45919179e4e45f6712334fc525137cef3357b80e2dd4ec4cc9a75e5f7e0f0",
+      "source": "## Name and logo",
+      "target": "## Название и логотип",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 880,
+      "sourceHash": "sha256:64713e6fb64788771725d74603007b3ffdbc529e811b383f9fdc27bec3fb5de6",
+      "targetHash": "sha256:5e7a4bf0a8d80d74c273c1e421bc0260d42cfd925607464574325821e38395fa",
+      "source": "The name Prompt Seen and its logo are not covered by these licenses.",
+      "target": "Название Prompt Seen и его логотип не подпадают под действие этих лицензий.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 881,
+      "sourceHash": "sha256:c011d6097bfbc8e936280addcf2e3e7d06ea2223ffd596973191b800a7035c32",
+      "targetHash": "sha256:133595a7bd06acd02fc9e3e950cc60a3518f1ba73b117d020ecd7eb5850d9f61",
+      "source": "License",
+      "target": "Лицензия",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 882,
+      "sourceHash": "sha256:dd684af7d06188feb37f0e136f00e2c8f5f1fec786747da48ea3ed8902d9108d",
+      "targetHash": "sha256:b3479a9043e297d4b9bd8a7588824187ab96d39be6ef4d6312dfa88e5dac6d89",
+      "source": "How the code, the prompt text and the images may be reused.",
+      "target": "Условия повторного использования кода, текстов промптов и изображений.",
+      "origin": ".artifacts/localization/ru/reviewed-units.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 883,
+      "sourceHash": "sha256:31ed2d53ea79b9e45776ce3735ffd4f13eba00d4b4eac1dbf1e845270602028f",
+      "targetHash": "sha256:f72869f55f9592cbcd129fb39f98c42c183151ec146f585db0376e53bc8a0583",
+      "source": "## What is it good for?",
+      "target": "## Для чего подходит?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 885,
+      "sourceHash": "sha256:dbcdec78a7649761d4970425bfe7e38db167628fc4556ef3350ba5e1c16ec22b",
+      "targetHash": "sha256:937000af7cfc512503ac8fd7fa0209f494af07c5ee9c86088f48e9b9865a4726",
+      "source": "## How do I adjust it?",
+      "target": "## Как настроить?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 901,
+      "sourceHash": "sha256:321a1945335c77c5c85d37c5650c0d9b92ff8a21b8389f7380eb302b383f6462",
+      "targetHash": "sha256:51670050fb51b8184b5f56ae3c02b506b84891ec9a219d0d60d841131ff6e061",
+      "source": "Works when cropped to a circle: the subject sits in the centre with a simple background.",
+      "target": "Подходит для круглого кадрирования: объект находится в центре на простом фоне.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 902,
+      "sourceHash": "sha256:68ab588687767d546c2baf7f648d033268eb7581c7d5b1dd66aad270753bc335",
+      "targetHash": "sha256:95b5ef501de612dbdd6c6f7dcde31f91d9f309ecc814f6a66d464b205b4974a7",
+      "source": "- Name two rim colours, one for each side, to keep the outline readable.\n- Keep the face in shadow; detail inside the silhouette breaks the effect.\n- To change the subject or colours, start from the [neon portrait template](template:t_003).",
+      "target": "- Назовите два цвета контрового света, по одному с каждой стороны, чтобы контур оставался различимым.\n- Оставьте лицо в тени: детали внутри силуэта нарушают эффект.\n- Чтобы изменить объект или цвета, начните с [шаблона неонового портрета](template:t_003).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 903,
+      "sourceHash": "sha256:efed3af55a6b52684a126da27b8372c3675227a1927f562aff434b66596a40bb",
+      "targetHash": "sha256:fcc8b12bbe19bce0384160f02f6d87d7c28e225b54fc10679344bae506a495c3",
+      "source": "Neon rim-lit profile",
+      "target": "Профиль с неоновым контровым светом",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 904,
+      "sourceHash": "sha256:fe1d336e7a3856a6820f10e223f8f7a3cfae85433f6cd19fd2a353924820d524",
+      "targetHash": "sha256:403b7694cb18702fbc0581d21b977bf142256b444f939b567575ea350867b1ef",
+      "source": "Neon rim-lit profile as a neon-lit portrait, suited to profile pictures and avatars.",
+      "target": "Портрет в профиль с неоновым контровым светом, подходящий для фото профиля и аватаров.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 923,
+      "sourceHash": "sha256:25c360dc2f12298e653d883a2eb0a3a90af6d3f9e6cc7dee5c7c1f038202a7ac",
+      "targetHash": "sha256:74d1cc832fca2474d39542ea4f05f85e59fb9857d445b41a0e11b4dda5a18511",
+      "source": "## 适合用在哪里？",
+      "target": "## Где использовать?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 924,
+      "sourceHash": "sha256:a3492a36c0fc64cd453f7bdd52ff4f1902fc18731319f5a5a49ee26c45deaec2",
+      "targetHash": "sha256:9c47ee629cbcea99c80adf79eea5b1b354eac85860ec7e871b54238ff1b76dd6",
+      "source": "平涂色块和有限的配色在大尺寸印刷时依然干净，挂在墙上显得有设计感。",
+      "target": "Плоские цветовые пятна и ограниченная палитра сохраняют чистоту при печати большого формата и выразительно смотрятся на стене.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 925,
+      "sourceHash": "sha256:807147a933b074f72cb8816d19603eecdb50729dec05235c7440caa1884bfd1f",
+      "targetHash": "sha256:e3579f1fa8f2fbabf7b64f86fec8921909d83dde495d650dd82826c0b2ecf727",
+      "source": "## 怎样调整？",
+      "target": "## Как изменить?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 926,
+      "sourceHash": "sha256:67df5f3424897cebd7aa2d51d913302b941276e4cfab4839249d1f81a0f44e89",
+      "targetHash": "sha256:34e45af30fc9da149bbe262611690d9d3a4fc3de71fad06324e12257569e8989",
+      "source": "- 描述笔触质感（枯笔、湿染），而不是线条粗细。\n- 明确印章的位置，否则它可能落在主体上。\n- 提示词中标出的短语说明了各部分控制什么。\n- 想换主体或配色，可以从[水墨长卷模板](template:t_002)开始。",
+      "target": "- Описывайте фактуру мазка (сухая кисть, влажная размывка), а не толщину линий.\n- Явно задайте положение печати, иначе она может оказаться на главном объекте.\n- Выделенные в промпте фразы объясняют, за что отвечает каждая часть.\n- Чтобы сменить объект или палитру, начните с [шаблона свитка тушью](template:t_002).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 927,
+      "sourceHash": "sha256:a063664e306eab3345b819666b4e064ce6ff570e2d050346f7250611d3d0dbd4",
+      "targetHash": "sha256:e66006b7f7ac8accba20aee90d93fc23365dfa06780f642177c50ccf9a4089d2",
+      "source": "水墨梅枝",
+      "target": "Ветка сливы тушью",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 928,
+      "sourceHash": "sha256:42a9d28d60da12d4e11b91678cfd300c0c96351e3188c788fe04d9fdd221a0eb",
+      "targetHash": "sha256:0cfe21b1731a6137eedaff96fabb9fceb4fb3b9b190163fc58e23ae7c9416ec1",
+      "source": "水墨风格的插画“水墨梅枝”，适合用作装裱的装饰画。",
+      "target": "Иллюстрация «Ветка сливы тушью» в стиле живописи тушью, подходящая для декоративной картины в раме.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1110,
+      "sourceHash": "sha256:074ad951502ebc0d30a1e1c049aa0d5912016c0f8b25f44b97dcd3783a0b92cd",
+      "targetHash": "sha256:3d3a3701ed425654eb4b50bfca3b8f30577489b19bf7d54c4b0e232b892cbfae",
+      "source": "## How to use",
+      "target": "## Как использовать",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1112,
+      "sourceHash": "sha256:4d58f30ae2947b7f1549b6c0135c9d97aee1fa24cfc48d62e5c0b4a8aff9ac6b",
+      "targetHash": "sha256:9187d0fdb56485a30dff07286f0bd7b62528c9e0251cbb5ef2354162787a2d8b",
+      "source": "## Recorded result",
+      "target": "## Зафиксированный результат",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1135,
+      "sourceHash": "sha256:d9717252f395e682a5ab4f30fc6e8b8ea4391d882f44d4ca2a5d06ea499f86a5",
+      "targetHash": "sha256:af19ecb921f38042202361b58bc349c0b4e05bbc6be4717b250dd56a52a617a8",
+      "source": "Add final typography separately; compare identity and skin texture with the input.",
+      "target": "Добавьте финальную типографику отдельно; сравните узнаваемость человека и фактуру кожи с исходным изображением.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1136,
+      "sourceHash": "sha256:cf0e22ed2ff4b4fb63a339888664bd764ad4eaadad2044606e02ad948e0aefb2",
+      "targetHash": "sha256:e98934c119f5d14c05575931603911122439002505cf1fba58d212b24439eded",
+      "source": "The example was generated with the built-in image tool. Its exact model ID was not returned. The recorded run contains the submitted prompt and ordered inputs.",
+      "target": "Пример создан встроенным инструментом генерации изображений. Он не вернул точный ID модели. Запись запуска содержит отправленный промпт и входные изображения в заданном порядке.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1137,
+      "sourceHash": "sha256:a34a3f40104809c8bd5228653ab663120547bcb3a0ef7d3343275808a26e9748",
+      "targetHash": "sha256:2bc4b8f36c8f9ca0ce3ced8b72fb9c558086af70a333332b877b3661e3dd9a0f",
+      "source": "Editorial cover portrait",
+      "target": "Журнальный портрет для обложки",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1144,
+      "sourceHash": "sha256:5670686a54410855aa3c9268ea8c7c5ab29e1d7693fe75c0bb14c192ed0d9895",
+      "targetHash": "sha256:376f8bd4a71947b3eca2bbee48145133067e22abfc4c94846038808ded272462",
+      "source": "Check both faces separately, natural proportions and consistent lighting.",
+      "target": "Проверьте каждое лицо отдельно, естественность пропорций и согласованность освещения.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1145,
+      "sourceHash": "sha256:764ddc1bfb0c01de514a18535badaa4f3ee7df5b1011ec867a418068efba4e20",
+      "targetHash": "sha256:a1a91e47010ad80615d0e4cc1a9c8658ab51643ebae0b2ce697be3a6c0db0978",
+      "source": "Two-person wedding editorial",
+      "target": "Свадебная съёмка двух человек в журнальном стиле",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1160,
+      "sourceHash": "sha256:936a8d186f4a8f955bfad20d4a04df8d469b3ab85c8fe19237ce9c1da64ec616",
+      "targetHash": "sha256:2cf46612c0515d5bea71dfe2c8e6da9eafa4a88d984c2789b3b34de70b0dd7f0",
+      "source": "Keep the product silhouette, cap and label consistent in every panel.",
+      "target": "Сохраняйте одинаковые силуэт товара, крышку и этикетку во всех ячейках.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1163,
+      "sourceHash": "sha256:7bea37dc4e01c83c86a29ed56eba62474d1a0005de496b98da3696289df7a436",
+      "targetHash": "sha256:b5b1b3f2beab95b9cbd6f0182ce15d15d09b8ee38ada85fe16629f826c779e44",
+      "source": "## Generation evidence and limits",
+      "target": "## Подтверждения генерации и ограничения",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1232,
+      "sourceHash": "sha256:d5ba9731da535e7c79fedbdbbda110fece0a977cce31adef95c315eb161a4f7a",
+      "targetHash": "sha256:1a13b3e9d622529b90160f2e1b837f16be2c798c34a1fad3966d94b91df7b85c",
+      "source": "Copy the exact prompt used for this image. Changing the subject creates a new, untested variant. This example uses no reference image.",
+      "target": "Скопируйте точный промпт, использованный для этого изображения. Смена объекта создаёт новый, непроверенный вариант. В этом примере нет референсного изображения.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1233,
+      "sourceHash": "sha256:7f4616b214daa90c49b1a49caf344d9a9bd1fff9de3ff06d939422d4bf85b6c8",
+      "targetHash": "sha256:8830c37695d2a8564d58b3765c23376150a4cced260bb02b832b6b6313d9e64c",
+      "source": "## Observed result",
+      "target": "## Наблюдаемый результат",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1234,
+      "sourceHash": "sha256:fc020fb9d2f1e35e8e684ae167531eede4525c074ba8f18d04cbde74fa75bbef",
+      "targetHash": "sha256:7e619a3ad77aa50e7000b688fc84484ed8b076e6cb0393b2520dfbc608bb11f3",
+      "source": "## Source",
+      "target": "## Источник",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1235,
+      "sourceHash": "sha256:e546a917d27fa4b155581eadb9e93f165e43d182a3c4a59421462cdf0dfa41c8",
+      "targetHash": "sha256:b45a88925921bf771433c86e3ef3fd53b7550c591661b5a9c54ff03f2c5347a4",
+      "source": "Independently adapted from the supplied design prompt collection, case 1. [Source](https://pixonara.com/prompt/655). GPT Image returned no precise version identifier.",
+      "target": "Самостоятельная адаптация из предоставленной подборки дизайнерских промптов, пример 1. [Источник](https://pixonara.com/prompt/655). GPT Image не вернул точный идентификатор версии.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1236,
+      "sourceHash": "sha256:83ea2657f54b9b2732fcf2bc747a06a6e46b1daf504c09a838454157f835d9c2",
+      "targetHash": "sha256:372066af7ee40a8ce789bff5fc126003bf98ebc6de969e55142b7a8947024b11",
+      "source": "Minimal studio product hero",
+      "target": "Минималистичный студийный снимок товара",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1357,
+      "sourceHash": "sha256:9625f555c4da3b76aabf47bcf7db33428abd30fb2e7fbe86bc45ef0d1b559277",
+      "targetHash": "sha256:cdc0f28400f30302b17eb627fd8c0125e139c4a5343062e346b9ce1cc67180fc",
+      "source": "Use the exact recorded prompt. No reference image is required. Changes to the prompt or inputs create an untested variant.",
+      "target": "Используйте точный записанный промпт. Референсное изображение не требуется. Изменение промпта или входных данных создаёт непроверенный вариант.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1358,
+      "sourceHash": "sha256:f8c25b459293ee52cddb10163fd25712b392facd1843d0ec1b473502fe7656cf",
+      "targetHash": "sha256:82fe82a2f27d2a685385d2fe0b96edbbe276b1dbec32830f33d40a4fae30b35e",
+      "source": "## Source and generation",
+      "target": "## Источник и генерация",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1360,
+      "sourceHash": "sha256:6a77927869ee145e35991274494d32034265447c060d84936767d0b174d60148",
+      "targetHash": "sha256:e09c770468309259969f6e11b0b1bcd183f24fc0102037e35b2e341e4a539323",
+      "source": "Generated with GPT Image 2.6. All reference images used here were generated for this project.",
+      "target": "Создано с помощью GPT Image 2.6. Все использованные здесь референсные изображения созданы для этого проекта.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1384,
+      "sourceHash": "sha256:1d6dfad30b5abadd776ae3a64e8d56cdeae4430bd52cc5c1d6cf5c71acc744b7",
+      "targetHash": "sha256:b804c0a847a22b01a6e3f8a621c4bfaa57716237f696bed5559eace2de7325e7",
+      "source": "The source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#build-slides-diagrams-and-charts). Source-post engagement does not measure this newly generated example.",
+      "target": "Источник содержит оригинальный промпт; для этой работы использован отдельно записанный рабочий промпт. [Источник](https://developers.openai.com/api/docs/guides/image-prompting#build-slides-diagrams-and-charts). Реакции на исходную публикацию не отражают популярность этого нового сгенерированного примера.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1385,
+      "sourceHash": "sha256:eee5f13cc90d7b5461a1b0e87037348aa112bf33afb6a0e4258c44c6df4520f9",
+      "targetHash": "sha256:aba75e1d1824965687ad0d1bea3dc0257fbc7a51a1d94494b05d860588c95727",
+      "source": "Market opportunity pitch slide",
+      "target": "Слайд о рыночных возможностях для питча",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1386,
+      "sourceHash": "sha256:b20264d83acafbebc33f02510f765558b7f18c3dd0bcc38e5b38f42632ca19bf",
+      "targetHash": "sha256:574485ba4a47212b7a5569679eefb67381574f166aac6f6956de878f93640b4c",
+      "source": "Fictional market slide has 2026/2027/2028 bars of 10/14/19 and visible illustrative-data disclaimer",
+      "target": "Слайд о вымышленном рынке со столбцами за 2026/2027/2028 годы со значениями 10/14/19 и видимым предупреждением об иллюстративном характере данных",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1387,
+      "sourceHash": "sha256:f2169bf54ac12fbea7694634619c89387d8836764ab0cafddae9399079b79851",
+      "targetHash": "sha256:7b143d8592630bef92e8b9ef1a095d34656556c488a3d48d02f44ddaed6467e7",
+      "source": "Use the exact recorded prompt and the displayed original reference assets in order. Changes to the prompt or inputs create an untested variant.",
+      "target": "Используйте точный записанный промпт и показанные оригинальные референсы в указанном порядке. Изменение промпта или входных данных создаёт непроверенный вариант.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1409,
+      "sourceHash": "sha256:b8a0e0248fd001f623da361bcf239270d3edc3548fd328d22f326cea3d2bdbf9",
+      "targetHash": "sha256:df2a5ab650912c1e0b56ad74ff1e002b6346030924a5ae0eda0ea79571768bb6",
+      "source": "## GIF assembly",
+      "target": "## Сборка GIF",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1410,
+      "sourceHash": "sha256:8642433d0526f09b992966f5261c99ddb55b727095ed4af491c8671250c8ff31",
+      "targetHash": "sha256:fe2d7f0a564659ba8514cf6392c5dbda2e3864b22a3f39719dca91fa6d79217d",
+      "source": "The model generated a 3-column by 2-row PNG sprite sheet. Crop equal cells in row-major order and encode six frames at 300 ms per frame with infinite looping. The resulting GIF is 512 × 512 pixels and 1.8 seconds per cycle. No interpolation was added. This is a composed animation, not a native GIF returned by the model.",
+      "target": "Модель создала PNG-лист спрайтов из 3 столбцов и 2 строк. Вырежьте одинаковые ячейки построчно и закодируйте шесть кадров по 300 мс с бесконечным повторением. Полученный GIF имеет размер 512 × 512 пикселей и длительность цикла 1,8 секунды. Интерполяция не добавлялась. Это собранная анимация, а не GIF, напрямую возвращённый моделью.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1411,
+      "sourceHash": "sha256:a1c4227d66c0883e3fc8007855d7059c9e2e916e731a4a39411d12c945629b4e",
+      "targetHash": "sha256:89bf793e00b2765aee9d0062de183769895f71cca08ed9294dd7154708ed093d",
+      "source": "The source provides an original prompt; this production uses the separately recorded working prompt. [Source](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif). Source-post engagement does not measure this newly generated example.",
+      "target": "Источник содержит оригинальный промпт; для этой работы использован отдельно записанный рабочий промпт. [Источник](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif). Реакции на исходную публикацию не отражают популярность этого нового сгенерированного примера.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1412,
+      "sourceHash": "sha256:a9efd7cb30f834620249c5e40aac38b891177f45df44da85e3f1c147bd3c2c75",
+      "targetHash": "sha256:23ec8b2a2b0d1e02d201702767cc367012d1dffdde3c171c539d8761ae8f0be5",
+      "source": "Monkey raising a lantern",
+      "target": "Обезьянка поднимает фонарь",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1413,
+      "sourceHash": "sha256:18d46a83af06d7dc92f0cff4bbe3119a2f25e0d974168170d146d591c15ca901",
+      "targetHash": "sha256:7243220df22493d68a9ad7fd48315bf55eb8a5dc166a9001c8fb9f1e2b854a51",
+      "source": "Six distinct generated poses show the monkey raising and lowering the lantern and blinking",
+      "target": "Шесть разных сгенерированных поз показывают, как обезьянка поднимает и опускает фонарь и моргает",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1471,
+      "sourceHash": "sha256:34ab094935d9ea0adc6c78a2403c7f7106745d8fd9f92b5d142fb3a9358fbef4",
+      "targetHash": "sha256:a1aae1f49547ffeb97a0f07f7fa367e166493e0a71b8704c67412d721feb64af",
+      "source": "## Result and limitations",
+      "target": "## Результат и ограничения",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1505,
+      "sourceHash": "sha256:6893ebe8fc9aee96b65dd3213e6a54e852c1e77f0ec56cf2132c09882c84ca83",
+      "targetHash": "sha256:100e06758b330a06d5f12077fd9fd3c303db88c3073d736d3543d8dc5d786147",
+      "source": "Reuse the archived GPT Image sheet and resample its action to nine frames. Sources with eight poses split one held pose across two encoded frames without adding a new pose; longer sequences select nine chronological poses. Preserve total duration and loop settings. Small source cells are enlarged for display without adding detail. The GIF is composed locally; the image tool returned a still PNG. The source sheet, exact crops, frame delays and first-frame poster are retained in the campaign archive.",
+      "target": "Повторно используйте архивный лист GPT Image и приведите действие к девяти кадрам. Для исходников с восемью позами одна удерживаемая поза делится на два закодированных кадра без добавления новой позы; для более длинных последовательностей выбираются девять поз в хронологическом порядке. Сохраните общую длительность и настройки повторения. Маленькие исходные ячейки увеличиваются для показа без добавления деталей. GIF собирается локально; инструмент генерации изображений вернул неподвижный PNG. Исходный лист, точные области вырезания, задержки кадров и постер первого кадра сохранены в архиве кампании.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1512,
+      "sourceHash": "sha256:ba064e76c6727dfc26d990946070c703a2b96dabafcf8d23ebf88b480d0cbf02",
+      "targetHash": "sha256:606946d11a2e2293abd59a60017d9689014457b279ccaca3699e1da73494b3af",
+      "source": "9 frames, 2 seconds, 360×480px; repeats indefinitely. GPT Image frame-sheet + local GIF encoding.",
+      "target": "9 кадров, 2 секунды, 360×480 пикселей; бесконечное повторение. Лист кадров GPT Image + локальное кодирование GIF.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1513,
+      "sourceHash": "sha256:5b9a39da093e3a6fa6d8b2decd6a94bc0f4303474d3ef1136b9240d0d2f83305",
+      "targetHash": "sha256:689a6f9c61fd71bc4a9251a411107b213d4688c7f3d53d563e4f6fa9d7667a0c",
+      "source": "Adapted by Prompt Seen from [@devteamdrew's original prompt](https://x.com/devteamdrew/status/2118538745175503130). The author labels the source work Image 2.6; this run only establishes the GPT Image family, with no exact model ID. The prompt preserves its submitted language on both page editions. Likes describe the whole source post, shared by variants, and are not engagement for this example.",
+      "target": "Адаптация Prompt Seen на основе [оригинального промпта @devteamdrew](https://x.com/devteamdrew/status/2118538745175503130). Автор обозначает исходную работу как Image 2.6; этот запуск подтверждает только семейство GPT Image, без точного ID модели. Промпт сохраняет язык отправленного текста в обеих языковых версиях страницы. Лайки относятся ко всей исходной публикации, общей для вариантов, и не отражают реакции на этот пример.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1518,
+      "sourceHash": "sha256:1749ddc0255909b741193d38c8a7c938ce1fa9ca1a8c12dbcfc76588d4f9542a",
+      "targetHash": "sha256:0f952383738005715f188a04a2cd535bafc4a140e45bbddd94aebe1dc9e13177",
+      "source": "Variants from the same source post: [Golden Gate gouache waves](prompt:p_288) · [Colosseum travel poster](prompt:p_289)",
+      "target": "Варианты из той же исходной публикации: [Гуашевые волны у моста Золотые Ворота](prompt:p_288) · [Туристический постер с Колизеем](prompt:p_289)",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1519,
+      "sourceHash": "sha256:3cb86041da705c6ca29220990396159f05994c6bf3e88b07ba2d71641d0b8d3d",
+      "targetHash": "sha256:8ae4d926648754dba81a95f7f8e063f59bcd2c1eba31eb78cf8fff3d4474d17e",
+      "source": "Mount Fuji travel poster — composed GIF",
+      "target": "Туристический постер с Фудзи — собранный GIF",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1588,
+      "sourceHash": "sha256:58e8108a6917eac2cf4b5f66e8e029f5283faf0b344c1a8ec4e6a21cb6ea4b6d",
+      "targetHash": "sha256:aec586a5080e34ca6ef46fa55578186c35c1709e3c99f079a5171001ebd70f3b",
+      "source": "Shop banners, launch posts and packaging mock-ups where the product shape has to read instantly.",
+      "target": "Баннеры магазина, публикации о запуске и макеты упаковки, где форма товара должна сразу считываться.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1589,
+      "sourceHash": "sha256:f409cab7e57c35ae2f27fc4c9fb8a3c9d0bc36974a3326b54c94f081637b95bc",
+      "targetHash": "sha256:f8224b53f66203c7b5502dbda0eddde0bac6e221e4f3a0d2029fd9808d696a79",
+      "source": "## How do I fill it in?",
+      "target": "## Как заполнить?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1590,
+      "sourceHash": "sha256:e43693095dce070942f754bb4ea5cc12e0f69d0cd4793b9a77a2b1912bd3c8f5",
+      "targetHash": "sha256:86f767f8b52209e267be146740268db50f984520095598dbe67f0196a3b82922",
+      "source": "- **Product**: name the object and its material, such as “a speckled ceramic mug”. The material decides the surface texture.\n- **Selling points**: up to three short phrases. Concrete ones (“airtight lid”) turn into visible details; vague ones (“premium”) are ignored.\n- **Headline**: optional. Version 3 requests the supplied headline exactly and leaves the bars blank when it is empty. Check the lettering in each result.",
+      "target": "- **Товар**: назовите предмет и материал, например «керамическая кружка в крапинку». Материал определяет фактуру поверхности.\n- **Преимущества**: до трёх коротких фраз. Конкретные («герметичная крышка») превращаются в видимые детали; расплывчатые («премиальный») игнорируются.\n- **Заголовок**: необязателен. Версия 3 запрашивает указанный заголовок дословно и оставляет полосы пустыми, если он не задан. Проверяйте надпись в каждом результате.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1591,
+      "sourceHash": "sha256:7c0297c68513ef6ceaa8c60ea5ae11d9f66c2c68aee8c90b0bbdf112cf218a9a",
+      "targetHash": "sha256:1f54075789a246ee0201890af372fc2ed658910c9abfc1a0a19a4f16c8d2f9f9",
+      "source": "## What changed in version 2?",
+      "target": "## Что изменилось в версии 2?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1592,
+      "sourceHash": "sha256:5cc6167d753a050d30c6e443db40047297a6571f983e2981fcb746e63f8d5e6a",
+      "targetHash": "sha256:ba09e85a2a92b6895e0883f6b1542135e280f00a34e937c3f7eba84d3d096d7d",
+      "source": "Version 2 adds the optional headline, a grey and a coral palette, and more ratios. Examples made with version 1 keep their original prompt.",
+      "target": "В версии 2 добавлены необязательный заголовок, серая и коралловая палитры и дополнительные соотношения сторон. Примеры, созданные с версией 1, сохраняют исходный промпт.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1593,
+      "sourceHash": "sha256:ba80beb71f095cddae2ffbbcaa2ebfa598a9c5aa9b04f3cbfea9fc2f11d9fde0",
+      "targetHash": "sha256:ebd62f2e8b3fb2217017f4e1435910774e2e1c610d67b318abe8dc1d9059ab90",
+      "source": "Product poster",
+      "target": "Постер товара",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1594,
+      "sourceHash": "sha256:75fa2fe81c77e7bc1ee62efa8593c99d754446e626245b66675697693bb39f3f",
+      "targetHash": "sha256:0d50fb8d91660b77a8486c8bf6026e74f52f5c29bb01573befada8d238672575",
+      "source": "Fill in a product, up to three selling points, a palette and a ratio to get a clean flat-vector product poster.",
+      "target": "Укажите товар, до трёх преимуществ, палитру и соотношение сторон, чтобы получить лаконичный постер товара в плоском векторном стиле.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1595,
+      "sourceHash": "sha256:eeb9a26266964cf51a2486c1822c276c936ca4519a442b66e49ad9aab1bcf1ff",
+      "targetHash": "sha256:a50240ccfb0ba0009fc14d81bdfae650a5afc62d6db8d8ad1aba5b4537b2ffa1",
+      "source": "横幅、长卷壁纸和需要东方气质的封面。宽幅比例下，留白比题材本身更重要。",
+      "target": "Баннеры, обои в формате длинного свитка и обложки с восточным характером. В широком формате свободное пространство важнее самого сюжета.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1596,
+      "sourceHash": "sha256:aa79457b55cccf10473cb348753add9d5e491cc9352d6602fd700f5fc280d625",
+      "targetHash": "sha256:f8224b53f66203c7b5502dbda0eddde0bac6e221e4f3a0d2029fd9808d696a79",
+      "source": "## 怎样填写？",
+      "target": "## Как заполнить?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1597,
+      "sourceHash": "sha256:01074e69bbe5960cb1967196125086ea095aa622599856db974f6b86de6053f9",
+      "targetHash": "sha256:1c07fa5b20aee6042e468539f56b9f070c0aaaae061e4687f167d1ea1f99321b",
+      "source": "- **题材**：一个主体即可，如“竹林”“孤松”。题材越多，留白越少。\n- **笔法**：决定画面质感。“湿笔晕染”柔和，“枯笔”粗粝。\n- **细节**：最多四项，写可数的东西，如“五根竹竿”。",
+      "target": "- **Сюжет**: достаточно одного главного объекта, например «бамбуковая роща» или «одинокая сосна». Чем больше объектов, тем меньше свободного пространства.\n- **Техника кисти**: определяет фактуру изображения. «Влажная размывка» мягкая, «сухая кисть» шероховатая.\n- **Детали**: не более четырёх; указывайте то, что можно посчитать, например «пять стеблей бамбука».",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1598,
+      "sourceHash": "sha256:2e0dc8e2699ef7524d8369b21bb7b323155c684ee177230547d0154bae212b0d",
+      "targetHash": "sha256:a0beced1b4f4bbe126409b00ce22225ba58ed629ae8537c5f0b0a6e3a750b973",
+      "source": "提示词正文保持英文，因为在测试中英文描述的笔法更稳定。",
+      "target": "Текст промпта остаётся английским, поскольку в тестах описания техники кисти на английском давали более стабильные результаты.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1599,
+      "sourceHash": "sha256:2f486e88c9db11fa8f296d3088c837069193a97563d2b8e7339de46febb0f9d4",
+      "targetHash": "sha256:78de88093644610db63a6ff81f6833b19f5aa7f2ee08f38aa074d76b1648da8d",
+      "source": "水墨长卷",
+      "target": "Длинный свиток тушью",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1600,
+      "sourceHash": "sha256:9a5e3481221527b86f29bd312235762f52ccbcd5ef0fdc66c0254544446c197f",
+      "targetHash": "sha256:ead2f868f626b995d316a1fd8cfde617150dd8dab4c6511f95cc9676a9ca668c",
+      "source": "填入题材、季节、笔法和细节，生成留白充足的水墨画提示词。",
+      "target": "Укажите сюжет, сезон, технику кисти и детали, чтобы составить промпт для рисунка тушью с большим количеством свободного пространства.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1605,
+      "sourceHash": "sha256:35a2510eb54772dc68b08e3b331150424fe9668c52b58d1ee5503f93238edbaf",
+      "targetHash": "sha256:ac3f802ff25e6a0f761ebfe85abf402d622310d232def1cab3115bda30d83fbe",
+      "source": "## Inspiration",
+      "target": "## Вдохновение",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1620,
+      "sourceHash": "sha256:caa737e98731a2ca2812f63bf613de181efc0e3711d0accb29a5dee93532c05f",
+      "targetHash": "sha256:cb88cc7df1f8c0c317f10cb1a32f47a8a727ca16ace89561d7563d0e2216f35b",
+      "source": "This template has two recorded examples using the same synthetic PINE bottle reference. The default values produce the submitted text for the sage, ivory and silver campaign; the alternate values use charcoal, amber and outdoor scenes. The [tested campaign case](prompt:p_123) explains what was observed in each output.",
+      "target": "У этого шаблона есть два записанных примера с одним и тем же синтетическим референсом бутылки PINE. Значения по умолчанию дают отправленный текст для кампании в шалфейных и серебристых тонах и цвете слоновой кости; альтернативные значения используют угольный и янтарный цвета и сцены на открытом воздухе. [Проверенный пример кампании](prompt:p_123) объясняет наблюдения для каждого результата.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Approved after correcting ivory palette colour to цвете слоновой кости; original labels, links and limitations preserved."
+    },
+    {
+      "id": 1621,
+      "sourceHash": "sha256:7bbb85aa3f209954b747c0e8e4f9025f07553ce83f9fbfcb3da2613b3f7f98c5",
+      "targetHash": "sha256:3611d5e9def85571046e804453df0a0da5569912dc3aab82e9c324ce438dd648",
+      "source": "The [default run](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) and [alternate run](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) record template v1, submitted values, prompt hashes, reference IDs and output IDs on October 29, 2026. Upload the product reference shown with the matching test print; the template fields change the text, not the input image.",
+      "target": "[Запуск по умолчанию](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) и [альтернативный запуск](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) фиксируют версию шаблона v1, отправленные значения, хеши промптов, ID референсов и результатов за 29 октября 2026 года. Загрузите референс товара, показанный с соответствующим тестовым изображением; поля шаблона меняют текст, а не входное изображение.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1622,
+      "sourceHash": "sha256:30bda51bce63a86ad2879de1605ed1e21a4747c3baec400185c31b879ccd3cb8",
+      "targetHash": "sha256:82df74ddfacc77b4b41240bcd9823ebdf8390a52cfabee4067098ba56af3e485",
+      "source": "GPT Image 2.5 is the [project owner's version attribution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). The built-in image tool returned no exact API model ID, and no seed, sampling or quality settings were recorded. Matching the text and input does not guarantee identical pixels.",
+      "target": "GPT Image 2.5 — это [обозначение версии владельцем проекта](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). Встроенный инструмент генерации изображений не вернул точный ID модели API; seed, параметры сэмплирования и качества не записывались. Совпадение текста и входного изображения не гарантирует идентичности пикселей.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1623,
+      "sourceHash": "sha256:b5aa6fdbbdfbe31d907e3695700edf40a54934c587b355e205d9d6d31db6908b",
+      "targetHash": "sha256:5cde488872d77183cd812d5064af6885e2c3d558cd2c8cef4bd81037e6ad7fb2",
+      "source": "Editing fields creates a prompt, not a newly generated image. Values without a matching recorded run remain untested. Check the nine-panel layout, label text and product silhouette after generating with your own photo.",
+      "target": "Редактирование полей создаёт промпт, а не новое изображение. Значения без соответствующего записанного запуска остаются непроверенными. После генерации со своей фотографией проверьте сетку из девяти ячеек, текст этикетки и силуэт товара.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1624,
+      "sourceHash": "sha256:909b0a8089d29e283b9ead92ed17d9fc4b6c819aefabf8c41e1adf7c7c0a736e",
+      "targetHash": "sha256:1ef589ff1474a70e7d7b4b94449c6b2392053a0a64d56f96c0b7cda3873c7f6b",
+      "source": "See the [tested case](prompt:p_123) for original sources and dated attention metrics.",
+      "target": "Оригинальные источники и показатели внимания с датами приведены в [проверенном примере](prompt:p_123).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1625,
+      "sourceHash": "sha256:b6104e88cb521b509b313dd235d332260994b01da46531d701dea163e2031208",
+      "targetHash": "sha256:ea3627aa13d04057c58036ac962964c052a062ea7270d09be721ca2f0346b6dd",
+      "source": "3x3 product campaign prompt template",
+      "target": "Шаблон промпта для кампании товара 3×3",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1626,
+      "sourceHash": "sha256:b7933049f9e312b1ede4c9d8698b5372e6d1b8b56a1d153d73aaba768c7844dc",
+      "targetHash": "sha256:1d6144db79392955c960762d22ae18bb90edd5ccd841f70730af94f0d45cbb36",
+      "source": "Adapt the palette and nine scenes of a reference-photo campaign prompt, with two recorded examples and their original product input.",
+      "target": "Измените палитру и девять сцен промпта кампании по референсной фотографии; доступны два записанных примера и их исходное изображение товара.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1650,
+      "sourceHash": "sha256:b8193bb475dedee5cde299bf1d7af03be6709806d50661f21a8af1279f826c2f",
+      "targetHash": "sha256:ffc40911796f4b662f9cc28fcab35ac2ae3be12bd3093a0310a0185a6704f47d",
+      "source": "## How are these landscapes built?",
+      "target": "## Как устроены эти пейзажи?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1651,
+      "sourceHash": "sha256:6c1a6ba61c3395296d02ff309eaae8ffd893426d325653a7f0b6bc59d8becc26",
+      "targetHash": "sha256:061166eadb4b43bf413ce79b1d9ab955e0310479709ff55c6f924b531bc718ac",
+      "source": "Almost every landscape here is a stack of shapes ordered from light to dark, with one light source. The prompts name the number of layers and the time of day rather than individual colours.",
+      "target": "Почти каждый пейзаж здесь состоит из слоёв фигур, расположенных от светлого к тёмному, с одним источником света. Промпты задают число слоёв и время суток, а не отдельные цвета.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1652,
+      "sourceHash": "sha256:0d101ca08d46ef8e643969b8ed428a7da0b6f7989dc2177ee2da18af44bdea5e",
+      "targetHash": "sha256:05c66b64e07d1008b865cbd6cb5511d81a7c4ec60289f75680d352295a17394c",
+      "source": "## Which one should I start with?",
+      "target": "## С чего начать?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1653,
+      "sourceHash": "sha256:f0ce3d5e2cdfe61d915b1202c3d88c0d1d7efb319a6550472869579708232604",
+      "targetHash": "sha256:4483069f51143fa175c39e6e42550d7b61e1138cc169cc95ff54b613071088bc",
+      "source": "- For a wallpaper: [Morning mist over the hills](prompt:p_016), which leaves the sky empty.\n- For a print: [Desert dunes in warm light](prompt:p_006).\n- For an ink painting: the [ink scroll template](template:t_002).",
+      "target": "- Для обоев: [Утренний туман над холмами](prompt:p_016), где небо остаётся пустым.\n- Для печати: [Пустынные дюны в тёплом свете](prompt:p_006).\n- Для рисунка тушью: [шаблон свитка тушью](template:t_002).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1654,
+      "sourceHash": "sha256:940f39d733553b824e6b7d8731e550e4d3ad329c9ea498b73e10134c2920d5ef",
+      "targetHash": "sha256:72bb6ba10820583ec8879024d25c7622d636e6998e18c150fee2f7774668d6b8",
+      "source": "Landscape prompts",
+      "target": "Промпты пейзажей",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1655,
+      "sourceHash": "sha256:ae411b017d418e100ca1a8474279bb7b6e02dea90a339de72c41a8d6c90d9329",
+      "targetHash": "sha256:fec5f9b58d76b63e3e943b4101483c9339d4eca32b568e752b742a3277249c98",
+      "source": "Flat-vector and ink landscapes: ridges, dunes and seas built from a few layered shapes.",
+      "target": "Пейзажи в плоском векторном стиле и тушью: хребты, дюны и моря из нескольких слоёв фигур.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1656,
+      "sourceHash": "sha256:1d01679c827538d5a0bc2d3f527a05c7cef81f03144a7f1c36b6f6b5000714a4",
+      "targetHash": "sha256:e4ba5634943b26e428edd30db086363f41eb97eb346e8589e01a801d0b4f2adf",
+      "source": "## Why no lettering?",
+      "target": "## Почему без надписей?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1657,
+      "sourceHash": "sha256:ea22e8f5a7bca77fc5806d670542707b395de2b17a5b33cb62f4cdf8446fea83",
+      "targetHash": "sha256:6c05395c90d73ddcbbfd27db134bb8e74bbd5631db60468e8f29f7d0e0a8ade0",
+      "source": "Image models still garble text. These prompts reserve bars for titles and dates, so the layout survives and the words can be set afterwards.",
+      "target": "Модели генерации изображений всё ещё искажают текст. Эти промпты оставляют полосы для заголовков и дат, чтобы сохранить композицию и добавить слова позже.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1658,
+      "sourceHash": "sha256:bc6454350f12f48d2e8ab6ced315be4b535aef4eafc4b48e7192f1d348d07a85",
+      "targetHash": "sha256:fd8b326145451366b9d65ece45b5bf6e0415f87d99d9c8d4e797a48d58603719",
+      "source": "See the collection [Posters with a clear hierarchy](collection:c_001).",
+      "target": "Смотрите подборку [Постеры с чёткой иерархией](collection:c_001).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1659,
+      "sourceHash": "sha256:30b5fad513dff7d51251c79ad5e6c13038895ca7f5d1ff10d60961afaf8b40c8",
+      "targetHash": "sha256:4a8afd9622e01277bd60ca0c9446bc6c74171c6c9c5cf2bb01d4a6743cd90ad4",
+      "source": "Poster prompts",
+      "target": "Промпты постеров",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1660,
+      "sourceHash": "sha256:94d18ef52a9460ba34a1b596c103626fd446003e660dc05e2c5f11bd3432a5bb",
+      "targetHash": "sha256:0ea86e1760d3a2e03072905194b8f2cee82d249ccfdc9ed98fd9a2ea25754df1",
+      "source": "Geometric and retro posters that keep a clear hierarchy without readable text.",
+      "target": "Геометрические и ретропостеры, сохраняющие чёткую иерархию без читаемого текста.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1661,
+      "sourceHash": "sha256:331a348177f4e69beb09f28c70387ac364fefda79ebf67da655b963716d7abde",
+      "targetHash": "sha256:7ead8c209506759fa89cefbefc36978a611678affff397ce0efbd063093ed853",
+      "source": "## 水墨提示词写什么？",
+      "target": "## Что писать в промпте для рисунка тушью?",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1662,
+      "sourceHash": "sha256:1b3a0ce9057a3fd03fd83b697665d73736924bc37079eb44455dbaec346fc7ef",
+      "targetHash": "sha256:625077cfd5878dd8d9ee061ae08df354fc1a0c3f99c6a683a11a8764c1184c15",
+      "source": "写笔触而不是线条粗细：“枯笔”“湿笔晕染”比“粗线”“细线”更可靠。再写清印章的位置，否则它可能落在主体上。",
+      "target": "Описывайте мазки, а не толщину линий: «сухая кисть» и «влажная размывка» надёжнее «толстых» и «тонких» линий. Также чётко задайте положение печати, иначе она может оказаться на главном объекте.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1663,
+      "sourceHash": "sha256:8cade70a81ac41d2c128f311b4f9c42360fe119569ff54fdbe2a11488a76b738",
+      "targetHash": "sha256:ab37164aad16adaee14f55d730d3125a825ff67b8cb7a435fd77483476e959c1",
+      "source": "可以从[水墨梅枝](prompt:p_012)开始，或者直接使用[水墨长卷模板](template:t_002)。",
+      "target": "Начните с [Ветки сливы тушью](prompt:p_012) или сразу используйте [шаблон свитка тушью](template:t_002).",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1664,
+      "sourceHash": "sha256:4112840a8f7a60582e8bea73cc6a4f8344ea946761567892190685e3feb283ea",
+      "targetHash": "sha256:458f988c0837f685d5e02c5249dbe2d838fe56b5ffdacdda7db2b296570920b9",
+      "source": "水墨风格提示词",
+      "target": "Промпты для живописи тушью",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    },
+    {
+      "id": 1665,
+      "sourceHash": "sha256:a6335825cdc64d1ad05081f325da6213167bde36ba4e7c42316a2168c245a8b6",
+      "targetHash": "sha256:a8c8d3bc6ddfcd7dc50736e1bf56804a2cbb04764f4b053e31b68a37304142be",
+      "source": "枝条、竹林与山峦的水墨提示词，重在笔触与留白。",
+      "target": "Промпты ветвей, бамбуковых рощ и гор тушью с акцентом на мазки и свободное пространство.",
+      "origin": "production/localization/ru/batches/pilot-text-drafts.json",
+      "conclusion": "approved",
+      "reason": "Independently compared source and target meaning, scope, uncertainty, links and protected terms. This is language review only."
+    }
+  ],
+  "nonblockingSuggestions": [
+    {
+      "id": 567,
+      "current": "Размывы тушью",
+      "suggested": "Размывка тушью",
+      "reason": "Singular form reads more naturally as a technique label; plural current wording is understandable."
+    },
+    {
+      "id": 868,
+      "currentFragment": "размеры для отображения сжимаются отдельно",
+      "suggestedFragment": "версии для отображения сжимаются отдельно",
+      "reason": "Compressing image variants is clearer Russian than compressing sizes; source distinction remains understandable."
+    }
+  ],
+  "supplementalRecords": [
+    {
+      "id": 588,
+      "reviewer": "AI Codex ru_batch_d — independent source-comparison reviewer",
+      "completedAt": "2026-11-17T15:26:37.151878+00:00",
+      "source": "Editorial",
+      "target": "Редакционные материалы",
+      "sourceHash": "sha256:5ad6a405f686225dd432f0463257b835962e54111f7764edc2400eeeea23c32b",
+      "targetHash": "sha256:975d80aff9504ca4a417cf0faff5d064256d2e81d6047cce1780e0557e803163",
+      "conclusion": "approved",
+      "reason": "Corrected label preserves the broad editorial use case, including portraits, photography and illustration. Supersedes the old target without deleting the changes-requested history."
+    }
+  ]
+}

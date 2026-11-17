@@ -58,6 +58,7 @@ inspirationSources:
       zh-Hant: 整部教學或作品展示影片
       fr: Ensemble du tutoriel ou de la vidéo de présentation
       it: Intero video tutorial o dimostrativo
+      ru: Весь обучающий или демонстрационный ролик
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,6 +72,7 @@ inspirationSources:
       zh-Hant: 官方公開 API 快照
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -83,6 +85,7 @@ inspirationSources:
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
       it: Prompt originale o estratto disponibile; adattato autonomamente
+      ru: Доступен исходный промпт или отрывок; самостоятельная адаптация
     metrics:
       - key: views
         value: 344604
@@ -97,6 +100,7 @@ inspirationSources:
           zh-Hant: 播放或瀏覽
           fr: Vues
           it: Visualizzazioni
+          ru: Просмотры
       - key: likes
         value: 26934
         labels:
@@ -110,6 +114,7 @@ inspirationSources:
           zh-Hant: 按讚
           fr: Mentions J’aime
           it: Mi piace
+          ru: Лайки
       - key: saves
         value: 5872
         labels:
@@ -123,6 +128,7 @@ inspirationSources:
           zh-Hant: 收藏
           fr: Enregistrements
           it: Salvataggi
+          ru: Сохранения
       - key: comments
         value: 938
         labels:
@@ -136,6 +142,7 @@ inspirationSources:
           zh-Hant: 留言
           fr: Commentaires
           it: Commenti
+          ru: Комментарии
       - key: shares
         value: 1029
         labels:
@@ -149,6 +156,7 @@ inspirationSources:
           zh-Hant: 分享
           fr: Partages
           it: Condivisioni
+          ru: Репосты
       - key: coins
         value: 859
         labels:
@@ -162,6 +170,7 @@ inspirationSources:
           zh-Hant: 投幣
           fr: Pièces
           it: Monete
+          ru: Монеты
       - key: danmaku
         value: 73
         labels:
@@ -175,6 +184,7 @@ inspirationSources:
           zh-Hant: 彈幕
           fr: Commentaires défilants (danmaku)
           it: Commenti sovrapposti (danmaku)
+          ru: Данмаку
 source:
   author: Prompt Seen
   url: null
@@ -197,6 +207,7 @@ annotations:
       zh-Hant: 明確的網格固定貼紙數量和閱讀順序。
       fr: La grille explicite fixe le nombre d’autocollants et l’ordre de lecture.
       it: La griglia esplicita fissa il numero degli adesivi e l’ordine di lettura.
+      ru: Явная сетка фиксирует число стикеров и порядок чтения.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -214,3 +225,4 @@ annotations:
       zh-Hant: 統一面部、髮型與服裝，讓十六種表情保持同一個角色。
       fr: L’identité et les vêtements restent cohérents d’une émotion à l’autre, sur les seize images.
       it: Identità e abbigliamento restano coerenti nelle sedici emozioni.
+      ru: Узнаваемость персонажа и одежда сохраняются во всех шестнадцати эмоциях.

@@ -30,6 +30,8 @@ inputRequirements:
     zh-Hant: 上傳一張主體清楚的照片。本例人物為 AI 生成的虛構成年人。
     fr: Importez une photo nette du sujet. L’exemple utilise un adulte fictif généré par IA.
     it: Carica una foto nitida del soggetto. L’esempio usa un adulto immaginario generato con l’IA.
+    ru: Загрузите одну чёткую фотографию объекта. В примере использован вымышленный взрослый, созданный
+      ИИ.
   slots:
     - id: subject
       labels:
@@ -43,6 +45,7 @@ inputRequirements:
         zh-Hant: 人物、寵物或原創角色
         fr: Sujet
         it: Soggetto
+        ru: Объект
       min: 1
       max: 1
 showcaseExampleId: x_178
@@ -66,6 +69,7 @@ inspirationSources:
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
       it: Intero post o galleria di immagini
+      ru: Вся публикация или галерея изображений
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -79,6 +83,7 @@ inspirationSources:
       zh-Hant: 官方公開 API 快照
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -91,6 +96,7 @@ inspirationSources:
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
       fr: Prompt original complet non récupéré ; adaptation indépendante
       it: Prompt originale completo non recuperato; adattato autonomamente
+      ru: Полный оригинальный промпт не получен; самостоятельная адаптация
     metrics:
       - key: likes
         value: 6338
@@ -105,6 +111,7 @@ inspirationSources:
           zh-Hant: 按讚
           fr: Mentions J’aime
           it: Mi piace
+          ru: Лайки
       - key: conversation_count
         value: 365
         labels:
@@ -118,6 +125,7 @@ inspirationSources:
           zh-Hant: 回覆
           fr: Réponses
           it: Risposte
+          ru: Ответы
       - key: views
         value: null
         labels:
@@ -131,6 +139,7 @@ inspirationSources:
           zh-Hant: 播放或瀏覽
           fr: Vues
           it: Visualizzazioni
+          ru: Просмотры
       - key: reposts
         value: null
         labels:
@@ -144,6 +153,7 @@ inspirationSources:
           zh-Hant: 轉發
           fr: Republications
           it: Ripubblicazioni
+          ru: Репосты
       - key: bookmarks
         value: null
         labels:
@@ -157,6 +167,7 @@ inspirationSources:
           zh-Hant: 書籤
           fr: Signets
           it: Segnalibri
+          ru: Закладки
 source:
   author: Prompt Seen
   url: null
