@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { BASE, BUILD, homePath, message } from './support/artifact';
 import { localeIndex, promptDetail } from './support/content';
 import { worksOnShow } from './support/home';
-import { seriousViolations } from './support/a11y';
+import { seriousViolations, settle } from './support/a11y';
 
 type Locale = (typeof BUILD.locales)[number];
 const defaultLocale = BUILD.locales.find((l) => l.code === BUILD.defaultLocale)!;
@@ -19,7 +19,12 @@ async function chooseLanguage(page: Page, from: Locale, to: Locale) {
         .click();
     await input.fill(to.nativeName);
   }
-  await page.getByRole('option', { name: to.nativeName }).click();
+  const option = page.getByRole('option', { name: to.nativeName });
+  await expect(option).toBeVisible();
+  // While the lazy picker enters, Firefox's automatic scrollIntoView can scroll the
+  // document and dismiss it before the click. Keep the real full-list selection path.
+  await settle(page);
+  await option.click();
   await expect(page.locator('html')).toHaveAttribute('lang', to.htmlLang);
   await expect(page.locator('html')).toHaveAttribute('dir', to.direction);
 }
