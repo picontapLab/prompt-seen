@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import type { LocalizationSearchCase } from '../../../tests/support/localization-search';
+import { searchRecord, type LocalizationSearchCase } from '../../../tests/support/localization-search';
 import path from 'node:path';
 import { beforeAll, expect, it } from 'vitest';
 import { loadConfig } from '../../../src/config/load';
@@ -17,10 +17,17 @@ const cases: LocalizationSearchCase[] = JSON.parse(
 let engine: Engine;
 
 beforeAll(() => {
+  expect(
+    new Set(cases.map((entry) => entry.query)).size,
+    'Arabic acceptance requires at least 30 distinct frozen search scenarios',
+  ).toBeGreaterThanOrEqual(30);
   const config = loadConfig(root, { BUILD_MODE: 'preview' });
   const loaded = loadContent({ root, config, url: createUrlModule(urlConfigOf(config)) });
   expect(loaded.findings.blocking).toBe(0);
   const content = loaded.built!;
+  for (const entry of cases)
+    for (const key of entry.expectedKeys)
+      expect(searchRecord(content.locales.get('ar')!, key)?.localization.localStatus, key).toBe('current');
   const details = new Map(
     content.details
       .filter((detail) => detail.locale === 'ar')

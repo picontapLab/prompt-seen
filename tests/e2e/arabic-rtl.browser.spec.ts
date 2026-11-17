@@ -1,15 +1,9 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import { renderTemplate } from '../../src/modules/template';
 import { BASE, message } from './support/artifact';
-import { arabic, expectArabicState } from './support/arabic';
+import { arabic, expectArabicState, hydrated } from './support/arabic';
 import { templateDetail } from './support/content';
-
-const hydrated = (page: Page, selector: string) =>
-  page.waitForFunction((selector) => {
-    const element = document.querySelector(selector);
-    return element && Object.keys(element).some((key) => key.startsWith('__reactProps'));
-  }, selector);
 
 test('Arabic browser acceptance uses the requested artifact state', expectArabicState);
 

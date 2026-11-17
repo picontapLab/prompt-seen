@@ -3,7 +3,7 @@ import path from 'node:path';
 import { expect, test } from '@playwright/test';
 import { searchRecord, type LocalizationSearchCase } from '../support/localization-search';
 import { BASE, ROOT, message } from './support/artifact';
-import { arabic, expectArabicState } from './support/arabic';
+import { arabic, expectArabicState, hydrated } from './support/arabic';
 import { localeIndex, promptDetail, templateDetail } from './support/content';
 import { layoutProblems } from './support/layout';
 import { seriousViolations } from './support/a11y';
@@ -100,6 +100,7 @@ test.describe('Arabic typography and layout', () => {
           await page.evaluate(() => document.fonts.ready);
           const preview = page.locator('[data-static-from="lg"] > button');
           if (await preview.isVisible()) {
+            await hydrated(page, '[data-static-from="lg"] > button');
             await preview.click();
             await expect(preview).toHaveAttribute('aria-expanded', 'true');
           }
