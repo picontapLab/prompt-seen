@@ -204,7 +204,8 @@ test('“Clear filters” stays where it first appears while the chosen filters 
 
 test.describe('§12.8-10: nothing moves once fonts and images have loaded', () => {
   test.skip(({ browserName }) => browserName !== 'chromium', 'layout shifts are read with the Layout Instability API');
-  test.setTimeout(240_000);
+  // Each page gets its own cold context and budget as the enabled locale set grows.
+  test.setTimeout(90_000);
   // Every built language's home and list (CJK and Arabic pages swap other faces than Latin
   // ones), and one Prompt and template page.
   const pages = [
@@ -219,29 +220,28 @@ test.describe('§12.8-10: nothing moves once fonts and images have loaded', () =
     { name: 'desktop', width: 1440, height: 900 },
     { name: 'phone', width: 390, height: 844 },
   ])
-    test(`${vp.name}, cold cache on a slow network: layout shift stays under 0.1`, async ({ page }) => {
-      await page.setViewportSize({ width: vp.width, height: vp.height });
-      await page.addInitScript(() => {
-        const w = window as unknown as { __cls: number; __shifts: string[] };
-        w.__cls = 0;
-        w.__shifts = [];
-        new PerformanceObserver((list) => {
-          for (const e of list.getEntries() as (PerformanceEntry & {
-            value: number;
-            hadRecentInput: boolean;
-            sources?: { node?: Node }[];
-          })[]) {
-            if (e.hadRecentInput) continue;
-            w.__cls += e.value;
-            w.__shifts.push(
-              `${e.value.toFixed(3)} ${(e.sources ?? []).map((s) => (s.node as Element | undefined)?.className ?? s.node?.nodeName).join(',')}`,
-            );
-          }
-        }).observe({ type: 'layout-shift', buffered: true });
-      });
-      await slowColdVisit(page);
-      const results: string[] = [];
-      for (const { name, path } of pages) {
+    for (const { name, path } of pages)
+      test(`${vp.name}, ${name}, cold cache on a slow network: layout shift stays under 0.1`, async ({ page }) => {
+        await page.setViewportSize({ width: vp.width, height: vp.height });
+        await page.addInitScript(() => {
+          const w = window as unknown as { __cls: number; __shifts: string[] };
+          w.__cls = 0;
+          w.__shifts = [];
+          new PerformanceObserver((list) => {
+            for (const e of list.getEntries() as (PerformanceEntry & {
+              value: number;
+              hadRecentInput: boolean;
+              sources?: { node?: Node }[];
+            })[]) {
+              if (e.hadRecentInput) continue;
+              w.__cls += e.value;
+              w.__shifts.push(
+                `${e.value.toFixed(3)} ${(e.sources ?? []).map((s) => (s.node as Element | undefined)?.className ?? s.node?.nodeName).join(',')}`,
+              );
+            }
+          }).observe({ type: 'layout-shift', buffered: true });
+        });
+        await slowColdVisit(page);
         await page.goto(`${BASE}${path}`, { waitUntil: 'load', timeout: 60_000 });
         await page.evaluate(() => document.fonts.ready);
         await page.waitForTimeout(1000);
@@ -249,9 +249,7 @@ test.describe('§12.8-10: nothing moves once fonts and images have loaded', () =
           const w = window as unknown as { __cls: number; __shifts: string[] };
           return { cls: w.__cls, shifts: w.__shifts };
         });
-        results.push(`${name} ${cls.toFixed(3)}`);
         expect(cls, `${name}: ${shifts.join(' | ')}`).toBeLessThan(0.1);
-      }
-      test.info().annotations.push({ type: 'cls', description: results.join(', ') });
-    });
+        test.info().annotations.push({ type: 'cls', description: `${name} ${cls.toFixed(3)}` });
+      });
 });
