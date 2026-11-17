@@ -9,6 +9,12 @@ describe('formatLocale', () => {
   });
 
   it('round-trips registry codes', () => {
-    for (const code of ['en', 'zh-Hans', 'pt-BR', 'ar']) expect(registryCode(formatLocale(code))).toBe(code);
+    for (const code of ['en', 'zh-Hans', 'zh-Hant', 'pt-BR', 'ar']) expect(registryCode(formatLocale(code))).toBe(code);
+  });
+  it('uses Gregorian dates and Latin digits for Traditional Chinese', () => {
+    const code = formatLocale('zh-Hant');
+    expect(new Intl.NumberFormat(code).format(1000000)).toBe('1,000,000');
+    expect(new Intl.DateTimeFormat(code, { timeZone: 'UTC' }).resolvedOptions().calendar).toBe('gregory');
+    expect(new Intl.NumberFormat(code, { style: 'percent' }).format(0.25)).toBe('25%');
   });
 });

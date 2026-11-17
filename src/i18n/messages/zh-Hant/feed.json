@@ -1,0 +1,80 @@
+{
+  "band": {
+    "label": "本週精選"
+  },
+  "card": {
+    "byModel": "由 {model} 生成",
+    "notVerified": "尚未驗證"
+  },
+  "count": "{count, plural, other {# 格}}",
+  "description": "經過實測的圖像提示詞，按最新排列：每條都附生成的圖片、測試所用的模型與日期，以及各句短語作用的說明。",
+  "documentTitle": "圖像提示詞",
+  "documentTitlePage": "圖像提示詞（第 {page} 頁）",
+  "feed": {
+    "label": "提示詞",
+    "skip": "跳過清單"
+  },
+  "filters": {
+    "active": "目前篩選條件",
+    "all": "全部",
+    "clear": "清除篩選",
+    "empty": {
+      "body": "去掉一個條件，或清除全部條件查看所有提示詞。",
+      "title": "沒有符合這些條件的提示詞"
+    },
+    "failed": "篩選沒有生效，請重試。",
+    "featured": "精選",
+    "latest": "最新",
+    "noMatch": "在其他條件下沒有結果",
+    "open": "篩選",
+    "openCount": "篩選（{count}）",
+    "panel": "用途 · 畫幅",
+    "panelCount": "用途 · 畫幅（{count}）",
+    "panelTitle": "用途、畫幅與參考圖",
+    "ref": "參考圖",
+    "refs": {
+      "none": "純文字",
+      "required": "需要參考圖"
+    },
+    "results": "{count, plural, =0 {沒有結果} other {# 個結果}}",
+    "shape": "畫幅",
+    "shapes": {
+      "landscape": "橫幅",
+      "panorama": "全景",
+      "portrait": "豎幅",
+      "square": "方形"
+    },
+    "show": "{count, plural, =0 {沒有結果} other {顯示 # 個結果}}",
+    "sort": "排序",
+    "style": "風格",
+    "use": "用途"
+  },
+  "interlude": {
+    "collection": "合集 · {count, plural, other {# 件作品}}",
+    "feature": "特寫：{title}",
+    "fields": "{count, plural, other {# 個欄位}}",
+    "open": "打開這一格",
+    "openCollection": "查看合集",
+    "templates": "範本 · 填空即可生成"
+  },
+  "intro": "我們測試過的每一條提示詞，按最新排列，每條都印著它生成的那一格畫面。指向作品可以看提示詞的開頭；打開它可以看完整提示詞、測試記錄，以及每句話起的作用。",
+  "introLess": "收起",
+  "introMore": "展開",
+  "pageOf": "第 {page} 頁，共 {pages} 頁",
+  "status": {
+    "developing": "正在顯影第 {from}–{to} 格…",
+    "developingEarlier": "正在顯影前面的畫面…",
+    "end": "膠卷到頭了 · 已顯示全部 {total} 格",
+    "failed": "第 {from}–{to} 格沒有載入成功。",
+    "failedEarlier": "前面的畫面沒有載入成功。",
+    "loaded": "{count, plural, other {又載入了 # 格}}",
+    "page": "頁碼",
+    "pageLink": "第 {page} 頁",
+    "pages": "清單分頁",
+    "reload": "重新載入",
+    "retry": "重試",
+    "shown": "已顯示第 {from}–{to} 格，共 {total} 格",
+    "stale": "頁面打開後，清單已更新。"
+  },
+  "title": "膠卷"
+}

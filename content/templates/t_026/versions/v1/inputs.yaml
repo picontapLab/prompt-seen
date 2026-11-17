@@ -11,6 +11,7 @@ instructions:
   es: Sube una foto de una persona vista de perfil, seguida de dos a cuatro fotos
     de recuerdos; indica un nombre y un color de acento.
   ko: 옆모습 사진 한 장을 먼저, 추억 사진 두 장에서 네 장을 다음에 업로드하고 이름과 포인트 색을 제공하세요.
+  zh-Hant: 先上傳一張側臉照片，再上傳兩至四張回憶照片，並提供姓名與強調色。
 slots:
   - id: profile
     labels:
@@ -21,6 +22,7 @@ slots:
       pt-BR: Perfil
       es: Perfil
       ko: 옆모습
+      zh-Hant: 側臉輪廓
     min: 1
     max: 1
   - id: memories
@@ -32,5 +34,6 @@ slots:
       pt-BR: Memórias
       es: Recuerdos
       ko: 추억
+      zh-Hant: 回憶或動作照片
     min: 2
     max: 4

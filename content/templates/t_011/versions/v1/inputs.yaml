@@ -11,6 +11,7 @@ instructions:
   es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas;
     la foto de producto es opcional.
   ko: 기기, 확인한 구조 설명과 정확한 라벨을 제공하세요. 제품 사진은 선택 사항입니다.
+  zh-Hant: 提供裝置名稱、已核對的結構資料與準確的標註文字；商品照片為選填。
 slots:
   - id: product
     labels:
@@ -21,5 +22,6 @@ slots:
       pt-BR: Produto
       es: Producto
       ko: 제품
+      zh-Hant: 產品外觀
     min: 0
     max: 1

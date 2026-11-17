@@ -1,0 +1,146 @@
+{
+  "measuredAt": "2026-11-17T15:37:04.965Z",
+  "build": {
+    "buildId": "zh-hant-preparation-root",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "pt-BR",
+        "pathPrefix": "pt-br",
+        "nativeName": "Português (Brasil)",
+        "htmlLang": "pt-BR",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ko",
+        "pathPrefix": "ko",
+        "nativeName": "한국어",
+        "htmlLang": "ko",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "fileCount": 27704,
+  "htmlFiles": 2818,
+  "htmlBytes": 331718231,
+  "indexes": [
+    {
+      "file": "dist/generated/de/search/index.json",
+      "bytes": 1308320,
+      "gzipBytes": 234623
+    },
+    {
+      "file": "dist/generated/en/search/index.json",
+      "bytes": 1182569,
+      "gzipBytes": 211926
+    },
+    {
+      "file": "dist/generated/es/search/index.json",
+      "bytes": 1289688,
+      "gzipBytes": 231359
+    },
+    {
+      "file": "dist/generated/ja/search/index.json",
+      "bytes": 2160688,
+      "gzipBytes": 376287
+    },
+    {
+      "file": "dist/generated/ko/search/index.json",
+      "bytes": 1904799,
+      "gzipBytes": 325518
+    },
+    {
+      "file": "dist/generated/pt-BR/search/index.json",
+      "bytes": 1317640,
+      "gzipBytes": 235357
+    },
+    {
+      "file": "dist/generated/zh-Hans/search/index.json",
+      "bytes": 1744086,
+      "gzipBytes": 296962
+    }
+  ]
+}

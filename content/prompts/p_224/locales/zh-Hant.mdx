@@ -1,0 +1,28 @@
+---
+title: 猴子舉燈籠
+description: 六個不同的生成姿態呈現猴子舉起、放下燈籠與眨眼
+status: published
+updatedAt: 2026-11-04
+translation:
+  sourceLocale: en
+  sourceHash: sha256:13eb0850594dd996
+  reviewStatus: reviewed
+---
+
+## 使用方法
+
+使用記錄中的完整提示詞，並依序加入展示的原始參考素材。修改提示詞或輸入後即為尚未測試的變體。
+
+## 觀察結果
+
+六個不同的生成姿態呈現猴子提起、放下燈籠與眨眼。以逐列順序裁為 512px GIF，每格 300ms，無限循環；各姿態間背景略有漂移。這是合成 GIF，不是原生 GIF 輸出。
+
+## GIF 合成
+
+模型生成三欄兩列的 PNG 精靈圖表。依從左到右、從上到下的順序裁切等大格子，編碼為六幀，每幀 300 毫秒，無限循環。成品 GIF 為 512 × 512 像素，每輪 1.8 秒，沒有加入補間。這是合成動畫，並非模型直接回傳的原生 GIF。
+
+## 來源與生成
+
+來源提供原始提示詞；本次製作使用另行記錄的實際提示詞。[來源](https://developers.openai.com/api/docs/guides/image-prompting#generate-a-looping-gif)。來源貼文互動數不代表這個新生成範例的熱度。
+
+使用 GPT Image 2.6 生成。本例使用的所有參考圖片均為本專案生成。

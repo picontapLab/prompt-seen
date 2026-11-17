@@ -1,0 +1,124 @@
+{
+  "actions": {
+    "label": "提示詞操作"
+  },
+  "annotations": {
+    "heading": "每句話的作用"
+  },
+  "breadcrumb": {
+    "home": "首頁",
+    "label": "麵包屑導覽",
+    "prompts": "提示詞",
+    "templates": "範本"
+  },
+  "copy": {
+    "done": "已複製",
+    "failed": "複製失敗",
+    "failedHint": "請選取提示詞文字，使用鍵盤或選單複製。",
+    "label": "複製提示詞"
+  },
+  "customize": "用範本改寫",
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "examples": {
+    "cover": "封面",
+    "heading": "測試樣張",
+    "model": "模型",
+    "notes": "觀察",
+    "outputs": "生成結果",
+    "parameter": "參數",
+    "parameters": "參數",
+    "promptUsed": "這張樣張使用的提示詞",
+    "provider": "服務供應商",
+    "recorded": "記錄日期",
+    "references": "參考圖",
+    "selectRun": "實測結果",
+    "template": "範本 {version}",
+    "unknown": "未記錄",
+    "value": "值"
+  },
+  "image": {
+    "dimensions": "{width} × {height}",
+    "failed": "圖片沒有載入出來。",
+    "original": "原尺寸圖片",
+    "retry": "重試",
+    "show": "顯示第 {n} 張圖（共 {total} 張）"
+  },
+  "inspiration": {
+    "adaptation": "本站提示詞為獨立改寫，展示圖片為本站記錄的生成結果。",
+    "evidence": "證據",
+    "heading": "靈感來源與證據",
+    "observed": "觀察時間：{date}",
+    "original": "原始內容",
+    "scope": "這些數字屬於原始貼文或影片，是調研時的快照，並非即時計數或本站圖片的評分。",
+    "snapshot": "來源互動快照"
+  },
+  "kinds": {
+    "prompt": "提示詞",
+    "template": "範本"
+  },
+  "related": {
+    "similar": "相近提示詞",
+    "templates": "相關範本"
+  },
+  "share": {
+    "copied": "連結已複製",
+    "failed": "連結複製失敗",
+    "label": "分享"
+  },
+  "sheet": {
+    "characters": "{count} 個字元",
+    "collapse": "收起",
+    "expand": "展開全文",
+    "expandLines": "展開全文（共 {lines} 行）",
+    "label": "提示詞 · {language}",
+    "languageNote": "提示詞保持原始語言；翻譯後生成效果可能不同。"
+  },
+  "source": {
+    "aiGenerated": "AI 生成的圖片",
+    "algorithmic": "由程式生成",
+    "author": "作者：{author}",
+    "creator": "創作者：{creator}",
+    "heading": "來源與授權",
+    "image": "圖片",
+    "licence": "授權：{licence}",
+    "prompt": "提示詞",
+    "unknown": "來源未知"
+  },
+  "template": {
+    "choices": "{count} 個選項",
+    "examples": "用這個範本生成的作品",
+    "field": "欄位",
+    "fieldCount": "{count} 個欄位",
+    "fields": "欄位",
+    "listLimit": "{min}–{max} 項",
+    "maxLength": "最多 {max} 個字元",
+    "optional": "可選",
+    "required": "必填",
+    "sampleImage": "此圖對應預設示例；填寫其他內容會得到不同的結果。",
+    "testedImage": "這張圖片來自目前參數的實測記錄。",
+    "type": "類型",
+    "types": {
+      "enum": "選項",
+      "string": "文字",
+      "string-list": "清單"
+    },
+    "unmatchedImage": "目前參數尚無實測圖片。此處展示其他樣例。",
+    "value": "預設示例中的值",
+    "version": "版本 {version}"
+  },
+  "test": {
+    "dimensions": "{width} × {height}",
+    "label": "測試記錄",
+    "lastTested": "測試於 {date}",
+    "neverTested": "尚未測試",
+    "notVerified": "尚未驗證",
+    "recordedUnknownModel": "已有實測結果 · 模型身分尚未驗證",
+    "reference": {
+      "none": "無需參考圖",
+      "optional": "可選參考圖",
+      "required": "需要參考圖"
+    },
+    "updated": "更新於 {date}",
+    "verifiedWith": "已用 {model} 測試"
+  }
+}

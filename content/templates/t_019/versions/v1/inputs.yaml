@@ -11,6 +11,7 @@ instructions:
   es: Indica el concepto de producto, el color de acento y las características de
     diseño; la referencia del exterior es opcional.
   ko: 제품 콘셉트, 포인트 색과 디자인 특징을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
+  zh-Hant: 提供商品概念、強調色與設計特徵；外觀參考圖片為選填。
 slots:
   - id: product
     labels:
@@ -21,5 +22,6 @@ slots:
       pt-BR: Produto
       es: Producto
       ko: 제품
+      zh-Hant: 產品外觀
     min: 0
     max: 1

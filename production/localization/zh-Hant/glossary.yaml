@@ -1,0 +1,31 @@
+locale: zh-Hant
+register: Standard written Traditional Chinese with Taiwan product terminology
+terms:
+  - { source: Prompt, preferred: 提示詞 }
+  - { source: Template, preferred: 範本, searchAliases: [模板, template] }
+  - { source: AI model, preferred: AI 模型, note: Do not treat a model as a template. }
+  - { source: Collection, preferred: 合集 }
+  - { source: Topic, preferred: 主題, searchAliases: [主题] }
+  - { source: Reference image, preferred: 參考圖片, searchAliases: [參考圖, 参考图片, 参考图, reference image] }
+  - { source: Product photography, preferred: 商品攝影, searchAliases: [產品攝影, 商品摄影, 产品摄影, product photography, packshot] }
+  - { source: Portrait, preferred: 人像, searchAliases: [肖像, portrait] }
+  - { source: Poster, preferred: 海報, searchAliases: [海报, poster] }
+  - { source: Lantern, preferred: 燈籠, searchAliases: [灯笼] }
+  - { source: Copy, preferred: 複製 }
+  - { source: Download, preferred: 下載 }
+  - { source: Reset, preferred: 重設 }
+  - { source: Save draft, preferred: 儲存草稿 }
+  - { source: Favorites, preferred: 收藏 }
+  - { source: Search, preferred: 搜尋 }
+  - { source: Filter, preferred: 篩選 }
+  - { source: Settings, preferred: 設定 }
+  - { source: File, preferred: 檔案 }
+  - { source: Video, preferred: 影片 }
+  - { source: Information, preferred: 資訊 }
+  - { source: Verified, preferred: 已驗證 }
+  - { source: Not verified, preferred: 尚未驗證 }
+boundaries:
+  - Alias expansion occurs only in the zh-Hant index profile.
+  - Generic photography does not imply product photography.
+  - Preserve exact lettering reported in generated images, including Simplified Chinese.
+  - Review 發/髮, 後/后, 乾/幹/干 and proper names in context; no global character folding.

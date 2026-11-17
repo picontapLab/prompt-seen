@@ -1,0 +1,37 @@
+{
+  "completedAt": "2026-11-17T14:59:57.295325+00:00",
+  "branch": "codex/traditional-chinese-localization",
+  "buildId": "zh-hant-preparation-root",
+  "buildMode": "production",
+  "builtLocales": [
+    "en",
+    "zh-Hans",
+    "es",
+    "pt-BR",
+    "ja",
+    "ko",
+    "de"
+  ],
+  "traditionalChineseEnabled": false,
+  "linkDifferences": [],
+  "logHashes": {
+    "unit": "ebe895618b449367a1ea2304a97be619c4a70afe6e645f0d4677a600aa54c098",
+    "typecheck": "c461654f383f04a38bf507804ef10b90aa23919397d10c3f5aacbff1fc24b284",
+    "lint": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6",
+    "content": "e11023ccc46c62672faf61dc350c587c16a1f562b70001ca39c890ca27e1c722",
+    "build": "80ea136230a2b9e0cce250c86dbf57f22aca2624d0e57ad7032172cf8a86e55e",
+    "browser": "88ad6b8b159b292f3792d1d71ffc32e1d77d666defe3e77e5d45a75fd7a56355"
+  },
+  "unitSummary": "105 passed | 27 skipped (132)",
+  "browserSummary": "4 passed, 18 skipped; actual bundled Worker fixture in Chromium, Firefox and WebKit plus disabled-route HTTP check",
+  "contentSummary": "0 errors, 0 publish errors, 10 existing warnings",
+  "typecheck": "passed",
+  "lint": "passed",
+  "importDryRun": "38 batches, zero conflicts; see import-dry-run.json",
+  "limits": [
+    "No zh-Hant artifact or full-corpus acceptance yet",
+    "No current media/GIF visual acceptance",
+    "No approvals generated or translations promoted",
+    "No deployment or real OS IME validation"
+  ]
+}

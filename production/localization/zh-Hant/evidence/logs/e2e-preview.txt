@@ -1,0 +1,110 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker processes
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/17 15:58:28 [notice] 1#1: start worker process 29
+
+Running 31 tests using 2 workers
+
+(node:7320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7321) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [http] › tests/e2e/traditional-chinese.http.spec.ts:8:1 › Traditional Chinese artifact follows preview and production registration (45ms)
+  ✓   2 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_005 (52ms)
+  ✓   3 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_012 (29ms)
+  ✓   4 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_151 (25ms)
+  -   6 [http] › tests/e2e/traditional-chinese.http.spec.ts:44:3 › Traditional Chinese raw HTML and original prompt language › fallbacks remain noindex and absent from external Markdown export
+  ✓   5 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_217 (31ms)
+[WebServer] 2026/11/17 15:58:29 [error] 20#20: *7 "/srv/dist/prompt-seen/zh-hant/unknown-traditionalChinese-acceptance-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /prompt-seen/zh-hant/unknown-traditionalChinese-acceptance-page/ HTTP/1.1", host: "127.0.0.1:8096"
+  ✓   7 [http] › tests/e2e/traditional-chinese.http.spec.ts:56:3 › Traditional Chinese raw HTML and original prompt language › search stays noindex and unknown Traditional Chinese addresses return 404 (30ms)
+(node:7568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (1.3s)
+  ✓  10 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (566ms)
+  ✓   8 [chromium] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (2.2s)
+  ✓  11 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (830ms)
+  ✓  12 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (817ms)
+  ✓  14 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (1.7s)
+  ✓  13 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (2.2s)
+(node:8004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (1.4s)
+(node:8296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (1.6s)
+  ✓  16 [firefox] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (3.5s)
+  ✓  18 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (1.2s)
+  ✓  19 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (1.3s)
+  ✓  20 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (1.3s)
+  ✓  22 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (1.7s)
+  ✓  21 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (3.0s)
+(node:8695) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (1.8s)
+(node:8760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  25 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (717ms)
+  ✓  24 [webkit] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (3.0s)
+  ✓  26 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (1.9s)
+  ✓  27 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (1.2s)
+  ✓  28 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (1.3s)
+  ✓  30 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (2.0s)
+  ✓  29 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (3.7s)
+  ✓  31 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (1.9s)
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 20#20: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 20#20: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 21#21: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 23#23: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 21#21: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 23#23: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 24#24: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 25#25: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 24#24: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 25#25: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 26#26: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 26#26: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 27#27: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 28#28: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 27#27: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 28#28: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 29#29: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 29#29: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 22#22: exiting
+[WebServer] 2026/11/17 15:58:54 [notice] 22#22: exit
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 17 (SIGCHLD) received from 27
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/17 15:58:54 [notice] 1#1: exit
+
+  1 skipped
+  30 passed (27.0s)

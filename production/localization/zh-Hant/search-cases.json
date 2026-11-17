@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "locale": "zh-Hant",
+  "cases": [
+    {
+      "query": "霓虹 人像",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "領域別名與無空格查詢"
+    },
+    {
+      "query": "霓虹人像",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "領域別名與無空格查詢"
+    },
+    {
+      "query": "霓虹 肖像",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "領域別名與無空格查詢"
+    },
+    {
+      "query": "水墨 梅枝",
+      "expectedKeys": [
+        "prompt/p_012"
+      ],
+      "topK": 5,
+      "reason": "繁體說明與原始提示詞分離"
+    },
+    {
+      "query": "水墨梅枝",
+      "expectedKeys": [
+        "prompt/p_012"
+      ],
+      "topK": 5,
+      "reason": "繁體說明與原始提示詞分離"
+    },
+    {
+      "query": "雙人 婚紗",
+      "expectedKeys": [
+        "prompt/p_115"
+      ],
+      "topK": 5,
+      "reason": "多參考圖片"
+    },
+    {
+      "query": "商品攝影 棚拍",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "有界商品攝影別名"
+    },
+    {
+      "query": "產品攝影 棚拍",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "有界商品攝影別名"
+    },
+    {
+      "query": "产品摄影 棚拍",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "有界商品攝影別名"
+    },
+    {
+      "query": "packshot 棚拍",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "有界商品攝影別名"
+    },
+    {
+      "query": "富士山 海報",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "混合語言與文字"
+    },
+    {
+      "query": "富士山 海报",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "混合語言與文字"
+    },
+    {
+      "query": "富士山 poster",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "混合語言與文字"
+    },
+    {
+      "query": "商品 海報 範本",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5,
+      "reason": "範本類型"
+    },
+    {
+      "query": "商品 海报 模板",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5,
+      "reason": "範本類型"
+    },
+    {
+      "query": "水墨 範本",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "topK": 5,
+      "reason": "範本別名"
+    },
+    {
+      "query": "水墨 模板",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "topK": 5,
+      "reason": "範本別名"
+    },
+    {
+      "query": "猴子 燈籠",
+      "expectedKeys": [
+        "prompt/p_224"
+      ],
+      "topK": 5,
+      "reason": "有界異體詞"
+    },
+    {
+      "query": "猴子 灯笼",
+      "expectedKeys": [
+        "prompt/p_224"
+      ],
+      "topK": 5,
+      "reason": "有界異體詞"
+    },
+    {
+      "query": "GPT Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "全半角與模型名稱"
+    },
+    {
+      "query": "ＧＰＴ Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "全半角與模型名稱"
+    },
+    {
+      "query": "p_217",
+      "expectedKeys": [
+        "prompt/p_217"
+      ],
+      "topK": 5,
+      "reason": "穩定 ID"
+    },
+    {
+      "query": "海報 合集",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5,
+      "reason": "合集分組"
+    },
+    {
+      "query": "水墨 主題",
+      "expectedKeys": [
+        "topic/style/ink"
+      ],
+      "topK": 5,
+      "reason": "主題分組"
+    },
+    {
+      "query": "zzqvnoresult984731",
+      "expectedKeys": [],
+      "topK": 5,
+      "expectedTotal": 0,
+      "reason": "確定無結果"
+    },
+    {
+      "query": "packshot",
+      "expectedKeys": [],
+      "excludedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "一般人像攝影不應因攝影一詞取得商品攝影別名"
+    },
+    {
+      "query": "模板",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "excludedKeys": [
+        "prompt/p_217"
+      ],
+      "topK": 5,
+      "reason": "AI 模型與範本不同"
+    }
+  ]
+}

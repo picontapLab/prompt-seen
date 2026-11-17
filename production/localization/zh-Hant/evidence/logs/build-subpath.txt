@@ -1,0 +1,164 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 build
+> npm run gen && npm run content:build && next build && tsx scripts/package.ts
+
+npm warn Unknown env config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 gen
+> tsx scripts/config-gen.ts
+
+config: production build zh-hant-reviewed-subpath, basePath "/prompt-seen", locales en, zh-Hans, es, pt-BR, ja, ko, de, zh-Hant
+npm warn Unknown env config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 content:build
+> tsx scripts/content-build.ts
+
+  build-info          1 file(s)  public/generated/build.json: build id, mode, base path and locales
+  content          3057 file(s)  .generated/content/: manifest, per-locale indexes and detail models
+  cloudflare          2 file(s)  deploy/generated/cloudflare/_headers, _redirects
+  display-fonts     141 file(s)  public/generated/fonts/: CJK display font subsets of titles and display-face interface text
+  feed              112 file(s)  public/generated/{locale}/feed/: list pages and filter index; .generated/feed/: showcase band
+  netlify             1 file(s)  deploy/generated/netlify/_redirects: redirects and error pages for Netlify
+  nginx               1 file(s)  deploy/generated/nginx/prompt-seen.conf: reference host include
+  prompt-json      2280 file(s)  public/generated/{locale}/prompts/{slug}.json: detail models for the popup
+  robots              0 file(s)  deploy/generated/robots-snippet.txt: crawler rules for the host to merge (snippet mode)
+  search              8 file(s)  public/generated/{locale}/search/index.json: per-locale search index
+  static-redirects   25 file(s)  deploy/generated/static/: meta refresh pages for hosts without redirect rules
+  vercel              1 file(s)  deploy/generated/vercel/vercel.json: redirects for Vercel
+content:build production zh-hant-reviewed-subpath: 5629 file(s) from 12 emitter(s); en 285p/75t/16c/3s/2pg, zh-Hans 285p/75t/16c/3s/2pg, es 285p/75t/16c/3s/2pg, pt-BR 285p/75t/16c/3s/2pg, ja 285p/75t/16c/3s/2pg, ko 285p/75t/16c/3s/2pg, de 285p/75t/16c/3s/2pg, zh-Hant 285p/75t/16c/3s/2pg
+▲ Next.js 16.4.2 (Turbopack)
+✓ Running next.config.ts took 681ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.0s
+  Running TypeScript ...
+  Finished TypeScript in 18.1s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/6095) ...
+  Generating static pages using 9 workers (1523/6095) 
+  Generating static pages using 9 workers (3047/6095) 
+  Generating static pages using 9 workers (4571/6095) 
+✓ Generating static pages using 9 workers (6095/6095) in 64s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[locale]
+│ ├ ● /en
+│ ├ ● /zh-hans
+│ ├ ● /es
+│ └ ● [+5 more paths]
+├   /[locale]/[page]
+│ ├ ● /en/about
+│ ├ ● /en/license
+│ ├ ● /zh-hans/about
+│ └ ● [+13 more paths]
+├   /[locale]/404
+│ ├ ● /en/404
+│ ├ ● /zh-hans/404
+│ ├ ● /es/404
+│ └ ● [+5 more paths]
+├   /[locale]/410
+│ ├ ● /en/410
+│ ├ ● /zh-hans/410
+│ ├ ● /es/410
+│ └ ● [+5 more paths]
+├   /[locale]/categories/[slug]
+│ ├ ● /en/categories/landscape
+│ ├ ● /en/categories/poster
+│ ├ ● /zh-hans/categories/landscape
+│ └ ● [+13 more paths]
+├   /[locale]/collections
+│ ├ ● /en/collections
+│ ├ ● /zh-hans/collections
+│ ├ ● /es/collections
+│ └ ● [+5 more paths]
+├   /[locale]/collections/[slug]
+│ ├ ● /en/collections/social-everyday-portrait-adaptations
+│ ├ ● /en/collections/social-nine-frame-composed-gifs
+│ ├ ● /en/collections/english-social-reactions
+│ └ ● [+125 more paths]
+├   /[locale]/explore
+│ ├ ● /en/explore
+│ ├ ● /zh-hans/explore
+│ ├ ● /es/explore
+│ └ ● [+5 more paths]
+├   /[locale]/favorites
+│ ├ ● /en/favorites
+│ ├ ● /zh-hans/favorites
+│ ├ ● /es/favorites
+│ └ ● [+5 more paths]
+├   /[locale]/prompts
+│ ├ ● /en/prompts
+│ ├ ● /zh-hans/prompts
+│ ├ ● /es/prompts
+│ └ ● [+5 more paths]
+├   /[locale]/prompts/[slug]
+│ ├ ● /en/prompts/adapted-s14-everyday-portrait
+│ ├ ● /en/prompts/adapted-s11-everyday-portrait
+│ ├ ● /en/prompts/adapted-s04-everyday-portrait
+│ └ ● [+2277 more paths]
+├   /[locale]/prompts/[slug]/index.md
+│ ├ ● /en/prompts/adapted-s14-everyday-portrait/index.md
+│ ├ ● /en/prompts/adapted-s11-everyday-portrait/index.md
+│ ├ ● /en/prompts/adapted-s04-everyday-portrait/index.md
+│ └ ● [+2256 more paths]
+├   /[locale]/prompts/page/[page]
+│ ├ ● /en/prompts/page/2
+│ ├ ● /en/prompts/page/3
+│ ├ ● /en/prompts/page/4
+│ └ ● [+85 more paths]
+├   /[locale]/search
+│ ├ ● /en/search
+│ ├ ● /zh-hans/search
+│ ├ ● /es/search
+│ └ ● [+5 more paths]
+├   /[locale]/sitemap-pages.xml
+│ ├ ● /en/sitemap-pages.xml
+│ ├ ● /zh-hans/sitemap-pages.xml
+│ ├ ● /es/sitemap-pages.xml
+│ └ ● [+5 more paths]
+├   /[locale]/styles/[slug]
+│ ├ ● /en/styles/ink
+│ ├ ● /zh-hans/styles/ink
+│ ├ ● /es/styles/ink
+│ └ ● [+5 more paths]
+├   /[locale]/templates
+│ ├ ● /en/templates
+│ ├ ● /zh-hans/templates
+│ ├ ● /es/templates
+│ └ ● [+5 more paths]
+├   /[locale]/templates/[slug]
+│ ├ ● /en/templates/birthday-main-character-card
+│ ├ ● /en/templates/gaming-ghost-reaction-stickers
+│ ├ ● /en/templates/supportive-frog-reaction-stickers
+│ └ ● [+597 more paths]
+├   /[locale]/templates/[slug]/index.md
+│ ├ ● /en/templates/birthday-main-character-card/index.md
+│ ├ ● /en/templates/gaming-ghost-reaction-stickers/index.md
+│ ├ ● /en/templates/supportive-frog-reaction-stickers/index.md
+│ └ ● [+594 more paths]
+├   /[locale]/translation-missing
+│ ├ ● /en/translation-missing
+│ ├ ● /zh-hans/translation-missing
+│ ├ ● /es/translation-missing
+│ └ ● [+5 more paths]
+├   /[locale]/use-cases/[slug]
+│ ├ ● /en/use-cases/_none
+│ ├ ● /zh-hans/use-cases/_none
+│ ├ ● /es/use-cases/_none
+│ └ ● [+5 more paths]
+├ ○ /icon.svg
+├ ○ /llms.txt
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+package: out/ -> dist/prompt-seen/ (production, 8 locale(s))

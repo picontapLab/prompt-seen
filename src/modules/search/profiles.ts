@@ -1,4 +1,5 @@
 import { koreanAliases } from './korean';
+import { traditionalChineseAliases } from './traditional-chinese';
 import { normalizeTerm, queryTerms, tokenize } from './tokenize';
 import type { SearchKind } from './types';
 
@@ -121,6 +122,7 @@ const PROFILES = {
 } as const;
 
 export function domainAliases(text: string, locale: string, kind?: SearchKind): string {
+  if (locale === 'zh-Hant') return traditionalChineseAliases(text, kind);
   const language = locale.split('-')[0]!.toLowerCase();
   if (language === 'ko')
     return (

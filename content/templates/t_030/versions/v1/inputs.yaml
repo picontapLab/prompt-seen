@@ -11,6 +11,7 @@ instructions:
   es: Sube una referencia de personaje. Aporta exactamente dieciséis textos cortos
     en orden de lectura.
   ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 읽는 순서대로 짧은 문구를 정확히 열여섯 개 제공하세요.
+  zh-Hant: 上傳一張角色參考圖片，並依閱讀順序提供恰好十六則簡短配文。
 slots:
   - id: character
     labels:
@@ -21,5 +22,6 @@ slots:
       pt-BR: Personagem
       es: Personaje
       ko: 캐릭터
+      zh-Hant: 角色參考
     min: 1
     max: 1

@@ -1,0 +1,173 @@
+{
+  "completedAt": "2026-11-17T16:10:32.575548+00:00",
+  "branch": "codex/traditional-chinese-localization",
+  "baseline": "53cbc8ef",
+  "uncommitted": true,
+  "deployed": false,
+  "unitTests": {
+    "filesPassed": 67,
+    "passed": 686,
+    "failed": 0,
+    "skipped": 0,
+    "command": "ZH_HANT_ACCEPTANCE=1 npm test -- --maxWorkers=2"
+  },
+  "browsers": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "matrix": [
+    {
+      "candidate": "preview",
+      "passed": 30,
+      "skipped": 1,
+      "skipReason": "No fallback exists in the complete corpus"
+    },
+    {
+      "candidate": "subpath",
+      "passed": 31,
+      "skipped": 0
+    },
+    {
+      "candidate": "root",
+      "passed": 102,
+      "skipped": 0,
+      "includes": "71 existing all-site SEO checks"
+    }
+  ],
+  "localeGates": [
+    {
+      "locale": "en",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "zh-Hans",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "es",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "pt-BR",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "ja",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "ko",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "de",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "zh-Hant",
+      "ready": true,
+      "blocking": false
+    },
+    {
+      "locale": "ar",
+      "ready": false,
+      "blocking": false
+    }
+  ],
+  "logs": [
+    {
+      "name": "tests-final",
+      "file": "production/localization/zh-Hant/evidence/logs/tests-final.txt",
+      "sha256": "df61abdff987aa9b7ebc41bdeb96c26c951b94f4ad407e9b13dacb70e3b7ded5"
+    },
+    {
+      "name": "types-release",
+      "file": "production/localization/zh-Hant/evidence/logs/types-release.txt",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "name": "lint-release",
+      "file": "production/localization/zh-Hant/evidence/logs/lint-release.txt",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "name": "lint-final",
+      "file": "production/localization/zh-Hant/evidence/logs/lint-final.txt",
+      "sha256": "3aca6b4a03c9ed71bb09cd6ae6392d989b43a1914caabb1323f44938b294f5f6"
+    },
+    {
+      "name": "tokens",
+      "file": "production/localization/zh-Hant/evidence/logs/tokens.txt",
+      "sha256": "dd7b01db033d56f99c882931f74e17114720cded18b67bf54b47a7d7c82ab27d"
+    },
+    {
+      "name": "storybook",
+      "file": "production/localization/zh-Hant/evidence/logs/storybook.txt",
+      "sha256": "da9b18685a92ae38d8d103508cddfd8f9c99f4354b4cefe297b93a1e1078fdaa"
+    },
+    {
+      "name": "content-final",
+      "file": "production/localization/zh-Hant/evidence/logs/content-final.txt",
+      "sha256": "168ccb5c171406153eb997ae21de0cdb43d64c3854429ff54e3242ad13ac314f"
+    },
+    {
+      "name": "build-preview",
+      "file": "production/localization/zh-Hant/evidence/logs/build-preview.txt",
+      "sha256": "aac9440a603fc0f26d1b0bca66c3a9779c787c81cb716894105d93e58f66af3d"
+    },
+    {
+      "name": "build-subpath",
+      "file": "production/localization/zh-Hant/evidence/logs/build-subpath.txt",
+      "sha256": "75589d61e873629d4282a05616d9ad82a23dc514654988e92f9c41c47263a587"
+    },
+    {
+      "name": "build-root",
+      "file": "production/localization/zh-Hant/evidence/logs/build-root.txt",
+      "sha256": "3c18721cc8e30649305f42a59223c6f6a5c86c5532621b30a890dd9e4ada4d1e"
+    },
+    {
+      "name": "e2e-preview",
+      "file": "production/localization/zh-Hant/evidence/logs/e2e-preview.txt",
+      "sha256": "cec3692ce901203f3dc427d68d4181db261bef5f99778804ad338185b6480a91"
+    },
+    {
+      "name": "e2e-subpath",
+      "file": "production/localization/zh-Hant/evidence/logs/e2e-subpath.txt",
+      "sha256": "692f92cb4a987b8bc854ed1090a4127b346f825f808c6996a9c7f6d44ace1682"
+    },
+    {
+      "name": "e2e-root",
+      "file": "production/localization/zh-Hant/evidence/logs/e2e-root.txt",
+      "sha256": "06901b46dd9803151a746a817ac47a3e10b67f6c315c2c3d496605dc7e3dc4fb"
+    },
+    {
+      "name": "protected-final",
+      "file": "production/localization/zh-Hant/evidence/logs/protected-final.txt",
+      "sha256": "7f94114259f12c9c2afef51b97f415f4d8e45ed41d9fe964d34eea0fa3a59795"
+    },
+    {
+      "name": "search-fix",
+      "file": "production/localization/zh-Hant/evidence/logs/search-fix.txt",
+      "sha256": "3a145df9c80e91be209150fd823178e51c59f9d6d36a08e418b982122f241b39"
+    }
+  ],
+  "limitations": [
+    "No real OS IME or assistive technology manual test",
+    "No deployment or live-site validation",
+    "Next.js build emitted a security upgrade notice; dependencies unchanged"
+  ],
+  "resolvedFailures": [
+    "Pure-kind template query ordering fixed and independently reviewed",
+    "Quick-search test moved to home; search-page launcher intentionally focuses full search field",
+    "Full corpus export test timeout scoped to 20 seconds",
+    "Resource contention timeouts eliminated by final standalone maxWorkers=2 run"
+  ]
+}

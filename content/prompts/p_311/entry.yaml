@@ -31,6 +31,7 @@ inputRequirements:
     es: Sube la imagen de referencia generada por el proyecto en el orden indicado
       (R19) y después usa el prompt adaptado completo.
     ko: 표시된 순서(R19)대로 프로젝트에서 생성한 참조 이미지 1장을 업로드한 뒤 전체 각색 프롬프트를 사용하세요.
+    zh-Hant: 按顯示順序上傳 1 張本站生成的參考圖（R19），使用完整改編詞。
   slots:
     - id: reference1
       labels:
@@ -41,6 +42,7 @@ inputRequirements:
         pt-BR: Referência de personagem gerada pelo projeto
         es: Referencia de personaje generada para el proyecto
         ko: 프로젝트에서 생성한 캐릭터 참조 이미지
+        zh-Hant: 本站生成的角色參考圖
       min: 1
       max: 1
 showcaseExampleId: x_375
@@ -63,6 +65,7 @@ inspirationSources:
       es: Publicación original completa; compartida entre variantes, no esta
         adaptación
       ko: 이 각색이 아닌 원본 게시물 전체; 여러 변형이 공유하는 수치
+      zh-Hant: 原帖整組統計；同帖變體共享，不屬於本改編作品
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +77,7 @@ inspirationSources:
       es: Informe de investigación guardado y captura de puntuación del índice de
         búsqueda
       ko: 저장된 조사 보고서와 검색 색인 점수 스냅샷
+      zh-Hant: 儲存的調研報告及搜尋索引得分快照
     evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -83,6 +87,7 @@ inspirationSources:
       pt-BR: Adaptação independente; original completo preservado separadamente
       es: Adaptación independiente; original completo conservado por separado
       ko: 독립적인 각색; 전체 원문은 별도로 보존
+      zh-Hant: 獨立改編；完整原詞另存檔案
     metrics:
       - key: score
         value: 204
@@ -94,6 +99,7 @@ inspirationSources:
           pt-BR: Registro da pontuação do índice de busca
           es: Captura de puntuación del índice de búsqueda
           ko: 검색 색인 점수 스냅샷
+          zh-Hant: 搜尋索引得分快照
 source:
   author: Prompt Seen (adaptation)
   url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
