@@ -71,7 +71,10 @@ test.describe('frozen Italian search scenarios in the real Worker', () => {
         const button = document.querySelector('[data-search-launcher]');
         return button && Object.keys(button).some((key) => key.startsWith('__reactProps'));
       });
-      await page.locator('[data-search-launcher]').click();
+      // Keyboard activation gives every browser the same focus restoration origin;
+      // Safari does not focus links on pointer activation.
+      await page.locator('[data-search-launcher]').focus();
+      await page.locator('[data-search-launcher]').press('Enter');
       const panel = page.locator('[data-quick-search]');
       const field = panel.getByRole('textbox');
       await field.fill(example.query);
