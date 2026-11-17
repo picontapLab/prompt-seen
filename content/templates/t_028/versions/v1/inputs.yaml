@@ -13,6 +13,7 @@ instructions:
   it: Carica una foto di prodotto e indica titolo, testo secondario, invito all’azione e palette.
   ru: Загрузите одну фотографию товара и задайте заголовок, дополнительный текст, призыв к действию и
     палитру.
+  ar: ارفع صورة منتج واحدة، وقدّم عنوانًا ونصًا فرعيًا ودعوة لاتخاذ إجراء ولوحة ألوان.
 slots:
   - id: product
     labels:
@@ -27,5 +28,6 @@ slots:
       fr: Produit
       it: Prodotto
       ru: Товар
+      ar: منتج
     min: 1
     max: 1

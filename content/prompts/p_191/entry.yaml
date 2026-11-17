@@ -35,6 +35,7 @@ inputRequirements:
       sintetiche.
     ru: Загрузите референсные изображения в указанном порядке. В примере использованы синтетические
       входные изображения.
+    ar: ارفع الصور المرجعية بالترتيب المدرج. يستخدم المثال صور إدخال اصطناعية.
   slots:
     - id: materialSample
       labels:
@@ -49,6 +50,7 @@ inputRequirements:
         fr: Échantillon de matériau
         it: Campione di materiale
         ru: Образец материала
+        ar: عيّنة خامة
       min: 1
       max: 1
     - id: targetScene
@@ -64,6 +66,7 @@ inputRequirements:
         fr: Scène cible
         it: Scena di destinazione
         ru: Целевая сцена
+        ar: المشهد المستهدف
       min: 1
       max: 1
 showcaseExampleId: x_252

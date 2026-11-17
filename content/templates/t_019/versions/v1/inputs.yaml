@@ -17,6 +17,7 @@ instructions:
     riferimento dell’esterno è facoltativo.
   ru: Укажите концепцию продукта, акцентный цвет и особенности дизайна; референс внешнего вида
     необязателен.
+  ar: قدّم مفهوم المنتج ولون التمييز وخصائص التصميم؛ ومرجع للمظهر الخارجي اختياري.
 slots:
   - id: product
     labels:
@@ -31,5 +32,6 @@ slots:
       fr: Produit
       it: Prodotto
       ru: Товар
+      ar: منتج
     min: 0
     max: 1

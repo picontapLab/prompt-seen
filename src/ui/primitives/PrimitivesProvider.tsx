@@ -2,6 +2,7 @@
 
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { I18nProvider } from 'react-aria-components';
+import { formatLocale } from '@/i18n/format-locale';
 import { toastQueue } from './toast-queue';
 
 const Toaster = lazy(() => import('./Toast').then((m) => ({ default: m.Toaster })));
@@ -25,7 +26,7 @@ export function PrimitivesProvider({ locale, children }: { locale: string; child
     };
   }, []);
   return (
-    <I18nProvider locale={locale}>
+    <I18nProvider locale={formatLocale(locale)}>
       {children}
       {toaster && (
         <Suspense>

@@ -200,6 +200,36 @@ const PROFILES = {
     productPhotography: RUSSIAN_PRODUCT_PHOTOGRAPHY,
     photography: 'фотография',
   },
+  ar: {
+    terms: [
+      ['قالب', 'قوالب', 'القالب', 'القوالب', 'template', 'templates'],
+      ['أمر نصي', 'أوامر نصية', 'الأوامر النصية', 'prompt', 'prompts'],
+      ['مجموعة', 'مجموعات', 'المجموعة', 'المجموعات', 'collection', 'collections'],
+      ['موضوع', 'موضوعات', 'الموضوع', 'الموضوعات', 'topic', 'topics'],
+      ['بورتريه', 'صورة شخصية', 'صور شخصية', 'portrait', 'portraits'],
+      ['ملصق إعلاني', 'ملصقات إعلانية', 'الملصق الإعلاني', 'poster', 'posters'],
+      ['ملصق لاصق', 'ملصقات لاصقة', 'الملصق اللاصق', 'sticker', 'stickers'],
+      ['إضاءة', 'الإضاءة', 'بالإضاءة', 'بإضاءة', 'lighting'],
+      ['خلفية', 'خلفيات', 'الخلفية', 'الخلفيات', 'background'],
+      ['صورة مرجعية', 'صور مرجعية', 'الصورة المرجعية', 'reference image'],
+      ['حملة منتجات', 'حملة منتج', 'لحملة منتج', 'حملة المنتجات', 'حملة المنتج', 'product campaign'],
+      ['استوديو', 'الاستوديو', 'studio'],
+      ['غلاف', 'الغلاف', 'لغلاف', 'أغلفة'],
+      ['حملة', 'الحملة', 'لحملة'],
+      ['فرصة', 'الفرصة', 'لفرصة', 'فرص'],
+      ['سوق', 'السوق', 'سوقية', 'السوقية'],
+      ['3x3', '3×3'],
+    ],
+    compounds: [],
+    kinds: {
+      prompt: 'أمر نصي',
+      template: 'قالب قوالب القالب القوالب template templates',
+      collection: 'مجموعة مجموعات المجموعة المجموعات collection collections',
+      topic: 'موضوع موضوعات الموضوع الموضوعات topic topics',
+    },
+    productPhotography: ['تصوير المنتجات', 'تصوير منتجات', 'تصوير المنتج', 'product photography', 'packshot'],
+    photography: 'تصوير',
+  },
   pt: {
     terms: PORTUGUESE_TERMS,
     compounds: [],
@@ -231,7 +261,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       koreanAliases(text) +
       (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
     );
-  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it' && language !== 'ru') return '';
+  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it' && language !== 'ru' && language !== 'ar') return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));
   const compounds = profile.compounds
@@ -251,6 +281,12 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       return new RegExp(`(?:^|[^\\p{L}\\p{N}])${words.join('\\s+')}(?=$|[^\\p{L}\\p{N}])`, 'u').test(
         normalizeTerm(text, locale),
       );
+    if (language === 'ar' && words.length > 1) {
+      const phrase = normalizeTerm(word, locale)
+        .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        .replace(/[ \t]+/g, '[ \\t]+');
+      return new RegExp(`(?:^|[^\\p{L}\\p{N}])${phrase}(?=$|[^\\p{L}\\p{N}])`, 'u').test(normalizeTerm(text, locale));
+    }
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).
     return (language === 'pt' || language === 'fr' || language === 'ru') && words.length > 1

@@ -37,6 +37,8 @@ inputRequirements:
       Il nostro personaggio adulto in kimono è generato da Prompt Seen.
     ru: Загрузите один референс персонажа. В исходную опцию подставлено ドアスコープ (дверной глазок). Наш
       взрослый персонаж в кимоно создан Prompt Seen.
+    ar: ارفع مرجعًا واحدًا للشخصية. مُلئ خيار المصدر بالقيمة ドアスコープ (عين الباب). ولّد Prompt Seen
+      شخصيتنا البالغة المرتدية كيمونو.
   slots:
     - id: character
       labels:
@@ -51,6 +53,7 @@ inputRequirements:
         fr: Référence générée pour le projet
         it: Riferimento generato dal progetto
         ru: Референс, созданный для проекта
+        ar: مرجع مولّد للمشروع
       min: 1
       max: 1
 showcaseExampleId: x_309
@@ -75,6 +78,7 @@ inspirationSources:
       fr: Publication ou galerie originale entière ; pas cet exemple généré
       it: Intero post o galleria originale, non questo esempio generato
       ru: Вся исходная публикация или галерея, а не этот сгенерированный пример
+      ar: المنشور الأصلي أو المعرض كاملًا؛ وليس هذا المثال المولّد.
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -95,6 +99,7 @@ inspirationSources:
         dell’autore
       ru: Сохранённый снимок публичной публикации X; полный промпт из сохранённого зеркала авторской
         публикации или ответа
+      ar: لقطة X عامة محفوظة؛ والأمر الكامل من نسخة محفوظة لمنشور المؤلف أو ردّه.
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118220107487051883&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language; option filled and recorded
@@ -108,6 +113,7 @@ inspirationSources:
       fr: Texte complet de l’auteur, langue originale ; option renseignée et enregistrée
       it: Testo completo dell’autore nella lingua originale; opzione compilata e registrata
       ru: Полный авторский текст на исходном языке; опция заполнена и записана
+      ar: نص المؤلف كاملًا بلغته الأصلية؛ مع ملء الخيار وتسجيله
     metrics:
       - key: likes
         value: 17
@@ -123,6 +129,7 @@ inspirationSources:
           fr: Mentions J’aime de la publication source
           it: Mi piace del post originale
           ru: Лайки исходной публикации
+          ar: إعجابات المنشور المصدر
 source:
   author: kabumira862571
   url: https://x.com/kabumira862571/status/2118220107487051883

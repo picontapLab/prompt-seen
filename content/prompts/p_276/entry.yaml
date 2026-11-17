@@ -46,6 +46,9 @@ inputRequirements:
     ru: Загрузите первый портрет взрослого, затем второй. Изображение 1 остаётся слева, изображение 2 —
       справа. В демонстрации использованы вымышленные люди, созданные ИИ. Сохраните все надписи на
       английском.
+    ar: ارفع الصورة الشخصية الأولى لشخص بالغ، ثم الصورة الشخصية الثانية لشخص بالغ. تبقى الصورة 1 على
+      اليسار والصورة 2 على اليمين. يستخدم المثال أشخاصًا خياليين مولّدين بالذكاء الاصطناعي. أبقِ
+      جميع الكتابات بالإنجليزية.
   slots:
     - id: personA
       labels:
@@ -60,6 +63,7 @@ inputRequirements:
         fr: Première personne, à gauche
         it: Prima persona, a sinistra
         ru: Первый человек, слева
+        ar: الشخص الأول، يسارًا
       min: 1
       max: 1
     - id: personB
@@ -75,6 +79,7 @@ inputRequirements:
         fr: Deuxième personne, à droite
         it: Seconda persona, a destra
         ru: Второй человек, справа
+        ar: الشخص الثاني، يمينًا
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -103,6 +108,7 @@ annotations:
       fr: Quatre images forment un tirage de photomaton compact.
       it: Quattro riquadri formano una stampa compatta da cabina fotografica.
       ru: Четыре кадра образуют один компактный отпечаток фотобудки.
+      ar: تشكّل أربعة إطارات مطبوعة مدمجة واحدة لكشك تصوير.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -121,3 +127,4 @@ annotations:
       fr: Le flash et le grain créent le rendu photographique.
       it: Flash e grana stabiliscono l’aspetto fotografico.
       ru: Вспышка и зерно задают фотографический вид.
+      ar: يحدّد الفلاش والحبيبات المظهر الفوتوغرافي.

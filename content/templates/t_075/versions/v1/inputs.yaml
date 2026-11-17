@@ -18,6 +18,8 @@ instructions:
     Mantieni tutte le scritte in inglese.
   ru: Загрузите один чёткий портрет взрослого. Демонстрационный референс создан ИИ. Сохраните все
     надписи на английском.
+  ar: ارفع صورة واضحة واحدة لشخص بالغ. المرجع التوضيحي مولّد بالذكاء الاصطناعي. أبقِ جميع الكتابات
+    بالإنجليزية.
 slots:
   - id: person
     labels:
@@ -32,5 +34,6 @@ slots:
       fr: Portrait de la personne
       it: Ritratto della persona
       ru: Портрет человека
+      ar: صورة الشخص
     min: 1
     max: 1

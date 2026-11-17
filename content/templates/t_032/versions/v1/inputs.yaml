@@ -13,6 +13,7 @@ instructions:
   it: Carica un ritratto ed esattamente nove brevi messaggi di auguri. La persona del nostro esempio è
     sintetica.
   ru: Загрузите один портрет и ровно девять коротких поздравлений. Наш человек синтетический.
+  ar: ارفع بورتريه واحدًا وتسع عبارات تهنئة قصيرة بالضبط. الشخص في مثالنا اصطناعي.
 slots:
   - id: person
     labels:
@@ -27,5 +28,6 @@ slots:
       fr: Personne
       it: Persona
       ru: Человек
+      ar: شخص
     min: 1
     max: 1

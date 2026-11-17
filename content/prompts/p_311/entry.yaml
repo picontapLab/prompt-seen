@@ -37,6 +37,8 @@ inputRequirements:
       prompt adattato completo.
     ru: Загрузите 1 референсное изображение, созданное для проекта, в показанном порядке (R19), затем
       используйте полный адаптированный промпт.
+    ar: ارفع الصورة المرجعية الواحدة المولّدة للمشروع بالترتيب المعروض (R19)، ثم استخدم الأمر المقتبس
+      كاملًا.
   slots:
     - id: reference1
       labels:
@@ -51,6 +53,7 @@ inputRequirements:
         fr: Référence de personnage générée pour le projet
         it: Riferimento del personaggio generato dal progetto
         ru: Референс персонажа, созданный для проекта
+        ar: مرجع شخصية مولّد للمشروع
       min: 1
       max: 1
 showcaseExampleId: x_375
@@ -76,6 +79,7 @@ inspirationSources:
         cette adaptation
       it: Intero post originale; condiviso dalle varianti, non questo adattamento
       ru: Вся исходная публикация; показатели общие для вариантов и не относятся к этой адаптации
+      ar: المنشور الأصلي كاملًا؛ مشترك بين نسخه، وليس لهذا الاقتباس
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -90,6 +94,7 @@ inspirationSources:
       fr: Rapport de recherche et instantané de score d’index de recherche enregistrés
       it: Rapporto di ricerca salvato e istantanea del punteggio dell’indice di ricerca
       ru: Сохранённый исследовательский отчёт и снимок рейтинга поискового индекса
+      ar: تقرير بحث محفوظ ولقطة لنتيجة فهرس البحث
     evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -103,6 +108,7 @@ inspirationSources:
       fr: Adaptation indépendante ; original complet conservé séparément
       it: Adattamento indipendente; originale completo conservato separatamente
       ru: Самостоятельная адаптация; полный оригинал сохранён отдельно
+      ar: اقتباس مستقل؛ مع حفظ الأصل كاملًا بصورة منفصلة
     metrics:
       - key: score
         value: 204
@@ -118,6 +124,7 @@ inspirationSources:
           fr: Instantané de score d’index de recherche
           it: Istantanea del punteggio dell’indice di ricerca
           ru: Снимок рейтинга поискового индекса
+          ar: لقطة لنتيجة فهرس البحث
 source:
   author: Prompt Seen (adaptation)
   url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/

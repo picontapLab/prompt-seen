@@ -11,6 +11,7 @@ instructions:
   fr: Importez une photo de produit ou de personne et indiquez un nom de marque et une palette.
   it: Carica una foto di un prodotto o di una persona e indica il nome della marca e la palette.
   ru: Загрузите одну фотографию товара или человека и задайте название бренда и палитру.
+  ar: ارفع صورة واحدة لمنتج أو شخص، وقدّم اسم علامة تجارية ولوحة ألوان.
 slots:
   - id: subject
     labels:
@@ -25,5 +26,6 @@ slots:
       fr: Sujet
       it: Soggetto
       ru: Объект
+      ar: الموضوع
     min: 1
     max: 1

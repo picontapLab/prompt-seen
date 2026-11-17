@@ -37,6 +37,8 @@ inputRequirements:
       tutte le scritte in inglese.
     ru: Загрузите одну чёткую фотографию собаки. Демонстрационный референс создан ИИ. Сохраните все
       надписи на английском.
+    ar: ارفع صورة واضحة واحدة لكلب. المرجع التوضيحي مولّد بالذكاء الاصطناعي. أبقِ جميع الكتابات
+      بالإنجليزية.
   slots:
     - id: pet
       labels:
@@ -51,6 +53,7 @@ inputRequirements:
         fr: Photo du chien
         it: Foto del cane
         ru: Фотография собаки
+        ar: صورة الكلب
       min: 1
       max: 1
 showcaseExampleId: x_341
@@ -79,6 +82,7 @@ annotations:
       fr: Une grande photo d’animal rend immédiatement l’histoire claire.
       it: Una foto dominante dell’animale rende subito chiara la storia.
       ru: Одна главная фотография питомца делает сюжет мгновенно понятным.
+      ar: تجعل صورة رئيسية واحدة للحيوان الأليف القصة واضحة فورًا.
   - phrase: bold black serif typography
     region:
       x: 0.034
@@ -97,3 +101,4 @@ annotations:
       fr: La typographie à empattements en gras donne au titre l’allure d’un journal.
       it: Il carattere serif marcato dà al titolo un aspetto da giornale.
       ru: Крупный шрифт с засечками придаёт заголовку газетный характер.
+      ar: يجعل الخط العريض ذو الزوائد العنوان يبدو كعنوان صحيفة.

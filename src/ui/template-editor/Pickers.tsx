@@ -49,7 +49,7 @@ function Picker({
         {options.map((option) => (
           <Radio key={option.value} value={option.value} className={styles.option}>
             {kind === 'ratio' ? <Frame value={option.value} /> : <Swatch colors={option.swatch ?? []} />}
-            <span lang={option.lang} dir="auto" className={styles.optionLabel}>
+            <span lang={option.lang} dir={kind === 'ratio' ? 'ltr' : 'auto'} className={styles.optionLabel}>
               {option.label}
             </span>
           </Radio>

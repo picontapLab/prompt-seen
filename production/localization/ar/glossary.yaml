@@ -1,0 +1,22 @@
+locale: ar
+standard: Modern Standard Arabic
+terms:
+  - { concept: prompt, preferred: أمر نصي, short: أمر, plural: أوامر }
+  - { concept: template, preferred: قالب, plural: قوالب }
+  - { concept: model, preferred: نموذج ذكاء اصطناعي, note: Keep model brands and versions unchanged. }
+  - { concept: collection, preferred: مجموعة, plural: مجموعات }
+  - { concept: topic, preferred: موضوع, plural: موضوعات }
+  - { concept: reference-image, preferred: صورة مرجعية }
+  - { concept: generated-image, preferred: صورة مولّدة }
+  - { concept: poster, preferred: ملصق إعلاني, note: Do not treat bare ملصق as a sticker synonym. }
+  - { concept: sticker, preferred: ملصق لاصق }
+  - { concept: product-photography, preferred: تصوير المنتجات }
+  - { concept: copy, preferred: نسخ }
+  - { concept: download, preferred: تنزيل }
+  - { concept: reset, preferred: إعادة ضبط }
+  - { concept: not-verified, preferred: غير متحقق منه }
+search:
+  profile: src/modules/search/profiles.ts
+  numericSystems: [latn, arab, arabext]
+  preserveLetterDistinctions: [ة/ه, ؤ/و, ئ/ي, ء]
+  prohibited: [universal stemming, automatic clitic stripping, automatic Arabizi transliteration]

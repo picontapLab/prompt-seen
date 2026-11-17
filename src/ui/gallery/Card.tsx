@@ -11,6 +11,7 @@ import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
 import { GifBadge } from '@/ui/media/GifBadge';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import { textDirection } from '@/ui/prompt-detail/language';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 import styles from './Card.module.css';
 
 export type CardProps = {
@@ -42,12 +43,25 @@ export function useCardFacts(card: FeedCard) {
   const t = useTranslations('feed.card');
   const format = useFormatter();
   return [
-    card.verification === 'verified' && card.model ? card.model : t('notVerified'),
-    card.ratio,
-    card.lastTestedAt && format.dateTime(isoDate(card.lastTestedAt), { month: 'short', day: 'numeric' }),
+    <bdi dir={card.verification === 'verified' && card.model ? 'ltr' : 'auto'} key="model">
+      {card.verification === 'verified' && card.model ? card.model : t('notVerified')}
+    </bdi>,
+    <bdi dir="ltr" key="ratio">
+      {card.ratio}
+    </bdi>,
+    card.lastTestedAt && (
+      <bdi dir="auto" key="date">
+        {format.dateTime(isoDate(card.lastTestedAt), { month: 'short', day: 'numeric' })}
+      </bdi>
+    ),
   ]
     .filter(Boolean)
-    .join(' · ');
+    .map((fact, index) => (
+      <span key={index}>
+        {index > 0 && ' · '}
+        {fact}
+      </span>
+    ));
 }
 
 /**
@@ -116,7 +130,7 @@ export function Card({
             <GifBadge image={card.cover} hasGifOutput={card.hasGifOutput} />
             {card.verification === 'verified' && card.model ? (
               <span className={styles.modelBadge} data-model-badge="">
-                {t('byModel', { model: card.model })}
+                <IsolatedMessage format={(model) => t('byModel', { model })} value={card.model} dir="ltr" />
               </span>
             ) : null}
           </span>

@@ -48,13 +48,21 @@
   }
 
   :where([lang]) {
+    /* Explicit language boundaries restore values overridden by an outer Arabic/CJK block. */
+    --weight-display: 700;
+    --tracking-display: -0.02em;
+    --tracking-label: 0.12em;
+    --tracking-wordmark: 0.04em;
+    --leading-page-title: 0.95;
+    --leading-display: 0.92;
+    --measure: 68ch;
     --font-display:
       'Fira Sans Extra Condensed', var(--font-display-fallback, 'Fira Sans Extra Condensed'), 'IBM Plex Sans',
       system-ui, sans-serif;
     --font-text:
-      'IBM Plex Sans', var(--font-text-fallback, 'IBM Plex Sans'), system-ui, -apple-system, 'Segoe UI', Roboto,
-      sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      'IBM Plex Sans', 'IBM Plex Sans Arabic', var(--font-text-fallback, 'IBM Plex Sans'), system-ui, -apple-system,
+      'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'IBM Plex Sans Arabic', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     --leading-body: var(--leading-base);
     --leading-heading: 1.2;
   }
@@ -93,10 +101,11 @@
     --measure: 40em; /* about 35–42 characters per line */
   }
 
-  /* Arabic: Plex Sans Arabic for Arabic script, Plex Sans for Latin runs. Letter spacing breaks
-     joining, so it is zero at every size. Noto Kufi Arabic (display) is still a candidate. */
-  :where([lang]:lang(ar)) {
-    --font-display: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+  /* Arabic uses delivered faces and weights; spacing must not break joining. */
+  /* Must outrank :root defaults when Arabic is the document language. */
+  [lang]:lang(ar) {
+    --font-display: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+    --weight-display: 600;
     --font-text:
       'IBM Plex Sans Arabic', 'IBM Plex Sans', var(--font-text-fallback, 'IBM Plex Sans'), 'Noto Sans Arabic',
       'Segoe UI', sans-serif;

@@ -1,6 +1,7 @@
 'use client';
 
 import { languageAttributes } from '@/ui/prompt-detail/language';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 
 import { Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -67,13 +68,15 @@ export function SearchPage({ locale }: { locale: LocaleEntry }) {
 
   const results = trimmed ? search.results : null;
   const noResults = !!trimmed && search.status === 'success' && results?.total === 0;
-  const status = !trimmed
-    ? ''
-    : search.status === 'loading'
-      ? t('page.updating')
-      : results
-        ? t('page.summary', { count: results.total, query: results.query })
-        : '';
+  const status = !trimmed ? (
+    ''
+  ) : search.status === 'loading' ? (
+    t('page.updating')
+  ) : results ? (
+    <IsolatedMessage format={(query) => t('page.summary', { count: results.total, query })} value={results.query} />
+  ) : (
+    ''
+  );
 
   return (
     <div className={styles.page}>
@@ -97,6 +100,7 @@ export function SearchPage({ locale }: { locale: LocaleEntry }) {
           id="search-field"
           name="q"
           type="search"
+          dir="auto"
           className={styles.input}
           value={value}
           onChange={(e) => setValue(e.target.value)}

@@ -37,6 +37,8 @@ inputRequirements:
       Mantieni tutte le scritte in inglese.
     ru: Загрузите один чёткий портрет взрослого. Демонстрационный референс создан ИИ. Сохраните все
       надписи на английском.
+    ar: ارفع صورة واضحة واحدة لشخص بالغ. المرجع التوضيحي مولّد بالذكاء الاصطناعي. أبقِ جميع الكتابات
+      بالإنجليزية.
   slots:
     - id: person
       labels:
@@ -51,6 +53,7 @@ inputRequirements:
         fr: Portrait de la personne
         it: Ritratto della persona
         ru: Портрет человека
+        ar: صورة الشخص
       min: 1
       max: 1
 showcaseExampleId: x_346
@@ -79,6 +82,7 @@ annotations:
       fr: Le haut et le bas créent la mise en place et la chute de la blague.
       it: Parte superiore e inferiore creano premessa e battuta finale.
       ru: Верхняя и нижняя части создают завязку и развязку шутки.
+      ar: يصنع الجزءان العلوي والسفلي التمهيد والقفلة الكوميدية.
   - phrase: expressive editorial illustration
     region:
       x: 0.36
@@ -97,3 +101,4 @@ annotations:
       fr: Les expressions rendent la blague compréhensible d’un coup d’œil.
       it: Le espressioni comunicano la battuta a colpo d’occhio.
       ru: Выражения лиц передают шутку с первого взгляда.
+      ar: تنقل التعابير النكتة من النظرة الأولى.

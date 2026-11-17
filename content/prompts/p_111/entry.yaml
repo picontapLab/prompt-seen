@@ -33,6 +33,7 @@ inputRequirements:
     it: Carica il ritratto di un adulto. Il nostro riferimento raffigura una persona immaginaria
       generata dall’IA.
     ru: Загрузите один портрет взрослого человека. Наш референс — вымышленный человек, созданный ИИ.
+    ar: ارفع بورتريه واحدًا لشخص بالغ. مرجعنا لشخص خيالي مولّد بالذكاء الاصطناعي.
   slots:
     - id: person
       labels:
@@ -47,6 +48,7 @@ inputRequirements:
         fr: Personne
         it: Persona
         ru: Человек
+        ar: شخص
       min: 1
       max: 1
 showcaseExampleId: x_156
@@ -76,6 +78,7 @@ inspirationSources:
       fr: Ensemble du tutoriel ou de la vidéo de présentation
       it: Intero video tutorial o dimostrativo
       ru: Весь обучающий или демонстрационный ролик
+      ar: الفيديو التعليمي أو الاستعراضي بالكامل
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -90,6 +93,7 @@ inspirationSources:
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
       ru: Снимок данных официального публичного API
+      ar: لقطة من واجهة API العامة الرسمية
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV16m4y1a7uC
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -103,6 +107,7 @@ inspirationSources:
       fr: Prompt original complet non récupéré ; adaptation indépendante
       it: Prompt originale completo non recuperato; adattato autonomamente
       ru: Полный оригинальный промпт не получен; самостоятельная адаптация
+      ar: لم يُسترجع الأمر الأصلي كاملًا؛ أُعدّت صياغة مقتبسة بصورة مستقلة
     metrics:
       - key: views
         value: 56375
@@ -118,6 +123,7 @@ inspirationSources:
           fr: Vues
           it: Visualizzazioni
           ru: Просмотры
+          ar: المشاهدات
       - key: likes
         value: 3074
         labels:
@@ -132,6 +138,7 @@ inspirationSources:
           fr: Mentions J’aime
           it: Mi piace
           ru: Лайки
+          ar: الإعجابات
       - key: saves
         value: 2984
         labels:
@@ -146,6 +153,7 @@ inspirationSources:
           fr: Enregistrements
           it: Salvataggi
           ru: Сохранения
+          ar: مرات الحفظ
       - key: comments
         value: 64
         labels:
@@ -160,6 +168,7 @@ inspirationSources:
           fr: Commentaires
           it: Commenti
           ru: Комментарии
+          ar: التعليقات
       - key: shares
         value: 202
         labels:
@@ -174,6 +183,7 @@ inspirationSources:
           fr: Partages
           it: Condivisioni
           ru: Репосты
+          ar: المشاركات
       - key: coins
         value: 184
         labels:
@@ -188,6 +198,7 @@ inspirationSources:
           fr: Pièces
           it: Monete
           ru: Монеты
+          ar: العملات
       - key: danmaku
         value: 7
         labels:
@@ -202,3 +213,4 @@ inspirationSources:
           fr: Commentaires défilants (danmaku)
           it: Commenti sovrapposti (danmaku)
           ru: Данмаку
+          ar: التعليقات المتحركة على الفيديو

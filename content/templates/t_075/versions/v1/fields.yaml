@@ -14,6 +14,7 @@ fields:
       fr: Âge à l’anniversaire
       it: Età del compleanno
       ru: Возраст именинника
+      ar: عمر عيد الميلاد
     help:
       en: Use a short age such as 30.
       zh-Hans: 填写简短年龄，例如 30。
@@ -26,6 +27,7 @@ fields:
       fr: Utilisez un âge court, par exemple 30.
       it: Usa un’età breve, come 30.
       ru: Укажите возраст коротко, например 30.
+      ar: استخدم عمرًا قصيرًا مثل 30.
     type: string
     default: "30"
     minLength: 1
@@ -46,6 +48,7 @@ fields:
       fr: Nom
       it: Nome
       ru: Имя
+      ar: الاسم
     help:
       en: Use a short display name.
       zh-Hans: 填写简短显示姓名。
@@ -58,6 +61,7 @@ fields:
       fr: Utilisez un nom d’affichage court.
       it: Usa un nome visualizzato breve.
       ru: Используйте короткое отображаемое имя.
+      ar: استخدم اسم عرض قصيرًا.
     type: string
     default: ALEX
     minLength: 1

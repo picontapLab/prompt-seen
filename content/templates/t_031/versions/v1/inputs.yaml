@@ -11,6 +11,7 @@ instructions:
   fr: Importez une carte vérifiée et fournissez des destinations et des notes d’itinéraire contrôlées.
   it: Carica una mappa verificata e indica destinazioni e note sull’itinerario controllate.
   ru: Загрузите проверенную карту и задайте проверенные пункты назначения и описание маршрута.
+  ar: ارفع خريطة متحقَّقًا منها، وقدّم وجهات وملاحظات مسار جرى التحقق منها.
 slots:
   - id: map
     labels:
@@ -25,5 +26,6 @@ slots:
       fr: Carte
       it: Mappa
       ru: Карта
+      ar: خريطة
     min: 1
     max: 1

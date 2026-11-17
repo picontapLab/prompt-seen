@@ -16,6 +16,7 @@ fields:
       fr: Personnage
       it: Personaggio
       ru: Персонаж
+      ar: الشخصية
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -28,6 +29,7 @@ fields:
       fr: Indiquez qui est le sujet et une pose, par exemple « un danseur en pleine rotation ».
       it: Chi è e una posa, per esempio «una ballerina a metà giro».
       ru: Кто это и одна поза, например «танцор в середине поворота».
+      ar: حدّد الشخصية ووضعية واحدة، مثل «راقص في منتصف استدارة».
   - name: rimLight
     type: enum
     required: true
@@ -45,6 +47,7 @@ fields:
       fr: Éclairage de contour
       it: Luce sui bordi
       ru: Контровый свет
+      ar: الإضاءة الحافية
     options:
       - value: cyan and magenta
         swatch:
@@ -62,6 +65,7 @@ fields:
           fr: Cyan et magenta
           it: Ciano e magenta
           ru: Голубой и пурпурный
+          ar: سماوي وأرجواني
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -78,6 +82,7 @@ fields:
           fr: Ambre et sarcelle
           it: Ambra e petrolio
           ru: Янтарный и бирюзовый
+          ar: كهرماني وأزرق مخضر
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -94,6 +99,7 @@ fields:
           fr: Violet et cyan
           it: Viola e ciano
           ru: Фиолетовый и голубой
+          ar: بنفسجي وسماوي
   - name: background
     type: enum
     required: true
@@ -111,6 +117,7 @@ fields:
       fr: Arrière-plan
       it: Sfondo
       ru: Фон
+      ar: الخلفية
     options:
       - value: soft bokeh lights
         labels:
@@ -125,6 +132,7 @@ fields:
           fr: Lumières en bokeh doux
           it: Luci bokeh morbide
           ru: Мягкие огни боке
+          ar: أضواء بوكيه ناعمة
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -138,6 +146,7 @@ fields:
           fr: Ville nocturne floue
           it: Città notturna sfocata
           ru: Размытый ночной город
+          ar: مدينة ليلية مموّهة
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -151,6 +160,7 @@ fields:
           fr: Dégradé sombre uniforme
           it: Sfumatura scura piatta
           ru: Плоский тёмный градиент
+          ar: تدرج داكن مسطح
   - name: mood
     type: string
     required: false
@@ -168,6 +178,7 @@ fields:
       fr: Ambiance
       it: Atmosfera
       ru: Настроение
+      ar: الأجواء
   - name: aspectRatio
     type: enum
     required: true

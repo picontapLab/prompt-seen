@@ -16,6 +16,7 @@ instructions:
   it: Descrivi i personaggi e fornisci esattamente quattro momenti narrativi in ordine; la scheda dei
     personaggi è facoltativa.
   ru: Опишите героев и задайте ровно четыре сюжетных момента по порядку; лист персонажей необязателен.
+  ar: صِف الشخصيات وقدّم أربع محطات قصصية بالضبط وبالترتيب؛ وورقة مرجع الشخصيات اختيارية.
 slots:
   - id: character
     labels:
@@ -30,5 +31,6 @@ slots:
       fr: Personnage
       it: Personaggio
       ru: Персонаж
+      ar: شخصية
     min: 0
     max: 1

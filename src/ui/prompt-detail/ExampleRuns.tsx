@@ -83,7 +83,7 @@ export function ExampleRuns({
             <dl className={styles.runMeta}>
               <div>
                 <dt>{t('model')}</dt>
-                <dd>{modelName(run.model) ?? t('unknown')}</dd>
+                <dd>{modelName(run.model) ? <bdi dir="ltr">{modelName(run.model)}</bdi> : t('unknown')}</dd>
               </div>
               <div>
                 <dt>{t('recorded')}</dt>

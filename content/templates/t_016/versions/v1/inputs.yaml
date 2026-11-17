@@ -13,6 +13,7 @@ instructions:
   it: Fornisci un nome di marchio immaginario, una palette e un’atmosfera; un logo esistente è
     facoltativo.
   ru: Укажите вымышленное название бренда, палитру и настроение; существующий логотип необязателен.
+  ar: قدّم اسم علامة تجارية خيالية ولوحة ألوان وطابعًا عامًا؛ وشعار موجود مسبقًا اختياري.
 slots:
   - id: logo
     labels:
@@ -27,5 +28,6 @@ slots:
       fr: Logo
       it: Logo
       ru: Логотип
+      ar: شعار
     min: 0
     max: 1

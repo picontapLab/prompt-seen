@@ -33,6 +33,7 @@ inputRequirements:
     it: Carica il ritratto di un adulto. Il nostro riferimento raffigura una persona immaginaria
       generata dall’IA.
     ru: Загрузите один портрет взрослого человека. Наш референс — вымышленный человек, созданный ИИ.
+    ar: ارفع بورتريه واحدًا لشخص بالغ. مرجعنا لشخص خيالي مولّد بالذكاء الاصطناعي.
   slots:
     - id: person
       labels:
@@ -47,6 +48,7 @@ inputRequirements:
         fr: Personne
         it: Persona
         ru: Человек
+        ar: شخص
       min: 1
       max: 1
 showcaseExampleId: x_159
@@ -76,6 +78,7 @@ inspirationSources:
       fr: Ensemble de la publication ou de la galerie d’images
       it: Intero post o galleria di immagini
       ru: Вся публикация или галерея изображений
+      ar: المنشور أو معرض الصور بالكامل
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -90,6 +93,7 @@ inspirationSources:
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
       ru: Снимок данных официального публичного API
+      ar: لقطة من واجهة API العامة الرسمية
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2011304086847832089&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -103,6 +107,7 @@ inspirationSources:
       fr: Prompt source ou extrait disponible ; adaptation indépendante
       it: Prompt originale o estratto disponibile; adattato autonomamente
       ru: Доступен исходный промпт или отрывок; самостоятельная адаптация
+      ar: الأمر الأصلي أو مقتطف منه متاح؛ أُعدّت صياغة مقتبسة بصورة مستقلة
     metrics:
       - key: likes
         value: 2165
@@ -118,6 +123,7 @@ inspirationSources:
           fr: Mentions J’aime
           it: Mi piace
           ru: Лайки
+          ar: الإعجابات
       - key: conversation_count
         value: 58
         labels:
@@ -132,6 +138,7 @@ inspirationSources:
           fr: Réponses
           it: Risposte
           ru: Ответы
+          ar: الردود
       - key: views
         value: null
         labels:
@@ -146,6 +153,7 @@ inspirationSources:
           fr: Vues
           it: Visualizzazioni
           ru: Просмотры
+          ar: المشاهدات
       - key: reposts
         value: null
         labels:
@@ -160,6 +168,7 @@ inspirationSources:
           fr: Republications
           it: Ripubblicazioni
           ru: Репосты
+          ar: إعادات النشر
       - key: bookmarks
         value: null
         labels:
@@ -174,3 +183,4 @@ inspirationSources:
           fr: Signets
           it: Segnalibri
           ru: Закладки
+          ar: الإشارات المرجعية

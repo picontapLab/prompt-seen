@@ -17,6 +17,8 @@ instructions:
     L’animale dell’esempio è sintetico.
   ru: Загрузите одну фотографию питомца и выберите взрослый возрастной диапазон и характер. Питомец в
     примере синтетический.
+  ar: ارفع صورة حيوان أليف واحدة، واختر نطاق عمر لشخص بالغ وطابعًا للشخصية. الحيوان الأليف في المثال
+    اصطناعي.
 slots:
   - id: pet
     labels:
@@ -31,5 +33,6 @@ slots:
       fr: Animal de compagnie
       it: Animale domestico
       ru: Питомец
+      ar: حيوان أليف
     min: 1
     max: 1

@@ -4,6 +4,7 @@ export type LocalizationSearchCase = {
   query: string;
   expectedKeys: string[];
   excludedKeys?: string[];
+  expectedTotal?: number;
   topK: number;
   expectedTotal?: number;
 };

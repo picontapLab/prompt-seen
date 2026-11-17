@@ -12,6 +12,7 @@ instructions:
   fr: Importez une photo d’action et indiquez un mot court en majuscules ainsi qu’une couleur de fond.
   it: Carica una foto d’azione e indica una parola breve in maiuscolo e un colore di sfondo.
   ru: Загрузите одну фотографию действия и задайте короткое слово прописными буквами и цвет фона.
+  ar: ارفع صورة حركة واحدة، وقدّم كلمة قصيرة بأحرف لاتينية كبيرة ولون الخلفية.
 slots:
   - id: action
     labels:
@@ -26,5 +27,6 @@ slots:
       fr: Action
       it: Azione
       ru: Действие
+      ar: حركة
     min: 1
     max: 1

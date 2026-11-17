@@ -11,6 +11,7 @@ instructions:
   fr: Importez une photo de produit ; fournissez une palette et exactement neuf thèmes de scène.
   it: Carica una foto di prodotto; fornisci una palette ed esattamente nove temi per le scene.
   ru: Загрузите одну фотографию товара; задайте палитру и ровно девять тем сцен.
+  ar: ارفع صورة منتج واحدة؛ وقدّم لوحة ألوان وتسعة موضوعات للمشاهد بالضبط.
 slots:
   - id: product
     labels:
@@ -25,5 +26,6 @@ slots:
       fr: Produit
       it: Prodotto
       ru: Товар
+      ar: منتج
     min: 1
     max: 1

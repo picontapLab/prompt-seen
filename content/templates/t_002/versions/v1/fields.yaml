@@ -16,6 +16,7 @@ fields:
       fr: Sujet
       it: Soggetto
       ru: Объект
+      ar: الموضوع
     help:
       en: One main subject, such as “a bamboo grove”.
       zh-Hans: 一个主体即可，如“竹林”。
@@ -28,6 +29,7 @@ fields:
       fr: Un seul sujet principal, comme « une bambouseraie ».
       it: Un soggetto principale, come «un boschetto di bambù».
       ru: Один главный объект, например «бамбуковая роща».
+      ar: موضوع رئيسي واحد، مثل «غابة خيزران».
   - name: season
     type: enum
     required: true
@@ -45,6 +47,7 @@ fields:
       fr: Saison
       it: Stagione
       ru: Сезон
+      ar: الفصل
     options:
       - value: spring
         labels:
@@ -59,6 +62,7 @@ fields:
           fr: Printemps
           it: Primavera
           ru: Весна
+          ar: الربيع
       - value: summer
         labels:
           en: Summer
@@ -72,6 +76,7 @@ fields:
           fr: Été
           it: Estate
           ru: Лето
+          ar: الصيف
       - value: autumn
         labels:
           en: Autumn
@@ -85,6 +90,7 @@ fields:
           fr: Automne
           it: Autunno
           ru: Осень
+          ar: الخريف
       - value: winter
         labels:
           en: Winter
@@ -98,6 +104,7 @@ fields:
           fr: Hiver
           it: Inverno
           ru: Зима
+          ar: الشتاء
   - name: brushwork
     type: enum
     required: true
@@ -115,6 +122,7 @@ fields:
       fr: Technique de pinceau
       it: Tecnica pittorica
       ru: Техника кисти
+      ar: أسلوب الفرشاة
     options:
       - value: soft grey washes with crisp dark nodes
         labels:
@@ -129,6 +137,7 @@ fields:
           fr: Lavis doux, nœuds nets
           it: Sfumature morbide, nodi netti
           ru: Мягкие размывки, чёткие узлы
+          ar: غسلات ناعمة وعُقد واضحة
       - value: loose wet washes
         labels:
           en: Loose wet washes
@@ -142,6 +151,7 @@ fields:
           fr: Lavis humides libres
           it: Sfumature libere a pennello bagnato
           ru: Свободные влажные размывки
+          ar: غسلات رطبة حرة
       - value: dry brush with visible texture
         labels:
           en: Dry brush
@@ -155,6 +165,7 @@ fields:
           fr: Pinceau sec
           it: Pennello secco
           ru: Сухая кисть
+          ar: فرشاة جافة
   - name: elements
     type: string-list
     required: false
@@ -174,6 +185,7 @@ fields:
       fr: Détails
       it: Dettagli
       ru: Детали
+      ar: التفاصيل
     help:
       en: Things you can count work best, e.g. “five tall stalks”.
       zh-Hans: 写可数的东西效果最好，如“五根竹竿”。
@@ -186,6 +198,7 @@ fields:
       fr: Les éléments dénombrables fonctionnent mieux, par exemple « cinq grandes tiges ».
       it: Gli elementi numerabili funzionano meglio, per esempio «cinque steli alti».
       ru: Лучше всего работают детали, которые можно посчитать, например «пять высоких стеблей».
+      ar: تنجح العناصر القابلة للعد أكثر، مثل «خمس سيقان طويلة».
   - name: aspectRatio
     type: enum
     required: true

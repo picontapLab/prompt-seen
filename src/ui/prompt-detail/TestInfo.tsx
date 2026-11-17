@@ -2,6 +2,7 @@ import { CircleCheck, CircleDashed } from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import type { PromptDetail } from '@/modules/content/types';
 import { GifBadge } from '@/ui/media/GifBadge';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 import styles from './Detail.module.css';
 
 /** "2026-10-10" as a date at midnight UTC, the time zone every page formats in (§11.9). */
@@ -29,7 +30,7 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
       {verified ? (
         <span className={styles.badge} data-tone="verified">
           <CircleCheck aria-hidden="true" />
-          {t('verifiedWith', { model })}
+          <IsolatedMessage format={(slot) => t('verifiedWith', { model: slot })} value={model} dir="ltr" />
         </span>
       ) : (
         <span className={styles.badge} data-tone="unverified">
@@ -40,13 +41,22 @@ export function TestInfo({ detail }: { detail: Pick<PromptDetail, 'test' | 'cove
       {/* Facts in two short runs, so a wrapped line never starts with a separator. */}
       <span className="tabular">
         {[
-          !verified && model,
-          t('dimensions', { width: cover.width, height: cover.height }),
-          test.aspectRatio,
-          test.lastTestedAt ? t('lastTested', { date: date(test.lastTestedAt) }) : t('neverTested'),
+          !verified && model ? <bdi dir="ltr">{model}</bdi> : null,
+          <bdi dir="ltr" key="dimensions">
+            {t('dimensions', { width: cover.width, height: cover.height })}
+          </bdi>,
+          test.aspectRatio ? <bdi dir="ltr">{test.aspectRatio}</bdi> : null,
+          <bdi dir="auto" key="tested">
+            {test.lastTestedAt ? t('lastTested', { date: date(test.lastTestedAt) }) : t('neverTested')}
+          </bdi>,
         ]
           .filter(Boolean)
-          .join(' · ')}
+          .map((fact, index) => (
+            <span key={index}>
+              {index > 0 && ' · '}
+              {fact}
+            </span>
+          ))}
       </span>
       <span className="tabular">
         {[t(`reference.${test.referenceImage}`), t('updated', { date: date(detail.updatedAt) })].join(' · ')}

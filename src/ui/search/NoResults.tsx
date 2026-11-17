@@ -1,6 +1,7 @@
 'use client';
 
 import { languageAttributes } from '@/ui/prompt-detail/language';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 
 import { useLocale, useTranslations } from 'next-intl';
 import { localeByCode, type LocaleEntry } from '@/config';
@@ -43,13 +44,15 @@ export function NoResults({
   const Title = compact ? 'p' : 'h2';
   return (
     <div className={compact ? `${styles.help} ${styles.compact}` : styles.help} data-no-results="">
-      <Title className={styles.title}>{t('title', { query })}</Title>
+      <Title className={styles.title}>
+        <IsolatedMessage format={(query) => t('title', { query })} value={query} />
+      </Title>
       {help && help.broader.length > 0 && (
         <Suggestions label={t('broader')}>
           {help.broader.map((b) => (
             <li key={b.word}>
               <button type="button" className={styles.suggestion} onClick={() => onQuery(b.word)}>
-                {t('suggestion', { label: b.word, count: b.total })}
+                <IsolatedMessage format={(label) => t('suggestion', { label, count: b.total })} value={b.word} />
               </button>
             </li>
           ))}
@@ -60,9 +63,11 @@ export function NoResults({
           {help.terms.map((term) => (
             <li key={term.label}>
               <button type="button" className={styles.suggestion} onClick={() => onQuery(term.label)}>
-                <span {...languageAttributes(term.labelLocale)}>
-                  {t('suggestion', { label: term.label, count: term.total })}
-                </span>
+                <IsolatedMessage
+                  format={(label) => t('suggestion', { label, count: term.total })}
+                  value={term.label}
+                  {...languageAttributes(term.labelLocale)}
+                />
               </button>
             </li>
           ))}

@@ -37,6 +37,8 @@ inputRequirements:
       sintetica, non un vero documento di famiglia.
     ru: Загрузите одну старую фотографию. Наш исходник — синтетически состаренная фотография, а не
       настоящий семейный архив.
+    ar: ارفع صورة قديمة واحدة. صورة «قبل» لدينا صورة اصطناعية أُضفي عليها طابع القِدم، وليست من أرشيف
+      عائلي حقيقي.
   slots:
     - id: oldPhoto
       labels:
@@ -51,6 +53,7 @@ inputRequirements:
         fr: Photo ancienne
         it: Vecchia foto
         ru: Старая фотография
+        ar: صورة قديمة
       min: 1
       max: 1
 showcaseExampleId: x_183
@@ -75,6 +78,7 @@ inspirationSources:
       fr: Ensemble du tutoriel ou de la vidéo de présentation
       it: Intero video tutorial o dimostrativo
       ru: Весь обучающий или демонстрационный ролик
+      ar: الفيديو التعليمي أو الاستعراضي بالكامل
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -89,6 +93,7 @@ inspirationSources:
       fr: Relevé de l’API publique officielle
       it: Istantanea dell’API pubblica ufficiale
       ru: Снимок данных официального публичного API
+      ar: لقطة من واجهة API العامة الرسمية
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -102,6 +107,7 @@ inspirationSources:
       fr: Prompt original complet non récupéré ; adaptation indépendante
       it: Prompt originale completo non recuperato; adattato autonomamente
       ru: Полный оригинальный промпт не получен; самостоятельная адаптация
+      ar: لم يُسترجع الأمر الأصلي كاملًا؛ أُعدّت صياغة مقتبسة بصورة مستقلة
     metrics:
       - key: views
         value: 33334
@@ -117,6 +123,7 @@ inspirationSources:
           fr: Vues
           it: Visualizzazioni
           ru: Просмотры
+          ar: المشاهدات
       - key: likes
         value: 505
         labels:
@@ -131,6 +138,7 @@ inspirationSources:
           fr: Mentions J’aime
           it: Mi piace
           ru: Лайки
+          ar: الإعجابات
       - key: saves
         value: 1340
         labels:
@@ -145,6 +153,7 @@ inspirationSources:
           fr: Enregistrements
           it: Salvataggi
           ru: Сохранения
+          ar: مرات الحفظ
       - key: comments
         value: 62
         labels:
@@ -159,6 +168,7 @@ inspirationSources:
           fr: Commentaires
           it: Commenti
           ru: Комментарии
+          ar: التعليقات
       - key: shares
         value: 139
         labels:
@@ -173,6 +183,7 @@ inspirationSources:
           fr: Partages
           it: Condivisioni
           ru: Репосты
+          ar: المشاركات
       - key: coins
         value: 211
         labels:
@@ -187,6 +198,7 @@ inspirationSources:
           fr: Pièces
           it: Monete
           ru: Монеты
+          ar: العملات
       - key: danmaku
         value: 112
         labels:
@@ -201,6 +213,7 @@ inspirationSources:
           fr: Commentaires défilants (danmaku)
           it: Commenti sovrapposti (danmaku)
           ru: Данмаку
+          ar: التعليقات المتحركة على الفيديو
 source:
   author: Prompt Seen
   url: null

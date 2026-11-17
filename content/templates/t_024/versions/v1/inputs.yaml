@@ -11,6 +11,7 @@ instructions:
   fr: Décrivez un personnage et une scène ; une référence de personnage original est facultative.
   it: Descrivi un personaggio e una scena; un riferimento originale del personaggio è facoltativo.
   ru: Опишите персонажа и сцену; референс оригинального персонажа необязателен.
+  ar: صِف شخصية ومشهدًا؛ ومرجع لشخصية أصلية اختياري.
 slots:
   - id: character
     labels:
@@ -25,5 +26,6 @@ slots:
       fr: Personnage
       it: Personaggio
       ru: Персонаж
+      ar: شخصية
     min: 0
     max: 1
