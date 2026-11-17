@@ -68,6 +68,8 @@ export function PopupHost({
   const register = useCallback((s: PopupSource | null) => setSource(s), []);
   const origin = useRef<PopupOrigin | null>(null);
   const getOrigin = useCallback(() => origin.current, []);
+  // The stand-in and loaded popup must return to the same gallery after a takeover.
+  const galleryUrlRef = useRef('');
 
   // On the server and at hydration `loaded` is null, so both render the stand-in.
   const [DetailPopup, setDetailPopup] = useState<Popup | null>(() => loaded);
@@ -119,6 +121,7 @@ export function PopupHost({
             siteName={siteName}
             source={source}
             getOrigin={getOrigin}
+            galleryUrlRef={galleryUrlRef}
             takeover={pending === 'open'}
           />
         ) : (
@@ -126,6 +129,7 @@ export function PopupHost({
             locale={locale}
             items={source?.items ?? NO_ITEMS}
             getOrigin={getOrigin}
+            galleryUrlRef={galleryUrlRef}
             failed={failed}
             onRetry={retry}
             onState={setPending}

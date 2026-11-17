@@ -3,7 +3,7 @@
 import { X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useEffect, useId, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useSyncExternalStore, type RefObject } from 'react';
 import type { FeedCard } from '@/modules/feed/types';
 import { paths, stripBasePath, withBasePath } from '@/modules/url';
 import { IconButton } from '@/ui/primitives/Button';
@@ -29,6 +29,7 @@ export function PendingDialog({
   locale,
   items,
   getOrigin,
+  galleryUrlRef,
   failed,
   onRetry,
   onState,
@@ -36,6 +37,8 @@ export function PendingDialog({
   locale: PopupLocale;
   items: readonly FeedCard[];
   getOrigin: () => PopupOrigin | null;
+  /** Shared with DetailPopup so loading its code cannot lose the return address. */
+  galleryUrlRef: RefObject<string>;
   /** The popup's code could not be loaded. */
   failed: boolean;
   onRetry: () => void;
@@ -54,16 +57,15 @@ export function PendingDialog({
   const dialogRef = useRef<HTMLDialogElement>(null);
   const shown = useRef(false);
   const leaving = useRef(false);
-  const galleryUrl = useRef('');
 
   // A foreign pushState can arrive before a render's passive effects. Never save its
   // detail address as the gallery to return to when closing the stand-in dialog.
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
     if (!matchPromptPath(stripBasePath(currentPathname), prefix)) {
-      galleryUrl.current = currentPathname + window.location.search + window.location.hash;
+      galleryUrlRef.current = currentPathname + window.location.search + window.location.hash;
     }
-  }, [pathname, prefix]);
+  }, [galleryUrlRef, pathname, prefix]);
 
   // Open and close follow the address in the same commit, so an Esc right after the click reaches
   // an open dialog (§12.8-3).
@@ -107,7 +109,7 @@ export function PendingDialog({
     onState('leaving');
     if (isPopupEntry()) window.history.back();
     else {
-      replaceWithGallery(galleryUrl.current || withBasePath(paths.prompts(prefix)));
+      replaceWithGallery(galleryUrlRef.current || withBasePath(paths.prompts(prefix)));
       notifyLocation();
     }
   };

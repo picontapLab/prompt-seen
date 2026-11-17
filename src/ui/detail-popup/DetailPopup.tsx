@@ -80,6 +80,7 @@ export function DetailPopup({
   siteName,
   source,
   getOrigin,
+  galleryUrlRef,
   takeover = false,
 }: {
   locale: PopupLocale;
@@ -87,6 +88,8 @@ export function DetailPopup({
   source: PopupSource | null;
   /** The card of the latest click that opened the popup (PopupHost). */
   getOrigin: () => PopupOrigin | null;
+  /** Host-owned return address, retained when the loaded popup replaces the stand-in. */
+  galleryUrlRef: RefObject<string>;
   /**
    * Mounted in place of PopupHost's open stand-in dialog: the popup is on screen already, so it
    * opens without entry animations or a flight. Read once, at mount.
@@ -148,7 +151,6 @@ export function DetailPopup({
   const openRef = useRef<string | null>(null);
   const lastViewed = useRef<string | null>(null);
   const savedTitle = useRef('');
-  const galleryUrl = useRef('');
   const stepDir = useRef<1 | -1 | 0>(0);
   /** The work at which "next" waited for the next batch; the step goes ahead when it arrives. */
   const [wantNext, setWantNext] = useState<string | null>(null);
@@ -222,9 +224,9 @@ export function DetailPopup({
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
     if (!matchPromptPath(stripBasePath(currentPathname), prefix)) {
-      galleryUrl.current = currentPathname + window.location.search + window.location.hash;
+      galleryUrlRef.current = currentPathname + window.location.search + window.location.hash;
     }
-  }, [pathname, prefix]);
+  }, [galleryUrlRef, pathname, prefix]);
 
   // --- Open and close follow the address, in the same commit --------------------------------------
   useLayoutEffect(() => {
@@ -324,10 +326,10 @@ export function DetailPopup({
     if (!openRef.current) return;
     if (isPopupEntry()) window.history.back();
     else {
-      replaceWithGallery(galleryUrl.current || withBasePath(paths.prompts(prefix)));
+      replaceWithGallery(galleryUrlRef.current || withBasePath(paths.prompts(prefix)));
       notifyLocation();
     }
-  }, [prefix]);
+  }, [galleryUrlRef, prefix]);
 
   /**
    * Close button, Esc and the scrim (§11.3.1): a short exit (≤ 180 ms) back onto the card, then the

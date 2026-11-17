@@ -123,6 +123,21 @@ async function delayJson(page: Page, slug: string, ms: number) {
   });
 }
 
+/** Hold code outside the HTML's first-load scripts to exercise the stand-in and its takeover. */
+async function holdPopupCode(page: Page, url: string): Promise<() => void> {
+  const html = await (await page.request.get(url)).text();
+  const referenced = new Set(
+    [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"/g)].map((match) => new URL(match[1]!, 'http://x').pathname),
+  );
+  let release!: () => void;
+  const released = new Promise<void>((resolve) => (release = resolve));
+  await page.route('**/_next/static/chunks/*.js', async (route) => {
+    if (!referenced.has(new URL(route.request().url()).pathname)) await released;
+    await route.continue().catch(() => {}); // the page may be gone by then
+  });
+  return release;
+}
+
 const first = works[0]!;
 const second = works[1]!;
 const third = works[2]!;
@@ -282,16 +297,7 @@ test.describe('desktop', () => {
     page,
   }) => {
     // The popup's code is not first-load (§16.1): hold every script the HTML does not reference.
-    const html = await (await page.request.get(listUrl)).text();
-    const referenced = new Set(
-      [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"/g)].map((m) => new URL(m[1]!, 'http://x').pathname),
-    );
-    let release!: () => void;
-    const released = new Promise<void>((r) => (release = r));
-    await page.route('**/_next/static/chunks/*.js', async (route) => {
-      if (!referenced.has(new URL(route.request().url()).pathname)) await released;
-      await route.continue().catch(() => {}); // the page may be gone by then
-    });
+    const release = await holdPopupCode(page, listUrl);
     // A held script started before the load event delays it.
     await gotoList(page, listUrl, 'domcontentloaded');
     const { doc, historyLength } = await state(page);
@@ -544,6 +550,28 @@ test.describe('desktop', () => {
       expect(await state(page)).toMatchObject({ historyLength: historyLength + 1, doc, locked: false });
     });
   }
+
+  test('a foreign popup entry keeps its paginated return address through lazy takeover', async ({ page }) => {
+    test.skip(index.pageCount < 2, 'needs a second gallery page');
+    const gallery = `${listUrl}page/2/`;
+    const release = await holdPopupCode(page, gallery);
+    try {
+      await gotoList(page, gallery, 'domcontentloaded');
+      const { historyLength, doc } = await state(page);
+      await page.evaluate((url) => history.pushState(null, '', url), detailUrl(second.slug));
+      await expectOpen(page, second.slug);
+      await expect(popup(page).locator('[data-popup-step]')).toHaveCount(0);
+      release();
+      await expect(popup(page).locator('[data-stage-picture]')).toBeVisible();
+      await expect(popup(page)).toHaveAttribute('data-instant', '');
+      await page.keyboard.press('Escape');
+      await expect(popup(page)).not.toHaveAttribute('open', '');
+      await expect.poll(async () => (await state(page)).path).toBe(gallery);
+      expect(await state(page)).toMatchObject({ historyLength: historyLength + 1, doc, locked: false });
+    } finally {
+      release();
+    }
+  });
 
   test('§12.8-8: with reduced motion the same tasks work, without flight or movement', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
