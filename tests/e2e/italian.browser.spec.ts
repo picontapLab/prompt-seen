@@ -161,9 +161,9 @@ test.describe('actual Italian preview samples', () => {
         await expect(page.locator('h1')).toHaveText('Ramo di pruno a inchiostro');
         expect(errors).toEqual([]);
         if (browserName === 'chromium' && [360, 1440].includes(width)) {
-          const directory = path.join(ROOT, 'production/localization/it/evidence/screenshots');
-          fs.mkdirSync(directory, { recursive: true });
-          await page.screenshot({ path: path.join(directory, `${width}-${theme}.png`) });
+          const screenshot = test.info().outputPath(`italian-${width}-${theme}.png`);
+          await page.screenshot({ path: screenshot });
+          await test.info().attach('Italian layout', { path: screenshot, contentType: 'image/png' });
         }
       });
     }
