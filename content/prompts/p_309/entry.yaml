@@ -31,6 +31,8 @@ inputRequirements:
     es: Sube la imagen de referencia generada por el proyecto en el orden indicado
       (R18) y después usa el prompt adaptado completo.
     ko: 표시된 순서(R18)대로 프로젝트에서 생성한 참조 이미지 1장을 업로드한 뒤 전체 각색 프롬프트를 사용하세요.
+    ru: Загрузите 1 референсное изображение, созданное для проекта, в показанном
+      порядке (R18), затем используйте полный адаптированный промпт.
   slots:
     - id: reference1
       labels:
@@ -41,6 +43,7 @@ inputRequirements:
         pt-BR: Referência de personagem gerada pelo projeto
         es: Referencia de personaje generada para el proyecto
         ko: 프로젝트에서 생성한 캐릭터 참조 이미지
+        ru: Референс персонажа, созданный для проекта
       min: 1
       max: 1
 showcaseExampleId: x_373
@@ -63,6 +66,8 @@ inspirationSources:
       es: Publicación original completa; compartida entre variantes, no esta
         adaptación
       ko: 이 각색이 아닌 원본 게시물 전체; 여러 변형이 공유하는 수치
+      ru: Вся исходная публикация; показатели общие для вариантов и не относятся к
+        этой адаптации
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -73,6 +78,7 @@ inspirationSources:
       pt-BR: Captura pública arquivada do X e prompt completo do autor
       es: Captura pública archivada de X y prompt completo del autor
       ko: 보관된 공개 X 스냅샷과 작성자의 전체 프롬프트
+      ru: Архивный снимок публичной публикации X и полный авторский промпт
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118750260549796019&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -82,6 +88,7 @@ inspirationSources:
       pt-BR: Adaptação independente; original completo preservado separadamente
       es: Adaptación independiente; original completo conservado por separado
       ko: 독립적인 각색; 전체 원문은 별도로 보존
+      ru: Самостоятельная адаптация; полный оригинал сохранён отдельно
     metrics:
       - key: likes
         value: 22
@@ -93,6 +100,7 @@ inspirationSources:
           pt-BR: Curtidas da publicação de origem
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
+          ru: Лайки исходной публикации
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/Voxyz_ai/status/2118750260549796019

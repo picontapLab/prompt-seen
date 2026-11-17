@@ -1,0 +1,1743 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "AI Codex ru_batch_d — independent of ru_batch_a author",
+  "completedAt": "2026-11-17T15:28:50.257914+00:00",
+  "scope": "Independent source-comparison of all 182 A-partition translation units, with special attention to numeric facts, literal image text and source-frame vs nine-encoded-frame distinctions. No new media inspection, historical review certification or provider provenance certification. No native-speaker or human certification. A later, separately scoped visual supplement checks captions in a_457/a_464 to resolve source shorthand; see supplementalVisualChecks.",
+  "counts": {
+    "reviewed": 182,
+    "approved": 182,
+    "changesRequested": 0,
+    "corrected": 5
+  },
+  "changes": [
+    {
+      "id": 93,
+      "before": "Три портрета с именами образуют чёткий треугольник. Подписи партнёрства, поиска и родства связывают нужных персонажей; партнёрская связь двунаправленная.",
+      "after": "Три портрета с именами образуют чёткий треугольник. Подписи партнёрства, поиска и родства между братьями и сёстрами связывают нужных персонажей; партнёрская связь двунаправленная.",
+      "reason": "Preserve sibling specificity; generic kinship could also mean parent/child or other family relationships."
+    },
+    {
+      "id": 161,
+      "before": "Селфи за один вызов сохраняет чёрный боб, карие глаза, кардиган и нежный иллюстративный стиль. Композиция сверху с расстояния вытянутой руки, простой диван и шторы, без надписей. Примерно 9:16; фактические размеры сохранены. Локальное сопоставление референсов и сообщение, написанное ассистентом, — самостоятельные адаптации рабочего процесса.",
+      "after": "Селфи за один вызов сохраняет стрижку боб с чёрными волосами, карие глаза, кардиган и нежный иллюстративный стиль. Композиция сверху с расстояния вытянутой руки, простой диван и шторы, без надписей. Примерно 9:16; фактические размеры сохранены. Локальное сопоставление референсов и сообщение, написанное ассистентом, — самостоятельные адаптации рабочего процесса.",
+      "reason": "Clarify that black bob describes hairstyle and hair colour rather than a literal black bean; use consistent haircut terminology."
+    },
+    {
+      "id": 173,
+      "before": "Четыре тёплых кадра в стиле книжной иллюстрации в правильном порядке: собака у закрывающейся двери, взгляд на диван, занятие подушек, невинное приветствие у открытой двери. Проточина на морде корги, уши и зелёная бандана единообразны; в гостиной повторяются диван, книжный шкаф, лампа, ковёр и картина на стене. Все четыре запрошенные подписи появляются ровно по одному разу с правильной пунктуацией и крупными читаемыми буквами.",
+      "after": "Четыре тёплых кадра в стиле книжной иллюстрации в правильном порядке: собака у закрывающейся двери, взгляд на диван, собака на подушках, невинное приветствие у открытой двери. Проточина на морде корги, уши и зелёная бандана единообразны; в гостиной повторяются диван, книжный шкаф, лампа, ковёр и картина на стене. Все четыре запрошенные подписи появляются ровно по одному разу с правильной пунктуацией и крупными читаемыми буквами.",
+      "reason": "Replace unnatural занятие подушек with a clear description of the dog occupying the cushions; sequence unchanged."
+    },
+    {
+      "id": 177,
+      "before": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь рисованных гуашевых городских кадров показывают движение велосипедистов, скутера, людей и птиц на фоне узнаваемого Колизея. Фактически выполнены центральное кадрирование 3:4 и повторяющееся воспроизведение длительностью 2 секунды. Видимый сброс положения на границе цикла и небольшие изменения перерисованной архитектуры означают, что это стилизованная покадровая адаптация, а не бесшовный результат, заданный оригинальным промптом.",
+      "after": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь рисованных гуашевых городских кадров показывают движение велосипедистов, скутера, людей и птиц на фоне узнаваемого Колизея. Фактически выполнены центральное кадрирование 3:4 и повторяющееся воспроизведение длительностью 2 секунды. Видимый сброс положения на границе цикла и небольшие изменения перерисованной архитектуры означают, что это стилизованная адаптация по ключевым кадрам, а не бесшовный результат, заданный оригинальным промптом.",
+      "reason": "Preserve keyframe specifically, rather than implying a full frame-by-frame animation workflow."
+    },
+    {
+      "id": 162,
+      "before": "Девять разных мультяшных реакций в равномерной сетке 3 на 3. Проверены все подписи по порядку: Hey!, Same., Seriously?, I am in contraction, Nope., Thank you!, You got this., BRB, Love it!; апостроф в четвёртой подписи присутствует. Кудри, черты лица и бирюзовая толстовка R1 остаются узнаваемыми во всех ячейках. Крупные контрастные надписи, светлый фон и белые границы; дополнительного заголовка нет. Компоновка на телефоне будет проверена после импорта.",
+      "after": "Девять разных мультяшных реакций в равномерной сетке 3 на 3. Проверены все подписи по порядку: Hey!, Same., Seriously?, I'm in!, Nope., Thank you!, You got this., BRB, Love it!; апостроф в четвёртой подписи присутствует. Кудри, черты лица и бирюзовая толстовка R1 остаются узнаваемыми во всех ячейках. Крупные контрастные надписи, светлый фон и белые границы; дополнительного заголовка нет. Компоновка на телефоне будет проверена после импорта.",
+      "reason": "I am in contraction describes the contracted form rather than literal image wording. The unchanged run record and actual original PNG both show I'm in! in the fourth cell; use that observed original caption without inventing new lettering.",
+      "completedAt": "2026-11-17T15:39:56.056976+00:00"
+    }
+  ],
+  "records": [
+    {
+      "id": 0,
+      "source": "Fruit texture, leaf crown, carved facial features and scale fruit checked.",
+      "target": "Проверены фактура фрукта, корона из листьев, вырезанные черты лица и фрукты, задающие масштаб.",
+      "sourceHash": "sha256:f4ec72a1753389548e05ce17f393fe1eba71c1508eec81428932d5306d3ca9df",
+      "targetHash": "sha256:2f2b9d6ccdfd16531b4f6ebbd2a486affba16a8b3e8e8e3bd58d42b108ee1f8e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 1,
+      "source": "Bottle shape, expressive stylized face, warm glass reflections and three colored background bottles checked; fur is more realistic than the requested cartoon treatment.",
+      "target": "Проверены форма бутылки, выразительное стилизованное лицо, тёплые отражения на стекле и три цветные бутылки на фоне; мех выглядит реалистичнее, чем требуемая мультяшная стилизация.",
+      "sourceHash": "sha256:c651b8a074e4c01d6fc733073b8f960503d2dcc3ebf0bd637aa526a1d8b55084",
+      "targetHash": "sha256:7a6dc63980acf737e6cd1b3dc9af0ccc7a60e585d1d239df57b384d8175b5b7b",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 2,
+      "source": "Aerial coastline, white lighthouse, painted bands, sea ice and scale birds checked.",
+      "target": "Проверены вид побережья с воздуха, белый маяк, нарисованные полосы, морской лёд и птицы, задающие масштаб.",
+      "sourceHash": "sha256:f5b401bac8545b3efa7332ed518031aec87d998c27e53f07699dc2575bc4983e",
+      "targetHash": "sha256:fdc3d4f5af29e7a11b7c6e31fba2d7a50a415880de1b21af86c38ad427146345",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 3,
+      "source": "Five-finger hand, photographic condensation, ink swimmer, smiling garnish and headline space checked.",
+      "target": "Проверены рука с пятью пальцами, фотографически достоверный конденсат, пловец тушью, улыбающееся украшение напитка и место для заголовка.",
+      "sourceHash": "sha256:1bf617234b41444aca0d17bd51b76fad479c3477abe18f20fa6a3b58a7e62217",
+      "targetHash": "sha256:a7e3f5c479f4b6032bcecc4eb00634b2fe35b01c494a6c2ea8b2e40fe7d23cd5",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 4,
+      "source": "Apron, recognizable tabby face, simple paws, fish on paper and customer coins checked.",
+      "target": "Проверены фартук, узнаваемая мордочка полосатого кота, простые лапы, рыба на бумаге и монеты покупателей.",
+      "sourceHash": "sha256:a31fc8e457c30a6bbf798b98d2c135917950becc42dd6c1b33ae737fe7eab096",
+      "targetHash": "sha256:2c94455ba4441138fd085d3c2157a51cb035f4db32239cc03975786e50316b28",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 5,
+      "source": "Natural street scale, unposed pedestrians, restrained colors and film grain checked.",
+      "target": "Проверены естественный масштаб улицы, непостановочные позы прохожих, сдержанные цвета и плёночное зерно.",
+      "sourceHash": "sha256:13dce1f11b9f8413a816d804ddfa3cce4b93a019c35db083af9a2c4eec437609",
+      "targetHash": "sha256:b1abe4f60eb1899c5562f285739b1831e4b84a45ec3ef8efaec9a7b672b40c9e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 6,
+      "source": "Tree canopies, pedestrian bridges, public life, clean architecture and quiet transit checked; rendering is more realistic than the requested animation-background style.",
+      "target": "Проверены кроны деревьев, пешеходные мосты, общественная жизнь, чистая архитектура и спокойный транспорт; изображение реалистичнее, чем требуемый стиль фона для анимации.",
+      "sourceHash": "sha256:f84f5ecd6c45d8d124c4f824962a5ef09c51a1b22a1ca156338f50d3504499ab",
+      "targetHash": "sha256:4dee20364a94ea1453b10325d4f1ee292ff85ed1b4109a005a2701ed004055f6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 7,
+      "source": "Hand scale, moss and tiny trees, waterfall and sharp miniature focus checked.",
+      "target": "Проверены масштаб относительно руки, мох и крошечные деревья, водопад и резкий фокус на миниатюре.",
+      "sourceHash": "sha256:3f6ed69983790c56c194d0da9018e9703afd5059ce62cfffb9d50409c4f17ab7",
+      "targetHash": "sha256:77b266c338c8459805cb23cad43b69ad3242eed543c861e4f17bd33030a159ee",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 8,
+      "source": "Empty dining booths, tiled floors, fluorescent lighting and awkward corridor transition checked; no people or horror props.",
+      "target": "Проверены пустые обеденные кабинки, плиточные полы, люминесцентное освещение и неуютный переход в коридор; людей и атрибутов хоррора нет.",
+      "sourceHash": "sha256:ddb76bd51fd871a1f75ed4a4a25f574cd48d378dd9bcd9c1f0ffa54ec1277239",
+      "targetHash": "sha256:72694fe12b24976bfe7ac618b5d93fa6bafac3178a5a470b8fc653b772365e61",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 10,
+      "source": "Pose, navy shirt, beige trousers and hair retained; enlarged expressive eyes and softened sculpted forms provide a clear 3D restyle.",
+      "target": "Поза, тёмно-синяя рубашка, бежевые брюки и волосы сохранены; увеличенные выразительные глаза и смягчённые скульптурные формы отчётливо передают стилизацию под 3D.",
+      "sourceHash": "sha256:74b5fafaaa32a236ae6d7c1de3a020ca2eef4b197a474efeef0e9c5bf3198f8a",
+      "targetHash": "sha256:b63061c979e3cc27df0dc1eb2e5bc4072dcb98c51d9f584908e16eb0c80b74f2",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 11,
+      "source": "Central subject is sharp and recognizable; surrounding pedestrian motion trails and warm face lighting read clearly.",
+      "target": "Главный человек в центре резкий и узнаваемый; следы движения окружающих прохожих и тёплое освещение лица хорошо читаются.",
+      "sourceHash": "sha256:4d3d1ef7d13598c8de0f3d253f93fef31fdc81f7bbb978d7f56f8120668ca0f0",
+      "targetHash": "sha256:73366b2ffbea8131d20df178454845eb9bae7eb05896eef6f3e6ba6ce65a8c1d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 12,
+      "source": "Recognizable face, tight off-center crop, direct flash, dark background and visible fine grain are present.",
+      "target": "Присутствуют узнаваемое лицо, тесное кадрирование со смещением от центра, прямая вспышка, тёмный фон и заметное мелкое зерно.",
+      "sourceHash": "sha256:eca8bb07799afeff808faa643267dc98835ceb75cf170d547fb6734a406a4e93",
+      "targetHash": "sha256:ead6e2f6a45f7fa5665739b1c9dba157837cb84adeafe63c1add82e4c489f778",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 14,
+      "source": "All five supplied component labels are legible and point to the intended conceptual components. Cutaway and enlarged burr inset are clear. The output uses five accent colors rather than four; not a manufacturing specification.",
+      "target": "Все пять заданных подписей компонентов разборчивы и указывают на нужные условные компоненты. Разрез и увеличенная вставка с жерновами понятны. В результате использовано пять акцентных цветов вместо четырёх; это не производственная спецификация.",
+      "sourceHash": "sha256:561cb1d40f5ba8f5a02895d450d85ce469cce0e9e8d2d386eb66ef5d783919f3",
+      "targetHash": "sha256:dd35c33a37a3a5ef189dfdaf2bedfcb0327337c4f8372c05213821a5b44d9b60",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 15,
+      "source": "All five ingredients and quantities are readable and correct; floating layers, connecting steam and finished bowl are clear.",
+      "target": "Все пять ингредиентов и их количества читаются и указаны верно; парящие слои, соединяющий их пар и готовая миска хорошо различимы.",
+      "sourceHash": "sha256:8a9908d05393f0995261cac800d89324a8df9095534203f38e14d471b64ddf09",
+      "targetHash": "sha256:687a77ded796ca73a487bd577d3c4bc90c38d3abdba0ec0146de10bfc9791290",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 16,
+      "source": "KYOTO, DEMO — 12 APR, FICTIONAL FORECAST, 18°C and PARTLY CLOUDY are legible; pagoda, shrine gate and town house are present.",
+      "target": "KYOTO, DEMO — 12 APR, FICTIONAL FORECAST, 18°C и PARTLY CLOUDY разборчивы; присутствуют пагода, ворота святилища и городской дом.",
+      "sourceHash": "sha256:cc855fac00cd15f523dd5edab18bffa4e87b59988d8ee5bfa77dabb37b76f543",
+      "targetHash": "sha256:b9e0d7781965cfaee3b462d0c6aaefaac3b8f2303167a82fe1d0c1bdf3f5d873",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 17,
+      "source": "Four panels show plan, crooked door, repair and celebration. All three creatures retain their colors and accessories.",
+      "target": "Четыре кадра показывают план, перекошенную дверь, ремонт и празднование. Все три существа сохраняют свои цвета и аксессуары.",
+      "sourceHash": "sha256:987c33ff3bfbd422c92b4c7560b0a30cf58035dd34b1e7756661c5e67b41e9a5",
+      "targetHash": "sha256:8de12936cd7b8dd7f1e74c6ca0b554e125a97b5b47ee04d388fce16fb3bb4a31",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 18,
+      "source": "Exactly nine specified icons in a 3-by-3 grid; shared muted palette, tactile surfaces and clear silhouettes.",
+      "target": "Ровно девять заданных иконок в сетке 3 на 3; общая приглушённая палитра, тактильные поверхности и чёткие силуэты.",
+      "sourceHash": "sha256:44283378ca5e0288448733da35ed5455bc358b555d0831765167e9908acfe45f",
+      "targetHash": "sha256:af8aa8773e0223c96d0534a99a0b281c71b9a520dbe9e67268e0b80e1be94918",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 19,
+      "source": "Fictional Moss & Mug name and core mark are consistent across cup, carton, bag, menu and campaign applications; fine secondary copy remains illustrative.",
+      "target": "Вымышленное название Moss & Mug и основной знак единообразны на стакане, коробке, пакете, меню и материалах кампании; мелкий вспомогательный текст остаётся иллюстративным.",
+      "sourceHash": "sha256:c231c45aa43bf44edfc84ae7987fa95719e25fd5ebe0db1b5207996b755abb7a",
+      "targetHash": "sha256:89aca6ac108e7891295cc2266e25eca5b3beaab1419b8230695e13f133c07752",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 20,
+      "source": "The three orange legs, unequal eyes, long left arm, short right arm, blue spikes and red zigzag mouth match the drawing; fur and stitched felt make it tangible.",
+      "target": "Три оранжевые ноги, неодинаковые глаза, длинная левая рука, короткая правая рука, синие шипы и красный зигзагообразный рот соответствуют рисунку; мех и сшитый фетр придают осязаемость.",
+      "sourceHash": "sha256:9aa249c75a9ffd3326822d897e29bfc2b4bd1fbf4c994ba4fdb0e039c7f0051c",
+      "targetHash": "sha256:c173c8d3472679d91be1b9ac36861f197f87bca9318fdfabbe18e94719bb1960",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 22,
+      "source": "The supplied facial structure is recognizable at thumbnail size, while local regions consist of stone paths, foliage and flowers. Strong conditioning leaves the face visible even at full size; this is an advanced structural demonstration, not a subtle or text-only illusion.",
+      "target": "Заданная структура лица узнаваема в миниатюре, а отдельные области состоят из каменных дорожек, листвы и цветов. Сильное влияние референса сохраняет видимость лица даже в полном размере; это продвинутая демонстрация структурного сходства, а не незаметная иллюзия или иллюзия, созданная только текстом.",
+      "sourceHash": "sha256:4379bbe0af11021946c9587b9c66925dc80dbb9a448fec57f58963630afb94dc",
+      "targetHash": "sha256:5f87f8a510ba89cc8cf2f08ddfb558b6659bb70b9c7d72f5ef1fed7044452ccf",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 23,
+      "source": "Window, sofa, rug, oval table, plants and bookcase retain their relative arrangement in a coherent miniature cutaway.",
+      "target": "Окно, диван, ковёр, овальный стол, растения и книжный шкаф сохраняют взаимное расположение в согласованном миниатюрном разрезе.",
+      "sourceHash": "sha256:9e4a109b625737f049f3b651e4ae6eba5fb2a2b2c2f6af5a58a2bc2fd4917920",
+      "targetHash": "sha256:1ad6ed77a51e60da03ab773d61c90867a2122a28858cb4fe1d0aa1137e6d2806",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 24,
+      "source": "Cobalt and ivory engineering-style plate includes perspective, exploded assembly and two details with correct supplied labels. Generated dimensions and serial number are decorative, not measured specifications.",
+      "target": "Лист в инженерном стиле в кобальтовых тонах и цвете слоновой кости включает перспективный вид, взрыв-схему сборки и две детали с верными заданными подписями. Сгенерированные размеры и серийный номер декоративны и не являются измеренными характеристиками.",
+      "sourceHash": "sha256:ef113f8c630f98324fd0c4dee512bb84069c5104cc9d2b6a2ea615ab6924cab9",
+      "targetHash": "sha256:af85957b9e5d1a283ec15891f2856f7fd8b0c7380284d4c1cf242cfb21e4c747",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 25,
+      "source": "Perspective, front and side views and two material details share the same cup design; all three requested feature labels are clear.",
+      "target": "Перспективный вид, виды спереди и сбоку и две детали материалов показывают один и тот же дизайн чашки; все три запрошенные подписи особенностей разборчивы.",
+      "sourceHash": "sha256:ed654184361bce5a204aef18911b75adab8f22c6864a46cd9a9307c4964a7a31",
+      "targetHash": "sha256:ba6a204f95f956f57b9289d18fb7fc0217656c36bb0d049e0e6ad7eecc9f8b6e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 26,
+      "source": "PLAY is spelled correctly with separate rounded glossy coral letters and a soft floor shadow.",
+      "target": "PLAY написано правильно отдельными округлыми глянцевыми коралловыми буквами с мягкой тенью на полу.",
+      "sourceHash": "sha256:986d450ce4bfa15fae0f37546e643c0e12fa6851459a4d9e683044ff067f86ff",
+      "targetHash": "sha256:2bd8288a0807f863b676eadbd743ac99bf3e49ba1f794e361e3a9ba9e78294f7",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 27,
+      "source": "Two distinct original creatures face each other with crisp pixel clusters, coherent turquoise/amber/violet palette, attack particles and readable game UI.",
+      "target": "Два разных оригинальных существа стоят лицом друг к другу; чёткие группы пикселей, согласованная бирюзовая, янтарная и фиолетовая палитра, частицы атаки и читаемый игровой интерфейс.",
+      "sourceHash": "sha256:f0151ead497e438ec19bc3a7f26a780dbe4a7ddac7c19f25d7b92a347f899edf",
+      "targetHash": "sha256:27066803cae979af78595c98050ea50d458d5eba1a94377d4ae41f0167f891c6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 28,
+      "source": "Five fingers and five requested nail motifs are visible with natural cuticles and convincing glossy surfaces.",
+      "target": "Видны пять пальцев и пять запрошенных мотивов на ногтях, с естественными кутикулами и убедительными глянцевыми поверхностями.",
+      "sourceHash": "sha256:7030b181f52466592612d6f94503edc11973c6be28a395daf784dca6e1a959ff",
+      "targetHash": "sha256:3e81742df85312a2a93014c7ac52642cdd6fdeb325b9c5c01844c19404dcf384",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 29,
+      "source": "Fox reading beneath a tree is clearly built from layered sage, peach and cream paper with visible fibers and contact shadows.",
+      "target": "Лиса, читающая под деревом, явно собрана из слоёв бумаги шалфейного, персикового и кремового цветов с видимыми волокнами и контактными тенями.",
+      "sourceHash": "sha256:9984d1b4e87d60ea411bf0cbfb053fa73b20519a77b81087e36ea6c396dcca31",
+      "targetHash": "sha256:d828fad110b4f5aada08413177137e10b0fa307658d3d8a4a37156a9f091f787",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 30,
+      "source": "Cheerful robot watering a plant is readable; clay surfaces have visible tool marks and imperfect handmade paint.",
+      "target": "Весёлый робот, поливающий растение, хорошо читается; на глиняных поверхностях видны следы инструментов и несовершенства ручной росписи.",
+      "sourceHash": "sha256:3a9514a1485297aa48d8886388a2247930382f1e0e418695841149a136cbe052",
+      "targetHash": "sha256:1dfec3c03318bb850200c3fafa4c79b0b1d67b512c029651220faae31d62bba8",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 31,
+      "source": "Recognizable miniature retains face, hair and clothing; transparent stand, matching illustrated box and wireframe monitor are present. Packaging lettering is illustrative.",
+      "target": "Узнаваемая миниатюра сохраняет лицо, волосы и одежду; присутствуют прозрачная подставка, подходящая коробка с иллюстрацией и монитор с каркасной моделью. Надписи на упаковке иллюстративны.",
+      "sourceHash": "sha256:4a2cbbc81afdd107a94db914bbca8472ce8f2a11dc455c964ccaf29016cfb324",
+      "targetHash": "sha256:ecb50632d21a106373d94ed8e4ba411a92f479b452f2e83422ee012a024004a4",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 32,
+      "source": "Recognizable miniature with navy shirt and beige trousers; top loop and short chain connect convincingly beside a key.",
+      "target": "Узнаваемая миниатюра в тёмно-синей рубашке и бежевых брюках; верхнее ушко и короткая цепочка убедительно соединены рядом с ключом.",
+      "sourceHash": "sha256:ade1e57143739d8d509612a6f1b8d59ae75af7a2dd95b2fb561209932e38ea0e",
+      "targetHash": "sha256:130225d0e240413e81c822fd9855671dc936fe060b2835a6b421d7b7fa8f5f12",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 33,
+      "source": "Second attempt has fully human anatomy, ordinary knit clothing, no tail or animal ears, and retains the source sofa, light and orange-white palette.",
+      "target": "Во второй попытке анатомия полностью человеческая, обычная вязаная одежда, без хвоста и звериных ушей; исходный диван, свет и оранжево-белая палитра сохранены.",
+      "sourceHash": "sha256:e9638048ca4f2c6a883b42c72d21da2409d4222e7780976bd02260ba82d59882",
+      "targetHash": "sha256:dcb94ecbf6dbaaca062e34c59ffa66c896bd27627d798581a4d3844b5cdcf8ca",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 34,
+      "source": "Second attempt clearly separates the photographic adult from a giant stylized 3D companion; face, clothing colors, gestures and ground perspective are consistent.",
+      "target": "Во второй попытке фотографически изображённый взрослый чётко отделён от огромного стилизованного 3D-компаньона; лицо, цвета одежды, жесты и перспектива поверхности согласованы.",
+      "sourceHash": "sha256:aeee7339d290d6362aac95d0a71fc5120221f711d497e14fc73eb33ee9fa5f30",
+      "targetHash": "sha256:b126a73f9742100bdebb7a182a14d1c954769c34443895aa704241a00b36f08b",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 35,
+      "source": "Preserves running pose, navy shirt, cream trousers and riverside setting in watercolor animation style.",
+      "target": "В акварельном анимационном стиле сохранены поза бегущего человека, тёмно-синяя рубашка, кремовые брюки и обстановка у реки.",
+      "sourceHash": "sha256:ce41a4f052d1f5e0d4d06d732ae92b7553deb8673cf128e8bbeac02b76b77c3f",
+      "targetHash": "sha256:05daadd8396e2328d656671063ee87087bfccd1222b0e428131cb0ea84ecb6ca",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 36,
+      "source": "Restored synthetic archival portrait retains face, clothing and room with subdued color; no claim of a real historical photo.",
+      "target": "Восстановленный синтетический архивный портрет сохраняет лицо, одежду и комнату в приглушённых цветах; не заявляется, что это настоящая историческая фотография.",
+      "sourceHash": "sha256:66152c9fe28b3a3cec4286951162582432667e1cfb0b8425ceb9d8d187cc8f9e",
+      "targetHash": "sha256:8a8f45726760e4232a790ae9a3ac5a5d769281b8e07061ddd8bf5ba0ae99e0b8",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 37,
+      "source": "Profile contour readable; action and portrait inputs arranged inside silhouette; LIN exact.",
+      "target": "Контур профиля читается; входные изображения с движением и портретом расположены внутри силуэта; LIN воспроизведено точно.",
+      "sourceHash": "sha256:33ae86242a17784adcd705a50f00aa54e2dc6f4491ea9d29e735e8ee2b1390ef",
+      "targetHash": "sha256:280cc0c2b77656fee40b27fb72fcedfc5c72da8bed89d168975b920cb8723ac9",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 38,
+      "source": "Original circular mountain icon remains recognizable in dense black and cream fur.",
+      "target": "Оригинальная круглая иконка с горой остаётся узнаваемой в густом чёрном и кремовом мехе.",
+      "sourceHash": "sha256:5c05f689741232615d03788f0d16dee93f6ae32c0277f58f06f63a8fbf6a6d6a",
+      "targetHash": "sha256:44c8d59be1f6c790487882f069ded2a76e768b80f8b9fd303fa2bf90c6c802a0",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 39,
+      "source": "PLAY lettering readable, source runner occupies photo-filled letters; coral field and margin clear.",
+      "target": "Надпись PLAY читается, бегущий человек из исходника заполняет буквы фотографией; коралловое поле и поля вокруг хорошо различимы.",
+      "sourceHash": "sha256:43bbedb5f19397bcede269049d2c9c01007edff5226371ae2efe41ccd604cb67",
+      "targetHash": "sha256:d91a21080bdf1c75875593c7c5807a186110d5d86e02e02902f187358cc49bac",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 40,
+      "source": "PINE, SLOW DOWN, A little pause, every day and EXPLORE readable exactly; bottle preserved.",
+      "target": "PINE, SLOW DOWN, A little pause, every day и EXPLORE читаются и воспроизведены точно; бутылка сохранена.",
+      "sourceHash": "sha256:c1bc6eefa8a0ad8969ccddb3e4d43e83d1a5740e6ec6de91cee51f71eddb1b21",
+      "targetHash": "sha256:2616db7b437fd22567da710a42ce22dfa60cd6d52cc690a40fa8aeed01e76a90",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 41,
+      "source": "PINE bottle intersects restrained rectangular and quarter-circle composition; extra generic slogan is decorative.",
+      "target": "Бутылка PINE пересекает сдержанную композицию из прямоугольников и четвертей круга; дополнительный общий слоган декоративен.",
+      "sourceHash": "sha256:e7bff32b7739d852e093f3a22ebba76da0ef73789b8aced66bbe6655a7448b93",
+      "targetHash": "sha256:1c5f4d6b8ba1f87b0975caa485599932c73f55c82b1812aed774ba400cdf169a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 42,
+      "source": "Adult identity and separate jade jacket/red skirt garment reference retained.",
+      "target": "Сохранены узнаваемость взрослого и отдельный референс одежды с нефритовым жакетом и красной юбкой.",
+      "sourceHash": "sha256:89ac79a62c7f302de1d620b8e812a9b7f1df9265895e6a98fbb51a20d52c1d1a",
+      "targetHash": "sha256:9b71439a77e0f0357accc31aaa276569711fde47581733b8962774b63a266f2d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 43,
+      "source": "Crayon strokes and paper texture preserve sofa, window, rug and table layout.",
+      "target": "Штрихи воскового мелка и фактура бумаги сохраняют расположение дивана, окна, ковра и стола.",
+      "sourceHash": "sha256:ec62999f16ec7beed065897e0fabd38cd464ee323c919a32293eee471f8a66ea",
+      "targetHash": "sha256:1c9d49885a5d1384993d7ffd8321fbfd5eb686ab8866b4231932e4a5fc745ee8",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 44,
+      "source": "16 distinct cells; all 16 supplied Chinese captions checked in reading order, including 安心. Same hairstyle and navy outfit.",
+      "target": "16 отдельных ячеек; все 16 заданных китайских подписей проверены в порядке чтения, включая 安心. Одинаковые причёска и тёмно-синяя одежда.",
+      "sourceHash": "sha256:bb4f70edd9f7cd45ecd197058aee0c10950befc10ad2be9091e504f24e2011ff",
+      "targetHash": "sha256:9a0b1f61a1cd4f538e44394523d67d73792afb552ca27a57c8e5de134cabd007",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 45,
+      "source": "Main islands and city order recognizable; schematic route, not navigation. Default labels Tokyo, Kyoto, Osaka checked. Alternate rejected because route arrow direction contradicts Tokyo-to-Kyoto notes.",
+      "target": "Основные острова и порядок городов узнаваемы; маршрут схематичный, не для навигации. Подписи по умолчанию Tokyo, Kyoto, Osaka проверены. Альтернативный вариант отклонён, поскольку направление стрелки маршрута противоречит примечаниям о пути из Токио в Киото.",
+      "sourceHash": "sha256:73c48bc64df22ef1e5a9897682965fe3fefe75d06ef839c3f4a648154c101684",
+      "targetHash": "sha256:525a9e492b7b5b98c74338becf24d4cc65f707c8a989dac818bab9f48962c620",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 46,
+      "source": "Alternate yellow triangular bird preserves blue head, bent red beak, purple unequal wings and toy texture.",
+      "target": "Альтернативная жёлтая треугольная птица сохраняет синюю голову, изогнутый красный клюв, неодинаковые фиолетовые крылья и игрушечную фактуру.",
+      "sourceHash": "sha256:2bd2f534a102f76090d062b53a68e816e72e5261bcf3916e32e8470f9709e784",
+      "targetHash": "sha256:150465142589fd76e83cd23ba280eb06332c5419b323a41cbe564f5db12b8e0d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 47,
+      "source": "Adult B converted to desk figure with clear acrylic base, packaging and modelling screen; generated packaging names are illustrative.",
+      "target": "Взрослый B превращён в настольную фигурку с прозрачной акриловой подставкой, упаковкой и экраном моделирования; сгенерированные названия на упаковке иллюстративны.",
+      "sourceHash": "sha256:59d8515de77bf0e91136a7efb9a46b5ad63187135dc30b65c1e540f28ee96f88",
+      "targetHash": "sha256:28fa4eef2485e5e875fc6108c103b2ebed655f289460b54b41331673ec5c30a5",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 49,
+      "source": "Human adult with orange-white knit, no animal tail or ears; calm pose on blue sofa.",
+      "target": "Взрослый человек в оранжево-белой вязаной одежде, без звериного хвоста и ушей; спокойная поза на синем диване.",
+      "sourceHash": "sha256:74c2d3708efb01eccdc13e1ff37d3edd9fd4eaa759028d7079de0025222f26a5",
+      "targetHash": "sha256:c5b20b551a2048fe1cd41b5f59d83a637af265387f4f434f874b89504f4051a6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 50,
+      "source": "Alternate office reference preserved as isometric cutaway with mint chair, long desk and terracotta floor.",
+      "target": "Альтернативный референс офиса сохранён в виде изометрического разреза с мятным креслом, длинным столом и терракотовым полом.",
+      "sourceHash": "sha256:690349e44dce8022a7f1b4501410d083b23d9d5bced7a9c1be19b4bb2c6adff6",
+      "targetHash": "sha256:0e2e96e6db021d1aa4f41f5a2d0caab48c3c3a4082467aa44abcd8753a95effc",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 51,
+      "source": "Nine distinct bakery icons in 3x3 grid, cohesive buttery yellow palette.",
+      "target": "Девять разных иконок пекарни в сетке 3×3, согласованная палитра сливочно-жёлтых оттенков.",
+      "sourceHash": "sha256:94d6f653cfc58e10a23ef38d389330657f67970b5f42e22c371017c707c21cd3",
+      "targetHash": "sha256:5fcfaff1b5e1db017e8095b4ab1adbab5f0879e9b1cb7cf20a6b67c9781d8a00",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 52,
+      "source": "Alternate room layout retained in hand-painted animation style.",
+      "target": "Альтернативная планировка комнаты сохранена в стиле рисованной анимации.",
+      "sourceHash": "sha256:67e743865e983ad08fbb60ee209547e95f13e41d7a2c3cdd9457ab7d9e7a321f",
+      "targetHash": "sha256:f46a17e9b8ca03eacb16b3b9ab82da4095943d883d03fdf2c6b7e263237e0419",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 53,
+      "source": "Pebble & Pour wordmark repeated consistently across cup, carton, bag, menu and collateral; concept prices are illustrative.",
+      "target": "Словесный знак Pebble & Pour единообразно повторяется на стакане, коробке, пакете, меню и сопутствующих материалах; цены концептуальные и иллюстративные.",
+      "sourceHash": "sha256:b48e81995008722af43e663fee6ed6faf8d7512df0b5eab9eb84961995c96bc5",
+      "targetHash": "sha256:3ce4181d51caa354e13bbf8c0b63c18a63f7eae4a48b3c35c6f6b2d7a79dff14",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 54,
+      "source": "Adult B face and outfit recognizable in small keychain figure with metal ring.",
+      "target": "Лицо и одежда взрослого B узнаваемы в маленькой фигурке-брелоке с металлическим кольцом.",
+      "sourceHash": "sha256:267c3b04e46c36e76cf0f33ca6a1cd1605995f4606294b773867b3c420f20c07",
+      "targetHash": "sha256:9d42a5a076f16a1e086d9f23a864bb1929d54277146bcc00e4959626db12f99a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 55,
+      "source": "PEPPER HOPPER, CRANK, SHAFT, BURRS and PEPPER CUP checked; concept cutaway, not an engineering certification.",
+      "target": "Проверены PEPPER HOPPER, CRANK, SHAFT, BURRS и PEPPER CUP; это концептуальный разрез, а не инженерная сертификация.",
+      "sourceHash": "sha256:9ecc02180250085e4182ccdfb09e49589fbb5ce62d3cc22129478738d9f25a26",
+      "targetHash": "sha256:4583744bf89e2132eae18604a0ef1a09c8e1bfec4950f29e39ca3a3d6bdf8af4",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 57,
+      "source": "All supplied ingredient labels and quantities checked: noodles 150g, broth 400ml, tofu 80g, shiitake 40g, bok choy 60g.",
+      "target": "Проверены все заданные подписи ингредиентов и количества: noodles 150g, broth 400ml, tofu 80g, shiitake 40g, bok choy 60g.",
+      "sourceHash": "sha256:7677512fd71352378404a4e2ab1f862e27376846cbbea0ab421dea1f845aa29b",
+      "targetHash": "sha256:b9c2e812a28bf28ac458c0a6d385acfe7827cbf9f248246323074baeee6190bb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 58,
+      "source": "OSAKA, DEMO 20 MAY, FICTIONAL FORECAST, 22C and light rain checked; castle, shopping street and bridge shown.",
+      "target": "Проверены OSAKA, DEMO 20 MAY, FICTIONAL FORECAST, 22C и light rain; показаны замок, торговая улица и мост.",
+      "sourceHash": "sha256:33c3b9875df1c790ea4ca7615656b73ccb57ba4095f913ad1f0c6986b75e0bf6",
+      "targetHash": "sha256:4fc534605c94eac04bfcfd5093cb59b3b022c86fba94e42b5ff614870b95bfff",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 59,
+      "source": "Nine cells and all supplied Chinese greetings verified: 喜悦、平安、热爱、干杯、希望、微笑、心愿、温暖、快乐. Same adult and red knit.",
+      "target": "Проверены девять ячеек и все заданные китайские пожелания: 喜悦、平安、热爱、干杯、希望、微笑、心愿、温暖、快乐. Один и тот же взрослый человек в красной вязаной одежде.",
+      "sourceHash": "sha256:4eda8e80d70289caaa5daac150301cfd53929880de073ccce3aa34a31fd8c4e9",
+      "targetHash": "sha256:0da982185a334ee88aa1f26130e9ca80c2a6bd56c3934fa0d582803d0b7938b0",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 60,
+      "source": "Selected material isolated successfully: cloud output is billowing vapor without glass casing; glass output is clear refractive solid without clouds. Original mountain/circle negative spaces preserved.",
+      "target": "Выбранный материал успешно отделён: облачный вариант состоит из клубящегося пара без стеклянной оболочки; стеклянный — из прозрачного преломляющего свет твёрдого материала без облаков. Исходные просветы в форме горы и круга сохранены.",
+      "sourceHash": "sha256:9ee8408a74f1877097bc838b672a281f53461270ba66b16c8ff1c0e865ff7def",
+      "targetHash": "sha256:4bc92aba6d566e682e39d7a2affef6e1a1d14ad2ce4b51323379519d157089da",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 61,
+      "source": "Four supplied labels checked: 立领、前襟、花卉刺绣、裙褶. Jade jacket and pleated skirt match fictional garment reference; no invented historical dates.",
+      "target": "Проверены четыре заданные подписи: 立领、前襟、花卉刺绣、裙褶. Нефритовый жакет и плиссированная юбка соответствуют вымышленному референсу одежды; выдуманных исторических дат нет.",
+      "sourceHash": "sha256:75bc50f9bc7b281d5b3c812a57752923c8ce286532055afb713782ce8f668a43",
+      "targetHash": "sha256:e4d38b8c98e9730252f802d7d2d2b1e920a241ca9d0a7deb1a56377f7fbed52c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 62,
+      "source": "Tokyo and Kyoto connected with non-directional dotted line. Main islands and explicit illustrative/not-navigation disclaimer readable. Landmarks and relief decorative, not geospatial measurements.",
+      "target": "Токио и Киото соединены пунктирной линией без указания направления. Основные острова и явное предупреждение об иллюстративном характере и непригодности для навигации читаются. Достопримечательности и рельеф декоративны, а не основаны на геопространственных измерениях.",
+      "sourceHash": "sha256:2824a3f459088ed9811ccd85794b2b1ff07c1fcd897188fb495570a833c47a70",
+      "targetHash": "sha256:7c3c8bfecb12a8c6dadf63f91d3b53d5211dbfe9b664429cb0e05a22a178fa6b",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 63,
+      "source": "Improved oblique garden plane: distinct cypress trees, flower beds and gravel paths remain individually readable at full size; thumbnail aligns to supplied face. The face is still noticeable at large size, so describe as a structural illusion rather than invisible-at-full-size. Built-in image conditioning, no ControlNet.",
+      "target": "Улучшенный наклонный ракурс сада: отдельные кипарисы, клумбы и гравийные дорожки остаются различимыми в полном размере; миниатюра совпадает по структуре с заданным лицом. Лицо всё ещё заметно в большом размере, поэтому результат следует описывать как структурную иллюзию, а не как незаметный в полном размере. Использовано встроенное влияние референсного изображения, без ControlNet.",
+      "sourceHash": "sha256:7c95a43dbefdbd223a5ea2399ba2c7e1b5a8567e63b839c0a76806adc8dc3f98",
+      "targetHash": "sha256:89fcd4f0a918b97c623fdc75678421aa96b46ab203dcb8bbc25cae7b5d1ce76a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 64,
+      "source": "One sparkling drink bottle remains unobscured; lemon, mint and sharp water arcs frame it on navy, with the left third reserved for copy.",
+      "target": "Одна бутылка газированного напитка остаётся ничем не закрытой; лимон, мята и резкие водяные дуги обрамляют её на тёмно-синем фоне, а левая треть отведена под текст.",
+      "sourceHash": "sha256:c58aea685d4fd438ec9dab9fc55d9218c4ec55151957c3dac5e7c348e4b344d2",
+      "targetHash": "sha256:1a2056509b8d2e24d0b95e1d5aae9ebaa5728aa64a40d7016bff00b24735b48f",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 65,
+      "source": "One black headphone rests on a stone pedestal at right; haze and overhead lighting leave the left half open. Wide 16:9 composition matches the request.",
+      "target": "Одни чёрные наушники лежат на каменном постаменте справа; дымка и верхний свет оставляют левую половину свободной. Широкая композиция 16:9 соответствует запросу.",
+      "sourceHash": "sha256:0e822a7915e69ffdf2ecf4d45aa8c7e49183f62fd5ee5fcf0ba5d39c9fcd9d9d",
+      "targetHash": "sha256:1509a02f5ccd230f876d8671b832b196bafef213af84a263cf600a3383e5e195",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 66,
+      "source": "Amber tea pours from a carafe into one glass; a clear stream, sharp droplets, blank front label and teal backdrop are visible.",
+      "target": "Янтарный чай льётся из графина в один стакан; видны чёткая струя, резкие капли, пустая передняя этикетка и бирюзовый фон.",
+      "sourceHash": "sha256:49b76919650303f2b2c96ad2d1dd1913bb9e083b89c49d99f25240997efe3049",
+      "targetHash": "sha256:de9703d940d14fc6e1ecfe67ffe0e05e742d4a62e0965350695060426f4cb73e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 67,
+      "source": "One ceramic soup bowl on wood with parsley, visible steam and daylight; bowl proportions and garnish are coherent.",
+      "target": "Одна керамическая миска супа на дереве с петрушкой, видимым паром и дневным светом; пропорции миски и украшение блюда согласованы.",
+      "sourceHash": "sha256:3509408bc9f9ca4e0d3992fd3f0c575b06a983c115378397787c4cc9ac528b5d",
+      "targetHash": "sha256:6000bfc8ec6c485d30a1d6e90462b4649c51fccb2a5b6d0cb021bda25a9ada7e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 68,
+      "source": "Golden honey in a bronze-lidded glass jar among wheat and yellow flowers, with bee and ivy accents; backlight and a restrained blank cream label match the requested concept.",
+      "target": "Золотистый мёд в стеклянной банке с бронзовой крышкой среди пшеницы и жёлтых цветов, с акцентами в виде пчелы и плюща; контровой свет и сдержанная пустая кремовая этикетка соответствуют запрошенному концепту.",
+      "sourceHash": "sha256:52ced92c1750d278101dc8923a9b8904f06a7db86d85039b27b0d5ad56054c8a",
+      "targetHash": "sha256:aa8585435648fff4f3a5e0a0cf114e44211f9e859abfdf7e088c09515612b90a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 69,
+      "source": "Matte-black chronograph with orange accents framed by rocks and distant mountains. Dial markings remain a generated concept, not a validated watch specification.",
+      "target": "Матово-чёрный хронограф с оранжевыми акцентами обрамлён камнями и далёкими горами. Разметка циферблата остаётся сгенерированным концептом, а не проверенной спецификацией часов.",
+      "sourceHash": "sha256:40a813b236ed95ecd15f4c8944710cc4caee24e2befc531300d6e9578bf6f6d1",
+      "targetHash": "sha256:339648d6706707acf915bb64c6bc1b08a12f7a490cadb271572b83eea688bb1c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 70,
+      "source": "Floating jam jar with legible BERRY DAY label, red splash, strawberries and leaves; a generic phone feed sits behind it on a red-orange background.",
+      "target": "Парящая банка джема с разборчивой этикеткой BERRY DAY, красным всплеском, клубникой и листьями; позади на красно-оранжевом фоне показана обычная лента на телефоне.",
+      "sourceHash": "sha256:af3ff7edca12df8ae7deac37f42b61290545749845228b485ee3744d15fc0f49",
+      "targetHash": "sha256:6c7b85dd4a118636c13be0d93d1b570c0d7b99b0f2d5f4d8ed5969a9e32dc5d3",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 71,
+      "source": "Transparent coffee machine exposes orange tubes, grinder and chamber while pouring into one glass cup. This is a visual concept, not an engineering diagram.",
+      "target": "Прозрачная кофемашина открывает вид на оранжевые трубки, кофемолку и камеру, наливая напиток в одну стеклянную чашку. Это визуальный концепт, а не инженерная схема.",
+      "sourceHash": "sha256:934951f29b3c29bf3b22cece9f3413c70145bcdde9b9a1b79ed62aba47beeb04",
+      "targetHash": "sha256:f91c969fd192591c7aa06ac52ae620e607f2235c3d7c358056f086d43ff74d45",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 72,
+      "source": "Blue-violet frosted glass sculpture on cool gray. The title 流体之间 overlaps the vessel, with the covered letters deliberately blurred as requested.",
+      "target": "Скульптура из сине-фиолетового матового стекла на холодном сером фоне. Заголовок 流体之间 перекрывает сосуд; закрытые буквы намеренно размыты согласно запросу.",
+      "sourceHash": "sha256:4e75f277ef49dba9159bcb5242da4511278ea5dda82d83d8d4863c062f737ecd",
+      "targetHash": "sha256:a23984179c1ef18c8c0d4760db777f3da835ce819962ec131238b2b84859a56a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 73,
+      "source": "Red-yellow radial layout with an illustrated woman pointing to the CTA. Both Chinese strings 夏日特惠 and 立即选购 are legible; a simple sun mark appears above.",
+      "target": "Красно-жёлтая радиальная композиция с нарисованной женщиной, указывающей на призыв к действию. Обе китайские строки 夏日特惠 и 立即选购 разборчивы; сверху расположен простой знак солнца.",
+      "sourceHash": "sha256:a0db3937542ae12d4973054b51ec030784427f9377a18fd7dbb9f230c10a7a31",
+      "targetHash": "sha256:3f3247d88896b9ea7f1806a0ab54c2c010c0d241776c3e91b5eedec5f96ee40d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 74,
+      "source": "Original cyclist postman in a moonlit town; the exact title 月光邮差 is clear, with visible cross-folds, scratches and worn edges.",
+      "target": "Оригинальный почтальон на велосипеде в городке при лунном свете; точный заголовок 月光邮差 читается, видны перекрёстные сгибы, царапины и потёртые края.",
+      "sourceHash": "sha256:192e9a04e9b40eb6735bf1d6467cc406810984451f6b03bf6f2385a6de61e152",
+      "targetHash": "sha256:4bb6a09b36f91b2e93cc322eadbb5670312ee53c28321be212463fe59503187c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 75,
+      "source": "MELT remains legible as its stems become drips. The line Letters soften into motion. is rendered exactly on warm white.",
+      "target": "MELT остаётся читаемым, пока штрихи букв превращаются в потёки. Строка Letters soften into motion. воспроизведена точно на тёплом белом фоне.",
+      "sourceHash": "sha256:cb74abd5c2088425d046380b8a48c8fa00515d2b9eef32a9ae797b91016f125b",
+      "targetHash": "sha256:cbc594415939f5b35fae4a0d9705908dc4f8e22c2d2f8cef46ba9d3784e9d60e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 76,
+      "source": "The title 泡茶三步 and the ordered steps 温杯、投茶、注水 are correct, with separate cup, leaf and pouring illustrations on warm paper.",
+      "target": "Заголовок 泡茶三步 и последовательность шагов 温杯、投茶、注水 верны; на бумаге тёплого оттенка отдельно изображены чашка, листья и наливание воды.",
+      "sourceHash": "sha256:b14c0eaa87a57d67e3f3d92d41e92ec91587ed17991a7824492dfc64861f5c59",
+      "targetHash": "sha256:cfc35dbbbf68149240e679afae48a4f5966fb152d9f01dee9e4f533da9fa8bb5",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 77,
+      "source": "An open book supports layered paper trees, a cottage, fox and stream bridge. Paper grain, tabs, folds and layer shadows are visible.",
+      "target": "На открытой книге стоят многослойные бумажные деревья, домик, лиса и мост через ручей. Видны зернистость бумаги, язычки креплений, сгибы и тени между слоями.",
+      "sourceHash": "sha256:7139cb8c37b55a0eae4da6515f4a74dd7769f15edc8167467fe30a513f12a4ec",
+      "targetHash": "sha256:f2c6d91c03cb72f76cfa87042c6891fbf842b88e50cee53c4a6d423e6ca57a70",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 79,
+      "source": "A complete white fabric-covered speaker is centered on white with a contact shadow and no added text.",
+      "target": "Целая белая колонка в тканевой обивке расположена по центру на белом фоне с контактной тенью и без добавленного текста.",
+      "sourceHash": "sha256:0132d5bb0fbb45c652307702d84b1a13fb482419ad8db423d4980096920ed12e",
+      "targetHash": "sha256:6ed427b857d83ea667f9582b03073a8e8728122226fc2d009201351d5feba796",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 80,
+      "source": "The silver mouse has a visible air gap above its separate soft shadow; the full silhouette and scroll wheel are intact.",
+      "target": "Между серебристой мышью и её отдельной мягкой тенью виден воздушный зазор; полный силуэт и колесо прокрутки сохранены.",
+      "sourceHash": "sha256:a73c0ed4c98f36e5647276f1eaa3dad15fa708fd870488f235a7c5d39bb8f170",
+      "targetHash": "sha256:664ff05a33a8c502c3303fde09bb79dde5a60d4a9bede8b33f05f6e9fff38e46",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 81,
+      "source": "Leather grain and cream stitching are sharp near the wallet corner, with directional side light and shallow focus.",
+      "target": "Зернистость кожи и кремовые стежки возле угла кошелька резкие, с направленным боковым светом и малой глубиной резкости.",
+      "sourceHash": "sha256:1dde0a66014c10a0bf0d4dd1d711b398a1db5075e05a1279e5f4d869051a7938",
+      "targetHash": "sha256:165ffa81008f3818a1e0861e4b9665174afae34b23070cd7f96190a8efcc6fd6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 82,
+      "source": "Top-down espresso-machine controls show coherent buttons and brushed metal, with a softly blurred countertop. The machine is a fictional concept.",
+      "target": "Вид сверху на органы управления эспрессо-машины показывает согласованные кнопки и шлифованный металл, со слегка размытой столешницей. Машина — вымышленный концепт.",
+      "sourceHash": "sha256:458c05ea216f5d9a2f772571aaf017604443d8baa87b59cd6ccb1fa4eead875e",
+      "targetHash": "sha256:52b4585912029c5ac2cbe0bca6b4f186328fb451ba03ef7b399e574ff5893254",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 83,
+      "source": "A linen pouch is the focal point on a linen-covered table, lit from a left window with a notebook nearby.",
+      "target": "Льняной мешочек — главный объект на столе, покрытом льном; его освещает окно слева, рядом лежит блокнот.",
+      "sourceHash": "sha256:10d711da2e041ac2857ae8e4a10f1d9fee2a3e6b52f99be91826b72492fd68a7",
+      "targetHash": "sha256:e48f28360ae56bef63d3b4421f10e133db8f7ae3b9fcc88c45905cfac65603ca",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 84,
+      "source": "A natural hand adjusts a coral desk fan; object scale and tabletop contact are coherent in warm light.",
+      "target": "Естественно выглядящая рука регулирует коралловый настольный вентилятор; масштаб предмета и контакт со столешницей согласованы в тёплом свете.",
+      "sourceHash": "sha256:4e93d6a2ce466315fb3e2613eab11cc87942d466ef64824922f601bef4fb4a07",
+      "targetHash": "sha256:30ea85a5e51b5546f9407963a8476aad3aea96f32364f28a812c8e61510f2763",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 85,
+      "source": "An amber sports bottle stands among restrained autumn leaves by a lake; the bottle remains dominant.",
+      "target": "Янтарная спортивная бутылка стоит среди сдержанно расположенных осенних листьев у озера; бутылка остаётся главным объектом.",
+      "sourceHash": "sha256:386e573a2eb07f461dda686276b6d5b2f6222cc2ffb687f05b2eeda9e3644486",
+      "targetHash": "sha256:b5602b123effe94f4dad722ffddbbf3f7e08194f25a0fef016be5c895d1b617a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 86,
+      "source": "A green tea tin occupies the lower portion of a cobalt poster, leaving the top clear for later copy.",
+      "target": "Банка зелёного чая занимает нижнюю часть кобальтового постера, оставляя верх свободным для последующего текста.",
+      "sourceHash": "sha256:1dd29af930adbbfc417dac92bcd7d57717698d359b558ab68b9e024e373b67f9",
+      "targetHash": "sha256:ac7b44885cfdbb2850f1d1db67462acd7a77f48dbb92b700a34ecc6f88d9fafa",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 87,
+      "source": "LISBON and PORTUGAL are spelled correctly, with a yellow tram, sloped street, red roofs and blue river in simplified flat shapes. Some subtle tonal variation remains.",
+      "target": "LISBON и PORTUGAL написаны правильно; жёлтый трамвай, наклонная улица, красные крыши и синяя река переданы упрощёнными плоскими формами. Сохраняются небольшие тональные вариации.",
+      "sourceHash": "sha256:ecd739d3a8254bba44911bc50d69d259b95e7980335ebc2d8435359ae5de4500",
+      "targetHash": "sha256:b3ded59b326732d526c62a03e97aaea36ca06b25e241bd75777c16763bf5afe7",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 88,
+      "source": "The crescent coastline, west harbor, three northern hills, central town and eastern pond are retained; a dashed route leads to the southeast X.",
+      "target": "Сохранены серповидное побережье, западная гавань, три северных холма, центральный городок и восточный пруд; пунктирный маршрут ведёт к X на юго-востоке.",
+      "sourceHash": "sha256:2bccb9c4361a2182adfe897785b9b0c55b14147747c2bd7c54ad12c9ff6267be",
+      "targetHash": "sha256:172fe597812e8bd95f4b199e5196a98a93c871f0aa53a6a92686c2a3447b47fd",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 89,
+      "source": "The main rabbit-and-garden drawing is black on white with a small colored scene at bottom right. Physical print size depends on export settings.",
+      "target": "Основной рисунок кролика и сада выполнен чёрным на белом, с маленькой цветной сценой внизу справа. Физический размер отпечатка зависит от настроек экспорта.",
+      "sourceHash": "sha256:f869d71260417f0e3cb02764affac60e77a2006a458832eec941f4424736eb74",
+      "targetHash": "sha256:7ec077b781acdaa5bd94e0f863011486a48e5e6e138dc89ded47e28d1980a0b3",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 90,
+      "source": "Two blue-clad gardeners carry the specified tools. The full Chinese slogan is legible with period-style printed texture.",
+      "target": "Два садовника в синей одежде несут заданные инструменты. Полный китайский слоган разборчив, фактура печати соответствует стилю эпохи.",
+      "sourceHash": "sha256:fea5e2bf1eba8401f6a003d092880f0851f18e50786ea83d687d3edf062221f9",
+      "targetHash": "sha256:8ed02d7b8c689b6f4cebf27dd50a4f34b0564c84b14160ca6fd4774f27b68d6d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 91,
+      "source": "Brand, flavor, 18-yuan price, half-price offer, June 1–7 dates and CTA are all visible and legible. The campaign is fictional.",
+      "target": "Бренд, вкус, цена 18 юаней, предложение за полцены, даты 1–7 июня и призыв к действию видны и читаются. Кампания вымышленная.",
+      "sourceHash": "sha256:897a06ff070c90589e4622eab06a9bdfa6e3589378f84630d5a74a87dc11d37e",
+      "targetHash": "sha256:b735a7c1b7b2fed52bc7dbd4ede4ef2708f6f1d6ca5bd1071ec39d2730795819",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 92,
+      "source": "Five stages follow the correct requested order; 1500m, medium roast, medium-fine grind, 92°C and the three flavor labels are readable. Parameters describe the fictional sample.",
+      "target": "Пять этапов следуют в верном заданном порядке; читаются 1500m, medium roast, medium-fine grind, 92°C и три подписи вкусов. Параметры относятся к вымышленному образцу.",
+      "sourceHash": "sha256:c744930f10c940b725c5c5e1cd96578d6bc08e3788cb05c3bd06aa77d0d53706",
+      "targetHash": "sha256:b48918189bfa1d8e91d25171d1c0be6a5634050cfd77c0f36229beb6b2c8bbda",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 93,
+      "source": "Three named portraits form a clear triangle. Partner, search and sibling labels connect the intended characters; the partner relationship has two directions.",
+      "target": "Три портрета с именами образуют чёткий треугольник. Подписи партнёрства, поиска и родства между братьями и сёстрами связывают нужных персонажей; партнёрская связь двунаправленная.",
+      "sourceHash": "sha256:babde04b15156cac1e0cac6948bdf88c691159cca48a7cfa6e11e5af34358cbd",
+      "targetHash": "sha256:a860fa05cf8b046a59b041657695790773ce0473599c2d681654cbbdc1fd5963",
+      "conclusion": "approved",
+      "reason": "Source-compared after the recorded correction; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 94,
+      "source": "A complete central vase has six separated callouts, with the requested Chinese labels readable. This is a generated exhibit-layout concept.",
+      "target": "Целая ваза в центре имеет шесть отдельных выносок с разборчивыми заданными китайскими подписями. Это сгенерированный концепт оформления экспоната.",
+      "sourceHash": "sha256:7e2b97dcf277052e6a1a19c5bbbe1c7127850047cca4459962bdbfeb816eb0b6",
+      "targetHash": "sha256:2cf6c1c897fdb4a8987bfe3d8c6a3aaf1ab654b4dbb33ac6785dbd795c5c443a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 95,
+      "source": "Title, separated fan parts, material samples and four-stage process occupy the requested regions; all requested short labels are readable.",
+      "target": "Заголовок, разнесённые детали вентилятора, образцы материалов и четырёхэтапный процесс занимают заданные области; все запрошенные короткие подписи читаются.",
+      "sourceHash": "sha256:d2f1000f1df5a244481c1215e8cff01c4526867b4cf1db091bee36512a75162a",
+      "targetHash": "sha256:915954a42edd67684c546328c35af58a90941a091fb88aaa4e529ecafc088046",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 96,
+      "source": "A clear flying swallow contains a lighthouse, town, lit path and traveler in a watercolor world with generous paper margins.",
+      "target": "В отчётливом силуэте летящей ласточки заключены маяк, городок, освещённая тропа и путешественник в акварельном мире с широкими бумажными полями.",
+      "sourceHash": "sha256:bdf7ea548219f928a11846934dfb4209310bad5ed02bdcd115c581916216d975",
+      "targetHash": "sha256:cfdc23bd28a5f7e456ab813b6b4b7985dbfb539afd7babcdbb2c6b10bcbb2f8e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 97,
+      "source": "All 24 source lines appear once across the title and three columns; the original date, hours and location are retained.",
+      "target": "Все 24 исходные строки встречаются по одному разу в заголовке и трёх колонках; исходные дата, часы и место сохранены.",
+      "sourceHash": "sha256:a1bc913635f9027e5f6f66579b5b971681cb5fc93b46e092d4ecf239c83e6662",
+      "targetHash": "sha256:422a75261089dbec820616de952bca87359bf8e80aa4f7a174114ddda768e1bc",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 98,
+      "source": "Main butterfly, two magnified details, five topic modules and five butterfly groups are visible. The model expanded the short copy; this is a layout study, not a scientifically reviewed teaching sheet.",
+      "target": "Видны главная бабочка, две увеличенные детали, пять тематических блоков и пять групп бабочек. Модель расширила короткий текст; это исследование компоновки, а не учебный лист, прошедший научную проверку.",
+      "sourceHash": "sha256:64d5e690466e3cd77feb70f63984a25efea04add25c101efd5a052a9058a6b74",
+      "targetHash": "sha256:b9e62dd8979609a8a9e2461bc72ef4a3c9d44dad01c8fc30d7d8601c88963770",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 99,
+      "source": "The complete ten-by-ten grid contains 100 distinct labeled cells in the requested row order. The small scenes are illustrative, not engineering diagrams.",
+      "target": "Полная сетка 10 на 10 содержит 100 разных подписанных ячеек в заданном порядке строк. Маленькие сцены иллюстративны и не являются инженерными схемами.",
+      "sourceHash": "sha256:e3a480d65767aca26d3ea99a18d1dcd6db60e614e46c546411f1812369591662",
+      "targetHash": "sha256:d8316af604598f63da55e87aab8e22a5c0830acea33851b3e7d0bc60e44e5cdc",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 100,
+      "source": "Four named movement panels and the warm-up, progression, alternative and recovery modules are readable. The model added explanations; the image is a layout concept, not validated exercise instruction.",
+      "target": "Читаются четыре подписанных блока движений и блоки разминки, прогрессии, альтернативы и восстановления. Модель добавила пояснения; изображение — концепт компоновки, а не проверенная инструкция по упражнениям.",
+      "sourceHash": "sha256:c76bce9a0d254c07002859a279668825f5f1567d5a5eb3bb61594efa7ab4608a",
+      "targetHash": "sha256:905fc95b602d6c89eab0f7f2254759ee5f8d26381a277a593e702f652ca89b53",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 101,
+      "source": "The gable, front door, three windows and three steps preserve the sketch arrangement and perspective, with wood, metal and concrete materials added.",
+      "target": "Фронтон, входная дверь, три окна и три ступени сохраняют расположение и перспективу эскиза; добавлены материалы дерева, металла и бетона.",
+      "sourceHash": "sha256:e7f778b7e05a8b751040b651d7e504dbba39ff225f080e144bf77501981b9bcc",
+      "targetHash": "sha256:7bb7404f40c69261378a807c3278920f35d0d0ecaf7c79ab3c3ee0942775d029",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 102,
+      "source": "Two rooms, the offset divider, two windows and both doors correspond to the plan. This is the first generated view; the separately recorded reverse-view step uses this image as its input.",
+      "target": "Две комнаты, смещённая перегородка, два окна и обе двери соответствуют плану. Это первый сгенерированный вид; в отдельно записанном шаге обратного ракурса это изображение используется как входное.",
+      "sourceHash": "sha256:94c50ac1d7587de19fa6f1a744eb36b9546589b27409e9027acf4d0ff984828a",
+      "targetHash": "sha256:e076f5ffb657e1714b04f3a3000d1758fff2ea36e75f0cf3c3aa8c01ba1defe1",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 103,
+      "source": "Only the visible floor becomes green terrazzo; the rug, furniture, door and window retain their positions and shapes.",
+      "target": "Только видимый пол становится зелёным терраццо; ковёр, мебель, дверь и окно сохраняют свои положения и формы.",
+      "sourceHash": "sha256:d402872a20c08f496b348c9018a54dc164f6854e88ce75bcc6338b26c20176e3",
+      "targetHash": "sha256:959bb9877601099f6502b90f4f6dfa584db11fb715c0b12a45e90bb73da8f8ea",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 104,
+      "source": "The orange corduroy sofa replaces the teal sofa and its cushions; the remaining room arrangement and daylight are preserved.",
+      "target": "Оранжевый вельветовый диван заменяет бирюзовый диван и его подушки; остальное расположение предметов в комнате и дневной свет сохранены.",
+      "sourceHash": "sha256:a3388172c2efff86e9b5bdbb27b78d1bf718661ee4b7d361aeceeda70a39d34f",
+      "targetHash": "sha256:b6fe8575c88055c0a56a8d7dd234da85bdb73f68a52fb578d25c917a909aa4bd",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 105,
+      "source": "A warm bedroom is furnished along the left wall; the original rear window, right door and camera view are retained.",
+      "target": "Тёплая спальня обставлена вдоль левой стены; исходное окно сзади, дверь справа и ракурс камеры сохранены.",
+      "sourceHash": "sha256:f4ad36ccc5a9f29d2bbaa6981f81f19b10574decd09bbceb389f6eb9fdcb9062",
+      "targetHash": "sha256:85b7e72ffbcc3192e78a8fb270d50aa17da76ff85c57ee259e7ed84ccb757781",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 106,
+      "source": "Sofa, table, lamp and right window retain the clay layout while linen, travertine, oak and brass replace the white materials.",
+      "target": "Диван, стол, лампа и правое окно сохраняют расположение из модели без текстур, а белые материалы заменены льном, травертином, дубом и латунью.",
+      "sourceHash": "sha256:279e2b488c77ad162c942d87b18bc160a43955ba2425734dc5aac52a2be1fa61",
+      "targetHash": "sha256:dc3b0ba74c6bc4c6afabf749fe9fa56dda571fc1f5331b6ab7d0b274d205365d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 107,
+      "source": "The original lamp glows warmly, the window turns dark blue, and all main objects and the camera remain fixed.",
+      "target": "Исходная лампа светит тёплым светом, окно становится тёмно-синим, а все основные предметы и камера остаются на своих местах.",
+      "sourceHash": "sha256:342c962404b929accc138f90f7a842ba8c8848cdfe26878c7f9426228154ff10",
+      "targetHash": "sha256:931632ebda0cb473718766badce27af846ad9e2768ec12451ae9dc9d172bf30a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 108,
+      "source": "A complete knitted doll is cupped in two hands. Bob hair, red glasses and yellow-teal clothing preserve the synthetic reference identity.",
+      "target": "Целую вязаную куклу держат в двух сложенных ладонях. Стрижка боб, красные очки и жёлто-бирюзовая одежда сохраняют узнаваемость синтетического референса.",
+      "sourceHash": "sha256:1bcb081a6c5a96892c5bdc6b306df88f62cbd8f3c91f5ed02d7fbf9e111a7c12",
+      "targetHash": "sha256:bd7a49d9a72328b72d7c252d92b0f53df293c5a51cf8cddd9edd75568e3b51fe",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 109,
+      "source": "The full figure stands on a round desktop base; pose, bob haircut, red glasses and outfit colors remain recognizable.",
+      "target": "Фигурка в полный рост стоит на круглой настольной подставке; поза, стрижка боб, красные очки и цвета одежды остаются узнаваемыми.",
+      "sourceHash": "sha256:8193785e523ee59edf9b698b4f37611ceb90978cd79f00f665595544e34e24ff",
+      "targetHash": "sha256:e2489c9a48ee6932056db75ef4dfdf5cd610412f90527ebb795bfc8d8f2570b8",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 110,
+      "source": "An oversized recognizable head and exposed spring neck distinguish the bobblehead, with reference colors retained on a bookshelf.",
+      "target": "Увеличенная узнаваемая голова и открытая пружинная шея отличают фигурку с качающейся головой; на книжной полке сохранены цвета референса.",
+      "sourceHash": "sha256:223ddfc44769db6a1916f412d986e240af6e10d953b1aa0009b2c2c9cb5885d6",
+      "targetHash": "sha256:41bbf139f3f57c947907e5515e7d971c253419f6df7fe2798f4fc49e7e434817",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 111,
+      "source": "Mouse outline, split buttons and scroll wheel are retained, with transparent rainbow glass and rim light against black.",
+      "target": "Контур мыши, разделённые кнопки и колесо прокрутки сохранены; прозрачное радужное стекло и контровой свет на чёрном фоне.",
+      "sourceHash": "sha256:d40e24c71e77ffd91cada15ca8a30d28f21ee87b19adf7cbf08f1c7405075f97",
+      "targetHash": "sha256:122bf3bf08246650183759748abfec4f10c57bd746c085d07f044cb25d86506a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 112,
+      "source": "A rounded orange cat supports and embraces a natural wrist; the soft-looking flat base contacts the table. Material safety and ergonomics are not tested.",
+      "target": "Округлый оранжевый кот поддерживает и обнимает естественно выглядящее запястье; мягкая на вид плоская основа соприкасается со столом. Безопасность материала и эргономика не проверены.",
+      "sourceHash": "sha256:e24346b00ce3e042d95b44b62ab1b512c90db5cbed602046937a6f8602afdc02",
+      "targetHash": "sha256:f96299326f1714e2e137967a30f3c99a59d340fa213abfdc7b097356238f0edb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 113,
+      "source": "A hand holds the silver ring above a complete chibi rubber charm; black edges and reference colors are clear.",
+      "target": "Рука держит серебристое кольцо над целым резиновым брелоком в стиле чиби; чёрные края и цвета референса хорошо различимы.",
+      "sourceHash": "sha256:a7717d742d61947d59644bf6da2e30512cd41ba10ff230c16a85847a0ecc5a2a",
+      "targetHash": "sha256:79259845745eaf30aeab45a6e3a39692f9bd37864a1560334befcc2ba117921d",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 114,
+      "source": "A single full-body pin uses shiny metal boundaries and saturated enamel, preserving the reference hair, glasses and clothing colors.",
+      "target": "Один значок с фигурой в полный рост использует блестящие металлические границы и насыщенную эмаль, сохраняя цвета волос, очков и одежды референса.",
+      "sourceHash": "sha256:40793addeaf755add9a4ac2df178ef44747d4a1ebb995ae83e8f796841ffa380",
+      "targetHash": "sha256:852c81eea35fc444ee5a0d4a49cbb01896cfe12acf9b946568fa98c8af86ba30",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 115,
+      "source": "Two cherries and joined stems are recognizable with hard block edges on white. Some internal tonal variation remains; this is a raster concept, not a cleaned pixel sprite.",
+      "target": "Две вишни и соединённые плодоножки узнаваемы благодаря жёстким блочным границам на белом фоне. Внутри сохраняются некоторые тональные вариации; это растровый концепт, а не очищенный пиксельный спрайт.",
+      "sourceHash": "sha256:d2f23eeb38a8db4c5e2fc7391bfb61c496ed8fcf27177da2fc081a9efda5102d",
+      "targetHash": "sha256:725cbe498eb41749c7867c3370c6216fd1746b0e4bdd32e33174f70c4a06ebfb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 116,
+      "source": "The cherry target becomes isometric cubic geometry using the tree style reference, without copying the tree or grass block.",
+      "target": "Целевое изображение вишен превращено в изометрическую кубическую геометрию по стилевому референсу дерева, без копирования дерева или блока травы.",
+      "sourceHash": "sha256:615c003660edd70fd29058eddce03e8f9af64fa44e9cb461d1df64cf0d0eb059",
+      "targetHash": "sha256:07b3879bf5968023a4954845d47bce7a00934955e5e03f6980691dd3c66c751c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 117,
+      "source": "A single clear ESC keycap contains a seated worker, screens, lamp, cables, cup and greenery, with surrounding keyboard keys visible.",
+      "target": "Одна прозрачная клавиша ESC содержит сидящего работника, экраны, лампу, кабели, чашку и зелень; вокруг видны другие клавиши клавиатуры.",
+      "sourceHash": "sha256:3ce9b80a9beb71176f72f8eaad91d433d1d9c89599caa4b23bec0e194292677b",
+      "targetHash": "sha256:84101abe687cfea79b7f1868b2d0dadf4c8c450ee47a89099954f17c19eb04c4",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 118,
+      "source": "A friendly otter wears blue-white research clothing and goggles, holds a small underwater robot, and stands fully visible on a round base.",
+      "target": "Дружелюбная выдра в сине-белой исследовательской одежде и защитных очках держит маленького подводного робота и целиком видна на круглой подставке.",
+      "sourceHash": "sha256:ef4efc18ad401ecfc0076cf2d1889a04711c62510df92283acec0c49570e0903",
+      "targetHash": "sha256:842d79398be837abfa2117a782911f9cad83b228b856a2a9a518569ff0521ecb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 119,
+      "source": "The elevated three-quarter view exposes the sculptural lid top and hollow side handle, preserving the reference speckled ceramic and gold collar.",
+      "target": "Приподнятый ракурс в три четверти открывает скульптурный верх крышки и полую боковую ручку, сохраняя крапчатую керамику и золотой ободок референса.",
+      "sourceHash": "sha256:7c0b9750781b84d8d7ff7999aa6d855bc39ff2a523f3b14632ef071b3b2b96ae",
+      "targetHash": "sha256:8713df722e5e37221f4544fb61f1b26b29b6e0320d2e4851c794f7cc79130aef",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 120,
+      "source": "Six numbered products occupy the requested groups. The sofa has no loose cushions, and the standalone cushion appears only once.",
+      "target": "Шесть пронумерованных предметов занимают заданные группы. На диване нет отдельных подушек, а самостоятельная подушка появляется только один раз.",
+      "sourceHash": "sha256:4afd00f19c3da32dbd246c000fa23f84546ae5ba0b477ccff7e8cb031bee41e1",
+      "targetHash": "sha256:81cfd26e6e3f18d07bfadd4f3ed6f819b48fa30c6f7bb161f09261573c0d74e9",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 121,
+      "source": "Second step: the large room is now on the left, the small room on the right, windows near the camera and the entrance on the far side. This is a generated spatial concept; exact geometry and lighting conservation are not guaranteed.",
+      "target": "Второй шаг: большая комната теперь слева, маленькая справа, окна возле камеры, а вход на дальней стороне. Это сгенерированный пространственный концепт; точность геометрии и сохранение освещения не гарантируются.",
+      "sourceHash": "sha256:b4e245e57d8ac558b259d4cd180caf09207d1f2db72d02abe1f4660fbac0fb9f",
+      "targetHash": "sha256:9442dbd11f3a6ec5456f9de8eb9d7a5c8f3890786427ac22084d8b1c9c9f575c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 122,
+      "source": "One rounded mirror-metal star on a fully visible cream card. The hanging aperture is now a horizontal Euro slot with a central upward semicircle; STAR CLUB and Small shine. Big joy. are correct. Warm reflections tint the metal.",
+      "target": "Одна округлая звезда из зеркального металла на полностью видимой кремовой карточке. Отверстие для подвешивания теперь представляет собой горизонтальный европодвес с центральным полукругом вверх; STAR CLUB и Small shine. Big joy. воспроизведены верно. Тёплые отражения придают металлу оттенок.",
+      "sourceHash": "sha256:da61c0196d797532bcfe49c2b5e418e3109c7b229bdd5a404bc5eab1083f257f",
+      "targetHash": "sha256:9268c6753bbe11b1ac8bff4ecbfd37826f630aeab1582ad74559d4d2006967bf",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 123,
+      "source": "An older fisherman repairs a net with a small dog resting beside his boot. Natural skin and fabric detail, subdued light; the dog is close to the lower edge.",
+      "target": "Пожилой рыбак чинит сеть, рядом с его ботинком отдыхает маленькая собака. Естественная детализация кожи и ткани, приглушённый свет; собака близко к нижнему краю.",
+      "sourceHash": "sha256:1f1662e0175c6d982f1c5654465e17b3f8f37d48ae8d24941d1ea1638aebfa4b",
+      "targetHash": "sha256:64c9abb96414d4c15042b77e6c7788cb494ac4bf6bf5e6bf7ba1f63394b5e4c6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 124,
+      "source": "Cutaway espresso machine shows water tank, pump, heater, brew head, coffee puck and cup. Chinese labels and three explanatory steps are legible; schematic layout is illustrative, not an engineering drawing.",
+      "target": "Эспрессо-машина в разрезе показывает бак для воды, насос, нагреватель, заварочную группу, кофейную таблетку и чашку. Китайские подписи и три поясняющих шага разборчивы; схема иллюстративна и не является инженерным чертежом.",
+      "sourceHash": "sha256:5083f1bfec86c3030dec7e8246139be356c0e58a4bbb1ced9952235c415204c5",
+      "targetHash": "sha256:b2cf7671222070a9ca7a5b568327f56f566f0cf1d06425cae33488b15f3bf095",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 125,
+      "source": "Three adults on an urban footbridge, cream charcoal and olive outfits. THREAD and MOVE YOUR WAY are spelled correctly and do not cover faces.",
+      "target": "Три взрослых человека на городском пешеходном мосту, в кремовой, угольно-серой и оливковой одежде. THREAD и MOVE YOUR WAY написаны правильно и не закрывают лица.",
+      "sourceHash": "sha256:fef9b182991a0cb5c3876e5336bb6b3c390b1a178ff12143ba04dc64d7239d89",
+      "targetHash": "sha256:3c576258a2b87d64b52a6e1adb0f98c2e19f334b5e9fabda3ec488f23458b631",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 126,
+      "source": "Bread and wheat mark with correctly spelled Field & Flour. Verified PNG alpha and inspected against white; warm brown vector-like raster with slight tonal variation.",
+      "target": "Знак с хлебом и пшеницей и правильно написанным Field & Flour. Проверена прозрачность PNG и выполнен просмотр на белом фоне; тёплый коричневый растр, похожий на вектор, с небольшими тональными вариациями.",
+      "sourceHash": "sha256:0f79602c8b7f37cfbd80baf98359c348c762196e6ea5d0169b3c7e4f69b26591",
+      "targetHash": "sha256:a5a8d1dad93d4da920bbb9b584a8b5153de69bcd99039819f7319dfeaa564ec7",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 127,
+      "source": "Fictional period-style outdoor festival scene: seated adults, vintage camera and vehicles, distant stage, faded film texture. Not an archival photograph or a verified reconstruction.",
+      "target": "Вымышленная сцена фестиваля под открытым небом в стиле эпохи: сидящие взрослые, винтажная камера и транспорт, далёкая сцена, фактура выцветшей плёнки. Это не архивная фотография и не проверенная реконструкция.",
+      "sourceHash": "sha256:1a072344e9555638c5e1cf00a6b7562726a7208b6c084e8afddf6a68c62cae06",
+      "targetHash": "sha256:166cb6bc82dd6443eecf9bfb3fdd6f8782490b9ae61404e41282d16ece5af188",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 128,
+      "source": "Four-panel comic preserves the red-collared dog and living room. Departure, sofa pose, cushion-building and innocent return pose are readable; final cushion fort is mostly collapsed.",
+      "target": "Комикс из четырёх кадров сохраняет собаку в красном ошейнике и гостиную. Уход, поза на диване, строительство из подушек и невинная поза при возвращении хорошо читаются; в финале крепость из подушек в основном разрушена.",
+      "sourceHash": "sha256:7d003aa3535fc41c4be2647add5dde263670c2880168c833f266d6e608517367",
+      "targetHash": "sha256:652f25d73e20ad1fd2509dc17b17f7f2e7ad7f6ba84f0021c4c1e5b671494085",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 129,
+      "source": "Chinese farmers market UI includes search, produce and bakery cards, two merchant cards, opening hours and four navigation icons. This is a visual mockup, not a functioning app.",
+      "target": "Китайский интерфейс фермерского рынка включает поиск, карточки овощей и фруктов и выпечки, две карточки продавцов, часы работы и четыре навигационные иконки. Это визуальный макет, а не работающее приложение.",
+      "sourceHash": "sha256:48bac2f0e47b4aba0e5e2276ed4da2ac217f4c7799a2870fe0d356f30c3934fe",
+      "targetHash": "sha256:b2be799f6712e46b295ac2dd261fec638bc5c8d69071928b80faf98877d4baed",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 130,
+      "source": "Legible Chinese concept diagram distinguishes cytoplasm, mitochondrial matrix and inner membrane, with oxygen, water and ATP. Simplified: omits the acetyl-CoA transition and detailed chemiosmosis; not a complete biochemistry teaching reference.",
+      "target": "Разборчивая концептуальная схема на китайском различает цитоплазму, матрикс митохондрии и внутреннюю мембрану и показывает кислород, воду и АТФ. Схема упрощена: пропущены переход к ацетил-КоА и подробности хемиосмоса; это не полноценный учебный материал по биохимии.",
+      "sourceHash": "sha256:30bd17d9a3aaa534eaa9b9c2c7d22dfc766f9f74c4f0124184fdb11141dcc4b1",
+      "targetHash": "sha256:59bba848135a69880bd6123ddd325efb01d98931b13ec4427b7877cbd9e7a424",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 132,
+      "source": "Vase changed from cream to cobalt blue, red markup removed. Jug, dried stems, tiles and window remain visually consistent; new glaze is glossier.",
+      "target": "Цвет вазы изменён с кремового на кобальтовый, красная разметка убрана. Кувшин, сухие стебли, плитка и окно визуально согласованы с исходником; новая глазурь более глянцевая.",
+      "sourceHash": "sha256:b6061a15ff790f69330029c43935ff8e34394adad7e965b7217cae4589c22943",
+      "targetHash": "sha256:42983321479d29b48661c36fa9558c3d1c6f26eef410d9346184e16923fb5498",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 133,
+      "source": "Side-view motorcycle rider adapts the synthetic reference palette and blocky outline while changing the vehicle and clothing. More detailed pixels than the source; both wheels visible.",
+      "target": "Мотоциклист сбоку адаптирует палитру и блочный контур синтетического референса, меняя транспорт и одежду. Пиксели детальнее, чем в исходнике; оба колеса видны.",
+      "sourceHash": "sha256:c20c6aba2802b065b7fe3159a6332390e93cdb7fc8dba68e90dde2d5eee71487",
+      "targetHash": "sha256:ff16e736cc756a0b999adee21c6f2ef9db0afcf520292cf92b2ba38a3c28ff73",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 134,
+      "source": "Preserves the sketch river curve, three foreground pines and right-side bridge. Adds realistic grass, water and timber texture; overall finish remains slightly painterly.",
+      "target": "Сохранены изгиб реки из эскиза, три сосны на переднем плане и мост справа. Добавлены реалистичные фактуры травы, воды и дерева; общее изображение остаётся слегка живописным.",
+      "sourceHash": "sha256:aa06f0385d0893f89a432d910cb734b20bc3ad380d9ecd3a474bd760c37206c9",
+      "targetHash": "sha256:4932a9596e405c3961af9d14e1562142f5e4c1d64888cfb174b912c687cfb2b6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 135,
+      "source": "Twelve orange-cat workplace stickers in three columns and four rows. All twelve requested Chinese captions are legible and match the prompt; navy ties and crayon style remain consistent.",
+      "target": "Двенадцать рабочих стикеров с оранжевым котом в трёх столбцах и четырёх строках. Все двенадцать запрошенных китайских подписей разборчивы и соответствуют промпту; тёмно-синие галстуки и стиль восковых мелков единообразны.",
+      "sourceHash": "sha256:f3d34b134e7784ebbaf5ab298f70ff5099087e51f24a2ed7aae704e53607eeba",
+      "targetHash": "sha256:539a7ab897810b060fba6643282729b972e36c1548978b8a4d2e1079c1d8e431",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 136,
+      "source": "Orange koi seen from above in pale blue water with light caustics; tail slightly cropped at left. Generated with the exact short source prompt.",
+      "target": "Оранжевый кои сверху в бледно-голубой воде со световыми каустиками; хвост слегка обрезан слева. Создано по точному короткому исходному промпту.",
+      "sourceHash": "sha256:01c9e0c0a464c5cea34a57fef53d0b633a511a105ef0594bac49f12b654d32f9",
+      "targetHash": "sha256:2aa0e0705daa81e59c59dde7d088ad501f298f6d9b79d4a63c517ef6d1c49228",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 137,
+      "source": "Pelican with complete beak rides a red bicycle beside the sea at sunset. Both wheels visible, two feet on pedals, wings near handlebar; suitable synthetic animation reference.",
+      "target": "Пеликан с полностью видимым клювом едет на красном велосипеде у моря на закате. Оба колеса видны, две лапы на педалях, крылья возле руля; подходящий синтетический референс для анимации.",
+      "sourceHash": "sha256:63b406e9d7a8aaf501f4336c9597306d19192c03f7bcd5998f8f4b838ef83e94",
+      "targetHash": "sha256:afc50ec243532dd6ceffa123c971c9bb4904a6a838dc70ee44d8b43dd1d36399",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 139,
+      "source": "Six-frame office reaction progresses from hope to shock, crying and wiping tears, then returns to the starting pose. Falling chart stays visible. Encoded as a 1.8-second looping GIF from the generated sheet.",
+      "target": "Офисная реакция из шести кадров переходит от надежды к шоку, плачу и вытиранию слёз, затем возвращается к исходной позе. Падающий график остаётся видимым. Из сгенерированного листа закодирован повторяющийся GIF длительностью 1,8 секунды.",
+      "sourceHash": "sha256:bee8525a358135d958fa2f66005067421df14d16af71e53bb2b42e4ab00a0424",
+      "targetHash": "sha256:644d4211fd67fe5392f0edd83f5ea6b1b18de7b2642b206602861b4f56638440",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 140,
+      "source": "Six generated office poses show surprise, celebration and tossing blank paper slips, then return to seated start. Rising chart remains consistent. Composed 1.8-second looping GIF; not native animated model output.",
+      "target": "Шесть сгенерированных офисных поз показывают удивление, празднование и подбрасывание пустых листков бумаги, затем возвращение к начальной сидячей позе. Растущий график остаётся согласованным. Собранный повторяющийся GIF длительностью 1,8 секунды; не анимация, напрямую выданная моделью.",
+      "sourceHash": "sha256:8fb94eafd9f90be022c53e38a411ae7e911ac958b1c85646fc62f6aa0b53a46c",
+      "targetHash": "sha256:ca811a9597132a5471bfb2ea00e4bdd1f291c925d693f4a641b2b8091cf57401",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 141,
+      "source": "Six white-chicken dance poses alternate feet and wings, ending with a smile. Full body remains inside each cell. Composed looping GIF; subtle pose-scale variation.",
+      "target": "В шести танцевальных позах белой курицы чередуются движения лап и крыльев, завершаясь улыбкой. Всё тело остаётся внутри каждой ячейки. Собранный повторяющийся GIF; небольшие изменения масштаба между позами.",
+      "sourceHash": "sha256:1fb2de1f710a1d3dbf87c9b93360937a08e3146c593ed72161e16bb9251e5f2d",
+      "targetHash": "sha256:2fed7e461a7c2766c0caaf17414f9e2caca7c2d9dc05d738410acd05e850dbb3",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 142,
+      "source": "Synthetic blue-haired character retains hair clip and apron across six rice-eating poses. The Chinese caption 真香 is legible throughout. Spoon rises, mouth opens, eyes close and pose resets. Composed GIF with minor text placement drift.",
+      "target": "Синтетический персонаж с синими волосами сохраняет заколку и фартук в шести позах поедания риса. Китайская подпись 真香 читается во всех кадрах. Ложка поднимается, рот открывается, глаза закрываются, и поза возвращается к начальной. Собранный GIF с небольшим смещением текста.",
+      "sourceHash": "sha256:e25efc1640ca0570df1190b3b5954b28bd36705b9fd93b63c7ad827fffaa2837",
+      "targetHash": "sha256:68eaf7af53d7c3a141bdbae79fe3350909b6dc9164685520442423ff2cfb04d1",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 143,
+      "source": "White chicken opens and closes its wings across six tai-chi-inspired poses in a courtyard. Full body and two feet remain visible; gesture is stylized rather than accurate martial-arts instruction. Composed GIF.",
+      "target": "Белая курица раскрывает и складывает крылья в шести позах во дворе, вдохновлённых тайцзи. Всё тело и две лапы остаются видимыми; жесты стилизованы и не являются точной инструкцией по боевому искусству. Собранный GIF.",
+      "sourceHash": "sha256:0e144a2aea024dacb6fea3bd512e759f642d1c0a6383398467db0e5555234f4c",
+      "targetHash": "sha256:9584a43f3144cf5f341e4d49dd3f2ca70ce258c7aa297d7d0c6a89f371dadaaa",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 144,
+      "source": "Four family members remain around the same dinner table as the father lifts food and the mother nods. Old television and 2005 calendar support the fictional period scene. Six-frame composed GIF, not historical footage.",
+      "target": "Четыре члена семьи остаются за одним обеденным столом, пока отец поднимает еду, а мать кивает. Старый телевизор и календарь 2005 года поддерживают вымышленную сцену эпохи. Собранный GIF из шести кадров, а не историческая съёмка.",
+      "sourceHash": "sha256:28c550d11e983d985d9ddbb01117a10eca4241691a93e3072e0b69188384d406",
+      "targetHash": "sha256:b05ca0a7dac9fe4160196c937ef568dae473f623c3d610d47164c6ace83e3f8c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 145,
+      "source": "Original round fish retains its yellow hat, mint body and coral fins. Six poses produce a small bob and tail shift; the two requested nods are subtle rather than strongly separated. Composed looping GIF.",
+      "target": "Оригинальная круглая рыбка сохраняет жёлтую шляпу, мятное тело и коралловые плавники. Шесть поз создают небольшое покачивание и смещение хвоста; два запрошенных кивка едва заметны и не разделены отчётливо. Собранный повторяющийся GIF.",
+      "sourceHash": "sha256:0abd9875ea806d306fa834afcc7655f2211111f83b93a9113b7126a1fd309ff3",
+      "targetHash": "sha256:a260d5694fe3383e26624a4e43624b90a0823900394b0e210ad8e3337895f330",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 146,
+      "source": "A female adult gymnast shows crouch, takeoff, tucked rotation and landing across six poses. The written prompt specified an adult without gender. Composed GIF; six-step motion is coarse and the first crouch differs from the final standing pose.",
+      "target": "Взрослая гимнастка показывает приседание, отталкивание, вращение в группировке и приземление в шести позах. В письменном промпте был указан взрослый без уточнения пола. Собранный GIF; движение из шести шагов грубое, а начальное приседание отличается от финальной стоячей позы.",
+      "sourceHash": "sha256:feac1d6e95c6d6ecfdd895dee1f240fb8fd12943159ff78dbb96cc519ca51234",
+      "targetHash": "sha256:ed500478246b2c15dc054b66cb6d3e49e7af9201d247669a9cdee0be399c4d5f",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 147,
+      "source": "Green and orange robots retain their left-right positions and identities while stepping, waving and bringing hands together. Full bodies stay inside each cell. Six-frame composed GIF with white background.",
+      "target": "Зелёный и оранжевый роботы сохраняют свои позиции слева и справа и узнаваемость, шагая, махая и соединяя руки. Полные фигуры остаются внутри каждой ячейки. Собранный GIF из шести кадров на белом фоне.",
+      "sourceHash": "sha256:2f7e3023b2157a4964b07e667791ebec0ff955fc964f770ba7e9acccce36faeb",
+      "targetHash": "sha256:2f40e7aeac12e520a244ee49e32217148cbc4d21af43ed885ea23967e4099d64",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 148,
+      "source": "Pelican and red bicycle preserve the sunset reference. Legs shift between pedaling poses with slight body bobbing. Composed GIF; pedal geometry and background alignment vary, and wheel rotation is not physically continuous.",
+      "target": "Пеликан и красный велосипед сохраняют референс на закате. Лапы переходят между позами вращения педалей с небольшим покачиванием тела. Собранный GIF; геометрия педалей и выравнивание фона меняются, а вращение колёс физически не непрерывно.",
+      "sourceHash": "sha256:4ec1646af7215a1fc2dcc6b91cb57ea2f3b90a5751509010b3727eb76d112070",
+      "targetHash": "sha256:2473f4bc83fd40b41d5a138e139e077c1d29e2b1683845a0265b617374048df5",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 149,
+      "source": "Pencil owl blinks and lifts its wings while remaining a drawing on the notebook page. Six-frame composed GIF preserves the paper setting with small page and line drift between frames.",
+      "target": "Карандашная сова моргает и поднимает крылья, оставаясь рисунком на странице блокнота. Собранный GIF из шести кадров сохраняет бумажную обстановку с небольшими смещениями страницы и линий между кадрами.",
+      "sourceHash": "sha256:9bb9cc4fdf48f3b28e569669ee4c6fe316be898649327001864f1a28a6c002aa",
+      "targetHash": "sha256:d246fb2cf40c5436ea53f32dc9368a1ebd569fe0e017f379c8a76697d8815955",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 150,
+      "source": "Inspected actual returned square image: blue-orange kingfisher, vertical beak touching water with fish at impact, symmetric extended wings, golden backlight and water reflection; no other-model comparison claimed. Exact model version not returned.",
+      "target": "Проверено фактически полученное квадратное изображение: сине-оранжевый зимородок, вертикальный клюв касается воды с рыбой в точке удара, симметрично расправленные крылья, золотистый контровой свет и отражение в воде; сравнение с другой моделью не заявляется. Точная версия модели не возвращена.",
+      "sourceHash": "sha256:54b94a084a0c1aafa5712e51cd53aed5526e7a6cb0c6cfa6288c36949eda3b36",
+      "targetHash": "sha256:af007c5deabe8004fe7b14793028e5f4fa86b24d3dd1703cd21b3cd63cd95453",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 151,
+      "source": "Red circle replaced by Santa hat and blue book by wrapped red gift; annotation rings removed; face, star clip, green cardigan, hands, pose and background visually consistent.",
+      "target": "Красный круг заменён шапкой Санты, а синяя книга — упакованным красным подарком; кольца разметки убраны; лицо, заколка-звезда, зелёный кардиган, руки, поза и фон визуально согласованы с исходником.",
+      "sourceHash": "sha256:bb2257f97b2b74a0885a856a2f59649149b37d435cc3d05308c68e3ed52c8f0f",
+      "targetHash": "sha256:c6ebb69c4141ffa46d8884cf8746ac94bc9ae4870d1782a379c77bc25de9beb2",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 152,
+      "source": "Natural adult office portrait, vertical 9:16 composition, visible desk and ordinary office setting, faithful to short Japanese source prompt.",
+      "target": "Естественный офисный портрет взрослого, вертикальная композиция 9:16, видимый стол и обычная офисная обстановка, соответствующие короткому исходному промпту на японском.",
+      "sourceHash": "sha256:16748c35389c8a567c0647002d1e6675c364803f2e0833aa2b4b8bfc6dbb286d",
+      "targetHash": "sha256:2734bb97907d8e7d8f38babd9e803799f7832378f2aaadf1882b166cf7816f88",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 153,
+      "source": "3:4 portrait poster with ornate gold frame, snowman identity and red scarf retained, twig arms extend beyond frame with shadows, seamless plaster wall, small source-like snowman and two-word title plus italic subtitle. Lower miniature is a generated rendition, not a pixel-identical pasted source thumbnail.",
+      "target": "Вертикальный постер 3:4 с нарядной золотой рамой; узнаваемость снеговика и красный шарф сохранены, руки-ветки выходят за раму с тенями, бесшовная оштукатуренная стена, маленький снеговик, похожий на исходный, и заголовок из двух слов с курсивным подзаголовком. Нижняя миниатюра — сгенерированное изображение, а не вставленная исходная миниатюра с идентичными пикселями.",
+      "sourceHash": "sha256:00b431042fc1cf2144e82f01aed6157cac06c1c4855b950de123bbcf8dde8dbe",
+      "targetHash": "sha256:99e8e03e6194e5cc22ae16adc18167907b62edc7b2d6f47278474a18d43104ad",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 154,
+      "source": "Cyan handwritten phrases, symbols and equations project over wet skin, face, neck and shoulders; eyes sharply focused and dark teal backdrop. Original source has no fixed caption text requirement.",
+      "target": "Голубые рукописные фразы, символы и уравнения проецируются на влажную кожу лица, шеи и плеч; глаза резко сфокусированы, фон тёмно-бирюзовый. В оригинальном источнике нет требования к фиксированному тексту подписи.",
+      "sourceHash": "sha256:312a59b84b98a954f1d5b75727ae88359f00f86069fd1817e1b7212e0a6b2e5c",
+      "targetHash": "sha256:e12162b70d171856d9c0d1158b68e15ee18e7920d870b892e929589ca694bdef",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 155,
+      "source": "Compared with generated identity reference: facial features and black hair consistent; blue zip-up sweatshirt over white tank, flash lighting, film grain, wall Polaroids and music flyers. Camera-date decoration is model-generated, not generation metadata.",
+      "target": "Сравнение со сгенерированным референсом человека: черты лица и чёрные волосы согласованы; синяя толстовка на молнии поверх белой майки, свет вспышки, плёночное зерно, полароидные снимки на стене и музыкальные листовки. Декоративная дата камеры сгенерирована моделью и не является метаданными генерации.",
+      "sourceHash": "sha256:390f549807a7d3a6df6cfcd5e2f9165e192bb3e942b02fd5732de76c3cd4e139",
+      "targetHash": "sha256:79aaf26440e9688b1a432a753ecede8059752bcd8b34282a982bcdfd596a60da",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 156,
+      "source": "Verified 3 columns by 4 rows and all twelve captions in reading order: 开心、气成河豚、委屈巴巴、笑不活了、收到、啊？、累瘫了、我裂开了、先装死、蹲个后续、没眼看、下班！. Consistent orange cat and blue tie, thick crayon outlines and cream background.",
+      "target": "Проверены 3 столбца, 4 строки и все двенадцать подписей в порядке чтения: 开心、气成河豚、委屈巴巴、笑不活了、收到、啊？、累瘫了、我裂开了、先装死、蹲个后续、没眼看、下班！. Единообразные оранжевый кот и синий галстук, толстые контуры восковым мелком и кремовый фон.",
+      "sourceHash": "sha256:7866637fafb0db55226d99cf1deadcd416e7c696ce029bdeea3e63bdf3bff8a3",
+      "targetHash": "sha256:2f91ad633ae95252e5d77eb6cf45d330d5462ccd3d5790bdc265b8120d5125fc",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 157,
+      "source": "Frontal selfie with icy blue eyes, glitter makeup and glossy lips. Subject's right pupil (viewer-left eye) is visibly absent, as explicitly requested in the source; no other three gallery images claimed.",
+      "target": "Фронтальное селфи с ледяными голубыми глазами, макияжем с блёстками и глянцевыми губами. Правый зрачок человека (глаз слева для зрителя) явно отсутствует, как прямо запрошено в источнике; остальные три изображения галереи не заявляются.",
+      "sourceHash": "sha256:2f50e6a079789c03808506506f5c0a603b5e6694b538122cdf740f0147089da5",
+      "targetHash": "sha256:f14c5b2ac246533592a5d810576f922bec455820cc878c9eafe76d52196e2f17",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 158,
+      "source": "Folk-art Christmas card retains fictional reference face, curly hair, red shirt, white shorts, leaning pose, wooden rail and football goal. Flat warm red-green-cream palette and textured irregular outlines; portrait 2:3.",
+      "target": "Рождественская открытка в стиле народного искусства сохраняет вымышленное лицо из референса, кудрявые волосы, красную рубашку, белые шорты, наклонённую позу, деревянное ограждение и футбольные ворота. Плоская тёплая красно-зелёно-кремовая палитра и фактурные неровные контуры; вертикальный формат 2:3.",
+      "sourceHash": "sha256:f868c3a819c5e08fa8cf1219b073ebfdaa2cfe640d29a026083becae70c8dfd4",
+      "targetHash": "sha256:76af046f48be6c02f4efe3259cc0e69d5f17176abb1b7e7e8fa56728b260af35",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 159,
+      "source": "Door-peephole perspective with visible circular rim, sunny residential street, consistent adult character face, low bun, gold hairpin, red kimono and cream obi. Original Japanese option filled as ドアスコープ and preserved in values.json. Portrait 4:5.",
+      "target": "Ракурс через дверной глазок с видимым круглым ободком, солнечная жилая улица, согласованное лицо взрослого персонажа, низкий пучок, золотая шпилька, красное кимоно и кремовый пояс оби. Исходный японский вариант заполнен как ドアスコープ и сохранён в values.json. Вертикальный формат 4:5.",
+      "sourceHash": "sha256:1ab075a5574afec886f396a8ccde08efb76c5d9611589a7f7d813393d043a7bc",
+      "targetHash": "sha256:ea7ee82a64e10b2569af611f2bdcb0791fc4de8f158af11e4ea2a75df0578171",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 160,
+      "source": "Adult street portrait matches original: white cap raised by right hand, green wired headphones, pendant, white cropped tank, draped denim jacket, left hand in jeans pocket, sunlit urban scene and film grain. Original prompt unchanged.",
+      "target": "Уличный портрет взрослого соответствует оригиналу: белая кепка приподнята правой рукой, зелёные проводные наушники, подвеска, белая укороченная майка, накинутая джинсовая куртка, левая рука в кармане джинсов, солнечная городская сцена и плёночное зерно. Исходный промпт не изменён.",
+      "sourceHash": "sha256:73f9349183b89036a104206159f56f0a90bc4331ea65bc5eaf6238d1d9c8780d",
+      "targetHash": "sha256:93291d81074194368f13e7d8436b3fd35e41fe10d3bad691010d3ae600707874",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 161,
+      "source": "Single-call selfie preserves black bob, brown eyes, cardigan and delicate illustrated style. High-angle arm-length composition, simple sofa and curtains, no writing. Approximately 9:16; actual dimensions retained. Local reference mapping and assistant-authored message are independent workflow adaptations.",
+      "target": "Селфи за один вызов сохраняет стрижку боб с чёрными волосами, карие глаза, кардиган и нежный иллюстративный стиль. Композиция сверху с расстояния вытянутой руки, простой диван и шторы, без надписей. Примерно 9:16; фактические размеры сохранены. Локальное сопоставление референсов и сообщение, написанное ассистентом, — самостоятельные адаптации рабочего процесса.",
+      "sourceHash": "sha256:3bedcf9940543580665a29801ba63ef615cdfbeac44a73b9d531521ef0566e11",
+      "targetHash": "sha256:6841fc307b41da388dc26f8610b404a28926f2218d4c96d1e40e44f802b246e6",
+      "conclusion": "approved",
+      "reason": "Source-compared after the recorded correction; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 162,
+      "source": "Nine distinct cartoon reactions in an even 3-by-3 arrangement. Inspected all captions in order: Hey!, Same., Seriously?, I am in contraction, Nope., Thank you!, You got this., BRB, Love it!; apostrophe in the fourth caption is present. R1 curly hair, facial features and teal sweatshirt remain recognizable across all cells. Large high-contrast lettering, pale background and white borders; no extra title. Phone layout will be checked after import.",
+      "target": "Девять разных мультяшных реакций в равномерной сетке 3 на 3. Проверены все подписи по порядку: Hey!, Same., Seriously?, I'm in!, Nope., Thank you!, You got this., BRB, Love it!; апостроф в четвёртой подписи присутствует. Кудри, черты лица и бирюзовая толстовка R1 остаются узнаваемыми во всех ячейках. Крупные контрастные надписи, светлый фон и белые границы; дополнительного заголовка нет. Компоновка на телефоне будет проверена после импорта.",
+      "sourceHash": "sha256:defaba2a224e15ee8166dbd1afbe187098649f384b763f1eb973715d66b314f3",
+      "targetHash": "sha256:548bfce058c6764b854eaaeed6906338188259238895cdf2ca23addba2680f03",
+      "conclusion": "approved",
+      "reason": "Approved after resolving source shorthand with x_338 template.values.captions[3] and direct inspection of original a_457: the fourth caption visibly reads I'm in! with apostrophe and exclamation mark. No English source or run metadata changed.",
+      "completedAt": "2026-11-17T15:39:56.056976+00:00"
+    },
+    {
+      "id": 163,
+      "source": "Inspected nine separate corgi reactions with all nine requested captions in correct order, including the two-line snacks question and punctuation. White facial blaze, upright ears and green bandana remain consistent. Distinct wave, play bow, side eye, belly-up, running, sleeping, approval, longing and hug poses. Sleep marks and hearts function as expression symbols. No unrelated titles or text.",
+      "target": "Проверены девять отдельных реакций корги со всеми девятью запрошенными подписями в правильном порядке, включая вопрос о лакомствах в две строки и пунктуацию. Белая проточина на морде, стоячие уши и зелёная бандана единообразны. Различимы позы приветствия лапой, игрового поклона, косого взгляда, лежания на спине, бега, сна, одобрения, тоски и объятия. Знаки сна и сердечки служат символами выражения. Посторонних заголовков или текста нет.",
+      "sourceHash": "sha256:46ba28cbdded16f003283fd614aedd51ecbf7c25f5ca93007de502cfc58c90e4",
+      "targetHash": "sha256:8b3588252fa3d54adcb395c3acea9fa08193b31dbc60fcf62e5f735550eb3b7c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 164,
+      "source": "Four photos in a 2-by-2 grid on a 4:5 cream paper print. R1 remains left and R3 right in all panels; both faces recognizable with intact features, teal and burgundy tops. Smiling, surprise, laughter and shoulder lean occur in the requested sequence. Blue curtain, flash look, subtle grain, exact Better together caption with no other text.",
+      "target": "Четыре фотографии в сетке 2 на 2 на кремовом бумажном отпечатке 4:5. R1 остаётся слева, R3 справа во всех кадрах; оба лица узнаваемы, черты сохранены, верх одежды бирюзовый и бордовый. Улыбка, удивление, смех и наклон к плечу идут в заданной последовательности. Синяя штора, эффект вспышки, лёгкое зерно, точная подпись Better together без другого текста.",
+      "sourceHash": "sha256:640fb2b43fa96becf24824ba0b7a6b59ea260016e5bcc56404ab8188fd7466f6",
+      "targetHash": "sha256:31d527884375974dac177dc63523523a7a2b9d42a70eb8317e3ed4c04ee09234",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 165,
+      "source": "Inspected exact masthead THE DAILY WOOF, headline LOCAL DOG DENIES EVERYTHING and subheading Witnesses report a suspicious amount of fluff. No extra article text. Large readable serif typography, warm newsprint, one large corgi photo beside a torn cushion and fluff. White blaze, orange coat and green bandana match R2.",
+      "target": "Проверены точные надписи: название газеты THE DAILY WOOF, заголовок LOCAL DOG DENIES EVERYTHING и подзаголовок Witnesses report a suspicious amount of fluff. Дополнительного текста статьи нет. Крупный читаемый шрифт с засечками, газетная бумага тёплого оттенка, одна большая фотография корги возле разорванной подушки и наполнителя. Белая проточина, оранжевая шерсть и зелёная бандана соответствуют R2.",
+      "sourceHash": "sha256:2e9cacac653e726bedcdd3e572cdc77a83b47cc5a5487766e1bc9cb9ec41dbf7",
+      "targetHash": "sha256:0be6044434f4e9acbbe70329107eccaa7b180c6b4e6cee2eba076cd5ac114c02",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 166,
+      "source": "Revised output has exactly nine crayon orange-cat cells, consistent navy tie wherever the torso is visible, clear office props and distinct reactions. All nine captions checked; Logging off. now has one period, and You are on mute contraction has its apostrophe. No extra labels. Textured crayon style and bold navy lettering match the brief.",
+      "target": "В исправленном результате ровно девять ячеек с оранжевым котом, нарисованным восковым мелком, единообразный тёмно-синий галстук везде, где видно туловище, понятные офисные предметы и разные реакции. Все девять подписей проверены; в Logging off. теперь одна точка, а в сокращённой форме You are on mute есть апостроф. Дополнительных подписей нет. Фактурный стиль восковых мелков и жирные тёмно-синие надписи соответствуют заданию.",
+      "sourceHash": "sha256:e47dd583fc240010345e12e40daac1648055824e8f9cb3f8c4d9830db31e4e29",
+      "targetHash": "sha256:120c6a94dba1af59d0b6f0db68902d1bb81eceb45adadea9d18e13c1741bdd3a",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 167,
+      "source": "Inspected nine plush raccoon reactions with lavender hoodie and consistent face mask. Exact captions in reading order with single final periods and correct apostrophes; two-line captions remain within their cells. Fur and hoodie texture clearly visible, expressive eyelids, low-battery icon and cozy home props follow the brief.",
+      "target": "Проверены девять реакций плюшевого енота в лавандовом худи с единообразной маской на мордочке. Точные подписи в порядке чтения с одиночными конечными точками и правильными апострофами; двухстрочные подписи остаются внутри своих ячеек. Фактуры меха и худи хорошо видны, выразительные веки, значок разряженной батареи и уютные домашние предметы соответствуют заданию.",
+      "sourceHash": "sha256:1ab4d0d4db2b2f3fe036c08eaacb210aca74f12fae25fe2ac2bbae86b47dea58",
+      "targetHash": "sha256:ea13aa3d78ed6f52c3ec4f86ac1278d6fee9c8544d2e9d5c0bfa5d9db6248e41",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 168,
+      "source": "Nine green frog reactions with yellow scarves, matte handmade texture and soft studio shadows. All nine supportive captions checked for wording, punctuation and reading order, with at most two lines each. Gestures include thumbs-up, steps, a flower, celebration, open arms and rest. Generous spacing; no extra title.",
+      "target": "Девять реакций зелёных лягушек в жёлтых шарфах, с матовой фактурой ручной работы и мягкими студийными тенями. Все девять поддерживающих подписей проверены на формулировку, пунктуацию и порядок чтения, каждая занимает не больше двух строк. Жесты включают большой палец вверх, шаги, цветок, празднование, раскрытые объятия и отдых. Достаточные промежутки; дополнительного заголовка нет.",
+      "sourceHash": "sha256:e8dfa5aa4f1d16f2898e9de50c0f00360b55438d926655b94bc924f054033dc0",
+      "targetHash": "sha256:34817b68519a1493fc606c29977e3ab3de855c1d4bbf24e4ef7d459b72d78bbc",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 169,
+      "source": "Inspected nine white pixel ghost cells with cobalt headphones and stepped pixel contours. All nine gaming captions match in reading order, including GG!, BRB, One more? and the single period in Logging off. Distinct win, approval, apology, lag, away, replay, encouragement, near-miss and sleep reactions. Large navy pixel lettering is clear against a pale cool background.",
+      "target": "Проверены девять ячеек с белым пиксельным призраком в кобальтовых наушниках и со ступенчатыми пиксельными контурами. Все девять игровых подписей совпадают в порядке чтения, включая GG!, BRB, One more? и единственную точку в Logging off. Различимы реакции победы, одобрения, извинения, задержки, отсутствия, повторной игры, поддержки, почти достигнутой цели и сна. Крупные тёмно-синие пиксельные надписи хорошо видны на светлом холодном фоне.",
+      "sourceHash": "sha256:098672eca31aa8dc6bafae3e3106474727344c43851c7a741e9e2d701fc67a6b",
+      "targetHash": "sha256:989e26c8bd1c7af45af4b6240ca6ed2abde1da4a5d0df65c9e7d8a0b5c90f5eb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 170,
+      "source": "Exactly two stacked illustrated panels: R1 smiles at a phone in daylight above, then looks reluctantly from a blanket-covered sofa toward shoes by the door at night. R1 facial features and curls remain recognizable. Both requested captions are exact and very large; no additional labels.",
+      "target": "Ровно два иллюстрированных кадра друг над другом: сверху R1 улыбается телефону при дневном свете, затем ночью неохотно смотрит с укрытого одеялом дивана на обувь у двери. Черты лица и кудри R1 остаются узнаваемыми. Обе запрошенные подписи точны и очень крупны; дополнительных надписей нет.",
+      "sourceHash": "sha256:657b6a9fd4cd4dc10a3fc9068f91e20a98f3d55508d9d0fa7072ad70c640d356",
+      "targetHash": "sha256:b09ad482e74597213793a080dfd4b81bfbe261edc8b45622582b3b1d34e47568",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 171,
+      "source": "Six distinct paper-cut groups: iced coffee, unlettered book, headphones, pair of sneakers, tote, cat on cushion. Forest-green and orange palette, tactile paper and soft shadows. Title WEEKEND STARTER PACK and footer Coffee. Books. No plans. appear once each with correct punctuation; no brand logos or extra labels.",
+      "target": "Шесть отдельных групп из вырезанной бумаги: кофе со льдом, книга без надписей, наушники, пара кроссовок, сумка-шопер, кот на подушке. Палитра лесного зелёного и оранжевого, тактильная бумага и мягкие тени. Заголовок WEEKEND STARTER PACK и нижняя строка Coffee. Books. No plans. встречаются по одному разу с правильной пунктуацией; логотипов брендов и дополнительных подписей нет.",
+      "sourceHash": "sha256:60cf537da20b8d59c67f8377ba37cedda6f967c30697260b39944bfc16a395cd",
+      "targetHash": "sha256:a8b39e64d37699f5229c8ecb8b563157f21afddf1e21768e75c0bf3d4171922c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 172,
+      "source": "4:5 collectible birthday card with recognizable R3 face, freckles and brown wavy hair, paper crown fully inside the frame, cobalt blue and silver foil. All three requested text elements match exactly: LEVEL 30 UNLOCKED, ALEX, Cake first. Responsibilities later. Name and level are large; no invented statistics or brand marks.",
+      "target": "Коллекционная открытка ко дню рождения 4:5 с узнаваемым лицом R3, веснушками и каштановыми волнистыми волосами; бумажная корона полностью внутри кадра, кобальтовый синий и серебристая фольга. Все три запрошенных текстовых элемента совпадают точно: LEVEL 30 UNLOCKED, ALEX, Cake first. Responsibilities later. Имя и уровень крупные; выдуманных характеристик или знаков брендов нет.",
+      "sourceHash": "sha256:9f36a4c3ae5ce7ace4280eaeeab2a47f080475940a73a8c73ab909a8fcce771f",
+      "targetHash": "sha256:170f7e4b62eb323fb5589e00dda57cce282bca5f3f70b52472f0b0a550a18c35",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 173,
+      "source": "Four warm storybook panels in correct order: dog by closing door, looking at sofa, occupying cushions, innocent greeting at open door. Consistent corgi facial blaze, ears and green bandana, with recurring sofa, bookshelf, lamp, rug and wall picture in the living room. All four requested captions appear exactly once with correct punctuation and large readable letters.",
+      "target": "Четыре тёплых кадра в стиле книжной иллюстрации в правильном порядке: собака у закрывающейся двери, взгляд на диван, собака на подушках, невинное приветствие у открытой двери. Проточина на морде корги, уши и зелёная бандана единообразны; в гостиной повторяются диван, книжный шкаф, лампа, ковёр и картина на стене. Все четыре запрошенные подписи появляются ровно по одному разу с правильной пунктуацией и крупными читаемыми буквами.",
+      "sourceHash": "sha256:3cdb894743411ba90aa65ff1a09ea3e14303b28b6e616676c468948e619fa824",
+      "targetHash": "sha256:2201f8b0d335d637d0289312ce1a5a89ff50e4637818783e09b93dc267985819",
+      "conclusion": "approved",
+      "reason": "Source-compared after the recorded correction; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 174,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight cells start empty, show partial entrance from the left, a running bounce and landing, then exit to the right. Character palette, clip and clothing follow generated reference. Two-second loop; final partial exit returns to empty first frame. Source Japanese short request preserved separately.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь ячеек начинаются с пустого кадра, показывают частичное появление слева, подскок на бегу и приземление, затем выход вправо. Палитра персонажа, заколка и одежда соответствуют сгенерированному референсу. Двухсекундный цикл; частичный выход в конце возвращается к пустому первому кадру. Короткий исходный запрос на японском сохранён отдельно.",
+      "sourceHash": "sha256:0e1e03c24e764d49659213ca1ec018a2f90f5a191b6844188ca0c55f030e64ef",
+      "targetHash": "sha256:1fc5d9956fc640e5c8845ec8cb3277d4b4d8d0ddb30728f10cd3375d8d4bc708",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 175,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): All twelve cells spell 周一不想上班 correctly. Straw hat, blue band and orange vest stay recognizable while character yawns, sinks to the floor and stands again. 2400 ms loop. Subtitle position and outlines have slight generated jitter; disclose this rather than claim pixel-locked lettering.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): во всех двенадцати ячейках 周一不想上班 написано правильно. Соломенная шляпа, синяя лента и оранжевый жилет остаются узнаваемыми, пока персонаж зевает, опускается на пол и снова встаёт. Цикл 2400 мс. Положение субтитров и контуры слегка дрожат из-за генерации; это следует раскрыть, а не заявлять о неизменности надписей на уровне пикселей.",
+      "sourceHash": "sha256:0d54643ebfe6246579acc79eaea6610e85487fa7ea89b3b5b607de9181703ed8",
+      "targetHash": "sha256:d26e497edeed84c3a02c1c0c4778391f7c657eb8ae749214adf37c6a251d7835",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 176,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight gouache frames retain bridge, cliff and beach while surf washes in and recedes and gulls change position. Center crop to 3:4 retains bridge and foreground subjects. Minor redrawn landscape and people drift is visible; not a perfectly locked painted layer. Two-second infinite loop, separately attributed production adaptation.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь гуашевых кадров сохраняют мост, утёс и пляж, пока прибой накатывает и отступает, а чайки меняют положение. Центральное кадрирование до 3:4 сохраняет мост и объекты переднего плана. Заметны небольшие изменения перерисованных пейзажа и людей; это не идеально неподвижный живописный слой. Двухсекундный бесконечный цикл, производственная адаптация с отдельной атрибуцией.",
+      "sourceHash": "sha256:0e99d6e2912d589112d8c4d5d1fcab1c7154565f5db9b328b16aed971d64d579",
+      "targetHash": "sha256:0f3b2c9ca21127cb3e6eddab7e912beecc119b51324c0669a55ee1eac788d8e2",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 177,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight drawn gouache city frames show cyclists, scooter, people and birds moving against a recognizable Colosseum. Actual 3:4 center crop and 2-second repeating playback. Visible position reset at loop boundary and minor architectural redraw drift mean this is a stylized keyframe adaptation, not the seamless original-prompt target.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь рисованных гуашевых городских кадров показывают движение велосипедистов, скутера, людей и птиц на фоне узнаваемого Колизея. Фактически выполнены центральное кадрирование 3:4 и повторяющееся воспроизведение длительностью 2 секунды. Видимый сброс положения на границе цикла и небольшие изменения перерисованной архитектуры означают, что это стилизованная адаптация по ключевым кадрам, а не бесшовный результат, заданный оригинальным промптом.",
+      "sourceHash": "sha256:6f5fb2f351241767bf804364fdf314508977b0cb48584f93b94ce279fdb855d6",
+      "targetHash": "sha256:c7ad81bfa6fdb9e5fae91351a5397a21f551b701e6db6cee8d02b186950c2b37",
+      "conclusion": "approved",
+      "reason": "Source-compared after the recorded correction; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 179,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Ten gray hallway frames show approach, mannequin appearance, camera turn and fall, approach and pass, then empty tilted hallway. Play once, ten 500 ms frames, 5 seconds. Camera tilt and geometry are approximate drawn keyframes rather than a measured 3D camera simulation; documented adaptation limitation. Removed only 2px panel borders during extraction.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): десять кадров серого коридора показывают приближение, появление манекена, поворот и падение камеры, приближение и проход мимо, затем пустой наклонённый коридор. Однократное воспроизведение, десять кадров по 500 мс, 5 секунд. Наклон камеры и геометрия представлены приблизительными рисованными ключевыми кадрами, а не точной симуляцией 3D-камеры; это задокументированное ограничение адаптации. При извлечении удалены только рамки панелей толщиной 2 пикселя.",
+      "sourceHash": "sha256:ad387a28d577fab09f1ff7ceceddb7bb2d07818efa8538feb5bb8946a89eeff5",
+      "targetHash": "sha256:b7444439a112a39dc379b3e0aac48c60070a3211803dd8f50d525aabef2ba014",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 180,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Source cells enlarged for display without new detail. Total duration and playback count preserved. Original source review (frame counts describe source only): Sixteen chronological montage keyframes retain the adult reference outfit and summer garden, pool ring, water gun, kicking water, turns and ending splash. Actual silent 10-second GIF at 1.6 keyframes per second, plays once. Center-cropped 9:16 cells are only 171x304; show as a small storyboard adaptation, never claim 30fps video, music, smooth camera motion or full original specification.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Исходные ячейки увеличены для показа без добавления новых деталей. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): шестнадцать монтажных ключевых кадров в хронологическом порядке сохраняют одежду взрослого с референса и летний сад, плавательный круг, водяной пистолет, удары ногами по воде, повороты и финальный всплеск. Фактически это беззвучный GIF длительностью 10 секунд с частотой 1,6 ключевого кадра в секунду и однократным воспроизведением. Ячейки с центральным кадрированием 9:16 имеют размер всего 171×304; показывайте результат как небольшую адаптацию в виде раскадровки и никогда не заявляйте о видео 30 кадров/с, музыке, плавном движении камеры или полном соответствии исходной спецификации.",
+      "sourceHash": "sha256:aeb71cff390bd0f090dfe146b03e4caf38056393e3397c4092bf2ef4bd6bd8fd",
+      "targetHash": "sha256:5b2178eb9921f833b446c93bdf41dcf1594b966044e078ac420e45f0238e77fb",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 181,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve distinct views rotate from front through both sides and back to near-front, keeping the red-bearded dwarf, shoulder axe, fur and costume recognizable. Complete body within each frame. 1440 ms loop. Hand-drawn view spacing is approximate, not a true 3D mesh render.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать разных ракурсов проходят от вида спереди через обе стороны и спину к почти фронтальному виду, сохраняя узнаваемость рыжебородого гнома, топора на плече, меха и костюма. В каждом кадре видна полная фигура. Цикл 1440 мс. Интервалы между рисованными ракурсами приблизительны; это не настоящий рендер 3D-сетки.",
+      "sourceHash": "sha256:50de1ef5de4c12ba0d333ab2f8283b94c109d425e30dca5a7310bb8a9aa0facf",
+      "targetHash": "sha256:17ce882077547e4e96c059c649187d482ccc1cf73490c3964240851841619345",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 182,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve front, side and rear views of the blue-and-gold sword embedded in a mossy stone form a complete turntable cycle. Subject remains centered and whole. 12 frames, 120 ms each. Generated views have approximate angular spacing and small geometry changes; no real 3D-model claim.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать видов спереди, сбоку и сзади сине-золотого меча, вонзённого в мшистый камень, образуют полный цикл кругового обзора. Объект остаётся целым и по центру. 12 кадров по 120 мс. У сгенерированных видов приблизительные угловые интервалы и небольшие изменения геометрии; наличие настоящей 3D-модели не заявляется.",
+      "sourceHash": "sha256:07a61f16a28b96769bfe0c1af84596f04bccd017f87663de8520991ba8d5e533",
+      "targetHash": "sha256:0901a2abf0c89eab8313cb7a8e0d49b2a17ddd5b310af1c2210b6a40b2aae66c",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 183,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve distinguishable front, side and rear views of one dark futuristic motorbike with cyan wheels and red accents. Wheels and body remain visible. 1440 ms repeating turntable. Small generated geometry and scale drift are visible; this is an illustrated multi-view adaptation, not an exported 3D asset.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать различимых видов спереди, сбоку и сзади одного тёмного футуристического мотоцикла с голубыми колёсами и красными акцентами. Колёса и корпус остаются видимыми. Повторяющийся круговой обзор длительностью 1440 мс. Заметны небольшие сгенерированные изменения геометрии и масштаба; это рисованная многоракурсная адаптация, а не экспортированный 3D-объект.",
+      "sourceHash": "sha256:b56a2d4f9307466e48ab2ee258d99270ddc263a02a67e6ab2d2bf22036472ace",
+      "targetHash": "sha256:5d30ac6b19a97337fba8a08d9ab4c3107d04ece3149a50434dd87de754159a92",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 184,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve complete seated-tabby views progress from front around the back and return to near-front. White chest, paws and tabby coat remain recognizable. 1440 ms repeating GIF; angle intervals and fine fur markings vary slightly because views are generated images.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать полных видов сидящего полосатого кота проходят от фронтального вида вокруг спины и возвращаются к почти фронтальному. Белая грудка, лапы и полосатая шерсть остаются узнаваемыми. Повторяющийся GIF длительностью 1440 мс; угловые интервалы и мелкие отметины шерсти немного различаются, поскольку ракурсы сгенерированы.",
+      "sourceHash": "sha256:e3592f7241ef464ce3921bf7d9705a8be860090de6c1bc7860a66426f6659cb0",
+      "targetHash": "sha256:2719ad6dda943ef764255aec0ac23b00599d755a05888d15df6c8656d533e00e",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 185,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight chest-up frames show holding rice, lifting chopsticks, eating, chewing and a satisfied smile, with correct 真香！ lettering throughout. Blue whale maid features follow reference. Two-second repeating GIF; slight redrawn subtitle and hair movement remains.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь кадров по грудь показывают, как персонаж держит рис, поднимает палочки, ест, жуёт и довольно улыбается; надпись 真香！ верна во всех кадрах. Черты синей горничной-кита соответствуют референсу. Повторяющийся двухсекундный GIF; сохраняются небольшие движения перерисованных субтитров и волос.",
+      "sourceHash": "sha256:3806c2b2544d9a78fde5dba7e79c44fd76261ed34dda18d4c70acab3dbab62d0",
+      "targetHash": "sha256:53718fa93f6dc29e28b4a3f022ddc1e6ca525b59901700eb268ef9ef455e8ade",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 186,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve cells retain whale maid design from the two ordered reference views, moving from tired to cheerful waving and back. Every caption is 下班！ with no missing characters. 2400 ms loop. Small position/letterform and hair redraw jitter remains, disclosed in adaptation notes.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать ячеек сохраняют образ горничной-кита из двух референсных ракурсов в заданном порядке, переходя от усталости к радостному маханию рукой и обратно. Каждая подпись — 下班！, без пропущенных знаков. Цикл 2400 мс. Сохраняются небольшие дрожания положения, формы букв и перерисованных волос, раскрытые в примечаниях к адаптации.",
+      "sourceHash": "sha256:c5888acfb274a196cd8a1d885d9d5dcf2be820888e88d7a23226fb2cbaabebfa",
+      "targetHash": "sha256:2f3178df93e0a20388faccf30250f89cc0875d542620530a56c3480dfe440c22",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 187,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Twelve returned poses follow the ordered input chart: preparation, jump, turn, raise, dunk, hang, release and landing. Character and hoop positions stay readable; actual 1800 ms loop. The ball returns to the ready hand at the loop reset without a separate pickup transition; document this keyframe limitation.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): двенадцать полученных поз следуют входной схеме в заданном порядке: подготовка, прыжок, поворот, подъём, бросок сверху, вис, отпускание и приземление. Положения персонажа и кольца остаются понятными; фактический цикл 1800 мс. При перезапуске цикла мяч возвращается в готовую руку без отдельного перехода с подбором; это ограничение ключевых кадров следует документировать.",
+      "sourceHash": "sha256:93d1086a3c26bd6b6d52f917d011b6131d89a839fcf3471c6cfa2ae4f5218dc6",
+      "targetHash": "sha256:b99d09456004486cf2c15d701092556803b8a5ab959a4db7904925e5252bd0a6",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 188,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. Nine chronological source poses selected. Total duration and playback count preserved. Original source review (frame counts describe source only): Nine actual transparent GIF frames show front paws clapping while half-closed deadpan eyes remain stable. All labels correctly read 好棒棒 and float above the ears without supports. Inspected encoded GIF against light and dark backgrounds: real alpha and no white outline. Slight face redraw variation remains; 100-percent pixel locking is not claimed.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): девять фактических кадров прозрачного GIF показывают хлопки передними лапами, пока полуприкрытые невозмутимые глаза остаются стабильными. Все подписи правильно гласят 好棒棒 и парят над ушами без опор. Закодированный GIF проверен на светлом и тёмном фоне: настоящая прозрачность и отсутствие белой обводки. Сохраняются небольшие различия перерисованного лица; 100-процентная неизменность пикселей не заявляется.",
+      "sourceHash": "sha256:a9f3b1fab38f69e09e2f019bbb537ccf32a2f3defc733814a10e17d8cf866f59",
+      "targetHash": "sha256:1ab0f21346dc4181b50ffd02dc1c85efe7231fff5ba85cf02b171e88e6e20199",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 189,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight penguin joy poses progress through smile, wing lift, happy hop, landing and neutral pose; red scarf and colors consistent. Full figure and no written text. 1600 ms infinite loop; small generated outline and scale variation.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь радостных поз пингвина проходят через улыбку, подъём крыльев, счастливый подскок, приземление и нейтральную позу; красный шарф и цвета единообразны. Полная фигура и отсутствие письменного текста. Бесконечный цикл 1600 мс; небольшие сгенерированные изменения контура и масштаба.",
+      "sourceHash": "sha256:191992ae270ef85dcccfffe80dbd7d76d095f0f02e4d6a25e4afa68aecbd80a5",
+      "targetHash": "sha256:8f07c3f90c1c9ecfabe9ec91a622144986f1f36cb8bd651cfe7e260de46afc09",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    },
+    {
+      "id": 190,
+      "source": "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and final poses retained. This output reuses archived GPT Image source pixels; no new provider call. One held pose is split into two frames; eight distinct source poses, nine encoded frames. Total duration and playback count preserved. Original source review (frame counts describe source only): Eight poses show furrowed brows, puffed cheeks and alternating foot stomps, preserving penguin and red scarf. 1600 ms loop; expression resets to neutral on first frame, so no seamless expression match is claimed.",
+      "target": "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Одна удерживаемая поза разделена на два кадра: восемь разных исходных поз, девять закодированных кадров. Общая длительность и число воспроизведений сохранены. Исходная проверка (число кадров относится только к исходнику): восемь поз показывают нахмуренные брови, надутые щёки и попеременные притопывания лапами, сохраняя пингвина и красный шарф. Цикл 1600 мс; в первом кадре выражение возвращается к нейтральному, поэтому бесшовное совпадение выражений не заявляется.",
+      "sourceHash": "sha256:ed04490ffeb5e3b3c50677dd2a908db83ad35f3f4ee7aa548037ec5ebc1f5a1c",
+      "targetHash": "sha256:cbc4cf26b6c81999f647bda5f1bca830e319bcfd35bd57a4edfb231671e21054",
+      "conclusion": "approved",
+      "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+    }
+  ],
+  "sourceIssues": [
+    {
+      "id": 162,
+      "issue": "Source lists I am in contraction while also asserting an apostrophe in the fourth caption. The translation preserves that source wording and contradiction; the reviewer has not asserted that this is the actual graphic caption.",
+      "blockingForTranslation": false,
+      "resolution": "Resolved by unchanged run record and actual original image: source says contraction descriptively; Russian now quotes the observed I'm in! caption. Earlier issue text is preserved as history."
+    },
+    {
+      "id": 166,
+      "issue": "Source describes a You are on mute contraction without spelling the contracted caption. Translation preserves this as a description of a contraction and does not invent replacement image lettering.",
+      "blockingForTranslation": false,
+      "resolution": "Confirmed via x_342 and a_464 that You're on mute. is the visible contracted form; existing Russian descriptive translation is accurate and remains unchanged."
+    }
+  ],
+  "reviewHistory": [
+    {
+      "recordedAt": "2026-11-17T15:28:50.257914+00:00",
+      "status": "superseded-after-source-clarification",
+      "record": {
+        "id": 162,
+        "source": "Nine distinct cartoon reactions in an even 3-by-3 arrangement. Inspected all captions in order: Hey!, Same., Seriously?, I am in contraction, Nope., Thank you!, You got this., BRB, Love it!; apostrophe in the fourth caption is present. R1 curly hair, facial features and teal sweatshirt remain recognizable across all cells. Large high-contrast lettering, pale background and white borders; no extra title. Phone layout will be checked after import.",
+        "target": "Девять разных мультяшных реакций в равномерной сетке 3 на 3. Проверены все подписи по порядку: Hey!, Same., Seriously?, I am in contraction, Nope., Thank you!, You got this., BRB, Love it!; апостроф в четвёртой подписи присутствует. Кудри, черты лица и бирюзовая толстовка R1 остаются узнаваемыми во всех ячейках. Крупные контрастные надписи, светлый фон и белые границы; дополнительного заголовка нет. Компоновка на телефоне будет проверена после импорта.",
+        "sourceHash": "sha256:defaba2a224e15ee8166dbd1afbe187098649f384b763f1eb973715d66b314f3",
+        "targetHash": "sha256:5a1e92d2644064deabd1d30adb7f50d1b62f4affde2dac928762967c0e1b812a",
+        "conclusion": "approved",
+        "reason": "Source-compared; quantities, sequence order, requested/observed distinction, limitations and literal image lettering retained. Review covers translation only, not new visual evidence."
+      },
+      "note": "The initial translation preserved the source wording literally; targeted run-record and actual-asset inspection now establishes that contraction is descriptive, not graphic lettering."
+    }
+  ],
+  "supplementalVisualChecks": [
+    {
+      "reviewer": "AI Codex ru_batch_d",
+      "completedAt": "2026-11-17T15:39:56.056976+00:00",
+      "scope": "Targeted caption disambiguation only. Does not certify generation history, provider identity, all prior visual observations or animation.",
+      "checks": [
+        {
+          "assetId": "a_457",
+          "file": "public/media/a_457/everyday-reaction-stickers-original-fcdab9d2f673.png",
+          "contentHash": "sha256:fcdab9d2f6733f61937fad277bd587da59892c09e97e0a4becdada39582b73b5",
+          "runRecord": "content/examples/x_338/run.yaml",
+          "runRecordSha256": "sha256:35233dc8e6b31e9cddac7c0c7f1464f494e3fb06abe38064fddaad2fc9a176f0",
+          "method": "Directly viewed actual original PNG with view_image; inspected only the specified caption to disambiguate source wording.",
+          "observation": "Fourth cell (row 2, column 1) visibly reads I'm in!; apostrophe and final exclamation mark are present. Matches template.values.captions[3]."
+        },
+        {
+          "assetId": "a_464",
+          "file": "public/media/a_464/office-cat-reaction-stickers-original-b7ca8aa11ae4.png",
+          "contentHash": "sha256:b7ca8aa11ae41e0980c30f15a6fa48e0c8ec2ef7bc92b55873c7564e5c84d68d",
+          "runRecord": "content/examples/x_342/run.yaml",
+          "runRecordSha256": "sha256:4c93b27d7a7bbbe0f5147c70cf372d9bc0ad8eb38b68a1736a93b22e69af09da",
+          "method": "Directly viewed actual original PNG with view_image; inspected only the specified caption to disambiguate source wording.",
+          "observation": "Middle cell visibly reads You're on mute. with apostrophe and one final period. The existing Russian wording explicitly describes a contracted form of You are on mute and is semantically accurate; no change needed."
+        }
+      ]
+    }
+  ]
+}

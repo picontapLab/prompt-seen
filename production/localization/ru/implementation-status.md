@@ -1,77 +1,90 @@
 # Russian implementation status
 
 Worktree: `russian-localization/prompt-seen`. Branch: `codex/russian-localization`.
-Base: `53cbc8efce854f8f067acef8372daf49be82f9c3`. The source checkout's unrelated
-uncommitted edits were not copied or modified. Scope is recomputed from this worktree.
+Original engineering baseline: `53cbc8efce854f8f067acef8372daf49be82f9c3`.
+The source checkout's unrelated uncommitted edits were not copied or modified.
 
-## Implemented — preview only
+## Full content milestone
 
-- Complete/fingerprint/source-only policy; `preview: true`, `enabled: false`.
-- All 427 UI messages in 14 namespaces, Russian cardinal forms and formatting tests.
-- Russian ё/е compatibility with distinct й/и, original UTF-16 highlighting,
-  finite domain/inflection aliases, analyzer version 7 and keyboard chord support.
-- Russian Storybook catalogs, samples and toolbar entry.
-- R0 About, License and all 34 taxonomy fields passed source-comparison review;
-  import and promote use the existing transactional CLI. UI review is recorded
-  as AI review, not native-speaker certification.
-- R1: eight Prompt pages (`p_005`, `p_012`, `p_111`, `p_115`, `p_151`,
-  `p_217`, `p_224`, `p_290`), three templates (`t_001`, `t_002`, `t_017`),
-  two collections (`c_001`, `c_002`) and all three topic pages, with their
-  required shared fields. Imported and promoted through the generic CLI.
-- Exact original-file SHA-256 matches reuse existing visual observations for
-  23 assets. All nine Fuji GIF frames were additionally inspected; metadata
-  confirms 360×480, 2 seconds and infinite looping. Historical source review
-  claims remain attributed source statements, not new provenance certification.
-- 24 frozen pilot search queries, actual Worker tests, original Chinese Prompt
-  preservation and Cyrillic template input/copy/download checks.
+**381/381 content units and 2,220/2,220 fields are current.** The candidate report
+has 381 indexable units, zero fallback, missing, draft, outdated, unreviewed or
+invalid units, and `ready: true`. `locale:check --locale ru --strict` passes.
 
-## Current readiness
+The completed scope is 285 Prompt descriptions, 75 templates, 16 collections,
+three topics, About and License; 1,793 shared fields and all 427 UI messages.
+Original Prompt bodies, template values/constraints, media, generation records,
+model facts, source links and licensing remain unchanged.
 
-The post-pilot report has **18/381 current content units** and **574/2,220
-current fields** (427 UI messages and 147 shared fields). There are **363
-missing content units** and **1,646 remaining fields**. Russian strict readiness
-fails as expected; this is not a complete production candidate. Candidate
-indexability is only 13 units: translated collection/topic text does not make
-its untranslated linked contents indexable. Preview remains noindex throughout.
+Configuration remains `coverage: complete`, `review: fingerprint`,
+`promptBodies: source-only`, `preview: true`, `enabled: false`. This work completes
+content preparation and review, not production enablement or deployment.
 
-Existing enabled languages en, zh-Hans, es, pt-BR, ja, ko and de remain ready.
-Arabic remains unfinished and preview-only; no all-language strict bypass was used.
+## Independent review
 
-## Verification
+All 1,666 deduplicated content text units and 427 UI strings were independently
+source-compared by subagents. Authors did not approve their own translation
+partitions. The review records contain exact source/target hashes and corrections:
 
-- Full unit suite: 67 files, 651 tests passed. TypeScript and ESLint passed.
-- Disabled production build at `/`: Russian routes/search/sitemap entries absent;
-  HTTP and Chromium/Firefox/WebKit keyboard/Worker checks passed (7 tests,
-  28 Russian-page checks intentionally skipped because ru was disabled).
-- Foundation preview at `/prompt-seen`: 35 HTTP/browser tests passed.
-- Pilot preview at `/prompt-seen`: see `evidence/verification.json` for final
-  test results and evidence hashes. Clipboard verification uses Chromium;
-  Firefox/WebKit verify the edited preview and downloaded bytes.
-- Source invariant audit: all 46 modified content YAML files preserve every
-  non-ru value when parsed, including Prompt data, template values, source and
-  model facts, run metadata, media hashes and licensing.
-- The narrow-screen template test expands the bottom sheet before inspecting
-  its below-fold controls. A Firefox measurement found the collapsed sample
-  button at y=1509–1553 outside the 900px viewport; after expansion and scrolling
-  it is fully visible at y=604–648. This corrects a test-state mismatch, not CSS.
+- `subagent-existing-review.json`: 249 existing R0/R1 text units, including a
+  separately approved correction for the broad Editorial category.
+- `subagent-full-a-review.json`: 182 units reviewed by `ru_batch_d`.
+- `subagent-full-b-review.json`: 521 units reviewed by `ru_batch_c`.
+- `subagent-full-c-review.json`: 441 units reviewed by `ru_batch_a`.
+- `subagent-full-d-review.json`: 273 units reviewed by `ru_batch_a`.
+- `subagent-ui-review.json`: 427 UI messages and 33 ICU plural nodes reviewed by
+  `ru_batch_d`, including the `maxLength` grammar correction.
+- `subagent-integration-review.json`: independent completeness, field identity,
+  array order, MDX structure and protected-data-boundary audit by `ru_batch_c`.
 
-Next.js reported an existing security-version warning and stopped initial preview
-build attempts. Retrying the same build succeeded. Dependencies were not upgraded
-as part of localization; the security upgrade remains separate work.
+A context-specific field override distinguishes a brand name (`Название`) from a
+person's name (`Имя`). The assembler checks its exact source and target repository
+fingerprints. All 4,769 unit bindings are recorded in `full-review-bindings.json`;
+only exact approved targets entered the generic import/promote batch.
 
-## In progress
+These are explicitly AI reviews, not native-speaker or human certification.
 
-- Complete the remaining 363 content units and 1,646 fields with source comparison
-  and asset evidence, using the scope and batch plan. Preserve all original bodies.
-- Extend search acceptance from the reviewed pilot to the complete corpus, including
-  ranking/negative cases and performance thresholds in the specification.
-- Complete full browsing, popup, favorites, reference-input, font and performance
-  acceptance; pilot checks are not a substitute for RU01–RU12 release coverage.
-- Reach strict ready before enabling ru in an isolated production candidate; then
-  run the full root-production, subpath-production and subpath-preview matrix.
-  No production enablement, merge or deployment has been performed.
+## Media and source preservation
 
-Initial local machine-translation samples were rejected for mistranslating technical
-image descriptions (for example “cartoon treatment” and scale cues). Those drafts
-are not approved content. Exact reviewed inputs, fingerprints and test results are
-recorded under `batches/` and `evidence/` as work proceeds.
+All 363 original media SHA-256 values match the existing visual-review evidence
+and actual files. Its original limitations are preserved. The primary agent also
+viewed all frames of all 26 composed nine-frame GIFs in nine contact sheets and
+checked dimensions, delays, distinct-frame counts and loop metadata. These checks
+are recorded in `full-media-review.json`; they do not claim live playback or new
+provider/provenance certification. A subagent additionally viewed the actual
+caption images for units 162 and 166 to resolve source wording ambiguities.
+
+`full-source-invariants.json` confirms that all 843 modified content YAML files
+preserve every non-ru value relative to the original engineering baseline. No
+original Prompt/body files changed. The source MDX-to-corpus extraction preserves
+all 381 source documents' AST/text; the translated pages retain all links and
+format structure.
+
+## Verification and release boundary
+
+- Russian strict completeness passes; all seven existing enabled languages remain
+  ready. Arabic remains unfinished and preview-only; no all-language strict
+  bypass was used.
+- Content validation: zero errors and publish errors, with the same ten existing
+  zh-Hans warnings and one unused-media maintenance notice.
+- TypeScript, ESLint, preview build and all 651 unit tests (67 files) pass.
+  The serial unit run passed with unchanged timeouts after concurrent runs hit
+  timeouts under machine contention. Actual commands and log hashes are in
+  `evidence/full-verification.json`.
+- Final acceptance: 45 distinct passing checks across HTTP and Chromium, Firefox,
+  WebKit; one fallback-only check intentionally skips because there is no fallback.
+  The full HTTP test passed after correcting its frozen-scope comparison.
+- Full HTTP acceptance visits every Russian page and compares the entry set with
+  the frozen 381-item scope (also checking English contains those entries), checks
+  Russian HTML/title/noindex behavior, and verifies all 285 actual HTML and popup
+  Prompt texts/languages against original literal files or raw template rendering.
+- Browser checks cover the actual Worker, 24 frozen pilot queries against the
+  complete corpus, keyboard behavior, four widths and two themes, accessible
+  templates, Cyrillic input, downloads and Chromium clipboard readback.
+
+The earlier foundation/pilot results are retained in `evidence/verification.json`.
+The full production build matrix, broader ranking/performance release acceptance,
+production enablement, merge and deployment are separate outstanding release
+steps from the specification. No production deployment has been performed.
+
+The build emitted a known Next.js security vulnerability warning. A dependency
+upgrade remains separate outstanding work; no dependency version was changed.

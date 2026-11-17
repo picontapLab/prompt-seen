@@ -31,6 +31,8 @@ inputRequirements:
     es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
       imágenes de entrada sintéticas.
     ko: 표시된 순서대로 참조 이미지를 업로드하세요. 예시는 합성 입력 이미지를 사용합니다.
+    ru: Загрузите референсные изображения в указанном порядке. В примере
+      использованы синтетические входные изображения.
   slots:
     - id: floorPlan
       labels:
@@ -41,6 +43,7 @@ inputRequirements:
         pt-BR: Planta baixa
         es: Plano de planta
         ko: 평면도
+        ru: План помещения
       min: 1
       max: 1
 showcaseExampleId: x_251

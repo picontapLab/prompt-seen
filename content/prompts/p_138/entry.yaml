@@ -30,6 +30,8 @@ inputRequirements:
     es: Sube una foto antigua. Nuestra imagen inicial es una fotografía envejecida
       sintética, no un archivo familiar real.
     ko: 오래된 사진 한 장을 업로드하세요. 보정 전 이미지는 실제 가족 기록이 아닌 합성한 오래된 사진입니다.
+    ru: Загрузите одну старую фотографию. Наш исходник — синтетически состаренная
+      фотография, а не настоящий семейный архив.
   slots:
     - id: oldPhoto
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Foto antiga
         es: Foto antigua
         ko: 오래된 사진
+        ru: Старая фотография
       min: 1
       max: 1
 showcaseExampleId: x_183
@@ -60,6 +63,7 @@ inspirationSources:
       pt-BR: Vídeo completo de tutorial ou demonstração
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
+      ru: Весь обучающий или демонстрационный ролик
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -70,6 +74,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -79,6 +84,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      ru: Полный оригинальный промпт не получен; самостоятельная адаптация
     metrics:
       - key: views
         value: 33334
@@ -90,6 +96,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          ru: Просмотры
       - key: likes
         value: 505
         labels:
@@ -100,6 +107,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ru: Лайки
       - key: saves
         value: 1340
         labels:
@@ -110,6 +118,7 @@ inspirationSources:
           pt-BR: Salvamentos
           es: Guardados
           ko: 저장
+          ru: Сохранения
       - key: comments
         value: 62
         labels:
@@ -120,6 +129,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          ru: Комментарии
       - key: shares
         value: 139
         labels:
@@ -130,6 +140,7 @@ inspirationSources:
           pt-BR: Compartilhamentos
           es: Veces compartido
           ko: 공유
+          ru: Репосты
       - key: coins
         value: 211
         labels:
@@ -140,6 +151,7 @@ inspirationSources:
           pt-BR: Moedas
           es: Monedas
           ko: 코인
+          ru: Монеты
       - key: danmaku
         value: 112
         labels:
@@ -150,6 +162,7 @@ inspirationSources:
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
           ko: 화면 댓글
+          ru: Данмаку
 source:
   author: Prompt Seen
   url: null

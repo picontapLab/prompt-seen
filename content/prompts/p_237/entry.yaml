@@ -35,6 +35,8 @@ inputRequirements:
       generada por Prompt Seen.
     ko: 머리에 빨간 원이 있고 책 주위에 별도의 파란 원이 있는 일러스트를 업로드하세요. 여기 표시된 참조 이미지는 Prompt Seen에서
       생성했습니다.
+    ru: Загрузите иллюстрацию с красным кругом на голове и отдельным синим кругом
+      вокруг книги. Показанный здесь референс создан Prompt Seen.
   slots:
     - id: marked
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         pt-BR: Referência gerada pelo projeto
         es: Referencia generada por el proyecto
         ko: 프로젝트에서 생성한 참조 이미지
+        ru: Референс, созданный для проекта
       min: 1
       max: 1
 showcaseExampleId: x_301
@@ -66,6 +69,7 @@ inspirationSources:
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
+      ru: Вся исходная публикация или галерея, а не этот сгенерированный пример
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -76,9 +80,11 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo
         da publicação/resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de
-        la publicación o respuesta del autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la
+        publicación o respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
+      ru: Сохранённый снимок публичной публикации X; полный промпт из сохранённого
+        зеркала авторской публикации или ответа
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118151619212890291&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -88,6 +94,7 @@ inspirationSources:
       pt-BR: Texto completo do autor, no idioma original
       es: Texto completo del autor, idioma original
       ko: 작성자의 전체 원문, 원래 언어
+      ru: Полный авторский текст на исходном языке
     metrics:
       - key: likes
         value: 93
@@ -99,6 +106,7 @@ inspirationSources:
           pt-BR: Curtidas da publicação de origem
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
+          ru: Лайки исходной публикации
 source:
   author: IHayato
   url: https://x.com/IHayato/status/2118151619212890291

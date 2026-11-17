@@ -30,6 +30,8 @@ inputRequirements:
     es: Sube una foto u obra que puedas usar. Nuestro ejemplo usa una imagen
       generada original.
     ko: 사용할 권리가 있는 사진이나 작품 한 장을 업로드하세요. 예시는 직접 생성한 이미지입니다.
+    ru: Загрузите одну фотографию или работу, которую вы вправе использовать. В
+      примере использовано оригинальное сгенерированное изображение.
   slots:
     - id: picture
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Imagem
         es: Imagen
         ko: 이미지
+        ru: Изображение
       min: 1
       max: 1
 showcaseExampleId: x_190
@@ -60,6 +63,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      ru: Вся публикация или галерея изображений
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -70,6 +74,7 @@ inspirationSources:
       pt-BR: Captura indexada da fonte primária
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
+      ru: Проиндексированный снимок первоисточника
     evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1kpuhyp/turn_this_image_into_a_drawing_a_5_year_old_would/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -79,6 +84,7 @@ inspirationSources:
       pt-BR: Prompt ou trecho de origem disponível; adaptado de forma independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      ru: Доступен исходный промпт или отрывок; самостоятельная адаптация
     metrics:
       - key: post_score
         value: 6188
@@ -90,6 +96,7 @@ inspirationSources:
           pt-BR: Pontuação da publicação
           es: Puntuación de la publicación
           ko: 게시물 점수
+          ru: Рейтинг публикации
       - key: comments
         value: null
         labels:
@@ -100,6 +107,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          ru: Комментарии
 source:
   author: Prompt Seen
   url: null

@@ -1,6 +1,9 @@
 import { expect, test } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import YAML from 'yaml';
+import { fieldsFileSchema, promptEntrySchema, templateEntrySchema } from '../../scripts/lib/content/schemas';
+import { renderTemplate } from '../../src/modules/template';
 import { BASE, BUILD, ROOT, publicUrl } from './support/artifact';
 import { localeIndex, promptDetail } from './support/content';
 import { alternates, canonical, elementText, htmlElement, robots } from './support/html';
@@ -8,7 +11,9 @@ import { alternates, canonical, elementText, htmlElement, robots } from './suppo
 const russian = BUILD.locales.find((locale) => locale.code === 'ru');
 
 test('Russian publication follows the actual artifact configuration', async ({ request }) => {
-  if (process.env.RU_ACCEPTANCE === '1') expect(russian).toBeDefined();
+  if (['RU_ACCEPTANCE', 'RU_FULL_ACCEPTANCE', 'RU_PILOT_ACCEPTANCE'].some((flag) => process.env[flag] === '1')) {
+    expect(russian).toBeDefined();
+  }
   if (!russian) {
     expect((await request.get(`${BASE}/ru/`)).status()).toBe(404);
     expect((await request.get(`${BASE}/generated/ru/search/index.json`)).status()).toBe(404);
@@ -30,6 +35,88 @@ test('Russian publication follows the actual artifact configuration', async ({ r
 
 test.describe('Russian pages and original Prompt text', () => {
   test.skip(!russian, 'Russian is not part of this artifact');
+  test('full Russian corpus has every source entry, localized HTML and unchanged original Prompts', async ({
+    request,
+  }) => {
+    test.skip(process.env.RU_FULL_ACCEPTANCE !== '1', 'Requires full reviewed coverage');
+    test.setTimeout(120_000);
+    const index = localeIndex('ru');
+    const source = localeIndex('en');
+    const scope: { items: { key: string }[] } = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'production/localization/ru/scope.json'), 'utf8'),
+    );
+    expect(scope.items).toHaveLength(381);
+    const servedPrompts = new Map<string, { text: string; language: string }>();
+    for (const kind of ['prompts', 'templates', 'collections', 'topics', 'pages'] as const) {
+      const scopedId = (entry: (typeof index)[typeof kind][number]) =>
+        entry.kind === 'topic' ? `${entry.taxonomy}/${entry.id}` : entry.id;
+      expect(source[kind].length, kind).toBeGreaterThan(0);
+      // English preview also includes unpublished drafts, outside the frozen localization scope.
+      const scopedIds = scope.items
+        .filter((item) => item.key.startsWith(`${kind.slice(0, -1)}/`))
+        .map((item) => item.key.split('/').slice(1).join('/'))
+        .sort();
+      expect(scopedIds.length, kind).toBeGreaterThan(0);
+      expect(source[kind].map(scopedId), kind).toEqual(expect.arrayContaining(scopedIds));
+      expect(index[kind].map(scopedId).sort(), kind).toEqual(scopedIds);
+      for (const entry of index[kind]) {
+        expect(entry.localization.contentLocale, `${kind}/${entry.id}`).toBe('ru');
+        const response = await request.get(`${BASE}${entry.path}`);
+        expect(response.status(), entry.path).toBe(200);
+        const html = await response.text();
+        if (kind === 'prompts') {
+          const block = /<div id="[^"]*-prompt"([^>]*)>([\s\S]*?)<\/div>/.exec(html);
+          expect(block, entry.id).not.toBeNull();
+          const text = block![2]!
+            .replace(/<!-- -->/g, '')
+            .replace(/<[^>]+>/g, '')
+            .replace(/&quot;/g, '"')
+            .replace(/&#x27;|&#39;/g, "'")
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+          servedPrompts.set(entry.id, { text, language: /lang="([^"]+)"/.exec(block![1]!)?.[1] ?? '' });
+        }
+        expect(htmlElement(html), entry.path).toEqual({ lang: 'ru', dir: 'ltr' });
+        expect(elementText(html, 'h1'), entry.path).toBe(entry.title);
+        if (BUILD.buildMode === 'preview') expect(robots(html).join(','), entry.path).toContain('noindex');
+      }
+    }
+    for (const entry of index.prompts) {
+      const directory = path.join(ROOT, 'content/prompts', entry.id);
+      const data = promptEntrySchema.parse(YAML.parse(fs.readFileSync(path.join(directory, 'entry.yaml'), 'utf8')));
+      const original = data.promptSource;
+      const readPrompt = (file: string) => fs.readFileSync(file, 'utf8').replace(/\r\n?/g, '\n').trim();
+      let expected: { text: string; language: string };
+      if (original.type === 'literal') {
+        expected = { text: readPrompt(path.join(directory, original.file)), language: original.language };
+      } else {
+        const templateDir = path.join(ROOT, 'content/templates', original.templateId);
+        const versionDir = path.join(templateDir, 'versions', original.version);
+        const template = templateEntrySchema.parse(
+          YAML.parse(fs.readFileSync(path.join(templateDir, 'entry.yaml'), 'utf8')),
+        );
+        const fields = fieldsFileSchema.parse(
+          YAML.parse(fs.readFileSync(path.join(versionDir, 'fields.yaml'), 'utf8')),
+        ).fields;
+        const rendered = renderTemplate(
+          { body: readPrompt(path.join(versionDir, 'body.txt')), fields },
+          original.values,
+        );
+        expect(rendered.ok, entry.id).toBe(true);
+        if (rendered.text === null) throw new Error(`Invalid source template: ${entry.id}`);
+        expected = { text: rendered.text, language: template.promptLanguage };
+      }
+      const detail = promptDetail('ru', entry.id);
+      expect(detail.prompt, entry.id).toMatchObject(expected);
+      expect(servedPrompts.get(entry.id), entry.id).toEqual(expected);
+      const response = await request.get(`${BASE}/generated/ru/prompts/${detail.slug}.json`);
+      expect(response.status(), entry.id).toBe(200);
+      const popup = await response.json();
+      expect(popup.prompt, entry.id).toEqual(detail.prompt);
+      expect(popup.prompt, entry.id).toMatchObject(expected);
+    }
+  });
   for (const slug of ['about', 'license']) {
     test(slug, async ({ request }) => {
       const response = await request.get(`${BASE}/ru/${slug}/`);

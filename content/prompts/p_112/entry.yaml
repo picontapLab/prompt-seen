@@ -27,9 +27,11 @@ inputRequirements:
       KI-generierte erwachsene Person.
     pt-BR: Envie um retrato com uma pose clara. Nossa referência é uma pessoa adulta
       fictícia gerada por IA.
-    es: Sube un retrato con una pose clara. Nuestra referencia es un adulto
-      ficticio generado por IA.
+    es: Sube un retrato con una pose clara. Nuestra referencia es un adulto ficticio
+      generado por IA.
     ko: 자세가 명확한 인물 사진 한 장을 업로드하세요. 참조 이미지는 AI로 생성한 가상 성인입니다.
+    ru: Загрузите один портрет с чёткой позой. Наш референс — вымышленный взрослый,
+      созданный ИИ.
   slots:
     - id: person
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Pessoa
         es: Persona
         ko: 인물
+        ru: Человек
       min: 1
       max: 1
 showcaseExampleId: x_157
@@ -65,6 +68,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      ru: Вся публикация или галерея изображений
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -75,6 +79,7 @@ inspirationSources:
       pt-BR: Captura oficial da API pública
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      ru: Снимок данных официального публичного API
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2020241008693506483&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -84,6 +89,7 @@ inspirationSources:
       pt-BR: Prompt de origem ou trecho disponível; adaptação independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      ru: Доступен исходный промпт или отрывок; самостоятельная адаптация
     metrics:
       - key: likes
         value: 3324
@@ -95,6 +101,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          ru: Лайки
       - key: conversation_count
         value: 29
         labels:
@@ -105,6 +112,7 @@ inspirationSources:
           pt-BR: Respostas
           es: Respuestas
           ko: 답글
+          ru: Ответы
       - key: views
         value: null
         labels:
@@ -115,6 +123,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          ru: Просмотры
       - key: reposts
         value: null
         labels:
@@ -125,6 +134,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          ru: Репосты
       - key: bookmarks
         value: null
         labels:
@@ -135,3 +145,4 @@ inspirationSources:
           pt-BR: Favoritos
           es: Marcadores
           ko: 북마크
+          ru: Закладки
