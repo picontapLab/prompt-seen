@@ -1,17 +1,15 @@
 referenceImage: required
 instructions:
-  en: Upload one action photo and supply a short uppercase word and background
-    color.
+  en: Upload one action photo and supply a short uppercase word and background color.
   zh-Hans: 动作照片、短词与主色
   ja: 動作中の写真を 1 枚アップロードし、大文字の短い単語と背景色を指定してください。
-  de: Lade ein Actionfoto hoch und gib ein kurzes Wort in Großbuchstaben sowie
-    eine Hintergrundfarbe an.
-  pt-BR: Envie uma foto de ação e informe uma palavra curta em maiúsculas e uma
-    cor de fundo.
-  es: Sube una foto de acción e indica una palabra corta en mayúsculas y un color
-    de fondo.
+  de: Lade ein Actionfoto hoch und gib ein kurzes Wort in Großbuchstaben sowie eine Hintergrundfarbe
+    an.
+  pt-BR: Envie uma foto de ação e informe uma palavra curta em maiúsculas e uma cor de fundo.
+  es: Sube una foto de acción e indica una palabra corta en mayúsculas y un color de fondo.
   ko: 동작 사진 한 장을 업로드하고 대문자로 된 짧은 단어와 배경색을 제공하세요.
   zh-Hant: 上傳一張動作照片，並提供一個簡短的大寫單字與背景顏色。
+  fr: Importez une photo d’action et indiquez un mot court en majuscules ainsi qu’une couleur de fond.
 slots:
   - id: action
     labels:
@@ -23,5 +21,6 @@ slots:
       es: Acción
       ko: 동작
       zh-Hant: 動作照片
+      fr: Action
     min: 1
     max: 1

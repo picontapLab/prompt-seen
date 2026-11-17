@@ -22,12 +22,12 @@ inputRequirements:
     en: Paste the complete original prompt without adding an input image.
     zh-Hans: 直接使用完整原词，不需要参考图。
     ja: 入力画像を追加せず、元のプロンプト全文を貼り付けてください。
-    de: Füge den vollständigen Originalprompt ein, ohne ein Eingabebild
-      hinzuzufügen.
+    de: Füge den vollständigen Originalprompt ein, ohne ein Eingabebild hinzuzufügen.
     pt-BR: Cole o prompt original completo sem adicionar uma imagem de entrada.
     es: Pega el prompt original completo sin añadir una imagen de entrada.
     ko: 입력 이미지를 추가하지 않고 전체 원본 프롬프트를 붙여 넣으세요.
     zh-Hant: 直接使用完整原詞，不需要參考圖。
+    fr: Collez le prompt original complet sans ajouter d’image d’entrée.
   slots: []
 showcaseExampleId: x_300
 promptProvenance: source-prompt
@@ -43,26 +43,28 @@ inspirationSources:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
-      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
-        Beispiel
+      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte Beispiel
       pt-BR: Publicação ou galeria original inteira; não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
+      fr: Publication ou galerie originale entière ; pas cet exemple généré
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
-      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
-        gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
-      pt-BR: Captura pública salva do X; prompt completo do espelho salvo da
-        publicação ou resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de la
-        publicación o respuesta del autor
+      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer gespeicherten Spiegelkopie
+        des Autorenbeitrags bzw. der Antwort
+      pt-BR: Captura pública salva do X; prompt completo do espelho salvo da publicação ou resposta do
+        autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la publicación o
+        respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
+      fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
+        réponse de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118381855166881928&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -73,6 +75,7 @@ inspirationSources:
       es: Texto completo del autor, idioma original
       ko: 작성자의 전체 원문, 원래 언어
       zh-Hant: 完整作者原詞，保留原語言
+      fr: Texte complet de l’auteur, langue originale
     metrics:
       - key: likes
         value: 227
@@ -85,6 +88,7 @@ inspirationSources:
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
+          fr: Mentions J’aime de la publication source
 source:
   author: NovaXCode
   url: https://x.com/NovaXCode/status/2118383239392075848

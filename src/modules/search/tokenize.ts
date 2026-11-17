@@ -33,6 +33,7 @@ const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
 export function normalizeTerm(text: string, locale: string): string {
   const language = locale.split('-')[0]!.toLowerCase();
   let s = text.normalize('NFKC').toLocaleLowerCase(locale);
+  if (language === 'fr') s = s.replace(/œ/g, 'oe').replace(/æ/g, 'ae');
   if (language === 'de') s = s.replace(/ß/g, 'ss').replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u');
   if (FOLD_SCRIPT.test(s)) {
     s = s
@@ -96,6 +97,11 @@ function runs(text: string, locale: string): Run[] {
   return out;
 }
 
+// Drop only a complete French elision prefix immediately before an apostrophe and word.
+// Inspect the original text: normalizing ligatures first would move the highlight offsets.
+const FRENCH_ELISION = /^(?:[cdjlmnst]|qu)$/iu;
+const APOSTROPHE_WORD = /^['’][\p{L}\p{N}]/u;
+
 const endOf = (c: { text: string; start: number }) => c.start + c.text.length;
 
 /**
@@ -110,6 +116,12 @@ export function spans(text: string, locale: string, mode: 'index' | 'query' = 'i
       const first = run.chars[0]!;
       const last = run.chars.at(-1)!;
       const raw = text.slice(first.start, endOf(last));
+      if (
+        locale.split('-')[0]!.toLowerCase() === 'fr' &&
+        FRENCH_ELISION.test(raw) &&
+        APOSTROPHE_WORD.test(text.slice(endOf(last)))
+      )
+        continue;
       const term = normalizeTerm(raw, locale);
       if (term) out.push({ term, start: first.start, end: endOf(last) });
       continue;

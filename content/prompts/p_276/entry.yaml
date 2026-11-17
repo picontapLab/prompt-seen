@@ -19,26 +19,27 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload the first adult portrait, then the second adult portrait. Image 1
-      stays on the left; image 2 stays on the right. The demonstration uses
-      AI-generated fictional people. Keep all lettering in English.
+    en: Upload the first adult portrait, then the second adult portrait. Image 1 stays on the left;
+      image 2 stays on the right. The demonstration uses AI-generated fictional people. Keep all
+      lettering in English.
     zh-Hans: 依次上传第一位和第二位成年人的肖像。图 1 保持在左，图 2 保持在右。示例采用 AI 生成的虚构人物。画面文字保持英文。
     ja: 1人目、2人目の順に成人のポートレートをアップロードしてください。画像1の人物は左、画像2の人物は右に配置します。作例の人物は AI
       で生成した架空の人物です。画像内の文字はすべて英語にしてください。
-    de: Lade zuerst das erste Erwachsenenporträt und danach das zweite hoch. Bild 1
-      bleibt links; Bild 2 bleibt rechts. Die Demonstration verwendet
-      KI-generierte fiktive Personen. Lass alle Schriftzüge auf Englisch.
-    pt-BR: Envie o primeiro retrato de uma pessoa adulta e depois o segundo. A
-      imagem 1 fica à esquerda; a imagem 2 fica à direita. A demonstração usa
-      pessoas fictícias geradas por IA. Mantenha todo o texto da imagem em
-      inglês.
-    es: Sube primero el retrato de la primera persona adulta y después el de la
-      segunda. La imagen 1 permanece a la izquierda y la imagen 2 a la derecha.
-      La demostración usa personas ficticias generadas por IA. Conserva todos
-      los textos en inglés.
-    ko: 첫 번째 성인 인물 사진을 먼저, 두 번째 성인 인물 사진을 다음에 업로드하세요. 이미지 1은 왼쪽, 이미지 2는 오른쪽을 유지합니다.
-      시연에는 AI로 생성한 가상 인물을 사용합니다. 모든 글자는 영어로 유지하세요.
+    de: Lade zuerst das erste Erwachsenenporträt und danach das zweite hoch. Bild 1 bleibt links; Bild 2
+      bleibt rechts. Die Demonstration verwendet KI-generierte fiktive Personen. Lass alle
+      Schriftzüge auf Englisch.
+    pt-BR: Envie o primeiro retrato de uma pessoa adulta e depois o segundo. A imagem 1 fica à esquerda;
+      a imagem 2 fica à direita. A demonstração usa pessoas fictícias geradas por IA. Mantenha todo
+      o texto da imagem em inglês.
+    es: Sube primero el retrato de la primera persona adulta y después el de la segunda. La imagen 1
+      permanece a la izquierda y la imagen 2 a la derecha. La demostración usa personas ficticias
+      generadas por IA. Conserva todos los textos en inglés.
+    ko: 첫 번째 성인 인물 사진을 먼저, 두 번째 성인 인물 사진을 다음에 업로드하세요. 이미지 1은 왼쪽, 이미지 2는 오른쪽을 유지합니다. 시연에는 AI로 생성한 가상 인물을
+      사용합니다. 모든 글자는 영어로 유지하세요.
     zh-Hant: 依次上傳第一位和第二位成年人的肖像。圖 1 保持在左，圖 2 保持在右。示例採用 AI 生成的虛構人物。畫面文字保持英文。
+    fr: Importez le premier portrait d’adulte, puis le second. L’image 1 reste à gauche et l’image 2 à
+      droite. La démonstration utilise des personnes fictives générées par IA. Gardez tous les
+      textes dans l’image en anglais.
   slots:
     - id: personA
       labels:
@@ -50,6 +51,7 @@ inputRequirements:
         es: Primera persona, izquierda
         ko: 첫 번째 인물, 왼쪽
         zh-Hant: 第一位人物，左側
+        fr: Première personne, à gauche
       min: 1
       max: 1
     - id: personB
@@ -62,6 +64,7 @@ inputRequirements:
         es: Segunda persona, derecha
         ko: 두 번째 인물, 오른쪽
         zh-Hant: 第二位人物，右側
+        fr: Deuxième personne, à droite
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -87,6 +90,7 @@ annotations:
       es: Cuatro fotogramas forman una impresión compacta de cabina de fotos.
       ko: 네 프레임이 작은 포토부스 인화물 하나를 이룹니다.
       zh-Hant: 四幀組成完整照片亭拼圖。
+      fr: Quatre images forment un tirage de photomaton compact.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -102,3 +106,4 @@ annotations:
       es: El flash y el grano establecen el aspecto fotográfico.
       ko: 플래시와 입자가 사진 같은 느낌을 만듭니다.
       zh-Hant: 閃光與顆粒共同形成攝影質感。
+      fr: Le flash et le grain créent le rendu photographique.

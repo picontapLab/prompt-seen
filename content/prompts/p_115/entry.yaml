@@ -19,18 +19,19 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload person A first, then person B. Both references are fictional
-      AI-generated adults.
+    en: Upload person A first, then person B. Both references are fictional AI-generated adults.
     zh-Hans: 两位成年人的照片
     ja: 最初に人物 A、次に人物 B の画像をアップロードしてください。どちらの参照画像も、AI で生成した架空の成人です。
-    de: Lade zuerst Person A und dann Person B hoch. Beide Referenzen zeigen
-      fiktive, mit KI erzeugte Erwachsene.
-    pt-BR: Envie primeiro a pessoa A e depois a pessoa B. As duas referências são
-      adultos fictícios gerados por IA.
-    es: Sube primero a la persona A y después a la persona B. Ambas referencias son
-      adultos ficticios generados por IA.
+    de: Lade zuerst Person A und dann Person B hoch. Beide Referenzen zeigen fiktive, mit KI erzeugte
+      Erwachsene.
+    pt-BR: Envie primeiro a pessoa A e depois a pessoa B. As duas referências são adultos fictícios
+      gerados por IA.
+    es: Sube primero a la persona A y después a la persona B. Ambas referencias son adultos ficticios
+      generados por IA.
     ko: 인물 A를 먼저, 인물 B를 다음에 업로드하세요. 두 참조 인물 모두 AI로 생성한 가상 성인입니다.
     zh-Hant: 先上傳人物 A 的照片，再上傳人物 B 的照片。本例中的兩位人物均為 AI 生成的虛構成年人。
+    fr: Importez d’abord la personne A, puis la personne B. Les deux références représentent des adultes
+      fictifs générés par IA.
   slots:
     - id: personA
       labels:
@@ -42,6 +43,7 @@ inputRequirements:
         es: Persona A
         ko: 인물 A
         zh-Hant: 第一位成年人
+        fr: Personne A
       min: 1
       max: 1
     - id: personB
@@ -54,6 +56,7 @@ inputRequirements:
         es: Persona B
         ko: 인물 B
         zh-Hant: 第二位成年人
+        fr: Personne B
       min: 1
       max: 1
 showcaseExampleId: x_160
@@ -80,6 +83,7 @@ inspirationSources:
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
       zh-Hant: 整部教學或作品展示影片
+      fr: Ensemble du tutoriel ou de la vidéo de présentation
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -91,6 +95,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV18sJ9zeEGY
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -101,6 +106,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: views
         value: 9416
@@ -113,6 +119,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: likes
         value: 231
         labels:
@@ -124,6 +131,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: saves
         value: 345
         labels:
@@ -135,6 +143,7 @@ inspirationSources:
           es: Guardados
           ko: 저장
           zh-Hant: 收藏
+          fr: Enregistrements
       - key: comments
         value: 139
         labels:
@@ -146,6 +155,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
       - key: shares
         value: 65
         labels:
@@ -157,6 +167,7 @@ inspirationSources:
           es: Veces compartido
           ko: 공유
           zh-Hant: 分享
+          fr: Partages
       - key: coins
         value: 208
         labels:
@@ -168,6 +179,7 @@ inspirationSources:
           es: Monedas
           ko: 코인
           zh-Hant: 投幣
+          fr: Pièces
       - key: danmaku
         value: 4
         labels:
@@ -179,3 +191,4 @@ inspirationSources:
           es: Comentarios danmaku
           ko: 화면 댓글
           zh-Hant: 彈幕
+          fr: Commentaires défilants (danmaku)

@@ -19,19 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload a high-contrast portrait guide and use a tool capable of strong
-      reference or structure conditioning.
+    en: Upload a high-contrast portrait guide and use a tool capable of strong reference or structure
+      conditioning.
     zh-Hans: 高对比轮廓图与结构控制工作流
     ja: コントラストの高いポートレートのガイド画像をアップロードし、参照画像や構造による強い条件付けに対応したツールを使ってください。
-    de: Lade eine kontrastreiche Porträtvorlage hoch und verwende ein Werkzeug, das
-      eine starke Steuerung durch Referenz oder Struktur unterstützt.
-    pt-BR: Envie um guia de retrato com alto contraste e use uma ferramenta capaz de
-      aplicar forte condicionamento por referência ou estrutura.
-    es: Sube una guía de retrato con alto contraste y usa una herramienta capaz de
-      condicionar fuertemente el resultado mediante una referencia o una
-      estructura.
+    de: Lade eine kontrastreiche Porträtvorlage hoch und verwende ein Werkzeug, das eine starke
+      Steuerung durch Referenz oder Struktur unterstützt.
+    pt-BR: Envie um guia de retrato com alto contraste e use uma ferramenta capaz de aplicar forte
+      condicionamento por referência ou estrutura.
+    es: Sube una guía de retrato con alto contraste y usa una herramienta capaz de condicionar
+      fuertemente el resultado mediante una referencia o una estructura.
     ko: 대비가 뚜렷한 인물 가이드 이미지를 업로드하고 참조 이미지나 구조를 강하게 반영할 수 있는 도구를 사용하세요.
     zh-Hant: 上傳一張高對比的人像引導圖，並使用能夠強力約束參考圖片或結構的工具。
+    fr: Importez un portrait-guide à fort contraste et utilisez un outil permettant un conditionnement
+      marqué par référence ou structure.
   slots:
     - id: silhouette
       labels:
@@ -43,6 +44,7 @@ inputRequirements:
         es: Retrato guía en blanco y negro
         ko: 실루엣
         zh-Hant: 高對比輪廓
+        fr: Silhouette
       min: 1
       max: 1
 promptProvenance: independent-adaptation
@@ -63,6 +65,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +77,7 @@ inspirationSources:
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
+      fr: Instantané indexé de la source primaire
     evidenceUrl: https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -84,6 +88,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: post_score
         value: 1032
@@ -96,6 +101,7 @@ inspirationSources:
           es: Puntuación de la publicación
           ko: 게시물 점수
           zh-Hant: 貼文分數
+          fr: Score de la publication
       - key: comments
         value: null
         labels:
@@ -107,6 +113,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
 source:
   author: Prompt Seen
   url: null

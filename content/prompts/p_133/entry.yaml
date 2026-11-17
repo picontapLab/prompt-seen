@@ -19,18 +19,16 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one clear subject photo. The example uses a fictional AI-generated
-      adult.
+    en: Upload one clear subject photo. The example uses a fictional AI-generated adult.
     zh-Hans: 人物、宠物或自创角色照片
     ja: 被写体がはっきり写った写真を 1 枚アップロードしてください。この作例では、AI で生成した架空の成人を使っています。
-    de: Lade ein klares Foto des Motivs hoch. Das Beispiel verwendet eine fiktive,
-      KI-generierte erwachsene Person.
-    pt-BR: Envie uma foto nítida da pessoa. O exemplo usa um adulto fictício gerado
-      por IA.
-    es: Sube una foto clara del sujeto. El ejemplo usa un adulto ficticio generado
-      por IA.
+    de: Lade ein klares Foto des Motivs hoch. Das Beispiel verwendet eine fiktive, KI-generierte
+      erwachsene Person.
+    pt-BR: Envie uma foto nítida da pessoa. O exemplo usa um adulto fictício gerado por IA.
+    es: Sube una foto clara del sujeto. El ejemplo usa un adulto ficticio generado por IA.
     ko: 대상이 선명한 사진 한 장을 업로드하세요. 예시는 AI로 생성한 가상 성인을 사용합니다.
     zh-Hant: 上傳一張主體清楚的照片。本例人物為 AI 生成的虛構成年人。
+    fr: Importez une photo nette du sujet. L’exemple utilise un adulte fictif généré par IA.
   slots:
     - id: subject
       labels:
@@ -42,6 +40,7 @@ inputRequirements:
         es: Sujeto
         ko: 대상
         zh-Hant: 人物、寵物或原創角色
+        fr: Sujet
       min: 1
       max: 1
 showcaseExampleId: x_178
@@ -63,6 +62,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +74,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1962647019090256101&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -84,6 +85,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: likes
         value: 6338
@@ -96,6 +98,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: conversation_count
         value: 365
         labels:
@@ -107,6 +110,7 @@ inspirationSources:
           es: Respuestas
           ko: 답글
           zh-Hant: 回覆
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -118,6 +122,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -129,6 +134,7 @@ inspirationSources:
           es: Republicaciones
           ko: 재게시
           zh-Hant: 轉發
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -140,6 +146,7 @@ inspirationSources:
           es: Marcadores
           ko: 북마크
           zh-Hant: 書籤
+          fr: Signets
 source:
   author: Prompt Seen
   url: null

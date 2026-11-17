@@ -27,6 +27,7 @@ inputRequirements:
     es: Usa el prompt reescrito completo sin imagen de entrada.
     ko: 입력 이미지 없이 전체 재작성 프롬프트를 사용하세요.
     zh-Hant: 使用完整改編提示詞，不需要參考圖。
+    fr: Utilisez le prompt réécrit complet sans image d’entrée.
   slots: []
 showcaseExampleId: x_376
 promptProvenance: independent-adaptation
@@ -42,40 +43,42 @@ inspirationSources:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
       ja: 元投稿またはギャラリー全体の数値であり、この生成作例への反応数ではありません。
-      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
-        Beispiel
+      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte Beispiel
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
+      fr: Publication ou galerie originale entière ; pas cet exemple généré
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
       ja: 保存されたXの公開スナップショット。元の完全なプロンプトは作者の投稿または返信の保存済みミラーに由来します。
-      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
-        gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
-      pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo
-        da publicação/resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de la
-        publicación o respuesta del autor
+      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer gespeicherten Spiegelkopie
+        des Autorenbeitrags bzw. der Antwort
+      pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo da
+        publicação/resposta do autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la publicación o
+        respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
+      fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
+        réponse de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118247837683044650&lang=en&token=1
     sourcePromptStatus:
-      en: Independent adaptation; original prompt failed three attempts and is
-        archived separately.
+      en: Independent adaptation; original prompt failed three attempts and is archived separately.
       zh-Hans: 独立改编；原词三次尝试失败并另行归档。
       ja: 独自アレンジ。原文での3回の試行は失敗し、別途保存しています。
-      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen und
-        ist separat archiviert.
-      pt-BR: Adaptação independente; o prompt original falhou em três tentativas e
-        está arquivado separadamente.
-      es: Adaptación independiente; el prompt original falló en tres intentos y se
-        archiva por separado.
+      de: Eigenständige Adaption; der Originalprompt scheiterte in drei Versuchen und ist separat
+        archiviert.
+      pt-BR: Adaptação independente; o prompt original falhou em três tentativas e está arquivado
+        separadamente.
+      es: Adaptación independiente; el prompt original falló en tres intentos y se archiva por separado.
       ko: 독립적인 각색; 원본 프롬프트는 세 번의 시도에 실패했으며 별도로 보관되어 있습니다.
       zh-Hant: 獨立改編；原詞三次嘗試失敗並另行歸檔。
+      fr: Adaptation indépendante ; le prompt original a échoué lors de trois essais et est archivé
+        séparément.
     metrics:
       - key: likes
         value: 245
@@ -88,6 +91,7 @@ inspirationSources:
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
+          fr: Mentions J’aime de la publication source
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/johnAGI168/status/2118247837683044650

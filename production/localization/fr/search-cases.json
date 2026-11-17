@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr",
+  "cases": [
+    {
+      "query": "éclairage néon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "eclairage neon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "ÉCLAIRAGE NÉON PORTRAIT",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "éclairage néon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "l’éclairage néon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "l'eclairage neon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5,
+      "reason": "Accent, case, NFD and elision; frozen before full-corpus search tuning."
+    },
+    {
+      "query": "portrait couverture",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "mariage deux personnes",
+      "expectedKeys": [
+        "prompt/p_115"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "photographie de produit studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "packshot studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "affiche Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "poster Fuji",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "modèle affiche produit",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "modele affiche produit",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "modèle encre",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "singe lanterne",
+      "expectedKeys": [
+        "prompt/p_224"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "GPT Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "p_217",
+      "expectedKeys": [
+        "prompt/p_217"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "affiches hiérarchie",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "lavis encre",
+      "expectedKeys": [
+        "topic/style/ink"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "autocollants grenouille",
+      "expectedKeys": [
+        "prompt/p_280"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "sticker grenouille",
+      "expectedKeys": [
+        "prompt/p_280"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "campagne produit 3 × 3",
+      "expectedKeys": [
+        "template/t_017"
+      ],
+      "topK": 5,
+      "reason": "Source-supported French title/domain query; frozen before tuning."
+    },
+    {
+      "query": "packshot",
+      "expectedKeys": [],
+      "topK": 5,
+      "reason": "Ordinary portraits must not acquire product photography aliases.",
+      "excludedKeys": [
+        "prompt/p_111",
+        "prompt/p_115"
+      ]
+    },
+    {
+      "query": "zxqvfrsansresultat987",
+      "expectedKeys": [],
+      "topK": 5,
+      "reason": "Explicit zero-result acceptance.",
+      "expectedTotal": 0
+    },
+    {
+      "query": "梅枝",
+      "expectedKeys": [],
+      "topK": 5,
+      "reason": "Chinese title remains discoverable through language suggestions, not French fallback.",
+      "expectedTotal": 0
+    }
+  ]
+}

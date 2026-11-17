@@ -19,18 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one clear adult portrait. The demonstration reference is
-      AI-generated. Keep all lettering in English.
+    en: Upload one clear adult portrait. The demonstration reference is AI-generated. Keep all lettering
+      in English.
     zh-Hans: 上传一张清晰的成年人肖像。示例参考图由 AI 生成。画面文字保持英文。
     ja: 成人の鮮明なポートレートを1枚アップロードしてください。作例の参照画像は AI 生成です。画像内の文字はすべて英語にしてください。
-    de: Lade ein klares Porträt einer erwachsenen Person hoch. Das Referenzbild der
-      Demonstration wurde mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
-    pt-BR: Envie um retrato nítido de uma pessoa adulta. A referência da
-      demonstração foi gerada por IA. Mantenha todo o texto da imagem em inglês.
-    es: Sube un retrato claro de una persona adulta. La referencia de demostración
-      está generada por IA. Mantén todo el texto de la imagen en inglés.
+    de: Lade ein klares Porträt einer erwachsenen Person hoch. Das Referenzbild der Demonstration wurde
+      mit KI erzeugt. Lass alle Schriftzüge auf Englisch.
+    pt-BR: Envie um retrato nítido de uma pessoa adulta. A referência da demonstração foi gerada por IA.
+      Mantenha todo o texto da imagem em inglês.
+    es: Sube un retrato claro de una persona adulta. La referencia de demostración está generada por IA.
+      Mantén todo el texto de la imagen en inglés.
     ko: 선명한 성인 인물 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
     zh-Hant: 上傳一張清晰的成年人肖像。示例參考圖由 AI 生成。畫面文字保持英文。
+    fr: Importez un portrait d’adulte net. La référence de démonstration est générée par IA. Gardez tous
+      les textes dans l’image en anglais.
   slots:
     - id: person
       labels:
@@ -42,6 +44,7 @@ inputRequirements:
         es: Retrato de persona
         ko: 인물 사진
         zh-Hant: 人物肖像
+        fr: Portrait de la personne
       min: 1
       max: 1
 showcaseExampleId: x_346
@@ -67,6 +70,7 @@ annotations:
       es: La parte superior e inferior crean el planteamiento y el remate.
       ko: 위아래 칸이 도입과 웃음 포인트를 만듭니다.
       zh-Hant: 上下兩格形成鋪墊和反差笑點。
+      fr: Le haut et le bas créent la mise en place et la chute de la blague.
   - phrase: expressive editorial illustration
     region:
       x: 0.36
@@ -82,3 +86,4 @@ annotations:
       es: Las expresiones transmiten la broma de un vistazo.
       ko: 표정만으로 농담을 한눈에 전달합니다.
       zh-Hant: 鮮明表情幫助快速理解笑點。
+      fr: Les expressions rendent la blague compréhensible d’un coup d’œil.

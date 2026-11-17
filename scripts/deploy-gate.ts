@@ -16,7 +16,7 @@ type Get = <T>(path: string) => Promise<T>;
 export const requiredJobs = [
   'check',
   'secrets',
-  ...['root', 'subpath'].flatMap((path) => [
+  ...['root', 'subpath-production', 'subpath'].flatMap((path) => [
     `build (${path})`,
     ...['chromium', 'firefox', 'webkit'].map((browser) => `build-and-test (${path}, ${browser})`),
   ]),

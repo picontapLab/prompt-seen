@@ -19,18 +19,15 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one simple icon. Our example uses an original fictional mountain
-      emblem.
+    en: Upload one simple icon. Our example uses an original fictional mountain emblem.
     zh-Hans: 简单Emoji或图标图像
     ja: シンプルなアイコンを 1 枚アップロードしてください。この作例では、オリジナルの架空の山のエンブレムを使っています。
-    de: Lade ein einfaches Icon hoch. Unser Beispiel verwendet ein eigenes fiktives
-      Bergemblem.
-    pt-BR: Envie um ícone simples. Nosso exemplo usa um emblema fictício original de
-      montanha.
-    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio y
-      original.
+    de: Lade ein einfaches Icon hoch. Unser Beispiel verwendet ein eigenes fiktives Bergemblem.
+    pt-BR: Envie um ícone simples. Nosso exemplo usa um emblema fictício original de montanha.
+    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio y original.
     ko: 단순한 아이콘 하나를 업로드하세요. 예시는 직접 만든 가상의 산 엠블럼입니다.
     zh-Hant: 上傳一個簡單圖示。本例使用原創的虛構山峰徽章。
+    fr: Importez une icône simple. Notre exemple utilise un emblème de montagne fictif original.
   slots:
     - id: icon
       labels:
@@ -42,6 +39,7 @@ inputRequirements:
         es: Icono
         ko: 아이콘
         zh-Hant: 圖示輪廓
+        fr: Icône
       min: 1
       max: 1
 showcaseExampleId: x_185
@@ -63,6 +61,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +73,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1911075302941622512&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -84,6 +84,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: likes
         value: 2527
@@ -96,6 +97,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: conversation_count
         value: 63
         labels:
@@ -107,6 +109,7 @@ inspirationSources:
           es: Respuestas
           ko: 답글
           zh-Hant: 回覆
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -118,6 +121,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -129,6 +133,7 @@ inspirationSources:
           es: Republicaciones
           ko: 재게시
           zh-Hant: 轉發
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -140,6 +145,7 @@ inspirationSources:
           es: Marcadores
           ko: 북마크
           zh-Hant: 書籤
+          fr: Signets
 source:
   author: Prompt Seen
   url: null

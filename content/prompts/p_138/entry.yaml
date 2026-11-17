@@ -19,18 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one old photo. Our before image is a synthetic aged photograph, not a
-      real family archive.
+    en: Upload one old photo. Our before image is a synthetic aged photograph, not a real family
+      archive.
     zh-Hans: 待修复的旧照片
     ja: 古い写真を 1 枚アップロードしてください。この作例の修復前画像は、古びた写真として生成したもので、実際の家族の記録写真ではありません。
-    de: Lade ein altes Foto hoch. Unser Vorher-Bild ist ein künstlich gealtertes,
-      generiertes Foto, kein echtes Familienarchiv.
-    pt-BR: Envie uma foto antiga. Nossa imagem anterior à restauração é uma
-      fotografia envelhecida sinteticamente, não um arquivo familiar real.
-    es: Sube una foto antigua. Nuestra imagen inicial es una fotografía envejecida
-      sintética, no un archivo familiar real.
+    de: Lade ein altes Foto hoch. Unser Vorher-Bild ist ein künstlich gealtertes, generiertes Foto, kein
+      echtes Familienarchiv.
+    pt-BR: Envie uma foto antiga. Nossa imagem anterior à restauração é uma fotografia envelhecida
+      sinteticamente, não um arquivo familiar real.
+    es: Sube una foto antigua. Nuestra imagen inicial es una fotografía envejecida sintética, no un
+      archivo familiar real.
     ko: 오래된 사진 한 장을 업로드하세요. 보정 전 이미지는 실제 가족 기록이 아닌 합성한 오래된 사진입니다.
     zh-Hant: 上傳一張老照片。本例是合成的仿舊圖片，並非真實的家庭檔案。
+    fr: Importez une photo ancienne. Notre image avant restauration est une photographie vieillie
+      synthétique, pas une véritable archive familiale.
   slots:
     - id: oldPhoto
       labels:
@@ -42,6 +44,7 @@ inputRequirements:
         es: Foto antigua
         ko: 오래된 사진
         zh-Hant: 待修復舊照片
+        fr: Photo ancienne
       min: 1
       max: 1
 showcaseExampleId: x_183
@@ -63,6 +66,7 @@ inspirationSources:
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
       zh-Hant: 整部教學或作品展示影片
+      fr: Ensemble du tutoriel ou de la vidéo de présentation
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +78,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV17w41157Ev
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -84,6 +89,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: views
         value: 33334
@@ -96,6 +102,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: likes
         value: 505
         labels:
@@ -107,6 +114,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: saves
         value: 1340
         labels:
@@ -118,6 +126,7 @@ inspirationSources:
           es: Guardados
           ko: 저장
           zh-Hant: 收藏
+          fr: Enregistrements
       - key: comments
         value: 62
         labels:
@@ -129,6 +138,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
       - key: shares
         value: 139
         labels:
@@ -140,6 +150,7 @@ inspirationSources:
           es: Veces compartido
           ko: 공유
           zh-Hant: 分享
+          fr: Partages
       - key: coins
         value: 211
         labels:
@@ -151,6 +162,7 @@ inspirationSources:
           es: Monedas
           ko: 코인
           zh-Hant: 投幣
+          fr: Pièces
       - key: danmaku
         value: 112
         labels:
@@ -162,6 +174,7 @@ inspirationSources:
           es: Comentarios danmaku
           ko: 화면 댓글
           zh-Hant: 彈幕
+          fr: Commentaires défilants (danmaku)
 source:
   author: Prompt Seen
   url: null

@@ -22,14 +22,14 @@ inputRequirements:
     en: Upload one adult portrait. Our reference is a fictional AI-generated person.
     zh-Hans: 人物照片
     ja: 成人のポートレートを 1 枚アップロードしてください。この作例の参照画像は、AI で生成した架空の人物です。
-    de: Lade ein Porträt einer erwachsenen Person hoch. Unsere Referenz ist eine
-      fiktive, KI-generierte Person.
-    pt-BR: Envie um retrato de uma pessoa adulta. Nossa referência é uma pessoa
-      fictícia gerada por IA.
-    es: Sube un retrato de una persona adulta. Nuestra referencia es una persona
-      ficticia generada por IA.
+    de: Lade ein Porträt einer erwachsenen Person hoch. Unsere Referenz ist eine fiktive, KI-generierte
+      Person.
+    pt-BR: Envie um retrato de uma pessoa adulta. Nossa referência é uma pessoa fictícia gerada por IA.
+    es: Sube un retrato de una persona adulta. Nuestra referencia es una persona ficticia generada por
+      IA.
     ko: 성인 인물 사진 한 장을 업로드하세요. 참조 이미지는 AI로 생성한 가상 인물입니다.
     zh-Hant: 上傳一張成年人的人像照片。本例參考圖片中的人物為 AI 生成的虛構人物。
+    fr: Importez un portrait d’adulte. Notre référence représente une personne fictive générée par IA.
   slots:
     - id: person
       labels:
@@ -41,6 +41,7 @@ inputRequirements:
         es: Persona
         ko: 인물
         zh-Hant: 成年人物肖像
+        fr: Personne
       min: 1
       max: 1
 showcaseExampleId: x_158
@@ -67,6 +68,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -78,6 +80,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2018685474131562751&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -88,6 +91,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: likes
         value: 1118
@@ -100,6 +104,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: conversation_count
         value: 31
         labels:
@@ -111,6 +116,7 @@ inspirationSources:
           es: Respuestas
           ko: 답글
           zh-Hant: 回覆
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -122,6 +128,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -133,6 +140,7 @@ inspirationSources:
           es: Republicaciones
           ko: 재게시
           zh-Hant: 轉發
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -144,3 +152,4 @@ inspirationSources:
           es: Marcadores
           ko: 북마크
           zh-Hant: 書籤
+          fr: Signets

@@ -1,17 +1,18 @@
 referenceImage: optional
 instructions:
-  en: Supply the device, checked structure notes and exact labels; a product photo
-    is optional.
+  en: Supply the device, checked structure notes and exact labels; a product photo is optional.
   zh-Hans: 产品名称、准确结构资料与标注；外观照可选
   ja: 機器、確認済みの構造の説明、正確なラベルを指定してください。商品写真の使用は任意です。
-  de: Gib das Gerät, überprüfte Angaben zum Aufbau und genaue Beschriftungen an;
-    ein Produktfoto ist optional.
-  pt-BR: Forneça o dispositivo, notas verificadas sobre sua estrutura e os rótulos
-    exatos; uma foto do produto é opcional.
-  es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas;
-    la foto de producto es opcional.
+  de: Gib das Gerät, überprüfte Angaben zum Aufbau und genaue Beschriftungen an; ein Produktfoto ist
+    optional.
+  pt-BR: Forneça o dispositivo, notas verificadas sobre sua estrutura e os rótulos exatos; uma foto do
+    produto é opcional.
+  es: Indica el dispositivo, notas estructurales verificadas y etiquetas exactas; la foto de producto
+    es opcional.
   ko: 기기, 확인한 구조 설명과 정확한 라벨을 제공하세요. 제품 사진은 선택 사항입니다.
   zh-Hant: 提供裝置名稱、已核對的結構資料與準確的標註文字；商品照片為選填。
+  fr: Indiquez l’appareil, des notes de structure vérifiées et les légendes exactes ; une photo du
+    produit est facultative.
 slots:
   - id: product
     labels:
@@ -23,5 +24,6 @@ slots:
       es: Producto
       ko: 제품
       zh-Hant: 產品外觀
+      fr: Produit
     min: 0
     max: 1

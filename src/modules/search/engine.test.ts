@@ -318,3 +318,35 @@ describe('worker requests (§11.6.4, §13.3)', () => {
     expect(res).toEqual({ type: 'help', seq: 3, help: { broader: [], terms: [], otherLocales: [] } });
   });
 });
+
+describe('French retrieval after serialized index loading', () => {
+  const french = engineOf('fr', [
+    doc('poster', { title: 'Poster Fuji', contentLocale: 'fr' }),
+    doc('literal', { title: 'Affiche Fuji', contentLocale: 'fr' }),
+    doc('sticker', { title: 'Autocollant du lundi', contentLocale: 'fr' }),
+    doc('product', { title: 'Photographie de produit en studio', contentLocale: 'fr' }),
+    doc('family', { title: 'Photographie de famille', contentLocale: 'fr' }),
+    doc('scattered', { title: 'Photographie de famille et description du produit', contentLocale: 'fr' }),
+    doc('model', { title: 'Modèle d’IA pour la photographie', contentLocale: 'fr' }),
+    doc('template', { title: 'Portrait au néon', kind: 'template', contentLocale: 'fr' }),
+    doc('light', { title: 'Éclairage du cœur de l’œuvre', contentLocale: 'fr' }),
+  ]);
+  it('prefers literal matches to low-weight aliases', () => {
+    expect(ids('affiche Fuji', french)).toEqual(['literal', 'poster']);
+    expect(ids('sticker lundi', french)).toEqual(['sticker']);
+  });
+  it('requires a real product-photography phrase', () => {
+    expect(ids('packshot', french)).toEqual(['product']);
+    expect(ids('photo de produit studio', french)).toEqual(['product']);
+    expect(ids('photographie', french)).toContain('family');
+  });
+  it('adds template-kind vocabulary without turning an AI model into a template', () => {
+    expect(ids('modèle de prompt néon', french)).toEqual(['template']);
+    expect(ids('gabarit', french)).toEqual(['template']);
+    expect(ids('template', french)).toEqual(['template']);
+  });
+  it('finds elided and ligature words using the same document/query analyzer', () => {
+    expect(ids("l'eclairage coeur oeuvre", french)).toEqual(['light']);
+    expect(search(french, 'zxqvnonexistent').total).toBe(0);
+  });
+});

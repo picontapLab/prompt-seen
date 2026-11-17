@@ -19,19 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload the 1 project-generated reference image(s) in the displayed order
-      (R19), then use the complete adapted prompt.
+    en: Upload the 1 project-generated reference image(s) in the displayed order (R19), then use the
+      complete adapted prompt.
     zh-Hans: 按显示顺序上传 1 张本站生成的参考图（R19），使用完整改编词。
     ja: 表示順に本プロジェクトで生成した参照画像1枚（R19）をアップロードし、完全なアレンジ済みプロンプトを使用してください。
-    de: Lade das eine projektintern generierte Referenzbild in der angezeigten
-      Reihenfolge (R19) hoch und verwende dann den vollständigen adaptierten
-      Prompt.
-    pt-BR: Envie a imagem de referência gerada pelo projeto na ordem exibida (R19) e
-      use o prompt adaptado completo.
-    es: Sube la imagen de referencia generada por el proyecto en el orden indicado
-      (R19) y después usa el prompt adaptado completo.
+    de: Lade das eine projektintern generierte Referenzbild in der angezeigten Reihenfolge (R19) hoch
+      und verwende dann den vollständigen adaptierten Prompt.
+    pt-BR: Envie a imagem de referência gerada pelo projeto na ordem exibida (R19) e use o prompt
+      adaptado completo.
+    es: Sube la imagen de referencia generada por el proyecto en el orden indicado (R19) y después usa
+      el prompt adaptado completo.
     ko: 표시된 순서(R19)대로 프로젝트에서 생성한 참조 이미지 1장을 업로드한 뒤 전체 각색 프롬프트를 사용하세요.
     zh-Hant: 按顯示順序上傳 1 張本站生成的參考圖（R19），使用完整改編詞。
+    fr: Importez l’image de référence générée pour le projet dans l’ordre affiché (R19), puis utilisez
+      le prompt adapté complet.
   slots:
     - id: reference1
       labels:
@@ -43,6 +44,7 @@ inputRequirements:
         es: Referencia de personaje generada para el proyecto
         ko: 프로젝트에서 생성한 캐릭터 참조 이미지
         zh-Hant: 本站生成的角色參考圖
+        fr: Référence de personnage générée pour le projet
       min: 1
       max: 1
 showcaseExampleId: x_375
@@ -60,12 +62,12 @@ inspirationSources:
       zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
       ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
       de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
-      pt-BR: Publicação original inteira; compartilhada entre variantes, não esta
-        adaptação
-      es: Publicación original completa; compartida entre variantes, no esta
-        adaptación
+      pt-BR: Publicação original inteira; compartilhada entre variantes, não esta adaptação
+      es: Publicación original completa; compartida entre variantes, no esta adaptación
       ko: 이 각색이 아닌 원본 게시물 전체; 여러 변형이 공유하는 수치
       zh-Hant: 原帖整組統計；同帖變體共享，不屬於本改編作品
+      fr: Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de
+        cette adaptation
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,10 +76,10 @@ inspirationSources:
       ja: 保存された調査レポートと検索インデックスのスコアのスナップショット
       de: Gespeicherter Recherchebericht und Snapshot der Suchindex-Bewertung
       pt-BR: Relatório de pesquisa salvo e registro da pontuação no índice de busca
-      es: Informe de investigación guardado y captura de puntuación del índice de
-        búsqueda
+      es: Informe de investigación guardado y captura de puntuación del índice de búsqueda
       ko: 저장된 조사 보고서와 검색 색인 점수 스냅샷
       zh-Hant: 儲存的調研報告及搜尋索引得分快照
+      fr: Rapport de recherche et instantané de score d’index de recherche enregistrés
     evidenceUrl: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -88,6 +90,7 @@ inspirationSources:
       es: Adaptación independiente; original completo conservado por separado
       ko: 독립적인 각색; 전체 원문은 별도로 보존
       zh-Hant: 獨立改編；完整原詞另存檔案
+      fr: Adaptation indépendante ; original complet conservé séparément
     metrics:
       - key: score
         value: 204
@@ -100,6 +103,7 @@ inspirationSources:
           es: Captura de puntuación del índice de búsqueda
           ko: 검색 색인 점수 스냅샷
           zh-Hant: 搜尋索引得分快照
+          fr: Instantané de score d’index de recherche
 source:
   author: Prompt Seen (adaptation)
   url: https://www.reddit.com/r/OpenAI/comments/1xoh2u0/i_tried_the_new_image_26_gif_feature/

@@ -1,0 +1,89 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker processes
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/17 14:40:59 [notice] 1#1: start worker process 29
+
+Running 12 tests using 2 workers
+
+(node:54348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:54349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [http] › tests/e2e/french.http.spec.ts:55:5 › fr: license has local text and mode-appropriate metadata (44ms)
+[WebServer] 2026/11/17 14:40:59 [error] 21#21: *2 "/srv/dist/prompt-seen/fr-fr/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /prompt-seen/fr-fr/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 14:40:59 [error] 21#21: *2 "/srv/dist/prompt-seen/fr-ca/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /prompt-seen/fr-ca/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 14:40:59 [error] 21#21: *2 "/srv/dist/prompt-seen/fr-FR/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /prompt-seen/fr-FR/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   1 [http] › tests/e2e/french.http.spec.ts:8:1 › fr: artifact availability and entry points match the requested release state (108ms)
+  ✓   3 [http] › tests/e2e/french.http.spec.ts:55:5 › fr: about has local text and mode-appropriate metadata (7ms)
+(node:54353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:54354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium] › tests/e2e/french.browser.spec.ts:10:1 › fr: browser acceptance verifies artifact state before checking pages (4ms)
+  ✓   5 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px light (1.1s)
+  ✓   6 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px light (1.1s)
+  ✓   7 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px dark (992ms)
+  ✓   8 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px dark (1.1s)
+  ✓   9 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px light (1.1s)
+  ✓  10 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px light (1.1s)
+  ✓  11 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px dark (1.0s)
+  ✓  12 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px dark (1.1s)
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 20#20: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 21#21: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 22#22: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 23#23: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 25#25: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 24#24: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 26#26: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 23#23: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 22#22: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 24#24: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 26#26: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 21#21: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 25#25: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 27#27: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 28#28: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 29#29: exiting
+[WebServer] 2026/11/17 14:41:04 [notice] 27#27: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 28#28: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 29#29: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 20#20: exit
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 21
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 27
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/17 14:41:04 [notice] 1#1: exit
+
+  12 passed (5.9s)

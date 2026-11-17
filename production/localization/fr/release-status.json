@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr",
+  "state": "implemented-local-acceptance-passed",
+  "updatedAt": "2026-11-17T16:06:20.948134+00:00",
+  "branch": "codex/french-localization",
+  "worktree": "/Users/hp/.codex/worktrees/french-localization/prompt-seen",
+  "candidate": {
+    "baseCommit": "53cbc8efce854f8f067acef8372daf49be82f9c3",
+    "sourceFingerprint": "4f481002faefd1e823a7dfc555a5658b014b06259640590ba5f24b5670d886fd",
+    "buildId": "fr-local-4f481002faefd1e8",
+    "kind": "uncommitted isolated worktree candidate"
+  },
+  "finalSourceFingerprint": "94df69b9234fca4f7287dcfe13c433e99e109d7e2a839ee91c95e5d7312ca202",
+  "sourceFingerprintNote": "The candidate build ID predates one test-only correction: resolve the Chinese suggestion by its exact target href instead of expecting Chinese glyphs in French UI. No runtime code changed after the candidate build ID was assigned. The corrected case passed all three browsers against root; both later matrices passed the whole French suite.",
+  "registry": {
+    "enabled": true,
+    "preview": true,
+    "meaning": "Local source candidate; not a live deployment claim"
+  },
+  "coverage": {
+    "target": 381,
+    "visible": 381,
+    "fallback": 0,
+    "localCurrent": 381,
+    "indexable": 381,
+    "fieldsTotal": 2220,
+    "fieldsCurrent": 2220,
+    "total": 381,
+    "published": 381,
+    "approved": 381,
+    "fields": 2220,
+    "missing": 0,
+    "draft": 0,
+    "outdated": 0,
+    "unreviewed": 0,
+    "archived": 0,
+    "invalid": 0,
+    "collection": 16,
+    "page": 2,
+    "prompt": 285,
+    "template": 75,
+    "topic": 3
+  },
+  "policy": {
+    "coverage": "complete",
+    "review": "fingerprint",
+    "promptBodies": "source-only"
+  },
+  "unitTests": {
+    "files": 67,
+    "passed": 653
+  },
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "format": "passed",
+    "contentValidation": "passed; 0 errors, 0 publish errors, 10 existing warnings",
+    "tokens": "passed",
+    "storybookBuild": "passed",
+    "preservation": {
+      "passed": true,
+      "files": 7129
+    },
+    "batchOwnership": {
+      "passed": true,
+      "batches": 20,
+      "pages": 381,
+      "fields": 2220
+    },
+    "existingEnabledLocales": "All 7 remain ready and their counts match the baseline"
+  },
+  "browserRuntime": {
+    "local": "Playwright 1.64.1",
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "ci": "Manifest pins 1.65.0; CI explicitly installs 1.64.1 for Firefox. Full remote CI has not run."
+  },
+  "matrices": [
+    {
+      "name": "root-production",
+      "build": "passed after security-notice retry",
+      "frenchCases": 243,
+      "result": "240 passed initially; 3 language-suggestion locator failures corrected and passed in a targeted three-browser rerun",
+      "httpPassed": 352,
+      "httpSkipped": 1,
+      "skipReason": "No RTL locale built in production",
+      "extraFontAndLayoutChecks": 10
+    },
+    {
+      "name": "subpath-production",
+      "build": "passed after security-notice retry",
+      "buildWallSecondsIncludingRetry": 174,
+      "frenchCases": 243,
+      "result": "all passed",
+      "httpPassed": 352,
+      "httpSkipped": 1,
+      "skipReason": "No RTL locale built in production"
+    },
+    {
+      "name": "subpath-preview",
+      "build": "passed",
+      "buildWallSeconds": 156,
+      "frenchCases": 243,
+      "result": "all passed",
+      "httpPassed": 355,
+      "httpSkipped": 1,
+      "skipReason": "Existing Korean production fallback/Markdown test is inapplicable to preview"
+    }
+  ],
+  "earlierStates": {
+    "disabledProduction": "HTTP negative checks passed before preparation and again against the completed-source performance baseline",
+    "disabledFrenchPreview": "12 foundation HTTP/browser checks passed before French was enabled"
+  },
+  "review": {
+    "reviewer": "Codex AI",
+    "humanNativeSpeakerReview": false,
+    "evidence": [
+      "ui-review-evidence.md",
+      "f1-review-evidence.md",
+      "f2-f3-review-evidence.md"
+    ],
+    "media": "All cited F1/F2 contact sheets and complete GIF frame sequences reviewed. Real browser playback of p_224, p_290 and transparent p_300 passed in both themes and all three browsers."
+  },
+  "performanceEvidence": "evidence/performance-comparison.json",
+  "remainingReleaseGates": [
+    {
+      "gate": "full-ci",
+      "status": "not run",
+      "detail": "Run the complete existing browser suite and all remote CI jobs on the committed candidate. Local browser validation focused on French plus generic French font/layout checks; all HTTP tests ran for every matrix."
+    },
+    {
+      "gate": "native-browser-zoom",
+      "status": "manual check pending",
+      "detail": "720 CSS-pixel reflow equivalent to a 1440px display at 200% passed; native OS/browser zoom was not exercised."
+    },
+    {
+      "gate": "framework-security",
+      "status": "needs follow-up",
+      "detail": "Next.js 16.4.2 reported a known security vulnerability and stopped the first production build attempts. The documented retry succeeded. Dependencies and CI were not changed to suppress the advisory; review and upgrade the framework before release."
+    },
+    {
+      "gate": "deploy-and-live-verification",
+      "status": "not performed",
+      "detail": "No commit, push, deployment, live-site verification or rollback exercise was performed."
+    }
+  ],
+  "taskStatus": {
+    "FR-01": "complete",
+    "FR-02": "complete",
+    "FR-03": "complete",
+    "FR-04": "complete",
+    "FR-05": "complete",
+    "FR-06": "complete",
+    "FR-07": "complete",
+    "FR-08": "complete",
+    "FR-09": "complete",
+    "FR-10": "local targeted acceptance complete; remaining release gates above",
+    "FR-11": "not deployed",
+    "FR-12": "maintenance documentation prepared; live handoff pending"
+  }
+}

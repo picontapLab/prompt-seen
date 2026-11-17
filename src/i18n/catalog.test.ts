@@ -77,3 +77,21 @@ describe('compileMessages', () => {
       }
     });
 });
+
+it('formats French zero, plural, million and apostrophe-adjacent parameters', () => {
+  const t = catalogTranslator(ROOT, 'fr');
+  for (const [count, expected] of [
+    [0, 'Aucun résultat'],
+    [1, '1 résultat'],
+    [2, '2 résultats'],
+    [1000, '1\u202f000 résultats'],
+    [1000000, '1\u202f000\u202f000 résultats'],
+  ] as const) {
+    expect(t('search.count', { count })).toBe(expected);
+  }
+  expect(t('templates.tokens.remaining', { count: 0 })).toBe('Aucun élément supplémentaire ne peut être ajouté.');
+  expect(t('detail.image.show', { n: 2, total: 3 })).toBe('Afficher l’image 2 sur 3');
+  expect(t('templates.editor.errors.required', { label: 'Éclairage' })).toBe(
+    'Le champ «\u00a0Éclairage\u00a0» est vide. Remplissez-le pour compléter le prompt.',
+  );
+});

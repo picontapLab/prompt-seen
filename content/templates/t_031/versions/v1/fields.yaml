@@ -11,6 +11,7 @@ fields:
       es: País
       ko: 국가
       zh-Hant: 目的地國家
+      fr: Pays
     help: {}
     type: string
     default: Japan
@@ -29,6 +30,7 @@ fields:
       es: Destinos
       ko: 목적지
       zh-Hant: 核對後的目的地
+      fr: Destinations
     help: {}
     type: string-list
     default:
@@ -51,11 +53,11 @@ fields:
       es: Notas de ruta
       ko: 경로 설명
       zh-Hant: 核對後的路線說明
+      fr: Notes d’itinéraire
     help: {}
     type: string
-    default: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the
-      supplied map locations. No travel times, prices or current transport
-      claims.
+    default: Illustrative route from Tokyo to Kyoto to Osaka. Place labels at the supplied map
+      locations. No travel times, prices or current transport claims.
     minLength: null
     maxLength: 2000
     multiline: true

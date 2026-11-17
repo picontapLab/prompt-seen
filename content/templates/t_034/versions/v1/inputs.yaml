@@ -3,14 +3,14 @@ instructions:
   en: Upload an object reference and supply checked notes and exact Chinese labels.
   zh-Hans: 服饰或器物参考、已核对史料与中文标注
   ja: 物体の参照画像をアップロードし、確認済みの説明と正確な中国語ラベルを指定してください。
-  de: Lade eine Objektreferenz hoch und gib überprüfte Angaben sowie genaue
-    chinesische Beschriftungen an.
-  pt-BR: Envie uma referência do objeto e forneça observações conferidas e os
-    rótulos exatos em chinês.
-  es: Sube una referencia de objeto y aporta notas verificadas y etiquetas exactas
-    en chino.
+  de: Lade eine Objektreferenz hoch und gib überprüfte Angaben sowie genaue chinesische Beschriftungen
+    an.
+  pt-BR: Envie uma referência do objeto e forneça observações conferidas e os rótulos exatos em chinês.
+  es: Sube una referencia de objeto y aporta notas verificadas y etiquetas exactas en chino.
   ko: 물체 참조 이미지를 업로드하고 확인한 설명과 정확한 중국어 라벨을 제공하세요.
   zh-Hant: 上傳物件參考圖片，並提供已核對的資料與準確的中文標註。
+  fr: Importez une référence d’objet et fournissez des notes vérifiées et les légendes chinoises
+    exactes.
 slots:
   - id: object
     labels:
@@ -22,5 +22,6 @@ slots:
       es: Objeto
       ko: 물체
       zh-Hant: 服飾或器物參考
+      fr: Objet
     min: 1
     max: 1

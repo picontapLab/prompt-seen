@@ -1,17 +1,19 @@
 referenceImage: required
 instructions:
-  en: Upload one side-profile photo followed by two to four memory photos; supply
-    a name and accent color.
+  en: Upload one side-profile photo followed by two to four memory photos; supply a name and accent
+    color.
   zh-Hans: 清晰侧脸照、多张回忆或动作照片、姓名
   ja: 横顔の写真を 1 枚、その後に思い出の写真を 2〜4 枚アップロードし、名前とアクセントカラーを指定してください。
-  de: Lade zuerst ein Profilfoto von der Seite und anschließend zwei bis vier
-    Erinnerungsfotos hoch; gib einen Namen und eine Akzentfarbe an.
-  pt-BR: Envie uma foto de perfil lateral seguida de duas a quatro fotos de
-    lembranças; forneça um nome e uma cor de destaque.
-  es: Sube una foto de una persona vista de perfil, seguida de dos a cuatro fotos
-    de recuerdos; indica un nombre y un color de acento.
+  de: Lade zuerst ein Profilfoto von der Seite und anschließend zwei bis vier Erinnerungsfotos hoch;
+    gib einen Namen und eine Akzentfarbe an.
+  pt-BR: Envie uma foto de perfil lateral seguida de duas a quatro fotos de lembranças; forneça um
+    nome e uma cor de destaque.
+  es: Sube una foto de una persona vista de perfil, seguida de dos a cuatro fotos de recuerdos; indica
+    un nombre y un color de acento.
   ko: 옆모습 사진 한 장을 먼저, 추억 사진 두 장에서 네 장을 다음에 업로드하고 이름과 포인트 색을 제공하세요.
   zh-Hant: 先上傳一張側臉照片，再上傳兩至四張回憶照片，並提供姓名與強調色。
+  fr: Importez une photo de profil, puis deux à quatre photos souvenirs ; indiquez un nom et une
+    couleur d’accent.
 slots:
   - id: profile
     labels:
@@ -23,6 +25,7 @@ slots:
       es: Perfil
       ko: 옆모습
       zh-Hant: 側臉輪廓
+      fr: Profil
     min: 1
     max: 1
   - id: memories
@@ -35,5 +38,6 @@ slots:
       es: Recuerdos
       ko: 추억
       zh-Hant: 回憶或動作照片
+      fr: Souvenirs
     min: 2
     max: 4

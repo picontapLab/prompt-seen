@@ -1,0 +1,1820 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr",
+  "operations": [
+    {
+      "key": "content/examples/x_364/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:1fea3f2de6a9c86d95e3a8513675b519e11632e71a63bf98f8012f2734e152d4",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4a68fe6182914552b33483d60f610d4e40006e7c22abdce716533b9e9ce457d0",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Neuf poses sources sélectionnées dans l’ordre chronologique. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Neuf images GIF réellement transparentes montrent les pattes avant applaudissant tandis que les yeux mi-clos impassibles restent stables. Toutes les légendes portent correctement 好棒棒 et flottent au-dessus des oreilles sans support. GIF encodé inspecté sur fonds clair et sombre : véritable canal alpha, sans contour blanc. Une légère variation du visage redessiné subsiste ; aucune fixité à 100 % des pixels revendiquée."
+    },
+    {
+      "key": "content/media/a_492.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:6d5bbe4bdd9b628bc8d636a927c2e01b97e78cffddb69c2cff1c541d26aed735",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a85a4977312daa98d09a42dcc7869e9a77c31a4a084d5826c75bfed4ea58ce49",
+      "translation": "Applaudissements impassibles d’un renard du Tibet"
+    },
+    {
+      "key": "content/media/a_493.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:d5bfb6b5fd45c686eeaa21501c2e439ffd651696f12732921585c80d3fbd44f2",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:cee6f2e3148e1c4693ee6f76398d16ef160ab9efc4ffe17b7bc2f979a0f6cb1b",
+      "translation": "Référence de renard sur fond transparent"
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:2501cf4104c56b8317c6c6b29b173baf033c1b878a82cbfd534104ed475fc0d6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b643e7ee636f84ba1eee2b9dcd4656f65ee67cbd183fc932cc763bf4067f25c6",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R10), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:05ea571535fba9436e16fd3ad78ce47a15239b12a5897ef157a8343c7c348256",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8a924fec421f75a93dd9703a14f51cbe7d5df50036fd0f323f7de4c986db317a",
+      "translation": "Référence de renard sur fond transparent"
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b643e7ee636f84ba1eee2b9dcd4656f65ee67cbd183fc932cc763bf4067f25c6",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b643e7ee636f84ba1eee2b9dcd4656f65ee67cbd183fc932cc763bf4067f25c6",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b643e7ee636f84ba1eee2b9dcd4656f65ee67cbd183fc932cc763bf4067f25c6",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_300/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b643e7ee636f84ba1eee2b9dcd4656f65ee67cbd183fc932cc763bf4067f25c6",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_365/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a384dbae8f3762bd2ea8ead0dac2292a00f7c39da359e18556b069edfd41f19e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:cf13f48dff3cacb1206f340f0936b51b15404ed95c9b32bfd0acc60eea7de607",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses de joie du manchot passent par sourire, ailes levées, petit saut joyeux, réception et pose neutre ; écharpe rouge et couleurs cohérentes. Personnage entier et aucun texte écrit. Boucle infinie de 1600 ms ; petites variations générées de contour et d’échelle."
+    },
+    {
+      "key": "content/media/a_494.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:5562462fdb5e181efaee802ed5d9bd024f2940c3f68793be6479179fd6a23462",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:5df6db5de96dcadbe1714415442a3974b1d762956fdfa575b788e9c2a34165f6",
+      "translation": "Joie du manchot"
+    },
+    {
+      "key": "content/media/a_495.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e922b2aa88e2f80fc6cb49dc7c7abbddbdeceac46733842ac5ca0051e60ae719",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:efef2887912dbcd7061ab412e11508e48fd366d62b2c0efd50f02b2ed82bda65",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:02f3269e10c2c0ed7fab757c5055b1940bcc1e371889a8701e6ea694301a2a5b",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R11), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:6a13d8623b9bd34a756286387747f0c8af654968929d5d3a26b2dde22ab7820f",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:02f3269e10c2c0ed7fab757c5055b1940bcc1e371889a8701e6ea694301a2a5b",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:02f3269e10c2c0ed7fab757c5055b1940bcc1e371889a8701e6ea694301a2a5b",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:02f3269e10c2c0ed7fab757c5055b1940bcc1e371889a8701e6ea694301a2a5b",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_301/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:02f3269e10c2c0ed7fab757c5055b1940bcc1e371889a8701e6ea694301a2a5b",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_366/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e8d337bf60a55f0b656ed403dab83c13188749057860500a1a510325ac443350",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7e60a6b6fde351d21bd934f989ca9aff9e628040d0043f875bc545538288d00a",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses montrent sourcils froncés, joues gonflées et piétinement alterné, en conservant le manchot et son écharpe rouge. Boucle de 1600 ms ; l’expression revient au neutre dans la première image, sans revendication de raccord parfait des expressions."
+    },
+    {
+      "key": "content/media/a_496.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:cfcdf7e2594b841cb6886b3e7b35a86dd16596d4289f17b824bc213ff4258b4c",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b6d371ccb3d942b03ddd6c88e92d0400bc64537eafed14944b3069eb7b5b875",
+      "translation": "Colère du manchot"
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:efef2887912dbcd7061ab412e11508e48fd366d62b2c0efd50f02b2ed82bda65",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:84f4cac9378fe96475fffcabc672a6b6debf8c5306279e02d630819b3edb585c",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R11), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f502e707d797a027980681690e7f4280da671fe635c66e5ea872a5d4dba3ae20",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:84f4cac9378fe96475fffcabc672a6b6debf8c5306279e02d630819b3edb585c",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:84f4cac9378fe96475fffcabc672a6b6debf8c5306279e02d630819b3edb585c",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:84f4cac9378fe96475fffcabc672a6b6debf8c5306279e02d630819b3edb585c",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_302/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:84f4cac9378fe96475fffcabc672a6b6debf8c5306279e02d630819b3edb585c",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_367/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:1031411ce14f48e9c3c57ee6c0cf1ae83a59ec3e2fac564ed45b9531a29c99a8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4bb56098cd332f0e25fa9af745d712ee0e16abe6d3b1110cc2505e4b6055845d",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses distinctes montrent tête baissée, larme et aile qui essuie, puis retour au neutre. Légères variations d’échelle et de dessin ; aucun raccord sans couture fixe au pixel près revendiqué."
+    },
+    {
+      "key": "content/media/a_497.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:61a38f160d16d37a0c42f6d0bf5eae836bd5bef78db9b02f9ade11a91443a695",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4b9277b5e549e50abd3e6ff22d04c8582d757f385008c03d2791cc4b37759e32",
+      "translation": "Tristesse du manchot"
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:efef2887912dbcd7061ab412e11508e48fd366d62b2c0efd50f02b2ed82bda65",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:651429ff9ab6222bcaa4741692cd93f983d7c67f749cd921e62c541b8e6aff86",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R11), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4b9ab9269c80e9c27e4d5c37f9a8cb0569291d9d2b2188fbf078c8f72e5310cd",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:651429ff9ab6222bcaa4741692cd93f983d7c67f749cd921e62c541b8e6aff86",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:651429ff9ab6222bcaa4741692cd93f983d7c67f749cd921e62c541b8e6aff86",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:651429ff9ab6222bcaa4741692cd93f983d7c67f749cd921e62c541b8e6aff86",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_303/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:651429ff9ab6222bcaa4741692cd93f983d7c67f749cd921e62c541b8e6aff86",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_368/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:1dd210c5cdfbcd638261bf860bd21418d1b5ec19474a585268b9e41601f94297",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:86765798a77049149a660d0f978f63342276535d1c262bd8b2325c2bdee0f108",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses distinctes montrent une danse souriante d’un côté à l’autre avec alternance des ailes et des pieds. De légères variations de redessin et le retour au neutre subsistent."
+    },
+    {
+      "key": "content/media/a_498.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a18db5390f6d7124c31dcce3627c61973b1f3cc2344520d55eea5e6a0d36d337",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7ea76c04b12b6d62d361906cee477769946b36964a42bce74ede888d4a4bf64e",
+      "translation": "Allégresse du manchot"
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:efef2887912dbcd7061ab412e11508e48fd366d62b2c0efd50f02b2ed82bda65",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8859c91b08157156645e5315d07b5078e0b14c0caa6cda3d41c3459345c39b80",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R11), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b984fdc9b1d305b8ab29a8c20c0649f8ae61d029aaaaed4a8b7e5cb29670a392",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8859c91b08157156645e5315d07b5078e0b14c0caa6cda3d41c3459345c39b80",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8859c91b08157156645e5315d07b5078e0b14c0caa6cda3d41c3459345c39b80",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8859c91b08157156645e5315d07b5078e0b14c0caa6cda3d41c3459345c39b80",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_304/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8859c91b08157156645e5315d07b5078e0b14c0caa6cda3d41c3459345c39b80",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_369/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:293ae42d0d701a9eb95620ca58c7d57b053c6dcfdce93bcd4c8cbfe941192396",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:09aede86aa74193ae238f5ddaa950b21bab3a05c43204549c3efced1fb40b642",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Neuf poses sources sélectionnées dans l’ordre chronologique. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Douze poses en style pixel montrent dégainé, préparation, balayage d’eau et récupération. Utilise un épéiste original plutôt que Tanjiro. La vague s’approche des bords de cellule, avec une légère dérive de forme et un changement visible de posture entre la dernière et la première image ; ce n’est pas un sprite de jeu parfaitement raccordé."
+    },
+    {
+      "key": "content/media/a_499.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:f39a13c7fbd9214423c8738123d5a0813aa94c153813b386255c11d8066cc908",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:0a6e214cd2a47ac1057ac9f3cdc15caf133a73a0086fa41ad03dd603a1af2b65",
+      "translation": "Attaque d’eau d’un épéiste en pixels"
+    },
+    {
+      "key": "content/media/a_500.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2174e4e68623b7bc007afe0f1419c098e394bab5fa024d65854fa67299e80890",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a3fcde552ca28f1f96de22f47caa82fe666e11bf3903062e219aedae5d932632",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ef2d8e9a2ef5ea160bff2cfe59f9e1980c815d287040ad9759c34ae21a8a0373",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R12), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:58b437120b73807cb3eef36b3b286a5e3628ccce5974802dc871129ec5c27eaf",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ef2d8e9a2ef5ea160bff2cfe59f9e1980c815d287040ad9759c34ae21a8a0373",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ef2d8e9a2ef5ea160bff2cfe59f9e1980c815d287040ad9759c34ae21a8a0373",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ef2d8e9a2ef5ea160bff2cfe59f9e1980c815d287040ad9759c34ae21a8a0373",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_305/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ef2d8e9a2ef5ea160bff2cfe59f9e1980c815d287040ad9759c34ae21a8a0373",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_370/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:bce597f1885cfb0e62e597ef244db76052f7511f84530d3b2fe8a07526ed89e8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:61bb5d3926c24a37907c0caa3680c661c6efefbe9c1254e73ada4d0903fd6d86",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit images dessinées montrent dans l’ordre les paupières ouvertes, mi-closes, fermées puis rouvertes. Visage, vêtements et cadrage restent cohérents avec de légères variations de dessin entre les images. Encodé en boucle infinie de deux secondes ; métadonnées réelles du GIF vérifiées. C’est une adaptation à partir d’une planche d’images, pas une sortie GIF native du prompt source."
+    },
+    {
+      "key": "content/media/a_501.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:ebf3b69410cebdf9675007edb2355df2e1cc464d7a0ca368cd299bcf41b51dbb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f41436a981e5aad6ad1bc8121aae7cd07b38e41b4e00d6e90ab626391ec96d7b",
+      "translation": "Doux clignement d’yeux animé"
+    },
+    {
+      "key": "content/media/a_502.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:c746ca1b8b92cb68b3c700c54e6a7c355adb2a85792dc72cb3964cb6a8c43d78",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:3a50d4ae7cc2551d9dbee4e79a56395d2b8e5a358d5f66ab4ac8025ea233163d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e629145b1f31576634c9512274d78ac03eff202cf8eccf359c47541e41e00eb8",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R15), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:fd8fa1c45d955133193f0715d0d7c46b40c39215f1ec6bc10b9218a270e5a10d",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e629145b1f31576634c9512274d78ac03eff202cf8eccf359c47541e41e00eb8",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e629145b1f31576634c9512274d78ac03eff202cf8eccf359c47541e41e00eb8",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e629145b1f31576634c9512274d78ac03eff202cf8eccf359c47541e41e00eb8",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_306/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e629145b1f31576634c9512274d78ac03eff202cf8eccf359c47541e41e00eb8",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_371/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a26729e09c1153f42aba060ffdf8ce4e8e43fe679d27f9fe3ec9f4088ecb6f93",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7cf28ed13058e9f418f50d36bc4b199edc80cf13d882fbc5d0140620c71a1dd4",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit premières cellules sélectionnées : le chat regarde la caméra, fait un clin d’œil, puis un chapeau vert marqué Robin tombe et se pose. Quatre dernières cellules écartées parce que le chat saute ou disparaît. Le GIF final de huit images est lu une fois en deux secondes ; aucune fausse revendication de boucle sans raccord. Robin est lisible sur le chapeau posé."
+    },
+    {
+      "key": "content/media/a_503.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:ad69c9820438b130ad74d8dbc79b0e4b289e3487c395c7dce1689025804aaab2",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a24fc9278cd25ade13cf9b2f57c88f7fe2f13b17f9c64cc8ff12bacabbd8f52b",
+      "translation": "Clin d’œil du chat Robin et chute de chapeau"
+    },
+    {
+      "key": "content/media/a_504.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:057ef53e382d9df222613e780007304436771da036751ac72297a0b1b1565404",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a8d982eb864e9b1737bc8d26a16b89b58ddf0969312ac181a24c1f674b27e72f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:19471712fdd1e331b8014bb80ddcfc09e2bd99345ac9113022f1bd9fef2c0161",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R16), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:082059e847cf1f20b4ed706bd6b5f3f0039ad24cd1008f19dfa479df206e055b",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:19471712fdd1e331b8014bb80ddcfc09e2bd99345ac9113022f1bd9fef2c0161",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:19471712fdd1e331b8014bb80ddcfc09e2bd99345ac9113022f1bd9fef2c0161",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:19471712fdd1e331b8014bb80ddcfc09e2bd99345ac9113022f1bd9fef2c0161",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_307/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:19471712fdd1e331b8014bb80ddcfc09e2bd99345ac9113022f1bd9fef2c0161",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_372/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:f2c1de0812c7b31a94f18a64772d8a089e36beac83152e7f4d0b5f08cff7a836",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:5fcce359c4554ec32bb5f240e58041c2f0aff64bb6706fa1aedd3a9a7124d81f",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses montrent pas latéraux, bras levés, saut, réception et retour. Le corps entier tient dans chaque cellule. De petites variations d’échelle et de ligne de sol restent visibles."
+    },
+    {
+      "key": "content/media/a_505.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:d48fd10332e22dc2f088ba4aae75a5d22b3dc53fb36ac6c2e84a2a08666f4c89",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:37ae592d0c1135a081e632dcb463564576262db61e737e776bee7d7d08d1d05c",
+      "translation": "Danse de joie chibi"
+    },
+    {
+      "key": "content/media/a_506.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:d6d5e002e1b72e6ab309f7585bb901f4c56b3904a10fd01153fb0b91ac64c820",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:d6d4725fe96164ba1030edcf005f1c41b477c940eafbaf8faa7f1d3a93d0278e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:36cccaf621fbfe19b516a0eba3762a5d76529e2aaa712dc969a22802f2553191",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R17), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ff1bf05fcf7f7a38152a3e5f63666b7487f635673b1b9ca37e88c773e6ff79c3",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:36cccaf621fbfe19b516a0eba3762a5d76529e2aaa712dc969a22802f2553191",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:36cccaf621fbfe19b516a0eba3762a5d76529e2aaa712dc969a22802f2553191",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:36cccaf621fbfe19b516a0eba3762a5d76529e2aaa712dc969a22802f2553191",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_308/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:36cccaf621fbfe19b516a0eba3762a5d76529e2aaa712dc969a22802f2553191",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_373/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:a0e492a5d24e5546df9825060f933eb6c0df199e2beded0f2df20e0e74d2a467",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:e702930662c75e327c67a121cc65f73a3fc6ec9cd3ce13fe6409dd99d8f4355f",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Neuf poses sources sélectionnées dans l’ordre chronologique. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Douze orientations distinctes du bâton et phases de scintillement sont dessinées chronologiquement. Corps entier et bâton restent dans chaque cellule ; aucun horodatage ni texte. Une légère variation de longueur du bâton redessiné est visible. Douze images encodées de 100 ms, boucle infinie, durée totale de 1200 ms."
+    },
+    {
+      "key": "content/media/a_507.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:2c519e31201338388a4f44d441a7a9fa150bd94086438e962fd07d2c7214a356",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:739759320666cd49f57f4ca6f0d5ff1b100175a9e34aefe3cb2ed8595fb10ec6",
+      "translation": "Bâton de sorcier tournoyant et étincelles"
+    },
+    {
+      "key": "content/media/a_508.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:6d16e691b93830d59157ad210088baf97e286068e2aa37a220d5c012efc8d384",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:9708024f22a4a00378bf6ae718503484e1fea91dba70744318f7731d962eeb6a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d4b5ad4035a7b369a4dd5790d7293a400665451350a898592a100a9456ca602",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R18), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:abf5c6a678d71e399e55586e8d81b47ccda832996ff32796ab70088d3040e309",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d4b5ad4035a7b369a4dd5790d7293a400665451350a898592a100a9456ca602",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d4b5ad4035a7b369a4dd5790d7293a400665451350a898592a100a9456ca602",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d4b5ad4035a7b369a4dd5790d7293a400665451350a898592a100a9456ca602",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_309/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d4b5ad4035a7b369a4dd5790d7293a400665451350a898592a100a9456ca602",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_374/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:944b4922f2569fb23db557cef2b458543e2477b77bae13ba071b286323e17ff5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:86d5999f583d0cd7f6ecb1946aa389dee3e12aef7e4bbcf5880a9d3ef18d4168",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Une pose maintenue est répartie sur deux images : huit poses sources distinctes, neuf images encodées. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Huit poses reconnaissables de Johnny Bravo en pixel art montrent pas alternés, mouvements des bras, déhanchements et rebond accroupi. Personnage entier visible ; aucun texte. Boucle réelle de 800 ms, silencieuse. Les formes du sprite présentent de légères variations de redessin ; aucun son source revendiqué."
+    },
+    {
+      "key": "content/media/a_509.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:0e62d1f1247426419019975e931a19aff2ebbc104d843a4806bf08b76b5fde76",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:b6b6bad8fcf9d680ef092a936c7f5f1ebba82ee024417686375558db4ef68bea",
+      "translation": "Danse de Johnny Bravo en huit bits"
+    },
+    {
+      "key": "content/prompts/p_310/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:db37b4629c7ff4a9694c1240eb589f66f9e1d1267a4771b5426866ffdcb44d90",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f516bb9973ad72cf8c5a33e9b78ff0637dd644b2c6015697b6c9c45d9f3dc3b1",
+      "translation": "Utilisez le prompt adapté complet sans image de référence."
+    },
+    {
+      "key": "content/prompts/p_310/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f516bb9973ad72cf8c5a33e9b78ff0637dd644b2c6015697b6c9c45d9f3dc3b1",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    },
+    {
+      "key": "content/prompts/p_310/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:18ad64a97076537df3677a0556324637c4afcddf9a621a467483db9f464326b0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f516bb9973ad72cf8c5a33e9b78ff0637dd644b2c6015697b6c9c45d9f3dc3b1",
+      "translation": "Relevé public X archivé et prompt complet de l’auteur"
+    },
+    {
+      "key": "content/prompts/p_310/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:4d42a2cf133f84c81703d32e4b1c8a6f42103ff89e64d840c903185fb26da248",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f516bb9973ad72cf8c5a33e9b78ff0637dd644b2c6015697b6c9c45d9f3dc3b1",
+      "translation": "Adaptation indépendante ; original complet conservé séparément"
+    },
+    {
+      "key": "content/prompts/p_310/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:235876486810e70cf6ca71204dfdabc971fecb5fc25dc8e785dbc8afbcbb33fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f516bb9973ad72cf8c5a33e9b78ff0637dd644b2c6015697b6c9c45d9f3dc3b1",
+      "translation": "Mentions J’aime de la publication source"
+    },
+    {
+      "key": "content/examples/x_375/run.yaml#notes",
+      "sourceField": [
+        "notes",
+        "en"
+      ],
+      "targetField": [
+        "notes",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:fb13c1d0605ff4b35617fbac956b1d62833e18e001336677f2708e08f1737947",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:5b79c7b2f67fb0702d82ad3f57e64caf7e7c7caccb2cdf1f6bba89a9dc00c26e",
+      "translation": "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources GPT Image archivés ; aucun nouvel appel au fournisseur. Neuf poses sources sélectionnées dans l’ordre chronologique. La durée totale et le nombre de lectures sont conservés. Examen de la source d’origine (les nombres d’images ne concernent que la source) : Douze poses montrent une inclinaison vers le haut, un hochement rapide vers le bas et le retour, yeux fermés. Une seule lecture avec maintien de la dernière image aux yeux fermés. La cinquième cellule comporte un flou de mouvement dessiné et une légère dérive d’alignement."
+    },
+    {
+      "key": "content/media/a_510.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:c7bf1c1257730f9081c7202786a1e7d1b49e90dd1bc7d04f6ffb8fee35ec2ba1",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:c11dfc9e0a670dda86c01c570457bd2ec2e66daa5bf41e0bc99800d19c06a8c4",
+      "translation": "Hochement de tête animé et yeux fermés"
+    },
+    {
+      "key": "content/media/a_511.yaml#alt",
+      "sourceField": [
+        "alt",
+        "en"
+      ],
+      "targetField": [
+        "alt",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:e79c931b17b7907e39ebac705a715d5170ec66193e69c60410b9f097a2a2154a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:762a2b7c9967ed9f2aaccf59f2fc37f75cf8101e642b26dc3e9dfa77f9dca605",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_311/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:398c730733196acac24e7d4182c2537f5a174d4e49fc499d4892908aca11291e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:dcff3f8f5a9febe27031a6385aad2c1668cbd5d9cc898e0383c40c8460decd18",
+      "translation": "Importez l’image de référence générée pour le projet dans l’ordre affiché (R19), puis utilisez le prompt adapté complet."
+    },
+    {
+      "key": "content/prompts/p_311/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:b6a24fd7c70cbe6f9d4441dd1d6df63a1836a0044b9c1fe4885d10f5c359480e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:450f573b4e1017fbeb438c1a2897f08ee9885a241610008dbc89438b40dee65d",
+      "translation": "Référence de personnage générée pour le projet"
+    },
+    {
+      "key": "content/prompts/p_311/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "fr"
+      ],
+      "expectedSourceHash": "sha256:df36063598e89915280f34ba761c39ab00cd549acbcee3b2b72260fda5b98a81",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:dcff3f8f5a9febe27031a6385aad2c1668cbd5d9cc898e0383c40c8460decd18",
+      "translation": "Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de cette adaptation"
+    }
+  ]
+}

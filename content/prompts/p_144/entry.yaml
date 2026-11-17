@@ -19,19 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload the adult portrait first and costume second. Both inputs are
-      synthetic; the costume is a modern fictional design.
+    en: Upload the adult portrait first and costume second. Both inputs are synthetic; the costume is a
+      modern fictional design.
     zh-Hans: 人物照片和服饰参考
     ja: 成人のポートレートを先に、衣装を次にアップロードしてください。どちらも生成した入力画像で、衣装は現代の架空のデザインです。
-    de: Lade zuerst das Erwachsenenporträt und danach das Kostüm hoch. Beide
-      Eingaben sind künstlich erzeugt; das Kostüm ist ein moderner fiktiver
-      Entwurf.
-    pt-BR: Envie primeiro o retrato da pessoa adulta e depois o traje. As duas
-      entradas são sintéticas; o traje é um design fictício moderno.
-    es: Sube primero el retrato adulto y después el vestuario. Ambas entradas son
-      sintéticas; el vestuario es un diseño moderno ficticio.
+    de: Lade zuerst das Erwachsenenporträt und danach das Kostüm hoch. Beide Eingaben sind künstlich
+      erzeugt; das Kostüm ist ein moderner fiktiver Entwurf.
+    pt-BR: Envie primeiro o retrato da pessoa adulta e depois o traje. As duas entradas são sintéticas;
+      o traje é um design fictício moderno.
+    es: Sube primero el retrato adulto y después el vestuario. Ambas entradas son sintéticas; el
+      vestuario es un diseño moderno ficticio.
     ko: 성인 인물 사진을 먼저, 의상 이미지를 다음에 업로드하세요. 두 입력 모두 합성 이미지이며 의상은 현대적인 가상 디자인입니다.
     zh-Hant: 先上傳成年人的人像照片，再上傳服裝參考圖片。兩張輸入圖片均為合成；服裝是現代虛構設計。
+    fr: Importez d’abord le portrait d’adulte, puis le costume. Les deux entrées sont synthétiques ; le
+      costume est une création fictive moderne.
   slots:
     - id: person
       labels:
@@ -43,6 +44,7 @@ inputRequirements:
         es: Persona
         ko: 인물
         zh-Hant: 成年人物肖像
+        fr: Personne
       min: 1
       max: 1
     - id: garment
@@ -55,6 +57,7 @@ inputRequirements:
         es: Prenda
         ko: 의상
         zh-Hant: 服飾參考
+        fr: Vêtement
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -76,6 +79,7 @@ inspirationSources:
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
       zh-Hant: 整部教學或作品展示影片
+      fr: Ensemble du tutoriel ou de la vidéo de présentation
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -87,6 +91,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -97,6 +102,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: views
         value: 18638
@@ -109,6 +115,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: likes
         value: 477
         labels:
@@ -120,6 +127,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: saves
         value: 689
         labels:
@@ -131,6 +139,7 @@ inspirationSources:
           es: Guardados
           ko: 저장
           zh-Hant: 收藏
+          fr: Enregistrements
       - key: comments
         value: 116
         labels:
@@ -142,6 +151,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
       - key: shares
         value: 98
         labels:
@@ -153,6 +163,7 @@ inspirationSources:
           es: Veces compartido
           ko: 공유
           zh-Hant: 分享
+          fr: Partages
       - key: coins
         value: 178
         labels:
@@ -164,6 +175,7 @@ inspirationSources:
           es: Monedas
           ko: 코인
           zh-Hant: 投幣
+          fr: Pièces
       - key: danmaku
         value: 14
         labels:
@@ -175,6 +187,7 @@ inspirationSources:
           es: Comentarios danmaku
           ko: 화면 댓글
           zh-Hant: 彈幕
+          fr: Commentaires défilants (danmaku)
 source:
   author: Prompt Seen
   url: null

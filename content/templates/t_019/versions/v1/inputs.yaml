@@ -1,17 +1,18 @@
 referenceImage: optional
 instructions:
-  en: Supply product concept, accent color and design features; an exterior
-    reference is optional.
+  en: Supply product concept, accent color and design features; an exterior reference is optional.
   zh-Hans: 产品概念、设计特征、配色；参考图可选
   ja: 商品コンセプト、アクセントカラー、デザインの特徴を指定してください。外観の参照画像の使用は任意です。
-  de: Gib Produktkonzept, Akzentfarbe und Designmerkmale an; eine Referenz der
-    Außenansicht ist optional.
-  pt-BR: Forneça o conceito do produto, a cor de destaque e as características de
-    design; uma referência do exterior é opcional.
-  es: Indica el concepto de producto, el color de acento y las características de
-    diseño; la referencia del exterior es opcional.
+  de: Gib Produktkonzept, Akzentfarbe und Designmerkmale an; eine Referenz der Außenansicht ist
+    optional.
+  pt-BR: Forneça o conceito do produto, a cor de destaque e as características de design; uma
+    referência do exterior é opcional.
+  es: Indica el concepto de producto, el color de acento y las características de diseño; la
+    referencia del exterior es opcional.
   ko: 제품 콘셉트, 포인트 색과 디자인 특징을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
   zh-Hant: 提供商品概念、強調色與設計特徵；外觀參考圖片為選填。
+  fr: Indiquez le concept produit, la couleur d’accent et les caractéristiques de design ; une
+    référence extérieure est facultative.
 slots:
   - id: product
     labels:
@@ -23,5 +24,6 @@ slots:
       es: Producto
       ko: 제품
       zh-Hant: 產品外觀
+      fr: Produit
     min: 0
     max: 1

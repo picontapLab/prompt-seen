@@ -19,18 +19,19 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one room photo with the important furniture visible. The example room
-      is synthetic.
+    en: Upload one room photo with the important furniture visible. The example room is synthetic.
     zh-Hans: 房间照片
     ja: 主要な家具が見える室内写真を 1 枚アップロードしてください。作例の部屋は生成したものです。
-    de: Lade ein Raumfoto hoch, auf dem die wichtigen Möbel sichtbar sind. Der
-      Beispielraum ist künstlich erzeugt.
-    pt-BR: Envie uma foto do ambiente com os móveis importantes visíveis. O ambiente
-      do exemplo é sintético.
-    es: Sube una foto de habitación con los muebles importantes visibles. La
-      habitación de ejemplo es sintética.
+    de: Lade ein Raumfoto hoch, auf dem die wichtigen Möbel sichtbar sind. Der Beispielraum ist
+      künstlich erzeugt.
+    pt-BR: Envie uma foto do ambiente com os móveis importantes visíveis. O ambiente do exemplo é
+      sintético.
+    es: Sube una foto de habitación con los muebles importantes visibles. La habitación de ejemplo es
+      sintética.
     ko: 주요 가구가 보이는 방 사진 한 장을 업로드하세요. 예시의 방은 합성 이미지입니다.
     zh-Hant: 上傳一張重要家具清楚可見的房間照片。本例使用合成圖片。
+    fr: Importez une photo de pièce où les meubles importants sont visibles. La pièce d’exemple est
+      synthétique.
   slots:
     - id: room
       labels:
@@ -42,6 +43,7 @@ inputRequirements:
         es: Habitación
         ko: 방
         zh-Hant: 房間照片
+        fr: Pièce
       min: 1
       max: 1
 showcaseExampleId: x_170
@@ -63,6 +65,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +77,7 @@ inspirationSources:
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
+      fr: Instantané indexé de la source primaire
     evidenceUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -84,6 +88,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: post_score
         value: 2746
@@ -96,6 +101,7 @@ inspirationSources:
           es: Puntuación de la publicación
           ko: 게시물 점수
           zh-Hant: 貼文分數
+          fr: Score de la publication
       - key: comments
         value: null
         labels:
@@ -107,6 +113,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
 source:
   author: Prompt Seen
   url: null

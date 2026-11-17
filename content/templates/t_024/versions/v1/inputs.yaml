@@ -3,14 +3,12 @@ instructions:
   en: Describe a character and scene; an original character reference is optional.
   zh-Hans: 角色或场景；照片可选
   ja: キャラクターと場面を説明してください。オリジナルキャラクターの参照画像の使用は任意です。
-  de: Beschreibe eine Figur und eine Szene; eine Referenz für eine eigene Figur
-    ist optional.
-  pt-BR: Descreva um personagem e uma cena; uma referência de personagem original
-    é opcional.
-  es: Describe un personaje y una escena; la referencia de un personaje original
-    es opcional.
+  de: Beschreibe eine Figur und eine Szene; eine Referenz für eine eigene Figur ist optional.
+  pt-BR: Descreva um personagem e uma cena; uma referência de personagem original é opcional.
+  es: Describe un personaje y una escena; la referencia de un personaje original es opcional.
   ko: 캐릭터와 장면을 설명하세요. 독창적인 캐릭터 참조 이미지는 선택 사항입니다.
   zh-Hant: 描述角色與場景；原創角色參考圖片為選填。
+  fr: Décrivez un personnage et une scène ; une référence de personnage original est facultative.
 slots:
   - id: character
     labels:
@@ -22,5 +20,6 @@ slots:
       es: Personaje
       ko: 캐릭터
       zh-Hant: 角色或人物參考
+      fr: Personnage
     min: 0
     max: 1

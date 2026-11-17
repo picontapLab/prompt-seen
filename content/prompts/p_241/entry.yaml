@@ -19,24 +19,21 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Upload one adult portrait as the identity reference. Our reference is a
-      fictional adult generated for this example, replacing the unavailable
-      author input.
+    en: Upload one adult portrait as the identity reference. Our reference is a fictional adult
+      generated for this example, replacing the unavailable author input.
     zh-Hans: 上传一张成人肖像作为身份参考。本例以本站生成的虚构成人代替未公开的作者底图。
-    ja: 人物の特徴を参照するため、成人のポートレートを 1
-      枚アップロードしてください。この参照画像は、入手できない作者の入力画像の代わりに、この作例用に生成した架空の成人です。
-    de: Lade ein Erwachsenenporträt als Identitätsreferenz hoch. Unsere Referenz ist
-      eine für dieses Beispiel generierte fiktive erwachsene Person und ersetzt
-      die nicht verfügbare Autoreneingabe.
-    pt-BR: Envie um retrato de uma pessoa adulta como referência de identidade.
-      Nossa referência é uma pessoa adulta fictícia gerada para este exemplo,
-      substituindo a entrada indisponível da autora.
-    es: Sube un retrato adulto como referencia de identidad. Nuestra referencia es
-      una persona adulta ficticia generada para este ejemplo, que sustituye a la
-      entrada no disponible del autor.
-    ko: 인물 정체성 참조용으로 성인 인물 사진 한 장을 업로드하세요. 작성자의 입력 이미지를 확보할 수 없어, 이 예시를 위해 생성한 가상
-      성인을 참조 이미지로 사용했습니다.
+    ja: 人物の特徴を参照するため、成人のポートレートを 1 枚アップロードしてください。この参照画像は、入手できない作者の入力画像の代わりに、この作例用に生成した架空の成人です。
+    de: Lade ein Erwachsenenporträt als Identitätsreferenz hoch. Unsere Referenz ist eine für dieses
+      Beispiel generierte fiktive erwachsene Person und ersetzt die nicht verfügbare Autoreneingabe.
+    pt-BR: Envie um retrato de uma pessoa adulta como referência de identidade. Nossa referência é uma
+      pessoa adulta fictícia gerada para este exemplo, substituindo a entrada indisponível da
+      autora.
+    es: Sube un retrato adulto como referencia de identidad. Nuestra referencia es una persona adulta
+      ficticia generada para este ejemplo, que sustituye a la entrada no disponible del autor.
+    ko: 인물 정체성 참조용으로 성인 인물 사진 한 장을 업로드하세요. 작성자의 입력 이미지를 확보할 수 없어, 이 예시를 위해 생성한 가상 성인을 참조 이미지로 사용했습니다.
     zh-Hant: 上傳一張成年人的肖像作為身分參考。本例使用為此示例生成的虛構成年人，替代無法取得的作者輸入圖片。
+    fr: Importez un portrait d’adulte comme référence d’identité. Notre référence est un adulte fictif
+      généré pour cet exemple, remplaçant l’entrée indisponible de l’auteur.
   slots:
     - id: person
       labels:
@@ -48,6 +45,7 @@ inputRequirements:
         es: Referencia generada por el proyecto
         ko: 프로젝트에서 생성한 참조 이미지
         zh-Hant: 本站生成的示例參考圖
+        fr: Référence générée pour le projet
       min: 1
       max: 1
 showcaseExampleId: x_305
@@ -64,26 +62,28 @@ inspirationSources:
       en: Whole original post or gallery; not this generated example
       zh-Hans: 原帖或整组作品；不属于本站新生成示例
       ja: 元の投稿全体またはギャラリー全体。この生成例に対するものではありません。
-      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte
-        Beispiel
+      de: Gesamter Originalbeitrag oder gesamte Galerie; nicht dieses generierte Beispiel
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
+      fr: Publication ou galerie originale entière ; pas cet exemple généré
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
       en: Saved public X snapshot; complete prompt from saved author post/reply mirror
       zh-Hans: 保存的 X 公开快照；完整原词取自作者主帖或回复镜像
       ja: 保存した X の公開スナップショット。プロンプト全文は、保存した作者の投稿・返信のミラーから取得しています。
-      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer
-        gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
-      pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo
-        da publicação/resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de la
-        publicación o respuesta del autor
+      de: Gespeicherter öffentlicher X-Snapshot; vollständiger Prompt aus einer gespeicherten Spiegelkopie
+        des Autorenbeitrags bzw. der Antwort
+      pt-BR: Registro público salvo do X; prompt completo obtido de um espelho salvo da
+        publicação/resposta do autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la publicación o
+        respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
+      fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
+        réponse de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118202866448077182&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -94,6 +94,7 @@ inspirationSources:
       es: Texto completo del autor, idioma original
       ko: 작성자의 전체 원문, 원래 언어
       zh-Hant: 完整作者原詞，保留原語言
+      fr: Texte complet de l’auteur, langue originale
     metrics:
       - key: likes
         value: 39
@@ -106,6 +107,7 @@ inspirationSources:
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
+          fr: Mentions J’aime de la publication source
 source:
   author: AIwithSarah_
   url: https://x.com/AIwithSarah_/status/2118202866448077182

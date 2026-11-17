@@ -11,11 +11,11 @@ fields:
       es: Personajes
       ko: 등장인물
       zh-Hant: 原創角色設定
+      fr: Personnages
     help: {}
     type: string
-    default: "three original fluffy creatures: a round mint-green builder with a
-      yellow scarf, a small peach helper with round glasses, and a tall lavender
-      helper with a blue cap"
+    default: "three original fluffy creatures: a round mint-green builder with a yellow scarf, a small
+      peach helper with round glasses, and a tall lavender helper with a blue cap"
     minLength: null
     maxLength: 2000
     multiline: true
@@ -31,6 +31,7 @@ fields:
       es: Momentos de la historia
       ko: 이야기 장면
       zh-Hant: 四個故事節點
+      fr: Étapes du récit
     help: {}
     type: string-list
     default:

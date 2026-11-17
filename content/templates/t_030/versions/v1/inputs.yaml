@@ -1,17 +1,16 @@
 referenceImage: required
 instructions:
-  en: Upload one character reference. Supply exactly sixteen short captions in
-    reading order.
+  en: Upload one character reference. Supply exactly sixteen short captions in reading order.
   zh-Hans: 一张角色参考图；16条短中文配文
   ja: キャラクターの参照画像を 1 枚アップロードしてください。短いキャプションを読む順にちょうど 16 個指定します。
-  de: Lade ein Figurenreferenzbild hoch. Gib genau sechzehn kurze Beschriftungen
-    in Leserichtung an.
-  pt-BR: Envie uma referência de personagem. Forneça exatamente dezesseis legendas
-    curtas na ordem de leitura.
-  es: Sube una referencia de personaje. Aporta exactamente dieciséis textos cortos
-    en orden de lectura.
+  de: Lade ein Figurenreferenzbild hoch. Gib genau sechzehn kurze Beschriftungen in Leserichtung an.
+  pt-BR: Envie uma referência de personagem. Forneça exatamente dezesseis legendas curtas na ordem de
+    leitura.
+  es: Sube una referencia de personaje. Aporta exactamente dieciséis textos cortos en orden de lectura.
   ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 읽는 순서대로 짧은 문구를 정확히 열여섯 개 제공하세요.
   zh-Hant: 上傳一張角色參考圖片，並依閱讀順序提供恰好十六則簡短配文。
+  fr: Importez une image de référence du personnage. Fournissez exactement seize légendes courtes dans
+    l’ordre de lecture.
 slots:
   - id: character
     labels:
@@ -23,5 +22,6 @@ slots:
       es: Personaje
       ko: 캐릭터
       zh-Hant: 角色參考
+      fr: Personnage
     min: 1
     max: 1

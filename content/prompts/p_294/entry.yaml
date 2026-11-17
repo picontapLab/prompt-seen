@@ -27,6 +27,7 @@ inputRequirements:
     es: Usa el prompt adaptado completo sin imagen de referencia.
     ko: 참조 이미지 없이 전체 각색 프롬프트를 사용하세요.
     zh-Hant: 使用完整改編詞，無需參考圖。
+    fr: Utilisez le prompt adapté complet sans image de référence.
   slots: []
 showcaseExampleId: x_358
 promptProvenance: independent-adaptation
@@ -43,12 +44,12 @@ inspirationSources:
       zh-Hans: 原帖整组统计；同帖变体共享，不属于本改编作品
       ja: 元投稿全体の数値。各バリエーションで共有し、本アレンジへの反応数ではありません
       de: Gesamter Originalbeitrag; gemeinsam für die Varianten, nicht diese Adaption
-      pt-BR: Publicação original inteira; compartilhada entre variantes, não esta
-        adaptação
-      es: Publicación original completa; compartida entre variantes, no esta
-        adaptación
+      pt-BR: Publicação original inteira; compartilhada entre variantes, não esta adaptação
+      es: Publicación original completa; compartida entre variantes, no esta adaptación
       ko: 이 각색이 아닌 원본 게시물 전체; 여러 변형이 공유하는 수치
       zh-Hant: 原帖整組統計；同帖變體共享，不屬於本改編作品
+      fr: Ensemble de la publication d’origine ; indicateurs partagés entre les variantes, pas ceux de
+        cette adaptation
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -60,6 +61,7 @@ inspirationSources:
       es: Captura pública archivada de X y prompt completo del autor
       ko: 보관된 공개 X 스냅샷과 작성자의 전체 프롬프트
       zh-Hant: 歸檔的 X 公開快照與完整作者原詞
+      fr: Relevé public X archivé et prompt complet de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118407355859878352&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; full original preserved separately
@@ -70,6 +72,7 @@ inspirationSources:
       es: Adaptación independiente; original completo conservado por separado
       ko: 독립적인 각색; 전체 원문은 별도로 보존
       zh-Hant: 獨立改編；完整原詞另存檔案
+      fr: Adaptation indépendante ; original complet conservé séparément
     metrics:
       - key: likes
         value: 152
@@ -82,6 +85,7 @@ inspirationSources:
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
+          fr: Mentions J’aime de la publication source
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/xikhar/status/2118409026044403849

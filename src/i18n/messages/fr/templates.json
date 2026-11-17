@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Modèles",
+    "documentTitle": "Modèles de prompt d’image",
+    "description": "Des prompts d’image testés avec des champs à compléter : renseignez quelques valeurs et copiez un prompt complet, formulé comme la version testée.",
+    "intro": "Chaque modèle est un prompt testé avec quelques champs à compléter. Renseignez-les et le prompt se met à jour pendant la saisie ; copiez-le ou téléchargez-le au format texte.",
+    "introMore": "Afficher plus",
+    "introLess": "Afficher moins",
+    "count": "{count, plural, one {# modèle} other {# modèles}}",
+    "fields": "{count, plural, one {# champ} other {# champs}}",
+    "version": "Version {version}",
+    "empty": "Il n’y a pas encore de modèles dans cette langue."
+  },
+  "editor": {
+    "fields": "Champs",
+    "other": "Autres",
+    "preview": "Aperçu du prompt",
+    "expand": "Afficher le prompt complet",
+    "collapse": "Masquer le prompt",
+    "reset": "Réinitialiser",
+    "resetDone": "Exemple par défaut restauré",
+    "anotherSample": "Un autre exemple",
+    "sampleDone": "Exemple {n} sur {total}",
+    "undo": "Annuler",
+    "download": "Télécharger le fichier .txt",
+    "downloaded": "Prompt téléchargé au format texte",
+    "share": "Partager ces valeurs",
+    "shareCopied": "Lien contenant vos valeurs copié",
+    "shareFailed": "Impossible de copier le lien",
+    "missing": "{count, plural, =0 {Aucun champ à remplir} one {# champ à remplir} other {# champs à remplir}}",
+    "restored": "Votre dernière saisie a été restaurée.",
+    "shared": "Champs remplis à partir d’un lien partagé.",
+    "mismatch": "Ce lien a été créé pour la version {version}. L’exemple par défaut de la version {current} est affiché à la place.",
+    "errors": {
+      "required": "Le champ « {label} » est vide. Remplissez-le pour compléter le prompt.",
+      "too-short": "Le champ « {label} » doit contenir au moins {limit} caractères ({actual} actuellement).",
+      "too-long": "Le champ « {label} » ne peut pas dépasser {limit} caractères ({actual} actuellement).",
+      "too-few": "Ajoutez au moins {limit} éléments au champ « {label} » ({actual} actuellement).",
+      "too-many": "Le champ « {label} » accepte au maximum {limit} éléments ({actual} actuellement). Retirez les éléments en trop.",
+      "item-too-long": "L’élément {item} ne peut pas dépasser {limit} caractères ({actual} actuellement).",
+      "empty-item": "L’élément {item} est vide. Supprimez-le ou remplissez-le.",
+      "invalid-option": "Choisissez une des options pour « {label} ».",
+      "wrong-type": "Cette valeur ne peut pas être utilisée pour « {label} ». Saisissez-la à nouveau."
+    }
+  },
+  "tokens": {
+    "items": "Éléments",
+    "count": "{count} / {max}",
+    "placeholder": "Saisir du texte et appuyer sur Entrée",
+    "howTo": "Appuyez sur Entrée pour ajouter un élément.",
+    "remaining": "{count, plural, =0 {Aucun élément supplémentaire ne peut être ajouté.} one {Vous pouvez encore ajouter # élément.} other {Vous pouvez encore ajouter # éléments.}}",
+    "full": "{max, plural, one {Ce champ accepte # élément.} other {Ce champ accepte # éléments.}} Retirez-en un pour en ajouter un autre.",
+    "pendingTooLong": "Cet élément contient {count} caractères ; la limite est de {max}.",
+    "remove": "Retirer {item}",
+    "added": "{item} ajouté",
+    "removed": "{item} retiré"
+  }
+}

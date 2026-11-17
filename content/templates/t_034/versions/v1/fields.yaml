@@ -11,6 +11,7 @@ fields:
       es: Prenda u objeto
       ko: 의상 또는 물체
       zh-Hant: 服飾或器物
+      fr: Vêtement ou objet
     help: {}
     type: string
     default: a modern fictional Ming-inspired jacket and pleated skirt
@@ -29,12 +30,12 @@ fields:
       es: Notas históricas
       ko: 역사 설명
       zh-Hant: 已核對的史料
+      fr: Notes historiques
     help: {}
     type: string
-    default: "This is a contemporary fictional costume reference, not a museum
-      artifact. Describe only visible construction: standing collar, front
-      fastening, pale jade jacket, small embroidered floral motifs and a
-      dark-red pleated skirt. Do not add a dynasty date, maker, collection
+    default: "This is a contemporary fictional costume reference, not a museum artifact. Describe only
+      visible construction: standing collar, front fastening, pale jade jacket, small embroidered
+      floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker, collection
       number or undocumented historical claim."
     minLength: null
     maxLength: 2000
@@ -51,6 +52,7 @@ fields:
       es: Etiquetas
       ko: 라벨
       zh-Hant: 準確的中文標註
+      fr: Légendes
     help: {}
     type: string-list
     default:

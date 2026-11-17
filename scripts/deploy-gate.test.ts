@@ -29,15 +29,15 @@ function fixture(overrides: Record<string, unknown> = {}) {
 const runsPath = `actions/workflows/ci.yml/runs?head_sha=${sha}&branch=main&event=push&per_page=100`;
 
 describe('production release gate', () => {
-  it('matches the two builds and all six isolated browser jobs in CI, with secret-gated preview', () => {
+  it('matches the three builds and all nine isolated browser jobs in CI, with secret-gated preview', () => {
     const { jobs } = YAML.parse(fs.readFileSync('.github/workflows/ci.yml', 'utf8'));
     const builds = jobs.build.strategy.matrix.include.map((entry: { name: string }) => `build (${entry.name})`);
     const browsers = jobs['build-and-test'].strategy.matrix;
     const checks = browsers.name.flatMap((name: string) =>
       browsers.browser.map((browser: string) => `build-and-test (${name}, ${browser})`),
     );
-    expect(builds).toHaveLength(2);
-    expect(checks).toHaveLength(6);
+    expect(builds).toHaveLength(3);
+    expect(checks).toHaveLength(9);
     expect([...requiredJobs].sort()).toEqual(['check', 'secrets', ...builds, ...checks].sort());
     expect(jobs.preview.needs).toEqual(expect.arrayContaining(['check', 'secrets', 'build-and-test']));
   });
@@ -68,7 +68,7 @@ describe('production release gate', () => {
   it('fails closed with no CI history', async () => {
     await expect(checkRelease(fixture({ [runsPath]: { workflow_runs: [] } }))).rejects.toThrow('successful push CI');
   });
-  it.each(['secrets', 'build-and-test (subpath, webkit)'])(
+  it.each(['secrets', 'build-and-test (subpath, webkit)', 'build-and-test (subpath-production, webkit)'])(
     'requires %s to pass even if the workflow reports success',
     async (name) => {
       await expect(

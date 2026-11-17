@@ -19,18 +19,18 @@ model:
 inputRequirements:
   referenceImage: none
   instructions:
-    en: No reference image is needed. Copy the full prompt into your image
-      generator.
+    en: No reference image is needed. Copy the full prompt into your image generator.
     zh-Hans: 无需参考图，将完整提示词复制到图像生成工具即可。
     ja: 参照画像は不要です。プロンプト全文を画像生成ツールにコピーしてください。
-    de: Ein Referenzbild ist nicht erforderlich. Kopiere den vollständigen Prompt in
-      deinen Bildgenerator.
-    pt-BR: Nenhuma imagem de referência é necessária. Copie o prompt completo para o
-      seu gerador de imagens.
-    es: No se necesita imagen de referencia. Copia el prompt completo en tu
-      generador de imágenes.
+    de: Ein Referenzbild ist nicht erforderlich. Kopiere den vollständigen Prompt in deinen
+      Bildgenerator.
+    pt-BR: Nenhuma imagem de referência é necessária. Copie o prompt completo para o seu gerador de
+      imagens.
+    es: No se necesita imagen de referencia. Copia el prompt completo en tu generador de imágenes.
     ko: 참조 이미지가 필요하지 않습니다. 전체 프롬프트를 이미지 생성기에 복사하세요.
     zh-Hant: 無需參考圖，將完整提示詞複製到圖像生成工具即可。
+    fr: Aucune image de référence n’est nécessaire. Copiez le prompt complet dans votre générateur
+      d’images.
   slots: []
 showcaseExampleId: x_152
 source:
@@ -56,6 +56,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -67,6 +68,7 @@ inspirationSources:
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
+      fr: Instantané indexé de la source primaire
     evidenceUrl: https://www.reddit.com/r/midjourney/comments/1j6olw2/analog_photography_in_japan/
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -77,6 +79,7 @@ inspirationSources:
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: post_score
         value: 2405
@@ -89,6 +92,7 @@ inspirationSources:
           es: Puntuación de la publicación
           ko: 게시물 점수
           zh-Hant: 貼文分數
+          fr: Score de la publication
       - key: comments
         value: null
         labels:
@@ -100,3 +104,4 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires

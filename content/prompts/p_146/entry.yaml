@@ -56,6 +56,7 @@ inspirationSources:
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
       zh-Hant: 整部教學或作品展示影片
+      fr: Ensemble du tutoriel ou de la vidéo de présentation
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -67,6 +68,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -77,6 +79,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: views
         value: 344604
@@ -89,6 +92,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: likes
         value: 26934
         labels:
@@ -100,6 +104,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: saves
         value: 5872
         labels:
@@ -111,6 +116,7 @@ inspirationSources:
           es: Guardados
           ko: 저장
           zh-Hant: 收藏
+          fr: Enregistrements
       - key: comments
         value: 938
         labels:
@@ -122,6 +128,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
       - key: shares
         value: 1029
         labels:
@@ -133,6 +140,7 @@ inspirationSources:
           es: Veces compartido
           ko: 공유
           zh-Hant: 分享
+          fr: Partages
       - key: coins
         value: 859
         labels:
@@ -144,6 +152,7 @@ inspirationSources:
           es: Monedas
           ko: 코인
           zh-Hant: 投幣
+          fr: Pièces
       - key: danmaku
         value: 73
         labels:
@@ -155,6 +164,7 @@ inspirationSources:
           es: Comentarios danmaku
           ko: 화면 댓글
           zh-Hant: 彈幕
+          fr: Commentaires défilants (danmaku)
 source:
   author: Prompt Seen
   url: null
@@ -175,6 +185,7 @@ annotations:
       es: La cuadrícula explícita fija el número de pegatinas y el orden de lectura.
       ko: 명시적인 격자가 스티커 개수와 읽는 순서를 고정합니다.
       zh-Hant: 明確的網格固定貼紙數量和閱讀順序。
+      fr: La grille explicite fixe le nombre d’autocollants et l’ordre de lecture.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -185,11 +196,9 @@ annotations:
       en: Identity and clothing stay consistent across the sixteen emotions.
       zh-Hans: 统一面部、发型与服装，让十六种表情保持同一个角色。
       ja: 16 種類の感情を通して、人物の特徴と服装を統一しています。
-      de: Identität und Kleidung bleiben über die sechzehn Emotionen hinweg
-        konsistent.
-      pt-BR: A identidade e as roupas permanecem consistentes ao longo das dezesseis
-        emoções.
-      es: La identidad y la ropa se mantienen coherentes a través de las dieciséis
-        emociones.
+      de: Identität und Kleidung bleiben über die sechzehn Emotionen hinweg konsistent.
+      pt-BR: A identidade e as roupas permanecem consistentes ao longo das dezesseis emoções.
+      es: La identidad y la ropa se mantienen coherentes a través de las dieciséis emociones.
       ko: 열여섯 감정에서 인물 정체성과 의상이 일관되게 유지됩니다.
       zh-Hant: 統一面部、髮型與服裝，讓十六種表情保持同一個角色。
+      fr: L’identité et les vêtements restent cohérents d’une émotion à l’autre, sur les seize images.

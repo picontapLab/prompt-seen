@@ -1,0 +1,20 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+Running 10 tests using 2 workers
+
+(node:61511) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:61510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr light laptop (1.6s)
+  ✓   2 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr light desktop (1.6s)
+  ✓   4 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr light phone (1.6s)
+  ✓   3 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr light tablet (1.7s)
+  ✓   6 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr dark laptop (1.6s)
+  ✓   5 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr dark desktop (1.7s)
+  ✓   8 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr dark phone (1.4s)
+  ✓   7 [chromium] › tests/e2e/acceptance.browser.spec.ts:70:9 › every built language, both themes, four widths: nothing cut off or overlapping › fr dark tablet (1.5s)
+  ✓   9 [chromium] › tests/e2e/acceptance.browser.spec.ts:248:5 › the size-adjusted fallback faces back the web fonts while they load (§11.1.2) › fr: the text and display stacks name a declared "… Fallback" face (360ms)
+  ✓  10 [chromium] › tests/e2e/acceptance.browser.spec.ts:295:5 › text in another language keeps its own type (§8.6, §11.1.2) › fr: English prompts and other quoted text use their own font stack (703ms)
+
+  10 passed (7.7s)

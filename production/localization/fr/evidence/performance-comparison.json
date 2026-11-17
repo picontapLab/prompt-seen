@@ -1,0 +1,66 @@
+{
+  "comparison": "Root production, identical content and runtime code; only French enabled flag and build ID differ. Disabled build ID has an 18-byte suffix.",
+  "englishFirstLoadKiB": {
+    "home": 194.2,
+    "prompts": 202.6,
+    "template": 206.5
+  },
+  "englishFirstLoadDeltaKiBAtOneDecimal": {
+    "home": 0,
+    "prompts": 0,
+    "template": 0
+  },
+  "englishFontBytes": 126020,
+  "englishFontBytesDelta": 0,
+  "frenchFontBytes": {
+    "home": 142476,
+    "prompts": 142476,
+    "template": 126020
+  },
+  "frenchIndex": {
+    "rawBytes": 1304078,
+    "gzipBytes": 235206
+  },
+  "artifactDelta": {
+    "files": 3474,
+    "bytes": 151722243,
+    "htmlFiles": 402,
+    "htmlBytes": 52194202
+  },
+  "existingIndexDeltas": {
+    "zh-Hans": {
+      "rawBytes": -18,
+      "gzipBytes": -9
+    },
+    "ja": {
+      "rawBytes": -18,
+      "gzipBytes": -13
+    },
+    "pt-BR": {
+      "rawBytes": -18,
+      "gzipBytes": -13
+    },
+    "de": {
+      "rawBytes": -18,
+      "gzipBytes": -8
+    },
+    "ko": {
+      "rawBytes": -18,
+      "gzipBytes": -16
+    },
+    "es": {
+      "rawBytes": -18,
+      "gzipBytes": -14
+    },
+    "en": {
+      "rawBytes": -18,
+      "gzipBytes": -18
+    }
+  },
+  "budgetNote": "Existing English list/template JS exceeds the historical nominal 200 KiB target; French does not expand that existing excess. French index remains demand-loaded.",
+  "evidence": [
+    "root-production-performance.txt",
+    "disabled-baseline-performance.txt",
+    "root-production-fonts.txt"
+  ]
+}

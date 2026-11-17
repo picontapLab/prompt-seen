@@ -13,16 +13,17 @@ fields:
       es: Personaje
       ko: 캐릭터
       zh-Hant: 人物
+      fr: Personnage
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
       ja: 人物とポーズをひとつ指定します。例：「回転中のダンサー」。
-      de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in
-        einer Drehung“.
+      de: Beschreibe die Person und eine Pose, etwa „eine tanzende Person mitten in einer Drehung“.
       pt-BR: Quem é e uma pose, como “uma pessoa dançando durante um giro”.
       es: Quién es y una pose, por ejemplo «una persona que baila en pleno giro».
       ko: "누구인지와 자세 하나를 적으세요. 예: “회전 중인 무용수”."
       zh-Hant: 人物身分與一個姿勢，例如「正在轉身的舞者」。
+      fr: Indiquez qui est le sujet et une pose, par exemple « un danseur en pleine rotation ».
   - name: rimLight
     type: enum
     required: true
@@ -37,6 +38,7 @@ fields:
       es: Luz de contorno
       ko: 윤곽광
       zh-Hant: 輪廓光
+      fr: Éclairage de contour
     options:
       - value: cyan and magenta
         swatch:
@@ -51,6 +53,7 @@ fields:
           es: Cian y magenta
           ko: 청록색과 마젠타색
           zh-Hant: 青與洋紅
+          fr: Cyan et magenta
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -64,6 +67,7 @@ fields:
           es: Ámbar y verde azulado
           ko: 호박색과 청록색
           zh-Hant: 琥珀與青綠
+          fr: Ambre et sarcelle
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -77,6 +81,7 @@ fields:
           es: Violeta y cian
           ko: 보라색과 청록색
           zh-Hant: 紫與青
+          fr: Violet et cyan
   - name: background
     type: enum
     required: true
@@ -91,6 +96,7 @@ fields:
       es: Fondo
       ko: 배경
       zh-Hant: 背景
+      fr: Arrière-plan
     options:
       - value: soft bokeh lights
         labels:
@@ -102,6 +108,7 @@ fields:
           es: Luces de bokeh suave
           ko: 부드러운 보케 불빛
           zh-Hant: 柔和的虛化光點
+          fr: Lumières en bokeh doux
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -112,6 +119,7 @@ fields:
           es: Ciudad nocturna desenfocada
           ko: 흐릿한 밤의 도시
           zh-Hant: 虛化的夜城
+          fr: Ville nocturne floue
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -122,6 +130,7 @@ fields:
           es: Degradado plano oscuro
           ko: 단순한 어두운 그라데이션
           zh-Hant: 平坦的深色漸層
+          fr: Dégradé sombre uniforme
   - name: mood
     type: string
     required: false
@@ -136,6 +145,7 @@ fields:
       es: Ambiente
       ko: 분위기
       zh-Hant: 情緒
+      fr: Ambiance
   - name: aspectRatio
     type: enum
     required: true
@@ -151,6 +161,7 @@ fields:
       es: Relación de aspecto
       ko: 화면 비율
       zh-Hant: 畫面比例
+      fr: Rapport largeur/hauteur
     options:
       - value: 4:5
         labels:
@@ -163,6 +174,7 @@ fields:
           es: 4:5
           ko: 4:5
           zh-Hant: 4:5
+          fr: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -174,6 +186,7 @@ fields:
           es: 1:1
           ko: 1:1
           zh-Hant: 1:1
+          fr: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -185,6 +198,7 @@ fields:
           es: 2:3
           ko: 2:3
           zh-Hant: 2:3
+          fr: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -196,3 +210,4 @@ fields:
           es: 9:16
           ko: 9:16
           zh-Hant: 9:16
+          fr: 9:16

@@ -22,12 +22,12 @@ inputRequirements:
     en: Upload one everyday photo. The example uses an original synthetic scene.
     zh-Hans: 日常照片或合照
     ja: 日常の写真を 1 枚アップロードしてください。この作例では、独自に生成した場面を使っています。
-    de: Lade ein Alltagsfoto hoch. Das Beispiel verwendet eine eigene künstlich
-      erzeugte Szene.
+    de: Lade ein Alltagsfoto hoch. Das Beispiel verwendet eine eigene künstlich erzeugte Szene.
     pt-BR: Envie uma foto do dia a dia. O exemplo usa uma cena sintética original.
     es: Sube una foto cotidiana. El ejemplo usa una escena sintética original.
     ko: 일상 사진 한 장을 업로드하세요. 예시는 직접 합성한 장면입니다.
     zh-Hant: 上傳一張日常照片。本例使用原創合成場景。
+    fr: Importez une photo du quotidien. L’exemple utilise une scène synthétique originale.
   slots:
     - id: scene
       labels:
@@ -39,6 +39,7 @@ inputRequirements:
         es: Escena
         ko: 장면
         zh-Hant: 日常照片
+        fr: Scène
       min: 1
       max: 1
 showcaseExampleId: x_182
@@ -60,6 +61,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,6 +73,7 @@ inspirationSources:
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
+      fr: Instantané indexé de la source primaire
     evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1jkbxnr/the_office_in_studio_ghibli_style/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -81,6 +84,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: post_score
         value: 10750
@@ -93,6 +97,7 @@ inspirationSources:
           es: Puntuación de la publicación
           ko: 게시물 점수
           zh-Hant: 貼文分數
+          fr: Score de la publication
       - key: comments
         value: null
         labels:
@@ -104,6 +109,7 @@ inspirationSources:
           es: Comentarios
           ko: 댓글
           zh-Hant: 留言
+          fr: Commentaires
 source:
   author: Prompt Seen
   url: null

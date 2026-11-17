@@ -1,5 +1,3 @@
-# Categories (design doc §5.1). IDs are also topic slugs; labels per locale code.
-# `aliases` (optional): other words that find a term in search, per locale (design doc §13.2).
 - id: landscape
   labels:
     en: Landscape
@@ -11,6 +9,7 @@
     pt-BR: Paisagem
     ko: 풍경
     zh-Hant: 風景
+    fr: Paysage
 - id: poster
   labels:
     en: Poster
@@ -22,9 +21,14 @@
     pt-BR: Cartaz
     ko: 포스터
     zh-Hant: 海報
+    fr: Affiche
   aliases:
-    en: [ flyer, placard ]
-    zh-Hans: [ 招贴, 宣传画 ]
+    en:
+      - flyer
+      - placard
+    zh-Hans:
+      - 招贴
+      - 宣传画
     ja:
       - チラシ
       - プラカード
@@ -43,6 +47,11 @@
     zh-Hant:
       - 招貼
       - 宣傳畫
+    fr:
+      - tract
+      - pancarte
+      - flyer
+      - poster
 - id: product
   labels:
     en: Product
@@ -54,6 +63,7 @@
     pt-BR: Produto
     ko: 제품
     zh-Hant: 產品
+    fr: Produit
 - id: portrait
   labels:
     en: Portrait
@@ -65,9 +75,12 @@
     pt-BR: Retrato
     ko: 인물 사진
     zh-Hant: 肖像
+    fr: Portrait
   aliases:
-    en: [ headshot ]
-    zh-Hans: [ 人像 ]
+    en:
+      - headshot
+    zh-Hans:
+      - 人像
     ja:
       - 顔写真
       - ヘッドショット
@@ -82,6 +95,10 @@
       - 얼굴 중심 사진
     zh-Hant:
       - 人像
+    fr:
+      - portrait de tête
+      - portrait professionnel
+      - headshot
 - id: illustration
   labels:
     en: Illustration
@@ -93,6 +110,7 @@
     pt-BR: Ilustração
     ko: 일러스트
     zh-Hant: 插畫
+    fr: Illustration
 - id: architecture
   labels:
     en: Architecture
@@ -104,6 +122,7 @@
     pt-BR: Arquitetura
     ko: 건축
     zh-Hant: 建築
+    fr: Architecture
 - id: food
   labels:
     en: Food
@@ -115,6 +134,7 @@
     pt-BR: Comida
     ko: 음식
     zh-Hant: 美食
+    fr: Alimentation
 - id: pattern
   labels:
     en: Pattern
@@ -126,3 +146,4 @@
     pt-BR: Estampa
     ko: 패턴
     zh-Hant: 圖案
+    fr: Motif

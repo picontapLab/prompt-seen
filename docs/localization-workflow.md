@@ -135,3 +135,24 @@ existing five-result quick-search groups and independently paginated search page
 Keep every frozen query and expected key. Validate both serialized-engine results
 and the actual browser Worker. Record index-size changes for every affected locale;
 these indexes must remain loaded on demand.
+
+### French maintenance
+
+French follows `docs/french-localization-spec.md` and the uniquely owned batches in
+`production/localization/fr/batch-plan.json`. Its policy is complete coverage,
+fingerprint review and source-only Prompt bodies. Use a fresh `locale:check --locale
+fr --strict` before release; recorded AI review is not a native-speaker endorsement.
+
+When source content changes, the content author owns its French translation and
+source/target/media re-review before promotion. Preserve original Prompt text,
+template values, input ordering, generation facts and media. Recompute the scope
+for newly public entries and retain hash-bound import and promotion receipts.
+
+French search folds accents and œ/æ ligatures, removes French elision prefixes,
+and expands maintained domain phrases. Keep the frozen 26-query corpus in
+`production/localization/fr/search-cases.json`; run the serialized-engine test and
+real Worker tests after content or analyzer changes. Production CI checks root and
+subpath artifacts, plus the noindex subpath preview, across three browsers. The
+registry's enabled flag describes the source configuration, not a completed live
+deployment. See the French release-status record for actual validation and release
+status.

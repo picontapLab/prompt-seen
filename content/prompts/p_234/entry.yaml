@@ -19,18 +19,20 @@ model:
 inputRequirements:
   referenceImage: required
   instructions:
-    en: Use the independently generated reference assets in the displayed order. Do
-      not use the official or social source images.
+    en: Use the independently generated reference assets in the displayed order. Do not use the official
+      or social source images.
     zh-Hans: 按展示顺序使用原创生成底图；不使用官方或社交作者原图。
     ja: 独自に生成した参照画像を表示順に使ってください。公式の画像や SNS の出典画像は使わないでください。
-    de: Verwende die unabhängig erzeugten Referenzdateien in der angezeigten
-      Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
-    pt-BR: Use os recursos de referência gerados de forma independente na ordem
-      exibida. Não use as imagens oficiais ou das publicações sociais de origem.
-    es: Usa los recursos de referencia generados de forma independiente en el orden
-      mostrado. No uses las imágenes oficiales ni las de las fuentes sociales.
+    de: Verwende die unabhängig erzeugten Referenzdateien in der angezeigten Reihenfolge. Verwende keine
+      Bilder aus offiziellen oder sozialen Quellen.
+    pt-BR: Use os recursos de referência gerados de forma independente na ordem exibida. Não use as
+      imagens oficiais ou das publicações sociais de origem.
+    es: Usa los recursos de referencia generados de forma independiente en el orden mostrado. No uses
+      las imágenes oficiales ni las de las fuentes sociales.
     ko: 표시된 순서대로 독립적으로 생성한 참조 자산을 사용하세요. 공식 이미지나 소셜 출처 이미지는 사용하지 마세요.
     zh-Hant: 按展示順序使用原創生成底圖；不使用官方或社交作者原圖。
+    fr: Utilisez les ressources de référence générées indépendamment dans l’ordre affiché. N’utilisez
+      pas les images des sources officielles ou des réseaux sociaux.
   slots:
     - id: reference
       labels:
@@ -42,6 +44,7 @@ inputRequirements:
         es: Referencia sintética original
         ko: 원본 합성 참조 이미지
         zh-Hant: 原創生成參考圖
+        fr: Référence synthétique originale
       min: 1
       max: 1
 showcaseExampleId: x_298
@@ -55,46 +58,46 @@ inspirationSources:
     metricObjectUrl: https://x.com/MinLiBuilds/status/2118138824673173569
     metricObjectPublishedAt: null
     metricScope:
-      en: Original source post; not this new generated output. Multiple cases from one
-        post share the metrics.
+      en: Original source post; not this new generated output. Multiple cases from one post share the
+        metrics.
       zh-Hans: 原始来源帖，非本次新生成成品；同帖多个任务共用指标。
       ja: 元の投稿に対する指標であり、今回新しく生成した結果に対するものではありません。同じ投稿を元にした複数の作例は、同じ指標を共有しています。
-      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere
-        Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
-      pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos de
-        uma mesma publicação compartilham as métricas.
-      es: Publicación original; no este nuevo resultado generado. Varios casos de una
-        misma publicación comparten las métricas.
+      de: Ursprünglicher Quellbeitrag; nicht dieses neu generierte Ergebnis. Mehrere Beispiele aus einem
+        Beitrag verwenden dieselben Kennzahlen.
+      pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos de uma mesma
+        publicação compartilham as métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de una misma publicación
+        comparten las métricas.
       ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
       zh-Hant: 原始來源帖，非本次新生成成品；同帖多個任務共用指標。
+      fr: Publication source d’origine, et non ce nouveau résultat généré. Plusieurs cas issus d’une même
+        publication partagent les mêmes indicateurs.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
-      en: "Prior research: direct page and visual review. Counts have not been
-        refreshed."
+      en: "Prior research: direct page and visual review. Counts have not been refreshed."
       zh-Hans: 此前调研的原站页面及视觉核对，未刷新互动数。
       ja: 事前調査：元のページと画像を直接確認しました。件数は更新していません。
-      de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die
-        Zahlen wurden nicht aktualisiert."
-      pt-BR: "Pesquisa anterior: página direta e revisão visual. As contagens não
-        foram atualizadas."
-      es: "Investigación previa: revisión directa de la página y revisión visual. Los
-        recuentos no se han actualizado."
+      de: "Frühere Recherche: direkte Prüfung der Seite und visuelle Prüfung. Die Zahlen wurden nicht
+        aktualisiert."
+      pt-BR: "Pesquisa anterior: página direta e revisão visual. As contagens não foram atualizadas."
+      es: "Investigación previa: revisión directa de la página y revisión visual. Los recuentos no se han
+        actualizado."
       ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
       zh-Hant: 此前調研的原站頁面及視覺核對，未刷新互動數。
+      fr: "Recherche antérieure : page consultée directement et examen visuel. Les compteurs n’ont pas été
+        actualisés."
     evidenceUrl: https://x.com/MinLiBuilds/status/2118138824673173569
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
       zh-Hans: 未取得原提示词，本次为独立推导方案。
       ja: 元のプロンプトは見つかりませんでした。これは独自に推定したプロンプトです。
-      de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig
-        abgeleiteter Prompt.
-      pt-BR: O prompt original não foi encontrado. Este é um prompt inferido de forma
-        independente.
-      es: No se encontró el prompt original. Este es un prompt inferido de forma
-        independiente.
+      de: Der Originalprompt wurde nicht gefunden. Dies ist ein eigenständig abgeleiteter Prompt.
+      pt-BR: O prompt original não foi encontrado. Este é um prompt inferido de forma independente.
+      es: No se encontró el prompt original. Este es un prompt inferido de forma independiente.
       ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
       zh-Hant: 未取得原提示詞，本次為獨立推導方案。
+      fr: Le prompt original n’a pas été trouvé. Ce prompt a été déduit indépendamment.
     metrics:
       - key: likes
         value: 21
@@ -107,6 +110,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: reposts
         value: 1
         labels:
@@ -118,6 +122,7 @@ inspirationSources:
           es: Republicaciones
           ko: 재게시
           zh-Hant: 轉發
+          fr: Republications
 source:
   author: Prompt Seen
   url: null

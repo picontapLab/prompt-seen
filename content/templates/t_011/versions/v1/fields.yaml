@@ -11,6 +11,7 @@ fields:
       es: Dispositivo
       ko: 기기
       zh-Hant: 產品名稱
+      fr: Appareil
     help: {}
     type: string
     default: an original concept hand-cranked coffee grinder
@@ -29,11 +30,12 @@ fields:
       es: Notas de estructura
       ko: 구조 설명
       zh-Hant: 核對後的結構資料
+      fr: Notes de structure
     help: {}
     type: string
-    default: "Fictional concept specification: removable top crank turns a vertical
-      shaft; a conical burr pair sits below a bean hopper; grounds fall into a
-      detachable lower cup. No dimensions or performance claims."
+    default: "Fictional concept specification: removable top crank turns a vertical shaft; a conical
+      burr pair sits below a bean hopper; grounds fall into a detachable lower cup. No dimensions or
+      performance claims."
     minLength: null
     maxLength: 2000
     multiline: true
@@ -49,6 +51,7 @@ fields:
       es: Etiquetas
       ko: 라벨
       zh-Hant: 準確的部件標註
+      fr: Légendes
     help: {}
     type: string-list
     default:

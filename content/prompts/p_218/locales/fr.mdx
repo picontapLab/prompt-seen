@@ -1,0 +1,34 @@
+---
+title: Changer la couleur d’un vase avec une photo et une annotation
+description: Un prompt de retouche de couleur par IA enregistré, avec deux
+  entrées de référence ordonnées, le résultat au vase bleu cobalt et la
+  modification de glaçure observée.
+status: published
+updatedAt: 2026-11-06
+translation:
+  sourceLocale: en
+  sourceHash: sha256:cb1800a78015b5f4
+  reviewStatus: reviewed
+---
+
+## Utilisation
+
+Utilisez le prompt enregistré exact et les ressources de référence originales affichées, dans leur ordre. Modifier le prompt ou les entrées crée une variante non testée.
+
+Importez d’abord la photo de pièce synthétique originale, puis le calque distinct d’annotation au cercle rouge. Le calque désigne le vase ; ce n’est pas le résultat généré. Le prompt de travail enregistré est en chinois et reste inchangé ici. Une traduction anglaise constituerait un nouveau prompt non testé.
+
+## Résultat observé
+
+Vase passé du crème au bleu cobalt, annotation rouge supprimée. Pichet, tiges sèches, carreaux et fenêtre restent visuellement cohérents ; la nouvelle glaçure est plus brillante.
+
+## Preuves de génération et limites
+
+Les [données de l’exécution](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml) associent l’empreinte du prompt aux entrées a_373 et a_374, dans cet ordre, et au résultat a_372. Le [reçu de génération](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json) conserve les empreintes des entrées et du résultat. Son horodatage est le 5 novembre UTC, soit le 4 novembre à Los Angeles, date affichée pour cette exécution.
+
+GPT Image 2.6 est une [attribution de version du propriétaire du projet](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). L’outil n’a renvoyé aucun identifiant exact de modèle API ; graine, réglages d’échantillonnage et de qualité n’ont pas été enregistrés. Ce résultat montre un changement de couleur avec une surface plus brillante ; il ne prouve pas qu’une retouche de couleur conserve chaque reflet ou pixel. Vérifiez la finition du matériau et les objets environnants avec votre propre image.
+
+## Source et génération
+
+La source fournit un prompt original ; cette production utilise le prompt de travail enregistré séparément. [Source](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). L’engagement de la publication source ne mesure pas cet exemple nouvellement généré.
+
+Généré avec GPT Image 2.6. Toutes les images de référence utilisées ici ont été générées pour ce projet.

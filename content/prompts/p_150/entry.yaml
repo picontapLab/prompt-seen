@@ -8,11 +8,10 @@ promptSource:
   version: v1
   values:
     garmentOrObject: a modern fictional Ming-inspired jacket and pleated skirt
-    historyNotes: "This is a contemporary fictional costume reference, not a museum
-      artifact. Describe only visible construction: standing collar, front
-      fastening, pale jade jacket, small embroidered floral motifs and a
-      dark-red pleated skirt. Do not add a dynasty date, maker, collection
-      number or undocumented historical claim."
+    historyNotes: "This is a contemporary fictional costume reference, not a museum artifact. Describe
+      only visible construction: standing collar, front fastening, pale jade jacket, small
+      embroidered floral motifs and a dark-red pleated skirt. Do not add a dynasty date, maker,
+      collection number or undocumented historical claim."
     labels:
       - 立领
       - 前襟
@@ -50,6 +49,7 @@ inspirationSources:
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +61,7 @@ inspirationSources:
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2045504669401653414&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -71,6 +72,7 @@ inspirationSources:
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: likes
         value: 1125
@@ -83,6 +85,7 @@ inspirationSources:
           es: Me gusta
           ko: 좋아요
           zh-Hant: 按讚
+          fr: Mentions J’aime
       - key: conversation_count
         value: 52
         labels:
@@ -94,6 +97,7 @@ inspirationSources:
           es: Respuestas
           ko: 답글
           zh-Hant: 回覆
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -105,6 +109,7 @@ inspirationSources:
           es: Visualizaciones
           ko: 조회수
           zh-Hant: 播放或瀏覽
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -116,6 +121,7 @@ inspirationSources:
           es: Republicaciones
           ko: 재게시
           zh-Hant: 轉發
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -127,6 +133,7 @@ inspirationSources:
           es: Marcadores
           ko: 북마크
           zh-Hant: 書籤
+          fr: Signets
 source:
   author: Prompt Seen
   url: null
