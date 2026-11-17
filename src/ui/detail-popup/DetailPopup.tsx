@@ -217,9 +217,14 @@ export function DetailPopup({
   }, [cardLink, stopMotion]);
 
   // Remember the gallery's own address, for closing an entry the popup did not write.
-  useEffect(() => {
-    if (!openSlug) galleryUrl.current = window.location.pathname + window.location.search + window.location.hash;
-  }, [openSlug, pathname]);
+  // Capture it in the commit, before another history write, and classify the same live
+  // address we save: a delayed render's openSlug can describe the previous gallery.
+  useLayoutEffect(() => {
+    const currentPathname = window.location.pathname;
+    if (!matchPromptPath(stripBasePath(currentPathname), prefix)) {
+      galleryUrl.current = currentPathname + window.location.search + window.location.hash;
+    }
+  }, [pathname, prefix]);
 
   // --- Open and close follow the address, in the same commit --------------------------------------
   useLayoutEffect(() => {

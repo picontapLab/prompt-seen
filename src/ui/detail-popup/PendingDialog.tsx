@@ -56,9 +56,14 @@ export function PendingDialog({
   const leaving = useRef(false);
   const galleryUrl = useRef('');
 
-  useEffect(() => {
-    if (!slug) galleryUrl.current = window.location.pathname + window.location.search + window.location.hash;
-  }, [slug, pathname]);
+  // A foreign pushState can arrive before a render's passive effects. Never save its
+  // detail address as the gallery to return to when closing the stand-in dialog.
+  useLayoutEffect(() => {
+    const currentPathname = window.location.pathname;
+    if (!matchPromptPath(stripBasePath(currentPathname), prefix)) {
+      galleryUrl.current = currentPathname + window.location.search + window.location.hash;
+    }
+  }, [pathname, prefix]);
 
   // Open and close follow the address in the same commit, so an Esc right after the click reaches
   // an open dialog (§12.8-3).

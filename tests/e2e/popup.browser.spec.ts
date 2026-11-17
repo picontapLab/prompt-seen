@@ -520,11 +520,30 @@ test.describe('desktop', () => {
     await expectOpen(page, second.slug);
     expect((await state(page)).ours).toBe(false);
     await page.keyboard.press('Escape');
-    // This foreign history entry needs a gallery navigation, not the cached popup
-    // history path. Include that full-route load in the bounded close wait.
+    // Closing replaces the foreign entry without loading a new document. A stale
+    // gallery address used to replace it with the same detail URL and leave it locked.
     await expect(popup(page)).not.toHaveAttribute('open', '', { timeout: 15_000 });
     expect(await state(page)).toMatchObject({ path: listUrl, historyLength: historyLength + 1, doc, locked: false });
   });
+
+  for (const gallery of [
+    { name: 'pagination', url: `${listUrl}page/2/`, available: index.pageCount > 1 },
+    { name: 'query and filters', url: `${listUrl}?source=gallery#shape=portrait&sort=featured`, available: true },
+  ]) {
+    test(`a foreign popup entry returns to the gallery's ${gallery.name}`, async ({ page }) => {
+      test.skip(!gallery.available, 'needs a second gallery page');
+      await gotoList(page, gallery.url);
+      if (gallery.name === 'query and filters') await expect(page.locator('[data-filtered]')).toBeVisible();
+      const { historyLength, doc } = await state(page);
+      const returnUrl = page.url();
+      await page.evaluate((url) => history.pushState(null, '', url), detailUrl(second.slug));
+      await expectOpen(page, second.slug);
+      await page.keyboard.press('Escape');
+      await expect(popup(page)).not.toHaveAttribute('open', '', { timeout: 15_000 });
+      await expect(page).toHaveURL(returnUrl);
+      expect(await state(page)).toMatchObject({ historyLength: historyLength + 1, doc, locked: false });
+    });
+  }
 
   test('§12.8-8: with reduced motion the same tasks work, without flight or movement', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
