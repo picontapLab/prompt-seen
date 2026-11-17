@@ -79,8 +79,8 @@ export function createIndex(documents: readonly SearchDocument[], locale: string
     documents.map((document) => ({
       ...document,
       aliases: domainAliases(
-        // Newlines preserve field boundaries for profiles that require a contiguous phrase.
-        [document.title, document.terms, document.description, document.body].join('\n'),
+        // A field boundary is not whitespace inside a phrase (Italian permits line breaks).
+        [document.title, document.terms, document.description, document.body].join('\u0000'),
         locale,
         document.kind,
       ),

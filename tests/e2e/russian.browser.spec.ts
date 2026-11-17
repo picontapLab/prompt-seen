@@ -6,7 +6,8 @@ import { russianFixtureCases, russianSearchFixture } from '../support/russian-se
 import { BASE, BUILD } from './support/artifact';
 import { layoutProblems } from './support/layout';
 import { seriousViolations } from './support/a11y';
-import { russianCorpusCases } from '../support/russian-corpus';
+import { russianCorpusCases, russianRankingCases } from '../support/russian-corpus';
+import type { LocalizationSearchCase } from '../support/localization-search';
 import { templateDetail } from './support/content';
 
 const russian = BUILD.locales.find((locale) => locale.code === 'ru');
@@ -17,7 +18,7 @@ test('Russian template inputs retain Cyrillic text through preview, download and
   context,
   browserName,
 }) => {
-  test.skip(!russian || process.env.RU_PILOT_ACCEPTANCE !== '1', 'Requires the reviewed Russian pilot');
+  test.skip(!russian, 'Russian is not part of this artifact');
   const detail = templateDetail('ru', 't_001');
   await page.goto(`${BASE}${detail.path}`);
   await page.waitForFunction(() => {
@@ -44,8 +45,10 @@ test('Russian template inputs retain Cyrillic text through preview, download and
   expect(await seriousViolations(page)).toEqual([]);
 });
 
-test('Russian pilot queries use the actual built corpus in the actual Worker', async ({ page }) => {
-  test.skip(!russian || process.env.RU_PILOT_ACCEPTANCE !== '1', 'Requires the reviewed Russian pilot');
+test('Russian frozen ranking and pilot regressions use the actual built corpus in the actual Worker', async ({
+  page,
+}) => {
+  test.skip(!russian, 'Russian is not part of this artifact');
   await page.addInitScript(() => {
     const NativeWorker = window.Worker;
     window.Worker = class extends NativeWorker {
@@ -58,7 +61,15 @@ test('Russian pilot queries use the actual built corpus in the actual Worker', a
   const started = page.waitForEvent('worker');
   await page.goto(`${BASE}/ru/search/`);
   await started;
-  for (const [i, sample] of russianCorpusCases.entries()) {
+  const cases: LocalizationSearchCase[] = [
+    ...russianRankingCases,
+    ...russianCorpusCases.map((sample) => ({
+      query: sample.query,
+      expectedKeys: sample.id ? [`${sample.id.startsWith('t_') ? 'template' : 'prompt'}/${sample.id}`] : [],
+      topK: Number.MAX_SAFE_INTEGER,
+    })),
+  ];
+  for (const [i, sample] of cases.entries()) {
     const request: WorkerRequest = {
       type: 'search',
       seq: -1000 - i,
@@ -90,10 +101,15 @@ test('Russian pilot queries use the actual built corpus in the actual Worker', a
     );
     expect(response.type, sample.query).toBe('results');
     if (response.type !== 'results') throw new Error(JSON.stringify(response));
-    const ids = response.results.groups.flatMap((group) => group.hits.map((hit) => hit.id));
-    if (sample.id)
-      expect(ids, sample.query).toContain(`${sample.id.startsWith('t_') ? 'template' : 'prompt'}:${sample.id}`);
-    else expect(response.results.total, sample.query).toBe(0);
+    const keys = response.results.groups.flatMap((group) =>
+      group.hits.slice(0, sample.topK).map((hit) => hit.id.replaceAll(':', '/')),
+    );
+    const allKeys = response.results.groups.flatMap((group) => group.hits.map((hit) => hit.id.replaceAll(':', '/')));
+    for (const key of sample.expectedKeys) expect(keys, sample.query).toContain(key);
+    for (const key of sample.excludedKeys ?? []) expect(allKeys, sample.query).not.toContain(key);
+    if (sample.expectedTotal !== undefined) expect(response.results.total, sample.query).toBe(sample.expectedTotal);
+    if (sample.expectedTotal === undefined && !sample.expectedKeys.length && !sample.excludedKeys?.length)
+      expect(response.results.total, sample.query).toBe(0);
   }
 });
 
@@ -190,7 +206,7 @@ test.describe('Russian layout and accessible foundation pages', () => {
         await expect(page.locator('h1')).toHaveText('О Prompt Seen');
         expect(await layoutProblems(page)).toEqual([]);
         expect(await seriousViolations(page)).toEqual([]);
-        if (process.env.RU_PILOT_ACCEPTANCE === '1') {
+        if (russian) {
           for (const id of ['t_001', 't_002', 't_017']) {
             const detail = templateDetail('ru', id);
             await page.goto(`${BASE}${detail.path}`);

@@ -60,6 +60,7 @@ describe('ranking and matching (§13.1)', () => {
       doc('product', { title: 'Fotografia di prodotto in studio' }),
       doc('family', { title: 'Fotografia di famiglia' }),
       doc('split', { title: 'Fotografia. Di prodotto si parla altrove.' }),
+      doc('split-fields', { title: 'Fotografia', body: 'di prodotto' }),
       doc('scattered', { title: 'Fotografia di famiglia con un prodotto' }),
       doc('model', { title: 'Modello di IA per fotografia' }),
       doc('template', { kind: 'template', title: 'Ritratto ad acquerello' }),

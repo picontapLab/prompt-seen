@@ -1,6 +1,6 @@
 {
   "title": "Il rullino",
-  "intro": "Tutti i prompt che abbiamo testato, dai più recenti, ciascuno accanto al fotogramma che ha prodotto. Punta un’opera per leggere l’inizio del prompt; aprila per vedere il testo completo, il registro del test e l’effetto di ogni frase.",
+  "intro": "Tutti i prompt che abbiamo testato, dai più recenti, ciascuno accanto al fotogramma che ha prodotto. Passa il puntatore su un’opera per leggere l’inizio del prompt; aprila per vedere il testo completo, il registro del test e l’effetto di ogni frase.",
   "introMore": "Mostra di più",
   "introLess": "Mostra meno",
   "count": "{count, plural, one {# fotogramma} many {# fotogrammi} other {# fotogrammi}}",
@@ -8,8 +8,13 @@
   "documentTitle": "Prompt per immagini",
   "documentTitlePage": "Prompt per immagini, pagina {page}",
   "description": "Prompt per immagini testati, dai più recenti: ciascuno con l’immagine prodotta, il modello e la data del test, e note sull’effetto delle frasi.",
-  "band": { "label": "Le scelte della settimana" },
-  "card": { "byModel": "con {model}", "notVerified": "Non verificato" },
+  "band": {
+    "label": "Le scelte della settimana"
+  },
+  "card": {
+    "byModel": "con {model}",
+    "notVerified": "Non verificato"
+  },
   "interlude": {
     "feature": "In evidenza: {title}",
     "open": "Apri il fotogramma",
@@ -18,7 +23,10 @@
     "collection": "Raccolta · {count, plural, one {# opera} many {# opere} other {# opere}}",
     "openCollection": "Apri la raccolta"
   },
-  "feed": { "label": "Prompt", "skip": "Salta l’elenco" },
+  "feed": {
+    "label": "Prompt",
+    "skip": "Salta l’elenco"
+  },
   "status": {
     "shown": "Fotogrammi {from}–{to} di {total} mostrati",
     "developing": "Sviluppo dei fotogrammi {from}–{to}…",
@@ -42,9 +50,17 @@
     "panelTitle": "Uso, formato e immagine di riferimento",
     "use": "Uso",
     "shape": "Formato",
-    "shapes": { "portrait": "Verticale", "square": "Quadrato", "landscape": "Orizzontale", "panorama": "Panoramico" },
+    "shapes": {
+      "portrait": "Verticale",
+      "square": "Quadrato",
+      "landscape": "Orizzontale",
+      "panorama": "Panoramico"
+    },
     "ref": "Immagine di riferimento",
-    "refs": { "none": "Solo testo", "required": "Richiede un’immagine di riferimento" },
+    "refs": {
+      "none": "Solo testo",
+      "required": "Richiede un’immagine di riferimento"
+    },
     "open": "Filtri",
     "openCount": "Filtri ({count})",
     "show": "{count, plural, =0 {Nessun risultato} one {Mostra # risultato} many {Mostra # risultati} other {Mostra # risultati}}",

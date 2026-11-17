@@ -6,7 +6,6 @@ export type LocalizationSearchCase = {
   excludedKeys?: string[];
   expectedTotal?: number;
   topK: number;
-  expectedTotal?: number;
 };
 
 /** Report keys include the taxonomy segment for topics; all four searchable kinds retain it. */

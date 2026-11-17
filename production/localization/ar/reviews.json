@@ -23410,6 +23410,51 @@
       "completedAt": "2026-11-17T15:10:05.737285+00:00",
       "conclusion": "approved",
       "reason": "Individually compared this Arabic UI message with English; catalog validation passed. No browser or human-reader claim."
+    },
+    {
+      "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:410e7b63548ed93377b94fc83f24d590ceb15b9f7bd004903aba83d3a9f4777a",
+      "targetHash": "sha256:dcce8cd4db4b27d55431948a2ac715e4be35a94e100d95ca9276a15322bbe51d",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P2: short age refers to a brief written age (the field permits 3 characters), not a short lifespan. The current Arabic literally asks the reader to use a short life/age. The replacement clearly describes concise notation while preserving the source example. See production/localization/review-2026-11-17/ar-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:fa9d56c7852a4f6a814c6e6835e48e03f73642fcaabcee8bc10b84214f13c600",
+      "targetHash": "sha256:628f71994a386bfae4039b90687ad2cb0d5d734d30280f49e733b6a3fe64be6c",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3: idiomatic field label for a person’s age at their birthday; current construct reads as the birthday’s age. See production/localization/review-2026-11-17/ar-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_116.yaml#alt",
+      "sourceHash": "sha256:aab0f0e1c978e98ba9bc1d5004221f60d72513ad4ee8190a2962ed01bd59e3f5",
+      "targetHash": "sha256:69a6c74d053f71a876385d7f98cd1b7af2e9a67c5ad5ea6716fa129250be491b",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。 See production/localization/review-2026-11-17/ar-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_207.yaml#alt",
+      "sourceHash": "sha256:dd3d468dc2031e5b782c1e662502edc1d432c662598e291e2ca6769efe07b292",
+      "targetHash": "sha256:aed29d98f79eb6c9fe17f431358ab80cbf58f72937fcb15411e0a5258c82890c",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。 See production/localization/review-2026-11-17/ar-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_231.yaml#alt",
+      "sourceHash": "sha256:5e717271a985513cde361d4caaa1b4154f93b368ec50882bf5bf81f20261d4d9",
+      "targetHash": "sha256:4e006290c1c7dae653078e93648f81c41194ef8f5decf1c98fdb31c0c716c705",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。 See production/localization/review-2026-11-17/ar-applied.json. These are AI reviews, not human/native-speaker signoff."
     }
   ]
 }

@@ -1,5 +1,7 @@
 # Russian implementation status
 
+> Integration update (2026-11-17): the corrected combined candidate is enabled and independently AI-reviewed. See [integration acceptance](../review-2026-11-17/acceptance.json) for current results. The original candidate results below are historical; human acceptance and deployment remain pending.
+
 Worktree: `russian-localization/prompt-seen`. Branch: `codex/russian-localization`.
 Original engineering baseline: `53cbc8efce854f8f067acef8372daf49be82f9c3`.
 The source checkout's unrelated uncommitted edits were not copied or modified.

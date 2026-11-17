@@ -1,0 +1,208 @@
+{
+  "reviewer": "Codex subagent /root/review_arabic (AI)",
+  "reviewedAt": "2026-11-17T19:42:14.482Z",
+  "root": "/private/tmp/prompt-seen-language-review/integration",
+  "conclusions": {
+    "ru": "approved for local merge after parent completes integration verification",
+    "ar": "approved for local merge after parent completes integration verification"
+  },
+  "remainingFindings": [],
+  "closedFindings": [
+    "Russian generated-photo provenance, typography and idiomatic wording corrected in MDX and shared fields",
+    "Arabic birthday-age notation and label corrected",
+    "New shared media descriptions match the corrected source semantics and supplied visual-review evidence",
+    "Russian multiword aliases no longer span punctuation or fields",
+    "Required wedding query retrieves actual p_115 prose after finite inflection expansion",
+    "Russian ranking cases retain spec top5 expectations; pilot existence cases preserved separately",
+    "Core Russian tests no longer hidden behind pilot environment flags; dynamic scope and CI explicit expectations present",
+    "Duplicate expectedTotal declaration removed; Node/Worker both honor expectedTotal/excludedKeys and consistent empty-case semantics"
+  ],
+  "checks": {
+    "appliedValues": {
+      "ru": 16,
+      "ar": 5,
+      "mismatches": 0
+    },
+    "unitTests": {
+      "files": 5,
+      "passed": 80,
+      "failed": 0,
+      "log": "/tmp/prompt-seen-language-review/ru-ar-rereview-tests.log"
+    },
+    "directReproduction": {
+      "languages": [
+        "ru",
+        "ar",
+        "fr"
+      ],
+      "contiguousPositive": true,
+      "punctuationFalsePositive": false,
+      "crossFieldFalsePositive": false,
+      "russianRequiredWeddingQuery": "1 result: prompt:p_115 from actual source MDX"
+    }
+  },
+  "changes": {
+    "ru": [
+      {
+        "file": "content/prompts/p_138/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите одну старую фотографию. Наш исходник — сгенерированная фотография с эффектом старины, а не снимок из настоящего семейного архива.",
+        "reason": "P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated."
+      },
+      {
+        "file": "content/prompts/p_138/entry.yaml",
+        "key": "content/prompts/p_138/entry.yaml#inputRequirements.instructions",
+        "approvedTranslation": "Загрузите одну старую фотографию. Наш исходник — сгенерированная фотография с эффектом старины, а не снимок из настоящего семейного архива.",
+        "reason": "P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated."
+      },
+      {
+        "file": "content/prompts/p_277/entry.yaml",
+        "key": "content/prompts/p_277/entry.yaml#annotations.1.note",
+        "approvedTranslation": "Жирный шрифт с засечками придаёт заголовку газетный характер.",
+        "reason": "P2 typography: source Bold serif type describes weight, whereas Крупный describes size. Preserve the distinction."
+      },
+      {
+        "file": "content/templates/t_003/versions/v1/fields.yaml",
+        "key": "content/templates/t_003/versions/v1/fields.yaml#fields.0.help",
+        "approvedTranslation": "Опишите персонажа и одну позу, например «танцор во время поворота».",
+        "reason": "P3 natural instruction: replace the fragmentary literal Who it is and one pose with a grammatical polite Russian instruction."
+      },
+      {
+        "file": "content/prompts/p_135/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+        "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+      },
+      {
+        "file": "content/templates/t_025/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+        "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+      },
+      {
+        "file": "content/templates/t_025/versions/v1/inputs.yaml",
+        "key": "content/templates/t_025/versions/v1/inputs.yaml#instructions",
+        "approvedTranslation": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+        "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+      },
+      {
+        "file": "content/prompts/p_148/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+        "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+      },
+      {
+        "file": "content/templates/t_032/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+        "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+      },
+      {
+        "file": "content/templates/t_032/versions/v1/inputs.yaml",
+        "key": "content/templates/t_032/versions/v1/inputs.yaml#instructions",
+        "approvedTranslation": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+        "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+      },
+      {
+        "file": "content/prompts/p_141/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+        "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+      },
+      {
+        "file": "content/templates/t_027/locales/ru.mdx",
+        "key": null,
+        "approvedTranslation": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+        "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+      },
+      {
+        "file": "content/templates/t_027/versions/v1/inputs.yaml",
+        "key": "content/templates/t_027/versions/v1/inputs.yaml#instructions",
+        "approvedTranslation": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+        "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+      },
+      {
+        "file": "content/media/a_116.yaml",
+        "key": "content/media/a_116.yaml#alt",
+        "approvedTranslation": "Серые стебли бамбука и летящие листья на бумаге тёплого оттенка, с красной печатью внизу справа.",
+        "reason": "已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。"
+      },
+      {
+        "file": "content/media/a_207.yaml",
+        "key": "content/media/a_207.yaml#alt",
+        "approvedTranslation": "Реалистично изображённая рука держит стакан лимонада; композицию дополняют забавный пловец, нарисованный чёрной тушью, пузырьки и улыбающийся ломтик лимона.",
+        "reason": "已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。"
+      },
+      {
+        "file": "content/media/a_231.yaml",
+        "key": "content/media/a_231.yaml#alt",
+        "approvedTranslation": "Чёрно-белый портрет анфас человека с длинными волнистыми волосами.",
+        "reason": "已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。"
+      }
+    ],
+    "ar": [
+      {
+        "file": "content/templates/t_075/versions/v1/fields.yaml",
+        "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.help",
+        "approvedTranslation": "اكتب العمر بصيغة مختصرة، مثل 30.",
+        "reason": "P2: short age refers to a brief written age (the field permits 3 characters), not a short lifespan. The current Arabic literally asks the reader to use a short life/age. The replacement clearly describes concise notation while preserving the source example."
+      },
+      {
+        "file": "content/templates/t_075/versions/v1/fields.yaml",
+        "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.labels",
+        "approvedTranslation": "العمر في عيد الميلاد",
+        "reason": "P3: idiomatic field label for a person’s age at their birthday; current construct reads as the birthday’s age."
+      },
+      {
+        "file": "content/media/a_116.yaml",
+        "key": "content/media/a_116.yaml#alt",
+        "approvedTranslation": "سيقان خيزران رمادية وأوراق متطايرة على ورق بلون دافئ، مع ختم أحمر في أسفل اليمين.",
+        "reason": "已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。"
+      },
+      {
+        "file": "content/media/a_207.yaml",
+        "key": "content/media/a_207.yaml#alt",
+        "approvedTranslation": "يد تبدو واقعية تمسك بكوب من عصير الليمون، مع رسم مرح لسبّاح بالحبر الأسود وفقاعات وشريحة ليمون مبتسمة.",
+        "reason": "已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。"
+      },
+      {
+        "file": "content/media/a_231.yaml",
+        "key": "content/media/a_231.yaml#alt",
+        "approvedTranslation": "صورة شخصية أمامية بالأبيض والأسود لشخص ذي شعر طويل مموّج.",
+        "reason": "已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。"
+      }
+    ]
+  },
+  "fileByteHashes": {
+    "src/modules/search/profiles.ts": "sha256:9487af8a400d7d95bf1deac12257c6afd35294247c1e9533f8da084117b35176",
+    "src/modules/search/engine.ts": "sha256:491c46f335517ee9924eda084140efa4d2699a4071680ed59a26172ae6ac5b7f",
+    "src/modules/search/tokenize.ts": "sha256:60febca5894e817fa91aadeb70a6d4c86b0699ecddf69c8266611f760f8ef3df",
+    "src/modules/search/types.ts": "sha256:b1122c2e389bfbab3d558de70c9d9a1aa17376d85248fbe53f195db4114da681",
+    "src/modules/search/russian.test.ts": "sha256:a372c0f51345c63b584fc5a997ecddb0b9dab4631d9a0e715c1a18ca94079160",
+    "src/modules/search/engine.test.ts": "sha256:e1499649046df074f83f84d657293a5184b321d826fd0ca437964c5b43e23a28",
+    "scripts/lib/localization/russian-search.test.ts": "sha256:0fa6a9f2d15ff152d031e5323b69f12ed4bdf8b1e24113761704c066b2738a97",
+    "tests/e2e/russian.browser.spec.ts": "sha256:674800dbb1cf81e47f9600c87c42b5ec94d737960c35edeb5352733cd9ce888b",
+    "tests/e2e/russian.http.spec.ts": "sha256:60184bd41d8fec37a2e4fd210616e07bbf30794a3f7b81e2e87ea515ec0c903b",
+    "tests/support/russian-corpus.ts": "sha256:8d5cc8cd8a58af7fc9f91aa1cf0fcbc333bab81c184314a3f09c5d5bd2cb6205",
+    "tests/support/localization-search.ts": "sha256:9eef995315c91d825224ab9bdd14e35a19714984fade63c6ad6cfe9a7104abe3",
+    "production/localization/ru/search-cases.json": "sha256:a65642110ea3f2a5988c002f4ad420bdddf9627e26e1c60749e01866737943c9",
+    "content/prompts/p_138/locales/ru.mdx": "sha256:3eaf94aa9f7becb4481ce5661fbda0c813b85dfd9bf8d5302ea94ca244168320",
+    "content/prompts/p_138/entry.yaml": "sha256:1a06b320dd0fb093f2d06008a748032f90ec7bd9a836b486a776fda3898d7b27",
+    "content/prompts/p_277/entry.yaml": "sha256:19735d1e9a4f6578a28c505de553efbb77a499bd8bf52ea35de8603828ecf966",
+    "content/templates/t_003/versions/v1/fields.yaml": "sha256:a9009a4489fe3a8995c3c5ade332bb8715cc24548491d1c63e0d62ec85f17393",
+    "content/prompts/p_135/locales/ru.mdx": "sha256:3a6de5d9b09b30cf7edeeec7534e3f0f159779e2e6fa578d2b1cb740edfd18c0",
+    "content/templates/t_025/locales/ru.mdx": "sha256:fb5cfcf8d6a5b77be49cdb876be369c3ce12286612aa36750f6751bc01b7cfff",
+    "content/templates/t_025/versions/v1/inputs.yaml": "sha256:e13a3f0bb07feffd0cff9e1eaac993ff5fce4d606ae52131aeaead0956bf2083",
+    "content/prompts/p_148/locales/ru.mdx": "sha256:3797308667712ea710c57d656aa234af47a44aee271ac50efd5a66f9a284ff7a",
+    "content/templates/t_032/locales/ru.mdx": "sha256:7ac3adb7f58263deb8c042a87e5d84dc854a23757eab72044b842bc7b93541a4",
+    "content/templates/t_032/versions/v1/inputs.yaml": "sha256:31e8ebc6433f98ebf8acacde3bb15135985223f97d8d72923458d3d88b443374",
+    "content/prompts/p_141/locales/ru.mdx": "sha256:8edc9b75d0295302415727a2840b06d3cbc2c581e75709f4a47235a0df3669b8",
+    "content/templates/t_027/locales/ru.mdx": "sha256:1c5e314524c320da5366a3c05d3682f42fcba46a5e7eede2c9866087bc33eaae",
+    "content/templates/t_027/versions/v1/inputs.yaml": "sha256:ec6b40d86d4da801be756bc6fca2e12c882c952012512de2748b02d30c5a083e",
+    "content/media/a_116.yaml": "sha256:225d6194f89eb3bd1b830dec39328199e08cdc0c8593479407e09e60ca7993cf",
+    "content/media/a_207.yaml": "sha256:893ef31e7361b4902bc7484a18e53aba2f69e6721868cdad6182a424daf48ca8",
+    "content/media/a_231.yaml": "sha256:71a46359bf78f9d5fe8090d411279593f0881ac3980afc1d1b0fa7a9ab19b812",
+    "content/templates/t_075/versions/v1/fields.yaml": "sha256:d0e9574febb934d43cc5d4003a109082c0760e6056584455e8f42902cedb92b7"
+  },
+  "scopeLimit": "AI source/target and code re-review plus focused unit checks. File-byte hashes identify inspected files, not localization field fingerprints. Parent performs actual integration build/browser matrix and fingerprint promotion. No deployment, human review, native zoom or screen-reader session is claimed."
+}

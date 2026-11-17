@@ -1,0 +1,61 @@
+[
+  {
+    "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.help",
+    "file": "content/templates/t_075/versions/v1/fields.yaml",
+    "targetField": [
+      "fields",
+      0,
+      "help",
+      "ar"
+    ],
+    "old": "استخدم عمرًا قصيرًا مثل 30.",
+    "new": "اكتب العمر بصيغة مختصرة، مثل 30.",
+    "reason": "P2: short age refers to a brief written age (the field permits 3 characters), not a short lifespan. The current Arabic literally asks the reader to use a short life/age. The replacement clearly describes concise notation while preserving the source example."
+  },
+  {
+    "key": "content/templates/t_075/versions/v1/fields.yaml#fields.0.labels",
+    "file": "content/templates/t_075/versions/v1/fields.yaml",
+    "targetField": [
+      "fields",
+      0,
+      "labels",
+      "ar"
+    ],
+    "old": "عمر عيد الميلاد",
+    "new": "العمر في عيد الميلاد",
+    "reason": "P3: idiomatic field label for a person’s age at their birthday; current construct reads as the birthday’s age."
+  },
+  {
+    "key": "content/media/a_116.yaml#alt",
+    "file": "content/media/a_116.yaml",
+    "targetField": [
+      "alt",
+      "ar"
+    ],
+    "old": "خمس سيقان خيزران رمادية وأوراق متناثرة على ورق دافئ اللون، مع ختم أحمر أسفل اليمين.",
+    "new": "سيقان خيزران رمادية وأوراق متطايرة على ورق بلون دافئ، مع ختم أحمر في أسفل اليمين.",
+    "reason": "已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。"
+  },
+  {
+    "key": "content/media/a_207.yaml#alt",
+    "file": "content/media/a_207.yaml",
+    "targetField": [
+      "alt",
+      "ar"
+    ],
+    "old": "عصير ليمون ويد بمظهر واقعي يلتقيان برسوم مرحة لسبّاحين وفقاعات وليمونة مبتسمة بالحبر الأسود.",
+    "new": "يد تبدو واقعية تمسك بكوب من عصير الليمون، مع رسم مرح لسبّاح بالحبر الأسود وفقاعات وشريحة ليمون مبتسمة.",
+    "reason": "已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。"
+  },
+  {
+    "key": "content/media/a_231.yaml#alt",
+    "file": "content/media/a_231.yaml",
+    "targetField": [
+      "alt",
+      "ar"
+    ],
+    "old": "شكل ظلي",
+    "new": "صورة شخصية أمامية بالأبيض والأسود لشخص ذي شعر طويل مموّج.",
+    "reason": "已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。"
+  }
+]

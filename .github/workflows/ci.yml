@@ -134,8 +134,8 @@ jobs:
       PW_BROWSERS: ${{ matrix.browser }}
       FR_EXPECT_STATE: enabled
       IT_EXPECT_STATE: enabled
-      # Arabic remains preview-only until its complete coverage and acceptance gates pass.
-      AR_EXPECT_STATE: ${{ matrix.name == 'subpath' && 'preview' || 'disabled' }}
+      AR_EXPECT_STATE: enabled
+      RU_EXPECT_STATE: enabled
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

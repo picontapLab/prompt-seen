@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import YAML from 'yaml';
-const root = process.cwd(),
-  base = '53cbc8ef';
+const base = '53cbc8ef';
+const locales = (process.argv.find((arg) => arg.startsWith('--locales='))?.slice('--locales='.length) ?? 'zh-Hant').split(',');
+const baselineFiles = new Set(execFileSync('git', ['ls-tree', '-r', '--name-only', base, 'content'], { encoding: 'utf8' }).trim().split('\n'));
 const files = execFileSync('git', ['diff', '--name-only', base, '--', 'content'], { encoding: 'utf8' })
   .trim()
   .split('\n')
@@ -13,7 +14,7 @@ function clean(v) {
   if (v && typeof v === 'object')
     return Object.fromEntries(
       Object.entries(v)
-        .filter(([key]) => key !== 'zh-Hant')
+        .filter(([key]) => !locales.includes(key))
         .map(([k, x]) => [k, clean(x)]),
     );
   return v;
@@ -21,6 +22,13 @@ function clean(v) {
 const exceptions = new Set(['content/media/a_116.yaml', 'content/media/a_207.yaml', 'content/media/a_231.yaml']);
 for (const file of files) {
   if (file === 'content/locales.yaml') continue;
+  if (locales.some((locale) => file.endsWith(`/locales/${locale}.mdx`))) {
+    assert.ok(fs.existsSync(file), `Unexpected deleted translation: ${file}`);
+    continue;
+  }
+  if (!baselineFiles.has(file)) {
+    assert.fail(`Unexpected new content: ${file}`);
+  }
   const previous = execFileSync('git', ['show', `${base}:${file}`], { encoding: 'utf8' }),
     current = fs.readFileSync(file, 'utf8');
   if (file.endsWith('.yaml')) {
@@ -40,7 +48,7 @@ const protectedFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', base
 })
   .trim()
   .split('\n')
-  .filter((p) => p.startsWith('public/media/') || p.endsWith('/prompt.txt') || p.endsWith('/template.txt'));
+  .filter((p) => p.startsWith('public/media/') || p.endsWith('/prompt.txt') || p.endsWith('/body.txt'));
 for (const file of process.argv.includes('--content-only') ? [] : protectedFiles)
   assert.deepEqual(
     fs.readFileSync(file),
@@ -54,6 +62,7 @@ fs.writeFileSync(
   JSON.stringify(
     {
       base,
+      locales,
       checkedAt: new Date().toISOString(),
       changedContentFiles: files.length,
       byteIdenticalProtectedFiles: process.argv.includes('--content-only') ? null : protectedFiles.length,

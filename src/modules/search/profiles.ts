@@ -159,6 +159,8 @@ const RUSSIAN_TERMS = [
   ['подборка', 'подборки', 'подборок', 'collection', 'collections'],
   ['тема', 'темы', 'topic', 'topics'],
   ['тушь', 'тушью', 'туши', 'ink'],
+  ['свадьба', 'свадьбы', 'свадебная', 'свадебный', 'свадебное', 'свадебной', 'wedding'],
+  ['два', 'две', 'двух'],
 ] as const;
 
 const RUSSIAN_PRODUCT_PHOTOGRAPHY = [
@@ -261,7 +263,16 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       koreanAliases(text) +
       (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
     );
-  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it' && language !== 'ru' && language !== 'ar') return '';
+  if (
+    language !== 'de' &&
+    language !== 'es' &&
+    language !== 'pt' &&
+    language !== 'fr' &&
+    language !== 'it' &&
+    language !== 'ru' &&
+    language !== 'ar'
+  )
+    return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));
   const compounds = profile.compounds
@@ -281,7 +292,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       return new RegExp(`(?:^|[^\\p{L}\\p{N}])${words.join('\\s+')}(?=$|[^\\p{L}\\p{N}])`, 'u').test(
         normalizeTerm(text, locale),
       );
-    if (language === 'ar' && words.length > 1) {
+    if ((language === 'ar' || language === 'ru' || language === 'fr') && words.length > 1) {
       const phrase = normalizeTerm(word, locale)
         .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
         .replace(/[ \t]+/g, '[ \\t]+');
@@ -289,7 +300,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
     }
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).
-    return (language === 'pt' || language === 'fr' || language === 'ru') && words.length > 1
+    return language === 'pt' && words.length > 1
       ? phraseText.includes(` ${words.join(' ')} `)
       : words.every((term) => terms.has(term));
   };

@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import type { LocalizationSearchCase } from './localization-search';
+
 // Frozen against the R1 source-compared pilot before checking its built index.
 // These are pilot regressions; full-corpus ranking/performance acceptance is separate.
 export const russianCorpusCases = [
@@ -26,3 +29,8 @@ export const russianCorpusCases = [
   { query: 'шаблон кампании', id: 't_017' },
   { query: 'zxqvnonexistent', id: null },
 ] as const;
+
+/** Full-corpus ranking cases from the specification, frozen before the integration fix. */
+export const russianRankingCases: LocalizationSearchCase[] = JSON.parse(
+  fs.readFileSync(new URL('../../production/localization/ru/search-cases.json', import.meta.url), 'utf8'),
+).cases;

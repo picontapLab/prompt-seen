@@ -1,0 +1,40 @@
+{
+  "reviewer": "AI Codex subagent review_traditional_chinese",
+  "reviewedAt": "2026-11-17T19:43:01.517825+00:00",
+  "verdict": "approved for local merge",
+  "remainingBlockingFindings": [],
+  "scope": [
+    "13 Traditional Chinese correction entries verified against exact final values",
+    "12 French/Italian/Russian/Arabic shared image alt corrections verified against reviewed original assets",
+    "Traditional Chinese alias dispatch and pure-kind ranking retained after cross-language merge",
+    "Field separator remains NUL and analyzer version is 8",
+    "Protected-content verifier handles added/existing explicitly selected locale MDX and rejects their deletion; body.txt protection restored"
+  ],
+  "validation": {
+    "searchTests": {
+      "files": 3,
+      "passed": 96,
+      "failed": 0,
+      "log": "/tmp/prompt-seen-language-review/zh-hant-integration-search-tests.log"
+    },
+    "protectedContent": {
+      "passed": true,
+      "contentDifferences": 2749,
+      "protectedFilesEnumerated": 2978,
+      "contentOnly": true,
+      "method": "Executed exact script with only evidence-file write replaced by no-op, imports resolved to integration dependencies",
+      "log": "/tmp/prompt-seen-language-review/zh-hant-protection-review.log"
+    }
+  },
+  "files": {
+    "src/modules/search/engine.ts": "sha256:491c46f335517ee9924eda084140efa4d2699a4071680ed59a26172ae6ac5b7f",
+    "src/modules/search/profiles.ts": "sha256:9487af8a400d7d95bf1deac12257c6afd35294247c1e9533f8da084117b35176",
+    "src/modules/search/traditional-chinese.ts": "sha256:71d2e41f65cbd18e6c1e9e68ce7373a249ed5ac6dc31d54ddb9d91e55592f045",
+    "src/modules/search/types.ts": "sha256:b1122c2e389bfbab3d558de70c9d9a1aa17376d85248fbe53f195db4114da681",
+    "production/localization/zh-Hant/verify-protected-content.mjs": "sha256:debc84a1bbd74a1257c3819d1ac8e18766b3598abd959b1518255e1034f4c182"
+  },
+  "limitations": [
+    "No build or broad browser matrix run by this reviewer; parent runs integrated checks",
+    "Manual IME/accessibility and deployment checks remain pending and are not merge blockers under clarified user scope"
+  ]
+}

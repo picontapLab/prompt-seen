@@ -35,7 +35,8 @@ describe('formatLocale', () => {
   });
 
   it('round-trips registry codes', () => {
-    for (const code of ['en', 'zh-Hans', 'zh-Hant', 'pt-BR', 'ar', 'ru']) expect(registryCode(formatLocale(code))).toBe(code);
+    for (const code of ['en', 'zh-Hans', 'zh-Hant', 'pt-BR', 'ar', 'ru'])
+      expect(registryCode(formatLocale(code))).toBe(code);
   });
   it('uses Gregorian dates and Latin digits for Traditional Chinese', () => {
     const code = formatLocale('zh-Hant');
@@ -56,14 +57,14 @@ it('formats French numbers and UTC dates with explicit Latin digits', () => {
   ).toBe('17 novembre 2026');
 });
 
-  it('uses Russian decimal punctuation and UTC calendar dates', () => {
-    expect(new Intl.NumberFormat(formatLocale('ru')).format(12345.5)).toBe('12\u00a0345,5');
-    expect(
-      new Intl.DateTimeFormat(formatLocale('ru'), {
-        timeZone: 'UTC',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      }).format(new Date('2026-11-17T00:00:00Z')),
-    ).toBe('17 ноября 2026 г.');
-  });
+it('uses Russian decimal punctuation and UTC calendar dates', () => {
+  expect(new Intl.NumberFormat(formatLocale('ru')).format(12345.5)).toBe('12\u00a0345,5');
+  expect(
+    new Intl.DateTimeFormat(formatLocale('ru'), {
+      timeZone: 'UTC',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(new Date('2026-11-17T00:00:00Z')),
+  ).toBe('17 ноября 2026 г.');
+});

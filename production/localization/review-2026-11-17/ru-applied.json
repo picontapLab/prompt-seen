@@ -1,0 +1,148 @@
+[
+  {
+    "file": "content/prompts/p_138/locales/ru.mdx",
+    "old": "Загрузите одну старую фотографию. Наш исходник — синтетически состаренная фотография, а не настоящий семейный архив.",
+    "new": "Загрузите одну старую фотографию. Наш исходник — сгенерированная фотография с эффектом старины, а не снимок из настоящего семейного архива.",
+    "reason": "P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated."
+  },
+  {
+    "key": "content/prompts/p_138/entry.yaml#inputRequirements.instructions",
+    "file": "content/prompts/p_138/entry.yaml",
+    "targetField": [
+      "inputRequirements",
+      "instructions",
+      "ru"
+    ],
+    "old": "Загрузите одну старую фотографию. Наш исходник — синтетически состаренная фотография, а не настоящий семейный архив.",
+    "new": "Загрузите одну старую фотографию. Наш исходник — сгенерированная фотография с эффектом старины, а не снимок из настоящего семейного архива.",
+    "reason": "P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated."
+  },
+  {
+    "key": "content/prompts/p_277/entry.yaml#annotations.1.note",
+    "file": "content/prompts/p_277/entry.yaml",
+    "targetField": [
+      "annotations",
+      1,
+      "note",
+      "ru"
+    ],
+    "old": "Крупный шрифт с засечками придаёт заголовку газетный характер.",
+    "new": "Жирный шрифт с засечками придаёт заголовку газетный характер.",
+    "reason": "P2 typography: source Bold serif type describes weight, whereas Крупный describes size. Preserve the distinction."
+  },
+  {
+    "key": "content/templates/t_003/versions/v1/fields.yaml#fields.0.help",
+    "file": "content/templates/t_003/versions/v1/fields.yaml",
+    "targetField": [
+      "fields",
+      0,
+      "help",
+      "ru"
+    ],
+    "old": "Кто это и одна поза, например «танцор в середине поворота».",
+    "new": "Опишите персонажа и одну позу, например «танцор во время поворота».",
+    "reason": "P3 natural instruction: replace the fragmentary literal Who it is and one pose with a grammatical polite Russian instruction."
+  },
+  {
+    "file": "content/prompts/p_135/locales/ru.mdx",
+    "old": "Загрузите одну фотографию питомца и выберите взрослый возрастной диапазон и характер. Питомец в примере синтетический.",
+    "new": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+    "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+  },
+  {
+    "file": "content/templates/t_025/locales/ru.mdx",
+    "old": "Загрузите одну фотографию питомца и выберите взрослый возрастной диапазон и характер. Питомец в примере синтетический.",
+    "new": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+    "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+  },
+  {
+    "key": "content/templates/t_025/versions/v1/inputs.yaml#instructions",
+    "file": "content/templates/t_025/versions/v1/inputs.yaml",
+    "targetField": [
+      "instructions",
+      "ru"
+    ],
+    "old": "Загрузите одну фотографию питомца и выберите взрослый возрастной диапазон и характер. Питомец в примере синтетический.",
+    "new": "Загрузите одну фотографию питомца, выберите возрастную группу взрослого персонажа и его характер. Изображение питомца в примере сгенерировано.",
+    "reason": "P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image."
+  },
+  {
+    "file": "content/prompts/p_148/locales/ru.mdx",
+    "old": "Загрузите один портрет и ровно девять коротких поздравлений. Наш человек синтетический.",
+    "new": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+    "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+  },
+  {
+    "file": "content/templates/t_032/locales/ru.mdx",
+    "old": "Загрузите один портрет и ровно девять коротких поздравлений. Наш человек синтетический.",
+    "new": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+    "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+  },
+  {
+    "key": "content/templates/t_032/versions/v1/inputs.yaml#instructions",
+    "file": "content/templates/t_032/versions/v1/inputs.yaml",
+    "targetField": [
+      "instructions",
+      "ru"
+    ],
+    "old": "Загрузите один портрет и ровно девять коротких поздравлений. Наш человек синтетический.",
+    "new": "Загрузите один портрет и ровно девять коротких поздравлений. Изображение человека в нашем примере сгенерировано.",
+    "reason": "P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person."
+  },
+  {
+    "file": "content/prompts/p_141/locales/ru.mdx",
+    "old": "Загрузите одну фотографию действия и задайте короткое слово прописными буквами и цвет фона.",
+    "new": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+    "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+  },
+  {
+    "file": "content/templates/t_027/locales/ru.mdx",
+    "old": "Загрузите одну фотографию действия и задайте короткое слово прописными буквами и цвет фона.",
+    "new": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+    "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+  },
+  {
+    "key": "content/templates/t_027/versions/v1/inputs.yaml#instructions",
+    "file": "content/templates/t_027/versions/v1/inputs.yaml",
+    "targetField": [
+      "instructions",
+      "ru"
+    ],
+    "old": "Загрузите одну фотографию действия и задайте короткое слово прописными буквами и цвет фона.",
+    "new": "Загрузите одну фотографию, запечатлевшую движение, и задайте короткое слово прописными буквами и цвет фона.",
+    "reason": "P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion."
+  },
+  {
+    "key": "content/media/a_116.yaml#alt",
+    "file": "content/media/a_116.yaml",
+    "targetField": [
+      "alt",
+      "ru"
+    ],
+    "old": "Пять серых стеблей бамбука и летящие листья на бумаге тёплого оттенка, с красной печатью внизу справа.",
+    "new": "Серые стебли бамбука и летящие листья на бумаге тёплого оттенка, с красной печатью внизу справа.",
+    "reason": "已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。"
+  },
+  {
+    "key": "content/media/a_207.yaml#alt",
+    "file": "content/media/a_207.yaml",
+    "targetField": [
+      "alt",
+      "ru"
+    ],
+    "old": "Реалистичные лимонад и рука сочетаются с игривыми чёрными рисунками тушью: пловцами, пузырьками и улыбающимся лимоном.",
+    "new": "Реалистично изображённая рука держит стакан лимонада; композицию дополняют забавный пловец, нарисованный чёрной тушью, пузырьки и улыбающийся ломтик лимона.",
+    "reason": "已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。"
+  },
+  {
+    "key": "content/media/a_231.yaml#alt",
+    "file": "content/media/a_231.yaml",
+    "targetField": [
+      "alt",
+      "ru"
+    ],
+    "old": "Силуэт",
+    "new": "Чёрно-белый портрет анфас человека с длинными волнистыми волосами.",
+    "reason": "已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。"
+  }
+]

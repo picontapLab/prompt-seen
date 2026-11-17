@@ -70,20 +70,22 @@ describe('production release gate', () => {
   it('fails closed with no CI history', async () => {
     await expect(checkRelease(fixture({ [runsPath]: { workflow_runs: [] } }))).rejects.toThrow('successful push CI');
   });
-  it.each(['secrets', 'build-and-test (subpath, webkit)', 'build-and-test (subpath-production, webkit)', 'build-and-test (subpath-production, chromium)'])(
-    'requires %s to pass even if the workflow reports success',
-    async (name) => {
-      await expect(
-        checkRelease(
-          fixture({
-            'actions/runs/10/jobs?filter=latest&per_page=100&page=1': {
-              jobs: requiredJobs.filter((job) => job !== name).map((job) => ({ name: job, conclusion: 'success' })),
-            },
-          }),
-        ),
-      ).rejects.toThrow(name);
-    },
-  );
+  it.each([
+    'secrets',
+    'build-and-test (subpath, webkit)',
+    'build-and-test (subpath-production, webkit)',
+    'build-and-test (subpath-production, chromium)',
+  ])('requires %s to pass even if the workflow reports success', async (name) => {
+    await expect(
+      checkRelease(
+        fixture({
+          'actions/runs/10/jobs?filter=latest&per_page=100&page=1': {
+            jobs: requiredJobs.filter((job) => job !== name).map((job) => ({ name: job, conclusion: 'success' })),
+          },
+        }),
+      ),
+    ).rejects.toThrow(name);
+  });
   it.each(['behind', 'diverged'])('rejects a %s main after a force push', async (status) => {
     await expect(checkRelease(fixture({ [`compare/${liveSha}...${sha}`]: { status } }))).rejects.toThrow(
       'Use Rollback',

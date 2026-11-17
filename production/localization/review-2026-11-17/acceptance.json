@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-17T19:48:39.782469+00:00",
+  "baseline": "53cbc8efce854f8f067acef8372daf49be82f9c3",
+  "state": "reviewed-integration-candidate",
+  "locales": [
+    "ar",
+    "fr",
+    "it",
+    "ru",
+    "zh-Hant"
+  ],
+  "mergeAuthorization": "User explicitly accepts independent AI subagent review for merging every locale; pending human acceptance and deployment are recorded separately.",
+  "registry": "All five candidates enabled with complete/fingerprint/source-only; not a deployment claim.",
+  "translationReplacements": {
+    "ar": 5,
+    "fr": 100,
+    "it": 119,
+    "ru": 16,
+    "zh-Hant": 13
+  },
+  "checks": {
+    "contentValidation": "passed: 0 errors, 0 publish errors, 10 existing zh-Hans warnings",
+    "typecheck": "passed",
+    "unitTests": {
+      "files": 76,
+      "passed": 851,
+      "failed": 0
+    },
+    "lint": "passed",
+    "format": "passed",
+    "tokens": "passed",
+    "protectedContent": "2749 content differences checked; original Prompt/template bodies and media have no Git differences"
+  },
+  "matrices": [],
+  "deployed": false,
+  "pushed": false,
+  "pending": [
+    "Human native-language and assistive-technology acceptance where required by the original specifications",
+    "Native browser 200% zoom and real OS input-method acceptance",
+    "Remote CI",
+    "Production deployment, live build-ID verification and rollback target"
+  ],
+  "earlierEvidence": "Per-locale acceptance records describe their original separate candidates. Only this report and its logs describe the combined corrected candidate."
+}

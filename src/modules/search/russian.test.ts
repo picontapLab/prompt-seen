@@ -57,7 +57,13 @@ describe('Russian controlled aliases', () => {
     for (const text of ['предметная съёмка', 'предметной съёмки', 'product photography']) {
       expect(domainAliases(text, 'ru')).toContain('packshot');
     }
-    for (const text of ['портретная фотография', 'предметная композиция, затем съёмка', 'модель ИИ']) {
+    for (const text of [
+      'портретная фотография',
+      'предметная композиция, затем съёмка',
+      'предметная. Съёмка',
+      'предметная\nсъёмка',
+      'модель ИИ',
+    ]) {
       expect(domainAliases(text, 'ru', 'prompt')).not.toContain('packshot');
       expect(domainAliases(text, 'ru', 'prompt')).not.toContain('шаблон');
     }

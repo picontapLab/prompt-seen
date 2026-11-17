@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "locale": "ru",
+  "frozenBeforeFix": true,
+  "source": "Russian spec §7.3; existing pilot existence cases remain separately unchanged.",
+  "cases": [
+    {
+      "query": "неоновый портрет",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "НЕОНОВЫЙ ПОРТРЕТ",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "неоновый портрет",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "неонового портрета",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "neon portrait",
+      "expectedKeys": [
+        "prompt/p_005"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "портрет обложка",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "свадьба два человека",
+      "expectedKeys": [
+        "prompt/p_115"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "предметная съёмка студия",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "предметная съемка студия",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "предметная съёмка студия",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "предметной съёмки студия",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "packshot studio",
+      "expectedKeys": [
+        "prompt/p_151"
+      ],
+      "topK": 5,
+      "excludedKeys": [
+        "prompt/p_115"
+      ]
+    },
+    {
+      "query": "постер Фудзи",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "плакат Фудзи",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "шаблон постера",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "шаблоны постеров",
+      "expectedKeys": [
+        "template/t_001"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "шаблон тушь",
+      "expectedKeys": [
+        "template/t_002"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "обезьяна фонарь",
+      "expectedKeys": [
+        "prompt/p_224"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "GPT Image p_111",
+      "expectedKeys": [
+        "prompt/p_111"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "p_217",
+      "expectedKeys": [
+        "prompt/p_217"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "подборка постеров",
+      "expectedKeys": [
+        "collection/c_001"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "тема тушь",
+      "expectedKeys": [
+        "topic/style/ink"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "Фудзи собранный GIF",
+      "expectedKeys": [
+        "prompt/p_290"
+      ],
+      "topK": 5
+    },
+    {
+      "query": "zxqvnonexistent",
+      "expectedKeys": [],
+      "topK": 5,
+      "expectedTotal": 0
+    }
+  ]
+}

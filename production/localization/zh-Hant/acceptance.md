@@ -1,5 +1,7 @@
 # 繁体中文实施与验收
 
+> Integration update (2026-11-17): the corrected combined candidate is enabled and independently AI-reviewed. See [integration acceptance](../review-2026-11-17/acceptance.json) for current results. The original candidate results below are historical; human acceptance and deployment remain pending.
+
 全量内容已完成、经三个独立 AI subagent 审阅并导入。工作分支 `codex/traditional-chinese-localization`，工程基线 `53cbc8ef`。注册表已设为 `enabled: true / preview: true`，策略为 `complete / fingerprint / source-only`。这是本地生产候选，未提交、未部署。
 
 ## 内容完成度

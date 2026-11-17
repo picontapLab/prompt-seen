@@ -38,7 +38,7 @@ beforeAll(() => {
     analyzerVersion: SEARCH_ANALYZER_VERSION,
     buildId: 'italian-acceptance',
     locale: 'it',
-    counts: content.manifest.counts.de!,
+    counts: content.manifest.counts.it!,
     popular: [],
     terms: suggestTerms(content.locales.get('it')!),
     index: JSON.parse(JSON.stringify(createIndex(documents, 'it'))),

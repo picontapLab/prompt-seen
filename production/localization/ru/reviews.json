@@ -28738,6 +28738,150 @@
       "completedAt": "2026-11-17T15:32:52.727Z",
       "conclusion": "approved",
       "reason": "Independent source/target and ICU parameter review, bound to subagent-ui-review.json: templates.tokens.removed"
+    },
+    {
+      "key": "prompt/p_138",
+      "sourceHash": "sha256:39797f8e54474ff3ac657c6fdd77f7676be5b7c483b38beeb25ee947086d8d2b",
+      "targetHash": "sha256:2d93d93f293cd10315da49a65c71a1a3839acab5fe0942df7b17b2d2ce0ef6a3",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:c2161333a53c3dd43e8d22298f39aa5b488bd373a0eb63e05028d3e600854c27",
+      "targetHash": "sha256:7d89135e651bec390dc88fb6b0e6240a5f06c5524daed0ae19eda626990cf65f",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P2 semantic/provenance: synthetic aged photograph is a generated image made to look old. The current translation only says the photograph was artificially aged, losing that the image itself was generated. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/prompts/p_277/entry.yaml#annotations.1.note",
+      "sourceHash": "sha256:b87a769a1043c2fc1d18db1662a0eceae7c3724c2a8aece468fe98542ac99ed5",
+      "targetHash": "sha256:6d6767632b0751accd03c059f86c832d5bb70446bce6a62f2d8b5d24e9d82095",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P2 typography: source Bold serif type describes weight, whereas Крупный describes size. Preserve the distinction. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/templates/t_003/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:17561c2f1ee5497d9cc53c81e1d54bf3a0a36e27d67477b4025ef02c9a868b16",
+      "targetHash": "sha256:8422b5bd89e82bbcae32fd19925eb2708e2b73366f721947fa530b4e519b49c7",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural instruction: replace the fragmentary literal Who it is and one pose with a grammatical polite Russian instruction. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "prompt/p_135",
+      "sourceHash": "sha256:8bb5c2e704491a1ae76da937b0f8876d9cff3e0d7cdbb7461712d93b440086ea",
+      "targetHash": "sha256:6142d7caed102473de2795fe47096afc9c2bf9d53fe749dd0fdd482f590348d0",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "template/t_025",
+      "sourceHash": "sha256:280e29a5e81554442ec1c97df98887188e4851ac5418d38fd000ab10665a3eb0",
+      "targetHash": "sha256:c49ee73bac1c9633fa0c906351860a276e4acac21232181d88b94e938f082d70",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/templates/t_025/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:a7c18a8efdc7403aaee1f403b4a54a7aef4e245668b07b2ebebc8f03108fec7d",
+      "targetHash": "sha256:1adfd39fae18814b215fe10e896ceea32f3dc031b90f39b88dfc4256cfcc6847",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian and clear reference: взрослый возрастной диапазон is awkward, while синтетический питомец sounds like an artificial animal. The source describes the adult human age range and the generated pet reference image. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "prompt/p_148",
+      "sourceHash": "sha256:18eb60d364c017d583b5f93fd8badf5ecf5a0449c1c3333dcf5f3d4f89761f7e",
+      "targetHash": "sha256:d4922ffe6ba0d66cf5ff0653285d97fbb69e23697aedbb063e1d13acc22c5cef",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "template/t_032",
+      "sourceHash": "sha256:19db9f211f9004a203ff6744a260cbc6c8e8e702e28984c12fb148664b51c79b",
+      "targetHash": "sha256:9c4c1546ad1bad9314b33fd24fd2cc3cfa7e7dbea7f05759ff27d9ff4f5fa6fd",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/templates/t_032/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:18d314aa29dffd3506619ca25f302def731868b65ccbc63d2ee03806fbb4ff0b",
+      "targetHash": "sha256:9853514fa20a1afe0723c001c5334eade6d8698e9824bc88a2d03b374ebb1fbf",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural Russian: Наш человек синтетический suggests a synthetic human; explicitly describe the generated example image without implying a real person. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "prompt/p_141",
+      "sourceHash": "sha256:5f179e83357ca49270a1d7c442181b47f89d94715414d864be0be3e4fe40c062",
+      "targetHash": "sha256:fbbaac555e7be86e6e21d32289172cbf37e68e5edf661e22963a2d07d6b61eda",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "template/t_027",
+      "sourceHash": "sha256:1fb9fe2bc139b5bdea5818170352872a9ba8ac7b695e2223c53a1df02f6378c0",
+      "targetHash": "sha256:077393cb1f4e2ae7208c2ac67435189d37a88a2c58fccf9ee25d31a8b2135838",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/templates/t_027/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:02a353262a39e3cfea94472351640e23d0831b153499b429bf0b581d3a41902c",
+      "targetHash": "sha256:99326de013b1dbc6af59aadc18d35d1b0cc9fe3291685739622b0d5415dddbf2",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: P3 natural domain wording: фотография действия is an English calque for action photograph; describe a photograph capturing motion. See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_116.yaml#alt",
+      "sourceHash": "sha256:aab0f0e1c978e98ba9bc1d5004221f60d72513ad4ee8190a2962ed01bd59e3f5",
+      "targetHash": "sha256:3c9f5a5be13216f9fc1dd2ea8d8d0ac7d18c2f727eac015516608117a9529825",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：灰色竹竿、飘落竹叶、暖色纸面与右下红印符合修正英文；可见竹竿并非明确只有五根，因此去掉旧译文的“五”。法/意/阿同时明确 warm 指色调而不是纸张温度。 See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_207.yaml#alt",
+      "sourceHash": "sha256:dd3d468dc2031e5b782c1e662502edc1d432c662598e291e2ca6769efe07b292",
+      "targetHash": "sha256:fe18f91394c95a1375b3b4565aed4a5f8886da1c730b9d5175c10891ec78dbcb",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：写实的手握着玻璃杯，杯内只有一个黑色墨线泳者；杯缘是微笑的柠檬切片，不是整颗柠檬。修正旧译文的复数泳者和整颗柠檬，保留气泡与趣味绘画效果。 See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
+    },
+    {
+      "key": "content/media/a_231.yaml#alt",
+      "sourceHash": "sha256:5e717271a985513cde361d4caaa1b4154f93b368ec50882bf5bf81f20261d4d9",
+      "targetHash": "sha256:82f9f9d64c5ea6ab41fad86b2e568c151c378764105e725aad67493bf1d971ec",
+      "reviewer": "Codex AI root, following independent language subagent review",
+      "completedAt": "2026-11-17T19:35:05.227Z",
+      "conclusion": "approved",
+      "reason": "Integration review: 已实际查看原始图片：有清楚五官的正面黑白人物肖像，长发呈波浪状，并非只有人物轮廓的剪影。以修正英文的中性人物表述翻译，不推断身份。 See production/localization/review-2026-11-17/ru-applied.json. These are AI reviews, not human/native-speaker signoff."
     }
   ]
 }

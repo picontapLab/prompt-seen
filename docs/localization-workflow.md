@@ -5,13 +5,17 @@ The locale registry is the only policy source. Each registered language declares
 `fingerprint`) and `promptBodies` (`optional` or `source-only`). Complete coverage
 requires fingerprint review. `enabled` and `preview` retain their existing meaning.
 
-English and Simplified Chinese use incremental metadata review. Japanese, German and
-Spanish use complete fingerprint review and original Prompt bodies. The production
-candidate registry enables `en`, `zh-Hans`, `es`, `ja` and `de`; preview also includes
-Arabic for RTL checks. New public content must satisfy all three complete-language
-gates before apply. Other registered locales use incremental fingerprint review.
-Registry enablement alone is not deployment evidence; Spanish release results are
-recorded in `production/localization/es/production-acceptance.json`.
+English and Simplified Chinese use incremental metadata review. Spanish, Brazilian
+Portuguese, Japanese, Korean, German, French, Russian, Traditional Chinese, Italian
+and Arabic use complete fingerprint review and original Prompt bodies. All twelve
+locales are enabled in the reviewed integration candidate. New public content must
+satisfy every enabled complete-language gate before apply.
+
+Registry enablement describes the source candidate, not a deployment. The combined
+2026-11-17 review, corrections and acceptance results are recorded in
+`production/localization/review-2026-11-17/acceptance.json`. The user authorized AI
+subagent review as the merge criterion; pending human and live-site checks remain
+explicitly separate from the local merge.
 
 ## Inspect and record scope
 
