@@ -30,6 +30,8 @@ inputRequirements:
     es: Sube una imagen clara de un muñeco de nieve. Este ejemplo usa uno generado
       por Prompt Seen.
     ko: 선명한 눈사람 이미지 한 장을 업로드하세요. 이 예시는 Prompt Seen에서 생성한 눈사람을 사용합니다.
+    fr: Importez une image nette de bonhomme de neige. Cet exemple utilise un
+      bonhomme de neige généré par Prompt Seen.
   slots:
     - id: snowman
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Referência gerada pelo projeto
         es: Referencia generada por el proyecto
         ko: 프로젝트에서 생성한 참조 이미지
+        fr: Référence générée pour le projet
       min: 1
       max: 1
 showcaseExampleId: x_303
@@ -61,6 +64,7 @@ inspirationSources:
       pt-BR: Publicação ou galeria original inteira, não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
+      fr: Publication ou galerie originale entière ; pas cet exemple généré
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -71,9 +75,11 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo de uma cópia salva da
         publicação ou resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de
-        la publicación o respuesta del autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la
+        publicación o respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
+      fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de
+        la publication ou réponse de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118193088128745875&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -83,6 +89,7 @@ inspirationSources:
       pt-BR: Texto completo do autor, no idioma original
       es: Texto completo del autor, idioma original
       ko: 작성자의 전체 원문, 원래 언어
+      fr: Texte complet de l’auteur, langue originale
     metrics:
       - key: likes
         value: 62
@@ -94,6 +101,7 @@ inspirationSources:
           pt-BR: Curtidas da publicação de origem
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
+          fr: Mentions J’aime de la publication source
 source:
   author: Goodmanprotocol
   url: https://x.com/Goodmanprotocol/status/2118193088128745875

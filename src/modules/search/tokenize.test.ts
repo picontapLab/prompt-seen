@@ -81,3 +81,58 @@ describe('positions', () => {
     expect(spans('éx', 'fr')).toEqual([{ term: 'ex', start: 0, end: 3 }]);
   });
 });
+
+describe('French words and original highlight positions', () => {
+  it.each(['éclairage', 'eclairage', 'ÉCLAIRAGE', 'e\u0301clairage', 'l’éclairage', "l'eclairage"])(
+    'finds the same core term for %s',
+    (text) => {
+      expect(queryTerms(text, 'fr')).toEqual(['eclairage']);
+      expect(tokenize(text, 'fr')).toEqual(['eclairage']);
+    },
+  );
+  it.each(['œuvre', 'ŒUVRE', 'oeuvre'])('folds the ligature in %s', (text) => {
+    expect(queryTerms(text, 'fr')).toEqual(['oeuvre']);
+  });
+  it('folds both ligatures without changing original UTF-16 ranges', () => {
+    const text = '🖼 L’œuvre, cœur, Æ et e\u0301clairage';
+    const parts = spans(text, 'fr');
+    expect(parts.map((span) => text.slice(span.start, span.end))).toEqual([
+      'œuvre',
+      'cœur',
+      'Æ',
+      'et',
+      'e\u0301clairage',
+    ]);
+    expect(parts.map((span) => span.term)).toEqual(['oeuvre', 'coeur', 'ae', 'et', 'eclairage']);
+    expect(parts[0]).toEqual({ term: 'oeuvre', start: 5, end: 10 });
+  });
+  it('removes complete elision prefixes only when touching an apostrophe and a word', () => {
+    for (const prefix of ['c', 'd', 'j', 'l', 'm', 'n', 's', 't', 'qu']) {
+      expect(queryTerms(`${prefix}’image`, 'fr')).toEqual(['image']);
+      expect(queryTerms(`${prefix.toUpperCase()}'image`, 'fr-FR')).toEqual(['image']);
+      expect(queryTerms(`${prefix}' image`, 'fr')).toEqual([prefix, 'image']);
+    }
+    expect(queryTerms('l d qu', 'fr')).toEqual(['l', 'd', 'qu']);
+    expect(queryTerms('rock’n’roll aujourd’hui d’une image', 'fr')).toEqual([
+      'rock',
+      'roll',
+      'aujourd',
+      'hui',
+      'une',
+      'image',
+    ]);
+    expect(queryTerms("l’🖼 qu'", 'fr')).toEqual(['l', 'qu']);
+  });
+  it('treats hyphens and both French non-breaking spaces as separators', () => {
+    expect(queryTerms('arc-en-ciel arrière-plan', 'fr')).toEqual(queryTerms('arc en ciel arriere plan', 'fr'));
+    expect(queryTerms('1\u00a0000 1\u202f000', 'fr')).toEqual(['1', '000']);
+    expect(spans('1\u202f000', 'fr')).toEqual([
+      { term: '1', start: 0, end: 1 },
+      { term: '000', start: 2, end: 5 },
+    ]);
+  });
+  it('leaves other languages and model identifiers unchanged', () => {
+    expect(queryTerms('l’œuvre cœur æ', 'en')).toEqual(['l', 'œuvre', 'cœur', 'æ']);
+    expect(queryTerms('GPT Image p_111', 'fr')).toEqual(['gpt', 'image', 'p', '111']);
+  });
+});

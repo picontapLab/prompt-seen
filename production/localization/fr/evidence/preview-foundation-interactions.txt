@@ -1,0 +1,433 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker processes
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/17 15:11:22 [notice] 1#1: start worker process 29
+
+Running 43 tests using 2 workers
+
+(node:94423) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:94422) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 1024px light: French popup, copy and favorites form one browsing flow (1.9s)
+  ✓   3 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px dark: French sorting and filters preserve readable controls and matching results (2.8s)
+  ✓   4 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px dark: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓   5 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 1024px dark: French popup, copy and favorites form one browsing flow (1.6s)
+  ✓   6 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px light: French sorting and filters preserve readable controls and matching results (2.8s)
+  ✓   7 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px light: translated template fields keep edited preview, copy and download identical (1.2s)
+  ✓   8 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 1440px light: French popup, copy and favorites form one browsing flow (1.6s)
+  ✘   1 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit (12.6s)
+(node:94523) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px dark: French sorting and filters preserve readable controls and matching results (2.8s)
+  ✓  11 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px dark: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓  12 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 1440px dark: French popup, copy and favorites form one browsing flow (1.7s)
+  ✓  13 [chromium] › tests/e2e/french-interactions.browser.spec.ts:215:5 › reviewed French pilot samples › French template reflows at the 720 CSS-pixel viewport of a 1440px display zoomed to 200% (1.5s)
+  ✓  14 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-FR › 360px: recommends a built French option without redirecting (1.3s)
+  ✓  15 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-FR › 1440px: recommends a built French option without redirecting (988ms)
+  ✓  16 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-CA › 360px: recommends a built French option without redirecting (1.3s)
+  ✓  17 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-CA › 1440px: recommends a built French option without redirecting (985ms)
+  ✓  18 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-BE › 360px: recommends a built French option without redirecting (1.3s)
+  ✘  10 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit (12.4s)
+  ✓  19 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-BE › 1440px: recommends a built French option without redirecting (1.0s)
+(node:94560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-CH › 360px: recommends a built French option without redirecting (1.3s)
+  ✓  22 [chromium] › tests/e2e/french-interactions.browser.spec.ts:239:9 › French browser preference fr-CH › 1440px: recommends a built French option without redirecting (1.0s)
+  ✓  23 [chromium] › tests/e2e/french-interactions.browser.spec.ts:273:5 › French search interaction and original Prompt text › quick search and search page agree after rapid input, with indexes loaded on demand (2.4s)
+  ✓  24 [chromium] › tests/e2e/french-interactions.browser.spec.ts:311:5 › French search interaction and original Prompt text › searches original Chinese text and offers a Chinese title after an empty French search (1.3s)
+  ✘  21 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit (12.6s)
+(node:94904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  25 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit (12.3s)
+(node:94972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  26 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit (12.0s)
+(node:95025) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  27 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit (12.1s)
+(node:95105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  28 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit (12.1s)
+(node:95130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  29 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit (12.1s)
+(node:95238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  30 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px light: French sorting and filters preserve readable controls and matching results (2.8s)
+  ✓  31 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px light: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓  32 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 360px light: French popup, copy and favorites form one browsing flow (1.5s)
+  ✓  33 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px dark: French sorting and filters preserve readable controls and matching results (2.7s)
+  ✓  34 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px dark: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓  35 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 360px dark: French popup, copy and favorites form one browsing flow (1.5s)
+  ✓  36 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px light: French sorting and filters preserve readable controls and matching results (2.7s)
+  ✓  37 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px light: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓  38 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 768px light: French popup, copy and favorites form one browsing flow (1.6s)
+  ✓  39 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px dark: French sorting and filters preserve readable controls and matching results (2.7s)
+  ✓  40 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px dark: translated template fields keep edited preview, copy and download identical (1.3s)
+  ✓  41 [chromium] › tests/e2e/french-interactions.browser.spec.ts:164:9 › reviewed French pilot samples › 768px dark: French popup, copy and favorites form one browsing flow (1.6s)
+  ✓  42 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px light: French sorting and filters preserve readable controls and matching results (3.1s)
+  ✓  43 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px light: translated template fields keep edited preview, copy and download identical (1.2s)
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 27#27: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 20#20: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 21#21: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 22#22: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 20#20: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 27#27: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 21#21: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 22#22: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 23#23: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 24#24: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 23#23: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 24#24: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 28#28: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 26#26: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 25#25: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 28#28: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 29#29: exiting
+[WebServer] 2026/11/17 15:13:39 [notice] 25#25: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 26#26: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 29#29: exit
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/17 15:13:39 [notice] 1#1: exit
+
+
+  1) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-8f9e4-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-8f9e4-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-8f9e4-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-8f9e4-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-e1fcc-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-e1fcc-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-e1fcc-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-e1fcc-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-32519-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-32519-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-32519-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-32519-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-f0287-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-f0287-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-f0287-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-f0287-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-55753-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-55753-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-55753-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-55753-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-5a561-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-5a561-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-5a561-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-5a561-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-704a5-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-704a5-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-704a5-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-704a5-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }) with timeout 5000ms
+      - waiting for locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' })
+
+
+      57 |               await expect(
+      58 |                 page.locator('[data-group="prompt"] li').filter({ hasText: 'Boîte de thé sur fond sauge' }),
+    > 59 |               ).toBeVisible();
+         |                 ^
+      60 |               await page.locator('[data-group="prompt"] li a').first().hover();
+      61 |             }
+      62 |             await openPreview(page);
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-interactions.browser.spec.ts:59:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-6add8-scriptions-and-controls-fit-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-interactions.browse-6add8-scriptions-and-controls-fit-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-interactions.browse-6add8-scriptions-and-controls-fit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-interactions.browse-6add8-scriptions-and-controls-fit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit 
+    [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit 
+  35 passed (2.3m)

@@ -1,0 +1,48 @@
+{
+  "open": "Rechercher",
+  "tooltip": "Rechercher ({key})",
+  "panel": {
+    "label": "Recherche",
+    "field": "Rechercher des prompts et des modèles",
+    "placeholder": "Rechercher des prompts, des modèles, des styles…",
+    "close": "Fermer la recherche",
+    "recent": "Recherches récentes",
+    "clearRecent": "Effacer les recherches récentes",
+    "popular": "Usages populaires",
+    "seeAll": "{count, plural, =0 {Voir les résultats} one {Voir le résultat} other {Voir les # résultats}}",
+    "openSearchPage": "Ouvrir la page de recherche",
+    "loading": "Chargement de la recherche…",
+    "keys": "↑ ↓ pour choisir · Entrée pour ouvrir · Échap pour fermer"
+  },
+  "groups": {
+    "prompt": "Prompts",
+    "template": "Modèles",
+    "collection": "Collections",
+    "topic": "Thèmes"
+  },
+  "count": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}}",
+  "error": {
+    "body": "La recherche n’a pas pu être chargée. Les listes et les liens restent utilisables.",
+    "stale": "Le site a été mis à jour pendant que cette page était ouverte. Rechargez-la pour rechercher dans la nouvelle version.",
+    "retry": "Réessayer",
+    "reload": "Recharger"
+  },
+  "page": {
+    "documentTitle": "Rechercher des prompts et des modèles",
+    "title": "Recherche",
+    "description": "Recherchez des prompts d’image et des modèles testés par titre, usage, style et texte du prompt.",
+    "intro": "La recherche porte sur les titres, les usages, les styles, les modèles d’IA et le texte des prompts.",
+    "summary": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}} pour « {query} »",
+    "updating": "Mise à jour des résultats…",
+    "more": "{shown} sur {total} affichés"
+  },
+  "noResults": {
+    "title": "Aucun résultat pour « {query} »",
+    "broader": "Essayez avec moins de mots",
+    "terms": "Libellés associés",
+    "otherLocales": "Dans d’autres langues",
+    "otherLocale": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}} dans le contenu en {language}",
+    "suggestion": "{label} ({count})",
+    "browse": "Parcourir tous les prompts"
+  }
+}

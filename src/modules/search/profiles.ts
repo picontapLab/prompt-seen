@@ -95,8 +95,40 @@ const PORTUGUESE_KINDS: Record<SearchKind, string> = {
   topic: 'tema',
 };
 
+const FRENCH_TERMS = [
+  ['affiche', 'poster'],
+  ['autocollant', 'sticker'],
+  ['éclairage', 'lighting'],
+  ['portrait', 'portraits'],
+  ['modèle de prompt', 'gabarit', 'template'],
+] as const;
+
+const FRENCH_PRODUCT_PHOTOGRAPHY = [
+  'photographie de produit',
+  'photographie de produits',
+  'photo de produit',
+  'photo de produits',
+  'photos de produits',
+  'packshot',
+  'product photography',
+] as const;
+
+const FRENCH_KINDS: Record<SearchKind, string> = {
+  prompt: 'prompt',
+  template: 'modèle de prompt gabarit template',
+  collection: 'collection',
+  topic: 'thème',
+};
+
 // Each language uses the same low-weight expansion contract; only vocabulary differs.
 const PROFILES = {
+  fr: {
+    terms: FRENCH_TERMS,
+    compounds: [],
+    kinds: FRENCH_KINDS,
+    productPhotography: FRENCH_PRODUCT_PHOTOGRAPHY,
+    photography: 'photographie',
+  },
   pt: {
     terms: PORTUGUESE_TERMS,
     compounds: [],
@@ -127,7 +159,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       koreanAliases(text) +
       (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
     );
-  if (language !== 'de' && language !== 'es' && language !== 'pt') return '';
+  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr') return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));
   const compounds = profile.compounds
@@ -140,10 +172,11 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
     // Separate mentions of «primer plano» and «fondo urbano» do not describe a city map.
     if (language === 'es' && word === 'plano urbano')
       return /(?:^|[^\p{L}\p{N}])plano[ \t]+urbano(?=$|[^\p{L}\p{N}])/u.test(normalizeTerm(text, locale));
-    const words = queryTerms(word, locale);
+    // Preserve repeated words in contiguous French phrases, without synthetic kind tokens.
+    const words = language === 'fr' ? tokenize(word, locale) : queryTerms(word, locale);
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).
-    return language === 'pt' && words.length > 1
+    return (language === 'pt' || language === 'fr') && words.length > 1
       ? phraseText.includes(` ${words.join(' ')} `)
       : words.every((term) => terms.has(term));
   };

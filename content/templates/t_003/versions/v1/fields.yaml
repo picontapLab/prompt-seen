@@ -12,6 +12,7 @@ fields:
       pt-BR: Personagem
       es: Personaje
       ko: 캐릭터
+      fr: Personnage
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -21,6 +22,8 @@ fields:
       pt-BR: Quem é e uma pose, como “uma pessoa dançando durante um giro”.
       es: Quién es y una pose, por ejemplo «una persona que baila en pleno giro».
       ko: "누구인지와 자세 하나를 적으세요. 예: “회전 중인 무용수”."
+      fr: Indiquez qui est le sujet et une pose, par exemple « un danseur en pleine
+        rotation ».
   - name: rimLight
     type: enum
     required: true
@@ -34,6 +37,7 @@ fields:
       pt-BR: Luz de contorno
       es: Luz de contorno
       ko: 윤곽광
+      fr: Éclairage de contour
     options:
       - value: cyan and magenta
         swatch:
@@ -47,6 +51,7 @@ fields:
           pt-BR: Ciano e magenta
           es: Cian y magenta
           ko: 청록색과 마젠타색
+          fr: Cyan et magenta
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -59,6 +64,7 @@ fields:
           pt-BR: Âmbar e verde-azulado
           es: Ámbar y verde azulado
           ko: 호박색과 청록색
+          fr: Ambre et sarcelle
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -71,6 +77,7 @@ fields:
           pt-BR: Violeta e ciano
           es: Violeta y cian
           ko: 보라색과 청록색
+          fr: Violet et cyan
   - name: background
     type: enum
     required: true
@@ -84,6 +91,7 @@ fields:
       pt-BR: Fundo
       es: Fondo
       ko: 배경
+      fr: Arrière-plan
     options:
       - value: soft bokeh lights
         labels:
@@ -94,6 +102,7 @@ fields:
           pt-BR: Luzes de bokeh suaves
           es: Luces de bokeh suave
           ko: 부드러운 보케 불빛
+          fr: Lumières en bokeh doux
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -103,6 +112,7 @@ fields:
           pt-BR: Cidade noturna desfocada
           es: Ciudad nocturna desenfocada
           ko: 흐릿한 밤의 도시
+          fr: Ville nocturne floue
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -112,6 +122,7 @@ fields:
           pt-BR: Degradê escuro simples
           es: Degradado plano oscuro
           ko: 단순한 어두운 그라데이션
+          fr: Dégradé sombre uniforme
   - name: mood
     type: string
     required: false
@@ -125,6 +136,7 @@ fields:
       pt-BR: Clima
       es: Ambiente
       ko: 분위기
+      fr: Ambiance
   - name: aspectRatio
     type: enum
     required: true
@@ -139,6 +151,7 @@ fields:
       pt-BR: Proporção
       es: Relación de aspecto
       ko: 화면 비율
+      fr: Rapport largeur/hauteur
     options:
       - value: 4:5
         labels:
@@ -150,6 +163,7 @@ fields:
           pt-BR: 4:5
           es: 4:5
           ko: 4:5
+          fr: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -160,6 +174,7 @@ fields:
           pt-BR: 1:1
           es: 1:1
           ko: 1:1
+          fr: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -170,6 +185,7 @@ fields:
           pt-BR: 2:3
           es: 2:3
           ko: 2:3
+          fr: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -180,3 +196,4 @@ fields:
           pt-BR: 9:16
           es: 9:16
           ko: 9:16
+          fr: 9:16

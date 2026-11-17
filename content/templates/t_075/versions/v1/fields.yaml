@@ -10,6 +10,7 @@ fields:
       pt-BR: Idade no aniversário
       es: Edad de cumpleaños
       ko: 생일 나이
+      fr: Âge à l’anniversaire
     help:
       en: Use a short age such as 30.
       zh-Hans: 填写简短年龄，例如 30。
@@ -18,6 +19,7 @@ fields:
       pt-BR: Informe a idade de forma breve, como 30.
       es: Usa una edad breve, como 30.
       ko: 나이는 30처럼 짧게 입력하세요.
+      fr: Utilisez un âge court, par exemple 30.
     type: string
     default: "30"
     minLength: 1
@@ -34,6 +36,7 @@ fields:
       pt-BR: Nome
       es: Nombre
       ko: 이름
+      fr: Nom
     help:
       en: Use a short display name.
       zh-Hans: 填写简短显示姓名。
@@ -42,6 +45,7 @@ fields:
       pt-BR: Use um nome curto para exibição.
       es: Usa un nombre corto para mostrar.
       ko: 짧은 표시 이름을 사용하세요.
+      fr: Utilisez un nom d’affichage court.
     type: string
     default: ALEX
     minLength: 1

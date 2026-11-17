@@ -31,3 +31,9 @@ describe('suggestLanguage (§8.2)', () => {
     expect(suggestLanguage(['zh-TW'], [{ code: 'zh-Hans', htmlLang: 'zh-Hans' }])).toBeNull();
   });
 });
+
+it.each(['fr', 'fr-FR', 'fr-CA', 'fr-BE', 'fr-CH'])('suggests %s only when French is available', (tag) => {
+  expect(suggestLanguage([tag], locales)).toBeNull();
+  expect(suggestLanguage([tag], [...locales, { code: 'fr', htmlLang: 'fr' }])).toBe('fr');
+  expect(suggestLanguage(['ja', tag], [...locales, { code: 'fr', htmlLang: 'fr' }])).toBe('ja');
+});

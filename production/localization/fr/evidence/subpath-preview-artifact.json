@@ -1,0 +1,173 @@
+{
+  "build": {
+    "buildId": "fr-local-4f481002faefd1e8",
+    "siteName": "Prompt Seen",
+    "buildMode": "preview",
+    "origin": "https://promptseen.dev",
+    "basePath": "/prompt-seen",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "\u7b80\u4f53\u4e2d\u6587",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Espa\u00f1ol",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "pt-BR",
+        "pathPrefix": "pt-br",
+        "nativeName": "Portugu\u00eas (Brasil)",
+        "htmlLang": "pt-BR",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "\u65e5\u672c\u8a9e",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ko",
+        "pathPrefix": "ko",
+        "nativeName": "\ud55c\uad6d\uc5b4",
+        "htmlLang": "ko",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "fr",
+        "pathPrefix": "fr",
+        "nativeName": "Fran\u00e7ais",
+        "htmlLang": "fr",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ar",
+        "pathPrefix": "ar",
+        "nativeName": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        "htmlLang": "ar",
+        "direction": "rtl",
+        "enabled": false,
+        "localization": {
+          "coverage": "incremental",
+          "review": "fingerprint",
+          "promptBodies": "optional"
+        }
+      }
+    ]
+  },
+  "files": 31844,
+  "bytes": 1992716628,
+  "htmlFiles": 3624,
+  "htmlBytes": 418746960,
+  "indexes": {
+    "zh-Hans": {
+      "rawBytes": 1761824,
+      "gzipBytes": 302017
+    },
+    "ja": {
+      "rawBytes": 2176968,
+      "gzipBytes": 385512
+    },
+    "ar": {
+      "rawBytes": 1211290,
+      "gzipBytes": 217934
+    },
+    "pt-BR": {
+      "rawBytes": 1333899,
+      "gzipBytes": 240783
+    },
+    "de": {
+      "rawBytes": 1324584,
+      "gzipBytes": 240016
+    },
+    "ko": {
+      "rawBytes": 1921081,
+      "gzipBytes": 333218
+    },
+    "fr": {
+      "rawBytes": 1304078,
+      "gzipBytes": 235206
+    },
+    "es": {
+      "rawBytes": 1305968,
+      "gzipBytes": 236490
+    },
+    "en": {
+      "rawBytes": 1205876,
+      "gzipBytes": 217587
+    }
+  }
+}

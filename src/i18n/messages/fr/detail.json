@@ -1,0 +1,124 @@
+{
+  "kinds": {
+    "prompt": "Prompt",
+    "template": "Modèle de prompt"
+  },
+  "documentTitle": "{title} · {kind} · {siteName}",
+  "breadcrumb": {
+    "label": "Fil d’Ariane",
+    "home": "Accueil",
+    "prompts": "Prompts",
+    "templates": "Modèles"
+  },
+  "test": {
+    "label": "Compte rendu du test",
+    "verifiedWith": "Testé avec {model}",
+    "notVerified": "Non vérifié",
+    "lastTested": "Testé le {date}",
+    "neverTested": "Pas encore testé",
+    "updated": "Mis à jour le {date}",
+    "dimensions": "{width} × {height}",
+    "reference": {
+      "none": "Sans image de référence",
+      "optional": "Image de référence facultative",
+      "required": "Image de référence requise"
+    },
+    "recordedUnknownModel": "Résultat enregistré · modèle d’IA non vérifié"
+  },
+  "sheet": {
+    "label": "Prompt · {language}",
+    "languageNote": "Les prompts conservent leur langue d’origine. Un prompt traduit peut donner des résultats différents.",
+    "characters": "{count, plural, =0 {0 caractère} one {# caractère} other {# caractères}}",
+    "expand": "Tout afficher",
+    "expandLines": "Tout afficher ({lines, plural, one {# ligne} other {# lignes}})",
+    "collapse": "Afficher moins"
+  },
+  "copy": {
+    "label": "Copier le prompt",
+    "done": "Copié",
+    "failed": "Copie impossible",
+    "failedHint": "Sélectionnez le texte du prompt et copiez-le avec votre clavier ou le menu."
+  },
+  "share": {
+    "label": "Partager",
+    "copied": "Lien copié",
+    "failed": "Impossible de copier le lien"
+  },
+  "customize": "Personnaliser",
+  "annotations": {
+    "heading": "L’effet de chaque expression"
+  },
+  "image": {
+    "original": "Image en taille réelle",
+    "dimensions": "{width} × {height}",
+    "show": "Afficher l’image {n} sur {total}",
+    "failed": "L’image n’a pas pu être chargée.",
+    "retry": "Réessayer"
+  },
+  "examples": {
+    "heading": "Images de test",
+    "recorded": "Enregistré",
+    "model": "Modèle d’IA",
+    "provider": "Fournisseur",
+    "notes": "Nos observations",
+    "parameters": "Paramètres",
+    "parameter": "Paramètre",
+    "value": "Valeur",
+    "template": "Modèle de prompt {version}",
+    "references": "Images de référence",
+    "outputs": "Résultat",
+    "promptUsed": "Prompt utilisé pour cette image",
+    "unknown": "Non enregistré",
+    "selectRun": "Résultat enregistré",
+    "cover": "Couverture"
+  },
+  "source": {
+    "heading": "Source et licence",
+    "prompt": "Prompt",
+    "image": "Image",
+    "unknown": "Source inconnue",
+    "author": "Par {author}",
+    "licence": "Licence : {licence}",
+    "creator": "Créateur : {creator}",
+    "aiGenerated": "Image générée",
+    "algorithmic": "Généré par un programme"
+  },
+  "related": {
+    "templates": "Modèles de prompt associés",
+    "similar": "Prompts similaires"
+  },
+  "actions": {
+    "label": "Actions du prompt"
+  },
+  "template": {
+    "fields": "Champs",
+    "field": "Champ",
+    "type": "Type",
+    "value": "Dans l’exemple par défaut",
+    "optional": "Facultatif",
+    "required": "Obligatoire",
+    "types": {
+      "string": "Texte",
+      "string-list": "Liste",
+      "enum": "Choix"
+    },
+    "listLimit": "{min}–{max} éléments",
+    "maxLength": "Jusqu’à {max} caractères",
+    "choices": "{count, plural, one {# option} other {# options}}",
+    "version": "Version {version}",
+    "fieldCount": "{count, plural, one {# champ} other {# champs}}",
+    "sampleImage": "Cette image provient de l’exemple par défaut. D’autres valeurs donnent d’autres résultats.",
+    "examples": "Créés avec ce modèle de prompt",
+    "testedImage": "Résultat enregistré pour ces valeurs exactes.",
+    "unmatchedImage": "Aucun résultat n’a été enregistré pour ces valeurs. L’image montre un autre exemple."
+  },
+  "inspiration": {
+    "heading": "Inspiration et éléments de preuve",
+    "adaptation": "Ce prompt est une adaptation indépendante. L’image affichée ici est notre propre résultat enregistré.",
+    "original": "Contenu d’origine",
+    "snapshot": "Relevé de la source",
+    "observed": "Observé le {date}",
+    "evidence": "Éléments de preuve",
+    "scope": "Ces chiffres concernent la publication ou la vidéo d’origine. Ce sont des relevés datés, pas des compteurs en direct ni des évaluations de notre image."
+  }
+}

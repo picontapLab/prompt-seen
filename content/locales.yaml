@@ -87,9 +87,10 @@ locales:
       nativeName: Français,
       htmlLang: fr,
       direction: ltr,
-      enabled: false,
+      enabled: true,
+      preview: true,
       phase: 1,
-      localization: { coverage: incremental, review: fingerprint, promptBodies: optional }
+      localization: { coverage: complete, review: fingerprint, promptBodies: source-only }
     }
   # Phase 2
   - {

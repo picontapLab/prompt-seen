@@ -1,0 +1,689 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker processes
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/17 15:35:46 [notice] 1#1: start worker process 29
+
+Running 243 tests using 3 workers
+
+(node:87483) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:87485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:87484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [http] › tests/e2e/french.http.spec.ts:55:5 › fr: license has local text and mode-appropriate metadata (50ms)
+  ✓    3 [http] › tests/e2e/french.http.spec.ts:55:5 › fr: about has local text and mode-appropriate metadata (46ms)
+[WebServer] 2026/11/17 15:35:47 [error] 22#22: *3 "/srv/dist/fr-fr/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-fr/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:35:47 [error] 22#22: *3 "/srv/dist/fr-ca/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-ca/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:35:47 [error] 22#22: *3 "/srv/dist/fr-FR/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-FR/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓    2 [http] › tests/e2e/french.http.spec.ts:8:1 › fr: artifact availability and entry points match the requested release state (133ms)
+(node:87493) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:87494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:87495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    6 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px dark: translated template fields keep edited preview, copy and download identical (1.5s)
+  ✓    5 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px light: translated template fields keep edited preview, copy and download identical (1.7s)
+  ✓    7 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px dark: French popup, copy and favorites form one browsing flow (2.0s)
+  ✓    8 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px light: French popup, copy and favorites form one browsing flow (1.9s)
+  ✓    9 [chromium] › tests/e2e/french-interactions.browser.spec.ts:220:5 › reviewed French pilot samples › French template reflows at the 720 CSS-pixel viewport of a 1440px display zoomed to 200% (1.6s)
+  ✓   11 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 360px: recommends a built French option without redirecting (1.3s)
+  ✓   10 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px dark: French sorting and filters preserve readable controls and matching results (3.0s)
+  ✓   12 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 1440px: recommends a built French option without redirecting (1.1s)
+  ✓   13 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px dark: translated template fields keep edited preview, copy and download identical (1.6s)
+  ✓    4 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit (8.5s)
+  ✓   14 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 360px: recommends a built French option without redirecting (1.4s)
+  ✓   17 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 1440px: recommends a built French option without redirecting (1.1s)
+  ✓   15 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px dark: French popup, copy and favorites form one browsing flow (1.8s)
+  ✓   18 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 360px: recommends a built French option without redirecting (1.4s)
+  ✓   20 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 1440px: recommends a built French option without redirecting (1.1s)
+  ✓   19 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px light: French sorting and filters preserve readable controls and matching results (2.9s)
+  ✓   21 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 360px: recommends a built French option without redirecting (1.3s)
+  ✓   22 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px light: translated template fields keep edited preview, copy and download identical (1.5s)
+  ✓   23 [chromium] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 1440px: recommends a built French option without redirecting (1.1s)
+  ✓   24 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px light: French popup, copy and favorites form one browsing flow (1.9s)
+  ✓   16 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit (8.4s)
+  ✓   25 [chromium] › tests/e2e/french-interactions.browser.spec.ts:278:5 › French search interaction and original Prompt text › quick search and search page agree after rapid input, with indexes loaded on demand (2.9s)
+  ✓   28 [chromium] › tests/e2e/french-interactions.browser.spec.ts:316:5 › French search interaction and original Prompt text › searches original Chinese text and offers a Chinese title after an empty French search (1.4s)
+  ✓   26 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px dark: French sorting and filters preserve readable controls and matching results (3.0s)
+  ✓   30 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px dark: translated template fields keep edited preview, copy and download identical (1.5s)
+  ✓   31 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px dark: French popup, copy and favorites form one browsing flow (1.8s)
+  ✓   29 [chromium] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the light page (5.6s)
+  ✓   27 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit (8.3s)
+  ✓   32 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px light: French sorting and filters preserve readable controls and matching results (3.0s)
+  ✓   35 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px light: translated template fields keep edited preview, copy and download identical (1.4s)
+  ✓   36 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px light: French popup, copy and favorites form one browsing flow (1.9s)
+  ✓   33 [chromium] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the dark page (5.5s)
+  ✓   38 [chromium] › tests/e2e/french-search.browser.spec.ts:70:3 › fr: every frozen query runs in the real Worker with complete negative assertions (561ms)
+  ✓   39 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (721ms)
+  ✓   37 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px dark: French sorting and filters preserve readable controls and matching results (3.1s)
+  ✓   40 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: eclairage neon portrait (743ms)
+  ✓   41 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: photographie de produit studio (672ms)
+  ✓   42 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: ÉCLAIRAGE NÉON PORTRAIT (710ms)
+  ✓   43 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: packshot studio (644ms)
+  ✓   34 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit (8.7s)
+  ✓   44 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (720ms)
+  ✓   45 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiche Fuji (699ms)
+  ✓   47 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l’éclairage néon portrait (654ms)
+  ✓   48 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: poster Fuji (654ms)
+  ✓   49 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l'eclairage neon portrait (646ms)
+  ✓   50 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle affiche produit (688ms)
+  ✓   51 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: portrait couverture (705ms)
+  ✓   52 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modele affiche produit (634ms)
+  ✓   53 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: mariage deux personnes (661ms)
+  ✓   54 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle encre (727ms)
+  ✓   55 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: p_217 (690ms)
+  ✓   56 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: singe lanterne (686ms)
+  ✓   57 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiches hiérarchie (670ms)
+  ✓   58 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: GPT Image p_111 (694ms)
+  ✓   60 [chromium] › tests/e2e/french.browser.spec.ts:10:1 › fr: browser acceptance verifies artifact state before checking pages (0ms)
+  ✓   59 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: lavis encre (677ms)
+  ✓   62 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: autocollants grenouille (742ms)
+  ✓   61 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px light (1.3s)
+  ✓   63 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: sticker grenouille (642ms)
+  ✓   65 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: campagne produit 3 × 3 (663ms)
+  ✓   64 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px dark (1.2s)
+  ✓   66 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: zxqvfrsansresultat987 (462ms)
+  ✓   67 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px light (1.4s)
+  ✓   46 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit (9.8s)
+  ✓   69 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px dark (1.5s)
+  ✓   71 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px light (1.3s)
+  ✓   72 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px dark (1.3s)
+  ✓   73 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px light (1.4s)
+  ✘   68 [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 (6.4s)
+  ✓   74 [chromium] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px dark (1.2s)
+(node:8108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   70 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit (8.7s)
+  ✓   76 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px light: translated template fields keep edited preview, copy and download identical (7.1s)
+  ✓   77 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit (9.0s)
+  ✓   78 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px light: French popup, copy and favorites form one browsing flow (4.8s)
+  ✓   80 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px dark: French sorting and filters preserve readable controls and matching results (4.8s)
+  ✓   79 [chromium] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit (8.9s)
+  ✓   81 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px dark: translated template fields keep edited preview, copy and download identical (3.9s)
+  ✓   82 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px light: French sorting and filters preserve readable controls and matching results (3.1s)
+  ✓   84 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px light: translated template fields keep edited preview, copy and download identical (1.6s)
+  ✓   75 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit (24.9s)
+  ✓   83 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px dark: French popup, copy and favorites form one browsing flow (4.7s)
+  ✓   85 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px light: French popup, copy and favorites form one browsing flow (1.9s)
+[WebServer] 2026/11/17 15:37:06 [error] 26#26: *598 "/srv/dist/fr-fr/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-fr/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:06 [error] 26#26: *598 "/srv/dist/fr-ca/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-ca/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:06 [error] 26#26: *598 "/srv/dist/fr-FR/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr-FR/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   88 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px dark: French sorting and filters preserve readable controls and matching results (3.0s)
+  ✓   89 [chromium] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px dark: translated template fields keep edited preview, copy and download identical (1.6s)
+  ✓   87 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px light: French sorting and filters preserve readable controls and matching results (6.0s)
+  ✓   90 [chromium] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px dark: French popup, copy and favorites form one browsing flow (1.8s)
+  ✓   91 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px light: translated template fields keep edited preview, copy and download identical (3.5s)
+  ✓   92 [chromium] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px light: French sorting and filters preserve readable controls and matching results (3.1s)
+(node:22051) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 2026/11/17 15:37:15 [error] 21#21: *665 "/srv/dist/en/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:15 [error] 21#21: *668 "/srv/dist/zh-hans/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:15 [error] 21#21: *671 "/srv/dist/es/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:16 [error] 20#20: *674 "/srv/dist/pt-br/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:16 [error] 20#20: *677 "/srv/dist/ja/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   93 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px light: French popup, copy and favorites form one browsing flow (3.7s)
+[WebServer] 2026/11/17 15:37:17 [error] 20#20: *692 "/srv/dist/ko/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:17 [error] 22#22: *695 "/srv/dist/de/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:18 [error] 22#22: *698 "/srv/dist/fr/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:18 [error] 23#23: *702 "/srv/dist/xx/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /xx/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:18 [error] 23#23: *702 open() "/srv/dist/no-such-page" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /no-such-page HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:18 [error] 23#23: *703 "/srv/dist/ar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:19 [error] 23#23: *711 "/srv/dist/ko/unknown-korean-acceptance-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/unknown-korean-acceptance-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:19 [error] 23#23: *714 "/srv/dist/en/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:21 [error] 23#23: *717 "/srv/dist/zh-hans/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:21 [error] 25#25: *720 "/srv/dist/es/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   94 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px dark: translated template fields keep edited preview, copy and download identical (6.3s)
+  ✓   95 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px dark: French sorting and filters preserve readable controls and matching results (5.1s)
+[WebServer] 2026/11/17 15:37:23 [error] 25#25: *735 "/srv/dist/pt-br/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:23 [error] 24#24: *738 "/srv/dist/ja/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   86 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit (23.0s)
+[WebServer] 2026/11/17 15:37:25 [error] 24#24: *741 "/srv/dist/ko/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:26 [error] 26#26: *750 "/srv/dist/de/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   97 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px dark: translated template fields keep edited preview, copy and download identical (4.0s)
+  ✓   96 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px dark: French popup, copy and favorites form one browsing flow (4.9s)
+[WebServer] 2026/11/17 15:37:28 [error] 24#24: *765 "/srv/dist/fr/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:29 [error] 27#27: *777 open() "/srv/dist/media/a_999/missing-detail-000000000000.webp" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /media/a_999/missing-detail-000000000000.webp HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 27#27: *780 "/srv/dist/en/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  100 [firefox] › tests/e2e/french-interactions.browser.spec.ts:220:5 › reviewed French pilot samples › French template reflows at the 720 CSS-pixel viewport of a 1440px display zoomed to 200% (3.7s)
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *783 "/srv/dist/en/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /en/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓   99 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px dark: French popup, copy and favorites form one browsing flow (4.4s)
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:30 [error] 28#28: *786 "/srv/dist/zh-hans/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *786 "/srv/dist/zh-hans/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *786 "/srv/dist/zh-hans/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *801 "/srv/dist/zh-hans/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:31 [error] 28#28: *804 "/srv/dist/es/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *807 "/srv/dist/es/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /es/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 29#29: *810 "/srv/dist/pt-br/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 21#21: *813 "/srv/dist/pt-br/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:32 [error] 20#20: *816 "/srv/dist/ja/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *819 "/srv/dist/ja/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ja/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  101 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 360px: recommends a built French option without redirecting (2.6s)
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *822 "/srv/dist/ko/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *825 "/srv/dist/ko/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /ko/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 21#21: *829 "/srv/dist/de/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *837 "/srv/dist/de/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /de/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/product/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/product/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/portrait/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/portrait/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/illustration/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/illustration/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/architecture/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/architecture/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/food/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/food/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/pattern/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/pattern/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/flat-vector/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/flat-vector/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/bauhaus/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/bauhaus/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/neon/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/neon/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/minimal/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/minimal/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/gradient/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/gradient/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/geometric/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/geometric/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/cyanotype/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/cyanotype/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/wallpaper/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/wallpaper/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/art-print/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/art-print/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/social-post/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/social-post/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/packaging/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/packaging/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/book-cover/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/book-cover/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/event-poster/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/event-poster/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/avatar/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/avatar/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/editorial/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/editorial/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/categories/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/categories/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/styles/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/styles/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:33 [error] 20#20: *840 "/srv/dist/fr/use-cases/_none/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/use-cases/_none/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:34 [error] 20#20: *843 "/srv/dist/fr/no-such-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /fr/no-such-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:34 [error] 20#20: *847 "/srv/dist/pt/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:34 [error] 20#20: *847 "/srv/dist/pt-pt/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-pt/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:34 [error] 20#20: *847 "/srv/dist/pt-PT/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-PT/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  103 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 1440px: recommends a built French option without redirecting (2.0s)
+[WebServer] 2026/11/17 15:37:35 [error] 22#22: *852 "/srv/dist/pt-br/no-such-portuguese-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/no-such-portuguese-page/ HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:35 [error] 22#22: *852 "/srv/dist/pt-br/prompts/page/13/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /pt-br/prompts/page/13/ HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  102 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px light: French sorting and filters preserve readable controls and matching results (5.2s)
+  ✓  104 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 360px: recommends a built French option without redirecting (2.1s)
+  ✓  105 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px light: translated template fields keep edited preview, copy and download identical (3.1s)
+  ✓  106 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 1440px: recommends a built French option without redirecting (3.2s)
+  ✓  108 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 360px: recommends a built French option without redirecting (2.8s)
+  ✓  107 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px light: French popup, copy and favorites form one browsing flow (4.3s)
+  ✓  109 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 1440px: recommends a built French option without redirecting (2.1s)
+  ✓   98 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit (20.4s)
+  ✓  111 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 360px: recommends a built French option without redirecting (3.0s)
+  ✓  110 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px dark: French sorting and filters preserve readable controls and matching results (4.9s)
+  ✓  113 [firefox] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 1440px: recommends a built French option without redirecting (2.2s)
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/image26-s10-marked-vase-color-edit/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/image26-s10-marked-vase-color-edit/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/design-top60-03/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/design-top60-03/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/product-brand-story-grid/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/product-brand-story-grid/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/sage-tile-banner/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/sage-tile-banner/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/blue-bauhaus-square/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/blue-bauhaus-square/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/ocean-horizon-banner/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/ocean-horizon-banner/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/blue-rim-avatar/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/blue-rim-avatar/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/monochrome-arches/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/monochrome-arches/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/lavender-tiles/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/lavender-tiles/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/leafy-avatar/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/leafy-avatar/index.md HTTP/1.1", host: "127.0.0.1:8090"
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/moonlit-sail/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/moonlit-sail/index.md HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  115 [firefox] › tests/e2e/french-interactions.browser.spec.ts:278:5 › French search interaction and original Prompt text › quick search and search page agree after rapid input, with indexes loaded on demand (4.3s)
+[WebServer] 2026/11/17 15:37:54 [error] 28#28: *4098 open() "/srv/dist/zh-hans/prompts/black-and-white-tiles/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/black-and-white-tiles/index.md HTTP/1.1", host: "127.0.0.1:8090"
+  ✓  114 [firefox] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the light page (6.7s)
+  ✓  116 [firefox] › tests/e2e/french-interactions.browser.spec.ts:316:5 › French search interaction and original Prompt text › searches original Chinese text and offers a Chinese title after an empty French search (3.1s)
+  ✓  118 [firefox] › tests/e2e/french-search.browser.spec.ts:70:3 › fr: every frozen query runs in the real Worker with complete negative assertions (1.5s)
+  ✓  119 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (1.7s)
+  ✓  117 [firefox] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the dark page (6.5s)
+  ✓  120 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: eclairage neon portrait (1.8s)
+  ✓  121 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: photographie de produit studio (1.6s)
+  ✓  122 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: ÉCLAIRAGE NÉON PORTRAIT (1.5s)
+  ✓  123 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: packshot studio (1.7s)
+  ✓  124 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (1.4s)
+  ✓  112 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit (20.2s)
+  ✓  125 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiche Fuji (1.9s)
+  ✓  126 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l’éclairage néon portrait (1.5s)
+  ✓  128 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: poster Fuji (1.5s)
+  ✓  130 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle affiche produit (1.2s)
+  ✓  129 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l'eclairage neon portrait (2.3s)
+  ✓  132 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: portrait couverture (1.1s)
+  ✓  131 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modele affiche produit (1.6s)
+  ✓  133 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: mariage deux personnes (1.5s)
+  ✓  134 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle encre (1.5s)
+  ✓  135 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: p_217 (1.5s)
+  ✓  136 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: singe lanterne (1.4s)
+  ✓  137 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiches hiérarchie (1.4s)
+  ✓  138 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: GPT Image p_111 (1.5s)
+  ✓  140 [firefox] › tests/e2e/french.browser.spec.ts:10:1 › fr: browser acceptance verifies artifact state before checking pages (0ms)
+  ✓  139 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: lavis encre (1.4s)
+  ✓  142 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: autocollants grenouille (958ms)
+  ✓  141 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px light (2.1s)
+  ✓  143 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: sticker grenouille (1.4s)
+  ✓  144 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px dark (2.4s)
+  ✓  145 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: campagne produit 3 × 3 (1.5s)
+  ✓  147 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: zxqvfrsansresultat987 (1.4s)
+  ✓  127 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit (15.8s)
+  ✓  146 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px light (2.3s)
+  ✓  150 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px dark (3.7s)
+  ✓  151 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px light (2.3s)
+  ✘  148 [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 (7.2s)
+(node:31058) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  152 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px dark (2.3s)
+  ✓  153 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px light (2.8s)
+  ✓  155 [firefox] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px dark (2.9s)
+(node:31322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  149 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit (18.0s)
+  ✓  156 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px light: translated template fields keep edited preview, copy and download identical (2.9s)
+  ✓  158 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px light: French popup, copy and favorites form one browsing flow (3.1s)
+  ✓  154 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px light: reviewed descriptions and controls fit (13.8s)
+  ✓  159 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px dark: French sorting and filters preserve readable controls and matching results (4.2s)
+  ✓  161 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 768px dark: translated template fields keep edited preview, copy and download identical (3.4s)
+  ✓  162 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 768px dark: French popup, copy and favorites form one browsing flow (3.3s)
+  ✓  163 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px light: French sorting and filters preserve readable controls and matching results (4.6s)
+  ✓  160 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 360px dark: reviewed descriptions and controls fit (17.8s)
+  ✓  164 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px light: translated template fields keep edited preview, copy and download identical (3.2s)
+  ✓  166 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px light: French popup, copy and favorites form one browsing flow (3.1s)
+  ✓  167 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1024px dark: French sorting and filters preserve readable controls and matching results (4.5s)
+  ✓  168 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1024px dark: translated template fields keep edited preview, copy and download identical (3.3s)
+  ✓  157 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit (35.1s)
+  ✓  169 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1024px dark: French popup, copy and favorites form one browsing flow (3.4s)
+  ✓  165 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px light: reviewed descriptions and controls fit (16.3s)
+  ✓  171 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px light: French sorting and filters preserve readable controls and matching results (4.3s)
+  ✓  173 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px light: translated template fields keep edited preview, copy and download identical (3.0s)
+  ✓  174 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px light: French popup, copy and favorites form one browsing flow (3.2s)
+  ✓  175 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 1440px dark: French sorting and filters preserve readable controls and matching results (4.5s)
+  ✓  172 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 768px dark: reviewed descriptions and controls fit (15.9s)
+  ✓  176 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 1440px dark: translated template fields keep edited preview, copy and download identical (3.4s)
+  ✓  178 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 1440px dark: French popup, copy and favorites form one browsing flow (3.4s)
+  ✓  179 [webkit] › tests/e2e/french-interactions.browser.spec.ts:220:5 › reviewed French pilot samples › French template reflows at the 720 CSS-pixel viewport of a 1440px display zoomed to 200% (2.5s)
+  ✓  180 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 360px: recommends a built French option without redirecting (2.2s)
+  ✓  181 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-FR › 1440px: recommends a built French option without redirecting (2.2s)
+  ✓  182 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 360px: recommends a built French option without redirecting (2.2s)
+  ✓  183 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CA › 1440px: recommends a built French option without redirecting (2.3s)
+  ✓  177 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px light: reviewed descriptions and controls fit (15.5s)
+  ✓  170 [firefox] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit (35.9s)
+  ✓  184 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 360px: recommends a built French option without redirecting (2.3s)
+  ✓  187 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-BE › 1440px: recommends a built French option without redirecting (2.1s)
+  ✓  186 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px light: French sorting and filters preserve readable controls and matching results (6.1s)
+  ✓  188 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 360px: recommends a built French option without redirecting (2.3s)
+  ✓  190 [webkit] › tests/e2e/french-interactions.browser.spec.ts:244:9 › French browser preference fr-CH › 1440px: recommends a built French option without redirecting (2.3s)
+  ✓  189 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px light: translated template fields keep edited preview, copy and download identical (3.8s)
+  ✓  191 [webkit] › tests/e2e/french-interactions.browser.spec.ts:278:5 › French search interaction and original Prompt text › quick search and search page agree after rapid input, with indexes loaded on demand (4.5s)
+  ✓  192 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px light: French popup, copy and favorites form one browsing flow (3.6s)
+  ✓  185 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1024px dark: reviewed descriptions and controls fit (14.0s)
+  ✓  193 [webkit] › tests/e2e/french-interactions.browser.spec.ts:316:5 › French search interaction and original Prompt text › searches original Chinese text and offers a Chinese title after an empty French search (5.1s)
+  ✓  194 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px dark: French sorting and filters preserve readable controls and matching results (4.9s)
+  ✓  197 [firefox] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px dark: translated template fields keep edited preview, copy and download identical (2.5s)
+  ✓  198 [firefox] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px dark: French popup, copy and favorites form one browsing flow (3.5s)
+  ✓  196 [webkit] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the light page (7.1s)
+  ✓  195 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px light: reviewed descriptions and controls fit (13.6s)
+  ✓  199 [firefox] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px light: French sorting and filters preserve readable controls and matching results (4.4s)
+(node:51049) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  202 [webkit] › tests/e2e/french-search.browser.spec.ts:70:3 › fr: every frozen query runs in the real Worker with complete negative assertions (1.7s)
+  ✓  200 [webkit] › tests/e2e/french-media.browser.spec.ts:11:5 › French GIFs decode and visibly animate against the dark page (7.3s)
+  ✓  203 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (1.5s)
+  ✓  204 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: photographie de produit studio (1.5s)
+  ✓  205 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: eclairage neon portrait (1.5s)
+  ✓  206 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: packshot studio (1.4s)
+  ✓  207 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: ÉCLAIRAGE NÉON PORTRAIT (1.5s)
+  ✓  208 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiche Fuji (1.5s)
+  ✓  209 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: éclairage néon portrait (1.5s)
+  ✓  210 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: poster Fuji (1.5s)
+  ✓  211 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l’éclairage néon portrait (1.6s)
+  ✓  201 [webkit] › tests/e2e/french-interactions.browser.spec.ts:29:9 › reviewed French pilot samples › 1440px dark: reviewed descriptions and controls fit (12.9s)
+  ✓  212 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle affiche produit (1.7s)
+  ✓  213 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: l'eclairage neon portrait (1.5s)
+  ✓  215 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modele affiche produit (1.6s)
+  ✓  216 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: portrait couverture (1.5s)
+  ✓  217 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: modèle encre (1.4s)
+  ✓  214 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px light: French sorting and filters preserve readable controls and matching results (3.4s)
+  ✓  218 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: mariage deux personnes (1.4s)
+  ✓  219 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: singe lanterne (1.4s)
+  ✓  221 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: p_217 (1.4s)
+  ✓  220 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px light: translated template fields keep edited preview, copy and download identical (2.4s)
+  ✓  222 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: GPT Image p_111 (1.5s)
+  ✓  225 [webkit] › tests/e2e/french.browser.spec.ts:10:1 › fr: browser acceptance verifies artifact state before checking pages (0ms)
+  ✓  223 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: affiches hiérarchie (1.4s)
+  ✓  226 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px light (1.8s)
+  ✓  227 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: lavis encre (1.5s)
+  ✓  224 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px light: French popup, copy and favorites form one browsing flow (2.5s)
+  ✓  229 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: autocollants grenouille (1.4s)
+  ✓  228 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 360px dark (1.7s)
+  ✓  231 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: sticker grenouille (1.5s)
+  ✓  232 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px light (1.9s)
+  ✓  230 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 360px dark: French sorting and filters preserve readable controls and matching results (3.7s)
+  ✓  233 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: campagne produit 3 × 3 (1.4s)
+  ✓  234 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 768px dark (1.9s)
+  ✓  236 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: zxqvfrsansresultat987 (1.7s)
+  ✓  235 [webkit] › tests/e2e/french-interactions.browser.spec.ts:127:9 › reviewed French pilot samples › 360px dark: translated template fields keep edited preview, copy and download identical (2.5s)
+  ✓  237 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px light (2.2s)
+  ✓  239 [webkit] › tests/e2e/french-interactions.browser.spec.ts:169:9 › reviewed French pilot samples › 360px dark: French popup, copy and favorites form one browsing flow (2.7s)
+  ✓  240 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1024px dark (2.3s)
+  ✓  242 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px light (2.0s)
+  ✓  241 [webkit] › tests/e2e/french-interactions.browser.spec.ts:75:9 › reviewed French pilot samples › 768px light: French sorting and filters preserve readable controls and matching results (3.9s)
+  ✓  243 [webkit] › tests/e2e/french.browser.spec.ts:15:7 › fr: foundation 1440px dark (2.1s)
+  ✘  238 [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 (7.4s)
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 20#20: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 20#20: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 21#21: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 23#23: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 25#25: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 26#26: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 23#23: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 26#26: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 25#25: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 22#22: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 22#22: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 24#24: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 21#21: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 24#24: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 28#28: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 27#27: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 29#29: exiting
+[WebServer] 2026/11/17 15:40:53 [notice] 27#27: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 29#29: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 28#28: exit
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/17 15:40:53 [notice] 1#1: exit
+
+
+  1) [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ──────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-no-results] a').filter({ hasText: '中文' }).first() with timeout 5000ms
+      - waiting for locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+
+
+      117 |       }
+      118 |       if (example.query === '梅枝')
+    > 119 |         await expect(page.locator('[data-no-results] a').filter({ hasText: '中文' }).first()).toBeVisible();
+          |                                                                                             ^
+      120 |     });
+      121 |   }
+      122 | }
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-search.browser.spec.ts:119:93
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-search.browser-fr-search-UI-梅枝-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-search.browser-fr-search-UI-梅枝-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ───────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-no-results] a').filter({ hasText: '中文' }).first() with timeout 5000ms
+      - waiting for locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+
+
+      117 |       }
+      118 |       if (example.query === '梅枝')
+    > 119 |         await expect(
+          |                      ^
+      120 |           page.locator(
+      121 |             `[data-no-results] a[href="${BASE}/${BUILD.locales.find((locale) => locale.code === 'zh-Hans')!.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}"]`,
+      122 |           ),
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-search.browser.spec.ts:119:93
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-search.browser-fr-search-UI-梅枝-firefox/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-search.browser-fr-search-UI-梅枝-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-no-results] a').filter({ hasText: '中文' }).first() with timeout 5000ms
+      - waiting for locator('[data-no-results] a').filter({ hasText: '中文' }).first()
+
+
+      117 |       }
+      118 |       if (example.query === '梅枝')
+    > 119 |         await expect(
+          |                      ^
+      120 |           page.locator(
+      121 |             `[data-no-results] a[href="${BASE}/${BUILD.locales.find((locale) => locale.code === 'zh-Hans')!.pathPrefix}/search/?q=${encodeURIComponent('梅枝')}"]`,
+      122 |           ),
+        at /Users/hp/.codex/worktrees/french-localization/prompt-seen/tests/e2e/french-search.browser.spec.ts:119:93
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/french-search.browser-fr-search-UI-梅枝-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/french-search.browser-fr-search-UI-梅枝-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/french-search.browser-fr-search-UI-梅枝-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ───────────────────
+    [firefox] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ────────────────────
+    [webkit] › tests/e2e/french-search.browser.spec.ts:90:5 › fr search UI: 梅枝 ─────────────────────
+  240 passed (5.1m)

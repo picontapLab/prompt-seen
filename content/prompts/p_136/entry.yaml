@@ -29,6 +29,8 @@ inputRequirements:
     es: Sube un retrato de una persona adulta. Nuestra referencia es una persona
       ficticia generada por IA.
     ko: 성인 인물 사진 한 장을 업로드하세요. 참조 이미지는 AI로 생성한 가상 인물입니다.
+    fr: Importez un portrait d’adulte. Notre référence représente une personne
+      fictive générée par IA.
   slots:
     - id: person
       labels:
@@ -39,6 +41,7 @@ inputRequirements:
         pt-BR: Pessoa
         es: Persona
         ko: 인물
+        fr: Personne
       min: 1
       max: 1
 showcaseExampleId: x_181
@@ -59,6 +62,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:10:42Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -69,6 +73,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2029142137015812314&lang=en&token=1
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -78,6 +83,7 @@ inspirationSources:
       pt-BR: Prompt ou trecho de origem disponível; adaptado de forma independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      fr: Prompt source ou extrait disponible ; adaptation indépendante
     metrics:
       - key: likes
         value: 1421
@@ -89,6 +95,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          fr: Mentions J’aime
       - key: conversation_count
         value: 49
         labels:
@@ -99,6 +106,7 @@ inspirationSources:
           pt-BR: Respostas
           es: Respuestas
           ko: 답글
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -109,6 +117,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -119,6 +128,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -129,6 +139,7 @@ inspirationSources:
           pt-BR: Itens salvos
           es: Marcadores
           ko: 북마크
+          fr: Signets
 source:
   author: Prompt Seen
   url: null

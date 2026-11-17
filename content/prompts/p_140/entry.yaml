@@ -27,9 +27,11 @@ inputRequirements:
       Bergemblem.
     pt-BR: Envie um ícone simples. Nosso exemplo usa um emblema fictício original de
       montanha.
-    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio
-      y original.
+    es: Sube un icono sencillo. Nuestro ejemplo usa un emblema de montaña ficticio y
+      original.
     ko: 단순한 아이콘 하나를 업로드하세요. 예시는 직접 만든 가상의 산 엠블럼입니다.
+    fr: Importez une icône simple. Notre exemple utilise un emblème de montagne
+      fictif original.
   slots:
     - id: icon
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Ícone
         es: Icono
         ko: 아이콘
+        fr: Icône
       min: 1
       max: 1
 showcaseExampleId: x_185
@@ -60,6 +63,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      fr: Ensemble de la publication ou de la galerie d’images
     observedAt: 2026-10-29T06:20:06Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -70,6 +74,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      fr: Relevé de l’API publique officielle
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=1911075302941622512&lang=en&token=1
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -79,6 +84,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptação independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      fr: Prompt original complet non récupéré ; adaptation indépendante
     metrics:
       - key: likes
         value: 2527
@@ -90,6 +96,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          fr: Mentions J’aime
       - key: conversation_count
         value: 63
         labels:
@@ -100,6 +107,7 @@ inspirationSources:
           pt-BR: Respostas
           es: Respuestas
           ko: 답글
+          fr: Réponses
       - key: views
         value: null
         labels:
@@ -110,6 +118,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          fr: Vues
       - key: reposts
         value: null
         labels:
@@ -120,6 +129,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          fr: Republications
       - key: bookmarks
         value: null
         labels:
@@ -130,6 +140,7 @@ inspirationSources:
           pt-BR: Itens salvos
           es: Marcadores
           ko: 북마크
+          fr: Signets
 source:
   author: Prompt Seen
   url: null

@@ -1,0 +1,80 @@
+{
+  "title": "La pellicule",
+  "intro": "Tous les prompts que nous avons testés, du plus récent au plus ancien, accompagnés de l’image obtenue. Survolez une création pour lire le début de son prompt ; ouvrez-la pour découvrir le texte complet, le compte rendu du test et l’effet de chaque expression.",
+  "introMore": "Afficher plus",
+  "introLess": "Afficher moins",
+  "count": "{count, plural, one {# image} other {# images}}",
+  "pageOf": "Page {page} sur {pages}",
+  "documentTitle": "Prompts d’image",
+  "documentTitlePage": "Prompts d’image, page {page}",
+  "description": "Des prompts d’image testés, du plus récent au plus ancien : chacun présente l’image obtenue, le modèle d’IA et la date du test, ainsi que des notes sur l’effet de ses expressions.",
+  "band": {
+    "label": "La sélection de la semaine"
+  },
+  "card": {
+    "byModel": "avec {model}",
+    "notVerified": "Non vérifié"
+  },
+  "interlude": {
+    "feature": "À la une : {title}",
+    "open": "Ouvrir l’image",
+    "templates": "Modèles · compléter les champs",
+    "fields": "{count, plural, one {# champ} other {# champs}}",
+    "collection": "Collection · {count, plural, one {# création} other {# créations}}",
+    "openCollection": "Voir la collection"
+  },
+  "feed": {
+    "label": "Prompts",
+    "skip": "Passer la liste"
+  },
+  "status": {
+    "shown": "Images {from}–{to} sur {total} affichées",
+    "developing": "Développement des images {from}–{to}…",
+    "developingEarlier": "Développement des images précédentes…",
+    "loaded": "{count, plural, one {# image supplémentaire chargée} other {# images supplémentaires chargées}}",
+    "failed": "Impossible de charger les images {from}–{to}.",
+    "failedEarlier": "Impossible de charger les images précédentes.",
+    "retry": "Réessayer",
+    "stale": "Cette liste a changé depuis le chargement de la page.",
+    "reload": "Recharger",
+    "end": "Fin de la pellicule · les {total} images sont affichées",
+    "pages": "Pages de la liste",
+    "page": "Page",
+    "pageLink": "Page {page}"
+  },
+  "filters": {
+    "style": "Style",
+    "all": "Tout",
+    "panel": "Usage · Format",
+    "panelCount": "Usage · Format ({count})",
+    "panelTitle": "Usage, format et image de référence",
+    "use": "Usage",
+    "shape": "Format",
+    "shapes": {
+      "portrait": "Vertical",
+      "square": "Carré",
+      "landscape": "Horizontal",
+      "panorama": "Panoramique"
+    },
+    "ref": "Image de référence",
+    "refs": {
+      "none": "Texte uniquement",
+      "required": "Image de référence nécessaire"
+    },
+    "open": "Filtres",
+    "openCount": "Filtres ({count})",
+    "show": "{count, plural, =0 {Aucun résultat} one {Afficher # résultat} other {Afficher # résultats}}",
+    "results": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}}",
+    "active": "Filtres actifs",
+    "clear": "Effacer les filtres",
+    "noMatch": "Aucun résultat avec les autres filtres",
+    "sort": "Trier",
+    "latest": "Les plus récents",
+    "featured": "À la une",
+    "empty": {
+      "title": "Aucun prompt ne correspond à ces filtres",
+      "body": "Retirez un filtre ou effacez-les tous pour voir l’ensemble des prompts."
+    },
+    "failed": "Impossible d’appliquer les filtres."
+  }
+}

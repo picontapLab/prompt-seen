@@ -30,6 +30,8 @@ inputRequirements:
     es: Sube las imágenes de referencia en el orden indicado. El ejemplo usa
       imágenes de entrada sintéticas.
     ko: 표시된 순서대로 참조 이미지를 업로드하세요. 예시는 합성 입력 이미지를 사용합니다.
+    fr: Importez les images de référence dans l’ordre indiqué. L’exemple utilise des
+      images d’entrée synthétiques.
   slots:
     - id: materialSample
       labels:
@@ -40,6 +42,7 @@ inputRequirements:
         pt-BR: Amostra de material
         es: Muestra de material
         ko: 소재 견본
+        fr: Échantillon de matériau
       min: 1
       max: 1
     - id: targetScene
@@ -51,6 +54,7 @@ inputRequirements:
         pt-BR: Cena de destino
         es: Escena objetivo
         ko: 적용할 장면
+        fr: Scène cible
       min: 1
       max: 1
 showcaseExampleId: x_252

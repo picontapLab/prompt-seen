@@ -1,0 +1,14 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> prompt-seen@0.0.0 test
+> vitest run src/modules/search/tokenize.test.ts src/modules/search/engine.test.ts src/modules/search/french-highlight.test.ts src/i18n/catalog.test.ts src/i18n/format-locale.test.ts src/ui/pages/language-match.test.ts
+
+
+ RUN  v5.0.5 /Users/hp/.codex/worktrees/french-localization/prompt-seen
+
+
+ Test Files  6 passed (6)
+      Tests  95 passed (95)
+   Start at  06:13:32
+   Duration  490ms (tests 44%, transform 41%, import 13%, worker 2%)
+

@@ -29,11 +29,14 @@ inputRequirements:
     pt-BR: Envie uma referência de personagem. A opção da fonte está preenchida com
       ドアスコープ (olho mágico de porta). Nosso personagem adulto de quimono foi
       gerado pelo Prompt Seen.
-    es: Sube una referencia de personaje. La opción de origen se rellena con
-      ドアスコープ (mirilla de puerta). Nuestro personaje adulto con kimono fue
-      generado por Prompt Seen.
+    es: Sube una referencia de personaje. La opción de origen se rellena con ドアスコープ
+      (mirilla de puerta). Nuestro personaje adulto con kimono fue generado por
+      Prompt Seen.
     ko: 캐릭터 참조 이미지 한 장을 업로드하세요. 원문의 선택 항목은 ドアスコープ(현관문 렌즈)로 채웠습니다. 성인 기모노 캐릭터는 Prompt
       Seen에서 생성했습니다.
+    fr: Importez une référence de personnage. L’option source est renseignée avec
+      ドアスコープ (judas de porte). Notre personnage adulte en kimono est généré par
+      Prompt Seen.
   slots:
     - id: character
       labels:
@@ -44,6 +47,7 @@ inputRequirements:
         pt-BR: Referência gerada pelo projeto
         es: Referencia generada por el proyecto
         ko: 프로젝트에서 생성한 참조 이미지
+        fr: Référence générée pour le projet
       min: 1
       max: 1
 showcaseExampleId: x_309
@@ -65,6 +69,7 @@ inspirationSources:
       pt-BR: Publicação ou galeria original inteira; não este exemplo gerado
       es: Publicación o galería original completa; no este ejemplo generado
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
+      fr: Publication ou galerie originale entière ; pas cet exemple généré
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -75,9 +80,11 @@ inspirationSources:
         gespeicherten Spiegelkopie des Autorenbeitrags bzw. der Antwort
       pt-BR: Registro público salvo do X; prompt completo de uma cópia salva da
         publicação ou resposta do autor
-      es: Captura pública guardada de X; prompt completo de la copia guardada de
-        la publicación o respuesta del autor
+      es: Captura pública guardada de X; prompt completo de la copia guardada de la
+        publicación o respuesta del autor
       ko: 저장된 공개 X 스냅샷; 저장된 작성자 게시물/답글 미러에서 확보한 전체 프롬프트
+      fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de
+        la publication ou réponse de l’auteur
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118220107487051883&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language; option filled and recorded
@@ -89,6 +96,8 @@ inspirationSources:
         registrada
       es: Texto completo del autor, idioma original; opción rellenada y registrada
       ko: 작성자의 전체 원문, 원래 언어; 선택 항목을 채우고 기록함
+      fr: Texte complet de l’auteur, langue originale ; option renseignée et
+        enregistrée
     metrics:
       - key: likes
         value: 17
@@ -100,6 +109,7 @@ inspirationSources:
           pt-BR: Curtidas da publicação de origem
           es: Me gusta de la publicación original
           ko: 출처 게시물 좋아요
+          fr: Mentions J’aime de la publication source
 source:
   author: kabumira862571
   url: https://x.com/kabumira862571/status/2118220107487051883

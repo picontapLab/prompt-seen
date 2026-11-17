@@ -27,10 +27,12 @@ inputRequirements:
       Reihenfolge. Verwende keine Bilder aus offiziellen oder sozialen Quellen.
     pt-BR: Use os recursos de referência gerados de forma independente na ordem
       exibida. Não use as imagens oficiais ou das publicações sociais de origem.
-    es: Usa los recursos de referencia generados de forma independiente en el
-      orden mostrado. No uses las imágenes oficiales ni las de las fuentes
-      sociales.
+    es: Usa los recursos de referencia generados de forma independiente en el orden
+      mostrado. No uses las imágenes oficiales ni las de las fuentes sociales.
     ko: 표시된 순서대로 독립적으로 생성한 참조 자산을 사용하세요. 공식 이미지나 소셜 출처 이미지는 사용하지 마세요.
+    fr: Utilisez les ressources de référence générées indépendamment dans l’ordre
+      affiché. N’utilisez pas les images des sources officielles ou des réseaux
+      sociaux.
   slots:
     - id: reference
       labels:
@@ -41,6 +43,7 @@ inputRequirements:
         pt-BR: Referência sintética original
         es: Referencia sintética original
         ko: 원본 합성 참조 이미지
+        fr: Référence synthétique originale
       min: 1
       max: 1
 showcaseExampleId: x_298
@@ -62,9 +65,11 @@ inspirationSources:
         Beispiele aus einem Beitrag verwenden dieselben Kennzahlen.
       pt-BR: Publicação original da fonte, não esta nova saída gerada. Vários casos de
         uma mesma publicação compartilham as métricas.
-      es: Publicación original; no este nuevo resultado generado. Varios casos de
-        una misma publicación comparten las métricas.
+      es: Publicación original; no este nuevo resultado generado. Varios casos de una
+        misma publicación comparten las métricas.
       ko: 이번에 새로 생성한 결과가 아닌 원본 출처 게시물의 수치입니다. 한 게시물에서 나온 여러 사례는 같은 지표를 공유합니다.
+      fr: Publication source d’origine, et non ce nouveau résultat généré. Plusieurs
+        cas issus d’une même publication partagent les mêmes indicateurs.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -76,9 +81,11 @@ inspirationSources:
         Zahlen wurden nicht aktualisiert."
       pt-BR: "Pesquisa anterior: página direta e revisão visual. As contagens não
         foram atualizadas."
-      es: "Investigación previa: revisión directa de la página y revisión visual.
-        Los recuentos no se han actualizado."
+      es: "Investigación previa: revisión directa de la página y revisión visual. Los
+        recuentos no se han actualizado."
       ko: "이전 조사: 원본 페이지와 시각 검토. 수치는 갱신하지 않았습니다."
+      fr: "Recherche antérieure : page consultée directement et examen visuel. Les
+        compteurs n’ont pas été actualisés."
     evidenceUrl: https://x.com/MinLiBuilds/status/2118138824673173569
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -91,6 +98,8 @@ inspirationSources:
       es: No se encontró el prompt original. Este es un prompt inferido de forma
         independiente.
       ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
+      fr: Le prompt original n’a pas été trouvé. Ce prompt a été déduit
+        indépendamment.
     metrics:
       - key: likes
         value: 21
@@ -102,6 +111,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          fr: Mentions J’aime
       - key: reposts
         value: 1
         labels:
@@ -112,6 +122,7 @@ inspirationSources:
           pt-BR: Republicações
           es: Republicaciones
           ko: 재게시
+          fr: Republications
 source:
   author: Prompt Seen
   url: null
