@@ -126,8 +126,11 @@ export function PendingDialog({
         e.preventDefault();
         leave();
       }}
-      // Closed by the browser itself (repeated Esc without user activation skips `cancel`).
-      onClose={leave}
+      onClose={(event) => {
+        // A queued close event can arrive after Forward reopens this same dialog. Only
+        // a dialog still closed by the browser (including repeated Esc) should leave.
+        if (!event.currentTarget.open) leave();
+      }}
       onPointerDown={(e) => (downTarget.current = e.target)}
       onClick={(e) => {
         if (e.target === e.currentTarget && downTarget.current === e.currentTarget) leave();

@@ -317,9 +317,46 @@ test.describe('desktop', () => {
 
     await card(page, second.slug).click();
     await expectOpen(page, second.slug);
+    // A native close event is queued separately from close(). Deliver the old event after
+    // Forward reopens the same stand-in, so it cannot accidentally send us Back again.
+    await page.evaluate(() => {
+      const dialog = document.querySelector<HTMLDialogElement>('dialog[data-popup]')!;
+      const w = window as unknown as { releaseDelayedPopupClose?: () => number };
+      const hold = (event: Event) => {
+        if (event.target !== dialog) return;
+        document.removeEventListener('close', hold, true);
+        event.stopImmediatePropagation();
+        w.releaseDelayedPopupClose = () => {
+          const originalBack = history.back;
+          let calls = 0;
+          history.back = () => {
+            calls += 1;
+            originalBack.call(history);
+          };
+          try {
+            dialog.dispatchEvent(new Event('close'));
+            return calls;
+          } finally {
+            history.back = originalBack;
+          }
+        };
+      };
+      document.addEventListener('close', hold, true);
+    });
     await page.goBack({ waitUntil: 'commit' }); // the load event may still wait for held scripts
     await expectClosed(page, second.slug);
+    await page.waitForFunction(
+      () =>
+        typeof (window as unknown as { releaseDelayedPopupClose?: () => number }).releaseDelayedPopupClose ===
+        'function',
+    );
     await page.goForward({ waitUntil: 'commit' });
+    await expectOpen(page, second.slug);
+    expect(
+      await page.evaluate(() =>
+        (window as unknown as { releaseDelayedPopupClose: () => number }).releaseDelayedPopupClose(),
+      ),
+    ).toBe(0);
     await expectOpen(page, second.slug);
 
     // The code arrives while the stand-in is open: the popup replaces it without entering again.
