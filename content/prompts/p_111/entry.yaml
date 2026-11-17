@@ -29,6 +29,7 @@ inputRequirements:
     es: Sube un retrato de una persona adulta. Nuestra referencia es una persona
       ficticia generada por IA.
     ko: 성인 인물 사진 한 장을 업로드하세요. 참조 이미지는 AI로 생성한 가상 인물입니다.
+    zh-Hant: 上傳一張成年人的人像照片。本例參考圖片中的人物為 AI 生成的虛構人物。
   slots:
     - id: person
       labels:
@@ -39,6 +40,7 @@ inputRequirements:
         pt-BR: Pessoa
         es: Persona
         ko: 인물
+        zh-Hant: 人物肖像
       min: 1
       max: 1
 showcaseExampleId: x_156
@@ -64,6 +66,7 @@ inspirationSources:
       pt-BR: Vídeo completo de tutorial ou demonstração
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
+      zh-Hant: 整部教學或作品展示影片
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -74,6 +77,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      zh-Hant: 官方公開 API 快照
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV16m4y1a7uC
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -83,6 +87,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
     metrics:
       - key: views
         value: 56375
@@ -94,6 +99,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          zh-Hant: 播放或瀏覽
       - key: likes
         value: 3074
         labels:
@@ -104,6 +110,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          zh-Hant: 按讚
       - key: saves
         value: 2984
         labels:
@@ -114,6 +121,7 @@ inspirationSources:
           pt-BR: Salvamentos
           es: Guardados
           ko: 저장
+          zh-Hant: 收藏
       - key: comments
         value: 64
         labels:
@@ -124,6 +132,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          zh-Hant: 留言
       - key: shares
         value: 202
         labels:
@@ -134,6 +143,7 @@ inspirationSources:
           pt-BR: Compartilhamentos
           es: Veces compartido
           ko: 공유
+          zh-Hant: 分享
       - key: coins
         value: 184
         labels:
@@ -144,6 +154,7 @@ inspirationSources:
           pt-BR: Moedas
           es: Monedas
           ko: 코인
+          zh-Hant: 投幣
       - key: danmaku
         value: 7
         labels:
@@ -154,3 +165,4 @@ inspirationSources:
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
           ko: 화면 댓글
+          zh-Hant: 彈幕

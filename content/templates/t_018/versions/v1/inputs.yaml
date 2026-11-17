@@ -9,6 +9,7 @@ instructions:
     opcional.
   es: Indica un objeto y etiquetas cortas; la referencia del exterior es opcional.
   ko: 물체와 짧은 라벨을 제공하세요. 외관 참조 이미지는 선택 사항입니다.
+  zh-Hant: 提供物件名稱與簡短標註；外觀參考圖片為選填。
 slots:
   - id: object
     labels:
@@ -19,5 +20,6 @@ slots:
       pt-BR: Objeto
       es: Objeto
       ko: 물체
+      zh-Hant: 物件外觀
     min: 0
     max: 1

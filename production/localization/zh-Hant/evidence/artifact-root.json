@@ -1,0 +1,164 @@
+{
+  "measuredAt": "2026-11-17T16:07:29.514Z",
+  "build": {
+    "buildId": "zh-hant-reviewed-root",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "pt-BR",
+        "pathPrefix": "pt-br",
+        "nativeName": "Português (Brasil)",
+        "htmlLang": "pt-BR",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ko",
+        "pathPrefix": "ko",
+        "nativeName": "한국어",
+        "htmlLang": "ko",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "zh-Hant",
+        "pathPrefix": "zh-hant",
+        "nativeName": "繁體中文",
+        "htmlLang": "zh-Hant",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "fileCount": 31209,
+  "htmlFiles": 3220,
+  "htmlBytes": 382505277,
+  "indexes": [
+    {
+      "file": "dist/generated/de/search/index.json",
+      "bytes": 1331857,
+      "gzipBytes": 237928
+    },
+    {
+      "file": "dist/generated/en/search/index.json",
+      "bytes": 1206107,
+      "gzipBytes": 215026
+    },
+    {
+      "file": "dist/generated/es/search/index.json",
+      "bytes": 1313225,
+      "gzipBytes": 234810
+    },
+    {
+      "file": "dist/generated/ja/search/index.json",
+      "bytes": 2184135,
+      "gzipBytes": 379350
+    },
+    {
+      "file": "dist/generated/ko/search/index.json",
+      "bytes": 1928341,
+      "gzipBytes": 328915
+    },
+    {
+      "file": "dist/generated/pt-BR/search/index.json",
+      "bytes": 1341178,
+      "gzipBytes": 238474
+    },
+    {
+      "file": "dist/generated/zh-Hans/search/index.json",
+      "bytes": 1767614,
+      "gzipBytes": 300329
+    },
+    {
+      "file": "dist/generated/zh-Hant/search/index.json",
+      "bytes": 1933014,
+      "gzipBytes": 330150
+    }
+  ]
+}

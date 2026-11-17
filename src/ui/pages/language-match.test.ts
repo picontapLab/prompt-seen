@@ -25,6 +25,20 @@ describe('suggestLanguage (§8.2)', () => {
     expect(suggestLanguage(['pt-PT'], locales)).toBe('pt-BR');
     expect(suggestLanguage(['pt'], locales)).toBe('pt-BR');
   });
+  it.each(['zh-Hant', 'zh-Hant-TW', 'zh-Hant-HK', 'zh-Hant-MO', 'zh-TW', 'zh-HK', 'zh-MO'])(
+    'recommends Traditional Chinese for %s when available',
+    (tag) => expect(suggestLanguage([tag], locales)).toBe('zh-Hant'),
+  );
+  it('honours the explicit script before the region and continues unavailable preferences', () => {
+    expect(suggestLanguage(['zh-Hans-TW'], locales)).toBe('zh-Hans');
+    expect(suggestLanguage(['zh-Hant-CN'], locales)).toBe('zh-Hant');
+    expect(
+      suggestLanguage(
+        ['zh-HK', 'en'],
+        locales.filter((locale) => locale.code !== 'zh-Hant'),
+      ),
+    ).toBe('en');
+  });
   it('suggests nothing when no language matches', () => {
     expect(suggestLanguage(['de-DE', 'fr'], locales)).toBeNull();
     expect(suggestLanguage([], locales)).toBeNull();

@@ -1,0 +1,200 @@
+npm warn Unknown user config "home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: using the "epoll" event method
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: nginx/1.30.6
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: OS: Linux 7.2.12-orbstack-00394-gbecdd6130068
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 20480:1048576
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker processes
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 20
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 21
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 22
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 23
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 24
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 25
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 26
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 27
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 28
+[WebServer] 2026/11/17 16:07:30 [notice] 1#1: start worker process 29
+
+Running 102 tests using 2 workers
+
+(node:81352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [http] › tests/e2e/seo.http.spec.ts:104:1 › the sitemap index lists one sitemap per public locale, and only those (36ms)
+  ✓    2 [http] › tests/e2e/seo.http.spec.ts:114:3 › en: the sitemap lists every published page with its content date and main image (229ms)
+  ✓    4 [http] › tests/e2e/seo.http.spec.ts:114:3 › zh-Hans: the sitemap lists every published page with its content date and main image (221ms)
+  ✓    3 [http] › tests/e2e/seo.http.spec.ts:142:3 › en: every sitemap address is a page whose canonical is that address (2.1s)
+  ✓    5 [http] › tests/e2e/seo.http.spec.ts:142:3 › zh-Hans: every sitemap address is a page whose canonical is that address (1.9s)
+  ✓    6 [http] › tests/e2e/seo.http.spec.ts:114:3 › es: the sitemap lists every published page with its content date and main image (194ms)
+  ✓    8 [http] › tests/e2e/seo.http.spec.ts:114:3 › pt-BR: the sitemap lists every published page with its content date and main image (202ms)
+  ✓    7 [http] › tests/e2e/seo.http.spec.ts:142:3 › es: every sitemap address is a page whose canonical is that address (1.9s)
+  ✓   10 [http] › tests/e2e/seo.http.spec.ts:114:3 › ja: the sitemap lists every published page with its content date and main image (171ms)
+  ✓    9 [http] › tests/e2e/seo.http.spec.ts:142:3 › pt-BR: every sitemap address is a page whose canonical is that address (1.9s)
+  ✓   12 [http] › tests/e2e/seo.http.spec.ts:114:3 › ko: the sitemap lists every published page with its content date and main image (251ms)
+  ✓   11 [http] › tests/e2e/seo.http.spec.ts:142:3 › ja: every sitemap address is a page whose canonical is that address (1.8s)
+  ✓   14 [http] › tests/e2e/seo.http.spec.ts:114:3 › de: the sitemap lists every published page with its content date and main image (178ms)
+  ✓   13 [http] › tests/e2e/seo.http.spec.ts:142:3 › ko: every sitemap address is a page whose canonical is that address (1.7s)
+  ✓   16 [http] › tests/e2e/seo.http.spec.ts:114:3 › zh-Hant: the sitemap lists every published page with its content date and main image (224ms)
+  ✓   15 [http] › tests/e2e/seo.http.spec.ts:142:3 › de: every sitemap address is a page whose canonical is that address (1.7s)
+  ✓   18 [http] › tests/e2e/seo.http.spec.ts:175:1 › robots.txt allows search and AI search, applies the training policy and names the sitemap (8ms)
+  ✓   19 [http] › tests/e2e/seo.http.spec.ts:205:3 › en: a prompt's index.md is Markdown, canonical to its page, and says what the page says (13ms)
+  ✓   20 [http] › tests/e2e/seo.http.spec.ts:225:3 › en: a template's index.md holds the default prompt the page shows (11ms)
+  ✓   21 [http] › tests/e2e/seo.http.spec.ts:205:3 › zh-Hans: a prompt's index.md is Markdown, canonical to its page, and says what the page says (11ms)
+  ✓   22 [http] › tests/e2e/seo.http.spec.ts:225:3 › zh-Hans: a template's index.md holds the default prompt the page shows (10ms)
+  ✓   23 [http] › tests/e2e/seo.http.spec.ts:205:3 › es: a prompt's index.md is Markdown, canonical to its page, and says what the page says (12ms)
+  ✓   24 [http] › tests/e2e/seo.http.spec.ts:225:3 › es: a template's index.md holds the default prompt the page shows (10ms)
+  ✓   25 [http] › tests/e2e/seo.http.spec.ts:205:3 › pt-BR: a prompt's index.md is Markdown, canonical to its page, and says what the page says (10ms)
+  ✓   26 [http] › tests/e2e/seo.http.spec.ts:225:3 › pt-BR: a template's index.md holds the default prompt the page shows (10ms)
+  ✓   27 [http] › tests/e2e/seo.http.spec.ts:205:3 › ja: a prompt's index.md is Markdown, canonical to its page, and says what the page says (11ms)
+  ✓   28 [http] › tests/e2e/seo.http.spec.ts:225:3 › ja: a template's index.md holds the default prompt the page shows (11ms)
+  ✓   29 [http] › tests/e2e/seo.http.spec.ts:205:3 › ko: a prompt's index.md is Markdown, canonical to its page, and says what the page says (11ms)
+  ✓   30 [http] › tests/e2e/seo.http.spec.ts:225:3 › ko: a template's index.md holds the default prompt the page shows (11ms)
+  ✓   31 [http] › tests/e2e/seo.http.spec.ts:205:3 › de: a prompt's index.md is Markdown, canonical to its page, and says what the page says (11ms)
+  ✓   32 [http] › tests/e2e/seo.http.spec.ts:225:3 › de: a template's index.md holds the default prompt the page shows (11ms)
+  ✓   33 [http] › tests/e2e/seo.http.spec.ts:205:3 › zh-Hant: a prompt's index.md is Markdown, canonical to its page, and says what the page says (10ms)
+  ✓   34 [http] › tests/e2e/seo.http.spec.ts:225:3 › zh-Hant: a template's index.md holds the default prompt the page shows (10ms)
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/image26-s10-marked-vase-color-edit/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/image26-s10-marked-vase-color-edit/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/design-top60-03/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/design-top60-03/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/product-brand-story-grid/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/product-brand-story-grid/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/sage-tile-banner/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/sage-tile-banner/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/blue-bauhaus-square/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/blue-bauhaus-square/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/ocean-horizon-banner/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/ocean-horizon-banner/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/blue-rim-avatar/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/blue-rim-avatar/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/monochrome-arches/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/monochrome-arches/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/lavender-tiles/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/lavender-tiles/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/leafy-avatar/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/leafy-avatar/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/moonlit-sail/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/moonlit-sail/index.md HTTP/1.1", host: "127.0.0.1:8096"
+[WebServer] 2026/11/17 16:07:39 [error] 26#26: *3149 open() "/srv/dist/zh-hans/prompts/black-and-white-tiles/index.md" failed (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hans/prompts/black-and-white-tiles/index.md HTTP/1.1", host: "127.0.0.1:8096"
+  ✓   35 [http] › tests/e2e/seo.http.spec.ts:238:1 › drafts and preview-only locales have no index.md and no Markdown alternate (87ms)
+  ✓   17 [http] › tests/e2e/seo.http.spec.ts:142:3 › zh-Hant: every sitemap address is a page whose canonical is that address (1.7s)
+  ✓   37 [http] › tests/e2e/seo.http.spec.ts:277:3 › en: a prompt's structured data matches its title, dates, author and breadcrumb (18ms)
+  ✓   38 [http] › tests/e2e/seo.http.spec.ts:316:3 › en: a template's structured data is its default prompt and current version (8ms)
+  ✓   39 [http] › tests/e2e/seo.http.spec.ts:334:3 › en: list pages describe their works in visible order (27ms)
+  ✓   40 [http] › tests/e2e/seo.http.spec.ts:358:3 › en: the home page names the site and its publisher (20ms)
+  ✓   41 [http] › tests/e2e/seo.http.spec.ts:277:3 › zh-Hans: a prompt's structured data matches its title, dates, author and breadcrumb (13ms)
+  ✓   42 [http] › tests/e2e/seo.http.spec.ts:316:3 › zh-Hans: a template's structured data is its default prompt and current version (9ms)
+  ✓   43 [http] › tests/e2e/seo.http.spec.ts:334:3 › zh-Hans: list pages describe their works in visible order (23ms)
+  ✓   44 [http] › tests/e2e/seo.http.spec.ts:358:3 › zh-Hans: the home page names the site and its publisher (16ms)
+  ✓   45 [http] › tests/e2e/seo.http.spec.ts:277:3 › es: a prompt's structured data matches its title, dates, author and breadcrumb (12ms)
+  ✓   46 [http] › tests/e2e/seo.http.spec.ts:316:3 › es: a template's structured data is its default prompt and current version (9ms)
+  ✓   47 [http] › tests/e2e/seo.http.spec.ts:334:3 › es: list pages describe their works in visible order (19ms)
+  ✓   48 [http] › tests/e2e/seo.http.spec.ts:358:3 › es: the home page names the site and its publisher (50ms)
+  ✓   36 [http] › tests/e2e/seo.http.spec.ts:255:1 › llms.txt links only published, reachable content (300ms)
+  ✓   50 [http] › tests/e2e/seo.http.spec.ts:316:3 › pt-BR: a template's structured data is its default prompt and current version (10ms)
+  ✓   49 [http] › tests/e2e/seo.http.spec.ts:277:3 › pt-BR: a prompt's structured data matches its title, dates, author and breadcrumb (13ms)
+  ✓   51 [http] › tests/e2e/seo.http.spec.ts:334:3 › pt-BR: list pages describe their works in visible order (18ms)
+  ✓   53 [http] › tests/e2e/seo.http.spec.ts:277:3 › ja: a prompt's structured data matches its title, dates, author and breadcrumb (17ms)
+  ✓   52 [http] › tests/e2e/seo.http.spec.ts:358:3 › pt-BR: the home page names the site and its publisher (47ms)
+  ✓   54 [http] › tests/e2e/seo.http.spec.ts:316:3 › ja: a template's structured data is its default prompt and current version (8ms)
+  ✓   55 [http] › tests/e2e/seo.http.spec.ts:334:3 › ja: list pages describe their works in visible order (19ms)
+  ✓   57 [http] › tests/e2e/seo.http.spec.ts:277:3 › ko: a prompt's structured data matches its title, dates, author and breadcrumb (12ms)
+  ✓   58 [http] › tests/e2e/seo.http.spec.ts:316:3 › ko: a template's structured data is its default prompt and current version (9ms)
+  ✓   56 [http] › tests/e2e/seo.http.spec.ts:358:3 › ja: the home page names the site and its publisher (55ms)
+  ✓   59 [http] › tests/e2e/seo.http.spec.ts:334:3 › ko: list pages describe their works in visible order (25ms)
+  ✓   61 [http] › tests/e2e/seo.http.spec.ts:277:3 › de: a prompt's structured data matches its title, dates, author and breadcrumb (12ms)
+  ✓   62 [http] › tests/e2e/seo.http.spec.ts:316:3 › de: a template's structured data is its default prompt and current version (8ms)
+  ✓   60 [http] › tests/e2e/seo.http.spec.ts:358:3 › ko: the home page names the site and its publisher (51ms)
+  ✓   63 [http] › tests/e2e/seo.http.spec.ts:334:3 › de: list pages describe their works in visible order (22ms)
+  ✓   65 [http] › tests/e2e/seo.http.spec.ts:277:3 › zh-Hant: a prompt's structured data matches its title, dates, author and breadcrumb (12ms)
+  ✓   66 [http] › tests/e2e/seo.http.spec.ts:316:3 › zh-Hant: a template's structured data is its default prompt and current version (8ms)
+  ✓   64 [http] › tests/e2e/seo.http.spec.ts:358:3 › de: the home page names the site and its publisher (46ms)
+  ✓   67 [http] › tests/e2e/seo.http.spec.ts:334:3 › zh-Hant: list pages describe their works in visible order (18ms)
+  ✓   69 [http] › tests/e2e/seo.http.spec.ts:376:1 › share images are the og crop: 1200 × 630, or that ratio when the original is smaller (9ms)
+  ✓   68 [http] › tests/e2e/seo.http.spec.ts:358:3 › zh-Hant: the home page names the site and its publisher (47ms)
+  ✓   70 [http] › tests/e2e/seo.http.spec.ts:387:3 › en: translated prompt HTML, popup, Markdown and structured data agree (18ms)
+  ✓   72 [http] › tests/e2e/traditional-chinese.http.spec.ts:8:1 › Traditional Chinese artifact follows preview and production registration (8ms)
+  ✓   71 [http] › tests/e2e/seo.http.spec.ts:387:3 › zh-Hans: translated prompt HTML, popup, Markdown and structured data agree (19ms)
+  ✓   73 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_005 (8ms)
+  ✓   74 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_012 (9ms)
+  ✓   75 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_151 (8ms)
+  ✓   76 [http] › tests/e2e/traditional-chinese.http.spec.ts:23:5 › Traditional Chinese raw HTML and original prompt language › p_217 (8ms)
+  ✓   77 [http] › tests/e2e/traditional-chinese.http.spec.ts:44:3 › Traditional Chinese raw HTML and original prompt language › fallbacks remain noindex and absent from external Markdown export (4ms)
+[WebServer] 2026/11/17 16:07:40 [error] 23#23: *3579 "/srv/dist/zh-hant/unknown-traditionalChinese-acceptance-page/index.html" is not found (2: No such file or directory), client: 192.168.215.1, server: _, request: "GET /zh-hant/unknown-traditionalChinese-acceptance-page/ HTTP/1.1", host: "127.0.0.1:8096"
+  ✓   78 [http] › tests/e2e/traditional-chinese.http.spec.ts:56:3 › Traditional Chinese raw HTML and original prompt language › search stays noindex and unknown Traditional Chinese addresses return 404 (7ms)
+(node:81395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   80 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (312ms)
+  ✓   81 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (484ms)
+  ✓   79 [chromium] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (1.1s)
+  ✓   82 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (620ms)
+  ✓   83 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (765ms)
+  ✓   85 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (1.4s)
+  ✓   84 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (2.1s)
+(node:81430) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   86 [chromium] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (1.3s)
+(node:81438) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   88 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (1.4s)
+  ✓   89 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (1.3s)
+  ✓   87 [firefox] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (4.2s)
+  ✓   90 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (2.1s)
+  ✓   91 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (1.4s)
+  ✓   93 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (1.7s)
+  ✓   92 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (2.9s)
+(node:81573) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   94 [firefox] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (2.2s)
+(node:81587) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   96 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:64:1 › Traditional Chinese serialized vocabulary runs in the bundled Worker (738ms)
+  ✓   95 [webkit] › tests/e2e/traditional-chinese-ime-submit.browser.spec.ts:9:1 › Safari-style 229 Enter after compositionend does not submit, but the next ordinary Enter does (2.9s)
+  ✓   97 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:81:3 › Traditional Chinese interface › frozen corpus cases run against the packaged index in the bundled Worker (1.7s)
+  ✓   98 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 390px (1.1s)
+  ✓   99 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:104:5 › Traditional Chinese interface › Traditional Chinese display font and layout at 1280px (1.3s)
+  ✓  101 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_001 (2.1s)
+  ✓  100 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:133:3 › Traditional Chinese interface › composition preserves candidate input without submitting or closing quick search (3.6s)
+  ✓  102 [webkit] › tests/e2e/traditional-chinese.browser.spec.ts:167:5 › Traditional Chinese interface › input survives rendering, copy and download: t_002 (1.8s)
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 22#22: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 21#21: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 20#20: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 22#22: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 21#21: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 20#20: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 23#23: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 24#24: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 24#24: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 28#28: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 23#23: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 28#28: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 25#25: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 26#26: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 25#25: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 26#26: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 27#27: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 29#29: exiting
+[WebServer] 2026/11/17 16:08:04 [notice] 27#27: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 29#29: exit
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 21
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 21 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 20
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 20 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 22 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 23 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 26 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 28 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 24 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 29 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 29 (SIGIO) received
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: signal 17 (SIGCHLD) received from 27
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 25 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: worker process 27 exited with code 0
+[WebServer] 2026/11/17 16:08:04 [notice] 1#1: exit
+
+  102 passed (34.4s)

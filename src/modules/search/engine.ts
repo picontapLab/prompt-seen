@@ -1,5 +1,6 @@
 import MiniSearch, { type Options, type SearchResult } from 'minisearch';
 import { domainAliases } from './profiles';
+import { traditionalChineseKindQuery } from './traditional-chinese';
 import { cjkRuns, isCjkTerm, normalizeTerm, queryTerms, tokenize } from './tokenize';
 import {
   SEARCH_KINDS,
@@ -97,7 +98,15 @@ export function loadEngine(file: SearchIndexFile): Engine {
 }
 
 function run(engine: Engine, query: string): SearchResult[] {
-  return engine.mini.search(query);
+  const hits = engine.mini.search(query);
+  const kind = engine.locale === 'zh-Hant' ? traditionalChineseKindQuery(query) : null;
+  if (!kind) return hits;
+  return hits.sort((a, b) => {
+    if (a.kind === kind && b.kind === kind) return String(a.id).localeCompare(String(b.id));
+    if (a.kind === kind) return -1;
+    if (b.kind === kind) return 1;
+    return 0;
+  });
 }
 
 /**

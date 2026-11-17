@@ -1,0 +1,32 @@
+---
+title: 使用照片與標記更換花瓶顏色
+description: 記錄 AI 改色提示詞，包含兩張依序排列的參考輸入、鈷藍色花瓶輸出，以及觀察到的釉面變化。
+status: published
+updatedAt: 2026-11-06
+translation:
+  sourceLocale: en
+  sourceHash: sha256:cb1800a78015b5f4
+  reviewStatus: reviewed
+---
+
+## 使用方法
+
+使用記錄中的完整提示詞，並依序加入展示的原始參考素材。修改提示詞或輸入後即為尚未測試的變體。
+
+先上傳原始合成房間照片，再上傳獨立的紅圈標記疊加圖。疊加圖用來指出花瓶，並非生成結果。記錄中的實際提示詞為中文，在此保持不變。英文翻譯會構成尚未測試的新提示詞。
+
+## 觀察結果
+
+花瓶由奶油色改為鈷藍，紅色標記已移除。水壺、乾枝、磁磚與窗戶在視覺上保持一致；新釉面更亮。
+
+## 生成證據與限制
+
+[執行記錄](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml)將提示詞雜湊連結至依序排列的輸入 a_373、a_374，以及輸出 a_372。[生成收據](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json)保留輸入與輸出雜湊。其時間戳記為 UTC 11 月 5 日，對應洛杉磯 11 月 4 日，也就是本次執行顯示的日期。
+
+GPT Image 2.6 是[專案擁有者的版本註記](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json)。工具未回傳精確的 API 模型 ID；種子、採樣與品質設定均未記錄。這一組輸出呈現顏色變化與更有光澤的表面，不能證明改色會保留每一道反光或每個像素。嘗試自己的圖片時，請檢查材質表面與周圍物件。
+
+## 來源與生成
+
+來源提供原始提示詞；本次製作使用另行記錄的實際提示詞。[來源](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup)。來源貼文互動數不代表這個新生成範例的熱度。
+
+使用 GPT Image 2.6 生成。本例使用的所有參考圖片均為本專案生成。

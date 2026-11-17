@@ -11,6 +11,7 @@ instructions:
   es: Sube un retrato claro de una persona adulta. La referencia de demostración
     está generada por IA. Mantén todo el texto de la imagen en inglés.
   ko: 선명한 성인 인물 사진 한 장을 업로드하세요. 시연용 참조 이미지는 AI로 생성했습니다. 모든 글자는 영어로 유지하세요.
+  zh-Hant: 上傳一張清晰的成年人肖像。示例參考圖由 AI 生成。畫面文字保持英文。
 slots:
   - id: person
     labels:
@@ -21,5 +22,6 @@ slots:
       pt-BR: Retrato de pessoa
       es: Retrato de persona
       ko: 인물 사진
+      zh-Hant: 人物肖像
     min: 1
     max: 1

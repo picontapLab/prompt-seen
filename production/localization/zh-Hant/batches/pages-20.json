@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "locale": "zh-Hant",
+  "operations": [
+    {
+      "key": "topic/style/ink",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:702339951d97f634d735e1040a98d93797bcbf30c6bbfa1cf0550fd5806bd77e",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "水墨風格提示詞",
+        "description": "枝條、竹林與山巒的水墨提示詞，重在筆觸與留白。",
+        "body": "## 水墨提示詞寫什麼？\n\n寫筆觸而不是線條粗細：“枯筆”“濕筆暈染”比“粗線”“細線”更可靠。再寫清印章的位置，否則它可能落在主體上。\n\n可以從[水墨梅枝](prompt:p_012)開始，或者直接使用[水墨長卷範本](template:t_002)。"
+      }
+    }
+  ]
+}

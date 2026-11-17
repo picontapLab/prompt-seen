@@ -10,6 +10,7 @@ fields:
       pt-BR: Rotação em graus
       es: Rotación en grados
       ko: 회전 각도(도)
+      zh-Hant: 旋轉角度
     help:
       en: Changing the angle also requires revising the room-position directions in
         the prompt. Only the default is demonstrated.
@@ -19,10 +20,11 @@ fields:
         Raumposition im Prompt. Nur der Standardwert wird demonstriert.
       pt-BR: Mudar o ângulo também exige revisar no prompt as orientações de posição
         dos cômodos. Somente o valor padrão é demonstrado.
-      es: Cambiar el ángulo también requiere revisar las indicaciones de posición
-        de las habitaciones en el prompt. Solo se demuestra la versión
+      es: Cambiar el ángulo también requiere revisar las indicaciones de posición de
+        las habitaciones en el prompt. Solo se demuestra la versión
         predeterminada.
       ko: 각도를 바꾸면 프롬프트 안의 방 위치 지시도 수정해야 합니다. 기본값만 시연되어 있습니다.
+      zh-Hant: 修改角度時還需同步修改提示詞中的房間方位描述。僅預設值有展示結果。
     type: string
     default: "180"
     minLength: 1
