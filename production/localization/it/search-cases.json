@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "cases": [
+    {"query":"ritratto neon","expectedKeys":["prompt/p_005"],"topK":5},
+    {"query":"ritratti neon","expectedKeys":["prompt/p_005"],"topK":5},
+    {"query":"l’illuminazione neon","expectedKeys":["prompt/p_005"],"topK":5},
+    {"query":"l'illuminazione neon","expectedKeys":["prompt/p_005"],"topK":5},
+    {"query":"illuminazione neon","expectedKeys":["prompt/p_005"],"topK":5},
+    {"query":"ritratto copertina","expectedKeys":["prompt/p_111"],"topK":5},
+    {"query":"matrimonio due persone","expectedKeys":["prompt/p_115"],"topK":5},
+    {"query":"fotografia di prodotto studio","expectedKeys":["prompt/p_151"],"topK":5},
+    {"query":"foto di prodotto studio","expectedKeys":["prompt/p_151"],"topK":5},
+    {"query":"packshot studio","expectedKeys":["prompt/p_151"],"topK":5},
+    {"query":"modello di prompt prodotto","expectedKeys":["template/t_001"],"topK":5},
+    {"query":"template prodotto","expectedKeys":["template/t_001"],"topK":5},
+    {"query":"modello di prompt inchiostro","expectedKeys":["template/t_002"],"topK":5},
+    {"query":"scimmia lanterna","expectedKeys":["prompt/p_224"],"topK":5},
+    {"query":"poster Colosseo","expectedKeys":["prompt/p_289"],"topK":5},
+    {"query":"manifesto Colosseo","expectedKeys":["prompt/p_289"],"topK":5},
+    {"query":"poster Fuji","expectedKeys":["prompt/p_290"],"topK":5},
+    {"query":"raccolta poster","expectedKeys":["collection/c_001"],"topK":5},
+    {"query":"tema inchiostro","expectedKeys":["topic/style/ink"],"topK":5},
+    {"query":"GPT Image p_111","expectedKeys":["prompt/p_111"],"topK":5},
+    {"query":"p_217","expectedKeys":["prompt/p_217"],"topK":5},
+    {"query":"lanterna","expectedKeys":["prompt/p_224"],"excludedKeys":["prompt/p_005"],"topK":5},
+    {"query":"Colosseo","expectedKeys":["prompt/p_289"],"excludedKeys":["prompt/p_005"],"topK":5},
+    {"query":"zzqvxxinesistente","expectedKeys":[],"topK":5}
+  ]
+}

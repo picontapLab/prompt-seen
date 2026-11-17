@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "operations": [
+    {
+      "key": "collection/c_001",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:52d650b99f25b13ad1ee421dda72562accabf6bd843ac23c80b5cc03a318ae2d",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster con una gerarchia chiara",
+        "description": "Poster in cui una forma domina e ogni altro elemento ha una posizione definita.",
+        "reasons": {
+          "p_045": "Cinque frasi annotate mostrano quali parole hanno collocato ciascuna forma.",
+          "p_002": "La stessa struttura del poster jazz, con il disco e il semicerchio scambiati di posto.",
+          "p_022": "Corallo su crema: la gerarchia regge anche con uno sfondo chiaro.",
+          "t_001": "La stessa idea applicata ai prodotti: il modello riserva uno spazio al titolo.",
+          "p_076": "Un poster di viaggio che usa le strisce nel cielo per costruire la gerarchia visiva.",
+          "p_010": "Barre per il titolo in alto, prodotto in basso: il layout a due livelli più semplice."
+        },
+        "body": "Ognuno di questi prompt specifica dove collocare le forme. Questa semplice abitudine evita che i poster piatti sembrino coriandoli sparsi.\n\n## Che cosa hanno in comune?\n\n- Una forma dominante, nominata per prima e collocata in una posizione precisa.\n- Barre al posto delle scritte, così il layout funziona anche senza testo leggibile.\n- Al massimo quattro colori, oltre allo sfondo."
+      }
+    },
+    {
+      "key": "collection/c_002",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:cd80cf7a7e7d5fc7b89304d4303fcb980da5dd32c4b4f03f3380a83007c63f11",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Paesaggi tranquilli",
+        "description": "Crinali sovrapposti, acqua immobile e ampi cieli vuoti, per sfondi discreti.",
+        "reasons": {
+          "p_042": "La nebbia svolge il lavoro che altrimenti spetterebbe ai dettagli.",
+          "p_016": "Cinque livelli che sfumano nella nebbia: massima profondità con il minimo disegno.",
+          "p_001": "Una versione più calda con il sole basso tra i crinali.",
+          "t_002": "Trasforma uno di questi paesaggi in una pittura a inchiostro con il modello del rotolo.",
+          "p_088": "Nel formato 3:1, il solo orizzonte diventa il soggetto.",
+          "p_098": "Due frasi annotate mostrano come sono stati collocati la luna e il primo piano scuro."
+        },
+        "body": "Paesaggi costruiti con poche forme sovrapposte. Funzionano come sfondo per il testo perché nessun elemento richiede attenzione.\n\n## Come mantengo tranquillo un paesaggio?\n\n- Ordina i livelli dal chiaro allo scuro invece di aggiungere dettagli.\n- Indica una sola fonte luminosa e la sua posizione.\n- Lascia vuoto il cielo: è lo spazio destinato al testo."
+      }
+    },
+    {
+      "key": "collection/c_003",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:fcf9fdfb9f2e2d4140a970bb3b6a3a6e305184a1b6c9de7ea22a5733d3469b83",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ispirazioni per immagini social · Top 50",
+        "description": "50 idee per immagini testate, adattate in modo indipendente da post social e immagini della community.",
+        "reasons": {
+          "p_146": "#1 · Sedici emozioni diventano un foglio di adesivi con un personaggio coerente e brevi didascalie in cinese.",
+          "p_122": "#2 · Una creatura asimmetrica disegnata a pastello diventa un oggetto tangibile senza correggerne le proporzioni insolite.",
+          "p_133": "#3 · Un ritratto diventa una statuina con una scatola coordinata e uno schermo che ne mostra la modellazione.",
+          "p_123": "#4 · Una foto di prodotto diventa nove composizioni coordinate per una campagna.",
+          "p_135": "#5 · La postura e i segni del mantello di un animale diventano personalità, acconciatura e abbigliamento umani.",
+          "p_125": "#6 · Un soggiorno diventa una miniatura aperta che conserva la disposizione degli arredi.",
+          "p_120": "#7 · Nove oggetti arrotondati condividono palette, materiale e illuminazione.",
+          "p_137": "#8 · Una scena familiare diventa un morbido fotogramma d’animazione dipinto a mano.",
+          "p_121": "#9 · L’identità di una caffetteria immaginaria si estende a tazze, confezioni e applicazioni editoriali.",
+          "p_134": "#10 · Un soggetto riconoscibile diventa un ciondolo in miniatura accanto a una chiave reale.",
+          "p_147": "#11 · Un contorno verificato fa da base a una mappa turistica in miniatura e a un percorso etichettato.",
+          "p_116": "#12 · Un involucro trasparente rivela la disposizione dei componenti fornita, con etichette discrete.",
+          "p_111": "#13 · Una luce direzionale morbida e una giacca scultorea creano un ritratto con spazio per la tipografia di copertina.",
+          "p_117": "#14 · Gli ingredienti si sollevano sopra una ciotola pronta, con le esatte quantità fornite.",
+          "p_118": "#15 · Monumenti simili a giocattoli illustrano una scheda meteo con uno scenario chiaramente indicato.",
+          "p_138": "#16 · Graffi e scolorimento vengono attenuati mantenendo riconoscibile la scena originale.",
+          "p_139": "#17 · Un profilo riconoscibile racchiude una griglia di momenti fotografici personali.",
+          "p_112": "#18 · La posa e l’abbigliamento originali diventano un personaggio scolpito, illuminato dolcemente.",
+          "p_119": "#19 · Personaggi originali coerenti interpretano quattro momenti narrativi chiari.",
+          "p_126": "#20 · Linee avorio trasformano un oggetto in un’elegante tavola tecnica blu cobalto.",
+          "p_127": "#21 · Prospettiva, prospetti e studi dei dettagli descrivono un unico concept di prodotto coerente.",
+          "p_140": "#22 · La sagoma netta di un’icona diventa un morbido oggetto da studio rivestito di pelo.",
+          "p_148": "#23 · Una persona appare in nove espressioni festive con brevi auguri.",
+          "p_141": "#24 · Una fotografia d’azione fornita riempie le lettere grandi e leggibili di un poster.",
+          "p_128": "#25 · Una parola breve diventa un oggetto gonfiabile lucido con una spaziatura studiata.",
+          "p_142": "#26 · Una foto di prodotto incontra forme grafiche decise e il testo esatto della campagna.",
+          "p_143": "#27 · La fotografia di prodotto attraversa una griglia di grandi blocchi di colore e curve.",
+          "p_129": "#28 · Due creature inventate si affrontano in un’arena nitida in pixel art.",
+          "p_149": "#29 · Un emblema originale esplora due materiali distinti conservando la propria sagoma.",
+          "p_113": "#30 · Una figura centrale nitida contrasta con le scie dei pedoni ripresi a lunga esposizione.",
+          "p_114": "#31 · Grana fine e flash diretto creano un primo piano notturno spontaneo.",
+          "p_136": "#32 · Una persona dall’aspetto fotografico condivide una strada con un imponente compagno stilizzato.",
+          "p_115": "#33 · Due ritratti di adulti forniti diventano una calda fotografia di matrimonio in giardino.",
+          "p_144": "#34 · Un ritratto e un riferimento per il costume si uniscono in una tranquilla scena in giardino.",
+          "p_150": "#35 · Un oggetto centrale e studi dei dettagli formano una sobria tavola di catalogo con etichette cinesi.",
+          "p_130": "#36 · Cinque motivi coordinati per unghie condividono un tema e una palette da campagna beauty.",
+          "p_131": "#37 · Fibre di carta e bordi sollevati danno profondità fisica a una delicata illustrazione narrativa.",
+          "p_132": "#38 · Impronte e segni degli strumenti rendono tangibile una piccola scena d’argilla.",
+          "p_102": "#39 · Una fragola diventa un minuscolo gattino, con semi e polpa che ne formano il muso e le zampe.",
+          "p_101": "#40 · Un mondo alpino in miniatura riversa una cascata da una sfera di vetro su un tavolo di quercia.",
+          "p_103": "#41 · Un gattino imbronciato riempie una bottiglia rotonda per pozioni in una bottega d’alchimista dalla luce calda.",
+          "p_104": "#42 · Fasce dipinte color corallo, turchese e zafferano seguono una costa rocciosa intorno a un faro bianco.",
+          "p_105": "#43 · Una limonata e una mano realistiche incontrano nuotatori giocosi a inchiostro nero, bolle e un limone sorridente.",
+          "p_106": "#44 · Un minuscolo gatto soriano pescivendolo scambia un pesce fresco con monete nella luce mattutina del mercato.",
+          "p_107": "#45 · Una strada di quartiere immaginaria al crepuscolo, con biciclette, persone comuni e luci calde provenienti dalla scena.",
+          "p_108": "#46 · Una città ottimista si intreccia tra alberi giganti, giardini pubblici e ponti pedonali.",
+          "p_109": "#47 · Un bosco muschioso e una piccola cascata formano un ecosistema in miniatura in una mano aperta.",
+          "p_145": "#48 · Forme riconoscibili diventano tratti irregolari di pastello a cera su carta scolastica.",
+          "p_110": "#49 · Una zona ristoro sotterranea vuota appare familiare e allo stesso tempo lievemente disorientante.",
+          "p_124": "#50 · Luce e ombra del giardino seguono la struttura di un volto fornito, osservabile a scale diverse."
+        },
+        "body": "## Dall’ispirazione alla tua immagine\n\nQuesta selezione editoriale è aggiornata al 29 ottobre 2026 e ordinata secondo la nostra classifica di ricerca. Non è una graduatoria unificata di popolarità: le piattaforme misurano l’attenzione in modi diversi e ogni caso conserva la fonte originale e la data di osservazione.\n\nParti dal risultato registrato, esamina le eventuali immagini di riferimento, poi copia il prompt o modifica un modello testato. I nostri esempi generati sono dimostrazioni originali; le interazioni della fonte appartengono al post originale.\n\n## Esplora la raccolta\n\n[Foto e personaggi](collection:c_004) · [Design del marchio](collection:c_005) · [Informazioni e storie](collection:c_006) · [Arte e mondi giocosi](collection:c_007)"
+      }
+    },
+    {
+      "key": "collection/c_004",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:58b61ae264b8f99bf0b414128b62e8c38720172c0a917002e973a4c8fdef2653",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Da foto a personaggi",
+        "description": "17 idee per immagini testate, adattate in modo indipendente da post social e immagini della community.",
+        "reasons": {
+          "p_146": "#1 · Sedici emozioni diventano un foglio di adesivi con un personaggio coerente e brevi didascalie in cinese.",
+          "p_122": "#2 · Una creatura asimmetrica disegnata a pastello diventa un oggetto tangibile senza correggerne le proporzioni insolite.",
+          "p_133": "#3 · Un ritratto diventa una statuina con una scatola coordinata e uno schermo che ne mostra la modellazione.",
+          "p_135": "#5 · La postura e i segni del mantello di un animale diventano personalità, acconciatura e abbigliamento umani.",
+          "p_125": "#6 · Un soggiorno diventa una miniatura aperta che conserva la disposizione degli arredi.",
+          "p_137": "#8 · Una scena familiare diventa un morbido fotogramma d’animazione dipinto a mano.",
+          "p_134": "#10 · Un soggetto riconoscibile diventa un ciondolo in miniatura accanto a una chiave reale.",
+          "p_111": "#13 · Una luce direzionale morbida e una giacca scultorea creano un ritratto con spazio per la tipografia di copertina.",
+          "p_138": "#16 · Graffi e scolorimento vengono attenuati mantenendo riconoscibile la scena originale.",
+          "p_112": "#18 · La posa e l’abbigliamento originali diventano un personaggio scolpito, illuminato dolcemente.",
+          "p_140": "#22 · La sagoma netta di un’icona diventa un morbido oggetto da studio rivestito di pelo.",
+          "p_148": "#23 · Una persona appare in nove espressioni festive con brevi auguri.",
+          "p_113": "#30 · Una figura centrale nitida contrasta con le scie dei pedoni ripresi a lunga esposizione.",
+          "p_114": "#31 · Grana fine e flash diretto creano un primo piano notturno spontaneo.",
+          "p_136": "#32 · Una persona dall’aspetto fotografico condivide una strada con un imponente compagno stilizzato.",
+          "p_115": "#33 · Due ritratti di adulti forniti diventano una calda fotografia di matrimonio in giardino.",
+          "p_144": "#34 · Un ritratto e un riferimento per il costume si uniscono in una tranquilla scena in giardino."
+        },
+        "body": "## Dall’ispirazione alla tua immagine\n\nQuesta selezione editoriale è aggiornata al 29 ottobre 2026 e ordinata secondo la nostra classifica di ricerca. Non è una graduatoria unificata di popolarità: le piattaforme misurano l’attenzione in modi diversi e ogni caso conserva la fonte originale e la data di osservazione.\n\nParti dal risultato registrato, esamina le eventuali immagini di riferimento, poi copia il prompt o modifica un modello testato. I nostri esempi generati sono dimostrazioni originali; le interazioni della fonte appartengono al post originale.\n\n## Esplora la raccolta\n\nTorna alla [Top 50 completa](collection:c_003) per tutti e quattro i temi."
+      }
+    },
+    {
+      "key": "collection/c_005",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:92bab6e3980d5fb68107e367be554a6f36f6cbe3d4c86896a76e2ca2180f21e8",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Design del marchio e commerciale",
+        "description": "11 idee per immagini testate, adattate in modo indipendente da post social e immagini della community.",
+        "reasons": {
+          "p_123": "#4 · Una foto di prodotto diventa nove composizioni coordinate per una campagna.",
+          "p_120": "#7 · Nove oggetti arrotondati condividono palette, materiale e illuminazione.",
+          "p_121": "#9 · L’identità di una caffetteria immaginaria si estende a tazze, confezioni e applicazioni editoriali.",
+          "p_139": "#17 · Un profilo riconoscibile racchiude una griglia di momenti fotografici personali.",
+          "p_127": "#21 · Prospettiva, prospetti e studi dei dettagli descrivono un unico concept di prodotto coerente.",
+          "p_141": "#24 · Una fotografia d’azione fornita riempie le lettere grandi e leggibili di un poster.",
+          "p_128": "#25 · Una parola breve diventa un oggetto gonfiabile lucido con una spaziatura studiata.",
+          "p_142": "#26 · Una foto di prodotto incontra forme grafiche decise e il testo esatto della campagna.",
+          "p_143": "#27 · La fotografia di prodotto attraversa una griglia di grandi blocchi di colore e curve.",
+          "p_149": "#29 · Un emblema originale esplora due materiali distinti conservando la propria sagoma.",
+          "p_130": "#36 · Cinque motivi coordinati per unghie condividono un tema e una palette da campagna beauty."
+        },
+        "body": "## Dall’ispirazione alla tua immagine\n\nQuesta selezione editoriale è aggiornata al 29 ottobre 2026 e ordinata secondo la nostra classifica di ricerca. Non è una graduatoria unificata di popolarità: le piattaforme misurano l’attenzione in modi diversi e ogni caso conserva la fonte originale e la data di osservazione.\n\nParti dal risultato registrato, esamina le eventuali immagini di riferimento, poi copia il prompt o modifica un modello testato. I nostri esempi generati sono dimostrazioni originali; le interazioni della fonte appartengono al post originale.\n\n## Esplora la raccolta\n\nTorna alla [Top 50 completa](collection:c_003) per tutti e quattro i temi."
+      }
+    },
+    {
+      "key": "collection/c_006",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:ce91a21dc56c5c75e282d3902cfc75857be22dc2aa17e1da6a29e065bc7acfc9",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Informazioni e storie visive",
+        "description": "8 idee per immagini testate, adattate in modo indipendente da post social e immagini della community.",
+        "reasons": {
+          "p_147": "#11 · Un contorno verificato fa da base a una mappa turistica in miniatura e a un percorso etichettato.",
+          "p_116": "#12 · Un involucro trasparente rivela la disposizione dei componenti fornita, con etichette discrete.",
+          "p_117": "#14 · Gli ingredienti si sollevano sopra una ciotola pronta, con le esatte quantità fornite.",
+          "p_118": "#15 · Monumenti simili a giocattoli illustrano una scheda meteo con uno scenario chiaramente indicato.",
+          "p_119": "#19 · Personaggi originali coerenti interpretano quattro momenti narrativi chiari.",
+          "p_126": "#20 · Linee avorio trasformano un oggetto in un’elegante tavola tecnica blu cobalto.",
+          "p_129": "#28 · Due creature inventate si affrontano in un’arena nitida in pixel art.",
+          "p_150": "#35 · Un oggetto centrale e studi dei dettagli formano una sobria tavola di catalogo con etichette cinesi."
+        },
+        "body": "## Dall’ispirazione alla tua immagine\n\nQuesta selezione editoriale è aggiornata al 29 ottobre 2026 e ordinata secondo la nostra classifica di ricerca. Non è una graduatoria unificata di popolarità: le piattaforme misurano l’attenzione in modi diversi e ogni caso conserva la fonte originale e la data di osservazione.\n\nParti dal risultato registrato, esamina le eventuali immagini di riferimento, poi copia il prompt o modifica un modello testato. I nostri esempi generati sono dimostrazioni originali; le interazioni della fonte appartengono al post originale.\n\n## Esplora la raccolta\n\nTorna alla [Top 50 completa](collection:c_003) per tutti e quattro i temi."
+      }
+    },
+    {
+      "key": "collection/c_007",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:ea35f0bd180aa2a09dfed6aa925094a786dfb67ddeffee4da691561f50d5dc5a",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Arte e mondi giocosi",
+        "description": "14 idee per immagini testate, adattate in modo indipendente da post social e immagini della community.",
+        "reasons": {
+          "p_131": "#37 · Fibre di carta e bordi sollevati danno profondità fisica a una delicata illustrazione narrativa.",
+          "p_132": "#38 · Impronte e segni degli strumenti rendono tangibile una piccola scena d’argilla.",
+          "p_102": "#39 · Una fragola diventa un minuscolo gattino, con semi e polpa che ne formano il muso e le zampe.",
+          "p_101": "#40 · Un mondo alpino in miniatura riversa una cascata da una sfera di vetro su un tavolo di quercia.",
+          "p_103": "#41 · Un gattino imbronciato riempie una bottiglia rotonda per pozioni in una bottega d’alchimista dalla luce calda.",
+          "p_104": "#42 · Fasce dipinte color corallo, turchese e zafferano seguono una costa rocciosa intorno a un faro bianco.",
+          "p_105": "#43 · Una limonata e una mano realistiche incontrano nuotatori giocosi a inchiostro nero, bolle e un limone sorridente.",
+          "p_106": "#44 · Un minuscolo gatto soriano pescivendolo scambia un pesce fresco con monete nella luce mattutina del mercato.",
+          "p_107": "#45 · Una strada di quartiere immaginaria al crepuscolo, con biciclette, persone comuni e luci calde provenienti dalla scena.",
+          "p_108": "#46 · Una città ottimista si intreccia tra alberi giganti, giardini pubblici e ponti pedonali.",
+          "p_109": "#47 · Un bosco muschioso e una piccola cascata formano un ecosistema in miniatura in una mano aperta.",
+          "p_145": "#48 · Forme riconoscibili diventano tratti irregolari di pastello a cera su carta scolastica.",
+          "p_110": "#49 · Una zona ristoro sotterranea vuota appare familiare e allo stesso tempo lievemente disorientante.",
+          "p_124": "#50 · Luce e ombra del giardino seguono la struttura di un volto fornito, osservabile a scale diverse."
+        },
+        "body": "## Dall’ispirazione alla tua immagine\n\nQuesta selezione editoriale è aggiornata al 29 ottobre 2026 e ordinata secondo la nostra classifica di ricerca. Non è una graduatoria unificata di popolarità: le piattaforme misurano l’attenzione in modi diversi e ogni caso conserva la fonte originale e la data di osservazione.\n\nParti dal risultato registrato, esamina le eventuali immagini di riferimento, poi copia il prompt o modifica un modello testato. I nostri esempi generati sono dimostrazioni originali; le interazioni della fonte appartengono al post originale.\n\n## Esplora la raccolta\n\nTorna alla [Top 50 completa](collection:c_003) per tutti e quattro i temi."
+      }
+    },
+    {
+      "key": "collection/c_008",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:6f6a9adae0b8722f01c0c2ded2d2e3cbe07d012e9893d5276138fb1825471664",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Top 60 dei prompt IA per il design",
+        "description": "Prompt di design adattati in modo indipendente, con risultati dimostrativi di GPT Image.",
+        "body": "## Esempi generati in modo indipendente\n\nOgni caso ha il proprio risultato GPT Image, il prompt effettivamente usato e un’esecuzione sottoposta a revisione. I casi di modifica delle immagini includono riferimenti sintetici nell’ordine corretto. Sono esclusi i due casi da immagine a video (15 e 16); rimangono 58 casi statici. I risultati del modello sono concept visivi; i limiti di ciascun caso sono registrati nei dettagli."
+      }
+    },
+    {
+      "key": "collection/c_009",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:6961980c537e256a8245e91f17134b97317d454207eea0806acee86089da1b88",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Immagini di prodotto e commerciali",
+        "description": "Prompt di design adattati in modo indipendente, con risultati dimostrativi di GPT Image.",
+        "body": "## Esempi generati in modo indipendente\n\nOgni caso ha il proprio risultato GPT Image, il prompt effettivamente usato e un’esecuzione sottoposta a revisione. I casi di modifica delle immagini includono riferimenti sintetici nell’ordine corretto. Sono esclusi i due casi da immagine a video (15 e 16); rimangono 58 casi statici. I risultati del modello sono concept visivi; i limiti di ciascun caso sono registrati nei dettagli."
+      }
+    },
+    {
+      "key": "collection/c_010",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:c3ba6049fda91475348913c5fad54e47a47d83ca1d09ef2536c3bd823ba8cd3d",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster e design dell’informazione",
+        "description": "Prompt di design adattati in modo indipendente, con risultati dimostrativi di GPT Image.",
+        "body": "## Esempi generati in modo indipendente\n\nOgni caso ha il proprio risultato GPT Image, il prompt effettivamente usato e un’esecuzione sottoposta a revisione. I casi di modifica delle immagini includono riferimenti sintetici nell’ordine corretto. Sono esclusi i due casi da immagine a video (15 e 16); rimangono 58 casi statici. I risultati del modello sono concept visivi; i limiti di ciascun caso sono registrati nei dettagli."
+      }
+    },
+    {
+      "key": "collection/c_011",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:1cc5b4ebfb575dcd3c05c7d6d44466b153deaa62f7def8a1a2c06d7a24b15fdf",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Progettazione degli spazi e architettura",
+        "description": "Prompt di design adattati in modo indipendente, con risultati dimostrativi di GPT Image.",
+        "body": "## Esempi generati in modo indipendente\n\nOgni caso ha il proprio risultato GPT Image, il prompt effettivamente usato e un’esecuzione sottoposta a revisione. I casi di modifica delle immagini includono riferimenti sintetici nell’ordine corretto. Sono esclusi i due casi da immagine a video (15 e 16); rimangono 58 casi statici. I risultati del modello sono concept visivi; i limiti di ciascun caso sono registrati nei dettagli."
+      }
+    },
+    {
+      "key": "collection/c_012",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:7f1d194ddd2ffdf723ec6dd599c8777dcf480276a1ae44bbb38c03ecdcc8ec7b",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Concept di elementi grafici e mascotte",
+        "description": "Prompt di design adattati in modo indipendente, con risultati dimostrativi di GPT Image.",
+        "body": "## Esempi generati in modo indipendente\n\nOgni caso ha il proprio risultato GPT Image, il prompt effettivamente usato e un’esecuzione sottoposta a revisione. I casi di modifica delle immagini includono riferimenti sintetici nell’ordine corretto. Sono esclusi i due casi da immagine a video (15 e 16); rimangono 58 casi statici. I risultati del modello sono concept visivi; i limiti di ciascun caso sono registrati nei dettagli."
+      }
+    },
+    {
+      "key": "collection/c_013",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:b94136fa4148ba12fc3066e3779567f519b54ffb53742c994d5db0160345bd51",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Prompt social di Image 2.6 — test nella lingua originale",
+        "description": "Undici test di prompt statici nella lingua originale, incluso un ritratto di strada riuscito dopo un nuovo tentativo, con riferimenti generati dal progetto.",
+        "body": "## Prompt statici testati\n\nUndici esempi accettati usano i prompt completi degli autori nella lingua originale. Le immagini di riferimento sono generate da questo progetto. Il ritratto di strada è riuscito a un nuovo tentativo; altri quattro casi statici restano rifiutati dallo strumento di generazione.\n\nGli autori identificano l’opera originale come Image 2.6. Il nostro strumento indica GPT Image senza una versione esatta del modello. L’elenco segue i Mi piace dei post originali su X rilevati il 7 novembre 2026; sono istantanee dell’intero post, non interazioni con i nostri esempi né una classifica tra piattaforme.\n\n## Adattamenti separati\n\nScopri le [26 GIF composte da nove fotogrammi](collection:c_016), realizzate da fotogrammi GPT Image archiviati. Sono adattamenti locali, non GIF native restituite dal modello. I [quattro adattamenti di ritratti quotidiani](collection:c_017) coprono le scene rimanenti con prompt riscritti separatamente. L’[esempio separato del flusso selfie](prompt:p_273) usa una chiamata di generazione e un messaggio giapponese scritto dall’assistente; è un adattamento indipendente."
+      }
+    },
+    {
+      "key": "collection/c_015",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:40779d4a9cca67433ba7daab2b9c6fdfa74c9ff8d8d2dd74e068357adbfb31f6",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Reazioni e immagini social in inglese",
+        "description": "12 prompt per immagini testati, per adesivi di reazione in inglese, ricordi in cabina fotografica, storie di animali e biglietti di compleanno.",
+        "body": "## Adesivi di reazione\n\nSei fogli di reazioni a nove riquadri coprono risposte quotidiane, umori del cane, conversazioni d’ufficio, energia sociale, incoraggiamento e videogiochi. I set del ritratto e del cane richiedono una foto di riferimento ciascuno; quelli del gatto, procione, rana e fantasma funzionano con il solo testo. Ogni foglio è un’unica immagine da condividere. L’esportazione dei singoli adesivi richiede un flusso separato.\n\n## Modifiche fotografiche e immagini da condividere\n\nCrea una cabina fotografica per due persone, un giornale immaginario dedicato a un animale, un meme a due riquadri, un collage del fine settimana, un biglietto di compleanno o un fumetto sul cane a quattro vignette. Il collage non richiede foto di riferimento; gli altri cinque casi ne richiedono una o due, come indicato nelle istruzioni di input. I tre riferimenti dimostrativi sono generati dall’IA. Tutte le didascalie nelle immagini e i prompt di generazione sono in inglese, anche nelle pagine tradotte. Modifica le nove didascalie nei sei modelli di adesivi oppure il nome e l’età nel modello di compleanno."
+      }
+    },
+    {
+      "key": "collection/c_016",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:807424f1d4fc617182e3ab6876abe5c3f8046a2d147c218a5e8dd338e04319db",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Animazioni social — 26 GIF composte da nove fotogrammi",
+        "description": "Adattamenti a nove fotogrammi ricavati da fogli di azioni GPT Image, con prompt originali, riferimenti e riproduzione documentata.",
+        "body": "Ogni GIF contiene nove fotogrammi codificati, composti localmente da immagini GPT Image archiviate. Le fonti con otto pose dividono una posa mantenuta in due fotogrammi codificati; dalle sequenze più lunghe vengono selezionate nove pose. Durata totale e impostazioni di ripetizione sono conservate. Si tratta di adattamenti indipendenti, non di GIF native né di test esatti dei prompt originali. Le celle piccole della fonte possono essere ingrandite senza aggiungere dettagli. La lingua originale del prompt viene conservata. Vedi anche i [test statici originali](collection:c_013)."
+      }
+    },
+    {
+      "key": "collection/c_017",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:46d14eec5a2470f6a4ad43e290f195ce3495365f1a1767721e6a3b11aad17263",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Quattro adattamenti di ritratti quotidiani",
+        "description": "Scene in camera da letto, in auto di notte, in hanfu al chiaro di luna e in un ascensore a specchi, con prompt riscritti separatamente.",
+        "body": "Quattro nuove immagini statiche GPT Image usano abbigliamento e pose comuni per adulti, mantenendo le ambientazioni generali della fonte. Sono adattamenti indipendenti, non nuovi tentativi riusciti dei prompt originali. Ogni pagina spiega le modifiche, conserva la lingua del prompt inviato e attribuisce separatamente il post di origine. I prompt originali e tre tentativi falliti per caso rimangono archiviati. Vedi i [test statici originali](collection:c_013) e gli [adattamenti GIF a nove fotogrammi](collection:c_016)."
+      }
+    },
+    {
+      "key": "prompt/p_001",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:3cbb34018f30fdc7e2914a61e4281d5986fad41525b6d18daadf5ba731164af5",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Crinali sovrapposti al crepuscolo",
+        "description": "Crinali sovrapposti al crepuscolo in un paesaggio vettoriale piatto, adatto come sfondo per computer e telefono.",
+        "body": "## A che cosa serve?\n\nUn’immagine tranquilla e poco dettagliata che fa da sfondo a icone e testo senza competere con essi.\n\n## Come la modifico?\n\n- Cambia il numero dei crinali per controllare la profondità: tre danno apertura, cinque creano stratificazione.\n- Indica il momento della giornata invece di elencare colori: la sfumatura del cielo lo seguirà."
+      }
+    },
+    {
+      "key": "prompt/p_002",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:68ab1e7963105f2f2237817b06047c7b2b36711820429d3e361e032427d26b02",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster geometrico per concerto",
+        "description": "Poster geometrico per concerto in stile Bauhaus, adatto a manifesti per eventi.",
+        "body": "## A che cosa serve?\n\nGeometrie decise che restano leggibili dall’altro lato della stanza, con barre riservate ai dettagli dell’evento.\n\n## Come la modifico?\n\n- Assegna una posizione a ogni forma (in alto a destra, in basso a sinistra): il layout rimarrà equilibrato.\n- Limita la palette a quattro colori più lo sfondo."
+      }
+    },
+    {
+      "key": "prompt/p_003",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:780ec87f9a11542fbeced93f1c5852dff7d5d1b0c2f42e80b74de9143535096c",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Scatola da tè su sfondo salvia",
+        "description": "Una scatola da tè su sfondo salvia in un’illustrazione vettoriale piatta di prodotto, adatta a confezioni ed etichette.",
+        "body": "## A che cosa serve?\n\nMantiene riconoscibile la forma del prodotto e lascia un’area pulita per un’etichetta o un logo.\n\n## Come la modifico?\n\n- Descrivi prima la sagoma dell’oggetto, poi l’etichetta: quest’ultima manterrà le proporzioni.\n- Uno sfondo circolare morbido separa un prodotto chiaro da una parete chiara.\n- Per cambiare soggetto o colori, parti dal [modello di poster di prodotto](template:t_001)."
+      }
+    },
+    {
+      "key": "prompt/p_004",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:3e537bc72ebcbf73a28b10bd99d3209461f0af4cc61e1fefc82f4b3405c6c91e",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Barca a vela al tramonto",
+        "description": "Una barca a vela al tramonto in un paesaggio vettoriale piatto, adatto a stampe artistiche da incorniciare.",
+        "body": "## A che cosa serve?\n\nForme piatte e una palette limitata si stampano in modo pulito anche in grande formato e danno un aspetto curato alla parete.\n\n## Come la modifico?\n\n- Sposta l’orizzonte con espressioni come «orizzonte basso» o «orizzonte alto» per cambiare atmosfera.\n- Chiedi linee di riflesso orizzontali per mantenere l’acqua piatta e grafica."
+      }
+    }
+  ]
+}

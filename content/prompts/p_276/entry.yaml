@@ -38,6 +38,9 @@ inputRequirements:
       los textos en inglés.
     ko: 첫 번째 성인 인물 사진을 먼저, 두 번째 성인 인물 사진을 다음에 업로드하세요. 이미지 1은 왼쪽, 이미지 2는 오른쪽을 유지합니다.
       시연에는 AI로 생성한 가상 인물을 사용합니다. 모든 글자는 영어로 유지하세요.
+    it: Carica il primo ritratto adulto, poi il secondo. L’immagine 1 resta a
+      sinistra; l’immagine 2 resta a destra. La dimostrazione usa persone
+      immaginarie generate con l’IA. Mantieni tutte le scritte in inglese.
   slots:
     - id: personA
       labels:
@@ -48,6 +51,7 @@ inputRequirements:
         pt-BR: Primeira pessoa, à esquerda
         es: Primera persona, izquierda
         ko: 첫 번째 인물, 왼쪽
+        it: Prima persona, a sinistra
       min: 1
       max: 1
     - id: personB
@@ -59,6 +63,7 @@ inputRequirements:
         pt-BR: Segunda pessoa, à direita
         es: Segunda persona, derecha
         ko: 두 번째 인물, 오른쪽
+        it: Seconda persona, a destra
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -83,6 +88,7 @@ annotations:
       pt-BR: Quatro quadros formam uma impressão compacta de cabine fotográfica.
       es: Cuatro fotogramas forman una impresión compacta de cabina de fotos.
       ko: 네 프레임이 작은 포토부스 인화물 하나를 이룹니다.
+      it: Quattro riquadri formano una stampa compatta da cabina fotografica.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -97,3 +103,4 @@ annotations:
       pt-BR: Flash e granulação estabelecem a aparência fotográfica.
       es: El flash y el grano establecen el aspecto fotográfico.
       ko: 플래시와 입자가 사진 같은 느낌을 만듭니다.
+      it: Flash e grana stabiliscono l’aspetto fotografico.

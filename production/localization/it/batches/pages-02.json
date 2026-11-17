@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "operations": [
+    {
+      "key": "prompt/p_005",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:26b969f06aefd781380e0c9e9a3cf8044e8578a26af81571c682adb0eb735073",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ritratto di profilo con illuminazione al neon sui bordi",
+        "description": "Un ritratto di profilo con illuminazione al neon lungo i contorni, adatto a immagini del profilo e avatar.",
+        "body": "## A che cosa serve?\n\nFunziona anche ritagliata in un cerchio: il soggetto è al centro e lo sfondo è semplice.\n\n## Come la modifico?\n\n- Indica due colori per la luce sui bordi, uno per lato, per mantenere leggibile il contorno.\n- Mantieni il volto in ombra: i dettagli all’interno della sagoma interrompono l’effetto.\n- Per cambiare soggetto o colori, parti dal [modello di ritratto al neon](template:t_003)."
+      }
+    },
+    {
+      "key": "prompt/p_006",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:680da2421946c1e79eeacd1846ab1cf0288f54437a1c156e332d43509f07b36f",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Dune nel deserto in una luce calda",
+        "description": "Dune nel deserto in una luce calda, in un paesaggio vettoriale piatto adatto come sfondo per computer e telefono.",
+        "body": "## A che cosa serve?\n\nUn’immagine tranquilla e poco dettagliata che fa da sfondo a icone e testo senza competere con essi.\n\n## Come la modifico?\n\n- Cambia il numero dei crinali per controllare la profondità: tre danno apertura, cinque creano stratificazione.\n- Indica il momento della giornata invece di elencare colori: la sfumatura del cielo lo seguirà."
+      }
+    },
+    {
+      "key": "prompt/p_007",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:1ea4d089d64983cfba5692189e31cb7075b45014a0f2f933dbc140b9420c78f7",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ficus elastica in vaso",
+        "description": "Un ficus elastica in vaso in un’illustrazione vettoriale piatta, adatta a contenuti editoriali.",
+        "body": "## A che cosa serve?\n\nIllustra un articolo senza dettagli troppo letterali, adattandosi così a titoli diversi.\n\n## Come la modifico?\n\n- Specifica il numero di foglie: poche foglie grandi si leggono meglio in piccolo formato.\n- Indica un vaso o un bordo ritagliato per decidere se la pianta sembra sospesa o appoggiata."
+      }
+    },
+    {
+      "key": "prompt/p_008",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:ac458b63293765c9148dad78e6dee2b072fd15c2dd8d99476c5c6c8b5709254c",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Città notturna con insegna al neon",
+        "description": "Una città notturna con insegna al neon in una scena architettonica illuminata al neon, adatta come sfondo per computer e telefono.",
+        "body": "## A che cosa serve?\n\nUn’immagine tranquilla e poco dettagliata che fa da sfondo a icone e testo senza competere con essi.\n\n## Come la modifico?\n\n- Usa insieme «finestre illuminate» e «notte»: da sole, le luci vengono spesso rese come riflessi diurni.\n- Una sola insegna al neon offre un punto focale senza creare disordine."
+      }
+    },
+    {
+      "key": "prompt/p_009",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:738b8f269eea56a0af9785269e14beaa021027a84b9f8eea6165732005cd8f4b",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ciotola di noodles al miso",
+        "description": "Una ciotola di noodles al miso in un’illustrazione vettoriale piatta di cibo, adatta a post social.",
+        "body": "## A che cosa serve?\n\nSi legge a colpo d’occhio nel feed: un soggetto chiaro, forte contrasto e spazio per una didascalia.\n\n## Come la modifico?\n\n- Chiedi una vista dall’alto per mantenere rotonda la ciotola e ordinato il layout.\n- Elenca le guarnizioni indicando dove collocarle: senza posizioni precise tendono ad accumularsi al centro."
+      }
+    },
+    {
+      "key": "prompt/p_010",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:ba24e35334ffd048311a484a861214c07b72cbcf93ae20a857fbe76443dde640",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster con tazza di ceramica",
+        "description": "Un poster con tazza di ceramica in un’illustrazione vettoriale piatta di prodotto, adatta a confezioni ed etichette.",
+        "body": "## A che cosa serve?\n\nMantiene riconoscibile la forma del prodotto e lascia un’area pulita per un’etichetta o un logo.\n\n## Come la modifico?\n\n- Descrivi prima la sagoma dell’oggetto, poi l’etichetta: quest’ultima manterrà le proporzioni.\n- Uno sfondo circolare morbido separa un prodotto chiaro da una parete chiara.\n- Per cambiare soggetto o colori, parti dal [modello di poster di prodotto](template:t_001)."
+      }
+    },
+    {
+      "key": "prompt/p_011",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:bec5ceefb1b22b0b6af6723f29dfab9b8e6abc1d07a3c224cfd8deffb5862f1b",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Motivo a piastrelle di metà Novecento",
+        "description": "Un motivo geometrico a piastrelle di metà Novecento, adatto a confezioni ed etichette.",
+        "body": "## A che cosa serve?\n\nMantiene riconoscibile la forma del prodotto e lascia un’area pulita per un’etichetta o un logo.\n\n## Come la modifico?\n\n- Indica le forme delle piastrelle (quarti di cerchio, triangoli, semicerchi) per mantenere vario il motivo.\n- Specifica «senza giunzioni» se il motivo deve ripetersi su una superficie più ampia."
+      }
+    },
+    {
+      "key": "prompt/p_012",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:a2c4cb4b571e24ebdc7392cd0d5a94131f38d7d91434923c3bacf434709a4e36",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ramo di pruno a inchiostro",
+        "description": "L’illustrazione «Ramo di pruno a inchiostro», in stile pittura a inchiostro, è adatta come stampa decorativa da incorniciare.",
+        "body": "## Dove usarla?\n\nCampiture piatte e una palette limitata rimangono pulite anche nella stampa di grande formato e danno un aspetto curato alla parete.\n\n## Come modificarla?\n\n- Descrivi la consistenza delle pennellate (pennello asciutto, lavatura bagnata) invece dello spessore delle linee.\n- Specifica la posizione del sigillo, altrimenti potrebbe finire sul soggetto.\n- Le frasi contrassegnate nel prompt spiegano che cosa controlla ciascuna parte.\n- Per cambiare soggetto o palette, parti dal [modello di rotolo a inchiostro](template:t_002)."
+      }
+    },
+    {
+      "key": "prompt/p_013",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:71558866aa856646984945c218ad35a730de958ee9a99b7cad2459dd40afe7bc",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Porticato al sole",
+        "description": "Un porticato al sole in una scena architettonica minimalista, adatta a illustrazioni editoriali.",
+        "body": "## A che cosa serve?\n\nIllustra un articolo senza dettagli troppo letterali, adattandosi così a titoli diversi.\n\n## Come la modifico?\n\n- Indica il numero degli archi: un numero dispari dà un centro alla composizione.\n- Specifica la direzione della luce per ottenere ombre diagonali coerenti."
+      }
+    },
+    {
+      "key": "prompt/p_014",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:66e258412b357c3faacc24acecc911e1643665c9b86935dabb30285b81031769",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Fette di pompelmo e lime",
+        "description": "Fette di pompelmo e lime in un’illustrazione vettoriale piatta di cibo, adatta a post social.",
+        "body": "## A che cosa serve?\n\nSi legge a colpo d’occhio nel feed: un soggetto chiaro, forte contrasto e spazio per una didascalia.\n\n## Come la modifico?\n\n- Chiedi fette viste dall’alto con spicchi visibili: i frutti interi appaiono più pesanti.\n- Mantieni lo sfondo di un solo colore tenue per far risaltare le fette."
+      }
+    },
+    {
+      "key": "prompt/p_015",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:44c948c9faa6663d5035eef719ab0c397dfc66025ddeead2837729db70c08036",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Rotolo con bosco di bambù",
+        "description": "L’illustrazione «Rotolo con bosco di bambù», in stile pittura a inchiostro, è adatta come stampa decorativa da incorniciare.",
+        "body": "## Dove usarla?\n\nCampiture piatte e una palette limitata rimangono pulite anche nella stampa di grande formato e danno un aspetto curato alla parete.\n\n## Come modificarla?\n\n- Descrivi la consistenza delle pennellate (pennello asciutto, lavatura bagnata) invece dello spessore delle linee.\n- Specifica la posizione del sigillo, altrimenti potrebbe finire sul soggetto.\n- Le frasi contrassegnate nel prompt spiegano che cosa controlla ciascuna parte.\n- Per cambiare soggetto o palette, parti dal [modello di rotolo a inchiostro](template:t_002)."
+      }
+    },
+    {
+      "key": "prompt/p_016",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:90cf3828036e5685bb06880d45f72574d798a6df0a41c4889a4b3d9e84c99b37",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Nebbia mattutina sulle colline",
+        "description": "Nebbia mattutina sulle colline in un paesaggio dalle sfumature morbide, adatto come sfondo per computer e telefono.",
+        "body": "## A che cosa serve?\n\nUn’immagine tranquilla e poco dettagliata che fa da sfondo a icone e testo senza competere con essi.\n\n## Come la modifico?\n\n- Cambia il numero dei crinali per controllare la profondità: tre danno apertura, cinque creano stratificazione.\n- Indica il momento della giornata invece di elencare colori: la sfumatura del cielo lo seguirà."
+      }
+    },
+    {
+      "key": "prompt/p_017",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:4948a89552aa47b74455d79bcb918c0815a0fd90ca8cc42d5afef168283dc209",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster di lancio per una bottiglia corallo",
+        "description": "Un poster di lancio per una bottiglia corallo in un’illustrazione vettoriale piatta di prodotto, adatta a post social.",
+        "body": "## A che cosa serve?\n\nSi legge a colpo d’occhio nel feed: un soggetto chiaro, forte contrasto e spazio per una didascalia.\n\n## Come la modifico?\n\n- Descrivi prima la sagoma dell’oggetto, poi l’etichetta: quest’ultima manterrà le proporzioni.\n- Uno sfondo circolare morbido separa un prodotto chiaro da una parete chiara.\n- Per cambiare soggetto o colori, parti dal [modello di poster di prodotto](template:t_001)."
+      }
+    },
+    {
+      "key": "prompt/p_018",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:c6bf6b99cafcb2f8511087527de533270ac95b72fdfa7b39d2a6dc78728ee378",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Panorama di crinali blu",
+        "description": "Un panorama di crinali blu dalle sfumature morbide, adatto come sfondo per computer e telefono.",
+        "body": "## A che cosa serve?\n\nUn’immagine tranquilla e poco dettagliata che fa da sfondo a icone e testo senza competere con essi.\n\n## Come la modifico?\n\n- Cambia il numero dei crinali per controllare la profondità: tre danno apertura, cinque creano stratificazione.\n- Indica il momento della giornata invece di elencare colori: la sfumatura del cielo lo seguirà."
+      }
+    },
+    {
+      "key": "prompt/p_019",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:070a5bcbecc62afd2cd89114c0af816da2d8f474066329b1f7159c4094e19f27",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Avatar ambra e verde petrolio",
+        "description": "Un avatar ambra e verde petrolio in un ritratto illuminato al neon, adatto a immagini del profilo e avatar.",
+        "body": "## A che cosa serve?\n\nFunziona anche ritagliata in un cerchio: il soggetto è al centro e lo sfondo è semplice.\n\n## Come la modifico?\n\n- Indica due colori per la luce sui bordi, uno per lato, per mantenere leggibile il contorno.\n- Mantieni il volto in ombra: i dettagli all’interno della sagoma interrompono l’effetto.\n- Per cambiare soggetto o colori, parti dal [modello di ritratto al neon](template:t_003)."
+      }
+    },
+    {
+      "key": "prompt/p_020",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:29e57f4f0aee2fa58e982df73088365cbf46e872d7d52ecac170f177d46c4193",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Profilo urbano al mattino",
+        "description": "Un profilo urbano al mattino in una scena architettonica vettoriale piatta, adatta a illustrazioni editoriali.",
+        "body": "## A che cosa serve?\n\nIllustra un articolo senza dettagli troppo letterali, adattandosi così a titoli diversi.\n\n## Come la modifico?\n\n- Usa insieme «finestre illuminate» e «notte»: da sole, le luci vengono spesso rese come riflessi diurni.\n- Una sola insegna al neon offre un punto focale senza creare disordine."
+      }
+    },
+    {
+      "key": "prompt/p_021",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:23211d870d1462d75f7ea0b1ecb7424fbe21dc8ae5cd861f1bb4b296198fcc50",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Fette di agrumi su sfondo menta",
+        "description": "Fette di agrumi su sfondo menta in un’illustrazione vettoriale piatta di cibo, adatta a post social.",
+        "body": "## A che cosa serve?\n\nSi legge a colpo d’occhio nel feed: un soggetto chiaro, forte contrasto e spazio per una didascalia.\n\n## Come la modifico?\n\n- Chiedi fette viste dall’alto con spicchi visibili: i frutti interi appaiono più pesanti.\n- Mantieni lo sfondo di un solo colore tenue per far risaltare le fette."
+      }
+    },
+    {
+      "key": "prompt/p_022",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:1dce15df108fed269a8aa0406c83e13bf389a51ae7eefcf7107838f36808917e",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster corallo per una serata jazz",
+        "description": "Un poster corallo per una serata jazz in stile Bauhaus, adatto a manifesti per eventi.",
+        "body": "## A che cosa serve?\n\nGeometrie decise che restano leggibili dall’altro lato della stanza, con barre riservate ai dettagli dell’evento.\n\n## Come la modifico?\n\n- Assegna una posizione a ogni forma (in alto a destra, in basso a sinistra): il layout rimarrà equilibrato.\n- Limita la palette a quattro colori più lo sfondo."
+      }
+    },
+    {
+      "key": "prompt/p_023",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:4ad244f6c85ca717bd0204f7c3e274765f03c1fd9d26fc03908a46a2b9a440a1",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ciotola di insalata estiva",
+        "description": "Una ciotola di insalata estiva in un’illustrazione vettoriale piatta di cibo, adatta a post social.",
+        "body": "## A che cosa serve?\n\nSi legge a colpo d’occhio nel feed: un soggetto chiaro, forte contrasto e spazio per una didascalia.\n\n## Come la modifico?\n\n- Chiedi una vista dall’alto per mantenere rotonda la ciotola e ordinato il layout.\n- Elenca le guarnizioni indicando dove collocarle: senza posizioni precise tendono ad accumularsi al centro."
+      }
+    },
+    {
+      "key": "prompt/p_024",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:5a0ce01737bf878b0128950b134b300ce5375a6284f2deed2f28b49734e8983d",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster con scatola di tè verde",
+        "description": "Un poster con scatola di tè verde in un’illustrazione vettoriale piatta di prodotto, adatta a confezioni ed etichette.",
+        "body": "## A che cosa serve?\n\nMantiene riconoscibile la forma del prodotto e lascia un’area pulita per un’etichetta o un logo.\n\n## Come la modifico?\n\n- Descrivi prima la sagoma dell’oggetto, poi l’etichetta: quest’ultima manterrà le proporzioni.\n- Uno sfondo circolare morbido separa un prodotto chiaro da una parete chiara.\n- Le frasi contrassegnate nel prompt mostrano che cosa controlla ciascuna parte.\n- Per cambiare soggetto o colori, parti dal [modello di poster di prodotto](template:t_001)."
+      }
+    }
+  ]
+}

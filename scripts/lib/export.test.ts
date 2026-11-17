@@ -71,7 +71,8 @@ describe('Markdown versions', () => {
       for (const locale of config.builtLocales.filter((locale) => !locale.enabled))
         expect(md).not.toContain(`/${locale.pathPrefix}/prompts/`);
     }
-  });
+    // This exhaustively renders every public Prompt in every enabled language.
+  }, 20_000);
 });
 
 describe('llms.txt', () => {

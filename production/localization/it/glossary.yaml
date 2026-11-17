@@ -1,0 +1,28 @@
+schemaVersion: 1
+locale: it
+status: reviewed
+sourcePolicy: Translate the source locale, file and field from the current report; preserve original Prompt text and facts.
+terms:
+  - { source: Prompt, target: prompt, note: Invariable plural. }
+  - { source: Template, target: modello di prompt, aliases: [modelli di prompt, template] }
+  - { source: AI model, target: modello di IA, note: Never substitute modello di prompt. }
+  - { source: Collection, target: raccolta, aliases: [raccolte] }
+  - { source: Topic, target: tema, aliases: [temi] }
+  - { source: Reference image, target: immagine di riferimento }
+  - { source: Output image, target: immagine generata }
+  - { source: Copy, target: Copia }
+  - { source: Download, target: Scarica }
+  - { source: Reset, target: Reimposta }
+  - { source: Favorites, target: Preferiti }
+  - { source: Not verified, target: non verificato }
+  - { source: Product photography, target: fotografia di prodotto, aliases: [foto di prodotto, packshot] }
+  - { source: Portrait, target: ritratto, aliases: [ritratti], note: Use verticale for aspect ratio. }
+  - { source: Landscape, target: paesaggio, note: Use orizzontale for aspect ratio. }
+  - { source: Poster, target: poster, aliases: [manifesto, manifesti], note: Invariable plural; manifesto aliases only in poster context. }
+  - { source: Sticker, target: adesivo, aliases: [adesivi, sticker] }
+  - { source: Lighting, target: illuminazione }
+  - { source: Background, target: sfondo, aliases: [sfondi] }
+preservationRules:
+  - Preserve brands, identifiers, slugs, URLs, code, licensing identifiers and intentional in-image literal text.
+  - Preserve original prompt text, template values, constraints and recorded generation facts.
+  - Media descriptions require matching asset evidence. Translation generation is not approval.

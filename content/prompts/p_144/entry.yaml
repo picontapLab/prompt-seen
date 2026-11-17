@@ -31,6 +31,8 @@ inputRequirements:
     es: Sube primero el retrato adulto y después el vestuario. Ambas entradas son
       sintéticas; el vestuario es un diseño moderno ficticio.
     ko: 성인 인물 사진을 먼저, 의상 이미지를 다음에 업로드하세요. 두 입력 모두 합성 이미지이며 의상은 현대적인 가상 디자인입니다.
+    it: Carica prima il ritratto dell’adulto e poi il costume. Entrambi gli input
+      sono sintetici; il costume è un modello moderno immaginario.
   slots:
     - id: person
       labels:
@@ -41,6 +43,7 @@ inputRequirements:
         pt-BR: Pessoa
         es: Persona
         ko: 인물
+        it: Persona
       min: 1
       max: 1
     - id: garment
@@ -52,6 +55,7 @@ inputRequirements:
         pt-BR: Peça de roupa
         es: Prenda
         ko: 의상
+        it: Abito
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -72,6 +76,7 @@ inspirationSources:
       pt-BR: Tutorial inteiro ou vídeo de demonstração
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
+      it: Intero video tutorial o dimostrativo
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -82,6 +87,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      it: Istantanea dell’API pubblica ufficiale
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -91,6 +97,7 @@ inspirationSources:
       pt-BR: Prompt original completo não recuperado; adaptado de forma independente
       es: No se obtuvo el prompt original completo; adaptado de forma independiente
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
+      it: Prompt originale completo non recuperato; adattato autonomamente
     metrics:
       - key: views
         value: 18638
@@ -102,6 +109,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          it: Visualizzazioni
       - key: likes
         value: 477
         labels:
@@ -112,6 +120,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          it: Mi piace
       - key: saves
         value: 689
         labels:
@@ -122,6 +131,7 @@ inspirationSources:
           pt-BR: Salvamentos
           es: Guardados
           ko: 저장
+          it: Salvataggi
       - key: comments
         value: 116
         labels:
@@ -132,6 +142,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          it: Commenti
       - key: shares
         value: 98
         labels:
@@ -142,6 +153,7 @@ inspirationSources:
           pt-BR: Compartilhamentos
           es: Veces compartido
           ko: 공유
+          it: Condivisioni
       - key: coins
         value: 178
         labels:
@@ -152,6 +164,7 @@ inspirationSources:
           pt-BR: Moedas
           es: Monedas
           ko: 코인
+          it: Monete
       - key: danmaku
         value: 14
         labels:
@@ -162,6 +175,7 @@ inspirationSources:
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
           ko: 화면 댓글
+          it: Commenti sovrapposti (danmaku)
 source:
   author: Prompt Seen
   url: null

@@ -55,6 +55,7 @@ inspirationSources:
       pt-BR: Vídeo completo de tutorial ou demonstração
       es: Vídeo completo del tutorial o la demostración
       ko: 전체 튜토리얼 또는 쇼케이스 영상
+      it: Intero video tutorial o dimostrativo
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -65,6 +66,7 @@ inspirationSources:
       pt-BR: Registro da API pública oficial
       es: Captura de la API pública oficial
       ko: 공식 공개 API 스냅샷
+      it: Istantanea dell’API pubblica ufficiale
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1uaqqB2Ez7
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -74,6 +76,7 @@ inspirationSources:
       pt-BR: Prompt original ou trecho disponível; adaptação independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: views
         value: 344604
@@ -85,6 +88,7 @@ inspirationSources:
           pt-BR: Visualizações
           es: Visualizaciones
           ko: 조회수
+          it: Visualizzazioni
       - key: likes
         value: 26934
         labels:
@@ -95,6 +99,7 @@ inspirationSources:
           pt-BR: Curtidas
           es: Me gusta
           ko: 좋아요
+          it: Mi piace
       - key: saves
         value: 5872
         labels:
@@ -105,6 +110,7 @@ inspirationSources:
           pt-BR: Salvamentos
           es: Guardados
           ko: 저장
+          it: Salvataggi
       - key: comments
         value: 938
         labels:
@@ -115,6 +121,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          it: Commenti
       - key: shares
         value: 1029
         labels:
@@ -125,6 +132,7 @@ inspirationSources:
           pt-BR: Compartilhamentos
           es: Veces compartido
           ko: 공유
+          it: Condivisioni
       - key: coins
         value: 859
         labels:
@@ -135,6 +143,7 @@ inspirationSources:
           pt-BR: Moedas
           es: Monedas
           ko: 코인
+          it: Monete
       - key: danmaku
         value: 73
         labels:
@@ -145,6 +154,7 @@ inspirationSources:
           pt-BR: Comentários sobrepostos (danmaku)
           es: Comentarios danmaku
           ko: 화면 댓글
+          it: Commenti sovrapposti (danmaku)
 source:
   author: Prompt Seen
   url: null
@@ -162,9 +172,9 @@ annotations:
       ja: 明示したグリッドが、ステッカーの数と読む順番を決めています。
       de: Das explizit vorgegebene Raster legt Stickeranzahl und Leserichtung fest.
       pt-BR: A grade explícita define a quantidade de figurinhas e a ordem de leitura.
-      es: La cuadrícula explícita fija el número de pegatinas y el orden de
-        lectura.
+      es: La cuadrícula explícita fija el número de pegatinas y el orden de lectura.
       ko: 명시적인 격자가 스티커 개수와 읽는 순서를 고정합니다.
+      it: La griglia esplicita fissa il numero degli adesivi e l’ordine di lettura.
   - phrase: face, hairstyle, outfit and colors consistent
     region:
       x: 0.01
@@ -182,3 +192,4 @@ annotations:
       es: La identidad y la ropa se mantienen coherentes a través de las dieciséis
         emociones.
       ko: 열여섯 감정에서 인물 정체성과 의상이 일관되게 유지됩니다.
+      it: Identità e abbigliamento restano coerenti nelle sedici emozioni.

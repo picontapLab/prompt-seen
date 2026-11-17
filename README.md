@@ -316,6 +316,7 @@ Project facts:
 - [Spanish localization specification](docs/spanish-localization-spec.md): staged rollout, translation batches, Spanish search behavior, review evidence and production acceptance.
 - [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
 - [Korean localization specification](docs/korean-localization-spec.md): complete content coverage, Korean search and input methods, acceptance and release gates.
+- [Italian localization specification](docs/italian-localization-spec.md): complete source-only coverage, Italian search, fingerprint reviews and candidate acceptance.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses

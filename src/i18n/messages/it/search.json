@@ -1,0 +1,43 @@
+{
+  "open": "Cerca",
+  "tooltip": "Cerca ({key})",
+  "panel": {
+    "label": "Ricerca",
+    "field": "Cerca prompt e modelli",
+    "placeholder": "Cerca prompt, modelli, stili…",
+    "close": "Chiudi la ricerca",
+    "recent": "Ricerche recenti",
+    "clearRecent": "Cancella le ricerche recenti",
+    "popular": "Usi più comuni",
+    "seeAll": "{count, plural, one {Mostra # risultato} many {Mostra tutti i # risultati} other {Mostra tutti i # risultati}}",
+    "openSearchPage": "Apri la pagina di ricerca",
+    "loading": "Caricamento della ricerca…",
+    "keys": "↑ ↓ per scegliere · Invio per aprire · Esc per chiudere"
+  },
+  "groups": { "prompt": "Prompt", "template": "Modelli", "collection": "Raccolte", "topic": "Temi" },
+  "count": "{count, plural, =0 {Nessun risultato} one {# risultato} many {# risultati} other {# risultati}}",
+  "error": {
+    "body": "Impossibile caricare la ricerca. Gli elenchi e i link sono ancora disponibili.",
+    "stale": "Il sito è stato aggiornato mentre questa pagina era aperta. Ricaricala per cercare nella nuova versione.",
+    "retry": "Riprova",
+    "reload": "Ricarica"
+  },
+  "page": {
+    "documentTitle": "Cerca prompt e modelli",
+    "title": "Ricerca",
+    "description": "Cerca prompt e modelli per immagini già testati, per titolo, uso, stile e testo del prompt.",
+    "intro": "La ricerca comprende titoli, usi, stili, modelli di IA e testo dei prompt.",
+    "summary": "{count, plural, one {# risultato} many {# risultati} other {# risultati}} per «{query}»",
+    "updating": "Aggiornamento dei risultati…",
+    "more": "{shown} risultati mostrati su {total}"
+  },
+  "noResults": {
+    "title": "Nessun risultato per «{query}»",
+    "broader": "Prova con meno parole",
+    "terms": "Etichette correlate",
+    "otherLocales": "In altre lingue",
+    "otherLocale": "{count, plural, one {# risultato} many {# risultati} other {# risultati}} nei contenuti in {language}",
+    "suggestion": "{label} ({count})",
+    "browse": "Sfoglia tutti i prompt"
+  }
+}

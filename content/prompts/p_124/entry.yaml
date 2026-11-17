@@ -31,6 +31,9 @@ inputRequirements:
       condicionar fuertemente el resultado mediante una referencia o una
       estructura.
     ko: 대비가 뚜렷한 인물 가이드 이미지를 업로드하고 참조 이미지나 구조를 강하게 반영할 수 있는 도구를 사용하세요.
+    it: Carica un ritratto guida ad alto contrasto e usa uno strumento capace di
+      applicare un forte condizionamento basato sul riferimento o sulla
+      struttura.
   slots:
     - id: silhouette
       labels:
@@ -41,6 +44,7 @@ inputRequirements:
         pt-BR: Silhueta
         es: Retrato guía en blanco y negro
         ko: 실루엣
+        it: Silhouette
       min: 1
       max: 1
 promptProvenance: independent-adaptation
@@ -60,6 +64,7 @@ inspirationSources:
       pt-BR: Publicação inteira ou galeria de imagens
       es: Publicación o galería de imágenes completa
       ko: 전체 게시물 또는 이미지 갤러리
+      it: Intero post o galleria di immagini
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -70,6 +75,7 @@ inspirationSources:
       pt-BR: Registro indexado da fonte primária
       es: Captura indexada de la fuente primaria
       ko: 색인된 1차 출처 스냅샷
+      it: Istantanea indicizzata della fonte primaria
     evidenceUrl: https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -79,6 +85,7 @@ inspirationSources:
       pt-BR: Prompt de origem ou trecho disponível; adaptação independente
       es: Prompt original o fragmento disponible; adaptado de forma independiente
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: post_score
         value: 1032
@@ -90,6 +97,7 @@ inspirationSources:
           pt-BR: Pontuação da publicação
           es: Puntuación de la publicación
           ko: 게시물 점수
+          it: Punteggio del post
       - key: comments
         value: null
         labels:
@@ -100,6 +108,7 @@ inspirationSources:
           pt-BR: Comentários
           es: Comentarios
           ko: 댓글
+          it: Commenti
 source:
   author: Prompt Seen
   url: null

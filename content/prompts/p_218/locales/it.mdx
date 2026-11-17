@@ -1,0 +1,34 @@
+---
+title: Cambiare colore a un vaso con foto e annotazione
+description: Un prompt registrato di modifica cromatica con IA, due riferimenti
+  ordinati, il vaso risultante blu cobalto e la variazione osservata dello
+  smalto.
+status: published
+updatedAt: 2026-11-06
+translation:
+  sourceLocale: en
+  sourceHash: sha256:cb1800a78015b5f4
+  reviewStatus: reviewed
+---
+
+## Come usarlo
+
+Usa il prompt esatto registrato e i riferimenti originali mostrati, nell’ordine indicato. Modificare il prompt o gli input crea una variante non verificata.
+
+Carica prima la foto sintetica originale della stanza e poi il livello separato con il cerchio rosso. L’annotazione identifica il vaso; non è il risultato generato. Il prompt operativo registrato è in cinese e qui resta invariato. Una traduzione inglese sarebbe un prompt nuovo, non verificato.
+
+## Risultato osservato
+
+Il vaso passa dal crema al blu cobalto e l’annotazione rossa viene rimossa. Brocca, steli secchi, piastrelle e finestra restano visivamente coerenti; il nuovo smalto è più lucido.
+
+## Documentazione e limiti della generazione
+
+La [registrazione dell’esecuzione](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml) collega l’hash del prompt agli input a_373 e a_374, in questo ordine, e al risultato a_372. La [ricevuta di generazione](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json) conserva gli hash degli input e del risultato. La data è il 5 novembre UTC, corrispondente al 4 novembre a Los Angeles, data visualizzata per questa esecuzione.
+
+GPT Image 2.6 è la [versione attribuita dal responsabile del progetto](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). Lo strumento non ha restituito l’ID esatto del modello API; seed, campionamento e qualità non sono stati registrati. Questo unico risultato mostra un cambio di colore con superficie più lucida, non dimostra che una modifica cromatica conservi ogni riflesso o pixel. Controlla la finitura e gli oggetti circostanti quando provi una tua immagine.
+
+## Fonte e generazione
+
+La fonte fornisce un prompt originale; questa produzione usa il prompt operativo registrato separatamente. [Fonte](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup). Le interazioni con il post originale non misurano questo nuovo esempio generato.
+
+Generato con GPT Image 2.6. Tutte le immagini di riferimento usate qui sono state generate per questo progetto.

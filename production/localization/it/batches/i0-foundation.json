@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "operations": [
+    {
+      "key": "page/about",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:9d82bee7055511e32b858e3819a35dbb3455440930e4e0c675dc048d93d57099",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Informazioni su Prompt Seen",
+        "description": "Che cos’è questa raccolta, come vengono testati i prompt e che cosa sono le voci di esempio.",
+        "body": "Prompt Seen è una raccolta di prompt per immagini da leggere, copiare e adattare. Ogni voce mostra l’immagine prodotta e indica quali frasi del prompt hanno modificato quali elementi.\n\n## Come vengono testati i prompt?\n\nOgni prompt viene eseguito registrando modello, data e parametri. Il registro viene conservato insieme al prompt come esempio di esecuzione e la pagina indica la data dell’ultimo test. Le voci senza un’esecuzione registrata sono contrassegnate come «Non verificato».\n\n## Che cosa sono le voci di esempio?\n\nLe 101 immagini dei contenuti sono state generate con GPT Image usando i prompt mostrati nelle rispettive pagine. Ognuna ha un’esecuzione registrata e una revisione visiva. Lo strumento integrato non espone la versione esatta del modello né i dati di utilizzo. Le immagini scaricabili a dimensione intera possono essere convertite in un altro formato senza perdita; le versioni per la visualizzazione vengono compresse separatamente. Le precedenti esecuzioni di esempio procedurali sono archiviate.\n\n## Come segnalo un problema?\n\nApri una segnalazione nel repository del progetto per informazioni errate, pagine non funzionanti o dubbi sulle licenze."
+      }
+    },
+    {
+      "key": "page/license",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:eb7db917372d912c150206d9ecc77e9d0363099944f928c645b7d37e20c2c831",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Licenza",
+        "description": "Come riutilizzare il codice, il testo dei prompt e le immagini.",
+        "body": "## Codice\n\nIl codice del sito, gli script e i componenti sono distribuiti con licenza MIT.\n\n## Prompt e descrizioni\n\nIl testo dei prompt e le descrizioni di ogni pagina sono distribuiti con licenza [Creative Commons Attribuzione 4.0](https://creativecommons.org/licenses/by/4.0/). Puoi riutilizzarli citando la fonte e inserendo un link alla pagina.\n\n## Immagini\n\nLe licenze delle immagini sono definite per ogni file; ciascuna pagina dell’immagine ne indica la licenza. Le immagini dei contenuti generate con GPT Image in questo repository sono distribuite con licenza CC BY 4.0.\n\n## Nome e logo\n\nIl nome Prompt Seen e il suo logo non sono coperti da queste licenze."
+      }
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#0.labels",
+      "sourceField": [
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:4130ac0ca247ebb36adcdebba05e46ee22c25722955484adfa2ac32b41faf2d2",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2d0cb172060001503d6b5c6d2c9fd570d94ae91c138d82256a98f64f33e66432",
+      "translation": "Paesaggio"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#1.aliases",
+      "sourceField": [
+        1,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:a5f1f457b7a81b2a6580936742a700b533f5d1034c414b720abe5a782ee0e2f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:3d48ba35a278b27a6f9b0bd981ae9f78072bfca0c9783fb3ffe832d3ae04d206",
+      "translation": [
+        "volantino",
+        "manifesto"
+      ]
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#1.labels",
+      "sourceField": [
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:49448f53971a77d5a68fa441691ec09da6e7b8e96219aa7140db8574d1a4ad14",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:3d48ba35a278b27a6f9b0bd981ae9f78072bfca0c9783fb3ffe832d3ae04d206",
+      "translation": "Poster"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#2.labels",
+      "sourceField": [
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20a33355fb303462da8389af509d3304751c9b43d5789472533cc564a2df1448",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:50f86b5b514560cf2cc587b95bcdc979c0a6dfa8aa05ab14b2bc6d4faa7e2dfc",
+      "translation": "Prodotto"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#3.aliases",
+      "sourceField": [
+        3,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        3,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:322c4b4ae88728bd73d9556df204e98ec167eef6e22261b7771442fa2fc0a47c",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f72c3e3fda172027ae2e7e8d66d1fbc06320307af8db143186376ee552038a61",
+      "translation": [
+        "ritratto del volto"
+      ]
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#3.labels",
+      "sourceField": [
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:405c1b8dd1c6dfaeb8a08cd129e29edf862eeae1c0918c80f5d7fe30733d52ef",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:f72c3e3fda172027ae2e7e8d66d1fbc06320307af8db143186376ee552038a61",
+      "translation": "Ritratto"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#4.labels",
+      "sourceField": [
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c037b57ecbea0df1841d4d3af8bb7d3b7a61a18a2edbb30d7bcdf70e57e6593f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:afb5bd3748ce1c3b34d3f030da04e0d02e8a7f68272615a2ebd1bc07905a3dac",
+      "translation": "Illustrazione"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#5.labels",
+      "sourceField": [
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:01a8cdc6b37eadd9586f50a6074b3cb0b2fdacba9bba536d6ab133a227275d9f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4fab41959b0ea200495f2769ff525424fc984c12929a0f92fba47a58f60020eb",
+      "translation": "Architettura"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#6.labels",
+      "sourceField": [
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d5b074442c3b4c3a7214663de18515767cdd56332a9cf6848556681feb6adc8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:78db8c1b585d0b8021b0cad05683f1ce872542afecf785e82b333f1fa2dd1a54",
+      "translation": "Cibo"
+    },
+    {
+      "key": "content/taxonomy/categories.yaml#7.labels",
+      "sourceField": [
+        7,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        7,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:883b58d7eb7442e1ed5751d08f38b1fbd58dcd853f1f035db25c373103c7c4b4",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7d88e94ae7961676453023a1f1f92b0ae8f9f6b8bd74ad896617669129299acf",
+      "translation": "Motivo decorativo"
+    },
+    {
+      "key": "content/taxonomy/field-groups.yaml#0.labels",
+      "sourceField": [
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:69fafd2ad1116ce270a7d4744ed29fa653d54e700a95d02d2b5af11051d48c8e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:cc6942c0b87af383518f2d40795f5326547e243de8a8f7260d7692963ec90331",
+      "translation": "Soggetto"
+    },
+    {
+      "key": "content/taxonomy/field-groups.yaml#1.labels",
+      "sourceField": [
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:3e35ab7e79ffbb9eb13cc354795107dfeb9065e78dbe712c9ad73c9e20a224a4",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:4de234b1eccdbc61218d7cd626471192be86caff77fedbf30beff890189632ef",
+      "translation": "Stile"
+    },
+    {
+      "key": "content/taxonomy/field-groups.yaml#2.labels",
+      "sourceField": [
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:703984017e40ef3fa81e71d44430c5be2dd253e2f8b9773ddfaaa3f241251b23",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:41eac0d0ad6d746389cca1aa1f7b3d023880c2d7914edaeba51799848dc602c4",
+      "translation": "Composizione"
+    },
+    {
+      "key": "content/taxonomy/field-groups.yaml#3.labels",
+      "sourceField": [
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5a7a64c6d4764d6fd7b4a929111703ccef3d8476a0c6853f522807dda8560754",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a380776ec53e99c14c0555aca556ac5406e97843c526367e3eee2a296340e3d3",
+      "translation": "Testo"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#0.aliases",
+      "sourceField": [
+        0,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:943fa6685b94379101a920cbcc9ec898e18962dea5e761a66b4127cd6a385f8d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:0c91cdd0944b726294b36d2b04628bc98bebdfd3d6b6bdb9eb71335c2b01a104",
+      "translation": [
+        "sumi-e",
+        "pittura a inchiostro",
+        "pittura a pennello"
+      ]
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#0.labels",
+      "sourceField": [
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:937c8d9a8747eedf92b35e7d6860f68cdf7bd6d61fe6b644be681bf33c2d8b96",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:0c91cdd0944b726294b36d2b04628bc98bebdfd3d6b6bdb9eb71335c2b01a104",
+      "translation": "Inchiostro acquerellato"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#1.aliases",
+      "sourceField": [
+        1,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:6c4607cb5c98310f14628e3ba29898d87b285e8190acba3903eb9fc5720b0f3f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:79da9eb15acd8a77d68feff78ffa36cffcf964f59a1397f384ce6a7bc6ca04c9",
+      "translation": [
+        "design piatto",
+        "arte vettoriale"
+      ]
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#1.labels",
+      "sourceField": [
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5cb0e1db4d5e7405ac1139bf949ad011b47f6e4b810f3f9d4e9218b89bae2901",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:79da9eb15acd8a77d68feff78ffa36cffcf964f59a1397f384ce6a7bc6ca04c9",
+      "translation": "Vettoriale piatto"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#2.labels",
+      "sourceField": [
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:3bcfb86eaafdac2c1b87b3017ad5e53b3f82a2c6ac4bed1aaa78f3963d770b3e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:39601940583c28ffddb0ad423968611e07e1dd86e5c464bfd14619e120bd5bb2",
+      "translation": "Bauhaus"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#3.labels",
+      "sourceField": [
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:9ab0333feba65be2d5636b4f9df075c46ac0b4f719758e907e06d774fcd8ce57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:cf0efd9cda72e85a464fd95d2ed272f3a259db02a327eaef8f2f34599e380f8b",
+      "translation": "Neon"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#4.labels",
+      "sourceField": [
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:664b98a05044c66852976c3abaef7c25fe4b8710599769d97727e270239561fa",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:5f2ea16a6d1bb5775cd43d9a64e64e71b855fe0130d9910910cf602066b2f0f9",
+      "translation": "Minimalista"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#5.labels",
+      "sourceField": [
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:ae00a5753c7402867ff2e42e8b042607d5e7138d2a85aa07b46bc9d05c273a31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:70a8abb0630611a42baa94f697057bc7906f05dd36c12532dd3a0c6120f80730",
+      "translation": "Sfumatura"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#6.labels",
+      "sourceField": [
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:31d0b5d4070368a0a598e1053fd8060cf7f588d44ced45811a2fc4a86dba790a",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:30a26dcaf27f66d77419e54dd24a376bccefa5262e479380cb893c594447ecc3",
+      "translation": "Geometrico"
+    },
+    {
+      "key": "content/taxonomy/styles.yaml#7.labels",
+      "sourceField": [
+        7,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        7,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:212d72f9adb8ba704efdfb1760d52687b2f5c129fbe8aac820bf8b7cf7b105f1",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:0adc11c61b20a79019065df53d72601ad1f74bfb44a91a78de6ea9eb181c30ea",
+      "translation": "Cianotipia"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#0.aliases",
+      "sourceField": [
+        0,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:beb5bac5f28522fa3160ebfdb232464468892cda8e12e30da37cd48881c3aff0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:fbae3b3b83bedf7526da73b4ab299f5d3e775d9bd483040508dc872b4ca4cfd9",
+      "translation": [
+        "sfondo",
+        "schermata di blocco"
+      ]
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#0.labels",
+      "sourceField": [
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3a3e6f1751829b8c8a6ce2716f0ba4d3e17713dd726187777494c16bce6f1f0",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:fbae3b3b83bedf7526da73b4ab299f5d3e775d9bd483040508dc872b4ca4cfd9",
+      "translation": "Sfondo dello schermo"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#1.labels",
+      "sourceField": [
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:0451a3e918a44ee6049b8014aa55a1ece76f1a080a2a65bd69ab230bfa193912",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:72bf9ab2d81cb104f57af9e13ce94c43b2e7190f1b15f2908b9004609cb8fa95",
+      "translation": "Stampa artistica"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#2.labels",
+      "sourceField": [
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:df07b1e2a0152ced8279a75b6c7dba56a07ec0a034f4d5af7fd9de3ff18ff24f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:03867e059482ad620dfc8c62ac49c32e11a184f7d5ac1f384ff944da491361b4",
+      "translation": "Post social"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#3.labels",
+      "sourceField": [
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:d1770a455ff162a93e6dca46cbe0447174cb4e60560121595b4235f0b1dcbe04",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:aa1baef083c8b248dfc279065e80a3ca51aaa74e78091b6b129e778c04896354",
+      "translation": "Confezione"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#4.labels",
+      "sourceField": [
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:d0163484e575315f98ad40e8f2148c0510f98d466936a824ee2f3faaa749ea51",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:3fa0b71b165815ba97962cdf6ebba0bce9444e8a6a11b99d359c2c661bd1c4fc",
+      "translation": "Copertina di libro"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#5.labels",
+      "sourceField": [
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:3553f4506d9c86647fe30520872fc13dc9497de6a7f01af7ddcda27fc0abf0f1",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:ee0a4768f857faaccf35cf749f56db7992ce5b1269e827b6cedb3cca0879bb8d",
+      "translation": "Poster per eventi"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#6.aliases",
+      "sourceField": [
+        6,
+        "aliases",
+        "en"
+      ],
+      "targetField": [
+        6,
+        "aliases",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:f492d82495a02a0e44f7a7091911556fa6b69751fe818b24fc77dfe23c178198",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:d4f4f0944020eeed98025228445542688e6b8006b2ed80b2066193bcdef721d9",
+      "translation": [
+        "immagine del profilo",
+        "foto profilo"
+      ]
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#6.labels",
+      "sourceField": [
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8ec7ed90c1eb8237664483c8fae1391cd674c14cf88f3e99e5e59e90d10b994f",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:d4f4f0944020eeed98025228445542688e6b8006b2ed80b2066193bcdef721d9",
+      "translation": "Avatar"
+    },
+    {
+      "key": "content/taxonomy/use-cases.yaml#7.labels",
+      "sourceField": [
+        7,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        7,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:930dcf3dabe52e0c6524c43a62c55c251af1223d9b86cfad4a8505fcd9d8e3c5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:9c00b67fadb468ffbcffd4011099f0749d13ff9d546b71b1bbadde4495522a71",
+      "translation": "Editoriale"
+    }
+  ]
+}
