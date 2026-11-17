@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { settle } from './support/a11y';
 import { BASE, BUILD, homePath } from './support/artifact';
 import { feedPage } from './support/content';
 
@@ -8,33 +9,36 @@ const work = cards.find((card) => card.cover.height > card.cover.width && card.t
 const href = `${BASE}/${locale.pathPrefix}/prompts/${work.slug}/`;
 
 async function expectToolbar(page: Page, scrolled: boolean) {
-  const geometry = await page.locator('dialog[data-popup]').evaluate((dialog) => {
-    const close = dialog.querySelector<HTMLElement>('[data-popup-close]')!;
-    const bar = close.parentElement!;
-    const bounds = bar.getBoundingClientRect();
-    const buttons = [...bar.querySelectorAll('button')].map((button) => button.getBoundingClientRect());
-    return {
-      top: bounds.top,
-      overflow: dialog.scrollWidth - dialog.clientWidth,
-      contained: buttons.every(
-        (button) =>
-          button.top >= bounds.top &&
-          button.bottom <= bounds.bottom &&
-          button.left >= bounds.left &&
-          button.right <= bounds.right &&
-          button.width >= 44 &&
-          button.height >= 44,
-      ),
-      separate: buttons.every((button, index) =>
-        buttons.slice(index + 1).every((other) => button.right <= other.left || other.right <= button.left),
-      ),
-      covered: [0.25, 0.6, 0.9].every((fraction) =>
-        bar.contains(document.elementFromPoint(bounds.left + bounds.width * fraction, bounds.top + 2)),
-      ),
-    };
-  });
-  expect(geometry).toMatchObject({ overflow: 0, contained: true, separate: true, covered: true });
-  if (scrolled) expect(geometry.top).toBeLessThanOrEqual(1);
+  await settle(page);
+  await expect(async () => {
+    const geometry = await page.locator('dialog[data-popup]').evaluate((dialog) => {
+      const close = dialog.querySelector<HTMLElement>('[data-popup-close]')!;
+      const bar = close.parentElement!;
+      const bounds = bar.getBoundingClientRect();
+      const buttons = [...bar.querySelectorAll('button')].map((button) => button.getBoundingClientRect());
+      return {
+        top: bounds.top,
+        overflow: dialog.scrollWidth - dialog.clientWidth,
+        contained: buttons.every(
+          (button) =>
+            button.top >= bounds.top &&
+            button.bottom <= bounds.bottom &&
+            button.left >= bounds.left &&
+            button.right <= bounds.right &&
+            button.width >= 44 &&
+            button.height >= 44,
+        ),
+        separate: buttons.every((button, index) =>
+          buttons.slice(index + 1).every((other) => button.right <= other.left || other.right <= button.left),
+        ),
+        covered: [0.25, 0.6, 0.9].every((fraction) =>
+          bar.contains(document.elementFromPoint(bounds.left + bounds.width * fraction, bounds.top + 2)),
+        ),
+      };
+    });
+    expect(geometry).toMatchObject({ overflow: 0, contained: true, separate: true, covered: true });
+    if (scrolled) expect(geometry.top).toBeLessThanOrEqual(1);
+  }).toPass({ timeout: 2000 });
 }
 
 for (const viewport of [
