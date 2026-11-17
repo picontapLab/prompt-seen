@@ -15,10 +15,10 @@ export const textDirection = (lang: string): 'rtl' | 'ltr' =>
 export function languageName(language: string, pageLang: string): string {
   try {
     const name = new Intl.DisplayNames([pageLang], { type: 'language' }).of(language) ?? language;
-    // ICU versions disagree on initial casing in Portuguese, Spanish and Italian
-    // (inglês/Inglês, inglés/Inglés, inglese/Inglese), causing hydration mismatches.
+    // ICU versions disagree on initial casing in Portuguese, Spanish, Italian and Russian
+    // (inglês/Inglês, inglés/Inglés, inglese/Inglese, английский/Английский), causing hydration mismatches.
     // Preserve region/proper-name casing after the first letter and unknown language tags.
-    return ['pt', 'es', 'it'].includes(pageLang.split('-')[0]!.toLowerCase()) && name !== language
+    return ['pt', 'es', 'it', 'ru'].includes(pageLang.split('-')[0]!.toLowerCase()) && name !== language
       ? name.charAt(0).toLocaleLowerCase(pageLang) + name.slice(1)
       : name;
   } catch {

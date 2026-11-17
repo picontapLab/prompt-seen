@@ -3,6 +3,21 @@ import { languageName } from './language';
 
 afterEach(() => vi.restoreAllMocks());
 
+it.each(['ru', 'ru-RU'])('keeps %s language labels stable across Node and WebKit casing', (pageLang) => {
+  const display = vi.spyOn(Intl.DisplayNames.prototype, 'of');
+  for (const [language, expected] of [
+    ['en', 'английский'],
+    ['pt-BR', 'португальский (Бразилия)'],
+  ]) {
+    for (const label of [expected!, expected!.charAt(0).toLocaleUpperCase(pageLang) + expected!.slice(1)]) {
+      display.mockReturnValue(label);
+      expect(languageName(language!, pageLang)).toBe(expected);
+    }
+  }
+  display.mockReturnValue('zz');
+  expect(languageName('zz', pageLang)).toBe('zz');
+});
+
 it.each([
   ['en', 'inglese'],
   ['zh-Hans', 'cinese semplificato'],
