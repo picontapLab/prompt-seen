@@ -38,6 +38,8 @@ describe('production release gate', () => {
     );
     expect(builds).toHaveLength(3);
     expect(checks).toHaveLength(9);
+    expect(jobs['build-and-test'].env.IT_EXPECT_STATE).toBe('enabled');
+    expect(jobs['build-and-test'].env.FR_EXPECT_STATE).toBe('enabled');
     expect([...requiredJobs].sort()).toEqual(['check', 'secrets', ...builds, ...checks].sort());
     expect(jobs.preview.needs).toEqual(expect.arrayContaining(['check', 'secrets', 'build-and-test']));
   });
@@ -68,7 +70,7 @@ describe('production release gate', () => {
   it('fails closed with no CI history', async () => {
     await expect(checkRelease(fixture({ [runsPath]: { workflow_runs: [] } }))).rejects.toThrow('successful push CI');
   });
-  it.each(['secrets', 'build-and-test (subpath, webkit)', 'build-and-test (subpath-production, webkit)'])(
+  it.each(['secrets', 'build-and-test (subpath, webkit)', 'build-and-test (subpath-production, webkit)', 'build-and-test (subpath-production, chromium)'])(
     'requires %s to pass even if the workflow reports success',
     async (name) => {
       await expect(

@@ -28,6 +28,7 @@ inputRequirements:
     ko: 입력 이미지 없이 전체 재작성 프롬프트를 사용하세요.
     zh-Hant: 使用完整改編提示詞，不需要參考圖。
     fr: Utilisez le prompt réécrit complet sans image d’entrée.
+    it: Usa il prompt riscritto completo senza immagine di input.
   slots: []
 showcaseExampleId: x_376
 promptProvenance: independent-adaptation
@@ -49,6 +50,7 @@ inspirationSources:
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
       fr: Publication ou galerie originale entière ; pas cet exemple généré
+      it: Intero post o galleria originale, non questo esempio generato
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -65,6 +67,8 @@ inspirationSources:
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
       fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
         réponse de l’auteur
+      it: Istantanea pubblica X salvata; prompt completo dalla copia salvata del post o della risposta
+        dell’autore
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118247837683044650&lang=en&token=1
     sourcePromptStatus:
       en: Independent adaptation; original prompt failed three attempts and is archived separately.
@@ -79,6 +83,8 @@ inspirationSources:
       zh-Hant: 獨立改編；原詞三次嘗試失敗並另行歸檔。
       fr: Adaptation indépendante ; le prompt original a échoué lors de trois essais et est archivé
         séparément.
+      it: Adattamento indipendente; il prompt originale è fallito in tre tentativi ed è archiviato
+        separatamente.
     metrics:
       - key: likes
         value: 245
@@ -92,6 +98,7 @@ inspirationSources:
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
+          it: Mi piace del post originale
 source:
   author: Prompt Seen (adaptation)
   url: https://x.com/johnAGI168/status/2118247837683044650

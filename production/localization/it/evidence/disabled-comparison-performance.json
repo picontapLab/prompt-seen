@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-11-17T16:20:21.033Z",
+  "build": {
+    "buildId": "223e2a43f4f3",
+    "siteName": "Prompt Seen",
+    "buildMode": "production",
+    "origin": "https://promptseen.dev",
+    "basePath": "",
+    "urlPattern": "{basePath}/{locale}/{path}",
+    "mediaBaseUrl": null,
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "pathPrefix": "en",
+        "nativeName": "English",
+        "htmlLang": "en",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "zh-Hans",
+        "pathPrefix": "zh-hans",
+        "nativeName": "简体中文",
+        "htmlLang": "zh-Hans",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "incremental",
+          "review": "metadata",
+          "promptBodies": "optional"
+        }
+      },
+      {
+        "code": "es",
+        "pathPrefix": "es",
+        "nativeName": "Español",
+        "htmlLang": "es",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "pt-BR",
+        "pathPrefix": "pt-br",
+        "nativeName": "Português (Brasil)",
+        "htmlLang": "pt-BR",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ja",
+        "pathPrefix": "ja",
+        "nativeName": "日本語",
+        "htmlLang": "ja",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "ko",
+        "pathPrefix": "ko",
+        "nativeName": "한국어",
+        "htmlLang": "ko",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      },
+      {
+        "code": "de",
+        "pathPrefix": "de",
+        "nativeName": "Deutsch",
+        "htmlLang": "de",
+        "direction": "ltr",
+        "enabled": true,
+        "localization": {
+          "coverage": "complete",
+          "review": "fingerprint",
+          "promptBodies": "source-only"
+        }
+      }
+    ]
+  },
+  "files": 27704,
+  "totalBytes": 1743842023,
+  "htmlBytes": 331680971,
+  "italianSearch": null,
+  "pages": [
+    {
+      "path": "/",
+      "noPrefetch": true,
+      "firstLoadJsGzipBytes": 198835,
+      "idleJsGzipBytes": 270681,
+      "fonts": [
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    },
+    {
+      "path": "/",
+      "noPrefetch": false,
+      "firstLoadJsGzipBytes": 198835,
+      "idleJsGzipBytes": 330213,
+      "fonts": [
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    },
+    {
+      "path": "/en/prompts/",
+      "noPrefetch": true,
+      "firstLoadJsGzipBytes": 207422,
+      "idleJsGzipBytes": 277927,
+      "fonts": [
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    },
+    {
+      "path": "/en/prompts/",
+      "noPrefetch": false,
+      "firstLoadJsGzipBytes": 207422,
+      "idleJsGzipBytes": 328872,
+      "fonts": [
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    },
+    {
+      "path": "/en/templates/birthday-main-character-card/",
+      "noPrefetch": true,
+      "firstLoadJsGzipBytes": 211419,
+      "idleJsGzipBytes": 268652,
+      "fonts": [
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    },
+    {
+      "path": "/en/templates/birthday-main-character-card/",
+      "noPrefetch": false,
+      "firstLoadJsGzipBytes": 211419,
+      "idleJsGzipBytes": 340787,
+      "fonts": [
+        {
+          "path": "/_next/static/media/fira_sans_extra_condensed_latin_700_normal-s.p.3nigjfnse8gkg.woff2",
+          "kind": "font",
+          "bytes": 25400,
+          "gzipBytes": 25428
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_400_normal-s.p.1xf5nwxyfigak.woff2",
+          "kind": "font",
+          "bytes": 22588,
+          "gzipBytes": 22598
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_400_normal.3xdfs0-p_zi4c.woff2",
+          "kind": "font",
+          "bytes": 14708,
+          "gzipBytes": 14731
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_mono_latin_500_normal.11q3guvgd1r20.woff2",
+          "kind": "font",
+          "bytes": 14888,
+          "gzipBytes": 14911
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_500_normal.2i4a1iuj6lbvw.woff2",
+          "kind": "font",
+          "bytes": 24184,
+          "gzipBytes": 24173
+        },
+        {
+          "path": "/_next/static/media/ibm_plex_sans_latin_600_normal.2ovda_azncp9b.woff2",
+          "kind": "font",
+          "bytes": 24252,
+          "gzipBytes": 24236
+        }
+      ],
+      "unsolicitedSearchOrReviewRequests": []
+    }
+  ]
+}

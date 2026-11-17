@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "operations": [
+    {
+      "key": "prompt/p_315",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:3fc69a88994e7d383e81f6d5b39574b7036051b141e0703fd66e18d3ed0ec1d6",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ritratto in ascensore a specchi con completo sartoriale — adattamento indipendente",
+        "description": "Una donna in completo nero tiene degli occhiali da sole accanto al proprio riflesso in un ascensore a specchi.",
+        "body": "## Come usarlo\n\nUsa il prompt riscritto completo senza immagine di input.\n\n## Risultato e modifiche\n\nUna donna in completo nero tiene degli occhiali da sole accanto al proprio riflesso in un ascensore a specchi. Conserva ascensore, specchio, occhiali e discreto dettaglio Keor. Sostituisce top corto, minigonna e calze con completo nero, camicetta avorio e scarpe basse. Non è un confronto tra versioni di modelli.\n\nPersona adulta in completo nero sartoriale, camicetta avorio e scarpe basse in ascensore, con occhiali da sole in mano, rivolta verso un unico riflesso coerente. Il testo Keor sul polsino è leggibile; il display del piano indica 6. Abito completo e scarpe visibili. Adattamento di moda quotidiana; nessuna pretesa di riprodurre l’abito originale succinto o confrontare versioni di modelli.\n\n## Fonte e generazione\n\nPrompt Seen ha riscritto autonomamente il [prompt originale di @tadasgedgaudas](https://x.com/tadasgedgaudas/status/2118284291381875124) dopo tre tentativi con il prompt originale che non hanno restituito immagini. Questo nuovo risultato usa il testo riscritto qui mostrato; non è un successo del prompt originale. Testo originale e tentativi falliti restano archiviati. Una nuova chiamata allo strumento integrato GPT Image ha prodotto questa immagine statica. La versione esatta del modello è sconosciuta. L’attribuzione dell’autore a Image 2.6 e i Mi piace dell’intero post riguardano il post originale, non questo adattamento. La lingua del prompt inviato resta invariata tra le lingue delle pagine."
+      }
+    },
+    {
+      "key": "template/t_001",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:a00891c4e6cd057e503a6b53adc304c2976680e715ce52ad59a40b48613e20e3",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Poster di prodotto",
+        "description": "Inserisci un prodotto, fino a tre punti di forza, una palette e un formato per ottenere un poster di prodotto pulito in stile vettoriale piatto.",
+        "body": "## A che cosa serve?\n\nBanner di negozi, post di lancio e mockup di confezioni in cui la forma del prodotto deve essere immediatamente riconoscibile.\n\n## Come si compila?\n\n- **Prodotto**: indica l’oggetto e il materiale, per esempio «una tazza di ceramica puntinata». Il materiale determina la texture della superficie.\n- **Punti di forza**: fino a tre brevi frasi. Quelle concrete («coperchio ermetico») diventano dettagli visibili; quelle vaghe («premium») vengono ignorate.\n- **Titolo**: facoltativo. La versione 3 richiede il titolo fornito esattamente e lascia le barre vuote quando manca. Controlla le scritte in ogni risultato.\n\n## Cosa cambia nella versione 2?\n\nLa versione 2 aggiunge il titolo facoltativo, una palette grigia e una corallo e altri formati. Gli esempi realizzati con la versione 1 conservano il prompt originale."
+      }
+    },
+    {
+      "key": "template/t_002",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:79d94491b072d6d494679cb894eb1435d0c51086825cc33752c90c6e93475806",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Rotolo di pittura a inchiostro",
+        "description": "Inserisci soggetto, stagione, tecnica e dettagli per generare un prompt di pittura a inchiostro con ampi spazi vuoti.",
+        "body": "## Dove usarla?\n\nBanner, sfondi panoramici e copertine dal carattere orientale. Nei formati larghi lo spazio vuoto conta più del soggetto stesso.\n\n## Come si compila?\n\n- **Soggetto**: ne basta uno, come «boschetto di bambù» o «pino solitario». Più soggetti aggiungi, meno spazio vuoto rimane.\n- **Tecnica**: determina la texture dell’immagine. Il pennello bagnato sfumato è morbido, quello secco è ruvido.\n- **Dettagli**: al massimo quattro elementi numerabili, come «cinque steli di bambù».\n\nIl testo del prompt resta in inglese perché nei test le descrizioni inglesi delle tecniche pittoriche hanno dato risultati più stabili."
+      }
+    },
+    {
+      "key": "template/t_003",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:78ca7cea5b80ddbcd8bd23da9dc10b9e0f7dac6173488e90a66cadc52345cee2",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ritratto con illuminazione al neon sui bordi",
+        "description": "Descrivi un personaggio, due colori di luce sui bordi e uno sfondo per ottenere un ritratto in silhouette suggestivo.",
+        "body": "## A che cosa serve?\n\nAvatar, copertine di album e anticipazioni di personaggi in cui il contorno conta più del viso.\n\n## Come si compila?\n\n- **Personaggio**: indica chi è e una posa, per esempio «una ballerina a metà giro».\n- **Luce sui bordi**: due colori, uno per lato. Un solo colore appare come un bagliore anziché una persona.\n- **Atmosfera**: facoltativa; bastano una o due parole."
+      }
+    },
+    {
+      "key": "template/t_004",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:74d52905769ab966ea043648a4e2c4cc1ad7d40ffdcc143be1f8050b330ee722",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Un mondo dentro una sfera di cristallo",
+        "description": "Un mondo alpino in miniatura riversa una cascata da una sfera di vetro su un tavolo di quercia.",
+        "body": "## Come usarlo\n\nDescrivi il paesaggio all’interno della sfera. Specifica chiaramente che l’acqua attraversa il confine del vetro e il bordo del tavolo: questi due passaggi creano l’illusione.\n\n## Risultato registrato\n\nIl paesaggio predefinito è stato generato con lo strumento integrato il 2026-10-29. Il fornitore non ha indicato l’ID esatto del modello. Le modifiche al paesaggio non sono ancora state testate.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_101) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_005",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:5102739f1bdccaf7b6546ed5435d0e1c4c4681636aa19bd622cb0395e85130f2",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Animale in miniatura fatto di frutta",
+        "description": "Una fragola diventa un minuscolo gattino, con semi e polpa che ne formano il muso e le zampe.",
+        "body": "## Come usarlo\n\nMantieni piccolo l’animale e continuo il materiale della frutta. Cambia insieme animale e frutto; conserva il frutto normale accanto come riferimento di scala.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_102) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_006",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:3274dd66ed164776e9e9b34b59558acdb41382ca0533377b500ccb0375d8df2d",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Gatto in una bottiglia per pozioni",
+        "description": "Un gattino imbronciato riempie una bottiglia rotonda per pozioni in una bottega d’alchimista dalla luce calda.",
+        "body": "## Come usarlo\n\nCambia l’animale mantenendo la bottiglia rotonda e l’espressione leggibile. È una scena fantastica: conserva la descrizione esplicita dell’animale comodo e illeso.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_103) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_007",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:2d26764614241a5c1ca120c253e5aa3278a15e630019c4e043b63f197b76df79",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Faro su una scogliera dipinta",
+        "description": "Fasce dipinte color corallo, turchese e zafferano seguono una costa rocciosa intorno a un faro bianco.",
+        "body": "## Come usarlo\n\nScegli un edificio costiero compatto. Mantieni la vista aerea e fai seguire alla pittura il terreno, evitando che sembri sospesa sopra di esso.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_104) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_008",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:c45da25577232127ddfe95a697cc3970c9c7596b9a8f6331f1059d59cb97ca65",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Fotografia di bevanda con scarabocchi a inchiostro",
+        "description": "Una limonata e una mano realistiche incontrano nuotatori giocosi a inchiostro nero, bolle e un limone sorridente.",
+        "body": "## Come usarlo\n\nCambia la bevanda ma conserva la condensa e il contrasto tra fotografia e inchiostro. Lascia libero lo sfondo se intendi aggiungere un titolo in seguito.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_105) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_009",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:41f1ad90be2018ef38951ddef9b59cf4c6b82e9316984bb463d4da7ca49885ae",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Gatto al mercato del pesce",
+        "description": "Un minuscolo gatto soriano pescivendolo scambia un pesce fresco con monete nella luce mattutina del mercato.",
+        "body": "## Come usarlo\n\nCambia l’animale conservando il pesce, la mano del cliente e le monete: questi oggetti spiegano l’interazione. Mantieni semplici le zampe.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_106) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_010",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:0d041b1dab9b24cdb11ed36c956187c474cb477a6e0f78b29115e8e8f8e73804",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Mondo in miniatura sul palmo",
+        "description": "Un bosco muschioso e una piccola cascata formano un ecosistema in miniatura in una mano aperta.",
+        "body": "## Come usarlo\n\nDescrivi un piccolo paesaggio naturale. Mantieni mano e paesaggio su scale diverse e rendi la miniatura il punto focale nitido.\n\n## Risultato registrato\n\nL’esempio predefinito è stato generato con lo strumento integrato. Il fornitore non ha restituito l’ID preciso del modello. Gli altri valori non sono ancora stati testati.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_109) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_011",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:677ca7c6d3700a50c45c170e1a65151335d8d06f5f845ba7a547e067f1926262",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Illustrazione esplicativa di prodotto in sezione",
+        "description": "Un involucro trasparente rivela la disposizione dei componenti fornita, con etichette discrete.",
+        "body": "## Come usarlo\n\nFornisci il dispositivo, note strutturali verificate e le etichette esatte; la foto del prodotto è facoltativa.\n\nL’esempio predefinito è un concept immaginario, non un disegno tecnico certificato.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_116) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_012",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:17fb1b37929fb9664bb6a8ca50980a637abcc3a3e09d59b0f1a253b8f7d5b8cd",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Ricetta con ingredienti sospesi",
+        "description": "Gli ingredienti si sollevano sopra una ciotola pronta, con le esatte quantità fornite.",
+        "body": "## Come usarlo\n\nFornisci un piatto e quantità verificate degli ingredienti.\n\nUsa una tua ricetta verificata e controlla ogni etichetta degli ingredienti.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_117) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_013",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:207e69a5dd862d0aa2f9222fd035a6c7d604fe9fffb6e71336be6969849ddeef",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Scheda meteo con città in miniatura",
+        "description": "Monumenti simili a giocattoli illustrano una scheda meteo con uno scenario chiaramente indicato.",
+        "body": "## Come usarlo\n\nFornisci città, data, previsioni e monumenti. La previsione del nostro esempio è immaginaria.\n\nSostituisci la previsione dimostrativa con dati verificati prima di pubblicare una scheda meteo attuale.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_118) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_014",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:404953095507200fb433075a84b9871263118143d81ab7deb579f94e5e9de023",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Storia di personaggi in quattro vignette",
+        "description": "Personaggi originali coerenti interpretano quattro momenti narrativi chiari.",
+        "body": "## Come usarlo\n\nDescrivi i personaggi e fornisci esattamente quattro momenti narrativi in ordine; la scheda dei personaggi è facoltativa.\n\nLeggi le vignette in ordine e controlla che ogni personaggio rimanga riconoscibile.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_119) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_015",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:a69159797c6b6dce8d977fbc00fbcae0da07099f1ae980efb9a5f063cb454784",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Set di nove icone materiche",
+        "description": "Nove oggetti arrotondati condividono palette, materiale e illuminazione.",
+        "body": "## Come usarlo\n\nScegli un tema, una palette ed esattamente nove oggetti distinti.\n\nConta le icone e controlla spaziatura, sagome e coerenza dei materiali.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_120) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_016",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:7d0d417120045ba2d0fcb2ae2df902bb7ef96d2061969c0a8cd144949128b84f",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Presentazione dell’identità di una caffetteria",
+        "description": "L’identità di una caffetteria immaginaria si estende a tazze, confezioni e applicazioni editoriali.",
+        "body": "## Come usarlo\n\nFornisci un nome di marchio immaginario, una palette e un’atmosfera; un logo esistente è facoltativo.\n\nControlla le scritte e i marchi ripetuti prima di usare i mockup come riferimenti di design.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_121) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_017",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:1b0354fbb8d4546582cca7b17ff86a00f63867bc2eb81a851bc5e84a279c52ee",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Modello di prompt per campagna di prodotto 3x3",
+        "description": "Adatta palette e nove scene di un prompt per campagna da foto di riferimento, con due esempi registrati e il prodotto originale di input.",
+        "body": "## Come usarlo\n\nCarica una foto di prodotto; fornisci una palette ed esattamente nove temi per le scene.\n\nMantieni coerenti la sagoma del prodotto, il tappo e l’etichetta in ogni riquadro.\n\n## Risultato registrato\n\nQuesto modello di prompt ha due esempi registrati con lo stesso riferimento sintetico della bottiglia PINE. I valori predefiniti producono il testo inviato per la campagna salvia, avorio e argento; quelli alternativi usano antracite, ambra e scene all’aperto. Il [caso di campagna testato](prompt:p_123) spiega quanto osservato in ogni risultato.\n\n## Documentazione e limiti della generazione\n\nL’[esecuzione predefinita](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml) e l’[esecuzione alternativa](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml) registrano il modello di prompt v1, i valori inviati, gli hash dei prompt e gli ID di riferimenti e risultati in data 29 ottobre 2026. Carica il riferimento del prodotto mostrato nella prova corrispondente; i campi modificano il testo, non l’immagine di input.\n\nGPT Image 2.5 è la [versione attribuita dal responsabile del progetto](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json). Lo strumento di immagini integrato non ha restituito l’ID esatto del modello API; seed, campionamento e qualità non sono stati registrati. Testo e input identici non garantiscono pixel identici.\n\nModificare i campi crea un prompt, non una nuova immagine generata. I valori senza un’esecuzione registrata corrispondente restano non verificati. Dopo la generazione con una tua foto, controlla i nove riquadri, le scritte delle etichette e la sagoma del prodotto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_123) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_018",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:0df70c21a9a0fbbda3e2e09705a90d16ab1b7d2a68e10bef1bc064f5861d65d3",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Tavola tecnica vintage",
+        "description": "Linee avorio trasformano un oggetto in un’elegante tavola tecnica blu cobalto.",
+        "body": "## Come usarlo\n\nFornisci un oggetto e brevi etichette; un riferimento dell’esterno è facoltativo.\n\nÈ una tavola concettuale decorativa, non un brevetto operativo né una specifica ingegneristica.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_126) per le fonti originali e le metriche di interesse datate."
+      }
+    },
+    {
+      "key": "template/t_019",
+      "sourceField": [
+        "$page"
+      ],
+      "targetField": [
+        "$page"
+      ],
+      "expectedSourceHash": "sha256:cbb101360c05d191908db34edbed1364b6823407b048f8ec1a639c71d2c59c1b",
+      "expectedTargetHash": null,
+      "translation": {
+        "title": "Tavola di schizzi per un concept industriale",
+        "description": "Prospettiva, prospetti e studi dei dettagli descrivono un unico concept di prodotto coerente.",
+        "body": "## Come usarlo\n\nFornisci il concept del prodotto, un colore d’accento e le caratteristiche del design; un riferimento dell’esterno è facoltativo.\n\nConfronta la geometria tra le viste; considera il risultato una proposta visiva preliminare.\n\n## Risultato registrato\n\nL’esempio è stato generato con lo strumento integrato. L’ID esatto del modello non è stato restituito. L’esecuzione registrata contiene il prompt inviato e gli input nell’ordine corretto.\n\n## Ispirazione\n\nConsulta il [caso testato](prompt:p_127) per le fonti originali e le metriche di interesse datate."
+      }
+    }
+  ]
+}

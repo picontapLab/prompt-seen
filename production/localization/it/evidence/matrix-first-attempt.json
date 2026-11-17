@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-17T16:18:12.518Z",
+  "results": [
+    {
+      "candidateCommit": "223e2a43f4f3ebd39fff502f1e55923816bebea1",
+      "name": "disabled-comparison",
+      "mode": "production",
+      "base": "",
+      "disabled": true,
+      "build": {
+        "command": "npm run build",
+        "exitCode": 1,
+        "seconds": 54.518,
+        "evidence": "evidence/disabled-comparison-build.log"
+      },
+      "status": "failed",
+      "error": "Error: Build failed: disabled-comparison"
+    }
+  ]
+}

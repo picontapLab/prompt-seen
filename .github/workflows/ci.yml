@@ -133,6 +133,7 @@ jobs:
     env:
       PW_BROWSERS: ${{ matrix.browser }}
       FR_EXPECT_STATE: enabled
+      IT_EXPECT_STATE: enabled
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

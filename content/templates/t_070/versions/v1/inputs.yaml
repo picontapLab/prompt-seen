@@ -14,6 +14,8 @@ instructions:
   zh-Hant: 上傳一張清晰的狗狗照片。示例參考圖由 AI 生成。畫面文字保持英文。
   fr: Importez une photo de chien nette. La référence de démonstration est générée par IA. Gardez tous
     les textes dans l’image en anglais.
+  it: Carica una foto nitida di un cane. Il riferimento dimostrativo è generato con l’IA. Mantieni
+    tutte le scritte in inglese.
 slots:
   - id: pet
     labels:
@@ -26,5 +28,6 @@ slots:
       ko: 개 사진
       zh-Hant: 狗狗照片
       fr: Photo du chien
+      it: Foto del cane
     min: 1
     max: 1

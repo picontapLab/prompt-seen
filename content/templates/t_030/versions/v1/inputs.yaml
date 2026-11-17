@@ -11,6 +11,8 @@ instructions:
   zh-Hant: 上傳一張角色參考圖片，並依閱讀順序提供恰好十六則簡短配文。
   fr: Importez une image de référence du personnage. Fournissez exactement seize légendes courtes dans
     l’ordre de lecture.
+  it: Carica un riferimento del personaggio. Fornisci esattamente sedici brevi didascalie in ordine di
+    lettura.
 slots:
   - id: character
     labels:
@@ -23,5 +25,6 @@ slots:
       ko: 캐릭터
       zh-Hant: 角色參考
       fr: Personnage
+      it: Personaggio
     min: 1
     max: 1

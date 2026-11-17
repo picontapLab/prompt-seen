@@ -33,6 +33,8 @@ inputRequirements:
     zh-Hant: 上傳頭部畫紅圈、書本畫藍圈的插畫，兩圈不要重疊。示例參考圖由本站生成。
     fr: Importez une illustration avec un cercle rouge sur la tête et un cercle bleu distinct autour
       d’un livre. La référence présentée ici a été générée par Prompt Seen.
+    it: Carica un’illustrazione con un cerchio rosso sulla testa e un cerchio blu separato attorno a un
+      libro. Il riferimento qui mostrato è stato generato da Prompt Seen.
   slots:
     - id: marked
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         ko: 프로젝트에서 생성한 참조 이미지
         zh-Hant: 本站生成的示例參考圖
         fr: Référence générée pour le projet
+        it: Riferimento generato dal progetto
       min: 1
       max: 1
 showcaseExampleId: x_301
@@ -67,6 +70,7 @@ inspirationSources:
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
       fr: Publication ou galerie originale entière ; pas cet exemple généré
+      it: Intero post o galleria originale, non questo esempio generato
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -83,6 +87,8 @@ inspirationSources:
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
       fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
         réponse de l’auteur
+      it: Istantanea pubblica X salvata; prompt completo dalla copia salvata del post o della risposta
+        dell’autore
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118151619212890291&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -94,6 +100,7 @@ inspirationSources:
       ko: 작성자의 전체 원문, 원래 언어
       zh-Hant: 完整作者原詞，保留原語言
       fr: Texte complet de l’auteur, langue originale
+      it: Testo completo dell’autore nella lingua originale
     metrics:
       - key: likes
         value: 93
@@ -107,6 +114,7 @@ inspirationSources:
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
+          it: Mi piace del post originale
 source:
   author: IHayato
   url: https://x.com/IHayato/status/2118151619212890291

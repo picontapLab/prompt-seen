@@ -31,6 +31,8 @@ inputRequirements:
     zh-Hant: 按列出的順序上傳參考圖。本例使用合成輸入素材。
     fr: Importez les images de référence dans l’ordre indiqué. L’exemple utilise des images d’entrée
       synthétiques.
+    it: Carica le immagini di riferimento nell’ordine elencato. L’esempio usa immagini di input
+      sintetiche.
   slots:
     - id: map
       labels:
@@ -43,6 +45,7 @@ inputRequirements:
         ko: 원본 지도
         zh-Hant: 原始地圖
         fr: Carte source
+        it: Mappa originale
       min: 1
       max: 1
 showcaseExampleId: x_237

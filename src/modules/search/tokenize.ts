@@ -28,6 +28,8 @@ const MARK = /[\p{M}‌‍︀-️ﾞﾟ]/u;
 const FOLD_SCRIPT = /[\p{Script=Latin}\p{Script=Greek}\p{Script=Cyrillic}]/u;
 
 const ARABIC_DIACRITICS = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
+const ITALIAN_ELISIONS = new Set(['l', 'd', 'un', 'all', 'dall', 'dell', 'nell', 'sull']);
+const ELISION_END = /^['’]\p{L}/u;
 
 /** The search form of one word or character run: compatibility forms, case and accents folded. */
 export function normalizeTerm(text: string, locale: string): string {
@@ -123,6 +125,14 @@ export function spans(text: string, locale: string, mode: 'index' | 'query' = 'i
       )
         continue;
       const term = normalizeTerm(raw, locale);
+      // Filter on original positions: rewriting apostrophes first would move highlights.
+      // Only an adjacent apostrophe followed by a letter is an Italian elision.
+      if (
+        locale.split('-')[0]!.toLowerCase() === 'it' &&
+        ITALIAN_ELISIONS.has(term) &&
+        ELISION_END.test(text.slice(endOf(last)))
+      )
+        continue;
       if (term) out.push({ term, start: first.start, end: endOf(last) });
       continue;
     }

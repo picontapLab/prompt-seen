@@ -10,6 +10,7 @@ instructions:
   ko: 동작 사진 한 장을 업로드하고 대문자로 된 짧은 단어와 배경색을 제공하세요.
   zh-Hant: 上傳一張動作照片，並提供一個簡短的大寫單字與背景顏色。
   fr: Importez une photo d’action et indiquez un mot court en majuscules ainsi qu’une couleur de fond.
+  it: Carica una foto d’azione e indica una parola breve in maiuscolo e un colore di sfondo.
 slots:
   - id: action
     labels:
@@ -22,5 +23,6 @@ slots:
       ko: 동작
       zh-Hant: 動作照片
       fr: Action
+      it: Azione
     min: 1
     max: 1

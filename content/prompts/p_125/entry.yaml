@@ -32,6 +32,8 @@ inputRequirements:
     zh-Hant: 上傳一張重要家具清楚可見的房間照片。本例使用合成圖片。
     fr: Importez une photo de pièce où les meubles importants sont visibles. La pièce d’exemple est
       synthétique.
+    it: Carica una foto della stanza in cui siano visibili gli arredi importanti. La stanza dell’esempio
+      è sintetica.
   slots:
     - id: room
       labels:
@@ -44,6 +46,7 @@ inputRequirements:
         ko: 방
         zh-Hant: 房間照片
         fr: Pièce
+        it: Stanza
       min: 1
       max: 1
 showcaseExampleId: x_170
@@ -66,6 +69,7 @@ inspirationSources:
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
+      it: Intero post o galleria di immagini
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -78,6 +82,7 @@ inspirationSources:
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
       fr: Instantané indexé de la source primaire
+      it: Istantanea indicizzata della fonte primaria
     evidenceUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -89,6 +94,7 @@ inspirationSources:
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: post_score
         value: 2746
@@ -102,6 +108,7 @@ inspirationSources:
           ko: 게시물 점수
           zh-Hant: 貼文分數
           fr: Score de la publication
+          it: Punteggio del post
       - key: comments
         value: null
         labels:
@@ -114,6 +121,7 @@ inspirationSources:
           ko: 댓글
           zh-Hant: 留言
           fr: Commentaires
+          it: Commenti
 source:
   author: Prompt Seen
   url: null

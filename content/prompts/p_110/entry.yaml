@@ -30,6 +30,7 @@ inputRequirements:
     zh-Hant: 無需參考圖，將完整提示詞複製到圖像生成工具即可。
     fr: Aucune image de référence n’est nécessaire. Copiez le prompt complet dans votre générateur
       d’images.
+    it: Non occorre un’immagine di riferimento. Copia il prompt completo nel tuo generatore di immagini.
   slots: []
 showcaseExampleId: x_155
 source:
@@ -56,6 +57,7 @@ inspirationSources:
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
+      it: Intero post o galleria di immagini
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -68,6 +70,7 @@ inspirationSources:
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
       fr: Instantané indexé de la source primaire
+      it: Istantanea indicizzata della fonte primaria
     evidenceUrl: https://www.reddit.com/r/midjourney/comments/1jd1jkf
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -79,6 +82,7 @@ inspirationSources:
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: post_score
         value: 565
@@ -92,6 +96,7 @@ inspirationSources:
           ko: 게시물 점수
           zh-Hant: 貼文分數
           fr: Score de la publication
+          it: Punteggio del post
       - key: comments
         value: null
         labels:
@@ -104,3 +109,4 @@ inspirationSources:
           ko: 댓글
           zh-Hant: 留言
           fr: Commentaires
+          it: Commenti

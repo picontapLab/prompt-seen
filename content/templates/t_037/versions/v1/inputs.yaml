@@ -12,6 +12,8 @@ instructions:
   zh-Hant: 按列出的順序上傳參考圖。本例使用合成輸入素材。
   fr: Importez les images de référence dans l’ordre indiqué. L’exemple utilise des images d’entrée
     synthétiques.
+  it: Carica le immagini di riferimento nell’ordine elencato. L’esempio usa immagini di input
+    sintetiche.
 slots:
   - id: product
     labels:
@@ -24,5 +26,6 @@ slots:
       ko: 제품 참조 이미지
       zh-Hant: 產品參考
       fr: Référence produit
+      it: Riferimento del prodotto
     min: 1
     max: 1

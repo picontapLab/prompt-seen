@@ -13,6 +13,8 @@ instructions:
   zh-Hant: 描述角色，並依順序提供恰好四個故事節點；角色設定圖為選填。
   fr: Décrivez les personnages et fournissez exactement quatre étapes narratives ordonnées ; une
     planche de personnages est facultative.
+  it: Descrivi i personaggi e fornisci esattamente quattro momenti narrativi in ordine; la scheda dei
+    personaggi è facoltativa.
 slots:
   - id: character
     labels:
@@ -25,5 +27,6 @@ slots:
       ko: 캐릭터
       zh-Hant: 角色設定圖
       fr: Personnage
+      it: Personaggio
     min: 0
     max: 1

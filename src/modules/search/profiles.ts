@@ -121,6 +121,32 @@ const FRENCH_KINDS: Record<SearchKind, string> = {
   topic: 'thème',
 };
 
+const ITALIAN_TERMS = [
+  ['ritratto', 'ritratti', 'portrait', 'portraits'],
+  ['adesivo', 'adesivi', 'sticker', 'stickers'],
+  ['modello di prompt', 'modelli di prompt', 'template', 'templates'],
+  ['raccolta', 'raccolte', 'collection', 'collections'],
+  ['tema', 'temi', 'topic', 'topics'],
+  ['illuminazione', 'lighting'],
+  ['sfondo', 'sfondi', 'background'],
+] as const;
+
+const ITALIAN_PRODUCT_PHOTOGRAPHY = [
+  'fotografia di prodotto',
+  'fotografia di prodotti',
+  'foto di prodotto',
+  'foto di prodotti',
+  'product photography',
+  'packshot',
+] as const;
+
+const ITALIAN_KINDS: Record<SearchKind, string> = {
+  prompt: 'prompt',
+  template: 'modello di prompt modelli di prompt template templates',
+  collection: 'raccolta raccolte collection collections',
+  topic: 'tema temi topic topics',
+};
+
 // Each language uses the same low-weight expansion contract; only vocabulary differs.
 const PROFILES = {
   fr: {
@@ -129,6 +155,13 @@ const PROFILES = {
     kinds: FRENCH_KINDS,
     productPhotography: FRENCH_PRODUCT_PHOTOGRAPHY,
     photography: 'photographie',
+  },
+  it: {
+    terms: ITALIAN_TERMS,
+    compounds: [],
+    kinds: ITALIAN_KINDS,
+    productPhotography: ITALIAN_PRODUCT_PHOTOGRAPHY,
+    photography: 'fotografia',
   },
   pt: {
     terms: PORTUGUESE_TERMS,
@@ -161,7 +194,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       koreanAliases(text) +
       (kind ? ` ${{ prompt: '프롬프트', template: '템플릿', collection: '컬렉션', topic: '주제' }[kind]}` : '')
     );
-  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr') return '';
+  if (language !== 'de' && language !== 'es' && language !== 'pt' && language !== 'fr' && language !== 'it') return '';
   const profile = PROFILES[language];
   const terms = new Set(queryTerms(text, locale));
   const compounds = profile.compounds
@@ -176,6 +209,11 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
       return /(?:^|[^\p{L}\p{N}])plano[ \t]+urbano(?=$|[^\p{L}\p{N}])/u.test(normalizeTerm(text, locale));
     // Preserve repeated words in contiguous French phrases, without synthetic kind tokens.
     const words = language === 'fr' ? tokenize(word, locale) : queryTerms(word, locale);
+    // Match a phrase in actual prose, without crossing punctuation or synthetic kind text.
+    if (language === 'it' && words.length > 1)
+      return new RegExp(`(?:^|[^\\p{L}\\p{N}])${words.join('\\s+')}(?=$|[^\\p{L}\\p{N}])`, 'u').test(
+        normalizeTerm(text, locale),
+      );
     // A Portuguese phrase must occur in the prose. The synthetic kind "prompt"
     // must not turn "modelo de IA" into "modelo de prompt" (a template).
     return (language === 'pt' || language === 'fr') && words.length > 1
@@ -187,5 +225,7 @@ export function domainAliases(text: string, locale: string, kind?: SearchKind): 
   const photography = profile.productPhotography.some(contains)
     ? [...profile.productPhotography, profile.photography]
     : [];
-  return [...extra, ...synonyms, ...photography].join(' ');
+  // Bare manifesto may mean a declaration; only known posters get these aliases.
+  const posters = language === 'it' && contains('poster') ? ['manifesto', 'manifesti'] : [];
+  return [...extra, ...synonyms, ...photography, ...posters].join(' ');
 }

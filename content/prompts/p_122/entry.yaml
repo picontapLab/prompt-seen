@@ -29,6 +29,8 @@ inputRequirements:
     ko: 그림 한 장을 업로드하세요. 참조 이미지는 직접 합성한 어린이 그림풍 작품입니다.
     zh-Hant: 上傳一張畫作。本例參考圖片是原創合成的童趣畫作。
     fr: Importez un dessin. Notre référence est un dessin enfantin synthétique original.
+    it: Carica un disegno. Il nostro riferimento è un disegno sintetico originale dall’aspetto
+      infantile.
   slots:
     - id: drawing
       labels:
@@ -41,6 +43,7 @@ inputRequirements:
         ko: 그림
         zh-Hant: 原始塗鴉
         fr: Dessin
+        it: Disegno
       min: 1
       max: 1
 showcaseExampleId: x_167
@@ -63,6 +66,7 @@ inspirationSources:
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
+      it: Intero post o galleria di immagini
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -75,6 +79,7 @@ inspirationSources:
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
       fr: Instantané indexé de la source primaire
+      it: Istantanea indicizzata della fonte primaria
     evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1k9x3ru/my_5_year_old_sons_drawings_rerendered_by_chatgpt/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -86,6 +91,7 @@ inspirationSources:
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: post_score
         value: 6653
@@ -99,6 +105,7 @@ inspirationSources:
           ko: 게시물 점수
           zh-Hant: 貼文分數
           fr: Score de la publication
+          it: Punteggio del post
       - key: comments
         value: null
         labels:
@@ -111,6 +118,7 @@ inspirationSources:
           ko: 댓글
           zh-Hant: 留言
           fr: Commentaires
+          it: Commenti
 source:
   author: Prompt Seen
   url: null

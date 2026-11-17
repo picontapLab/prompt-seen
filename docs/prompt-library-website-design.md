@@ -840,6 +840,8 @@ URL 前缀、文件名与语言标签保持规范映射，如 `/zh-hans/prompts/
 
 默认使用域名根部署（`basePath: ''`、`robots.mode: standalone`）。需要子路径时仍可设置 `BASE_PATH=/prompt-seen`，首页与 `x-default` 对应基础路径本身，如 `xxx.com/prompt-seen/`，其他页面以 `{basePath}/{locale}/` 开头；子路径的 robots 由宿主合并，见第 15.4 节。
 
+2026-11-17 意大利语实现候选：注册表启用集合为 `en`、`zh-Hans`、`es`、`pt-BR`、`ja`、`ko`、`de`、`it`，预览另含 `ar`。意大利语采用 complete/fingerprint/source-only，当前公开范围 381 个页面与 2,220 个解释/UI 字段全部 current；Prompt 原文、模板执行值和资产字节保持不变。首发规则及后续维护合同见[意大利语规格](italian-localization-spec.md)，本地候选、远程 CI 与实际部署分别记录于 `production/localization/it/production-acceptance.json`，不能把候选启用当作已上线。
+
 ### 8.3 三种不同的语言覆盖
 
 | 层级 | 要本地化的内容 | 发布含义 |

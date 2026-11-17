@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Modelli",
+    "documentTitle": "Modelli di prompt per immagini",
+    "description": "Prompt per immagini testati, con spazi da compilare: completa pochi campi e copia un prompt intero con la stessa formulazione della versione testata.",
+    "intro": "Ogni modello è un prompt testato con alcuni spazi da compilare. Il prompt si aggiorna mentre scrivi: copialo o scaricalo come file di testo.",
+    "introMore": "Mostra di più",
+    "introLess": "Mostra meno",
+    "count": "{count, plural, one {# modello} many {# modelli} other {# modelli}}",
+    "fields": "{count, plural, one {# campo} many {# campi} other {# campi}}",
+    "version": "Versione {version}",
+    "empty": "Non ci sono ancora modelli in questa lingua."
+  },
+  "editor": {
+    "fields": "Campi",
+    "other": "Altro",
+    "preview": "Anteprima del prompt",
+    "expand": "MOSTRA IL PROMPT COMPLETO",
+    "collapse": "NASCONDI IL PROMPT",
+    "reset": "Reimposta",
+    "resetDone": "Esempio predefinito ripristinato",
+    "anotherSample": "Un altro esempio",
+    "sampleDone": "Esempio {n} di {total}",
+    "undo": "Annulla",
+    "download": "Scarica .txt",
+    "downloaded": "Prompt scaricato come file di testo",
+    "share": "Condividi questi valori",
+    "shareCopied": "Link con i tuoi valori copiato",
+    "shareFailed": "Impossibile copiare il link",
+    "missing": "{count, plural, one {# campo da compilare} many {# campi da compilare} other {# campi da compilare}}",
+    "restored": "Sono stati ripristinati i valori inseriti l’ultima volta.",
+    "shared": "Compilato da un link condiviso.",
+    "mismatch": "Quel link è stato creato per la versione {version}. Viene mostrato l’esempio predefinito della versione {current}.",
+    "errors": {
+      "required": "Il campo «{label}» è vuoto. Compilalo per completare il prompt.",
+      "too-short": "Il campo «{label}» richiede almeno {limit} caratteri (ora {actual}).",
+      "too-long": "Il campo «{label}» non può superare {limit} caratteri (ora {actual}).",
+      "too-few": "Aggiungi almeno {limit} elementi al campo «{label}» (ora {actual}).",
+      "too-many": "Il campo «{label}» accetta al massimo {limit} elementi (ora {actual}). Rimuovi quelli in eccesso.",
+      "item-too-long": "L’elemento {item} non può superare {limit} caratteri (ora {actual}).",
+      "empty-item": "L’elemento {item} è vuoto. Rimuovilo o compilalo.",
+      "invalid-option": "Scegli una delle opzioni per il campo «{label}».",
+      "wrong-type": "Questo valore non è valido per il campo «{label}». Inseriscilo di nuovo."
+    }
+  },
+  "tokens": {
+    "items": "Elementi",
+    "count": "{count} / {max}",
+    "placeholder": "Digita e premi Invio",
+    "howTo": "Premi Invio per aggiungere un elemento.",
+    "remaining": "{count, plural, =0 {Non puoi aggiungere altri elementi.} one {Puoi aggiungere ancora # elemento.} many {Puoi aggiungere ancora # elementi.} other {Puoi aggiungere ancora # elementi.}}",
+    "full": "{max, plural, one {Questo campo accetta # elemento.} many {Questo campo accetta # elementi.} other {Questo campo accetta # elementi.}} Rimuovine uno per aggiungerne un altro.",
+    "pendingTooLong": "Questo elemento contiene {count} caratteri; il limite è {max}.",
+    "remove": "Rimuovi {item}",
+    "added": "Aggiunto: {item}",
+    "removed": "Rimosso: {item}"
+  }
+}

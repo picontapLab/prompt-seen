@@ -317,6 +317,7 @@ Project facts:
 - [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
 - [Korean localization specification](docs/korean-localization-spec.md): complete content coverage, Korean search and input methods, acceptance and release gates.
 - [French localization specification](docs/french-localization-spec.md): complete coverage, fingerprint review, French search behavior and the three-build acceptance matrix. Implementation evidence and remaining release gates are in `production/localization/fr/`.
+- [Italian localization specification](docs/italian-localization-spec.md): complete source-only coverage, Italian search, fingerprint reviews and candidate acceptance.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses

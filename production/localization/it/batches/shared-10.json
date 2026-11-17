@@ -1,0 +1,2140 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "operations": [
+    {
+      "key": "content/prompts/p_138/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c2161333a53c3dd43e8d22298f39aa5b488bd373a0eb63e05028d3e600854c27",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Carica una vecchia foto. L’immagine iniziale del nostro esempio è una fotografia invecchiata sintetica, non un vero documento di famiglia."
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:9776de6528548fbc1519b9644d818c412a398318733c987e1ac1bcf301e553db",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:466957de914b7e86ddda004e77f4b636ba037e1f2254bb9dd099947740fc54e0",
+      "translation": "Vecchia foto"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:9d0f2f655076a737e27759d0ed931c5678a3a3233d031613a54ed969ddb911f5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5433a0ecaac52c84fa5aac7b426a50f9e66c37a216a2dc86c10d731d033dda0b",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:99a325a37b4a814a0722cf524f7dbe53beab2ec57beb4d5d026002885f6b180c",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Salvataggi"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:39d29fa5aae6e878131fee3ec49ad1be88c485eb06985e6a3cf41e15909500ff",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Commenti"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:d79ef4e084935521143fae79cf67635f3635caeb65f02623ca80cc2111b6c253",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Condivisioni"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.5.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:4e5cd5198f256fac90e98114ebba8c86f96c71968bd04e16d11e605e9a312929",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Monete"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metrics.6.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:803e9261c48744bce715934d3a002ab3ef3f58628efe56f473556dce1c7b9e40",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Commenti sovrapposti (danmaku)"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:6922e3c2011832e38c778b0439ca8cd8b41ad8d9b9ded38ce5e1d773e1700c66",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Intero video tutorial o dimostrativo"
+    },
+    {
+      "key": "content/prompts/p_138/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:13c5d9397064b58d7f7b8b6f35aa3a7848dcb5873a41698e4988081141ca37b9",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_139/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:76b42c8a670ac669e1c8f8d9004292e89797f5330cf8284b6a5c900255d323fc",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:f31e35cfd528506c664b5a545d4398177738fb9756104032f35945e7e696c7df",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Carica un’icona semplice. Il nostro esempio usa un emblema montano immaginario originale."
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:cb0b436a180d536250e782a82d0e865cfadff289084bd94c0a7d8e5e4187fe70",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:70147090ba50f0cd4f5829f964a93d86ad3ac7cf3f0d7c2365619235eb5cb260",
+      "translation": "Icona"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_140/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:14a3e7345d7c78656e386e1642169c6b9af5c9a45e996a9a5192df311ef63329",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_141/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8882d33291764e36bddbfecf1844072e16a602b580549c50f4102d66dcdcd880",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_142/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:febcac6abcef3db7e322e7111004e85e4fa7e859247a68a1130e7f3338359ee9",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_143/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:7622e01308db4f741ab2d5d2e4ecb161875fdf833ef9f53c455fc83933461cc1",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b5686d42a1d038a7bd74051a62dddce84c5987cf4df3a9bc984e949c00a206d9",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Carica prima il ritratto dell’adulto e poi il costume. Entrambi gli input sono sintetici; il costume è un modello moderno immaginario."
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:f02565f697021f706c361043fae8a5b5a08f2edab5c09acc9a2aee8978a05281",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:79ab3143949f33f8d98f0abfb4e04b60680542758895dda24c6b2df27d7dc4e4",
+      "translation": "Persona"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:4b08ff5ce455a4149933f0be7f33554644ef76f30b714cf679fc07b378ab81b5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:8db2a4ee8ea2541bfc4a282057c3ef05c9ce99eb5bed31beb04d79b046bf0cf4",
+      "translation": "Abito"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:9d0f2f655076a737e27759d0ed931c5678a3a3233d031613a54ed969ddb911f5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5433a0ecaac52c84fa5aac7b426a50f9e66c37a216a2dc86c10d731d033dda0b",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:99a325a37b4a814a0722cf524f7dbe53beab2ec57beb4d5d026002885f6b180c",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Salvataggi"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:39d29fa5aae6e878131fee3ec49ad1be88c485eb06985e6a3cf41e15909500ff",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Commenti"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:d79ef4e084935521143fae79cf67635f3635caeb65f02623ca80cc2111b6c253",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Condivisioni"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.5.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:4e5cd5198f256fac90e98114ebba8c86f96c71968bd04e16d11e605e9a312929",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Monete"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metrics.6.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:803e9261c48744bce715934d3a002ab3ef3f58628efe56f473556dce1c7b9e40",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Commenti sovrapposti (danmaku)"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:6922e3c2011832e38c778b0439ca8cd8b41ad8d9b9ded38ce5e1d773e1700c66",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Intero video tutorial o dimostrativo"
+    },
+    {
+      "key": "content/prompts/p_144/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2beff5954c64132886f947cbc28cf36cdf6413c6227042a89703ce32f6996445",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inputRequirements.instructions",
+      "sourceField": [
+        "inputRequirements",
+        "instructions",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "instructions",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:e3fc5072811151463c359cd472d92126b89bed17c656005ee3720ab888c88cad",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Carica una foto o un’opera che hai il diritto di usare. Il nostro esempio usa un’immagine generata originale."
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inputRequirements",
+        "slots",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:ac061e85075d0e60fe5f057b3fdb4798c0b26023bb884f74e5bebc76efcb422e",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:5215e491704f252d82c5feecb3d9ef8f1acbc25e1d045899e351c7f2f0481736",
+      "translation": "Immagine"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:19ad3be9537dfc697cf0c871fbd153411c81e2e49db8f215591d1d7e3af7fa35",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Istantanea indicizzata della fonte primaria"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:792ee92b7f108b10ac978e26c2265fdf4ae05018b3fe133d95b87c971fe5a026",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Punteggio del post"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b2f7e86e93534f26ffab51f6e876bcc8b65e24d0bae932d5cb82641642034448",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Commenti"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_145/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:208487f1c2f341918aeb2ae4678c8b253aa237e61202db79858d5a1398f9e0bc",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a78e1c51b76c3fdd7383539ad9bb11414eeb7e7f550bb73de01a310da0df735c",
+      "translation": "Prompt originale o estratto disponibile; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#annotations.0.note",
+      "sourceField": [
+        "annotations",
+        0,
+        "note",
+        "en"
+      ],
+      "targetField": [
+        "annotations",
+        0,
+        "note",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:300b6dc54fff6b09e076cf1aaebebce316f27fe18207078cb1bd9daf3e3b17fe",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "La griglia esplicita fissa il numero degli adesivi e l’ordine di lettura."
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#annotations.1.note",
+      "sourceField": [
+        "annotations",
+        1,
+        "note",
+        "en"
+      ],
+      "targetField": [
+        "annotations",
+        1,
+        "note",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:86cd3159867fd8872a465cb0e6cd1b014872f6605feb260825944c32219851bf",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Identità e abbigliamento restano coerenti nelle sedici emozioni."
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:9d0f2f655076a737e27759d0ed931c5678a3a3233d031613a54ed969ddb911f5",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5433a0ecaac52c84fa5aac7b426a50f9e66c37a216a2dc86c10d731d033dda0b",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:99a325a37b4a814a0722cf524f7dbe53beab2ec57beb4d5d026002885f6b180c",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Salvataggi"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:39d29fa5aae6e878131fee3ec49ad1be88c485eb06985e6a3cf41e15909500ff",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Commenti"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:d79ef4e084935521143fae79cf67635f3635caeb65f02623ca80cc2111b6c253",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Condivisioni"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.5.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        5,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:4e5cd5198f256fac90e98114ebba8c86f96c71968bd04e16d11e605e9a312929",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Monete"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.6.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        6,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:803e9261c48744bce715934d3a002ab3ef3f58628efe56f473556dce1c7b9e40",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Commenti sovrapposti (danmaku)"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:6922e3c2011832e38c778b0439ca8cd8b41ad8d9b9ded38ce5e1d773e1700c66",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Intero video tutorial o dimostrativo"
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:208487f1c2f341918aeb2ae4678c8b253aa237e61202db79858d5a1398f9e0bc",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:a4f894a9fcb3a34d732d9922e42a1893350ab8a96c4ff53e906694211ac3b04b",
+      "translation": "Prompt originale o estratto disponibile; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Segnalibri"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.metricScope",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metricScope",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:20cbd3c9478122d1fa8539576456b89424e8120c9579754dd91d449eaa4452fb",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Intero post o galleria di immagini"
+    },
+    {
+      "key": "content/prompts/p_147/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "sourcePromptStatus",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:b3b40127c06a816a320e7acdcea5dc22d65c67368a4a4419179c63b6eaa27f31",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2e095386cbd32658668485cf1473bad14641866a3378d43f1a5499469210b78b",
+      "translation": "Prompt originale completo non recuperato; adattato autonomamente"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "evidenceMethod",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:14dc50a3e8de8d2825473e9fc9667bf95cf41ca1e78ebc76ef73048b722fced8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Istantanea dell’API pubblica ufficiale"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.metrics.0.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        0,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5d96b767763e6f16e3d465dc173cc389524b1006c9447197da7a535e89e1e67d",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Mi piace"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.metrics.1.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        1,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:c47f9d2b98c1b69d066575a9fb7e9fb3414e19a498d908e3658249fe4850a4f6",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Risposte"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.metrics.2.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        2,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:8d511c8303ce24b531729ca050f1ff277694b18f7a5bf435087a201cd7158ea8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Visualizzazioni"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.metrics.3.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        3,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:471f407b090029c67b6f58f9d03c688a32788accc56c6b4593a4db051238aa57",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Ripubblicazioni"
+    },
+    {
+      "key": "content/prompts/p_148/entry.yaml#inspirationSources.0.metrics.4.labels",
+      "sourceField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "en"
+      ],
+      "targetField": [
+        "inspirationSources",
+        0,
+        "metrics",
+        4,
+        "labels",
+        "it"
+      ],
+      "expectedSourceHash": "sha256:5b732c8a8d3add58c4319bcb899754c19712548af93285deb5212c9ff09f39b8",
+      "expectedTargetHash": null,
+      "expectedIdentity": "sha256:2b3b330289e341f48fcf5045176c73320c17ea48a41d6a474abbee8f6badbd1c",
+      "translation": "Segnalibri"
+    }
+  ]
+}

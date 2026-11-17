@@ -14,6 +14,8 @@ instructions:
   zh-Hant: 先上傳一張側臉照片，再上傳兩至四張回憶照片，並提供姓名與強調色。
   fr: Importez une photo de profil, puis deux à quatre photos souvenirs ; indiquez un nom et une
     couleur d’accent.
+  it: Carica una foto di profilo seguita da due a quattro foto di ricordi; indica un nome e un colore
+    d’accento.
 slots:
   - id: profile
     labels:
@@ -26,6 +28,7 @@ slots:
       ko: 옆모습
       zh-Hant: 側臉輪廓
       fr: Profil
+      it: Profilo
     min: 1
     max: 1
   - id: memories
@@ -39,5 +42,6 @@ slots:
       ko: 추억
       zh-Hant: 回憶或動作照片
       fr: Souvenirs
+      it: Ricordi
     min: 2
     max: 4

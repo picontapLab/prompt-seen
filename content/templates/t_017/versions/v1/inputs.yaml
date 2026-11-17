@@ -9,6 +9,7 @@ instructions:
   ko: 제품 사진 한 장을 업로드하고 팔레트와 장면 주제를 정확히 아홉 개 제공하세요.
   zh-Hant: 上傳一張商品照片，並提供配色與恰好九個場景主題。
   fr: Importez une photo de produit ; fournissez une palette et exactement neuf thèmes de scène.
+  it: Carica una foto di prodotto; fornisci una palette ed esattamente nove temi per le scene.
 slots:
   - id: product
     labels:
@@ -21,5 +22,6 @@ slots:
       ko: 제품
       zh-Hant: 產品正面照
       fr: Produit
+      it: Prodotto
     min: 1
     max: 1

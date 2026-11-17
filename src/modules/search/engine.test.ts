@@ -54,6 +54,34 @@ const en = engineOf(
 const ids = (q: string, e = en) => search(e, q).groups.flatMap((g) => g.hits.map((h) => h.id));
 
 describe('ranking and matching (§13.1)', () => {
+  it('matches Italian elisions and domain aliases after serialization without changing stored text', () => {
+    const engine = engineOf('it', [
+      doc('neon', { title: 'Ritratto con illuminazione neon di qualità' }),
+      doc('product', { title: 'Fotografia di prodotto in studio' }),
+      doc('family', { title: 'Fotografia di famiglia' }),
+      doc('split', { title: 'Fotografia. Di prodotto si parla altrove.' }),
+      doc('scattered', { title: 'Fotografia di famiglia con un prodotto' }),
+      doc('model', { title: 'Modello di IA per fotografia' }),
+      doc('template', { kind: 'template', title: 'Ritratto ad acquerello' }),
+      doc('poster', { title: 'Poster Colosseo' }),
+      doc('literal', { title: 'Manifesto Colosseo' }),
+    ]);
+    for (const q of ['ritratti neon', 'l’illuminazione neon', "l'illuminazione neon", 'qualita', 'QUALITÀ'])
+      expect(ids(q, engine)).toEqual(['neon']);
+    expect(search(engine, 'qualita').groups[0]!.hits[0]!.title).toBe('Ritratto con illuminazione neon di qualità');
+    expect(ids('packshot', engine)).toEqual(['product']);
+    expect(ids('foto di prodotti studio', engine)).toEqual(['product']);
+    expect(ids('modelli di prompt acquerello', engine)).toEqual(['template']);
+    expect(ids('template', engine)).toEqual(['template']);
+    expect(ids('manifesto Colosseo', engine)).toEqual(['literal', 'poster']);
+    expect(ids('poster', engine)).not.toContain('literal');
+  });
+
+  it.each([' ', '\n', '\u00a0'])('accepts Italian photography phrases separated by %j', (space) => {
+    const engine = engineOf('it', [doc('product', { title: ['fotografia', 'di', 'prodotto'].join(space) })]);
+    expect(ids('packshot', engine)).toEqual(['product']);
+  });
+
   it('finds Brazilian Portuguese aliases while keeping model and product meanings separate', () => {
     const engine = engineOf('pt-BR', [
       doc('poster', { title: 'Pôster Fuji' }),

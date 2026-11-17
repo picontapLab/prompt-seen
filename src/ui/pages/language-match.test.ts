@@ -10,6 +10,11 @@ const locales = [
 ];
 
 describe('suggestLanguage (§8.2)', () => {
+  it.each(['it', 'it-IT', 'it-CH'])('suggests %s only when Italian is built', (preferred) => {
+    expect(suggestLanguage([preferred], [...locales, { code: 'it', htmlLang: 'it' }])).toBe('it');
+    expect(suggestLanguage([preferred], locales)).toBeNull();
+    expect(suggestLanguage(['ja-JP', preferred], [...locales, { code: 'it', htmlLang: 'it' }])).toBe('ja');
+  });
   it('takes the first preferred language the site has', () => {
     expect(suggestLanguage(['fr-FR', 'ja-JP', 'en'], locales)).toBe('ja');
     expect(suggestLanguage(['en-GB'], locales)).toBe('en');

@@ -10,6 +10,8 @@ instructions:
   ko: 인물 사진 한 장을 업로드하고 짧은 인사말을 정확히 아홉 개 입력하세요. 예시의 인물은 합성 이미지입니다.
   zh-Hant: 上傳一張人像照片與恰好九則簡短祝福。本例人物為合成。
   fr: Importez un portrait et exactement neuf vœux courts. Notre personne est synthétique.
+  it: Carica un ritratto ed esattamente nove brevi messaggi di auguri. La persona del nostro esempio è
+    sintetica.
 slots:
   - id: person
     labels:
@@ -22,5 +24,6 @@ slots:
       ko: 인물
       zh-Hant: 人物肖像
       fr: Personne
+      it: Persona
     min: 1
     max: 1

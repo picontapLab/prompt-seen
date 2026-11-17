@@ -9,6 +9,7 @@ instructions:
   ko: 캐릭터와 장면을 설명하세요. 독창적인 캐릭터 참조 이미지는 선택 사항입니다.
   zh-Hant: 描述角色與場景；原創角色參考圖片為選填。
   fr: Décrivez un personnage et une scène ; une référence de personnage original est facultative.
+  it: Descrivi un personaggio e una scena; un riferimento originale del personaggio è facoltativo.
 slots:
   - id: character
     labels:
@@ -21,5 +22,6 @@ slots:
       ko: 캐릭터
       zh-Hant: 角色或人物參考
       fr: Personnage
+      it: Personaggio
     min: 0
     max: 1

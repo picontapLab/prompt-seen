@@ -36,6 +36,25 @@ describe('compileMessages', () => {
     expect(t('search.count', { count })).toBe(count === 0 ? '沒有結果' : `${number} 個結果`);
   });
 
+  it('formats Italian zero, singular, plural and million counts identically to runtime ICU', () => {
+    const compiled = catalogTranslator(ROOT, 'it');
+    const runtime = createTranslator({
+      locale: formatLocale('it'),
+      messages: readCatalog(ROOT, 'it'),
+      timeZone: 'UTC',
+    }) as unknown as (key: string, values: Record<string, number>) => string;
+    for (const count of [0, 1, 2, 21, 1.5, 1000000]) {
+      for (const key of ['search.count', 'detail.sheet.characters', 'templates.tokens.remaining'])
+        expect(compiled(key, { count })).toBe(runtime(key, { count }));
+    }
+    expect(compiled('search.count', { count: 0 })).toBe('Nessun risultato');
+    expect(compiled('search.count', { count: 1 })).toBe('1 risultato');
+    expect(compiled('search.count', { count: 1000000 })).toBe('1.000.000 risultati');
+    expect(compiled('templates.tokens.remaining', { count: 0 })).toBe('Non puoi aggiungere altri elementi.');
+    expect(compiled('templates.editor.errors.required', { label: 'L’immagine' })).toBe(
+      'Il campo «L’immagine» è vuoto. Compilalo per completare il prompt.',
+    );
+  });
   it('formats Brazilian Portuguese zero, singular and plural UI messages', () => {
     const t = catalogTranslator(ROOT, 'pt-BR');
     expect(t('search.count', { count: 0 })).toBe('Nenhum resultado');

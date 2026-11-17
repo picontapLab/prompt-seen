@@ -33,6 +33,8 @@ inputRequirements:
     zh-Hant: 按展示順序使用原創生成底圖；不使用官方或社交作者原圖。
     fr: Utilisez les ressources de référence générées indépendamment dans l’ordre affiché. N’utilisez
       pas les images des sources officielles ou des réseaux sociaux.
+    it: Usa i riferimenti generati autonomamente nell’ordine mostrato. Non usare le immagini ufficiali o
+      delle fonti social.
   slots:
     - id: reference
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         ko: 원본 합성 참조 이미지
         zh-Hant: 原創生成參考圖
         fr: Référence synthétique originale
+        it: Riferimento sintetico originale
       min: 1
       max: 1
 showcaseExampleId: x_297
@@ -72,6 +75,8 @@ inspirationSources:
       zh-Hant: 原始來源帖，非本次新生成成品；同帖多個任務共用指標。
       fr: Publication source d’origine, et non ce nouveau résultat généré. Plusieurs cas issus d’une même
         publication partagent les mêmes indicateurs.
+      it: Post originale, non questo nuovo risultato generato. Più casi dallo stesso post condividono le
+        metriche.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -88,6 +93,7 @@ inspirationSources:
       zh-Hant: 此前調研的原站頁面及視覺核對，未刷新互動數。
       fr: "Recherche antérieure : page consultée directement et examen visuel. Les compteurs n’ont pas été
         actualisés."
+      it: "Ricerca precedente: pagina diretta e revisione visiva. I conteggi non sono stati aggiornati."
     evidenceUrl: https://x.com/798145343h/status/2118164732989608405
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -99,6 +105,7 @@ inspirationSources:
       ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
       zh-Hant: 未取得原提示詞，本次為獨立推導方案。
       fr: Le prompt original n’a pas été trouvé. Ce prompt a été déduit indépendamment.
+      it: Il prompt originale non è stato trovato. Questo è un prompt dedotto autonomamente.
     metrics:
       - key: likes
         value: 53
@@ -112,6 +119,7 @@ inspirationSources:
           ko: 좋아요
           zh-Hant: 按讚
           fr: Mentions J’aime
+          it: Mi piace
       - key: reposts
         value: 1
         labels:
@@ -124,6 +132,7 @@ inspirationSources:
           ko: 재게시
           zh-Hant: 轉發
           fr: Republications
+          it: Ripubblicazioni
 source:
   author: Prompt Seen
   url: null

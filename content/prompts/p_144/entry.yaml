@@ -33,6 +33,8 @@ inputRequirements:
     zh-Hant: 先上傳成年人的人像照片，再上傳服裝參考圖片。兩張輸入圖片均為合成；服裝是現代虛構設計。
     fr: Importez d’abord le portrait d’adulte, puis le costume. Les deux entrées sont synthétiques ; le
       costume est une création fictive moderne.
+    it: Carica prima il ritratto dell’adulto e poi il costume. Entrambi gli input sono sintetici; il
+      costume è un modello moderno immaginario.
   slots:
     - id: person
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         ko: 인물
         zh-Hant: 成年人物肖像
         fr: Personne
+        it: Persona
       min: 1
       max: 1
     - id: garment
@@ -58,6 +61,7 @@ inputRequirements:
         ko: 의상
         zh-Hant: 服飾參考
         fr: Vêtement
+        it: Abito
       min: 1
       max: 1
 showcaseExampleId: x_189
@@ -80,6 +84,7 @@ inspirationSources:
       ko: 전체 튜토리얼 또는 쇼케이스 영상
       zh-Hant: 整部教學或作品展示影片
       fr: Ensemble du tutoriel ou de la vidéo de présentation
+      it: Intero video tutorial o dimostrativo
     observedAt: 2026-10-29T06:17:12Z
     cacheTimestampKnown: false
     evidenceMethod:
@@ -92,6 +97,7 @@ inspirationSources:
       ko: 공식 공개 API 스냅샷
       zh-Hant: 官方公開 API 快照
       fr: Relevé de l’API publique officielle
+      it: Istantanea dell’API pubblica ufficiale
     evidenceUrl: https://api.bilibili.com/x/web-interface/view?bvid=BV1wT411R7fm
     sourcePromptStatus:
       en: Complete original prompt not retrieved; independently adapted
@@ -103,6 +109,7 @@ inspirationSources:
       ko: 전체 원본 프롬프트를 확보하지 못함; 독립적으로 각색
       zh-Hant: 未取得完整原始提示詞；本次為獨立改編。
       fr: Prompt original complet non récupéré ; adaptation indépendante
+      it: Prompt originale completo non recuperato; adattato autonomamente
     metrics:
       - key: views
         value: 18638
@@ -116,6 +123,7 @@ inspirationSources:
           ko: 조회수
           zh-Hant: 播放或瀏覽
           fr: Vues
+          it: Visualizzazioni
       - key: likes
         value: 477
         labels:
@@ -128,6 +136,7 @@ inspirationSources:
           ko: 좋아요
           zh-Hant: 按讚
           fr: Mentions J’aime
+          it: Mi piace
       - key: saves
         value: 689
         labels:
@@ -140,6 +149,7 @@ inspirationSources:
           ko: 저장
           zh-Hant: 收藏
           fr: Enregistrements
+          it: Salvataggi
       - key: comments
         value: 116
         labels:
@@ -152,6 +162,7 @@ inspirationSources:
           ko: 댓글
           zh-Hant: 留言
           fr: Commentaires
+          it: Commenti
       - key: shares
         value: 98
         labels:
@@ -164,6 +175,7 @@ inspirationSources:
           ko: 공유
           zh-Hant: 分享
           fr: Partages
+          it: Condivisioni
       - key: coins
         value: 178
         labels:
@@ -176,6 +188,7 @@ inspirationSources:
           ko: 코인
           zh-Hant: 投幣
           fr: Pièces
+          it: Monete
       - key: danmaku
         value: 14
         labels:
@@ -188,6 +201,7 @@ inspirationSources:
           ko: 화면 댓글
           zh-Hant: 彈幕
           fr: Commentaires défilants (danmaku)
+          it: Commenti sovrapposti (danmaku)
 source:
   author: Prompt Seen
   url: null

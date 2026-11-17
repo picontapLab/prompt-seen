@@ -9,6 +9,7 @@ instructions:
   ko: 사례 42의 첫 번째 파란색 축측도 결과를 업로드하세요.
   zh-Hant: 上傳案例 42 第一輪生成的藍色軸測圖。
   fr: Importez le premier résultat axonométrique bleu du cas 42.
+  it: Carica il primo risultato assonometrico blu del caso 42.
 slots:
   - id: axonometric
     labels:
@@ -21,5 +22,6 @@ slots:
       ko: 첫 번째 축측도 결과
       zh-Hant: 第一輪軸測圖
       fr: Premier résultat axonométrique
+      it: Primo risultato assonometrico
     min: 1
     max: 1

@@ -28,6 +28,7 @@ inputRequirements:
     ko: 입력 이미지를 추가하지 않고 전체 원본 프롬프트를 붙여 넣으세요.
     zh-Hant: 直接使用完整原詞，不需要參考圖。
     fr: Collez le prompt original complet sans ajouter d’image d’entrée.
+    it: Incolla il prompt originale completo senza aggiungere un’immagine di input.
   slots: []
 showcaseExampleId: x_304
 promptProvenance: source-prompt
@@ -49,6 +50,7 @@ inspirationSources:
       ko: 이 생성 예시가 아닌 원본 게시물 또는 갤러리 전체
       zh-Hant: 原帖或整組作品；不屬於本站新生成示例
       fr: Publication ou galerie originale entière ; pas cet exemple généré
+      it: Intero post o galleria originale, non questo esempio generato
     observedAt: 2026-11-07
     cacheTimestampKnown: false
     evidenceMethod:
@@ -65,6 +67,8 @@ inspirationSources:
       zh-Hant: 儲存的 X 公開快照；完整原詞取自作者主帖或回覆鏡像
       fr: Instantané public X enregistré ; prompt complet issu du miroir enregistré de la publication ou
         réponse de l’auteur
+      it: Istantanea pubblica X salvata; prompt completo dalla copia salvata del post o della risposta
+        dell’autore
     evidenceUrl: https://cdn.syndication.twimg.com/tweet-result?id=2118561513879507399&lang=en&token=1
     sourcePromptStatus:
       en: Complete author text, original language
@@ -76,6 +80,7 @@ inspirationSources:
       ko: 작성자의 전체 원문, 원래 언어
       zh-Hant: 完整作者原詞，保留原語言
       fr: Texte complet de l’auteur, langue originale
+      it: Testo completo dell’autore nella lingua originale
     metrics:
       - key: likes
         value: 42
@@ -89,6 +94,7 @@ inspirationSources:
           ko: 출처 게시물 좋아요
           zh-Hant: 原貼文按讚數
           fr: Mentions J’aime de la publication source
+          it: Mi piace del post originale
 source:
   author: iamsofiaijaz
   url: https://x.com/iamsofiaijaz/status/2118561558511132918

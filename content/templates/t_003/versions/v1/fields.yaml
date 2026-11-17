@@ -14,6 +14,7 @@ fields:
       ko: 캐릭터
       zh-Hant: 人物
       fr: Personnage
+      it: Personaggio
     help:
       en: Who it is and one pose, e.g. “a dancer mid-turn”.
       zh-Hans: 人物身份加一个动作，如“正在转身的舞者”。
@@ -24,6 +25,7 @@ fields:
       ko: "누구인지와 자세 하나를 적으세요. 예: “회전 중인 무용수”."
       zh-Hant: 人物身分與一個姿勢，例如「正在轉身的舞者」。
       fr: Indiquez qui est le sujet et une pose, par exemple « un danseur en pleine rotation ».
+      it: Chi è e una posa, per esempio «una ballerina a metà giro».
   - name: rimLight
     type: enum
     required: true
@@ -39,6 +41,7 @@ fields:
       ko: 윤곽광
       zh-Hant: 輪廓光
       fr: Éclairage de contour
+      it: Luce sui bordi
     options:
       - value: cyan and magenta
         swatch:
@@ -54,6 +57,7 @@ fields:
           ko: 청록색과 마젠타색
           zh-Hant: 青與洋紅
           fr: Cyan et magenta
+          it: Ciano e magenta
       - value: amber and teal
         swatch:
           - "#F59E0B"
@@ -68,6 +72,7 @@ fields:
           ko: 호박색과 청록색
           zh-Hant: 琥珀與青綠
           fr: Ambre et sarcelle
+          it: Ambra e petrolio
       - value: violet and cyan
         swatch:
           - "#A78BFA"
@@ -82,6 +87,7 @@ fields:
           ko: 보라색과 청록색
           zh-Hant: 紫與青
           fr: Violet et cyan
+          it: Viola e ciano
   - name: background
     type: enum
     required: true
@@ -97,6 +103,7 @@ fields:
       ko: 배경
       zh-Hant: 背景
       fr: Arrière-plan
+      it: Sfondo
     options:
       - value: soft bokeh lights
         labels:
@@ -109,6 +116,7 @@ fields:
           ko: 부드러운 보케 불빛
           zh-Hant: 柔和的虛化光點
           fr: Lumières en bokeh doux
+          it: Luci bokeh morbide
       - value: a blurred night city
         labels:
           en: Blurred night city
@@ -120,6 +128,7 @@ fields:
           ko: 흐릿한 밤의 도시
           zh-Hant: 虛化的夜城
           fr: Ville nocturne floue
+          it: Città notturna sfocata
       - value: a flat dark gradient
         labels:
           en: Flat dark gradient
@@ -131,6 +140,7 @@ fields:
           ko: 단순한 어두운 그라데이션
           zh-Hant: 平坦的深色漸層
           fr: Dégradé sombre uniforme
+          it: Sfumatura scura piatta
   - name: mood
     type: string
     required: false
@@ -146,6 +156,7 @@ fields:
       ko: 분위기
       zh-Hant: 情緒
       fr: Ambiance
+      it: Atmosfera
   - name: aspectRatio
     type: enum
     required: true
@@ -162,6 +173,7 @@ fields:
       ko: 화면 비율
       zh-Hant: 畫面比例
       fr: Rapport largeur/hauteur
+      it: Rapporto d’aspetto
     options:
       - value: 4:5
         labels:
@@ -175,6 +187,7 @@ fields:
           ko: 4:5
           zh-Hant: 4:5
           fr: 4:5
+          it: 4:5
       - value: 1:1
         labels:
           en: 1:1
@@ -187,6 +200,7 @@ fields:
           ko: 1:1
           zh-Hant: 1:1
           fr: 1:1
+          it: 1:1
       - value: 2:3
         labels:
           en: 2:3
@@ -199,6 +213,7 @@ fields:
           ko: 2:3
           zh-Hant: 2:3
           fr: 2:3
+          it: 2:3
       - value: 9:16
         labels:
           en: 9:16
@@ -211,3 +226,4 @@ fields:
           ko: 9:16
           zh-Hant: 9:16
           fr: 9:16
+          it: 9:16

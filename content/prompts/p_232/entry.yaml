@@ -45,6 +45,8 @@ inspirationSources:
       zh-Hant: 原始來源帖，非本次新生成成品；同帖多個任務共用指標。
       fr: Publication source d’origine, et non ce nouveau résultat généré. Plusieurs cas issus d’une même
         publication partagent les mêmes indicateurs.
+      it: Post originale, non questo nuovo risultato generato. Più casi dallo stesso post condividono le
+        metriche.
     observedAt: 2026-11-04
     cacheTimestampKnown: false
     evidenceMethod:
@@ -61,6 +63,7 @@ inspirationSources:
       zh-Hant: 此前調研的原站頁面及視覺核對，未刷新互動數。
       fr: "Recherche antérieure : page consultée directement et examen visuel. Les compteurs n’ont pas été
         actualisés."
+      it: "Ricerca precedente: pagina diretta e revisione visiva. I conteggi non sono stati aggiornati."
     evidenceUrl: https://x.com/gabrielchua/status/2118135343354720648
     sourcePromptStatus:
       en: The original prompt was not found. This is an independently inferred prompt.
@@ -72,6 +75,7 @@ inspirationSources:
       ko: 원본 프롬프트를 찾지 못했습니다. 독립적으로 추론한 프롬프트입니다.
       zh-Hant: 未取得原提示詞，本次為獨立推導方案。
       fr: Le prompt original n’a pas été trouvé. Ce prompt a été déduit indépendamment.
+      it: Il prompt originale non è stato trovato. Questo è un prompt dedotto autonomamente.
     metrics:
       - key: likes
         value: 132
@@ -85,6 +89,7 @@ inspirationSources:
           ko: 좋아요
           zh-Hant: 按讚
           fr: Mentions J’aime
+          it: Mi piace
       - key: reposts
         value: 15
         labels:
@@ -97,6 +102,7 @@ inspirationSources:
           ko: 재게시
           zh-Hant: 轉發
           fr: Republications
+          it: Ripubblicazioni
 source:
   author: Prompt Seen
   url: null

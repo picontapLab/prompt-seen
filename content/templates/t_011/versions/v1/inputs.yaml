@@ -13,6 +13,8 @@ instructions:
   zh-Hant: 提供裝置名稱、已核對的結構資料與準確的標註文字；商品照片為選填。
   fr: Indiquez l’appareil, des notes de structure vérifiées et les légendes exactes ; une photo du
     produit est facultative.
+  it: Fornisci il dispositivo, note strutturali verificate e le etichette esatte; la foto del prodotto
+    è facoltativa.
 slots:
   - id: product
     labels:
@@ -25,5 +27,6 @@ slots:
       ko: 제품
       zh-Hant: 產品外觀
       fr: Produit
+      it: Prodotto
     min: 0
     max: 1

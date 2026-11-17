@@ -33,6 +33,8 @@ inputRequirements:
     zh-Hant: 上傳一張高對比的人像引導圖，並使用能夠強力約束參考圖片或結構的工具。
     fr: Importez un portrait-guide à fort contraste et utilisez un outil permettant un conditionnement
       marqué par référence ou structure.
+    it: Carica un ritratto guida ad alto contrasto e usa uno strumento capace di applicare un forte
+      condizionamento basato sul riferimento o sulla struttura.
   slots:
     - id: silhouette
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         ko: 실루엣
         zh-Hant: 高對比輪廓
         fr: Silhouette
+        it: Silhouette
       min: 1
       max: 1
 promptProvenance: independent-adaptation
@@ -66,6 +69,7 @@ inspirationSources:
       ko: 전체 게시물 또는 이미지 갤러리
       zh-Hant: 整篇貼文或圖集
       fr: Ensemble de la publication ou de la galerie d’images
+      it: Intero post o galleria di immagini
     observedAt: 2026-10-28
     cacheTimestampKnown: false
     evidenceMethod:
@@ -78,6 +82,7 @@ inspirationSources:
       ko: 색인된 1차 출처 스냅샷
       zh-Hant: 一手帖搜尋索引快照
       fr: Instantané indexé de la source primaire
+      it: Istantanea indicizzata della fonte primaria
     evidenceUrl: https://www.reddit.com/r/StableDiffusion/comments/15wdoqa/been_trying_these_optical_illusions/
     sourcePromptStatus:
       en: Source prompt or excerpt available; independently adapted
@@ -89,6 +94,7 @@ inspirationSources:
       ko: 출처 프롬프트 또는 발췌문을 확인할 수 있음; 독립적으로 각색
       zh-Hant: 已取得來源提示詞或節錄；本次為獨立改編。
       fr: Prompt source ou extrait disponible ; adaptation indépendante
+      it: Prompt originale o estratto disponibile; adattato autonomamente
     metrics:
       - key: post_score
         value: 1032
@@ -102,6 +108,7 @@ inspirationSources:
           ko: 게시물 점수
           zh-Hant: 貼文分數
           fr: Score de la publication
+          it: Punteggio del post
       - key: comments
         value: null
         labels:
@@ -114,6 +121,7 @@ inspirationSources:
           ko: 댓글
           zh-Hant: 留言
           fr: Commentaires
+          it: Commenti
 source:
   author: Prompt Seen
   url: null

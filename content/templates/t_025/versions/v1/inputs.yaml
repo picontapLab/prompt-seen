@@ -13,6 +13,8 @@ instructions:
   zh-Hant: 上傳一張寵物照片，並選擇成年人的年齡範圍與性格。本例寵物為合成。
   fr: Importez une photo d’animal et choisissez une tranche d’âge adulte et une personnalité. L’animal
     d’exemple est synthétique.
+  it: Carica una foto di un animale domestico e scegli una fascia d’età adulta e una personalità.
+    L’animale dell’esempio è sintetico.
 slots:
   - id: pet
     labels:
@@ -25,5 +27,6 @@ slots:
       ko: 반려동물
       zh-Hant: 寵物照片
       fr: Animal de compagnie
+      it: Animale domestico
     min: 1
     max: 1

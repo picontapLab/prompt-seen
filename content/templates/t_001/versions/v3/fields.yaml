@@ -15,6 +15,7 @@ fields:
       ko: 제품
       zh-Hant: 產品
       fr: Produit
+      it: Prodotto
     help:
       en: Name the object and its material, e.g. “a speckled ceramic mug”.
       zh-Hans: 写清物品和材质，如“带斑点的陶瓷马克杯”。
@@ -26,6 +27,7 @@ fields:
       ko: "물체와 소재를 적으세요. 예: “점박이 도자기 머그잔”."
       zh-Hant: 寫清物品和材質，如“帶斑點的陶瓷馬克杯”。
       fr: Nommez l’objet et son matériau, par exemple « une tasse en céramique mouchetée ».
+      it: Indica oggetto e materiale, per esempio «una tazza di ceramica puntinata».
   - name: sellingPoints
     type: string-list
     required: true
@@ -45,6 +47,7 @@ fields:
       ko: 제품 특징
       zh-Hant: 核心賣點
       fr: Arguments de vente
+      it: Punti di forza
     help:
       en: Concrete details become visible; vague claims are ignored.
       zh-Hans: 具体的细节会被画出来，空泛的说法会被忽略。
@@ -56,6 +59,7 @@ fields:
       ko: 구체적인 특징은 이미지에 나타나지만 모호한 주장은 반영되지 않습니다.
       zh-Hant: 具體的細節會被畫出來，空泛的說法會被忽略。
       fr: Les détails concrets deviennent visibles ; les affirmations vagues sont ignorées.
+      it: I dettagli concreti diventano visibili; le affermazioni vaghe vengono ignorate.
   - name: palette
     type: enum
     required: true
@@ -72,6 +76,7 @@ fields:
       ko: 팔레트
       zh-Hant: 配色
       fr: Palette
+      it: Palette
     options:
       - value: warm neutral
         swatch:
@@ -89,6 +94,7 @@ fields:
           ko: 따뜻한 중성색
           zh-Hant: 暖色中性
           fr: Neutres chauds
+          it: Neutri caldi
       - value: sage green
         swatch:
           - "#DCE6DD"
@@ -105,6 +111,7 @@ fields:
           ko: 세이지 그린
           zh-Hant: 鼠尾草綠
           fr: Vert sauge
+          it: Verde salvia
       - value: midnight blue
         swatch:
           - "#1F2A44"
@@ -121,6 +128,7 @@ fields:
           ko: 미드나이트 블루
           zh-Hant: 午夜藍
           fr: Bleu nuit
+          it: Blu notte
       - value: soft grey
         swatch:
           - "#E2E2E0"
@@ -137,6 +145,7 @@ fields:
           ko: 부드러운 회색
           zh-Hant: 柔和灰
           fr: Gris doux
+          it: Grigio tenue
       - value: coral pop
         swatch:
           - "#EE6C4D"
@@ -153,6 +162,7 @@ fields:
           ko: 선명한 코럴
           zh-Hant: 珊瑚亮色
           fr: Éclat corail
+          it: Corallo vivace
   - name: aspectRatio
     type: enum
     required: true
@@ -169,6 +179,7 @@ fields:
       ko: 화면 비율
       zh-Hant: 畫面比例
       fr: Rapport largeur/hauteur
+      it: Rapporto d’aspetto
     options:
       - value: 4:5
         labels:
@@ -182,6 +193,7 @@ fields:
           ko: 4:5
           zh-Hant: 4:5
           fr: 4:5
+          it: 4:5
       - value: 5:4
         labels:
           en: 5:4
@@ -194,6 +206,7 @@ fields:
           ko: 5:4
           zh-Hant: 5:4
           fr: 5:4
+          it: 5:4
       - value: 1:1
         labels:
           en: 1:1
@@ -206,6 +219,7 @@ fields:
           ko: 1:1
           zh-Hant: 1:1
           fr: 1:1
+          it: 1:1
       - value: 3:4
         labels:
           en: 3:4
@@ -218,6 +232,7 @@ fields:
           ko: 3:4
           zh-Hant: 3:4
           fr: 3:4
+          it: 3:4
       - value: 16:9
         labels:
           en: 16:9
@@ -230,6 +245,7 @@ fields:
           ko: 16:9
           zh-Hant: 16:9
           fr: 16:9
+          it: 16:9
   - name: headline
     type: string
     required: false
@@ -246,6 +262,7 @@ fields:
       ko: 제목
       zh-Hant: 標題文字
       fr: Titre
+      it: Titolo
     help:
       en: Optional. Short words render more reliably.
       zh-Hans: 可选。字越少越容易正确生成。
@@ -257,3 +274,4 @@ fields:
       ko: 선택 사항입니다. 짧은 단어가 더 안정적으로 표현됩니다.
       zh-Hant: 可選。字越少越容易正確生成。
       fr: Facultatif. Les mots courts sont reproduits plus fidèlement.
+      it: Facoltativo. Le parole brevi vengono riprodotte più fedelmente.

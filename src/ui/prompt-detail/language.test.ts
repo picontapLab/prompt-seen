@@ -4,6 +4,21 @@ import { languageName } from './language';
 afterEach(() => vi.restoreAllMocks());
 
 it.each([
+  ['en', 'inglese'],
+  ['zh-Hans', 'cinese semplificato'],
+  ['ja', 'giapponese'],
+  ['pt-BR', 'portoghese (Brasile)'],
+])('keeps Italian %s labels stable across Node and WebKit ICU versions', (language, expected) => {
+  const display = vi.spyOn(Intl.DisplayNames.prototype, 'of');
+  for (const label of [expected!, expected!.charAt(0).toLocaleUpperCase('it') + expected!.slice(1)]) {
+    display.mockReturnValue(label);
+    expect(languageName(language!, 'it')).toBe(expected);
+  }
+  display.mockReturnValue(language);
+  expect(languageName(language!, 'it')).toBe(language);
+});
+
+it.each([
   ['en', 'inglês'],
   ['ja', 'japonês'],
   ['tr', 'turco'],

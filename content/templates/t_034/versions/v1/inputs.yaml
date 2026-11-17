@@ -11,6 +11,7 @@ instructions:
   zh-Hant: 上傳物件參考圖片，並提供已核對的資料與準確的中文標註。
   fr: Importez une référence d’objet et fournissez des notes vérifiées et les légendes chinoises
     exactes.
+  it: Carica un riferimento dell’oggetto e fornisci note verificate ed etichette cinesi esatte.
 slots:
   - id: object
     labels:
@@ -23,5 +24,6 @@ slots:
       ko: 물체
       zh-Hant: 服飾或器物參考
       fr: Objet
+      it: Oggetto
     min: 1
     max: 1

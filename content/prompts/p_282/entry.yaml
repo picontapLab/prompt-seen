@@ -33,6 +33,8 @@ inputRequirements:
     zh-Hant: 上傳一張清晰的成年人肖像。示例參考圖由 AI 生成。畫面文字保持英文。
     fr: Importez un portrait d’adulte net. La référence de démonstration est générée par IA. Gardez tous
       les textes dans l’image en anglais.
+    it: Carica un ritratto nitido di un adulto. Il riferimento dimostrativo è generato con l’IA.
+      Mantieni tutte le scritte in inglese.
   slots:
     - id: person
       labels:
@@ -45,6 +47,7 @@ inputRequirements:
         ko: 인물 사진
         zh-Hant: 人物肖像
         fr: Portrait de la personne
+        it: Ritratto della persona
       min: 1
       max: 1
 showcaseExampleId: x_346
@@ -71,6 +74,7 @@ annotations:
       ko: 위아래 칸이 도입과 웃음 포인트를 만듭니다.
       zh-Hant: 上下兩格形成鋪墊和反差笑點。
       fr: Le haut et le bas créent la mise en place et la chute de la blague.
+      it: Parte superiore e inferiore creano premessa e battuta finale.
   - phrase: expressive editorial illustration
     region:
       x: 0.36
@@ -87,3 +91,4 @@ annotations:
       ko: 표정만으로 농담을 한눈에 전달합니다.
       zh-Hant: 鮮明表情幫助快速理解笑點。
       fr: Les expressions rendent la blague compréhensible d’un coup d’œil.
+      it: Le espressioni comunicano la battuta a colpo d’occhio.

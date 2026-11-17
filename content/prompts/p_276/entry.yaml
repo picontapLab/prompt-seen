@@ -40,6 +40,9 @@ inputRequirements:
     fr: Importez le premier portrait d’adulte, puis le second. L’image 1 reste à gauche et l’image 2 à
       droite. La démonstration utilise des personnes fictives générées par IA. Gardez tous les
       textes dans l’image en anglais.
+    it: Carica il primo ritratto adulto, poi il secondo. L’immagine 1 resta a sinistra; l’immagine 2
+      resta a destra. La dimostrazione usa persone immaginarie generate con l’IA. Mantieni tutte le
+      scritte in inglese.
   slots:
     - id: personA
       labels:
@@ -52,6 +55,7 @@ inputRequirements:
         ko: 첫 번째 인물, 왼쪽
         zh-Hant: 第一位人物，左側
         fr: Première personne, à gauche
+        it: Prima persona, a sinistra
       min: 1
       max: 1
     - id: personB
@@ -65,6 +69,7 @@ inputRequirements:
         ko: 두 번째 인물, 오른쪽
         zh-Hant: 第二位人物，右側
         fr: Deuxième personne, à droite
+        it: Seconda persona, a destra
       min: 1
       max: 1
 showcaseExampleId: x_340
@@ -91,6 +96,7 @@ annotations:
       ko: 네 프레임이 작은 포토부스 인화물 하나를 이룹니다.
       zh-Hant: 四幀組成完整照片亭拼圖。
       fr: Quatre images forment un tirage de photomaton compact.
+      it: Quattro riquadri formano una stampa compatta da cabina fotografica.
   - phrase: direct flash and subtle film grain
     region:
       x: 0.05
@@ -107,3 +113,4 @@ annotations:
       ko: 플래시와 입자가 사진 같은 느낌을 만듭니다.
       zh-Hant: 閃光與顆粒共同形成攝影質感。
       fr: Le flash et le grain créent le rendu photographique.
+      it: Flash e grana stabiliscono l’aspetto fotografico.

@@ -31,6 +31,8 @@ inputRequirements:
     zh-Hant: 按列出的順序上傳參考圖。本例使用合成輸入素材。
     fr: Importez les images de référence dans l’ordre indiqué. L’exemple utilise des images d’entrée
       synthétiques.
+    it: Carica le immagini di riferimento nell’ordine elencato. L’esempio usa immagini di input
+      sintetiche.
   slots:
     - id: subject
       labels:
@@ -43,6 +45,7 @@ inputRequirements:
         ko: 대상 참조 이미지
         zh-Hant: 主體參考
         fr: Référence du sujet
+        it: Riferimento del soggetto
       min: 1
       max: 1
 showcaseExampleId: x_260

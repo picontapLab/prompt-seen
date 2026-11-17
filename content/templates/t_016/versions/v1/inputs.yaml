@@ -10,6 +10,8 @@ instructions:
   ko: 가상 브랜드명, 팔레트와 분위기를 제공하세요. 기존 로고는 선택 사항입니다.
   zh-Hant: 提供虛構品牌名稱、配色與調性；既有標誌為選填。
   fr: Indiquez un nom de marque fictif, une palette et une ambiance ; un logo existant est facultatif.
+  it: Fornisci un nome di marchio immaginario, una palette e un’atmosfera; un logo esistente è
+    facoltativo.
 slots:
   - id: logo
     labels:
@@ -22,5 +24,6 @@ slots:
       ko: 로고
       zh-Hant: 標誌
       fr: Logo
+      it: Logo
     min: 0
     max: 1

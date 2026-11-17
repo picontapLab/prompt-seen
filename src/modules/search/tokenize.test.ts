@@ -44,6 +44,51 @@ describe('words in alphabetic scripts', () => {
   });
 });
 
+describe('Italian elision and accents', () => {
+  it.each(['it', 'it-IT', 'it-CH'])('keeps index and query terms consistent for %s', (locale) => {
+    for (const prefix of ['l', 'd', 'un', 'all', 'dall', 'dell', 'nell', 'sull'])
+      for (const apostrophe of ["'", '’']) {
+        expect(tokenize(`${prefix}${apostrophe}immagine`, locale)).toEqual(['immagine']);
+        expect(queryTerms(`${prefix.toUpperCase()}${apostrophe}IMMAGINE`, locale)).toEqual(['immagine']);
+      }
+    for (const text of ['qualità', 'qualita', 'QUALITÀ', 'qualita\u0300'])
+      expect(queryTerms(text, locale)).toEqual(['qualita']);
+  });
+
+  it('only removes complete adjacent elision prefixes followed by a letter', () => {
+    expect(queryTerms('l d un dall', 'it')).toEqual(['l', 'd', 'un', 'dall']);
+    expect(tokenize('l ’immagine l’ l’123', 'it')).toEqual(['l', 'immagine', 'l', 'l', '123']);
+    expect(tokenize('rock’n’roll O’Reilly DALL·E GPT-Image-2 p_217', 'it')).toEqual([
+      'rock',
+      'n',
+      'roll',
+      'o',
+      'reilly',
+      'dall',
+      'e',
+      'gpt',
+      'image',
+      '2',
+      'p',
+      '217',
+    ]);
+    expect(tokenize('bianco-nero', 'it')).toEqual(tokenize('bianco nero', 'it'));
+    expect(tokenize('l’illuminazione', 'en')).toEqual(['l', 'illuminazione']);
+  });
+
+  it('retains original UTF-16 positions including emoji and combining marks', () => {
+    expect(spans('l’illuminazione', 'it')).toEqual([{ term: 'illuminazione', start: 2, end: 15 }]);
+    expect(spans('dell’immagine', 'it')).toEqual([{ term: 'immagine', start: 5, end: 13 }]);
+    const text = '🖼 l’qualita\u0300 e qualita\u0300';
+    const matches = spans(text, 'it').filter((span) => span.term === 'qualita');
+    expect(matches).toEqual([
+      { term: 'qualita', start: 5, end: 13 },
+      { term: 'qualita', start: 16, end: 24 },
+    ]);
+    expect(matches.map(({ start, end }) => text.slice(start, end))).toEqual(['qualita\u0300', 'qualita\u0300']);
+  });
+});
+
 describe('Han, kana and Hangul', () => {
   it('indexes every character and every overlapping pair', () => {
     expect(tokenize('水墨画', 'zh-Hans')).toEqual(['水', '墨', '画', '水墨', '墨画']);
