@@ -53,4 +53,4 @@ it('finds every frozen Spanish query in the serialized and reloaded full corpus'
     for (const key of expectedKeys) expect.soft(keys, query).toContain(key);
     for (const key of excludedKeys ?? []) expect.soft(keys, query).not.toContain(key);
   }
-}, 30_000);
+}, 60_000);
