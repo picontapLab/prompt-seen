@@ -24,16 +24,7 @@ export function Toaster() {
       {({ toast }) => {
         const { title, description, tone = 'info', action } = toast.content;
         return (
-          <AriaToast
-            toast={toast}
-            className={cx(styles.toast, styles[tone])}
-            style={
-              {
-                viewTransitionName: `toast-${toast.key.replace(/[^\w-]/g, '')}`,
-                viewTransitionClass: 'toast',
-              } as React.CSSProperties
-            }
-          >
+          <AriaToast toast={toast} className={cx(styles.toast, styles[tone])}>
             {tone === 'success' ? (
               <CircleCheck className={styles.icon} aria-hidden="true" />
             ) : (

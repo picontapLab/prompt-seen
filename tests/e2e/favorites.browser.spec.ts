@@ -88,6 +88,26 @@ test.describe('desktop', () => {
     expect(errors).toEqual([]);
   });
 
+  test('saving displays feedback without waiting for a document view transition', async ({ page }) => {
+    await page.addInitScript(() => {
+      const pending = new Promise(() => {});
+      Object.defineProperty(document, 'startViewTransition', {
+        value: () => ({
+          ready: pending,
+          updateCallbackDone: pending,
+          finished: pending,
+          skipTransition() {},
+        }),
+      });
+    });
+    await page.goto(listUrl);
+    await hydrated(page, '[data-favorite]');
+    const card = firstCard(page);
+    await card.hover();
+    await card.getByRole('button', { name: save }).click();
+    await expect(page.getByText(message(code, 'favorites.note.title'))).toBeVisible();
+  });
+
   test('the favourites page lists, removes in place with undo, exports and imports (§11.5)', async ({ page }) => {
     const errors = watchErrors(page);
     const ids = feedIndex(code)

@@ -35,6 +35,19 @@
     outline-offset: var(--focus-ring-offset);
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    .toast {
+      animation: toast-in var(--duration-content) var(--ease-enter);
+    }
+  }
+
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(var(--distance-reveal));
+    }
+  }
+
   /* Status colour always comes with an icon and words (§11.1.1). */
   .icon {
     flex: none;

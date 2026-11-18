@@ -1,6 +1,5 @@
 'use client';
 
-import { flushSync } from 'react-dom';
 import { UNSTABLE_ToastQueue as ToastQueue } from 'react-aria-components';
 
 // The site's toast queue, kept apart from the toast components so that queueing a toast costs
@@ -22,20 +21,10 @@ const DEFAULT_TIMEOUT = { action: 5000, plain: 6000 };
 /**
  * One queue for the whole site; the region is mounted once by the root document. Toasts are for
  * results that do not show where the action happened (§11.1.7); in-place feedback (copy, save)
- * stays on the control.
+ * stays on the control. Queue updates reach subscribers immediately because the undo action has
+ * a short lifetime and a document view transition can delay the notification.
  */
-export const toastQueue = new ToastQueue<ToastMessage>({
-  maxVisibleToasts: 3,
-  // Entry and exit through view transitions where available, else immediate (§12.2).
-  wrapUpdate(fn) {
-    const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (typeof document !== 'undefined' && 'startViewTransition' in document && !reduced) {
-      document.startViewTransition(() => flushSync(fn));
-    } else {
-      fn();
-    }
-  },
-});
+export const toastQueue = new ToastQueue<ToastMessage>({ maxVisibleToasts: 3 });
 
 export function showToast(message: ToastMessage, timeout?: number): string {
   return toastQueue.add(message, {
