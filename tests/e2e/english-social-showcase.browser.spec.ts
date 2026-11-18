@@ -33,7 +33,9 @@ for (const code of ['en', 'zh-Hans'])
       test(`${code}: all twelve home frames retain order, ratio and actions at ${viewport.width}px (${scheme})`, async ({
         page,
       }, testInfo) => {
-        test.setTimeout(60_000);
+        const expected = worksOnShow(code);
+        // Each additional frame adds a render and an image check.
+        test.setTimeout(testInfo.timeout + expected.length * 2000);
         await page.setViewportSize(viewport);
         await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' });
         await page.goto(`${BASE}${homePath(BUILD.locales.find((locale) => locale.code === code)!)}`);
@@ -44,7 +46,6 @@ for (const code of ['en', 'zh-Hans'])
         // The home-language spec prioritizes matching prompt languages while keeping the
         // campaign's relative order and every previously configured work in the cycle.
         const campaignOrder = order.map((id) => caseOf(id).promptId);
-        const expected = worksOnShow(code);
         expect(expected.filter((id) => campaignOrder.includes(id))).toEqual(campaignOrder);
         expect(expected).toEqual(expect.arrayContaining([...campaignOrder, ...oldOrder]));
         expect(new Set(expected).size).toBe(expected.length);
@@ -71,7 +72,9 @@ for (const code of ['en', 'zh-Hans'])
             if (code === 'en' && scheme === 'light')
               await page.screenshot({ path: testInfo.outputPath(`${campaignCase.id}-${viewport.width}.png`) });
           }
-          await another.click();
+          // Start with a pointer and continue with the focus the control preserves.
+          if (id === expected[0]) await another.click();
+          else await page.keyboard.press('Enter');
           await expect(another).toBeFocused();
         }
         await expect(hero).toHaveAttribute('data-on-show', expected[0]!);
