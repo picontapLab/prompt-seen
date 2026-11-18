@@ -35,3 +35,10 @@ id = "generic-api-key"
   paths = ['^docs/research/gpt-image-2[.]6-evidence-2026-11-07/gifs/2118220485150535796[.]fx[.]json$', '^docs/research/gpt-image-2[.]6-multilingual-evidence-2026-11-07/gifs/2118677264414245119[.]fx[.]json$']
   regexTarget = "match"
   regexes = ['^entityKey":\s*"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"$']
+
+  [[rules.allowlists]]
+  description = "Verified SHA-256 of the archived design-token contrast log"
+  condition = "AND"
+  paths = ['^production/localization/review-2026-11-17/evidence-sha256[.]json$']
+  regexTarget = "secret"
+  regexes = ['^87caf4854f456d8cda810236979ef775bbe39a1032cbe898082730b53d2b3ee6$']
