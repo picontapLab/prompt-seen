@@ -6,6 +6,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
 import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
+import { reportUploadFiles, shareLocalePayloads } from './lib/cloudflare-files';
+import { packPagesPayloads } from './lib/cloudflare-packs';
 import { runProductionDeployHook } from './lib/deploy-hook';
 import {
   CLOUDFLARE_SHARED_LAYOUT_PAYLOAD,
@@ -26,7 +28,7 @@ if (!fs.existsSync(path.join(site, '404.html'))) {
 }
 
 fs.rmSync(target, { recursive: true, force: true });
-fs.cpSync(dist, target, { recursive: true });
+fs.cpSync(dist, target, { recursive: true, mode: fs.constants.COPYFILE_FICLONE });
 for (const file of ['_headers', '_redirects']) {
   fs.copyFileSync(path.join(OUTPUT_DIRS.deploy, 'cloudflare', file), path.join(target, file));
 }
@@ -112,9 +114,15 @@ console.log(
   `deploy:cloudflare: shared ${sharedPayloads.reduce((count, group) => count + group.copies.length, 0)} detail segment payloads`,
 );
 
-const uploadFiles = fs.readdirSync(target, { recursive: true, withFileTypes: true }).filter((file) => file.isFile());
-if (uploadFiles.length > 20_000) {
-  throw new Error(`cloudflare: ${uploadFiles.length} files exceed the Pages limit of 20000`);
+const localeCopies = shareLocalePayloads(targetSite, config.basePath, path.join(target, '_redirects'), files);
+console.log(`deploy:cloudflare: shared ${localeCopies} identical locale segment payloads`);
+const countFiles = () =>
+  fs.readdirSync(target, { recursive: true, withFileTypes: true }).filter((file) => file.isFile()).length;
+const staticCount = countFiles();
+if (staticCount > 20_000) {
+  console.log(`deploy:cloudflare: ${staticCount} files after static sharing; packing Pages payloads`);
+  packPagesPayloads(target, config.basePath, files);
 }
+reportUploadFiles(staticCount > 20_000 ? countFiles() : staticCount);
 
 console.log(`deploy:cloudflare: ${path.relative(ROOT, target)}/ ready (${config.buildMode}, build ${config.buildId})`);

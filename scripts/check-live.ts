@@ -17,6 +17,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { loadConfig } from '../src/config/load';
 import type { ContentManifest } from '../src/modules/content/types';
+import { promptJsonFile } from '../src/modules/feed/files';
 import { CRAWLERS } from '../src/modules/geo/robots';
 import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { isAllowed, parseRobots } from './lib/live/robots';
@@ -142,7 +143,7 @@ async function main() {
   // Sitemaps: index, one per public locale; representative pages from them.
   const indexAddress = fetchUrl(url.paths.sitemapIndex());
   const indexRes = await get(indexAddress);
-  const samples: { label: string; internal: string }[] = [];
+  const samples: { label: string; internal: string; popupFile?: string }[] = [];
   if (!indexRes.ok) report('fail', `sitemap index: ${indexRes.status} ${indexAddress}`);
   else {
     const prefix = url.absoluteUrl('/');
@@ -180,7 +181,12 @@ async function main() {
       const prompt = entries.find((e) => /\/prompts\/(?!page\/)[^/]+\/$/.test(e.loc));
       const template = entries.find((e) => /\/templates\/[^/]+\/$/.test(e.loc));
       const listPage = entries.find((e) => /\/prompts\/page\/2\/$/.test(e.loc));
-      if (prompt) samples.push({ label: `${l.code} Prompt`, internal: internal(prompt.loc) });
+      if (prompt)
+        samples.push({
+          label: `${l.code} Prompt`,
+          internal: internal(prompt.loc),
+          popupFile: promptJsonFile(l.code, new URL(prompt.loc).pathname.split('/').at(-2)!),
+        });
       if (template) samples.push({ label: `${l.code} template`, internal: internal(template.loc) });
       if (listPage) samples.push({ label: `${l.code} list page 2`, internal: internal(listPage.loc) });
     }
@@ -195,8 +201,8 @@ async function main() {
   }
 
   // Machine-readable versions (§9.10.4).
-  const prompt = samples.find((s) => s.label.endsWith('Prompt'));
-  if (prompt) {
+  const prompt = samples.find((s) => s.popupFile);
+  if (prompt?.popupFile) {
     const md = await get(fetchUrl(`${prompt.internal}index.md`));
     const type = md.headers.get('content-type') ?? '';
     const link = md.headers.get('link') ?? '';
@@ -204,6 +210,31 @@ async function main() {
     else if (!link.includes('rel="canonical"'))
       report('warn', 'index.md: no Link rel="canonical" header (host configuration)');
     else report('pass', 'index.md: Markdown with a canonical Link header');
+
+    // Check complete navigation (including its alias), a segment, and popup JSON through Pages.
+    const dist = path.join(ROOT, 'dist', build.basePath);
+    const info = path.join(dist, 'generated/build.json');
+    if (
+      platform &&
+      values['expect-build'] === build.buildId &&
+      fs.existsSync(info) &&
+      JSON.parse(fs.readFileSync(info, 'utf8')).buildId === build.buildId
+    ) {
+      for (const internal of [
+        `${prompt.internal}index.txt`,
+        `${prompt.internal}__next._full.txt`,
+        `${prompt.internal}__next._tree.txt`,
+        url.paths.generated(prompt.popupFile),
+      ]) {
+        const res = await get(fetchUrl(internal));
+        const ok =
+          res.status === 200 && fs.readFileSync(path.join(dist, internal)).equals(Buffer.from(await res.arrayBuffer()));
+        report(
+          ok ? 'pass' : 'fail',
+          `Pages payload ${internal}: ${ok ? 'matches export' : 'missing or differs from export'}`,
+        );
+      }
+    }
   }
   const llms = await get(fetchUrl(url.paths.llms()));
   report(
@@ -311,6 +342,17 @@ async function main() {
         res.status === 200 && (res.headers.get('content-type') ?? '').startsWith('image/') ? 'pass' : 'fail',
         `CDN image: ${res.status} ${res.headers.get('content-type') ?? ''} ${image}`,
       );
+      if (
+        platform &&
+        image.startsWith(`${build.mediaBaseUrl}/media/`) &&
+        new URL(build.mediaBaseUrl).origin !== build.origin
+      ) {
+        const legacy = await get(fetchUrl(image.slice(build.mediaBaseUrl.length)), { method: 'HEAD' });
+        report(
+          legacy.status === 302 && legacy.headers.get('location') === image ? 'pass' : 'fail',
+          `Legacy media address redirects to the CDN (${legacy.status})`,
+        );
+      }
     }
     const cdnRobots = await get(`${new URL(build.mediaBaseUrl).origin}/robots.txt`);
     if (cdnRobots.status === 200) {

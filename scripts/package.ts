@@ -29,7 +29,7 @@ if (config.basePath && fs.existsSync(path.join(outDir, config.basePath))) {
 fs.mkdirSync(distDir, { recursive: true });
 for (const entry of fs.readdirSync(distDir)) fs.rmSync(path.join(distDir, entry), { recursive: true, force: true });
 fs.mkdirSync(target, { recursive: true });
-fs.cpSync(outDir, target, { recursive: true });
+fs.cpSync(outDir, target, { recursive: true, mode: fs.constants.COPYFILE_FICLONE });
 
 // List pages beyond a locale's list exist only to satisfy static export (prompts/page/[page]):
 // remove them, so the host answers 404 (§9.4).

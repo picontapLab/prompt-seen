@@ -1,5 +1,6 @@
 import {
   CLOUDFLARE_REDIRECT_LIMIT,
+  cloudflareMediaRedirect,
   cloudflarePayloadProxies,
   cloudflareRedirects,
   cloudflareSharedPayloadProxies,
@@ -57,6 +58,7 @@ export default defineEmitter({
       ...rules,
       nestedPayloadProxy,
       ...cloudflareSharedPayloadProxies(url),
+      ...cloudflareMediaRedirect(url, config.origin, config.media.baseUrl),
       '',
     ];
     write('deploy', 'cloudflare/_redirects', redirects.join('\n'));

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createUrlModule } from '../../src/modules/url/create';
 import {
+  cloudflareMediaRedirect,
   cloudflarePayloadProxies,
   cloudflareRedirects,
   cloudflareSharedPayloadProxies,
@@ -36,6 +37,17 @@ const manifest = {
 describe('host rules (§9.5)', () => {
   const url = urlFor('/prompt-seen');
   const rules = hostRules(manifest, url, locales);
+
+  it.each(['', '/prompt-seen'])('preserves historical media URLs under %s without redirect loops', (basePath) => {
+    const urls = urlFor(basePath);
+    const origin = 'https://example.com';
+    expect(cloudflareMediaRedirect(urls, origin, null)).toEqual([]);
+    expect(cloudflareMediaRedirect(urls, origin, origin + basePath)).toEqual([]);
+    expect(cloudflareMediaRedirect(urls, origin, origin + basePath + '/media/archive')).toEqual([]);
+    expect(cloudflareMediaRedirect(urls, origin, 'https://cdn.example.com/site')).toEqual([
+      `${basePath}/media/* https://cdn.example.com/site/media/:splat 302`,
+    ]);
+  });
 
   it.each(['', '/prompt-seen'])('preserves full RSC addresses under %s', (basePath) => {
     expect(cloudflarePayloadProxies(urlFor(basePath))).toEqual([

@@ -110,7 +110,7 @@ jobs:
       # Preserve the build's test models and host configuration as well as its public files.
       # A tar keeps hidden generated files and permissions intact during artifact transfer.
       - name: Package the build and its test inputs
-        run: tar -cf build.tar dist .generated public/generated deploy/generated src/config/generated
+        run: tar -cf build.tar dist .generated deploy/generated src/config/generated
       - uses: actions/upload-artifact@v7
         with:
           name: build-${{ matrix.name }}
@@ -186,12 +186,20 @@ jobs:
             test-results/
             playwright-report/
           retention-days: 7
+      - name: Restore the previous preview file count
+        if: matrix.name == 'subpath' && matrix.browser == 'chromium'
+        uses: actions/cache@v5
+        with:
+          path: ${{ runner.temp }}/pages-preview-count
+          key: pages-preview-count-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: pages-preview-count-
       - name: Keep the tested preview build for deployment
         if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         run: npm run deploy:cloudflare:prepare
         env:
           BASE_PATH: /prompt-seen
           BUILD_MODE: preview
+          PAGES_COUNT_HISTORY: ${{ runner.temp }}/pages-preview-count
       - name: Smoke-test the prepared preview artifact
         if: matrix.name == 'subpath' && matrix.browser == 'chromium'
         run: npm run test:deploy

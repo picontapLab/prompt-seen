@@ -62,8 +62,11 @@ These steps need accounts and credentials. Nothing in the repository creates the
      `S3_ENDPOINT` (`https://<account id>.r2.cloudflarestorage.com`), `S3_BUCKET`,
      `S3_ACCESS_KEY_ID` and `S3_SECRET_ACCESS_KEY`, and the variable `MEDIA_BASE_URL`
      (`https://media.xxx.com`).
-   - The deploy then uploads new images (`media:sync`), checks every image the build uses
-     (`media:check`) and leaves images out of the Pages upload.
+   - The deploy uploads current and historical image keys from `public/media/` with
+     `media:sync`. Before upload, `media:check` verifies public image responses and checks
+     local file bytes against the CDN's MD5 ETag or response body. Pages redirects old
+     `/media/*` addresses to the corresponding CDN keys with a 302. PR previews can continue
+     to serve local media. Rolling back to the previous deployment restores its media settings.
 7. **Optional: IndexNow.** Generate a key (`openssl rand -hex 16`) and add it as the secret
    `INDEXNOW_KEY`. Each root build then publishes `/<key>.txt`, and each deploy submits
    the addresses it added, changed or removed.
@@ -96,7 +99,7 @@ Merging into `main` runs CI, then the **Deploy** workflow (`.github/workflows/de
 
 1. resolve the candidate ref to an immutable SHA using the trusted gate from `main`;
 2. require that SHA to still be `main` HEAD, with the latest push CI successful and all required
-   jobs successful (checks, secret scan, two builds, six browser jobs);
+   jobs successful (checks, secret scan, three builds, nine browser jobs);
 3. compare it with Cloudflare's current canonical production commit: only the same commit or
    a descendant may deploy; missing metadata, divergent history and API failures stop the job;
 4. check out that exact SHA, sync media when configured, build in production mode and check media;
@@ -121,16 +124,42 @@ checks. The SHA and verified CI run are recorded in the Actions summary.
 
 ### Static payload file count
 
-The six-language production package measured on 2026-11-11 contains 23,806 files before host
-configuration and private customization. The production upload returned a 20,000-file limit.
-Upload preparation compares each `__next._full.txt` with its adjacent `index.txt` after private
-customization, then removes byte-identical copies. Prompt and template detail segment indexes
-are also compared within each kind and shared through two files in `generated/rsc/`.
-Four generated Pages 200 proxy rules serve the original addresses. Preparation fails if a
-payload differs or a required rule is missing. This reduced the measured candidate to 19,242 files.
-`npm run test:deploy` checks every removed copy against the packaged export and exercises the
-prepared artifact in the browser. Recount after private customization and confirm the current limit.
-See [Pages file limits](https://developers.cloudflare.com/pages/platform/limits/#files).
+The upload directory is `.deploy/cloudflare/`. Production and preview Actions summaries report
+its final file count, available capacity and change since the previous cached measurement.
+Preparation warns at 18,000 files and blocks uploads above 20,000.
+
+Content has separate build and delivery representations. The same localized detail model
+supplies the prompt page and its popup. The static export provides HTML for direct visits,
+Markdown for machine readers, and RSC data for Next.js navigation. The 12-language build
+has 285 prompts and 75 templates per language, yielding 4,320 detail URLs before listing,
+editorial and other pages. Search reads a per-language index on demand. The browser loads
+the resources for the current interaction. The CI build archive carries the public data
+once in `dist/{basePath}/generated`, alongside the private test models in `.generated/`.
+
+After private customization, preparation checks full RSC payloads, detail segment indexes and
+layouts for byte equality before sharing them through Pages 200 proxy rules. Additional locale
+segments share a copy only when their bytes match and an exact URL rule fits the redirect budget.
+
+If the resulting directory still exceeds 20,000 files, preparation packs full navigation data,
+route trees, page segments and prompt-popup JSON by locale and resource type. Each resource is
+compressed independently. A Pages Function reads its byte range through the built-in `ASSETS`
+binding and decompresses that resource. The full navigation URLs (`index.txt` and
+`__next._full.txt`) resolve to the same entry. Oversized entries retain their static files.
+Route-tree packs are bounded at 32 KiB and other packs at 256 KiB so a host that ignores Range
+can still serve small requests. HEAD and matching ETag requests read only pack metadata.
+
+Only the URL patterns in `_routes.json` consume Functions requests. HTML, Markdown, images,
+search indexes and static bundles use Pages asset serving. A Pages rollback switches the Function,
+index and assets together. The 12-language production build measured 45,909 files in `dist/`
+and 13,857 in the upload directory with local images on 2026-11-17. Of those upload files,
+4,840 are HTML (including host-specific error pages), 4,296 are Markdown, 2,377 are media and
+706 are navigation and popup packs. Production invocation cost depends on traffic to these URLs.
+
+Run `npm run test:deploy` against the prepared artifact. It checks each compacted payload against
+the export and exercises client navigation and prompt popups. To exercise Cloudflare's router
+locally, run `npx wrangler pages dev .deploy/cloudflare`.
+See [Pages invocation routing](https://developers.cloudflare.com/pages/functions/routing/#functions-invocation-routes)
+and [Pages file limits](https://developers.cloudflare.com/pages/platform/limits/#files).
 
 ### Private production customization
 

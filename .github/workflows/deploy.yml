@@ -116,11 +116,19 @@ jobs:
       - name: Live addresses before the deploy (IndexNow)
         if: env.READY == 'true'
         run: npm run indexnow -- snapshot --out .deploy/urls-before.json
+      - name: Restore the previous production file count
+        if: env.READY == 'true'
+        uses: actions/cache@v5
+        with:
+          path: ${{ runner.temp }}/pages-production-count
+          key: pages-production-count-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: pages-production-count-
       - name: Prepare production artifact and apply private customization
         if: env.READY == 'true'
         run: npm run deploy:cloudflare:prepare
         env:
           PRODUCTION_DEPLOY_HOOK: ${{ secrets.PRODUCTION_DEPLOY_HOOK }}
+          PAGES_COUNT_HISTORY: ${{ runner.temp }}/pages-production-count
       - name: Install the smoke-test browser
         if: env.READY == 'true'
         run: npx playwright install --with-deps chromium

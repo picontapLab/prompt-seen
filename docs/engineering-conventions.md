@@ -449,10 +449,10 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
 1. `check`: content validation, token contrast, typecheck, lint, format, unit tests, Storybook build.
 2. `secrets`: gitleaks over the branch's history. A test that needs a token-like value uses one
    that scanners ignore (a repeated character, or the documented `…EXAMPLE` keys).
-3. `build`: two builds only, production at the root and preview under `/prompt-seen`.
-   Each artifact includes `dist/`, `.generated/`, `public/generated/`, `deploy/generated/`, and
-   `src/config/generated/`; browser jobs restore the same artifact without rebuilding.
-4. `build-and-test`: six isolated runners (two paths × Chromium, Firefox, WebKit), two workers
+3. `build` produces a root production build and both production and preview builds under
+   `/prompt-seen`. Each artifact includes `dist/`, `.generated/`, `deploy/generated/` and
+   `src/config/generated/`. Browser jobs restore that build and read its public data from `dist/`.
+4. `build-and-test` uses nine isolated runners (three builds × Chromium, Firefox, WebKit), two workers
    each. HTTP checks run with Chromium only. Chromium and Firefox have 30-minute suite and
    40-minute job budgets. WebKit has 45-minute suite and 55-minute job budgets, including
    installation and report upload. `check` and `build`

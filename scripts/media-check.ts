@@ -4,9 +4,11 @@
 // popup JSON, Markdown versions and sitemaps point at. Needs no credentials.
 //
 //   npm run build && npm run media:check
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadConfig } from '../src/config/load';
+import { publicMediaKeys } from './lib/media/public-files';
 import { ROOT } from './lib/paths';
 
 const config = loadConfig(ROOT);
@@ -45,6 +47,9 @@ async function main() {
     for (const m of fs.readFileSync(file, 'utf8').matchAll(pattern)) urls.add(`${base}/${m[1]!.replace(/\\\//g, '/')}`);
   if (!urls.size) fail(`no addresses on ${base} in dist/; was the build made with this media.baseUrl?`);
 
+  const publicDir = path.join(ROOT, 'public');
+  const localFiles = new Map(publicMediaKeys(publicDir).map((key) => [`${base}/${key}`, path.join(publicDir, key)]));
+  for (const address of localFiles.keys()) urls.add(address);
   const list = [...urls].sort();
   const problems: string[] = [];
   let next = 0;
@@ -57,6 +62,16 @@ async function main() {
           const type = res.headers.get('content-type') ?? '';
           if (res.status !== 200) problems.push(`${res.status} ${address}`);
           else if (!type.startsWith('image/')) problems.push(`${type || 'no content type'} ${address}`);
+          else if (localFiles.has(address)) {
+            const bytes = fs.readFileSync(localFiles.get(address)!);
+            const md5 = createHash('md5').update(bytes).digest('hex');
+            // Single-part R2 uploads expose MD5. CDNs may omit it or use multipart ETags.
+            if (res.headers.get('etag') !== `"${md5}"`) {
+              const body = await fetch(address, { signal: AbortSignal.timeout(60_000) });
+              if (!body.ok || !bytes.equals(Buffer.from(await body.arrayBuffer())))
+                problems.push(`content mismatch ${address}`);
+            }
+          }
         } catch (error) {
           problems.push(`${(error as Error).message} ${address}`);
         }

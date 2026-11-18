@@ -12,6 +12,7 @@ import { parseArgs } from 'node:util';
 import YAML from 'yaml';
 import { contentDir } from '../src/config/load';
 import { mediaSchema } from './lib/content/schemas';
+import { publicMediaKeys } from './lib/media/public-files';
 import { localStorage, s3StorageFromEnv } from './lib/media/storage';
 import { ROOT } from './lib/paths';
 
@@ -63,7 +64,9 @@ async function main() {
   if (!remote) fail('set MEDIA_STORAGE=s3 and the S3_* variables (docs/operations.md)');
 
   const local = localStorage(path.join(ROOT, 'public'));
-  const keys = referencedKeys(contentDir(ROOT));
+  const keys = [
+    ...new Set([...referencedKeys(contentDir(ROOT)), ...publicMediaKeys(path.join(ROOT, 'public'))]),
+  ].sort();
   const missingLocally = (await Promise.all(keys.map(async (k) => ((await local.has(k)) ? null : k)))).filter(Boolean);
   let uploaded = 0;
   let present = 0;

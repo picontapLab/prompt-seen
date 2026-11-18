@@ -71,6 +71,13 @@ export function cloudflarePayloadProxies(url: Pick<Url, 'withBasePath'>): readon
 export const CLOUDFLARE_SHARED_RSC_KINDS = ['prompts', 'templates'] as const;
 export const CLOUDFLARE_SHARED_LAYOUT_PAYLOAD = '__next.$d$locale.!KHB1YmxpYyk.txt';
 
+/** Keep bookmarked image URLs working when the deployment uses an external media store. */
+export function cloudflareMediaRedirect(url: Pick<Url, 'withBasePath'>, origin: string, mediaBaseUrl: string | null) {
+  const source = url.withBasePath('/media/');
+  if (!mediaBaseUrl || `${mediaBaseUrl}/media/`.startsWith(origin + source)) return [];
+  return [`${source}* ${mediaBaseUrl}/media/:splat 302`];
+}
+
 /** Detail routes share segment indexes and, within each locale, public layouts. */
 export function cloudflareSharedPayloadProxies(url: Pick<Url, 'withBasePath'>): string[] {
   return CLOUDFLARE_SHARED_RSC_KINDS.flatMap((kind) => [

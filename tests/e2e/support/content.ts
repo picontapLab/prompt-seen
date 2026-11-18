@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { ContentManifest, LocaleIndex, PromptDetail, TemplateDetail } from '../../../src/modules/content/types';
 import { feedBandFile, feedIndexFile, feedPageFile } from '../../../src/modules/feed/files';
 import type { FeedIndex, FeedPage, FeedBand } from '../../../src/modules/feed/types';
-import { ROOT } from './artifact';
+import { BASE, ROOT } from './artifact';
 
 // The content model of the build under test (.generated/content/, written by content:build in
 // the same `npm run build`), so tests pick real entries and compare pages with their data.
@@ -29,8 +29,8 @@ export function sampleTemplate(code: string): TemplateDetail | null {
   return summary ? templateDetail(code, summary.id) : null;
 }
 
-// The list's data as the build wrote it (public/generated/{locale}/feed/, design doc §3.5).
-const feedDir = path.join(ROOT, 'public/generated');
+// Read the same feed files that the reference host serves for this build.
+const feedDir = path.join(ROOT, 'dist', BASE, 'generated');
 const readFeed = <T>(file: string): T => JSON.parse(fs.readFileSync(path.join(feedDir, file), 'utf8')) as T;
 export const feedIndex = (code: string) => readFeed<FeedIndex>(feedIndexFile(code));
 export const feedPage = (code: string, n: number) => readFeed<FeedPage>(feedPageFile(code, n));
