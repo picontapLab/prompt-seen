@@ -185,6 +185,9 @@ The project owner's 2026-11-05 version attribution labels the existing 208 promp
 2.5 and the 27 prompts in `production/gpt-image-26-2026-11/content-map.json` as GPT Image 2.6;
 see `production/model-version-annotation-2026-11-05.json`. Historical generation receipts retain
 the model information originally returned by the tool.
+The project owner’s 2026-11-09 attribution labels the 54 latest unversioned cases and their
+corresponding example runs as `GPT image 2.6`; see
+`production/model-version-annotation-2026-11-09.json`. Exact API identifiers remain unknown.
 
 Example annotations:
 
