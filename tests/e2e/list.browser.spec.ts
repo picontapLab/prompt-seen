@@ -35,7 +35,8 @@ test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('scrolling loads every batch by itself; the address follows the page in view (§9.4)', async ({ page }) => {
-    // Up to 80 wheel steps: 13–24 s in WebKit on CI, too close to the default 30 s.
+    // WebKit can spend seconds dispatching each wheel event. Use larger steps and
+    // check every intermediate page address separately.
     test.setTimeout(60_000);
     const errors = watchErrors(page);
     await page.goto(listUrl());
@@ -47,7 +48,7 @@ test.describe('desktop', () => {
     page.on('framenavigated', () => seenPaths.add(new URL(page.url()).pathname));
     let lastPath = '';
     for (let i = 0; i < 80; i += 1) {
-      await page.mouse.wheel(0, 700);
+      await page.mouse.wheel(0, 1800);
       await page.waitForTimeout(80);
       const { path, end } = await page.evaluate(() => ({
         path: location.pathname,

@@ -6,7 +6,10 @@ import { BASE, BUILD, NGINX_CONTAINER } from './support/artifact';
 // In a real browser: client navigation stays inside the base path, including requests the
 // page cannot observe (the implicit /favicon.ico, memo §7.4 item 2), and the pages pass axe.
 
-test('no request leaves the base path (browser view and nginx access log)', async ({ page, browserName }) => {
+test('no request leaves the base path (browser view and nginx access log)', async ({ page, browserName }, testInfo) => {
+  const locales = BUILD.locales.filter((locale) => locale.code !== BUILD.defaultLocale);
+  // Each locale adds a client navigation and a return to the default home.
+  test.setTimeout(testInfo.timeout + locales.length * 2000);
   const since = new Date(Date.now() - 2000).toISOString();
   const seen: URL[] = [];
   const failed: string[] = [];
@@ -15,16 +18,17 @@ test('no request leaves the base path (browser view and nginx access log)', asyn
     if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`);
   });
 
-  await page.goto(`${BASE}/`);
-  for (const locale of BUILD.locales.filter((l) => l.code !== BUILD.defaultLocale)) {
+  await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded' });
+  await page.waitForFunction(() => !!history.state?.__PRIVATE_NEXTJS_INTERNALS_TREE);
+  for (const locale of locales) {
     // Soft navigation through next/link from the default home to each locale and back.
     await page.locator(`footer a[hreflang="${locale.htmlLang}"]`).click();
     await expect(page.locator(`main [data-locale="${locale.code}"]`)).toBeVisible();
     await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
-    await page.goBack();
-    await expect(page.locator('main [data-page="home"]')).toBeVisible();
+    await page.goBack({ waitUntil: 'domcontentloaded' });
+    await expect(page.locator(`main [data-locale="${BUILD.defaultLocale}"]`)).toBeVisible();
   }
-  await page.goto(`${BASE}/${BUILD.locales[0]!.pathPrefix}/missing/`);
+  await page.goto(`${BASE}/${BUILD.locales[0]!.pathPrefix}/missing/`, { waitUntil: 'domcontentloaded' });
   await expect(page.locator('main [data-error="404"]')).toBeVisible();
   await page.locator('main [data-error="404"] a').first().click();
   await page.waitForLoadState('networkidle');
