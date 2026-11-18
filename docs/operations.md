@@ -99,7 +99,7 @@ Merging into `main` runs CI, then the **Deploy** workflow (`.github/workflows/de
 
 1. resolve the candidate ref to an immutable SHA using the trusted gate from `main`;
 2. require that SHA to still be `main` HEAD, with the latest push CI successful and all required
-   jobs successful (checks, secret scan, three builds, nine browser jobs);
+   jobs successful (checks, secret scan, three builds, twelve browser jobs);
 3. compare it with Cloudflare's current canonical production commit: only the same commit or
    a descendant may deploy; missing metadata, divergent history and API failures stop the job;
 4. check out that exact SHA, sync media when configured, build in production mode and check media;

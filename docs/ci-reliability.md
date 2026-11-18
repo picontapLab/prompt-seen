@@ -5,10 +5,11 @@ three browsers, both paths, one retry and failed-attempt evidence while investig
 
 Each browser job publishes `test-results/reliability.json`, a Markdown summary and the
 Playwright HTML report. The JSON records every test's stable ID (browser, relative file and
-title), outcome, each attempt's status/duration, worker count, run ID and run attempt. Use the
-stable ID to group repeat occurrences across jobs/runs; path coverage is identified by the
-artifact name (`playwright-root-*` or `playwright-subpath-*`). Downloads expire after 7 days,
-so retain evidence needed for an investigation before expiry.
+title), outcome, each attempt's status and duration, worker count, run ID and run attempt.
+The JSON and summary include the suite status, WebKit shard and count of tests that had no
+attempt. Use the stable ID to group repeat occurrences across jobs and runs. The artifact
+name identifies the build and browser. WebKit artifacts end in `-shard-1` or `-shard-2`.
+Downloads expire after 7 days, so retain evidence needed for an investigation before expiry.
 
 ## Resource baseline
 
@@ -31,6 +32,17 @@ root Firefox reached the 30-minute suite limit with 68 cases left. The root WebK
 nearly 33 minutes to reach the first test step, including 29 minutes to install browsers.
 Firefox has 40 minutes for the suite and 50 for its job. WebKit has 85 minutes for its job,
 including setup and report upload. Chromium retains its 30-minute suite and 40-minute job budgets.
+
+In [run 44213557265](https://github.com/picontapLab/prompt-seen/actions/runs/44213557265),
+root and preview WebKit reached the 45-minute suite limit. The root report listed 981 tests,
+including 292 without an attempt. WebKit now runs in two parallel shards per build with two
+workers per shard. Both shards must pass the release gate. The first complete sharded CI run
+will provide the new timing baseline.
+
+A local Ubuntu 26.04 ARM64 replay of the root build reproduced the home showcase and feed
+scroll timeouts and the missing first-save toast in headless WebKit. An Xvfb replay passed
+the showcase and scroll cases, but the WebKit target crashed during the favorites case.
+The interaction failures remain open.
 
 ## Open investigations
 

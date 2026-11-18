@@ -11,10 +11,12 @@ export function testIdentity(project: string, file: string, title: string): stri
 export default class ReliabilityReporter implements Reporter {
   private suite?: Suite;
   private workers = 0;
+  private shard: FullConfig['shard'] = null;
 
   onBegin(config: FullConfig, suite: Suite) {
     this.suite = suite;
     this.workers = config.workers;
+    this.shard = config.shard;
   }
 
   onEnd(result: FullResult) {
@@ -37,13 +39,17 @@ export default class ReliabilityReporter implements Reporter {
         })),
       };
     };
+    const records = tests.map(record);
+    const notRun = records.filter((test) => test.attempts.length === 0).length;
     const report = {
       status: result.status,
       workers: this.workers,
+      shard: this.shard,
+      notRun,
       durationMs: result.duration,
       run: process.env.GITHUB_RUN_ID,
       attempt: process.env.GITHUB_RUN_ATTEMPT,
-      tests: tests.map(record),
+      tests: records,
     };
     fs.mkdirSync('test-results', { recursive: true });
     fs.writeFileSync('test-results/reliability.json', `${JSON.stringify(report, null, 2)}\n`);
@@ -54,10 +60,12 @@ export default class ReliabilityReporter implements Reporter {
       (test) =>
         `| ${test.outcome} | ${test.id} | ${escaped(test.project)} | ${escaped(`${test.file}:${test.line} ${test.title}`)} | ${test.attempts.map((attempt) => attempt.status).join(' → ')} |`,
     );
+    const shardLabel = this.shard ? `, shard ${this.shard.current}/${this.shard.total}` : '';
     const summary = [
-      `### Browser reliability (${process.env.PW_BROWSERS ?? 'local'})`,
+      `### Browser reliability (${process.env.PW_BROWSERS ?? 'local'}${shardLabel})`,
       '',
-      `${tests.length} tests; ${failed.length} failed; ${flaky.length} flaky. ${this.workers} workers, ${(result.duration / 60_000).toFixed(1)} minutes.`,
+      `${tests.length} scheduled, ${failed.length} failed, ${flaky.length} flaky, ${notRun} not run.`,
+      `Suite ${result.status} in ${(result.duration / 60_000).toFixed(1)} minutes (worker count ${this.workers}).`,
       '',
       '| Outcome | Tracking ID | Browser | Test | Attempts |',
       '| --- | --- | --- | --- | --- |',

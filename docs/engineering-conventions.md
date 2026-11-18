@@ -452,19 +452,21 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
 3. `build` produces a root production build and both production and preview builds under
    `/prompt-seen`. Each artifact includes `dist/`, `.generated/`, `deploy/generated/` and
    `src/config/generated/`. Browser jobs restore that build and read its public data from `dist/`.
-4. `build-and-test` uses nine isolated runners (three builds × Chromium, Firefox, WebKit), two workers
-   each. HTTP checks run with Chromium only. The suite budgets are 30 minutes for Chromium,
-   40 for Firefox and 45 for WebKit. The corresponding job budgets are 40, 50 and 85 minutes,
+4. `build-and-test` uses twelve isolated runners. Each build runs Chromium, Firefox and two
+   parallel WebKit shards, with two workers per runner. HTTP checks run with Chromium only.
+   The suite budgets are 30 minutes for Chromium, 40 for Firefox and 45 per WebKit shard.
+   The corresponding job budgets are 40, 50 and 85 minutes,
    including installation and report upload. `check` and `build`
    have 20-minute budgets; `secrets` and `preview` have 10 minutes.
    A failed test is retried once; only the retry records a trace to bound disk usage. Failed
    attempts retain screenshots and error context. Each job uploads `test-results/` and the HTML
-   report, writes stable test IDs and every attempt to `reliability.json`, and adds failed/flaky
-   cases, duration and worker count to its Actions summary. See [CI reliability](ci-reliability.md)
+   report and writes stable test IDs and every attempt to `reliability.json`. The Actions summary
+   includes the shard, failed and flaky cases, the unstarted test count, duration and worker count.
+   See [CI reliability](ci-reliability.md)
    for the measured baseline, tracking and triage procedure. The validated Firefox 1.64.1
    runtime remains in place until the upstream regression is resolved.
 5. The subpath Chromium job prepares and smoke-tests the preview upload directory. `preview`
-   uploads that artifact only after `check`, `secrets`, and all six browser jobs succeed. Fork PRs
+   uploads that artifact only after `check`, `secrets`, and all twelve browser jobs succeed. Fork PRs
    cannot enter the upload job. Needs repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, optionally
    `CLOUDFLARE_PAGES_PROJECT` (default `prompt-seen`); without them upload is skipped.
 

@@ -29,15 +29,28 @@ function fixture(overrides: Record<string, unknown> = {}) {
 const runsPath = `actions/workflows/ci.yml/runs?head_sha=${sha}&branch=main&event=push&per_page=100`;
 
 describe('production release gate', () => {
-  it('matches the three builds and all nine isolated browser jobs in CI, with secret-gated preview', () => {
+  it('matches the three builds and all twelve isolated browser jobs in CI, with secret-gated preview', () => {
     const { jobs } = YAML.parse(fs.readFileSync('.github/workflows/ci.yml', 'utf8'));
     const builds = jobs.build.strategy.matrix.include.map((entry: { name: string }) => `build (${entry.name})`);
-    const browsers = jobs['build-and-test'].strategy.matrix;
-    const checks = browsers.name.flatMap((name: string) =>
-      browsers.browser.map((browser: string) => `build-and-test (${name}, ${browser})`),
+    const matrix = jobs['build-and-test'].strategy.matrix as {
+      name: string[];
+      browser: string[];
+      shard: number[];
+      exclude: { browser: string; shard: number }[];
+    };
+    const checks = matrix.name.flatMap((name) =>
+      matrix.browser.flatMap((browser) =>
+        matrix.shard
+          .filter((shard) => !matrix.exclude.some((entry) => entry.browser === browser && entry.shard === shard))
+          .map((shard) =>
+            browser === 'webkit'
+              ? `build-and-test (${name}, ${browser}, shard ${shard}/2)`
+              : `build-and-test (${name}, ${browser})`,
+          ),
+      ),
     );
     expect(builds).toHaveLength(3);
-    expect(checks).toHaveLength(9);
+    expect(checks).toHaveLength(12);
     expect(jobs['build-and-test'].env.IT_EXPECT_STATE).toBe('enabled');
     expect(jobs['build-and-test'].env.FR_EXPECT_STATE).toBe('enabled');
     expect([...requiredJobs].sort()).toEqual(['check', 'secrets', ...builds, ...checks].sort());
@@ -72,8 +85,9 @@ describe('production release gate', () => {
   });
   it.each([
     'secrets',
-    'build-and-test (subpath, webkit)',
-    'build-and-test (subpath-production, webkit)',
+    'build-and-test (root, webkit, shard 2/2)',
+    'build-and-test (subpath, webkit, shard 1/2)',
+    'build-and-test (subpath-production, webkit, shard 2/2)',
     'build-and-test (subpath-production, chromium)',
   ])('requires %s to pass even if the workflow reports success', async (name) => {
     await expect(
@@ -85,6 +99,18 @@ describe('production release gate', () => {
         }),
       ),
     ).rejects.toThrow(name);
+  });
+  it('rejects an unsuccessful WebKit shard even when the other shard and CI report success', async () => {
+    const shard = 'build-and-test (root, webkit, shard 1/2)';
+    await expect(
+      checkRelease(
+        fixture({
+          'actions/runs/10/jobs?filter=latest&per_page=100&page=1': {
+            jobs: requiredJobs.map((name) => ({ name, conclusion: name === shard ? 'failure' : 'success' })),
+          },
+        }),
+      ),
+    ).rejects.toThrow(shard);
   });
   it.each(['behind', 'diverged'])('rejects a %s main after a force push', async (status) => {
     await expect(checkRelease(fixture({ [`compare/${liveSha}...${sha}`]: { status } }))).rejects.toThrow(

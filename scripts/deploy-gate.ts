@@ -18,7 +18,10 @@ export const requiredJobs = [
   'secrets',
   ...['root', 'subpath-production', 'subpath'].flatMap((path) => [
     `build (${path})`,
-    ...['chromium', 'firefox', 'webkit'].map((browser) => `build-and-test (${path}, ${browser})`),
+    `build-and-test (${path}, chromium)`,
+    `build-and-test (${path}, firefox)`,
+    `build-and-test (${path}, webkit, shard 1/2)`,
+    `build-and-test (${path}, webkit, shard 2/2)`,
   ]),
 ];
 
