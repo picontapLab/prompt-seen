@@ -8,6 +8,7 @@ const browsers = (process.env.PW_BROWSERS ?? (process.env.CI ? 'chromium,firefox
   .split(',')
   .map((b) => b.trim())
   .filter(Boolean);
+const ciSuiteMinutes = browsers.includes('webkit') ? 45 : browsers.includes('firefox') ? 40 : 30;
 
 const browserProjects: Record<string, Project> = {
   chrome: { name: 'chrome', use: { ...devices['Desktop Chrome'], channel: 'chrome' } },
@@ -20,7 +21,7 @@ export default defineConfig({
   testDir: 'tests/e2e',
   fullyParallel: true,
   workers: process.env.CI ? 2 : undefined,
-  globalTimeout: process.env.CI ? (browsers.includes('webkit') ? 45 : 30) * 60_000 : undefined,
+  globalTimeout: process.env.CI ? ciSuiteMinutes * 60_000 : undefined,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI

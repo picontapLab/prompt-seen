@@ -122,7 +122,8 @@ jobs:
   build-and-test:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ matrix.browser == 'webkit' && 55 || 40 }}
+    # Leave room for browser setup and report uploads as well as the Playwright suite.
+    timeout-minutes: ${{ matrix.browser == 'webkit' && 85 || matrix.browser == 'firefox' && 50 || 40 }}
     strategy:
       fail-fast: false
       matrix:

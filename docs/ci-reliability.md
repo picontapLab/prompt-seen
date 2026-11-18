@@ -24,9 +24,13 @@ The six-language production and eight-language preview matrices in
 [run 43159104156](https://github.com/picontapLab/prompt-seen/actions/runs/43159104156),
 attempt 1 at `fb87dd22`, both reached the 30-minute WebKit suite limit. Root completed 509
 passes with 17 cases left to run. Subpath completed 479 passes, with one failed search case
-and 137 cases left to run. WebKit now has 45 minutes for the suite and 55 minutes for the job,
-allowing the measured remainder and setup/report upload. Chromium and Firefox use 30-minute
-suite and 40-minute job budgets. Fresh runs must record actual completion durations.
+and 137 cases left to run. WebKit uses a 45-minute suite budget to allow for the measured remainder.
+
+In the 12-language [run 44206561285](https://github.com/picontapLab/prompt-seen/actions/runs/44206561285),
+root Firefox reached the 30-minute suite limit with 68 cases left. The root WebKit job took
+nearly 33 minutes to reach the first test step, including 29 minutes to install browsers.
+Firefox has 40 minutes for the suite and 50 for its job. WebKit has 85 minutes for its job,
+including setup and report upload. Chromium retains its 30-minute suite and 40-minute job budgets.
 
 ## Open investigations
 

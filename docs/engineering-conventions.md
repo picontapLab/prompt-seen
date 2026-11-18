@@ -453,9 +453,9 @@ Set up in step 4c (design doc §9.4, §11.5, §11.10).
    `/prompt-seen`. Each artifact includes `dist/`, `.generated/`, `deploy/generated/` and
    `src/config/generated/`. Browser jobs restore that build and read its public data from `dist/`.
 4. `build-and-test` uses nine isolated runners (three builds × Chromium, Firefox, WebKit), two workers
-   each. HTTP checks run with Chromium only. Chromium and Firefox have 30-minute suite and
-   40-minute job budgets. WebKit has 45-minute suite and 55-minute job budgets, including
-   installation and report upload. `check` and `build`
+   each. HTTP checks run with Chromium only. The suite budgets are 30 minutes for Chromium,
+   40 for Firefox and 45 for WebKit. The corresponding job budgets are 40, 50 and 85 minutes,
+   including installation and report upload. `check` and `build`
    have 20-minute budgets; `secrets` and `preview` have 10 minutes.
    A failed test is retried once; only the retry records a trace to bound disk usage. Failed
    attempts retain screenshots and error context. Each job uploads `test-results/` and the HTML
