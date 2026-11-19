@@ -1,0 +1,84 @@
+{
+  "candidateId": "gpt26-gif-23-v2",
+  "slug": "gpt26-gif-23-hand-drawn-character-comes-alive",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Bring this drawing to life as a looping GIF. The character blinks and makes one small friendly movement such as a wave or a flap, then settles into the starting pose. Preserve the drawing style, line weight and paper texture. Do not add color.",
+  "promptLanguage": "en",
+  "promptProvenance": "source-prompt",
+  "source": {
+    "author": "Reddit r/ChatGPT",
+    "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the project-generated reference image shown with this case before using the prompt.",
+      "zh-Hans": "使用本案例附带的本站生成参考图后再提交提示词。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Project-generated synthetic reference",
+          "zh-Hans": "本站生成的合成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-gif-23",
+      "platform": "Reddit",
+      "author": "Reddit r/ChatGPT",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Source metrics do not measure this new generated output.",
+        "zh-Hans": "来源指标不代表本次新生成成品。"
+      },
+      "observedAt": "2026-11-19",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Public source page and generated output reviewed.",
+        "zh-Hans": "已核对公开来源页面与生成输出。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "sourcePromptStatus": {
+        "en": "Original public prompt reviewed.",
+        "zh-Hans": "已核对公开原始提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Hand-drawn character comes alive",
+      "description": "A hand-drawn character blinks and makes a small friendly movement.",
+      "body": "## How to use\n\nUpload the project-generated reference image shown with this case, then use the exact recorded prompt.\n\n## Observed result\n\nA hand-drawn character blinks and makes a small friendly movement. Generated with GPT Image 2.6 through the OpenAI Image API as a native animated GIF with 9 frames at 200 ms per frame.\n\n## Source and generation\n\nThis case is a Prompt Seen reproduction or adaptation of the linked public prompt research source. The source interaction does not measure this new generated output."
+    },
+    "zh-Hans": {
+      "title": "手绘角色眨眼动作",
+      "description": "手绘角色眨眼并做一次小挥手或拍翅",
+      "body": "## 使用方法\n\n上传本案例附带的本站生成参考图，再使用本次实际提交的完整提示词。\n\n## 观察结果\n\n手绘角色眨眼并做一次小挥手或拍翅 通过 OpenAI Image API 使用 GPT Image 2.6 生成原生 GIF，共 9 帧，每帧 200 毫秒。\n\n## 来源与生成\n\n本例是 Prompt Seen 根据公开提示词研究来源生成或改编的案例。来源互动数不代表本次新生成成品。"
+    }
+  },
+  "alt": {
+    "en": "A hand-drawn character blinks and makes a small friendly movement.",
+    "zh-Hans": "手绘角色眨眼并做一次小挥手或拍翅"
+  },
+  "editorialReview": {
+    "reviewer": "AI Codex editorial review",
+    "reviewedAt": "2026-11-19T15:42:27.406Z",
+    "contentHash": "319c0b0ac69485774d29d4bf0c71a9bf990e1988ccb8ddf4b7ad9b6733a5efbf"
+  }
+}

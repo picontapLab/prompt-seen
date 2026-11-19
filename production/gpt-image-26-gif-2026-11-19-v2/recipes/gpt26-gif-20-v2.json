@@ -1,0 +1,84 @@
+{
+  "candidateId": "gpt26-gif-20-v2",
+  "slug": "gpt26-gif-20-chibi-wave-and-thumbs-up-sticker",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Turn the person in this photo into a cute chibi cartoon sticker with a thick white die-cut border on a light-gray background. Animate a hello wave, a thumbs-up, and a return to the first pose. Keep hairstyle, glasses and outfit colors recognizable in every frame.",
+  "promptLanguage": "en",
+  "promptProvenance": "source-prompt",
+  "source": {
+    "author": "Reddit r/ChatGPT",
+    "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the project-generated reference image shown with this case before using the prompt.",
+      "zh-Hans": "使用本案例附带的本站生成参考图后再提交提示词。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Project-generated synthetic reference",
+          "zh-Hans": "本站生成的合成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-gif-20",
+      "platform": "Reddit",
+      "author": "Reddit r/ChatGPT",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Source metrics do not measure this new generated output.",
+        "zh-Hans": "来源指标不代表本次新生成成品。"
+      },
+      "observedAt": "2026-11-19",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Public source page and generated output reviewed.",
+        "zh-Hans": "已核对公开来源页面与生成输出。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "sourcePromptStatus": {
+        "en": "Original public prompt reviewed.",
+        "zh-Hans": "已核对公开原始提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Chibi wave and thumbs-up sticker",
+      "description": "A person becomes a chibi sticker, waves, gives a thumbs-up and resets.",
+      "body": "## How to use\n\nUpload the project-generated reference image shown with this case, then use the exact recorded prompt.\n\n## Observed result\n\nA person becomes a chibi sticker, waves, gives a thumbs-up and resets. Generated with GPT Image 2.6 through the OpenAI Image API as a native animated GIF with 9 frames at 200 ms per frame.\n\n## Source and generation\n\nThis case is a Prompt Seen reproduction or adaptation of the linked public prompt research source. The source interaction does not measure this new generated output."
+    },
+    "zh-Hans": {
+      "title": "Q 版挥手比赞贴纸",
+      "description": "人物变 Q 版贴纸，挥手、比赞、回位",
+      "body": "## 使用方法\n\n上传本案例附带的本站生成参考图，再使用本次实际提交的完整提示词。\n\n## 观察结果\n\n人物变 Q 版贴纸，挥手、比赞、回位 通过 OpenAI Image API 使用 GPT Image 2.6 生成原生 GIF，共 9 帧，每帧 200 毫秒。\n\n## 来源与生成\n\n本例是 Prompt Seen 根据公开提示词研究来源生成或改编的案例。来源互动数不代表本次新生成成品。"
+    }
+  },
+  "alt": {
+    "en": "A person becomes a chibi sticker, waves, gives a thumbs-up and resets.",
+    "zh-Hans": "人物变 Q 版贴纸，挥手、比赞、回位"
+  },
+  "editorialReview": {
+    "reviewer": "AI Codex editorial review",
+    "reviewedAt": "2026-11-19T15:40:49.818Z",
+    "contentHash": "67eb9db5f005062713506015bdeec71128553b80a31cdfbc57218ed21546abea"
+  }
+}

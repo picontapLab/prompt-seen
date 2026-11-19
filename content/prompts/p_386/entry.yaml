@@ -1,0 +1,108 @@
+id: p_386
+slug: gpt26-gif-18-pet-head-tilt-and-blink
+createdAt: 2026-11-19
+updatedAt: 2026-11-19
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: illustration
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_593
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the project-generated reference image shown with this case before using the prompt.
+    zh-Hans: 使用本案例附带的本站生成参考图后再提交提示词。
+    es: Sube la imagen de referencia sintética del proyecto antes de usar el prompt.
+    pt-BR: Envie a imagem de referência sintética do projeto antes de usar o prompt.
+    ja: プロンプトを使う前に、このケースに付属するプロジェクト生成の参照画像をアップロードしてください。
+    ko: 프롬프트를 사용하기 전에 이 사례에 포함된 프로젝트 생성 참조 이미지를 업로드하세요.
+    de: Lade das synthetische Projektreferenzbild hoch, bevor du den Prompt verwendest.
+    fr: Importez la référence synthétique du projet avant d’utiliser le prompt.
+    ru: Загрузите синтетический референс проекта перед использованием промпта.
+    zh-Hant: 使用本案例附帶的本專案生成參考圖後再提交提示詞。
+    it: Carica il riferimento sintetico del progetto prima di usare il prompt.
+    ar: حمّل الصورة المرجعية الاصطناعية التي أنشأها المشروع قبل استخدام المطالبة.
+  slots:
+    - id: reference
+      labels:
+        en: Project-generated identity reference
+        zh-Hans: 本站生成的身份参考图
+        es: Referencia de identidad generada por el proyecto
+        pt-BR: Referência de identidade gerada pelo projeto
+        ja: プロジェクト生成の人物参照画像
+        ko: 프로젝트에서 생성한 인물 참조 이미지
+        de: Vom Projekt erzeugte Identitätsreferenz
+        fr: Référence d’identité générée par le projet
+        ru: Референс личности, созданный проектом
+        zh-Hant: 本專案生成的身分參考圖
+        it: Riferimento d’identità generato dal progetto
+        ar: مرجع الهوية الذي أنشأه المشروع
+      min: 1
+      max: 1
+showcaseExampleId: x_450
+promptProvenance: source-prompt
+inspirationSources:
+  - candidateId: gpt26-gif-18
+    platform: Reddit
+    author: Reddit r/ChatGPT
+    url: https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/
+    publishedAt: null
+    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Source metrics do not measure this new generated output.
+      zh-Hans: 来源指标不代表本次新生成成品。
+      es: Las métricas de la fuente no miden este nuevo resultado generado.
+      pt-BR: As métricas da fonte não medem este novo resultado gerado.
+      ja: ソースの指標は今回の新しい生成結果を測定するものではありません。
+      ko: 출처 지표는 이번에 새로 생성된 결과를 측정하지 않습니다.
+      de: Quellmetriken messen dieses neu generierte Ergebnis nicht.
+      fr: Les métriques de la source ne mesurent pas ce nouveau résultat généré.
+      ru: Метрики источника не измеряют этот новый сгенерированный результат.
+      zh-Hant: 來源指標不代表本次新生成成品。
+      it: Le metriche della fonte non misurano questo nuovo risultato generato.
+      ar: لا تقيس مؤشرات المصدر هذه النتيجة الجديدة المُنشأة.
+    observedAt: 2026-11-19
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public source page and generated output reviewed.
+      zh-Hans: 已核对公开来源页面与生成输出。
+      es: Se revisaron la página de origen pública y el resultado generado.
+      pt-BR: A página pública de origem e o resultado gerado foram revisados.
+      ja: 公開ソースページと生成結果を確認しました。
+      ko: 공개 출처 페이지와 생성 결과를 검토했습니다.
+      de: Öffentliche Quellseite und generiertes Ergebnis geprüft.
+      fr: Page source publique et résultat généré vérifiés.
+      ru: Публичная страница источника и сгенерированный результат проверены.
+      zh-Hant: 已核對公開來源頁面與生成輸出。
+      it: Pagina pubblica della fonte e risultato generato verificati.
+      ar: تمت مراجعة صفحة المصدر العامة والنتيجة المُنشأة.
+    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/
+    sourcePromptStatus:
+      en: Original public prompt reviewed.
+      zh-Hans: 已核对公开原始提示词。
+      es: Se revisó el prompt público original.
+      pt-BR: Prompt público original revisado.
+      ja: 公開された原文プロンプトを確認しました。
+      ko: 공개된 원본 프롬프트를 검토했습니다.
+      de: Öffentlicher Originalprompt geprüft.
+      fr: Prompt public original vérifié.
+      ru: Оригинальный публичный промпт проверен.
+      zh-Hant: 已核對公開原始提示詞。
+      it: Prompt pubblico originale verificato.
+      ar: تمت مراجعة المطالبة العامة الأصلية.
+    metrics: []
+source:
+  author: Reddit r/ChatGPT
+  url: https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/
+  license: null
+annotations: []

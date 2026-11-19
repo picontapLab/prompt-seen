@@ -1,0 +1,84 @@
+{
+  "candidateId": "gpt26-gif-18-v2",
+  "slug": "gpt26-gif-18-pet-head-tilt-and-blink",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Turn this photo into a looping animated GIF. The pet tilts its head to one side, blinks once, then tilts back to where it started. Keep fur, collar, pose, background and camera unchanged.",
+  "promptLanguage": "en",
+  "promptProvenance": "source-prompt",
+  "source": {
+    "author": "Reddit r/ChatGPT",
+    "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+    "license": null
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the project-generated reference image shown with this case before using the prompt.",
+      "zh-Hans": "使用本案例附带的本站生成参考图后再提交提示词。"
+    },
+    "slots": [
+      {
+        "id": "reference",
+        "labels": {
+          "en": "Project-generated synthetic reference",
+          "zh-Hans": "本站生成的合成参考图"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "gpt26-gif-18",
+      "platform": "Reddit",
+      "author": "Reddit r/ChatGPT",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Source metrics do not measure this new generated output.",
+        "zh-Hans": "来源指标不代表本次新生成成品。"
+      },
+      "observedAt": "2026-11-19",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Public source page and generated output reviewed.",
+        "zh-Hans": "已核对公开来源页面与生成输出。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1xu03hs/7_gif_prompts_i_tested_on_gpt_image_26_the_model/",
+      "sourcePromptStatus": {
+        "en": "Original public prompt reviewed.",
+        "zh-Hans": "已核对公开原始提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Pet head tilt and blink",
+      "description": "A pet tilts its head, blinks and returns to the starting pose.",
+      "body": "## How to use\n\nUpload the project-generated reference image shown with this case, then use the exact recorded prompt.\n\n## Observed result\n\nA pet tilts its head, blinks and returns to the starting pose. Generated with GPT Image 2.6 through the OpenAI Image API as a native animated GIF with 9 frames at 200 ms per frame.\n\n## Source and generation\n\nThis case is a Prompt Seen reproduction or adaptation of the linked public prompt research source. The source interaction does not measure this new generated output."
+    },
+    "zh-Hans": {
+      "title": "宠物歪头眨眼",
+      "description": "宠物歪头、眨眼、回到原姿势",
+      "body": "## 使用方法\n\n上传本案例附带的本站生成参考图，再使用本次实际提交的完整提示词。\n\n## 观察结果\n\n宠物歪头、眨眼、回到原姿势 通过 OpenAI Image API 使用 GPT Image 2.6 生成原生 GIF，共 9 帧，每帧 200 毫秒。\n\n## 来源与生成\n\n本例是 Prompt Seen 根据公开提示词研究来源生成或改编的案例。来源互动数不代表本次新生成成品。"
+    }
+  },
+  "alt": {
+    "en": "A pet tilts its head, blinks and returns to the starting pose.",
+    "zh-Hans": "宠物歪头、眨眼、回到原姿势"
+  },
+  "editorialReview": {
+    "reviewer": "AI Codex editorial review",
+    "reviewedAt": "2026-11-19T15:39:44.713Z",
+    "contentHash": "380dd472b2a95c2099a1eeb492c32a369373552951db565f465c27438a567e35"
+  }
+}
