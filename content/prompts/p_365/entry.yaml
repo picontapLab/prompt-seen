@@ -1,0 +1,38 @@
+id: p_365
+slug: gpt26-top50-b03-case
+createdAt: 2026-11-18
+updatedAt: 2026-11-18
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: poster
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_569
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the project-generated reference image listed for this example.
+    zh-Hans: 上传本例列出的项目生成参考图。
+  slots:
+    - id: napkin
+      labels:
+        en: Project-generated sketch reference
+        zh-Hans: Project-generated sketch reference
+      min: 1
+      max: 1
+showcaseExampleId: x_429
+promptProvenance: independent-adaptation
+inspirationSources: []
+source:
+  author: Kamran Arshad / ImagineArt
+  url: https://www.imagine.art/insights/gpt-image-2-6-overview
+  license: null
+annotations: []

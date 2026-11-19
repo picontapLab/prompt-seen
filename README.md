@@ -312,13 +312,15 @@ Project facts:
 - [Engineering conventions](docs/engineering-conventions.md): how code in this repository is organised and extended.
 - [Operations](docs/operations.md): production setup, deploying, rolling back, search engines, analytics.
 - [General localization and German launch specification](docs/general-localization-spec.md): reusable locale policies, translation tooling, browsing and indexing rules, implementation steps and acceptance criteria.
-- [Portuguese localization specification](docs/portuguese-localization-spec.md): full Brazilian Portuguese coverage, translation and review workflow, search acceptance and release gates.
 - [Spanish localization specification](docs/spanish-localization-spec.md): staged rollout, translation batches, Spanish search behavior, review evidence and production acceptance.
 - [Japanese localization specification](docs/japanese-localization-spec.md): full content coverage, translation workflow, acceptance checks and launch requirements.
-- [Korean localization specification](docs/korean-localization-spec.md): complete content coverage, Korean search and input methods, acceptance and release gates.
-- [French localization specification](docs/french-localization-spec.md): complete coverage, fingerprint review, French search behavior and the three-build acceptance matrix. Implementation evidence and remaining release gates are in `production/localization/fr/`.
-- [Italian localization specification](docs/italian-localization-spec.md): complete source-only coverage, Italian search, fingerprint reviews and candidate acceptance.
-- [Russian localization specification](docs/russian-localization-spec.md): staged preparation, Russian search and keyboard support, translation review and release gates. [Implementation status](production/localization/ru/implementation-status.md).
+- [Korean localization specification](docs/korean-localization-spec.md): full launch scope, translation batches, Hangul search and input methods, acceptance criteria and release sequence.
+- [Brazilian Portuguese localization specification](docs/portuguese-localization-spec.md): complete launch scope, translation and review stages, Portuguese search, production acceptance and release gates.
+- [French localization specification](docs/french-localization-spec.md): implementation stages, French editorial and search rules, translation batches, release gates and rollback.
+- [Traditional Chinese localization specification](docs/traditional-chinese-localization-spec.md): full launch scope, conversion and terminology review, protected Prompt text, search aliases, acceptance criteria and release gates.
+- [Russian localization specification](docs/russian-localization-spec.md): complete launch scope, Cyrillic search and typography, plural rules, translation batches, acceptance gates and release workflow.
+- [Italian localization specification](docs/italian-localization-spec.md): complete launch scope, editorial and plural rules, elision-aware search, translation batches, implementation tasks and release gates.
+- [Indonesian localization specification](docs/indonesian-localization-spec.md): launch scope, search aliases, translation batches and release gates.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses

@@ -63,6 +63,11 @@ docs/screenshots/
 /docs/research/**/evidence/**/deployment-log-excerpt.txt
 /docs/research/**/publication-redactions.json
 
+# Local research captures and generated staging artifacts stay outside commits. They may contain
+# third-party raw responses, absolute workstation paths, and duplicate runtime media.
+/docs/research/gpt-image-2.6-top50-2026-11-17/
+/production/gpt-image-26-top50-2026-11-18/
+
 # Non-runtime content-production artifacts
 production/*/outputs/
 production/*/jobs/

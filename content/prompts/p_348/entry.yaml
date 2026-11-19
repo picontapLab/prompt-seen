@@ -1,0 +1,38 @@
+id: p_348
+slug: gpt26-top50-p36-case
+createdAt: 2026-11-18
+updatedAt: 2026-11-18
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: ko
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_552
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the project-generated reference image listed for this example.
+    zh-Hans: 上传本例列出的项目生成参考图。
+  slots:
+    - id: person
+      labels:
+        en: Project-generated identity reference
+        zh-Hans: Project-generated identity reference
+      min: 1
+      max: 1
+showcaseExampleId: x_412
+promptProvenance: independent-adaptation
+inspirationSources: []
+source:
+  author: EEJ_OOXO
+  url: https://x.com/EEJ_OOXO/status/2120772387348300055
+  license: null
+annotations: []
