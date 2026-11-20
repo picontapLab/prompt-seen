@@ -12,9 +12,21 @@
 </p>
 
 <p align="center">
+  <strong>Languages:</strong>
+  <a href="./README.md">English</a> ·
+  <a href="./README.zh-CN.md">简体中文</a> ·
+  <a href="./README.zh-TW.md">繁體中文</a> ·
+  <a href="./README.es.md">Español</a> ·
+  <a href="./README.pt-BR.md">Português (Brasil)</a> ·
+  <a href="./README.ja.md">日本語</a> ·
+  <a href="./README.ko.md">한국어</a> ·
+  <a href="./README.de.md">Deutsch</a> ·
+  <a href="./README.fr.md">Français</a>
+</p>
+
+<p align="center">
   <a href="#gallery">Gallery</a> ·
-  <a href="#recently-added--english-prompts">Recently added</a> ·
-  <a href="#social-sharing--playful-edits">Social &amp; playful</a> ·
+  <a href="#gpt-image-26-highlights">GPT Image 2.6</a> ·
   <a href="#image-models">Image models</a> ·
   <a href="#contributing">Contribute</a> ·
   <a href="#documentation">Documentation</a>
@@ -33,16 +45,9 @@
 
 ## Gallery
 
-The gallery uses 67 unique outputs from the repository. Every card links to its prompt record and
-includes the exact prompt text used for the image, so the visual result can be evaluated beside the
-recipe. The five groups use disjoint outputs to cover more subjects and use cases.
-
-### Recently added · English prompts
-
-Ten cases introduced on November 9, 2026, featuring reaction stickers, photo-booth portraits,
-a pet newspaper, a meme, a weekend collage, a birthday card and a comic. All ten use English
-prompts; expand each card for the exact text from its recorded run. Reference images are linked
-in input order where required.
+The curated gallery below uses 67 unique outputs from the repository, together with ten featured
+GPT Image 2.6 outputs. Every card links to its prompt record, where the exact prompt text used for
+the image can be reviewed beside the visual result.
 
 <table>
   <tr>
@@ -67,10 +72,32 @@ in input order where required.
   </tr>
 </table>
 
-### Social sharing & playful edits
+### GPT Image 2.6 highlights
 
-Character stickers, festive photo grids, personalized keepsakes and playful transformations for
-chats and social feeds. Reference-based examples link to the input image used in the recorded run.
+The gallery also includes five project-generated GPT Image 2.6 still images and five animated GIFs.
+Each record keeps the prompt, model attribution, media metadata and license together.
+
+<table>
+  <tr>
+    <td valign="top"><a href="./content/prompts/p_316/"><img src="./public/media/a_520/gpt26-top50-p01-card-126c2581ec5f.webp" alt="Sunny seaside bus stop with oversized blue-and-cream Chinese film-title lettering." width="180" /></a><br /><sub>Coastal film opener · p_316</sub></td>
+    <td valign="top"><a href="./content/prompts/p_325/"><img src="./public/media/a_529/gpt26-top50-p11-card-e8768cd31f39.webp" alt="Flower mage in a pink dress standing in a sunlit chapel garden." width="180" /></a><br /><sub>Flower mage · p_325</sub></td>
+    <td valign="top"><a href="./content/prompts/p_342/"><img src="./public/media/a_546/gpt26-top50-p29-card-01781033d804.webp" alt="Illustrated surfer riding through a curling turquoise wave with hand-painted lettering." width="180" /></a><br /><sub>Painted wave · p_342</sub></td>
+    <td valign="top"><a href="./content/prompts/p_344/"><img src="./public/media/a_548/gpt26-top50-p31-card-0f4846a48940.webp" alt="Illustrated artist rowing a small boat along a glossy river of honey." width="180" /></a><br /><sub>Honey river · p_344</sub></td>
+    <td valign="top"><a href="./content/prompts/p_369/"><img src="./public/media/a_573/gpt26-top50-b07-card-086632928095.webp" alt="Retro travel poster for Port Averly with a lighthouse, orange cliffs and a setting sun." width="180" /></a><br /><sub>Port Averly poster · p_369</sub></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="./content/prompts/p_370/"><img src="./public/media/a_576/gpt26-gif-01-api-output-original-02de12566477.gif" alt="Green tree frog wearing glasses types quickly at a laptop in a looping GIF." width="180" /></a><br /><sub>Frog typing loop · p_370</sub></td>
+    <td valign="top"><a href="./content/prompts/p_371/"><img src="./public/media/a_577/gpt26-gif-02-api-output-original-27240a022f38.gif" alt="Pixel-art golden retriever wearing sunglasses gives two thumbs up in a looping GIF." width="180" /></a><br /><sub>Pixel dog reaction · p_371</sub></td>
+    <td valign="top"><a href="./content/prompts/p_372/"><img src="./public/media/a_578/gpt26-gif-03-api-output-original-d5186c8339f9.gif" alt="Glossy yellow clay star wearing sunglasses hops and lands in a looping GIF." width="180" /></a><br /><sub>Clay star hop · p_372</sub></td>
+    <td valign="top"><a href="./content/prompts/p_383/"><img src="./public/media/a_589/gpt26-gif-14-api-output-original-58118ba1e15d.gif" alt="Headset-wearing raccoon reacts to a production outage in a looping GIF." width="180" /></a><br /><sub>Raccoon outage reaction · p_383</sub></td>
+    <td valign="top"><a href="./content/prompts/p_398/"><img src="./public/media/a_605/gpt26-gif-30-api-output-original-7a18c23b8ab2.gif" alt="Compact cassette with moving reels in a looping GIF." width="180" /></a><br /><sub>Cassette reel loop · p_398</sub></td>
+  </tr>
+</table>
+
+The static cases are recorded in the [GPT Image 2.6 production report](production/gpt-image-26-2026-11/README.md),
+and the GIF cases are documented in the [API GIF generation report](production/gpt-image-26-gif-2026-11-19-v2/README.md).
+The displayed outputs are generated for Prompt Seen and carry the per-file CC BY 4.0 metadata in
+`content/media/`; any source inspiration is credited separately in the linked prompt record.
 
 <table>
   <tr>
@@ -94,8 +121,6 @@ chats and social feeds. Reference-based examples link to the input image used in
     <td valign="top"><a href="./content/prompts/p_109/"><img src="./public/media/a_211/miniature-world-in-palm-card-8d73f6951b84.webp" alt="A miniature mossy forest and waterfall rest in an open human palm" width="320" /></a><br /><sub>Miniature world in a palm · p_109</sub><br /><sub>Input: text only</sub><details><summary>Show prompt</summary><pre><code>A tiny self-contained mossy forest with a tiny waterfall resting in an open human palm, built like an exquisite miniature ecosystem. Include small trees, textured rocks and a narrow stream, with convincing scale differences between the landscape and the fingers. Photograph it with a macro lens, gentle daylight, shallow depth of field and rich natural colors. Keep the miniature crisp and the background soft. No buildings, labels or fantasy creatures; the wonder comes from scale alone.</code></pre></details></td>
   </tr>
 </table>
-
-### Categories
 
 <table>
   <tr>
@@ -139,8 +164,6 @@ Flat lay illustration of grapefruit and lime slices, slices seen from above with
     <td valign="top"><a href="./content/prompts/p_025/"><img src="./public/media/a_126/sunny-tile-pattern-card-250d3d091e35.webp" alt="Sunny tile pattern prompt" width="320" /></a><br /><sub>Pattern · p_025</sub><details><summary>Show prompt</summary><pre><code>Seamless geometric tile pattern of sunny kitchen tiles: quarter circles, triangles, half circles and dots on square tiles, lemon, orange and lime, flat colours, 4:5 aspect ratio.</code></pre></details></td>
   </tr>
 </table>
-
-### Style tags
 
 <table>
   <tr>
@@ -192,8 +215,6 @@ Aspect ratio: 16:9.</code></pre></details></td>
   </tr>
 </table>
 
-### Use-case tags
-
 <table>
   <tr>
     <td valign="top"><a href="./content/prompts/p_026/"><img src="./public/media/a_127/quiet-harbor-noon-card-1ff3a317bec6.webp" alt="Quiet harbor at noon wallpaper prompt" width="320" /></a><br /><sub>Wallpaper · p_026</sub><details><summary>Show prompt</summary><pre><code>Flat vector seascape of a quiet harbor at noon with a high pale sun, deep blues with a pale sun, the sun resting on the horizon, horizontal reflection lines on calm water, no outlines, 16:9 aspect ratio.</code></pre></details></td>
@@ -240,8 +261,8 @@ another eligible output.
 
 ## Image models
 
-The collection will include prompts and actual generated outputs from these concrete model
-versions. A contribution should record the provider, exact model ID or version, prompt, inputs,
+The collection is organized around concrete model versions and their prompts and generated
+outputs. A contribution should record the provider, exact model ID or version, prompt, inputs,
 parameters, output asset and review notes.
 
 | Provider          | Models to collect                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -321,6 +342,8 @@ Project facts:
 - [Russian localization specification](docs/russian-localization-spec.md): complete launch scope, Cyrillic search and typography, plural rules, translation batches, acceptance gates and release workflow.
 - [Italian localization specification](docs/italian-localization-spec.md): complete launch scope, editorial and plural rules, elision-aware search, translation batches, implementation tasks and release gates.
 - [Indonesian localization specification](docs/indonesian-localization-spec.md): launch scope, search aliases, translation batches and release gates.
+- [GPT Image 2.6 static production report](production/gpt-image-26-2026-11/README.md): generation scope, provenance, import workflow and verification notes.
+- [GPT Image 2.6 GIF production report](production/gpt-image-26-gif-2026-11-19-v2/README.md): accepted API GIF cases, localized prompt pages and media records.
 - [Contributing](CONTRIBUTING.md), [code of conduct](CODE_OF_CONDUCT.md), [security](SECURITY.md), [changelog](CHANGELOG.md).
 
 ## Licenses
