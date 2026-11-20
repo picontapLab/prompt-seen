@@ -95,7 +95,7 @@ const visibleDate = (code: string, date: string) =>
   );
 
 async function get(request: APIRequestContext, url: string) {
-  const res = await request.get(url);
+  const res = await request.get(url, { maxRedirects: 0 });
   expect(res.status(), url).toBe(200);
   return res;
 }
@@ -103,43 +103,54 @@ async function get(request: APIRequestContext, url: string) {
 // ---------------------------------------------------------------------------------------------
 // Sitemaps (§9.3, §9.7)
 
-test('the sitemap index lists one sitemap per public locale, and only those', async ({ request }) => {
-  const res = await get(request, `${BASE}/sitemap.xml`);
-  expect(res.headers()['content-type']).toMatch(/xml/);
-  const locs = xmlValues(await res.text(), 'loc');
-  expect(locs).toEqual(publicLocales.map((l) => publicUrl(`/${l.pathPrefix}/sitemap-pages.xml`)));
-  for (const l of previewOnly)
-    expect((await request.get(`${BASE}/${l.pathPrefix}/sitemap-pages.xml`)).status()).toBe(404);
-});
+test(
+  'the sitemap index lists one sitemap per public locale, and only those',
+  { tag: '@release' },
+  async ({ request }) => {
+    const liveBuild = await get(request, `${BASE}/generated/build.json`);
+    expect(await liveBuild.json()).toMatchObject({ buildId: BUILD.buildId, buildMode: BUILD.buildMode });
+    const res = await get(request, `${BASE}/sitemap.xml`);
+    expect(res.headers()['content-type']).toMatch(/xml/);
+    const locs = xmlValues(await res.text(), 'loc');
+    expect(locs).toEqual(publicLocales.map((l) => publicUrl(`/${l.pathPrefix}/sitemap-pages.xml`)));
+    for (const l of previewOnly)
+      expect((await request.get(`${BASE}/${l.pathPrefix}/sitemap-pages.xml`)).status()).toBe(404);
+  },
+);
 
 for (const locale of publicLocales) {
-  test(`${locale.code}: the sitemap lists every published page with its content date and main image`, async ({
-    request,
-  }) => {
-    const entries = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
-    const byLoc = new Map(entries.map((e) => [e.loc, e]));
-    expect(byLoc.size, 'no address twice').toBe(entries.length);
-    expect(byLoc.has(publicUrl(homePath(locale)))).toBe(homeIsIndexable(locale.code));
-    if (locale.code === BUILD.defaultLocale) expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
+  test(
+    `${locale.code}: the sitemap lists every published page with its content date and main image`,
+    { tag: '@release' },
+    async ({ request }) => {
+      const entries = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
+      const byLoc = new Map(entries.map((e) => [e.loc, e]));
+      expect(byLoc.size, 'no address twice').toBe(entries.length);
+      expect(byLoc.has(publicUrl(homePath(locale)))).toBe(homeIsIndexable(locale.code));
+      if (locale.code === BUILD.defaultLocale) expect(byLoc.has(publicUrl(`/${locale.pathPrefix}/`))).toBe(false);
 
-    // Every published prompt and template is there, with its date and main image; no draft is.
-    const index = localeIndex(locale.code);
-    for (const e of [...index.prompts, ...index.templates]) {
-      const entry = byLoc.get(publicUrl(e.path));
-      if (!e.localization.indexable) {
-        expect(entry, `draft ${e.id}`).toBeUndefined();
-        continue;
+      // Every published prompt and template is there, with its date and main image; no draft is.
+      const index = localeIndex(locale.code);
+      for (const e of [...index.prompts, ...index.templates]) {
+        const entry = byLoc.get(publicUrl(e.path));
+        if (!e.localization.indexable) {
+          expect(entry, `draft ${e.id}`).toBeUndefined();
+          continue;
+        }
+        expect(entry, e.id).toBeDefined();
+        expect(entry!.lastmod).toBe(e.updatedAt);
+        if (e.cover) {
+          const key = e.cover.variants.detail!.key;
+          expect(entry!.images).toEqual([BUILD.mediaBaseUrl ? `${BUILD.mediaBaseUrl}/${key}` : publicUrl(`/${key}`)]);
+        }
       }
-      expect(entry, e.id).toBeDefined();
-      expect(entry!.lastmod).toBe(e.updatedAt);
-      if (e.cover) expect(entry!.images).toEqual([publicUrl(`/${e.cover.variants.detail!.key}`)]);
-    }
-    // Every page of the list, newest work first.
-    for (let n = 1; n <= feedIndex(locale.code).pageCount; n++)
-      expect(
-        byLoc.has(publicUrl(n === 1 ? `/${locale.pathPrefix}/prompts/` : `/${locale.pathPrefix}/prompts/page/${n}/`)),
-      ).toBe(listIsIndexable(locale.code, n));
-  });
+      // Every page of the list, newest work first.
+      for (let n = 1; n <= feedIndex(locale.code).pageCount; n++)
+        expect(
+          byLoc.has(publicUrl(n === 1 ? `/${locale.pathPrefix}/prompts/` : `/${locale.pathPrefix}/prompts/page/${n}/`)),
+        ).toBe(listIsIndexable(locale.code, n));
+    },
+  );
 
   test(`${locale.code}: every sitemap address is a page whose canonical is that address`, async ({ request }) => {
     const entries = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
@@ -255,7 +266,7 @@ test('drafts and preview-only locales have no index.md and no Markdown alternate
 // llms.txt (§9.10.4)
 
 for (const code of [BUILD.defaultLocale, 'zh-Hans'])
-  test(`${code}: llms.txt links only published, reachable content`, async ({ request }) => {
+  test(`${code}: llms.txt links only published, reachable content`, { tag: '@release' }, async ({ request }) => {
     const locale = BUILD.locales.find((entry) => entry.code === code && entry.enabled);
     test.skip(!locale);
     const directory = code === BUILD.defaultLocale ? '/llms.txt' : `/${locale!.pathPrefix}/llms.txt`;
@@ -270,11 +281,17 @@ for (const code of [BUILD.defaultLocale, 'zh-Hans'])
     const links = [...text.matchAll(/\]\((https?:[^)\s]+)\)/g)].map((m) => m[1]!);
     expect(links.length).toBeGreaterThan(0);
     const internal = links.filter((url) => url.startsWith(origin));
-    for (const group of Array.from({ length: Math.ceil(internal.length / 24) }, (_, i) =>
-      internal.slice(i * 24, (i + 1) * 24),
-    ))
+    const batchSize = process.env.PW_TARGET_ORIGIN ? 8 : 24;
+    for (let start = 0; start < internal.length; start += batchSize)
       await Promise.all(
-        group.map(async (url) => expect((await request.head(local(url.split('#')[0]!))).status(), url).toBe(200)),
+        internal.slice(start, start + batchSize).map(async (url) => {
+          const link = await request.head(local(url.split('#')[0]!), { maxRedirects: 0 });
+          expect(link.status(), url).toBe(200);
+          if (url.endsWith('/index.md')) {
+            expect(link.headers()['content-type'], url).toMatch(/^text\/markdown/);
+            expect(link.headers()['link'], url).toContain(`<${url.slice(0, -'index.md'.length)}>; rel="canonical"`);
+          }
+        }),
       );
     for (const l of previewOnly) expect(text).not.toContain(`${origin}${l.pathPrefix}/`);
     const index = localeIndex(code);
@@ -282,50 +299,55 @@ for (const code of [BUILD.defaultLocale, 'zh-Hans'])
       expect(internal.includes(publicUrl(`${entry.path}index.md`)), entry.id).toBe(entry.localization.indexable);
   });
 
-test('datasets match their byte hashes and complete indexable prompt and template inventories', async ({ request }) => {
-  const directory = `${BASE}/generated/datasets/v2`;
-  if (BUILD.buildMode === 'preview') {
-    for (const file of ['manifest.json', 'en.json', 'zh-Hans.json']) {
-      expect(fs.existsSync(path.join(ROOT, 'dist', directory, file))).toBe(false);
-      expect((await request.get(`${directory}/${file}`)).status()).toBe(404);
+test(
+  'datasets match their byte hashes and complete indexable prompt and template inventories',
+  { tag: '@release' },
+  async ({ request }) => {
+    const directory = `${BASE}/generated/datasets/v2`;
+    if (BUILD.buildMode === 'preview') {
+      for (const file of ['manifest.json', 'en.json', 'zh-Hans.json']) {
+        expect(fs.existsSync(path.join(ROOT, 'dist', directory, file))).toBe(false);
+        expect((await request.get(`${directory}/${file}`)).status()).toBe(404);
+      }
+      return;
     }
-    return;
-  }
-  const res = await get(request, `${directory}/manifest.json`);
-  expect(res.headers()['content-type']).toMatch(/^application\/json/);
-  const manifest = (await res.json()) as {
-    files: { locale: string; url: string; prompts: number; templates: number; sha256: string }[];
-  };
-  expect(manifest).toMatchObject({ format: 'prompt-seen/content-export', version: 2, buildId: BUILD.buildId });
-  expect(manifest.files.map((file) => file.locale)).toEqual(
-    publicLocales.filter((entry) => ['en', 'zh-Hans'].includes(entry.code)).map((entry) => entry.code),
-  );
-  for (const info of manifest.files) {
-    const data = await get(request, local(info.url));
-    expect(data.headers()['content-type']).toMatch(/^application\/json/);
-    expect(
-      createHash('sha256')
-        .update(await data.body())
-        .digest('hex'),
-    ).toBe(info.sha256);
-    const payload = await data.json();
-    const entry = localeIndex(info.locale);
-    expect(payload).toMatchObject({
-      format: 'prompt-seen/content-export',
-      version: 2,
-      locale: info.locale,
-      buildId: BUILD.buildId,
-    });
-    expect(payload.prompts).toHaveLength(info.prompts);
-    expect(payload.templates).toHaveLength(info.templates);
-    for (const kind of ['prompts', 'templates'] as const) {
-      const expected = entry[kind].filter((item) => item.localization.indexable);
-      expect(payload[kind].map((item: { url: string }) => item.url)).toEqual(
-        expected.map((item) => publicUrl(item.path)),
-      );
+    const res = await get(request, `${directory}/manifest.json`);
+    expect(res.headers()['content-type']).toMatch(/^application\/json/);
+    expect(await res.text()).toBe(fs.readFileSync(path.join(ROOT, 'dist', directory, 'manifest.json'), 'utf8'));
+    const manifest = (await res.json()) as {
+      files: { locale: string; url: string; prompts: number; templates: number; sha256: string }[];
+    };
+    expect(manifest).toMatchObject({ format: 'prompt-seen/content-export', version: 2, buildId: BUILD.buildId });
+    expect(manifest.files.map((file) => file.locale)).toEqual(
+      publicLocales.filter((entry) => ['en', 'zh-Hans'].includes(entry.code)).map((entry) => entry.code),
+    );
+    for (const info of manifest.files) {
+      const data = await get(request, local(info.url));
+      expect(data.headers()['content-type']).toMatch(/^application\/json/);
+      expect(
+        createHash('sha256')
+          .update(await data.body())
+          .digest('hex'),
+      ).toBe(info.sha256);
+      const payload = await data.json();
+      const entry = localeIndex(info.locale);
+      expect(payload).toMatchObject({
+        format: 'prompt-seen/content-export',
+        version: 2,
+        locale: info.locale,
+        buildId: BUILD.buildId,
+      });
+      expect(payload.prompts).toHaveLength(info.prompts);
+      expect(payload.templates).toHaveLength(info.templates);
+      for (const kind of ['prompts', 'templates'] as const) {
+        const expected = entry[kind].filter((item) => item.localization.indexable);
+        expect(payload[kind].map((item: { url: string }) => item.url)).toEqual(
+          expected.map((item) => publicUrl(item.path)),
+        );
+      }
     }
-  }
-});
+  },
+);
 
 const featuredRuns = {
   p_123: 'x_168',
@@ -350,110 +372,118 @@ const featuredRuns = {
   p_370: 'x_434',
 };
 
-test('Simplified Chinese: recovered translations restore their aggregate entry points', async ({ request }) => {
-  test.skip(BUILD.buildMode !== 'production');
-  const locale = publicLocales.find((entry) => entry.code === 'zh-Hans');
-  test.skip(!locale);
-  const index = localeIndex('zh-Hans');
-  const required = [
-    'p_013',
-    'p_019',
-    'p_026',
-    'p_034',
-    'p_044',
-    'p_048',
-    'p_053',
-    'p_064',
-    'p_070',
-    'p_075',
-    'p_080',
-    'p_084',
-    'p_088',
-    'p_097',
-    'p_099',
-    'p_066',
-    'p_007',
-    'p_058',
-    'p_123',
-    'p_153',
-    'p_218',
-    't_003',
-    't_001',
-    't_017',
-  ];
-  const library = [...index.prompts, ...index.templates];
-  for (const id of required)
-    expect(library.find((entry) => entry.id === id)?.localization, id).toMatchObject({
-      localStatus: 'current',
-      indexable: true,
-      contentLocale: 'zh-Hans',
-    });
-  const prefix = `/${locale!.pathPrefix}`;
-  const sitemap = urlEntries(await (await get(request, `${BASE}${prefix}/sitemap-pages.xml`)).text());
-  const expected = [
-    `${prefix}/`,
-    `${prefix}/prompts/`,
-    `${prefix}/templates/`,
-    `${prefix}/collections/`,
-    ...Array.from({ length: feedIndex(locale!.code).pageCount - 1 }, (_, i) => `${prefix}/prompts/page/${i + 2}/`),
-    ...['c_001', 'c_002', 'c_003', 'c_005', 'c_008', 'c_009'].map(
-      (id) => index.collections.find((item) => item.id === id)!.path,
-    ),
-  ];
-  for (const internal of expected) {
-    const url = publicUrl(internal);
-    expect(
-      sitemap.some((entry) => entry.loc === url),
-      internal,
-    ).toBe(true);
-    const page = await get(request, `${BASE}${internal}`);
-    const html = await page.text();
-    expect(page.headers()['x-robots-tag'] ?? '').not.toContain('noindex');
-    expect(canonical(html)).toBe(url);
-    expect(alternates(html)[locale!.htmlLang]).toBe(url);
-    expect(jsonLd(html).length).toBeGreaterThan(0);
-  }
-});
-
-for (const code of ['en', 'zh-Hans']) {
-  test(`${code}: editorial topics, collections and testing method are discoverable`, async ({ request }) => {
-    const locale = publicLocales.find((entry) => entry.code === code);
+test(
+  'Simplified Chinese: recovered translations restore their aggregate entry points',
+  { tag: '@release' },
+  async ({ request }) => {
+    test.skip(BUILD.buildMode !== 'production');
+    const locale = publicLocales.find((entry) => entry.code === 'zh-Hans');
     test.skip(!locale);
+    const index = localeIndex('zh-Hans');
+    const required = [
+      'p_013',
+      'p_019',
+      'p_026',
+      'p_034',
+      'p_044',
+      'p_048',
+      'p_053',
+      'p_064',
+      'p_070',
+      'p_075',
+      'p_080',
+      'p_084',
+      'p_088',
+      'p_097',
+      'p_099',
+      'p_066',
+      'p_007',
+      'p_058',
+      'p_123',
+      'p_153',
+      'p_218',
+      't_003',
+      't_001',
+      't_017',
+    ];
+    const library = [...index.prompts, ...index.templates];
+    for (const id of required)
+      expect(library.find((entry) => entry.id === id)?.localization, id).toMatchObject({
+        localStatus: 'current',
+        indexable: true,
+        contentLocale: 'zh-Hans',
+      });
     const prefix = `/${locale!.pathPrefix}`;
     const sitemap = urlEntries(await (await get(request, `${BASE}${prefix}/sitemap-pages.xml`)).text());
-    const entries = [
-      'categories/product',
-      'categories/poster',
-      'categories/portrait',
-      'use-cases/social-post',
-      'use-cases/packaging',
-      'collections/design-ai-product-commercial',
-      'collections/english-social-reactions',
-      'collections/social-nine-frame-composed-gifs',
+    const expected = [
+      `${prefix}/`,
+      `${prefix}/prompts/`,
+      `${prefix}/templates/`,
+      `${prefix}/collections/`,
+      ...Array.from({ length: feedIndex(locale!.code).pageCount - 1 }, (_, i) => `${prefix}/prompts/page/${i + 2}/`),
+      ...['c_001', 'c_002', 'c_003', 'c_005', 'c_008', 'c_009'].map(
+        (id) => index.collections.find((item) => item.id === id)!.path,
+      ),
     ];
-    for (const entry of entries) {
-      const internal = `${prefix}/${entry}/`;
+    for (const internal of expected) {
       const url = publicUrl(internal);
       expect(
-        sitemap.some((item) => item.loc === url),
+        sitemap.some((entry) => entry.loc === url),
         internal,
       ).toBe(true);
-      const html = await (await get(request, `${BASE}${internal}`)).text();
+      const page = await get(request, `${BASE}${internal}`);
+      const html = await page.text();
+      expect(page.headers()['x-robots-tag'] ?? '').not.toContain('noindex');
       expect(canonical(html)).toBe(url);
-      expect(node(html, 'CollectionPage')?.mainEntity.numberOfItems).toBeGreaterThanOrEqual(3);
+      expect(alternates(html)[locale!.htmlLang]).toBe(url);
+      expect(jsonLd(html).length).toBeGreaterThan(0);
     }
-    const about = await (await get(request, `${BASE}${prefix}/about/`)).text();
-    expect(about).toContain('id="testing-method"');
-    for (const [id, run] of Object.entries({ p_123: 'x_168', p_217: 'x_281', p_287: 'x_351' })) {
-      const path = `${BASE}${promptDetail(code, id).path}`;
-      expect(about).toContain(`href="${path}#run-${run}"`);
-      expect(await (await get(request, path)).text()).toContain(`id="run-${run}"`);
-    }
-  });
+  },
+);
+
+for (const code of ['en', 'zh-Hans']) {
+  test(
+    `${code}: editorial topics, collections and testing method are discoverable`,
+    { tag: '@release' },
+    async ({ request }) => {
+      const locale = publicLocales.find((entry) => entry.code === code);
+      test.skip(!locale);
+      const prefix = `/${locale!.pathPrefix}`;
+      const sitemap = urlEntries(await (await get(request, `${BASE}${prefix}/sitemap-pages.xml`)).text());
+      const entries = [
+        'categories/product',
+        'categories/poster',
+        'categories/portrait',
+        'use-cases/social-post',
+        'use-cases/packaging',
+        'collections/design-ai-product-commercial',
+        'collections/english-social-reactions',
+        'collections/social-nine-frame-composed-gifs',
+      ];
+      for (const entry of entries) {
+        const internal = `${prefix}/${entry}/`;
+        const url = publicUrl(internal);
+        expect(
+          sitemap.some((item) => item.loc === url),
+          internal,
+        ).toBe(true);
+        const html = await (await get(request, `${BASE}${internal}`)).text();
+        expect(canonical(html)).toBe(url);
+        expect(node(html, 'CollectionPage')?.mainEntity.numberOfItems).toBeGreaterThanOrEqual(3);
+      }
+      const about = await (await get(request, `${BASE}${prefix}/about/`)).text();
+      expect(about).toContain('id="testing-method"');
+      for (const [id, run] of Object.entries({ p_123: 'x_168', p_217: 'x_281', p_287: 'x_351' })) {
+        const path = `${BASE}${promptDetail(code, id).path}`;
+        expect(about).toContain(`href="${path}#run-${run}"`);
+        expect(await (await get(request, path)).text()).toContain(`id="run-${run}"`);
+      }
+    },
+  );
 }
 
 for (const code of ['en', 'zh-Hans']) {
-  test(`${code}: 20 cases agree across HTML, Markdown, popup and dataset`, async ({ request }) => {
+  test(`${code}: 20 cases agree across HTML, Markdown, popup and dataset`, { tag: '@release' }, async ({ request }) => {
     test.skip(BUILD.buildMode !== 'production' || !publicLocales.some((locale) => locale.code === code));
     const data = await (await get(request, `${BASE}/generated/datasets/v2/${code}.json`)).json();
     const locale = publicLocales.find((locale) => locale.code === code)!;
@@ -512,6 +542,16 @@ for (const code of ['en', 'zh-Hans']) {
         expect(d.test.referenceImage).toBe('optional');
         expect(f.referenceAssetIds).toEqual([]);
       }
+      if (['p_123', 'p_218', 'p_053'].includes(id))
+        for (const asset of [...exported.facts.references, ...exported.facts.outputs] as {
+          url: string;
+          mimeType: string;
+        }[]) {
+          const sameOrigin = new URL(asset.url).origin === BUILD.origin;
+          const res = await request.head(sameOrigin ? local(asset.url) : asset.url, { maxRedirects: 0 });
+          expect(res.status(), asset.url).toBe(200);
+          expect(res.headers()['content-type'], asset.url).toContain(asset.mimeType);
+        }
       if (id === 'p_287' || id === 'p_398') {
         const expected = id === 'p_287' ? { frameCount: 9, durationMs: 2400 } : { frameCount: 12, durationMs: 1920 };
         expect(exported.facts.outputs[0]).toMatchObject({ mimeType: 'image/gif', animation: expected });

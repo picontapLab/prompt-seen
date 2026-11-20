@@ -9,6 +9,7 @@ const browsers = (process.env.PW_BROWSERS ?? (process.env.CI ? 'chromium,firefox
   .map((b) => b.trim())
   .filter(Boolean);
 const ciSuiteMinutes = browsers.includes('webkit') ? 45 : browsers.includes('firefox') ? 40 : 30;
+const targetOrigin = process.env.PW_TARGET_ORIGIN;
 
 const browserProjects: Record<string, Project> = {
   chrome: { name: 'chrome', use: { ...devices['Desktop Chrome'], channel: 'chrome' } },
@@ -28,7 +29,7 @@ export default defineConfig({
     ? [['github'], ['list'], ['html', { open: 'never' }], ['./scripts/lib/playwright-reporter.ts']]
     : [['list']],
   use: {
-    baseURL: `http://127.0.0.1:${PORT}`,
+    baseURL: targetOrigin ?? `http://127.0.0.1:${PORT}`,
     // A worker keeps every recorded trace (screencast frames included) on disk until it exits, even
     // for tests that pass. Recording every test previously filled the runner disk (ENOSPC).
     // CI records only the retry of a failed test; each browser job uses two workers.
@@ -44,12 +45,14 @@ export default defineConfig({
       return { ...project, testMatch: /\.browser\.spec\.ts$/ };
     }),
   ],
-  webServer: {
-    command: 'sh scripts/nginx.sh',
-    url: `http://127.0.0.1:${PORT}${BASE}/`,
-    reuseExistingServer: !process.env.CI,
-    timeout: 60_000,
-    // SIGTERM reaches `docker run` so the --rm container stops with the run.
-    gracefulShutdown: { signal: 'SIGTERM', timeout: 10_000 },
-  },
+  webServer: targetOrigin
+    ? undefined
+    : {
+        command: 'sh scripts/nginx.sh',
+        url: `http://127.0.0.1:${PORT}${BASE}/`,
+        reuseExistingServer: !process.env.CI,
+        timeout: 60_000,
+        // SIGTERM reaches `docker run` so the --rm container stops with the run.
+        gracefulShutdown: { signal: 'SIGTERM', timeout: 10_000 },
+      },
 });

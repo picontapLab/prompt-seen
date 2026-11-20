@@ -1,6 +1,8 @@
 import { execFile } from 'node:child_process';
+import fs from 'node:fs';
 import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
+import os from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
 import { expect, it } from 'vitest';
@@ -19,6 +21,8 @@ async function check(
     complete?: boolean;
     platformHeader?: boolean;
     platform?: boolean;
+    releaseRecord?: string;
+    expectedBuild?: string;
   } = {},
 ) {
   const base = options.basePath ?? '';
@@ -92,8 +96,9 @@ async function check(
         '--site',
         origin,
         '--expect-build',
-        'live-fixture',
+        options.expectedBuild ?? 'live-fixture',
         ...(options.platform ? ['--platform'] : []),
+        ...(options.releaseRecord ? ['--release-record', options.releaseRecord] : []),
       ],
       {
         env: { ...process.env, BASE_PATH: base },
@@ -147,4 +152,21 @@ it('checks sitemap metadata even when platform headers prevent all indexing', as
   const result = await check({ platform: true, platformHeader: true, listed: true });
   expect(result.code).toBe(1);
   expect(result.stdout).toContain('noindex metadata on a sitemap-listed page');
+});
+
+it('records the canonical cutover only after observing the expected production build', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'prompt-seen-release-'));
+  const releaseRecord = path.join(dir, 'canonical.json');
+  try {
+    expect((await check({ releaseRecord, expectedBuild: 'next-release' })).code).toBe(1);
+    expect(fs.existsSync(releaseRecord)).toBe(false);
+    expect((await check({ releaseRecord })).code).toBe(0);
+    expect(JSON.parse(fs.readFileSync(releaseRecord, 'utf8'))).toMatchObject({
+      buildId: 'live-fixture',
+      origin: expect.stringMatching(/^http:\/\/127\.0\.0\.1:/),
+      canonicalFirstObservedAt: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T.*Z$/),
+    });
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });

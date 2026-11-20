@@ -156,11 +156,36 @@ jobs:
           command: pages deploy .deploy/cloudflare --project-name=${{ env.PROJECT }} --branch=main --commit-hash=${{ env.BUILD_ID }}
       - name: Check the platform address (noindex, statuses, content)
         if: env.READY == 'true'
-        run: npm run check:live -- --site "${{ steps.deploy.outputs.deployment-url }}" --platform --expect-build "$BUILD_ID"
+        shell: bash
+        env:
+          PAGES_DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          mkdir -p .artifacts/release
+          printf '%s\n' "$PAGES_DEPLOYMENT_URL" > .artifacts/release/pages-url.txt
+          npm run check:live -- --site "$PAGES_DEPLOYMENT_URL" --platform --expect-build "$BUILD_ID" | tee .artifacts/release/pages.log
       - name: Check the canonical site
-        if: env.READY == 'true'
+        if: ${{ !cancelled() && steps.deploy.outcome == 'success' }}
         # The host may cache for a moment: wait up to three minutes for this build, then check.
-        run: npm run check:live -- --expect-build "$BUILD_ID" --wait 180
+        shell: bash
+        run: |
+          mkdir -p .artifacts/release
+          npm run check:live -- --expect-build "$BUILD_ID" --wait 180 --release-record .artifacts/release/canonical.json | tee .artifacts/release/canonical.log
+      - name: Verify the bilingual SEO and GEO release targets
+        if: env.READY == 'true'
+        shell: bash
+        env:
+          PW_BROWSERS: ''
+          PW_TARGET_ORIGIN: ${{ env.SITE_ORIGIN }}
+        run: |
+          npm run test:e2e -- --project=http home.http.spec.ts seo.http.spec.ts --grep '@release' --reporter=list --trace=off --timeout=120000 | tee .artifacts/release/public-http.log
+      - name: Archive public release verification
+        if: ${{ !cancelled() && steps.deploy.outcome == 'success' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-verification-${{ env.BUILD_ID }}
+          path: .artifacts/release/
+          include-hidden-files: true
+          if-no-files-found: error
       - name: Tell IndexNow what changed
         if: env.READY == 'true'
         run: npm run indexnow -- submit --before .deploy/urls-before.json
@@ -170,4 +195,6 @@ jobs:
         if: env.READY == 'true'
         run: |
           echo "Deployed \`$BUILD_ID\` to $SITE_ORIGIN (this deployment on Pages: ${{ steps.deploy.outputs.deployment-url }})." >> "$GITHUB_STEP_SUMMARY"
+          observed_at=$(node -p 'require("./.artifacts/release/canonical.json").canonicalFirstObservedAt')
+          echo "First observed at the canonical origin: $observed_at (UTC)." >> "$GITHUB_STEP_SUMMARY"
           echo "To undo it, run the Rollback workflow." >> "$GITHUB_STEP_SUMMARY"

@@ -5,6 +5,7 @@
 //   npm run check:live -- --site <url> --platform  a platform address (e.g. *.pages.dev): expects noindex
 //   npm run check:live -- --expect-build <id>      and that this build is the one being served
 //   npm run check:live -- --expect-build <id> --wait 180   first wait up to 180 s for it (host caches)
+//   --release-record <file> writes the first observed canonical production build and UTC time
 //
 // Checks: the build's own build.json; default home, every public locale's home, a Prompt and
 // a template per locale and a list page answer 200 with the canonical address and the right
@@ -32,6 +33,7 @@ const { values } = parseArgs({
     platform: { type: 'boolean' },
     'expect-build': { type: 'string' },
     wait: { type: 'string' },
+    'release-record': { type: 'string' },
   },
 });
 const config = loadConfig(ROOT);
@@ -63,16 +65,22 @@ const metaRobots = (html: string) =>
   [...html.matchAll(/<meta[^>]+name="robots"[^>]*content="([^"]+)"/g)].map((m) => m[1]!.toLowerCase()).join(', ');
 
 async function main() {
+  if (values['release-record'] && (platform || !values['expect-build']))
+    throw new Error('--release-record requires --expect-build on the canonical site');
   // The build being served tells the rest: its origin, base path, locales and image host.
   const local = createUrlModule(urlConfigOf(config));
   const at = (internal: string) => `${site}${local.withBasePath(internal)}`;
   const infoAddress = at(local.paths.generated('build.json'));
   // After a deploy the host's cache may still serve the previous build for a moment.
   const deadline = Date.now() + Number(values.wait ?? 0) * 1000;
+  let firstObservedAt: string | undefined;
   while (values['expect-build'] && Date.now() < deadline) {
     const res = await get(infoAddress).catch(() => null);
     const served = res?.ok ? ((await res.json()) as { buildId?: string }).buildId : null;
-    if (served === values['expect-build']) break;
+    if (served === values['expect-build']) {
+      firstObservedAt = new Date().toISOString();
+      break;
+    }
     console.log(`  waiting for build ${values['expect-build']} (serving ${served ?? 'nothing'})…`);
     await new Promise((r) => setTimeout(r, 10_000));
   }
@@ -103,6 +111,23 @@ async function main() {
     }),
   );
   const fetchUrl = (internal: string) => `${site}${url.withBasePath(internal)}`;
+
+  if (values['release-record'] && build.buildId === values['expect-build'] && build.buildMode === 'production') {
+    if (site !== build.origin) throw new Error('--release-record requires the canonical origin');
+    fs.writeFileSync(
+      values['release-record'],
+      `${JSON.stringify(
+        {
+          buildId: build.buildId,
+          origin: build.origin,
+          basePath: build.basePath,
+          canonicalFirstObservedAt: firstObservedAt ?? new Date().toISOString(),
+        },
+        null,
+        2,
+      )}\n`,
+    );
+  }
 
   report(
     build.buildMode === 'production' ? 'pass' : 'fail',

@@ -14,73 +14,88 @@ const meta = (html: string, property: string) =>
 const hrefs = (html: string) =>
   [...html.matchAll(/<a\b[^>]*\shref="([^"]+)"/g)].map((m) => m[1]!.replace(/&amp;/g, '&'));
 
+test('the prefixed default home points to the root canonical', { tag: '@release' }, async ({ request }) => {
+  const locale = BUILD.locales.find((entry) => entry.code === BUILD.defaultLocale)!;
+  const res = await request.get(`${BASE}/${locale.pathPrefix}/`, { maxRedirects: 0 });
+  expect(res.status()).toBe(200);
+  const html = await res.text();
+  expect(canonical(html)).toBe(publicUrl('/'));
+  expect(alternates(html)).toEqual(homeAlternates(locale.code));
+});
+
 for (const locale of BUILD.locales) {
   const code = locale.code;
   const url = `${BASE}${homePath(locale)}`;
 
-  test(`${code}: the first screen is in the HTML: the work on show, its quote and actions`, async ({ request }) => {
-    const res = await request.get(url);
-    expect(res.status()).toBe(200);
-    const html = await res.text();
-    expect(dataAttr(html, 'page')).toBe('home');
-    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
-    expect(main.match(/<h1\b/g)).toHaveLength(1);
-    expect(main.match(/<h[1-6]\b/)?.[0]).toBe('<h1');
+  test(
+    `${code}: the first screen is in the HTML: the work on show, its quote and actions`,
+    { tag: '@release' },
+    async ({ request }) => {
+      const res = await request.get(url);
+      expect(res.status()).toBe(200);
+      const html = await res.text();
+      expect(dataAttr(html, 'page')).toBe('home');
+      const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
+      expect(main.match(/<h1\b/g)).toHaveLength(1);
+      expect(main.match(/<h[1-6]\b/)?.[0]).toBe('<h1');
 
-    const onShow = worksOnShow(code);
-    if (!onShow.length) {
+      const onShow = worksOnShow(code);
+      if (!onShow.length) {
+        expect(elementText(html, 'h1')).toBe(message(code, 'home.hero.title'));
+        expect(html).toContain(message(code, 'home.hero.intro'));
+        expect(dataAttr(html, 'on-show')).toBeNull();
+        return;
+      }
+      expect(dataAttr(html, 'on-show')).toBe(onShow[0]);
+      const work = promptDetail(code, onShow[0]!);
+
+      // Title, positioning line and label, in this locale's words (§8.3).
       expect(elementText(html, 'h1')).toBe(message(code, 'home.hero.title'));
-      expect(html).toContain(message(code, 'home.hero.intro'));
-      expect(dataAttr(html, 'on-show')).toBeNull();
-      return;
-    }
-    expect(dataAttr(html, 'on-show')).toBe(onShow[0]);
-    const work = promptDetail(code, onShow[0]!);
+      expect(title(html)).toBe(message(code, 'home.documentTitle', { siteName: BUILD.siteName }));
+      expect(html).toContain(`>${work.title.replace(/&/g, '&amp;')}</h2>`);
 
-    // Title, positioning line and label, in this locale's words (§8.3).
-    expect(elementText(html, 'h1')).toBe(message(code, 'home.hero.title'));
-    expect(title(html)).toBe(message(code, 'home.documentTitle', { siteName: BUILD.siteName }));
-    expect(html).toContain(`>${work.title.replace(/&/g, '&amp;')}</h2>`);
+      // The main image: the detail size, loaded first and never lazily (§10.3, LCP).
+      const detailKey = work.cover.variants.detail!.key;
+      const hero = new RegExp(`<img[^>]*src="[^"]*${detailKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`).exec(
+        html,
+      )?.[0];
+      expect(hero, 'the hero image is in the HTML').toBeTruthy();
+      expect(hero).toContain('fetchPriority="high"');
+      expect(hero).not.toContain('loading="lazy"');
 
-    // The main image: the detail size, loaded first and never lazily (§10.3, LCP).
-    const detailKey = work.cover.variants.detail!.key;
-    const hero = new RegExp(`<img[^>]*src="[^"]*${detailKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`).exec(
-      html,
-    )?.[0];
-    expect(hero, 'the hero image is in the HTML').toBeTruthy();
-    expect(hero).toContain('fetchPriority="high"');
-    expect(hero).not.toContain('loading="lazy"');
+      // Each annotated phrase is a lettered button in the quote (§11.1.9), A, B, C… in order.
+      for (const a of work.annotations) {
+        expect(html).toContain(`data-letter="${a.letter}"`);
+        expect(html).toContain(a.phrase.replace(/&/g, '&amp;').replace(/'/g, '&#x27;'));
+      }
 
-    // Each annotated phrase is a lettered button in the quote (§11.1.9), A, B, C… in order.
-    for (const a of work.annotations) {
-      expect(html).toContain(`data-letter="${a.letter}"`);
-      expect(html).toContain(a.phrase.replace(/&/g, '&amp;').replace(/'/g, '&#x27;'));
-    }
+      // Actions: copy and the way to the work's page; a plain search form that works without JS.
+      expect(html).toContain(message(code, 'detail.copy.label'));
+      expect(hrefs(html)).toContain(`${BASE}${work.path}`);
+      expect(html).toMatch(new RegExp(`<form[^>]*action="${BASE}/${locale.pathPrefix}/search/"`));
+      const another = message(code, 'home.hero.another');
+      if (onShow.length > 1) expect(html).toContain(another);
+      else expect(html).not.toContain(another);
+    },
+  );
 
-    // Actions: copy and the way to the work's page; a plain search form that works without JS.
-    expect(html).toContain(message(code, 'detail.copy.label'));
-    expect(hrefs(html)).toContain(`${BASE}${work.path}`);
-    expect(html).toMatch(new RegExp(`<form[^>]*action="${BASE}/${locale.pathPrefix}/search/"`));
-    const another = message(code, 'home.hero.another');
-    if (onShow.length > 1) expect(html).toContain(another);
-    else expect(html).not.toContain(another);
-  });
-
-  test(`${code}: metadata: canonical, hreflang with the default home as x-default, the work as share image`, async ({
-    request,
-  }) => {
-    const html = await (await request.get(url)).text();
-    expect(canonical(html)).toBe(publicUrl(homePath(locale)));
-    expect(alternates(html)).toEqual(homeAlternates(code));
-    const first = worksOnShow(code)[0];
-    if (!first) {
-      expect(meta(html, 'og:image')).toBeNull();
-      return;
-    }
-    const work = promptDetail(code, first);
-    expect(meta(html, 'og:image')).toContain(work.cover.variants.og!.key);
-    expect(meta(html, 'og:description')).toBe(message(code, 'home.description'));
-  });
+  test(
+    `${code}: metadata: canonical, hreflang with the default home as x-default, the work as share image`,
+    { tag: '@release' },
+    async ({ request }) => {
+      const html = await (await request.get(url)).text();
+      expect(canonical(html)).toBe(publicUrl(homePath(locale)));
+      expect(alternates(html)).toEqual(homeAlternates(code));
+      const first = worksOnShow(code)[0];
+      if (!first) {
+        expect(meta(html, 'og:image')).toBeNull();
+        return;
+      }
+      const work = promptDetail(code, first);
+      expect(meta(html, 'og:image')).toContain(work.cover.variants.og!.key);
+      expect(meta(html, 'og:description')).toBe(message(code, 'home.description'));
+    },
+  );
 
   test(`${code}: below the first screen every link reaches a page of this build`, async ({ request }) => {
     const html = await (await request.get(url)).text();
