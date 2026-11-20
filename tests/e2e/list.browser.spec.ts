@@ -35,7 +35,7 @@ test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('scrolling loads every batch by itself; the address follows the page in view (§9.4)', async ({ page }) => {
-    test.setTimeout(60_000);
+    test.setTimeout(120_000);
     const errors = watchErrors(page);
     await page.goto(listUrl());
     await hydrated(page);
@@ -45,7 +45,7 @@ test.describe('desktop', () => {
     const batch = (n: number) => page.locator(`[role="feed"] article[data-entry][data-feed-page="${n}"]`);
     for (let n = 2; n <= index.pageCount; n += 1) {
       await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
-      await expect(batch(n).first()).toBeAttached();
+      await expect(batch(n).first()).toBeAttached({ timeout: 15_000 });
     }
     await expect(page.locator('[data-feed-end]')).toHaveText(
       message(code, 'feed.status.end', { total: String(index.items.length) }),

@@ -46,5 +46,7 @@ export async function seriousViolations(page: Page, include?: string): Promise<s
   await settle(page);
   const builder = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']);
   const { violations } = await (include ? builder.include(include) : builder).analyze();
-  return violations.filter((v) => v.impact === 'serious' || v.impact === 'critical').map((v) => v.id);
+  return violations
+    .filter((violation) => violation.impact === 'serious' || violation.impact === 'critical')
+    .map((violation) => `${violation.id}: ${violation.nodes.map(({ target }) => target.join(' ')).join(', ')}`);
 }

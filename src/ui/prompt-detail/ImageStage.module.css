@@ -117,6 +117,8 @@
     display: inline-flex;
     align-items: center;
     gap: 2px;
+    min-inline-size: var(--target-dense);
+    min-block-size: var(--target-dense);
     color: inherit;
   }
   .original svg {
