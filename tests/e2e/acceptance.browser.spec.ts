@@ -107,21 +107,21 @@ test.describe('German long labels (§16.5 德语长标签)', () => {
     browserName,
   }) => {
     test.skip(browserName !== 'chromium', 'clipboard permissions are Chromium-only in Playwright');
+    test.skip(!BUILD.locales.some((locale) => locale.code === 'de'), 'no German in this build');
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto(`${BASE}${samplePrompt('en').path}`);
+    await page.goto(`${BASE}${samplePrompt('de').path}`);
     await takenOver(page);
     // The copy button may hydrate after the header; hydration would put its English text back.
     await page.waitForFunction(() => {
       const el = document.querySelector('section button[id$="-copy"]');
       return !!el && Object.keys(el).some((k) => k.startsWith('__react'));
     });
-    await applyGermanLabels(page);
     const copy = page.locator('section button[id$="-copy"]');
     const save = page.locator('main [data-shortcut="save"]');
     const before = { copy: (await copy.boundingBox())!.width, save: (await save.boundingBox())!.width };
     await copy.click();
-    await expect(copy).toContainText('In die Zwischenablage kopiert');
+    await expect(copy).toHaveAccessibleName(message('de', 'detail.copy.done'));
     await save.click();
     await expect(save).toHaveAttribute('aria-pressed', 'true');
     expect({ copy: (await copy.boundingBox())!.width, save: (await save.boundingBox())!.width }).toEqual(before);

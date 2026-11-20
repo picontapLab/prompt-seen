@@ -9,10 +9,10 @@ import { paths } from '@/modules/url';
 import { languageAttributes } from './language';
 import styles from './Detail.module.css';
 
-function External({ href, children }: { href: string | null; children: React.ReactNode }) {
+function External({ href, children, target }: { href: string | null; children: React.ReactNode; target?: '_blank' }) {
   if (!href) return <>{children}</>;
   return (
-    <a href={href} className={styles.external}>
+    <a href={href} className={styles.external} target={target} rel={target && 'noopener'}>
       {children}
       <ArrowUpRight aria-hidden="true" />
     </a>
@@ -86,7 +86,7 @@ export function SourceInfo({
           return (
             <div key={asset.assetId}>
               <dt>
-                <External href={getImage(asset, 'original').src}>
+                <External href={getImage(asset, 'original').src} target="_blank">
                   <span {...languageAttributes(asset.altLocale)}>{asset.alt || t('image')}</span>
                 </External>
               </dt>

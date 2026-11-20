@@ -37,7 +37,12 @@ function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string 
           return (
             <li key={img.assetId} style={{ aspectRatio: `${img.width} / ${img.height}`, background: p.placeholder }}>
               {original ? (
-                <a href={imageUrl(original)} aria-label={`${t('original')} · ${img.alt}`}>
+                <a
+                  href={imageUrl(original)}
+                  aria-label={`${t('original')} · ${img.alt}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   {thumbnail}
                 </a>
               ) : (

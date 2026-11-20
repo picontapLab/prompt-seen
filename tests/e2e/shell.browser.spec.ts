@@ -42,9 +42,10 @@ test('every locale page has the skip link, header, one main landmark and footer'
     await expect(page.getByRole('banner')).toBeVisible();
     await expect(page.getByRole('main')).toHaveCount(1);
     await expect(page.getByRole('contentinfo')).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: message(locale.code, 'shell.home', { siteName: BUILD.siteName }) }),
-    ).toBeVisible();
+    const name = message(locale.code, 'shell.home', { siteName: BUILD.siteName });
+    for (const landmark of ['banner', 'contentinfo'] as const) {
+      await expect(page.getByRole(landmark).getByRole('link', { name })).toBeVisible();
+    }
     // Skip link: first in the document, visible on focus, moves focus to <main>. (Focused
     // directly: WebKit, like Safari, skips links on Tab by default.)
     const skip = page.getByRole('link', { name: message(locale.code, 'shell.skipToContent') });

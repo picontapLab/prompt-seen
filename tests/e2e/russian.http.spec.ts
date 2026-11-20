@@ -58,7 +58,9 @@ test.describe('Russian pages and original Prompt text', () => {
         .sort();
       expect(scopedIds.length, kind).toBeGreaterThan(0);
       expect(source[kind].map(scopedId), kind).toEqual(expect.arrayContaining(scopedIds));
-      expect(index[kind].map(scopedId).sort(), kind).toEqual(scopedIds);
+      const publishedSourceIds = source[kind].filter((entry) => entry.visibility === 'published').map(scopedId);
+      const expectedIds = [...new Set([...scopedIds, ...publishedSourceIds])].sort();
+      expect(index[kind].map(scopedId).sort(), kind).toEqual(expectedIds);
       for (const entry of index[kind]) {
         expect(entry.localization.contentLocale, `${kind}/${entry.id}`).toBe('ru');
         const response = await request.get(`${BASE}${entry.path}`);

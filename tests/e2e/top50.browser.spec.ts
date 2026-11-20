@@ -33,7 +33,9 @@ test('template sample previews follow the sample and custom values remain untest
   const before = await output.getAttribute('src');
   await editor.locator('[data-action="sample"]').click();
   await expect(output).not.toHaveAttribute('src', before!);
-  await expect(editor.getByText(message('en', 'detail.template.testedImage'), { exact: true })).toBeVisible();
+  const caption = editor.locator('figure figcaption').last();
+  await expect(caption).toContainText(message('en', 'detail.template.testedImage'));
+  await expect(caption).toContainText(message('en', 'detail.test.generatedWith', { model: 'GPT Image 2.5' }));
   await editor.locator('[data-field-shell="brandPalette"] input').fill('violet and lime');
   await expect(editor.getByText(message('en', 'detail.template.unmatchedImage'), { exact: true })).toBeVisible();
 });

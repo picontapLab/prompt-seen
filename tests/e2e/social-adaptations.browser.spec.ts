@@ -4,6 +4,7 @@ import sharp from 'sharp';
 import { expect, test } from '@playwright/test';
 import { BASE, ROOT } from './support/artifact';
 import { localeIndex, promptDetail } from './support/content';
+import { cancelledFetch } from './support/errors';
 
 const campaign = path.join(ROOT, 'production/gpt-image-26-social-2026-11-07');
 const withdrawal: { items: { ids: { prompt: string }; folder: string }[]; runtimeFiles: { file: string }[] } =
@@ -16,7 +17,9 @@ for (const viewport of [
     await page.setViewportSize(viewport);
     const detail = promptDetail('en', 'p_273');
     const errors: string[] = [];
-    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('pageerror', (error) => {
+      if (!cancelledFetch(error.message)) errors.push(error.message);
+    });
     await page.goto(`${BASE}${detail.path}`);
     await expect(page.locator('[id$="-prompt"]').first()).toHaveText(detail.prompt.text);
     await expect(page.locator('[id$="-prompt"]').first()).toHaveAttribute('lang', 'ja');

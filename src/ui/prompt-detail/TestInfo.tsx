@@ -65,7 +65,7 @@ export function TestInfo({ detail, run, locale }: { detail: PromptDetail; run?: 
             return (
               <li key={`${i}-${image.assetId}`}>
                 {original ? (
-                  <a href={imageUrl(original)} lang={language ?? undefined}>
+                  <a href={imageUrl(original)} lang={language ?? undefined} target="_blank" rel="noopener">
                     {label}
                   </a>
                 ) : (

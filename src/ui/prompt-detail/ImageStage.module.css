@@ -107,8 +107,11 @@
   }
   .meta {
     display: inline-flex;
+    flex-wrap: wrap;
     gap: var(--space-12);
     margin-inline-start: auto;
+    min-inline-size: 0;
+    max-inline-size: 100%;
   }
   .original {
     display: inline-flex;
