@@ -4,6 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import type { LocaleEntry, ResolvedConfig } from '../../../src/config/schema';
+import { catalogTranslator } from '../../../src/i18n/translator';
 import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/types';
 import { createUrlModule } from '../../../src/modules/url/create';
 import { toCard } from '../../../src/modules/feed/compose';
@@ -11,6 +12,8 @@ import { searchDocuments } from '../../../src/modules/search/documents';
 import { promptMarkdown, templateMarkdown, type MarkdownContext } from '../../../src/modules/geo/markdown';
 import { createIndex, loadEngine, search } from '../../../src/modules/search/engine';
 import { aspectRatioLabel, openingOf } from './build-index';
+import { builtReader, exportRecord } from '../export';
+import { ROOT } from '../paths';
 import type { Finding } from './findings';
 import { loadContent } from './load';
 import { sha256, sourceHashOf } from './read';
@@ -641,6 +644,60 @@ describe('versioned reference inputs', () => {
     expect(detail<TemplateDetail>(r, 'template', 'en', 't_001')?.version.samples[0]?.exampleIds).toEqual(['x_001']);
     expect(detail<PromptDetail>(r, 'prompt', 'en', 'p_001')?.examples?.[0]?.referenceLabels).toEqual(['Product photo']);
   });
+});
+
+it('preserves multiple outputs from one run and uses its model name when the provider ID is null', () => {
+  const result = load(
+    setup({
+      'content/examples/x_002/prompt.txt': `${PROMPT}\n`,
+      'content/examples/x_002/run.yaml': [
+        'id: x_002',
+        'promptId: p_001',
+        'promptLanguage: en',
+        `promptSha256: ${sha256(PROMPT)}`,
+        'outputAssetIds: [a_003, a_001, a_002]',
+        'recordedAt: 2026-11-20',
+        'model: { displayName: GPT Image 2.6, providerModelId: null }',
+      ].join('\n'),
+    }),
+  );
+  expect(blocking(result.findings.list)).toEqual([]);
+  const reader = builtReader(result.built!);
+  const prompt = reader.getDetailModel('prompt', 'p_001', 'en')!;
+  const outputs = ['a_003', 'a_001', 'a_002'];
+  const model = { displayName: 'GPT Image 2.6', providerModelId: null };
+  expect(prompt.facts).toMatchObject({
+    exampleRunId: 'x_002',
+    matchingRunIds: ['x_002'],
+    outputAssetIds: outputs,
+    model,
+  });
+  expect(prompt.examples.find(({ id }) => id === 'x_002')?.outputs.map(({ assetId }) => assetId)).toEqual(outputs);
+
+  const ctx: MarkdownContext = {
+    absoluteUrl: (p) => `https://example.com${p}`,
+    absoluteImageUrl: (v) => `https://media.example.com/${v.key}`,
+    t: catalogTranslator(ROOT, 'en'),
+    languageName: (tag) => tag,
+  };
+  const originalUrls = outputs.map((id) => `https://media.example.com/media/${id}/x-original-aaa.jpg`);
+  const record = exportRecord(
+    { ...prompt, kind: 'prompt', locale: LOCALES[0]!, markdownPath: `${prompt.path}index.md` },
+    reader,
+    ctx,
+  );
+  expect(record).toMatchObject({
+    facts: {
+      exampleRunId: 'x_002',
+      model,
+      outputs: outputs.map((assetId, i) => ({ assetId, url: originalUrls[i] })),
+    },
+  });
+  const testRecord = promptMarkdown(prompt, ctx).split(/^## /m)[1]!;
+  expect(testRecord).toContain('GPT Image 2.6');
+  expect(testRecord.match(/https:\/\/media\.example\.com\/media\/a_00[123]\/x-original-aaa\.jpg/g)).toEqual(
+    originalUrls,
+  );
 });
 
 it('localizes source evidence without turning source metrics into site ratings', () => {
