@@ -35,7 +35,7 @@ test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('scrolling loads every batch by itself; the address follows the page in view (§9.4)', async ({ page }) => {
-    test.setTimeout(120_000);
+    test.setTimeout(180_000);
     const errors = watchErrors(page);
     await page.goto(listUrl());
     await hydrated(page);
@@ -43,9 +43,20 @@ test.describe('desktop', () => {
     await expect(page.locator('footer')).toBeHidden(); // waits for the end of the list
 
     const batch = (n: number) => page.locator(`[role="feed"] article[data-entry][data-feed-page="${n}"]`);
+    const edge = page.locator('[role="feed"] + [aria-hidden="true"]');
     for (let n = 2; n <= index.pageCount; n += 1) {
-      await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
-      await expect(batch(n).first()).toBeAttached({ timeout: 15_000 });
+      // A batch can change the height after its first cards attach. Follow the actual list edge
+      // until the next batch is visible in the DOM.
+      await expect
+        .poll(
+          async () => {
+            if ((await batch(n).count()) > 0) return true;
+            await edge.evaluate((sentinel) => sentinel.scrollIntoView({ block: 'end', behavior: 'instant' }));
+            return false;
+          },
+          { timeout: 30_000, intervals: [500, 1000] },
+        )
+        .toBe(true);
     }
     await expect(page.locator('[data-feed-end]')).toHaveText(
       message(code, 'feed.status.end', { total: String(index.items.length) }),

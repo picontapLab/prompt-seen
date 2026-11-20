@@ -8,7 +8,8 @@ const browsers = (process.env.PW_BROWSERS ?? (process.env.CI ? 'chromium,firefox
   .split(',')
   .map((b) => b.trim())
   .filter(Boolean);
-const ciSuiteMinutes = browsers.includes('webkit') ? 45 : browsers.includes('firefox') ? 40 : 30;
+// Chromium runs both the full browser suite and the HTTP checks for every locale.
+const ciSuiteMinutes = browsers.includes('firefox') ? 40 : 45;
 const targetOrigin = process.env.PW_TARGET_ORIGIN;
 
 const browserProjects: Record<string, Project> = {
