@@ -347,6 +347,10 @@
     gap: 2px;
     color: inherit;
   }
+  .facts .external {
+    min-inline-size: var(--target-dense);
+    min-block-size: var(--target-dense);
+  }
   .external svg {
     inline-size: 14px;
     block-size: 14px;
