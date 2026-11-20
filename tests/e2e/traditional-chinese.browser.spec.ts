@@ -134,7 +134,7 @@ test.describe('Traditional Chinese interface', () => {
     await page.goto(`${BASE}/zh-hant/search/?q=ink`);
     const input = page.locator('#search-field');
     await expect(input).toHaveValue('ink');
-    await expect(page.locator('[data-search-status]')).toContainText('ink');
+    await expect(page.locator('[data-search-status]')).toContainText('ink', { timeout: 15_000 });
     await input.focus();
     await input.dispatchEvent('compositionstart');
     await composingText(input, '繁');

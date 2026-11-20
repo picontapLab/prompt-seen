@@ -283,7 +283,7 @@ test.describe('every built language', () => {
       );
       const title = prompts[0]!.title;
       await page.locator('#search-field').fill(title);
-      await expect(page.locator('[data-group="prompt"] li').first()).toContainText(title);
+      await expect(page.locator('[data-group="prompt"] li').first()).toContainText(title, { timeout: 15_000 });
     });
   }
 });

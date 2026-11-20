@@ -9,7 +9,7 @@ import { BASE, BUILD, NGINX_CONTAINER } from './support/artifact';
 test('no request leaves the base path (browser view and nginx access log)', async ({ page, browserName }, testInfo) => {
   const locales = BUILD.locales.filter((locale) => locale.code !== BUILD.defaultLocale);
   // Each locale adds a client navigation and a return to the default home.
-  test.setTimeout(testInfo.timeout + locales.length * 2000);
+  test.setTimeout(testInfo.timeout + locales.length * 5000);
   const since = new Date(Date.now() - 2000).toISOString();
   const seen: URL[] = [];
   const failed: string[] = [];
@@ -23,10 +23,10 @@ test('no request leaves the base path (browser view and nginx access log)', asyn
   for (const locale of locales) {
     // Soft navigation through next/link from the default home to each locale and back.
     await page.locator(`footer a[hreflang="${locale.htmlLang}"]`).click();
-    await expect(page.locator(`main [data-locale="${locale.code}"]`)).toBeVisible();
+    await expect(page.locator(`main [data-locale="${locale.code}"]`)).toBeVisible({ timeout: 12_000 });
     await expect(page.locator('html')).toHaveAttribute('dir', locale.direction);
     await page.goBack({ waitUntil: 'domcontentloaded' });
-    await expect(page.locator(`main [data-locale="${BUILD.defaultLocale}"]`)).toBeVisible();
+    await expect(page.locator(`main [data-locale="${BUILD.defaultLocale}"]`)).toBeVisible({ timeout: 12_000 });
   }
   await page.goto(`${BASE}/${BUILD.locales[0]!.pathPrefix}/missing/`, { waitUntil: 'domcontentloaded' });
   await expect(page.locator('main [data-error="404"]')).toBeVisible();

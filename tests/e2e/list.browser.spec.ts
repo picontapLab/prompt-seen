@@ -35,8 +35,6 @@ test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test('scrolling loads every batch by itself; the address follows the page in view (§9.4)', async ({ page }) => {
-    // WebKit can spend seconds dispatching each wheel event. Use larger steps and
-    // check every intermediate page address separately.
     test.setTimeout(60_000);
     const errors = watchErrors(page);
     await page.goto(listUrl());
@@ -44,24 +42,22 @@ test.describe('desktop', () => {
     await expect(page.getByRole('button', { name: /load more/i })).toHaveCount(0);
     await expect(page.locator('footer')).toBeHidden(); // waits for the end of the list
 
-    const seenPaths = new Set<string>();
-    page.on('framenavigated', () => seenPaths.add(new URL(page.url()).pathname));
-    let lastPath = '';
-    for (let i = 0; i < 80; i += 1) {
-      await page.mouse.wheel(0, 1800);
-      await page.waitForTimeout(80);
-      const { path, end } = await page.evaluate(() => ({
-        path: location.pathname,
-        end: !!document.querySelector('[data-feed-end]'),
-      }));
-      if (path !== lastPath) seenPaths.add((lastPath = path));
-      if (end) break;
+    const batch = (n: number) => page.locator(`[role="feed"] article[data-entry][data-feed-page="${n}"]`);
+    for (let n = 2; n <= index.pageCount; n += 1) {
+      await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
+      await expect(batch(n).first()).toBeAttached();
     }
     await expect(page.locator('[data-feed-end]')).toHaveText(
       message(code, 'feed.status.end', { total: String(index.items.length) }),
     );
-    // Every page's address was shown on the way down (replaceState, no new history entries).
-    for (let n = 2; n < index.pageCount; n += 1) expect(seenPaths).toContain(listUrl(n));
+    // Visit the middle of each batch so a large scroll step cannot jump over a short page.
+    for (let n = 2; n < index.pageCount; n += 1) {
+      const cards = batch(n);
+      await cards
+        .nth(Math.floor((await cards.count()) / 2))
+        .evaluate((card) => card.scrollIntoView({ block: 'start', behavior: 'instant' }));
+      await expect(page).toHaveURL(new URL(listUrl(n), page.url()).href);
+    }
     expect(await page.evaluate(() => history.length)).toBeLessThanOrEqual(2);
 
     // The feed pattern: positions run 1…n without gaps; nothing is busy at the end.

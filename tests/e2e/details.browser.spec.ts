@@ -274,6 +274,7 @@ test('悬停效果: hover styles apply only with a fine pointer that can hover',
 test.describe('横向滚动: rows that scroll sideways snap, fade at the edge with more, and have visible buttons', () => {
   test('the list’s style tabs at 1024 px', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(list);
     await takenOver(page);
     const tabs = page.getByRole('group', { name: message(code, 'feed.filters.style') });

@@ -37,7 +37,8 @@ test('template sample previews follow the sample and custom values remain untest
   await expect(caption).toContainText(message('en', 'detail.template.testedImage'));
   await expect(caption).toContainText(message('en', 'detail.test.generatedWith', { model: 'GPT Image 2.5' }));
   await editor.locator('[data-field-shell="brandPalette"] input').fill('violet and lime');
-  await expect(editor.getByText(message('en', 'detail.template.unmatchedImage'), { exact: true })).toBeVisible();
+  await expect(caption).toContainText(message('en', 'detail.template.unmatchedImage'));
+  await expect(caption).toContainText(message('en', 'detail.test.generatedWith', { model: 'GPT Image 2.5' }));
 });
 
 test('multiple references keep their roles and source snapshots are separate from test results', async ({ page }) => {
