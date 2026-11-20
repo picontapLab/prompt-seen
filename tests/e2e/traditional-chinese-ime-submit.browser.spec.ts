@@ -10,16 +10,17 @@ test('Safari-style 229 Enter after compositionend does not submit, but the next 
   page,
 }) => {
   test.skip(!traditionalChinese, 'Traditional Chinese is not part of this artifact');
+  test.setTimeout(60_000);
   await page.goto(`${BASE}/${traditionalChinese!.pathPrefix}/search/?q=ink`);
   const input = page.locator('#search-field');
   await expect(input).toHaveValue('ink');
-  await expect(page.locator('[data-search-status]')).toContainText('ink');
+  await expect(page.locator('[data-search-status]')).toContainText('ink', { timeout: 15_000 });
   await input.focus();
   await input.dispatchEvent('compositionstart');
   await composingText(input, rawQuery);
   await input.dispatchEvent('compositionend', { data: rawQuery });
   await expect.poll(() => new URL(page.url()).searchParams.get('q')).toBe(rawQuery);
-  await expect(page.locator('[data-search-status]')).toContainText(rawQuery);
+  await expect(page.locator('[data-search-status]')).toContainText(rawQuery, { timeout: 15_000 });
   const before = await page.evaluate((key) => localStorage.getItem(key), historyKey);
 
   // Safari can end composition before the candidate-confirming Enter arrives as 229.

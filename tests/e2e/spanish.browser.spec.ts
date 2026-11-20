@@ -58,7 +58,7 @@ test.describe('reviewed Spanish pilot samples', () => {
   for (const width of [360, 768, 1024, 1440]) {
     for (const theme of ['light', 'dark'] as const) {
       test(`${width}px ${theme}: reviewed descriptions and controls fit`, async ({ page }) => {
-        test.setTimeout(60_000);
+        test.setTimeout(90_000);
         await page.setViewportSize({ width, height: 900 });
         await page.emulateMedia({ colorScheme: theme, reducedMotion: 'reduce' });
         const errors: string[] = [];

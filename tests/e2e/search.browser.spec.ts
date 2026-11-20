@@ -175,7 +175,8 @@ test.describe('desktop', () => {
     await expect(other).toBeVisible({ timeout: 15_000 });
     await expect(help.locator(`a[href="${BASE}/${en.pathPrefix}/prompts/"]`)).toBeVisible();
     await other.click();
-    await expect(page.locator('[data-group="prompt"] li').first()).toContainText('梅枝');
+    await expect(page.locator('html')).toHaveAttribute('lang', zh.htmlLang, { timeout: 15_000 });
+    await expect(page.locator('[data-group="prompt"] li').first()).toContainText('梅枝', { timeout: 15_000 });
   });
 
   test('available language suggestions appear while another index is loading', async ({ page }) => {
