@@ -27,6 +27,7 @@ export type Showcase = {
 
 export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
   const excerpt = promptExcerpt(detail.prompt.text, detail.annotations, maxQuote);
+  const model = detail.coverModel === undefined ? detail.test.model : detail.coverModel;
   return {
     hasGifOutput: detail.hasGifOutput,
     id: detail.id,
@@ -35,8 +36,8 @@ export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
     localization: detail.localization,
     frameNumber: detail.frameNumber,
     cover: detail.cover,
-    model: detail.test.model.displayName ?? detail.test.model.providerModelId,
-    lastTestedAt: detail.test.lastTestedAt,
+    model: model?.displayName ?? model?.providerModelId ?? null,
+    lastTestedAt: detail.coverRecordedAt === undefined ? detail.test.lastTestedAt : detail.coverRecordedAt,
     promptLanguage: detail.prompt.language,
     quote: excerpt.text,
     truncated: excerpt.truncated,

@@ -1,7 +1,12 @@
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
 import type { ImageRef, SourceInfo as Source } from '@/modules/content/types';
+import { getImage } from '@/modules/media';
+import { licenseUrl } from '@/modules/seo/structured-data';
+import { paths } from '@/modules/url';
+import { languageAttributes } from './language';
 import styles from './Detail.module.css';
 
 function External({ href, children }: { href: string | null; children: React.ReactNode }) {
@@ -19,50 +24,90 @@ function External({ href, children }: { href: string | null; children: React.Rea
  * which licence, or "Source unknown"; the image's creator, credit line, licence and how it was
  * made. Unknown fields are left out rather than filled with placeholders (§9.6).
  */
-export function SourceInfo({ source, image }: { source: Source; image: ImageRef }) {
+export function SourceInfo({
+  source,
+  image,
+  images,
+  references,
+  localePrefix,
+}: {
+  source?: Source;
+  image: ImageRef | null;
+  images?: readonly ImageRef[];
+  references?: readonly ImageRef[];
+  localePrefix: string;
+}) {
   const t = useTranslations('detail.source');
   const id = useId();
-  const { credit } = image;
-  const known = source.author || source.url || source.license;
-  const made =
-    image.digitalSourceType === 'trainedAlgorithmicMedia'
-      ? t('aiGenerated')
-      : image.digitalSourceType === 'algorithmicMedia'
-        ? t('algorithmic')
-        : null;
+  const assets = [...(references ?? []), ...(images?.length ? images : image ? [image] : [])];
 
   return (
     <section className={styles.section} aria-labelledby={id}>
       <h2 id={id} className={styles.sectionHeading}>
         {t('heading')}
       </h2>
+      <p>
+        <Link href={paths.page(localePrefix, 'license')} prefetch={false}>
+          {t('siteTextLicense')}
+        </Link>
+        {' · '}
+        <Link href={`${paths.page(localePrefix, 'about')}#testing-method`} prefetch={false}>
+          {t('testingMethod')}
+        </Link>
+      </p>
       <dl className={styles.facts}>
-        <div>
-          <dt>{t('prompt')}</dt>
-          <dd>
-            {known ? (
-              <>
-                {source.author && <External href={source.url}>{t('author', { author: source.author })}</External>}
-                {!source.author && source.url && <External href={source.url}>{source.url}</External>}
-                {source.license && <span>{t('licence', { licence: source.license })}</span>}
-              </>
-            ) : (
-              t('unknown')
-            )}
-          </dd>
-        </div>
-        <div>
-          <dt>{t('image')}</dt>
-          <dd>
-            {credit.creator && <span>{t('creator', { creator: credit.creator })}</span>}
-            {credit.copyrightNotice && <span>{credit.copyrightNotice}</span>}
-            {credit.license && (
-              <External href={credit.licenseUrl}>{t('licence', { licence: credit.license })}</External>
-            )}
-            {made && <span>{made}</span>}
-            {!credit.creator && !credit.license && !credit.copyrightNotice && <span>{t('unknown')}</span>}
-          </dd>
-        </div>
+        {source && (
+          <div>
+            <dt>{t('prompt')}</dt>
+            <dd>
+              {source.author || source.url || source.license ? (
+                <>
+                  {source.author && <External href={source.url}>{t('author', { author: source.author })}</External>}
+                  {!source.author && source.url && <External href={source.url}>{source.url}</External>}
+                  {source.license && (
+                    <External href={licenseUrl(source.license)}>{t('licence', { licence: source.license })}</External>
+                  )}
+                </>
+              ) : (
+                t('unknown')
+              )}
+            </dd>
+          </div>
+        )}
+        {[...new Map(assets.map((asset) => [asset.assetId, asset])).values()].map((asset) => {
+          const { credit } = asset;
+          const licence = credit.license ?? credit.licenseUrl;
+          const made =
+            asset.digitalSourceType === 'trainedAlgorithmicMedia'
+              ? t('aiGenerated')
+              : asset.digitalSourceType === 'algorithmicMedia'
+                ? t('algorithmic')
+                : null;
+          return (
+            <div key={asset.assetId}>
+              <dt>
+                <External href={getImage(asset, 'original').src}>
+                  <span {...languageAttributes(asset.altLocale)}>{asset.alt || t('image')}</span>
+                </External>
+              </dt>
+              <dd>
+                {credit.creator && <span>{t('creator', { creator: credit.creator })}</span>}
+                {credit.creditText && <span>{credit.creditText}</span>}
+                {credit.copyrightNotice && <span>{credit.copyrightNotice}</span>}
+                {licence && (
+                  <External href={credit.licenseUrl ?? licenseUrl(credit.license)}>
+                    {t('licence', { licence })}
+                  </External>
+                )}
+                {credit.sourceUrl && <External href={credit.sourceUrl}>{t('imageSource')}</External>}
+                {made && <span>{made}</span>}
+                {!credit.creator && !credit.creditText && !licence && !credit.copyrightNotice && !credit.sourceUrl && (
+                  <span>{t('unknown')}</span>
+                )}
+              </dd>
+            </div>
+          );
+        })}
       </dl>
     </section>
   );

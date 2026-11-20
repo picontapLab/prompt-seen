@@ -121,6 +121,48 @@ describe('content:export JSON', () => {
     expect(record.kind === 'prompt' && record.source.licenseUrl).toBe('https://creativecommons.org/licenses/by/4.0/');
     expect(data.templates.length).toBeGreaterThan(0);
   });
+
+  it('binds every public case to an actual, fully identified run and its original assets', () => {
+    for (const locale of config.builtLocales.filter((entry) => entry.enabled)) {
+      const data = exportJson(sources, config.buildId, locale, ['prompt']);
+      for (const record of data.prompts) {
+        if (record.kind !== 'prompt') continue;
+        const f = record.facts!;
+        expect(f, `${locale.code}/${record.id}`).toBeDefined();
+        expect(f.model.displayName).toMatch(/^GPT Image 2\.[56]$/);
+        expect(f.referenceAssetIds).toEqual(f.references.map(({ assetId }) => assetId));
+        expect(f.outputAssetIds).toEqual(f.outputs.map(({ assetId }) => assetId));
+        expect(f.outputs.length).toBeGreaterThan(0);
+        for (const output of f.outputs.filter((image) => image.mimeType === 'image/gif')) {
+          expect(f.model.displayName).toBe('GPT Image 2.6');
+          expect(output.animation?.frameCount).toBeGreaterThan(1);
+        }
+        if (f.matchingRunIds.length) {
+          expect(f.matchingRunIds).toContain(f.exampleRunId);
+          expect(f.examplePrompt.text).toBe(record.prompt.text);
+          expect(f.examplePrompt.language).toBe(record.prompt.language);
+        }
+      }
+    }
+  });
+
+  it.each([
+    ['p_024', 'zh-Hans', 'x_068', 'en', 'GPT Image 2.5', 'zh-Hans'],
+    ['p_217', 'en', 'x_281', 'zh-Hans', 'GPT Image 2.6', 'en'],
+  ])('keeps %s translated copy and generation evidence separate in %s', (id, code, run, source, model, copyLocale) => {
+    const locale = config.builtLocales.find((l) => l.code === code)!;
+    const data = exportJson(sources, config.buildId, locale, ['prompt']);
+    const record = data.prompts.find((p) => p.kind === 'prompt' && p.id === id);
+    expect(record).toMatchObject({
+      prompt: { language: copyLocale },
+      facts: {
+        matchingRunIds: [],
+        exampleRunId: run,
+        examplePrompt: { language: source },
+        model: { displayName: model },
+      },
+    });
+  });
 });
 
 it('excludes every external output in preview, including enabled languages', () => {

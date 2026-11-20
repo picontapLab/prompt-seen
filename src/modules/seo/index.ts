@@ -17,6 +17,7 @@ import {
   promptWork,
   templateWork,
   website,
+  workPage,
   type JsonLdNode,
   type LdContext,
   type LdCrumb,
@@ -79,6 +80,7 @@ const ld: LdContext = {
   absoluteImageUrl,
   entryPath: paths.siteRoot(),
   logoPath: paths.siteIcon(),
+  sameAs: config.repository ? [config.repository] : undefined,
 };
 
 async function documentTitle(locale: LocaleEntry, title: string, kind: 'prompt' | 'template') {
@@ -159,25 +161,18 @@ export function homeMetadata(
   locale: LocaleEntry,
   page: { documentTitle: string; title: string; description: string; image?: ImageRef | null; noindex?: boolean },
 ): Metadata {
-  const metadata = buildPageMetadata(
+  return buildPageMetadata(
     {
       ...page,
       path: paths.home(locale.pathPrefix),
       noindex: !homeIndexable(locale) || page.noindex,
       locale,
-      alternates: builtLocales.filter(homeIndexable).map((l) => ({ locale: l.code, path: paths.home(l.pathPrefix) })),
+      alternates: builtLocales
+        .filter((l) => homeIndexable(l))
+        .map((l) => ({ locale: l.code, path: paths.home(l.pathPrefix) })),
     },
     context,
   );
-  return {
-    ...metadata,
-    alternates: {
-      ...metadata.alternates,
-      ...(metadata.alternates?.languages && {
-        languages: { ...metadata.alternates.languages, 'x-default': absoluteUrl(paths.siteRoot()) },
-      }),
-    },
-  };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -190,7 +185,12 @@ export function promptStructuredData(
   crumbs: readonly LdCrumb[],
 ): JsonLdNode {
   if (!detail.localization.indexable) return graph();
-  return graph(promptWork(detail, locale, ld), breadcrumbList(crumbs, ld));
+  return graph(
+    workPage(detail, locale, ld),
+    promptWork(detail, locale, ld),
+    organization(ld),
+    breadcrumbList(crumbs, ld),
+  );
 }
 
 /** A template page: CreativeWork of the default sample's prompt, and the breadcrumb. */
@@ -200,7 +200,12 @@ export function templateStructuredData(
   crumbs: readonly LdCrumb[],
 ): JsonLdNode {
   if (!detail.localization.indexable) return graph();
-  return graph(templateWork(detail, locale, ld), breadcrumbList(crumbs, ld));
+  return graph(
+    workPage(detail, locale, ld),
+    templateWork(detail, locale, ld),
+    organization(ld),
+    breadcrumbList(crumbs, ld),
+  );
 }
 
 /** A locale's home page: the site in that language and the Organization behind it. */

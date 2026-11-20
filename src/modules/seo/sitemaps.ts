@@ -1,6 +1,6 @@
 import 'server-only';
 import { builtLocales, config, type LocaleEntry } from '@/config';
-import { homeIndexable } from '@/modules/home/server';
+import { homeIndexable, homeMembers, homeModel } from '@/modules/home/server';
 import { localeIndex } from '@/modules/content';
 import type { ImageRef, LocalizationState } from '@/modules/content/types';
 import { feedIndex, feedPage, feedBand, type FeedCard, type FeedPage } from '@/modules/feed';
@@ -25,17 +25,22 @@ export function listPageWorks(page: FeedPage): FeedCard[] {
 }
 
 /** Every displayed work participates in eligibility, including editorial interludes. */
-export function listPageIndexable(locale: LocaleEntry, page: FeedPage): boolean {
-  const items = page.blocks.flatMap((block): { localization: LocalizationState }[] =>
+function listPageMembers(locale: LocaleEntry, page: FeedPage) {
+  const items = page.blocks.flatMap<{ id: string; localization: LocalizationState }>((block) =>
     block.t === 'cards' || block.t === 'templates' ? block.items : block.t === 'feature' ? [block.card] : [block.item],
   );
   const band = page.page === 1 ? feedBand(locale.code) : null;
   if (band) items.push(band.lead, ...band.works);
-  return isAggregateIndexable(locale, items);
+  return items;
 }
 
-const mainImage = (image: ImageRef | null): string[] => {
-  const variant = image && (image.variants.detail ?? image.variants.card ?? image.variants.original);
+export function listPageIndexable(locale: LocaleEntry, page: FeedPage): boolean {
+  return isAggregateIndexable(locale, listPageMembers(locale, page));
+}
+
+const mainImage = (image: Pick<ImageRef, 'variants'> | null | undefined): string[] => {
+  const variant =
+    image && (image.variants.detail ?? image.variants.card ?? image.variants.original ?? image.variants.thumbnail);
   return variant ? [absoluteImageUrl(variant)] : [];
 };
 
@@ -52,29 +57,47 @@ export function localeSitemapUrls(locale: LocaleEntry, sections: PageSections): 
 
   // Only the canonical home: the default locale lives at the root, its prefixed alias is omitted.
   // Sitemaps are submitted through robots.txt or Search Console, allowing the root URL here.
-  if (homeIndexable(locale)) urls.push({ loc: absoluteUrl(paths.home(prefix)) });
+  const home = homeModel(locale);
+  if (homeIndexable(locale, home))
+    urls.push({
+      loc: absoluteUrl(paths.home(prefix)),
+      lastmod: latest(homeMembers(locale, home).map((entry) => entry.updatedAt)),
+      images: mainImage(home.onShow[0]?.cover ?? home.useCases[0]?.cover),
+    });
 
   if (sections.prompts) {
-    const updated = new Map(index.prompts.map((p) => [p.id, p.updatedAt]));
+    const updated = new Map(
+      [...index.prompts, ...index.templates, ...index.collections].map((p) => [p.id, p.updatedAt]),
+    );
     const { pageCount } = feedIndex(locale.code);
     for (let n = 1; n <= pageCount; n++) {
-      const works = listPageWorks(feedPage(locale.code, n));
-      if (!listPageIndexable(locale, feedPage(locale.code, n))) continue;
+      const page = feedPage(locale.code, n);
+      const members = listPageMembers(locale, page);
+      if (!isAggregateIndexable(locale, members)) continue;
       urls.push({
         loc: absoluteUrl(paths.promptsPage(prefix, n)),
-        lastmod: latest(works.map((w) => updated.get(w.id))),
+        lastmod: latest(members.map((entry) => updated.get(entry.id))),
+        images: mainImage((n === 1 ? feedBand(locale.code)?.lead.cover : null) ?? listPageWorks(page)[0]?.cover),
       });
     }
   }
   for (const p of prompts) urls.push({ loc: absoluteUrl(p.path), lastmod: p.updatedAt, images: mainImage(p.cover) });
 
   if (sections.templates && isAggregateIndexable(locale, index.templates))
-    urls.push({ loc: absoluteUrl(paths.templates(prefix)), lastmod: latest(templates.map((t) => t.updatedAt)) });
+    urls.push({
+      loc: absoluteUrl(paths.templates(prefix)),
+      lastmod: latest(templates.map((t) => t.updatedAt)),
+      images: mainImage(templates.find((t) => t.cover)?.cover),
+    });
   for (const t of templates) urls.push({ loc: absoluteUrl(t.path), lastmod: t.updatedAt, images: mainImage(t.cover) });
 
   const collections = published(index.collections);
   if (sections.collections && isAggregateIndexable(locale, index.collections))
-    urls.push({ loc: absoluteUrl(paths.collections(prefix)), lastmod: latest(collections.map((c) => c.updatedAt)) });
+    urls.push({
+      loc: absoluteUrl(paths.collections(prefix)),
+      lastmod: latest(collections.map((c) => c.updatedAt)),
+      images: mainImage(collections[0]?.cover),
+    });
   if (sections.collections)
     for (const c of collections)
       urls.push({ loc: absoluteUrl(c.path), lastmod: c.updatedAt, images: mainImage(c.cover) });

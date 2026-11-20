@@ -10,6 +10,7 @@ import { templateCrumbs } from '@/ui/prompt-detail/crumbs';
 import { ExampleRuns } from '@/ui/prompt-detail/ExampleRuns';
 import { languageName } from '@/ui/prompt-detail/language';
 import { RelatedRow } from '@/ui/prompt-detail/RelatedRow';
+import { SourceInfo } from '@/ui/prompt-detail/SourceInfo';
 import { RichText } from '@/ui/rich-text/RichText';
 import { TemplateEditor, type EditorModel } from '@/ui/template-editor/TemplateEditor';
 import detailStyles from '@/ui/prompt-detail/Detail.module.css';
@@ -94,21 +95,25 @@ export function TemplateDetailBody({
         />
       </div>
 
-      {(detail.body.length > 0 || detail.examples.length > 0) && (
-        <div className={styles.reading}>
-          {detail.body.length > 0 && (
-            <RichText locale={detail.localization.contentLocale} blocks={detail.body} className={detailStyles.body} />
-          )}
-          <ExampleRuns
-            runs={detail.examples}
-            frameNumber={detail.id.replace(/^t_/, 'T')}
-            currentPrompt={version.defaultPrompt}
-            promptLanguage={detail.promptLanguage}
-            templates={[detail]}
-            locale={prefix}
-          />
-        </div>
-      )}
+      <div className={styles.reading}>
+        {detail.body.length > 0 && (
+          <RichText locale={detail.localization.contentLocale} blocks={detail.body} className={detailStyles.body} />
+        )}
+        <ExampleRuns
+          runs={detail.examples}
+          frameNumber={detail.id.replace(/^t_/, 'T')}
+          currentPrompt={version.defaultPrompt}
+          promptLanguage={detail.promptLanguage}
+          templates={[detail]}
+          locale={prefix}
+        />
+        <SourceInfo
+          image={detail.cover}
+          images={detail.examples.flatMap((run) => run.outputs)}
+          references={detail.examples.flatMap((run) => run.references)}
+          localePrefix={prefix}
+        />
+      </div>
 
       <div className={detailStyles.related}>
         <RelatedRow

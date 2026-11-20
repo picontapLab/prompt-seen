@@ -12,6 +12,9 @@ import type { BuiltContent } from './content/build-index';
 
 /** Bumped when a field changes meaning or is removed; new fields keep the version. */
 export const EXPORT_VERSION = 2;
+export const EXPORT_FORMAT = 'prompt-seen/content-export';
+
+export const serializeExport = (data: unknown) => `${JSON.stringify(data, null, 2)}\n`;
 
 /** A content reader over an in-memory build, so exports never read stale generated files. */
 export function builtReader(built: BuiltContent): GeoSources['reader'] {
@@ -63,6 +66,20 @@ function exportImage(image: ImageRef | null, abs: Abs) {
   };
 }
 
+function exportRunAsset(image: ImageRef, abs: Abs) {
+  // Facts only select runs for which every original resolves at build time.
+  const original = image.variants.original!;
+  return {
+    assetId: image.assetId,
+    url: abs.absoluteImageUrl(original),
+    width: original.width,
+    height: original.height,
+    mimeType: original.mimeType,
+    credit: { ...image.credit, licenseUrl: image.credit.licenseUrl ?? licenseUrl(image.credit.license) },
+    ...(image.animation && { animation: image.animation }),
+  };
+}
+
 /** One record per published version, in the shape of the JSON export. */
 export function exportRecord(entry: MarkdownEntry, reader: GeoSources['reader'], abs: Abs) {
   const base = {
@@ -74,6 +91,7 @@ export function exportRecord(entry: MarkdownEntry, reader: GeoSources['reader'],
   };
   if (entry.kind === 'prompt') {
     const d = reader.getDetailModel('prompt', entry.id, entry.locale.code)!;
+    const run = d.examples.find((run) => run.id === d.facts?.exampleRunId);
     return {
       ...base,
       kind: 'prompt' as const,
@@ -83,6 +101,21 @@ export function exportRecord(entry: MarkdownEntry, reader: GeoSources['reader'],
       updatedAt: d.updatedAt,
       prompt: { text: d.prompt.text, language: d.prompt.language },
       test: d.test,
+      ...(d.facts &&
+        run && {
+          facts: {
+            ...d.facts,
+            referenceImage: d.test.referenceImage,
+            inputInstructions: d.inputInstructions ?? null,
+            inputInstructionsLocale: d.inputInstructionsLocale ?? null,
+            references: run.references.map((image, i) => ({
+              ...exportRunAsset(image, abs),
+              ...(run.referenceLabels?.[i] && { label: run.referenceLabels[i] }),
+              ...(run.referenceLabelLocales?.[i] && { labelLocale: run.referenceLabelLocales[i] }),
+            })),
+            outputs: run.outputs.map((image) => exportRunAsset(image, abs)),
+          },
+        }),
       taxonomy: {
         category: d.taxonomy.category.label,
         styles: d.taxonomy.styles.map((s) => s.label),
@@ -124,7 +157,7 @@ export function exportJson(
   const abs = { absoluteUrl: sources.url.absoluteUrl, absoluteImageUrl: sources.absoluteImageUrl };
   const entries = kinds.flatMap((kind) => geo.markdownEntries(kind)).filter((e) => e.locale.code === locale.code);
   return {
-    format: 'prompt-seen/content-export',
+    format: EXPORT_FORMAT,
     version: EXPORT_VERSION,
     buildId,
     site: { name: sources.siteName, url: sources.url.absoluteUrl(sources.url.paths.home(locale.pathPrefix)) },

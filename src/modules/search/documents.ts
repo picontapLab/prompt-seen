@@ -24,7 +24,14 @@ export type DocumentSources = {
 const thumbOf = (image: ImageRef | null): SearchThumb | null => {
   const v = image?.variants.thumbnail ?? image?.variants.card;
   return image && v
-    ? { key: v.key, width: v.width, height: v.height, placeholder: image.placeholder, mimeType: image.mimeType }
+    ? {
+        key: v.key,
+        width: v.width,
+        height: v.height,
+        placeholder: image.placeholder,
+        mimeType: image.mimeType,
+        generationModel: image.generationModel,
+      }
     : null;
 };
 

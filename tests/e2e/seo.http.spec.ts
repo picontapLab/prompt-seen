@@ -1,4 +1,6 @@
 import { homeIsIndexable } from './support/home';
+import { createHash } from 'node:crypto';
+import { promptJsonFile } from '../../src/modules/feed/files';
 import fs from 'node:fs';
 import path from 'node:path';
 import { expect, test, type APIRequestContext } from '@playwright/test';
@@ -252,23 +254,272 @@ test('drafts and preview-only locales have no index.md and no Markdown alternate
 // ---------------------------------------------------------------------------------------------
 // llms.txt (§9.10.4)
 
-test('llms.txt links only published, reachable content', async ({ request }) => {
-  const res = await get(request, `${BASE}/llms.txt`);
-  expect(res.headers()['content-type']).toMatch(/^text\/plain/);
-  const text = await res.text();
+for (const code of [BUILD.defaultLocale, 'zh-Hans'])
+  test(`${code}: llms.txt links only published, reachable content`, async ({ request }) => {
+    const locale = BUILD.locales.find((entry) => entry.code === code && entry.enabled);
+    test.skip(!locale);
+    const directory = code === BUILD.defaultLocale ? '/llms.txt' : `/${locale!.pathPrefix}/llms.txt`;
+    const res = await get(request, `${BASE}${directory}`);
+    expect(res.headers()['content-type']).toMatch(/^text\/plain/);
+    const text = await res.text();
+    if (BUILD.buildMode === 'preview') {
+      expect(text).toBe('');
+      return;
+    }
+    expect(text.startsWith(`# ${BUILD.siteName}\n\n> `)).toBe(true);
+    const links = [...text.matchAll(/\]\((https?:[^)\s]+)\)/g)].map((m) => m[1]!);
+    expect(links.length).toBeGreaterThan(0);
+    const internal = links.filter((url) => url.startsWith(origin));
+    for (const group of Array.from({ length: Math.ceil(internal.length / 24) }, (_, i) =>
+      internal.slice(i * 24, (i + 1) * 24),
+    ))
+      await Promise.all(
+        group.map(async (url) => expect((await request.head(local(url.split('#')[0]!))).status(), url).toBe(200)),
+      );
+    for (const l of previewOnly) expect(text).not.toContain(`${origin}${l.pathPrefix}/`);
+    const index = localeIndex(code);
+    for (const entry of [...index.prompts, ...index.templates])
+      expect(internal.includes(publicUrl(`${entry.path}index.md`)), entry.id).toBe(entry.localization.indexable);
+  });
+
+test('datasets match their byte hashes and complete indexable prompt and template inventories', async ({ request }) => {
+  const directory = `${BASE}/generated/datasets/v2`;
   if (BUILD.buildMode === 'preview') {
-    expect(text).toBe('');
+    for (const file of ['manifest.json', 'en.json', 'zh-Hans.json']) {
+      expect(fs.existsSync(path.join(ROOT, 'dist', directory, file))).toBe(false);
+      expect((await request.get(`${directory}/${file}`)).status()).toBe(404);
+    }
     return;
   }
-  expect(text.startsWith(`# ${BUILD.siteName}\n\n> `)).toBe(true);
-  const links = [...text.matchAll(/\]\((https?:[^)\s]+)\)/g)].map((m) => m[1]!);
-  expect(links.length).toBeGreaterThan(0);
-  await Promise.all(links.map(async (url) => expect((await request.head(local(url))).status(), url).toBe(200)));
-  for (const l of previewOnly) expect(text).not.toContain(`${origin}${l.pathPrefix}/`);
-  const def = localeIndex(BUILD.defaultLocale);
-  for (const p of def.prompts.filter((x) => x.visibility !== 'published'))
-    expect(text).not.toContain(publicUrl(`${p.path}index.md`));
+  const res = await get(request, `${directory}/manifest.json`);
+  expect(res.headers()['content-type']).toMatch(/^application\/json/);
+  const manifest = (await res.json()) as {
+    files: { locale: string; url: string; prompts: number; templates: number; sha256: string }[];
+  };
+  expect(manifest).toMatchObject({ format: 'prompt-seen/content-export', version: 2, buildId: BUILD.buildId });
+  expect(manifest.files.map((file) => file.locale)).toEqual(
+    publicLocales.filter((entry) => ['en', 'zh-Hans'].includes(entry.code)).map((entry) => entry.code),
+  );
+  for (const info of manifest.files) {
+    const data = await get(request, local(info.url));
+    expect(data.headers()['content-type']).toMatch(/^application\/json/);
+    expect(
+      createHash('sha256')
+        .update(await data.body())
+        .digest('hex'),
+    ).toBe(info.sha256);
+    const payload = await data.json();
+    const entry = localeIndex(info.locale);
+    expect(payload).toMatchObject({
+      format: 'prompt-seen/content-export',
+      version: 2,
+      locale: info.locale,
+      buildId: BUILD.buildId,
+    });
+    expect(payload.prompts).toHaveLength(info.prompts);
+    expect(payload.templates).toHaveLength(info.templates);
+    for (const kind of ['prompts', 'templates'] as const) {
+      const expected = entry[kind].filter((item) => item.localization.indexable);
+      expect(payload[kind].map((item: { url: string }) => item.url)).toEqual(
+        expected.map((item) => publicUrl(item.path)),
+      );
+    }
+  }
 });
+
+const featuredRuns = {
+  p_123: 'x_168',
+  p_153: 'x_269',
+  p_053: 'x_097',
+  p_043: 'x_087',
+  p_024: 'x_068',
+  p_045: 'x_089',
+  p_097: 'x_141',
+  p_217: 'x_281',
+  p_019: 'x_063',
+  p_084: 'x_128',
+  p_138: 'x_183',
+  p_218: 'x_282',
+  p_146: 'x_191',
+  p_274: 'x_338',
+  p_275: 'x_339',
+  p_279: 'x_343',
+  p_287: 'x_351',
+  p_398: 'x_462',
+  p_389: 'x_453',
+  p_370: 'x_434',
+};
+
+test('Simplified Chinese: recovered translations restore their aggregate entry points', async ({ request }) => {
+  test.skip(BUILD.buildMode !== 'production');
+  const locale = publicLocales.find((entry) => entry.code === 'zh-Hans');
+  test.skip(!locale);
+  const index = localeIndex('zh-Hans');
+  const required = [
+    'p_013',
+    'p_019',
+    'p_026',
+    'p_034',
+    'p_044',
+    'p_048',
+    'p_053',
+    'p_064',
+    'p_070',
+    'p_075',
+    'p_080',
+    'p_084',
+    'p_088',
+    'p_097',
+    'p_099',
+    'p_066',
+    'p_007',
+    'p_058',
+    'p_123',
+    'p_153',
+    'p_218',
+    't_003',
+    't_001',
+    't_017',
+  ];
+  const library = [...index.prompts, ...index.templates];
+  for (const id of required)
+    expect(library.find((entry) => entry.id === id)?.localization, id).toMatchObject({
+      localStatus: 'current',
+      indexable: true,
+      contentLocale: 'zh-Hans',
+    });
+  const prefix = `/${locale!.pathPrefix}`;
+  const sitemap = urlEntries(await (await get(request, `${BASE}${prefix}/sitemap-pages.xml`)).text());
+  const expected = [
+    `${prefix}/`,
+    `${prefix}/prompts/`,
+    `${prefix}/templates/`,
+    `${prefix}/collections/`,
+    ...Array.from({ length: feedIndex(locale!.code).pageCount - 1 }, (_, i) => `${prefix}/prompts/page/${i + 2}/`),
+    ...['c_001', 'c_002', 'c_003', 'c_005', 'c_008', 'c_009'].map(
+      (id) => index.collections.find((item) => item.id === id)!.path,
+    ),
+  ];
+  for (const internal of expected) {
+    const url = publicUrl(internal);
+    expect(
+      sitemap.some((entry) => entry.loc === url),
+      internal,
+    ).toBe(true);
+    const page = await get(request, `${BASE}${internal}`);
+    const html = await page.text();
+    expect(page.headers()['x-robots-tag'] ?? '').not.toContain('noindex');
+    expect(canonical(html)).toBe(url);
+    expect(alternates(html)[locale!.htmlLang]).toBe(url);
+    expect(jsonLd(html).length).toBeGreaterThan(0);
+  }
+});
+
+for (const code of ['en', 'zh-Hans']) {
+  test(`${code}: editorial topics, collections and testing method are discoverable`, async ({ request }) => {
+    const locale = publicLocales.find((entry) => entry.code === code);
+    test.skip(!locale);
+    const prefix = `/${locale!.pathPrefix}`;
+    const sitemap = urlEntries(await (await get(request, `${BASE}${prefix}/sitemap-pages.xml`)).text());
+    const entries = [
+      'categories/product',
+      'categories/poster',
+      'categories/portrait',
+      'use-cases/social-post',
+      'use-cases/packaging',
+      'collections/design-ai-product-commercial',
+      'collections/english-social-reactions',
+      'collections/social-nine-frame-composed-gifs',
+    ];
+    for (const entry of entries) {
+      const internal = `${prefix}/${entry}/`;
+      const url = publicUrl(internal);
+      expect(
+        sitemap.some((item) => item.loc === url),
+        internal,
+      ).toBe(true);
+      const html = await (await get(request, `${BASE}${internal}`)).text();
+      expect(canonical(html)).toBe(url);
+      expect(node(html, 'CollectionPage')?.mainEntity.numberOfItems).toBeGreaterThanOrEqual(3);
+    }
+    const about = await (await get(request, `${BASE}${prefix}/about/`)).text();
+    expect(about).toContain('id="testing-method"');
+    for (const [id, run] of Object.entries({ p_123: 'x_168', p_217: 'x_281', p_287: 'x_351' })) {
+      const path = `${BASE}${promptDetail(code, id).path}`;
+      expect(about).toContain(`href="${path}#run-${run}"`);
+      expect(await (await get(request, path)).text()).toContain(`id="run-${run}"`);
+    }
+  });
+}
+
+for (const code of ['en', 'zh-Hans']) {
+  test(`${code}: 20 cases agree across HTML, Markdown, popup and dataset`, async ({ request }) => {
+    test.skip(BUILD.buildMode !== 'production' || !publicLocales.some((locale) => locale.code === code));
+    const data = await (await get(request, `${BASE}/generated/datasets/v2/${code}.json`)).json();
+    const locale = publicLocales.find((locale) => locale.code === code)!;
+    const sitemap = urlEntries(await (await get(request, `${BASE}/${locale.pathPrefix}/sitemap-pages.xml`)).text());
+    for (const [id, runId] of Object.entries(featuredRuns)) {
+      const d = promptDetail(code, id);
+      const f = d.facts!;
+      const canonicalUrl = publicUrl(d.path);
+      expect(d.localization.indexable, id).toBe(true);
+      expect(
+        sitemap.some(({ loc }) => loc === canonicalUrl),
+        id,
+      ).toBe(true);
+      expect(f, id).toMatchObject({
+        exampleRunId: runId,
+        observation: expect.stringMatching(/\S/),
+        limitation: expect.stringMatching(/\S/),
+      });
+      const run = d.examples.find((example) => example.id === runId)!;
+      const exported = data.prompts.find((record: { id: string }) => record.id === id);
+      expect(exported).toMatchObject({ url: canonicalUrl, facts: f });
+      expect(exported.facts.references.map((img: { assetId: string }) => img.assetId)).toEqual(f.referenceAssetIds);
+      expect(exported.facts.outputs.map((img: { assetId: string }) => img.assetId)).toEqual(f.outputAssetIds);
+      const [page, markdown, popup] = await Promise.all([
+        get(request, `${BASE}${d.path}`),
+        get(request, `${BASE}${d.path}index.md`),
+        get(request, `${BASE}/generated/${promptJsonFile(code, d.slug)}`),
+      ]);
+      const html = await page.text();
+      const md = await markdown.text();
+      expect(page.headers()['x-robots-tag'] ?? '').not.toContain('noindex');
+      expect(canonical(html)).toBe(canonicalUrl);
+      expect(markdown.headers()['content-type']).toMatch(/^text\/markdown/);
+      expect(markdown.headers()['link']).toContain(`<${canonicalUrl}>; rel="canonical"`);
+      expect(html).toContain(`data-example-run="${runId}"`);
+      expect(decode(html)).toContain(f.observation);
+      expect(decode(html)).toContain(f.limitation);
+      expect(md).toContain(f.model.displayName);
+      expect(unescapeMd(md)).toContain(f.observation);
+      expect(unescapeMd(md)).toContain(f.limitation);
+      expect(md).toContain(f.examplePrompt.text);
+      expect(await popup.json()).toMatchObject({ facts: f });
+      expect(run.outputs.map(({ assetId }) => assetId)).toEqual(f.outputAssetIds);
+      expect(node(html, 'WebPage')).toMatchObject({
+        '@id': `${canonicalUrl}#webpage`,
+        inLanguage: locale.htmlLang,
+        mainEntity: { '@id': `${canonicalUrl}#work` },
+      });
+      expect(node(html, 'CreativeWork').inLanguage).toBe(d.prompt.language);
+      if (id === 'p_123') expect(f.matchingRunIds).toEqual(['x_168']);
+      if (id === 'p_218') {
+        expect(f.referenceAssetIds).toEqual(['a_373', 'a_374']);
+        expect(f.outputAssetIds).toEqual(['a_372']);
+      }
+      if (id === 'p_053') {
+        expect(d.test.referenceImage).toBe('optional');
+        expect(f.referenceAssetIds).toEqual([]);
+      }
+      if (id === 'p_287' || id === 'p_398') {
+        const expected = id === 'p_287' ? { frameCount: 9, durationMs: 2400 } : { frameCount: 12, durationMs: 1920 };
+        expect(exported.facts.outputs[0]).toMatchObject({ mimeType: 'image/gif', animation: expected });
+        expect(md).toContain(message(code, 'primitives.media.gifGenerated', { model: 'GPT Image 2.6' }));
+      }
+    }
+  });
+}
 
 // ---------------------------------------------------------------------------------------------
 // Structured data (§9.6): consistent with the visible page
@@ -293,11 +544,16 @@ for (const locale of BUILD.locales) {
       datePublished: d.createdAt,
       dateModified: d.updatedAt,
     });
+    expect(node(html, 'WebPage')).toMatchObject({
+      '@id': `${publicUrl(d.path)}#webpage`,
+      inLanguage: locale.htmlLang,
+      mainEntity: { '@id': `${publicUrl(d.path)}#work` },
+    });
     expect(decode(html)).toContain(
       message(locale.code, 'detail.test.updated', { date: visibleDate(locale.code, d.updatedAt) }),
     );
     if (d.source.author) {
-      expect(work.author.name).toBe(d.source.author);
+      expect(work.creditText ?? work.author?.name).toBe(d.source.author);
       expect(decode(html)).toContain(message(locale.code, 'detail.source.author', { author: d.source.author }));
     } else expect(work.author).toBeUndefined();
     // The main image is reachable and sized as the variant it names.
@@ -306,6 +562,7 @@ for (const locale of BUILD.locales) {
     expect([image.width, image.height]).toEqual([d.cover.variants.detail!.width, d.cover.variants.detail!.height]);
 
     const crumbs = breadcrumb(html, message(locale.code, 'detail.breadcrumb.label'));
+    expect(crumbs.at(-1)).toMatchObject({ name: d.title, href: null });
     const list = node(html, 'BreadcrumbList');
     expect(list.itemListElement.map((i: { name: string }) => i.name)).toEqual(crumbs.map((c) => c.name));
     expect(list.itemListElement.map((i: { item?: string }) => i.item ?? null)).toEqual(

@@ -63,6 +63,18 @@ function workspace() {
       }
     }
   }
+  const taxonomy = path.join(root, 'content/taxonomy');
+  // Keep taxonomy pages used by the fixture, but omit links to later editorial members.
+  for (const relative of fs.readdirSync(taxonomy, { recursive: true, encoding: 'utf8' })) {
+    if (!relative.endsWith('.mdx')) continue;
+    const file = path.join(taxonomy, relative);
+    const previous = fs.readFileSync(file, 'utf8');
+    const pruned = previous.replace(
+      /\[([^\[\]]+)\]\((prompt|template|collection):([pct]_\d+)\)/g,
+      (link, label, kind, id) => (fs.existsSync(path.join(root, 'content', `${kind}s`, id)) ? link : label),
+    );
+    if (pruned !== previous) fs.writeFileSync(file, pruned);
+  }
   // Exercise the migration's original sample dataset even after the live corpus is migrated.
   const archivedRuns = path.resolve('migrations/gpt-image-v1/archive/content/examples');
   if (fs.existsSync(archivedRuns)) {

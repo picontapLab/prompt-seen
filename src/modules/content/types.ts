@@ -65,6 +65,8 @@ export type ImageCredit = {
 
 export type ImageRef = {
   assetId: string;
+  /** Model named by the run that generated this output. */
+  generationModel?: string;
   /** Original file format; display variants may be animated WebP. */
   mimeType?: string;
   animation?: { frameCount: number; durationMs: number; loopCount: number | null };
@@ -97,7 +99,15 @@ export type TranslationInfo = {
   reviewStatus: ReviewStatus;
 };
 
-export type TermRef = { kind: TaxonomyKind; id: string; label: string; labelLocale?: string | null; path: string | null };
+export type TermRef = {
+  kind: TaxonomyKind;
+  id: string;
+  label: string;
+  labelLocale?: string | null;
+  path: string | null;
+  /** The linked topic is eligible for indexing in this language. */
+  indexable?: boolean;
+};
 
 export type ModelInfo = { displayName: string | null; providerModelId: string | null };
 
@@ -131,6 +141,9 @@ export type PromptSummary = Localized & {
   styleIds: string[];
   useCaseIds: string[];
   model: ModelInfo;
+  /** Model and date of the run that produced the cover, independent of the current prompt text. */
+  coverModel?: ModelInfo | null;
+  coverRecordedAt?: string | null;
   verification: 'verified' | 'unverified' | 'unknown';
   /** Date of the latest ExampleRun, or null when never tested (§9.8). */
   lastTestedAt: string | null;
@@ -218,7 +231,24 @@ export type ExampleRunView = {
   notesLocale?: string | null;
 };
 
-export type SourceInfo = { author: string | null; url: string | null; license: string | null };
+export type SourceInfo = {
+  author: string | null;
+  authorType?: 'Person' | 'Organization';
+  url: string | null;
+  license: string | null;
+};
+
+export type PromptFacts = {
+  matchingRunIds: string[];
+  exampleRunId: string;
+  examplePrompt: { text: string; language: string; sha256: string };
+  model: ModelInfo;
+  recordedAt: string;
+  referenceAssetIds: string[];
+  outputAssetIds: string[];
+  observation?: string;
+  limitation?: string;
+};
 
 export type PromptDetail = PromptSummary & {
   seo: SeoText;
@@ -236,12 +266,14 @@ export type PromptDetail = PromptSummary & {
     referenceImage: 'none' | 'optional' | 'required';
   };
   examples: ExampleRunView[];
+  facts?: PromptFacts;
   inputInstructions?: string | null;
   inputInstructionsLocale?: string | null;
   showcaseExampleId?: string | null;
   promptProvenance?: 'unknown' | 'original' | 'independent-adaptation' | 'source-prompt';
   inspirationSources?: InspirationSource[];
   source: SourceInfo;
+  translationOfWorkPath?: string | null;
   template: { id: string; version: string; values: FieldValues } | null;
   taxonomy: { category: TermRef; styles: TermRef[]; useCases: TermRef[] };
   relatedTemplates: TemplateSummary[];
@@ -287,6 +319,7 @@ export type InspirationSource = {
 export type TemplateSample = { name: string; values: FieldValues; exampleIds?: string[] };
 
 export type TemplateDetail = TemplateSummary & {
+  translationOfWorkPath?: string | null;
   inputInstructions?: string | null;
   inputInstructionsLocale?: string | null;
   seo: SeoText;

@@ -12,6 +12,7 @@ import {
   serializeJsonLd,
   templateWork,
   website,
+  workPage,
   type LdContext,
 } from './structured-data';
 
@@ -89,7 +90,7 @@ describe('promptWork', () => {
     expect(work).not.toHaveProperty('isBasedOn');
   });
 
-  it('names the site as an Organization and other authors as people', () => {
+  it('emits typed authors and keeps an untyped attribution as credit', () => {
     expect(promptWork(prompt({ source: { author: 'Prompt Seen', url: null, license: null } }), zh, ctx).author).toEqual(
       {
         '@type': 'Organization',
@@ -98,8 +99,32 @@ describe('promptWork', () => {
       },
     );
     expect(
-      promptWork(prompt({ source: { author: 'Mei', url: 'https://mei.example', license: null } }), zh, ctx).author,
+      promptWork(
+        prompt({ source: { author: 'Mei', authorType: 'Person', url: 'https://mei.example', license: null } }),
+        zh,
+        ctx,
+      ).author,
     ).toEqual({ '@type': 'Person', name: 'Mei', url: 'https://mei.example' });
+    expect(
+      promptWork(prompt({ source: { author: 'Studio Mei', url: 'https://mei.example', license: null } }), zh, ctx),
+    ).toMatchObject({
+      creditText: 'Studio Mei',
+      citation: ['https://mei.example'],
+    });
+  });
+
+  it('separates the page language from the prompt language and links translated work', () => {
+    const detail = prompt({ translationOfWorkPath: '/en/prompts/plum/' });
+    expect(workPage(detail, zh, ctx)).toMatchObject({
+      '@type': 'WebPage',
+      '@id': 'https://example.com/prompt-seen/zh-hans/prompts/plum/#webpage',
+      inLanguage: 'zh-Hans',
+      mainEntity: { '@id': 'https://example.com/prompt-seen/zh-hans/prompts/plum/#work' },
+    });
+    expect(promptWork(detail, zh, ctx)).toMatchObject({
+      inLanguage: 'en',
+      translationOfWork: { '@id': 'https://example.com/prompt-seen/en/prompts/plum/#work' },
+    });
   });
 
   it('points at the template it was made from', () => {
@@ -152,7 +177,6 @@ describe('imageObject', () => {
     });
     expect(imageObject(img, ctx)).toMatchObject({
       caption: 'Plum in winter',
-      creator: { '@type': 'Person', name: 'Mei' },
       creditText: 'Mei / Prompt Seen',
       copyrightNotice: '© 2026 Mei',
       license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -189,6 +213,7 @@ describe('templateWork', () => {
       inLanguage: 'en',
       datePublished: '2026-07-10',
       dateModified: '2026-09-02',
+      publisher: { '@id': 'https://example.com/prompt-seen/#organization' },
     });
   });
 });

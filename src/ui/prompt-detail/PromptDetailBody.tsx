@@ -62,6 +62,12 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
   const copyId = `${id}-copy`;
   const prefix = locale.pathPrefix;
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
+  const exampleId =
+    detail.facts?.exampleRunId ??
+    detail.showcaseExampleId ??
+    detail.examples.find((example) => example.prompt === detail.prompt.text)?.id ??
+    detail.examples[0]?.id;
+  const displayRun = detail.examples.find((example) => example.id === exampleId);
 
   return (
     <AnnotationProvider annotations={detail.annotations}>
@@ -95,7 +101,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               <p {...languageAttributes(detail.localization.contentLocale)} className={styles.summary}>
                 {detail.description}
               </p>
-              <TestInfo detail={detail} />
+              <TestInfo detail={detail} run={displayRun} locale={locale.htmlLang} />
               {detail.inputInstructions && (
                 <p {...languageAttributes(detail.inputInstructionsLocale)} className={styles.summary}>
                   {detail.inputInstructions}
@@ -105,7 +111,7 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
           </div>
           <RecordedShowcase
             runs={detail.examples.map(
-              ({ id, outputs, references, referenceLabels, referenceLabelLocales, prompt, promptLanguage }) => ({
+              ({ id, outputs, references, referenceLabels, referenceLabelLocales, prompt, promptLanguage, model }) => ({
                 id,
                 outputs,
                 references,
@@ -113,9 +119,11 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
                 referenceLabelLocales,
                 prompt,
                 promptLanguage,
+                model,
               }),
             )}
-            defaultId={detail.showcaseExampleId ?? undefined}
+            defaultId={exampleId}
+            promptLanguage={detail.prompt.language}
             cover={detail.cover}
             currentPrompt={detail.prompt.text}
             frameNumber={detail.frameNumber}
@@ -186,9 +194,17 @@ export function PromptDetailBody({ detail, locale, siteName, heading, coverPrevi
               promptLanguage={detail.prompt.language}
               templates={detail.relatedTemplates}
               locale={prefix}
+              showcaseId={exampleId}
+              stableIds={!heading}
             />
 
-            <SourceInfo source={detail.source} image={detail.cover} />
+            <SourceInfo
+              source={detail.source}
+              image={detail.cover}
+              images={detail.examples.flatMap((run) => run.outputs)}
+              references={detail.examples.flatMap((run) => run.references)}
+              localePrefix={prefix}
+            />
             <InspirationSources
               sources={detail.inspirationSources ?? []}
               independentlyAdapted={detail.promptProvenance === 'independent-adaptation'}

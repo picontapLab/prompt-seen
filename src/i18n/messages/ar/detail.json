@@ -23,7 +23,20 @@
       "optional": "الصورة المرجعية اختيارية",
       "required": "تلزم صورة مرجعية"
     },
-    "recordedUnknownModel": "نتيجة مسجلة · النموذج غير موثق"
+    "recordedUnknownModel": "نتيجة مسجلة · النموذج غير موثق",
+    "generatedWith": "أُنشئ باستخدام {model}",
+    "originalLanguage": "لغة طلب التوليد · {language}",
+    "recorded": "سُجّل التشغيل في {date}",
+    "referenceCount": "عدد الصور المرجعية المستخدمة: {count, number}",
+    "inputNumber": "المدخل {n, number}",
+    "outputNumber": "الناتج {n, number}",
+    "observation": "ملاحظة",
+    "limitation": "قيد الاستخدام",
+    "frames": "عدد الإطارات: {count, number}",
+    "seconds": "{duration, number} ث",
+    "loop": "تكرار مستمر",
+    "loopUnknown": "عدد مرات التكرار غير محدد",
+    "loopCount": "عدد مرات التكرار: {count, number}"
   },
   "sheet": {
     "label": "الأمر · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "الأمر المستخدم في هذه النسخة",
     "unknown": "غير مسجّل",
     "selectRun": "اختر النتيجة المسجلة",
-    "cover": "الغلاف"
+    "cover": "الغلاف",
+    "displayRun": "التشغيل المعروض",
+    "variant": "نسخة بديلة"
   },
   "source": {
     "heading": "المصدر والترخيص",
@@ -81,7 +96,10 @@
     "licence": "الترخيص: {licence}",
     "creator": "المبدع: {creator}",
     "aiGenerated": "صورة مولّدة",
-    "algorithmic": "مولّدة ببرنامج"
+    "algorithmic": "مولّدة ببرنامج",
+    "siteTextLicense": "ترخيص نصوص الموقع (CC BY 4.0)",
+    "testingMethod": "منهج الاختبار",
+    "imageSource": "مصدر الصورة"
   },
   "related": {
     "templates": "قوالب ذات صلة",

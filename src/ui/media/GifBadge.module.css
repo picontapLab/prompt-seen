@@ -2,6 +2,7 @@
   .badge {
     display: inline-block;
     flex: none;
+    max-inline-size: 100%;
     padding-inline: var(--space-4);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-image);
@@ -12,12 +13,13 @@
     font-weight: var(--weight-medium);
     line-height: var(--leading-xs);
     vertical-align: middle;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
   }
   .badge[data-overlay] {
     position: absolute;
     inset-block-end: var(--space-8);
     inset-inline-start: var(--space-8);
+    max-inline-size: calc(100% - var(--space-8) * 2);
     z-index: 1;
     pointer-events: none;
   }

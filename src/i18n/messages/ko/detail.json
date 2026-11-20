@@ -23,7 +23,20 @@
       "optional": "참조 이미지 선택 사항",
       "required": "참조 이미지 필요"
     },
-    "recordedUnknownModel": "결과 기록 있음 · 모델 검증되지 않음"
+    "recordedUnknownModel": "결과 기록 있음 · 모델 검증되지 않음",
+    "generatedWith": "{model}로 생성",
+    "originalLanguage": "생성 프롬프트 언어 · {language}",
+    "recorded": "실행 기록일 {date}",
+    "referenceCount": "참조 이미지 {count, number}장 사용",
+    "inputNumber": "입력 {n}",
+    "outputNumber": "출력 {n}",
+    "observation": "관찰 결과",
+    "limitation": "사용 제약",
+    "frames": "{count, number}프레임",
+    "seconds": "{duration, number}초",
+    "loop": "계속 반복",
+    "loopUnknown": "반복 횟수 미지정",
+    "loopCount": "반복 횟수 {count}"
   },
   "sheet": {
     "label": "프롬프트 · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "이 결과에 사용한 프롬프트",
     "unknown": "기록 없음",
     "selectRun": "기록된 결과",
-    "cover": "대표 이미지"
+    "cover": "대표 이미지",
+    "displayRun": "표시된 실행",
+    "variant": "변형"
   },
   "source": {
     "heading": "출처 및 라이선스",
@@ -81,7 +96,10 @@
     "licence": "라이선스: {licence}",
     "creator": "제작자: {creator}",
     "aiGenerated": "생성된 이미지",
-    "algorithmic": "프로그램으로 생성됨"
+    "algorithmic": "프로그램으로 생성됨",
+    "siteTextLicense": "사이트 텍스트 라이선스 (CC BY 4.0)",
+    "testingMethod": "테스트 방법",
+    "imageSource": "이미지 출처"
   },
   "related": {
     "templates": "관련 템플릿",

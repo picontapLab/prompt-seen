@@ -175,6 +175,32 @@ test.describe('desktop', () => {
     expect(errors).toEqual([]);
   });
 
+  test('an older popup payload still shows the matching result and copies the prompt', async ({
+    page,
+    context,
+    browserName,
+  }) => {
+    const detail = detailOf(second.slug);
+    await page.route(`**/generated/${code}/prompts/${second.slug}.json`, async (route) => {
+      const legacy = { ...detail };
+      delete legacy.facts;
+      await route.fulfill({ json: legacy });
+    });
+    await gotoList(page);
+    const trigger = card(page, second.slug);
+    await trigger.click();
+    await expectOpen(page, second.slug);
+    const dialog = popup(page);
+    await expect(dialog.locator('[id$="-prompt"]')).toHaveText(detail.prompt.text);
+    if (browserName === 'chromium') {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+      await dialog.locator('[id$="-copy"]').click();
+      expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(detail.prompt.text);
+    }
+    await page.keyboard.press('Escape');
+    await expectClosed(page, second.slug);
+  });
+
   test('§12.8-1: the image flies from the card; text keeps its size', async ({ page }) => {
     await gotoList(page);
     // Intent prefetch, as a resting pointer does (§11.8.2), so the model is there at the click.

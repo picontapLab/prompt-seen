@@ -341,6 +341,8 @@ export function validateContent(
       }
     }
     checkKeys(d.notes, run.file, 'notes', run.lineOf(['notes']));
+    checkKeys(d.observation, run.file, 'observation', run.lineOf(['observation']));
+    checkKeys(d.limitation, run.file, 'limitation', run.lineOf(['limitation']));
     if (run.prompt === null) continue;
     if (sha256(run.prompt) !== d.promptSha256)
       findings.error(

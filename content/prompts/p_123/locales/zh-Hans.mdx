@@ -1,18 +1,29 @@
 ---
-title: 同一产品九宫格品牌故事板
-description: 一张产品照片扩展为九种统一配色的广告构图。
+title: 用一张参考照片制作产品九宫格
+description: 复制实测提示词，用同一张合成 PINE 瓶身参考图比较两组九宫格广告画面。
 status: published
-updatedAt: 2026-10-29
+updatedAt: 2026-11-20
+seoDescription: 用一张合成 PINE 瓶身参考图生成九格广告，包含商品展示、户外场景和材质特写。
 translation:
   sourceLocale: en
-  sourceHash: sha256:98c79aabdfa6a4a1
+  sourceHash: sha256:d650aa843c92890c
   reviewStatus: reviewed
 ---
 
 ## 使用方法
 
-准备：清晰的产品正面照。一张产品照片扩展为九种统一配色的广告构图。
+上传一张产品照片，写明配色和九个场景。要求每格保持产品轮廓、瓶盖和标签一致。
 
 ## 实测结果
 
-样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。
+两个输出均使用同一张合成 PINE 瓶身参考图。默认运行使用鼠尾草绿、象牙白和拉丝银；另一运行更换了配色和九格场景。每个输出都附有自己的输入和实际提交的提示词。
+
+两个结果都呈现了九个格子。产品视图中可辨认出瓶身、银色瓶盖和 PINE 字样，材质和涂层特写只呈现局部。使用自己的包装时，请逐格核对标签小字和瓶身形状。
+
+## 生成证据与限制
+
+[默认运行记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml)和[变体运行记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml)均保存了提示词哈希、有序参考图 ID 与输出 ID。两次运行均于 2026 年 10 月 29 日使用内置图像工具完成。
+
+[项目归属记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json)将生成型号标为 GPT Image 2.5。回执未返回精确 API 模型 ID，也未记录种子、采样或质量设置。复用提示词时可能得到不同的像素结果。
+
+使用[产品九宫格模板](template:t_017)更换配色或场景。修改提示词或产品照片后，按自己的参考图复核格子数量、产品外形和文字。

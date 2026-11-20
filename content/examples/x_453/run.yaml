@@ -17,15 +17,63 @@ model:
 recordedAt: 2026-11-19
 parameters: {}
 notes:
-  en: A product rotates a full 360 degrees on a turntable.
-  zh-Hans: 产品在转台每帧约 40°，完整 360° 旋转
-  es: Un producto gira 360 grados en una plataforma giratoria.
-  pt-BR: Um produto gira 360 graus em uma plataforma giratória.
-  ja: 商品がターンテーブル上で360度回転します。
-  ko: 제품이 턴테이블 위에서 360도 회전합니다.
-  de: Ein Produkt dreht sich vollständig um 360 Grad auf einem Drehteller.
-  fr: Un produit effectue une rotation complète de 360 degrés sur un plateau tournant.
-  ru: Товар полностью вращается на 360 градусов на поворотной платформе.
-  zh-Hant: 產品在轉台上完整旋轉 360 度。
-  it: Un prodotto ruota completamente di 360 gradi su una piattaforma girevole.
-  ar: يدور المنتج دورة كاملة بزاوية 360 درجة على منصة دوارة.
+  en: The cup stays centered on the turntable. The lid opening shifts between frames while the ribbed
+    sleeve remains recognizable.
+  zh-Hans: 杯子始终位于转台中央。饮口在帧间换位，竖纹杯套仍可辨认。
+  ja: カップは回転台の中央にあり、蓋の飲み口がフレームごとに移動しても、縦溝のスリーブは判別できます。
+  de: Der Becher bleibt auf dem Drehteller zentriert. Die Trinköffnung wandert zwischen den Bildern,
+    die gerippte Manschette bleibt erkennbar.
+  pt-BR: O copo permanece centrado na base giratória. A abertura da tampa muda de posição enquanto a
+    faixa canelada continua reconhecível.
+  es: El vaso se mantiene centrado en la base giratoria. La abertura de la tapa cambia de posición y
+    la funda estriada sigue reconocible.
+  ko: 컵은 회전판 중앙을 유지합니다. 뚜껑의 마시는 구멍은 프레임마다 이동하고 골이 있는 컵 슬리브는 알아볼 수 있습니다.
+  zh-Hant: 杯子保持在轉台中央。飲口在幀間換位，直紋杯套仍可辨認。
+  fr: Le gobelet reste centré sur le plateau. L’ouverture du couvercle change de place et le manchon
+    rainuré reste reconnaissable.
+  it: Il bicchiere resta al centro della piattaforma. Il foro del coperchio cambia posizione e la
+    fascia rigata resta riconoscibile.
+  ru: Стакан остаётся в центре платформы. Отверстие в крышке перемещается между кадрами, ребристая
+    накладка узнаваема.
+  ar: يبقى الكوب في مركز المنصة الدوّارة. ويتغيّر موضع فتحة الشرب مع بقاء الغلاف المخدّد واضح المعالم.
+observation:
+  en: The cup stays centered on the turntable. The lid opening shifts between frames while the ribbed
+    sleeve remains recognizable.
+  zh-Hans: 杯子始终位于转台中央。饮口在帧间换位，竖纹杯套仍可辨认。
+  ja: カップは回転台の中央にあり、蓋の飲み口がフレームごとに移動しても、縦溝のスリーブは判別できます。
+  de: Der Becher bleibt auf dem Drehteller zentriert. Die Trinköffnung wandert zwischen den Bildern,
+    die gerippte Manschette bleibt erkennbar.
+  pt-BR: O copo permanece centrado na base giratória. A abertura da tampa muda de posição enquanto a
+    faixa canelada continua reconhecível.
+  es: El vaso se mantiene centrado en la base giratoria. La abertura de la tapa cambia de posición y
+    la funda estriada sigue reconocible.
+  ko: 컵은 회전판 중앙을 유지합니다. 뚜껑의 마시는 구멍은 프레임마다 이동하고 골이 있는 컵 슬리브는 알아볼 수 있습니다.
+  zh-Hant: 杯子保持在轉台中央。飲口在幀間換位，直紋杯套仍可辨認。
+  fr: Le gobelet reste centré sur le plateau. L’ouverture du couvercle change de place et le manchon
+    rainuré reste reconnaissable.
+  it: Il bicchiere resta al centro della piattaforma. Il foro del coperchio cambia posizione e la
+    fascia rigata resta riconoscibile.
+  ru: Стакан остаётся в центре платформы. Отверстие в крышке перемещается между кадрами, ребристая
+    накладка узнаваема.
+  ar: يبقى الكوب في مركز المنصة الدوّارة. ويتغيّر موضع فتحة الشرب مع بقاء الغلاف المخدّد واضح المعالم.
+limitation:
+  en: The unseen sides are inferred from one image. Check newly visible geometry and the loop seam
+    before using it as a product view.
+  zh-Hans: 不可见的侧面由模型根据单张图推断。用于商品展示前，请核对新出现的结构及循环衔接。
+  ja: 見えていない面は 1 枚の画像から推定されています。商品紹介に使う前に新たに見える形状とループの継ぎ目を確認してください。
+  de: Verdeckte Seiten werden aus einem Bild abgeleitet. Prüfen Sie die neu sichtbare Form und den
+    Schleifenübergang vor der Produktpräsentation.
+  pt-BR: Os lados ocultos são inferidos de uma imagem. Confira a geometria revelada e a emenda do loop
+    antes de usar como vista de produto.
+  es: Los lados ocultos se infieren de una imagen. Revisa las formas reveladas y la unión del bucle
+    antes de mostrar el producto.
+  ko: 보이지 않는 면은 이미지 한 장에서 추정했습니다. 제품을 보여 주기 전에 새로 보이는 형태와 루프 연결부를 확인하세요.
+  zh-Hant: 未顯示的側面由模型根據單張圖推斷。用於商品展示前，請核對新顯露的形狀和循環接點。
+  fr: Les faces cachées sont déduites d’une seule image. Vérifiez les nouvelles formes visibles et le
+    raccord de boucle avant une présentation produit.
+  it: I lati nascosti sono dedotti da un’immagine. Controlla la geometria che emerge e il raccordo del
+    loop prima di presentare il prodotto.
+  ru: Невидимые стороны достроены по одному изображению. Перед показом товара проверьте новую
+    геометрию и стык цикла.
+  ar: تُستنتج الجوانب الخفية من صورة واحدة. تحقّق من الشكل الظاهر حديثًا ومن نقطة اتصال الحلقة قبل
+    استخدامها في عرض المنتج.

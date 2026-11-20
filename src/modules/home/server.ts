@@ -28,9 +28,13 @@ export function homeModel(locale: LocaleEntry): HomeModel {
 }
 
 /** Index only the actual home selection; unrelated library fallback does not disqualify it. */
-export function homeIndexable(locale: LocaleEntry): boolean {
+export function homeIndexable(locale: LocaleEntry, model = homeModel(locale)): boolean {
   if (!locale.enabled || config.buildMode !== 'production') return false;
-  const model = homeModel(locale);
+  return homeMembers(locale, model).every((item) => item.localization.indexable);
+}
+
+/** The content shown anywhere on the home page, including alternate featured frames. */
+export function homeMembers(locale: LocaleEntry, model: HomeModel) {
   const index = localeIndex(locale.code);
   const ids = new Set([
     ...model.onShow.map((work) => work.id),
@@ -38,9 +42,10 @@ export function homeIndexable(locale: LocaleEntry): boolean {
     ...model.latest,
     ...model.useCases.map((use) => use.work),
   ]);
-  return (
-    index.prompts.filter((prompt) => ids.has(prompt.id)).every((prompt) => prompt.localization.indexable) &&
-    model.templates.every((template) => template.localization.indexable) &&
-    model.collections.every((collection) => collection.localization.indexable)
-  );
+  const templateIds = new Set(model.templates.map((template) => template.id));
+  return [
+    ...index.prompts.filter((prompt) => ids.has(prompt.id)),
+    ...index.templates.filter((template) => templateIds.has(template.id)),
+    ...model.collections,
+  ];
 }

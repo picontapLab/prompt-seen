@@ -23,7 +23,20 @@
       "optional": "Референсное изображение необязательно",
       "required": "Требуется референсное изображение"
     },
-    "recordedUnknownModel": "Сохранённый результат · модель не подтверждена"
+    "recordedUnknownModel": "Сохранённый результат · модель не подтверждена",
+    "generatedWith": "Создано с помощью {model}",
+    "originalLanguage": "Язык запроса для генерации · {language}",
+    "recorded": "Запуск записан {date}",
+    "referenceCount": "Использовано референсов: {count, number}",
+    "inputNumber": "Вход {n}",
+    "outputNumber": "Результат {n}",
+    "observation": "Наблюдение",
+    "limitation": "Ограничение",
+    "frames": "Кадров: {count, number}",
+    "seconds": "{duration, number} с",
+    "loop": "Непрерывный цикл",
+    "loopUnknown": "Число повторов не указано",
+    "loopCount": "Число повторов: {count}"
   },
   "sheet": {
     "label": "Промпт · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "Промпт, использованный для этого результата",
     "unknown": "Не записано",
     "selectRun": "Сохранённый результат",
-    "cover": "Обложка"
+    "cover": "Обложка",
+    "displayRun": "Показанный запуск",
+    "variant": "Вариант"
   },
   "source": {
     "heading": "Источник и лицензия",
@@ -81,7 +96,10 @@
     "licence": "Лицензия: {licence}",
     "creator": "Создатель: {creator}",
     "aiGenerated": "Сгенерированное изображение",
-    "algorithmic": "Создано программой"
+    "algorithmic": "Создано программой",
+    "siteTextLicense": "Лицензия текстов сайта (CC BY 4.0)",
+    "testingMethod": "Метод проверки",
+    "imageSource": "Источник изображения"
   },
   "related": {
     "templates": "Связанные шаблоны",

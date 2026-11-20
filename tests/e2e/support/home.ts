@@ -65,12 +65,11 @@ export function homeIsIndexable(code: string): boolean {
 }
 export function homeAlternates(code: string) {
   if (!homeIsIndexable(code)) return {};
+  const indexable = BUILD.locales.filter((locale) => homeIsIndexable(locale.code));
   return {
-    ...Object.fromEntries(
-      BUILD.locales
-        .filter((locale) => homeIsIndexable(locale.code))
-        .map((locale) => [locale.htmlLang, publicUrl(homePath(locale))]),
-    ),
-    ...(homeIsIndexable(BUILD.defaultLocale) ? { 'x-default': publicUrl('/') } : {}),
+    ...Object.fromEntries(indexable.map((locale) => [locale.htmlLang, publicUrl(homePath(locale))])),
+    ...(indexable.length > 1 && indexable.some((locale) => locale.code === BUILD.defaultLocale)
+      ? { 'x-default': publicUrl('/') }
+      : {}),
   };
 }

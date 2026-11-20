@@ -11,7 +11,7 @@ export const FEED_PAGE_SIZE = 24;
 /** The image fields a card needs; full credits stay in the detail model. */
 export type FeedImage = Pick<
   ImageRef,
-  'width' | 'height' | 'placeholder' | 'altLocale' | 'alt' | 'variants' | 'mimeType' | 'animation'
+  'width' | 'height' | 'placeholder' | 'altLocale' | 'alt' | 'variants' | 'mimeType' | 'animation' | 'generationModel'
 >;
 
 /** One work in the justified rows (§11.1.4, §11.8.2). */

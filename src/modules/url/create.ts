@@ -172,7 +172,7 @@ export function createUrlModule(cfg: UrlConfig) {
     /** At the host root only when the site is deployed there; see robots.mode (§15.4.3). */
     robots: () => '/robots.txt',
     /** Site summary for AI tools (§9.10.4). */
-    llms: () => '/llms.txt',
+    llms: (locale?: string) => (locale ? `/${locale}/llms.txt` : '/llms.txt'),
   };
 
   return { withBasePath, stripBasePath, absoluteUrl, mediaUrl, absoluteMediaUrl, paths };

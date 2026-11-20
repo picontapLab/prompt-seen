@@ -12,6 +12,7 @@ export default defineEmitter({
       buildId: config.buildId,
       siteName: config.siteName,
       buildMode: config.buildMode,
+      ...(config.buildMode === 'production' && { datasetVersion: 2 }),
       origin: config.origin,
       basePath: config.basePath,
       urlPattern: config.urlPattern,

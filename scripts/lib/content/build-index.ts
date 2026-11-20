@@ -33,7 +33,7 @@ import { compileMdx, type ContentLink } from './mdx';
 import type { Content, LocaleFile, PromptRecord, TaxonomyKey, TemplateRecord } from './read';
 import { classifyLocalization, selectDescription, type LocalStatus } from './localization';
 import { TAXONOMY_FILES, sha256 } from './read';
-import { matchingPromptRuns, resolvePrompt, resolveTemplate, runPromptLanguage, sourcePromptLanguage } from './prompt-variants';
+import { matchingPromptRuns, promptShowcase, resolvePrompt, resolveTemplate, runPromptLanguage, sourcePromptLanguage } from './prompt-variants';
 import {
   COLLECTION_MIN_ITEMS,
   localeStates,
@@ -277,6 +277,13 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
   const localizedText = (values: Record<string, string>, code: string, source?: string) => selectText(values, code, source)?.value ?? null;
   const textLocale = (values: Record<string, string>, code: string, source?: string) => selectText(values, code, source)?.locale ?? null;
 
+  const outputModels = new Map<string, string>();
+  for (const run of content.examples.values()) {
+    const model = run.data.model.displayName;
+    for (const id of run.data.outputAssetIds)
+      if (model) outputModels.set(id, model);
+  }
+
   const imageRef = (assetId: string, code: string, full: boolean, source?: string): ImageRef => {
     const m = content.media.get(assetId)!.data;
     const ratio = m.width / m.height;
@@ -284,6 +291,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     return {
       assetId,
       mimeType: m.mimeType,
+      generationModel: outputModels.get(assetId),
       ...(m.animation ? { animation: m.animation } : {}),
       width: m.width,
       height: m.height,
@@ -308,11 +316,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     };
   };
 
-  const richBody = (file: LocaleFile, code: string): { body: RichBlock[]; toc: { id: string; text: string }[] } => {
+  const richBody = (file: LocaleFile, code: string, firstSectionId?: string): { body: RichBlock[]; toc: { id: string; text: string }[] } => {
     const compiled = compileMdx(file.body, {
       file: file.file,
+      firstSectionId,
       resolve: {
         link: (l) => linkPath(l, code),
+        siteLink: (target) =>
+          target === 'home' ? url.paths.siteRoot() : target === 'issues' && config.repository
+            ? `${config.repository}/issues`
+            : config.repository,
         figure: (id) => (content.media.has(id) ? imageRef(id, code, true, file.locale) : null),
       },
     });
@@ -352,6 +365,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     label: termLabel(key, id, code),
     labelLocale: textLocale(content.taxonomy[key].get(id)?.labels ?? {}, code),
     path: topicPath(key, id, code),
+    indexable: vis(`topic:${key}:${id}`, code)?.localization.indexable ?? false,
   });
 
   // ---- Summaries -----------------------------------------------------------------------------------
@@ -372,6 +386,8 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     const language = selected.language;
     const matches = matchingPromptRuns(content, r, code);
     const isSource = language === sourcePromptLanguage(content, r);
+    const runs = runsOfPrompt(r.data.id);
+    const coverRun = runs.find((run) => run.data.outputAssetIds.includes(r.data.coverAssetId!));
     return {
       kind: 'prompt',
       id: r.data.id,
@@ -386,12 +402,14 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
       frameNumber: frameNumber(r.data.id),
       cover: imageRef(r.data.coverAssetId!, code, false, v.file.locale),
-      hasGifOutput: runsOfPrompt(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
+      hasGifOutput: runs.some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       categoryId: r.data.categoryId,
       styleIds: r.data.styleIds,
       useCaseIds: r.data.useCaseIds,
       model: isSource ? { displayName: r.data.model.displayName, providerModelId: r.data.model.providerModelId }
         : matches[0]?.data.model ?? { displayName: null, providerModelId: null },
+      coverModel: coverRun?.data.model ?? null,
+      coverRecordedAt: coverRun?.data.recordedAt ?? null,
       verification: isSource ? r.data.model.verification : 'unknown',
       lastTestedAt: matches[0]?.data.recordedAt ?? null,
       promptLanguage: language,
@@ -513,6 +531,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
           noteLocale: textLocale(a.note, code, v.file.locale),
         }));
       const examples = runsOfPrompt(r.data.id).map((x) => exampleView(x.data.id, code));
+      const facts = promptShowcase(content, r, code, v.file.locale);
       const score = (p: PromptRecord) =>
         (p.data.categoryId === r.data.categoryId ? 3 : 0) +
         2 * p.data.styleIds.filter((s) => r.data.styleIds.includes(s)).length +
@@ -523,6 +542,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
         .slice(0, SIMILAR_LIMIT)
         .map((p) => promptById.get(p.data.id)!);
       const source = r.data.promptSource;
+      const sourceLanguage = sourcePromptLanguage(content, r);
       const model: PromptDetail = {
         ...summary,
         cover: imageRef(r.data.coverAssetId!, code, true, v.file.locale),
@@ -538,13 +558,18 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
         test: {
           model: summary.model,
           verification: summary.verification,
-          recordedOutput: matchingPromptRuns(content, r, code).some((run) => run.data.outputAssetIds.length > 0),
+          recordedOutput: Boolean(facts?.matchingRunIds.length),
           lastTestedAt: summary.lastTestedAt,
           aspectRatio: aspectRatioLabel(summary.cover.width, summary.cover.height),
           referenceImage: inputRequirementsOf(content, r).referenceImage,
         },
         examples,
+        ...(facts && { facts }),
         source: r.data.source,
+        translationOfWorkPath:
+          selected.language !== sourceLanguage && vis(r.data.id, sourceLanguage)?.localization.indexable
+            ? pathOf.prompt(sourceLanguage, r.data.slug)
+            : null,
         promptProvenance: r.data.promptProvenance,
         inspirationSources: r.data.inspirationSources.map((source) => ({
           ...source,
@@ -622,6 +647,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
       const defaultValues = selected.samples.get('default')?.values ?? {};
       const model: TemplateDetail = {
         ...templateById.get(r.data.id)!,
+        translationOfWorkPath:
+          selected.language !== r.data.promptLanguage && vis(r.data.id, r.data.promptLanguage)?.localization.indexable
+            ? pathOf.template(r.data.promptLanguage, r.data.slug)
+            : null,
         cover: (() => {
           const id = templateCover(r);
           return id && content.media.has(id) ? imageRef(id, code, true, v.file.locale) : null;
@@ -738,7 +767,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
         createdAt: v.file.fm.updatedAt,
         updatedAt: v.file.fm.updatedAt,
         seo: seo(v.file),
-        ...richBody(v.file, code),
+        ...richBody(v.file, code, page.slug === 'about' ? 'testing-method' : undefined),
         alternates: alternates(owner, code, (c) => pathOf.page(c, page.slug)),
         languageLinks: languageLinks(owner, (c) => pathOf.page(c, page.slug)),
         translation: translation(v),
@@ -787,7 +816,9 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
         return slot ? (localizedText(slot.labels, code) ?? '') : '';
       }),
       references: d.referenceAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
-      outputs: d.outputAssetIds.filter((a) => content.media.has(a)).map((a) => imageRef(a, code, true)),
+      outputs: d.outputAssetIds.filter((a) => content.media.has(a)).map((a) => ({
+        ...imageRef(a, code, true), generationModel: d.model.displayName ?? undefined,
+      })),
       notes: localizedText(d.notes, code),
       notesLocale: textLocale(d.notes, code),
     };

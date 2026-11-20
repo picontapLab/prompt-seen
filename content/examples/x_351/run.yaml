@@ -12,86 +12,65 @@ outputAssetIds:
   - a_474
 provider: OpenAI + local GIF encoding
 model:
-  displayName: GPT image 2.6
+  displayName: GPT Image 2.6
   providerModelId: null
 recordedAt: 2026-11-09
 parameters: {}
 notes:
-  en: "Reviewed all nine-frame sequences in four contact sheets: action order, identity, captions and
-    final poses retained. This output reuses archived GPT Image source pixels; no new provider call.
-    Nine chronological source poses selected. Total duration and playback count preserved. Original
-    source review (frame counts describe source only): All twelve cells spell 周一不想上班 correctly.
-    Straw hat, blue band and orange vest stay recognizable while character yawns, sinks to the floor
-    and stands again. 2400 ms loop. Subtitle position and outlines have slight generated jitter;
-    disclose this rather than claim pixel-locked lettering."
-  zh-Hans: 周一不想上班
-  ja: 4枚の一覧画像ですべての9フレームの順序、人物の特徴、字幕、最終姿態を確認しました。保存済みのGPT
-    Image素材を再利用し、新たな画像ツール呼び出しは行っていません。元素材から時系列順に9姿態を選びました。総再生時間とループ回数は保持しています。元素材の確認記録（以下のコマ数は元素材のもの）：元の12コマすべてで「周一不想上班」が正しく描かれています。麦わら帽子、青い帯、オレンジ色のベストを保ち、あくび、座り込み、立ち上がりへ進みます。2.4秒ループ。字幕位置や輪郭には小さな揺れがあり、文字の画素単位の固定は保証しません。
-  de: "Alle Sequenzen mit neun Frames in vier Kontaktbögen geprüft: Handlungsreihenfolge, Identität,
-    Beschriftungen und Endposen erhalten. Diese Ausgabe verwendet archivierte GPT-Image-Quellpixel
-    erneut; kein neuer Anbieteraufruf. Neun chronologische Quellposen ausgewählt. Gesamtdauer und
-    Wiedergabeanzahl erhalten. Ursprüngliche Quellprüfung (Frame-Anzahlen beschreiben nur die
-    Quelle): Alle zwölf Zellen schreiben 周一不想上班 korrekt. Strohhut, blaues Band und orangefarbene
-    Weste bleiben erkennbar, während die Figur gähnt, zu Boden sinkt und wieder aufsteht.
-    2400-ms-Schleife. Untertitelposition und Konturen weisen leichtes generiertes Zittern auf; dies
-    offenlegen, statt pixelgenau fixierte Schrift zu behaupten."
-  pt-BR: "Todas as sequências de nove quadros foram revisadas em quatro folhas de contato: ordem das
-    ações, identidade, legendas e poses finais preservadas. Este resultado reutiliza pixels de
-    fontes arquivadas do GPT Image; não houve nova chamada ao provedor. Nove poses cronológicas da
-    fonte selecionadas. Duração total e número de reproduções preservados. Revisão original da fonte
-    (as contagens de quadros descrevem apenas a fonte): Todas as doze células apresentam 周一不想上班
-    escrito corretamente. Chapéu de palha, faixa azul e colete laranja continuam reconhecíveis
-    enquanto a personagem boceja, desaba no chão e volta a ficar de pé. Repetição de 2400 ms. A
-    posição das legendas e os contornos têm pequenas oscilações geradas; informe isso em vez de
-    alegar letras fixas pixel a pixel."
-  es: "Se revisaron todas las secuencias de nueve fotogramas en cuatro hojas de contacto: se
-    conservaron el orden de la acción, la identidad, los textos y las poses finales. Este resultado
-    reutiliza los píxeles de origen archivados de GPT Image; no hubo nueva llamada al proveedor. Se
-    seleccionaron nueve poses de origen cronológicas. Se conservaron la duración total y el número
-    de reproducciones. Revisión original de la fuente (los recuentos de fotogramas describen solo la
-    fuente): Las doce celdas escriben correctamente 周一不想上班. El sombrero de paja, la banda azul y el
-    chaleco naranja siguen siendo reconocibles mientras el personaje bosteza, se deja caer al suelo
-    y vuelve a levantarse. Bucle de 2400 ms. La posición del subtítulo y los contornos presentan
-    ligeras oscilaciones generadas; hay que indicarlo en vez de afirmar que las letras quedan fijas
-    píxel a píxel."
-  ko: "콘택트 시트 네 장에서 아홉 프레임으로 구성된 모든 시퀀스를 검토하여 동작 순서, 대상의 정체성, 문구와 마지막 자세가 유지됨을 확인했습니다. 이 결과는 보관된 GPT
-    Image 원본 픽셀을 재사용하며 제공업체를 새로 호출하지 않았습니다. 시간순 원본 자세 아홉 개를 선택했습니다. 전체 길이와 재생 횟수를 유지했습니다. 원본 검토
-    기록(프레임 수는 원본에만 해당): 열두 칸 모두 周一不想上班을 정확히 표시합니다. 캐릭터가 하품하고 바닥에 주저앉았다 다시 일어나는 동안 밀짚모자, 파란 띠와 주황 조끼를
-    알아볼 수 있습니다. 2400ms 반복입니다. 생성된 자막의 위치와 윤곽에 약한 떨림이 있어 글자가 픽셀 단위로 고정되었다고 하지 않고 이를 밝힙니다."
-  zh-Hant: 已在四張接觸印樣中核對全部九格序列：動作順序、身分、字幕與最終姿態均保留。本次輸出重用封存的 GPT Image
-    來源像素，未再次呼叫供應商。依時間順序選取九個來源姿態，總時長與播放次數保持不變。原始來源審查（以下格數僅描述來源版本）：十二格中的「周一不想上班」均正確。角色打呵欠、癱坐地板再站起時，草帽、藍色帽帶與橙色背心仍可辨認。2400ms
-    循環。字幕位置與輪廓有輕微生成抖動；應揭露此限制，不宣稱文字逐像素鎖定。
-  fr: "Toutes les séquences de neuf images ont été examinées dans quatre planches-contact : ordre des
-    actions, identité, légendes et poses finales conservés. Ce résultat réutilise les pixels sources
-    GPT Image archivés ; aucun nouvel appel au fournisseur. Neuf poses sources sélectionnées dans
-    l’ordre chronologique. La durée totale et le nombre de lectures sont conservés. Examen de la
-    source d’origine (les nombres d’images ne concernent que la source) : Les douze cellules
-    orthographient correctement 周一不想上班. Chapeau de paille, bande bleue et gilet orange restent
-    reconnaissables pendant que le personnage bâille, s’affaisse au sol et se relève. Boucle de
-    2400 ms. Position du sous-titre et contours présentent un léger tremblement généré ; le signaler
-    sans prétendre à un lettrage fixe au pixel près."
-  it: "Tutte le sequenze di nove fotogrammi sono state esaminate in quattro provini: ordine delle
-    azioni, identità, didascalie e pose finali conservati. Questo risultato riusa i pixel GPT Image
-    archiviati; nessuna nuova chiamata al fornitore. Selezionate nove pose originali in ordine
-    cronologico. Durata totale e numero di riproduzioni conservati. Revisione originale della fonte
-    (i conteggi riguardano solo la fonte): tutte le dodici celle scrivono correttamente 周一不想上班.
-    Cappello di paglia, fascia blu e gilet arancione restano riconoscibili mentre il personaggio
-    sbadiglia, si accascia e si rialza. Ciclo di 2400 ms. Posizione dei sottotitoli e contorni
-    presentano un lieve tremolio generato; va dichiarato senza affermare che le scritte siano fisse
-    pixel per pixel."
-  ru: "Все последовательности из девяти кадров проверены на четырёх контактных листах: порядок
-    действий, узнаваемость персонажей, подписи и финальные позы сохранены. Результат повторно
-    использует пиксели архивного исходника GPT Image; нового обращения к сервису не было. Выбраны
-    девять исходных поз в хронологическом порядке. Общая длительность и число воспроизведений
-    сохранены. Исходная проверка (число кадров относится только к исходнику): во всех двенадцати
-    ячейках 周一不想上班 написано правильно. Соломенная шляпа, синяя лента и оранжевый жилет остаются
-    узнаваемыми, пока персонаж зевает, опускается на пол и снова встаёт. Цикл 2400 мс. Положение
-    субтитров и контуры слегка дрожат из-за генерации; это следует раскрыть, а не заявлять о
-    неизменности надписей на уровне пикселей."
-  ar: "رُوجعت جميع التسلسلات ذات التسعة إطارات في أربع لوحات تجميع: حُفظ ترتيب الحركة والهوية والنصوص
-    والوضعيات النهائية. تعيد هذه النتيجة استخدام بكسلات مصدر GPT Image المؤرشفة؛ ومن دون استدعاء
-    جديد للمزوّد. اختيرت تسع وضعيات مصدر بترتيب زمني. حُفظت المدة الإجمالية وعدد مرات التشغيل.
-    مراجعة المصدر الأصلية (تصف أعداد الإطارات المصدر وحده): تكتب الخلايا الاثنتا عشرة 周一不想上班 كتابة
-    صحيحة. تبقى القبعة القشية والشريط الأزرق والسترة البرتقالية قابلة للتعرّف بينما تتثاءب الشخصية
-    وتهبط إلى الأرض وتقف مجددًا. حلقة مدتها 2400 ms. يوجد اهتزاز مولّد طفيف في موضع النص وحدوده؛
-    ويجب الإفصاح عنه بدل الادعاء بثبات الحروف بكسلًا ببكسل."
+  en: The straw-hatted character yawns, sits down and stands again. 周一不想上班 is readable in all nine
+    frames.
+  zh-Hans: 戴草帽的角色打哈欠、坐下再站起，九帧中的“周一不想上班”均可读。
+  ja: 麦わら帽子のキャラクターはあくびをして座り、また立ち上がります。「周一不想上班」は 9 フレームすべてで読めます。
+  de: Die Figur mit Strohhut gähnt, setzt sich und steht wieder auf. 周一不想上班 ist in allen neun Bildern
+    lesbar.
+  pt-BR: O personagem de chapéu de palha boceja, senta e se levanta. 周一不想上班 é legível nos nove quadros.
+  es: El personaje con sombrero de paja bosteza, se sienta y vuelve a levantarse. 周一不想上班 se lee en los
+    nueve fotogramas.
+  ko: 밀짚모자 캐릭터가 하품하고 앉았다가 다시 일어납니다. 아홉 프레임 모두에서 周一不想上班이 읽힙니다.
+  zh-Hant: 戴草帽的角色打呵欠、坐下再站起，九幀中的「周一不想上班」都能讀清楚。
+  fr: Le personnage au chapeau de paille bâille, s’assoit puis se relève. 周一不想上班 se lit dans les neuf
+    images.
+  it: Il personaggio con il cappello di paglia sbadiglia, si siede e si rialza. 周一不想上班 si legge in
+    tutti e nove i fotogrammi.
+  ru: Персонаж в соломенной шляпе зевает, садится и снова встаёт. Надпись 周一不想上班 читается во всех
+    девяти кадрах.
+  ar: تتثاءب الشخصية ذات قبعة القش ثم تجلس وتقف من جديد. ويمكن قراءة 周一不想上班 في اللقطات التسع.
+observation:
+  en: The straw-hatted character yawns, sits down and stands again. 周一不想上班 is readable in all nine
+    frames.
+  zh-Hans: 戴草帽的角色打哈欠、坐下再站起，九帧中的“周一不想上班”均可读。
+  ja: 麦わら帽子のキャラクターはあくびをして座り、また立ち上がります。「周一不想上班」は 9 フレームすべてで読めます。
+  de: Die Figur mit Strohhut gähnt, setzt sich und steht wieder auf. 周一不想上班 ist in allen neun Bildern
+    lesbar.
+  pt-BR: O personagem de chapéu de palha boceja, senta e se levanta. 周一不想上班 é legível nos nove quadros.
+  es: El personaje con sombrero de paja bosteza, se sienta y vuelve a levantarse. 周一不想上班 se lee en los
+    nueve fotogramas.
+  ko: 밀짚모자 캐릭터가 하품하고 앉았다가 다시 일어납니다. 아홉 프레임 모두에서 周一不想上班이 읽힙니다.
+  zh-Hant: 戴草帽的角色打呵欠、坐下再站起，九幀中的「周一不想上班」都能讀清楚。
+  fr: Le personnage au chapeau de paille bâille, s’assoit puis se relève. 周一不想上班 se lit dans les neuf
+    images.
+  it: Il personaggio con il cappello di paglia sbadiglia, si siede e si rialza. 周一不想上班 si legge in
+    tutti e nove i fotogrammi.
+  ru: Персонаж в соломенной шляпе зевает, садится и снова встаёт. Надпись 周一不想上班 читается во всех
+    девяти кадрах.
+  ar: تتثاءب الشخصية ذات قبعة القش ثم تجلس وتقف من جديد. ويمكن قراءة 周一不想上班 في اللقطات التسع.
+limitation:
+  en: The GIF is assembled locally from generated poses. Caption position and character outlines shift
+    slightly between frames.
+  zh-Hans: GIF 由生成的连续姿态在本地合成，字幕位置和角色轮廓在帧间有轻微变化。
+  ja: GIF は生成されたポーズを使ってローカルで合成しています。字幕位置と輪郭にはフレーム間でわずかなずれがあります。
+  de: Das GIF wurde lokal aus generierten Posen zusammengesetzt. Position des Textes und Umrisse
+    verschieben sich zwischen Bildern leicht.
+  pt-BR: O GIF foi montado localmente a partir de poses geradas. A posição da legenda e o contorno
+    oscilam um pouco entre os quadros.
+  es: El GIF se montó localmente a partir de poses generadas. La posición del texto y los contornos
+    varían ligeramente entre fotogramas.
+  ko: GIF는 생성된 자세를 로컬에서 합성한 결과입니다. 프레임마다 자막 위치와 윤곽이 조금씩 달라집니다.
+  zh-Hant: GIF 由生成的一系列姿勢在本機合成，字幕位置與角色輪廓在幀間略有變化。
+  fr: Le GIF est assemblé localement à partir de poses générées. La légende et les contours bougent
+    légèrement d’une image à l’autre.
+  it: La GIF è assemblata in locale a partire da pose generate. La posizione della scritta e i
+    contorni variano lievemente tra i fotogrammi.
+  ru: GIF собран локально из сгенерированных поз. Положение надписи и контур немного смещаются между
+    кадрами.
+  ar: جُمّع ملف GIF محليًا من وضعيات مولّدة. يتغيّر موضع العبارة ومحيط الشخصية قليلًا بين اللقطات.

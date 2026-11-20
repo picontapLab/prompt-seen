@@ -23,7 +23,20 @@
       "optional": "参照画像は任意",
       "required": "参照画像が必要"
     },
-    "recordedUnknownModel": "生成結果を記録済み・モデル未確認"
+    "recordedUnknownModel": "生成結果を記録済み・モデル未確認",
+    "generatedWith": "{model} で生成",
+    "originalLanguage": "生成プロンプトの言語：{language}",
+    "recorded": "実行記録：{date}",
+    "referenceCount": "参照画像を {count, number} 枚使用",
+    "inputNumber": "入力 {n}",
+    "outputNumber": "出力 {n}",
+    "observation": "観察結果",
+    "limitation": "制約",
+    "frames": "{count, number} フレーム",
+    "seconds": "{duration, number} 秒",
+    "loop": "無限ループ",
+    "loopUnknown": "ループ回数の指定なし",
+    "loopCount": "ループ回数 {count}"
   },
   "sheet": {
     "label": "プロンプト · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "このプリントに使ったプロンプト",
     "unknown": "記録なし",
     "selectRun": "記録された生成結果",
-    "cover": "カバー"
+    "cover": "カバー",
+    "displayRun": "表示中の実行",
+    "variant": "バリエーション"
   },
   "source": {
     "heading": "出典とライセンス",
@@ -81,7 +96,10 @@
     "licence": "ライセンス：{licence}",
     "creator": "制作者：{creator}",
     "aiGenerated": "AI で生成した画像",
-    "algorithmic": "プログラムで生成"
+    "algorithmic": "プログラムで生成",
+    "siteTextLicense": "サイト内テキストのライセンス（CC BY 4.0）",
+    "testingMethod": "検証方法",
+    "imageSource": "画像の出典"
   },
   "related": {
     "templates": "関連テンプレート",

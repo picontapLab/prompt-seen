@@ -23,6 +23,7 @@ const translator = (code: string) => {
 export const geo = createGeoDocuments({
   buildMode: config.buildMode,
   siteName: config.siteName,
+  repository: config.repository,
   defaultLocale: config.defaultLocale,
   locales: builtLocales,
   languageEntry: (locale) => (homeIndexable(locale) ? paths.home(locale.pathPrefix) : null),

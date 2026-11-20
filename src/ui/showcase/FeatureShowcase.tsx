@@ -99,12 +99,18 @@ export function FeatureShowcase({
   );
 
   return (
-    <AnnotationProvider annotations={s.cover.animation ? [] : s.annotations} defaultCurrent={defaultAnnotation}>
-      <figure
-        className={styles.showcase}
-        data-size={size}
-        data-entry={s.id}
-        style={{ '--w': s.cover.width, '--h': s.cover.height } as CSSProperties}
+    <figure
+      className={styles.showcase}
+      data-size={size}
+      data-entry={s.id}
+      data-has-intro={intro ? '' : undefined}
+      style={{ '--w': s.cover.width, '--h': s.cover.height } as CSSProperties}
+    >
+      {intro && <header className={styles.intro}>{intro}</header>}
+      <AnnotationProvider
+        key={s.id}
+        annotations={s.cover.animation ? [] : s.annotations}
+        defaultCurrent={defaultAnnotation}
       >
         <div
           className={styles.media}
@@ -139,7 +145,6 @@ export function FeatureShowcase({
           </figcaption>
         </div>
         <div className={styles.text}>
-          {intro}
           <p className={styles.promptLabel} data-prompt-language={s.promptLanguage}>
             {t('sheet.label', { language: languageName(s.promptLanguage, locale) })}
           </p>
@@ -151,9 +156,10 @@ export function FeatureShowcase({
           {/* Every note stays readable text, and describes its phrase (§11.1.9). */}
           <AnnotationNotes heading={t('annotations.heading')} promptLanguage={s.promptLanguage} visuallyHidden />
           {actions && <div className={styles.actions}>{actions}</div>}
-          {footer}
+          {!intro && footer}
         </div>
-      </figure>
-    </AnnotationProvider>
+      </AnnotationProvider>
+      {intro && footer && <div className={styles.footer}>{footer}</div>}
+    </figure>
   );
 }

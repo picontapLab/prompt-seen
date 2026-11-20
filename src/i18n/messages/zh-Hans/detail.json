@@ -23,7 +23,20 @@
       "optional": "可选参考图",
       "required": "需要参考图"
     },
-    "recordedUnknownModel": "已有实测结果 · 模型身份未核实"
+    "recordedUnknownModel": "已有实测结果 · 模型身份未核实",
+    "generatedWith": "由 {model} 生成",
+    "originalLanguage": "生成原文语言 · {language}",
+    "recorded": "运行记录于 {date}",
+    "referenceCount": "本次使用 {count, number} 张参考图",
+    "inputNumber": "输入 {n}",
+    "outputNumber": "输出 {n}",
+    "observation": "结果观察",
+    "limitation": "使用限制",
+    "frames": "{count, number} 帧",
+    "seconds": "{duration, number} 秒",
+    "loop": "持续循环",
+    "loopUnknown": "未指定循环次数",
+    "loopCount": "循环次数 {count}"
   },
   "sheet": {
     "label": "提示词 · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "这张样张使用的提示词",
     "unknown": "未记录",
     "selectRun": "选择实测结果",
-    "cover": "封面"
+    "cover": "封面",
+    "displayRun": "展示运行",
+    "variant": "变体"
   },
   "source": {
     "heading": "来源与许可",
@@ -81,7 +96,10 @@
     "licence": "许可：{licence}",
     "creator": "创作者：{creator}",
     "aiGenerated": "AI 生成的图片",
-    "algorithmic": "由程序生成"
+    "algorithmic": "由程序生成",
+    "siteTextLicense": "本站文本许可（CC BY 4.0）",
+    "testingMethod": "测试方法",
+    "imageSource": "图片出处"
   },
   "related": {
     "templates": "相关模板",

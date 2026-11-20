@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import type { ImageRef } from '@/modules/content/types';
+import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
 import styles from './GifBadge.module.css';
 
 /** The format belongs to the original, even when the browser displays an animated WebP. */
@@ -8,7 +9,7 @@ export function GifBadge({
   hasGifOutput,
   overlay = false,
 }: {
-  image?: Pick<ImageRef, 'mimeType'> | null;
+  image?: Pick<ImageRef, 'mimeType' | 'generationModel'> | null;
   hasGifOutput?: boolean;
   overlay?: boolean;
 }) {
@@ -17,7 +18,13 @@ export function GifBadge({
   if (!gif && !hasGifOutput) return null;
   return (
     <span className={styles.badge} data-overlay={overlay || undefined} data-media-badge="gif">
-      {gif ? 'GIF' : t('gifExample')}
+      {gif && image.generationModel ? (
+        <IsolatedMessage format={(model) => t('gifGenerated', { model })} value={image.generationModel} dir="ltr" />
+      ) : gif ? (
+        'GIF'
+      ) : (
+        t('gifExample')
+      )}
     </span>
   );
 }

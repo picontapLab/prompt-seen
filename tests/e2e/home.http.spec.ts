@@ -23,6 +23,9 @@ for (const locale of BUILD.locales) {
     expect(res.status()).toBe(200);
     const html = await res.text();
     expect(dataAttr(html, 'page')).toBe('home');
+    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? '';
+    expect(main.match(/<h1\b/g)).toHaveLength(1);
+    expect(main.match(/<h[1-6]\b/)?.[0]).toBe('<h1');
 
     const onShow = worksOnShow(code);
     if (!onShow.length) {

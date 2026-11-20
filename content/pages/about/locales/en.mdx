@@ -1,20 +1,20 @@
 ---
-title: About Prompt Seen
-description: What this library is, how prompts are tested, and what the sample entries are.
+title: "About Prompt Seen"
+description: "How Prompt Seen records the prompts, inputs, and generated outputs in the library."
 status: published
-updatedAt: 2026-10-28
+updatedAt: 2026-11-20
 ---
 
-Prompt Seen is a library of image prompts you can read, copy and adapt. Every entry shows the image it produced and marks which phrases in the prompt changed what.
+Prompt Seen is a library of image prompts and reusable templates with generated results.
 
 ## How are prompts tested?
 
-Each prompt is run with a recorded model, date and parameters. The record is kept with the prompt as an example run, and the page shows when it was last tested. Entries with no recorded run are marked “Not verified”.
+Every case in the library uses GPT Image 2.5 or GPT Image 2.6. A run records the submitted prompt verbatim, its language, the reference images in submission order, and the original outputs in order. Model identifiers and other parameters appear when the run record includes them.
 
-## What are the sample entries?
+We review the actual output for visible details and record any limits that affect reuse. For text or sticker sheets, we read each label in order. For GIFs, we inspect the frames and report playback information from the file. The run date comes from the record and the page update date indicates the latest editorial change.
 
-The 101 content images were generated with GPT Image using the prompts shown on their pages. Each has a recorded run and a visual review. The built-in tool does not expose the exact model snapshot or usage. Downloadable full-size images may use a lossless format conversion; display sizes are compressed separately. The earlier procedural sample runs are archived.
+The [product storyboard](prompt:p_123#run-x_168) and its [color variant](prompt:p_123#run-x_196) use distinct submitted prompts. The [market-opportunity slide](prompt:p_217#run-x_281) was generated from Chinese and is available with an English translation. The [Monday character GIF](prompt:p_287#run-x_351) has nine frames and takes 2.4 seconds per loop. It loops continuously.
 
-## How do I report a problem?
+## Who maintains the library?
 
-Open an issue in the project's repository for wrong information, broken pages or a licensing concern.
+The Prompt Seen project maintains this [official site](site:home) and its [public repository](site:repository). Report factual errors, broken pages, or rights questions in the [issue tracker](site:issues). See the [license page](page:license) for site text reuse and check each image’s credit for its own terms.

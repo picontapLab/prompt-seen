@@ -1,5 +1,8 @@
 {
-  "kinds": { "prompt": "Prompt", "template": "Modello di prompt" },
+  "kinds": {
+    "prompt": "Prompt",
+    "template": "Modello di prompt"
+  },
   "documentTitle": "{title} · {kind} · {siteName}",
   "breadcrumb": {
     "label": "Percorso di navigazione",
@@ -20,7 +23,20 @@
       "optional": "Immagine di riferimento facoltativa",
       "required": "Immagine di riferimento obbligatoria"
     },
-    "recordedUnknownModel": "Risultato registrato · modello non verificato"
+    "recordedUnknownModel": "Risultato registrato · modello non verificato",
+    "generatedWith": "Generato con {model}",
+    "originalLanguage": "Lingua del prompt di generazione · {language}",
+    "recorded": "Esecuzione registrata il {date}",
+    "referenceCount": "{count, plural, one {# immagine di riferimento usata} other {# immagini di riferimento usate}}",
+    "inputNumber": "Input {n}",
+    "outputNumber": "Risultato {n}",
+    "observation": "Osservazione",
+    "limitation": "Limite",
+    "frames": "{count, plural, one {# fotogramma} other {# fotogrammi}}",
+    "seconds": "{duration, number} s",
+    "loop": "Ciclo continuo",
+    "loopUnknown": "Numero di ripetizioni non specificato",
+    "loopCount": "Ripetizioni: {count}"
   },
   "sheet": {
     "label": "Prompt · {language}",
@@ -36,9 +52,15 @@
     "failed": "Impossibile copiare",
     "failedHint": "Seleziona il testo del prompt e copialo con la tastiera o dal menu."
   },
-  "share": { "label": "Condividi", "copied": "Link copiato", "failed": "Impossibile copiare il link" },
+  "share": {
+    "label": "Condividi",
+    "copied": "Link copiato",
+    "failed": "Impossibile copiare il link"
+  },
   "customize": "Personalizza",
-  "annotations": { "heading": "L’effetto di ogni frase" },
+  "annotations": {
+    "heading": "L’effetto di ogni frase"
+  },
   "image": {
     "original": "Immagine a dimensione intera",
     "dimensions": "{width} × {height}",
@@ -61,7 +83,9 @@
     "promptUsed": "Prompt usato per questa prova",
     "unknown": "Non registrato",
     "selectRun": "Risultato registrato",
-    "cover": "Copertina"
+    "cover": "Copertina",
+    "displayRun": "Esecuzione mostrata",
+    "variant": "Variante"
   },
   "source": {
     "heading": "Fonte e licenza",
@@ -72,10 +96,18 @@
     "licence": "Licenza: {licence}",
     "creator": "Autore: {creator}",
     "aiGenerated": "Immagine generata",
-    "algorithmic": "Generata da un programma"
+    "algorithmic": "Generata da un programma",
+    "siteTextLicense": "Licenza dei testi del sito (CC BY 4.0)",
+    "testingMethod": "Metodo di verifica",
+    "imageSource": "Fonte dell’immagine"
   },
-  "related": { "templates": "Modelli correlati", "similar": "Prompt simili" },
-  "actions": { "label": "Azioni sul prompt" },
+  "related": {
+    "templates": "Modelli correlati",
+    "similar": "Prompt simili"
+  },
+  "actions": {
+    "label": "Azioni sul prompt"
+  },
   "template": {
     "fields": "Campi",
     "field": "Campo",
@@ -83,7 +115,11 @@
     "value": "Nell’esempio predefinito",
     "optional": "Facoltativo",
     "required": "Obbligatorio",
-    "types": { "string": "Testo", "string-list": "Elenco", "enum": "Scelta" },
+    "types": {
+      "string": "Testo",
+      "string-list": "Elenco",
+      "enum": "Scelta"
+    },
     "listLimit": "{min}–{max} elementi",
     "maxLength": "Fino a {max} caratteri",
     "choices": "{count, plural, one {# opzione} many {# opzioni} other {# opzioni}}",

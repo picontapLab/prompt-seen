@@ -29,7 +29,7 @@ export function InspirationSources({
             <dd className="tabular">
               <a className={styles.external} href={source.url}>
                 {source.platform}
-                {source.author ? ` · ${source.author}` : ''}
+                {source.author && source.author !== source.platform ? ` · ${source.author}` : ''}
                 <ArrowUpRight aria-hidden="true" />
               </a>
               {source.publishedAt && <span>{source.publishedAt}</span>}

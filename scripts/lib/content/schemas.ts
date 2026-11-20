@@ -164,7 +164,12 @@ export const promptEntrySchema = z
     promptProvenance: z.enum(['unknown', 'original', 'independent-adaptation', 'source-prompt']).default('unknown'),
     inspirationSources: z.array(inspirationSourceSchema).default([]),
     source: z
-      .object({ author: optionalText, url: httpUrl.nullable().default(null), license: optionalText })
+      .object({
+        author: optionalText,
+        authorType: z.enum(['Person', 'Organization']).optional(),
+        url: httpUrl.nullable().default(null),
+        license: optionalText,
+      })
       .strict()
       .default({ author: null, url: null, license: null }),
     annotations: z.array(annotationSchema).max(5, 'at most five annotations per prompt (§11.1.9)').default([]),
@@ -307,6 +312,8 @@ export const exampleRunSchema = z
     parameters: z.record(z.string(), parameterValue).default({}),
     /** Human observations per locale (§5.5). */
     notes: localeText.default({}),
+    observation: localeText.default({}),
+    limitation: localeText.default({}),
   })
   .strict()
   .refine((r) => r.promptId !== null || r.template !== null, {

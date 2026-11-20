@@ -18,13 +18,15 @@ import type { Findings } from './findings';
 // Anything else (raw HTML, import/export, {expressions}, images, other components) is an
 // error with its line, so the browser never compiles MDX and pages never run content code.
 
-export const CONTENT_LINK = /^(prompt|template|collection|page|category|style|use-case):([a-z0-9_-]+)$/;
+export const CONTENT_LINK = /^(prompt|template|collection|page|category|style|use-case):([a-z0-9_-]+)(#[\w-]+)?$/;
 export type ContentLinkKind = 'prompt' | 'template' | 'collection' | 'page' | 'category' | 'style' | 'use-case';
-export type ContentLink = { kind: ContentLinkKind; target: string };
+export type ContentLink = { kind: ContentLinkKind; target: string; fragment?: string };
+type SiteLink = 'home' | 'repository' | 'issues';
 
 export type MdxResolvers = {
   /** Internal path of a content link in this locale, or null when it is not visible there. */
   link: (link: ContentLink) => string | null;
+  siteLink?: (target: SiteLink) => string | null;
   /** The image for <Figure asset>, with alt text in this locale. */
   figure: (assetId: string) => ImageRef | null;
 };
@@ -46,6 +48,7 @@ type Ctx = {
   findings: Findings | null;
   resolve: MdxResolvers | null;
   slugger: GithubSlugger;
+  firstSectionId?: string;
   out: CompiledMdx;
 };
 
@@ -139,6 +142,11 @@ function inline(ctx: Ctx, nodes: readonly PhrasingContent[]): RichInline[] {
 function linkTarget(ctx: Ctx, node: { position?: Nodes['position'] }, url: string): { href: string; internal: boolean } | null {
   if (/^https?:\/\/[^\s]+$/.test(url) || /^mailto:[^\s]+$/.test(url)) return { href: url, internal: false };
   if (/^#[\w-]+$/.test(url)) return { href: url, internal: false };
+  const site = /^site:(home|repository|issues)$/.exec(url);
+  if (site) {
+    const href = ctx.resolve ? ctx.resolve.siteLink?.(site[1] as SiteLink) : url;
+    return href ? { href, internal: href.startsWith('/') } : null;
+  }
   const m = CONTENT_LINK.exec(url);
   if (!m) {
     fail(
@@ -149,11 +157,11 @@ function linkTarget(ctx: Ctx, node: { position?: Nodes['position'] }, url: strin
     );
     return null;
   }
-  const link: ContentLink = { kind: m[1] as ContentLinkKind, target: m[2]! };
+  const link: ContentLink = { kind: m[1] as ContentLinkKind, target: m[2]!, ...(m[3] && { fragment: m[3] }) };
   ctx.out.links.push({ ...link, line: lineOf(ctx, node) });
   if (!ctx.resolve) return { href: url, internal: true };
   const path = ctx.resolve.link(link);
-  return path === null ? null : { href: path, internal: true };
+  return path === null ? null : { href: `${path}${link.fragment ?? ''}`, internal: true };
 }
 
 function attributes(ctx: Ctx, el: JsxElement, allowed: Record<string, boolean>): Record<string, string> | null {
@@ -215,8 +223,8 @@ function blocks(ctx: Ctx, nodes: readonly RootContent[]): RichBlock[] {
           break;
         }
         const text = plain(c).trim();
-        const id = ctx.slugger.slug(text);
         const t = `h${n.depth}` as 'h2' | 'h3' | 'h4';
+        const id = ctx.slugger.slug(t === 'h2' && ctx.out.toc.length === 0 ? (ctx.firstSectionId ?? text) : text);
         result.push({ t, id, c });
         if (t === 'h2') {
           ctx.out.toc.push({ id, text });
@@ -308,10 +316,10 @@ function blockText(b: RichBlock): string {
  */
 export function compileMdx(
   source: string,
-  { file, lineOffset = 0, findings = null, resolve = null }: { file: string; lineOffset?: number; findings?: Findings | null; resolve?: MdxResolvers | null },
+  { file, lineOffset = 0, findings = null, resolve = null, firstSectionId }: { file: string; lineOffset?: number; findings?: Findings | null; resolve?: MdxResolvers | null; firstSectionId?: string },
 ): CompiledMdx {
   const out: CompiledMdx = { blocks: [], toc: [], sections: [], text: '', links: [], figures: [] };
-  const ctx: Ctx = { file, lineOffset, findings, resolve, slugger: new GithubSlugger(), out };
+  const ctx: Ctx = { file, lineOffset, findings, resolve, firstSectionId, slugger: new GithubSlugger(), out };
   let tree;
   try {
     tree = processor.parse(source);

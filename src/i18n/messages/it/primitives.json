@@ -1,14 +1,36 @@
 {
-  "media": { "gifExample": "Include una GIF" },
-  "dialog": { "close": "Chiudi" },
-  "toast": { "region": "Notifiche", "dismiss": "Chiudi" },
-  "button": { "pending": "Operazione in corso…" },
+  "media": {
+    "gifExample": "Include una GIF",
+    "gifGenerated": "GIF generata con {model}"
+  },
+  "dialog": {
+    "close": "Chiudi"
+  },
+  "toast": {
+    "region": "Notifiche",
+    "dismiss": "Chiudi"
+  },
+  "button": {
+    "pending": "Operazione in corso…"
+  },
   "chip": {
     "remove": "Rimuovi {label}",
     "count": "{count, plural, one {# risultato} many {# risultati} other {# risultati}}"
   },
-  "field": { "optional": "Facoltativo", "required": "Obbligatorio", "length": "{count} / {max}" },
-  "combobox": { "noResults": "Nessuna corrispondenza", "showOptions": "Mostra le opzioni" },
-  "select": { "placeholder": "Scegli…" },
-  "scrollRow": { "previous": "Scorri indietro", "next": "Scorri avanti" }
+  "field": {
+    "optional": "Facoltativo",
+    "required": "Obbligatorio",
+    "length": "{count} / {max}"
+  },
+  "combobox": {
+    "noResults": "Nessuna corrispondenza",
+    "showOptions": "Mostra le opzioni"
+  },
+  "select": {
+    "placeholder": "Scegli…"
+  },
+  "scrollRow": {
+    "previous": "Scorri indietro",
+    "next": "Scorri avanti"
+  }
 }

@@ -1,25 +1,24 @@
 ---
-title: Über Prompt Seen
-description: Was diese Bibliothek bietet, wie Prompts getestet werden und woher
-  die Beispiele stammen.
+title: "Über Prompt Seen"
+description: "Wie Prompt Seen die Prompts, Eingaben und generierten Ergebnisse der Bibliothek dokumentiert."
 status: published
-updatedAt: 2026-10-28
+updatedAt: 2026-11-20
 translation:
   sourceLocale: en
-  sourceHash: sha256:6eafce776ffd67c6
+  sourceHash: sha256:cd3a8ee067a499e5
   reviewStatus: reviewed
 ---
 
-Prompt Seen ist eine Bibliothek mit Bild-Prompts zum Lesen, Kopieren und Anpassen. Jeder Eintrag zeigt das erzeugte Bild und markiert, welche Wirkung einzelne Formulierungen im Prompt hatten.
+Prompt Seen ist eine Bibliothek für Bild-Prompts und wiederverwendbare Vorlagen mit den dazugehörigen generierten Ergebnissen.
 
 ## Wie werden Prompts getestet?
 
-Jeder Prompt wird mit einem dokumentierten Modell, Datum und Parametersatz ausgeführt. Der Nachweis bleibt als Beispielausführung beim Prompt erhalten. Die Seite zeigt das Datum des letzten Tests. Einträge ohne dokumentierte Ausführung sind als „Nicht überprüft“ gekennzeichnet.
+Alle Beispiele der Bibliothek verwenden GPT Image 2.5 oder GPT Image 2.6. Für jeden Lauf speichern wir den genauen Wortlaut des übermittelten Prompts, seine Sprache, die Referenzbilder in der Reihenfolge der Übermittlung und die Originalausgaben in der aufgezeichneten Reihenfolge. Modellkennungen und weitere Parameter erscheinen, wenn sie im Laufprotokoll stehen.
 
-## Was sind die Beispieleinträge?
+Wir prüfen das tatsächliche Ergebnis auf sichtbare Details und dokumentieren Grenzen, die für die Weiterverwendung wichtig sind. Bei Plakaten und Stickerbögen lesen wir alle Texte der Reihe nach. Bei GIFs prüfen wir die Einzelbilder und entnehmen der Datei die Wiedergabedaten. Das Laufdatum stammt aus dem Protokoll und das Aktualisierungsdatum der Seite bezeichnet die letzte redaktionelle Änderung.
 
-Die 101 Inhaltsbilder wurden mit GPT Image und den auf ihren Seiten gezeigten Prompts erzeugt. Zu jedem gibt es eine dokumentierte Ausführung und eine Sichtprüfung. Das integrierte Werkzeug gibt weder die genaue Modellversion noch Verbrauchsdaten an. Herunterladbare Bilder in Originalgröße können verlustfrei in ein anderes Format umgewandelt sein; die Anzeigegrößen werden separat komprimiert. Die früheren prozedural erzeugten Beispielausführungen sind archiviert.
+Das [Produkt-Storyboard](prompt:p_123#run-x_168) und seine [Farbvariante](prompt:p_123#run-x_196) verwenden unterschiedliche Prompts. Die [Folie zur Marktchance](prompt:p_217#run-x_281) wurde aus einem chinesischen Original erstellt und bietet zusätzlich eine englische Übersetzung. Das [GIF mit der Montagsfigur](prompt:p_287#run-x_351) enthält neun Einzelbilder und dauert 2,4 Sekunden pro Durchlauf. Das GIF wiederholt sich fortlaufend.
 
-## Wie melde ich ein Problem?
+## Wer betreut die Bibliothek?
 
-Erstelle im Repository des Projekts ein Issue, wenn du falsche Angaben, defekte Seiten oder ein Lizenzproblem findest.
+Das Projekt Prompt Seen betreut diese [offizielle Website](site:home) und das [öffentliche Repository](site:repository). Melde Sachfehler, defekte Seiten oder Fragen zu Rechten im [Issue-Tracker](site:issues). Die [Lizenzseite](page:license) erklärt die Verwendung der Texte. Für Bilder gelten die Angaben beim jeweiligen Bild.

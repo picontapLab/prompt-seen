@@ -127,7 +127,14 @@ export async function Shell({
         <div className={`container ${styles.footerGrid}`}>
           {!host && (
             <div className={styles.footerBrand}>
-              <Wordmark siteName={config.siteName} size="sm" />
+              <Link
+                href={paths.siteRoot()}
+                className={styles.footerLink}
+                aria-label={t('home', { siteName: config.siteName })}
+                prefetch={false}
+              >
+                <Wordmark siteName={config.siteName} size="sm" />
+              </Link>
               <p>{t('footer.tagline')}</p>
               {repository && <RepositoryLink {...repository} labelled />}
             </div>

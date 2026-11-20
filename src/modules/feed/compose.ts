@@ -65,6 +65,7 @@ export const shapeOf = (width: number, height: number): Shape => {
 export const slimImage = (image: ImageRef): FeedImage => ({
   mimeType: image.mimeType,
   animation: image.animation,
+  generationModel: image.generationModel,
   width: image.width,
   height: image.height,
   placeholder: image.placeholder,
@@ -74,6 +75,7 @@ export const slimImage = (image: ImageRef): FeedImage => ({
 });
 
 export function toCard(p: PromptSummary, ratioLabel: ComposeInput['ratioLabel']): FeedCard {
+  const model = p.coverModel === undefined ? p.model : p.coverModel;
   return {
     hasGifOutput: p.hasGifOutput,
     id: p.id,
@@ -84,9 +86,9 @@ export function toCard(p: PromptSummary, ratioLabel: ComposeInput['ratioLabel'])
     frameNumber: p.frameNumber,
     cover: slimImage(p.cover),
     ratio: ratioLabel(p.cover.width, p.cover.height),
-    model: p.model.displayName ?? p.model.providerModelId,
-    verification: p.verification,
-    lastTestedAt: p.lastTestedAt,
+    model: model?.displayName ?? model?.providerModelId ?? null,
+    verification: p.coverModel ? 'verified' : p.verification,
+    lastTestedAt: p.coverRecordedAt === undefined ? p.lastTestedAt : p.coverRecordedAt,
     promptLanguage: p.promptLanguage,
     locale: p.locale,
     description: p.description,

@@ -1,6 +1,6 @@
 {
-  "title": "Die Bildstrecke",
-  "intro": "Alle von uns getesteten Prompts, die neuesten zuerst – jeweils mit dem erzeugten Bild. Zeige auf ein Werk, um den Anfang des Prompts zu lesen. Öffne es für den vollständigen Text, den Testnachweis und Erläuterungen zu einzelnen Formulierungen.",
+  "title": "Bild-Prompts",
+  "intro": "Jedes Beispiel enthält den ursprünglichen Prompt und das damit erzeugte Ergebnis. Im Beispiel findest du das protokollierte Modell, die Eingaben und Hinweise zum Ergebnis.",
   "introMore": "Mehr",
   "introLess": "Weniger",
   "count": "{count, plural, one {# Bild} other {# Bilder}}",
@@ -8,8 +8,13 @@
   "documentTitle": "Bild-Prompts",
   "documentTitlePage": "Bild-Prompts, Seite {page}",
   "description": "Getestete Bild-Prompts, die neuesten zuerst: mit erzeugtem Bild, verwendetem Modell, Testdatum und Erläuterungen zur Wirkung einzelner Formulierungen.",
-  "band": { "label": "Unsere Auswahl dieser Woche" },
-  "card": { "byModel": "mit {model}", "notVerified": "Nicht überprüft" },
+  "band": {
+    "label": "Unsere Auswahl dieser Woche"
+  },
+  "card": {
+    "byModel": "mit {model}",
+    "notVerified": "Nicht überprüft"
+  },
   "interlude": {
     "feature": "Im Fokus: {title}",
     "open": "Bild öffnen",
@@ -18,7 +23,10 @@
     "collection": "Sammlung · {count, plural, one {# Werk} other {# Werke}}",
     "openCollection": "Sammlung ansehen"
   },
-  "feed": { "label": "Prompts", "skip": "Liste überspringen" },
+  "feed": {
+    "label": "Prompts",
+    "skip": "Liste überspringen"
+  },
   "status": {
     "shown": "Bilder {from}–{to} von {total} angezeigt",
     "developing": "Bilder {from}–{to} werden geladen…",
@@ -42,9 +50,17 @@
     "panelTitle": "Verwendung, Format und Referenzbild",
     "use": "Verwendung",
     "shape": "Format",
-    "shapes": { "portrait": "Hochformat", "square": "Quadrat", "landscape": "Querformat", "panorama": "Panorama" },
+    "shapes": {
+      "portrait": "Hochformat",
+      "square": "Quadrat",
+      "landscape": "Querformat",
+      "panorama": "Panorama"
+    },
     "ref": "Referenzbild",
-    "refs": { "none": "Nur Text", "required": "Benötigt ein Referenzbild" },
+    "refs": {
+      "none": "Nur Text",
+      "required": "Benötigt ein Referenzbild"
+    },
     "open": "Filter",
     "openCount": "Filter ({count})",
     "show": "{count, plural, =0 {Keine Ergebnisse} one {# Ergebnis anzeigen} other {# Ergebnisse anzeigen}}",

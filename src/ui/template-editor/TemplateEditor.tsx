@@ -534,6 +534,17 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
                   </span>
                   <figcaption className={styles.sampleNote}>
                     {matched ? d('template.testedImage') : d('template.unmatchedImage')}
+                    {sampleImage?.generationModel && (
+                      <>
+                        {' '}
+                        ·{' '}
+                        <IsolatedMessage
+                          format={(model) => d('test.generatedWith', { model })}
+                          value={sampleImage.generationModel}
+                          dir="ltr"
+                        />
+                      </>
+                    )}
                   </figcaption>
                 </figure>
               )}

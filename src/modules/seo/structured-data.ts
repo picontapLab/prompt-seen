@@ -114,13 +114,12 @@ export function website(page: { path: string; locale: SeoLocale }, ctx: LdContex
   });
 }
 
-/**
- * Who made something, from a name in a content file. Files hold names only: the site's own name
- * is the Organization, any other name is taken to be a person.
- */
-function agent(name: string, ctx: LdContext, url?: string | null): JsonLdNode {
-  if (name === ctx.siteName) return { '@type': 'Organization', '@id': organizationId(ctx), name };
-  return node({ '@type': 'Person', name, url });
+/** The publisher has a known identity. Other credited agents require an explicit type. */
+function agent(name: string, ctx: LdContext, type?: 'Person' | 'Organization', url?: string | null) {
+  if (name === ctx.siteName || name.startsWith(`${ctx.siteName} (`) || name.startsWith(`${ctx.siteName};`)) {
+    return { '@type': 'Organization', '@id': organizationId(ctx), name: ctx.siteName };
+  }
+  return type ? node({ '@type': type, name, url }) : undefined;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -145,7 +144,8 @@ export function imageObject(image: ImageRef, ctx: LdContext): JsonLdNode | null 
     height: variant.height,
     caption: image.caption,
     creator: credit.creator ? agent(credit.creator, ctx) : undefined,
-    creditText: credit.creditText,
+    creditText: credit.creditText ?? credit.creator,
+    isBasedOn: credit.sourceUrl,
     copyrightNotice: credit.copyrightNotice,
     license: credit.licenseUrl ?? licenseUrl(credit.license),
     acquireLicensePage: credit.acquireLicenseUrl,
@@ -177,6 +177,17 @@ export function breadcrumbList(crumbs: readonly LdCrumb[], ctx: LdContext): Json
 export function promptWork(detail: PromptDetail, locale: SeoLocale, ctx: LdContext): JsonLdNode {
   const url = ctx.absoluteUrl(detail.path);
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
+  const { author, authorType, url: sourceUrl, license } = detail.source;
+  const inspirations = detail.inspirationSources ?? [];
+  const citations = [
+    ...(sourceUrl && !inspirations.some((source) => source.url === sourceUrl) ? [sourceUrl] : []),
+    ...inspirations.map((source) => ({
+      '@type': 'CreativeWork',
+      name:
+        source.author && source.author !== source.platform ? `${source.author} · ${source.platform}` : source.platform,
+      url: source.url,
+    })),
+  ];
   return node({
     '@type': 'CreativeWork',
     '@id': `${url}#work`,
@@ -187,9 +198,15 @@ export function promptWork(detail: PromptDetail, locale: SeoLocale, ctx: LdConte
     inLanguage: detail.prompt.language,
     datePublished: detail.createdAt,
     dateModified: detail.updatedAt,
-    author: detail.source.author ? agent(detail.source.author, ctx, detail.source.url) : undefined,
-    license: licenseValue(detail.source.license),
+    author: author ? agent(author, ctx, authorType, sourceUrl) : undefined,
+    creditText: author && author !== ctx.siteName ? author : undefined,
+    citation: citations.length ? citations : undefined,
+    publisher: { '@id': organizationId(ctx) },
+    license: licenseValue(license),
     isBasedOn: template ? ctx.absoluteUrl(template.path) : undefined,
+    translationOfWork: detail.translationOfWorkPath
+      ? { '@id': `${ctx.absoluteUrl(detail.translationOfWorkPath)}#work` }
+      : undefined,
     image: imageObject(detail.cover, ctx),
   });
 }
@@ -208,8 +225,27 @@ export function templateWork(detail: TemplateDetail, locale: SeoLocale, ctx: LdC
     inLanguage: detail.promptLanguage,
     datePublished: detail.createdAt,
     dateModified: detail.updatedAt,
+    publisher: { '@id': organizationId(ctx) },
+    translationOfWork: detail.translationOfWorkPath
+      ? { '@id': `${ctx.absoluteUrl(detail.translationOfWorkPath)}#work` }
+      : undefined,
     image: detail.cover ? imageObject(detail.cover, ctx) : undefined,
   });
+}
+
+/** The localized explanation, with the prompt or template as its main entity. */
+export function workPage(detail: PromptDetail | TemplateDetail, locale: SeoLocale, ctx: LdContext): JsonLdNode {
+  const url = ctx.absoluteUrl(detail.path);
+  return {
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: detail.title,
+    description: detail.description,
+    inLanguage: locale.htmlLang,
+    mainEntity: { '@id': `${url}#work` },
+    publisher: { '@id': organizationId(ctx) },
+  };
 }
 
 export type ListItemInput = { path: string; name: string };

@@ -58,7 +58,6 @@ export function HomeHero({
     <section ref={section} className={styles.hero} aria-labelledby="home-title" data-on-show={s.id}>
       <FeatureShowcase
         locale={locale}
-        key={s.id}
         showcase={s}
         size="hero"
         // Always on the first screen: loaded at once, never lazily, whichever work is on show.

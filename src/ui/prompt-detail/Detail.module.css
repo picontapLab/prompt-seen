@@ -132,6 +132,17 @@
     line-height: var(--leading-lg);
   }
 
+  .testAssets {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding-inline-start: 1.25rem;
+  }
+  .testAssets a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
   /* Test record (§9.2 item 3): monospaced facts, a badge for the tested model. */
   .testInfo {
     display: flex;

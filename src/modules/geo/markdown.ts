@@ -30,6 +30,8 @@ export type MarkdownContext = {
   languageName: (tag: string) => string;
   /** Published versions of this entry in other locales: native name and Markdown address. */
   otherVersions?: readonly { name: string; url: string }[];
+  testingMethodUrl?: string;
+  textLicenseUrl?: string;
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -192,12 +194,16 @@ function exampleRuns(
   currentPrompt: string,
   templates: readonly { id: string; title: string; path: string }[],
   ctx: MarkdownContext,
+  showcaseId?: string,
 ): string | null {
   if (!runs.length) return null;
   const { t } = ctx;
   const parts = [`## ${t('detail.examples.heading')}`];
   for (const run of runs) {
-    parts.push(`### ${run.recordedAt} · ${escapeText(modelName(run.model) ?? t('detail.examples.unknown'))}`);
+    const role = showcaseId
+      ? ` · ${t(run.id === showcaseId ? 'detail.examples.displayRun' : 'detail.examples.variant')}`
+      : '';
+    parts.push(`### ${run.recordedAt} · ${escapeText(modelName(run.model) ?? t('detail.examples.unknown'))}${role}`);
     const template = run.template && templates.find((x) => x.id === run.template!.id);
     const facts = [
       run.provider && `- ${labelled(t, t('detail.examples.provider'), escapeText(run.provider))}`,
@@ -209,11 +215,12 @@ function exampleRuns(
         )}`,
     ].filter(Boolean);
     if (facts.length) parts.push(facts.join('\n'));
-    if (run.parameters.length)
+    const parameters = run.parameters.filter((p) => p.value !== null && p.value !== '');
+    if (parameters.length)
       parts.push(
         table(
           [t('detail.examples.parameter'), t('detail.examples.value')],
-          run.parameters.map((p) => [codeSpan(p.name), p.value === null ? '—' : escapeText(String(p.value))]),
+          parameters.map((p) => [codeSpan(p.name), escapeText(String(p.value))]),
         ),
       );
     if (run.notes) parts.push(labelled(t, t('detail.examples.notes'), escapeText(run.notes)));
@@ -242,10 +249,45 @@ function exampleRuns(
       );
       parts.push(`#### ${t('detail.examples.outputs')}`);
     }
-    const outputs = run.outputs.map((o) => image(o, ctx)).filter(Boolean);
+    const outputs = run.outputs.map((o) =>
+      [image(o, ctx), assetLine(o, t('detail.image.original'), ctx)].filter(Boolean).join('\n\n'),
+    );
     if (outputs.length) parts.push(outputs.join('\n\n'));
   }
   return parts.join('\n\n');
+}
+
+function assetLine(img: ImageRef, label: string, ctx: MarkdownContext) {
+  const { t, absoluteImageUrl } = ctx;
+  const original = img.variants.original;
+  const a = img.animation;
+  const c = img.credit;
+  return [
+    original ? link(label, absoluteImageUrl(original)) : escapeText(label),
+    t('detail.test.dimensions', { width: img.width, height: img.height }),
+    img.mimeType,
+    img.mimeType === 'image/gif' &&
+      img.generationModel &&
+      t('primitives.media.gifGenerated', { model: img.generationModel }),
+    a && t('detail.test.frames', { count: a.frameCount }),
+    a && t('detail.test.seconds', { duration: a.durationMs / 1000 }),
+    a &&
+      (a.loopCount === 0
+        ? t('detail.test.loop')
+        : a.loopCount === null
+          ? t('detail.test.loopUnknown')
+          : t('detail.test.loopCount', { count: a.loopCount })),
+    c.creator && escapeText(t('detail.source.creator', { creator: c.creator })),
+    c.creditText && escapeText(c.creditText),
+    c.copyrightNotice && escapeText(c.copyrightNotice),
+    c.sourceUrl && link(t('detail.source.image'), c.sourceUrl),
+    c.license &&
+      (c.licenseUrl
+        ? link(t('detail.source.licence', { licence: c.license }), c.licenseUrl)
+        : escapeText(t('detail.source.licence', { licence: c.license }))),
+  ]
+    .filter(Boolean)
+    .join(' · ');
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -255,21 +297,44 @@ function exampleRuns(
 export function promptMarkdown(detail: PromptDetail, ctx: MarkdownContext): string {
   const { t } = ctx;
   const { test, source } = detail;
+  const facts = detail.facts;
+  const displayRun = detail.examples.find((run) => run.id === facts?.exampleRunId);
   const model = modelName(test.model);
   const verified = test.verification === 'verified' && model;
   const template = detail.template && detail.relatedTemplates.find((x) => x.id === detail.template!.id);
   const credit = detail.cover.credit;
 
-  const testRecord = [
-    verified
-      ? t('detail.test.verifiedWith', { model })
-      : (test.recordedOutput ? t('detail.test.recordedUnknownModel') : t('detail.test.notVerified')) +
-        (model ? ` (${model})` : ''),
-    `${t('detail.test.dimensions', { width: detail.cover.width, height: detail.cover.height })} · ${test.aspectRatio}`,
-    test.lastTestedAt ? t('detail.test.lastTested', { date: test.lastTestedAt }) : t('detail.test.neverTested'),
-    t(`detail.test.reference.${test.referenceImage}`),
-    t('detail.test.updated', { date: detail.updatedAt }),
-  ].map((line) => `- ${escapeText(line)}`);
+  const testRecord =
+    facts && displayRun
+      ? [
+          modelName(facts.model) ? t('detail.test.generatedWith', { model: modelName(facts.model)! }) : '',
+          t('detail.test.originalLanguage', { language: ctx.languageName(facts.examplePrompt.language) }),
+          t('detail.test.recorded', { date: facts.recordedAt }),
+          t('detail.test.updated', { date: detail.updatedAt }),
+          t(`detail.test.reference.${test.referenceImage}`),
+          t('detail.test.referenceCount', { count: facts.referenceAssetIds.length }),
+          facts.observation && labelled(t, t('detail.test.observation'), facts.observation),
+          facts.limitation && labelled(t, t('detail.test.limitation'), facts.limitation),
+        ]
+          .filter((line): line is string => Boolean(line))
+          .map((line) => `- ${escapeText(line)}`)
+          .concat(
+            displayRun.references.map(
+              (img, i) =>
+                `- ${assetLine(img, displayRun.referenceLabels?.[i] || t('detail.test.inputNumber', { n: i + 1 }), ctx)}`,
+            ),
+            displayRun.outputs.map((img, i) => `- ${assetLine(img, t('detail.test.outputNumber', { n: i + 1 }), ctx)}`),
+          )
+      : [
+          verified
+            ? t('detail.test.verifiedWith', { model })
+            : (test.recordedOutput ? t('detail.test.recordedUnknownModel') : t('detail.test.notVerified')) +
+              (model ? ` (${model})` : ''),
+          `${t('detail.test.dimensions', { width: detail.cover.width, height: detail.cover.height })} · ${test.aspectRatio}`,
+          test.lastTestedAt ? t('detail.test.lastTested', { date: test.lastTestedAt }) : t('detail.test.neverTested'),
+          t(`detail.test.reference.${test.referenceImage}`),
+          t('detail.test.updated', { date: detail.updatedAt }),
+        ].map((line) => `- ${escapeText(line)}`);
 
   const promptSource = source.author || source.url || source.license;
   const imageFacts = [
@@ -296,21 +361,26 @@ export function promptMarkdown(detail: PromptDetail, ctx: MarkdownContext): stri
 
   return join([
     ...head(detail, ctx),
-    image(detail.cover, ctx),
+    image(displayRun?.outputs[0] ?? detail.cover, ctx),
     detail.inputInstructions && escapeText(detail.inputInstructions),
     `## ${t('detail.test.label')}\n\n${testRecord.join('\n')}`,
     `## ${t('detail.sheet.label', { language: ctx.languageName(detail.prompt.language) })}\n\n${codeBlock(detail.prompt.text)}`,
+    facts &&
+      (facts.examplePrompt.text !== detail.prompt.text || facts.examplePrompt.language !== detail.prompt.language) &&
+      `### ${t('detail.examples.promptUsed')} · ${escapeText(ctx.languageName(facts.examplePrompt.language))}\n\n${codeBlock(facts.examplePrompt.text)}`,
     template && labelled(t, t('detail.customize'), link(template.title, ctx.absoluteUrl(template.path))),
     detail.annotations.length > 0 &&
       `## ${t('detail.annotations.heading')}\n\n${detail.annotations
         .map((a) => `- ${labelled(t, `**${a.letter}** ${codeSpan(a.phrase)}`, escapeText(a.note))}`)
         .join('\n')}`,
     richText(detail.body, ctx),
-    exampleRuns(detail.examples, detail.prompt.text, detail.relatedTemplates, ctx),
+    exampleRuns(detail.examples, detail.prompt.text, detail.relatedTemplates, ctx, facts?.exampleRunId),
     `## ${t('detail.source.heading')}\n\n${[
       `- ${labelled(t, t('detail.source.prompt'), promptSource ? promptFacts.join(' · ') : t('detail.source.unknown'))}`,
       `- ${labelled(t, t('detail.source.image'), imageFacts.length ? imageFacts.join(' · ') : t('detail.source.unknown'))}`,
     ].join('\n')}`,
+    ctx.textLicenseUrl && link(t('geo.markdown.textLicense'), ctx.textLicenseUrl),
+    ctx.testingMethodUrl && link(t('geo.llms.method'), ctx.testingMethodUrl),
     (detail.inspirationSources?.length ?? 0) > 0 &&
       `## ${t('detail.inspiration.heading')}\n\n${detail.promptProvenance === 'independent-adaptation' ? t('detail.inspiration.adaptation') + '\n\n' : ''}${detail
         .inspirationSources!.map((source) =>

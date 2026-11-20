@@ -73,6 +73,8 @@ const TEXT_MAPS = new Set([
   'instructions',
   'note',
   'notes',
+  'observation',
+  'limitation',
   'metricScope',
   'evidenceMethod',
   'sourcePromptStatus',

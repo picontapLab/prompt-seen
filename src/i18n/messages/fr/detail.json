@@ -23,7 +23,20 @@
       "optional": "Image de référence facultative",
       "required": "Image de référence requise"
     },
-    "recordedUnknownModel": "Résultat enregistré · modèle d’IA non vérifié"
+    "recordedUnknownModel": "Résultat enregistré · modèle d’IA non vérifié",
+    "generatedWith": "Généré avec {model}",
+    "originalLanguage": "Langue du prompt de génération · {language}",
+    "recorded": "Exécution enregistrée le {date}",
+    "referenceCount": "{count, plural, one {# image de référence utilisée} other {# images de référence utilisées}}",
+    "inputNumber": "Entrée {n}",
+    "outputNumber": "Résultat {n}",
+    "observation": "Observation",
+    "limitation": "Limite",
+    "frames": "{count, plural, one {# image} other {# images}}",
+    "seconds": "{duration, number} s",
+    "loop": "En boucle continue",
+    "loopUnknown": "Nombre de répétitions non spécifié",
+    "loopCount": "Nombre de répétitions : {count}"
   },
   "sheet": {
     "label": "Prompt · {language}",
@@ -70,7 +83,9 @@
     "promptUsed": "Prompt utilisé pour cette image",
     "unknown": "Non enregistré",
     "selectRun": "Résultat enregistré",
-    "cover": "Couverture"
+    "cover": "Couverture",
+    "displayRun": "Exécution affichée",
+    "variant": "Variante"
   },
   "source": {
     "heading": "Source et licence",
@@ -81,7 +96,10 @@
     "licence": "Licence : {licence}",
     "creator": "Créateur : {creator}",
     "aiGenerated": "Image générée",
-    "algorithmic": "Généré par un programme"
+    "algorithmic": "Généré par un programme",
+    "siteTextLicense": "Licence des textes du site (CC BY 4.0)",
+    "testingMethod": "Méthode de test",
+    "imageSource": "Source de l’image"
   },
   "related": {
     "templates": "Modèles de prompt associés",

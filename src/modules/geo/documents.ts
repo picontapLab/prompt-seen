@@ -4,6 +4,7 @@ import type { EntryKind, ImageVariant, LocalizationState, PromptDetail, Template
 import { isIndexable, type PageSections } from '@/modules/seo/indexing';
 import type { createUrlModule } from '@/modules/url/create';
 import { languageName } from '@/ui/prompt-detail/language';
+import { DATASET_DIRECTORY, DATASET_LOCALES } from './datasets';
 import { llmsTxt, type LlmsLink } from './llms';
 import { promptMarkdown, templateMarkdown, type MarkdownContext, type Translate } from './markdown';
 
@@ -18,6 +19,7 @@ export type GeoSources = {
   /** Addresses already accepted by the same aggregate rules as HTML/sitemap. */
   languageEntry?: (locale: LocaleEntry) => string | null;
   siteName: string;
+  repository?: string | null;
   defaultLocale: string;
   /** Locales built in this run, in registry order. */
   locales: readonly LocaleEntry[];
@@ -90,12 +92,17 @@ export function createGeoDocuments(src: GeoSources) {
         ? [{ name: other.nativeName, url: absoluteUrl(markdownPath(kind, other.pathPrefix, entry.slug)) }]
         : [];
     });
+    const info = src.sections.pages ? src.reader.localeIndex(locale.code).pages : [];
+    const about = info.find((page) => page.slug === 'about' && isIndexable(locale, page.localization));
+    const license = info.find((page) => page.slug === 'license' && page.visibility === 'published');
     return {
       absoluteUrl,
       absoluteImageUrl: src.absoluteImageUrl,
       t: src.translator(locale.code),
       languageName: (tag) => languageName(tag, locale.htmlLang),
       otherVersions,
+      testingMethodUrl: about && `${absoluteUrl(about.path)}#testing-method`,
+      textLicenseUrl: license && absoluteUrl(license.path),
     };
   }
 
@@ -115,27 +122,59 @@ export function createGeoDocuments(src: GeoSources) {
       : null;
   }
 
-  /** llms.txt: the site in the default locale, with links to every language and Markdown version. */
-  function llms(): string {
+  /** llms.txt in the directory's language, using the same publication rule as Markdown. */
+  function llms(code = src.defaultLocale): string {
     if (src.buildMode !== 'production') return '';
-    const def = byCode.get(src.defaultLocale);
-    if (!def) throw new Error(`default locale ${src.defaultLocale} is not built`);
-    const t = src.translator(def.code);
-    const index = src.reader.localeIndex(def.code);
+    const locale = byCode.get(code);
+    if (!locale?.enabled) return '';
+    const t = src.translator(code);
+    const index = src.reader.localeIndex(code);
     const published = <T extends { localization: LocalizationState }>(xs: readonly T[]) =>
-      xs.filter((x) => isIndexable(def, x.localization));
-    const toMarkdown = (kind: MarkdownKind) =>
-      markdownEntries(kind)
-        .filter((e) => e.locale.code === def.code)
-        .map((e): LlmsLink => ({ title: e.title, url: absoluteUrl(e.markdownPath), note: e.description }));
+      xs.filter((x) => isIndexable(locale, x.localization));
+    const toMarkdown = (entries: readonly MarkdownEntry[]) =>
+      entries.map((e): LlmsLink => ({ title: e.title, url: absoluteUrl(e.markdownPath), note: e.description }));
     const pages = (xs: readonly { title: string; path: string; description: string }[]): LlmsLink[] =>
       xs.map((x) => ({ title: x.title, url: absoluteUrl(x.path), note: x.description }));
+    const templates = markdownEntries('template').filter((e) => e.locale.code === code);
+    const prompts = markdownEntries('prompt').filter((e) => e.locale.code === code);
+    const collections = src.sections.collections ? published(index.collections) : [];
+    const topics = src.sections.topics ? published(index.topics) : [];
+    const info = src.sections.pages ? published(index.pages) : [];
+    const about = info.find((page) => page.slug === 'about');
+    const lastEdit = [...prompts, ...templates, ...collections, ...topics, ...info].reduce(
+      (latest, entry) => (entry.updatedAt > latest ? entry.updatedAt : latest),
+      '',
+    );
+    const other = byCode.get(code === src.defaultLocale ? 'zh-Hans' : src.defaultLocale);
 
     return llmsTxt({
       title: src.siteName,
       summary: t('geo.llms.summary'),
-      details: [t('geo.llms.details')],
+      details: [t('geo.llms.details'), ...(lastEdit ? [t('geo.llms.updated', { date: lastEdit })] : [])],
       sections: [
+        {
+          heading: t('geo.llms.resources'),
+          links: [
+            ...(about ? [{ title: t('geo.llms.method'), url: `${absoluteUrl(about.path)}#testing-method` }] : []),
+            ...(DATASET_LOCALES.has(code)
+              ? [
+                  {
+                    title: t('geo.llms.dataset'),
+                    url: absoluteUrl(paths.generated(`${DATASET_DIRECTORY}/${code}.json`)),
+                  },
+                ]
+              : []),
+            ...(other?.enabled && other.code !== code
+              ? [
+                  {
+                    title: t('geo.llms.directory', { language: other.nativeName }),
+                    url: absoluteUrl(paths.llms(other.code === src.defaultLocale ? undefined : other.pathPrefix)),
+                  },
+                ]
+              : []),
+            ...(src.repository ? [{ title: t('geo.llms.repository'), url: src.repository }] : []),
+          ],
+        },
         {
           heading: t('geo.llms.languages'),
           links: src.locales
@@ -145,20 +184,17 @@ export function createGeoDocuments(src: GeoSources) {
               return path ? [{ title: l.nativeName, url: absoluteUrl(path) }] : [];
             }),
         },
-        { heading: t('geo.llms.templates'), links: toMarkdown('template') },
-        { heading: t('geo.llms.prompts'), links: toMarkdown('prompt') },
+        { heading: t('geo.llms.templates'), links: toMarkdown(templates) },
+        { heading: t('geo.llms.prompts'), links: toMarkdown(prompts) },
         {
           heading: t('geo.llms.collections'),
-          links: src.sections.collections ? pages(published(index.collections)) : [],
+          links: pages(collections),
         },
-        { heading: t('geo.llms.topics'), links: src.sections.topics ? pages(published(index.topics)) : [] },
+        { heading: t('geo.llms.topics'), links: pages(topics) },
         {
           // "Optional" is the llms.txt name for links a tool may skip with a short context.
           heading: 'Optional',
-          links: [
-            ...(src.sections.pages ? pages(published(index.pages)) : []),
-            { title: t('geo.llms.sitemap'), url: absoluteUrl(paths.sitemapIndex()) },
-          ],
+          links: [...pages(info), { title: t('geo.llms.sitemap'), url: absoluteUrl(paths.sitemapIndex()) }],
         },
       ],
     });

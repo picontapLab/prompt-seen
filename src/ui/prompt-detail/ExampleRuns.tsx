@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useId } from 'react';
 import type { ExampleRunView, ImageRef, TemplateSummary } from '@/modules/content/types';
-import { getImage } from '@/modules/media';
+import { getImage, imageUrl } from '@/modules/media';
 import { paths } from '@/modules/url';
 import { GifBadge } from '@/ui/media/GifBadge';
 import { isoDate, modelName } from './TestInfo';
@@ -12,6 +12,7 @@ import styles from './Detail.module.css';
 const printId = (frame: string, index: number) => `${frame}-${String.fromCharCode(65 + index)}`;
 
 function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string }) {
+  const t = useTranslations('detail.image');
   if (images.length === 0) return null;
   return (
     <figure className={styles.runImages}>
@@ -19,19 +20,29 @@ function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string 
       <ul>
         {images.map((img) => {
           const p = getImage(img, 'thumbnail');
+          const original = img.variants.original;
+          const thumbnail = (
+            <img
+              src={p.src}
+              srcSet={p.srcSet}
+              sizes="160px"
+              width={p.width}
+              height={p.height}
+              alt={p.alt}
+              lang={p.lang}
+              loading="lazy"
+              decoding="async"
+            />
+          );
           return (
             <li key={img.assetId} style={{ aspectRatio: `${img.width} / ${img.height}`, background: p.placeholder }}>
-              <img
-                src={p.src}
-                srcSet={p.srcSet}
-                sizes="160px"
-                width={p.width}
-                height={p.height}
-                alt={p.alt}
-                lang={p.lang}
-                loading="lazy"
-                decoding="async"
-              />
+              {original ? (
+                <a href={imageUrl(original)} aria-label={`${t('original')} · ${img.alt}`}>
+                  {thumbnail}
+                </a>
+              ) : (
+                thumbnail
+              )}
               <GifBadge image={img} overlay />
             </li>
           );
@@ -53,6 +64,8 @@ export function ExampleRuns({
   promptLanguage,
   templates,
   locale,
+  showcaseId,
+  stableIds = false,
 }: {
   runs: readonly ExampleRunView[];
   frameNumber: string;
@@ -62,6 +75,9 @@ export function ExampleRuns({
   templates: readonly TemplateSummary[];
   /** URL prefix of the page's locale. */
   locale: string;
+  showcaseId?: string;
+  /** Full pages have publicly linkable run headings. Dialog headings use scoped IDs. */
+  stableIds?: boolean;
 }) {
   const t = useTranslations('detail.examples');
   const format = useFormatter();
@@ -75,10 +91,12 @@ export function ExampleRuns({
       </h2>
       {runs.map((run, i) => {
         const template = run.template && templates.find((x) => x.id === run.template!.id);
+        const runId = stableIds ? `run-${run.id}` : `${id}-${run.id}`;
         return (
-          <article key={run.id} className={styles.run} aria-labelledby={`${id}-${run.id}`}>
-            <h3 id={`${id}-${run.id}`} className={styles.printId}>
+          <article key={run.id} className={styles.run} aria-labelledby={runId}>
+            <h3 id={runId} className={styles.printId}>
               {printId(frameNumber, i)}
+              {showcaseId && ` · ${t(run.id === showcaseId ? 'displayRun' : 'variant')}`}
             </h3>
             <dl className={styles.runMeta}>
               <div>
@@ -122,7 +140,7 @@ export function ExampleRuns({
               <Thumbs images={run.references} label={t('references')} />
               <Thumbs images={run.outputs} label={t('outputs')} />
             </div>
-            {run.parameters.length > 0 && (
+            {run.parameters.some((p) => p.value !== null && p.value !== '') && (
               <div className={styles.tableWrap}>
                 <table className={styles.table}>
                   <caption className="visually-hidden">{t('parameters')}</caption>
@@ -133,14 +151,18 @@ export function ExampleRuns({
                     </tr>
                   </thead>
                   <tbody>
-                    {run.parameters.map((p) => (
-                      <tr key={p.name}>
-                        <th scope="row">
-                          <code>{p.name}</code>
-                        </th>
-                        <td className="tabular">{p.value === null ? t('unknown') : String(p.value)}</td>
-                      </tr>
-                    ))}
+                    {run.parameters
+                      .filter((p) => p.value !== null && p.value !== '')
+                      .map((p) => (
+                        <tr key={p.name}>
+                          <th scope="row">
+                            <code>{p.name}</code>
+                          </th>
+                          <td className="tabular">
+                            <bdi dir="auto">{String(p.value)}</bdi>
+                          </td>
+                        </tr>
+                      ))}
                   </tbody>
                 </table>
               </div>

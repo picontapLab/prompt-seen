@@ -1,25 +1,24 @@
 ---
-title: Sobre o Prompt Seen
-description: O que é esta biblioteca, como os prompts são testados e o que são
-  os exemplos de conteúdo.
+title: "Sobre o Prompt Seen"
+description: "Como o Prompt Seen registra os prompts, as entradas e os resultados gerados da biblioteca."
 status: published
-updatedAt: 2026-10-28
+updatedAt: 2026-11-20
 translation:
   sourceLocale: en
-  sourceHash: sha256:6eafce776ffd67c6
+  sourceHash: sha256:cd3a8ee067a499e5
   reviewStatus: reviewed
 ---
 
-O Prompt Seen é uma biblioteca de prompts de imagem que você pode ler, copiar e adaptar. Cada item mostra a imagem produzida e indica quais frases do prompt alteraram quais aspectos do resultado.
+O Prompt Seen é uma biblioteca de prompts para imagens e modelos reutilizáveis com resultados gerados.
 
 ## Como os prompts são testados?
 
-Cada prompt é executado com modelo, data e parâmetros registrados. O registro fica junto ao prompt como uma execução de exemplo, e a página mostra quando ele foi testado pela última vez. Os itens sem execução registrada são marcados como “Não verificado”.
+Todos os casos da biblioteca usam GPT Image 2.5 ou GPT Image 2.6. Cada execução registra o prompt exatamente como foi enviado, seu idioma, as imagens de referência na ordem de envio e os resultados originais na ordem registrada. Os identificadores do modelo e os demais parâmetros aparecem quando constam no registro.
 
-## O que são os exemplos de conteúdo?
+Conferimos o resultado para descrever os detalhes visíveis e os limites que afetam a reutilização. Em cartazes e folhas de figurinhas, lemos cada texto em ordem. Em GIFs, conferimos os quadros e extraímos do arquivo as informações de reprodução. A data da execução vem do registro e a data de atualização indica a última alteração editorial da página.
 
-As 101 imagens de conteúdo foram geradas com GPT Image usando os prompts exibidos nas respectivas páginas. Cada uma tem uma execução registrada e uma revisão visual. A ferramenta integrada não informa o snapshot exato do modelo nem os dados de uso. As imagens em tamanho original disponíveis para baixar podem passar por uma conversão de formato sem perdas; os tamanhos de exibição são comprimidos separadamente. As execuções anteriores de exemplos procedurais estão arquivadas.
+O [storyboard de produto](prompt:p_123#run-x_168) e sua [variação de cores](prompt:p_123#run-x_196) usam prompts distintos. O [slide sobre a oportunidade de mercado](prompt:p_217#run-x_281) foi gerado em chinês e tem tradução para o inglês. O [GIF do personagem de segunda-feira](prompt:p_287#run-x_351) tem nove quadros e dura 2,4 segundos por ciclo. O GIF se repete continuamente.
 
-## Como relato um problema?
+## Quem mantém a biblioteca?
 
-Abra uma issue no repositório do projeto para informar dados incorretos, páginas com problemas ou dúvidas sobre licenciamento.
+O projeto Prompt Seen mantém este [site oficial](site:home) e o [repositório público](site:repository). Relate erros, páginas com problemas ou dúvidas sobre direitos na [lista de issues](site:issues). Consulte a [página de licenças](page:license) para reutilizar os textos do site e os créditos de cada imagem para ver seus termos.

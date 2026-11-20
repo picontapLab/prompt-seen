@@ -34,7 +34,9 @@
     "selectRun": "實測結果",
     "template": "範本 {version}",
     "unknown": "未記錄",
-    "value": "值"
+    "value": "值",
+    "displayRun": "展示執行",
+    "variant": "變體"
   },
   "image": {
     "dimensions": "{width} × {height}",
@@ -82,7 +84,10 @@
     "image": "圖片",
     "licence": "授權：{licence}",
     "prompt": "提示詞",
-    "unknown": "來源未知"
+    "unknown": "來源未知",
+    "siteTextLicense": "本站文字授權（CC BY 4.0）",
+    "testingMethod": "測試方法",
+    "imageSource": "圖像來源"
   },
   "template": {
     "choices": "{count} 個選項",
@@ -119,6 +124,19 @@
       "required": "需要參考圖"
     },
     "updated": "更新於 {date}",
-    "verifiedWith": "已用 {model} 測試"
+    "verifiedWith": "已用 {model} 測試",
+    "generatedWith": "由 {model} 生成",
+    "originalLanguage": "生成原文語言 · {language}",
+    "recorded": "執行記錄於 {date}",
+    "referenceCount": "本次使用 {count, number} 張參考圖",
+    "inputNumber": "輸入 {n}",
+    "outputNumber": "輸出 {n}",
+    "observation": "結果觀察",
+    "limitation": "使用限制",
+    "frames": "{count, number} 幀",
+    "seconds": "{duration, number} 秒",
+    "loop": "持續循環",
+    "loopUnknown": "未指定循環次數",
+    "loopCount": "循環次數 {count}"
   }
 }

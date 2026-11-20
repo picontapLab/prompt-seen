@@ -107,6 +107,18 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Compare the public datasets with the CLI export
+        if: matrix.name == 'root'
+        run: |
+          npm run content:export -- --locale en,zh-Hans --format json --out .artifacts/seo-geo/export
+          cmp .artifacts/seo-geo/export/en.json dist/generated/datasets/v2/en.json
+          cmp .artifacts/seo-geo/export/zh-Hans.json dist/generated/datasets/v2/zh-Hans.json
+      - uses: actions/upload-artifact@v7
+        if: matrix.name == 'root'
+        with:
+          name: datasets-v2-${{ env.BUILD_ID }}
+          path: dist/generated/datasets/v2/*.json
+          if-no-files-found: error
       # Preserve the build's test models and host configuration as well as its public files.
       # A tar keeps hidden generated files and permissions intact during artifact transfer.
       - name: Package the build and its test inputs

@@ -15,7 +15,7 @@ import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { pageSections } from '../src/ui/navigation/sections';
 import { printFindings } from './lib/content/findings';
 import { loadContent } from './lib/content/load';
-import { builtReader, exportJson } from './lib/export';
+import { builtReader, exportJson, serializeExport } from './lib/export';
 import { ROOT } from './lib/paths';
 import { validateBuildMessages } from './lib/localization/messages';
 
@@ -82,10 +82,7 @@ const write = (file: string, contents: string) => {
 
 if (values.format === 'json') {
   for (const locale of locales)
-    write(
-      path.join(out, `${locale.code}.json`),
-      `${JSON.stringify(exportJson(sources, config.buildId, locale, kinds), null, 2)}\n`,
-    );
+    write(path.join(out, `${locale.code}.json`), serializeExport(exportJson(sources, config.buildId, locale, kinds)));
 } else {
   const geo = createGeoDocuments(sources);
   for (const kind of kinds)

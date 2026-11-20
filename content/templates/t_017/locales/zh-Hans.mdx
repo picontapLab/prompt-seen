@@ -1,22 +1,30 @@
 ---
-title: 同一产品九宫格品牌故事板
-description: 一张产品照片扩展为九种统一配色的广告构图。
+title: 产品九宫格广告提示词模板
+description: 调整配色和九个场景，参考同一张原始产品图和两张有运行记录的样例。
 status: published
-updatedAt: 2026-10-29
+updatedAt: 2026-11-20
 translation:
   sourceLocale: en
-  sourceHash: sha256:dc42369056ca0690
+  sourceHash: sha256:5e704a436ddca474
   reviewStatus: reviewed
 ---
 
 ## 使用方法
 
-准备：清晰的产品正面照。一张产品照片扩展为九种统一配色的广告构图。
+上传一张产品照片，指定配色和九个场景主题。让各格的产品轮廓、瓶盖和标签保持一致。
 
 ## 实测结果
 
-样例由内置图像工具生成，工具未返回精确模型 ID。运行记录保存实际提交的提示词与有序参考图。本站人物、房间、宠物和服饰参考均为原创合成素材。
+两次运行使用同一张合成 PINE 瓶身参考图。默认值对应鼠尾草绿、象牙白和银色方案，变体用炭灰、琥珀和户外场景。[实测案例](prompt:p_123)解释每张成品的可见结果。
+
+## 生成证据与限制
+
+[默认运行](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_168/run.yaml)和[变体运行](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_196/run.yaml)均于 2026 年 10 月 29 日记录了模板第 1 版、当时填写的值、提示词哈希、参考图 ID 和输出 ID。请上传对应样例展示的产品图。模板字段负责改变文字，参考图需另外上传。
+
+[项目归属记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json)将生成型号标为 GPT Image 2.5。内置图像工具未返回精确 API 模型 ID，运行未记录种子、采样或质量设置。同一提示词与输入也可能得到不同的像素结果。
+
+编辑字段后会得到新的提示词。没有匹配运行记录的参数组合仍需实测。换用自己的产品图生成后，请检查九格布局、标签字样和产品外形。
 
 ## 灵感来源
 
-在[实测案例](prompt:p_123)中查看原始来源和带日期的互动快照。
+[实测案例](prompt:p_123)列出原始来源和带日期的互动数据。

@@ -10,7 +10,7 @@ import styles from './Detail.module.css';
 
 type Run = Pick<
   ExampleRunView,
-  'id' | 'outputs' | 'references' | 'referenceLabels' | 'referenceLabelLocales' | 'prompt' | 'promptLanguage'
+  'id' | 'outputs' | 'references' | 'referenceLabels' | 'referenceLabelLocales' | 'prompt' | 'promptLanguage' | 'model'
 >;
 
 /** Keep the selected run's inputs, output and immutable prompt together. */
@@ -19,6 +19,7 @@ export function RecordedShowcase({
   defaultId,
   cover,
   currentPrompt,
+  promptLanguage,
   frameNumber,
   siteName,
   preview,
@@ -27,6 +28,7 @@ export function RecordedShowcase({
   defaultId?: string;
   cover: ImageRef;
   currentPrompt: string;
+  promptLanguage: string;
   frameNumber: string;
   siteName: string;
   preview?: string;
@@ -36,17 +38,16 @@ export function RecordedShowcase({
   const [selected, setSelected] = useState(defaultId);
   const run = runs.find((item) => item.id === selected);
   const isDefault = selected === defaultId;
-  const images = (
-    isDefault ? [cover, ...(run ? run.outputs : runs.flatMap((item) => item.outputs))] : (run?.outputs ?? [cover])
-  ).filter((image, index, all) => all.findIndex((item) => item.assetId === image.assetId) === index);
+  const images = run?.outputs.length ? run.outputs : [cover];
+  const showsCover = images[0]?.assetId === cover.assetId;
   const stage = (
     <ImageStage
       images={images}
       startPrint={frameNumber}
       endPrint={`${siteName.toUpperCase()} 400`}
       sizes="(min-width: 1024px) 58vw, 100vw"
-      preview={isDefault ? preview : undefined}
-      annotationsEnabled={isDefault}
+      preview={showsCover ? preview : undefined}
+      annotationsEnabled={showsCover}
     />
   );
 
@@ -59,7 +60,8 @@ export function RecordedShowcase({
             {!defaultId && <option value="">{t('examples.cover')}</option>}
             {runs.map((item, index) => (
               <option key={item.id} value={item.id}>
-                {frameNumber}-{String.fromCharCode(65 + index)}
+                {frameNumber}-{String.fromCharCode(65 + index)} ·{' '}
+                {t(item.id === defaultId ? 'examples.displayRun' : 'examples.variant')}
               </option>
             ))}
           </select>
@@ -88,24 +90,32 @@ export function RecordedShowcase({
           </AnnotationProvider>
         )}
       </div>
-      {run && run.prompt.trim() !== currentPrompt.trim() && (
-        <details className={styles.runPrompt}>
-          <summary>{t('examples.promptUsed')}</summary>
-          <p id={`${id}-snapshot`} lang={run.promptLanguage ?? undefined} dir="auto">
-            {run.prompt}
-          </p>
-          <CopyButton
-            text={run.prompt}
-            selectOnFailId={`${id}-snapshot`}
-            labels={{
-              copy: t('copy.label'),
-              done: t('copy.done'),
-              failed: t('copy.failed'),
-              failedHint: t('copy.failedHint'),
-            }}
-          />
-        </details>
+      {run && !isDefault && run.model.displayName && (
+        <p className={styles.runNotes}>
+          {t('examples.model')} · <bdi dir="ltr">{run.model.displayName}</bdi>
+        </p>
       )}
+      {run &&
+        (!isDefault ||
+          run.prompt !== currentPrompt ||
+          (run.promptLanguage && run.promptLanguage !== promptLanguage)) && (
+          <details className={styles.runPrompt}>
+            <summary>{t('examples.promptUsed')}</summary>
+            <p id={`${id}-snapshot`} lang={run.promptLanguage ?? undefined} dir="auto">
+              {run.prompt}
+            </p>
+            <CopyButton
+              text={run.prompt}
+              selectOnFailId={`${id}-snapshot`}
+              labels={{
+                copy: t('copy.label'),
+                done: t('copy.done'),
+                failed: t('copy.failed'),
+                failedHint: t('copy.failedHint'),
+              }}
+            />
+          </details>
+        )}
     </div>
   );
 }

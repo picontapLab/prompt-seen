@@ -1,18 +1,25 @@
 {
   "llms": {
     "collections": "合集",
-    "details": "每條提示詞和範本都有 Markdown 版本：在頁面地址後加 index.md，連結見下方。各頁面註明提示詞文字與圖片的授權。",
+    "details": "本站展示 GPT Image 2.5 和 GPT Image 2.6 的實測輸出。下列 Markdown 提供生成原文、參考圖要求、輸入順序、輸出與授權。獨立改寫註明靈感來源，互動數屬於原始貼文。",
     "languages": "語言",
     "prompts": "提示詞",
     "sitemap": "網站地圖索引",
     "summary": "經過實測的圖像提示詞與範本，看見每句話的作用。",
     "templates": "範本",
-    "topics": "分類、風格與用途"
+    "topics": "分類、風格與用途",
+    "method": "測試與複核方法",
+    "dataset": "公開資料集（JSON v2）",
+    "directory": "{language}檢索目錄",
+    "repository": "原始碼儲存庫",
+    "resources": "資源",
+    "updated": "內容更新於 {date}"
   },
   "markdown": {
     "field": "{label}：{value}",
     "otherLanguages": "其他語言",
     "templateBody": "帶預留位置的範本",
-    "webPage": "網頁"
+    "webPage": "網頁",
+    "textLicense": "本站文字授權（CC BY 4.0）"
   }
 }

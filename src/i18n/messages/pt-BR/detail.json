@@ -34,7 +34,9 @@
     "selectRun": "Resultado registrado",
     "template": "Template {version}",
     "unknown": "Não registrado",
-    "value": "Valor"
+    "value": "Valor",
+    "displayRun": "Execução exibida",
+    "variant": "Variante"
   },
   "image": {
     "dimensions": "{width} × {height}",
@@ -82,7 +84,10 @@
     "image": "Imagem",
     "licence": "Licença: {licence}",
     "prompt": "Prompt",
-    "unknown": "Fonte desconhecida"
+    "unknown": "Fonte desconhecida",
+    "siteTextLicense": "Licença dos textos do site (CC BY 4.0)",
+    "testingMethod": "Método de teste",
+    "imageSource": "Fonte da imagem"
   },
   "template": {
     "choices": "{count, plural, =0 {0 opções} one {# opção} other {# opções}}",
@@ -119,6 +124,19 @@
       "required": "Imagem de referência obrigatória"
     },
     "updated": "Atualizado em {date}",
-    "verifiedWith": "Testado com {model}"
+    "verifiedWith": "Testado com {model}",
+    "generatedWith": "Gerado com {model}",
+    "originalLanguage": "Idioma do prompt de geração · {language}",
+    "recorded": "Execução registrada em {date}",
+    "referenceCount": "{count, plural, one {# imagem de referência usada} other {# imagens de referência usadas}}",
+    "inputNumber": "Entrada {n}",
+    "outputNumber": "Resultado {n}",
+    "observation": "Observação",
+    "limitation": "Limitação",
+    "frames": "{count, plural, one {# quadro} other {# quadros}}",
+    "seconds": "{duration, number} s",
+    "loop": "Repetição contínua",
+    "loopUnknown": "Número de repetições não especificado",
+    "loopCount": "Repetições: {count}"
   }
 }

@@ -86,8 +86,11 @@ export function promptTextOf(content: Content, rec: PromptRecord): string | null
 /** Locale files of the entry a content link points at, or null when it does not exist. */
 export function linkTargetLocales(content: Content, link: ContentLink): ReadonlyMap<string, LocaleFile> | null {
   switch (link.kind) {
-    case 'prompt':
+    case 'prompt': {
+      const runId = link.fragment?.match(/^#run-(x_\d+)$/)?.[1];
+      if (runId && content.examples.get(runId)?.data.promptId !== link.target) return null;
       return content.prompts.get(link.target)?.locales ?? null;
+    }
     case 'template':
       return content.templates.get(link.target)?.locales ?? null;
     case 'collection':

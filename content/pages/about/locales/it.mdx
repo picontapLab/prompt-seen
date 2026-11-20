@@ -1,25 +1,24 @@
 ---
-title: Informazioni su Prompt Seen
-description: Che cos’è questa raccolta, come vengono testati i prompt e che cosa
-  sono le voci di esempio.
+title: "Informazioni su Prompt Seen"
+description: "Come Prompt Seen documenta i prompt, gli input e i risultati generati della raccolta."
 status: published
-updatedAt: 2026-10-28
+updatedAt: 2026-11-20
 translation:
   sourceLocale: en
-  sourceHash: sha256:6eafce776ffd67c6
+  sourceHash: sha256:cd3a8ee067a499e5
   reviewStatus: reviewed
 ---
 
-Prompt Seen è una raccolta di prompt per immagini da leggere, copiare e adattare. Ogni voce mostra l’immagine prodotta e indica quali frasi del prompt hanno modificato quali elementi.
+Prompt Seen è una raccolta di prompt per immagini e modelli riutilizzabili, accompagnati dai risultati generati.
 
-## Come vengono testati i prompt?
+## Come vengono verificati i prompt?
 
-Ogni prompt viene eseguito registrando modello, data e parametri. Il registro viene conservato insieme al prompt come esempio di esecuzione e la pagina indica la data dell’ultimo test. Le voci senza un’esecuzione registrata sono contrassegnate come «Non verificato».
+Tutti i casi della raccolta usano GPT Image 2.5 o GPT Image 2.6. Il registro di ogni esecuzione conserva parola per parola il prompt inviato, la sua lingua, le immagini di riferimento nell’ordine di invio e i risultati originali nell’ordine registrato. Gli identificativi del modello e gli altri parametri appaiono quando sono presenti nel registro.
 
-## Che cosa sono le voci di esempio?
+Esaminiamo il risultato per documentare i dettagli visibili e i limiti che incidono sul riuso. Nei poster e nei fogli di adesivi leggiamo le scritte in ordine. Per le GIF verifichiamo i fotogrammi e leggiamo dal file i dati di riproduzione. La data di esecuzione viene dal registro, mentre quella di aggiornamento indica l’ultima modifica editoriale della pagina.
 
-Le 101 immagini dei contenuti sono state generate con GPT Image usando i prompt mostrati nelle rispettive pagine. Ognuna ha un’esecuzione registrata e una revisione visiva. Lo strumento integrato non espone la versione esatta del modello né i dati di utilizzo. Le immagini scaricabili a dimensione intera possono essere convertite in un altro formato senza perdita; le versioni per la visualizzazione vengono compresse separatamente. Le precedenti esecuzioni di esempio procedurali sono archiviate.
+Lo [storyboard di prodotto](prompt:p_123#run-x_168) e la sua [variante cromatica](prompt:p_123#run-x_196) utilizzano prompt distinti. La [slide sull’opportunità di mercato](prompt:p_217#run-x_281) è stata generata dal testo cinese e include una traduzione inglese. La [GIF del personaggio del lunedì](prompt:p_287#run-x_351) ha nove fotogrammi e un ciclo di 2,4 secondi. La GIF si ripete continuamente.
 
-## Come segnalo un problema?
+## Chi gestisce la raccolta?
 
-Apri una segnalazione nel repository del progetto per informazioni errate, pagine non funzionanti o dubbi sulle licenze.
+Il progetto Prompt Seen gestisce questo [sito ufficiale](site:home) e il [repository pubblico](site:repository). Segnala errori, pagine non funzionanti o dubbi sui diritti nella [sezione delle segnalazioni](site:issues). La [pagina delle licenze](page:license) spiega come riusare i testi del sito. I crediti di ogni immagine ne indicano le condizioni.

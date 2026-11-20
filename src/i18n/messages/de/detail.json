@@ -1,7 +1,15 @@
 {
-  "kinds": { "prompt": "Prompt", "template": "Vorlage" },
+  "kinds": {
+    "prompt": "Prompt",
+    "template": "Vorlage"
+  },
   "documentTitle": "{title} · {kind} · {siteName}",
-  "breadcrumb": { "label": "Seitenpfad", "home": "Startseite", "prompts": "Prompts", "templates": "Vorlagen" },
+  "breadcrumb": {
+    "label": "Seitenpfad",
+    "home": "Startseite",
+    "prompts": "Prompts",
+    "templates": "Vorlagen"
+  },
   "test": {
     "label": "Testnachweis",
     "verifiedWith": "Getestet mit {model}",
@@ -15,7 +23,20 @@
       "optional": "Referenzbild optional",
       "required": "Referenzbild erforderlich"
     },
-    "recordedUnknownModel": "Dokumentiertes Ergebnis · Modell nicht überprüft"
+    "recordedUnknownModel": "Dokumentiertes Ergebnis · Modell nicht überprüft",
+    "generatedWith": "Mit {model} erzeugt",
+    "originalLanguage": "Sprache des Generierungsprompts · {language}",
+    "recorded": "Lauf aufgezeichnet am {date}",
+    "referenceCount": "{count, plural, one {# Referenzbild verwendet} other {# Referenzbilder verwendet}}",
+    "inputNumber": "Eingabe {n}",
+    "outputNumber": "Ausgabe {n}",
+    "observation": "Beobachtung",
+    "limitation": "Einschränkung",
+    "frames": "{count, plural, one {# Einzelbild} other {# Einzelbilder}}",
+    "seconds": "{duration, number} s",
+    "loop": "Endlosschleife",
+    "loopUnknown": "Anzahl der Wiederholungen nicht angegeben",
+    "loopCount": "Wiederholungen: {count}"
   },
   "sheet": {
     "label": "Prompt · {language}",
@@ -31,9 +52,15 @@
     "failed": "Kopieren fehlgeschlagen",
     "failedHint": "Markiere den Prompt-Text und kopiere ihn mit der Tastatur oder über das Menü."
   },
-  "share": { "label": "Teilen", "copied": "Link kopiert", "failed": "Link konnte nicht kopiert werden" },
+  "share": {
+    "label": "Teilen",
+    "copied": "Link kopiert",
+    "failed": "Link konnte nicht kopiert werden"
+  },
   "customize": "Anpassen",
-  "annotations": { "heading": "Wie einzelne Formulierungen wirken" },
+  "annotations": {
+    "heading": "Wie einzelne Formulierungen wirken"
+  },
   "image": {
     "original": "Bild in Originalgröße",
     "dimensions": "{width} × {height}",
@@ -56,7 +83,9 @@
     "promptUsed": "Für dieses Ergebnis verwendeter Prompt",
     "unknown": "Nicht aufgezeichnet",
     "selectRun": "Dokumentiertes Ergebnis",
-    "cover": "Titelbild"
+    "cover": "Titelbild",
+    "displayRun": "Angezeigter Lauf",
+    "variant": "Variante"
   },
   "source": {
     "heading": "Quelle und Lizenz",
@@ -67,10 +96,18 @@
     "licence": "Lizenz: {licence}",
     "creator": "Urheber: {creator}",
     "aiGenerated": "Generiertes Bild",
-    "algorithmic": "Von einem Programm erzeugt"
+    "algorithmic": "Von einem Programm erzeugt",
+    "siteTextLicense": "Lizenz der Website-Texte (CC BY 4.0)",
+    "testingMethod": "Testmethode",
+    "imageSource": "Bildquelle"
   },
-  "related": { "templates": "Verwandte Vorlagen", "similar": "Ähnliche Prompts" },
-  "actions": { "label": "Prompt-Aktionen" },
+  "related": {
+    "templates": "Verwandte Vorlagen",
+    "similar": "Ähnliche Prompts"
+  },
+  "actions": {
+    "label": "Prompt-Aktionen"
+  },
   "template": {
     "fields": "Felder",
     "field": "Feld",
@@ -78,7 +115,11 @@
     "value": "Im Standardbeispiel",
     "optional": "Optional",
     "required": "Erforderlich",
-    "types": { "string": "Text", "string-list": "Liste", "enum": "Auswahl" },
+    "types": {
+      "string": "Text",
+      "string-list": "Liste",
+      "enum": "Auswahl"
+    },
     "listLimit": "{min}–{max} Einträge",
     "maxLength": "Bis zu {max} Zeichen",
     "choices": "{count, plural, one {# Option} other {# Optionen}}",

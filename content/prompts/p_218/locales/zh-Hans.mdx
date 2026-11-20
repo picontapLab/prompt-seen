@@ -1,24 +1,29 @@
 ---
-title: 圈选花瓶局部改色
-description: 花瓶由米色改为钴蓝，红圈已移除；玻璃壶、干燥枝条、墙砖和窗户保持视觉一致
+title: 用原图与标注层给花瓶改色
+description: 按顺序提供两张参考图，把花瓶由米色改为钴蓝，并对照成品检查釉面变化。
 status: published
-updatedAt: 2026-11-04
+updatedAt: 2026-11-20
+seoDescription: 先上传原图，再上传独立标注层，把米色花瓶改为钴蓝色，周围场景仍可辨认。
 translation:
   sourceLocale: en
-  sourceHash: sha256:bc2b5538ba4f7ca9
+  sourceHash: sha256:cb1800a78015b5f4
   reviewStatus: reviewed
 ---
 
 ## 使用方法
 
-使用本次实际提交的提示词，并按展示顺序加入原创参考图。修改提示词或底图后属于未验证的新变体。
+复制本次实际提交的中文提示词。先上传合成室内原图，再上传带红圈的独立标注层。红圈标出要编辑的花瓶。修改提示词或输入图后，需要重新验证效果。
 
 ## 观察结果
 
-花瓶由米色改为钴蓝，红圈已移除；玻璃壶、干燥枝条、墙砖和窗户保持视觉一致。新釉面比原图更有光泽。
+花瓶由米色变为钴蓝，红圈消失。水壶、干枝、墙砖和窗户仍与原图视觉相近，新釉面更亮。
+
+## 生成证据与限制
+
+[运行记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/content/examples/x_282/run.yaml)把提示词哈希、有序输入 a_373 和 a_374 与输出 a_372 关联。[生成回执](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/gpt-image-26-2026-11/audit/S10.json)保存了输入和输出哈希，时间为 UTC 11 月 5 日，对应页面所示洛杉矶时间 11 月 4 日。
+
+[项目归属记录](https://github.com/picontapLab/prompt-seen/blob/89395feb8e5fda7419aa3f5d2594df8a71fb3363/production/model-version-annotation-2026-11-05.json)将生成型号标为 GPT Image 2.6。回执未提供精确 API 模型 ID、种子、采样或质量设置。这次改色让釉面更亮，尝试自己的图片时请检查材质、反光和周围物件。
 
 ## 来源与生成
 
-来源公开原提示词；本次使用单独记录的制作提示词。[来源](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup)。来源帖互动数不代表本次新生成案例的热度。
-
-本例使用 GPT Image 2.6 生成。使用的参考图均为本项目新生成。
+[来源页面](https://developers.openai.com/api/docs/guides/image-prompting#guide-an-edit-with-markup)提供原始提示词；本例使用单独保存的制作原文。来源帖互动数对应原帖。本次使用的参考图均由本项目生成。

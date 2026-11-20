@@ -14,13 +14,16 @@ type Label = (key: CrumbLabel) => string;
 const sectionPath = (key: 'prompts' | 'templates', prefix: string) =>
   headerSections.find((s) => s.key === key)?.available ? paths[key](prefix) : null;
 
-/** Home › Prompts › {category}. A crumb links only to a page this build has. */
-export function promptCrumbs(detail: Pick<PromptDetail, 'taxonomy'>, prefix: string, label: Label): Crumb[] {
+/** Home › Prompts › optional indexable category › the current work. */
+export function promptCrumbs(detail: Pick<PromptDetail, 'taxonomy' | 'title'>, prefix: string, label: Label): Crumb[] {
   const category = detail.taxonomy.category;
   return [
     { label: label('home'), href: paths.home(prefix) },
     { label: label('prompts'), href: sectionPath('prompts', prefix) },
-    { label: category.label, href: linkedPages.topics ? category.path : null },
+    ...(linkedPages.topics && category.indexable && category.path
+      ? [{ label: category.label, href: category.path }]
+      : []),
+    { label: detail.title, href: null },
   ];
 }
 

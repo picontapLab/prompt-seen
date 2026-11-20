@@ -1,25 +1,24 @@
 ---
-title: À propos de Prompt Seen
-description: Présentation de cette bibliothèque, de la méthode de test des
-  prompts et des exemples proposés.
+title: "À propos de Prompt Seen"
+description: "Comment Prompt Seen consigne les prompts, les entrées et les résultats générés de sa bibliothèque."
 status: published
-updatedAt: 2026-10-28
+updatedAt: 2026-11-20
 translation:
   sourceLocale: en
-  sourceHash: sha256:6eafce776ffd67c6
+  sourceHash: sha256:cd3a8ee067a499e5
   reviewStatus: reviewed
 ---
 
-Prompt Seen est une bibliothèque de prompts d’image que vous pouvez lire, copier et adapter. Chaque fiche montre l’image obtenue et indique quelles expressions du prompt ont influencé quels éléments.
+Prompt Seen est une bibliothèque de prompts d’image et de modèles réutilisables accompagnés de leurs résultats générés.
 
-## Comment les prompts sont-ils testés ?
+## Comment les prompts sont-ils testés ?
 
-Chaque prompt est exécuté avec un modèle d’IA, une date et des paramètres enregistrés. Ce compte rendu est conservé avec le prompt en tant qu’exemple d’exécution, et la page indique la date du dernier test. Les fiches sans exécution enregistrée portent la mention « Non vérifié ».
+Tous les cas de la bibliothèque utilisent GPT Image 2.5 ou GPT Image 2.6. Chaque exécution consigne mot pour mot le prompt soumis, sa langue, les images de référence dans l’ordre de soumission et les résultats originaux dans l’ordre enregistré. Les identifiants de modèle et les autres paramètres sont affichés lorsqu’ils figurent dans le relevé.
 
-## Que sont les exemples proposés ?
+Nous examinons le résultat pour relever les détails visibles et les limites qui influent sur la réutilisation. Pour les affiches et les planches d’autocollants, nous lisons tous les textes dans l’ordre. Pour les GIF, nous vérifions les images successives et relevons les données de lecture dans le fichier. La date d’exécution vient du relevé et la date de mise à jour de la page correspond à la dernière modification éditoriale.
 
-Les 101 images de contenu ont été générées avec GPT Image à partir des prompts affichés sur leurs pages. Chacune dispose d’une exécution enregistrée et d’un examen visuel. L’outil intégré n’expose ni la version exacte du modèle ni les données d’utilisation. Les images téléchargeables en taille réelle peuvent avoir subi une conversion de format sans perte ; les formats d’affichage sont compressés séparément. Les anciennes exécutions d’exemple procédurales sont archivées.
+Le [storyboard produit](prompt:p_123#run-x_168) et sa [variante de couleurs](prompt:p_123#run-x_196) utilisent des prompts distincts. La [diapositive sur l’opportunité de marché](prompt:p_217#run-x_281) a été générée à partir du texte chinois et propose une traduction anglaise. Le [GIF du personnage du lundi](prompt:p_287#run-x_351) comporte neuf images et une boucle dure 2,4 secondes. Le GIF se répète en continu.
 
-## Comment signaler un problème ?
+## Qui maintient la bibliothèque ?
 
-Ouvrez une issue dans le dépôt du projet pour signaler une information erronée, une page défectueuse ou une question de licence.
+Le projet Prompt Seen maintient ce [site officiel](site:home) et le [dépôt public](site:repository). Signalez les erreurs, les pages défectueuses ou les questions de droits dans le [suivi des tickets](site:issues). Consultez la [page des licences](page:license) pour réutiliser les textes du site et les crédits de chaque image pour connaître ses conditions.

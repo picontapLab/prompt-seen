@@ -34,18 +34,6 @@
     display: grid;
     gap: var(--space-12);
   }
-  /* Phones: the work, its prompt and "Copy prompt" first; what the site is for and the search
-     field follow (§11.8.1 手机端：作品在上，引述与操作在下). Only the visual order changes: the
-     title stays the first heading, and focus still moves phrases → actions → search. */
-  @container (max-width: 767.98px) {
-    .intro {
-      order: 1;
-      margin-block-start: var(--space-16);
-    }
-    .find {
-      order: 2;
-    }
-  }
   .eyebrow {
     margin: 0;
     color: var(--mark);

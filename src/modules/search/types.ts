@@ -8,7 +8,14 @@ export const SEARCH_ANALYZER_VERSION = 8;
 export type SearchKind = (typeof SEARCH_KINDS)[number];
 
 /** A small picture beside a result: the work's thumbnail at its original ratio. */
-export type SearchThumb = { key: string; width: number; height: number; placeholder: string; mimeType?: string };
+export type SearchThumb = {
+  key: string;
+  width: number;
+  height: number;
+  placeholder: string;
+  mimeType?: string;
+  generationModel?: string;
+};
 
 /** What a result shows; stored in the index beside the terms. */
 export type SearchStored = {

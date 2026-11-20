@@ -16,6 +16,8 @@ Prompt Seen 是一个可搜索的提示词、模板和真实生成结果库，�
 - 按类别、风格、用途、语言和合集查找案例。
 - 保留模型、输入、输出、来源和许可证信息。
 
+查看[测试方法](https://promptseen.dev/zh-hans/about/#testing-method)，浏览[商品](https://promptseen.dev/zh-hans/categories/product/)、[海报](https://promptseen.dev/zh-hans/categories/poster/)、[人像](https://promptseen.dev/zh-hans/categories/portrait/)、[社媒发布](https://promptseen.dev/zh-hans/use-cases/social-post/)和[包装](https://promptseen.dev/zh-hans/use-cases/packaging/)主题，或下载[简体中文](https://promptseen.dev/generated/datasets/v2/zh-Hans.json)和[英语](https://promptseen.dev/generated/datasets/v2/en.json)数据集。
+
 ## Gallery
 
 主 README 将案例统一放在 Gallery 中，并突出 5 张 GPT Image 2.6 静态图和 5 个 GIF。

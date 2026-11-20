@@ -237,7 +237,10 @@ describe('a valid content tree', () => {
       { locale: 'zh-Hans', path: '/zh-hans/prompts/ink-portrait/' },
     ]);
     expect(p.translation).toEqual({ sourceLocale: 'en', reviewStatus: 'reviewed' });
-    expect(p.taxonomy.category).toEqual({ kind: 'category', id: 'portrait', label: '肖像', labelLocale: 'zh-Hans', path: '/zh-hans/categories/portrait/' });
+    expect(p.taxonomy.category).toEqual({
+      kind: 'category', id: 'portrait', label: '肖像', labelLocale: 'zh-Hans',
+      path: '/zh-hans/categories/portrait/', indexable: false,
+    });
     expect(p.body[0]).toMatchObject({ t: 'h2', id: 'how-to-adjust-it' });
     expect(JSON.parse(JSON.stringify(p))).toEqual(p);
   });

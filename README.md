@@ -43,6 +43,13 @@
 - **Keep the evidence.** Prompt text, model information, inputs, output assets and credits travel
   with the content instead of being lost in a screenshot.
 
+Read the [testing method](https://promptseen.dev/en/about/#testing-method), browse the
+[product](https://promptseen.dev/en/categories/product/), [poster](https://promptseen.dev/en/categories/poster/),
+[portrait](https://promptseen.dev/en/categories/portrait/), [social post](https://promptseen.dev/en/use-cases/social-post/),
+and [packaging](https://promptseen.dev/en/use-cases/packaging/) topics, or download the
+[English](https://promptseen.dev/generated/datasets/v2/en.json) and
+[Simplified Chinese](https://promptseen.dev/generated/datasets/v2/zh-Hans.json) datasets.
+
 ## Gallery
 
 The curated gallery below uses 67 unique outputs from the repository, together with ten featured

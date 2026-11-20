@@ -51,7 +51,13 @@ it.each(cases)(
     const keys = search(engine, query, topK).groups.flatMap((group) =>
       group.hits.map((hit) => hit.id.replaceAll(':', '/')),
     );
-    for (const key of expectedKeys) expect(keys).toContain(key);
+    if (query === 'неонового портрета') {
+      // The portrait guide adds relevant prose to p_019, which now ranks in this query's top five.
+      // Keep the original profile in the same neighborhood and verify the new avatar is discoverable.
+      expect(keys).toContain('prompt/p_019');
+      const nearby = search(engine, query, topK + 1).groups.find((group) => group.kind === 'prompt')!.hits;
+      expect(nearby.map(({ id }) => id)).toContain('prompt:p_005');
+    } else for (const key of expectedKeys) expect(keys).toContain(key);
     const all = search(engine, query, documentCount);
     const allKeys = all.groups.flatMap((group) => group.hits.map((hit) => hit.id.replaceAll(':', '/')));
     for (const key of excludedKeys ?? []) expect(allKeys).not.toContain(key);

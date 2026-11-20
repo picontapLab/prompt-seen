@@ -119,7 +119,11 @@ export function matchingPromptRuns(content: Content, rec: PromptRecord, locale: 
         run.data.promptId !== rec.data.id ||
         run.prompt !== selected.text ||
         run.data.promptSha256 !== hash ||
-        runPromptLanguage(content, run) !== selected.language
+        runPromptLanguage(content, run) !== selected.language ||
+        run.data.outputAssetIds.length === 0 ||
+        ![...run.data.referenceAssetIds, ...run.data.outputAssetIds].every(
+          (id) => content.media.get(id)?.data.original.key,
+        )
       )
         return false;
       const source = rec.data.promptSource;
@@ -135,6 +139,24 @@ export function matchingPromptRuns(content: Content, rec: PromptRecord, locale: 
       );
     })
     .sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
+}
+
+export function promptShowcase(content: Content, rec: PromptRecord, locale: string, descriptionLocale: string) {
+  const matching = matchingPromptRuns(content, rec, locale);
+  const candidates = matching.length ? matching : matchingPromptRuns(content, rec, sourcePromptLanguage(content, rec));
+  const run = candidates.find((item) => item.data.id === rec.data.showcaseExampleId) ?? candidates[0];
+  if (!run?.prompt) return undefined;
+  return {
+    matchingRunIds: matching.map(({ data }) => data.id),
+    exampleRunId: run.data.id,
+    examplePrompt: { text: run.prompt, language: runPromptLanguage(content, run)!, sha256: run.data.promptSha256 },
+    model: run.data.model,
+    recordedAt: run.data.recordedAt,
+    referenceAssetIds: run.data.referenceAssetIds,
+    outputAssetIds: run.data.outputAssetIds,
+    ...(run.data.observation[descriptionLocale] && { observation: run.data.observation[descriptionLocale] }),
+    ...(run.data.limitation[descriptionLocale] && { limitation: run.data.limitation[descriptionLocale] }),
+  };
 }
 
 export function validatePromptVariants(content: Content, findings: Findings) {

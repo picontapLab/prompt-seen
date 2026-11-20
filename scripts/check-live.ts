@@ -14,10 +14,12 @@
 // (warning) or ✗ per check and exits 1 when any check fails.
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { parseArgs } from 'node:util';
 import { loadConfig } from '../src/config/load';
 import type { ContentManifest } from '../src/modules/content/types';
 import { promptJsonFile } from '../src/modules/feed/files';
+import { DATASET_DIRECTORY, DATASET_LOCALES } from '../src/modules/geo/datasets';
 import { CRAWLERS } from '../src/modules/geo/robots';
 import { createUrlModule, urlConfigOf } from '../src/modules/url/create';
 import { isAllowed, parseRobots } from './lib/live/robots';
@@ -82,6 +84,7 @@ async function main() {
   const build = (await infoRes.json()) as {
     buildId: string;
     buildMode: string;
+    datasetVersion?: number;
     origin: string;
     basePath: string;
     urlPattern: string;
@@ -139,6 +142,11 @@ async function main() {
 
   const publicLocales = build.locales.filter((l) => l.enabled);
   const homeEligibility = new Map<string, boolean>();
+  const servedSitemaps = new Map<string, Set<string>>();
+  const dist = path.join(ROOT, 'dist', build.basePath);
+  const candidateInfo = path.join(dist, 'generated/build.json');
+  const matchingArtifact =
+    fs.existsSync(candidateInfo) && JSON.parse(fs.readFileSync(candidateInfo, 'utf8')).buildId === build.buildId;
 
   // Sitemaps: index, one per public locale; representative pages from them.
   const indexAddress = fetchUrl(url.paths.sitemapIndex());
@@ -169,6 +177,7 @@ async function main() {
     for (const l of publicLocales) {
       const res = await get(fetchUrl(url.paths.sitemap(l.pathPrefix)));
       const entries = res.ok ? sitemapEntries(await res.text()) : [];
+      servedSitemaps.set(l.code, new Set(entries.map((entry) => entry.loc)));
       // Incremental locales can have a browsable, non-indexable home (§5.2). Its
       // metadata must match the served sitemap, not merely the enabled flag.
       homeEligibility.set(
@@ -212,14 +221,7 @@ async function main() {
     else report('pass', 'index.md: Markdown with a canonical Link header');
 
     // Check complete navigation (including its alias), a segment, and popup JSON through Pages.
-    const dist = path.join(ROOT, 'dist', build.basePath);
-    const info = path.join(dist, 'generated/build.json');
-    if (
-      platform &&
-      values['expect-build'] === build.buildId &&
-      fs.existsSync(info) &&
-      JSON.parse(fs.readFileSync(info, 'utf8')).buildId === build.buildId
-    ) {
+    if (platform && values['expect-build'] === build.buildId && matchingArtifact) {
       for (const internal of [
         `${prompt.internal}index.txt`,
         `${prompt.internal}__next._full.txt`,
@@ -241,6 +243,74 @@ async function main() {
     llms.status === 200 && (llms.headers.get('content-type') ?? '').startsWith('text/plain') ? 'pass' : 'fail',
     `llms.txt: ${llms.status} ${llms.headers.get('content-type') ?? ''}`,
   );
+  if (build.datasetVersion === 2) {
+    const localized = publicLocales.find((locale) => locale.code === 'zh-Hans');
+    if (localized) {
+      const internal = url.paths.llms(localized.pathPrefix);
+      const directory = await get(fetchUrl(internal));
+      const ok =
+        directory.ok &&
+        (directory.headers.get('content-type') ?? '').startsWith('text/plain') &&
+        (await directory.text()).includes(`/generated/${DATASET_DIRECTORY}/zh-Hans.json`);
+      report(ok ? 'pass' : 'fail', `${internal}: ${ok ? 'published with dataset link' : 'missing or invalid'}`);
+    }
+    const manifestPath = url.paths.generated(`${DATASET_DIRECTORY}/manifest.json`);
+    const res = await get(fetchUrl(manifestPath));
+    const manifest =
+      res.ok && (res.headers.get('content-type') ?? '').startsWith('application/json')
+        ? ((await res.json()) as {
+            buildId?: string;
+            format?: string;
+            version?: number;
+            files?: { locale: string; url: string; sha256: string; prompts: number; templates: number }[];
+          })
+        : null;
+    const expected = publicLocales.filter((locale) => DATASET_LOCALES.has(locale.code));
+    if (matchingArtifact)
+      for (const locale of expected) {
+        const file = path.join(dist, url.paths.sitemap(locale.pathPrefix));
+        const candidates = sitemapEntries(fs.readFileSync(file, 'utf8')).map((entry) => entry.loc);
+        const actual = servedSitemaps.get(locale.code);
+        const absent = candidates.filter((loc) => !actual?.has(loc));
+        const unexpected = (actual?.size ?? 0) - candidates.length + absent.length;
+        const ok = !absent.length && unexpected === 0;
+        report(
+          ok ? 'pass' : 'fail',
+          `${locale.code} sitemap: ${ok ? `${candidates.length} candidate addresses` : `${absent.length} missing, ${unexpected} unexpected`}`,
+        );
+      }
+    const manifestMatches =
+      manifest?.buildId === build.buildId &&
+      manifest.format === 'prompt-seen/content-export' &&
+      manifest.version === 2 &&
+      Array.isArray(manifest.files) &&
+      manifest.files.length === expected.length;
+    report(
+      manifestMatches ? 'pass' : 'fail',
+      `v2 dataset manifest: ${manifestMatches ? 'matches build and locale count' : 'missing or invalid'}`,
+    );
+    if (manifestMatches)
+      for (const locale of expected) {
+        const internal = url.paths.generated(`${DATASET_DIRECTORY}/${locale.code}.json`);
+        const file = manifest.files!.find(
+          (entry) => entry.locale === locale.code && entry.url === url.absoluteUrl(internal),
+        );
+        const dataset = await get(fetchUrl(internal));
+        const bytes = Buffer.from(await dataset.arrayBuffer());
+        const isJson = dataset.ok && (dataset.headers.get('content-type') ?? '').startsWith('application/json');
+        const digest = createHash('sha256').update(bytes).digest('hex');
+        const payload = isJson && digest === file?.sha256 ? JSON.parse(bytes.toString('utf8')) : null;
+        const ok =
+          payload?.buildId === build.buildId &&
+          payload?.locale === locale.code &&
+          payload?.prompts?.length === file?.prompts &&
+          payload?.templates?.length === file?.templates;
+        report(
+          ok ? 'pass' : 'fail',
+          `${internal}: ${ok ? 'matches byte hash, build and counts' : 'missing or invalid'}`,
+        );
+      }
+  }
   const icon = await get(fetchUrl(url.paths.siteIcon()));
   report(icon.status === 200 ? 'pass' : 'fail', `site icon: ${icon.status}`);
 

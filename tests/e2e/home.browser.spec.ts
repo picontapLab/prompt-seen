@@ -111,6 +111,9 @@ test.describe('desktop', () => {
     test.setTimeout(testInfo.timeout + onShow.length * 2000);
     await page.goto(url);
     await hydrated(page);
+    const title = await page.getByRole('heading', { level: 1 }).elementHandle();
+    const search = page.locator('#home-search');
+    await search.fill('sticker');
     for (let i = 1; i <= onShow.length; i++) {
       await another(page).click();
       const id = onShow[i % onShow.length]!;
@@ -122,6 +125,8 @@ test.describe('desktop', () => {
       );
       await expect(heroImage(page)).toHaveAttribute('alt', next.cover.alt);
     }
+    expect(await title!.evaluate((heading) => heading === document.querySelector('main h1'))).toBe(true);
+    await expect(search).toHaveValue('sticker');
     // Keys keep working on the new work's phrases.
     const first = promptDetail(code, onShow[0]!).annotations[0]!;
     await phrase(page, first.letter).hover();
@@ -199,6 +204,24 @@ test.describe('phone', () => {
     await expect(box(page, a.letter)).toBeInViewport();
     for (const other of work.annotations.filter((x) => x.letter !== a.letter))
       await expect(box(page, other.letter)).toBeHidden();
+  });
+
+  test('copy, opening the full work and switching frames keep their keyboard order', async ({ page, browserName }) => {
+    test.skip(onShow.length < 2, 'one work on show');
+    await page.goto(url);
+    await hydrated(page);
+    const tab = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+    const open = hero(page).locator('a[data-prefetch]');
+
+    await copyButton(page).focus();
+    await page.keyboard.press(tab);
+    await expect(open).toBeFocused();
+    await expect(open).toHaveAttribute('href', `${BASE}${work.path}`);
+    await page.keyboard.press(tab);
+    await expect(another(page)).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(hero(page)).toHaveAttribute('data-on-show', onShow[1]!);
+    await expect(another(page)).toBeFocused();
   });
 });
 

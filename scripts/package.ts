@@ -55,6 +55,10 @@ if (config.buildMode === 'preview')
   for (const locale of config.builtLocales)
     fs.rmSync(path.join(target, url.paths.sitemap(locale.pathPrefix)), { force: true });
 
+for (const locale of config.builtLocales)
+  if (locale.code !== 'zh-Hans' || !locale.enabled)
+    fs.rmSync(path.join(target, url.paths.llms(locale.pathPrefix)), { force: true });
+
 // Placeholder pages of locales with no topics, collections or content pages (EMPTY_PARAM): static
 // export needs one param per route; the address must answer 404.
 for (const l of config.builtLocales)

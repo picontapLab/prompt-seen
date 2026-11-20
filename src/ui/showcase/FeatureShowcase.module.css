@@ -43,6 +43,36 @@
     margin-inline: 0;
   }
 
+  /* The page heading comes first in the document. On phones the feature and its actions keep
+     their position at the top of the screen. On wider screens they share the two-column grid. */
+  @container (max-width: 767.98px) {
+    .intro {
+      order: 1;
+    }
+    .footer {
+      order: 2;
+    }
+  }
+  @container (min-width: 768px) {
+    .showcase[data-has-intro] {
+      grid-template-areas: 'media intro' 'media text' 'media footer';
+      grid-template-rows: auto auto 1fr;
+      align-items: start;
+    }
+    .showcase[data-has-intro] > .media {
+      grid-area: media;
+    }
+    .showcase[data-has-intro] > .text {
+      grid-area: text;
+    }
+    .intro {
+      grid-area: intro;
+    }
+    .footer {
+      grid-area: footer;
+    }
+  }
+
   .media {
     container-type: inline-size;
     display: grid;
