@@ -2,7 +2,7 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 import { worksOnShow } from './support/home';
 import { seriousViolations } from './support/a11y';
 import { BASE, BUILD, homePath, message } from './support/artifact';
-import { promptDetail } from './support/content';
+import { localeIndex, promptDetail } from './support/content';
 
 // The home page in real browsers (design doc §11.8.1, §11.1.9, §16.2 首屏展示, §16.5 首屏吸引力,
 // §17.3 step 4b): the work on show, its quote and "Copy prompt" on the first screen of a desktop
@@ -234,6 +234,46 @@ test.describe('phone', () => {
       await expect(box(page, a.letter)).toHaveAttribute('data-state', 'current');
       expect(await copyTop(page), `"Copy prompt" with ${a.letter} current`).toBeCloseTo(before, 0);
     }
+  });
+
+  test('collection covers hold their place before their images load', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md L-1: the frames were 0 × 0 until the images arrived.
+    const covers = localeIndex(code)
+      .collections.slice(0, 2)
+      .map((c) => c.cover);
+    test.skip(!covers.length, 'no collections on the home page');
+    let release!: () => void;
+    const held = new Promise<void>((r) => (release = r));
+    for (const cover of covers) {
+      const folder = cover.variants.detail!.key.split('/').slice(0, -1).join('/');
+      await page.route(`**/${folder}/*`, async (route) => {
+        await held;
+        await route.continue();
+      });
+    }
+    // The held files would never fire `load`.
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
+    const section = page.locator('section:has(#home-collections)');
+    await section.scrollIntoViewIfNeeded();
+    const frames = section.locator('figure > span');
+    await expect(frames).toHaveCount(covers.length);
+    for (const frame of await frames.all()) {
+      const b = (await frame.boundingBox())!;
+      expect(b.width, 'the frame has its width before the image').toBeGreaterThan(0);
+      expect(b.height, 'the frame has its height before the image').toBeGreaterThan(0);
+    }
+    const before = (await section.boundingBox())!.height;
+    release();
+    await expect
+      .poll(() =>
+        section
+          .locator('figure img')
+          .evaluateAll((imgs) =>
+            imgs.every((img) => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0),
+          ),
+      )
+      .toBe(true);
+    expect((await section.boundingBox())!.height, 'the section keeps its height').toBeCloseTo(before, 0);
   });
 
   test('copy, opening the full work and switching frames keep their keyboard order', async ({ page, browserName }) => {

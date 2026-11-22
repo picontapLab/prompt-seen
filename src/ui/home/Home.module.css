@@ -325,6 +325,13 @@
     color: var(--text-primary);
     text-decoration: none;
   }
+  /* The cover's frame takes its width as a share of the figure (`.coverFrame`); a figure shrunk
+     to its content left the frame 0 × 0 until the image arrived, and the section then grew by
+     531 px on a phone (docs/home-ux-optimization-spec.md L-1). The figure spans the column; the
+     frame inside still keeps its ratio, its height cap and the start edge. */
+  .collection > figure {
+    justify-self: stretch;
+  }
   .collection:focus-visible {
     outline: var(--focus-ring-width) solid var(--accent);
     outline-offset: var(--focus-ring-offset);
