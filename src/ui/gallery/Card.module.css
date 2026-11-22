@@ -173,8 +173,36 @@
   .actions {
     position: absolute;
     inset-block-start: var(--space-8);
-    inset-inline-end: var(--space-8);
+    inset-inline: var(--space-8);
     z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* The strip spans the frame so that the frame's width can be queried below; presses go
+       through it to the link, and only its content takes them. */
+    container-type: inline-size;
+    pointer-events: none;
+  }
+  .actions > * {
+    pointer-events: auto;
+  }
+  /* On a small frame (a phone puts two or three works in a row) the 44 px disc of the save
+     button hides up to a third of the picture. It shrinks to 32 px and moves into the corner;
+     the ring around it keeps the 44 px target (§11.1.7). */
+  @container (max-width: 11.99rem) {
+    .actions > * {
+      margin-block-start: calc(-1 * var(--space-4));
+      margin-inline-end: calc(-1 * var(--space-4));
+    }
+    .card .actions > [data-favorite] {
+      --_disc: calc(var(--target-min) - var(--space-12));
+      inline-size: var(--_disc);
+      min-block-size: var(--_disc);
+    }
+    .card .actions > [data-favorite]::after {
+      content: '';
+      position: absolute;
+      inset: calc((var(--_disc) - var(--target-min)) / 2);
+    }
   }
   @media (hover: hover) and (pointer: fine) {
     .card:not(:has([data-saved])) .actions {

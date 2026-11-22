@@ -179,11 +179,33 @@
   /* --- More on show: one row of works peeking at the bottom of the first screen ------------- */
   .more {
     margin-block-start: var(--space-40);
-    --row-height: 120px;
+    --row-height: 160px;
   }
   @media (min-width: 768px) {
     .more {
       --row-height: 140px;
+    }
+  }
+  /* On phones the row scrolls sideways (§11.9 横向滚动) at the list's own row height. Wrapped
+     into the width, six works came out 72–99 px wide, which left three to five characters of
+     each title. Every work keeps the row height and its own ratio; the padding keeps focus
+     rings and the save button's target inside the scroller. The selectors outweigh the list's
+     row rules, whichever stylesheet loads first. */
+  @media (max-width: 767.98px) {
+    .more .moreWorks {
+      --_bleed: calc(var(--focus-ring-width) + var(--focus-ring-offset));
+      flex-wrap: nowrap;
+      margin: calc(-1 * var(--_bleed));
+      padding: var(--_bleed);
+      overflow-x: auto;
+      scroll-padding-inline: var(--_bleed);
+    }
+    .more .moreWorks::after {
+      display: none;
+    }
+    .more .moreWorks > li {
+      flex: none;
+      inline-size: calc(var(--row-height) * var(--r));
     }
   }
 

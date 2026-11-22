@@ -23,4 +23,28 @@
     z-index: 1;
     pointer-events: none;
   }
+
+  /* A host too narrow for the whole label (`gifBadgeHost`, the frame of a small card): under
+     15rem "GIF generated with …" wraps to several lines and hides the picture, so the badge
+     shows the format alone. The whole label stays in the accessibility tree, hidden the way
+     `.visually-hidden` hides; the card's facts name the model. Hosts are size containers. */
+  .host {
+    container-type: inline-size;
+  }
+  .short {
+    display: none;
+  }
+  @container (max-width: 14.99rem) {
+    .host .full {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .host .short {
+      display: inline;
+    }
+  }
 }

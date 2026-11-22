@@ -13,11 +13,14 @@ import { getImage } from '@/modules/media';
 import { paths, withBasePath } from '@/modules/url';
 import { popupLocale } from '@/ui/detail-popup/logic';
 import { PopupHost, PopupWorks } from '@/ui/detail-popup/PopupHost';
+import { Card } from '@/ui/gallery/Card';
+import gallery from '@/ui/gallery/Gallery.module.css';
 import { TemplateCards } from '@/ui/gallery/Interludes';
 import { pageSections } from '@/ui/navigation/sections';
 import { Cover, WorkRows } from '@/ui/pages/PageParts';
 import pages from '@/ui/pages/Pages.module.css';
 import { cardsFor } from '@/ui/pages/works';
+import { ScrollRow } from '@/ui/primitives/ScrollRow';
 import styles from './Home.module.css';
 import { HomeHero } from './HomeHero';
 
@@ -30,6 +33,7 @@ const FIRST_SCREEN_USES = 4;
 
 export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: HomeModel }) {
   const t = await getTranslations({ locale: locale.code, namespace: 'home' });
+  const row = await getTranslations({ locale: locale.code, namespace: 'primitives.scrollRow' });
   const prefix = locale.pathPrefix;
   const sections = pageSections();
   const onShow = cardsFor(
@@ -116,7 +120,23 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
                   </Link>
                 )}
               </div>
-              <WorkRows cards={more} locale={locale.code} label={t('more.title')} />
+              {/* The list's cards in its justified row; on phones the row scrolls sideways. */}
+              <ScrollRow
+                as="ul"
+                scrollerClassName={`${gallery.gallery} ${pages.rows} ${styles.moreWorks}`}
+                aria-label={t('more.title')}
+                labels={{ previous: row('previous'), next: row('next') }}
+              >
+                {more.map((card) => (
+                  <li
+                    key={card.id}
+                    className={gallery.cell}
+                    style={{ '--r': card.cover.width / card.cover.height } as CSSProperties}
+                  >
+                    <Card card={card} locale={locale.code} />
+                  </li>
+                ))}
+              </ScrollRow>
             </section>
           )}
 
