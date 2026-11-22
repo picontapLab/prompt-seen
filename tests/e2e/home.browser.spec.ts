@@ -223,6 +223,20 @@ test.describe('desktop', () => {
     expect(await card.getAttribute('aria-describedby')).toBeNull();
   });
 
+  test('a template card link is named by its title and described by its use and field count', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md S-2a: named by its content it read the title, count,
+    // use and excerpt as one name. The excerpt is left out of the description.
+    await page.goto(url);
+    const card = page.locator('section:has(#home-templates) li[data-entry]').first();
+    test.skip(!(await card.count()), 'no templates on the home page');
+    const title = (await card.locator('[id$="-title"]').textContent())!;
+    const summary = (await card.locator('[data-template-summary]').textContent())!;
+    const fields = (await card.locator('[id$="-fields"]').textContent())!;
+    const link = card.getByRole('link');
+    await expect(link).toHaveAccessibleName(title);
+    await expect(link).toHaveAccessibleDescription(`${summary} ${fields}`);
+  });
+
   test('works on the page open in the detail popup at their own address; Esc returns', async ({ page }) => {
     await page.goto(url);
     await hydrated(page);

@@ -307,6 +307,24 @@ test.describe('desktop', () => {
     await expect(article).toHaveAccessibleName(title);
   });
 
+  test('a template card in the strip is named by its title and described by its use and field count', async ({
+    page,
+  }) => {
+    // docs/home-ux-optimization-spec.md S-2a: the strip shares the home page's template cards.
+    const n = Array.from({ length: index.pageCount }, (_, i) => i + 1).find((p) =>
+      feedPage(code, p).blocks.some((b) => b.t === 'templates'),
+    );
+    test.skip(!n, 'no template strip in this list');
+    await page.goto(listUrl(n));
+    const card = page.locator('[role="feed"] > article[data-interlude="templates"] li[data-entry]').first();
+    const title = (await card.locator('[id$="-title"]').textContent())!;
+    const summary = (await card.locator('[data-template-summary]').textContent())!;
+    const fields = (await card.locator('[id$="-fields"]').textContent())!;
+    const link = card.getByRole('link');
+    await expect(link).toHaveAccessibleName(title);
+    await expect(link).toHaveAccessibleDescription(`${summary} ${fields}`);
+  });
+
   test('resting on a card prefetches its popup data, not the page or large image', async ({ page }) => {
     await page.goto(listUrl());
     await hydrated(page);

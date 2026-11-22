@@ -83,17 +83,34 @@ export function FeatureRow({ block, posinset, setsize, locale, ...rest }: { bloc
  * Template cards (§11.8.1, §11.8.2): localized uses, plus same-language excerpts with
  * placeholders in their variable colours. The list's template strip
  * and the home page show the same cards.
+ *
+ * Each link is named by the template's title and described by its use and field count
+ * (docs/home-ux-optimization-spec.md S-2a); named by its content, it read the title, count, use
+ * and excerpt as one name of up to 226 characters. The excerpt stays out of the description: the
+ * use already says what the template is for, and which words of the excerpt can be changed is
+ * shown by colour, which reading aloud drops. The template's page has the whole prompt.
  */
 export function TemplateCards({ items }: { items: readonly FeedTemplate[] }) {
   const t = useTranslations('feed');
+  const id = useId();
   return (
     <ul className={styles.templates}>
       {items.map((tpl) => (
         <li key={tpl.id} data-entry={tpl.id}>
-          <a href={withBasePath(tpl.path)} className={styles.template}>
-            <span className={styles.templateTitle}>{tpl.title}</span>
-            <span className={styles.templateMeta}>{t('interlude.fields', { count: tpl.fieldCount })}</span>
+          <a
+            href={withBasePath(tpl.path)}
+            className={styles.template}
+            aria-labelledby={`${id}-${tpl.id}-title`}
+            aria-describedby={`${id}-${tpl.id}-summary ${id}-${tpl.id}-fields`}
+          >
+            <span id={`${id}-${tpl.id}-title`} className={styles.templateTitle}>
+              {tpl.title}
+            </span>
+            <span id={`${id}-${tpl.id}-fields`} className={styles.templateMeta}>
+              {t('interlude.fields', { count: tpl.fieldCount })}
+            </span>
             <span
+              id={`${id}-${tpl.id}-summary`}
               className={styles.templateSummary}
               data-template-summary=""
               lang={tpl.localization.contentLocale}

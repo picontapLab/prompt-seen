@@ -1,6 +1,6 @@
 # 首页体验优化实施规格
 
-版本：v1.3。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段的 S-2 已实施，S-1 与 C-1 到 C-3 待定。基线：`codex/seo-geo` 分支提交 `63735b66a`。
+版本：v1.4。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段的 S-2 与 S-2a 已实施，S-1 与 C-1 到 C-3 待定。基线：`codex/seo-geo` 分支提交 `63735b66a`。
 
 本规格处理各语言首页（`src/ui/home/`、首屏所用的 `FeatureShowcase` 及其共享部件）在真实浏览器可视区下的体验问题。依据是 2026-11-21 对渲染页面的实测，不是设计稿或源码推断。每一项给出现状测量、原因、修改落点和验收方式，可以直接拆成任务。
 
@@ -198,6 +198,18 @@
   - `home.http.spec.ts` 原先靠外层的 `aria-describedby` 找卡片，改为按 `data-entry` 与 `data-save-scope` 查找；新增首页与列表页各一项浏览器测试，检查链接的可访问名称与描述。
   - VoiceOver 实测没有做，改用 Chromium 的可访问性树核对（见附录 A）。
 
+#### S-2a 模板卡片链接的名称（v1.4 新增）
+
+- **现状**：S-2 复测时发现，首页“模板”区与列表连续列表里的模板条共用 `TemplateCards`（`src/ui/gallery/Interludes.tsx`），卡片是一个链接，里面是标题、字段数、用途说明，正文语言与页面一致时还有带彩色变量的提示词摘录。链接名称由这些内容拼成，英文首页三张为 226、170、188 字符，简中为 94、149、127 字符，没有描述。模板列表页（`/templates/`）的卡片链接里只有无替代文字的图片和标题，名称本来就是标题，不在此列。
+- **修改**：链接用 `aria-labelledby` 指向标题，`aria-describedby` 依次指向用途说明与字段数；id 由 `useId` 与模板 ID 组成，同一页上多处使用也不重复。
+- **摘录不进描述**：
+  - 用途说明已经用页面语言讲清模板做什么；
+  - 摘录里哪些词可以改，是靠变量的颜色与虚线下划线表达的，读出来只剩普通文字，容易让人以为是固定内容；
+  - 放进去会让描述长约一倍。
+  - 完整提示词与字段在模板页上都能读到。
+- **描述顺序**：先用途说明、后字段数，与作品卡片“摘要、测试信息”的顺序一致。
+- **验收**：首页与列表页模板条的链接名称等于标题，描述为“用途说明 字段数”；axe 违规为 0，复核数不增加。
+
 #### C-1 展出作品的标注数量与区域（内容与校验）
 
 - **现状**：`content/site.yaml` 的 `home.featured` 配置了 20 件作品，其中 16 件只有 2 个标注（§11.8.1 要求 3–5 个）；有 3–5 个标注的 4 件（p_045、p_012、p_067、p_015）日期最早，排在“换一件”轮换的末尾。简中兜底作品 p_024 也只有 2 个。英文首件 p_274 的标注 A 区域为 0.96 × 0.98，框住了整张图，演示不出“这句话改了哪里”。
@@ -384,3 +396,18 @@ Chromium 可访问性树（CDP `Accessibility.getPartialAXTree`）：
 列表页的 `article` 名称与描述同链接一致；首页的 `div` 外层不再有名称。
 
 测试：打包产物上用到卡片的 19 个浏览器测试文件与 `home.http.spec.ts`、`list.http.spec.ts` 共 797 项在 Chromium 下通过，2 项为测试内的条件跳过；单元测试 875 项、类型检查、lint 与格式检查通过。WebKit、Firefox 与 VoiceOver 未测。
+
+### S-2a 实施后（v1.4）
+
+开发服务器，Chromium 可访问性树（CDP `Accessibility.getPartialAXTree`）。首页（1440 × 900 与 iPhone 13）与英文列表第 5 页的模板条结果相同。
+
+| 模板 | 改动前链接名称（字符数） | 改动后名称 | 改动后描述 |
+| --- | --- | --- | --- |
+| Birthday Main Character | 标题、“2 fields”、用途说明与摘录拼成（226） | Birthday Main Character | Turn a portrait into a birthday collectible card with an editable name and milestone. 2 fields |
+| One More Game | 同上（170） | One More Game | A pixel ghost shares nine short gaming reactions for wins, mistakes and one more round. 1 field |
+| Tiny Frog, Big Support | 同上（188） | Tiny Frog, Big Support | Nine clay frog stickers offer encouragement, small celebrations and permission to rest. 1 field |
+| 简中：轴测图反向视角 | 同上（94） | 轴测图反向视角 | 第二步：大房间转到左侧、小房间在右侧……不能保证精确几何与光照完全守恒。 1 个字段 |
+
+axe（深色，`wcag2a`、`wcag2aa`、`wcag21aa`、`wcag22aa`）：首页与列表第 5 页违规前后都是 0；`color-contrast` 待复核前后相同（首页 1440 × 900 为 1、iPhone 13 为 41；列表第 5 页 1440 × 900 为 21；简中首页 2 与 39）。
+
+测试：打包产物上 `home.browser`、`home.http`、`home-language.browser`、`list.browser`、`list.http`、`acceptance.browser`、`templates.http`、`motion.browser` 与 `english-social-showcase.browser` 共 450 项在 Chromium 下通过，1 项为此前就有的条件跳过；其中包括首页与列表页各一项新增的模板卡片名称与描述测试。单元测试 875 项、类型检查、lint 与格式检查通过。WebKit、Firefox 与读屏软件实测未做。
