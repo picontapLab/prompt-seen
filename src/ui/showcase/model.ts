@@ -17,16 +17,22 @@ export type Showcase = {
   model: string | null;
   lastTestedAt: string | null;
   promptLanguage: string;
-  /** The opening sentences, holding every annotation that is kept. */
+  /** The annotated sentences, holding every annotation that is kept. */
   quote: string;
+  /** Text follows the quote. */
   truncated: boolean;
+  /** Sentences without annotations come before the quote (`QuoteBudget.dropLeading`). */
+  truncatedStart: boolean;
   /** The full prompt, for "Copy prompt" (§11.8.1: copy copies everything). */
   prompt: string;
   annotations: Annotation[];
 };
 
-export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
-  const excerpt = promptExcerpt(detail.prompt.text, detail.annotations, maxQuote);
+/** How much of the prompt a showcase quotes (`promptExcerpt`): display width and leading cut. */
+export type QuoteBudget = { maxWidth?: number; dropLeading?: boolean };
+
+export function toShowcase(detail: PromptDetail, { maxWidth = 320, dropLeading = false }: QuoteBudget = {}): Showcase {
+  const excerpt = promptExcerpt(detail.prompt.text, detail.annotations, maxWidth, { dropLeading });
   const model = detail.coverModel === undefined ? detail.test.model : detail.coverModel;
   return {
     hasGifOutput: detail.hasGifOutput,
@@ -41,6 +47,7 @@ export function toShowcase(detail: PromptDetail, maxQuote = 320): Showcase {
     promptLanguage: detail.prompt.language,
     quote: excerpt.text,
     truncated: excerpt.truncated,
+    truncatedStart: excerpt.truncatedStart,
     prompt: detail.prompt.text,
     annotations: excerpt.annotations,
   };

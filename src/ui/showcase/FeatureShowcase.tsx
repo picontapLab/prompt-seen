@@ -149,6 +149,7 @@ export function FeatureShowcase({
             {t('sheet.label', { language: languageName(s.promptLanguage, locale) })}
           </p>
           <blockquote className={styles.quote} lang={s.promptLanguage} dir={textDirection(s.promptLanguage)}>
+            {s.truncatedStart && '…'}
             <AnnotatedText text={s.quote} />
             {s.truncated && '…'}
           </blockquote>

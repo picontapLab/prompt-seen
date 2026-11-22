@@ -6,9 +6,10 @@
   }
 
   /* --- First screen ---------------------------------------------------------------------------
-     The work, its label and the start of the quote and actions fit one screen with no scrolling:
-     desktop 1440 × 900 and phone 390 × 844 (§11.8.1, §16.5 首屏吸引力). The image is as tall as
-     what is left, at its original ratio; its column is about 7/12 wide with film (§11.8.1). */
+     The work, its label, the quote and "Copy prompt" fit the visible area with no scrolling, from
+     a 1366 × 650 laptop window to a phone's 390 × 664 between Safari's bars (§11.8.1, §16.5
+     首屏吸引力). The image is as tall as what is left, at its original ratio; its column is about
+     7/12 wide with film (§11.8.1). */
   .hero {
     container-type: inline-size;
   }
@@ -16,10 +17,17 @@
     --_max-h: min(27svh, 18rem);
     row-gap: var(--space-16);
   }
-  /* Below the image: film edges, the label and the top of the next row (§11.8.1 更多展出). */
+  /* Below the image: film edges, the label and, on a tall screen, the top of the next row
+     (§11.8.1 更多展出). Under about 776 px of height the work keeps at least 26rem and the next
+     row no longer peeks in (docs/home-ux-optimization-spec.md H-3): at 1366 × 650 the 19rem
+     reserve alone left a 290 px work beside a heading larger than it. */
   @media (min-width: 768px) {
     .hero > figure[data-size] {
-      --_max-h: clamp(16rem, calc(100svh - var(--nav-height) - 19rem), 46rem);
+      --_max-h: clamp(
+        16rem,
+        max(calc(100svh - var(--nav-height) - 19rem), min(calc(100svh - var(--nav-height) - 11rem), 26rem)),
+        46rem
+      );
     }
   }
 
@@ -55,13 +63,16 @@
     text-wrap: balance;
   }
   @container (min-width: 1024px) {
+    /* At most about a tenth of the screen's height, never under the page-title scale, so a short
+       desktop window keeps the work larger than the heading (H-3). */
     .title {
-      font-size: var(--text-display);
+      font-size: min(var(--text-display), max(var(--text-page-title), 9svh));
     }
     /* Arabic keeps its generous line height for connected letters and marks. The page-title
-       scale leaves the prompt actions on the first screen (§11.8.1) even with a long heading. */
+       scale leaves the prompt actions on the first screen (§11.8.1) even with a long heading; its
+       three lines of 1.35 still need a lower cap on a short window (1366 × 650, H-3). */
     .title:lang(ar) {
-      font-size: var(--text-page-title);
+      font-size: min(var(--text-page-title), 8svh);
     }
   }
 

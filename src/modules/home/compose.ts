@@ -72,6 +72,14 @@ export type HomeModel = {
 /** Counts per section (§11.8.1): 4–6 more works, 6–8 use cases, a few rows of the list. */
 export const HOME_LIMITS = { more: 6, useCases: 8, latest: 12, templates: 3, collections: 2 } as const;
 
+/**
+ * The first screen's quote (§11.8.1, docs/home-ux-optimization-spec.md H-1): about three lines
+ * on a phone, so the work, its quote and "Copy prompt" share the first screen in every language.
+ * A Chinese quote of the same width has half the characters; an opening without annotations is
+ * left out when the annotated sentences alone are long enough.
+ */
+export const HERO_QUOTE = { maxWidth: 160, dropLeading: true } as const;
+
 export function composeHome(input: HomeInput): HomeModel {
   const byId = new Map(input.prompts.map((p) => [p.id, p]));
   const activeIds = featuredOrder(input.settings.featured, input.today);
@@ -133,7 +141,7 @@ export function composeHome(input: HomeInput): HomeModel {
       if (fallback) onShow = [fallback];
     }
   }
-  const showcases = onShow.map((d): OnShow => ({ ...toShowcase(d), slug: d.slug }));
+  const showcases = onShow.map((d): OnShow => ({ ...toShowcase(d, HERO_QUOTE), slug: d.slug }));
 
   // More works: the other works on show, then the featured order; never the current one. Works
   // the latest row already links come last, so the home page links as many works as it can;

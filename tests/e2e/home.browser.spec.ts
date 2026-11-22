@@ -30,6 +30,9 @@ const hydrated = (page: Page) =>
     return !!el && Object.keys(el).some((k) => k.startsWith('__reactProps'));
   });
 
+/** Top of "Copy prompt" in the document, so a scroll to the image does not count as a move. */
+const copyTop = (page: Page) => copyButton(page).evaluate((el) => el.getBoundingClientRect().top + scrollY);
+
 /** The whole element lies inside the viewport, with nothing scrolled. */
 async function expectInFirstScreen(page: Page, target: Locator, what: string) {
   const viewport = page.viewportSize()!;
@@ -69,11 +72,27 @@ test.describe('desktop', () => {
     await hydrated(page);
     await phrase(page, a.letter).hover();
     await expect(box(page, a.letter)).toHaveAttribute('data-state', 'current');
-    await expect(hero(page).locator('p[aria-hidden="true"]', { hasText: a.note })).toBeVisible();
+    // Every note is in the caption, stacked in one cell; only the current one is shown.
+    await expect(hero(page).locator('p[aria-hidden="true"] > [data-shown]')).toContainText(a.note);
     const describedBy = await phrase(page, a.letter).getAttribute('aria-describedby');
     await expect(page.locator(`[id="${describedBy}"]`)).toContainText(a.note);
     await page.mouse.move(5, 5);
     await expect(box(page, a.letter)).not.toHaveAttribute('data-state', 'current');
+  });
+
+  test('pointing at each phrase never moves "Copy prompt"', async ({ page }) => {
+    // The hint and the notes share the caption's height (docs/home-ux-optimization-spec.md H-2).
+    await page.goto(url);
+    await hydrated(page);
+    const before = await copyTop(page);
+    for (const a of work.annotations) {
+      await phrase(page, a.letter).hover();
+      await expect(box(page, a.letter)).toHaveAttribute('data-state', 'current');
+      expect(await copyTop(page), `"Copy prompt" with ${a.letter} current`).toBeCloseTo(before, 0);
+    }
+    await page.mouse.move(5, 5);
+    await expect(hero(page).locator('[id*="-box-"][data-state="current"]')).toHaveCount(0);
+    expect(await copyTop(page)).toBeCloseTo(before, 0);
   });
 
   test('the keyboard walks the phrases in reading order; Esc clears', async ({ page, browserName }) => {
@@ -206,6 +225,17 @@ test.describe('phone', () => {
       await expect(box(page, other.letter)).toBeHidden();
   });
 
+  test('tapping each phrase never moves "Copy prompt"', async ({ page }) => {
+    await page.goto(url);
+    await hydrated(page);
+    const before = await copyTop(page);
+    for (const a of work.annotations) {
+      await phrase(page, a.letter).tap();
+      await expect(box(page, a.letter)).toHaveAttribute('data-state', 'current');
+      expect(await copyTop(page), `"Copy prompt" with ${a.letter} current`).toBeCloseTo(before, 0);
+    }
+  });
+
   test('copy, opening the full work and switching frames keep their keyboard order', async ({ page, browserName }) => {
     test.skip(onShow.length < 2, 'one work on show');
     await page.goto(url);
@@ -236,6 +266,101 @@ test.describe('reduced motion', () => {
     await expect(heroImage(page)).not.toHaveAttribute('data-develop', /.+/);
     expect(await heroImage(page).evaluate((img) => getComputedStyle(img).opacity)).toBe('1');
   });
+});
+
+// The first screen in the area a browser actually shows, in several languages (design doc §16.5
+// 首屏吸引力, docs/home-ux-optimization-spec.md §2). 390 × 844 is a phone's screen; between
+// Safari's bars a page sees about 390 × 664. A 1366 × 768 laptop leaves about 1366 × 650.
+const DESKTOP_VIEWPORTS = [
+  { width: 1920, height: 1080 },
+  { width: 1440, height: 900 },
+  { width: 1366, height: 650 },
+  { width: 1280, height: 720 },
+  { width: 1024, height: 768 },
+];
+const PHONE_VIEWPORTS = [
+  { width: 390, height: 844 },
+  { width: 390, height: 664 },
+  { width: 412, height: 839 },
+];
+/** A small phone: the work and the start of its quote, with "Copy prompt" allowed below. */
+const SMALL_PHONE = { width: 320, height: 568 };
+// Latin, CJK, long German words, and right-to-left Arabic with its taller lines.
+const MATRIX_LOCALES = ['en', 'zh-Hans', 'de', 'ja', 'ar'].flatMap((c) => BUILD.locales.filter((l) => l.code === c));
+
+/** Each target that is not wholly inside the viewport, as a readable line; none passes. */
+async function outsideFirstScreen(page: Page, targets: [string, Locator][]): Promise<string[]> {
+  const { width, height } = page.viewportSize()!;
+  const out: string[] = [];
+  for (const [what, target] of targets) {
+    const b = await target.boundingBox();
+    if (!b) out.push(`${width}×${height}: ${what} is not rendered`);
+    else if (b.y < 0 || b.y + b.height > height || b.x < 0 || b.x + b.width > width)
+      out.push(`${width}×${height}: ${what} spans y ${Math.round(b.y)}–${Math.round(b.y + b.height)}`);
+  }
+  if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+    out.push(`${width}×${height}: the page scrolls sideways`);
+  return out;
+}
+
+/** Loads the home page at a viewport once fonts are in, since they set the heading's lines. */
+async function openAt(page: Page, at: string, viewport: { width: number; height: number }) {
+  await page.setViewportSize(viewport);
+  await page.goto(at);
+  await page.evaluate(() => document.fonts.ready);
+}
+
+test.describe('first screen in visible viewports', () => {
+  for (const l of MATRIX_LOCALES) {
+    const at = `${BASE}${homePath(l)}`;
+    const copy = (page: Page) => hero(page).getByRole('button', { name: message(l.code, 'detail.copy.label') });
+    const required = (page: Page): [string, Locator][] => [
+      ['the work on show', heroImage(page)],
+      ['its label', hero(page).locator('figcaption')],
+      ['the prompt quote', hero(page).locator('blockquote')],
+      ['"Copy prompt"', copy(page)],
+    ];
+
+    test(`${l.code}: desktops show the work, its quote, "Copy prompt" and the title`, async ({ page }) => {
+      test.skip(!worksOnShow(l.code).length, 'no work on show');
+      test.setTimeout(60_000);
+      const failures: string[] = [];
+      for (const viewport of DESKTOP_VIEWPORTS) {
+        await openAt(page, at, viewport);
+        failures.push(
+          ...(await outsideFirstScreen(page, [
+            ...required(page),
+            ['the title', page.getByRole('heading', { level: 1 })],
+          ])),
+        );
+        // The work outweighs the heading, also on a short window (H-3).
+        const img = (await heroImage(page).boundingBox())!;
+        const h1 = (await page.getByRole('heading', { level: 1 }).boundingBox())!;
+        if (img.width * img.height < h1.width * h1.height)
+          failures.push(`${viewport.width}×${viewport.height}: the title is larger than the work`);
+      }
+      expect(failures).toEqual([]);
+    });
+
+    test.describe(() => {
+      test.use({ hasTouch: true });
+
+      test(`${l.code}: phones show the work, its quote and "Copy prompt"`, async ({ page }) => {
+        test.skip(!worksOnShow(l.code).length, 'no work on show');
+        test.setTimeout(60_000);
+        const failures: string[] = [];
+        for (const viewport of PHONE_VIEWPORTS) {
+          await openAt(page, at, viewport);
+          failures.push(...(await outsideFirstScreen(page, required(page))));
+        }
+        await openAt(page, at, SMALL_PHONE);
+        failures.push(...(await outsideFirstScreen(page, required(page).slice(0, 2))));
+        const quote = (await hero(page).locator('blockquote').boundingBox())!;
+        if (quote.y + 24 > SMALL_PHONE.height) failures.push('320×568: the quote starts below the first screen');
+        expect(failures).toEqual([]);
+      });
+    });
+  }
 });
 
 for (const l of BUILD.locales)

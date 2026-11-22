@@ -54,6 +54,7 @@ export const jazzShowcase: Showcase = {
   promptLanguage: 'en',
   quote: prompt,
   truncated: false,
+  truncatedStart: false,
   prompt,
   annotations: [
     {

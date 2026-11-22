@@ -70,30 +70,74 @@ export function splitPrompt(text: string, annotations: readonly Annotation[]): T
 
 const SENTENCE_END = /[.!?。！？](?=\s|$)|[。！？]/g;
 
+/** Characters about twice as wide as a Latin letter: CJK ideographs, kana, Hangul, full-width forms. */
+const WIDE = /[\p{scx=Han}\p{scx=Hiragana}\p{scx=Katakana}\p{scx=Hangul}\u3000-\u303f\uff01-\uff60\uffe0-\uffe6]/u;
+
 /**
- * The opening of a prompt for a showcase quote (§11.8.1: "the first few sentences, with its
- * annotated phrases"): whole sentences up to the one holding the last annotation, at least the
- * first sentence, and the full text when it is short. Annotations past the cut are dropped.
+ * Display width of a text in Latin letter widths, wide characters counting 2. It sizes quotes and
+ * one-line copy by the room they take rather than by their length, so a Chinese quote gets about
+ * as many lines as a Latin one of the same width (docs/home-ux-optimization-spec.md H-1).
+ */
+export function displayWidth(text: string): number {
+  let width = 0;
+  for (const ch of text) width += WIDE.test(ch) ? 2 : 1;
+  return width;
+}
+
+export type PromptExcerpt = {
+  text: string;
+  /** Text follows the excerpt. */
+  truncated: boolean;
+  /** Sentences without annotations were left out before the excerpt (`dropLeading`). */
+  truncatedStart: boolean;
+  /** The annotations inside the excerpt, their offsets into its text. */
+  annotations: Annotation[];
+};
+
+/**
+ * A prompt's annotated sentences for a showcase quote (§11.8.1): whole sentences up to the one
+ * holding the last annotation, at least the first sentence, and the full text when it fits
+ * `maxWidth` (display width, see `displayWidth`). Annotations past the cut are dropped. With
+ * `dropLeading`, a quote that would still be too wide starts at the sentence holding the first
+ * annotation instead of the prompt's opening (H-1); annotations are never dropped for it.
  */
 export function promptExcerpt(
   text: string,
   annotations: readonly Annotation[],
-  maxChars = 320,
-): { text: string; truncated: boolean; annotations: Annotation[] } {
-  if (text.length <= maxChars) return { text, truncated: false, annotations: [...annotations] };
+  maxWidth = 320,
+  { dropLeading = false }: { dropLeading?: boolean } = {},
+): PromptExcerpt {
+  const whole = { text, truncated: false, truncatedStart: false, annotations: [...annotations] };
+  if (displayWidth(text) <= maxWidth) return whole;
+  const width = (from: number, to: number) => displayWidth(text.slice(from, to));
   const ends: number[] = [];
   for (const m of text.matchAll(SENTENCE_END)) ends.push(m.index + m[0].length);
+  const firstPhrase = annotations.reduce((min, a) => Math.min(min, a.start), text.length);
   const lastPhrase = annotations.reduce((max, a) => Math.max(max, a.end), 0);
-  // The sentence that holds the last phrase, or the first sentence; never past maxChars unless
-  // the annotations themselves reach further.
-  let cut = ends.find((e) => e >= lastPhrase) ?? text.length;
-  if (cut > maxChars && lastPhrase <= maxChars) {
-    cut = ends.filter((e) => e >= lastPhrase && e <= maxChars).at(-1) ?? Math.max(lastPhrase, ends[0] ?? cut);
+  // The sentence that holds the last phrase, or the first sentence; when that sentence runs past
+  // the budget but the phrase does not, the cut follows the phrase (or the first sentence).
+  const cutFrom = (from: number) => {
+    const firstEnd = ends.find((e) => e > from);
+    const cut = ends.find((e) => e > from && e >= lastPhrase) ?? text.length;
+    return width(from, cut) > maxWidth && width(from, lastPhrase) <= maxWidth
+      ? Math.max(lastPhrase, firstEnd ?? cut)
+      : cut;
+  };
+  let start = 0;
+  let cut = cutFrom(0);
+  if (dropLeading && annotations.length && width(0, cut) > maxWidth) {
+    const boundary = ends.filter((e) => e <= firstPhrase).at(-1);
+    if (boundary !== undefined) {
+      start = boundary + /^\s*/.exec(text.slice(boundary))![0].length;
+      cut = cutFrom(start);
+    }
   }
-  if (cut >= text.length) return { text, truncated: false, annotations: [...annotations] };
+  if (start === 0 && cut >= text.length) return whole;
+  const kept = annotations.filter((a) => a.start >= start && a.end <= cut);
   return {
-    text: text.slice(0, cut).trimEnd(),
-    truncated: true,
-    annotations: annotations.filter((a) => a.end <= cut),
+    text: text.slice(start, cut).trimEnd(),
+    truncated: cut < text.length,
+    truncatedStart: start > 0,
+    annotations: start ? kept.map((a) => ({ ...a, start: a.start - start, end: a.end - start })) : kept,
   };
 }

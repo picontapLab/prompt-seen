@@ -193,14 +193,25 @@
     font-family: var(--font-text);
   }
 
+  /* The hint and every note stack in one cell; only the current entry is visible, so the caption
+     keeps the height of its tallest entry and nothing below it moves. */
   .caption {
-    display: flex;
-    align-items: baseline;
+    display: grid;
     min-block-size: var(--leading-sm);
     margin: 0;
     color: var(--text-secondary);
     font-size: var(--text-sm);
     line-height: var(--leading-sm);
+  }
+  .captionEntry {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: baseline;
+    min-inline-size: 0;
+    visibility: hidden;
+  }
+  .captionEntry[data-shown] {
+    visibility: visible;
   }
   /* What to do with the lettered phrases, until one is current (§11.8.1). */
   .hint {
