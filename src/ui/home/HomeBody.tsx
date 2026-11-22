@@ -145,7 +145,13 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
               <h2 id="home-uses" className={pages.sectionTitle}>
                 {t('useCases.title')}
               </h2>
-              <ul className={styles.tiles}>
+              {/* One row of equal-height covers; below 1024 px it scrolls sideways. */}
+              <ScrollRow
+                as="ul"
+                scrollerClassName={styles.tiles}
+                aria-label={t('useCases.title')}
+                labels={{ previous: row('previous'), next: row('next') }}
+              >
                 {model.useCases.map((u) => {
                   const img = getImage(u.cover, 'card');
                   return (
@@ -180,7 +186,7 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
                     </li>
                   );
                 })}
-              </ul>
+              </ScrollRow>
             </section>
           )}
 

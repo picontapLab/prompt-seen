@@ -276,6 +276,28 @@ test.describe('phone', () => {
     expect((await section.boundingBox())!.height, 'the section keeps its height').toBeCloseTo(before, 0);
   });
 
+  test('use cases form one row that scrolls sideways and Tab reaches the last one', async ({ page, browserName }) => {
+    // docs/home-ux-optimization-spec.md L-2: wrapped, eight covers made five ragged rows.
+    await page.goto(url);
+    await hydrated(page);
+    const tiles = page.locator('[data-use-case]');
+    const count = await tiles.count();
+    test.skip(count < 2, 'fewer than two use cases');
+    const tops = await tiles.evaluateAll((els) => els.map((el) => Math.round(el.getBoundingClientRect().top)));
+    expect(new Set(tops).size, 'every use case on one row').toBe(1);
+    const heights = await tiles.evaluateAll((els) =>
+      els.map((el) => Math.round(el.querySelector('img')!.getBoundingClientRect().height)),
+    );
+    expect(new Set(heights).size, 'every cover the same height').toBe(1);
+    const list = page.locator('section:has(#home-uses) ul');
+    expect(await list.evaluate((ul) => ul.scrollWidth > ul.clientWidth), 'the row scrolls').toBe(true);
+    const tab = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+    await tiles.first().focus();
+    for (let i = 1; i < count; i++) await page.keyboard.press(tab);
+    await expect(tiles.last()).toBeFocused();
+    await expect(tiles.last()).toBeInViewport();
+  });
+
   test('copy, opening the full work and switching frames keep their keyboard order', async ({ page, browserName }) => {
     test.skip(onShow.length < 2, 'one work on show');
     await page.goto(url);

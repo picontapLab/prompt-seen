@@ -255,6 +255,28 @@
       flex-wrap: nowrap;
     }
   }
+  /* Below that they keep one row and scroll sideways (§11.9 横向滚动), as "More on show" does on
+     phones. Wrapped, eight covers at their ratios came out as five ragged rows, 1202 px tall on a
+     390 px phone, with a wide work alone on its row (docs/home-ux-optimization-spec.md L-2).
+     The padding keeps focus rings inside the scroller. */
+  @media (max-width: 1023.98px) {
+    .tiles {
+      --_bleed: calc(var(--focus-ring-width) + var(--focus-ring-offset));
+      flex-wrap: nowrap;
+      margin: calc(-1 * var(--_bleed));
+      padding: var(--_bleed);
+      overflow-x: auto;
+      scroll-padding-inline: var(--_bleed);
+    }
+    .tiles::after {
+      display: none;
+    }
+    .tiles > li {
+      flex: none;
+      inline-size: calc(var(--_h) * var(--r));
+      max-inline-size: none;
+    }
+  }
   /* The column follows the tile, so a long name (German "Veranstaltungsplakat") wraps instead of
      widening a tile that shrank to share the row. */
   .tile {
