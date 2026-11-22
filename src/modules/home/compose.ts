@@ -80,6 +80,32 @@ export const HOME_LIMITS = { more: 6, useCases: 8, latest: 12, templates: 3, col
  */
 export const HERO_QUOTE = { maxWidth: 160, dropLeading: true } as const;
 
+/**
+ * Up to `limit` of `ids`, in their order except that each pick is the first remaining one whose
+ * category differs from the one before it (`before` for the first). When every remaining one
+ * shares that category, the next in order follows, so one category alone keeps its order.
+ */
+export function alternateCategories(
+  ids: readonly string[],
+  categoryOf: (id: string) => string | undefined,
+  limit: number,
+  before?: string,
+): string[] {
+  const rest = [...ids];
+  const picked: string[] = [];
+  let last = before;
+  while (picked.length < limit && rest.length) {
+    const i = Math.max(
+      0,
+      rest.findIndex((id) => categoryOf(id) !== last),
+    );
+    const [id] = rest.splice(i, 1);
+    picked.push(id!);
+    last = categoryOf(id!);
+  }
+  return picked;
+}
+
 export function composeHome(input: HomeInput): HomeModel {
   const byId = new Map(input.prompts.map((p) => [p.id, p]));
   const activeIds = featuredOrder(input.settings.featured, input.today);
@@ -145,16 +171,28 @@ export function composeHome(input: HomeInput): HomeModel {
 
   // More works: the other works on show, then the featured order; never the current one. Works
   // the latest row already links come last, so the home page links as many works as it can;
-  // they still fill the row when there are not enough others.
+  // they still fill the row when there are not enough others. Within each of those two groups
+  // categories take turns, so neighbours differ where the candidates allow
+  // (docs/home-ux-optimization-spec.md C-2).
   const current = showcases[0]?.id;
   const latest = input.prompts.slice(0, HOME_LIMITS.latest).map((p) => p.id);
   const inLatest = new Set(latest);
   const candidates = [...showcases.slice(1).map((s) => s.id), ...input.featuredOrder].filter(
     (id, i, all) => id !== current && byId.has(id) && all.indexOf(id) === i,
   );
-  const more = [...candidates.filter((id) => !inLatest.has(id)), ...candidates.filter((id) => inLatest.has(id))].slice(
-    0,
+  const categoryOf = (id: string) => byId.get(id)?.categoryId;
+  const more = alternateCategories(
+    candidates.filter((id) => !inLatest.has(id)),
+    categoryOf,
     HOME_LIMITS.more,
+  );
+  more.push(
+    ...alternateCategories(
+      candidates.filter((id) => inLatest.has(id)),
+      categoryOf,
+      HOME_LIMITS.more - more.length,
+      more.length ? categoryOf(more.at(-1)!) : undefined,
+    ),
   );
 
   // Use cases with the most works first; each cover is a different work where there is one,

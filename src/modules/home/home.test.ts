@@ -7,7 +7,7 @@ import type {
   TemplateSummary,
   Term,
 } from '@/modules/content/types';
-import { composeHome, featuredOrder, HOME_LIMITS, type HomeInput } from './compose';
+import { alternateCategories, composeHome, featuredOrder, HOME_LIMITS, type HomeInput } from './compose';
 
 // The home page's choices (design doc §11.8.1): which work is on show and in what order
 // "Another frame" steps, more works without repeats, use cases with distinct covers.
@@ -146,6 +146,46 @@ describe('composeHome', () => {
     const short = composeHome(input(many, { featuredOrder: ['p_020', 'p_015', 'p_010', 'p_008'] }));
     expect(short.more.slice(0, 1)).toEqual(['p_008']);
     expect(short.more).toEqual(['p_008', 'p_020', 'p_015', 'p_010'].filter((id) => id !== short.onShow[0]?.id));
+  });
+
+  it('takes categories in turns in the more row so neighbours differ, keeping latest works last', () => {
+    // docs/home-ux-optimization-spec.md C-2. 30 works, newest first: the latest row holds
+    // p_030…p_019; p_025 is the only "d" and sits in it.
+    const category: Record<string, string> = {
+      p_025: 'd',
+      p_010: 'a',
+      p_009: 'a',
+      p_008: 'a',
+      p_007: 'b',
+      p_006: 'a',
+      p_005: 'c',
+      p_004: 'a',
+      p_003: 'b',
+    };
+    const many = Array.from({ length: 30 }, (_, i) =>
+      prompt(30 - i, { categoryId: category[`p_${String(30 - i).padStart(3, '0')}`] ?? 'z' }),
+    );
+    const order = ['p_025', 'p_010', 'p_009', 'p_008', 'p_007', 'p_006', 'p_005', 'p_004', 'p_003'];
+    const home = composeHome(input(many, { featuredOrder: order }));
+    expect(home.more).toEqual(['p_010', 'p_007', 'p_009', 'p_005', 'p_008', 'p_003']);
+    const kinds = home.more.map((id) => category[id]);
+    expect(kinds.filter((kind, i) => i > 0 && kind === kinds[i - 1])).toEqual([]);
+    // The latest row's work stays out while other candidates fill the row.
+    expect(home.more).not.toContain('p_025');
+  });
+
+  it('keeps the more row in order when its candidates share one category', () => {
+    const many = Array.from({ length: 30 }, (_, i) => prompt(30 - i, { categoryId: 'a' }));
+    const order = ['p_010', 'p_009', 'p_008', 'p_007', 'p_006', 'p_005', 'p_004'];
+    expect(composeHome(input(many, { featuredOrder: order })).more).toEqual(order.slice(0, HOME_LIMITS.more));
+  });
+
+  it('alternates from the category before the first pick', () => {
+    const kinds: Record<string, string> = { x: 'a', y: 'a', z: 'b' };
+    const of = (id: string) => kinds[id];
+    expect(alternateCategories(['x', 'y', 'z'], of, 3)).toEqual(['x', 'z', 'y']);
+    expect(alternateCategories(['x', 'y', 'z'], of, 3, 'a')).toEqual(['z', 'x', 'y']);
+    expect(alternateCategories(['x', 'y', 'z'], of, 2)).toEqual(['x', 'z']);
   });
 
   it('gives each use case a different cover where it can, and links the topic page or the filtered list', () => {

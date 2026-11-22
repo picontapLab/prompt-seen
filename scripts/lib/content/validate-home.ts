@@ -1,4 +1,5 @@
 import type { ResolvedConfig } from '../../../src/config/schema';
+import { featuredOrder } from '../../../src/modules/home/featured';
 import type { Findings } from './findings';
 import type { Content } from './read';
 
@@ -13,9 +14,20 @@ export const MIN_FEATURED_ANNOTATIONS = 3;
 /** A region over half the picture frames nearly all of it and shows no place for its phrase. */
 export const MAX_REGION_AREA = 0.5;
 
+/** The work on show and the row under it: the first screen a visitor compares at a glance. */
+export const FIRST_SCREEN_WORKS = 7;
+/** More works of one category than this among them read as one kind of picture (C-2). */
+export const MAX_FIRST_SCREEN_SAME_CATEGORY = 3;
+
 const percent = (share: number) => `${Math.round(share * 100)}%`;
 
-export function validateHomeSettings(content: Content, config: ResolvedConfig, findings: Findings): void {
+export function validateHomeSettings(
+  content: Content,
+  config: ResolvedConfig,
+  findings: Findings,
+  /** The build date, as `composeHome` uses it: works scheduled later are not on show yet. */
+  today = new Date().toISOString().slice(0, 10),
+): void {
   const seen = new Set<string>();
   config.home.featured.forEach((item, i) => {
     const field = `home.featured.${i}.prompt`;
@@ -62,4 +74,26 @@ export function validateHomeSettings(content: Content, config: ResolvedConfig, f
     }
     seen.add(item.prompt);
   });
+
+  // The first works in the order they are shown today, among those that can be on show
+  // (docs/home-ux-optimization-spec.md C-2): one category filling them makes the first screen
+  // and the row under it look alike. A warning, since the remedy is editorial.
+  const shown = featuredOrder(config.home.featured, today)
+    .filter((id) => content.prompts.get(id)?.data.annotations.length)
+    .slice(0, FIRST_SCREEN_WORKS);
+  const byCategory = new Map<string, string[]>();
+  for (const id of shown) {
+    const category = content.prompts.get(id)!.data.categoryId;
+    byCategory.set(category, [...(byCategory.get(category) ?? []), id]);
+  }
+  for (const [category, ids] of byCategory)
+    if (ids.length > MAX_FIRST_SCREEN_SAME_CATEGORY)
+      findings.warning(
+        FILE,
+        `${ids.length} of the first ${shown.length} works on show are in the category "${category}" (${ids.join(', ')})`,
+        {
+          field: 'home.featured',
+          fix: `feature works of other categories near the top, at most ${MAX_FIRST_SCREEN_SAME_CATEGORY} of one category among the first ${FIRST_SCREEN_WORKS}`,
+        },
+      );
 }
