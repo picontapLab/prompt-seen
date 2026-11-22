@@ -361,7 +361,11 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
   });
 });
 
-test('标题截断: a card title stays on one line with an ellipsis; the whole title is in the page', async ({ page }) => {
+test('标题截断: a card title ends in an ellipsis, two lines on a narrow card; the whole title is in the page', async ({
+  page,
+}) => {
+  // One line on a card at least 13rem wide, two on a narrower one (docs/home-ux-optimization-spec.md
+  // S-1, decision D-3); a phone shows both kinds.
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(list);
   await takenOver(page);
@@ -369,14 +373,24 @@ test('标题截断: a card title stays on one line with an ellipsis; the whole t
     els.slice(0, 24).map((card) => {
       const title = document.getElementById(card.getAttribute('aria-labelledby')!)!;
       const cs = getComputedStyle(title);
+      const narrow =
+        card.getBoundingClientRect().width < 13 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const clamp = cs.getPropertyValue('-webkit-line-clamp');
       return {
         text: title.textContent ?? '',
-        truncated: title.scrollWidth > title.clientWidth,
-        ellipsis: cs.textOverflow === 'ellipsis' && cs.whiteSpace === 'nowrap',
+        narrow,
+        truncated: narrow ? title.scrollHeight > title.clientHeight + 1 : title.scrollWidth > title.clientWidth,
+        ellipsis:
+          cs.textOverflow === 'ellipsis' &&
+          (narrow ? clamp === '2' && cs.whiteSpace === 'normal' : cs.whiteSpace === 'nowrap'),
       };
     }),
   );
-  expect(titles.every((t) => t.ellipsis)).toBe(true);
+  expect(titles.filter((t) => !t.ellipsis)).toEqual([]);
+  expect(
+    titles.some((t) => t.narrow),
+    'a phone shows narrow cards',
+  ).toBe(true);
   const cut = titles.find((t) => t.truncated);
   test.skip(!cut, 'no title is long enough to be cut at this width');
   // The full title is the card's accessible name.

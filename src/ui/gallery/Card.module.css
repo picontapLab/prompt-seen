@@ -7,6 +7,14 @@
     --_caption: calc(var(--space-4) * 3 + var(--leading-sm) * 3 + var(--leading-xs));
     position: relative;
     min-inline-size: 0;
+    /* The title wraps to two lines on a narrow card (below); its width comes from the row. */
+    container: card / inline-size;
+  }
+  /* Below 768 px most cards are narrower than 13rem, so their estimate holds a two-line title. */
+  @media (max-width: 767.98px) {
+    .card {
+      --_caption: calc(var(--space-4) * 3 + var(--leading-sm) * 4 + var(--leading-xs));
+    }
   }
 
   /* In a long feed, cards far from the viewport skip rendering (§11.8.2 性能). The size estimate
@@ -107,6 +115,18 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     text-underline-offset: 0.2em;
+  }
+  /* Two lines on a card narrower than about 13rem, as on phones and in the home's rows: one line
+     there kept a quarter of a German title (decision D-3 of docs/home-ux-optimization-spec.md). */
+  @container card (max-width: 12.99rem) {
+    .title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
   }
 
   .lines {
