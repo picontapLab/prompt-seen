@@ -164,14 +164,18 @@
     gap: var(--space-8) var(--space-24);
     margin-block-end: var(--space-16);
   }
+  /* Section titles in the display face at the section-title size of §11.1.2 (decision D-2 of
+     docs/home-ux-optimization-spec.md, 2026-11-22). As 12 px secondary mono they were the smallest
+     text on the page, set like card metadata; the mono label stays with eyebrows, edge print and
+     metadata. CJK pages get these messages in their display subset (DISPLAY_MESSAGE_KEYS). */
   .sectionTitle {
     margin: 0 0 var(--space-16);
-    color: var(--text-secondary);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-medium);
-    letter-spacing: var(--tracking-label);
-    line-height: var(--leading-xs);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-display);
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-2xl);
   }
   .sectionHead .sectionTitle {
     margin: 0;

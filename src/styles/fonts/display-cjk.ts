@@ -34,6 +34,15 @@ export const DISPLAY_MESSAGE_KEYS: readonly string[] = [
   'favorites.page.title', // the favourites page's title (step 4c)
   'favorites.page.empty.title', // its heading when nothing is saved
   'explore.title', // the explore page's title (step 4c)
+  // Section titles (`.sectionTitle`, decision D-2 of docs/home-ux-optimization-spec.md):
+  'home.more.title',
+  'home.useCases.title',
+  'home.latest.title',
+  'home.templates.title',
+  'home.collections.title',
+  'pages.topic.works', // a topic page's works
+  'pages.errors.useCases', // the error pages' sections
+  'pages.errors.latest',
 ];
 
 /** The generated stylesheet of a locale, relative to public/generated/. */
