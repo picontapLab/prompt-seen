@@ -22,6 +22,7 @@ import { validateFeedSettings } from './validate-feed';
 import { validateHomeSettings } from './validate-home';
 import { templateContractHash, legacyTemplateContractHash } from './template-contract';
 import { resolveTemplate, validatePromptVariants } from './prompt-variants';
+import { checkPromptQuotations } from './prompt-quotes';
 
 // Cross-file rules (design doc §14.2 steps 3–5, §14.3). Mode-independent: the same content
 // gives the same findings in every build. What a build shows is decided in build-index.ts.
@@ -179,6 +180,7 @@ export function validateContent(
     if (d.inputRequirements.referenceImage !== inputRequirementsOf(content, rec).referenceImage)
       findings.error(rec.file, 'referenceImage summary differs from the template version input contract');
     const text = promptTextOf(content, rec);
+    checkPromptQuotations(content, rec, text, findings);
     if (text !== null) {
       const spans: [number, number, number][] = [];
       d.annotations.forEach((a, i) => {
