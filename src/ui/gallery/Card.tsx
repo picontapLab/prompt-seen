@@ -92,14 +92,22 @@ export function Card({
   const f = useTranslations('favorites');
   const img = getImage(card.cover, 'card');
   const style = { '--w': card.cover.width, '--h': card.cover.height } as CSSProperties;
-  const Tag = posinset ? 'article' : 'div';
+  const inFeed = Boolean(posinset);
+  const Tag = inFeed ? 'article' : 'div';
+  const titleId = `${id}-title`;
+  const descriptionIds = `${id}-summary ${id}-facts`;
 
+  // The link is named by the title and described by the summary and test facts; named by its
+  // content it read the image description, frame number, title, summary and facts as one name.
+  // In a feed the article carries the same name and description (feed pattern); outside one the
+  // wrapper is a plain div, which ARIA does not let be named (docs/home-ux-optimization-spec.md
+  // S-2). The image keeps its alt text for the page and for search.
   return (
     <Tag
       className={className ? `${styles.card} ${className}` : styles.card}
       style={style}
-      aria-labelledby={`${id}-title`}
-      aria-describedby={`${id}-summary ${id}-facts`}
+      aria-labelledby={inFeed ? titleId : undefined}
+      aria-describedby={inFeed ? descriptionIds : undefined}
       aria-posinset={posinset}
       aria-setsize={setsize}
       data-entry={card.id}
@@ -110,6 +118,8 @@ export function Card({
       <a
         href={withBasePath(card.path)}
         className={styles.link}
+        aria-labelledby={titleId}
+        aria-describedby={descriptionIds}
         data-crop-target=""
         data-prefetch={withBasePath(paths.generated(promptJsonFile(locale, card.slug)))}
       >
@@ -143,7 +153,7 @@ export function Card({
           <span
             lang={card.localization.contentLocale}
             dir={textDirection(card.localization.contentLocale)}
-            id={`${id}-title`}
+            id={titleId}
             className={styles.title}
           >
             {card.title}

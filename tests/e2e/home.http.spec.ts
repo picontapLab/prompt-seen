@@ -136,9 +136,8 @@ for (const locale of BUILD.locales) {
     }
     expect(html).toContain(message(locale.code, 'home.hero.intro'));
     // The more row avoids works the latest row already links, when there are enough others.
-    const cards = [...html.matchAll(/aria-describedby="[^"]*-summary [^"]*"[^>]*\sdata-entry="([^"]+)"/g)].map(
-      (m) => m[1]!,
-    );
+    // Cards in page order: each card's wrapper holds its ID and the save scope.
+    const cards = [...html.matchAll(/\sdata-entry="([^"]+)"[^>]*\sdata-save-scope=""/g)].map((m) => m[1]!);
     expect(cards).toHaveLength(summaries.length);
     const moreCount = Math.min(6, Math.max(0, index.prompts.length - 1));
     const [more, latest] = [cards.slice(0, moreCount), cards.slice(moreCount)];

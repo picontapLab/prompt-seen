@@ -293,6 +293,20 @@ test.describe('desktop', () => {
     await expect(page).toHaveURL(listUrl());
   });
 
+  test('a card link is named by its title and described by its summary and facts', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md S-2: named by its content, the link read the image
+    // description, frame number, title, summary and facts as one name. The article keeps the
+    // same name and description (feed pattern).
+    await page.goto(listUrl());
+    const article = articles(page).first();
+    const title = (await article.locator('[id$="-title"]').textContent())!;
+    const summary = (await article.locator('[data-card-summary]').textContent())!;
+    const link = article.getByRole('link');
+    await expect(link).toHaveAccessibleName(title);
+    await expect(link).toHaveAccessibleDescription(new RegExp(`^${summary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+    await expect(article).toHaveAccessibleName(title);
+  });
+
   test('resting on a card prefetches its popup data, not the page or large image', async ({ page }) => {
     await page.goto(listUrl());
     await hydrated(page);

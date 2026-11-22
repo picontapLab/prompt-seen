@@ -1,6 +1,6 @@
 # 首页体验优化实施规格
 
-版本：v1.2。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段待实施。基线：`codex/seo-geo` 分支提交 `63735b66a`。
+版本：v1.3。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段的 S-2 已实施，S-1 与 C-1 到 C-3 待定。基线：`codex/seo-geo` 分支提交 `63735b66a`。
 
 本规格处理各语言首页（`src/ui/home/`、首屏所用的 `FeatureShowcase` 及其共享部件）在真实浏览器可视区下的体验问题。依据是 2026-11-21 对渲染页面的实测，不是设计稿或源码推断。每一项给出现状测量、原因、修改落点和验收方式，可以直接拆成任务。
 
@@ -190,6 +190,13 @@
 - **现状**：axe 有 18 处“aria-prohibited-attr”待审。`Card` 外层是没有角色的 `<div aria-labelledby aria-describedby>`（`src/ui/gallery/Card.tsx:101`）；ARIA 1.2 不允许给 generic 元素命名，读屏软件可能忽略这两个属性。
 - **修改**：去掉外层的 `aria-labelledby`，把 `aria-describedby` 移到卡片链接上（链接的可访问名称已经是标题）。
 - **验收**：axe 该项待审数为 0；VoiceOver 读卡片链接时先读标题，再读摘要和测试信息。
+- **实施记录（v1.3）**：上面“链接的可访问名称已经是标题”这一前提不对。实测链接的名称由其全部内容拼成：图片 alt、帧号、（桌面上悬停用的）型号徽标、标题、摘要与测试信息，长达三百多字符，没有描述。实施方式：
+  - 卡片链接一律设 `aria-labelledby` 指向标题、`aria-describedby` 指向摘要与测试信息，名称就是标题。
+  - 不在连续列表中的卡片（首页、列表页的展示带、收藏页、专题页与错误页），外层 `<div>` 去掉这两个属性。
+  - 连续列表中的卡片外层是 `<article>`（带 `aria-posinset`），按 WAI-ARIA feed 模式保留这两个属性；列表页之前也没有这一项待审。
+  - 代价：图片 alt 与帧号不再是链接名称的一部分。alt 仍在图片上，供页面与搜索使用，详情页的同一张图也带有它。
+  - `home.http.spec.ts` 原先靠外层的 `aria-describedby` 找卡片，改为按 `data-entry` 与 `data-save-scope` 查找；新增首页与列表页各一项浏览器测试，检查链接的可访问名称与描述。
+  - VoiceOver 实测没有做，改用 Chromium 的可访问性树核对（见附录 A）。
 
 #### C-1 展出作品的标注数量与区域（内容与校验）
 
@@ -353,3 +360,27 @@ L-3，英文；zh-Hans、de、ar 的数值相同，阿拉伯语从右往左同�
 第 1 阶段复测：en 与 zh-Hans 在 1366 × 650、1280 × 720、390 × 664 下“复制提示词”底边分别为 543 / 504、554 / 568、640 / 644，均在首屏内，与 L-1 到 L-3 之前相同；悬停或点按短语时位移 0 px。德语在 1440 × 900 下“更多展出”的标题不在首屏，这在第 1 阶段之前就是如此，与本阶段无关。
 
 测试：打包产物上 `home.browser.spec.ts`、`home.http.spec.ts`、`list.browser.spec.ts`、`list.http.spec.ts`、`motion.browser.spec.ts` 与 `pages.browser.spec.ts` 共 250 项在 Chromium 下通过，其中包括 T-3、T-4、T-5；列表页行高相关测试未受影响。单元测试 875 项、类型检查、lint 与格式检查通过。WebKit 与 Firefox 未在本机运行。
+
+### 第 3 阶段 S-2 实施后（v1.3）
+
+打包产物（nginx，深色主题），axe-core 4.14，标签 `wcag2a`、`wcag2aa`、`wcag21aa`、`wcag22aa`。违规数前后都是 0。
+
+| 页面与视口 | `aria-prohibited-attr` 待复核 | `color-contrast` 待复核 |
+| --- | --- | --- |
+| 首页，iPhone 13 | 18 → 0 | 41 → 41 |
+| 首页，1440 × 900 | 18 → 0 | 1 → 1 |
+| 英文列表页，iPhone 13 | 2 → 0 | 12 → 12 |
+| 英文列表页，1440 × 900 | 2 → 0 | 37 → 37 |
+
+列表页的 2 处是展示带里的卡片；对比度待复核来自横向滚动行与渐隐边缘，axe 判断不了背景，数量没有变化。
+
+Chromium 可访问性树（CDP `Accessibility.getPartialAXTree`）：
+
+| 卡片 | 改动前链接名称 | 改动后链接名称 | 改动后链接描述 |
+| --- | --- | --- | --- |
+| 首页“更多展出”第 1 张（`div` 外层） | “Nine illustrated reactions of an orange-and-white corgi … 0275 My Dog, My Mood Turn a dog photo into …”（无描述） | My Dog, My Mood | Turn a dog photo into nine playful reactions for pet chats and everyday replies. GPT Image 2.6 · 1:1 · Nov 9 |
+| 列表页连续列表第 1 张（`article` 外层） | 由内容拼成（同上） | Cassette spools 12-frame loop | A 12-frame cassette loop keeps the label and shell stable while the reels move. GPT Image 2.6 · 1:1 · Nov 19 |
+
+列表页的 `article` 名称与描述同链接一致；首页的 `div` 外层不再有名称。
+
+测试：打包产物上用到卡片的 19 个浏览器测试文件与 `home.http.spec.ts`、`list.http.spec.ts` 共 797 项在 Chromium 下通过，2 项为测试内的条件跳过；单元测试 875 项、类型检查、lint 与格式检查通过。WebKit、Firefox 与 VoiceOver 未测。

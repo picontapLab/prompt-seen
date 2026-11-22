@@ -209,6 +209,20 @@ test.describe('desktop', () => {
     expect(await heroImage(page).evaluate((img) => getComputedStyle(img).opacity)).toBe('1');
   });
 
+  test('a card link is named by its title and described by its summary and facts', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md S-2: the wrapper is a plain div, which ARIA does not let
+    // be named, so the name and description sit on the link.
+    await page.goto(url);
+    const card = page.locator('section:has(#home-more) [data-save-scope]').first();
+    const title = (await card.locator('[id$="-title"]').textContent())!;
+    const summary = (await card.locator('[data-card-summary]').textContent())!;
+    const link = card.getByRole('link');
+    await expect(link).toHaveAccessibleName(title);
+    await expect(link).toHaveAccessibleDescription(new RegExp(`^${summary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+    expect(await card.getAttribute('aria-labelledby')).toBeNull();
+    expect(await card.getAttribute('aria-describedby')).toBeNull();
+  });
+
   test('works on the page open in the detail popup at their own address; Esc returns', async ({ page }) => {
     await page.goto(url);
     await hydrated(page);
