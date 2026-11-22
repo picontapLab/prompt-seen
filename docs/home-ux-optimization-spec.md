@@ -472,3 +472,25 @@ p_284、p_123、p_101、p_050 只有标注数量不足；p_045、p_012、p_067�
 ill 即 illustration。改动前英文等三种语言末尾三件相邻同类，简中有两处相邻同类；改动后四种语言都没有相邻同类。英文等三种语言的 p_278 被 p_284 替换，简中的 p_283 被 p_284 替换。
 
 `npm run content:validate -- --quiet`：退出码 0，警告 30 条（C-1 之后的 29 条，加 C-2 的 1 条：“5 of the first 7 works on show are in the category "illustration" (p_274, p_275, p_279, p_283, p_278)”）。
+
+### L-4、S-1、C-3 实施后（v1.7）
+
+提交：L-4 `0109e233d`，S-1 `cdc8c578d`，C-3 的校验 `137c7f0a3`；p_024 的内容修正未做（见 C-3）。
+
+L-4，打包产物（nginx），1440 × 900：
+
+| 页面 | en | zh-Hans | de | ar |
+| --- | --- | --- | --- | --- |
+| 首页 | Featured image prompts | 精选图像提示词 | Ausgewählte Bild-Prompts | أوامر صور مختارة |
+| 专题页（social-post） | Prompts | 提示词 | Prompts | الأوامر |
+| 错误页 | Browse by use | 按用途浏览 | Nach Verwendung stöbern | تصفح حسب الاستخدام |
+
+- 区块标题全部为 24 px；拉丁文字为 Fira Sans Extra Condensed，简中为 “Fira Sans Extra Condensed for CJK”，阿拉伯语为 IBM Plex Sans Arabic。
+- 字形核对（CDP `CSS.getPlatformFontsForNode`）：简中三种页面的区块标题字形全部由子集字体 Noto Sans SC 渲染，没有回退到系统字体。
+- axe（`wcag2a`、`wcag2aa`、`wcag21aa`、`wcag22aa`，页面顶部）：三种页面 × 四种语言都是 0 违规。滚动后再测会出现 `target-size`，那是吸顶页眉盖住链接造成的误报，与 `tests/e2e/support/a11y.ts` 中的说明一致。
+- 截图：`.artifacts/home-ux/l4-{home,topic,error}-{en,zh-Hans,de,ar}-{light,dark}.png`，共 24 张，滚动到第一个区块标题附近。
+- 1440 × 900 下 en、zh-Hans、ar 的“更多展出”标题与图片顶部在首屏内；第 1 阶段的首屏矩阵测试在打包产物上通过。
+
+S-1 的可见比例见 S-1 的实施记录。C-3：`content:validate` 退出码 0，警告 32 条，其中 2 条为 p_024 的空引号。
+
+测试：打包产物上 23 个浏览器与 HTTP 测试文件（home、home-language、list、pages、acceptance、german、details、motion、favorites、explore、popup、popup-layout、english-social-showcase、french-interactions、italian、korean-interactions、portuguese、portuguese-policy、spanish、search 的浏览器测试，以及 home、list、pages 的 HTTP 测试）共 885 项在 Chromium 下通过，2 项为测试内的条件跳过。`details.browser.spec.ts` 的“标题截断”测试已按两行规则更新，随 S-1 提交。单元测试 886 项、类型检查、lint、格式检查与 `tokens:check` 通过。WebKit 与 Firefox 未在本机运行。
