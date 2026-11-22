@@ -1,6 +1,6 @@
 # 首页体验优化实施规格
 
-版本：v1.4。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段的 S-2 与 S-2a 已实施，S-1 与 C-1 到 C-3 待定。基线：`codex/seo-geo` 分支提交 `63735b66a`。
+版本：v1.5。日期：2026-11-22，America/Los_Angeles。状态：第 1 阶段已提交（`410f8166d`：T-1、T-2、H-1、H-2 的说明区结构、H-3），H-2 的提示文案等待字段审校（D-6）；第 2 阶段 L-1、L-2、L-3 已提交（`09e9958e0`、`63a68fce2`、`b24b57607`，含 T-3 到 T-5），L-4 等待 D-2；第 3 阶段的 S-2、S-2a 与 C-1 的校验已实施，C-1 的补标注等待内容编辑，S-1、C-2、C-3 待定。基线：`codex/seo-geo` 分支提交 `63735b66a`。
 
 本规格处理各语言首页（`src/ui/home/`、首屏所用的 `FeatureShowcase` 及其共享部件）在真实浏览器可视区下的体验问题。依据是 2026-11-21 对渲染页面的实测，不是设计稿或源码推断。每一项给出现状测量、原因、修改落点和验收方式，可以直接拆成任务。
 
@@ -217,6 +217,7 @@
   - 内容：编辑依据测试记录，为 `home.featured` 中的作品补足 3–5 个标注，每个区域不超过图片面积的 50%。
   - 校验：`scripts/lib/content/validate-home.ts` 对标注少于 3 个或任一区域超过 50% 的展出作品给出警告；内容补齐后改为错误。`validate-home.test.ts` 同步补充用例。
 - **验收**：`npm run content:validate` 在当前内容上至少对这 16 件作品给出警告（区域面积检查可能再标出其他作品）。
+- **实施记录（v1.5，校验部分）**：`validate-home.ts` 对每件展出作品只在其第一个条目上检查：标注少于 3 个、任一区域超过图片面积 50% 时各给出一条警告；没有标注的仍是错误。警告不影响退出码：`content:validate` 与 `content:build` 只在错误或发布错误时失败，CI（`.github/workflows/ci.yml`）只运行 `npm run content:validate`，没有警告数门槛。当前内容上新增 28 条警告：标注不足 16 件，区域过大 12 件（名单见附录 A）。补标注与调整区域是内容编辑的工作，未改 `content/`。
 
 #### C-2 展出作品同质
 
@@ -411,3 +412,27 @@ Chromium 可访问性树（CDP `Accessibility.getPartialAXTree`）：
 axe（深色，`wcag2a`、`wcag2aa`、`wcag21aa`、`wcag22aa`）：首页与列表第 5 页违规前后都是 0；`color-contrast` 待复核前后相同（首页 1440 × 900 为 1、iPhone 13 为 41；列表第 5 页 1440 × 900 为 21；简中首页 2 与 39）。
 
 测试：打包产物上 `home.browser`、`home.http`、`home-language.browser`、`list.browser`、`list.http`、`acceptance.browser`、`templates.http`、`motion.browser` 与 `english-social-showcase.browser` 共 450 项在 Chromium 下通过，1 项为此前就有的条件跳过；其中包括首页与列表页各一项新增的模板卡片名称与描述测试。单元测试 875 项、类型检查、lint 与格式检查通过。WebKit、Firefox 与读屏软件实测未做。
+
+### C-1 校验实施后（v1.5）
+
+`npm run content:validate -- --quiet`：退出码 0；警告从 1 条增至 29 条，新增 28 条全部来自 `content/site.yaml` 的 `home.featured`。
+
+- 标注不足 3 个（16 件，均为 2 个）：p_274、p_275、p_276、p_277、p_279、p_283、p_278、p_280、p_281、p_282、p_284、p_285、p_146、p_123、p_101、p_050。
+- 区域超过图片一半（12 件，都是描述整体版式的短语）：
+
+| 作品 | 短语 | 区域面积 |
+| --- | --- | --- |
+| p_274 | clean 3-by-3 grid | 94% |
+| p_275 | clean 3-by-3 grid | 91% |
+| p_276 | four photos in a 2-by-2 grid | 83% |
+| p_277 | one large photograph | 51% |
+| p_279 | clean 3-by-3 grid | 93% |
+| p_283 | exactly six separate vignettes | 65% |
+| p_278 | clean 3-by-3 grid | 95% |
+| p_280 | clean 3-by-3 grid | 93% |
+| p_281 | clean 3-by-3 grid | 94% |
+| p_282 | two vertically stacked panels | 97% |
+| p_285 | four panels in a 2-by-2 grid | 97% |
+| p_146 | a clean 4-by-4 grid | 96% |
+
+p_284、p_123、p_101、p_050 只有标注数量不足；p_045、p_012、p_067、p_015 两项都通过。
