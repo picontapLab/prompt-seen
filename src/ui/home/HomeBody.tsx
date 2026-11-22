@@ -191,7 +191,7 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
           )}
 
           {latest.length > 0 && (
-            <section className={pages.section} aria-labelledby="home-latest">
+            <section className={`${pages.section} ${styles.latest}`} aria-labelledby="home-latest">
               <div className={pages.sectionHead}>
                 <h2 id="home-latest" className={pages.sectionTitle}>
                   {t('latest.title')}

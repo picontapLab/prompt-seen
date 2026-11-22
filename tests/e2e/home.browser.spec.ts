@@ -95,6 +95,36 @@ test.describe('desktop', () => {
     expect(await copyTop(page)).toBeCloseTo(before, 0);
   });
 
+  test('the works on show fill one row, no smaller than the newest works', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md L-3, T-5: wrapped at 140 px they left 302 px empty.
+    test.setTimeout(60_000);
+    const failures: string[] = [];
+    for (const viewport of DESKTOP_VIEWPORTS) {
+      await page.setViewportSize(viewport);
+      await page.goto(url);
+      const m = await page.evaluate(() => {
+        const section = (id: string) => document.getElementById(id)!.closest('section')!;
+        const row = section('home-more').querySelector('ul')!;
+        const more = [...row.querySelectorAll('li img')].map((img) => img.getBoundingClientRect());
+        const latest = [...section('home-latest').querySelectorAll('li img')].map((img) => img.getBoundingClientRect());
+        const box = row.getBoundingClientRect();
+        return {
+          count: more.length,
+          rows: new Set(more.map((b) => Math.round(b.top))).size,
+          gap: box.right - Math.max(...more.map((b) => b.right)),
+          more: Math.min(...more.map((b) => b.height)),
+          latest: Math.max(...latest.map((b) => b.height)),
+        };
+      });
+      const at = `${viewport.width}×${viewport.height}`;
+      if (m.count >= 4 && (m.rows !== 1 || Math.abs(m.gap) > 1))
+        failures.push(`${at}: ${m.rows} row(s), ${Math.round(m.gap)} px left at the end`);
+      if (viewport.width >= 1440 && m.more < m.latest)
+        failures.push(`${at}: works on show ${Math.round(m.more)} px, newest works ${Math.round(m.latest)} px`);
+    }
+    expect(failures).toEqual([]);
+  });
+
   test('the keyboard walks the phrases in reading order; Esc clears', async ({ page, browserName }) => {
     const [a, b] = work.annotations;
     await page.goto(url);

@@ -219,6 +219,41 @@
       inline-size: calc(var(--row-height) * var(--r));
     }
   }
+  /* On desktop the works on show fill one row: each grows with its ratio, so they keep one height
+     and meet both edges. Wrapped at 140 px they ended at 1098 of 1400 px on a 1440 screen and were
+     half the height of the newest works below (docs/home-ux-optimization-spec.md L-3). Few works
+     stop at 300 px high and start-align instead of growing huge. */
+  @media (min-width: 1024px) {
+    .more .moreWorks {
+      flex-wrap: nowrap;
+    }
+    .more .moreWorks::after {
+      display: none;
+    }
+    .more .moreWorks > li {
+      min-inline-size: 0;
+      max-inline-size: calc(300px * var(--r));
+    }
+  }
+
+  /* The newest works on the home page are an overview with the way to the list, in rows lower than
+     the list's own and than the works on show above them: two rows of about six instead of three
+     of four (L-3). The list page keeps its row heights. */
+  @media (min-width: 1024px) {
+    .latest {
+      --row-height: 140px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .latest {
+      --row-height: 160px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .latest {
+      --row-height: 180px;
+    }
+  }
 
   .sectionIntro {
     margin: 0 0 var(--space-16);
