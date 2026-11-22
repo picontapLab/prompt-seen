@@ -45,9 +45,17 @@ export function ScrollRow({
     const el = ref.current;
     if (!el) return;
     const measure = () => {
+      // Only a scroller that scrolls has an edge to fade or a button to show. Where the layout lets
+      // the row overflow visibly (the home rows on a desktop fill the width and do not scroll),
+      // what sticks out, such as a card's crop marks, is not content to scroll to: counted, it
+      // showed a fade and a button that did nothing (docs/home-ux-optimization-spec.md L-3).
+      const overflow = getComputedStyle(el).overflowX;
       // scrollLeft is 0 at the start and negative towards the end in right-to-left rows.
       const offset = Math.abs(el.scrollLeft);
-      const next = { before: offset > 1, after: offset + el.clientWidth < el.scrollWidth - 1 };
+      const next =
+        overflow === 'auto' || overflow === 'scroll'
+          ? { before: offset > 1, after: offset + el.clientWidth < el.scrollWidth - 1 }
+          : { before: false, after: false };
       setEdges((prev) => (prev.before === next.before && prev.after === next.after ? prev : next));
     };
     // WebKit can end a smooth scroll that a second press interrupted a few pixels short of an

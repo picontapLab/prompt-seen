@@ -125,6 +125,44 @@ test.describe('desktop', () => {
     expect(failures).toEqual([]);
   });
 
+  test('rows that fill a desktop neither scroll, fade nor show scroll buttons', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md L-3: the last card's crop marks stuck out 11 px past the
+    // filled "More on show" row, which then faded its last card and showed a button that did nothing.
+    test.setTimeout(60_000);
+    const failures: string[] = [];
+    for (const viewport of DESKTOP_VIEWPORTS) {
+      await page.setViewportSize(viewport);
+      await page.goto(url);
+      await hydrated(page);
+      for (const id of ['home-more', 'home-uses']) {
+        const state = await page.evaluate((heading) => {
+          const scroller = document.getElementById(heading)!.closest('section')!.querySelector('ul')!;
+          const root = scroller.parentElement!;
+          return {
+            overflow: getComputedStyle(scroller).overflowX,
+            before: root.hasAttribute('data-more-before'),
+            after: root.hasAttribute('data-more-after'),
+            buttons: root.querySelectorAll('[data-scroll-button]').length,
+          };
+        }, id);
+        if (state.overflow !== 'visible' || state.before || state.after || state.buttons)
+          failures.push(`${viewport.width}×${viewport.height} #${id}: ${JSON.stringify(state)}`);
+      }
+    }
+    expect(failures).toEqual([]);
+    // The last work's crop marks show whole when it is pointed at.
+    const last = page.locator('section:has(#home-more) li').last();
+    await last.locator('a').hover();
+    await expect(last.locator('[data-corner]').first()).toHaveCSS('opacity', '1');
+    const marks = await last
+      .locator('[data-corner]')
+      .evaluateAll((corners) =>
+        corners.map((c) => [Number(getComputedStyle(c).opacity), c.getBoundingClientRect().right] as const),
+      );
+    expect(marks.every(([opacity]) => opacity === 1)).toBe(true);
+    expect(Math.max(...marks.map(([, right]) => right))).toBeLessThanOrEqual(page.viewportSize()!.width);
+  });
+
   test('the keyboard walks the phrases in reading order; Esc clears', async ({ page, browserName }) => {
     const [a, b] = work.annotations;
     await page.goto(url);
@@ -292,6 +330,18 @@ test.describe('phone', () => {
       await expect(box(page, a.letter)).toHaveAttribute('data-state', 'current');
       expect(await copyTop(page), `"Copy prompt" with ${a.letter} current`).toBeCloseTo(before, 0);
     }
+  });
+
+  test('the featured row scrolls sideways on a phone, with its fade and a working button', async ({ page }) => {
+    await page.goto(url);
+    await hydrated(page);
+    const scroller = page.locator('section:has(#home-more) ul');
+    const root = scroller.locator('xpath=..');
+    expect(await scroller.evaluate((el) => getComputedStyle(el).overflowX)).toBe('auto');
+    await expect(root).toHaveAttribute('data-more-after', 'true');
+    await root.locator('[data-scroll-button]').tap();
+    await expect.poll(() => scroller.evaluate((el) => Math.abs(el.scrollLeft))).toBeGreaterThan(0);
+    await expect(root).toHaveAttribute('data-more-before', 'true');
   });
 
   test('collection covers hold their place before their images load', async ({ page }) => {
