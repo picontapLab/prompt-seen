@@ -361,38 +361,36 @@ test.describe('横向滚动: rows that scroll sideways snap, fade at the edge wi
   });
 });
 
-test('标题截断: a card title ends in an ellipsis, two lines on a narrow card; the whole title is in the page', async ({
+test('标题截断: a card title ends in an ellipsis, in two lines on a phone and one on a desktop; the whole title is in the page', async ({
   page,
 }) => {
-  // One line on a card at least 13rem wide, two on a narrower one (docs/home-ux-optimization-spec.md
-  // S-1, decision D-3); a phone shows both kinds.
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto(list);
-  await takenOver(page);
-  const titles = await cards(page).evaluateAll((els) =>
-    els.slice(0, 24).map((card) => {
-      const title = document.getElementById(card.getAttribute('aria-labelledby')!)!;
-      const cs = getComputedStyle(title);
-      const narrow =
-        card.getBoundingClientRect().width < 13 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-      const clamp = cs.getPropertyValue('-webkit-line-clamp');
-      return {
-        text: title.textContent ?? '',
-        narrow,
-        truncated: narrow ? title.scrollHeight > title.clientHeight + 1 : title.scrollWidth > title.clientWidth,
-        ellipsis:
-          cs.textOverflow === 'ellipsis' &&
-          (narrow ? clamp === '2' && cs.whiteSpace === 'normal' : cs.whiteSpace === 'nowrap'),
-      };
-    }),
-  );
-  expect(titles.filter((t) => !t.ellipsis)).toEqual([]);
-  expect(
-    titles.some((t) => t.narrow),
-    'a phone shows narrow cards',
-  ).toBe(true);
-  const cut = titles.find((t) => t.truncated);
-  test.skip(!cut, 'no title is long enough to be cut at this width');
+  // In the feed the viewport decides (docs/home-ux-optimization-spec.md S-1, decision D-3; feed
+  // cards hold no size container): two lines below 768 px, one line from there.
+  const titles = async (width: number) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(list);
+    await takenOver(page);
+    return cards(page).evaluateAll((els) =>
+      els.slice(0, 24).map((card) => {
+        const title = document.getElementById(card.getAttribute('aria-labelledby')!)!;
+        const cs = getComputedStyle(title);
+        const twoLines = cs.getPropertyValue('-webkit-line-clamp') === '2' && cs.whiteSpace === 'normal';
+        return {
+          text: title.textContent ?? '',
+          twoLines,
+          oneLine: cs.whiteSpace === 'nowrap',
+          ellipsis: cs.textOverflow === 'ellipsis',
+          truncated: twoLines ? title.scrollHeight > title.clientHeight + 1 : title.scrollWidth > title.clientWidth,
+        };
+      }),
+    );
+  };
+  const wide = await titles(1440);
+  expect(wide.filter((t) => !t.ellipsis || !t.oneLine)).toEqual([]);
+  const phone = await titles(390);
+  expect(phone.filter((t) => !t.ellipsis || !t.twoLines)).toEqual([]);
+  const cut = phone.find((t) => t.truncated);
+  test.skip(!cut, 'no title is long enough to be cut on a phone');
   // The full title is the card's accessible name.
   await expect(page.getByRole('article', { name: cut!.text, exact: true }).first()).toBeAttached();
 });

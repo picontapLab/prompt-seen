@@ -7,8 +7,6 @@
     --_caption: calc(var(--space-4) * 3 + var(--leading-sm) * 3 + var(--leading-xs));
     position: relative;
     min-inline-size: 0;
-    /* The title wraps to two lines on a narrow card (below); its width comes from the row. */
-    container: card / inline-size;
   }
   /* Below 768 px most cards are narrower than 13rem, so their estimate holds a two-line title. */
   @media (max-width: 767.98px) {
@@ -121,9 +119,29 @@
     text-underline-offset: 0.2em;
   }
   /* Two lines on a card narrower than about 13rem, as on phones and in the home's rows: one line
-     there kept a quarter of a German title (decision D-3 of docs/home-ux-optimization-spec.md). */
+     there kept a quarter of a German title (decision D-3 of docs/home-ux-optimization-spec.md).
+     Outside the feed the label row, as wide as the card, is the size container it asks. */
+  .card:not([aria-posinset]) .label {
+    container: card / inline-size;
+  }
   @container card (max-width: 12.99rem) {
     .title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+  }
+  /* A feed card skips rendering off screen (content-visibility, above), and a size container on
+     or in it went wrong in the CI of PR #2: on the card, Firefox lost the place when returning
+     to the list or bringing a card into view; inside it, WebKit sized titles of cards it had
+     skipped as if they were narrow and lost the page in view after a long jump. Feed cards hold
+     no size container, so the feed decides by the viewport: below 768 px nearly every card is
+     narrower than 13rem. */
+  @media (max-width: 767.98px) {
+    .card[aria-posinset] .title {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
