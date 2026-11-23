@@ -9,7 +9,7 @@ import { CircleMark } from '@/ui/brand/CircleMark';
 import { CropMarks } from '@/ui/brand/CropMarks';
 import { FrameNumber } from '@/ui/brand/FrameNumber';
 import { FavoriteButton } from '@/ui/favorites/FavoriteButton';
-import { GifBadge, gifBadgeHost } from '@/ui/media/GifBadge';
+import { GifBadge, gifBadgeHost, gifBadgeViewportHost } from '@/ui/media/GifBadge';
 import { isoDate } from '@/ui/prompt-detail/TestInfo';
 import { textDirection } from '@/ui/prompt-detail/language';
 import { IsolatedMessage } from '@/ui/rich-text/IsolatedMessage';
@@ -158,7 +158,7 @@ export function Card({
             image
           )}
           <CropMarks mode="interactive" size={14} offset={7} />
-          <span className={`${styles.badges} ${gifBadgeHost}`}>
+          <span className={`${styles.badges} ${inFeed ? gifBadgeViewportHost : gifBadgeHost}`}>
             <GifBadge image={card.cover} hasGifOutput={card.hasGifOutput} />
             {card.verification === 'verified' && card.model ? (
               <span className={styles.modelBadge} data-model-badge="">

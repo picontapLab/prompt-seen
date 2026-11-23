@@ -221,7 +221,6 @@
     justify-content: flex-end;
     /* The strip spans the frame so that the frame's width can be queried below; presses go
        through it to the link, and only its content takes them. */
-    container-type: inline-size;
     pointer-events: none;
   }
   .actions > * {
@@ -229,8 +228,12 @@
   }
   /* On a small frame (a phone puts two or three works in a row) the 44 px disc of the save
      button hides up to a third of the picture. It shrinks to 32 px and moves into the corner;
-     the ring around it keeps the 44 px target (§11.1.7). */
-  @container (max-width: 11.99rem) {
+     the ring around it keeps the 44 px target (§11.1.7). Outside the feed the strip is the size
+     container asked. */
+  .card:not([aria-posinset]) .actions {
+    container: actions / inline-size;
+  }
+  @container actions (max-width: 11.99rem) {
     .actions > * {
       margin-block-start: calc(-1 * var(--space-4));
       margin-inline-end: calc(-1 * var(--space-4));
@@ -241,6 +244,25 @@
       min-block-size: var(--_disc);
     }
     .card .actions > [data-favorite]::after {
+      content: '';
+      position: absolute;
+      inset: calc((var(--_disc) - var(--target-min)) / 2);
+    }
+  }
+  /* Feed cards hold no size container (see the title, above), so there the viewport decides:
+     below 1024 px most feed frames are narrower than 13rem, and the smaller disc costs a wider
+     frame nothing. */
+  @media (max-width: 1023.98px) {
+    .card[aria-posinset] .actions > * {
+      margin-block-start: calc(-1 * var(--space-4));
+      margin-inline-end: calc(-1 * var(--space-4));
+    }
+    .card[aria-posinset] .actions > [data-favorite] {
+      --_disc: calc(var(--target-min) - var(--space-12));
+      inline-size: var(--_disc);
+      min-block-size: var(--_disc);
+    }
+    .card[aria-posinset] .actions > [data-favorite]::after {
       content: '';
       position: absolute;
       inset: calc((var(--_disc) - var(--target-min)) / 2);

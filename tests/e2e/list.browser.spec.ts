@@ -31,6 +31,33 @@ const hydrated = (page: Page) =>
     return !!el && Object.keys(el).some((k) => k.startsWith('__reactProps'));
   });
 
+/**
+ * Over the pictures of the first page's cards (§11.8.2 卡片): the save discs' widths on the cards
+ * in view, and whether each GIF badge shows the format alone or its whole label. Feed cards hold
+ * no size container, so the viewport decides (docs/home-ux-optimization-spec.md, PR #2 CI).
+ */
+const overlays = (page: Page) =>
+  articles(page).evaluateAll((els) => ({
+    discs: [
+      ...new Set(
+        els
+          .slice(0, 6)
+          .map((a) => a.querySelector('[data-favorite]'))
+          .filter((b) => b !== null)
+          .map((b) => Math.round(b.getBoundingClientRect().width)),
+      ),
+    ],
+    gifs: els.flatMap((a) => {
+      const badge = a.querySelector('[data-media-badge="gif"]');
+      const whole = badge?.querySelector(':scope > span:not([aria-hidden])');
+      const short = badge?.querySelector(':scope > span[aria-hidden]');
+      if (!whole || !short) return [];
+      const clipped = getComputedStyle(whole).clipPath !== 'none';
+      const shown = getComputedStyle(short).display !== 'none';
+      return [clipped && shown ? 'format alone' : !clipped && !shown ? 'whole label' : 'both or neither'];
+    }),
+  }));
+
 test.describe('desktop', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
@@ -307,6 +334,14 @@ test.describe('desktop', () => {
     await expect(article).toHaveAccessibleName(title);
   });
 
+  test('on a desktop a feed card shows the 44 px save disc and the whole GIF label', async ({ page }) => {
+    await page.goto(listUrl());
+    await hydrated(page);
+    const { discs, gifs } = await overlays(page);
+    expect(discs).toEqual([44]);
+    expect(gifs.filter((g) => g !== 'whole label')).toEqual([]);
+  });
+
   test('a template card in the strip is named by its title and described by its use and field count', async ({
     page,
   }) => {
@@ -350,6 +385,16 @@ test.describe('desktop', () => {
 
 test.describe('phone', () => {
   test.use({ viewport: { width: 390, height: 844 }, hasTouch: true });
+
+  test('on a phone a feed card keeps its picture clear: a 32 px save disc, the GIF badge naming the format alone', async ({
+    page,
+  }) => {
+    await page.goto(listUrl());
+    await hydrated(page);
+    const { discs, gifs } = await overlays(page);
+    expect(discs).toEqual([32]);
+    expect(gifs.filter((g) => g !== 'format alone')).toEqual([]);
+  });
 
   test('one Filters button opens every condition with a live result count', async ({ page }) => {
     await page.goto(listUrl());

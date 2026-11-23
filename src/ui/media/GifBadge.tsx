@@ -10,6 +10,13 @@ import styles from './GifBadge.module.css';
  */
 export const gifBadgeHost = styles.host!;
 
+/**
+ * Like `gifBadgeHost` for an element that must not be a size container, such as the frame of a
+ * card in a feed, which skips rendering off screen: the badge shows the format alone below
+ * 1024 px, where most such frames are too narrow for the whole label.
+ */
+export const gifBadgeViewportHost = styles.viewportHost!;
+
 /** The format belongs to the original, even when the browser displays an animated WebP. */
 export function GifBadge({
   image,

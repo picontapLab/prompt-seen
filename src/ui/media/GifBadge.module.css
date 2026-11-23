@@ -29,12 +29,12 @@
      shows the format alone. The whole label stays in the accessibility tree, hidden the way
      `.visually-hidden` hides; the card's facts name the model. Hosts are size containers. */
   .host {
-    container-type: inline-size;
+    container: gif-host / inline-size;
   }
   .short {
     display: none;
   }
-  @container (max-width: 14.99rem) {
+  @container gif-host (max-width: 14.99rem) {
     .host .full {
       position: absolute;
       inline-size: 1px;
@@ -44,6 +44,22 @@
       white-space: nowrap;
     }
     .host .short {
+      display: inline;
+    }
+  }
+  /* A host that cannot be a size container (`gifBadgeViewportHost`, the frame of a card in the
+     feed, which skips rendering off screen): the viewport decides, and below 1024 px most such
+     frames are under 16rem. */
+  @media (max-width: 1023.98px) {
+    .viewportHost .full {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .viewportHost .short {
       display: inline;
     }
   }
