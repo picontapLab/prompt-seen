@@ -125,6 +125,12 @@ test.describe('desktop', () => {
     expect(failures).toEqual([]);
   });
 
+  test('a desktop shows all the newest works', async ({ page }) => {
+    await page.goto(url);
+    const cells = page.locator('section:has(#home-latest) ul > li');
+    await expect(cells.filter({ visible: true })).toHaveCount(await cells.count());
+  });
+
   test('rows that fill a desktop neither scroll, fade nor show scroll buttons', async ({ page }) => {
     // docs/home-ux-optimization-spec.md L-3: the last card's crop marks stuck out 11 px past the
     // filled "More on show" row, which then faded its last card and showed a button that did nothing.
@@ -337,21 +343,47 @@ test.describe('phone', () => {
     // Rows of three only happen with portraits narrower than 3:4.
     await page.goto(url);
     const cards = await page.locator('section:has(#home-latest) [data-save-scope]').evaluateAll((els) =>
-      els.map((el) => {
-        const cs = getComputedStyle(el);
-        const b = el.getBoundingClientRect();
-        return {
-          top: Math.round(b.top),
-          width: b.width,
-          ratio: parseFloat(cs.getPropertyValue('--w')) / parseFloat(cs.getPropertyValue('--h')),
-        };
-      }),
+      els
+        .filter((el) => el.getClientRects().length > 0)
+        .map((el) => {
+          const cs = getComputedStyle(el);
+          const b = el.getBoundingClientRect();
+          return {
+            top: Math.round(b.top),
+            width: b.width,
+            ratio: parseFloat(cs.getPropertyValue('--w')) / parseFloat(cs.getPropertyValue('--h')),
+          };
+        }),
     );
     const rows = Map.groupBy(cards, (card) => card.top);
     const crowded = [...rows.values()].filter((row) => row.length > 2 && row.some((card) => card.ratio >= 0.75));
     expect(crowded, 'rows of three or more').toEqual([]);
     const narrowest = Math.min(...cards.filter((card) => card.ratio >= 0.75).map((card) => card.width));
     expect(narrowest).toBeGreaterThanOrEqual(150);
+  });
+
+  test('a phone shows eight of the newest works; the rest are not shown, loaded or focusable', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md S-1: twelve made six rows, nearly three screens.
+    await page.goto(url);
+    await hydrated(page);
+    const cells = page.locator('section:has(#home-latest) ul > li');
+    const total = await cells.count();
+    test.skip(total <= 8, 'eight newest works or fewer');
+    await expect(cells.filter({ visible: true })).toHaveCount(8);
+    // Scroll to the end, so lazy images in view would have loaded.
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    for (let i = 8; i < total; i++) {
+      const link = cells.nth(i).locator('a').first();
+      await expect(link).toBeHidden();
+      await link.focus();
+      await expect(link).not.toBeFocused();
+      expect(
+        await cells
+          .nth(i)
+          .locator('img')
+          .evaluate((img) => (img as HTMLImageElement).currentSrc),
+      ).toBe('');
+    }
   });
 
   test('the featured row scrolls sideways on a phone, with its fade and a working button', async ({ page }) => {

@@ -248,6 +248,12 @@
     .latest {
       --row-height: calc((100vw - 2 * var(--page-margin)) * 0.66);
     }
+    /* Two to a row, the twelve newest works made six rows, nearly three screens on a phone: phones
+       show the first eight. The rest stay in the HTML, so the page still links all twelve, but
+       are not laid out, loaded (their images are lazy) or reached by Tab. */
+    .latest ul > li:nth-child(n + 9) {
+      display: none;
+    }
   }
   @media (min-width: 1024px) {
     .latest {
