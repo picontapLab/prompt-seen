@@ -30,6 +30,8 @@ import { HomeHero } from './HomeHero';
 
 /** Use cases linked from the first screen, beside the search field (§11.8.1: 3–5). */
 const FIRST_SCREEN_USES = 4;
+/** Newest works a phone shows (below 480 px, Home.module.css); wider screens show all twelve. */
+const PHONE_LATEST = 8;
 
 export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: HomeModel }) {
   const t = await getTranslations({ locale: locale.code, namespace: 'home' });
@@ -203,7 +205,7 @@ export async function HomeBody({ locale, model }: { locale: LocaleEntry; model: 
                   </Link>
                 )}
               </div>
-              <WorkRows cards={latest} locale={locale.code} label={t('latest.title')} />
+              <WorkRows cards={latest} locale={locale.code} label={t('latest.title')} phoneLimit={PHONE_LATEST} />
             </section>
           )}
 

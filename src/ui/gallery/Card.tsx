@@ -1,6 +1,7 @@
 import { useFormatter, useTranslations } from 'next-intl';
 import { useId, type CSSProperties, type ReactNode } from 'react';
 import { promptJsonFile } from '@/modules/feed/files';
+import { breakpoints } from '@/styles/tokens/breakpoints';
 import type { FeedCard } from '@/modules/feed/types';
 import { getImage } from '@/modules/media';
 import { paths, withBasePath } from '@/modules/url';
@@ -36,7 +37,17 @@ export type CardProps = {
   page?: number;
   /** Stable key, to hold the card in place when content is added above it. */
   dataKey?: string;
+  /**
+   * The page hides this card on phones (below the `sm` breakpoint). Its image then selects an
+   * inline blank there, since WebKit fetches lazy images even inside `display: none`; wider
+   * screens load the work as usual.
+   */
+  phoneHidden?: boolean;
 };
+
+/** A transparent pixel, inline: what a card hidden on phones loads there instead of its work. */
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+const PHONE = `(max-width: ${breakpoints.sm - 0.02}px)`;
 
 /** "Sample Renderer 1 · 4:5 · Oct 12": what was tested, the shape and when (§11.1 展签, §9.10.3). */
 export function useCardFacts(card: FeedCard) {
@@ -85,6 +96,7 @@ export function Card({
   className,
   page,
   dataKey,
+  phoneHidden,
 }: CardProps) {
   const id = useId();
   const facts = useCardFacts(card);
@@ -92,6 +104,19 @@ export function Card({
   const f = useTranslations('favorites');
   const img = getImage(card.cover, 'card');
   const style = { '--w': card.cover.width, '--h': card.cover.height } as CSSProperties;
+  const image = (
+    <img
+      src={img.src}
+      srcSet={img.srcSet}
+      sizes={sizes ?? '(min-width: 1024px) 26vw, (min-width: 768px) 34vw, 50vw'}
+      width={img.width}
+      height={img.height}
+      alt={img.alt}
+      lang={img.lang}
+      loading={priority ? undefined : 'lazy'}
+      decoding={priority ? undefined : 'async'}
+    />
+  );
   const inFeed = Boolean(posinset);
   const Tag = inFeed ? 'article' : 'div';
   const titleId = `${id}-title`;
@@ -124,17 +149,14 @@ export function Card({
         data-prefetch={withBasePath(paths.generated(promptJsonFile(locale, card.slug)))}
       >
         <span className={styles.frame} style={{ background: img.placeholder }}>
-          <img
-            src={img.src}
-            srcSet={img.srcSet}
-            sizes={sizes ?? '(min-width: 1024px) 26vw, (min-width: 768px) 34vw, 50vw'}
-            width={img.width}
-            height={img.height}
-            alt={img.alt}
-            lang={img.lang}
-            loading={priority ? undefined : 'lazy'}
-            decoding={priority ? undefined : 'async'}
-          />
+          {phoneHidden ? (
+            <picture className={styles.picture}>
+              <source media={PHONE} srcSet={BLANK} />
+              {image}
+            </picture>
+          ) : (
+            image
+          )}
           <CropMarks mode="interactive" size={14} offset={7} />
           <span className={`${styles.badges} ${gifBadgeHost}`}>
             <GifBadge image={card.cover} hasGifOutput={card.hasGifOutput} />

@@ -114,19 +114,37 @@ export function Article({
   );
 }
 
-/** Works in the list's justified rows (§11.1.4), with the list's own cards. */
-export function WorkRows({ cards, locale, label }: { cards: readonly FeedCard[]; locale: string; label: string }) {
+/**
+ * Works in the list's justified rows (§11.1.4), with the list's own cards. Works from
+ * `phoneLimit` on carry `data-phone-hidden` for the page to hide on phones, and their images
+ * load nothing there (see Card's `phoneHidden`).
+ */
+export function WorkRows({
+  cards,
+  locale,
+  label,
+  phoneLimit,
+}: {
+  cards: readonly FeedCard[];
+  locale: string;
+  label: string;
+  phoneLimit?: number;
+}) {
   return (
     <ul className={`${gallery.gallery} ${styles.rows}`} aria-label={label}>
-      {cards.map((card) => (
-        <li
-          key={card.id}
-          className={gallery.cell}
-          style={{ '--r': card.cover.width / card.cover.height } as CSSProperties}
-        >
-          <Card card={card} locale={locale} />
-        </li>
-      ))}
+      {cards.map((card, i) => {
+        const phoneHidden = phoneLimit !== undefined && i >= phoneLimit;
+        return (
+          <li
+            key={card.id}
+            className={gallery.cell}
+            style={{ '--r': card.cover.width / card.cover.height } as CSSProperties}
+            data-phone-hidden={phoneHidden || undefined}
+          >
+            <Card card={card} locale={locale} phoneHidden={phoneHidden} />
+          </li>
+        );
+      })}
     </ul>
   );
 }

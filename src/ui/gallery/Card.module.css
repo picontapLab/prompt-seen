@@ -63,6 +63,10 @@
     block-size: 100%;
     border-radius: inherit;
   }
+  /* The <picture> of a card hidden on phones (Card's `phoneHidden`) leaves layout to its image. */
+  .picture {
+    display: contents;
+  }
 
   .badges {
     position: absolute;

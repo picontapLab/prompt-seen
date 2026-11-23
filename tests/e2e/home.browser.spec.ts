@@ -364,6 +364,12 @@ test.describe('phone', () => {
 
   test('a phone shows eight of the newest works; the rest are not shown, loaded or focusable', async ({ page }) => {
     // docs/home-ux-optimization-spec.md S-1: twelve made six rows, nearly three screens.
+    // WebKit fetches lazy images even when they are not displayed, so the hidden cards' images
+    // select an inline blank on phones; none of their files may be requested.
+    const requested = new Set<string>();
+    page.on('request', (request) => {
+      if (request.resourceType() === 'image') requested.add(new URL(request.url()).pathname);
+    });
     await page.goto(url);
     await hydrated(page);
     const cells = page.locator('section:has(#home-latest) ul > li');
@@ -372,18 +378,46 @@ test.describe('phone', () => {
     await expect(cells.filter({ visible: true })).toHaveCount(8);
     // Scroll to the end, so lazy images in view would have loaded.
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await page.waitForTimeout(1000);
     for (let i = 8; i < total; i++) {
       const link = cells.nth(i).locator('a').first();
       await expect(link).toBeHidden();
       await link.focus();
       await expect(link).not.toBeFocused();
+      const files = await cells
+        .nth(i)
+        .locator('img')
+        .evaluate((img) =>
+          [
+            img.getAttribute('src')!,
+            ...(img.getAttribute('srcset') ?? '').split(',').map((s) => s.trim().split(' ')[0]!),
+          ]
+            .filter(Boolean)
+            .map((u) => new URL(u, location.href).pathname),
+        );
       expect(
-        await cells
-          .nth(i)
+        files.filter((file) => requested.has(file)),
+        `work ${i + 1}'s image files requested`,
+      ).toEqual([]);
+    }
+  });
+
+  test('wider than a phone, all the newest works load their images', async ({ page }) => {
+    // The inline blank applies below 480 px only.
+    await page.setViewportSize({ width: 480, height: 844 });
+    await page.goto(url);
+    const hidden = page.locator('section:has(#home-latest) li[data-phone-hidden]');
+    test.skip(!(await hidden.count()), 'eight newest works or fewer');
+    await expect(hidden.first()).toBeVisible();
+    await hidden.last().scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        hidden
+          .last()
           .locator('img')
           .evaluate((img) => (img as HTMLImageElement).currentSrc),
-      ).toBe('');
-    }
+      )
+      .toMatch(/^https?:\/\/.+\.webp$/);
   });
 
   test('the featured row scrolls sideways on a phone, with its fade and a working button', async ({ page }) => {
