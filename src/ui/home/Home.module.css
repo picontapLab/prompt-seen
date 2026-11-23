@@ -239,6 +239,16 @@
   /* The newest works on the home page are an overview with the way to the list, in rows lower than
      the list's own and than the works on show above them: two rows of about six instead of three
      of four (L-3). The list page keeps its row heights. */
+  /* On phones they come about two to a row: three to a row made 112–128 px cards whose two-line
+     titles showed 40–50% of a long German title (S-1). The row height follows the content width,
+     so squares pair up from 320 to 479 px, 4:5 and 3:4 portraits pair with a neighbour and wide
+     works take a row of their own, each at its own ratio (§11.1.4). From 480 px the list's rows
+     already give cards of about 165 px or more. */
+  @media (max-width: 479.98px) {
+    .latest {
+      --row-height: calc((100vw - 2 * var(--page-margin)) * 0.66);
+    }
+  }
   @media (min-width: 1024px) {
     .latest {
       --row-height: 140px;

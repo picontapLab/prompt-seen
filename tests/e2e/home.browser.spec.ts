@@ -332,6 +332,28 @@ test.describe('phone', () => {
     }
   });
 
+  test('the newest works come about two to a row, wide enough for their titles', async ({ page }) => {
+    // docs/home-ux-optimization-spec.md S-1: three to a row made 112–128 px cards on a 390 px phone.
+    // Rows of three only happen with portraits narrower than 3:4.
+    await page.goto(url);
+    const cards = await page.locator('section:has(#home-latest) [data-save-scope]').evaluateAll((els) =>
+      els.map((el) => {
+        const cs = getComputedStyle(el);
+        const b = el.getBoundingClientRect();
+        return {
+          top: Math.round(b.top),
+          width: b.width,
+          ratio: parseFloat(cs.getPropertyValue('--w')) / parseFloat(cs.getPropertyValue('--h')),
+        };
+      }),
+    );
+    const rows = Map.groupBy(cards, (card) => card.top);
+    const crowded = [...rows.values()].filter((row) => row.length > 2 && row.some((card) => card.ratio >= 0.75));
+    expect(crowded, 'rows of three or more').toEqual([]);
+    const narrowest = Math.min(...cards.filter((card) => card.ratio >= 0.75).map((card) => card.width));
+    expect(narrowest).toBeGreaterThanOrEqual(150);
+  });
+
   test('the featured row scrolls sideways on a phone, with its fade and a working button', async ({ page }) => {
     await page.goto(url);
     await hydrated(page);
