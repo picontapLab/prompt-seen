@@ -120,13 +120,15 @@ test.describe('Korean interaction acceptance', () => {
   }
 
   test('cancelled composition keeps the confirmed query and history on the page and in the panel', async ({ page }) => {
+    // Both navigations start a fresh Worker and load the locale index.
+    test.setTimeout(60_000);
     const searchPath = `${BASE}/${korean!.pathPrefix}/search/`;
     const unfinished = `${rawQuery}ㅎ`;
     await page.goto(`${searchPath}?q=${encodeURIComponent(rawQuery)}`);
     const input = page.locator('#search-field');
     const status = page.locator('[data-search-status]');
     await expect(input).toHaveValue(rawQuery);
-    await expect(status).toContainText(rawQuery);
+    await expect(status).toContainText(rawQuery, { timeout: 15_000 });
     await input.press('Enter');
     const confirmedStatus = await status.textContent();
     await input.dispatchEvent('compositionstart');
@@ -151,7 +153,7 @@ test.describe('Korean interaction acceptance', () => {
     const field = panel(page).getByRole('textbox');
     await field.fill(rawQuery);
     const hit = panel(page).locator(`a[href="${BASE}${promptDetail('ko', 'p_151').path}"]`);
-    await expect(hit).toBeVisible();
+    await expect(hit).toBeVisible({ timeout: 15_000 });
     const confirmedCount = await panel(page).getByRole('status').textContent();
     const listAddress = page.url();
     await field.dispatchEvent('compositionstart');
