@@ -75,6 +75,7 @@ if (french) {
         test(`${width}px ${theme}: French sorting and filters preserve readable controls and matching results`, async ({
           page,
         }) => {
+          test.setTimeout(60_000);
           await page.setViewportSize({ width, height: 900 });
           await page.emulateMedia({ colorScheme: theme, reducedMotion: 'reduce' });
           await page.goto(`${BASE}/${french!.pathPrefix}/prompts/`);

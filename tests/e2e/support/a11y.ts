@@ -7,14 +7,21 @@ import { expect, type Page } from '@playwright/test';
  * reads as low contrast; slower runners (WebKit on Linux CI) hit that window reliably.
  */
 export async function settle(page: Page): Promise<void> {
-  await page.evaluate(() =>
-    Promise.all(
-      document
-        .getAnimations()
-        .filter((a) => a.effect?.getTiming().iterations !== Infinity)
-        .map((a) => a.finished.catch(() => undefined)),
-    ),
-  );
+  await page.waitForFunction(() => {
+    const overlay = Array.from(document.querySelectorAll('dialog[open], [role="dialog"], [role="alertdialog"]')).find(
+      (dialog) => dialog.checkVisibility(),
+    );
+    return document.getAnimations().every((animation) => {
+      if (animation.playState !== 'running' || animation.playbackRate === 0) return true;
+      const effect = animation.effect;
+      if (!(effect instanceof KeyframeEffect) || effect.getTiming().iterations === Infinity) return true;
+      const target = effect.target;
+      if (!target?.checkVisibility({ contentVisibilityAuto: true })) return true;
+      // An offscreen feed can suspend its animations when a filter dialog opens.
+      // Only the dialog, its contents and its ancestors can be transitioning into view.
+      return !!overlay && !overlay.contains(target) && !target.contains(overlay);
+    });
+  });
 }
 
 /**
