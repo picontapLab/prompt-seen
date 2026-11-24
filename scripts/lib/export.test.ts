@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import photoCampaign from '../../production/everyday-photo-edit-v1/campaign.json';
 import { config } from '../../src/config';
 import { catalogTranslator } from '../../src/i18n/translator';
 import { composeFeed, type ComposedFeed } from '../../src/modules/feed/compose';
@@ -277,14 +278,16 @@ describe('content:export JSON', () => {
     expect(data.templates.length).toBeGreaterThan(0);
   });
 
-  it('binds every public case to an actual, fully identified run and its original assets', () => {
+  it('exports the documented model and original assets for every public case', () => {
+    const familyOnlyRuns = new Set(['x_499', ...photoCampaign.cases.flatMap((item) => item.acceptedExampleIds)]);
     for (const locale of config.builtLocales.filter((entry) => entry.enabled)) {
       const data = exportJson(sources, config.buildId, locale, ['prompt']);
       for (const record of data.prompts) {
         if (record.kind !== 'prompt') continue;
         const f = record.facts!;
         expect(f, `${locale.code}/${record.id}`).toBeDefined();
-        expect(f.model.displayName).toMatch(/^GPT Image 2\.[56]$/);
+        if (familyOnlyRuns.has(f.exampleRunId)) expect(f.model.displayName).toBe('GPT Image');
+        else expect(f.model.displayName).toMatch(/^GPT Image 2\.[56]$/);
         expect(f.referenceAssetIds).toEqual(f.references.map(({ assetId }) => assetId));
         expect(f.outputAssetIds).toEqual(f.outputs.map(({ assetId }) => assetId));
         expect(f.outputs.length).toBeGreaterThan(0);
@@ -302,7 +305,7 @@ describe('content:export JSON', () => {
   });
 
   it.each([
-    ['p_024', 'zh-Hans', 'x_068', 'en', 'GPT Image 2.5', 'zh-Hans'],
+    ['p_024', 'zh-Hans', 'x_499', 'en', 'GPT Image', 'zh-Hans'],
     ['p_217', 'en', 'x_281', 'zh-Hans', 'GPT Image 2.6', 'en'],
   ])('keeps %s translated copy and generation evidence separate in %s', (id, code, run, source, model, copyLocale) => {
     const locale = config.builtLocales.find((l) => l.code === code)!;

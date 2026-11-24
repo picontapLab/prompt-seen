@@ -1,7 +1,7 @@
 id: p_024
 slug: green-tea-tin-poster
 createdAt: 2026-07-30
-updatedAt: 2026-11-20
+updatedAt: 2026-11-23
 promptSource:
   type: template
   templateId: t_001
@@ -13,16 +13,18 @@ promptSource:
       - single estate
     palette: sage green
     aspectRatio: 5:4
+    headline: GREEN TEA
 categoryId: product
 styleIds:
   - flat-vector
   - minimal
 useCaseIds:
   - packaging
-coverAssetId: a_125
+coverAssetId: a_689
+showcaseExampleId: x_499
 relatedTemplateIds: []
 model:
-  displayName: GPT Image 2.5
+  displayName: GPT Image
   providerModelId: null
   verification: verified
 inputRequirements:
@@ -35,9 +37,9 @@ annotations:
   - phrase: a soft circular backdrop
     region:
       x: 0.28
-      y: 0.045
-      w: 0.66
-      h: 0.77
+      y: 0.05
+      w: 0.68
+      h: 0.64
     note:
       en: The circle lifts a green tin off a green wall.
       zh-Hans: 圆形背景把绿色茶罐从绿色墙面上托出来。
@@ -53,10 +55,10 @@ annotations:
       ru: Круг отделяет зелёную банку от зелёной стены.
   - phrase: single estate
     region:
-      x: 0.495
-      y: 0.343
-      w: 0.19
-      h: 0.235
+      x: 0.52
+      y: 0.78
+      w: 0.23
+      h: 0.06
     note:
       en: This selling point became the paper label band; quality claims tend to turn into labels.
       zh-Hans: 这个卖点变成了纸质标签带；品质类卖点往往会被画成标签。

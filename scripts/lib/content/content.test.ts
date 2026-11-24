@@ -263,9 +263,11 @@ describe('a valid content tree', () => {
     expect(t.cover?.assetId).toBe('a_001');
   });
 
-  it('uses the current default run for the template cover and first print when a later ID shares its date', () => {
+  it('puts the prompt showcase and template default first when a later run shares their date', () => {
     const alternate = 'Poster for a tin in cold.';
     const root = setup({
+      'content/prompts/p_001/entry.yaml': promptEntry('p_001', 'ink-portrait', 'showcaseExampleId: x_001'),
+      'content/prompts/p_001/prompt.txt': 'Poster for a mug in warm.\n',
       'content/examples/x_002/run.yaml': [
         'id: x_002',
         'promptId: p_001',
@@ -277,7 +279,12 @@ describe('a valid content tree', () => {
       ].join('\n'),
       'content/examples/x_002/prompt.txt': alternate,
     });
-    const template = detail<TemplateDetail>(load(root), 'template', 'en', 't_001')!;
+    const result = load(root);
+    const prompt = detail<PromptDetail>(result, 'prompt', 'en', 'p_001')!;
+    expect(prompt.examples.map((run) => run.id)).toEqual(['x_001', 'x_002']);
+    expect(prompt.cover?.assetId).toBe('a_001');
+    expect(prompt.examples[0]?.outputs[0]?.assetId).toBe('a_001');
+    const template = detail<TemplateDetail>(result, 'template', 'en', 't_001')!;
     expect(template.examples.map((run) => run.id)).toEqual(['x_001', 'x_002']);
     expect(template.cover?.assetId).toBe(template.examples[0]?.outputs[0]?.assetId);
     expect(template.examples[1]).toMatchObject({

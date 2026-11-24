@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "locale": "it",
-  "sourceRevision": "c70a06a4ccff55ba99596932a7305b1e5b716d7b:6c72499e9250f8cba6485a6b00eb8aae98c6ddd3ca54b54a827e972e86b6d074",
-  "scopeFingerprint": "sha256:10c319cfbf74651285fb021f25f31935126aeab15eb68c810bab98906d215f05",
+  "sourceRevision": "cf30d84a7efb98421b80af1f8bf32ec2af874a9f:c592454dc7d392bc5f7543c9349d30ca820315ece363244474ff8e985494216c",
+  "scopeFingerprint": "sha256:677fee57e945386437cab8b583b287fbd02a908538379c5961c2b3df975c7aaf",
   "policyFingerprint": "sha256:629693422a72c0a8714e72ee61804b0f2ecc674b307239ee22ef1f8aecb5326b",
   "items": [
     {
@@ -119,7 +119,7 @@
     },
     {
       "key": "collection/c_018",
-      "sourceHash": "sha256:391a5dc50979709a4d6fcccf1fbda8e54798c384f82e35034a24310af88d4051",
+      "sourceHash": "sha256:edbf31428a39873dd9443e0094ebfb8b68d5a11ebc9248fa61d224e08267b4e8",
       "dependencies": [
         "content/media/a_613.yaml#alt"
       ]
@@ -416,11 +416,14 @@
     },
     {
       "key": "prompt/p_024",
-      "sourceHash": "sha256:8f73488f3ed66857a3502163ecc1e9a6f6d4c32d7552728c92c3e2d25cb25692",
+      "sourceHash": "sha256:adc9ce14e678dd129aefbbaa924c57e740f0cf1bf8133d6cdca0aaaaf453dcd8",
       "dependencies": [
         "content/examples/x_068/run.yaml#observation",
         "content/examples/x_068/run.yaml#limitation",
+        "content/examples/x_499/run.yaml#observation",
+        "content/examples/x_499/run.yaml#limitation",
         "content/media/a_125.yaml#alt",
+        "content/media/a_689.yaml#alt",
         "content/prompts/p_024/entry.yaml#annotations.0.note",
         "content/prompts/p_024/entry.yaml#annotations.1.note",
         "content/taxonomy/categories.yaml#2.labels",
@@ -722,6 +725,7 @@
         "content/media/a_151.yaml#alt",
         "content/prompts/p_050/entry.yaml#annotations.0.note",
         "content/prompts/p_050/entry.yaml#annotations.1.note",
+        "content/prompts/p_050/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#3.labels",
         "content/taxonomy/categories.yaml#3.aliases",
         "content/taxonomy/styles.yaml#3.labels",
@@ -1289,6 +1293,7 @@
         "content/media/a_203.yaml#alt",
         "content/prompts/p_101/entry.yaml#annotations.0.note",
         "content/prompts/p_101/entry.yaml#annotations.1.note",
+        "content/prompts/p_101/entry.yaml#annotations.2.note",
         "content/prompts/p_101/entry.yaml#inspirationSources.0.metricScope",
         "content/prompts/p_101/entry.yaml#inspirationSources.0.evidenceMethod",
         "content/prompts/p_101/entry.yaml#inspirationSources.0.sourcePromptStatus",
@@ -1760,6 +1765,7 @@
         "content/prompts/p_123/entry.yaml#inspirationSources.0.metrics.4.labels",
         "content/prompts/p_123/entry.yaml#annotations.0.note",
         "content/prompts/p_123/entry.yaml#annotations.1.note",
+        "content/prompts/p_123/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#2.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_017/versions/v1/inputs.yaml#instructions",
@@ -2059,7 +2065,7 @@
     },
     {
       "key": "prompt/p_138",
-      "sourceHash": "sha256:5d1131b0ad97bcfa2398aa0b0eff8f7fb23ff9aaeedc066cf6fa458e3a93737d",
+      "sourceHash": "sha256:854abefba27b51f0a2ec3260987634e85317464b562245b14d2d5f266ed7013e",
       "dependencies": [
         "content/examples/x_183/run.yaml#notes",
         "content/examples/x_183/run.yaml#observation",
@@ -2263,6 +2269,7 @@
         "content/prompts/p_146/entry.yaml#inspirationSources.0.metrics.6.labels",
         "content/prompts/p_146/entry.yaml#annotations.0.note",
         "content/prompts/p_146/entry.yaml#annotations.1.note",
+        "content/prompts/p_146/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_030/versions/v1/inputs.yaml#instructions",
@@ -3647,6 +3654,7 @@
         "content/media/a_458.yaml#alt",
         "content/prompts/p_274/entry.yaml#annotations.0.note",
         "content/prompts/p_274/entry.yaml#annotations.1.note",
+        "content/prompts/p_274/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_069/versions/v1/inputs.yaml#instructions",
@@ -3664,6 +3672,7 @@
         "content/media/a_460.yaml#alt",
         "content/prompts/p_275/entry.yaml#annotations.0.note",
         "content/prompts/p_275/entry.yaml#annotations.1.note",
+        "content/prompts/p_275/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_070/versions/v1/inputs.yaml#instructions",
@@ -3683,6 +3692,7 @@
         "content/prompts/p_276/entry.yaml#inputRequirements.slots.1.labels",
         "content/prompts/p_276/entry.yaml#annotations.0.note",
         "content/prompts/p_276/entry.yaml#annotations.1.note",
+        "content/prompts/p_276/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#3.labels",
         "content/taxonomy/categories.yaml#3.aliases",
         "content/taxonomy/use-cases.yaml#2.labels"
@@ -3699,6 +3709,7 @@
         "content/prompts/p_277/entry.yaml#inputRequirements.slots.0.labels",
         "content/prompts/p_277/entry.yaml#annotations.0.note",
         "content/prompts/p_277/entry.yaml#annotations.1.note",
+        "content/prompts/p_277/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#1.labels",
         "content/taxonomy/categories.yaml#1.aliases",
         "content/taxonomy/use-cases.yaml#2.labels"
@@ -3712,6 +3723,7 @@
         "content/media/a_464.yaml#alt",
         "content/prompts/p_278/entry.yaml#annotations.0.note",
         "content/prompts/p_278/entry.yaml#annotations.1.note",
+        "content/prompts/p_278/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_071/versions/v1/inputs.yaml#instructions"
@@ -3727,6 +3739,7 @@
         "content/media/a_465.yaml#alt",
         "content/prompts/p_279/entry.yaml#annotations.0.note",
         "content/prompts/p_279/entry.yaml#annotations.1.note",
+        "content/prompts/p_279/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_072/versions/v1/inputs.yaml#instructions"
@@ -3740,6 +3753,7 @@
         "content/media/a_466.yaml#alt",
         "content/prompts/p_280/entry.yaml#annotations.0.note",
         "content/prompts/p_280/entry.yaml#annotations.1.note",
+        "content/prompts/p_280/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_073/versions/v1/inputs.yaml#instructions"
@@ -3753,6 +3767,7 @@
         "content/media/a_467.yaml#alt",
         "content/prompts/p_281/entry.yaml#annotations.0.note",
         "content/prompts/p_281/entry.yaml#annotations.1.note",
+        "content/prompts/p_281/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels",
         "content/templates/t_074/versions/v1/inputs.yaml#instructions"
@@ -3769,6 +3784,7 @@
         "content/prompts/p_282/entry.yaml#inputRequirements.slots.0.labels",
         "content/prompts/p_282/entry.yaml#annotations.0.note",
         "content/prompts/p_282/entry.yaml#annotations.1.note",
+        "content/prompts/p_282/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels"
       ]
@@ -3782,6 +3798,7 @@
         "content/prompts/p_283/entry.yaml#inputRequirements.instructions",
         "content/prompts/p_283/entry.yaml#annotations.0.note",
         "content/prompts/p_283/entry.yaml#annotations.1.note",
+        "content/prompts/p_283/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels"
       ]
@@ -3795,6 +3812,7 @@
         "content/media/a_470.yaml#alt",
         "content/prompts/p_284/entry.yaml#annotations.0.note",
         "content/prompts/p_284/entry.yaml#annotations.1.note",
+        "content/prompts/p_284/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#1.labels",
         "content/taxonomy/categories.yaml#1.aliases",
         "content/taxonomy/use-cases.yaml#2.labels",
@@ -3813,6 +3831,7 @@
         "content/prompts/p_285/entry.yaml#inputRequirements.slots.0.labels",
         "content/prompts/p_285/entry.yaml#annotations.0.note",
         "content/prompts/p_285/entry.yaml#annotations.1.note",
+        "content/prompts/p_285/entry.yaml#annotations.2.note",
         "content/taxonomy/categories.yaml#4.labels",
         "content/taxonomy/use-cases.yaml#2.labels"
       ]
@@ -4718,7 +4737,7 @@
     },
     {
       "key": "prompt/p_399",
-      "sourceHash": "sha256:a95782ad59f3bb81e4abed3d8329e3ea00a5c13d3fc6b34137ec07928ab90650",
+      "sourceHash": "sha256:db70ba9ede6ae0b68cdbfe28979c9f77c2aeebd0e388d08d13836808d0cc4647",
       "dependencies": [
         "content/examples/x_463/run.yaml#notes",
         "content/examples/x_464/run.yaml#notes",
@@ -4738,7 +4757,7 @@
     },
     {
       "key": "prompt/p_400",
-      "sourceHash": "sha256:685b5a1a9d573f708fe17893df3dc80e7536f6eda629232a77d2bc0e7cddf825",
+      "sourceHash": "sha256:32cd99eecd252b104c82716e92060c050aa51aba7e1f6fbf4a1591fdb6d01a97",
       "dependencies": [
         "content/examples/x_465/run.yaml#notes",
         "content/examples/x_466/run.yaml#notes",
@@ -4754,7 +4773,7 @@
     },
     {
       "key": "prompt/p_401",
-      "sourceHash": "sha256:cbf004d13aff1adbe7bf40319e39e9f37e540c4b5897a6f3b4a6f70956286fce",
+      "sourceHash": "sha256:4f01429d14088a593703644715942ffec78d3d47776651fd52ab0de24ba3771e",
       "dependencies": [
         "content/examples/x_467/run.yaml#notes",
         "content/examples/x_468/run.yaml#notes",
@@ -4773,7 +4792,7 @@
     },
     {
       "key": "prompt/p_402",
-      "sourceHash": "sha256:29c23a658551a6e52b63e485749ffc17a756021f26a9599c4caa183650a69410",
+      "sourceHash": "sha256:743d68c0be4608e02e11438ebaec0a96055e91e8584035bc415d5e83f6ea6bbb",
       "dependencies": [
         "content/examples/x_469/run.yaml#notes",
         "content/examples/x_470/run.yaml#notes",
@@ -4793,7 +4812,7 @@
     },
     {
       "key": "prompt/p_403",
-      "sourceHash": "sha256:11cd3d67c01b17159f35ee7ad7c4dd3fdea4d4126158eb023d7f0b1d9a13d9cc",
+      "sourceHash": "sha256:e77f6fefe871bd3603ecfa5d2c535d075878b30c291cd18c12f2c68d0f435749",
       "dependencies": [
         "content/examples/x_471/run.yaml#notes",
         "content/examples/x_472/run.yaml#notes",
@@ -4809,7 +4828,7 @@
     },
     {
       "key": "prompt/p_404",
-      "sourceHash": "sha256:b911318eae5467edf196e13b40e352ad94e1cecb7c0419ffb0b1da6e710c7e0d",
+      "sourceHash": "sha256:c7e62f9be379f4f620b3f8f247d39c7d3e2202f1896a4cfb245ee131c1b1689c",
       "dependencies": [
         "content/examples/x_473/run.yaml#notes",
         "content/examples/x_474/run.yaml#notes",
@@ -4828,7 +4847,7 @@
     },
     {
       "key": "prompt/p_405",
-      "sourceHash": "sha256:c3a73b7221e33e3e51aa2b660288433a9aa4d7fbd35998f100747e356c0469fb",
+      "sourceHash": "sha256:19eba6f2c47f17fdb45eaf60627fe947a3139a3cd0ce705f41d671da90d438e0",
       "dependencies": [
         "content/examples/x_475/run.yaml#notes",
         "content/examples/x_476/run.yaml#notes",
@@ -4849,7 +4868,7 @@
     },
     {
       "key": "prompt/p_406",
-      "sourceHash": "sha256:5a19808ca325161886f3b11f558a9bf1a9b60d67f349df369a94447ea20701c6",
+      "sourceHash": "sha256:6b491db6f15e3731890a0975c8b94d0a89fa6b8a1757c9ebaea2814e924bc48f",
       "dependencies": [
         "content/examples/x_477/run.yaml#notes",
         "content/examples/x_478/run.yaml#notes",
@@ -4869,7 +4888,7 @@
     },
     {
       "key": "prompt/p_407",
-      "sourceHash": "sha256:2e8e0c47420ac35b3778ba7d7372854103ace60e0b6e153fe9af91aa26295a06",
+      "sourceHash": "sha256:88c53fa52c0c66be68ccefd1252f401f724d7191e8d09089d82d2696bd96d745",
       "dependencies": [
         "content/examples/x_479/run.yaml#notes",
         "content/examples/x_480/run.yaml#notes",
@@ -4886,7 +4905,7 @@
     },
     {
       "key": "prompt/p_408",
-      "sourceHash": "sha256:2a471762ffae1b346d1d3814c849347deac5fef9b121d677195bc796772441d5",
+      "sourceHash": "sha256:c02680aea3f969adab0090b7144bc4ba766de028be395947ac0d052d56bb640b",
       "dependencies": [
         "content/examples/x_481/run.yaml#notes",
         "content/examples/x_482/run.yaml#notes",
@@ -4905,7 +4924,7 @@
     },
     {
       "key": "prompt/p_409",
-      "sourceHash": "sha256:51e075464e1ada9c1133b2e89f56ab5573a047de052790a2ea46c2e9e96b7bf2",
+      "sourceHash": "sha256:26bc3dc872333a2ec241bb5d29c7830b0e58a1bddf22ca5462c1d8d835ef2e2b",
       "dependencies": [
         "content/examples/x_483/run.yaml#notes",
         "content/examples/x_484/run.yaml#notes",
@@ -4921,7 +4940,7 @@
     },
     {
       "key": "prompt/p_410",
-      "sourceHash": "sha256:d9f51537af543e87dcadd278c18e6fc8b0a89289500469b1ad4620d038f0059e",
+      "sourceHash": "sha256:ed9c8bcd97cee7eafbf77bdbb66230e8fafe6bb92fb314df2b094d447d1c0d4e",
       "dependencies": [
         "content/examples/x_485/run.yaml#notes",
         "content/examples/x_486/run.yaml#notes",
@@ -4944,7 +4963,7 @@
     },
     {
       "key": "prompt/p_411",
-      "sourceHash": "sha256:8c7558ea6ab16092fef72009336344cfb4fc5667063140ecb27edc4639c1695c",
+      "sourceHash": "sha256:43af315637595ce0888d6092b75dd60e27f97d709a410e5215c54bffcf5afde2",
       "dependencies": [
         "content/examples/x_487/run.yaml#notes",
         "content/examples/x_488/run.yaml#notes",
@@ -4961,7 +4980,7 @@
     },
     {
       "key": "prompt/p_412",
-      "sourceHash": "sha256:bba73efdf9caad079a912c93407dc31d9da19dde4ef1cca3e9c8045df85ca071",
+      "sourceHash": "sha256:1bc7c935b99861f92cfb9930861951e9b3b14834d220a89c06096cc485e861d3",
       "dependencies": [
         "content/examples/x_489/run.yaml#notes",
         "content/examples/x_490/run.yaml#notes",
@@ -4984,7 +5003,7 @@
     },
     {
       "key": "prompt/p_413",
-      "sourceHash": "sha256:6c0de7948862eb53ab105b2400907cb8273890327ac46dcfe4e46d953c5cec68",
+      "sourceHash": "sha256:f5613a6e6cdc1b480846f4f36be7735d440df58f17a0ccf40a587a094df3710c",
       "dependencies": [
         "content/examples/x_491/run.yaml#notes",
         "content/examples/x_492/run.yaml#notes",
@@ -5010,7 +5029,7 @@
     },
     {
       "key": "prompt/p_414",
-      "sourceHash": "sha256:0aa42d1e6a59a6fedd8f0eb5fcac1bdc11d77ab937e536119080c85a85e6be96",
+      "sourceHash": "sha256:0e59021ff969a5631d05b2020b8e2575911a3d21a1bde58a19c9a268b5baf90c",
       "dependencies": [
         "content/examples/x_493/run.yaml#notes",
         "content/examples/x_494/run.yaml#notes",
@@ -5029,7 +5048,7 @@
     },
     {
       "key": "prompt/p_415",
-      "sourceHash": "sha256:d3f726254f5699bb9012620c942033828b8d138aabd43348fd06b00580410ead",
+      "sourceHash": "sha256:3cb405f329d66ecdee2dba4ae4e2062562ef0f210b2312525557f1f522c527bd",
       "dependencies": [
         "content/examples/x_495/run.yaml#notes",
         "content/examples/x_496/run.yaml#notes",
@@ -5048,7 +5067,7 @@
     },
     {
       "key": "prompt/p_416",
-      "sourceHash": "sha256:d44cae3b04b1b3757d488fc14ae76b8f243e7de84542e3a3d8ec7bad69734edb",
+      "sourceHash": "sha256:dc71acb72a8dfd24151992ad704d95af3f1abbee0bf5bc5e9ecc08e5d0e41a5f",
       "dependencies": [
         "content/examples/x_497/run.yaml#notes",
         "content/examples/x_498/run.yaml#notes",
@@ -5068,10 +5087,13 @@
       "dependencies": [
         "content/examples/x_068/run.yaml#observation",
         "content/examples/x_068/run.yaml#limitation",
+        "content/examples/x_499/run.yaml#observation",
+        "content/examples/x_499/run.yaml#limitation",
         "content/media/a_111.yaml#alt",
         "content/media/a_125.yaml#alt",
         "content/media/a_138.yaml#alt",
         "content/media/a_202.yaml#alt",
+        "content/media/a_689.yaml#alt",
         "content/taxonomy/categories.yaml#2.labels",
         "content/taxonomy/field-groups.yaml#0.labels",
         "content/taxonomy/field-groups.yaml#1.labels",
@@ -6309,7 +6331,7 @@
     },
     {
       "key": "template/t_076",
-      "sourceHash": "sha256:a95782ad59f3bb81e4abed3d8329e3ea00a5c13d3fc6b34137ec07928ab90650",
+      "sourceHash": "sha256:db70ba9ede6ae0b68cdbfe28979c9f77c2aeebd0e388d08d13836808d0cc4647",
       "dependencies": [
         "content/examples/x_463/run.yaml#notes",
         "content/examples/x_464/run.yaml#notes",
@@ -6329,7 +6351,7 @@
     },
     {
       "key": "template/t_077",
-      "sourceHash": "sha256:685b5a1a9d573f708fe17893df3dc80e7536f6eda629232a77d2bc0e7cddf825",
+      "sourceHash": "sha256:32cd99eecd252b104c82716e92060c050aa51aba7e1f6fbf4a1591fdb6d01a97",
       "dependencies": [
         "content/examples/x_465/run.yaml#notes",
         "content/examples/x_466/run.yaml#notes",
@@ -6348,7 +6370,7 @@
     },
     {
       "key": "template/t_078",
-      "sourceHash": "sha256:29c23a658551a6e52b63e485749ffc17a756021f26a9599c4caa183650a69410",
+      "sourceHash": "sha256:743d68c0be4608e02e11438ebaec0a96055e91e8584035bc415d5e83f6ea6bbb",
       "dependencies": [
         "content/examples/x_469/run.yaml#notes",
         "content/examples/x_470/run.yaml#notes",
@@ -6368,7 +6390,7 @@
     },
     {
       "key": "template/t_079",
-      "sourceHash": "sha256:c3a73b7221e33e3e51aa2b660288433a9aa4d7fbd35998f100747e356c0469fb",
+      "sourceHash": "sha256:19eba6f2c47f17fdb45eaf60627fe947a3139a3cd0ce705f41d671da90d438e0",
       "dependencies": [
         "content/examples/x_475/run.yaml#notes",
         "content/examples/x_476/run.yaml#notes",
@@ -6389,7 +6411,7 @@
     },
     {
       "key": "template/t_080",
-      "sourceHash": "sha256:2a471762ffae1b346d1d3814c849347deac5fef9b121d677195bc796772441d5",
+      "sourceHash": "sha256:c02680aea3f969adab0090b7144bc4ba766de028be395947ac0d052d56bb640b",
       "dependencies": [
         "content/examples/x_481/run.yaml#notes",
         "content/examples/x_482/run.yaml#notes",
@@ -6408,7 +6430,7 @@
     },
     {
       "key": "template/t_081",
-      "sourceHash": "sha256:0aa42d1e6a59a6fedd8f0eb5fcac1bdc11d77ab937e536119080c85a85e6be96",
+      "sourceHash": "sha256:0e59021ff969a5631d05b2020b8e2575911a3d21a1bde58a19c9a268b5baf90c",
       "dependencies": [
         "content/examples/x_493/run.yaml#notes",
         "content/examples/x_494/run.yaml#notes",
@@ -9275,6 +9297,24 @@
       "sourceFile": "content/examples/x_498/run.yaml",
       "sourceField": [
         "notes",
+        "en"
+      ]
+    },
+    {
+      "key": "content/examples/x_499/run.yaml#limitation",
+      "sourceHash": "sha256:744ba44001a7df208d8b71dec9f35edd88d306c854031bade538594160095914",
+      "sourceFile": "content/examples/x_499/run.yaml",
+      "sourceField": [
+        "limitation",
+        "en"
+      ]
+    },
+    {
+      "key": "content/examples/x_499/run.yaml#observation",
+      "sourceHash": "sha256:13ee23b4457dbab30b671463d58fcfef1176e85067ebb38f6a8a887dd9aa5fdd",
+      "sourceFile": "content/examples/x_499/run.yaml",
+      "sourceField": [
+        "observation",
         "en"
       ]
     },
@@ -13554,6 +13594,15 @@
       ]
     },
     {
+      "key": "content/media/a_689.yaml#alt",
+      "sourceHash": "sha256:c4b06323bfd93ac778b5c35593ed4b5988a9b6f21ea2d08ea0e126db395723f0",
+      "sourceFile": "content/media/a_689.yaml",
+      "sourceField": [
+        "alt",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_012/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:78b9bdb84866309721a2dcda8831ce47ffaf3dd1475d77a69e5463428edc4e02",
       "sourceFile": "content/prompts/p_012/entry.yaml",
@@ -13719,6 +13768,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_050/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:a07524b874e467179040778f7069ff2c28f92a06e3a23809a0fee54f71927e4d",
+      "sourceFile": "content/prompts/p_050/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_067/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:3a31d19ac52de3d77e61f1c6ea3653cd744542a925184cd498cdfb91b6361370",
       "sourceFile": "content/prompts/p_067/entry.yaml",
@@ -13791,6 +13851,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_101/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:85e9f8fb52f61c671f7371f4a015df1b43f0dac4a9dc98aa1ac01d98c264a053",
+      "sourceFile": "content/prompts/p_101/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -16078,6 +16149,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_123/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:8722fc7edac53149850398224e9b0731e7683f29a4400ba2dbdcd8d5cc97c18e",
+      "sourceFile": "content/prompts/p_123/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -18443,6 +18525,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_146/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:ede34832891e89d39b2835a0d2412ef50e5a807536b9c50b6948fca85856bd12",
+      "sourceFile": "content/prompts/p_146/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -21599,6 +21692,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_274/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:82631431dc0d0434931c61acb352542b3a4246800e48d7693efba83078ecc959",
+      "sourceFile": "content/prompts/p_274/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_275/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:fb974b909845d8b8b22970d3cf550457758f060d33ff732378af59946107620f",
       "sourceFile": "content/prompts/p_275/entry.yaml",
@@ -21621,6 +21725,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_275/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:a353bd05c5de4094fe988cea352cf390433db67fc964920f3785d0fa859bd8ed",
+      "sourceFile": "content/prompts/p_275/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_276/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:d478514a16e8c9b04e36df13d16f278bb4ca0d56f79df34a97ecf16e35951437",
       "sourceFile": "content/prompts/p_276/entry.yaml",
@@ -21638,6 +21753,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_276/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:dfdb445ce47a02f69540c7b430f3c330d39ce340199134ce63122d97e432b430",
+      "sourceFile": "content/prompts/p_276/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -21699,6 +21825,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_277/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:6972315f2677f4310403044cc1471be74566de7ab515bca06902144ab6e0c477",
+      "sourceFile": "content/prompts/p_277/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_277/entry.yaml#inputRequirements.instructions",
       "sourceHash": "sha256:49d06d8b2b735881eaf2a542c0cae2c1188beadc2f7e5266346c93238c98bda3",
       "sourceFile": "content/prompts/p_277/entry.yaml",
@@ -21743,6 +21880,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_278/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:cddb27e17a3caadca162ba1cc33b2f4a1b3244db6d866baad70bf4ea395eac33",
+      "sourceFile": "content/prompts/p_278/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_279/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:30b96252d739ae2aa999700f836469031164c851e9f152917918130c41989d24",
       "sourceFile": "content/prompts/p_279/entry.yaml",
@@ -21760,6 +21908,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_279/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:6e3869262d4e70c409ee2a658b426cd415b20728887836c8668848b54bfa0d86",
+      "sourceFile": "content/prompts/p_279/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -21787,6 +21946,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_280/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:e99be838f02224799f13023421f4ed29f5a776139d3dfd783cc2a6fb1cf89b39",
+      "sourceFile": "content/prompts/p_280/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_281/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:a0e8fa8d2eec048597a09105286256a71d5fc6b48e7f3ac2a5990cb9e99eeb0e",
       "sourceFile": "content/prompts/p_281/entry.yaml",
@@ -21809,6 +21979,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_281/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:6c86ccd6d074a25684156e53730277d276b644e5bc15d9bc625a19bf7333c532",
+      "sourceFile": "content/prompts/p_281/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_282/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:a7ad758fab0bb8e44a01bdb6d5f7dcd16b51c16c930e4917bf357292307b34b6",
       "sourceFile": "content/prompts/p_282/entry.yaml",
@@ -21826,6 +22007,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_282/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:cae01df01561978746919893afcb0b43dd3f26dabeba909ce68f9fdf37b8138d",
+      "sourceFile": "content/prompts/p_282/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]
@@ -21875,6 +22067,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_283/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:590ee4d2bb2d601b030ca2b304c5c52e49e4dfb426d60ec3962986d8765684db",
+      "sourceFile": "content/prompts/p_283/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_283/entry.yaml#inputRequirements.instructions",
       "sourceHash": "sha256:cd713750cb7341ed500f52e690f28b1ea5aa968150d498661b56c287891f630d",
       "sourceFile": "content/prompts/p_283/entry.yaml",
@@ -21907,6 +22110,17 @@
       ]
     },
     {
+      "key": "content/prompts/p_284/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:71091327b1b7ddc3f25a011e2f4f7b21b5eeba08e196302467e5d8cf2b747964",
+      "sourceFile": "content/prompts/p_284/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
+        "note",
+        "en"
+      ]
+    },
+    {
       "key": "content/prompts/p_285/entry.yaml#annotations.0.note",
       "sourceHash": "sha256:68bc45172849e630bc6b7a20a1bb154f64f47f1403ecbbe341aefdb84b9035dc",
       "sourceFile": "content/prompts/p_285/entry.yaml",
@@ -21924,6 +22138,17 @@
       "sourceField": [
         "annotations",
         1,
+        "note",
+        "en"
+      ]
+    },
+    {
+      "key": "content/prompts/p_285/entry.yaml#annotations.2.note",
+      "sourceHash": "sha256:aa0a9ff9a69225c4dd6ee6c2dfc94fe86889500f4ced9b373c0409b88ca3291b",
+      "sourceFile": "content/prompts/p_285/entry.yaml",
+      "sourceField": [
+        "annotations",
+        2,
         "note",
         "en"
       ]

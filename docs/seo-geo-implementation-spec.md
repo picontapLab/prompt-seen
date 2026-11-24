@@ -4,7 +4,7 @@
 
 **一次交付。** 同一生产候选版本恢复简中首页、提示词全部分页、模板与合集入口，完成 **20 个提示词案例、5 个主题页（新建 4 个、更新 1 个）、3 个既有合集**，同步发布方法说明、英语及简中检索目录和 v2 数据集。重点页面覆盖英语与简中，共享组件和译稿按现有 12 语言策略验收。内容、页面和导出按真实依赖并行推进，通过同一份验收清单后发布。
 
-**全部案例均由 GPT Image 2.5 或 GPT Image 2.6 生成。** 每个案例标明对应型号。全站 GIF 统一标注为“GPT Image 2.6 生成的 GIF”，英文为“GIF generated with GPT Image 2.6”。读者在复制前能看到生成原文的语言、实际输入和对应输出。[版本归属记录](../production/model-version-annotation-2026-11-05.json) · [2.6 补充记录](../production/model-version-annotation-2026-11-09.json)
+**本规格的 20 个基线案例使用 GPT Image 2.5 或 GPT Image 2.6。** 新增运行按其回执和适用于该批次的版本认定展示型号。只能确认模型族时标为 GPT Image。全站 GIF 统一标注为“GPT Image 2.6 生成的 GIF”，英文为“GIF generated with GPT Image 2.6”。读者在复制前能看到生成原文的语言、实际输入和对应输出。[版本归属记录](../production/model-version-annotation-2026-11-05.json) · [2.6 补充记录](../production/model-version-annotation-2026-11-09.json)
 
 执行者操作 Chrome、运行自动检查，并用独立 subagent 复核。遇到问题先修复和复测，只有确需账户持有人操作或所有者裁决的具体事项才转人工。发布后按抓取日期观测收录、点击和引用。
 
@@ -23,7 +23,7 @@
 
 ### 1.1 核查结果
 
-2026-11-19 抓取了主站的页面、响应头、Markdown、robots、目录和两个语言 sitemap。生产 `buildId` 为 `f8048989773753dc60ac0c17fecdb26c70096a90`。本地 `085639d42` 与该版本的 `src/`、`scripts/`、`content/` 相同。下表的网络结论来自实际响应，第 2、4 节的依赖和匹配结果来自这份源树的全新 **production** 内容模型。索引资格指网站发出的信号，实际收录以搜索平台记录为准。[生产构建](https://promptseen.dev/generated/build.json) · [英语 sitemap](https://promptseen.dev/en/sitemap-pages.xml) · [简中 sitemap](https://promptseen.dev/zh-hans/sitemap-pages.xml)
+2026-11-19 抓取了主站的页面、响应头、Markdown、robots、目录和两个语言 sitemap。核查使用了与当时线上构建一致的页面源码、构建脚本和内容。下表的网络结论来自实际响应，第 2、4 节的依赖和匹配结果来自这份源树的全新 **production** 内容模型。索引资格指网站发出的信号，实际收录以搜索平台记录为准。[生产构建](https://promptseen.dev/generated/build.json) · [英语 sitemap](https://promptseen.dev/en/sitemap-pages.xml) · [简中 sitemap](https://promptseen.dev/zh-hans/sitemap-pages.xml)
 
 | 样本 | 已观测到的行为 |
 | --- | --- |
@@ -169,7 +169,7 @@ GIF 的标题写作品名，摘要与运行短评描述可见动作。卡片、�
 
 | 交付 | 实施要求 | 验收 |
 | --- | --- | --- |
-| 测试方法与品牌 | 在现有 `/{locale}/about/` 的方法段渲染固定 HTML ID `testing-method`，各语言目录和入口均链接 `#testing-method`。标题照常本地化。写明全部案例使用的两个型号、实际提示词与输入顺序如何关联输出、怎样复核、运行记录日期与编辑日期怎样读取。替换旧版固定库存及笼统的参数说明。用 `p_123` 讲变体、`p_217` 讲译文、`p_287` 讲 GIF 的播放时长和循环。提供维护者、官网、仓库问题入口和许可入口。 | 从案例和目录可直达本语言的方法段。三个例子都链接具体运行。项目 README 链接方法、专题与公开数据。每一条型号、参数及权利说明都有对应依据。 |
+| 测试方法与品牌 | 在现有 `/{locale}/about/` 的方法段渲染固定 HTML ID `testing-method`，各语言目录和入口均链接 `#testing-method`。标题照常本地化。说明已确认的两个型号及仅确认模型族时的标注、实际提示词与输入顺序如何关联输出、怎样复核、运行记录日期与编辑日期怎样读取。替换旧版固定库存及笼统的参数说明。用 `p_123` 讲变体、`p_217` 讲译文、`p_287` 讲 GIF 的播放时长和循环。提供维护者、官网、仓库问题入口和许可入口。 | 从案例和目录可直达本语言的方法段。三个例子都链接具体运行。项目 README 链接方法、专题与公开数据。每一条型号、参数及权利说明都有对应依据。 |
 | 检索目录 | 根 `/llms.txt` 保留已合格的默认语言入口，新增 `/zh-hans/llms.txt`。两份目录由同一生成器按语言导出合格提示词和模板的本地化标题、摘要、Markdown 链接，合集和主题链接规范 HTML。开头说明案例型号、原文、输入要求、实际输入、改写、来源互动及许可。英文目录链接简中目录，两份目录均链接方法和数据集。 | 生产返回 `text/plain`，条目齐全、链接可达、目标内容具备索引资格。预览目录无公开内容记录。日期取真实内容变更时间。抓取策略沿用现有 robots 规则。 |
 | 数据集 | 生产构建新增 emitter，复用 `exportJson`。稳定地址为 `/generated/datasets/v2/en.json`、`/generated/datasets/v2/zh-Hans.json`（文件名用注册表代码）及同目录 `manifest.json`。manifest 记录 `format`、`version`、`buildId`、每语言文件 URL、两类记录数及文件字节 SHA-256。CI 将 JSON 与 manifest 按生产 buildId 保存为发布工件。 | `format=prompt-seen/content-export`、`version=2`。语言、数量、URL 集合和内容与同一 SHA、production 模式下 CLI 导出一致，HTTP 为 `application/json`。每条保留 HTML/Markdown 地址和既有权利字段。单文件可独立下载，首页加载不发数据集请求。 |
 
@@ -189,7 +189,7 @@ GIF 的标题写作品名，摘要与运行短评描述可见动作。卡片、�
 | A04 | 读取 20 个案例的英、简中静态 HTML、Markdown、弹窗和 v2 导出。在 Chrome 验证桌面和 390px 视口 | 两种语言各 20 个可索引详情。关闭 JS 仍可读取原文、结果及许可。四个出口的展示运行、型号、生成原文、输入顺序、输出、观察和许可逐项相符。开启 JS 后复制文本逐字匹配所选版本，焦点和返回位置正确，RTL 数字及型号顺序正确。旧弹窗 JSON 缺 `facts` 时仍能打开和复制。 |
 | A05 | 打开 `p_123`、`p_218`、`p_053` 的输入与输出原图 | 商品九宫格仅 `x_168` 匹配当前原文，`x_196` 标作变体。花瓶按 `a_373 → a_374` 两项有序输入、`a_372` 输出。软管页面同时写明“参考图可选”和“本次使用 0 张”。 |
 | A06 | 交叉读取 `p_024`、`p_217` 的英、简中页面与导出，再测试精确 API ID 为空和多输出两种夹具 | 绿茶罐始终对应 GPT Image 2.5、英文原文及 `x_068`。幻灯片始终对应 GPT Image 2.6、中文原文及 `x_281`。在两个提供译文的页面，`matchingRunIds=[]`，型号与资产均取自实际展示运行。译文和原文各自可复制，两张译文列表卡片也显示各自封面的型号。API ID 为空时仍显示具体版本，多图按同一运行的顺序展示。 |
-| A07 | 扫描全部公开案例的型号与生成文案，交叉检查 `p_274`、`p_287`、`p_398` | 每个展示的输出标明其实际版本，文案与对应运行一致。简中肖像贴纸的 `WebPage.inLanguage=zh-Hans`、`CreativeWork.inLanguage=en`。九帧角色动图和磁带动图均显示同一语言的“GPT Image 2.6 生成的 GIF”标签。两者的帧数和时长分别取自各自文件。磁带保留灵感来源，作品和图片各按自己的许可字段输出。 |
+| A07 | 扫描全部公开案例的型号与生成文案，交叉检查 `p_274`、`p_287`、`p_398` | 每个展示的输出标明有证据支持的型号或模型族，文案与对应运行一致。简中肖像贴纸的 `WebPage.inLanguage=zh-Hans`、`CreativeWork.inLanguage=en`。九帧角色动图和磁带动图均显示同一语言的“GPT Image 2.6 生成的 GIF”标签。两者的帧数和时长分别取自各自文件。磁带保留灵感来源，作品和图片各按自己的许可字段输出。 |
 | A08 | 从首页或相关详情沿普通 HTML 链接打开主题、合集及方法段 | 英、简中分别有 5 个目标主题和 3 个目标合集，目标 URL 返回 200、可索引，自指 canonical 并进入各自 sitemap。每页至少三例，成员、推荐理由和双向内链符合第 5 节。面包屑与 JSON-LD 一致，末项是当前页。方法锚点能跳到对应段落。 |
 | A09 | 逐一 GET 两份 `llms.txt`、两份 v2 数据文件、manifest 和案例 Markdown，按清单与 CLI 对账 | 核对 HTTP 类型、语言、记录数、URL 集合、字段、原资产和 manifest 字节哈希。每个 Markdown 响应均有指向规范 HTML 的 HTTP `Link`，关系为 `rel="canonical"`。合格记录全部可达，预览、草稿和语言回退内容均按第 2.1 节处理。 |
 | A10 | 测试根路径生产、子路径生产与子路径预览，再测试 Cloudflare 打包和既有回退流程 | 在候选环境复现两种主机规则，核对 URL、媒体、语言前缀和 noindex。切换后从两处真实域名复验。HTML、feed、字典、弹窗、sitemap 和数据集属于同一构建。隔离环境切回上一成功工件后，页面和文件与旧版一致。首次上线 v2 时，切回旧版的新增数据集地址应返回 404。 |

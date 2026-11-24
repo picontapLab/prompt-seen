@@ -110,7 +110,7 @@ test('translated annotations retain their phrase and image interaction', async (
 });
 
 for (const { code, id, run } of [
-  { code: 'zh-Hans', id: 'p_024', run: 'x_068' },
+  { code: 'zh-Hans', id: 'p_024', run: 'x_499' },
   { code: 'en', id: 'p_217', run: 'x_281' },
 ]) {
   test(`${code}: copy the translation and actual generation prompt independently at 390px`, async ({

@@ -1,3 +1,8 @@
-# Keep the files named by this campaign's generation receipts and rejection reviews.
-!outputs/
+# Accepted originals live under public/media. Keep only the reviewed rejection evidence.
+/references/
 !rejected/
+rejected/*
+!rejected/03-a-input-01.json
+!rejected/03-a-input-01.png
+!rejected/03-a.png
+!rejected/edphoto-03-a-01.png
