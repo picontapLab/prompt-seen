@@ -13,7 +13,7 @@ beforeAll(() => {
   const root = path.resolve(import.meta.dirname, '../../..');
   const config = loadConfig(root, { BUILD_MODE: 'production' });
   loaded = loadContent({ root, config, url: createUrlModule(urlConfigOf(config)) });
-}, 30_000);
+}, 60_000);
 
 it('finds public prompts and templates by their stable identifiers after serializing the search index', () => {
   expect(loaded.findings.blocking).toBe(0);

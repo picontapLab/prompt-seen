@@ -84,47 +84,52 @@ test.describe('Arabic typography and layout', () => {
   test.skip(!arabic, 'Arabic is absent from this production artifact');
   for (const width of [320, 360, 768, 1024, 1440]) {
     for (const theme of ['light', 'dark'] as const) {
-      test(`${width}px ${theme}: nested language and controls fit`, async ({ page }, testInfo) => {
-        test.setTimeout(60_000);
-        await page.setViewportSize({ width, height: 900 });
-        await page.emulateMedia({ colorScheme: theme, reducedMotion: 'reduce' });
-        for (const route of [
-          '/ar/',
-          promptDetail('ar', 'p_012').path,
-          templateDetail('ar', 't_001').path,
-          '/ar/search/',
-        ]) {
-          await page.goto(`${BASE}${route}`);
-          await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-          await expect(page.locator('h1')).toBeVisible();
-          await page.evaluate(() => document.fonts.ready);
-          const preview = page.locator('[data-static-from="lg"] > button');
-          if (await preview.isVisible()) {
-            await hydrated(page, '[data-static-from="lg"] > button');
-            await preview.click();
-            await expect(preview).toHaveAttribute('aria-expanded', 'true');
-          }
-          expect(await layoutProblems(page), route).toEqual([]);
+      test.describe(`${width}px ${theme}`, () => {
+        test.use({ viewport: { width, height: 900 }, colorScheme: theme, reducedMotion: 'reduce' });
+        // These are independent layout snapshots. Give each route a fresh page so a
+        // WebKit renderer does not retain the previous gallery, editor and search index.
+        const routes = {
+          home: () => '/ar/',
+          prompt: () => promptDetail('ar', 'p_012').path,
+          template: () => templateDetail('ar', 't_001').path,
+          search: () => '/ar/search/',
+        };
+        for (const [name, getPath] of Object.entries(routes)) {
+          test(`${name}: nested language and controls fit`, async ({ page }, testInfo) => {
+            test.setTimeout(60_000);
+            const route = getPath();
+            await page.goto(`${BASE}${route}`);
+            await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+            await expect(page.locator('h1')).toBeVisible();
+            await page.evaluate(() => document.fonts.ready);
+            const preview = page.locator('[data-static-from="lg"] > button');
+            if (await preview.isVisible()) {
+              await hydrated(page, '[data-static-from="lg"] > button');
+              await preview.click();
+              await expect(preview).toHaveAttribute('aria-expanded', 'true');
+            }
+            expect(await layoutProblems(page), route).toEqual([]);
+            if (name !== 'home') return;
+            await expect
+              .poll(() => page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontFamily))
+              .toContain('IBM Plex Sans Arabic');
+            expect(await page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontWeight)).toBe('600');
+            await expect
+              .poll(() =>
+                page.evaluate(() =>
+                  [...document.fonts].some(
+                    (face) =>
+                      face.family.includes('IBM Plex Sans Arabic') && face.weight === '600' && face.status === 'loaded',
+                  ),
+                ),
+              )
+              .toBe(true);
+            expect(await seriousViolations(page)).toEqual([]);
+            const screenshot = testInfo.outputPath(`arabic-${width}-${theme}.png`);
+            await page.screenshot({ path: screenshot });
+            await testInfo.attach(`arabic-${width}-${theme}`, { path: screenshot, contentType: 'image/png' });
+          });
         }
-        await page.goto(`${BASE}/ar/`);
-        await expect
-          .poll(() => page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontFamily))
-          .toContain('IBM Plex Sans Arabic');
-        expect(await page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontWeight)).toBe('600');
-        await expect
-          .poll(() =>
-            page.evaluate(() =>
-              [...document.fonts].some(
-                (face) =>
-                  face.family.includes('IBM Plex Sans Arabic') && face.weight === '600' && face.status === 'loaded',
-              ),
-            ),
-          )
-          .toBe(true);
-        expect(await seriousViolations(page)).toEqual([]);
-        const screenshot = testInfo.outputPath(`arabic-${width}-${theme}.png`);
-        await page.screenshot({ path: screenshot });
-        await testInfo.attach(`arabic-${width}-${theme}`, { path: screenshot, contentType: 'image/png' });
       });
     }
   }
