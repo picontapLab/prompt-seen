@@ -26,6 +26,11 @@
     border-block-end: 1px solid var(--border-subtle);
     background: var(--canvas);
   }
+  /* Keep the sticky language picker's selected option in view by scrolling its list.
+     Scrolling the document instead dismisses the popover as soon as it opens. */
+  :global(html):has(.header [role='combobox'][aria-expanded='true']) {
+    overflow: hidden;
+  }
   @supports (backdrop-filter: blur(1px)) {
     .header {
       background: color-mix(in srgb, var(--canvas) 86%, transparent);

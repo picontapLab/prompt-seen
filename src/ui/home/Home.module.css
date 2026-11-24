@@ -4,6 +4,12 @@
   .home {
     padding-block: var(--space-24) var(--space-64);
   }
+  /* Clip offscreen card labels to their own paint area while fonts load. Leave
+     room for the outline around the focused frame. */
+  .home [data-entry] {
+    contain: paint;
+    overflow-clip-margin: calc(var(--focus-ring-width) + var(--focus-ring-offset));
+  }
 
   /* --- First screen ---------------------------------------------------------------------------
      The work, its label, the quote and "Copy prompt" fit the visible area with no scrolling, from
@@ -16,6 +22,12 @@
   .hero > figure[data-size] {
     --_max-h: min(27svh, 18rem);
     row-gap: var(--space-16);
+  }
+  @media (max-width: 767px) and (max-height: 700px) {
+    .hero > figure[data-size] {
+      --_max-h: 23svh;
+      row-gap: var(--space-12);
+    }
   }
   /* Below the image: film edges, the label and, on a tall screen, the top of the next row
      (§11.8.1 更多展出). Under about 776 px of height the work keeps at least 26rem and the next
@@ -72,7 +84,7 @@
        scale leaves the prompt actions on the first screen (§11.8.1) even with a long heading; its
        three lines of 1.35 still need a lower cap on a short window (1366 × 650, H-3). */
     .title:lang(ar) {
-      font-size: min(var(--text-page-title), 8svh);
+      font-size: min(var(--text-page-title), 6.5svh);
     }
   }
 

@@ -1,5 +1,5 @@
 import type { Annotation, ImageRef, PromptDetail } from '@/modules/content/types';
-import { promptExcerpt } from '@/ui/annotation/layout';
+import { fitAnnotatedExcerpt, promptExcerpt } from '@/ui/annotation/layout';
 
 /**
  * What a showcase needs from a prompt (design doc §11.8.1, §11.8.2): the work, its label and
@@ -32,7 +32,8 @@ export type Showcase = {
 export type QuoteBudget = { maxWidth?: number; dropLeading?: boolean };
 
 export function toShowcase(detail: PromptDetail, { maxWidth = 320, dropLeading = false }: QuoteBudget = {}): Showcase {
-  const excerpt = promptExcerpt(detail.prompt.text, detail.annotations, maxWidth, { dropLeading });
+  const opening = promptExcerpt(detail.prompt.text, detail.annotations, maxWidth, { dropLeading });
+  const excerpt = dropLeading ? fitAnnotatedExcerpt(opening, maxWidth) : opening;
   const model = detail.coverModel === undefined ? detail.test.model : detail.coverModel;
   return {
     hasGifOutput: detail.hasGifOutput,

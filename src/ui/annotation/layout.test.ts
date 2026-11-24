@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Annotation } from '@/modules/content/types';
-import { displayWidth, placeAnnotations, promptExcerpt, splitPrompt } from './layout';
+import { displayWidth, fitAnnotatedExcerpt, placeAnnotations, promptExcerpt, splitPrompt } from './layout';
 
 const text = 'Busy crossing at night. Pedestrians with dark umbrellas cross wide white stripes. Neon signs glow.';
 const ann = (letter: string, phrase: string, region: Annotation['region']): Annotation => {
@@ -11,6 +11,17 @@ const ann = (letter: string, phrase: string, region: Annotation['region']): Anno
 const a = ann('A', 'dark umbrellas', { x: 0.1, y: 0.5, w: 0.3, h: 0.2 });
 const b = ann('B', 'wide white stripes', { x: 0.05, y: 0.62, w: 0.9, h: 0.34 });
 const c = ann('C', 'Neon signs', { x: 0.7, y: 0.1, w: 0.25, h: 0.2 });
+
+it('keeps separated annotated phrases selectable in a compact home quote', () => {
+  const excerpt = fitAnnotatedExcerpt(promptExcerpt(text, [a, c]), 35);
+  expect(displayWidth(excerpt.text)).toBeLessThanOrEqual(35);
+  expect(excerpt.text).toContain(' … ');
+  expect(
+    splitPrompt(excerpt.text, excerpt.annotations)
+      .filter((piece) => piece.annotation)
+      .map((piece) => piece.text),
+  ).toEqual([a.phrase, c.phrase]);
+});
 
 describe('placeAnnotations', () => {
   it('puts the label on the nearer side when both are clear', () => {

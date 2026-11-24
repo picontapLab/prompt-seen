@@ -7,14 +7,14 @@ import { BASE, BUILD, homePath, message, ROOT } from './support/artifact';
 import { localeIndex, promptDetail, templateDetail } from './support/content';
 import { worksOnShow } from './support/home';
 
-// The campaign spec fixes the order; allocated IDs come from actual import receipts.
+// The current home edit sets the rotation. Import receipts identify the original campaign works.
 const campaign = path.join(ROOT, 'production/english-social-showcase-v1');
 const mapping: {
   collectionId: string;
   references: { id: string; assetId: string }[];
   cases: { id: string; promptId: string; templateId: string | null; slug: string }[];
 } = JSON.parse(fs.readFileSync(path.join(campaign, 'content-map.json'), 'utf8'));
-const order = ['c01', 'c02', 'c07', 'c08', 'c04', 'c10', 'c03', 'c05', 'c06', 'c09', 'c11', 'c12'];
+const order = ['c01', 'c02', 'c07', 'c08', 'c04', 'c11', 'c03', 'c10', 'c05', 'c06', 'c09', 'c12'];
 const caseOf = (id: string) => mapping.cases.find((item) => item.id === id)!;
 const before = YAML.parse(fs.readFileSync(path.join(campaign, 'audit/site-before.yaml'), 'utf8'));
 const oldOrder = featuredOrder(before.home.featured, new Date().toISOString().slice(0, 10));

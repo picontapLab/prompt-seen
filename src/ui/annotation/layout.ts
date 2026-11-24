@@ -94,6 +94,37 @@ export type PromptExcerpt = {
   annotations: Annotation[];
 };
 
+/** Fit a home quote with widely separated annotations by marking omitted passages.
+ * Keep the longest available context that fits without cutting an annotated phrase. */
+export function fitAnnotatedExcerpt(excerpt: PromptExcerpt, budget: number): PromptExcerpt {
+  let width = displayWidth(excerpt.text);
+  if (width <= budget || !excerpt.annotations.length) return excerpt;
+  const pieces = splitPrompt(excerpt.text, excerpt.annotations);
+  if (pieces.filter((piece) => piece.annotation).length !== excerpt.annotations.length) return excerpt;
+  const gaps = pieces.filter((piece) => !piece.annotation).sort((a, b) => displayWidth(b.text) - displayWidth(a.text));
+  let { truncated, truncatedStart } = excerpt;
+  for (const gap of gaps) {
+    if (width <= budget) break;
+    const first = gap === pieces[0];
+    const last = gap === pieces.at(-1);
+    const replacement = first || last ? '' : ' … ';
+    const saved = displayWidth(gap.text) - displayWidth(replacement);
+    if (saved <= 0) continue;
+    gap.text = replacement;
+    width -= saved;
+    truncatedStart ||= first;
+    truncated ||= last;
+  }
+  let text = '';
+  const annotations: Annotation[] = [];
+  for (const piece of pieces) {
+    const start = text.length;
+    text += piece.text;
+    if (piece.annotation) annotations.push({ ...piece.annotation, start, end: text.length });
+  }
+  return { text, annotations, truncated, truncatedStart };
+}
+
 /**
  * A prompt's annotated sentences for a showcase quote (§11.8.1): whole sentences up to the one
  * holding the last annotation, at least the first sentence, and the full text when it fits
