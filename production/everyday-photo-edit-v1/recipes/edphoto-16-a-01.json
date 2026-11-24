@@ -1,0 +1,102 @@
+{
+  "candidateId": "EDPHOTO-16",
+  "slug": "clean-up-the-background-of-a-secondhand-item",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。将商品后的环境整理为{{surface}}，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "surface",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Surface and background",
+        "zh-Hans": "台面和背景"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "浅灰哑光台面和背景"
+    }
+  ],
+  "values": {
+    "surface": "浅灰哑光台面和背景"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-16",
+      "platform": "哔哩哔哩",
+      "author": "黄彬AIGC",
+      "url": "https://www.bilibili.com/video/BV1L34y1F7Mc/",
+      "publishedAt": "2023-11-26",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV1L34y1F7Mc/",
+      "metricObjectPublishedAt": "2023-11-26",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。作者用 ComfyUI、Krita 和 LCM 制作商品海报，并在简介说明如何用原产品图替回生成时发生变化的产品。没有公开逐字指令或成对原图。"
+      },
+      "evidenceUrl": "https://www.bilibili.com/video/BV1L34y1F7Mc/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Clean up the background of a secondhand item",
+      "description": "The bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain. A different background can change how deep a dent looks.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A worn brown bag with a peeling corner sits on a cluttered desk.\n\n**B** A dented gray bottle with three scratches stands in front of a colorful tote.\n\nThe bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain. A different background can change how deep a dent looks.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image. Both items simulate secondhand goods."
+    },
+    "zh-Hans": {
+      "title": "二手实物整理背景",
+      "description": "将商品后的环境整理为台面和背景，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 桌上旧皮包，右下角掉皮、黄铜搭扣有划痕，背景杂乱。 书本、文具和木桌已换成浅灰底。包右下角的露底形状、锁扣交叉划痕、背带扣和提手磨边仍可辨，底部接触阴影自然。细微皮纹的反光随背景光色改变。\n\n**B** 磨砂水壶，杯身有凹痕与三道划痕，后方有彩色布袋。 彩色布袋和木桌换为米白底。壶左侧凹痕、右侧三道斜划痕和底边擦伤保留，黑色提环及壶盖形状一致。磨砂表面的阴影会影响凹痕看起来的深浅。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。两件商品均为模拟二手物品。"
+    }
+  },
+  "alt": {
+    "en": "Clean up the background of a secondhand item. The bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain.",
+    "zh-Hans": "书本、文具和木桌已换成浅灰底。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:07:41.506Z",
+    "contentHash": "ce3057a18f3e5c093d96b9615b9d0ad0793d9bce4af628e0123d94bf029f4f8c"
+  }
+}

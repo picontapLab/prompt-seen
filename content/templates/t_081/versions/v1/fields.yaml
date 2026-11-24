@@ -1,0 +1,35 @@
+fields:
+  - name: surface
+    required: true
+    group: text
+    labels:
+      en: Surface and background
+      zh-Hans: 台面和背景
+      es: Superficie y fondo
+      pt-BR: Superfície e fundo
+      fr: Surface et arrière-plan
+      it: Superficie e sfondo
+      de: Oberfläche und Hintergrund
+      ru: Поверхность и фон
+      ja: 台面と背景
+      ko: 바닥과 배경
+      ar: السطح والخلفية
+      zh-Hant: 台面和背景
+    help:
+      en: Describe the part of your photo to change.
+      zh-Hans: 简要描述照片中要修改的部分。
+      es: Describe brevemente la parte que quieres cambiar.
+      pt-BR: Descreva brevemente a parte que deseja alterar.
+      fr: Décrivez brièvement la partie à modifier.
+      it: Descrivi brevemente la parte da modificare.
+      de: Beschreibe kurz den zu ändernden Bildbereich.
+      ru: Кратко опишите область фотографии, которую хотите изменить.
+      ja: 変更したい部分を短く記入してください。
+      ko: 사진에서 바꿀 부분을 짧게 적으세요.
+      ar: صف بإيجاز الجزء الذي تريد تعديله.
+      zh-Hant: 簡要描述照片中要修改的部分。
+    type: string
+    default: 浅灰哑光台面和背景
+    minLength: null
+    maxLength: null
+    multiline: false

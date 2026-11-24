@@ -1,0 +1,158 @@
+id: p_412
+slug: remove-creases-from-a-black-and-white-photo
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_667
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the photo to edit first.
+    zh-Hans: 先上传要修改的照片。
+    es: Sube primero la foto que quieres editar.
+    pt-BR: Envie primeiro a foto que deseja editar.
+    fr: Importez d’abord la photo à retoucher.
+    it: Carica prima la foto da modificare.
+    de: Lade zuerst das zu bearbeitende Foto hoch.
+    ru: Сначала загрузите фотографию для редактирования.
+    ja: 最初に編集する写真をアップロードしてください。
+    ko: 편집할 사진을 먼저 올리세요.
+    ar: ارفع أولا الصورة المراد تعديلها.
+    zh-Hant: 先上傳要修改的照片。
+  slots:
+    - id: photo
+      labels:
+        en: Photo to edit
+        zh-Hans: 要修改的照片
+        es: Foto que se va a editar
+        pt-BR: Foto a editar
+        fr: Photo à retoucher
+        it: Foto da modificare
+        de: Zu bearbeitendes Foto
+        ru: Фото для редактирования
+        ja: 編集する写真
+        ko: 편집할 사진
+        ar: الصورة المطلوب تعديلها
+        zh-Hant: 要修改的照片
+      min: 1
+      max: 1
+showcaseExampleId: x_489
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-14
+    platform: Reddit r/ChatGPT
+    author: littlesouthpaw
+    url: https://www.reddit.com/r/ChatGPT/comments/1l69egf/
+    publishedAt: "2025"
+    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/
+    metricObjectPublishedAt: "2025"
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 对照。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 對照。作者標注修復黑白圖、原照和彩色圖，並在評論給出完整提示詞，特意指出帽子上的痕跡是照片破損。原始歷史顏色未知。
+    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/
+    sourcePromptStatus:
+      en: Full instruction in the comments.
+      zh-Hans: 评论公开完整指令。
+      es: La instrucción completa figura en los comentarios.
+      pt-BR: A instrução completa está nos comentários.
+      fr: La consigne complète figure dans les commentaires.
+      it: L’istruzione completa è nei commenti.
+      de: Die vollständige Anweisung steht in den Kommentaren.
+      ru: Полная инструкция приведена в комментариях.
+      ja: コメントに指示の全文があります。
+      ko: 전체 지시문이 댓글에 있습니다.
+      ar: التعليمات الكاملة في التعليقات.
+      zh-Hant: 評論公開完整指令。
+    metrics: []
+  - candidateId: EDPHOTO-14
+    platform: Reddit r/ChatGPT
+    author: perpetual_stew
+    url: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/
+    publishedAt: 2026-06-23
+    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/
+    metricObjectPublishedAt: 2026-06-23
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 对照。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 對照。四聯圖含本人原照、做舊、修復和著色。作者認為結果沒有還原本人。主帖說明試驗思路，未給完整逐步指令。
+    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/
+    sourcePromptStatus:
+      en: The full prompt could not be verified.
+      zh-Hans: 未核到完整提示词。
+      es: No se pudo verificar el texto completo.
+      pt-BR: Não foi possível verificar o texto completo.
+      fr: Le texte intégral n’a pas pu être vérifié.
+      it: Non è stato possibile verificare il testo integrale.
+      de: Der vollständige Wortlaut ließ sich nicht bestätigen.
+      ru: Полный текст инструкции подтвердить не удалось.
+      ja: 指示の全文は確認できませんでした。
+      ko: 지시문 전문은 확인하지 못했습니다.
+      ar: تعذر التحقق من النص الكامل للتعليمات.
+      zh-Hant: 未核到完整提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

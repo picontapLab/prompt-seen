@@ -263,6 +263,32 @@ describe('a valid content tree', () => {
     expect(t.cover?.assetId).toBe('a_001');
   });
 
+  it('uses the current default run for the template cover and first print when a later ID shares its date', () => {
+    const alternate = 'Poster for a tin in cold.';
+    const root = setup({
+      'content/examples/x_002/run.yaml': [
+        'id: x_002',
+        'promptId: p_001',
+        'template: { id: t_001, version: v1, sample: second, values: { product: a tin, palette: cold } }',
+        `promptSha256: ${sha256(alternate)}`,
+        'referenceAssetIds: [a_003]',
+        'outputAssetIds: [a_002]',
+        'recordedAt: 2026-10-05',
+      ].join('\n'),
+      'content/examples/x_002/prompt.txt': alternate,
+    });
+    const template = detail<TemplateDetail>(load(root), 'template', 'en', 't_001')!;
+    expect(template.examples.map((run) => run.id)).toEqual(['x_001', 'x_002']);
+    expect(template.cover?.assetId).toBe(template.examples[0]?.outputs[0]?.assetId);
+    expect(template.examples[1]).toMatchObject({
+      references: [{ assetId: 'a_003' }], outputs: [{ assetId: 'a_002' }], prompt: alternate,
+    });
+    expect(template.version.samples).toMatchObject([
+      { name: 'default', exampleIds: ['x_001'] },
+      { name: 'second', values: { product: 'a tin', palette: 'cold' }, exampleIds: ['x_002'] },
+    ]);
+  });
+
   it('resolves redirects and removed addresses per built locale (§9.5)', () => {
     const r = load(setup());
     expect(r.built!.manifest.redirects).toEqual([

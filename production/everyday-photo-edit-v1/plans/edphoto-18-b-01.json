@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-18-b-01",
+  "candidateId": "EDPHOTO-18",
+  "jobFingerprint": "1642c65b8c516db5da9aac17178cb096f265c70bf7ef64dbf2444ceb2b33b78f",
+  "planHash": "1d9707a574bcf46810003a2a43bdd01c442427a87e7a7871578ff5258f61c472",
+  "ids": {
+    "prompt": "p_416",
+    "template": null,
+    "example": "x_498",
+    "media": [
+      "a_687",
+      "a_688"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_498/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_498/run.yaml",
+      "after": "id: x_498\npromptId: p_416\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 96c7f2aec24c0e68cc0116fd1d4e98a791043dc899bfdceafa73283c9eb4a76f\nreferenceAssetIds:\n  - a_688\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_687\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 木桌和画具退出画幅，纸边拉正。左下枝条的铅笔线、湖面淡彩及白云留白仍可见，纸纹保留。颜色比底图稍鲜明，不能作为色彩校样。\n  zh-Hans: 木桌和画具退出画幅，纸边拉正。\n"
+    },
+    {
+      "file": "content/media/a_687.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_687\ncontentHash: sha256:401b4f4cf3ec65568ecc9c0a1758d0171a570b16d579031d793663043869c3ff\nmimeType: image/png\nbyteSize: 3445359\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_687/straighten-a-photographed-drawing-on-paper-original-401b4f4cf3ec.png\nvariants:\n  thumbnail:\n    key: media/a_687/straighten-a-photographed-drawing-on-paper-thumbnail-3ca6459673e2.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_687/straighten-a-photographed-drawing-on-paper-card-1da44eb89bfa.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_687/straighten-a-photographed-drawing-on-paper-detail-333c34154845.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_687/straighten-a-photographed-drawing-on-paper-og-a5329f6dd72d.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.531\nplaceholder:\n  color: \"#E8E8E8\"\nalt:\n  en: Straighten a photographed drawing on paper. The blank patch, loose pencil lines and paper grain remain.\n  zh-Hans: 木桌和画具退出画幅，纸边拉正。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_688.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_688\ncontentHash: sha256:156253a56ec135435e24adc60c473f673d8d095f9823fc7e5560458618d6bd8c\nmimeType: image/png\nbyteSize: 3276652\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_688/straighten-a-photographed-drawing-on-paper-reference-original-156253a56ec1.png\nvariants:\n  thumbnail:\n    key: media/a_688/straighten-a-photographed-drawing-on-paper-reference-thumbnail-05b88d911bd4.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_688/straighten-a-photographed-drawing-on-paper-reference-card-40a8b6c74ee3.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_688/straighten-a-photographed-drawing-on-paper-reference-detail-f1067ec16216.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_688/straighten-a-photographed-drawing-on-paper-reference-og-13fc4f6a72a3.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.75\nplaceholder:\n  color: \"#C8C8C8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-18-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-18-b-01\",\n  \"candidateId\": \"EDPHOTO-18\",\n  \"fingerprint\": \"1642c65b8c516db5da9aac17178cb096f265c70bf7ef64dbf2444ceb2b33b78f\",\n  \"ids\": {\n    \"prompt\": \"p_416\",\n    \"template\": null,\n    \"example\": \"x_498\",\n    \"media\": [\n      \"a_687\",\n      \"a_688\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"401b4f4cf3ec65568ecc9c0a1758d0171a570b16d579031d793663043869c3ff\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"156253a56ec135435e24adc60c473f673d8d095f9823fc7e5560458618d6bd8c\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"木桌和画具退出画幅，纸边拉正。左下枝条的铅笔线、湖面淡彩及白云留白仍可见，纸纹保留。颜色比底图稍鲜明，不能作为色彩校样。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:45:00.192Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:08:29.412Z\",\n    \"contentHash\": \"adc8be13a9f40c8b031fa81c32cfcf420c6c009bd41d50653d71528305d06939\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_498/prompt.txt": null,
+    "content/examples/x_498/run.yaml": null,
+    "content/media/a_687.yaml": null,
+    "content/media/a_688.yaml": null,
+    "production/applied/edphoto-18-b-01.json": null
+  }
+}

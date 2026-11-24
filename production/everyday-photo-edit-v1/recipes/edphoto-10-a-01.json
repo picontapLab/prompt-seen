@@ -1,0 +1,102 @@
+{
+  "candidateId": "EDPHOTO-10",
+  "slug": "extend-a-photo-for-a-different-aspect-ratio",
+  "categoryId": "landscape",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。将画布扩展为{{frame}}。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "frame",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Canvas shape and direction",
+        "zh-Hans": "画幅与扩展方向"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "2∶3 竖幅，向上下补画"
+    }
+  ],
+  "values": {
+    "frame": "2∶3 竖幅，向上下补画"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-10",
+      "platform": "哔哩哔哩",
+      "author": "工具狂",
+      "url": "https://www.bilibili.com/video/BV1Dm4y1v7JQ/",
+      "publishedAt": "2023-06-15",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV1Dm4y1v7JQ/",
+      "metricObjectPublishedAt": "2023-06-15",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。01:31 用 Photoshop Beta 扩海报，02:44 演示 Draw Things 填充和扩图，08:00 比较方法。公开简介没有完整文字指令。"
+      },
+      "evidenceUrl": "https://www.bilibili.com/video/BV1Dm4y1v7JQ/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Extend a photo for a different aspect ratio",
+      "description": "The bicycle gains sky and pavement above and below. The cabin gains lake on both sides. Scenery beyond the original frame is generated.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A bicycle with two complete wheels fills a landscape beach photo.\n\n**B** A wooden lakeside cabin fills a narrow portrait frame.\n\nThe bicycle gains sky and pavement above and below. The cabin gains lake on both sides. Scenery beyond the original frame is generated.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "照片扩图适配版式",
+      "description": "将画布扩展为画幅与扩展方向。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 横幅海边自行车照，车轮完整，车上方空间少，准备做竖封面。 横图向上下扩为竖图。按相同宽度对齐两轮中心、车篮与海平线，车轮完整圆润，海面连续。上方树枝延伸、下方地面增多，画外景物来自生成。\n\n**B** 竖幅湖边木屋照，屋顶完整，两侧空间紧，准备做横封面。 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。岸线在两侧连续，新增的远岸植被只作版式延伸。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Extend a photo for a different aspect ratio. The bicycle gains sky and pavement above and below.",
+    "zh-Hans": "横图向上下扩为竖图。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:05:44.806Z",
+    "contentHash": "c37cd7c0f04d04b21cc00965467414bb58d17cb43e2298f6b66956e82696b683"
+  }
+}

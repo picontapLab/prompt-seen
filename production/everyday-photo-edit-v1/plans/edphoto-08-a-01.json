@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-08-a-01",
+  "candidateId": "EDPHOTO-08",
+  "jobFingerprint": "9c0274c9900113b94b990974e8ae383c5c5c635cb155b6cd662b26867f555716",
+  "planHash": "312fd391bfe78df64d0d5d6e56a145088710abdcbe6df5f08205fc21ed1e942e",
+  "ids": {
+    "prompt": "p_406",
+    "template": null,
+    "example": "x_477",
+    "media": [
+      "a_641",
+      "a_642"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_477/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_477/run.yaml",
+      "after": "id: x_477\npromptId: p_406\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: b096f1f6e70a3d75ad06e5b5d0a2d55e9ba8bf389a4504b281f636d99857c19a\nreferenceAssetIds:\n  - a_642\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_641\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。两眼瞳孔位置、黑色鼻梁、外角铆钉和脸颊小痣保留。适合原底图里能看见瞳孔的轻度反光。\n  zh-Hans: 画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。\n"
+    },
+    {
+      "file": "content/media/a_641.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_641\ncontentHash: sha256:be626e11c55340b86b5443e95805a58e7bc2c85ca24e253a1966c090cc93b3dd\nmimeType: image/png\nbyteSize: 2508054\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_641/reduce-glare-on-eyeglasses-original-be626e11c553.png\nvariants:\n  thumbnail:\n    key: media/a_641/reduce-glare-on-eyeglasses-thumbnail-c328617f85d6.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_641/reduce-glare-on-eyeglasses-card-ae5da5736825.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_641/reduce-glare-on-eyeglasses-detail-1213cb8084d4.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_641/reduce-glare-on-eyeglasses-og-d9dceb31ba02.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.469\n  y: 0.438\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Reduce glare on eyeglasses. The clear pupil and lid guide the edit.\n  zh-Hans: 画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_642.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_642\ncontentHash: sha256:ed48ec9366b49119b1f5ccb243be2345d6eed707628be277687092cc3531e4a2\nmimeType: image/png\nbyteSize: 2649609\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_642/reduce-glare-on-eyeglasses-reference-original-ed48ec9366b4.png\nvariants:\n  thumbnail:\n    key: media/a_642/reduce-glare-on-eyeglasses-reference-thumbnail-65854ab7c482.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_642/reduce-glare-on-eyeglasses-reference-card-f2cee4fc6392.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_642/reduce-glare-on-eyeglasses-reference-detail-de55afe1071c.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_642/reduce-glare-on-eyeglasses-reference-og-632cce2e6ef2.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.438\n  y: 0.438\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_406/entry.yaml",
+      "after": "id: p_406\nslug: reduce-glare-on-eyeglasses\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_641\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_477\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-08\n    platform: YouTube\n    author: PiXimperfect\n    url: https://www.youtube.com/watch?v=87vUIoCzZns\n    publishedAt: 2025-10-14\n    metricObjectUrl: https://www.youtube.com/watch?v=87vUIoCzZns\n    metricObjectPublishedAt: 2025-10-14\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 演示。作者用 Photoshop 中的 Flux Kontext Pro 和 Nano Banana 处理镜片反光。03:06 处理蒙版边缘，04:46 开始复杂样例。作者说视频内示范提示词，公开简介没有逐字文本。\n    evidenceUrl: https://www.youtube.com/watch?v=87vUIoCzZns\n    sourcePromptStatus:\n      en: Demonstrated on video. The description omits the complete wording.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_406/locales/en.mdx",
+      "after": "---\ntitle: Reduce glare on eyeglasses\ndescription: The clear pupil and lid guide the edit. Small highlights remain\n  along the frames and the gaze stays aligned.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A green window reflection crosses the left lens of black frames.\n\n**B** A bright diagonal reflection crosses the right lens in a three-quarter portrait.\n\nThe clear pupil and lid guide the edit. Small highlights remain along the frames and the gaze stays aligned.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_406/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 减弱眼镜反光\ndescription: 减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:a310dbf47c1bdc26\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 成人正面近照，左镜片有淡绿色窗光，瞳孔仍可见。 画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。两眼瞳孔位置、黑色鼻梁、外角铆钉和脸颊小痣保留。适合原底图里能看见瞳孔的轻度反光。\n\n**B** 三分之二侧脸，右镜片有一道浅白长条反光，眼睑和虹膜可辨。 右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。鼻托、铰链和穿过头发的镜腿保留，镜片仍有窗色。远侧镜片的细微反射不能逐像素还原。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_406/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-08-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-08-a-01\",\n  \"candidateId\": \"EDPHOTO-08\",\n  \"fingerprint\": \"9c0274c9900113b94b990974e8ae383c5c5c635cb155b6cd662b26867f555716\",\n  \"ids\": {\n    \"prompt\": \"p_406\",\n    \"template\": null,\n    \"example\": \"x_477\",\n    \"media\": [\n      \"a_641\",\n      \"a_642\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"be626e11c55340b86b5443e95805a58e7bc2c85ca24e253a1966c090cc93b3dd\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"ed48ec9366b49119b1f5ccb243be2345d6eed707628be277687092cc3531e4a2\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。两眼瞳孔位置、黑色鼻梁、外角铆钉和脸颊小痣保留。适合原底图里能看见瞳孔的轻度反光。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:46:24.274Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:05.336Z\",\n    \"contentHash\": \"f2cd85fb59687832b145d12ede523f29dc4e859199e5b3846e6a54f8116217b3\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_477/prompt.txt": null,
+    "content/examples/x_477/run.yaml": null,
+    "content/media/a_641.yaml": null,
+    "content/media/a_642.yaml": null,
+    "content/prompts/p_406/entry.yaml": null,
+    "content/prompts/p_406/locales/en.mdx": null,
+    "content/prompts/p_406/locales/zh-Hans.mdx": null,
+    "content/prompts/p_406/prompt.txt": null,
+    "production/applied/edphoto-08-a-01.json": null
+  }
+}

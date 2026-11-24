@@ -1,0 +1,88 @@
+{
+  "candidateId": "EDPHOTO-17",
+  "slug": "reduce-window-reflections-in-a-landscape-photo",
+  "categoryId": "landscape",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-17",
+      "platform": "YouTube",
+      "author": "Focus Photo School",
+      "url": "https://www.youtube.com/watch?v=1NHfwLxMV8o",
+      "publishedAt": "2025-06-17",
+      "metricObjectUrl": "https://www.youtube.com/watch?v=1NHfwLxMV8o",
+      "metricObjectPublishedAt": "2025-06-17",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。00:35 开始演示 Lightroom 的 AI 反射消除。简介明确以滑块比较原始画面、去反射画面和分离的反射层。工具无需文字提示词。"
+      },
+      "evidenceUrl": "https://www.youtube.com/watch?v=1NHfwLxMV8o",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Reduce window reflections in a landscape photo",
+      "description": "The chair and light strip recede while the masts and power lines remain. A faint ceiling light is still visible above the harbor.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A reflected light strip crosses the sky above a mountain power line.\n\n**B** A reflected chair overlaps a harbor roof and sailboat mast.\n\nThe chair and light strip recede while the masts and power lines remain. A faint ceiling light is still visible above the harbor.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "减轻隔窗拍摄倒影",
+      "description": "减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 车窗外山脊和电塔清晰，玻璃映出一条淡灯带。 天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。车窗框及前景树木的运动虚化保留。远处细电线在小图中仍较难辨认。\n\n**B** 窗外港口屋顶和桅杆可辨，玻璃上映有浅色座椅轮廓。 右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。晚霞云层保留，玻璃上方仍有极淡的小灯点。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Reduce window reflections in a landscape photo. The chair and light strip recede while the masts and power lines remain.",
+    "zh-Hans": "右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。"
+  },
+  "target": {
+    "promptId": "p_415",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:08:08.825Z",
+    "contentHash": "d6d9451ffc00f87e37338a26e68d3c38581f6529c568acf68d528692562fc5b7"
+  }
+}

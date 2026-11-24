@@ -1,0 +1,109 @@
+{
+  "candidateId": "EDPHOTO-14",
+  "slug": "remove-creases-from-a-black-and-white-photo",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-14",
+      "platform": "Reddit r/ChatGPT",
+      "author": "littlesouthpaw",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "publishedAt": "2025",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "metricObjectPublishedAt": "2025",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "sourcePromptStatus": {
+        "en": "Full instruction in the comments.",
+        "zh-Hans": "评论公开完整指令。"
+      },
+      "metrics": []
+    },
+    {
+      "candidateId": "EDPHOTO-14",
+      "platform": "Reddit r/ChatGPT",
+      "author": "perpetual_stew",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "publishedAt": "2026-06-23",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "metricObjectPublishedAt": "2026-06-23",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Remove creases from a black-and-white photo",
+      "description": "Sleeve folds and window frames join across the repair. Grain and paper edges remain, and tiny book titles are still unreadable.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A pale crease crosses the sky and a man’s sleeve in an old monochrome portrait.\n\n**B** Two intersecting creases cross a shop window and pavement in a scanned print.\n\nSleeve folds and window frames join across the repair. Grain and paper edges remain, and tiny book titles are still unreadable.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "保留黑白的纸痕修复",
+      "description": "仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 合成旧黑白合影，有纵向白折痕经过衣袖及背景，两张脸保存完好。 穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。两张脸、花上衣和磨旧纸角保留，仍是带颗粒的黑白照片。细小灰尘和原有颗粒的界线较难区分。\n\n**B** 合成黑白店面照，折痕跨地面和窗框，另有少量灰尘点。 横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。窗内书封依旧不清晰，不能借修复辨认其文字。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Remove creases from a black-and-white photo. Sleeve folds and window frames join across the repair.",
+    "zh-Hans": "穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:07:02.407Z",
+    "contentHash": "11585dbe0c832026bc7ad0064ff96f03d7e782f2ac686b4ea10d3c1e860d1f10"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-14-b-01",
+  "candidateId": "EDPHOTO-14",
+  "jobFingerprint": "1c7267292d8a872b4d11085719b786dadc7fe773f4a7996bf3e0e4dcd73973bd",
+  "planHash": "2ebe4e2579ba10a8515cfb2816ce7244aa972c2b3a69d9df4d3ca6a527640ffc",
+  "ids": {
+    "prompt": "p_412",
+    "template": null,
+    "example": "x_490",
+    "media": [
+      "a_669",
+      "a_670"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_490/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_490/run.yaml",
+      "after": "id: x_490\npromptId: p_412\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: ed308b3565c0ceae8f600b687aaadf8eb781ea66c3c61de28e496b5eedd09cc0\nreferenceAssetIds:\n  - a_670\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_669\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。窗内书封依旧不清晰，不能借修复辨认其文字。\n  zh-Hans: 横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。\n"
+    },
+    {
+      "file": "content/media/a_669.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_669\ncontentHash: sha256:f01073c010809b4b5614069256a355bea3cc1a8cc366211fcb2699a25a917a76\nmimeType: image/png\nbyteSize: 2736841\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_669/remove-creases-from-a-black-and-white-photo-original-f01073c01080.png\nvariants:\n  thumbnail:\n    key: media/a_669/remove-creases-from-a-black-and-white-photo-thumbnail-c22e50baa9e8.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_669/remove-creases-from-a-black-and-white-photo-card-8840583cbede.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_669/remove-creases-from-a-black-and-white-photo-detail-277f4ea208e3.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_669/remove-creases-from-a-black-and-white-photo-og-c3f57cbe326c.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.25\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Remove creases from a black-and-white photo. Sleeve folds and window frames join across the repair.\n  zh-Hans: 横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_670.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_670\ncontentHash: sha256:52949c32dba730679a2307c58ccc36dd897e47d2f9f63592ddec65e9a043248a\nmimeType: image/png\nbyteSize: 2913409\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_670/remove-creases-from-a-black-and-white-photo-reference-original-52949c32dba7.png\nvariants:\n  thumbnail:\n    key: media/a_670/remove-creases-from-a-black-and-white-photo-reference-thumbnail-f0956954c152.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_670/remove-creases-from-a-black-and-white-photo-reference-card-f5e993a35b72.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_670/remove-creases-from-a-black-and-white-photo-reference-detail-a19e2faee283.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_670/remove-creases-from-a-black-and-white-photo-reference-og-0f48f9a7ca9d.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.281\nplaceholder:\n  color: \"#585858\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-14-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-14-b-01\",\n  \"candidateId\": \"EDPHOTO-14\",\n  \"fingerprint\": \"1c7267292d8a872b4d11085719b786dadc7fe773f4a7996bf3e0e4dcd73973bd\",\n  \"ids\": {\n    \"prompt\": \"p_412\",\n    \"template\": null,\n    \"example\": \"x_490\",\n    \"media\": [\n      \"a_669\",\n      \"a_670\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"f01073c010809b4b5614069256a355bea3cc1a8cc366211fcb2699a25a917a76\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"52949c32dba730679a2307c58ccc36dd897e47d2f9f63592ddec65e9a043248a\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。窗内书封依旧不清晰，不能借修复辨认其文字。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:17:35.992Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:10.488Z\",\n    \"contentHash\": \"c0b0a487f73406d3be168005403b72908ca197363bd8ef9a23805ed55df4c2d1\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_490/prompt.txt": null,
+    "content/examples/x_490/run.yaml": null,
+    "content/media/a_669.yaml": null,
+    "content/media/a_670.yaml": null,
+    "production/applied/edphoto-14-b-01.json": null
+  }
+}

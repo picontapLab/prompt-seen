@@ -1,0 +1,81 @@
+id: p_402
+slug: brighten-faces-in-a-backlit-group-photo
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: template
+  templateId: t_078
+  version: v1
+  values:
+    focus: 窗前的两位成年人
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_625
+relatedTemplateIds:
+  - t_078
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_469
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-04
+    platform: YouTube
+    author: Monzon Media
+    url: https://www.youtube.com/watch?v=vT9P5gM7JxA
+    publishedAt: 2022-04-30
+    metricObjectUrl: https://www.youtube.com/watch?v=vT9P5gM7JxA
+    metricObjectPublishedAt: 2022-04-30
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 对照。作者标出 00:00 原照、01:08 用 Relight AI 恢复阴影、01:44 加蒙版、04:04 修高光、04:50 前后对照。软件参数操作，简介披露推广链接。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 對照。作者標出 00:00 原照、01:08 用 Relight AI 恢復陰影、01:44 加蒙版、04:04 修高光、04:50 前後對照。軟體參數操作，簡介披露推廣鏈接。
+    evidenceUrl: https://www.youtube.com/watch?v=vT9P5gM7JxA
+    sourcePromptStatus:
+      en: The full prompt could not be verified.
+      zh-Hans: 未核到完整提示词。
+      es: No se pudo verificar el texto completo.
+      pt-BR: Não foi possível verificar o texto completo.
+      fr: Le texte intégral n’a pas pu être vérifié.
+      it: Non è stato possibile verificare il testo integrale.
+      de: Der vollständige Wortlaut ließ sich nicht bestätigen.
+      ru: Полный текст инструкции подтвердить не удалось.
+      ja: 指示の全文は確認できませんでした。
+      ko: 지시문 전문은 확인하지 못했습니다.
+      ar: تعذر التحقق من النص الكامل للتعليمات.
+      zh-Hant: 未核到完整提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

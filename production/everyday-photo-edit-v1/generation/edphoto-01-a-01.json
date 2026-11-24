@@ -1,0 +1,30 @@
+{
+  "provider": "image_gen",
+  "model": "GPT Image",
+  "inputPrompt": "生成一张横向 3∶2 的合成旅行快照。两位虚构成年朋友并肩站在石墙前，两人的脸和脚下的影子都可见。一名红衣路人从右后方经过，双脚跨在斜铺砖缝上，与前景人物不重叠。保留自然日光、墙缝、完整脚部和周围普通街景。单张底图，无注释。",
+  "inputParentHashes": [],
+  "editParentHashes": [
+    "2f49914f619bcd06cd95b4a594758735b4f1d23ecf5e2bd319576cd83b644778"
+  ],
+  "editDefinition": "job-definitions/edphoto-01-a-01.json",
+  "assets": [
+    {
+      "role": "photo",
+      "path": "production/everyday-photo-edit-v1/references/01-a.png",
+      "sha256": "2f49914f619bcd06cd95b4a594758735b4f1d23ecf5e2bd319576cd83b644778",
+      "width": 1536,
+      "height": 1024,
+      "toolFile": "exec-21e510b9-7c19-4bf2-bc75-f8ce6179acdb.png",
+      "fileModifiedAt": "2026-11-23T08:00:01.111480+00:00"
+    },
+    {
+      "role": "output",
+      "path": "production/everyday-photo-edit-v1/outputs/edphoto-01-a-01.png",
+      "sha256": "e3ce287ce7a92f3edc40c790191e7829f49fd0e6594d2a3c3322b7b23d1f70c9",
+      "width": 1536,
+      "height": 1024,
+      "toolFile": "exec-fc5a107a-be5c-4001-a54c-422d43fc9730.png",
+      "fileModifiedAt": "2026-11-23T08:00:57.593176+00:00"
+    }
+  ]
+}

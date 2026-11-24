@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Upload the photo to edit first.
+  zh-Hans: 先上传要修改的照片。
+  es: Sube primero la foto que quieres editar.
+  pt-BR: Envie primeiro a foto que deseja editar.
+  fr: Importez d’abord la photo à retoucher.
+  it: Carica prima la foto da modificare.
+  de: Lade zuerst das zu bearbeitende Foto hoch.
+  ru: Сначала загрузите фотографию для редактирования.
+  ja: 最初に編集する写真をアップロードしてください。
+  ko: 편집할 사진을 먼저 올리세요.
+  ar: ارفع أولا الصورة المراد تعديلها.
+  zh-Hant: 先上傳要修改的照片。
+slots:
+  - id: photo
+    labels:
+      en: Photo to edit
+      zh-Hans: 要修改的照片
+      es: Foto que se va a editar
+      pt-BR: Foto a editar
+      fr: Photo à retoucher
+      it: Foto da modificare
+      de: Zu bearbeitendes Foto
+      ru: Фото для редактирования
+      ja: 編集する写真
+      ko: 편집할 사진
+      ar: الصورة المطلوب تعديلها
+      zh-Hant: 要修改的照片
+    min: 1
+    max: 1

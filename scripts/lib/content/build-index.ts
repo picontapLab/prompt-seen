@@ -374,10 +374,16 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     [...content.examples.values()]
       .filter((x) => x.data.promptId === id)
       .sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
-  const runsOfTemplate = (id: string) =>
-    [...content.examples.values()]
-      .filter((x) => x.data.template?.id === id)
+  const runsOfTemplate = (template: TemplateRecord) => {
+    const runs = [...content.examples.values()]
+      .filter((x) => x.data.template?.id === template.data.id)
       .sort((a, b) => b.data.recordedAt.localeCompare(a.data.recordedAt) || b.data.id.localeCompare(a.data.id));
+    const firstDefault = runs.findIndex(({ data }) =>
+      data.template?.version === template.data.currentVersion && data.template.sample === 'default',
+    );
+    if (firstDefault > 0) runs.unshift(...runs.splice(firstDefault, 1));
+    return runs;
+  };
 
   const promptSummary = (r: PromptRecord, code: string): PromptSummary => {
     const v = vis(r.data.id, code)!;
@@ -418,19 +424,12 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
     };
   };
 
-  const templateCover = (r: TemplateRecord) => {
-    const runs = runsOfTemplate(r.data.id);
-    const preferred =
-      runs.find((x) => x.data.template!.version === r.data.currentVersion && x.data.template!.sample === 'default') ??
-      runs[0];
-    return preferred?.data.outputAssetIds[0] ?? null;
-  };
-
   const templateSummary = (r: TemplateRecord, code: string): TemplateSummary => {
     const v = vis(r.data.id, code)!;
     const version = r.versions.get(r.data.currentVersion)!;
     const selected = resolveTemplate(r, version, code);
-    const cover = templateCover(r);
+    const runs = runsOfTemplate(r);
+    const cover = runs[0]?.data.outputAssetIds[0];
     return {
       kind: 'template',
       id: r.data.id,
@@ -444,7 +443,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
       createdAt: r.data.createdAt,
       updatedAt: v.file.fm.updatedAt > r.data.updatedAt ? v.file.fm.updatedAt : r.data.updatedAt,
       cover: cover && content.media.has(cover) ? imageRef(cover, code, false, v.file.locale) : null,
-      hasGifOutput: runsOfTemplate(r.data.id).some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
+      hasGifOutput: runs.some((x) => x.data.outputAssetIds.some((id) => content.media.get(id)?.data.mimeType === 'image/gif')),
       currentVersion: r.data.currentVersion,
       fieldCount: version.fields.length,
       promptLanguage: selected.language,
@@ -530,7 +529,10 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
           note: localizedText(a.note, code, v.file.locale) ?? '',
           noteLocale: textLocale(a.note, code, v.file.locale),
         }));
-      const examples = runsOfPrompt(r.data.id).map((x) => exampleView(x.data.id, code));
+      // The showcase is the first labeled example (A) in the selector and run list.
+      const examples = runsOfPrompt(r.data.id)
+        .sort((a, b) => Number(b.data.id === r.data.showcaseExampleId) - Number(a.data.id === r.data.showcaseExampleId))
+        .map((x) => exampleView(x.data.id, code));
       const facts = promptShowcase(content, r, code, v.file.locale);
       const score = (p: PromptRecord) =>
         (p.data.categoryId === r.data.categoryId ? 3 : 0) +
@@ -625,10 +627,11 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
         optionLabelLocales: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, textLocale(o.labels, code, v.file.locale)])) : {},
         optionLabels: f.type === 'enum' ? Object.fromEntries(f.options.map((o) => [o.value, label(o.labels)])) : {},
       }));
+      const runs = runsOfTemplate(r);
       const samples = [...selected.samples].map(([name, s]) => ({
         name,
         values: s.values,
-        exampleIds: runsOfTemplate(r.data.id)
+        exampleIds: runs
           .filter((run) => {
             const t = run.data.template;
             const rendered = renderTemplate(spec, s.values).text;
@@ -652,7 +655,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
             ? pathOf.template(r.data.promptLanguage, r.data.slug)
             : null,
         cover: (() => {
-          const id = templateCover(r);
+          const id = runs[0]?.data.outputAssetIds[0];
           return id && content.media.has(id) ? imageRef(id, code, true, v.file.locale) : null;
         })(),
         seo: seo(v.file),
@@ -667,7 +670,7 @@ export function buildIndex(content: Content, config: ResolvedConfig, url: Url, s
           defaultPrompt: renderTemplate(spec, defaultValues).text ?? '',
         },
         versions: [...r.versions.keys()].sort((a, b) => Number(a.slice(1)) - Number(b.slice(1))),
-        examples: runsOfTemplate(r.data.id).map((x) => exampleView(x.data.id, code)),
+        examples: runs.map((x) => exampleView(x.data.id, code)),
         relatedPrompts: prompts.filter((p) => {
           const pr = content.prompts.get(p.id)!.data;
           return (

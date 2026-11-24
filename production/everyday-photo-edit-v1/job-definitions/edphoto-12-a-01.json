@@ -1,0 +1,16 @@
+{
+  "key": "edphoto-12-a-01",
+  "candidateId": "EDPHOTO-12",
+  "prompt": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "references": [
+    {
+      "slotId": "photo",
+      "path": "production/everyday-photo-edit-v1/references/12-a.png"
+    },
+    {
+      "slotId": "alternateFrame",
+      "path": "production/everyday-photo-edit-v1/references/12-a-ref.png"
+    }
+  ],
+  "targetAspectRatio": null
+}

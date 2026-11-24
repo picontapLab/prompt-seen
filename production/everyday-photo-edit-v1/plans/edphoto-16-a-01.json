@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-16-a-01",
+  "candidateId": "EDPHOTO-16",
+  "jobFingerprint": "83319e37f3078d6dbb246fa715c5611ba65c4ce9580ce1fa7ad93d2812f57d97",
+  "planHash": "0f45a1c1fcdf3791a2e2c23358e78cc6d33d941647b012e17c3216f125b171ab",
+  "ids": {
+    "prompt": "p_414",
+    "template": "t_081",
+    "example": "x_493",
+    "media": [
+      "a_677",
+      "a_678"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_493/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。将商品后的环境整理为浅灰哑光台面和背景，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_493/run.yaml",
+      "after": "id: x_493\npromptId: p_414\npromptLanguage: zh-Hans\ntemplate:\n  id: t_081\n  version: v1\n  sample: default\n  values:\n    surface: 浅灰哑光台面和背景\n  contractHash: 2581a6def516203f2c5487feda6569c5898b2360c516515c7f5671e599bf69ab\npromptSha256: 6bf8f7d90caa2a02107bbfb25081fb78df0dd78e8e400eef14089e90591bc5f0\nreferenceAssetIds:\n  - a_678\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_677\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 书本、文具和木桌已换成浅灰底。包右下角的露底形状、锁扣交叉划痕、背带扣和提手磨边仍可辨，底部接触阴影自然。细微皮纹的反光随背景光色改变。\n  zh-Hans: 书本、文具和木桌已换成浅灰底。\n"
+    },
+    {
+      "file": "content/media/a_677.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_677\ncontentHash: sha256:91f497a4897ca606418853b7552b6d77fda3a6112ad7fbe916e9ce4358f0767b\nmimeType: image/png\nbyteSize: 2496796\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_677/clean-up-the-background-of-a-secondhand-item-original-91f497a4897c.png\nvariants:\n  thumbnail:\n    key: media/a_677/clean-up-the-background-of-a-secondhand-item-thumbnail-80488e7a45cf.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_677/clean-up-the-background-of-a-secondhand-item-card-a86d1b8a102c.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_677/clean-up-the-background-of-a-secondhand-item-detail-3728a6fbcc57.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_677/clean-up-the-background-of-a-secondhand-item-og-3111f932ab4a.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.5\n  y: 0.125\nplaceholder:\n  color: \"#B8B8B8\"\nalt:\n  en: Clean up the background of a secondhand item. The bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain.\n  zh-Hans: 书本、文具和木桌已换成浅灰底。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_678.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_678\ncontentHash: sha256:fd2a05a7d8b9d4613626411ed821ec53b836539f6282698aa7a7b3cdac61fde0\nmimeType: image/png\nbyteSize: 2881340\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_678/clean-up-the-background-of-a-secondhand-item-reference-original-fd2a05a7d8b9.png\nvariants:\n  thumbnail:\n    key: media/a_678/clean-up-the-background-of-a-secondhand-item-reference-thumbnail-2b74b3954db8.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_678/clean-up-the-background-of-a-secondhand-item-reference-card-183f9dc60619.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_678/clean-up-the-background-of-a-secondhand-item-reference-detail-369fc4bf3792.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_678/clean-up-the-background-of-a-secondhand-item-reference-og-d48f163c523f.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.031\n  y: 0.219\nplaceholder:\n  color: \"#583838\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_414/entry.yaml",
+      "after": "id: p_414\nslug: clean-up-the-background-of-a-secondhand-item\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_081\n  version: v1\n  values:\n    surface: 浅灰哑光台面和背景\ncategoryId: product\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_677\nrelatedTemplateIds:\n  - t_081\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_493\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-16\n    platform: 哔哩哔哩\n    author: 黄彬AIGC\n    url: https://www.bilibili.com/video/BV1L34y1F7Mc/\n    publishedAt: 2023-11-26\n    metricObjectUrl: https://www.bilibili.com/video/BV1L34y1F7Mc/\n    metricObjectPublishedAt: 2023-11-26\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 演示。作者用 ComfyUI、Krita 和 LCM 制作商品海报，并在简介说明如何用原产品图替回生成时发生变化的产品。没有公开逐字指令或成对原图。\n    evidenceUrl: https://www.bilibili.com/video/BV1L34y1F7Mc/\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_414/locales/en.mdx",
+      "after": "---\ntitle: Clean up the background of a secondhand item\ndescription: The bag’s exposed corner, scratched brass clasp, bottle dent and\n  three diagonal marks remain. A different background can change how deep a dent\n  looks.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A worn brown bag with a peeling corner sits on a cluttered desk.\n\n**B** A dented gray bottle with three scratches stands in front of a colorful tote.\n\nThe bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain. A different background can change how deep a dent looks.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image. Both items simulate secondhand goods.\n"
+    },
+    {
+      "file": "content/prompts/p_414/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 二手实物整理背景\ndescription: 将商品后的环境整理为台面和背景，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:82bdeaf35ebbe6b6\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 桌上旧皮包，右下角掉皮、黄铜搭扣有划痕，背景杂乱。 书本、文具和木桌已换成浅灰底。包右下角的露底形状、锁扣交叉划痕、背带扣和提手磨边仍可辨，底部接触阴影自然。细微皮纹的反光随背景光色改变。\n\n**B** 磨砂水壶，杯身有凹痕与三道划痕，后方有彩色布袋。 彩色布袋和木桌换为米白底。壶左侧凹痕、右侧三道斜划痕和底边擦伤保留，黑色提环及壶盖形状一致。磨砂表面的阴影会影响凹痕看起来的深浅。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。两件商品均为模拟二手物品。\n"
+    },
+    {
+      "file": "content/templates/t_081/entry.yaml",
+      "after": "id: t_081\nslug: clean-up-the-background-of-a-secondhand-item\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: product\nstyleIds: []\nuseCaseIds:\n  - social-post\n"
+    },
+    {
+      "file": "content/templates/t_081/locales/en.mdx",
+      "after": "---\ntitle: Clean up the background of a secondhand item\ndescription: The bag’s exposed corner, scratched brass clasp, bottle dent and\n  three diagonal marks remain. A different background can change how deep a dent\n  looks.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A worn brown bag with a peeling corner sits on a cluttered desk.\n\n**B** A dented gray bottle with three scratches stands in front of a colorful tote.\n\nThe bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain. A different background can change how deep a dent looks.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image. Both items simulate secondhand goods.\n"
+    },
+    {
+      "file": "content/templates/t_081/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 二手实物整理背景\ndescription: 将商品后的环境整理为台面和背景，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:82bdeaf35ebbe6b6\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 桌上旧皮包，右下角掉皮、黄铜搭扣有划痕，背景杂乱。 书本、文具和木桌已换成浅灰底。包右下角的露底形状、锁扣交叉划痕、背带扣和提手磨边仍可辨，底部接触阴影自然。细微皮纹的反光随背景光色改变。\n\n**B** 磨砂水壶，杯身有凹痕与三道划痕，后方有彩色布袋。 彩色布袋和木桌换为米白底。壶左侧凹痕、右侧三道斜划痕和底边擦伤保留，黑色提环及壶盖形状一致。磨砂表面的阴影会影响凹痕看起来的深浅。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。两件商品均为模拟二手物品。\n"
+    },
+    {
+      "file": "content/templates/t_081/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。将商品后的环境整理为{{surface}}，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_081/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: surface\n    required: true\n    group: text\n    labels:\n      en: Surface and background\n      zh-Hans: 台面和背景\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 浅灰哑光台面和背景\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_081/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_081/versions/v1/samples/default.yaml",
+      "after": "surface: 浅灰哑光台面和背景\n"
+    },
+    {
+      "file": "production/applied/edphoto-16-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-16-a-01\",\n  \"candidateId\": \"EDPHOTO-16\",\n  \"fingerprint\": \"83319e37f3078d6dbb246fa715c5611ba65c4ce9580ce1fa7ad93d2812f57d97\",\n  \"ids\": {\n    \"prompt\": \"p_414\",\n    \"template\": \"t_081\",\n    \"example\": \"x_493\",\n    \"media\": [\n      \"a_677\",\n      \"a_678\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"91f497a4897ca606418853b7552b6d77fda3a6112ad7fbe916e9ce4358f0767b\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"fd2a05a7d8b9d4613626411ed821ec53b836539f6282698aa7a7b3cdac61fde0\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"书本、文具和木桌已换成浅灰底。包右下角的露底形状、锁扣交叉划痕、背带扣和提手磨边仍可辨，底部接触阴影自然。细微皮纹的反光随背景光色改变。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:31:21.930Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:41.506Z\",\n    \"contentHash\": \"ce3057a18f3e5c093d96b9615b9d0ad0793d9bce4af628e0123d94bf029f4f8c\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_493/prompt.txt": null,
+    "content/examples/x_493/run.yaml": null,
+    "content/media/a_677.yaml": null,
+    "content/media/a_678.yaml": null,
+    "content/prompts/p_414/entry.yaml": null,
+    "content/prompts/p_414/locales/en.mdx": null,
+    "content/prompts/p_414/locales/zh-Hans.mdx": null,
+    "content/templates/t_081/entry.yaml": null,
+    "content/templates/t_081/locales/en.mdx": null,
+    "content/templates/t_081/locales/zh-Hans.mdx": null,
+    "content/templates/t_081/versions/v1/body.txt": null,
+    "content/templates/t_081/versions/v1/fields.yaml": null,
+    "content/templates/t_081/versions/v1/inputs.yaml": null,
+    "content/templates/t_081/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-16-a-01.json": null
+  }
+}

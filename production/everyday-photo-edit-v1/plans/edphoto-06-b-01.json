@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-06-b-01",
+  "candidateId": "EDPHOTO-06",
+  "jobFingerprint": "35c4e3725201cf1d58ce92f8af06012882b72d2c5bb29ee0eb59402484beac29",
+  "planHash": "a90d825560ff3ee92b1f5de321f060c569c48f06f1c2f094a6a34217a53f3d58",
+  "ids": {
+    "prompt": "p_404",
+    "template": null,
+    "example": "x_474",
+    "media": [
+      "a_635",
+      "a_636"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_474/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_474/run.yaml",
+      "after": "id: x_474\npromptId: p_404\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 90507116ab05d1f4815853ad5c463b46a7e56a34ea9fc8922987f8fc53db6ffb\nreferenceAssetIds:\n  - a_636\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_635\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。支架轮廓与远处独立灯点仍清晰，帐篷下方仍暗。细小噪点在原尺寸更容易比较。\n  zh-Hans: 布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。\n"
+    },
+    {
+      "file": "content/media/a_635.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_635\ncontentHash: sha256:9ab7e46ede1590c399fb7badf86beb9efa22df513b6178ad16276f2539ed6810\nmimeType: image/png\nbyteSize: 2603252\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_635/reduce-color-noise-in-a-night-photo-original-9ab7e46ede15.png\nvariants:\n  thumbnail:\n    key: media/a_635/reduce-color-noise-in-a-night-photo-thumbnail-779ff1bfbe4b.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_635/reduce-color-noise-in-a-night-photo-card-0bebe8284ca3.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_635/reduce-color-noise-in-a-night-photo-detail-17c73956823f.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_635/reduce-color-noise-in-a-night-photo-og-9e5e2f01c656.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.938\nplaceholder:\n  color: \"#080808\"\nalt:\n  en: Reduce color noise in a night photo. Wood grain, stitching and separate lights remain visible.\n  zh-Hans: 布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_636.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_636\ncontentHash: sha256:c688f49d9033684352f6cdb17db54dc6e3711bc78bbfbdfbbc9be0f050d3e429\nmimeType: image/png\nbyteSize: 3349200\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_636/reduce-color-noise-in-a-night-photo-reference-original-c688f49d9033.png\nvariants:\n  thumbnail:\n    key: media/a_636/reduce-color-noise-in-a-night-photo-reference-thumbnail-9e8db8f454b3.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_636/reduce-color-noise-in-a-night-photo-reference-card-d7559f4de275.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_636/reduce-color-noise-in-a-night-photo-reference-detail-4d6808ed5982.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_636/reduce-color-noise-in-a-night-photo-reference-og-8f52b200c3d7.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.906\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-06-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-06-b-01\",\n  \"candidateId\": \"EDPHOTO-06\",\n  \"fingerprint\": \"35c4e3725201cf1d58ce92f8af06012882b72d2c5bb29ee0eb59402484beac29\",\n  \"ids\": {\n    \"prompt\": \"p_404\",\n    \"template\": null,\n    \"example\": \"x_474\",\n    \"media\": [\n      \"a_635\",\n      \"a_636\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"9ab7e46ede1590c399fb7badf86beb9efa22df513b6178ad16276f2539ed6810\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"c688f49d9033684352f6cdb17db54dc6e3711bc78bbfbdfbbc9be0f050d3e429\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。支架轮廓与远处独立灯点仍清晰，帐篷下方仍暗。细小噪点在原尺寸更容易比较。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:35:32.138Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:35.860Z\",\n    \"contentHash\": \"e7209a0cf708446cad2852af36b9629851f13dc2ed5975794ffee280ab175e8c\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_474/prompt.txt": null,
+    "content/examples/x_474/run.yaml": null,
+    "content/media/a_635.yaml": null,
+    "content/media/a_636.yaml": null,
+    "production/applied/edphoto-06-b-01.json": null
+  }
+}

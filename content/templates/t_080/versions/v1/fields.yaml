@@ -1,0 +1,35 @@
+fields:
+  - name: frame
+    required: true
+    group: text
+    labels:
+      en: Canvas shape and direction
+      zh-Hans: 画幅与扩展方向
+      es: Formato y dirección de ampliación
+      pt-BR: Formato e direção da expansão
+      fr: Format et sens de l’extension
+      it: Formato e direzione di estensione
+      de: Format und Erweiterungsrichtung
+      ru: Формат и направление расширения
+      ja: 縦横比と拡張方向
+      ko: 화면 비율과 확장 방향
+      ar: نسبة الأبعاد واتجاه التمديد
+      zh-Hant: 畫面比例與擴展方向
+    help:
+      en: Describe the part of your photo to change.
+      zh-Hans: 简要描述照片中要修改的部分。
+      es: Describe brevemente la parte que quieres cambiar.
+      pt-BR: Descreva brevemente a parte que deseja alterar.
+      fr: Décrivez brièvement la partie à modifier.
+      it: Descrivi brevemente la parte da modificare.
+      de: Beschreibe kurz den zu ändernden Bildbereich.
+      ru: Кратко опишите область фотографии, которую хотите изменить.
+      ja: 変更したい部分を短く記入してください。
+      ko: 사진에서 바꿀 부분을 짧게 적으세요.
+      ar: صف بإيجاز الجزء الذي تريد تعديله.
+      zh-Hant: 簡要描述照片中要修改的部分。
+    type: string
+    default: 2∶3 竖幅，向上下补画
+    minLength: null
+    maxLength: null
+    multiline: false

@@ -1,0 +1,88 @@
+{
+  "candidateId": "EDPHOTO-03",
+  "slug": "remove-overhead-wires-from-a-building-photo",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。只移除天空中跨过建筑的两根架空电线。延续屋顶、树枝与天际轮廓，保留路灯、建筑附属物与桥梁支撑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-03",
+      "platform": "哔哩哔哩",
+      "author": "橘子老师_SJRJT",
+      "url": "https://www.bilibili.com/video/BV1qp1NYaExU/",
+      "publishedAt": "2024-10-24",
+      "metricObjectUrl": "https://www.bilibili.com/video/BV1qp1NYaExU/",
+      "metricObjectPublishedAt": "2024-10-24",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。作者列出 Photoshop 移除电线电缆和背景人物操作。简介给出工具路径，未列逐字提示词或成对下载图。"
+      },
+      "evidenceUrl": "https://www.bilibili.com/video/BV1qp1NYaExU/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Remove overhead wires from a building photo",
+      "description": "The lamp bracket and bridge cables survive. A rejected attempt left dangling branches of wire, so inspect every endpoint.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two wires cross a white chimney beside a wrought-iron streetlamp.\n\n**B** Two overhead lines cross foliage and a distant tower above a suspension bridge.\n\nThe lamp bracket and bridge cables survive. A rejected attempt left dangling branches of wire, so inspect every endpoint.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "建筑上方去电线",
+      "description": "只移除天空中跨过建筑的两根架空电线。延续屋顶、树枝与天际轮廓，保留路灯、建筑附属物与桥梁支撑。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 老街红屋顶上方两根垂落细线，横跨烟囱，路灯在左。 跨过白色烟囱的两根线及其端点清除，烟囱两侧竖边连续。左侧卷铁灯架及下方红瓦保留。缩至 360 像素宽仍可对照，烟囱被遮住的粉刷纹理是局部补全。\n\n**B** 石桥背景中两根架空线穿过树冠与塔楼轮廓，保留桥索。 上方两根架空线已清除。右上塔楼檐角轮廓连贯，左上叶簇边缘保留。桥索、吊杆、过桥行人及近景人像保留。个别被线压住的树叶纹理属于推测补全。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Remove overhead wires from a building photo. The lamp bracket and bridge cables survive.",
+    "zh-Hans": "上方两根架空线已清除。"
+  },
+  "target": {
+    "promptId": "p_401",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:03:38.372Z",
+    "contentHash": "f4d08fce88b83888b1b1fdd2011bb036cdb92c6712ae61004eb95f6bb94e8ade"
+  }
+}

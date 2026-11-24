@@ -1,0 +1,70 @@
+{
+  "key": "edphoto-12-a-01",
+  "candidateId": "EDPHOTO-12",
+  "jobFingerprint": "d6c7e818a662353086bcfb2d57c67eb301fe88877ed2599bee25eede6edadac3",
+  "planHash": "eeb64f0b0e91f4e472be0da25e811abf9282de4dea7b0c15106c9300d9b9abee",
+  "ids": {
+    "prompt": "p_410",
+    "template": null,
+    "example": "x_485",
+    "media": [
+      "a_657",
+      "a_658",
+      "a_659"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_485/prompt.txt",
+      "after": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_485/run.yaml",
+      "after": "id: x_485\npromptId: p_410\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 37879aeb131fe9a20ef26890cfa6ba7a99a6ce062cf1358496ea6482f852c62f\nreferenceAssetIds:\n  - a_658\n  - a_659\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\n  - slotId: alternateFrame\n    referenceIndex: 1\noutputAssetIds:\n  - a_657\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。鼻尖、嘴角和绿外套拉链仍位于主帧位置，左右两人的笑容及镜框保留。相邻帧有轻微头部位移，不能整帧替换。\n  zh-Hans: 中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。\n"
+    },
+    {
+      "file": "content/media/a_657.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_657\ncontentHash: sha256:fa8a4876c7ecfbe0ba07cf0cd1fcf220f8bfa2239b3c7f091f901c59916fcaef\nmimeType: image/png\nbyteSize: 2592765\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_657/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-original-fa8a4876c7ec.png\nvariants:\n  thumbnail:\n    key: media/a_657/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-thumbnail-6302240ccc29.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_657/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-card-7db2b0192bd9.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_657/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-detail-ff9cb89ba52b.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_657/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-og-288a0473a702.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.156\n  y: 0.969\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Fix closed eyes in a group photo using a burst frame. Only the matching open eyes guide the edit.\n  zh-Hans: 中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_658.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_658\ncontentHash: sha256:2896e74030089c45396f3e11116712992ae883d3fa5cbd0d8eae67e769b705e7\nmimeType: image/png\nbyteSize: 2808444\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_658/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-original-2896e7403008.png\nvariants:\n  thumbnail:\n    key: media/a_658/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-thumbnail-d853a6fe85d3.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_658/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-card-b2760420522c.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_658/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-detail-a8d6e6d6ae81.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_658/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-og-7bc016d3046c.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.156\n  y: 0.969\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_659.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_659\ncontentHash: sha256:27e6a2a877bba45e7b11d88fb58c21c4490956b7ce11896069e263bf24ce1b88\nmimeType: image/png\nbyteSize: 2679965\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_659/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-original-27e6a2a877bb.png\nvariants:\n  thumbnail:\n    key: media/a_659/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-thumbnail-9f2caff58aec.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_659/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-card-de5974a08ece.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_659/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-detail-4f896bc18633.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_659/fix-closed-eyes-in-a-group-photo-using-a-burst-frame-reference-og-41b3486ed39e.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.156\n  y: 0.969\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Adjacent frame with open eyes\n  zh-Hans: 同一人的睁眼相邻帧\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_410/entry.yaml",
+      "after": "id: p_410\nslug: fix-closed-eyes-in-a-group-photo-using-a-burst-frame\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_657\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first. Add a nearby frame of the same person with open eyes.\n    zh-Hans: 先上传要修改的照片。再上传同一人的睁眼相邻帧。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\n    - id: alternateFrame\n      labels:\n        en: Adjacent frame with open eyes\n        zh-Hans: 同一人的睁眼相邻帧\n      min: 1\n      max: 1\nshowcaseExampleId: x_485\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-12\n    platform: Reddit r/GooglePixel\n    author: BirdKai\n    url: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/\n    publishedAt: \"2024\"\n    metricObjectUrl: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/\n    metricObjectPublishedAt: \"2024\"\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 自述。作者从 Top Shot 导出相邻帧，再用 Best Take 与 Unblur 处理。主帖无可核对的前后图，没有文字提示词。\n    evidenceUrl: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_410/locales/en.mdx",
+      "after": "---\ntitle: Fix closed eyes in a group photo using a burst frame\ndescription: Only the matching open eyes guide the edit. The subject’s mouth,\n  glasses and head position follow the first frame despite movement between\n  shots.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first. Add a nearby frame of the same person with open eyes.\n\n**A** The middle friend in a green jacket blinked during a garden portrait.\n\n**B** The person wearing glasses on the right blinked during an indoor portrait.\n\nOnly the matching open eyes guide the edit. The subject’s mouth, glasses and head position follow the first frame despite movement between shots.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_410/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 用连拍修正闭眼\ndescription: 以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:8e38b15398a50e39\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。再上传同一人的睁眼相邻帧。\n\n**A** 三位朋友合影，中间人闭眼，第二帧只有中间人睁眼、微有位移。 中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。鼻尖、嘴角和绿外套拉链仍位于主帧位置，左右两人的笑容及镜框保留。相邻帧有轻微头部位移，不能整帧替换。\n\n**B** 室内两人合影，靠右戴眼镜者闭眼，第二帧同一人睁眼。 右侧眼镜内双眼已按参考睁开，镜框、鼻托、嘴角与黑衣领仍在主帧位置。左侧人的微笑和窗帘未见结构改变。参照帧的头位稍偏右，成片保留主帧头位。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_410/prompt.txt",
+      "after": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-12-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-12-a-01\",\n  \"candidateId\": \"EDPHOTO-12\",\n  \"fingerprint\": \"d6c7e818a662353086bcfb2d57c67eb301fe88877ed2599bee25eede6edadac3\",\n  \"ids\": {\n    \"prompt\": \"p_410\",\n    \"template\": null,\n    \"example\": \"x_485\",\n    \"media\": [\n      \"a_657\",\n      \"a_658\",\n      \"a_659\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"fa8a4876c7ecfbe0ba07cf0cd1fcf220f8bfa2239b3c7f091f901c59916fcaef\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"2896e74030089c45396f3e11116712992ae883d3fa5cbd0d8eae67e769b705e7\"\n    },\n    {\n      \"slotId\": \"alternateFrame\",\n      \"sha256\": \"27e6a2a877bba45e7b11d88fb58c21c4490956b7ce11896069e263bf24ce1b88\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。鼻尖、嘴角和绿外套拉链仍位于主帧位置，左右两人的笑容及镜框保留。相邻帧有轻微头部位移，不能整帧替换。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:04:32.779Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:06:22.883Z\",\n    \"contentHash\": \"3cb0dd17d55e1f648fb0ac5107738e0ecd85374dc5bd80dccf4004711ed7048d\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_485/prompt.txt": null,
+    "content/examples/x_485/run.yaml": null,
+    "content/media/a_657.yaml": null,
+    "content/media/a_658.yaml": null,
+    "content/media/a_659.yaml": null,
+    "content/prompts/p_410/entry.yaml": null,
+    "content/prompts/p_410/locales/en.mdx": null,
+    "content/prompts/p_410/locales/zh-Hans.mdx": null,
+    "content/prompts/p_410/prompt.txt": null,
+    "production/applied/edphoto-12-a-01.json": null
+  }
+}

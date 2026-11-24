@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-04-a-01",
+  "candidateId": "EDPHOTO-04",
+  "jobFingerprint": "82c64ebfdca92832f2129f26a39b997fa3973b2f26fd5dfeebe67e2ab7bad676",
+  "planHash": "665b934c0af67b81dc859b03c7e165e39823d0827add05fbac2dc1031df7104e",
+  "ids": {
+    "prompt": "p_402",
+    "template": "t_078",
+    "example": "x_469",
+    "media": [
+      "a_625",
+      "a_626"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_469/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只给窗前的两位成年人的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_469/run.yaml",
+      "after": "id: x_469\npromptId: p_402\npromptLanguage: zh-Hans\ntemplate:\n  id: t_078\n  version: v1\n  sample: default\n  values:\n    focus: 窗前的两位成年人\n  contractHash: b07dd218a95369e5c964adf0310fe2b6a8e5afb080b1a7f93f5a205e061f4367\npromptSha256: f78a81ddd33b126dc2237f59ee3ef0e2d274206964d63fc2e52080e852ea9acd\nreferenceAssetIds:\n  - a_626\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_625\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。脸颈过渡连续，窗外叶片及窗框亮度与原照接近。360 像素宽仍看得清局部补光，原先已白的窗外高光依旧缺少细节。\n  zh-Hans: 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。\n"
+    },
+    {
+      "file": "content/media/a_625.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_625\ncontentHash: sha256:72c994b24ba808aaa17912400e56cfe29e5fb94a5f30dee8c8275a4496241947\nmimeType: image/png\nbyteSize: 2260201\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_625/brighten-faces-in-a-backlit-group-photo-original-72c994b24ba8.png\nvariants:\n  thumbnail:\n    key: media/a_625/brighten-faces-in-a-backlit-group-photo-thumbnail-165349461217.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_625/brighten-faces-in-a-backlit-group-photo-card-b6c92881eaf5.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_625/brighten-faces-in-a-backlit-group-photo-detail-0357f5d7ee66.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_625/brighten-faces-in-a-backlit-group-photo-og-f16bf279c14b.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Brighten faces in a backlit group photo. Eyes become legible while the leaves and sunset retain detail.\n  zh-Hans: 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_626.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_626\ncontentHash: sha256:4084e9124a0a3ed97875213761513b84aa085478b9a521e1f3cb28426bd6ff18\nmimeType: image/png\nbyteSize: 2169911\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_626/brighten-faces-in-a-backlit-group-photo-reference-original-4084e9124a0a.png\nvariants:\n  thumbnail:\n    key: media/a_626/brighten-faces-in-a-backlit-group-photo-reference-thumbnail-f73fb528a042.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_626/brighten-faces-in-a-backlit-group-photo-reference-card-abe32a58984e.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_626/brighten-faces-in-a-backlit-group-photo-reference-detail-a3ad74dd6de8.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_626/brighten-faces-in-a-backlit-group-photo-reference-og-7f40f1f44cb8.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0\nplaceholder:\n  color: \"#080808\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_402/entry.yaml",
+      "after": "id: p_402\nslug: brighten-faces-in-a-backlit-group-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_078\n  version: v1\n  values:\n    focus: 窗前的两位成年人\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_625\nrelatedTemplateIds:\n  - t_078\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_469\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-04\n    platform: YouTube\n    author: Monzon Media\n    url: https://www.youtube.com/watch?v=vT9P5gM7JxA\n    publishedAt: 2022-04-30\n    metricObjectUrl: https://www.youtube.com/watch?v=vT9P5gM7JxA\n    metricObjectPublishedAt: 2022-04-30\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。作者标出 00:00 原照、01:08 用 Relight AI 恢复阴影、01:44 加蒙版、04:04 修高光、04:50 前后对照。软件参数操作，简介披露推广链接。\n    evidenceUrl: https://www.youtube.com/watch?v=vT9P5gM7JxA\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_402/locales/en.mdx",
+      "after": "---\ntitle: Brighten faces in a backlit group photo\ndescription: Eyes become legible while the leaves and sunset retain detail. The\n  white shirt on the beach also brightened slightly.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two adults sit in shadow in front of a bright leafy window.\n\n**B** Three friends face the camera on a beach at sunset.\n\nEyes become legible while the leaves and sunset retain detail. The white shirt on the beach also brightened slightly.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_402/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 逆光合影补脸\ndescription: 只给需要补光的人的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:cfb427c23ced8ede\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 窗前两位不同肤色的成年人，面部欠曝但能看清，窗外绿叶明亮。 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。脸颈过渡连续，窗外叶片及窗框亮度与原照接近。360 像素宽仍看得清局部补光，原先已白的窗外高光依旧缺少细节。\n\n**B** 傍晚海边三位朋友逆光，留眼窝和衣领暗部细节。 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。橙色云层、太阳和海面反光位置稳定。中间人的白衣也轻微变亮。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_078/entry.yaml",
+      "after": "id: t_078\nslug: brighten-faces-in-a-backlit-group-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\n"
+    },
+    {
+      "file": "content/templates/t_078/locales/en.mdx",
+      "after": "---\ntitle: Brighten faces in a backlit group photo\ndescription: Eyes become legible while the leaves and sunset retain detail. The\n  white shirt on the beach also brightened slightly.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two adults sit in shadow in front of a bright leafy window.\n\n**B** Three friends face the camera on a beach at sunset.\n\nEyes become legible while the leaves and sunset retain detail. The white shirt on the beach also brightened slightly.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/templates/t_078/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 逆光合影补脸\ndescription: 只给需要补光的人的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:cfb427c23ced8ede\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 窗前两位不同肤色的成年人，面部欠曝但能看清，窗外绿叶明亮。 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。脸颈过渡连续，窗外叶片及窗框亮度与原照接近。360 像素宽仍看得清局部补光，原先已白的窗外高光依旧缺少细节。\n\n**B** 傍晚海边三位朋友逆光，留眼窝和衣领暗部细节。 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。橙色云层、太阳和海面反光位置稳定。中间人的白衣也轻微变亮。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_078/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。只给{{focus}}的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_078/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: focus\n    required: true\n    group: text\n    labels:\n      en: People to brighten\n      zh-Hans: 需要补光的人\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 窗前的两位成年人\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_078/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_078/versions/v1/samples/default.yaml",
+      "after": "focus: 窗前的两位成年人\n"
+    },
+    {
+      "file": "production/applied/edphoto-04-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-04-a-01\",\n  \"candidateId\": \"EDPHOTO-04\",\n  \"fingerprint\": \"82c64ebfdca92832f2129f26a39b997fa3973b2f26fd5dfeebe67e2ab7bad676\",\n  \"ids\": {\n    \"prompt\": \"p_402\",\n    \"template\": \"t_078\",\n    \"example\": \"x_469\",\n    \"media\": [\n      \"a_625\",\n      \"a_626\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"72c994b24ba808aaa17912400e56cfe29e5fb94a5f30dee8c8275a4496241947\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"4084e9124a0a3ed97875213761513b84aa085478b9a521e1f3cb28426bd6ff18\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。脸颈过渡连续，窗外叶片及窗框亮度与原照接近。360 像素宽仍看得清局部补光，原先已白的窗外高光依旧缺少细节。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:27:18.545Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:03:49.689Z\",\n    \"contentHash\": \"c5120a61501384289456ef5b5597c44c2ecaafe6b15d8c360b1b832cd1b5c364\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_469/prompt.txt": null,
+    "content/examples/x_469/run.yaml": null,
+    "content/media/a_625.yaml": null,
+    "content/media/a_626.yaml": null,
+    "content/prompts/p_402/entry.yaml": null,
+    "content/prompts/p_402/locales/en.mdx": null,
+    "content/prompts/p_402/locales/zh-Hans.mdx": null,
+    "content/templates/t_078/entry.yaml": null,
+    "content/templates/t_078/locales/en.mdx": null,
+    "content/templates/t_078/locales/zh-Hans.mdx": null,
+    "content/templates/t_078/versions/v1/body.txt": null,
+    "content/templates/t_078/versions/v1/fields.yaml": null,
+    "content/templates/t_078/versions/v1/inputs.yaml": null,
+    "content/templates/t_078/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-04-a-01.json": null
+  }
+}

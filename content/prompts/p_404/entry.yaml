@@ -1,0 +1,108 @@
+id: p_404
+slug: reduce-color-noise-in-a-night-photo
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: landscape
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_633
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the photo to edit first.
+    zh-Hans: 先上传要修改的照片。
+    es: Sube primero la foto que quieres editar.
+    pt-BR: Envie primeiro a foto que deseja editar.
+    fr: Importez d’abord la photo à retoucher.
+    it: Carica prima la foto da modificare.
+    de: Lade zuerst das zu bearbeitende Foto hoch.
+    ru: Сначала загрузите фотографию для редактирования.
+    ja: 最初に編集する写真をアップロードしてください。
+    ko: 편집할 사진을 먼저 올리세요.
+    ar: ارفع أولا الصورة المراد تعديلها.
+    zh-Hant: 先上傳要修改的照片。
+  slots:
+    - id: photo
+      labels:
+        en: Photo to edit
+        zh-Hans: 要修改的照片
+        es: Foto que se va a editar
+        pt-BR: Foto a editar
+        fr: Photo à retoucher
+        it: Foto da modificare
+        de: Zu bearbeitendes Foto
+        ru: Фото для редактирования
+        ja: 編集する写真
+        ko: 편집할 사진
+        ar: الصورة المطلوب تعديلها
+        zh-Hant: 要修改的照片
+      min: 1
+      max: 1
+showcaseExampleId: x_473
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-06
+    platform: YouTube
+    author: Arghya Banerjee
+    url: https://www.youtube.com/watch?v=eVeAFZ6-BEI
+    publishedAt: 2026-05-17
+    metricObjectUrl: https://www.youtube.com/watch?v=eVeAFZ6-BEI
+    metricObjectPublishedAt: 2026-05-17
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 对照。作者对两张高 ISO 鸟类照片用 Lightroom AI DeNoise 做前后比较，观察细羽纹理损失。用参数调节，未给文字指令。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 對照。作者對兩張高 ISO 鳥類照片用 Lightroom AI DeNoise 做前後比較，觀察細羽紋理損失。用參數調節，未給文字指令。
+    evidenceUrl: https://www.youtube.com/watch?v=eVeAFZ6-BEI
+    sourcePromptStatus:
+      en: The full prompt could not be verified.
+      zh-Hans: 未核到完整提示词。
+      es: No se pudo verificar el texto completo.
+      pt-BR: Não foi possível verificar o texto completo.
+      fr: Le texte intégral n’a pas pu être vérifié.
+      it: Non è stato possibile verificare il testo integrale.
+      de: Der vollständige Wortlaut ließ sich nicht bestätigen.
+      ru: Полный текст инструкции подтвердить не удалось.
+      ja: 指示の全文は確認できませんでした。
+      ko: 지시문 전문은 확인하지 못했습니다.
+      ar: تعذر التحقق من النص الكامل للتعليمات.
+      zh-Hant: 未核到完整提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

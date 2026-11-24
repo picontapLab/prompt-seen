@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-07-a-01",
+  "candidateId": "EDPHOTO-07",
+  "jobFingerprint": "0f9c29e20027eb8ffee508e87944b030137c6d420ad9b5b19fc4eb04887b9517",
+  "planHash": "9d9b549053edd7717447832025983e793ddfb9a91f822a45bd7b4713f8f1c6ae",
+  "ids": {
+    "prompt": "p_405",
+    "template": "t_079",
+    "example": "x_475",
+    "media": [
+      "a_637",
+      "a_638"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_475/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。用柔和浅灰背景替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_475/run.yaml",
+      "after": "id: x_475\npromptId: p_405\npromptLanguage: zh-Hans\ntemplate:\n  id: t_079\n  version: v1\n  sample: default\n  values:\n    backdrop: 柔和浅灰背景\n  contractHash: 2f4f845885da7a944f1bbb93f6c4375e86a4944b87dbd068ff851c6f7570aa40\npromptSha256: 5edb6a94f1ab5e7ceab674f450cbde733b7014495a61239b3e49ba4e3cce41be\nreferenceAssetIds:\n  - a_638\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_637\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 工作间已换为浅灰背景。右颊斑点、卷发轮廓、胡须和衬衣领扣保留。360 像素圆形裁切仍容下整张脸和发顶，但发顶留白较窄。\n  zh-Hans: 工作间已换为浅灰背景。\n"
+    },
+    {
+      "file": "content/media/a_637.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_637\ncontentHash: sha256:343626add0ab571a8fba9b9359e0f7d7034f589568245914380bef2262fc0e9f\nmimeType: image/png\nbyteSize: 2265244\nwidth: 1254\nheight: 1254\noriginal:\n  key: media/a_637/turn-a-selfie-into-a-natural-professional-headshot-original-343626add0ab.png\nvariants:\n  thumbnail:\n    key: media/a_637/turn-a-selfie-into-a-natural-professional-headshot-thumbnail-2096c1204acd.webp\n    width: 480\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_637/turn-a-selfie-into-a-natural-professional-headshot-card-365c16ac9ba0.webp\n    width: 960\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_637/turn-a-selfie-into-a-natural-professional-headshot-detail-42ed3dbdb3d5.webp\n    width: 1254\n    height: 1254\n    mimeType: image/webp\n  og:\n    key: media/a_637/turn-a-selfie-into-a-natural-professional-headshot-og-5f103444dfab.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.5\n  y: 0.5\nplaceholder:\n  color: \"#B8B8B8\"\nalt:\n  en: Turn a selfie into a natural professional headshot. The square portraits keep the cheek mark, collar buttons, glasses and wrinkles.\n  zh-Hans: 工作间已换为浅灰背景。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_638.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_638\ncontentHash: sha256:7bd8c7161b3e183202c63810c86d2d836209f3be689c738f62c4d7989c9b7605\nmimeType: image/png\nbyteSize: 2505765\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_638/turn-a-selfie-into-a-natural-professional-headshot-reference-original-7bd8c7161b3e.png\nvariants:\n  thumbnail:\n    key: media/a_638/turn-a-selfie-into-a-natural-professional-headshot-reference-thumbnail-b009c459f174.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_638/turn-a-selfie-into-a-natural-professional-headshot-reference-card-6461c784f823.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_638/turn-a-selfie-into-a-natural-professional-headshot-reference-detail-7e00fe09c061.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_638/turn-a-selfie-into-a-natural-professional-headshot-reference-og-28d774e22673.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0.313\nplaceholder:\n  color: \"#282848\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_405/entry.yaml",
+      "after": "id: p_405\nslug: turn-a-selfie-into-a-natural-professional-headshot\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_079\n  version: v1\n  values:\n    backdrop: 柔和浅灰背景\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - avatar\ncoverAssetId: a_637\nrelatedTemplateIds:\n  - t_079\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_475\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-07\n    platform: Nairaland 职业论坛\n    author: dosuu\n    url: https://www.nairaland.com/8500640/how-transformed-selfie-into-professional\n    publishedAt: 2025-08-18\n    metricObjectUrl: https://www.nairaland.com/8500640/how-transformed-selfie-into-professional\n    metricObjectPublishedAt: 2025-08-18\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 演示。作者称用自拍、ChatGPT 和其他 AI 工具改善灯光、背景及服装，并链接自制教程。论坛正文未给逐字提示词或单独的前后原图。\n    evidenceUrl: https://www.nairaland.com/8500640/how-transformed-selfie-into-professional\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_405/locales/en.mdx",
+      "after": "---\ntitle: Turn a selfie into a natural professional headshot\ndescription: The square portraits keep the cheek mark, collar buttons, glasses\n  and wrinkles. A circular crop fits both heads, with little clearance above the\n  curls.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A curly-haired adult in a navy shirt faces the camera in a cluttered workspace.\n\n**B** A gray-haired adult wearing fine metal frames sits beside a window.\n\nThe square portraits keep the cheek mark, collar buttons, glasses and wrinkles. A circular crop fits both heads, with little clearance above the curls.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_405/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 自拍转自然职业头像\ndescription: 用头像背景替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:126c05be76945ad1\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 深肤色短卷发成人，手机眼平半身照，工作间背景，衣领齐全。 工作间已换为浅灰背景。右颊斑点、卷发轮廓、胡须和衬衣领扣保留。360 像素圆形裁切仍容下整张脸和发顶，但发顶留白较窄。\n\n**B** 灰发戴细框眼镜成人，家中窗边半身照，保留自然皱纹。 书架与绿植换为米白窗光背景。细框眼镜的鼻托、眼周纹路和格衬衫领保留，圆形预览容下两侧头发。额头碎发在浅色背景上对比较低。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_079/entry.yaml",
+      "after": "id: t_079\nslug: turn-a-selfie-into-a-natural-professional-headshot\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - avatar\n"
+    },
+    {
+      "file": "content/templates/t_079/locales/en.mdx",
+      "after": "---\ntitle: Turn a selfie into a natural professional headshot\ndescription: The square portraits keep the cheek mark, collar buttons, glasses\n  and wrinkles. A circular crop fits both heads, with little clearance above the\n  curls.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A curly-haired adult in a navy shirt faces the camera in a cluttered workspace.\n\n**B** A gray-haired adult wearing fine metal frames sits beside a window.\n\nThe square portraits keep the cheek mark, collar buttons, glasses and wrinkles. A circular crop fits both heads, with little clearance above the curls.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/templates/t_079/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 自拍转自然职业头像\ndescription: 用头像背景替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:126c05be76945ad1\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 深肤色短卷发成人，手机眼平半身照，工作间背景，衣领齐全。 工作间已换为浅灰背景。右颊斑点、卷发轮廓、胡须和衬衣领扣保留。360 像素圆形裁切仍容下整张脸和发顶，但发顶留白较窄。\n\n**B** 灰发戴细框眼镜成人，家中窗边半身照，保留自然皱纹。 书架与绿植换为米白窗光背景。细框眼镜的鼻托、眼周纹路和格衬衫领保留，圆形预览容下两侧头发。额头碎发在浅色背景上对比较低。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_079/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。用{{backdrop}}替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_079/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: backdrop\n    required: true\n    group: text\n    labels:\n      en: Portrait background\n      zh-Hans: 头像背景\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 柔和浅灰背景\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_079/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_079/versions/v1/samples/default.yaml",
+      "after": "backdrop: 柔和浅灰背景\n"
+    },
+    {
+      "file": "production/applied/edphoto-07-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-07-a-01\",\n  \"candidateId\": \"EDPHOTO-07\",\n  \"fingerprint\": \"0f9c29e20027eb8ffee508e87944b030137c6d420ad9b5b19fc4eb04887b9517\",\n  \"ids\": {\n    \"prompt\": \"p_405\",\n    \"template\": \"t_079\",\n    \"example\": \"x_475\",\n    \"media\": [\n      \"a_637\",\n      \"a_638\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"343626add0ab571a8fba9b9359e0f7d7034f589568245914380bef2262fc0e9f\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"7bd8c7161b3e183202c63810c86d2d836209f3be689c738f62c4d7989c9b7605\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"工作间已换为浅灰背景。右颊斑点、卷发轮廓、胡须和衬衣领扣保留。360 像素圆形裁切仍容下整张脸和发顶，但发顶留白较窄。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:42:51.295Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:46.412Z\",\n    \"contentHash\": \"18132a04161b8ec0bbddd1f39d7026a9f782a859b8aff6d5a5e278b8fce9e942\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_475/prompt.txt": null,
+    "content/examples/x_475/run.yaml": null,
+    "content/media/a_637.yaml": null,
+    "content/media/a_638.yaml": null,
+    "content/prompts/p_405/entry.yaml": null,
+    "content/prompts/p_405/locales/en.mdx": null,
+    "content/prompts/p_405/locales/zh-Hans.mdx": null,
+    "content/templates/t_079/entry.yaml": null,
+    "content/templates/t_079/locales/en.mdx": null,
+    "content/templates/t_079/locales/zh-Hans.mdx": null,
+    "content/templates/t_079/versions/v1/body.txt": null,
+    "content/templates/t_079/versions/v1/fields.yaml": null,
+    "content/templates/t_079/versions/v1/inputs.yaml": null,
+    "content/templates/t_079/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-07-a-01.json": null
+  }
+}

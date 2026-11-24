@@ -1,0 +1,122 @@
+{
+  "candidateId": "EDPHOTO-15",
+  "slug": "correct-a-faded-photo-using-a-color-reference",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first. Add a photo showing the same object in its known color.",
+      "zh-Hans": "先上传要修改的照片。再上传同一衣物或门墙的色彩参照。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "colorReference",
+        "labels": {
+          "en": "Same object with a known color",
+          "zh-Hans": "同一物件的色彩参照"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-15",
+      "platform": "Reddit r/ChatGPT",
+      "author": "littlesouthpaw",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "publishedAt": "2025",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "metricObjectPublishedAt": "2025",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1l69egf/",
+      "sourcePromptStatus": {
+        "en": "Full instruction in the comments.",
+        "zh-Hans": "评论公开完整指令。"
+      },
+      "metrics": []
+    },
+    {
+      "candidateId": "EDPHOTO-15",
+      "platform": "Reddit r/ChatGPT",
+      "author": "perpetual_stew",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "publishedAt": "2026-06-23",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "metricObjectPublishedAt": "2026-06-23",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Correct a faded photo using a color reference",
+      "description": "The coat returns to blue and the door to red without adopting the reference pose or camera angle. Colors beyond the shared objects remain estimates.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first. Add a photo showing the same object in its known color.\n\n**A** A magenta garden portrait shows a seated woman with her hands on her lap.\n\n**B** A yellowed storefront shows a double door and a plaster wall at an angle.\n\nThe coat returns to blue and the door to red without adopting the reference pose or camera angle. Colors beyond the shared objects remain estimates.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "有参照的褪色照片校正",
+      "description": "以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。再上传同一衣物或门墙的色彩参照。\n\n**A** 褪成紫红的合成家庭相册照，主体穿蓝外套，另有同场外套色彩清楚的相邻照片。 紫色外套转为参照中的钴蓝，纸边和细颗粒保留。主图中双手叠在膝上、藤篮在右的远景构图仍在，参照中的托腮姿势没有移入。参照只能锚定已知衣物的颜色。\n\n**B** 偏黄的合成店面照，另有同一红门、白墙的另一机位彩照。 门由橙黄转为参照中的红色，白墙仍带暖光。门锁、缺漆和窗台花盆沿用主图角度，保留纸角折痕。树影区仍较暖。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Correct a faded photo using a color reference. The coat returns to blue and the door to red without adopting the reference pose or camera angle.",
+    "zh-Hans": "门由橙黄转为参照中的红色，白墙仍带暖光。"
+  },
+  "target": {
+    "promptId": "p_413",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:07:29.953Z",
+    "contentHash": "981917e892737494a6942c79cac31e378ff73b0a083dad8a41ba509bc296ecca"
+  }
+}

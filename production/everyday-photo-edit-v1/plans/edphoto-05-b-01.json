@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-05-b-01",
+  "candidateId": "EDPHOTO-05",
+  "jobFingerprint": "f22e4543f72af62637aa3ba03dc7e6210963189258b11ae0bcf0e337c69d30d5",
+  "planHash": "70087246b3b21aaf10bcbba84979810d493075c1a57d0bd2beef641606687f4c",
+  "ids": {
+    "prompt": "p_403",
+    "template": null,
+    "example": "x_472",
+    "media": [
+      "a_631",
+      "a_632"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_472/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以画面中的白瓷为中性参照减轻餐桌上的综合色偏，保留暖光气氛、食材本色和原有明暗层次。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_472/run.yaml",
+      "after": "id: x_472\npromptId: p_403\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 62d3d3004208b0f709dceee1fa51060588dffa98985fd269c6d89cfaaf73e1a7\nreferenceAssetIds:\n  - a_632\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_631\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 米饭及勺面趋近中性，碗边仍带一点冷光；窗外依旧偏蓝，台灯仍是橙黄。木筷、碗上蓝花和勺柄圆孔保留，碗口原有的褐色小点仍可见。\n  zh-Hans: 米饭及勺面趋近中性，碗边仍带一点冷光；窗外依旧偏蓝，台灯仍是橙黄。\n"
+    },
+    {
+      "file": "content/media/a_631.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_631\ncontentHash: sha256:6f6fe2e4e1dae6011e191e9bdb2fdb5caac977a97121d420a48e15765080b36e\nmimeType: image/png\nbyteSize: 2374436\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_631/correct-mixed-lighting-on-a-dinner-table-original-6f6fe2e4e1da.png\nvariants:\n  thumbnail:\n    key: media/a_631/correct-mixed-lighting-on-a-dinner-table-thumbnail-73e3addd6846.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_631/correct-mixed-lighting-on-a-dinner-table-card-d866e30bf5f9.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_631/correct-mixed-lighting-on-a-dinner-table-detail-4c0171334fa0.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_631/correct-mixed-lighting-on-a-dinner-table-og-9633ddf7f175.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0\nplaceholder:\n  color: \"#785838\"\nalt:\n  en: Correct mixed lighting on a dinner table. Use porcelain as the neutral anchor.\n  zh-Hans: 米饭及勺面趋近中性，碗边仍带一点冷光；窗外依旧偏蓝，台灯仍是橙黄。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_632.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_632\ncontentHash: sha256:4c9de1f13a29ff306fcdab1170cac588653ee6135f24fcfa0df61b0c25b69ef0\nmimeType: image/png\nbyteSize: 2228289\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_632/correct-mixed-lighting-on-a-dinner-table-reference-original-4c9de1f13a29.png\nvariants:\n  thumbnail:\n    key: media/a_632/correct-mixed-lighting-on-a-dinner-table-reference-thumbnail-740b5ac635cc.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_632/correct-mixed-lighting-on-a-dinner-table-reference-card-2286e33e9606.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_632/correct-mixed-lighting-on-a-dinner-table-reference-detail-ad77fe61ba00.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_632/correct-mixed-lighting-on-a-dinner-table-reference-og-bc6570c30c23.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.813\n  y: 0\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-05-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-05-b-01\",\n  \"candidateId\": \"EDPHOTO-05\",\n  \"fingerprint\": \"f22e4543f72af62637aa3ba03dc7e6210963189258b11ae0bcf0e337c69d30d5\",\n  \"ids\": {\n    \"prompt\": \"p_403\",\n    \"template\": null,\n    \"example\": \"x_472\",\n    \"media\": [\n      \"a_631\",\n      \"a_632\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"6f6fe2e4e1dae6011e191e9bdb2fdb5caac977a97121d420a48e15765080b36e\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"4c9de1f13a29ff306fcdab1170cac588653ee6135f24fcfa0df61b0c25b69ef0\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"米饭及勺面趋近中性，碗边仍带一点冷光；窗外依旧偏蓝，台灯仍是橙黄。木筷、碗上蓝花和勺柄圆孔保留，碗口原有的褐色小点仍可见。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:32:45.962Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:17.122Z\",\n    \"contentHash\": \"5da31bb254746749b01e26d5827a900a3ab6343208cdd0256b617d45e6245a37\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_472/prompt.txt": null,
+    "content/examples/x_472/run.yaml": null,
+    "content/media/a_631.yaml": null,
+    "content/media/a_632.yaml": null,
+    "production/applied/edphoto-05-b-01.json": null
+  }
+}

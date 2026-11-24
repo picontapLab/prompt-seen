@@ -1,0 +1,97 @@
+{
+  "candidateId": "EDPHOTO-12",
+  "slug": "fix-closed-eyes-in-a-group-photo-using-a-burst-frame",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first. Add a nearby frame of the same person with open eyes.",
+      "zh-Hans": "先上传要修改的照片。再上传同一人的睁眼相邻帧。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      },
+      {
+        "id": "alternateFrame",
+        "labels": {
+          "en": "Adjacent frame with open eyes",
+          "zh-Hans": "同一人的睁眼相邻帧"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-12",
+      "platform": "Reddit r/GooglePixel",
+      "author": "BirdKai",
+      "url": "https://www.reddit.com/r/GooglePixel/comments/19bd9lo/",
+      "publishedAt": "2024",
+      "metricObjectUrl": "https://www.reddit.com/r/GooglePixel/comments/19bd9lo/",
+      "metricObjectPublishedAt": "2024",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "自述。作者从 Top Shot 导出相邻帧，再用 Best Take 与 Unblur 处理。主帖无可核对的前后图，没有文字提示词。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/GooglePixel/comments/19bd9lo/",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Fix closed eyes in a group photo using a burst frame",
+      "description": "Only the matching open eyes guide the edit. The subject’s mouth, glasses and head position follow the first frame despite movement between shots.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first. Add a nearby frame of the same person with open eyes.\n\n**A** The middle friend in a green jacket blinked during a garden portrait.\n\n**B** The person wearing glasses on the right blinked during an indoor portrait.\n\nOnly the matching open eyes guide the edit. The subject’s mouth, glasses and head position follow the first frame despite movement between shots.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "用连拍修正闭眼",
+      "description": "以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。再上传同一人的睁眼相邻帧。\n\n**A** 三位朋友合影，中间人闭眼，第二帧只有中间人睁眼、微有位移。 中间人的眼睑张开幅度与相邻帧相近，视线对向镜头。鼻尖、嘴角和绿外套拉链仍位于主帧位置，左右两人的笑容及镜框保留。相邻帧有轻微头部位移，不能整帧替换。\n\n**B** 室内两人合影，靠右戴眼镜者闭眼，第二帧同一人睁眼。 右侧眼镜内双眼已按参考睁开，镜框、鼻托、嘴角与黑衣领仍在主帧位置。左侧人的微笑和窗帘未见结构改变。参照帧的头位稍偏右，成片保留主帧头位。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Fix closed eyes in a group photo using a burst frame. Only the matching open eyes guide the edit.",
+    "zh-Hans": "右侧眼镜内双眼已按参考睁开，镜框、鼻托、嘴角与黑衣领仍在主帧位置。"
+  },
+  "target": {
+    "promptId": "p_410",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:06:32.006Z",
+    "contentHash": "427f972847a32b2328fa880b5046105ac67da0e26c75c07ecb6a03e319ff3d75"
+  }
+}

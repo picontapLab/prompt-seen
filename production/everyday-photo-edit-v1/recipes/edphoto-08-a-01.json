@@ -1,0 +1,84 @@
+{
+  "candidateId": "EDPHOTO-08",
+  "slug": "reduce-glare-on-eyeglasses",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-08",
+      "platform": "YouTube",
+      "author": "PiXimperfect",
+      "url": "https://www.youtube.com/watch?v=87vUIoCzZns",
+      "publishedAt": "2025-10-14",
+      "metricObjectUrl": "https://www.youtube.com/watch?v=87vUIoCzZns",
+      "metricObjectPublishedAt": "2025-10-14",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。作者用 Photoshop 中的 Flux Kontext Pro 和 Nano Banana 处理镜片反光。03:06 处理蒙版边缘，04:46 开始复杂样例。作者说视频内示范提示词，公开简介没有逐字文本。"
+      },
+      "evidenceUrl": "https://www.youtube.com/watch?v=87vUIoCzZns",
+      "sourcePromptStatus": {
+        "en": "Demonstrated on video. The description omits the complete wording.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Reduce glare on eyeglasses",
+      "description": "The clear pupil and lid guide the edit. Small highlights remain along the frames and the gaze stays aligned.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A green window reflection crosses the left lens of black frames.\n\n**B** A bright diagonal reflection crosses the right lens in a three-quarter portrait.\n\nThe clear pupil and lid guide the edit. Small highlights remain along the frames and the gaze stays aligned.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "减弱眼镜反光",
+      "description": "减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 成人正面近照，左镜片有淡绿色窗光，瞳孔仍可见。 画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。两眼瞳孔位置、黑色鼻梁、外角铆钉和脸颊小痣保留。适合原底图里能看见瞳孔的轻度反光。\n\n**B** 三分之二侧脸，右镜片有一道浅白长条反光，眼睑和虹膜可辨。 右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。鼻托、铰链和穿过头发的镜腿保留，镜片仍有窗色。远侧镜片的细微反射不能逐像素还原。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Reduce glare on eyeglasses. The clear pupil and lid guide the edit.",
+    "zh-Hans": "画面左侧镜片的绿色窗格退去，框上沿留有小块自然高光。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:05:05.336Z",
+    "contentHash": "f2cd85fb59687832b145d12ede523f29dc4e859199e5b3846e6a54f8116217b3"
+  }
+}

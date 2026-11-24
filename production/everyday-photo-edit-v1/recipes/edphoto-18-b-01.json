@@ -1,0 +1,62 @@
+{
+  "candidateId": "EDPHOTO-18",
+  "slug": "straighten-a-photographed-drawing-on-paper",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Straighten a photographed drawing on paper",
+      "description": "The blank patch, loose pencil lines and paper grain remain. The corrected sheets look more saturated and are unsuitable as color proofs.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A tilted crayon landscape lies on checked fabric with an uncolored patch in the grass.\n\n**B** A curled watercolor of a lakeside village rests on a wooden table.\n\nThe blank patch, loose pencil lines and paper grain remain. The corrected sheets look more saturated and are unsuitable as color proofs.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "纸质画作翻拍整理",
+      "description": "以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 方格桌垫上一张横向蜡笔画，斜拍，纸有四角、短笔触和一处留白。 四角拉正，格纹桌面退出画幅。草地右下留白、三朵粉花与蓝天的斜蜡笔触保留，四边没有切入画面。光照均匀后颜色显得更鲜明。\n\n**B** 木桌上的横向水彩，四角完整，纸边翘起，有铅笔底稿线。 木桌和画具退出画幅，纸边拉正。左下枝条的铅笔线、湖面淡彩及白云留白仍可见，纸纹保留。颜色比底图稍鲜明，不能作为色彩校样。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Straighten a photographed drawing on paper. The blank patch, loose pencil lines and paper grain remain.",
+    "zh-Hans": "木桌和画具退出画幅，纸边拉正。"
+  },
+  "target": {
+    "promptId": "p_416",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:08:29.412Z",
+    "contentHash": "adc8be13a9f40c8b031fa81c32cfcf420c6c009bd41d50653d71528305d06939"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "candidateId": "EDPHOTO-13",
+  "slug": "reduce-slight-motion-blur-in-a-pet-photo",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Reduce slight motion blur in a pet photo",
+      "description": "The direction of gaze and identifying markings remain visible. Individual whisker tips are difficult to verify where they overlap.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A tabby turning its head has a visible forehead M and slightly blurred ears.\n\n**B** A black-and-white dog has blurred ear tips, a pink nose patch and a rectangular collar buckle.\n\nThe direction of gaze and identifying markings remain visible. Individual whisker tips are difficult to verify where they overlap.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "宠物轻微运动模糊",
+      "description": "缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 虎斑猫转头有轻微单向拖影，额头 M 纹、双耳和胡须根部可辨。 两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。胡须根部与朝右的视线延续，沙发与盆栽仍虚。最细须尖在输入中有重叠，难以逐根核实。\n\n**B** 黑白犬侧头，耳尖有轻微拖影，鼻斑和项圈扣清楚。 两耳尖的拖影减轻，毛色交界清晰。鼻尖粉斑、项圈方扣和圆环保留，身后草地仍然虚化。耳尖细毛的形状只可沿原轮廓对照。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Reduce slight motion blur in a pet photo. The direction of gaze and identifying markings remain visible.",
+    "zh-Hans": "两耳尖的拖影减轻，毛色交界清晰。"
+  },
+  "target": {
+    "promptId": "p_411",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:06:51.643Z",
+    "contentHash": "02a0d06e2d65a4564da1adb1b1d95e58be6e91c2730f19281deda416ba9af1bd"
+  }
+}

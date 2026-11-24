@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-18-a-01",
+  "candidateId": "EDPHOTO-18",
+  "jobFingerprint": "46a45b1a0b72eedfb181ec6b790b97c68413156d0e32ff3671ed53446cc91a76",
+  "planHash": "3b0eb37893470a0f8d9f7ee68fd60b432b4ef8b36aebb3dbb806d454f08e7f8b",
+  "ids": {
+    "prompt": "p_416",
+    "template": null,
+    "example": "x_497",
+    "media": [
+      "a_685",
+      "a_686"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_497/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_497/run.yaml",
+      "after": "id: x_497\npromptId: p_416\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 96c7f2aec24c0e68cc0116fd1d4e98a791043dc899bfdceafa73283c9eb4a76f\nreferenceAssetIds:\n  - a_686\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_685\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 四角拉正，格纹桌面退出画幅。草地右下留白、三朵粉花与蓝天的斜蜡笔触保留，四边没有切入画面。光照均匀后颜色显得更鲜明。\n  zh-Hans: 四角拉正，格纹桌面退出画幅。\n"
+    },
+    {
+      "file": "content/media/a_685.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_685\ncontentHash: sha256:2f4fa6bb4064200bb531e39a70bb59f9f28ddb87414921804cc87cbfee0f6d1d\nmimeType: image/png\nbyteSize: 3847191\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_685/straighten-a-photographed-drawing-on-paper-original-2f4fa6bb4064.png\nvariants:\n  thumbnail:\n    key: media/a_685/straighten-a-photographed-drawing-on-paper-thumbnail-bf3c2bf61e0e.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_685/straighten-a-photographed-drawing-on-paper-card-98d540baf257.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_685/straighten-a-photographed-drawing-on-paper-detail-113790b451c7.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_685/straighten-a-photographed-drawing-on-paper-og-5d92c45f8dc2.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.594\n  y: 0.5\nplaceholder:\n  color: \"#E8E8E8\"\nalt:\n  en: Straighten a photographed drawing on paper. The blank patch, loose pencil lines and paper grain remain.\n  zh-Hans: 四角拉正，格纹桌面退出画幅。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_686.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_686\ncontentHash: sha256:c8d41099f6ad504d2dc52b764aa30cebf7f1bbd81263bbc00c610575e5d838a1\nmimeType: image/png\nbyteSize: 3376138\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_686/straighten-a-photographed-drawing-on-paper-reference-original-c8d41099f6ad.png\nvariants:\n  thumbnail:\n    key: media/a_686/straighten-a-photographed-drawing-on-paper-reference-thumbnail-d24b3bb1093c.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_686/straighten-a-photographed-drawing-on-paper-reference-card-74a42d3d5ed8.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_686/straighten-a-photographed-drawing-on-paper-reference-detail-fb9202f5acba.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_686/straighten-a-photographed-drawing-on-paper-reference-og-22b72d24fa09.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.063\nplaceholder:\n  color: \"#887868\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_416/entry.yaml",
+      "after": "id: p_416\nslug: straighten-a-photographed-drawing-on-paper\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: product\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_685\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_497\npromptProvenance: original\ninspirationSources: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_416/locales/en.mdx",
+      "after": "---\ntitle: Straighten a photographed drawing on paper\ndescription: The blank patch, loose pencil lines and paper grain remain. The\n  corrected sheets look more saturated and are unsuitable as color proofs.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A tilted crayon landscape lies on checked fabric with an uncolored patch in the grass.\n\n**B** A curled watercolor of a lakeside village rests on a wooden table.\n\nThe blank patch, loose pencil lines and paper grain remain. The corrected sheets look more saturated and are unsuitable as color proofs.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_416/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 纸质画作翻拍整理\ndescription: 以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:c04726ea49ca319a\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 方格桌垫上一张横向蜡笔画，斜拍，纸有四角、短笔触和一处留白。 四角拉正，格纹桌面退出画幅。草地右下留白、三朵粉花与蓝天的斜蜡笔触保留，四边没有切入画面。光照均匀后颜色显得更鲜明。\n\n**B** 木桌上的横向水彩，四角完整，纸边翘起，有铅笔底稿线。 木桌和画具退出画幅，纸边拉正。左下枝条的铅笔线、湖面淡彩及白云留白仍可见，纸纹保留。颜色比底图稍鲜明，不能作为色彩校样。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_416/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-18-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-18-a-01\",\n  \"candidateId\": \"EDPHOTO-18\",\n  \"fingerprint\": \"46a45b1a0b72eedfb181ec6b790b97c68413156d0e32ff3671ed53446cc91a76\",\n  \"ids\": {\n    \"prompt\": \"p_416\",\n    \"template\": null,\n    \"example\": \"x_497\",\n    \"media\": [\n      \"a_685\",\n      \"a_686\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"2f4fa6bb4064200bb531e39a70bb59f9f28ddb87414921804cc87cbfee0f6d1d\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"c8d41099f6ad504d2dc52b764aa30cebf7f1bbd81263bbc00c610575e5d838a1\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"四角拉正，格纹桌面退出画幅。草地右下留白、三朵粉花与蓝天的斜蜡笔触保留，四边没有切入画面。光照均匀后颜色显得更鲜明。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:44:59.426Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:08:20.594Z\",\n    \"contentHash\": \"86b2702a1ee6fff620ab76843909cdcb91f1597ce6884d19ade3d648110bf88d\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_497/prompt.txt": null,
+    "content/examples/x_497/run.yaml": null,
+    "content/media/a_685.yaml": null,
+    "content/media/a_686.yaml": null,
+    "content/prompts/p_416/entry.yaml": null,
+    "content/prompts/p_416/locales/en.mdx": null,
+    "content/prompts/p_416/locales/zh-Hans.mdx": null,
+    "content/prompts/p_416/prompt.txt": null,
+    "production/applied/edphoto-18-a-01.json": null
+  }
+}

@@ -1,0 +1,35 @@
+fields:
+  - name: target
+    required: true
+    group: text
+    labels:
+      en: Item to remove
+      zh-Hans: 待清理物
+      es: Objeto que se quiere quitar
+      pt-BR: Objeto a remover
+      fr: Objet à effacer
+      it: Oggetto da rimuovere
+      de: Zu entfernender Gegenstand
+      ru: Предмет для удаления
+      ja: 取り除く物
+      ko: 지울 물건
+      ar: الغرض المراد إزالته
+      zh-Hant: 待清理物
+    help:
+      en: Describe the part of your photo to change.
+      zh-Hans: 简要描述照片中要修改的部分。
+      es: Describe brevemente la parte que quieres cambiar.
+      pt-BR: Descreva brevemente a parte que deseja alterar.
+      fr: Décrivez brièvement la partie à modifier.
+      it: Descrivi brevemente la parte da modificare.
+      de: Beschreibe kurz den zu ändernden Bildbereich.
+      ru: Кратко опишите область фотографии, которую хотите изменить.
+      ja: 変更したい部分を短く記入してください。
+      ko: 사진에서 바꿀 부분을 짧게 적으세요.
+      ar: صف بإيجاز الجزء الذي تريد تعديله.
+      zh-Hant: 簡要描述照片中要修改的部分。
+    type: string
+    default: 咖啡旁揉成团的纸巾
+    minLength: null
+    maxLength: null
+    multiline: false

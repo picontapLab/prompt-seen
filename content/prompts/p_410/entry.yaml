@@ -1,0 +1,124 @@
+id: p_410
+slug: fix-closed-eyes-in-a-group-photo-using-a-burst-frame
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: zh-Hans
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_657
+relatedTemplateIds: []
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the photo to edit first. ② Adjacent frame with open eyes
+    zh-Hans: 先上传要修改的照片。 ② 同一人的睁眼相邻帧
+    es: Sube primero la foto que quieres editar. ② Toma consecutiva con los ojos abiertos
+    pt-BR: Envie primeiro a foto que deseja editar. ② Foto da sequência com os olhos abertos
+    fr: Importez d’abord la photo à retoucher. ② Vue successive avec les yeux ouverts
+    it: Carica prima la foto da modificare. ② Scatto consecutivo con gli occhi aperti
+    de: Lade zuerst das zu bearbeitende Foto hoch. ② Benachbartes Serienbild mit offenen Augen
+    ru: Сначала загрузите фотографию для редактирования. ② Соседний кадр с открытыми глазами
+    ja: 最初に編集する写真をアップロードしてください。 ② 同じ人物が目を開けた連写の別カット
+    ko: 편집할 사진을 먼저 올리세요. ② 같은 사람이 눈을 뜬 연속 촬영 사진
+    ar: ارفع أولا الصورة المراد تعديلها. ② لقطة متتابعة للشخص نفسه بعينين مفتوحتين
+    zh-Hant: 先上傳要修改的照片。 ② 同一人的睜眼相鄰幀
+  slots:
+    - id: photo
+      labels:
+        en: Photo to edit
+        zh-Hans: 要修改的照片
+        es: Foto que se va a editar
+        pt-BR: Foto a editar
+        fr: Photo à retoucher
+        it: Foto da modificare
+        de: Zu bearbeitendes Foto
+        ru: Фото для редактирования
+        ja: 編集する写真
+        ko: 편집할 사진
+        ar: الصورة المطلوب تعديلها
+        zh-Hant: 要修改的照片
+      min: 1
+      max: 1
+    - id: alternateFrame
+      labels:
+        en: Adjacent frame with open eyes
+        zh-Hans: 同一人的睁眼相邻帧
+        es: Toma consecutiva con los ojos abiertos
+        pt-BR: Foto da sequência com os olhos abertos
+        fr: Vue successive avec les yeux ouverts
+        it: Scatto consecutivo con gli occhi aperti
+        de: Benachbartes Serienbild mit offenen Augen
+        ru: Соседний кадр с открытыми глазами
+        ja: 同じ人物が目を開けた連写の別カット
+        ko: 같은 사람이 눈을 뜬 연속 촬영 사진
+        ar: لقطة متتابعة للشخص نفسه بعينين مفتوحتين
+        zh-Hant: 同一人的睜眼相鄰幀
+      min: 1
+      max: 1
+showcaseExampleId: x_485
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-12
+    platform: Reddit r/GooglePixel
+    author: BirdKai
+    url: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/
+    publishedAt: "2024"
+    metricObjectUrl: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/
+    metricObjectPublishedAt: "2024"
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 自述。作者从 Top Shot 导出相邻帧，再用 Best Take 与 Unblur 处理。主帖无可核对的前后图，没有文字提示词。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 自述。作者從 Top Shot 導出相鄰幀，再用 Best Take 與 Unblur 處理。主帖無可核對的前後圖，沒有文字提示詞。
+    evidenceUrl: https://www.reddit.com/r/GooglePixel/comments/19bd9lo/
+    sourcePromptStatus:
+      en: The full prompt could not be verified.
+      zh-Hans: 未核到完整提示词。
+      es: No se pudo verificar el texto completo.
+      pt-BR: Não foi possível verificar o texto completo.
+      fr: Le texte intégral n’a pas pu être vérifié.
+      it: Non è stato possibile verificare il testo integrale.
+      de: Der vollständige Wortlaut ließ sich nicht bestätigen.
+      ru: Полный текст инструкции подтвердить не удалось.
+      ja: 指示の全文は確認できませんでした。
+      ko: 지시문 전문은 확인하지 못했습니다.
+      ar: تعذر التحقق من النص الكامل للتعليمات.
+      zh-Hant: 未核到完整提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

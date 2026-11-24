@@ -1,0 +1,106 @@
+{
+  "candidateId": "EDPHOTO-01",
+  "slug": "remove-a-passerby-from-a-travel-photo",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。移除{{target}}及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "target",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Person to remove",
+        "zh-Hans": "要移除的人"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "画面右后方穿红衣的路人"
+    }
+  ],
+  "values": {
+    "target": "画面左后方穿蓝衣的路人"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-01",
+      "platform": "Reddit r/ChatGPT",
+      "author": "Gloomy-Holiday8618",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/",
+      "publishedAt": "2026",
+      "metricObjectUrl": "https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/",
+      "metricObjectPublishedAt": "2026",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。主帖附图并给出完整指令，要求移除画面左前方的人。回帖指出补出的地毯花纹错位。能核对帖文和讨论，未独立取得成对原始文件。"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/",
+      "sourcePromptStatus": {
+        "en": "Full instruction in the post.",
+        "zh-Hans": "原帖公开完整指令。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Remove a passerby from a travel photo",
+      "description": "The paving and rails continue across the cleared gap. Furniture and foliage hidden behind a person can only be inferred.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two friends stand against a stone wall, with a pedestrian in red behind them.\n\n**B** A couple pose on a wooden boardwalk with a pedestrian in blue on the left.\n\nThe paving and rails continue across the cleared gap. Furniture and foliage hidden behind a person can only be inferred.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "旅行合影去路人",
+      "description": "移除要移除的人及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 石墙前两位朋友合影，右后红衣路人跨过斜铺砖缝。 右后红衣路人及脚下人影已清除，斜铺砖延续。两位朋友的脸、发丝、相机及脚前投影保留。原来被人遮住的街边桌椅属于推测性补全。\n\n**B** 林间木栈道情侣合影，左后蓝衣路人穿过栏杆，脚下有投影。 左后蓝衣路人及投影已清除。两道横栏接回原有立柱，柱数与透视一致。前景两人的脸、举手姿势、发际线与背包肩带保留。被背包遮挡的树叶无法逐片核实。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Remove a passerby from a travel photo. The paving and rails continue across the cleared gap.",
+    "zh-Hans": "左后蓝衣路人及投影已清除。"
+  },
+  "target": {
+    "promptId": "p_399",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:02:59.615Z",
+    "contentHash": "1cbe22a5f1254352115d6412ef05f8852f6052d2b6eb0d141fd3cd658188530a"
+  }
+}

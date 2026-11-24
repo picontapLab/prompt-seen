@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-08-b-01",
+  "candidateId": "EDPHOTO-08",
+  "jobFingerprint": "c54f182af1311587a9bd9be710eaeb2571dea347800c3517c0dea5e74f560a76",
+  "planHash": "94ec339d4915cdf530941e4b74839eb84f0f695e4e6675a90a13bea6cf29069e",
+  "ids": {
+    "prompt": "p_406",
+    "template": null,
+    "example": "x_478",
+    "media": [
+      "a_643",
+      "a_644"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_478/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_478/run.yaml",
+      "after": "id: x_478\npromptId: p_406\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: b096f1f6e70a3d75ad06e5b5d0a2d55e9ba8bf389a4504b281f636d99857c19a\nreferenceAssetIds:\n  - a_644\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_643\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。鼻托、铰链和穿过头发的镜腿保留，镜片仍有窗色。远侧镜片的细微反射不能逐像素还原。\n  zh-Hans: 右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。\n"
+    },
+    {
+      "file": "content/media/a_643.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_643\ncontentHash: sha256:b959d1a77fdc01dbd39cf660ff9e4cb7ff091775ebb5dde9166cb04bd8a0ae53\nmimeType: image/png\nbyteSize: 2654483\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_643/reduce-glare-on-eyeglasses-original-b959d1a77fdc.png\nvariants:\n  thumbnail:\n    key: media/a_643/reduce-glare-on-eyeglasses-thumbnail-2ddbc4704159.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_643/reduce-glare-on-eyeglasses-card-cd65ea63dc16.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_643/reduce-glare-on-eyeglasses-detail-e3d79f20b04e.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_643/reduce-glare-on-eyeglasses-og-d787466150d0.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.844\n  y: 0.656\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Reduce glare on eyeglasses. The clear pupil and lid guide the edit.\n  zh-Hans: 右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_644.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_644\ncontentHash: sha256:abbf394ade0771c093edd8db16d5335c10bc7290ca58bc8ea79963ea01c78f54\nmimeType: image/png\nbyteSize: 2879966\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_644/reduce-glare-on-eyeglasses-reference-original-abbf394ade07.png\nvariants:\n  thumbnail:\n    key: media/a_644/reduce-glare-on-eyeglasses-reference-thumbnail-388b65e204c5.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_644/reduce-glare-on-eyeglasses-reference-card-c6a745293f98.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_644/reduce-glare-on-eyeglasses-reference-detail-2c7b90e4fd97.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_644/reduce-glare-on-eyeglasses-reference-og-958b132b57d7.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.469\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-08-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-08-b-01\",\n  \"candidateId\": \"EDPHOTO-08\",\n  \"fingerprint\": \"c54f182af1311587a9bd9be710eaeb2571dea347800c3517c0dea5e74f560a76\",\n  \"ids\": {\n    \"prompt\": \"p_406\",\n    \"template\": null,\n    \"example\": \"x_478\",\n    \"media\": [\n      \"a_643\",\n      \"a_644\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"b959d1a77fdc01dbd39cf660ff9e4cb7ff091775ebb5dde9166cb04bd8a0ae53\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"abbf394ade0771c093edd8db16d5335c10bc7290ca58bc8ea79963ea01c78f54\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右镜片斜白光条减弱后，原有眼睑与视线可连续辨认。鼻托、铰链和穿过头发的镜腿保留，镜片仍有窗色。远侧镜片的细微反射不能逐像素还原。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:46:25.319Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:14.625Z\",\n    \"contentHash\": \"5dfaa288c2138ce237934e72b475e719807723b23b9ba498cfef273e3a01e0a6\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_478/prompt.txt": null,
+    "content/examples/x_478/run.yaml": null,
+    "content/media/a_643.yaml": null,
+    "content/media/a_644.yaml": null,
+    "production/applied/edphoto-08-b-01.json": null
+  }
+}

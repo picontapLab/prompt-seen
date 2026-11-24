@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-03-b-01",
+  "candidateId": "EDPHOTO-03",
+  "jobFingerprint": "082eba0e5360963c0db3573ee8809489f5c53b3ab988f0fcfeb26bebb6e49879",
+  "planHash": "345ec3f56772ab7412d00a5760fbe8a78a84a51590726733c676e01b6dcba68d",
+  "ids": {
+    "prompt": "p_401",
+    "template": null,
+    "example": "x_468",
+    "media": [
+      "a_623",
+      "a_624"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_468/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只移除天空中跨过建筑的两根架空电线。延续屋顶、树枝与天际轮廓，保留路灯、建筑附属物与桥梁支撑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_468/run.yaml",
+      "after": "id: x_468\npromptId: p_401\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 7eb0e5c832e18cf1e4393c15038ba5a5231b7452d9bac2a59d8833bf205b0960\nreferenceAssetIds:\n  - a_624\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_623\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 上方两根架空线已清除。右上塔楼檐角轮廓连贯，左上叶簇边缘保留。桥索、吊杆、过桥行人及近景人像保留。个别被线压住的树叶纹理属于推测补全。\n  zh-Hans: 上方两根架空线已清除。\n"
+    },
+    {
+      "file": "content/media/a_623.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_623\ncontentHash: sha256:d46ada666b0148f5b4923eaf814963320df2a115215325bee7ddc2ac4d170b6f\nmimeType: image/png\nbyteSize: 2707940\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_623/remove-overhead-wires-from-a-building-photo-original-d46ada666b01.png\nvariants:\n  thumbnail:\n    key: media/a_623/remove-overhead-wires-from-a-building-photo-thumbnail-f41f12a951ba.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_623/remove-overhead-wires-from-a-building-photo-card-050356a8321b.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_623/remove-overhead-wires-from-a-building-photo-detail-bfdbb100f4ec.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_623/remove-overhead-wires-from-a-building-photo-og-d234794794f7.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.5\n  y: 0.188\nplaceholder:\n  color: \"#C8D8F8\"\nalt:\n  en: Remove overhead wires from a building photo. The lamp bracket and bridge cables survive.\n  zh-Hans: 上方两根架空线已清除。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_624.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_624\ncontentHash: sha256:489bb125aed457513676b60ebebe0b73c9eefb0e91ec519d12e6bb02db4dd2aa\nmimeType: image/png\nbyteSize: 2862194\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_624/remove-overhead-wires-from-a-building-photo-reference-original-489bb125aed4.png\nvariants:\n  thumbnail:\n    key: media/a_624/remove-overhead-wires-from-a-building-photo-reference-thumbnail-07591e5017e2.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_624/remove-overhead-wires-from-a-building-photo-reference-card-96f68c7c98bf.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_624/remove-overhead-wires-from-a-building-photo-reference-detail-14d9abd8b248.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_624/remove-overhead-wires-from-a-building-photo-reference-og-81d5ee53fa0c.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.531\n  y: 0.188\nplaceholder:\n  color: \"#D8E8F8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-03-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-03-b-01\",\n  \"candidateId\": \"EDPHOTO-03\",\n  \"fingerprint\": \"082eba0e5360963c0db3573ee8809489f5c53b3ab988f0fcfeb26bebb6e49879\",\n  \"ids\": {\n    \"prompt\": \"p_401\",\n    \"template\": null,\n    \"example\": \"x_468\",\n    \"media\": [\n      \"a_623\",\n      \"a_624\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"d46ada666b0148f5b4923eaf814963320df2a115215325bee7ddc2ac4d170b6f\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"489bb125aed457513676b60ebebe0b73c9eefb0e91ec519d12e6bb02db4dd2aa\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"上方两根架空线已清除。右上塔楼檐角轮廓连贯，左上叶簇边缘保留。桥索、吊杆、过桥行人及近景人像保留。个别被线压住的树叶纹理属于推测补全。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:23:02.884Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:03:38.372Z\",\n    \"contentHash\": \"f4d08fce88b83888b1b1fdd2011bb036cdb92c6712ae61004eb95f6bb94e8ade\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_468/prompt.txt": null,
+    "content/examples/x_468/run.yaml": null,
+    "content/media/a_623.yaml": null,
+    "content/media/a_624.yaml": null,
+    "production/applied/edphoto-03-b-01.json": null
+  }
+}

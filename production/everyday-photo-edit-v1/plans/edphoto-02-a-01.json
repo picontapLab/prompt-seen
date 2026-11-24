@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-02-a-01",
+  "candidateId": "EDPHOTO-02",
+  "jobFingerprint": "1ecba31daf16185af31157cff75c62d60c8ed70a196f6aa9c51f049a3e9a4118",
+  "planHash": "a5d62c2a21deaf8cfe148ad74a8b05060df4f8fa60376992fe1e010f17a6a094",
+  "ids": {
+    "prompt": "p_400",
+    "template": "t_077",
+    "example": "x_465",
+    "media": [
+      "a_617",
+      "a_618"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_465/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。清理咖啡旁揉成团的纸巾及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_465/run.yaml",
+      "after": "id: x_465\npromptId: p_400\npromptLanguage: zh-Hans\ntemplate:\n  id: t_077\n  version: v1\n  sample: default\n  values:\n    target: 咖啡旁揉成团的纸巾\n  contractHash: c3d6ca50eff8af20a0cae089a00289ee07c4eeb177144f90de244716720bd2c6\npromptSha256: f96de2277437b607372b5fe40384c084a1e55d126ef5d42626686925e656ed20\nreferenceAssetIds:\n  - a_618\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_617\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右上纸巾和投影消失，顺纹补齐木桌。左下咖啡的拉花、杯柄朝向及杯碟轮廓保留。右下菜单的 Coffee 和 Tea 仍清楚可读，花瓶的斜影仍在。原先被纸巾盖住的细木纹只能沿邻区推测。\n  zh-Hans: 右上纸巾和投影消失，顺纹补齐木桌。\n"
+    },
+    {
+      "file": "content/media/a_617.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_617\ncontentHash: sha256:4aee5cb0f533eb7336fd88b77375bc33e01ba340c47cd54c28ccc38570b1e4c0\nmimeType: image/png\nbyteSize: 2632431\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_617/remove-clutter-from-a-caf-or-dinner-table-original-4aee5cb0f533.png\nvariants:\n  thumbnail:\n    key: media/a_617/remove-clutter-from-a-caf-or-dinner-table-thumbnail-d64944cb1f38.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_617/remove-clutter-from-a-caf-or-dinner-table-card-fefa84415206.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_617/remove-clutter-from-a-caf-or-dinner-table-detail-e5c9570bb422.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_617/remove-clutter-from-a-caf-or-dinner-table-og-bbcd963fa144.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.125\n  y: 0.656\nplaceholder:\n  color: \"#E8D8C8\"\nalt:\n  en: Remove clutter from a café or dinner table. The menu still reads Coffee and Tea.\n  zh-Hans: 右上纸巾和投影消失，顺纹补齐木桌。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_618.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_618\ncontentHash: sha256:da8633152a5760015a36f262290cdee1db594375bfd85d1eed2091bbfbaa3214\nmimeType: image/png\nbyteSize: 2813130\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_618/remove-clutter-from-a-caf-or-dinner-table-reference-original-da8633152a57.png\nvariants:\n  thumbnail:\n    key: media/a_618/remove-clutter-from-a-caf-or-dinner-table-reference-thumbnail-3f8d7ee94874.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_618/remove-clutter-from-a-caf-or-dinner-table-reference-card-8858c81ad5c5.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_618/remove-clutter-from-a-caf-or-dinner-table-reference-detail-8e9fcee3566f.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_618/remove-clutter-from-a-caf-or-dinner-table-reference-og-54b2010f2efe.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.125\n  y: 0.656\nplaceholder:\n  color: \"#483828\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_400/entry.yaml",
+      "after": "id: p_400\nslug: remove-clutter-from-a-caf-or-dinner-table\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_077\n  version: v1\n  values:\n    target: 咖啡旁揉成团的纸巾\ncategoryId: food\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_617\nrelatedTemplateIds:\n  - t_077\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_465\npromptProvenance: original\ninspirationSources: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_400/locales/en.mdx",
+      "after": "---\ntitle: Remove clutter from a café or dinner table\ndescription: The menu still reads Coffee and Tea. Check all four fork tines and\n  the cloth pattern where the wrapper ended.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A crumpled tissue casts a shadow beside coffee and a handwritten menu.\n\n**B** A clear wrapper lies between a dinner plate and fork on a checked cloth.\n\nThe menu still reads Coffee and Tea. Check all four fork tines and the cloth pattern where the wrapper ended.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_400/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 桌面去杂物\ndescription: 清理待清理物及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:c81a9aded8a157ec\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 咖啡与手写菜单旁有一团用过的纸巾，纸巾投影压在木纹上。 右上纸巾和投影消失，顺纹补齐木桌。左下咖啡的拉花、杯柄朝向及杯碟轮廓保留。右下菜单的 Coffee 和 Tea 仍清楚可读，花瓶的斜影仍在。原先被纸巾盖住的细木纹只能沿邻区推测。\n\n**B** 餐盘旁有一个空塑料包装，压在格纹餐布上，叉子紧邻包装。 右侧透明包装与高光消失。绿白格纹在盘沿与叉子之间连续，四根叉齿清楚可分。鸡肉、土豆泥、番茄和两瓣柠檬的位置及份量保留。透明袋造成的细碎反光会影响修复边界的判断。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_077/entry.yaml",
+      "after": "id: t_077\nslug: remove-clutter-from-a-caf-or-dinner-table\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: food\nstyleIds: []\nuseCaseIds:\n  - social-post\n"
+    },
+    {
+      "file": "content/templates/t_077/locales/en.mdx",
+      "after": "---\ntitle: Remove clutter from a café or dinner table\ndescription: The menu still reads Coffee and Tea. Check all four fork tines and\n  the cloth pattern where the wrapper ended.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A crumpled tissue casts a shadow beside coffee and a handwritten menu.\n\n**B** A clear wrapper lies between a dinner plate and fork on a checked cloth.\n\nThe menu still reads Coffee and Tea. Check all four fork tines and the cloth pattern where the wrapper ended.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/templates/t_077/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 桌面去杂物\ndescription: 清理待清理物及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:c81a9aded8a157ec\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 咖啡与手写菜单旁有一团用过的纸巾，纸巾投影压在木纹上。 右上纸巾和投影消失，顺纹补齐木桌。左下咖啡的拉花、杯柄朝向及杯碟轮廓保留。右下菜单的 Coffee 和 Tea 仍清楚可读，花瓶的斜影仍在。原先被纸巾盖住的细木纹只能沿邻区推测。\n\n**B** 餐盘旁有一个空塑料包装，压在格纹餐布上，叉子紧邻包装。 右侧透明包装与高光消失。绿白格纹在盘沿与叉子之间连续，四根叉齿清楚可分。鸡肉、土豆泥、番茄和两瓣柠檬的位置及份量保留。透明袋造成的细碎反光会影响修复边界的判断。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_077/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。清理{{target}}及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_077/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: target\n    required: true\n    group: text\n    labels:\n      en: Item to clear\n      zh-Hans: 待清理物\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 咖啡旁揉成团的纸巾\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_077/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_077/versions/v1/samples/default.yaml",
+      "after": "target: 咖啡旁揉成团的纸巾\n"
+    },
+    {
+      "file": "production/applied/edphoto-02-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-02-a-01\",\n  \"candidateId\": \"EDPHOTO-02\",\n  \"fingerprint\": \"1ecba31daf16185af31157cff75c62d60c8ed70a196f6aa9c51f049a3e9a4118\",\n  \"ids\": {\n    \"prompt\": \"p_400\",\n    \"template\": \"t_077\",\n    \"example\": \"x_465\",\n    \"media\": [\n      \"a_617\",\n      \"a_618\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"4aee5cb0f533eb7336fd88b77375bc33e01ba340c47cd54c28ccc38570b1e4c0\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"da8633152a5760015a36f262290cdee1db594375bfd85d1eed2091bbfbaa3214\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右上纸巾和投影消失，顺纹补齐木桌。左下咖啡的拉花、杯柄朝向及杯碟轮廓保留。右下菜单的 Coffee 和 Tea 仍清楚可读，花瓶的斜影仍在。原先被纸巾盖住的细木纹只能沿邻区推测。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:23:00.855Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:03:10.068Z\",\n    \"contentHash\": \"ffcdcdd0a6a5f8278b73a6eeb98bb78eb35b01f423269e4c87529161ebaabf72\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_465/prompt.txt": null,
+    "content/examples/x_465/run.yaml": null,
+    "content/media/a_617.yaml": null,
+    "content/media/a_618.yaml": null,
+    "content/prompts/p_400/entry.yaml": null,
+    "content/prompts/p_400/locales/en.mdx": null,
+    "content/prompts/p_400/locales/zh-Hans.mdx": null,
+    "content/templates/t_077/entry.yaml": null,
+    "content/templates/t_077/locales/en.mdx": null,
+    "content/templates/t_077/locales/zh-Hans.mdx": null,
+    "content/templates/t_077/versions/v1/body.txt": null,
+    "content/templates/t_077/versions/v1/fields.yaml": null,
+    "content/templates/t_077/versions/v1/inputs.yaml": null,
+    "content/templates/t_077/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-02-a-01.json": null
+  }
+}

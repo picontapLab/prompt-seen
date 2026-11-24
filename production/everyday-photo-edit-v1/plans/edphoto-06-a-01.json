@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-06-a-01",
+  "candidateId": "EDPHOTO-06",
+  "jobFingerprint": "c1e972c696f61c509f6ba65ed7b0694ae65350b81c75715546395177f20b6692",
+  "planHash": "0a8f7517427d23a97d997cb23081c9ea14b6ef34532e48a6f21054f33f35a030",
+  "ids": {
+    "prompt": "p_404",
+    "template": null,
+    "example": "x_473",
+    "media": [
+      "a_633",
+      "a_634"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_473/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_473/run.yaml",
+      "after": "id: x_473\npromptId: p_404\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 90507116ab05d1f4815853ad5c463b46a7e56a34ea9fc8922987f8fc53db6ffb\nreferenceAssetIds:\n  - a_634\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_633\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 椅背板间及左上阴影的彩色细点明显减少。木条走向、螺钉、座面落叶及金属扶手保持原位，街灯与信号灯仍分开。最暗的叶丛难以逐叶核对。\n  zh-Hans: 椅背板间及左上阴影的彩色细点明显减少。\n"
+    },
+    {
+      "file": "content/media/a_633.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_633\ncontentHash: sha256:be1e02e569638aa851be42eddc5582ed0ed4a9857108a11e29ec2c173a11b3fd\nmimeType: image/png\nbyteSize: 2698791\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_633/reduce-color-noise-in-a-night-photo-original-be1e02e56963.png\nvariants:\n  thumbnail:\n    key: media/a_633/reduce-color-noise-in-a-night-photo-thumbnail-c4b47cdab944.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_633/reduce-color-noise-in-a-night-photo-card-a213d69d44c0.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_633/reduce-color-noise-in-a-night-photo-detail-99450b5503fb.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_633/reduce-color-noise-in-a-night-photo-og-1371a90bd643.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.375\nplaceholder:\n  color: \"#080808\"\nalt:\n  en: Reduce color noise in a night photo. Wood grain, stitching and separate lights remain visible.\n  zh-Hans: 椅背板间及左上阴影的彩色细点明显减少。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_634.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_634\ncontentHash: sha256:63187887f237956cb0f55959e38c74396f1cf5f3bc0dbdb2a8de467f9a5f729a\nmimeType: image/png\nbyteSize: 3178633\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_634/reduce-color-noise-in-a-night-photo-reference-original-63187887f237.png\nvariants:\n  thumbnail:\n    key: media/a_634/reduce-color-noise-in-a-night-photo-reference-thumbnail-fe9173cb0a78.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_634/reduce-color-noise-in-a-night-photo-reference-card-2038dc9a7a05.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_634/reduce-color-noise-in-a-night-photo-reference-detail-b612bb7283a4.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_634/reduce-color-noise-in-a-night-photo-reference-og-2cc27a6af2b0.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.344\nplaceholder:\n  color: \"#382818\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_404/entry.yaml",
+      "after": "id: p_404\nslug: reduce-color-noise-in-a-night-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: landscape\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_633\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_473\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-06\n    platform: YouTube\n    author: Arghya Banerjee\n    url: https://www.youtube.com/watch?v=eVeAFZ6-BEI\n    publishedAt: 2026-05-17\n    metricObjectUrl: https://www.youtube.com/watch?v=eVeAFZ6-BEI\n    metricObjectPublishedAt: 2026-05-17\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。作者对两张高 ISO 鸟类照片用 Lightroom AI DeNoise 做前后比较，观察细羽纹理损失。用参数调节，未给文字指令。\n    evidenceUrl: https://www.youtube.com/watch?v=eVeAFZ6-BEI\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_404/locales/en.mdx",
+      "after": "---\ntitle: Reduce color noise in a night photo\ndescription: Wood grain, stitching and separate lights remain visible. Fine\n  noise is much easier to judge at full size.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Colored speckles cover the shaded wood of a park bench.\n\n**B** Noise competes with the diagonal weave of a blue market canopy.\n\nWood grain, stitching and separate lights remain visible. Fine noise is much easier to judge at full size.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_404/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 夜景暗部降噪\ndescription: 减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:9cdd3d7539632bd7\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 夜间街角长椅，暗处有彩噪，椅面木纹可辨，灯光未过曝。 椅背板间及左上阴影的彩色细点明显减少。木条走向、螺钉、座面落叶及金属扶手保持原位，街灯与信号灯仍分开。最暗的叶丛难以逐叶核对。\n\n**B** 夜市蓝布摊棚，暗面彩噪与布纹同时可见，背景小灯点分离。 布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。支架轮廓与远处独立灯点仍清晰，帐篷下方仍暗。细小噪点在原尺寸更容易比较。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_404/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-06-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-06-a-01\",\n  \"candidateId\": \"EDPHOTO-06\",\n  \"fingerprint\": \"c1e972c696f61c509f6ba65ed7b0694ae65350b81c75715546395177f20b6692\",\n  \"ids\": {\n    \"prompt\": \"p_404\",\n    \"template\": null,\n    \"example\": \"x_473\",\n    \"media\": [\n      \"a_633\",\n      \"a_634\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"be1e02e569638aa851be42eddc5582ed0ed4a9857108a11e29ec2c173a11b3fd\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"63187887f237956cb0f55959e38c74396f1cf5f3bc0dbdb2a8de467f9a5f729a\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"椅背板间及左上阴影的彩色细点明显减少。木条走向、螺钉、座面落叶及金属扶手保持原位，街灯与信号灯仍分开。最暗的叶丛难以逐叶核对。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:35:31.129Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:27.504Z\",\n    \"contentHash\": \"135e240c7d171ab6f85e0c4bb92d4cd3757a37e5e2e2c4c91b9b26478a9241b4\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_473/prompt.txt": null,
+    "content/examples/x_473/run.yaml": null,
+    "content/media/a_633.yaml": null,
+    "content/media/a_634.yaml": null,
+    "content/prompts/p_404/entry.yaml": null,
+    "content/prompts/p_404/locales/en.mdx": null,
+    "content/prompts/p_404/locales/zh-Hans.mdx": null,
+    "content/prompts/p_404/prompt.txt": null,
+    "production/applied/edphoto-06-a-01.json": null
+  }
+}

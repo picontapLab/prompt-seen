@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-13-b-01",
+  "candidateId": "EDPHOTO-13",
+  "jobFingerprint": "fe790416840595c2d6930c247533314f7cff6d583338d0b1f81b482f2f004f7d",
+  "planHash": "e850e075af38b393921f734a358cb48b49698bcc175c6218413d4e9664051af3",
+  "ids": {
+    "prompt": "p_411",
+    "template": null,
+    "example": "x_488",
+    "media": [
+      "a_665",
+      "a_666"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_488/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_488/run.yaml",
+      "after": "id: x_488\npromptId: p_411\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 4f333c90c1d89d7b5ef50efe7b5a8118f507d968e7f8df7f17c1553de18fb43b\nreferenceAssetIds:\n  - a_666\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_665\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 两耳尖的拖影减轻，毛色交界清晰。鼻尖粉斑、项圈方扣和圆环保留，身后草地仍然虚化。耳尖细毛的形状只可沿原轮廓对照。\n  zh-Hans: 两耳尖的拖影减轻，毛色交界清晰。\n"
+    },
+    {
+      "file": "content/media/a_665.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_665\ncontentHash: sha256:045a5dd7d3f000b182f0bf7e83699ec94f222e043758ac68529817db3616f5e0\nmimeType: image/png\nbyteSize: 2429516\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_665/reduce-slight-motion-blur-in-a-pet-photo-original-045a5dd7d3f0.png\nvariants:\n  thumbnail:\n    key: media/a_665/reduce-slight-motion-blur-in-a-pet-photo-thumbnail-0a177e2bbf66.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_665/reduce-slight-motion-blur-in-a-pet-photo-card-79873e817ed0.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_665/reduce-slight-motion-blur-in-a-pet-photo-detail-4140e466daa7.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_665/reduce-slight-motion-blur-in-a-pet-photo-og-7152d7b940d1.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.406\n  y: 0.688\nplaceholder:\n  color: \"#788858\"\nalt:\n  en: Reduce slight motion blur in a pet photo. The direction of gaze and identifying markings remain visible.\n  zh-Hans: 两耳尖的拖影减轻，毛色交界清晰。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_666.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_666\ncontentHash: sha256:a729fa012d91ea65d51f97e26f8a47d7a7fd81bd29ed14aefec8c3b297618882\nmimeType: image/png\nbyteSize: 2545355\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_666/reduce-slight-motion-blur-in-a-pet-photo-reference-original-a729fa012d91.png\nvariants:\n  thumbnail:\n    key: media/a_666/reduce-slight-motion-blur-in-a-pet-photo-reference-thumbnail-55997bede4b3.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_666/reduce-slight-motion-blur-in-a-pet-photo-reference-card-e6aebe4bf0d0.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_666/reduce-slight-motion-blur-in-a-pet-photo-reference-detail-3a06ddd4c697.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_666/reduce-slight-motion-blur-in-a-pet-photo-reference-og-9884f290b126.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.406\n  y: 0.656\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-13-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-13-b-01\",\n  \"candidateId\": \"EDPHOTO-13\",\n  \"fingerprint\": \"fe790416840595c2d6930c247533314f7cff6d583338d0b1f81b482f2f004f7d\",\n  \"ids\": {\n    \"prompt\": \"p_411\",\n    \"template\": null,\n    \"example\": \"x_488\",\n    \"media\": [\n      \"a_665\",\n      \"a_666\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"045a5dd7d3f000b182f0bf7e83699ec94f222e043758ac68529817db3616f5e0\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"a729fa012d91ea65d51f97e26f8a47d7a7fd81bd29ed14aefec8c3b297618882\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"两耳尖的拖影减轻，毛色交界清晰。鼻尖粉斑、项圈方扣和圆环保留，身后草地仍然虚化。耳尖细毛的形状只可沿原轮廓对照。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:12:42.026Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:06:51.643Z\",\n    \"contentHash\": \"02a0d06e2d65a4564da1adb1b1d95e58be6e91c2730f19281deda416ba9af1bd\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_488/prompt.txt": null,
+    "content/examples/x_488/run.yaml": null,
+    "content/media/a_665.yaml": null,
+    "content/media/a_666.yaml": null,
+    "production/applied/edphoto-13-b-01.json": null
+  }
+}

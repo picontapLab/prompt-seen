@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-07-b-01",
+  "candidateId": "EDPHOTO-07",
+  "jobFingerprint": "a20eb5621fb6554a708d31b574478c9509fb2d7fa6a9e408325cb06f55a7fee6",
+  "planHash": "2f3706cf1ed9ee6ecb025c7d0380e787003dbb996785061e766fc95e7cba1a0d",
+  "ids": {
+    "prompt": "p_405",
+    "template": "t_079",
+    "example": "x_476",
+    "media": [
+      "a_639",
+      "a_640"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_476/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。用米白色自然窗光背景替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_476/run.yaml",
+      "after": "id: x_476\npromptId: p_405\npromptLanguage: zh-Hans\ntemplate:\n  id: t_079\n  version: v1\n  sample: alternate\n  values:\n    backdrop: 米白色自然窗光背景\n  contractHash: 2f4f845885da7a944f1bbb93f6c4375e86a4944b87dbd068ff851c6f7570aa40\npromptSha256: 95a3d8d5b047a140994adcaf304d2f6882f30917270e07ced164106138da55d8\nreferenceAssetIds:\n  - a_640\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_639\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 书架与绿植换为米白窗光背景。细框眼镜的鼻托、眼周纹路和格衬衫领保留，圆形预览容下两侧头发。额头碎发在浅色背景上对比较低。\n  zh-Hans: 书架与绿植换为米白窗光背景。\n"
+    },
+    {
+      "file": "content/media/a_639.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_639\ncontentHash: sha256:321a083a32633437f02a2fe6c2c55be08e230bf3528a7e690e4f3ddefde04e8c\nmimeType: image/png\nbyteSize: 2609045\nwidth: 1254\nheight: 1254\noriginal:\n  key: media/a_639/turn-a-selfie-into-a-natural-professional-headshot-original-321a083a3263.png\nvariants:\n  thumbnail:\n    key: media/a_639/turn-a-selfie-into-a-natural-professional-headshot-thumbnail-ee49a136f379.webp\n    width: 480\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_639/turn-a-selfie-into-a-natural-professional-headshot-card-99fd916eb686.webp\n    width: 960\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_639/turn-a-selfie-into-a-natural-professional-headshot-detail-2808f6d97d6a.webp\n    width: 1254\n    height: 1254\n    mimeType: image/webp\n  og:\n    key: media/a_639/turn-a-selfie-into-a-natural-professional-headshot-og-0414d67edfcb.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.5\n  y: 0.5\nplaceholder:\n  color: \"#C8B8A8\"\nalt:\n  en: Turn a selfie into a natural professional headshot. The square portraits keep the cheek mark, collar buttons, glasses and wrinkles.\n  zh-Hans: 书架与绿植换为米白窗光背景。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_640.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_640\ncontentHash: sha256:cc4b7cae9d4108da3171f6eb92e32970c7d31ba61adb4f735dd8f22bb27bad13\nmimeType: image/png\nbyteSize: 3347968\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_640/turn-a-selfie-into-a-natural-professional-headshot-reference-original-cc4b7cae9d41.png\nvariants:\n  thumbnail:\n    key: media/a_640/turn-a-selfie-into-a-natural-professional-headshot-reference-thumbnail-1d9c38d5c384.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_640/turn-a-selfie-into-a-natural-professional-headshot-reference-card-2791b23dde59.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_640/turn-a-selfie-into-a-natural-professional-headshot-reference-detail-9750eb6aaad8.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_640/turn-a-selfie-into-a-natural-professional-headshot-reference-og-fc99735d1b85.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0\nplaceholder:\n  color: \"#586888\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_079/versions/v1/samples/alternate.yaml",
+      "after": "backdrop: 米白色自然窗光背景\n"
+    },
+    {
+      "file": "production/applied/edphoto-07-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-07-b-01\",\n  \"candidateId\": \"EDPHOTO-07\",\n  \"fingerprint\": \"a20eb5621fb6554a708d31b574478c9509fb2d7fa6a9e408325cb06f55a7fee6\",\n  \"ids\": {\n    \"prompt\": \"p_405\",\n    \"template\": \"t_079\",\n    \"example\": \"x_476\",\n    \"media\": [\n      \"a_639\",\n      \"a_640\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"321a083a32633437f02a2fe6c2c55be08e230bf3528a7e690e4f3ddefde04e8c\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"cc4b7cae9d4108da3171f6eb92e32970c7d31ba61adb4f735dd8f22bb27bad13\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"书架与绿植换为米白窗光背景。细框眼镜的鼻托、眼周纹路和格衬衫领保留，圆形预览容下两侧头发。额头碎发在浅色背景上对比较低。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:42:52.240Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:54.745Z\",\n    \"contentHash\": \"fd7aff73966c7406a3524e36390e8a9c59ee51c17e0d78b1af25f6521b70b988\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_476/prompt.txt": null,
+    "content/examples/x_476/run.yaml": null,
+    "content/media/a_639.yaml": null,
+    "content/media/a_640.yaml": null,
+    "content/templates/t_079/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-07-b-01.json": null
+  }
+}

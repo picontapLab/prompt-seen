@@ -1,0 +1,62 @@
+{
+  "candidateId": "EDPHOTO-11",
+  "slug": "straighten-converging-verticals-in-an-architecture-photo",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。矫正相机仰拍造成的竖线收敛，保留真实纵深、门窗或书架格数，用轻微裁切整理边沿。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Straighten converging verticals in an architecture photo",
+      "description": "The paired columns and bookshelf uprights become straighter. Window reflections and tiny spine lettering are unreliable for archival detail.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two stone columns lean inward above a street-corner entrance.\n\n**B** A bookcase with a globe and hourglass recedes toward the ceiling.\n\nThe paired columns and bookshelf uprights become straighter. Window reflections and tiny spine lettering are unreliable for archival detail.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "建筑透视纠偏",
+      "description": "矫正相机仰拍造成的竖线收敛，保留真实纵深、门窗或书架格数，用轻微裁切整理边沿。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 仰拍街角门面，两侧立柱向上收敛，门楣与台阶完整。 左右石柱的内边线已接近垂直。拱门、双扇门和两侧窗格数目相同，侧墙纵深及石阶层次仍在。玻璃中的反射细节发生轻微变化。\n\n**B** 仰拍室内书墙，两侧书架明显内倾，边缘有裁切余量。 后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。地球仪、沙漏、右侧相框和两侧书架保留空间纵深。书脊细字不宜用作逐字档案。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Straighten converging verticals in an architecture photo. The paired columns and bookshelf uprights become straighter.",
+    "zh-Hans": "后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。"
+  },
+  "target": {
+    "promptId": "p_409",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:06:11.728Z",
+    "contentHash": "391a6ced3f43d4f49c830681bc4fff4a91f7e65f1a2f2b73cc4903883c4b0aad"
+  }
+}

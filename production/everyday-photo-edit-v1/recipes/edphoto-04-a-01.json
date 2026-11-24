@@ -1,0 +1,102 @@
+{
+  "candidateId": "EDPHOTO-04",
+  "slug": "brighten-faces-in-a-backlit-group-photo",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。只给{{focus}}的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "focus",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "People to brighten",
+        "zh-Hans": "需要补光的人"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "窗前的两位成年人"
+    }
+  ],
+  "values": {
+    "focus": "窗前的两位成年人"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-04",
+      "platform": "YouTube",
+      "author": "Monzon Media",
+      "url": "https://www.youtube.com/watch?v=vT9P5gM7JxA",
+      "publishedAt": "2022-04-30",
+      "metricObjectUrl": "https://www.youtube.com/watch?v=vT9P5gM7JxA",
+      "metricObjectPublishedAt": "2022-04-30",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。作者标出 00:00 原照、01:08 用 Relight AI 恢复阴影、01:44 加蒙版、04:04 修高光、04:50 前后对照。软件参数操作，简介披露推广链接。"
+      },
+      "evidenceUrl": "https://www.youtube.com/watch?v=vT9P5gM7JxA",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Brighten faces in a backlit group photo",
+      "description": "Eyes become legible while the leaves and sunset retain detail. The white shirt on the beach also brightened slightly.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two adults sit in shadow in front of a bright leafy window.\n\n**B** Three friends face the camera on a beach at sunset.\n\nEyes become legible while the leaves and sunset retain detail. The white shirt on the beach also brightened slightly.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "逆光合影补脸",
+      "description": "只给需要补光的人的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 窗前两位不同肤色的成年人，面部欠曝但能看清，窗外绿叶明亮。 两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。脸颈过渡连续，窗外叶片及窗框亮度与原照接近。360 像素宽仍看得清局部补光，原先已白的窗外高光依旧缺少细节。\n\n**B** 傍晚海边三位朋友逆光，留眼窝和衣领暗部细节。 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。橙色云层、太阳和海面反光位置稳定。中间人的白衣也轻微变亮。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Brighten faces in a backlit group photo. Eyes become legible while the leaves and sunset retain detail.",
+    "zh-Hans": "两人眼窝阴影减轻，眉眼可辨，原有肤色差异、卷发与胡茬仍在。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:03:49.689Z",
+    "contentHash": "c5120a61501384289456ef5b5597c44c2ecaafe6b15d8c360b1b832cd1b5c364"
+  }
+}

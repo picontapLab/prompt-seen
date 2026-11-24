@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-17-b-01",
+  "candidateId": "EDPHOTO-17",
+  "jobFingerprint": "4db6023532a56b491ffb0b6c5cd5ce439dd0509a151c41fbd5e22192cd909ff7",
+  "planHash": "20feae773f4fab5e22adb32ad1d6b9197e1683d361ed361b0fa7032c9ad3a6aa",
+  "ids": {
+    "prompt": "p_415",
+    "template": null,
+    "example": "x_496",
+    "media": [
+      "a_683",
+      "a_684"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_496/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_496/run.yaml",
+      "after": "id: x_496\npromptId: p_415\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 7fbde21700de29f3ed51552c740d192c2565609a51827a406a263b776662a353\nreferenceAssetIds:\n  - a_684\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_683\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。晚霞云层保留，玻璃上方仍有极淡的小灯点。\n  zh-Hans: 右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。\n"
+    },
+    {
+      "file": "content/media/a_683.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_683\ncontentHash: sha256:f1a76894d9971d522d7ec31010b60ed1f58308d329be4a3d83f0515cc11e07df\nmimeType: image/png\nbyteSize: 2132325\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_683/reduce-window-reflections-in-a-landscape-photo-original-f1a76894d997.png\nvariants:\n  thumbnail:\n    key: media/a_683/reduce-window-reflections-in-a-landscape-photo-thumbnail-bee2fd5c1ceb.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_683/reduce-window-reflections-in-a-landscape-photo-card-7f89f25db8f6.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_683/reduce-window-reflections-in-a-landscape-photo-detail-1edeab72ef96.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_683/reduce-window-reflections-in-a-landscape-photo-og-cef1e40a8f3a.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.281\n  y: 0.344\nplaceholder:\n  color: \"#98A8C8\"\nalt:\n  en: Reduce window reflections in a landscape photo. The chair and light strip recede while the masts and power lines remain.\n  zh-Hans: 右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_684.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_684\ncontentHash: sha256:ef985c1442078c004f104ecab8ee4fe6789da8b3f9fd4517d44be714ebaff89d\nmimeType: image/png\nbyteSize: 2194038\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_684/reduce-window-reflections-in-a-landscape-photo-reference-original-ef985c144207.png\nvariants:\n  thumbnail:\n    key: media/a_684/reduce-window-reflections-in-a-landscape-photo-reference-thumbnail-16351544d568.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_684/reduce-window-reflections-in-a-landscape-photo-reference-card-49bac68514b9.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_684/reduce-window-reflections-in-a-landscape-photo-reference-detail-4678c60d00ae.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_684/reduce-window-reflections-in-a-landscape-photo-reference-og-b5a7f4cfbe4f.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.281\n  y: 0.344\nplaceholder:\n  color: \"#98A8B8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-17-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-17-b-01\",\n  \"candidateId\": \"EDPHOTO-17\",\n  \"fingerprint\": \"4db6023532a56b491ffb0b6c5cd5ce439dd0509a151c41fbd5e22192cd909ff7\",\n  \"ids\": {\n    \"prompt\": \"p_415\",\n    \"template\": null,\n    \"example\": \"x_496\",\n    \"media\": [\n      \"a_683\",\n      \"a_684\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"f1a76894d9971d522d7ec31010b60ed1f58308d329be4a3d83f0515cc11e07df\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"ef985c1442078c004f104ecab8ee4fe6789da8b3f9fd4517d44be714ebaff89d\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。晚霞云层保留，玻璃上方仍有极淡的小灯点。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:35:52.779Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:08:08.825Z\",\n    \"contentHash\": \"d6d9451ffc00f87e37338a26e68d3c38581f6529c568acf68d528692562fc5b7\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_496/prompt.txt": null,
+    "content/examples/x_496/run.yaml": null,
+    "content/media/a_683.yaml": null,
+    "content/media/a_684.yaml": null,
+    "production/applied/edphoto-17-b-01.json": null
+  }
+}

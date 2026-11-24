@@ -1,0 +1,102 @@
+{
+  "candidateId": "EDPHOTO-07",
+  "slug": "turn-a-selfie-into-a-natural-professional-headshot",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "avatar"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。用{{backdrop}}替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "backdrop",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Portrait background",
+        "zh-Hans": "头像背景"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "柔和浅灰背景"
+    }
+  ],
+  "values": {
+    "backdrop": "柔和浅灰背景"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-07",
+      "platform": "Nairaland 职业论坛",
+      "author": "dosuu",
+      "url": "https://www.nairaland.com/8500640/how-transformed-selfie-into-professional",
+      "publishedAt": "2025-08-18",
+      "metricObjectUrl": "https://www.nairaland.com/8500640/how-transformed-selfie-into-professional",
+      "metricObjectPublishedAt": "2025-08-18",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "演示。作者称用自拍、ChatGPT 和其他 AI 工具改善灯光、背景及服装，并链接自制教程。论坛正文未给逐字提示词或单独的前后原图。"
+      },
+      "evidenceUrl": "https://www.nairaland.com/8500640/how-transformed-selfie-into-professional",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Turn a selfie into a natural professional headshot",
+      "description": "The square portraits keep the cheek mark, collar buttons, glasses and wrinkles. A circular crop fits both heads, with little clearance above the curls.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A curly-haired adult in a navy shirt faces the camera in a cluttered workspace.\n\n**B** A gray-haired adult wearing fine metal frames sits beside a window.\n\nThe square portraits keep the cheek mark, collar buttons, glasses and wrinkles. A circular crop fits both heads, with little clearance above the curls.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "自拍转自然职业头像",
+      "description": "用头像背景替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 深肤色短卷发成人，手机眼平半身照，工作间背景，衣领齐全。 工作间已换为浅灰背景。右颊斑点、卷发轮廓、胡须和衬衣领扣保留。360 像素圆形裁切仍容下整张脸和发顶，但发顶留白较窄。\n\n**B** 灰发戴细框眼镜成人，家中窗边半身照，保留自然皱纹。 书架与绿植换为米白窗光背景。细框眼镜的鼻托、眼周纹路和格衬衫领保留，圆形预览容下两侧头发。额头碎发在浅色背景上对比较低。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Turn a selfie into a natural professional headshot. The square portraits keep the cheek mark, collar buttons, glasses and wrinkles.",
+    "zh-Hans": "工作间已换为浅灰背景。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:04:46.412Z",
+    "contentHash": "18132a04161b8ec0bbddd1f39d7026a9f782a859b8aff6d5a5e278b8fce9e942"
+  }
+}

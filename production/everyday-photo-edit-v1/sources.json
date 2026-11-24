@@ -1,0 +1,74 @@
+[
+  {
+    "source": "S01 → 01 去人",
+    "attribution": "Gloomy-Holiday8618，Reddit r/ChatGPT，2026。[原帖](https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/)",
+    "evidence": "**演示**。主帖附图并给出完整指令，要求移除画面左前方的人。回帖指出补出的地毯花纹错位。能核对帖文和讨论，未独立取得成对原始文件。",
+    "application": "清除目标之后，局部放大并检查地砖、护栏或条纹是否接得上。"
+  },
+  {
+    "source": "S02 → 03 去电线",
+    "attribution": "橘子老师_SJRJT，哔哩哔哩，2024-10-24。[实操视频](https://www.bilibili.com/video/BV1qp1NYaExU/)",
+    "evidence": "**演示**。作者列出 Photoshop 移除电线电缆和背景人物操作。简介给出工具路径，未列逐字提示词或成对下载图。",
+    "application": "一张图包含细电线和应保留的建筑边线，检验两个对象是否被正确区分。"
+  },
+  {
+    "source": "S03 → 08 眼镜眩光",
+    "attribution": "PiXimperfect，YouTube，2025-10-14。[视频与章节](https://www.youtube.com/watch?v=87vUIoCzZns)",
+    "evidence": "**演示**。作者用 Photoshop 中的 Flux Kontext Pro 和 Nano Banana 处理镜片反光。03:06 处理蒙版边缘，04:46 开始复杂样例。作者说视频内示范提示词，公开简介没有逐字文本。",
+    "application": "选择仍看得到眼睛的轻度反光底图，核对瞳孔、镜框接点和眼周阴影。"
+  },
+  {
+    "source": "S04 → 10 扩展画布",
+    "attribution": "工具狂，哔哩哔哩，2023-06-15。[扩图实操](https://www.bilibili.com/video/BV1Dm4y1v7JQ/)",
+    "evidence": "**演示**。01:31 用 Photoshop Beta 扩海报，02:44 演示 Draw Things 填充和扩图，08:00 比较方法。公开简介没有完整文字指令。",
+    "application": "把同类操作移到自生成的旅行照，从竖图扩为横图，检验原画面与扩展区接缝。"
+  },
+  {
+    "source": "S05 → 14、15 旧照修复与着色",
+    "attribution": "littlesouthpaw，Reddit r/ChatGPT，2025。[作者图帖和提示词](https://www.reddit.com/r/ChatGPT/comments/1l69egf/)",
+    "evidence": "**对照**。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。",
+    "application": "破损与原有服装图案放在相邻位置。保真修复和推测性着色分别核对、分别命名。"
+  },
+  {
+    "source": "S06 → 14、15 修复失败反例",
+    "attribution": "perpetual_stew，Reddit r/ChatGPT，2026-06-23。[四阶段对照](https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/)",
+    "evidence": "**对照**。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。",
+    "application": "对照输入中可见的脸型和五官，单独评价看起来更清晰但人已不像的结果。"
+  },
+  {
+    "source": "S07 → 12 合影闭眼",
+    "attribution": "BirdKai，Reddit r/GooglePixel，2024。[家庭合照操作记录](https://www.reddit.com/r/GooglePixel/comments/19bd9lo/)",
+    "evidence": "**自述**。作者从 Top Shot 导出相邻帧，再用 Best Take 与 Unblur 处理。主帖无可核对的前后图，没有文字提示词。",
+    "application": "明确需要同一人同一场景的另一帧，验收其视线与身份。"
+  },
+  {
+    "source": "S08 → 04 局部补光",
+    "attribution": "Monzon Media，YouTube，2022-04-30。[视频与章节](https://www.youtube.com/watch?v=vT9P5gM7JxA)",
+    "evidence": "**对照**。作者标出 00:00 原照、01:08 用 Relight AI 恢复阴影、01:44 加蒙版、04:04 修高光、04:50 前后对照。软件参数操作，简介披露推广链接。",
+    "application": "面部提亮与背景高光分开看，避免为了救脸把窗外或天空一并拉白。"
+  },
+  {
+    "source": "S09 → 07 职业头像",
+    "attribution": "dosuu，Nairaland 职业论坛，2025-08-18。[作者原帖](https://www.nairaland.com/8500640/how-transformed-selfie-into-professional) · [作者链接的演示](https://www.youtube.com/watch?v=QSYjzZ0Pm2c)",
+    "evidence": "**演示**。作者称用自拍、ChatGPT 和其他 AI 工具改善灯光、背景及服装，并链接自制教程。论坛正文未给逐字提示词或单独的前后原图。",
+    "application": "以普通自拍做肩上头像，核对发际线、脸型、眼镜和自然表情。"
+  },
+  {
+    "source": "S10 → 06 弱光降噪",
+    "attribution": "Arghya Banerjee，YouTube，2026-05-17。[双样例演示](https://www.youtube.com/watch?v=eVeAFZ6-BEI)",
+    "evidence": "**对照**。作者对两张高 ISO 鸟类照片用 Lightroom AI DeNoise 做前后比较，观察细羽纹理损失。用参数调节，未给文字指令。",
+    "application": "迁移到夜间轻噪点与毛发等细纹。运动拖影要作为另一类缺陷独立验证。"
+  },
+  {
+    "source": "S11 → 17 隔窗倒影",
+    "attribution": "Focus Photo School，YouTube，2025-06-17。[视频与章节](https://www.youtube.com/watch?v=1NHfwLxMV8o)",
+    "evidence": "**对照**。00:35 开始演示 Lightroom 的 AI 反射消除。简介明确以滑块比较原始画面、去反射画面和分离的反射层。工具无需文字提示词。",
+    "application": "用玻璃两侧可辨认的元素控制难度，区分应该保留的实景与可以减弱的倒影。"
+  },
+  {
+    "source": "S12 → 16 实物换环境",
+    "attribution": "黄彬AIGC，哔哩哔哩，2023-11-26。[作者教程与纠偏说明](https://www.bilibili.com/video/BV1L34y1F7Mc/)",
+    "evidence": "**演示**。作者用 ComfyUI、Krita 和 LCM 制作商品海报，并在简介说明如何用原产品图替回生成时发生变化的产品。没有公开逐字指令或成对原图。",
+    "application": "迁移到二手实物换底。把文字、磨损、小缺口列为保留项，核对商品区域是否被重新绘制。"
+  }
+]

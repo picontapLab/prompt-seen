@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-10-b-01",
+  "candidateId": "EDPHOTO-10",
+  "jobFingerprint": "75ce4833e7addcd25d940c5f5ecb7831138d471f8ca67d1f74e448828f7a5197",
+  "planHash": "a4edc9356ca4298463d9cd7cf0627fabcc45bcbea6a79cc638d194479a1869be",
+  "ids": {
+    "prompt": "p_408",
+    "template": "t_080",
+    "example": "x_482",
+    "media": [
+      "a_651",
+      "a_652"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_482/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。将画布扩展为3∶2 横幅，向左右补画。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_482/run.yaml",
+      "after": "id: x_482\npromptId: p_408\npromptLanguage: zh-Hans\ntemplate:\n  id: t_080\n  version: v1\n  sample: alternate\n  values:\n    frame: 3∶2 横幅，向左右补画\n  contractHash: 984317726d60585ae2cb479dd146fc84fc5cc17a1538f8be32bd09e0dcd3af9e\npromptSha256: d24381a9ccd0d20ed12e694d633a70ff224b442139d2661cbffc990194f36ee6\nreferenceAssetIds:\n  - a_652\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_651\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。岸线在两侧连续，新增的远岸植被只作版式延伸。\n  zh-Hans: 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。\n"
+    },
+    {
+      "file": "content/media/a_651.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_651\ncontentHash: sha256:283f2b4a37b0610015055240db12830b0fd125ad414434f11394d7ddcb3ac187\nmimeType: image/png\nbyteSize: 2909094\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_651/extend-a-photo-for-a-different-aspect-ratio-original-283f2b4a37b0.png\nvariants:\n  thumbnail:\n    key: media/a_651/extend-a-photo-for-a-different-aspect-ratio-thumbnail-42e915f3c413.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_651/extend-a-photo-for-a-different-aspect-ratio-card-54f457bf940f.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_651/extend-a-photo-for-a-different-aspect-ratio-detail-22e8409c907a.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_651/extend-a-photo-for-a-different-aspect-ratio-og-e9b0d5324b1f.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.094\n  y: 0.344\nplaceholder:\n  color: \"#B8C8D8\"\nalt:\n  en: Extend a photo for a different aspect ratio. The bicycle gains sky and pavement above and below.\n  zh-Hans: 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_652.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_652\ncontentHash: sha256:3510a8e48a0553bfa91c3fbb8b18d0823aed7ed6851809b17339ae1526c4be1a\nmimeType: image/png\nbyteSize: 2900776\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_652/extend-a-photo-for-a-different-aspect-ratio-reference-original-3510a8e48a05.png\nvariants:\n  thumbnail:\n    key: media/a_652/extend-a-photo-for-a-different-aspect-ratio-reference-thumbnail-daad316ddd77.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_652/extend-a-photo-for-a-different-aspect-ratio-reference-card-daac6eac3cfd.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_652/extend-a-photo-for-a-different-aspect-ratio-reference-detail-cb32883a8dde.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_652/extend-a-photo-for-a-different-aspect-ratio-reference-og-4acc37587721.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.969\n  y: 0.438\nplaceholder:\n  color: \"#B8C8D8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_080/versions/v1/samples/alternate.yaml",
+      "after": "frame: 3∶2 横幅，向左右补画\n"
+    },
+    {
+      "file": "production/applied/edphoto-10-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-10-b-01\",\n  \"candidateId\": \"EDPHOTO-10\",\n  \"fingerprint\": \"75ce4833e7addcd25d940c5f5ecb7831138d471f8ca67d1f74e448828f7a5197\",\n  \"ids\": {\n    \"prompt\": \"p_408\",\n    \"template\": \"t_080\",\n    \"example\": \"x_482\",\n    \"media\": [\n      \"a_651\",\n      \"a_652\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"283f2b4a37b0610015055240db12830b0fd125ad414434f11394d7ddcb3ac187\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"3510a8e48a0553bfa91c3fbb8b18d0823aed7ed6851809b17339ae1526c4be1a\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。岸线在两侧连续，新增的远岸植被只作版式延伸。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:54:38.826Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:52.813Z\",\n    \"contentHash\": \"79c1523676d25949369de3a1f5a77898f1e0b87260dfd33e62a0acdcd2b0a8ec\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_482/prompt.txt": null,
+    "content/examples/x_482/run.yaml": null,
+    "content/media/a_651.yaml": null,
+    "content/media/a_652.yaml": null,
+    "content/templates/t_080/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-10-b-01.json": null
+  }
+}

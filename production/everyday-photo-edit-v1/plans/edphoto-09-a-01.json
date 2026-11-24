@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-09-a-01",
+  "candidateId": "EDPHOTO-09",
+  "jobFingerprint": "65775c459ef9767639f826de05036191d7636dc9fbd51d183708f9065d26fd76",
+  "planHash": "42c85a0fd95d0da4b043899489695ef118159611815ea5c7ba6284daa386adcd",
+  "ids": {
+    "prompt": "p_407",
+    "template": null,
+    "example": "x_479",
+    "media": [
+      "a_645",
+      "a_646"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_479/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只淡化额头那颗凸起的红痘，让局部色调与邻近皮肤相接。保留雀斑、痣、皱纹、毛孔与原来脸型。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_479/run.yaml",
+      "after": "id: x_479\npromptId: p_407\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 14892252cdaa9bfec91aff3835f1947ba1ed5f66c4d63119fe4612592aba90c1\nreferenceAssetIds:\n  - a_646\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_645\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 额头正中的红痘淡化，侧光下仍可见附近细纹与毛孔。右颊雀斑和嘴角旁的小痣位置相同，脸型及头发高光保留。小尺寸下额头差异较细微。\n  zh-Hans: 额头正中的红痘淡化，侧光下仍可见附近细纹与毛孔。\n"
+    },
+    {
+      "file": "content/media/a_645.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_645\ncontentHash: sha256:68b87815373dce3c92ca9492889042a70734e40c621175216aa152a4504244b3\nmimeType: image/png\nbyteSize: 2638296\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_645/fade-a-single-forehead-blemish-original-68b87815373d.png\nvariants:\n  thumbnail:\n    key: media/a_645/fade-a-single-forehead-blemish-thumbnail-caabe2ea48c5.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_645/fade-a-single-forehead-blemish-card-a6214b5b048b.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_645/fade-a-single-forehead-blemish-detail-a97fb059b841.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_645/fade-a-single-forehead-blemish-og-79e720890a34.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.719\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Fade a single forehead blemish. Freckles, wrinkles and the mole remain visible.\n  zh-Hans: 额头正中的红痘淡化，侧光下仍可见附近细纹与毛孔。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_646.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_646\ncontentHash: sha256:594ecf7f34128621f2a42a14ee0d96286f9b838f949445ddf27daa3660bcd816\nmimeType: image/png\nbyteSize: 2919267\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_646/fade-a-single-forehead-blemish-reference-original-594ecf7f3412.png\nvariants:\n  thumbnail:\n    key: media/a_646/fade-a-single-forehead-blemish-reference-thumbnail-ac7b7e254107.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_646/fade-a-single-forehead-blemish-reference-card-16e74d99139e.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_646/fade-a-single-forehead-blemish-reference-detail-cd2169b7c625.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_646/fade-a-single-forehead-blemish-reference-og-bc7d0cf627f2.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.719\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_407/entry.yaml",
+      "after": "id: p_407\nslug: fade-a-single-forehead-blemish\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_645\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_479\npromptProvenance: original\ninspirationSources: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_407/locales/en.mdx",
+      "after": "---\ntitle: Fade a single forehead blemish\ndescription: Freckles, wrinkles and the mole remain visible. The second forehead\n  retains a slight pink patch.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A forehead spot is visible above freckled cheeks in side light.\n\n**B** A middle-aged adult has a forehead blemish, crow’s feet and a mole near the mouth.\n\nFreckles, wrinkles and the mole remain visible. The second forehead retains a slight pink patch.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_407/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 只去暂时性面部瑕疵\ndescription: 只淡化额头那颗凸起的红痘，让局部色调与邻近皮肤相接。保留雀斑、痣、皱纹、毛孔与原来脸型。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:67a9b227f6cf5536\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 自然侧光肖像，额头一颗红痘，脸颊有雀斑。 额头正中的红痘淡化，侧光下仍可见附近细纹与毛孔。右颊雀斑和嘴角旁的小痣位置相同，脸型及头发高光保留。小尺寸下额头差异较细微。\n\n**B** 中年成人，额头一颗红痘，嘴角有痣、眼角有纹。 右眉上方凸起与红色减轻，仍可见一点淡粉色。眼角纹、眼旁小痣和嘴角下深痣均保留。毛衣领及窗边光线延续原照。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_407/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只淡化额头那颗凸起的红痘，让局部色调与邻近皮肤相接。保留雀斑、痣、皱纹、毛孔与原来脸型。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-09-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-09-a-01\",\n  \"candidateId\": \"EDPHOTO-09\",\n  \"fingerprint\": \"65775c459ef9767639f826de05036191d7636dc9fbd51d183708f9065d26fd76\",\n  \"ids\": {\n    \"prompt\": \"p_407\",\n    \"template\": null,\n    \"example\": \"x_479\",\n    \"media\": [\n      \"a_645\",\n      \"a_646\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"68b87815373dce3c92ca9492889042a70734e40c621175216aa152a4504244b3\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"594ecf7f34128621f2a42a14ee0d96286f9b838f949445ddf27daa3660bcd816\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"额头正中的红痘淡化，侧光下仍可见附近细纹与毛孔。右颊雀斑和嘴角旁的小痣位置相同，脸型及头发高光保留。小尺寸下额头差异较细微。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:50:01.789Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:25.519Z\",\n    \"contentHash\": \"0a85506d857680948afa71210b5b460a86872dae99bd49af190e133388425a3a\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_479/prompt.txt": null,
+    "content/examples/x_479/run.yaml": null,
+    "content/media/a_645.yaml": null,
+    "content/media/a_646.yaml": null,
+    "content/prompts/p_407/entry.yaml": null,
+    "content/prompts/p_407/locales/en.mdx": null,
+    "content/prompts/p_407/locales/zh-Hans.mdx": null,
+    "content/prompts/p_407/prompt.txt": null,
+    "production/applied/edphoto-09-a-01.json": null
+  }
+}

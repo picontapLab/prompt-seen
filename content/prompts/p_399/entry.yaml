@@ -1,0 +1,81 @@
+id: p_399
+slug: remove-a-passerby-from-a-travel-photo
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: template
+  templateId: t_076
+  version: v1
+  values:
+    target: 画面右后方穿红衣的路人
+categoryId: portrait
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_613
+relatedTemplateIds:
+  - t_076
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_463
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-01
+    platform: Reddit r/ChatGPT
+    author: Gloomy-Holiday8618
+    url: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/
+    publishedAt: "2026"
+    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/
+    metricObjectPublishedAt: "2026"
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 演示。主帖附图并给出完整指令，要求移除画面左前方的人。回帖指出补出的地毯花纹错位。能核对帖文和讨论，未独立取得成对原始文件。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 演示。主帖附圖並給出完整指令，要求移除畫面左前方的人。回帖指出補出的地毯花紋錯位。能核對帖文和討論，未獨立取得成對原始文件。
+    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/
+    sourcePromptStatus:
+      en: Full instruction in the post.
+      zh-Hans: 原帖公开完整指令。
+      es: La instrucción completa figura en la publicación.
+      pt-BR: A instrução completa está na publicação.
+      fr: La consigne complète figure dans la publication.
+      it: L’istruzione completa è nella pubblicazione.
+      de: Die vollständige Anweisung steht im Beitrag.
+      ru: Полная инструкция приведена в публикации.
+      ja: 投稿に指示の全文があります。
+      ko: 전체 지시문이 게시물에 있습니다.
+      ar: التعليمات الكاملة في المنشور.
+      zh-Hant: 原帖公開完整指令。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

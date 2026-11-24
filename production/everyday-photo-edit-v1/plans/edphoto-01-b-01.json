@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-01-b-01",
+  "candidateId": "EDPHOTO-01",
+  "jobFingerprint": "7b7139c0b4624fd3e463cddd4eaa0d408c7d881bbce1f7fb775dea9e383fcaaf",
+  "planHash": "3606aa480a7b2c572bb832c373520da3bb7e8ed2b3e60580c31992364afe95f9",
+  "ids": {
+    "prompt": "p_399",
+    "template": "t_076",
+    "example": "x_464",
+    "media": [
+      "a_615",
+      "a_616"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_464/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。移除画面左后方穿蓝衣的路人及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_464/run.yaml",
+      "after": "id: x_464\npromptId: p_399\npromptLanguage: zh-Hans\ntemplate:\n  id: t_076\n  version: v1\n  sample: alternate\n  values:\n    target: 画面左后方穿蓝衣的路人\n  contractHash: c4868b1aa2d49e406346874fc6ed1f8b066bd12d42cb3192727e71741208391f\npromptSha256: ffc7cd6b87b98a36c6c436877d137027de9e6b45b0d14594452794e1fd626f70\nreferenceAssetIds:\n  - a_616\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_615\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 左后蓝衣路人及投影已清除。两道横栏接回原有立柱，柱数与透视一致。前景两人的脸、举手姿势、发际线与背包肩带保留。被背包遮挡的树叶无法逐片核实。\n  zh-Hans: 左后蓝衣路人及投影已清除。\n"
+    },
+    {
+      "file": "content/media/a_615.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_615\ncontentHash: sha256:b56806cd2b8936112d406396a02b5e5437455ee95037a3afbb4fe124c6f10d8e\nmimeType: image/png\nbyteSize: 2583308\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_615/remove-a-passerby-from-a-travel-photo-original-b56806cd2b89.png\nvariants:\n  thumbnail:\n    key: media/a_615/remove-a-passerby-from-a-travel-photo-thumbnail-bbf82e1b461a.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_615/remove-a-passerby-from-a-travel-photo-card-cae5dbc85e02.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_615/remove-a-passerby-from-a-travel-photo-detail-057466dae4ff.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_615/remove-a-passerby-from-a-travel-photo-og-ba7b8c78e1c4.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.719\nplaceholder:\n  color: \"#282838\"\nalt:\n  en: Remove a passerby from a travel photo. The paving and rails continue across the cleared gap.\n  zh-Hans: 左后蓝衣路人及投影已清除。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_616.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_616\ncontentHash: sha256:323df2f40bcaf96666e799986107b9cda89efbd6106d40690fe044ca480bf615\nmimeType: image/png\nbyteSize: 2727839\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_616/remove-a-passerby-from-a-travel-photo-reference-original-323df2f40bca.png\nvariants:\n  thumbnail:\n    key: media/a_616/remove-a-passerby-from-a-travel-photo-reference-thumbnail-144d08e3126e.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_616/remove-a-passerby-from-a-travel-photo-reference-card-f9340b53dad7.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_616/remove-a-passerby-from-a-travel-photo-reference-detail-a7581017f56a.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_616/remove-a-passerby-from-a-travel-photo-reference-og-3917d0109e93.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.688\nplaceholder:\n  color: \"#282838\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_076/versions/v1/samples/alternate.yaml",
+      "after": "target: 画面左后方穿蓝衣的路人\n"
+    },
+    {
+      "file": "production/applied/edphoto-01-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-01-b-01\",\n  \"candidateId\": \"EDPHOTO-01\",\n  \"fingerprint\": \"7b7139c0b4624fd3e463cddd4eaa0d408c7d881bbce1f7fb775dea9e383fcaaf\",\n  \"ids\": {\n    \"prompt\": \"p_399\",\n    \"template\": \"t_076\",\n    \"example\": \"x_464\",\n    \"media\": [\n      \"a_615\",\n      \"a_616\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"b56806cd2b8936112d406396a02b5e5437455ee95037a3afbb4fe124c6f10d8e\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"323df2f40bcaf96666e799986107b9cda89efbd6106d40690fe044ca480bf615\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"左后蓝衣路人及投影已清除。两道横栏接回原有立柱，柱数与透视一致。前景两人的脸、举手姿势、发际线与背包肩带保留。被背包遮挡的树叶无法逐片核实。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:03:20.767Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:02:59.615Z\",\n    \"contentHash\": \"1cbe22a5f1254352115d6412ef05f8852f6052d2b6eb0d141fd3cd658188530a\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_464/prompt.txt": null,
+    "content/examples/x_464/run.yaml": null,
+    "content/media/a_615.yaml": null,
+    "content/media/a_616.yaml": null,
+    "content/templates/t_076/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-01-b-01.json": null
+  }
+}

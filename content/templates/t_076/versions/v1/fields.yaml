@@ -1,0 +1,35 @@
+fields:
+  - name: target
+    required: true
+    group: text
+    labels:
+      en: Person to remove
+      zh-Hans: 要移除的人
+      es: Persona que se quiere eliminar
+      pt-BR: Pessoa a remover
+      fr: Personne à effacer
+      it: Persona da rimuovere
+      de: Zu entfernende Person
+      ru: Человек для удаления
+      ja: 消したい人物
+      ko: 지울 사람
+      ar: الشخص المراد إزالته
+      zh-Hant: 要移除的人
+    help:
+      en: Describe the part of your photo to change.
+      zh-Hans: 简要描述照片中要修改的部分。
+      es: Describe brevemente la parte que quieres cambiar.
+      pt-BR: Descreva brevemente a parte que deseja alterar.
+      fr: Décrivez brièvement la partie à modifier.
+      it: Descrivi brevemente la parte da modificare.
+      de: Beschreibe kurz den zu ändernden Bildbereich.
+      ru: Кратко опишите область фотографии, которую хотите изменить.
+      ja: 変更したい部分を短く記入してください。
+      ko: 사진에서 바꿀 부분을 짧게 적으세요.
+      ar: صف بإيجاز الجزء الذي تريد تعديله.
+      zh-Hant: 簡要描述照片中要修改的部分。
+    type: string
+    default: 画面右后方穿红衣的路人
+    minLength: null
+    maxLength: null
+    multiline: false

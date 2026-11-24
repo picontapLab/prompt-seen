@@ -1,0 +1,70 @@
+{
+  "key": "edphoto-15-a-01",
+  "candidateId": "EDPHOTO-15",
+  "jobFingerprint": "04a0d84796af5e7068891d1366ababd3a051e0c3ee1c2bf48187ded82e3126e4",
+  "planHash": "266b93b1350294ed2a247570e111dee6b625f818eb0594a2cb8e8597e335ce0a",
+  "ids": {
+    "prompt": "p_413",
+    "template": null,
+    "example": "x_491",
+    "media": [
+      "a_671",
+      "a_672",
+      "a_673"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_491/prompt.txt",
+      "after": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_491/run.yaml",
+      "after": "id: x_491\npromptId: p_413\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 9039d6d8fbbf42bf2ef5bd160822a6cce9110018659711ba47564234e7fb8b47\nreferenceAssetIds:\n  - a_672\n  - a_673\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\n  - slotId: colorReference\n    referenceIndex: 1\noutputAssetIds:\n  - a_671\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 紫色外套转为参照中的钴蓝，纸边和细颗粒保留。主图中双手叠在膝上、藤篮在右的远景构图仍在，参照中的托腮姿势没有移入。参照只能锚定已知衣物的颜色。\n  zh-Hans: 紫色外套转为参照中的钴蓝，纸边和细颗粒保留。\n"
+    },
+    {
+      "file": "content/media/a_671.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_671\ncontentHash: sha256:b4914a39f8a7bafc076a7daaa86eb76b5742eae288ac4275e0e64452ea5e772d\nmimeType: image/png\nbyteSize: 3150130\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_671/correct-a-faded-photo-using-a-color-reference-original-b4914a39f8a7.png\nvariants:\n  thumbnail:\n    key: media/a_671/correct-a-faded-photo-using-a-color-reference-thumbnail-c696ad7a7cf4.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_671/correct-a-faded-photo-using-a-color-reference-card-ba1256b37e4b.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_671/correct-a-faded-photo-using-a-color-reference-detail-60db5b80145b.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_671/correct-a-faded-photo-using-a-color-reference-og-cab81d26fbb3.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.594\n  y: 0.969\nplaceholder:\n  color: \"#383828\"\nalt:\n  en: Correct a faded photo using a color reference. The coat returns to blue and the door to red without adopting the reference pose or camera angle.\n  zh-Hans: 紫色外套转为参照中的钴蓝，纸边和细颗粒保留。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_672.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_672\ncontentHash: sha256:fe028fff99ed5744659cb1da86ec11bfcb072e34a29882bd4ed4693aa9f29d68\nmimeType: image/png\nbyteSize: 3188799\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_672/correct-a-faded-photo-using-a-color-reference-reference-original-fe028fff99ed.png\nvariants:\n  thumbnail:\n    key: media/a_672/correct-a-faded-photo-using-a-color-reference-reference-thumbnail-b3dd99577989.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_672/correct-a-faded-photo-using-a-color-reference-reference-card-ca41ac29f5a7.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_672/correct-a-faded-photo-using-a-color-reference-reference-detail-a15c4cd8288d.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_672/correct-a-faded-photo-using-a-color-reference-reference-og-be09e391a477.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.719\n  y: 0.969\nplaceholder:\n  color: \"#683848\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_673.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_673\ncontentHash: sha256:63bdc0f2be31c9bf201848d96b018772bed559d7df9248e4161b7a7f2aaf5a5d\nmimeType: image/png\nbyteSize: 3089673\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_673/correct-a-faded-photo-using-a-color-reference-reference-original-63bdc0f2be31.png\nvariants:\n  thumbnail:\n    key: media/a_673/correct-a-faded-photo-using-a-color-reference-reference-thumbnail-705f77525c6b.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_673/correct-a-faded-photo-using-a-color-reference-reference-card-c8a473c4adf6.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_673/correct-a-faded-photo-using-a-color-reference-reference-detail-b7caabe86b47.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_673/correct-a-faded-photo-using-a-color-reference-reference-og-9cf2e0e28588.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.5\n  y: 0.969\nplaceholder:\n  color: \"#282828\"\nalt:\n  en: Same object with a known color\n  zh-Hans: 同一物件的色彩参照\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_413/entry.yaml",
+      "after": "id: p_413\nslug: correct-a-faded-photo-using-a-color-reference\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_671\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first. Add a photo showing the same object in its known color.\n    zh-Hans: 先上传要修改的照片。再上传同一衣物或门墙的色彩参照。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\n    - id: colorReference\n      labels:\n        en: Same object with a known color\n        zh-Hans: 同一物件的色彩参照\n      min: 1\n      max: 1\nshowcaseExampleId: x_491\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-15\n    platform: Reddit r/ChatGPT\n    author: littlesouthpaw\n    url: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    publishedAt: \"2025\"\n    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    metricObjectPublishedAt: \"2025\"\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。\n    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    sourcePromptStatus:\n      en: Full instruction in the comments.\n      zh-Hans: 评论公开完整指令。\n    metrics: []\n  - candidateId: EDPHOTO-15\n    platform: Reddit r/ChatGPT\n    author: perpetual_stew\n    url: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    publishedAt: 2026-06-23\n    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    metricObjectPublishedAt: 2026-06-23\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。\n    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_413/locales/en.mdx",
+      "after": "---\ntitle: Correct a faded photo using a color reference\ndescription: The coat returns to blue and the door to red without adopting the\n  reference pose or camera angle. Colors beyond the shared objects remain\n  estimates.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first. Add a photo showing the same object in its known color.\n\n**A** A magenta garden portrait shows a seated woman with her hands on her lap.\n\n**B** A yellowed storefront shows a double door and a plaster wall at an angle.\n\nThe coat returns to blue and the door to red without adopting the reference pose or camera angle. Colors beyond the shared objects remain estimates.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_413/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 有参照的褪色照片校正\ndescription: 以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:312d9c58c125f2b7\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。再上传同一衣物或门墙的色彩参照。\n\n**A** 褪成紫红的合成家庭相册照，主体穿蓝外套，另有同场外套色彩清楚的相邻照片。 紫色外套转为参照中的钴蓝，纸边和细颗粒保留。主图中双手叠在膝上、藤篮在右的远景构图仍在，参照中的托腮姿势没有移入。参照只能锚定已知衣物的颜色。\n\n**B** 偏黄的合成店面照，另有同一红门、白墙的另一机位彩照。 门由橙黄转为参照中的红色，白墙仍带暖光。门锁、缺漆和窗台花盆沿用主图角度，保留纸角折痕。树影区仍较暖。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_413/prompt.txt",
+      "after": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-15-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-15-a-01\",\n  \"candidateId\": \"EDPHOTO-15\",\n  \"fingerprint\": \"04a0d84796af5e7068891d1366ababd3a051e0c3ee1c2bf48187ded82e3126e4\",\n  \"ids\": {\n    \"prompt\": \"p_413\",\n    \"template\": null,\n    \"example\": \"x_491\",\n    \"media\": [\n      \"a_671\",\n      \"a_672\",\n      \"a_673\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"b4914a39f8a7bafc076a7daaa86eb76b5742eae288ac4275e0e64452ea5e772d\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"fe028fff99ed5744659cb1da86ec11bfcb072e34a29882bd4ed4693aa9f29d68\"\n    },\n    {\n      \"slotId\": \"colorReference\",\n      \"sha256\": \"63bdc0f2be31c9bf201848d96b018772bed559d7df9248e4161b7a7f2aaf5a5d\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"紫色外套转为参照中的钴蓝，纸边和细颗粒保留。主图中双手叠在膝上、藤篮在右的远景构图仍在，参照中的托腮姿势没有移入。参照只能锚定已知衣物的颜色。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:27:02.379Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:21.236Z\",\n    \"contentHash\": \"d9952b7772878328796be3aaa630ca7c9ce8bdf27374c4619bea227ff1518c3c\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_491/prompt.txt": null,
+    "content/examples/x_491/run.yaml": null,
+    "content/media/a_671.yaml": null,
+    "content/media/a_672.yaml": null,
+    "content/media/a_673.yaml": null,
+    "content/prompts/p_413/entry.yaml": null,
+    "content/prompts/p_413/locales/en.mdx": null,
+    "content/prompts/p_413/locales/zh-Hans.mdx": null,
+    "content/prompts/p_413/prompt.txt": null,
+    "production/applied/edphoto-15-a-01.json": null
+  }
+}

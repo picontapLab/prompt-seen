@@ -1,0 +1,81 @@
+id: p_414
+slug: clean-up-the-background-of-a-secondhand-item
+createdAt: 2026-11-23
+updatedAt: 2026-11-23
+promptSource:
+  type: template
+  templateId: t_081
+  version: v1
+  values:
+    surface: 浅灰哑光台面和背景
+categoryId: product
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_677
+relatedTemplateIds:
+  - t_081
+model:
+  displayName: GPT Image 2.6
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_493
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: EDPHOTO-16
+    platform: 哔哩哔哩
+    author: 黄彬AIGC
+    url: https://www.bilibili.com/video/BV1L34y1F7Mc/
+    publishedAt: 2023-11-26
+    metricObjectUrl: https://www.bilibili.com/video/BV1L34y1F7Mc/
+    metricObjectPublishedAt: 2023-11-26
+    metricScope:
+      en: Original source post
+      zh-Hans: 原始发布内容
+      es: Publicación original
+      pt-BR: Publicação original
+      fr: Publication originale
+      it: Pubblicazione originale
+      de: Originalbeitrag
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      ar: المنشور الأصلي
+      zh-Hant: 原始發佈內容
+    observedAt: 2026-11-22
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the source post or video description.
+      zh-Hans: 演示。作者用 ComfyUI、Krita 和 LCM 制作商品海报，并在简介说明如何用原产品图替回生成时发生变化的产品。没有公开逐字指令或成对原图。
+      es: Se consultó la publicación o la descripción del vídeo.
+      pt-BR: A publicação ou a descrição do vídeo foi consultada.
+      fr: La publication ou la description de la vidéo a été consultée.
+      it: È stata consultata la pubblicazione o la descrizione del video.
+      de: Der Beitrag oder die Videobeschreibung wurde geprüft.
+      ru: Проверена публикация или описание видео.
+      ja: 投稿または動画の説明文を確認しました。
+      ko: 게시물 또는 동영상 설명을 확인했습니다.
+      ar: تمت مراجعة المنشور أو وصف الفيديو.
+      zh-Hant: 演示。作者用 ComfyUI、Krita 和 LCM 製作商品海報，並在簡介說明如何用原產品圖替回生成時發生變化的產品。沒有公開逐字指令或成對原圖。
+    evidenceUrl: https://www.bilibili.com/video/BV1L34y1F7Mc/
+    sourcePromptStatus:
+      en: The full prompt could not be verified.
+      zh-Hans: 未核到完整提示词。
+      es: No se pudo verificar el texto completo.
+      pt-BR: Não foi possível verificar o texto completo.
+      fr: Le texte intégral n’a pas pu être vérifié.
+      it: Non è stato possibile verificare il testo integrale.
+      de: Der vollständige Wortlaut ließ sich nicht bestätigen.
+      ru: Полный текст инструкции подтвердить не удалось.
+      ja: 指示の全文は確認できませんでした。
+      ko: 지시문 전문은 확인하지 못했습니다.
+      ar: تعذر التحقق من النص الكامل للتعليمات.
+      zh-Hant: 未核到完整提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

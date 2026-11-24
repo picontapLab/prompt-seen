@@ -1,0 +1,50 @@
+{
+  "key": "edphoto-15-b-01",
+  "candidateId": "EDPHOTO-15",
+  "jobFingerprint": "cd392f1c9ebdc04f3d7c7d4edfed56478cc427221e86939fde497bab7f3e3da0",
+  "planHash": "d004598865c0430856d426a8d121f662adaf5d690c64dfed69c6d64a2b5767a7",
+  "ids": {
+    "prompt": "p_413",
+    "template": null,
+    "example": "x_492",
+    "media": [
+      "a_674",
+      "a_675",
+      "a_676"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_492/prompt.txt",
+      "after": "输入顺序为主底图、辅助参考。最终画面以主底图为准。以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_492/run.yaml",
+      "after": "id: x_492\npromptId: p_413\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 9039d6d8fbbf42bf2ef5bd160822a6cce9110018659711ba47564234e7fb8b47\nreferenceAssetIds:\n  - a_675\n  - a_676\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\n  - slotId: colorReference\n    referenceIndex: 1\noutputAssetIds:\n  - a_674\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 门由橙黄转为参照中的红色，白墙仍带暖光。门锁、缺漆和窗台花盆沿用主图角度，保留纸角折痕。树影区仍较暖。\n  zh-Hans: 门由橙黄转为参照中的红色，白墙仍带暖光。\n"
+    },
+    {
+      "file": "content/media/a_674.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_674\ncontentHash: sha256:9d179d20318a022eb96bee0c1d86e014db868b1d09bed1fd0bd9ffb21f9e16ff\nmimeType: image/png\nbyteSize: 3123154\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_674/correct-a-faded-photo-using-a-color-reference-original-9d179d20318a.png\nvariants:\n  thumbnail:\n    key: media/a_674/correct-a-faded-photo-using-a-color-reference-thumbnail-ee752913d4c1.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_674/correct-a-faded-photo-using-a-color-reference-card-3342e8726b0b.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_674/correct-a-faded-photo-using-a-color-reference-detail-5a94cfbdc474.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_674/correct-a-faded-photo-using-a-color-reference-og-06e1ae0abf10.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0\nplaceholder:\n  color: \"#E8D8B8\"\nalt:\n  en: Correct a faded photo using a color reference. The coat returns to blue and the door to red without adopting the reference pose or camera angle.\n  zh-Hans: 门由橙黄转为参照中的红色，白墙仍带暖光。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_675.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_675\ncontentHash: sha256:f91e8712a32cf0448702ad9dc7018de9ba45f093b88a0803ac5b5acc7fca7b51\nmimeType: image/png\nbyteSize: 3203776\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_675/correct-a-faded-photo-using-a-color-reference-reference-original-f91e8712a32c.png\nvariants:\n  thumbnail:\n    key: media/a_675/correct-a-faded-photo-using-a-color-reference-reference-thumbnail-9ecdb02b8645.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_675/correct-a-faded-photo-using-a-color-reference-reference-card-5fe72ac75926.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_675/correct-a-faded-photo-using-a-color-reference-reference-detail-a2d55cb003ef.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_675/correct-a-faded-photo-using-a-color-reference-reference-og-484866cccf35.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0\nplaceholder:\n  color: \"#C89858\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_676.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_676\ncontentHash: sha256:b877ed987b47084483009f9e38e80f9606e61c5b3bae6d208eea18272d020312\nmimeType: image/png\nbyteSize: 3237388\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_676/correct-a-faded-photo-using-a-color-reference-reference-original-b877ed987b47.png\nvariants:\n  thumbnail:\n    key: media/a_676/correct-a-faded-photo-using-a-color-reference-reference-thumbnail-dac521040c5a.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_676/correct-a-faded-photo-using-a-color-reference-reference-card-85a3fe1de8d5.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_676/correct-a-faded-photo-using-a-color-reference-reference-detail-7804e0b39b50.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_676/correct-a-faded-photo-using-a-color-reference-reference-og-c2a919bd4c95.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.844\n  y: 0\nplaceholder:\n  color: \"#E8D8C8\"\nalt:\n  en: Same object with a known color\n  zh-Hans: 同一物件的色彩参照\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-15-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-15-b-01\",\n  \"candidateId\": \"EDPHOTO-15\",\n  \"fingerprint\": \"cd392f1c9ebdc04f3d7c7d4edfed56478cc427221e86939fde497bab7f3e3da0\",\n  \"ids\": {\n    \"prompt\": \"p_413\",\n    \"template\": null,\n    \"example\": \"x_492\",\n    \"media\": [\n      \"a_674\",\n      \"a_675\",\n      \"a_676\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"9d179d20318a022eb96bee0c1d86e014db868b1d09bed1fd0bd9ffb21f9e16ff\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"f91e8712a32cf0448702ad9dc7018de9ba45f093b88a0803ac5b5acc7fca7b51\"\n    },\n    {\n      \"slotId\": \"colorReference\",\n      \"sha256\": \"b877ed987b47084483009f9e38e80f9606e61c5b3bae6d208eea18272d020312\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"门由橙黄转为参照中的红色，白墙仍带暖光。门锁、缺漆和窗台花盆沿用主图角度，保留纸角折痕。树影区仍较暖。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:27:03.270Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:29.953Z\",\n    \"contentHash\": \"981917e892737494a6942c79cac31e378ff73b0a083dad8a41ba509bc296ecca\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_492/prompt.txt": null,
+    "content/examples/x_492/run.yaml": null,
+    "content/media/a_674.yaml": null,
+    "content/media/a_675.yaml": null,
+    "content/media/a_676.yaml": null,
+    "production/applied/edphoto-15-b-01.json": null
+  }
+}

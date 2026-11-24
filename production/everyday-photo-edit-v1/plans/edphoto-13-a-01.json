@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-13-a-01",
+  "candidateId": "EDPHOTO-13",
+  "jobFingerprint": "cf6b991c089d474938b2d855a43e6e40d56fb2fb6a769af41b326abb7bfbf5b9",
+  "planHash": "d8ef04e2eaf6040437a663b5562a117def071d39a41f40f7be14b976f24823f3",
+  "ids": {
+    "prompt": "p_411",
+    "template": null,
+    "example": "x_487",
+    "media": [
+      "a_663",
+      "a_664"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_487/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_487/run.yaml",
+      "after": "id: x_487\npromptId: p_411\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 4f333c90c1d89d7b5ef50efe7b5a8118f507d968e7f8df7f17c1553de18fb43b\nreferenceAssetIds:\n  - a_664\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_663\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。胡须根部与朝右的视线延续，沙发与盆栽仍虚。最细须尖在输入中有重叠，难以逐根核实。\n  zh-Hans: 两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。\n"
+    },
+    {
+      "file": "content/media/a_663.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_663\ncontentHash: sha256:17b0c0c38a3b8e1fa61acb3a33615d5dcea8eb8305d690d57f446eb7019be71d\nmimeType: image/png\nbyteSize: 2420692\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_663/reduce-slight-motion-blur-in-a-pet-photo-original-17b0c0c38a3b.png\nvariants:\n  thumbnail:\n    key: media/a_663/reduce-slight-motion-blur-in-a-pet-photo-thumbnail-28a80ed8b21f.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_663/reduce-slight-motion-blur-in-a-pet-photo-card-745578b3b485.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_663/reduce-slight-motion-blur-in-a-pet-photo-detail-f31acd1c1b41.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_663/reduce-slight-motion-blur-in-a-pet-photo-og-d0743f9f38e8.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.594\n  y: 0.594\nplaceholder:\n  color: \"#A8A8A8\"\nalt:\n  en: Reduce slight motion blur in a pet photo. The direction of gaze and identifying markings remain visible.\n  zh-Hans: 两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_664.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_664\ncontentHash: sha256:23de2438d9f44025b976f44ab8c25688feeb2aa68b2b8f3e4a7175dbf0f4874b\nmimeType: image/png\nbyteSize: 2149662\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_664/reduce-slight-motion-blur-in-a-pet-photo-reference-original-23de2438d9f4.png\nvariants:\n  thumbnail:\n    key: media/a_664/reduce-slight-motion-blur-in-a-pet-photo-reference-thumbnail-00fee367762b.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_664/reduce-slight-motion-blur-in-a-pet-photo-reference-card-e1924b866ccd.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_664/reduce-slight-motion-blur-in-a-pet-photo-reference-detail-850de7d7d681.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_664/reduce-slight-motion-blur-in-a-pet-photo-reference-og-345602e23e86.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.594\n  y: 0.563\nplaceholder:\n  color: \"#A8A8A8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_411/entry.yaml",
+      "after": "id: p_411\nslug: reduce-slight-motion-blur-in-a-pet-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_663\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_487\npromptProvenance: original\ninspirationSources: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_411/locales/en.mdx",
+      "after": "---\ntitle: Reduce slight motion blur in a pet photo\ndescription: The direction of gaze and identifying markings remain visible.\n  Individual whisker tips are difficult to verify where they overlap.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A tabby turning its head has a visible forehead M and slightly blurred ears.\n\n**B** A black-and-white dog has blurred ear tips, a pink nose patch and a rectangular collar buckle.\n\nThe direction of gaze and identifying markings remain visible. Individual whisker tips are difficult to verify where they overlap.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_411/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 宠物轻微运动模糊\ndescription: 缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:b39004674de4b31c\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 虎斑猫转头有轻微单向拖影，额头 M 纹、双耳和胡须根部可辨。 两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。胡须根部与朝右的视线延续，沙发与盆栽仍虚。最细须尖在输入中有重叠，难以逐根核实。\n\n**B** 黑白犬侧头，耳尖有轻微拖影，鼻斑和项圈扣清楚。 两耳尖的拖影减轻，毛色交界清晰。鼻尖粉斑、项圈方扣和圆环保留，身后草地仍然虚化。耳尖细毛的形状只可沿原轮廓对照。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_411/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-13-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-13-a-01\",\n  \"candidateId\": \"EDPHOTO-13\",\n  \"fingerprint\": \"cf6b991c089d474938b2d855a43e6e40d56fb2fb6a769af41b326abb7bfbf5b9\",\n  \"ids\": {\n    \"prompt\": \"p_411\",\n    \"template\": null,\n    \"example\": \"x_487\",\n    \"media\": [\n      \"a_663\",\n      \"a_664\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"17b0c0c38a3b8e1fa61acb3a33615d5dcea8eb8305d690d57f446eb7019be71d\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"23de2438d9f44025b976f44ab8c25688feeb2aa68b2b8f3e4a7175dbf0f4874b\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"两耳、鼻梁和脸颊的横向拖影减轻，虎斑 M 纹和颊部两道黑纹保持原位。胡须根部与朝右的视线延续，沙发与盆栽仍虚。最细须尖在输入中有重叠，难以逐根核实。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:12:41.113Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:06:43.689Z\",\n    \"contentHash\": \"adc27bd41f7b4bd24b2792bf0d887b3ef31a9c634a1a5b32a929677025e49793\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_487/prompt.txt": null,
+    "content/examples/x_487/run.yaml": null,
+    "content/media/a_663.yaml": null,
+    "content/media/a_664.yaml": null,
+    "content/prompts/p_411/entry.yaml": null,
+    "content/prompts/p_411/locales/en.mdx": null,
+    "content/prompts/p_411/locales/zh-Hans.mdx": null,
+    "content/prompts/p_411/prompt.txt": null,
+    "production/applied/edphoto-13-a-01.json": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-14-a-01",
+  "candidateId": "EDPHOTO-14",
+  "jobFingerprint": "8cd024b03882253ebb53c44f9997296f3bce3676da5077859c954d8ace79bed1",
+  "planHash": "272df96352f5ed85b9f087b6fe4a6620d4d5b4205e8e4bffe1b28a6e0ee790c2",
+  "ids": {
+    "prompt": "p_412",
+    "template": null,
+    "example": "x_489",
+    "media": [
+      "a_667",
+      "a_668"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_489/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_489/run.yaml",
+      "after": "id: x_489\npromptId: p_412\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: ed308b3565c0ceae8f600b687aaadf8eb781ea66c3c61de28e496b5eedd09cc0\nreferenceAssetIds:\n  - a_668\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_667\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。两张脸、花上衣和磨旧纸角保留，仍是带颗粒的黑白照片。细小灰尘和原有颗粒的界线较难区分。\n  zh-Hans: 穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。\n"
+    },
+    {
+      "file": "content/media/a_667.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_667\ncontentHash: sha256:6909d831e3a5096a94d7af29cd2c761de4310b47c633e402b7c3a2c7cbc146fa\nmimeType: image/png\nbyteSize: 2393999\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_667/remove-creases-from-a-black-and-white-photo-original-6909d831e3a5.png\nvariants:\n  thumbnail:\n    key: media/a_667/remove-creases-from-a-black-and-white-photo-thumbnail-08634efac5c5.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_667/remove-creases-from-a-black-and-white-photo-card-0c249ae46849.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_667/remove-creases-from-a-black-and-white-photo-detail-801c7e79c05f.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_667/remove-creases-from-a-black-and-white-photo-og-3581499628c0.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0\nplaceholder:\n  color: \"#A8A8A8\"\nalt:\n  en: Remove creases from a black-and-white photo. Sleeve folds and window frames join across the repair.\n  zh-Hans: 穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_668.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_668\ncontentHash: sha256:619a578f0fd561fd975ba22365c53e2d422e4f59248d819b8742251d5eef05c1\nmimeType: image/png\nbyteSize: 2588170\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_668/remove-creases-from-a-black-and-white-photo-reference-original-619a578f0fd5.png\nvariants:\n  thumbnail:\n    key: media/a_668/remove-creases-from-a-black-and-white-photo-reference-thumbnail-d14038d9d032.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_668/remove-creases-from-a-black-and-white-photo-reference-card-4ba56c8e4da0.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_668/remove-creases-from-a-black-and-white-photo-reference-detail-d2ac90d18985.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_668/remove-creases-from-a-black-and-white-photo-reference-og-ea9804436102.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0\nplaceholder:\n  color: \"#A8A8A8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_412/entry.yaml",
+      "after": "id: p_412\nslug: remove-creases-from-a-black-and-white-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_667\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_489\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-14\n    platform: Reddit r/ChatGPT\n    author: littlesouthpaw\n    url: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    publishedAt: \"2025\"\n    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    metricObjectPublishedAt: \"2025\"\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。作者标注修复黑白图、原照和彩色图，并在评论给出完整提示词，特意指出帽子上的痕迹是照片破损。原始历史颜色未知。\n    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1l69egf/\n    sourcePromptStatus:\n      en: Full instruction in the comments.\n      zh-Hans: 评论公开完整指令。\n    metrics: []\n  - candidateId: EDPHOTO-14\n    platform: Reddit r/ChatGPT\n    author: perpetual_stew\n    url: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    publishedAt: 2026-06-23\n    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    metricObjectPublishedAt: 2026-06-23\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。四联图含本人原照、做旧、修复和着色。作者认为结果没有还原本人。主帖说明试验思路，未给完整逐步指令。\n    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself/\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_412/locales/en.mdx",
+      "after": "---\ntitle: Remove creases from a black-and-white photo\ndescription: Sleeve folds and window frames join across the repair. Grain and\n  paper edges remain, and tiny book titles are still unreadable.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A pale crease crosses the sky and a man’s sleeve in an old monochrome portrait.\n\n**B** Two intersecting creases cross a shop window and pavement in a scanned print.\n\nSleeve folds and window frames join across the repair. Grain and paper edges remain, and tiny book titles are still unreadable.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_412/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 保留黑白的纸痕修复\ndescription: 仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:d5b4d834cc579f2e\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 合成旧黑白合影，有纵向白折痕经过衣袖及背景，两张脸保存完好。 穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。两张脸、花上衣和磨旧纸角保留，仍是带颗粒的黑白照片。细小灰尘和原有颗粒的界线较难区分。\n\n**B** 合成黑白店面照，折痕跨地面和窗框，另有少量灰尘点。 横折和斜折已修去，右侧橱窗横框、门槛与路面连续，旧纸边和褪旧的灰阶保留。窗内书封依旧不清晰，不能借修复辨认其文字。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_412/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-14-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-14-a-01\",\n  \"candidateId\": \"EDPHOTO-14\",\n  \"fingerprint\": \"8cd024b03882253ebb53c44f9997296f3bce3676da5077859c954d8ace79bed1\",\n  \"ids\": {\n    \"prompt\": \"p_412\",\n    \"template\": null,\n    \"example\": \"x_489\",\n    \"media\": [\n      \"a_667\",\n      \"a_668\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"6909d831e3a5096a94d7af29cd2c761de4310b47c633e402b7c3a2c7cbc146fa\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"619a578f0fd561fd975ba22365c53e2d422e4f59248d819b8742251d5eef05c1\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"穿过右边天空与男士衣袖的白折线消失，袖口的皱褶与肩线接续。两张脸、花上衣和磨旧纸角保留，仍是带颗粒的黑白照片。细小灰尘和原有颗粒的界线较难区分。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:17:35.094Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:02.407Z\",\n    \"contentHash\": \"11585dbe0c832026bc7ad0064ff96f03d7e782f2ac686b4ea10d3c1e860d1f10\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_489/prompt.txt": null,
+    "content/examples/x_489/run.yaml": null,
+    "content/media/a_667.yaml": null,
+    "content/media/a_668.yaml": null,
+    "content/prompts/p_412/entry.yaml": null,
+    "content/prompts/p_412/locales/en.mdx": null,
+    "content/prompts/p_412/locales/zh-Hans.mdx": null,
+    "content/prompts/p_412/prompt.txt": null,
+    "production/applied/edphoto-14-a-01.json": null
+  }
+}

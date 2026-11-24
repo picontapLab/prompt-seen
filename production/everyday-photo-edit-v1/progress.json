@@ -1,0 +1,727 @@
+[
+  {
+    "candidateId": "EDPHOTO-01",
+    "title": "旅行合影去路人",
+    "sources": [
+      "S01"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "移除{{target}}及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。",
+    "reviewCriteria": "对齐路人两侧的线和消失点。栏杆多了一根、纹理断开、仍有孤立人影或前景人脸变动均退回。",
+    "runs": {
+      "A": {
+        "scene": "石墙前两位朋友合影，右后红衣路人跨过斜铺砖缝。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-01-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-01-a-01.json",
+        "exampleId": "x_463"
+      },
+      "B": {
+        "scene": "林间木栈道情侣合影，左后蓝衣路人穿过栏杆，脚下有投影。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-01-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-01-b-01.json",
+        "exampleId": "x_464"
+      }
+    },
+    "field": {
+      "id": "target",
+      "required": true,
+      "type": "string",
+      "default": "画面右后方穿红衣的路人",
+      "alternate": "画面左后方穿蓝衣的路人"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-02",
+    "title": "桌面去杂物",
+    "sources": [],
+    "sourceType": "original",
+    "task": "清理{{target}}及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。",
+    "reviewCriteria": "查看木纹或格纹交点、叉齿和餐盘轮廓。抹去菜单字迹或改变菜品即退回。",
+    "runs": {
+      "A": {
+        "scene": "咖啡与手写菜单旁有一团用过的纸巾，纸巾投影压在木纹上。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-02-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-02-a-01.json",
+        "exampleId": "x_465",
+        "reviewedAt": "2026-11-23T08:23:00.855Z"
+      },
+      "B": {
+        "scene": "餐盘旁有一个空塑料包装，压在格纹餐布上，叉子紧邻包装。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-02-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-02-b-01.json",
+        "exampleId": "x_466",
+        "reviewedAt": "2026-11-23T08:23:01.888Z"
+      }
+    },
+    "field": {
+      "id": "target",
+      "required": true,
+      "type": "string",
+      "default": "咖啡旁揉成团的纸巾",
+      "alternate": "餐盘旁的空塑料包装"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-03",
+    "title": "建筑上方去电线",
+    "sources": [
+      "S02"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "只移除天空中跨过建筑的两根架空电线。延续屋顶、树枝与天际轮廓，保留路灯、建筑附属物与桥梁支撑。",
+    "reviewCriteria": "放大遮挡交界，桥索、烟囱及树枝仍与两侧相接。误删支撑、复制瓦片或留残线即退回。",
+    "runs": {
+      "A": {
+        "scene": "老街红屋顶上方两根垂落细线，横跨烟囱，路灯在左。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-03-a-02.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-03-a-02.json",
+        "exampleId": "x_467",
+        "reviewedAt": "2026-11-23T08:27:17.245Z",
+        "attempts": [
+          {
+            "job": "job-definitions/edphoto-03-a-01.json",
+            "review": "reviews/edphoto-03-a-01.json",
+            "output": "rejected"
+          }
+        ]
+      },
+      "B": {
+        "scene": "石桥背景中两根架空线穿过树冠与塔楼轮廓，保留桥索。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-03-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-03-b-01.json",
+        "exampleId": "x_468",
+        "reviewedAt": "2026-11-23T08:23:02.884Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-04",
+    "title": "逆光合影补脸",
+    "sources": [
+      "S08"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "只给{{focus}}的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。",
+    "reviewCriteria": "A 看窗外叶脉和脸颈衔接，B 看晚霞、耳侧轮廓与三人肤色。白边、磨皮、天空一并过曝即退回。",
+    "runs": {
+      "A": {
+        "scene": "窗前两位不同肤色的成年人，面部欠曝但能看清，窗外绿叶明亮。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-04-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-04-a-01.json",
+        "exampleId": "x_469",
+        "reviewedAt": "2026-11-23T08:27:18.545Z"
+      },
+      "B": {
+        "scene": "傍晚海边三位朋友逆光，留眼窝和衣领暗部细节。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-04-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-04-b-01.json",
+        "exampleId": "x_470",
+        "reviewedAt": "2026-11-23T08:29:46.788Z"
+      }
+    },
+    "field": {
+      "id": "focus",
+      "required": true,
+      "type": "string",
+      "default": "窗前的两位成年人",
+      "alternate": "海边合影中的三位朋友"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-05",
+    "title": "餐桌混合光校色",
+    "sources": [],
+    "sourceType": "original",
+    "task": "以画面中的白瓷为中性参照减轻餐桌上的综合色偏，保留暖光气氛、食材本色和原有明暗层次。",
+    "reviewCriteria": "白瓷仍有层次，红绿食材可区分。把米饭染蓝、整图漂白或改变配料即退回。",
+    "runs": {
+      "A": {
+        "scene": "白瓷盘一边泛绿，一边受暖灯照射，盘中番茄和青菜。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-05-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-05-a-01.json",
+        "exampleId": "x_471",
+        "reviewedAt": "2026-11-23T08:32:45.002Z"
+      },
+      "B": {
+        "scene": "蓝色窗光加暖灯下的米饭、木筷和白瓷勺。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-05-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-05-b-01.json",
+        "exampleId": "x_472",
+        "reviewedAt": "2026-11-23T08:32:45.962Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-06",
+    "title": "夜景暗部降噪",
+    "sources": [
+      "S10"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。",
+    "reviewCriteria": "同尺度检查噪点空区和有纹理区。蜡感涂抹、新造纹理或合并灯点即退回。",
+    "runs": {
+      "A": {
+        "scene": "夜间街角长椅，暗处有彩噪，椅面木纹可辨，灯光未过曝。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-06-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-06-a-01.json",
+        "exampleId": "x_473",
+        "reviewedAt": "2026-11-23T08:35:31.129Z"
+      },
+      "B": {
+        "scene": "夜市蓝布摊棚，暗面彩噪与布纹同时可见，背景小灯点分离。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-06-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-06-b-01.json",
+        "exampleId": "x_474",
+        "reviewedAt": "2026-11-23T08:35:32.138Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-07",
+    "title": "自拍转自然职业头像",
+    "sources": [
+      "S09"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "用{{backdrop}}替换杂乱背景，裁为正方形头肩照，眼睛位于上半部。保持本人年龄、肤色、脸型、发型、眼镜和原来衣领，用自然柔光衔接轮廓。",
+    "reviewCriteria": "对齐眼鼻、眼镜形状、发际线。圆形头像裁切预览能容下脸和头发。重塑脸型、换装或发丝出现明显抠边即退回。",
+    "runs": {
+      "A": {
+        "scene": "深肤色短卷发成人，手机眼平半身照，工作间背景，衣领齐全。",
+        "inputAspect": "2:3",
+        "outputAspect": "1:1",
+        "job": "job-definitions/edphoto-07-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-07-a-01.json",
+        "exampleId": "x_475",
+        "reviewedAt": "2026-11-23T08:42:51.295Z"
+      },
+      "B": {
+        "scene": "灰发戴细框眼镜成人，家中窗边半身照，保留自然皱纹。",
+        "inputAspect": "2:3",
+        "outputAspect": "1:1",
+        "job": "job-definitions/edphoto-07-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-07-b-01.json",
+        "exampleId": "x_476",
+        "reviewedAt": "2026-11-23T08:42:52.240Z"
+      }
+    },
+    "field": {
+      "id": "backdrop",
+      "required": true,
+      "type": "string",
+      "default": "柔和浅灰背景",
+      "alternate": "米白色自然窗光背景"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-08",
+    "title": "减弱眼镜反光",
+    "sources": [
+      "S03"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "减弱镜片上盖住眼部的浅色反光，沿用原来可见的瞳孔、眼睑和视线方向，保留镜框、镜片轮廓及少量自然高光。",
+    "reviewCriteria": "放大两眼、框缘和镜腿。改视线、重造虹膜、镜框融进脸颊即退回。底图眼部完全被遮挡时重做底图。",
+    "runs": {
+      "A": {
+        "scene": "成人正面近照，左镜片有淡绿色窗光，瞳孔仍可见。",
+        "inputAspect": "2:3",
+        "outputAspect": "2:3",
+        "job": "job-definitions/edphoto-08-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-08-a-01.json",
+        "exampleId": "x_477",
+        "reviewedAt": "2026-11-23T08:46:24.274Z"
+      },
+      "B": {
+        "scene": "三分之二侧脸，右镜片有一道浅白长条反光，眼睑和虹膜可辨。",
+        "inputAspect": "2:3",
+        "outputAspect": "2:3",
+        "job": "job-definitions/edphoto-08-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-08-b-01.json",
+        "exampleId": "x_478",
+        "reviewedAt": "2026-11-23T08:46:25.319Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-09",
+    "title": "只去暂时性面部瑕疵",
+    "sources": [],
+    "sourceType": "original",
+    "task": "只淡化额头那颗凸起的红痘，让局部色调与邻近皮肤相接。保留雀斑、痣、皱纹、毛孔与原来脸型。",
+    "reviewCriteria": "同尺度比额头和邻近正常皮肤。移除痣、全脸磨皮或改变年龄感即退回。",
+    "runs": {
+      "A": {
+        "scene": "自然侧光肖像，额头一颗红痘，脸颊有雀斑。",
+        "inputAspect": "2:3",
+        "outputAspect": "2:3",
+        "job": "job-definitions/edphoto-09-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-09-a-01.json",
+        "exampleId": "x_479",
+        "reviewedAt": "2026-11-23T08:50:01.789Z"
+      },
+      "B": {
+        "scene": "中年成人，额头一颗红痘，嘴角有痣、眼角有纹。",
+        "inputAspect": "2:3",
+        "outputAspect": "2:3",
+        "job": "job-definitions/edphoto-09-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-09-b-01.json",
+        "exampleId": "x_480",
+        "reviewedAt": "2026-11-23T08:50:02.728Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-10",
+    "title": "照片扩图适配版式",
+    "sources": [
+      "S04"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "将画布扩展为{{frame}}。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。",
+    "reviewCriteria": "用原构图边界对照主体尺度及地平线。拉长车轮、截屋顶、重复主体或只拉伸画面即退回。",
+    "runs": {
+      "A": {
+        "scene": "横幅海边自行车照，车轮完整，车上方空间少，准备做竖封面。",
+        "inputAspect": "3:2",
+        "outputAspect": "2:3",
+        "job": "job-definitions/edphoto-10-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-10-a-01.json",
+        "exampleId": "x_481",
+        "reviewedAt": "2026-11-23T08:54:37.918Z"
+      },
+      "B": {
+        "scene": "竖幅湖边木屋照，屋顶完整，两侧空间紧，准备做横封面。",
+        "inputAspect": "2:3",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-10-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-10-b-01.json",
+        "exampleId": "x_482",
+        "reviewedAt": "2026-11-23T08:54:38.826Z"
+      }
+    },
+    "field": {
+      "id": "frame",
+      "required": true,
+      "type": "string",
+      "default": "2∶3 竖幅，向上下补画",
+      "alternate": "3∶2 横幅，向左右补画"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-11",
+    "title": "建筑透视纠偏",
+    "sources": [],
+    "sourceType": "original",
+    "task": "矫正相机仰拍造成的竖线收敛，保留真实纵深、门窗或书架格数，用轻微裁切整理边沿。",
+    "reviewCriteria": "选两根真实竖边检查垂直方向，核对横梁、窗格或层板数量。把空间压平或增减格数即退回。",
+    "runs": {
+      "A": {
+        "scene": "仰拍街角门面，两侧立柱向上收敛，门楣与台阶完整。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-11-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-11-a-01.json",
+        "exampleId": "x_483",
+        "reviewedAt": "2026-11-23T08:58:34.251Z"
+      },
+      "B": {
+        "scene": "仰拍室内书墙，两侧书架明显内倾，边缘有裁切余量。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-11-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-11-b-01.json",
+        "exampleId": "x_484",
+        "reviewedAt": "2026-11-23T08:58:35.204Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-12",
+    "title": "用连拍修正闭眼",
+    "sources": [
+      "S07"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "以第一张作为成片。只用第二张中同一人睁眼时的眼部修正第一张的闭眼，位置、视线与第一张头部角度对齐。其余人的表情、镜框、嘴角和背景以第一张为准。",
+    "reviewCriteria": "顺序显示两帧和结果。分别核对第二帧的眼部与第一帧里所有人的嘴角。错人、换整张脸或第二帧覆盖底图即退回。",
+    "runs": {
+      "A": {
+        "scene": "三位朋友合影，中间人闭眼，第二帧只有中间人睁眼、微有位移。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-12-a-01.json",
+        "inputs": {
+          "photo": "accepted",
+          "alternateFrame": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-12-a-01.json",
+        "exampleId": "x_485",
+        "reviewedAt": "2026-11-23T09:04:32.779Z"
+      },
+      "B": {
+        "scene": "室内两人合影，靠右戴眼镜者闭眼，第二帧同一人睁眼。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-12-b-01.json",
+        "inputs": {
+          "photo": "accepted",
+          "alternateFrame": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-12-b-01.json",
+        "exampleId": "x_486",
+        "reviewedAt": "2026-11-23T09:04:33.679Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-13",
+    "title": "宠物轻微运动模糊",
+    "sources": [],
+    "sourceType": "original",
+    "task": "缓解头部的轻微运动拖影，只增强已有轮廓。保留毛色分界、原有标记、眼睛朝向与项圈形状，让背景继续自然虚化。",
+    "reviewCriteria": "猫看 M 纹、犬看鼻斑和扣件。新增胡须、毛斑移位、出现双轮廓或背景被锐化即退回。",
+    "runs": {
+      "A": {
+        "scene": "虎斑猫转头有轻微单向拖影，额头 M 纹、双耳和胡须根部可辨。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-13-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-13-a-01.json",
+        "exampleId": "x_487",
+        "reviewedAt": "2026-11-23T09:12:41.113Z"
+      },
+      "B": {
+        "scene": "黑白犬侧头，耳尖有轻微拖影，鼻斑和项圈扣清楚。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-13-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-13-b-01.json",
+        "exampleId": "x_488",
+        "reviewedAt": "2026-11-23T09:12:42.026Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-14",
+    "title": "保留黑白的纸痕修复",
+    "sources": [
+      "S05",
+      "S06"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "仅去除浅色纸张折痕和表面灰尘。沿用折痕两侧可见结构，保留原黑白调、颗粒、边缘、衣着和人物表情。",
+    "reviewCriteria": "窗框或袖口连续，黑白与颗粒一致。自动上色、年轻化或填入无法辨识的文字即退回。带自然上色的需求可转到 p_138。",
+    "runs": {
+      "A": {
+        "scene": "合成旧黑白合影，有纵向白折痕经过衣袖及背景，两张脸保存完好。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-14-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-14-a-01.json",
+        "exampleId": "x_489",
+        "reviewedAt": "2026-11-23T09:17:35.094Z"
+      },
+      "B": {
+        "scene": "合成黑白店面照，折痕跨地面和窗框，另有少量灰尘点。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-14-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-14-b-01.json",
+        "exampleId": "x_490",
+        "reviewedAt": "2026-11-23T09:17:35.992Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-15",
+    "title": "有参照的褪色照片校正",
+    "sources": [
+      "S05",
+      "S06"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "以第一张为成片。仅用第二张里同一衣物或门墙作色彩参照，缓解第一张整体褪色。保留第一张的取景、颗粒、表情与年代质感。",
+    "reviewCriteria": "对照参照物色相，核对第一张的脸和物件位置。把参照图的人物或机位移入结果即退回。标注为参考校色示范。",
+    "runs": {
+      "A": {
+        "scene": "褪成紫红的合成家庭相册照，主体穿蓝外套，另有同场外套色彩清楚的相邻照片。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-15-a-01.json",
+        "inputs": {
+          "photo": "accepted",
+          "colorReference": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-15-a-01.json",
+        "exampleId": "x_491",
+        "reviewedAt": "2026-11-23T09:27:02.379Z"
+      },
+      "B": {
+        "scene": "偏黄的合成店面照，另有同一红门、白墙的另一机位彩照。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-15-b-01.json",
+        "inputs": {
+          "photo": "accepted",
+          "colorReference": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-15-b-01.json",
+        "exampleId": "x_492",
+        "reviewedAt": "2026-11-23T09:27:03.270Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-16",
+    "title": "二手实物整理背景",
+    "sources": [
+      "S12"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "将商品后的环境整理为{{surface}}，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。",
+    "reviewCriteria": "标出包角、搭扣或壶身的检查位置。磨损消失、出现新配件、成色变新即退回。公开样例标明模拟二手物品。",
+    "runs": {
+      "A": {
+        "scene": "桌上旧皮包，右下角掉皮、黄铜搭扣有划痕，背景杂乱。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-16-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-16-a-01.json",
+        "exampleId": "x_493",
+        "reviewedAt": "2026-11-23T09:31:21.930Z"
+      },
+      "B": {
+        "scene": "磨砂水壶，杯身有凹痕与三道划痕，后方有彩色布袋。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-16-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-16-b-01.json",
+        "exampleId": "x_494",
+        "reviewedAt": "2026-11-23T09:31:22.872Z"
+      }
+    },
+    "field": {
+      "id": "surface",
+      "required": true,
+      "type": "string",
+      "default": "浅灰哑光台面和背景",
+      "alternate": "米白哑光台面和背景"
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-17",
+    "title": "减轻隔窗拍摄倒影",
+    "sources": [
+      "S11"
+    ],
+    "sourceType": "independent-adaptation",
+    "task": "减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。",
+    "reviewCriteria": "放大灯带与电塔、座椅与桅杆交叉处。消除真实桅杆、虚构严重遮挡的远景或换天即退回。",
+    "runs": {
+      "A": {
+        "scene": "车窗外山脊和电塔清晰，玻璃映出一条淡灯带。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-17-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-17-a-01.json",
+        "exampleId": "x_495",
+        "reviewedAt": "2026-11-23T09:35:52.029Z"
+      },
+      "B": {
+        "scene": "窗外港口屋顶和桅杆可辨，玻璃上映有浅色座椅轮廓。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-17-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-17-b-01.json",
+        "exampleId": "x_496",
+        "reviewedAt": "2026-11-23T09:35:52.779Z"
+      }
+    }
+  },
+  {
+    "candidateId": "EDPHOTO-18",
+    "title": "纸质画作翻拍整理",
+    "sources": [],
+    "sourceType": "original",
+    "task": "以纸张四角校正斜拍透视，裁去纸外桌面，均匀纸面照明。保留笔触、铅笔线、留白、画纸比例和纸边。",
+    "reviewCriteria": "对照笔触、纸缘及底稿线。重画线条、补画留白、裁去画内部分或改变长宽比即退回。",
+    "runs": {
+      "A": {
+        "scene": "方格桌垫上一张横向蜡笔画，斜拍，纸有四角、短笔触和一处留白。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-18-a-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-18-a-01.json",
+        "exampleId": "x_497",
+        "reviewedAt": "2026-11-23T09:44:59.426Z"
+      },
+      "B": {
+        "scene": "木桌上的横向水彩，四角完整，纸边翘起，有铅笔底稿线。",
+        "inputAspect": "3:2",
+        "outputAspect": "3:2",
+        "job": "job-definitions/edphoto-18-b-01.json",
+        "inputs": {
+          "photo": "accepted"
+        },
+        "output": "accepted",
+        "review": "reviews/edphoto-18-b-01.json",
+        "exampleId": "x_498",
+        "reviewedAt": "2026-11-23T09:45:00.192Z"
+      }
+    }
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "candidateId": "EDPHOTO-06",
+  "slug": "reduce-color-noise-in-a-night-photo",
+  "categoryId": "landscape",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [],
+  "values": {},
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "EDPHOTO-06",
+      "platform": "YouTube",
+      "author": "Arghya Banerjee",
+      "url": "https://www.youtube.com/watch?v=eVeAFZ6-BEI",
+      "publishedAt": "2026-05-17",
+      "metricObjectUrl": "https://www.youtube.com/watch?v=eVeAFZ6-BEI",
+      "metricObjectPublishedAt": "2026-05-17",
+      "metricScope": {
+        "en": "Original source post",
+        "zh-Hans": "原始发布内容"
+      },
+      "observedAt": "2026-11-22",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public post or video description and available chapter markers.",
+        "zh-Hans": "对照。作者对两张高 ISO 鸟类照片用 Lightroom AI DeNoise 做前后比较，观察细羽纹理损失。用参数调节，未给文字指令。"
+      },
+      "evidenceUrl": "https://www.youtube.com/watch?v=eVeAFZ6-BEI",
+      "sourcePromptStatus": {
+        "en": "No complete prompt was verified in the source.",
+        "zh-Hans": "未核到完整提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Reduce color noise in a night photo",
+      "description": "Wood grain, stitching and separate lights remain visible. Fine noise is much easier to judge at full size.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Colored speckles cover the shaded wood of a park bench.\n\n**B** Noise competes with the diagonal weave of a blue market canopy.\n\nWood grain, stitching and separate lights remain visible. Fine noise is much easier to judge at full size.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "夜景暗部降噪",
+      "description": "减弱阴影里零星的红绿彩噪，保留可见木纹、织纹、独立灯点和夜景黑位。只处理底图能辨认的细节。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 夜间街角长椅，暗处有彩噪，椅面木纹可辨，灯光未过曝。 椅背板间及左上阴影的彩色细点明显减少。木条走向、螺钉、座面落叶及金属扶手保持原位，街灯与信号灯仍分开。最暗的叶丛难以逐叶核对。\n\n**B** 夜市蓝布摊棚，暗面彩噪与布纹同时可见，背景小灯点分离。 布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。支架轮廓与远处独立灯点仍清晰，帐篷下方仍暗。细小噪点在原尺寸更容易比较。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Reduce color noise in a night photo. Wood grain, stitching and separate lights remain visible.",
+    "zh-Hans": "布面暗区红绿色杂点消退，斜织纹、黄色缝线和金属扣孔保留。"
+  },
+  "target": {
+    "promptId": "p_404",
+    "sampleName": "alternate"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:04:35.860Z",
+    "contentHash": "e7209a0cf708446cad2852af36b9629851f13dc2ed5975794ffee280ab175e8c"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-09-b-01",
+  "candidateId": "EDPHOTO-09",
+  "jobFingerprint": "a4a88fc0401b5447d5c029b6739d3d4584a985e4befaf86319745c7a5d6d3eb7",
+  "planHash": "39d1835f88df774f3840508c4bcfb14d36f37e65d671c36dd478f015cf67ac06",
+  "ids": {
+    "prompt": "p_407",
+    "template": null,
+    "example": "x_480",
+    "media": [
+      "a_647",
+      "a_648"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_480/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只淡化额头那颗凸起的红痘，让局部色调与邻近皮肤相接。保留雀斑、痣、皱纹、毛孔与原来脸型。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_480/run.yaml",
+      "after": "id: x_480\npromptId: p_407\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 14892252cdaa9bfec91aff3835f1947ba1ed5f66c4d63119fe4612592aba90c1\nreferenceAssetIds:\n  - a_648\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_647\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右眉上方凸起与红色减轻，仍可见一点淡粉色。眼角纹、眼旁小痣和嘴角下深痣均保留。毛衣领及窗边光线延续原照。\n  zh-Hans: 右眉上方凸起与红色减轻，仍可见一点淡粉色。\n"
+    },
+    {
+      "file": "content/media/a_647.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_647\ncontentHash: sha256:ee0ea3e8cebd59be18278face9a63958e711eecff8f134a117a1a787d5af3306\nmimeType: image/png\nbyteSize: 2596938\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_647/fade-a-single-forehead-blemish-original-ee0ea3e8cebd.png\nvariants:\n  thumbnail:\n    key: media/a_647/fade-a-single-forehead-blemish-thumbnail-6e971aa761bb.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_647/fade-a-single-forehead-blemish-card-895370bec50f.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_647/fade-a-single-forehead-blemish-detail-73934be13c61.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_647/fade-a-single-forehead-blemish-og-c20256cafc78.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0.656\nplaceholder:\n  color: \"#D8D8D8\"\nalt:\n  en: Fade a single forehead blemish. Freckles, wrinkles and the mole remain visible.\n  zh-Hans: 右眉上方凸起与红色减轻，仍可见一点淡粉色。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_648.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_648\ncontentHash: sha256:b4090993b21f23963aab04522ffc0afb5effc96c8dcb6c5250da9a4323758a99\nmimeType: image/png\nbyteSize: 2809249\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_648/fade-a-single-forehead-blemish-reference-original-b4090993b21f.png\nvariants:\n  thumbnail:\n    key: media/a_648/fade-a-single-forehead-blemish-reference-thumbnail-3180528ceec5.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_648/fade-a-single-forehead-blemish-reference-card-50b911604d8e.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_648/fade-a-single-forehead-blemish-reference-detail-50744324545c.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_648/fade-a-single-forehead-blemish-reference-og-b3faf150ffba.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.75\n  y: 0.656\nplaceholder:\n  color: \"#987868\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-09-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-09-b-01\",\n  \"candidateId\": \"EDPHOTO-09\",\n  \"fingerprint\": \"a4a88fc0401b5447d5c029b6739d3d4584a985e4befaf86319745c7a5d6d3eb7\",\n  \"ids\": {\n    \"prompt\": \"p_407\",\n    \"template\": null,\n    \"example\": \"x_480\",\n    \"media\": [\n      \"a_647\",\n      \"a_648\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"ee0ea3e8cebd59be18278face9a63958e711eecff8f134a117a1a787d5af3306\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"b4090993b21f23963aab04522ffc0afb5effc96c8dcb6c5250da9a4323758a99\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右眉上方凸起与红色减轻，仍可见一点淡粉色。眼角纹、眼旁小痣和嘴角下深痣均保留。毛衣领及窗边光线延续原照。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:50:02.728Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:33.625Z\",\n    \"contentHash\": \"94e304815cc55898b24c93caa521471dc7ce8e2b62cf764d4f376a5fc3f4c228\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_480/prompt.txt": null,
+    "content/examples/x_480/run.yaml": null,
+    "content/media/a_647.yaml": null,
+    "content/media/a_648.yaml": null,
+    "production/applied/edphoto-09-b-01.json": null
+  }
+}

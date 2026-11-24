@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-01-a-01",
+  "candidateId": "EDPHOTO-01",
+  "jobFingerprint": "578c479a90612fddcc48e14197fcf30b2d1e31696bdef70a5f603c783aa38b12",
+  "planHash": "19d6de3678473a587de7818c1cdf400f90e3f81c7ad592b05c7225923c6d133e",
+  "ids": {
+    "prompt": "p_399",
+    "template": "t_076",
+    "example": "x_463",
+    "media": [
+      "a_613",
+      "a_614"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_463/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。移除画面右后方穿红衣的路人及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_463/run.yaml",
+      "after": "id: x_463\npromptId: p_399\npromptLanguage: zh-Hans\ntemplate:\n  id: t_076\n  version: v1\n  sample: default\n  values:\n    target: 画面右后方穿红衣的路人\n  contractHash: c4868b1aa2d49e406346874fc6ed1f8b066bd12d42cb3192727e71741208391f\npromptSha256: ad76e77d95d807004045e4f068da2a354a04fed7ac326cc92c0dc03fd75ba811\nreferenceAssetIds:\n  - a_614\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_613\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右后红衣路人及脚下人影已清除，斜铺砖延续。两位朋友的脸、发丝、相机及脚前投影保留。原来被人遮住的街边桌椅属于推测性补全。\n  zh-Hans: 右后红衣路人及脚下人影已清除，斜铺砖延续。\n"
+    },
+    {
+      "file": "content/media/a_613.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_613\ncontentHash: sha256:e3ce287ce7a92f3edc40c790191e7829f49fd0e6594d2a3c3322b7b23d1f70c9\nmimeType: image/png\nbyteSize: 3343824\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_613/remove-a-passerby-from-a-travel-photo-original-e3ce287ce7a9.png\nvariants:\n  thumbnail:\n    key: media/a_613/remove-a-passerby-from-a-travel-photo-thumbnail-177355e04311.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_613/remove-a-passerby-from-a-travel-photo-card-4839594fb323.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_613/remove-a-passerby-from-a-travel-photo-detail-5942e8f5482c.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_613/remove-a-passerby-from-a-travel-photo-og-2909b7f96969.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.875\nplaceholder:\n  color: \"#D8C8B8\"\nalt:\n  en: Remove a passerby from a travel photo. The paving and rails continue across the cleared gap.\n  zh-Hans: 右后红衣路人及脚下人影已清除，斜铺砖延续。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_614.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_614\ncontentHash: sha256:2f49914f619bcd06cd95b4a594758735b4f1d23ecf5e2bd319576cd83b644778\nmimeType: image/png\nbyteSize: 3700493\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_614/remove-a-passerby-from-a-travel-photo-reference-original-2f49914f619b.png\nvariants:\n  thumbnail:\n    key: media/a_614/remove-a-passerby-from-a-travel-photo-reference-thumbnail-1fc973f8e464.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_614/remove-a-passerby-from-a-travel-photo-reference-card-151599c777a8.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_614/remove-a-passerby-from-a-travel-photo-reference-detail-cf540329579a.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_614/remove-a-passerby-from-a-travel-photo-reference-og-099433b2d68b.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.375\n  y: 0.781\nplaceholder:\n  color: \"#D8C8B8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_399/entry.yaml",
+      "after": "id: p_399\nslug: remove-a-passerby-from-a-travel-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_076\n  version: v1\n  values:\n    target: 画面右后方穿红衣的路人\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_613\nrelatedTemplateIds:\n  - t_076\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_463\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-01\n    platform: Reddit r/ChatGPT\n    author: Gloomy-Holiday8618\n    url: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/\n    publishedAt: \"2026\"\n    metricObjectUrl: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/\n    metricObjectPublishedAt: \"2026\"\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 演示。主帖附图并给出完整指令，要求移除画面左前方的人。回帖指出补出的地毯花纹错位。能核对帖文和讨论，未独立取得成对原始文件。\n    evidenceUrl: https://www.reddit.com/r/ChatGPT/comments/1q6apuv/holy_hell/\n    sourcePromptStatus:\n      en: Full instruction in the post.\n      zh-Hans: 原帖公开完整指令。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_399/locales/en.mdx",
+      "after": "---\ntitle: Remove a passerby from a travel photo\ndescription: The paving and rails continue across the cleared gap. Furniture and\n  foliage hidden behind a person can only be inferred.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two friends stand against a stone wall, with a pedestrian in red behind them.\n\n**B** A couple pose on a wooden boardwalk with a pedestrian in blue on the left.\n\nThe paving and rails continue across the cleared gap. Furniture and foliage hidden behind a person can only be inferred.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_399/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 旅行合影去路人\ndescription: 移除要移除的人及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:84ffdde1fa2afecb\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 石墙前两位朋友合影，右后红衣路人跨过斜铺砖缝。 右后红衣路人及脚下人影已清除，斜铺砖延续。两位朋友的脸、发丝、相机及脚前投影保留。原来被人遮住的街边桌椅属于推测性补全。\n\n**B** 林间木栈道情侣合影，左后蓝衣路人穿过栏杆，脚下有投影。 左后蓝衣路人及投影已清除。两道横栏接回原有立柱，柱数与透视一致。前景两人的脸、举手姿势、发际线与背包肩带保留。被背包遮挡的树叶无法逐片核实。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_076/entry.yaml",
+      "after": "id: t_076\nslug: remove-a-passerby-from-a-travel-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: portrait\nstyleIds: []\nuseCaseIds:\n  - social-post\n"
+    },
+    {
+      "file": "content/templates/t_076/locales/en.mdx",
+      "after": "---\ntitle: Remove a passerby from a travel photo\ndescription: The paving and rails continue across the cleared gap. Furniture and\n  foliage hidden behind a person can only be inferred.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** Two friends stand against a stone wall, with a pedestrian in red behind them.\n\n**B** A couple pose on a wooden boardwalk with a pedestrian in blue on the left.\n\nThe paving and rails continue across the cleared gap. Furniture and foliage hidden behind a person can only be inferred.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/templates/t_076/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 旅行合影去路人\ndescription: 移除要移除的人及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:84ffdde1fa2afecb\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 石墙前两位朋友合影，右后红衣路人跨过斜铺砖缝。 右后红衣路人及脚下人影已清除，斜铺砖延续。两位朋友的脸、发丝、相机及脚前投影保留。原来被人遮住的街边桌椅属于推测性补全。\n\n**B** 林间木栈道情侣合影，左后蓝衣路人穿过栏杆，脚下有投影。 左后蓝衣路人及投影已清除。两道横栏接回原有立柱，柱数与透视一致。前景两人的脸、举手姿势、发际线与背包肩带保留。被背包遮挡的树叶无法逐片核实。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_076/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。移除{{target}}及其对应的影子。按附近砖缝或栏杆的透视与间距补齐背景。保留前景合影人物、发丝和他们的影子。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_076/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: target\n    required: true\n    group: text\n    labels:\n      en: Person to remove\n      zh-Hans: 要移除的人\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 画面右后方穿红衣的路人\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_076/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_076/versions/v1/samples/default.yaml",
+      "after": "target: 画面右后方穿红衣的路人\n"
+    },
+    {
+      "file": "production/applied/edphoto-01-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-01-a-01\",\n  \"candidateId\": \"EDPHOTO-01\",\n  \"fingerprint\": \"578c479a90612fddcc48e14197fcf30b2d1e31696bdef70a5f603c783aa38b12\",\n  \"ids\": {\n    \"prompt\": \"p_399\",\n    \"template\": \"t_076\",\n    \"example\": \"x_463\",\n    \"media\": [\n      \"a_613\",\n      \"a_614\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"e3ce287ce7a92f3edc40c790191e7829f49fd0e6594d2a3c3322b7b23d1f70c9\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"2f49914f619bcd06cd95b4a594758735b4f1d23ecf5e2bd319576cd83b644778\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右后红衣路人及脚下人影已清除，斜铺砖延续。两位朋友的脸、发丝、相机及脚前投影保留。原来被人遮住的街边桌椅属于推测性补全。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:03:19.758Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:02:49.164Z\",\n    \"contentHash\": \"f7c53e154faf293408a391c3c2da3a6e4ce39e0276d6eac0a0a30d5c88422169\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_463/prompt.txt": null,
+    "content/examples/x_463/run.yaml": null,
+    "content/media/a_613.yaml": null,
+    "content/media/a_614.yaml": null,
+    "content/prompts/p_399/entry.yaml": null,
+    "content/prompts/p_399/locales/en.mdx": null,
+    "content/prompts/p_399/locales/zh-Hans.mdx": null,
+    "content/templates/t_076/entry.yaml": null,
+    "content/templates/t_076/locales/en.mdx": null,
+    "content/templates/t_076/locales/zh-Hans.mdx": null,
+    "content/templates/t_076/versions/v1/body.txt": null,
+    "content/templates/t_076/versions/v1/fields.yaml": null,
+    "content/templates/t_076/versions/v1/inputs.yaml": null,
+    "content/templates/t_076/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-01-a-01.json": null
+  }
+}

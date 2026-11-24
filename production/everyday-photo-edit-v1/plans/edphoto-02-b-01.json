@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-02-b-01",
+  "candidateId": "EDPHOTO-02",
+  "jobFingerprint": "d3f57c2ff62aaa3e82eb702d82b8a943a7aa1efdd18116dcbc4d9aab493d0d7b",
+  "planHash": "5ba65cb08eeaff37ffb5ce099cae4fcd84e8914984c5302e8f4e5ada080308c8",
+  "ids": {
+    "prompt": "p_400",
+    "template": "t_077",
+    "example": "x_466",
+    "media": [
+      "a_619",
+      "a_620"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_466/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。清理餐盘旁的空塑料包装及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_466/run.yaml",
+      "after": "id: x_466\npromptId: p_400\npromptLanguage: zh-Hans\ntemplate:\n  id: t_077\n  version: v1\n  sample: alternate\n  values:\n    target: 餐盘旁的空塑料包装\n  contractHash: c3d6ca50eff8af20a0cae089a00289ee07c4eeb177144f90de244716720bd2c6\npromptSha256: 1be913208d082634044efb9a77cbd5e8bd6f7eb85039bcc806a3182f89730871\nreferenceAssetIds:\n  - a_620\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_619\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 右侧透明包装与高光消失。绿白格纹在盘沿与叉子之间连续，四根叉齿清楚可分。鸡肉、土豆泥、番茄和两瓣柠檬的位置及份量保留。透明袋造成的细碎反光会影响修复边界的判断。\n  zh-Hans: 右侧透明包装与高光消失。\n"
+    },
+    {
+      "file": "content/media/a_619.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_619\ncontentHash: sha256:f8fb1868250d693af3254848980af280ae2d046ac77fb7e037d7b5f9b60c570c\nmimeType: image/png\nbyteSize: 2990532\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_619/remove-clutter-from-a-caf-or-dinner-table-original-f8fb1868250d.png\nvariants:\n  thumbnail:\n    key: media/a_619/remove-clutter-from-a-caf-or-dinner-table-thumbnail-371ef60e1637.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_619/remove-clutter-from-a-caf-or-dinner-table-card-b206cc1a13df.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_619/remove-clutter-from-a-caf-or-dinner-table-detail-0bbf7f860c65.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_619/remove-clutter-from-a-caf-or-dinner-table-og-08cf1973e1be.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.156\n  y: 0.75\nplaceholder:\n  color: \"#888888\"\nalt:\n  en: Remove clutter from a café or dinner table. The menu still reads Coffee and Tea.\n  zh-Hans: 右侧透明包装与高光消失。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_620.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_620\ncontentHash: sha256:549803927bed357d34a321493c19a399b110d230af95ee91b8ab1db35438ee9c\nmimeType: image/png\nbyteSize: 3073843\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_620/remove-clutter-from-a-caf-or-dinner-table-reference-original-549803927bed.png\nvariants:\n  thumbnail:\n    key: media/a_620/remove-clutter-from-a-caf-or-dinner-table-reference-thumbnail-0d4010caf83e.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_620/remove-clutter-from-a-caf-or-dinner-table-reference-card-b7d9488c1941.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_620/remove-clutter-from-a-caf-or-dinner-table-reference-detail-ebaa1eac2f90.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_620/remove-clutter-from-a-caf-or-dinner-table-reference-og-a0720aa0cae1.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.188\n  y: 0.75\nplaceholder:\n  color: \"#787878\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_077/versions/v1/samples/alternate.yaml",
+      "after": "target: 餐盘旁的空塑料包装\n"
+    },
+    {
+      "file": "production/applied/edphoto-02-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-02-b-01\",\n  \"candidateId\": \"EDPHOTO-02\",\n  \"fingerprint\": \"d3f57c2ff62aaa3e82eb702d82b8a943a7aa1efdd18116dcbc4d9aab493d0d7b\",\n  \"ids\": {\n    \"prompt\": \"p_400\",\n    \"template\": \"t_077\",\n    \"example\": \"x_466\",\n    \"media\": [\n      \"a_619\",\n      \"a_620\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"f8fb1868250d693af3254848980af280ae2d046ac77fb7e037d7b5f9b60c570c\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"549803927bed357d34a321493c19a399b110d230af95ee91b8ab1db35438ee9c\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"右侧透明包装与高光消失。绿白格纹在盘沿与叉子之间连续，四根叉齿清楚可分。鸡肉、土豆泥、番茄和两瓣柠檬的位置及份量保留。透明袋造成的细碎反光会影响修复边界的判断。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:23:01.888Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:03:18.671Z\",\n    \"contentHash\": \"4a461a865aa7d186c66aab4ff0849088cdd15db6e0eea228ca52286db72cf3ad\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_466/prompt.txt": null,
+    "content/examples/x_466/run.yaml": null,
+    "content/media/a_619.yaml": null,
+    "content/media/a_620.yaml": null,
+    "content/templates/t_077/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-02-b-01.json": null
+  }
+}

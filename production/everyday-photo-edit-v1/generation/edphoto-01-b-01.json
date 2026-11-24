@@ -1,0 +1,30 @@
+{
+  "provider": "image_gen",
+  "model": "GPT Image",
+  "inputPrompt": "生成一张用于修图教学的合成原始照片。画面像普通手机拍到的自然快照。遵循下面指定的主体、缺陷位置、可辨细节与光照，缺陷在缩小预览中仍能指出。只交付一张未经修复的照片，不加标题、箭头、边框或前后拼图。横向 3∶2，林间木栈道，一对虚构成年情侣站在前景合影。左后方有一位蓝衣路人正在走过，身体遮挡一小段木栏杆，脚下投影可见。两位主体与路人分开，栏杆两侧立柱间距清楚。",
+  "inputParentHashes": [],
+  "editParentHashes": [
+    "323df2f40bcaf96666e799986107b9cda89efbd6106d40690fe044ca480bf615"
+  ],
+  "editDefinition": "job-definitions/edphoto-01-b-01.json",
+  "assets": [
+    {
+      "role": "photo",
+      "path": "production/everyday-photo-edit-v1/references/01-b.png",
+      "sha256": "323df2f40bcaf96666e799986107b9cda89efbd6106d40690fe044ca480bf615",
+      "width": 1536,
+      "height": 1024,
+      "toolFile": "exec-bc5b11c2-6647-4632-aebf-267abfc07c82.png",
+      "fileModifiedAt": "2026-11-23T08:01:44.347221+00:00"
+    },
+    {
+      "role": "output",
+      "path": "production/everyday-photo-edit-v1/outputs/edphoto-01-b-01.png",
+      "sha256": "b56806cd2b8936112d406396a02b5e5437455ee95037a3afbb4fe124c6f10d8e",
+      "width": 1536,
+      "height": 1024,
+      "toolFile": "exec-166dcd22-7a7b-432f-b08e-04ac3e9b1624.png",
+      "fileModifiedAt": "2026-11-23T08:02:47.703844+00:00"
+    }
+  ]
+}

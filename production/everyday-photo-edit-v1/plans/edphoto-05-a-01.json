@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-05-a-01",
+  "candidateId": "EDPHOTO-05",
+  "jobFingerprint": "0356ef2eec5f36a79d71642918fe219e0f23236db041236c9af4b810181fb4bf",
+  "planHash": "6d7f812409e4a3b7d5fff51dd28c933b6baa2f0157d7ae4408173cb8912271b9",
+  "ids": {
+    "prompt": "p_403",
+    "template": null,
+    "example": "x_471",
+    "media": [
+      "a_629",
+      "a_630"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_471/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以画面中的白瓷为中性参照减轻餐桌上的综合色偏，保留暖光气氛、食材本色和原有明暗层次。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_471/run.yaml",
+      "after": "id: x_471\npromptId: p_403\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 62d3d3004208b0f709dceee1fa51060588dffa98985fd269c6d89cfaaf73e1a7\nreferenceAssetIds:\n  - a_630\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_629\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 瓷盘左缘的绿色偏光已消退，右侧台灯维持暖黄，盘沿高光仍有层次。番茄块与菜梗没有移位。偏暗的左侧桌面也随校色变暖。\n  zh-Hans: 瓷盘左缘的绿色偏光已消退，右侧台灯维持暖黄，盘沿高光仍有层次。\n"
+    },
+    {
+      "file": "content/media/a_629.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_629\ncontentHash: sha256:50b255216c03fdab2673e6893bc216e3f43ec6bdd9a0b4f9cec94da81205fd89\nmimeType: image/png\nbyteSize: 2316424\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_629/correct-mixed-lighting-on-a-dinner-table-original-50b255216c03.png\nvariants:\n  thumbnail:\n    key: media/a_629/correct-mixed-lighting-on-a-dinner-table-thumbnail-9344408e2538.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_629/correct-mixed-lighting-on-a-dinner-table-card-9fae743b06ab.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_629/correct-mixed-lighting-on-a-dinner-table-detail-14e7a5ae92c5.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_629/correct-mixed-lighting-on-a-dinner-table-og-bb0557e6fbd0.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.719\n  y: 0.719\nplaceholder:\n  color: \"#D8C8C8\"\nalt:\n  en: Correct mixed lighting on a dinner table. Use porcelain as the neutral anchor.\n  zh-Hans: 瓷盘左缘的绿色偏光已消退，右侧台灯维持暖黄，盘沿高光仍有层次。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_630.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_630\ncontentHash: sha256:c9b94b520eccb3eaa54339e3e24e625f9fe6cb5b6bdfe165ddb976d90865f99c\nmimeType: image/png\nbyteSize: 2161115\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_630/correct-mixed-lighting-on-a-dinner-table-reference-original-c9b94b520ecc.png\nvariants:\n  thumbnail:\n    key: media/a_630/correct-mixed-lighting-on-a-dinner-table-reference-thumbnail-d0e8b35cbb4b.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_630/correct-mixed-lighting-on-a-dinner-table-reference-card-b1f6bbc03965.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_630/correct-mixed-lighting-on-a-dinner-table-reference-detail-0f6cc9b77813.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_630/correct-mixed-lighting-on-a-dinner-table-reference-og-c6d54ff57069.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.906\n  y: 0.188\nplaceholder:\n  color: \"#282808\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_403/entry.yaml",
+      "after": "id: p_403\nslug: correct-mixed-lighting-on-a-dinner-table\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: food\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_629\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_471\npromptProvenance: original\ninspirationSources: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_403/locales/en.mdx",
+      "after": "---\ntitle: Correct mixed lighting on a dinner table\ndescription: Use porcelain as the neutral anchor. The blue floral pattern and\n  warm light remain, with some warmth still visible on the table.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A white plate of tomatoes and greens catches green and amber light.\n\n**B** Rice, a porcelain spoon and wooden chopsticks sit between a blue window and a warm lamp.\n\nUse porcelain as the neutral anchor. The blue floral pattern and warm light remain, with some warmth still visible on the table.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_403/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 餐桌混合光校色\ndescription: 以画面中的白瓷为中性参照减轻餐桌上的综合色偏，保留暖光气氛、食材本色和原有明暗层次。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:c8d32c25fbfbb19c\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 白瓷盘一边泛绿，一边受暖灯照射，盘中番茄和青菜。 瓷盘左缘的绿色偏光已消退，右侧台灯维持暖黄，盘沿高光仍有层次。番茄块与菜梗没有移位。偏暗的左侧桌面也随校色变暖。\n\n**B** 蓝色窗光加暖灯下的米饭、木筷和白瓷勺。 米饭及勺面趋近中性，碗边仍带一点冷光；窗外依旧偏蓝，台灯仍是橙黄。木筷、碗上蓝花和勺柄圆孔保留，碗口原有的褐色小点仍可见。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_403/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。以画面中的白瓷为中性参照减轻餐桌上的综合色偏，保留暖光气氛、食材本色和原有明暗层次。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-05-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-05-a-01\",\n  \"candidateId\": \"EDPHOTO-05\",\n  \"fingerprint\": \"0356ef2eec5f36a79d71642918fe219e0f23236db041236c9af4b810181fb4bf\",\n  \"ids\": {\n    \"prompt\": \"p_403\",\n    \"template\": null,\n    \"example\": \"x_471\",\n    \"media\": [\n      \"a_629\",\n      \"a_630\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"50b255216c03fdab2673e6893bc216e3f43ec6bdd9a0b4f9cec94da81205fd89\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"c9b94b520eccb3eaa54339e3e24e625f9fe6cb5b6bdfe165ddb976d90865f99c\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"瓷盘左缘的绿色偏光已消退，右侧台灯维持暖黄，盘沿高光仍有层次。番茄块与菜梗没有移位。偏暗的左侧桌面也随校色变暖。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:32:45.002Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:04:09.153Z\",\n    \"contentHash\": \"d30b1e0875daedb9021fb1f76f6177dc9c008cc75464b17e4f92a0a6f8b4397d\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_471/prompt.txt": null,
+    "content/examples/x_471/run.yaml": null,
+    "content/media/a_629.yaml": null,
+    "content/media/a_630.yaml": null,
+    "content/prompts/p_403/entry.yaml": null,
+    "content/prompts/p_403/locales/en.mdx": null,
+    "content/prompts/p_403/locales/zh-Hans.mdx": null,
+    "content/prompts/p_403/prompt.txt": null,
+    "production/applied/edphoto-05-a-01.json": null
+  }
+}

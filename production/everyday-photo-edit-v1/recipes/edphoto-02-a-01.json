@@ -1,0 +1,76 @@
+{
+  "candidateId": "EDPHOTO-02",
+  "slug": "remove-clutter-from-a-caf-or-dinner-table",
+  "categoryId": "food",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "编辑上传的这一张底图，以它为准。清理{{target}}及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "original",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "name": "target",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Item to clear",
+        "zh-Hans": "待清理物"
+      },
+      "help": {
+        "en": "Use a short description that matches your photo.",
+        "zh-Hans": "填写与你的照片相符的简短描述。"
+      },
+      "default": "咖啡旁揉成团的纸巾"
+    }
+  ],
+  "values": {
+    "target": "咖啡旁揉成团的纸巾"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Upload the photo to edit first.",
+      "zh-Hans": "先上传要修改的照片。"
+    },
+    "slots": [
+      {
+        "id": "photo",
+        "labels": {
+          "en": "Photo to edit",
+          "zh-Hans": "要修改的照片"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [],
+  "locales": {
+    "en": {
+      "title": "Remove clutter from a café or dinner table",
+      "description": "The menu still reads Coffee and Tea. Check all four fork tines and the cloth pattern where the wrapper ended.",
+      "body": "## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A crumpled tissue casts a shadow beside coffee and a handwritten menu.\n\n**B** A clear wrapper lies between a dinner plate and fork on a checked cloth.\n\nThe menu still reads Coffee and Tea. Check all four fork tines and the cloth pattern where the wrapper ended.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "桌面去杂物",
+      "description": "清理待清理物及其投影。延续底下的桌面纹理，保留餐具、食物份量、桌面其余物件及其文字。",
+      "body": "## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 咖啡与手写菜单旁有一团用过的纸巾，纸巾投影压在木纹上。 右上纸巾和投影消失，顺纹补齐木桌。左下咖啡的拉花、杯柄朝向及杯碟轮廓保留。右下菜单的 Coffee 和 Tea 仍清楚可读，花瓶的斜影仍在。原先被纸巾盖住的细木纹只能沿邻区推测。\n\n**B** 餐盘旁有一个空塑料包装，压在格纹餐布上，叉子紧邻包装。 右侧透明包装与高光消失。绿白格纹在盘沿与叉子之间连续，四根叉齿清楚可分。鸡肉、土豆泥、番茄和两瓣柠檬的位置及份量保留。透明袋造成的细碎反光会影响修复边界的判断。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Remove clutter from a café or dinner table. The menu still reads Coffee and Tea.",
+    "zh-Hans": "右上纸巾和投影消失，顺纹补齐木桌。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex",
+    "reviewedAt": "2026-11-23T10:03:10.068Z",
+    "contentHash": "ffcdcdd0a6a5f8278b73a6eeb98bb78eb35b01f423269e4c87529161ebaabf72"
+  }
+}

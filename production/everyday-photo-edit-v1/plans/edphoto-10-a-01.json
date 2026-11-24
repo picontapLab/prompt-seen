@@ -1,0 +1,94 @@
+{
+  "key": "edphoto-10-a-01",
+  "candidateId": "EDPHOTO-10",
+  "jobFingerprint": "2cbe80cc097767689f6fa9ac210cbda746e2f40c191c0dc0037da1fe2ce0dd83",
+  "planHash": "d08c962e212320361b1cc0140b518a4217aedd4d41f92846d2df61ce8ec0d56f",
+  "ids": {
+    "prompt": "p_408",
+    "template": "t_080",
+    "example": "x_481",
+    "media": [
+      "a_649",
+      "a_650"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_481/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。将画布扩展为2∶3 竖幅，向上下补画。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_481/run.yaml",
+      "after": "id: x_481\npromptId: p_408\npromptLanguage: zh-Hans\ntemplate:\n  id: t_080\n  version: v1\n  sample: default\n  values:\n    frame: 2∶3 竖幅，向上下补画\n  contractHash: 984317726d60585ae2cb479dd146fc84fc5cc17a1538f8be32bd09e0dcd3af9e\npromptSha256: 87f01e437224d071e4d314fca20f0a18698ebac355f8421f5eb4f297e97acd50\nreferenceAssetIds:\n  - a_650\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_649\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 横图向上下扩为竖图。按相同宽度对齐两轮中心、车篮与海平线，车轮完整圆润，海面连续。上方树枝延伸、下方地面增多，画外景物来自生成。\n  zh-Hans: 横图向上下扩为竖图。\n"
+    },
+    {
+      "file": "content/media/a_649.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_649\ncontentHash: sha256:480453f22d163e2efa0ae56e0bff8d5962b27e95028d2c32481fd0e8aef9f89c\nmimeType: image/png\nbyteSize: 3080783\nwidth: 1024\nheight: 1536\noriginal:\n  key: media/a_649/extend-a-photo-for-a-different-aspect-ratio-original-480453f22d16.png\nvariants:\n  thumbnail:\n    key: media/a_649/extend-a-photo-for-a-different-aspect-ratio-thumbnail-c54e48af013f.webp\n    width: 320\n    height: 480\n    mimeType: image/webp\n  card:\n    key: media/a_649/extend-a-photo-for-a-different-aspect-ratio-card-950910baf9cc.webp\n    width: 640\n    height: 960\n    mimeType: image/webp\n  detail:\n    key: media/a_649/extend-a-photo-for-a-different-aspect-ratio-detail-232f66ebf125.webp\n    width: 1024\n    height: 1536\n    mimeType: image/webp\n  og:\n    key: media/a_649/extend-a-photo-for-a-different-aspect-ratio-og-d046093ef534.jpg\n    width: 1024\n    height: 538\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.938\n  y: 0.531\nplaceholder:\n  color: \"#98C8F8\"\nalt:\n  en: Extend a photo for a different aspect ratio. The bicycle gains sky and pavement above and below.\n  zh-Hans: 横图向上下扩为竖图。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_650.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_650\ncontentHash: sha256:fb722bbe4130689fca0bb6d899872339608f0f0a1f504942cc93c69efde1e0ed\nmimeType: image/png\nbyteSize: 2865764\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_650/extend-a-photo-for-a-different-aspect-ratio-reference-original-fb722bbe4130.png\nvariants:\n  thumbnail:\n    key: media/a_650/extend-a-photo-for-a-different-aspect-ratio-reference-thumbnail-07c089bfe785.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_650/extend-a-photo-for-a-different-aspect-ratio-reference-card-064106753f92.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_650/extend-a-photo-for-a-different-aspect-ratio-reference-detail-165013f37a21.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_650/extend-a-photo-for-a-different-aspect-ratio-reference-og-bd250627fbd2.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.344\n  y: 0.531\nplaceholder:\n  color: \"#98B8E8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_408/entry.yaml",
+      "after": "id: p_408\nslug: extend-a-photo-for-a-different-aspect-ratio\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: template\n  templateId: t_080\n  version: v1\n  values:\n    frame: 2∶3 竖幅，向上下补画\ncategoryId: landscape\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_649\nrelatedTemplateIds:\n  - t_080\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\nshowcaseExampleId: x_481\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-10\n    platform: 哔哩哔哩\n    author: 工具狂\n    url: https://www.bilibili.com/video/BV1Dm4y1v7JQ/\n    publishedAt: 2023-06-15\n    metricObjectUrl: https://www.bilibili.com/video/BV1Dm4y1v7JQ/\n    metricObjectPublishedAt: 2023-06-15\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 演示。01:31 用 Photoshop Beta 扩海报，02:44 演示 Draw Things 填充和扩图，08:00 比较方法。公开简介没有完整文字指令。\n    evidenceUrl: https://www.bilibili.com/video/BV1Dm4y1v7JQ/\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_408/locales/en.mdx",
+      "after": "---\ntitle: Extend a photo for a different aspect ratio\ndescription: The bicycle gains sky and pavement above and below. The cabin gains\n  lake on both sides. Scenery beyond the original frame is generated.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A bicycle with two complete wheels fills a landscape beach photo.\n\n**B** A wooden lakeside cabin fills a narrow portrait frame.\n\nThe bicycle gains sky and pavement above and below. The cabin gains lake on both sides. Scenery beyond the original frame is generated.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_408/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 照片扩图适配版式\ndescription: 将画布扩展为画幅与扩展方向。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:8c2c9407b2403a53\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 横幅海边自行车照，车轮完整，车上方空间少，准备做竖封面。 横图向上下扩为竖图。按相同宽度对齐两轮中心、车篮与海平线，车轮完整圆润，海面连续。上方树枝延伸、下方地面增多，画外景物来自生成。\n\n**B** 竖幅湖边木屋照，屋顶完整，两侧空间紧，准备做横封面。 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。岸线在两侧连续，新增的远岸植被只作版式延伸。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_080/entry.yaml",
+      "after": "id: t_080\nslug: extend-a-photo-for-a-different-aspect-ratio\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\ncurrentVersion: v1\npromptLanguage: zh-Hans\ncategoryId: landscape\nstyleIds: []\nuseCaseIds:\n  - social-post\n"
+    },
+    {
+      "file": "content/templates/t_080/locales/en.mdx",
+      "after": "---\ntitle: Extend a photo for a different aspect ratio\ndescription: The bicycle gains sky and pavement above and below. The cabin gains\n  lake on both sides. Scenery beyond the original frame is generated.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A bicycle with two complete wheels fills a landscape beach photo.\n\n**B** A wooden lakeside cabin fills a narrow portrait frame.\n\nThe bicycle gains sky and pavement above and below. The cabin gains lake on both sides. Scenery beyond the original frame is generated.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/templates/t_080/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 照片扩图适配版式\ndescription: 将画布扩展为画幅与扩展方向。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:8c2c9407b2403a53\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 横幅海边自行车照，车轮完整，车上方空间少，准备做竖封面。 横图向上下扩为竖图。按相同宽度对齐两轮中心、车篮与海平线，车轮完整圆润，海面连续。上方树枝延伸、下方地面增多，画外景物来自生成。\n\n**B** 竖幅湖边木屋照，屋顶完整，两侧空间紧，准备做横封面。 竖图向两侧展开，沿相同高度比对屋脊、双窗、九格门窗与三级平台，原有木屋结构和花盆均在。岸线在两侧连续，新增的远岸植被只作版式延伸。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/templates/t_080/versions/v1/body.txt",
+      "after": "编辑上传的这一张底图，以它为准。将画布扩展为{{frame}}。完整保留原照片中的主体与几何比例，只向原边界外延续已有天空、地面或水面，不额外添加人物、车辆或建筑。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/templates/t_080/versions/v1/fields.yaml",
+      "after": "fields:\n  - name: frame\n    required: true\n    group: text\n    labels:\n      en: Canvas shape and direction\n      zh-Hans: 画幅与扩展方向\n    help:\n      en: Use a short description that matches your photo.\n      zh-Hans: 填写与你的照片相符的简短描述。\n    type: string\n    default: 2∶3 竖幅，向上下补画\n    minLength: null\n    maxLength: null\n    multiline: false\n"
+    },
+    {
+      "file": "content/templates/t_080/versions/v1/inputs.yaml",
+      "after": "referenceImage: required\ninstructions:\n  en: Upload the photo to edit first.\n  zh-Hans: 先上传要修改的照片。\nslots:\n  - id: photo\n    labels:\n      en: Photo to edit\n      zh-Hans: 要修改的照片\n    min: 1\n    max: 1\n"
+    },
+    {
+      "file": "content/templates/t_080/versions/v1/samples/default.yaml",
+      "after": "frame: 2∶3 竖幅，向上下补画\n"
+    },
+    {
+      "file": "production/applied/edphoto-10-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-10-a-01\",\n  \"candidateId\": \"EDPHOTO-10\",\n  \"fingerprint\": \"2cbe80cc097767689f6fa9ac210cbda746e2f40c191c0dc0037da1fe2ce0dd83\",\n  \"ids\": {\n    \"prompt\": \"p_408\",\n    \"template\": \"t_080\",\n    \"example\": \"x_481\",\n    \"media\": [\n      \"a_649\",\n      \"a_650\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"480453f22d163e2efa0ae56e0bff8d5962b27e95028d2c32481fd0e8aef9f89c\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"fb722bbe4130689fca0bb6d899872339608f0f0a1f504942cc93c69efde1e0ed\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"横图向上下扩为竖图。按相同宽度对齐两轮中心、车篮与海平线，车轮完整圆润，海面连续。上方树枝延伸、下方地面增多，画外景物来自生成。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:54:37.918Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:05:44.806Z\",\n    \"contentHash\": \"c37cd7c0f04d04b21cc00965467414bb58d17cb43e2298f6b66956e82696b683\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_481/prompt.txt": null,
+    "content/examples/x_481/run.yaml": null,
+    "content/media/a_649.yaml": null,
+    "content/media/a_650.yaml": null,
+    "content/prompts/p_408/entry.yaml": null,
+    "content/prompts/p_408/locales/en.mdx": null,
+    "content/prompts/p_408/locales/zh-Hans.mdx": null,
+    "content/templates/t_080/entry.yaml": null,
+    "content/templates/t_080/locales/en.mdx": null,
+    "content/templates/t_080/locales/zh-Hans.mdx": null,
+    "content/templates/t_080/versions/v1/body.txt": null,
+    "content/templates/t_080/versions/v1/fields.yaml": null,
+    "content/templates/t_080/versions/v1/inputs.yaml": null,
+    "content/templates/t_080/versions/v1/samples/default.yaml": null,
+    "production/applied/edphoto-10-a-01.json": null
+  }
+}

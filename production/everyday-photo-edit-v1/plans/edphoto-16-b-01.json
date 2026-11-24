@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-16-b-01",
+  "candidateId": "EDPHOTO-16",
+  "jobFingerprint": "bf4826d3a124ff31cc2287db68e49412c0750c93a532b748ce76867bd5dbde53",
+  "planHash": "3a8587e98f82a8a883711c684ce56587cd27b18371a25f45171b8be5df3f2c41",
+  "ids": {
+    "prompt": "p_414",
+    "template": "t_081",
+    "example": "x_494",
+    "media": [
+      "a_679",
+      "a_680"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_494/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。将商品后的环境整理为米白哑光台面和背景，保持原拍摄角度、比例和接触阴影。逐处保留物件的磨损、凹痕、划痕、颜色和已有标记。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_494/run.yaml",
+      "after": "id: x_494\npromptId: p_414\npromptLanguage: zh-Hans\ntemplate:\n  id: t_081\n  version: v1\n  sample: alternate\n  values:\n    surface: 米白哑光台面和背景\n  contractHash: 2581a6def516203f2c5487feda6569c5898b2360c516515c7f5671e599bf69ab\npromptSha256: 6c033c53bee7c402e19a69660a76a9e17d87e0d1dd22336829132ff297c8f5c0\nreferenceAssetIds:\n  - a_680\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_679\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 彩色布袋和木桌换为米白底。壶左侧凹痕、右侧三道斜划痕和底边擦伤保留，黑色提环及壶盖形状一致。磨砂表面的阴影会影响凹痕看起来的深浅。\n  zh-Hans: 彩色布袋和木桌换为米白底。\n"
+    },
+    {
+      "file": "content/media/a_679.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_679\ncontentHash: sha256:7e8aa9bdb5deeef5f4617ae941c05c190d3e6046ee8b1684d25915102eb38ad4\nmimeType: image/png\nbyteSize: 1842367\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_679/clean-up-the-background-of-a-secondhand-item-original-7e8aa9bdb5de.png\nvariants:\n  thumbnail:\n    key: media/a_679/clean-up-the-background-of-a-secondhand-item-thumbnail-c922a08860a9.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_679/clean-up-the-background-of-a-secondhand-item-card-1ae22972bf95.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_679/clean-up-the-background-of-a-secondhand-item-detail-08a05a7a2998.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_679/clean-up-the-background-of-a-secondhand-item-og-4d3eb7d1dc1c.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.531\n  y: 0\nplaceholder:\n  color: \"#E8D8D8\"\nalt:\n  en: Clean up the background of a secondhand item. The bag’s exposed corner, scratched brass clasp, bottle dent and three diagonal marks remain.\n  zh-Hans: 彩色布袋和木桌换为米白底。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_680.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_680\ncontentHash: sha256:94af681d6cd0ecde8ff3f324ba9719455b3b6775f6dc03383a5dfda3b13fc94c\nmimeType: image/png\nbyteSize: 2281422\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_680/clean-up-the-background-of-a-secondhand-item-reference-original-94af681d6cd0.png\nvariants:\n  thumbnail:\n    key: media/a_680/clean-up-the-background-of-a-secondhand-item-reference-thumbnail-ed7c6d4aba32.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_680/clean-up-the-background-of-a-secondhand-item-reference-card-0af8c9625ad2.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_680/clean-up-the-background-of-a-secondhand-item-reference-detail-3d49f534a46e.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_680/clean-up-the-background-of-a-secondhand-item-reference-og-f43ce535fd07.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.563\n  y: 0\nplaceholder:\n  color: \"#C8C8C8\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_081/versions/v1/samples/alternate.yaml",
+      "after": "surface: 米白哑光台面和背景\n"
+    },
+    {
+      "file": "production/applied/edphoto-16-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-16-b-01\",\n  \"candidateId\": \"EDPHOTO-16\",\n  \"fingerprint\": \"bf4826d3a124ff31cc2287db68e49412c0750c93a532b748ce76867bd5dbde53\",\n  \"ids\": {\n    \"prompt\": \"p_414\",\n    \"template\": \"t_081\",\n    \"example\": \"x_494\",\n    \"media\": [\n      \"a_679\",\n      \"a_680\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"7e8aa9bdb5deeef5f4617ae941c05c190d3e6046ee8b1684d25915102eb38ad4\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"94af681d6cd0ecde8ff3f324ba9719455b3b6775f6dc03383a5dfda3b13fc94c\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"彩色布袋和木桌换为米白底。壶左侧凹痕、右侧三道斜划痕和底边擦伤保留，黑色提环及壶盖形状一致。磨砂表面的阴影会影响凹痕看起来的深浅。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:31:22.872Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:07:49.672Z\",\n    \"contentHash\": \"02948d729e60c9f29004ea2b36ec800dd58abcde71fef7749b8cd62b7ef43692\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_494/prompt.txt": null,
+    "content/examples/x_494/run.yaml": null,
+    "content/media/a_679.yaml": null,
+    "content/media/a_680.yaml": null,
+    "content/templates/t_081/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-16-b-01.json": null
+  }
+}

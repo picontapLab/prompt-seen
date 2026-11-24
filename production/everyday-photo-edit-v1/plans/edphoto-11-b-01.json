@@ -1,0 +1,44 @@
+{
+  "key": "edphoto-11-b-01",
+  "candidateId": "EDPHOTO-11",
+  "jobFingerprint": "36db3696fb24f484e050d07562862bb78bce63983196c2edafa690eed4ff8ceb",
+  "planHash": "bccf49cc0ea49d3a2962eec8a36aa008dc096b44e20bed881f058dac2547d5ec",
+  "ids": {
+    "prompt": "p_409",
+    "template": null,
+    "example": "x_484",
+    "media": [
+      "a_655",
+      "a_656"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_484/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。矫正相机仰拍造成的竖线收敛，保留真实纵深、门窗或书架格数，用轻微裁切整理边沿。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_484/run.yaml",
+      "after": "id: x_484\npromptId: p_409\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: ae744eaac895b5a187d6ff87c6105bf28f4e99e1f3f31e3154ec83b47656688f\nreferenceAssetIds:\n  - a_656\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_655\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。地球仪、沙漏、右侧相框和两侧书架保留空间纵深。书脊细字不宜用作逐字档案。\n  zh-Hans: 后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。\n"
+    },
+    {
+      "file": "content/media/a_655.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_655\ncontentHash: sha256:2ead4bb68173fb58d53e9bf87245b570cf3ddf5dbabeb857a6fdbb120d41f336\nmimeType: image/png\nbyteSize: 2214549\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_655/straighten-converging-verticals-in-an-architecture-photo-original-2ead4bb68173.png\nvariants:\n  thumbnail:\n    key: media/a_655/straighten-converging-verticals-in-an-architecture-photo-thumbnail-cf850212aea0.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_655/straighten-converging-verticals-in-an-architecture-photo-card-5a59b6327cbb.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_655/straighten-converging-verticals-in-an-architecture-photo-detail-f240f05b8bea.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_655/straighten-converging-verticals-in-an-architecture-photo-og-e08ed09e7d99.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.188\nplaceholder:\n  color: \"#885838\"\nalt:\n  en: Straighten converging verticals in an architecture photo. The paired columns and bookshelf uprights become straighter.\n  zh-Hans: 后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_656.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_656\ncontentHash: sha256:214931fc810c59371fe591b83183c1653227b529789c3144e7afb7537f34e096\nmimeType: image/png\nbyteSize: 2193522\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_656/straighten-converging-verticals-in-an-architecture-photo-reference-original-214931fc810c.png\nvariants:\n  thumbnail:\n    key: media/a_656/straighten-converging-verticals-in-an-architecture-photo-reference-thumbnail-430087a3411d.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_656/straighten-converging-verticals-in-an-architecture-photo-reference-card-c0e3333786f2.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_656/straighten-converging-verticals-in-an-architecture-photo-reference-detail-ebf3cf610087.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_656/straighten-converging-verticals-in-an-architecture-photo-reference-og-e1153b485c15.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.063\n  y: 0.188\nplaceholder:\n  color: \"#281808\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "production/applied/edphoto-11-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-11-b-01\",\n  \"candidateId\": \"EDPHOTO-11\",\n  \"fingerprint\": \"36db3696fb24f484e050d07562862bb78bce63983196c2edafa690eed4ff8ceb\",\n  \"ids\": {\n    \"prompt\": \"p_409\",\n    \"template\": null,\n    \"example\": \"x_484\",\n    \"media\": [\n      \"a_655\",\n      \"a_656\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"2ead4bb68173fb58d53e9bf87245b570cf3ddf5dbabeb857a6fdbb120d41f336\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"214931fc810c59371fe591b83183c1653227b529789c3144e7afb7537f34e096\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"后墙书柜的左右竖框完成拉直，仍是四排陈列、下方三组柜门。地球仪、沙漏、右侧相框和两侧书架保留空间纵深。书脊细字不宜用作逐字档案。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:58:35.204Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:06:11.728Z\",\n    \"contentHash\": \"391a6ced3f43d4f49c830681bc4fff4a91f7e65f1a2f2b73cc4903883c4b0aad\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_484/prompt.txt": null,
+    "content/examples/x_484/run.yaml": null,
+    "content/media/a_655.yaml": null,
+    "content/media/a_656.yaml": null,
+    "production/applied/edphoto-11-b-01.json": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "key": "edphoto-17-a-01",
+  "candidateId": "EDPHOTO-17",
+  "jobFingerprint": "616fafbe70670913a40a75aab2faf275e52d95a3bf7f93b1331b0aa22cc461f0",
+  "planHash": "cd4447dc85e261c8bfe538020aa674871279765b8ed5f37eb9067fd6efdaf1ad",
+  "ids": {
+    "prompt": "p_415",
+    "template": null,
+    "example": "x_495",
+    "media": [
+      "a_681",
+      "a_682"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_495/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_495/run.yaml",
+      "after": "id: x_495\npromptId: p_415\npromptLanguage: zh-Hans\ntemplate: null\npromptSha256: 7fbde21700de29f3ed51552c740d192c2565609a51827a406a263b776662a353\nreferenceAssetIds:\n  - a_682\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_681\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。车窗框及前景树木的运动虚化保留。远处细电线在小图中仍较难辨认。\n  zh-Hans: 天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。\n"
+    },
+    {
+      "file": "content/media/a_681.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_681\ncontentHash: sha256:df566dd05bdf706598528d27eef0704c5ff604eb657d772e800e881a26535177\nmimeType: image/png\nbyteSize: 1887801\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_681/reduce-window-reflections-in-a-landscape-photo-original-df566dd05bdf.png\nvariants:\n  thumbnail:\n    key: media/a_681/reduce-window-reflections-in-a-landscape-photo-thumbnail-d7a5921bff09.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_681/reduce-window-reflections-in-a-landscape-photo-card-387f0d8000b4.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_681/reduce-window-reflections-in-a-landscape-photo-detail-53f9ce18f498.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_681/reduce-window-reflections-in-a-landscape-photo-og-3bd1ebbffefe.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0\n  y: 0.375\nplaceholder:\n  color: \"#080808\"\nalt:\n  en: Reduce window reflections in a landscape photo. The chair and light strip recede while the masts and power lines remain.\n  zh-Hans: 天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_682.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_682\ncontentHash: sha256:3d391e285029cf20d78ca4e80e72adfdb72c7ce75feda34f9fa038b869562ab6\nmimeType: image/png\nbyteSize: 1923839\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_682/reduce-window-reflections-in-a-landscape-photo-reference-original-3d391e285029.png\nvariants:\n  thumbnail:\n    key: media/a_682/reduce-window-reflections-in-a-landscape-photo-reference-thumbnail-73c17f6df272.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_682/reduce-window-reflections-in-a-landscape-photo-reference-card-fe329866871c.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_682/reduce-window-reflections-in-a-landscape-photo-reference-detail-9e14474ec107.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_682/reduce-window-reflections-in-a-landscape-photo-reference-og-7f4340944d54.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.406\n  y: 0.469\nplaceholder:\n  color: \"#585858\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/prompts/p_415/entry.yaml",
+      "after": "id: p_415\nslug: reduce-window-reflections-in-a-landscape-photo\ncreatedAt: 2026-11-23\nupdatedAt: 2026-11-23\npromptSource:\n  type: literal\n  file: prompt.txt\n  language: zh-Hans\ncategoryId: landscape\nstyleIds: []\nuseCaseIds:\n  - social-post\ncoverAssetId: a_681\nrelatedTemplateIds: []\nmodel:\n  displayName: GPT Image\n  providerModelId: null\n  verification: verified\ninputRequirements:\n  referenceImage: required\n  instructions:\n    en: Upload the photo to edit first.\n    zh-Hans: 先上传要修改的照片。\n  slots:\n    - id: photo\n      labels:\n        en: Photo to edit\n        zh-Hans: 要修改的照片\n      min: 1\n      max: 1\nshowcaseExampleId: x_495\npromptProvenance: independent-adaptation\ninspirationSources:\n  - candidateId: EDPHOTO-17\n    platform: YouTube\n    author: Focus Photo School\n    url: https://www.youtube.com/watch?v=1NHfwLxMV8o\n    publishedAt: 2025-06-17\n    metricObjectUrl: https://www.youtube.com/watch?v=1NHfwLxMV8o\n    metricObjectPublishedAt: 2025-06-17\n    metricScope:\n      en: Original source post\n      zh-Hans: 原始发布内容\n    observedAt: 2026-11-22\n    cacheTimestampKnown: false\n    evidenceMethod:\n      en: Reviewed the public post or video description and available chapter markers.\n      zh-Hans: 对照。00:35 开始演示 Lightroom 的 AI 反射消除。简介明确以滑块比较原始画面、去反射画面和分离的反射层。工具无需文字提示词。\n    evidenceUrl: https://www.youtube.com/watch?v=1NHfwLxMV8o\n    sourcePromptStatus:\n      en: No complete prompt was verified in the source.\n      zh-Hans: 未核到完整提示词。\n    metrics: []\nsource:\n  author: Prompt Seen\n  url: null\n  license: CC BY 4.0\nannotations: []\n"
+    },
+    {
+      "file": "content/prompts/p_415/locales/en.mdx",
+      "after": "---\ntitle: Reduce window reflections in a landscape photo\ndescription: The chair and light strip recede while the masts and power lines\n  remain. A faint ceiling light is still visible above the harbor.\nstatus: published\nupdatedAt: 2026-11-23\n---\n\n## How to use the photos\n\nUpload the photo to edit first.\n\n**A** A reflected light strip crosses the sky above a mountain power line.\n\n**B** A reflected chair overlaps a harbor roof and sailboat mast.\n\nThe chair and light strip recede while the masts and power lines remain. A faint ceiling light is still visible above the harbor.\n\nThe inputs and results are synthetic demonstrations made by Prompt Seen using GPT Image.\n"
+    },
+    {
+      "file": "content/prompts/p_415/locales/zh-Hans.mdx",
+      "after": "---\ntitle: 减轻隔窗拍摄倒影\ndescription: 减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。\nstatus: published\nupdatedAt: 2026-11-23\ntranslation:\n  sourceLocale: en\n  sourceHash: sha256:c1a78f40da365925\n  reviewStatus: reviewed\n---\n\n## 使用方法与观察位置\n\n先上传要修改的照片。\n\n**A** 车窗外山脊和电塔清晰，玻璃映出一条淡灯带。 天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。车窗框及前景树木的运动虚化保留。远处细电线在小图中仍较难辨认。\n\n**B** 窗外港口屋顶和桅杆可辨，玻璃上映有浅色座椅轮廓。 右侧浅色椅背和椅腿倒影消退，桅杆、山线与屋脊连续。晚霞云层保留，玻璃上方仍有极淡的小灯点。\n\n原图与成果均为本站使用 GPT Image 制作的合成示范。\n"
+    },
+    {
+      "file": "content/prompts/p_415/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。减弱玻璃上映出的车内灯光或座椅倒影。保留窗外可辨的山脊、建筑与细线，维持透过玻璃拍摄的自然光感。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "production/applied/edphoto-17-a-01.json",
+      "after": "{\n  \"key\": \"edphoto-17-a-01\",\n  \"candidateId\": \"EDPHOTO-17\",\n  \"fingerprint\": \"616fafbe70670913a40a75aab2faf275e52d95a3bf7f93b1331b0aa22cc461f0\",\n  \"ids\": {\n    \"prompt\": \"p_415\",\n    \"template\": null,\n    \"example\": \"x_495\",\n    \"media\": [\n      \"a_681\",\n      \"a_682\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"df566dd05bdf706598528d27eef0704c5ff604eb657d772e800e881a26535177\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"3d391e285029cf20d78ca4e80e72adfdb72c7ce75feda34f9fa038b869562ab6\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"天空中斜向的暖色灯带减弱，右侧电塔横臂和山脊仍清楚，导线接续。车窗框及前景树木的运动虚化保留。远处细电线在小图中仍较难辨认。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T09:35:52.029Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:08:00.463Z\",\n    \"contentHash\": \"b6c604463b0f603334160f428d58a8376d77a66cfe173a29b306765ea9d6001c\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_495/prompt.txt": null,
+    "content/examples/x_495/run.yaml": null,
+    "content/media/a_681.yaml": null,
+    "content/media/a_682.yaml": null,
+    "content/prompts/p_415/entry.yaml": null,
+    "content/prompts/p_415/locales/en.mdx": null,
+    "content/prompts/p_415/locales/zh-Hans.mdx": null,
+    "content/prompts/p_415/prompt.txt": null,
+    "production/applied/edphoto-17-a-01.json": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "key": "edphoto-04-b-01",
+  "candidateId": "EDPHOTO-04",
+  "jobFingerprint": "81fae30d50309d43717cfc10f77d55e951c8f72fd1b977b127517b5e70ab4f0e",
+  "planHash": "32cf1d2f2570c3f245bc7c7251002e0891d4d35e16795eb39190ad7f6dd1889e",
+  "ids": {
+    "prompt": "p_402",
+    "template": "t_078",
+    "example": "x_470",
+    "media": [
+      "a_627",
+      "a_628"
+    ]
+  },
+  "changes": [
+    {
+      "file": "content/examples/x_470/prompt.txt",
+      "after": "编辑上传的这一张底图，以它为准。只给海边合影中的三位朋友的面部阴影柔和补光，使眉眼可辨。保留各自肤色、原来的光线方向和环境亮度，脸与颈部自然过渡。输出一张完成编辑的照片。保持未指定改动的区域与原照片一致，不加说明文字或对照排版。\n"
+    },
+    {
+      "file": "content/examples/x_470/run.yaml",
+      "after": "id: x_470\npromptId: p_402\npromptLanguage: zh-Hans\ntemplate:\n  id: t_078\n  version: v1\n  sample: alternate\n  values:\n    focus: 海边合影中的三位朋友\n  contractHash: b07dd218a95369e5c964adf0310fe2b6a8e5afb080b1a7f93f5a205e061f4367\npromptSha256: c901688e0929b681874154973bf5ef45a296ccd416b15cb5919e8ec14e0570fb\nreferenceAssetIds:\n  - a_628\nreferenceBindings:\n  - slotId: photo\n    referenceIndex: 0\noutputAssetIds:\n  - a_627\nprovider: image_gen\nmodel:\n  displayName: GPT Image\n  providerModelId: null\nrecordedAt: 2026-11-23\nparameters: {}\nnotes:\n  en: 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。橙色云层、太阳和海面反光位置稳定。中间人的白衣也轻微变亮。\n  zh-Hans: 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。\n"
+    },
+    {
+      "file": "content/media/a_627.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_627\ncontentHash: sha256:90d5b3f75de5060aebe0354d6199e09b8d9a620e9186dc86309d1d17b0a6495b\nmimeType: image/png\nbyteSize: 2084732\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_627/brighten-faces-in-a-backlit-group-photo-original-90d5b3f75de5.png\nvariants:\n  thumbnail:\n    key: media/a_627/brighten-faces-in-a-backlit-group-photo-thumbnail-85a978ba2f9c.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_627/brighten-faces-in-a-backlit-group-photo-card-304f2c80c403.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_627/brighten-faces-in-a-backlit-group-photo-detail-480a48b1a125.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_627/brighten-faces-in-a-backlit-group-photo-og-73ff5ea2f5a3.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.563\n  y: 0.25\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Brighten faces in a backlit group photo. Eyes become legible while the leaves and sunset retain detail.\n  zh-Hans: 三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。\ncaption: {}\ncredit:\n  creator: Prompt Seen\n  creditText: AI-generated demonstration · Prompt Seen\n  copyrightNotice: null\n  sourceUrl: null\n  license: CC BY 4.0\n  licenseUrl: https://creativecommons.org/licenses/by/4.0/\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/media/a_628.yaml",
+      "after": "# Written by media:import. Objects are immutable; use --refresh after metadata changes.\nid: a_628\ncontentHash: sha256:da2801810dd396d9d72a79da7aa629ee0e1c84d959559d684e47b8f0ef671c69\nmimeType: image/png\nbyteSize: 2002946\nwidth: 1536\nheight: 1024\noriginal:\n  key: media/a_628/brighten-faces-in-a-backlit-group-photo-reference-original-da2801810dd3.png\nvariants:\n  thumbnail:\n    key: media/a_628/brighten-faces-in-a-backlit-group-photo-reference-thumbnail-b189e937fc25.webp\n    width: 480\n    height: 320\n    mimeType: image/webp\n  card:\n    key: media/a_628/brighten-faces-in-a-backlit-group-photo-reference-card-928fea89618c.webp\n    width: 960\n    height: 640\n    mimeType: image/webp\n  detail:\n    key: media/a_628/brighten-faces-in-a-backlit-group-photo-reference-detail-fecf057638c6.webp\n    width: 1536\n    height: 1024\n    mimeType: image/webp\n  og:\n    key: media/a_628/brighten-faces-in-a-backlit-group-photo-reference-og-5fe45b069a90.jpg\n    width: 1200\n    height: 630\n    mimeType: image/jpeg\nfocalPoint:\n  x: 0.563\n  y: 0.188\nplaceholder:\n  color: \"#181818\"\nalt:\n  en: Photo to edit\n  zh-Hans: 要修改的照片\ncaption: {}\ncredit:\n  creator: null\n  creditText: null\n  copyrightNotice: null\n  sourceUrl: null\n  license: null\n  licenseUrl: null\n  acquireLicenseUrl: null\nprovenance:\n  digitalSourceType: trainedAlgorithmicMedia\n  contentCredentials: unknown\n"
+    },
+    {
+      "file": "content/templates/t_078/versions/v1/samples/alternate.yaml",
+      "after": "focus: 海边合影中的三位朋友\n"
+    },
+    {
+      "file": "production/applied/edphoto-04-b-01.json",
+      "after": "{\n  \"key\": \"edphoto-04-b-01\",\n  \"candidateId\": \"EDPHOTO-04\",\n  \"fingerprint\": \"81fae30d50309d43717cfc10f77d55e951c8f72fd1b977b127517b5e70ab4f0e\",\n  \"ids\": {\n    \"prompt\": \"p_402\",\n    \"template\": \"t_078\",\n    \"example\": \"x_470\",\n    \"media\": [\n      \"a_627\",\n      \"a_628\"\n    ]\n  },\n  \"provider\": \"image_gen\",\n  \"model\": \"GPT Image\",\n  \"outputSha256\": \"90d5b3f75de5060aebe0354d6199e09b8d9a620e9186dc86309d1d17b0a6495b\",\n  \"referenceHashes\": [\n    {\n      \"slotId\": \"photo\",\n      \"sha256\": \"da2801810dd396d9d72a79da7aa629ee0e1c84d959559d684e47b8f0ef671c69\"\n    }\n  ],\n  \"review\": {\n    \"accepted\": true,\n    \"notes\": \"三人的眉眼和嘴角从阴影里显现，眼窝仍有层次，耳边发丝与衣领边缘自然。橙色云层、太阳和海面反光位置稳定。中间人的白衣也轻微变亮。\",\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T08:29:46.788Z\"\n  },\n  \"editorialReview\": {\n    \"reviewer\": \"Codex\",\n    \"reviewedAt\": \"2026-11-23T10:03:58.004Z\",\n    \"contentHash\": \"d315d5d39a3807cb555ffcaa02d538f7c41bf6c50767adeb200949eeec2098b3\"\n  }\n}\n"
+    }
+  ],
+  "before": {
+    "content/examples/x_470/prompt.txt": null,
+    "content/examples/x_470/run.yaml": null,
+    "content/media/a_627.yaml": null,
+    "content/media/a_628.yaml": null,
+    "content/templates/t_078/versions/v1/samples/alternate.yaml": null,
+    "production/applied/edphoto-04-b-01.json": null
+  }
+}
