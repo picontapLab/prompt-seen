@@ -14,12 +14,29 @@
   "editor": {
     "fields": "Fields",
     "other": "Other",
-    "preview": "Prompt preview",
-    "expand": "SHOW THE FULL PROMPT",
-    "collapse": "HIDE THE PROMPT",
+    "steps": {
+      "label": "How to use this template",
+      "prepare": "Have your image ready",
+      "prepareNote": "Do this in the image generator where you paste the prompt. Nothing is uploaded to this site.",
+      "fill": "Fill in the details",
+      "copy": "Copy the prompt"
+    },
+    "copiedNext": "Copied. Paste it into your image generator.",
+    "copiedNextWithInput": "Copied. Attach your image in your image generator, then paste the prompt.",
+    "stage": {
+      "before": "Before",
+      "after": "After",
+      "compare": "Compare before and after",
+      "compareValue": "{percent}% before",
+      "view": "Comparison view",
+      "viewSlider": "Slider",
+      "viewPair": "Side by side",
+      "examples": "Examples",
+      "example": "Example {n} of {total}",
+      "useValues": "Use this example's values"
+    },
     "reset": "Reset",
     "resetDone": "Restored the default sample",
-    "anotherSample": "Another sample",
     "sampleDone": "Sample {n} of {total}",
     "undo": "Undo",
     "download": "Download .txt",

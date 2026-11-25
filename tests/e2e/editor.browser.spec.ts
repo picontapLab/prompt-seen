@@ -1,14 +1,14 @@
 import fs from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { renderTemplate } from '../../src/modules/template';
-import { scrollToTop, seriousViolations, settle } from './support/a11y';
+import { scrollToTop, seriousViolations } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
 import { localeIndex, promptDetail, sampleTemplate, templateDetail } from './support/content';
 
 // The template editor in real browsers (design doc §11.4, §11.6, §11.8.4, §17.3 step 3c):
 // preview, copy and download agree (§16.2 模板输出); invalid values block copy and say why
 // (§16.2 参数错误); input methods keep their input (§12.8 scenario 6, §11.6.4); drafts, shared
-// links, samples and reset; the docked preview on phones.
+// links, samples and reset; the example stage; the action bar on phones.
 
 const [first] = BUILD.locales;
 const code = first!.code;
@@ -21,12 +21,25 @@ const fields = template.version.fields;
 const textField = fields.find((f) => f.type === 'string' && f.required)!;
 const listField = fields.find((f) => f.type === 'string-list');
 const spec = { body: template.version.body, fields };
+/** A template with several samples, each with a recorded run, for the stage's sample buttons. */
+const sampled = index.templates
+  .map((entry) => templateDetail(code, entry.id))
+  .find(
+    ({ version, examples }) =>
+      version.samples.length > 1 &&
+      version.fields.some((f) => f.type === 'string' && f.required) &&
+      examples.filter((run) => run.template?.version === version.id).length >= version.samples.length,
+  );
+/** The template edits an image of the reader's own: its recorded runs have reference images. */
+const needsInput = template.examples.some((run) => run.references.length > 0);
 
 const shell = (page: Page, name: string) => page.locator(`[data-field-shell="${name}"]`);
 const input = (page: Page, name: string) => shell(page, name).locator('input:not([type=radio]), textarea').first();
 const previewText = (page: Page) => page.locator('[id$="-prompt"]').first();
 const copyButton = (page: Page) => page.locator('[data-copy-state]').first();
 const variables = (page: Page, name: string) => previewText(page).locator(`[data-field="${name}"]`);
+const stage = (page: Page) => page.locator('[data-template-stage]');
+const sampleButton = (page: Page, index: number) => stage(page).locator(`[data-sample="${index}"]`);
 const t = (key: string, values: Record<string, string> = {}) => message(code, `templates.${key}`, values);
 
 /** Waits until React has attached its handlers, so input reaches the editor. */
@@ -171,21 +184,81 @@ test.describe('desktop', () => {
     await expect(shell(page, other.name).locator(':focus')).toHaveCount(1);
   });
 
-  test('another sample cycles in file order; reset restores the default and can be undone', async ({ page }) => {
-    test.skip(template.version.samples.length < 2, 'one sample only');
-    await open(page);
-    const second = renderTemplate(spec, template.version.samples[1]!.values).text!;
-    await page.locator('[data-action="sample"]').click();
-    await expect(previewText(page)).toHaveText(second);
-    for (let i = 2; i < template.version.samples.length; i++) await page.locator('[data-action="sample"]').click();
-    await page.locator('[data-action="sample"]').click();
-    await expect(previewText(page)).toHaveText(template.version.defaultPrompt);
+  test('a sample fills the form with its values; reset restores the default and can be undone', async ({ page }) => {
+    test.skip(!sampled, 'no template with several recorded samples');
+    const { version } = sampled!;
+    const own = version.fields.find((f) => f.type === 'string' && f.required)!;
+    const prompt = (index: number) => renderTemplate(version, version.samples[index]!.values).text!;
+    await page.goto(`${BASE}${sampled!.path}`);
+    await hydrated(page);
+    await expect(sampleButton(page, 0)).toHaveAttribute('aria-pressed', 'true');
+    const first = await stage(page).getAttribute('data-run');
+    for (let i = 1; i < version.samples.length; i++) {
+      await sampleButton(page, i).click();
+      await expect(previewText(page)).toHaveText(prompt(i));
+      await expect(sampleButton(page, i)).toHaveAttribute('aria-pressed', 'true');
+      await expect(stage(page)).not.toHaveAttribute('data-run', first!);
+    }
+    await sampleButton(page, 0).click();
+    await expect(previewText(page)).toHaveText(version.defaultPrompt);
+    await expect(stage(page)).toHaveAttribute('data-run', first!);
 
-    await input(page, textField.name).fill('edited value');
+    await input(page, own.name).fill('edited value');
     await page.locator('[data-action="reset"]').click();
-    await expect(previewText(page)).toHaveText(template.version.defaultPrompt);
+    await expect(previewText(page)).toHaveText(version.defaultPrompt);
     await page.getByRole('button', { name: t('editor.undo') }).click();
-    await expect(input(page, textField.name)).toHaveValue('edited value');
+    await expect(input(page, own.name)).toHaveValue('edited value');
+  });
+
+  test('with values of your own, a sample changes the stage only until you take its values (§11.8.4)', async ({
+    page,
+  }) => {
+    test.skip(!sampled, 'no template with several recorded samples');
+    const { version } = sampled!;
+    const own = version.fields.find((f) => f.type === 'string' && f.required)!;
+    await page.goto(`${BASE}${sampled!.path}`);
+    await hydrated(page);
+    const caption = stage(page).locator('figcaption');
+    const tested = message(code, 'detail.template.testedImage');
+    const untested = message(code, 'detail.template.unmatchedImage');
+    const use = stage(page).locator('[data-action="use-sample"]');
+    await expect(caption).toContainText(tested);
+    await expect(use).toHaveCount(0);
+    const first = await stage(page).getAttribute('data-run');
+
+    await input(page, own.name).fill('my own value');
+    await expect(caption).toContainText(untested);
+    await sampleButton(page, 1).click();
+    await expect(sampleButton(page, 1)).toHaveAttribute('aria-pressed', 'true');
+    await expect(stage(page)).not.toHaveAttribute('data-run', first!);
+    await expect(input(page, own.name)).toHaveValue('my own value');
+    await expect(caption).toContainText(untested);
+
+    await use.click();
+    await expect(previewText(page)).toHaveText(renderTemplate(version, version.samples[1]!.values).text!);
+    await expect(caption).toContainText(tested);
+    await expect(use).toHaveCount(0);
+    await page.getByRole('button', { name: t('editor.undo') }).click();
+    await expect(input(page, own.name)).toHaveValue('my own value');
+  });
+
+  test('the example and the steps share the first screen; the steps are numbered in order (§11.8.4)', async ({
+    page,
+  }) => {
+    await open(page);
+    const picture = (await stage(page).locator('img').first().boundingBox())!;
+    expect(picture.y).toBeLessThan(800 / 2);
+    const firstField = (await shell(page, fields[0]!.name).boundingBox())!;
+    expect(firstField.x).toBeGreaterThan(picture.x + picture.width);
+    const steps = page.locator('[data-step]');
+    const order = await steps.evaluateAll((items) => items.map((item) => (item as HTMLElement).dataset.step));
+    expect(order.filter((step) => step !== 'prepare')).toEqual(['fill', 'copy']);
+    if (template.inputInstructions && needsInput) {
+      expect(order[0]).toBe('prepare');
+      await expect(steps.first()).toContainText(template.inputInstructions);
+    } else {
+      expect(order).toEqual(['fill', 'copy']);
+    }
   });
 
   test('a draft comes back after a reload, and reset clears it (§11.6.2)', async ({ page }) => {
@@ -317,48 +390,50 @@ test.describe('desktop', () => {
 test.describe('phone', () => {
   test.use({ viewport: { width: 390, height: 844 }, hasTouch: true });
 
-  const sheet = (page: Page) => page.locator('section:has(> [data-sheet-body])');
-  const handle = (page: Page) => sheet(page).locator('button[aria-expanded]');
+  const bar = (page: Page) => page.getByRole('group', { name: message(code, 'detail.actions.label') });
+  const barCopy = (page: Page) => bar(page).locator('[data-copy-state]');
 
-  test('the preview is docked: copy and the first lines peek; it opens, closes and gives way to fields', async ({
+  test('the example comes first; copy stays in reach in the action bar until the prompt is on screen', async ({
     page,
+    context,
+    browserName,
   }) => {
     await open(page);
-    const copy = (await copyButton(page).boundingBox())!;
-    expect(copy.y + copy.height).toBeLessThanOrEqual(844);
-    expect(copy.y).toBeGreaterThan(844 / 2);
-    const top = (await previewText(page).boundingBox())!.y;
-    expect(top).toBeLessThan(844);
+    const picture = (await stage(page).locator('img').first().boundingBox())!;
+    const firstField = (await shell(page, fields[0]!.name).boundingBox())!;
+    expect(picture.y).toBeLessThan(firstField.y);
+    expect(picture.y).toBeLessThan(844);
 
-    await handle(page).click();
-    await expect(handle(page)).toHaveAttribute('aria-expanded', 'true');
-    await expect.poll(async () => (await sheet(page).boundingBox())!.y).toBeLessThan(844 * 0.3);
-    await page.keyboard.press('Escape');
-    await expect(handle(page)).toHaveAttribute('aria-expanded', 'false');
+    await expect(bar(page)).toHaveAttribute('data-visible', 'true');
+    await expect(barCopy(page)).toBeInViewport();
+    if (browserName === 'chromium') {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+      await barCopy(page).click();
+      await expect(barCopy(page)).toHaveAttribute('data-copy-state', 'done');
+      expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(template.version.defaultPrompt);
+      const next = message(code, needsInput ? 'templates.editor.copiedNextWithInput' : 'templates.editor.copiedNext');
+      await expect(page.locator('[data-next]')).toHaveText(next);
+    }
 
-    await handle(page).click();
-    await variables(page, textField.name).first().click();
-    await expect(handle(page)).toHaveAttribute('aria-expanded', 'false');
+    // The prompt's own copy button on screen: the bar steps aside, so there is one copy button.
+    await copyButton(page).scrollIntoViewIfNeeded();
+    await expect(bar(page)).not.toHaveAttribute('data-visible', 'true');
+  });
+
+  test('the action bar says what is missing and goes to the field', async ({ page }) => {
+    await open(page);
+    await input(page, textField.name).fill('');
+    await scrollToTop(page);
+    await expect(barCopy(page)).toHaveAttribute('data-copy-state', 'blocked');
+    await barCopy(page).click();
     await expect(input(page, textField.name)).toBeFocused();
   });
 
-  test('a drag on the handle opens and closes the sheet', async ({ page }) => {
+  test('pressing a variable in the prompt goes to its field', async ({ page }) => {
     await open(page);
-    const h = (await handle(page).boundingBox())!;
-    const x = h.x + h.width / 2;
-    const y = h.y + h.height / 2;
-    await page.mouse.move(x, y);
-    await page.mouse.down();
-    await page.mouse.move(x, y - 200, { steps: 8 });
-    await page.mouse.up();
-    await expect(handle(page)).toHaveAttribute('aria-expanded', 'true');
-    await settle(page);
-    const open1 = (await handle(page).boundingBox())!;
-    await page.mouse.move(x, open1.y + open1.height / 2);
-    await page.mouse.down();
-    await page.mouse.move(x, open1.y + 400, { steps: 8 });
-    await page.mouse.up();
-    await expect(handle(page)).toHaveAttribute('aria-expanded', 'false');
+    await variables(page, textField.name).first().click();
+    await expect(input(page, textField.name)).toBeFocused();
+    await expect(shell(page, textField.name)).toHaveAttribute('data-active', 'true');
   });
 
   test('the first sample of the list template has its copy reachable without scrolling the fields', async ({
@@ -366,6 +441,7 @@ test.describe('phone', () => {
   }) => {
     const any = sampleTemplate(code)!;
     await page.goto(`${BASE}${any.path}`);
-    await expect(copyButton(page)).toBeInViewport();
+    await hydrated(page);
+    await expect(barCopy(page)).toBeInViewport();
   });
 });

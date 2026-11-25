@@ -1,6 +1,6 @@
 'use client';
 
-import { Download, Link2, RotateCcw, Shuffle } from 'lucide-react';
+import { Download, Link2, RotateCcw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import {
   lazy,
@@ -12,18 +12,17 @@ import {
   useReducer,
   useRef,
   useState,
-  type CSSProperties,
   type MouseEvent,
+  type ReactNode,
 } from 'react';
 import type { ExampleRunView, ImageRef, LocalizedField, TemplateSample } from '@/modules/content/types';
 import { matchingExample } from '@/modules/template/examples';
-import { getImage } from '@/modules/media';
 import { graphemeLength, renderTemplate, type FieldError, type FieldValues } from '@/modules/template';
 import { absoluteUrl } from '@/modules/url';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import { languageAttributes } from '@/ui/prompt-detail/language';
+import { MobileActionBar } from '@/ui/prompt-detail/MobileActionBar';
 import { PromptSheet } from '@/ui/prompt-detail/PromptSheet';
-import { BottomSheet } from '@/ui/primitives/BottomSheet';
 import { Button } from '@/ui/primitives/Button';
 import { SegmentedControl } from '@/ui/primitives/SegmentedControl';
 import { TextField } from '@/ui/primitives/TextField';
@@ -33,6 +32,8 @@ import { browserStorage, draftKey, readDraft, removeDraft, writeDraft } from './
 import { editorReducer, initialEditorState, visibleErrors, type EditorState } from './editor-state';
 import { AspectRatioPicker, SwatchPicker } from './Pickers';
 import { decodeShare, encodeShare } from './share';
+import { sampleRuns } from './stage';
+import { TemplateStage } from './TemplateStage';
 import { TokenInput } from './TokenInput';
 import {
   completeValues,
@@ -62,7 +63,14 @@ export type EditorModel = {
   version: { id: string; body: string; fields: LocalizedField[]; samples: TemplateSample[] };
   /** Image of the default sample (§11.8.4 示例图说明). */
   cover: ImageRef | null;
-  examples?: (Pick<ExampleRunView, 'id' | 'prompt' | 'promptLanguage' | 'template'> & {
+  /** Edge print of the example stage, e.g. "T076" (§11.1.9). */
+  frameNumber?: string;
+  /** How to use the prompt, e.g. which photo to upload first (§11.8.4 使用步骤). */
+  inputInstructions?: string | null;
+  inputInstructionsLocale?: string | null;
+  /** True when the prompt works on an image of the reader's own: the steps start with it. */
+  needsInput?: boolean;
+  examples?: (Pick<ExampleRunView, 'id' | 'prompt' | 'promptLanguage' | 'template' | 'notes' | 'notesLocale'> & {
     image: ImageRef;
     references: ImageRef[];
   })[];
@@ -73,13 +81,12 @@ export type TemplateEditorProps = {
   /** The prompt language's name in the page language, and whether to explain it (§11.8.3). */
   languageName: string;
   showLanguageNote: boolean;
+  /** The save button for the phone action bar, rendered by the page (§11.8.4 移动端). */
+  barFavorite?: ReactNode;
 };
 
 /** Debounce for draft writes (§11.6.2): typing never waits on storage. */
 const SAVE_DELAY = 400;
-
-/** Visible while the sheet is collapsed: its head with the copy button, and two lines (§11.8.4). */
-const PEEK = 'calc(var(--space-8) + var(--target-min) + var(--space-8) + 3.4rem + var(--space-8))';
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -103,14 +110,34 @@ function focusTarget(shell: HTMLElement): HTMLElement | null {
   return null;
 }
 
+/** Height of the sticky header, in pixels: what scrolling must keep clear at the top. */
+const navHeight = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 0;
+
 /**
- * The template editor (design doc §11.4, §11.8.4): fields on one side, the live prompt on the
- * other. The prompt is rendered on every render by the same pure function as the build (§6.3),
- * so the preview, the copied text and the downloaded file are one string, and none can lag
- * behind the values (§11.6.4). The first render uses the default sample, as the HTML does;
- * a shared link or a saved draft is applied after hydration (§11.6.3).
+ * Brings a variable of the preview into view without losing the field being edited: the page
+ * moves by the least that shows the variable, and not at all when that would push the field
+ * under the header or off the bottom (§11.8.4 双向定位).
  */
-export function TemplateEditor({ model, languageName, showLanguageNote }: TemplateEditorProps) {
+function revealVariable(segment: HTMLElement, shell: HTMLElement) {
+  const margin = 16;
+  const top = navHeight() + margin;
+  const bottom = window.innerHeight - margin;
+  const s = segment.getBoundingClientRect();
+  const f = shell.getBoundingClientRect();
+  const by = s.bottom > bottom ? s.bottom - bottom : s.top < top ? s.top - top : 0;
+  if (by === 0 || f.top - by < top || f.bottom - by > bottom) return;
+  window.scrollBy({ top: by, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+}
+
+/**
+ * The template page's working area (design doc §11.4, §11.8.4): the example stage on one side,
+ * and on the other the steps to use the template: what to have ready, the fields, and the live
+ * prompt with copy. The prompt is rendered on every render by the same pure function as the
+ * build (§6.3), so the preview, the copied text and the downloaded file are one string, and none
+ * can lag behind the values (§11.6.4). The first render uses the default sample, as the HTML
+ * does; a shared link or a saved draft is applied after hydration (§11.6.3).
+ */
+export function TemplateEditor({ model, languageName, showLanguageNote, barFavorite }: TemplateEditorProps) {
   const t = useTranslations('templates.editor');
   const d = useTranslations('detail');
   const k = useTranslations('shortcuts');
@@ -125,13 +152,16 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
 
   const [state, dispatch] = useReducer(editorReducer, defaults, initialEditorState);
   const [active, setActive] = useState<string | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(false);
+  /** A sample looked at while the form holds other values: the stage shows it, the form keeps its values. */
+  const [picked, setPicked] = useState<number | null>(null);
+  const [copied, setCopied] = useState(false);
   const [announcement, setAnnouncement] = useState('');
   const latest = useRef(state);
   const initial = useRef(state);
   const previousDefaults = useRef(defaults);
   const shells = useRef(new Map<string, HTMLElement>());
   const previewId = `${id}-prompt`;
+  const copyId = `${id}-copy`;
 
   useLayoutEffect(() => {
     latest.current = state;
@@ -227,20 +257,13 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   useEffect(() => {
     if (!active) return;
     const segment = document.querySelector<HTMLElement>(`#${CSS.escape(previewId)} [data-field="${active}"]`);
-    const sheet = segment?.closest('[data-sheet-body]')?.parentElement;
-    // A docked sheet shows only its first lines; scrolling it would hide the copy button.
-    if (!segment || (sheet && getComputedStyle(sheet).position === 'fixed')) return;
-    segment.scrollIntoView({
-      block: 'nearest',
-      inline: 'nearest',
-      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
-    });
+    const shell = shells.current.get(active);
+    if (segment && shell) revealVariable(segment, shell);
   }, [active, previewId]);
 
   function focusField(name: string) {
     const shell = shells.current.get(name);
     if (!shell) return;
-    setSheetOpen(false);
     shell.scrollIntoView({ block: 'center', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     focusTarget(shell)?.focus({ preventScroll: true });
   }
@@ -274,15 +297,16 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
   }
 
   const reset = () => {
+    setPicked(null);
     load(defaults, 0, t('resetDone'));
     removeDraft(browserStorage(), key);
   };
-  const anotherSample = () => {
-    const next = (state.sample + 1) % version.samples.length;
+  const loadSample = (index: number) => {
+    setPicked(null);
     load(
-      sampleValues(fields, version.samples, next),
-      next,
-      t('sampleDone', { n: next + 1, total: version.samples.length }),
+      sampleValues(fields, version.samples, index),
+      index,
+      t('sampleDone', { n: index + 1, total: version.samples.length }),
     );
   };
 
@@ -335,223 +359,221 @@ export function TemplateEditor({ model, languageName, showLanguageNote }: Templa
           ? t('mismatch', { version: notice.version, current: version.id })
           : '';
 
-  const selectedSample = version.samples[state.sample];
-  const eligible = selectedSample?.exampleIds;
-  const runs = eligible ? (model.examples ?? []).filter((run) => eligible.includes(run.id)) : (model.examples ?? []);
-  const matched = matchingExample(runs, model.templateId, version.id, state.values, result.text, model.promptLanguage);
-  const sampleImage = matched?.image ?? model.cover;
-  const img = sampleImage && getImage(sampleImage, 'card');
+  // --- The example stage (§11.8.4 案例舞台). Each sample has the run recorded for it, if any.
+  // While the form holds a sample's values, that sample is on show and its image is their
+  // recorded result. Once the values are the reader's own, no image is evidence for them: the
+  // stage keeps showing a sample, says so, and choosing another sample changes the stage only.
+  const examples = useMemo(() => model.examples ?? [], [model.examples]);
+  const runs = useMemo(
+    () =>
+      sampleRuns(examples, version.samples, spec, {
+        id: model.templateId,
+        version: version.id,
+        language: model.promptLanguage,
+      }),
+    [examples, version.samples, version.id, spec, model.templateId, model.promptLanguage],
+  );
+  const held = version.samples.findIndex((_, i) => sameValues(state.values, sampleValues(fields, version.samples, i)));
+  const edited = held < 0;
+  const shownSample = edited ? (picked ?? state.sample) : held;
+  const matched = edited
+    ? matchingExample(examples, model.templateId, version.id, state.values, result.text, model.promptLanguage)
+    : (runs[held] ?? null);
+  const run = matched ?? runs[shownSample] ?? null;
+  const runIndex = run ? examples.findIndex((x) => x.id === run.id) : -1;
+  const frameNumber = model.frameNumber ?? model.templateId;
+
+  const selectSample = (index: number) => {
+    if (!edited) return loadSample(index);
+    setPicked(index);
+    setAnnouncement(t('sampleDone', { n: index + 1, total: version.samples.length }));
+  };
+
+  const shareUrl =
+    // The default sample needs no values in the link: the page itself shows it.
+    sameValues(state.values, defaults)
+      ? absoluteUrl(model.path)
+      : `${absoluteUrl(model.path)}#${encodeShare(version.id, state.values, fields)}`;
+  const copyBlocked = {
+    label: t('missing', { count: Math.max(missing.length, 1) }),
+    active: !result.ok,
+    onPress: onBlocked,
+  };
+
+  const form = (
+    <form className={styles.fields} aria-label={t('fields')} noValidate onSubmit={(event) => event.preventDefault()}>
+      {groups.map((group) => (
+        <fieldset key={group.id ?? '_'} className={styles.group}>
+          <legend
+            {...languageAttributes(group.labelLocale)}
+            // One group needs no heading of its own: the step already names it.
+            className={group.label && groups.length > 1 ? styles.legend : 'visually-hidden'}
+          >
+            {group.label ?? t('other')}
+          </legend>
+          {group.fields.map(({ field, index }) => {
+            const errors = shown.filter((e) => e.field === field.name);
+            const value = state.values[field.name];
+            const message = errors.map((e) => errorText(field, e)).join(' ');
+            return (
+              <div
+                key={field.name}
+                ref={(el) => {
+                  if (el) shells.current.set(field.name, el);
+                  else shells.current.delete(field.name);
+                }}
+                className={styles.field}
+                data-var={varColor(index)}
+                data-field-shell={field.name}
+                data-active={active === field.name || undefined}
+                onFocus={() => setActive(field.name)}
+                onBlur={(event) => {
+                  if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
+                  setActive((a) => (a === field.name ? null : a));
+                  dispatch({ type: 'touch', field: field.name });
+                }}
+              >
+                <FieldControl
+                  field={field}
+                  value={value}
+                  necessity={field.required === (marker === 'required') ? marker : undefined}
+                  errorMessage={message}
+                  invalidItems={errors.flatMap((e) => (e.item !== undefined ? [e.item] : []))}
+                  onChange={(next) => dispatch({ type: 'edit', field: field.name, value: next })}
+                />
+              </div>
+            );
+          })}
+        </fieldset>
+      ))}
+    </form>
+  );
 
   return (
     <div className={styles.editor} data-editor={model.templateId} data-version={version.id}>
-      <div className={styles.toolbar}>
-        <p className={styles.meta}>
-          <IsolatedMessage format={(version) => d('template.version', { version })} value={version.id} dir="ltr" />
-          {' · '}
-          {d('template.fieldCount', { count: fields.length })}
-        </p>
-        <p className={styles.notice} role="status" data-notice={notice?.kind}>
-          {noticeText}
-        </p>
-        <Button variant="ghost" icon={<RotateCcw aria-hidden="true" />} onPress={reset} data-action="reset">
-          {t('reset')}
-        </Button>
-      </div>
+      <div className={styles.layout}>
+        <div className={styles.stageColumn}>
+          <TemplateStage
+            run={run}
+            cover={model.cover}
+            matched={!!matched}
+            startPrint={frameNumber}
+            endPrint={runIndex >= 0 ? `${frameNumber}-${String.fromCharCode(65 + runIndex)}` : undefined}
+            samples={runs.map((sampleRun) => ({ run: sampleRun }))}
+            active={shownSample}
+            onSelect={selectSample}
+            onUseValues={edited && version.samples.length > 0 ? () => loadSample(shownSample) : undefined}
+          />
+        </div>
 
-      <div className={styles.grid}>
-        <form
-          className={styles.fields}
-          aria-label={t('fields')}
-          noValidate
-          onSubmit={(event) => event.preventDefault()}
-        >
-          {groups.map((group) => (
-            <fieldset key={group.id ?? '_'} className={styles.group}>
-              <legend
-                {...languageAttributes(group.labelLocale)}
-                className={group.label ? styles.legend : 'visually-hidden'}
-              >
-                {group.label ?? t('other')}
-              </legend>
-              {group.fields.map(({ field, index }) => {
-                const errors = shown.filter((e) => e.field === field.name);
-                const value = state.values[field.name];
-                const message = errors.map((e) => errorText(field, e)).join(' ');
-                return (
-                  <div
-                    key={field.name}
-                    ref={(el) => {
-                      if (el) shells.current.set(field.name, el);
-                      else shells.current.delete(field.name);
-                    }}
-                    className={styles.field}
-                    data-var={varColor(index)}
-                    data-field-shell={field.name}
-                    data-active={active === field.name || undefined}
-                    onFocus={() => setActive(field.name)}
-                    onBlur={(event) => {
-                      if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
-                      setActive((a) => (a === field.name ? null : a));
-                      dispatch({ type: 'touch', field: field.name });
-                    }}
-                  >
-                    <FieldControl
-                      field={field}
-                      value={value}
-                      necessity={field.required === (marker === 'required') ? marker : undefined}
-                      errorMessage={message}
-                      invalidItems={errors.flatMap((e) => (e.item !== undefined ? [e.item] : []))}
-                      onChange={(next) => dispatch({ type: 'edit', field: field.name, value: next })}
-                    />
-                  </div>
-                );
-              })}
-            </fieldset>
-          ))}
-        </form>
-
-        <div className={styles.previewColumn}>
-          <BottomSheet
-            label={t('preview')}
-            expandLabel={t('expand')}
-            collapseLabel={t('collapse')}
-            expanded={sheetOpen}
-            onExpandedChange={setSheetOpen}
-            peek={PEEK}
-            staticFrom="lg"
-            className={styles.sheet}
-          >
-            <div className={styles.preview}>
-              <PromptSheet
-                copyText={() => currentPrompt() ?? ''}
-                copyBlocked={{
-                  label: t('missing', { count: Math.max(missing.length, 1) }),
-                  active: !result.ok,
-                  onPress: onBlocked,
-                }}
-                copyShortcut={{ key: 'C', hint: k('withKey', { action: d('copy.label'), key: 'C' }) }}
-                fold={false}
-                language={model.promptLanguage}
-                languageName={languageName}
-                showLanguageNote={showLanguageNote}
-                characters={graphemeLength(previewText)}
-                lines={previewText.split('\n').length}
-                textId={previewId}
-              >
-                {segments.map((s, i) => {
-                  if (s.kind === 'text') return <span key={i}>{s.text}</span>;
-                  const field = fields[s.fieldIndex];
-                  const pulse = state.pulses[s.name] ?? 0;
-                  return (
-                    <span
-                      key={i}
-                      className={styles.variable}
-                      data-var={varColor(s.fieldIndex)}
-                      data-field={s.name}
-                      data-label={s.text ? undefined : (field?.label ?? s.name)}
-                      data-empty={s.text ? undefined : ''}
-                      data-invalid={s.invalid || undefined}
-                      data-active={active === s.name || undefined}
-                      data-pulse={pulse ? (pulse % 2 ? 'a' : 'b') : undefined}
-                      onClick={onPreviewClick}
-                    >
-                      <bdi dir="auto" lang="">
-                        {s.text}
-                      </bdi>
-                    </span>
-                  );
-                })}
-              </PromptSheet>
-
-              <div className={styles.actions}>
-                <Button icon={<Download aria-hidden="true" />} onPress={download} data-action="download">
-                  {t('download')}
-                </Button>
-                {version.samples.length > 1 && (
-                  <Button
-                    variant="ghost"
-                    icon={<Shuffle aria-hidden="true" />}
-                    onPress={anotherSample}
-                    data-action="sample"
-                  >
-                    {t('anotherSample')}
-                  </Button>
-                )}
-                <ShareButton
-                  url={
-                    // The default sample needs no values in the link: the page itself shows it.
-                    sameValues(state.values, defaults)
-                      ? absoluteUrl(model.path)
-                      : `${absoluteUrl(model.path)}#${encodeShare(version.id, state.values, fields)}`
-                  }
-                  title={model.title}
-                  labels={{ share: t('share'), copied: t('shareCopied'), failed: t('shareFailed') }}
-                  icon={<Link2 aria-hidden="true" />}
-                />
-              </div>
-
-              {matched && matched.references.length > 0 && (
-                <section aria-label={d('examples.references')}>
-                  <p className={styles.sampleNote}>{d('examples.references')}</p>
-                  {matched.references.map((reference, index) => {
-                    const input = getImage(reference, 'thumbnail');
+        <div className={styles.panel}>
+          <p className={styles.notice} role="status" data-notice={notice?.kind}>
+            {noticeText}
+          </p>
+          <ol className={styles.steps} aria-label={t('steps.label')}>
+            {model.inputInstructions && model.needsInput && (
+              <li className={styles.step} data-step="prepare">
+                <h2 className={styles.stepTitle}>{t('steps.prepare')}</h2>
+                <p {...languageAttributes(model.inputInstructionsLocale)} className={styles.stepText}>
+                  {model.inputInstructions}
+                </p>
+                <p className={styles.hint}>{t('steps.prepareNote')}</p>
+              </li>
+            )}
+            <li className={styles.step} data-step="fill">
+              <h2 className={styles.stepTitle}>{t('steps.fill')}</h2>
+              {form}
+            </li>
+            <li className={styles.step} data-step="copy">
+              <h2 className={styles.stepTitle}>{t('steps.copy')}</h2>
+              {model.inputInstructions && !model.needsInput && (
+                <p {...languageAttributes(model.inputInstructionsLocale)} className={styles.stepText}>
+                  {model.inputInstructions}
+                </p>
+              )}
+              <div className={styles.preview}>
+                <PromptSheet
+                  copyText={() => currentPrompt() ?? ''}
+                  copyBlocked={copyBlocked}
+                  copyShortcut={{ key: 'C', hint: k('withKey', { action: d('copy.label'), key: 'C' }) }}
+                  copyButtonId={copyId}
+                  onCopied={() => setCopied(true)}
+                  fold={false}
+                  language={model.promptLanguage}
+                  languageName={languageName}
+                  showLanguageNote={false}
+                  characters={graphemeLength(previewText)}
+                  lines={previewText.split('\n').length}
+                  textId={previewId}
+                >
+                  {segments.map((s, i) => {
+                    if (s.kind === 'text') return <span key={i}>{s.text}</span>;
+                    const field = fields[s.fieldIndex];
+                    const pulse = state.pulses[s.name] ?? 0;
                     return (
-                      <figure className={styles.sample} key={`${reference.assetId}-${index}`}>
-                        <span
-                          className={styles.sampleFrame}
-                          style={{ '--w': input.width, '--h': input.height } as CSSProperties}
-                        >
-                          <img
-                            src={input.src}
-                            width={input.width}
-                            height={input.height}
-                            alt={input.alt}
-                            loading="lazy"
-                          />
-                        </span>
-                        <figcaption className={styles.sampleNote}>{reference.caption}</figcaption>
-                      </figure>
+                      <span
+                        key={i}
+                        className={styles.variable}
+                        data-var={varColor(s.fieldIndex)}
+                        data-field={s.name}
+                        data-label={s.text ? undefined : (field?.label ?? s.name)}
+                        data-empty={s.text ? undefined : ''}
+                        data-invalid={s.invalid || undefined}
+                        data-active={active === s.name || undefined}
+                        data-pulse={pulse ? (pulse % 2 ? 'a' : 'b') : undefined}
+                        onClick={onPreviewClick}
+                      >
+                        <bdi dir="auto" lang="">
+                          {s.text}
+                        </bdi>
+                      </span>
                     );
                   })}
-                </section>
-              )}
-              {img && (
-                <figure className={styles.sample}>
-                  <span
-                    className={styles.sampleFrame}
-                    style={{ '--w': img.width, '--h': img.height, background: img.placeholder } as CSSProperties}
-                  >
-                    <img
-                      src={img.src}
-                      srcSet={img.srcSet}
-                      sizes="(min-width: 1024px) 240px, 50vw"
-                      width={img.width}
-                      height={img.height}
-                      alt={img.alt}
-                      lang={img.lang}
-                      decoding="async"
-                    />
-                  </span>
-                  <figcaption className={styles.sampleNote}>
-                    {matched ? d('template.testedImage') : d('template.unmatchedImage')}
-                    {sampleImage?.generationModel && (
-                      <>
-                        {' '}
-                        ·{' '}
-                        <IsolatedMessage
-                          format={(model) => d('test.generatedWith', { model })}
-                          value={sampleImage.generationModel}
-                          dir="ltr"
-                        />
-                      </>
-                    )}
-                  </figcaption>
-                </figure>
-              )}
-            </div>
-          </BottomSheet>
+                </PromptSheet>
+                {showLanguageNote && <p className={styles.hint}>{d('sheet.languageNote')}</p>}
+                {/* What to do with the copied prompt; empty until the first copy. */}
+                <p className={styles.next} role="status" data-next="">
+                  {copied ? t(model.needsInput ? 'copiedNextWithInput' : 'copiedNext') : ''}
+                </p>
+
+                <div className={styles.actions}>
+                  <Button icon={<Download aria-hidden="true" />} onPress={download} data-action="download">
+                    {t('download')}
+                  </Button>
+                  <ShareButton
+                    url={shareUrl}
+                    title={model.title}
+                    labels={{ share: t('share'), copied: t('shareCopied'), failed: t('shareFailed') }}
+                    icon={<Link2 aria-hidden="true" />}
+                  />
+                </div>
+              </div>
+            </li>
+          </ol>
+
+          <div className={styles.foot}>
+            <p className={styles.meta}>
+              <IsolatedMessage format={(version) => d('template.version', { version })} value={version.id} dir="ltr" />
+              {' · '}
+              {d('template.fieldCount', { count: fields.length })}
+            </p>
+            <Button variant="ghost" icon={<RotateCcw aria-hidden="true" />} onPress={reset} data-action="reset">
+              {t('reset')}
+            </Button>
+          </div>
         </div>
       </div>
+
+      {/* Phones: copy stays within reach while the prompt's own button is off screen (§11.8.4 移动端). */}
+      <MobileActionBar
+        copyText={() => currentPrompt() ?? ''}
+        copyBlocked={copyBlocked}
+        onCopied={() => setCopied(true)}
+        sheetCopyId={copyId}
+        shareUrl={shareUrl}
+        title={model.title}
+        favorite={barFavorite}
+      />
 
       <span role="status" className="visually-hidden">
         {announcement}

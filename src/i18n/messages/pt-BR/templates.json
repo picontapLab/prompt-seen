@@ -1,7 +1,5 @@
 {
   "editor": {
-    "anotherSample": "Outro exemplo",
-    "collapse": "OCULTAR O PROMPT",
     "download": "Baixar .txt",
     "downloaded": "Prompt baixado como arquivo de texto",
     "errors": {
@@ -15,12 +13,31 @@
       "too-short": "{label} precisa de pelo menos {limit} caracteres (atualmente {actual}).",
       "wrong-type": "Este valor não pode ser usado em {label}. Digite novamente."
     },
-    "expand": "MOSTRAR O PROMPT COMPLETO",
     "fields": "Campos",
     "mismatch": "Esse link foi criado para a versão {version}. Exibindo o exemplo padrão da versão {current}.",
     "missing": "{count, plural, =0 {Nenhum campo a preencher} one {# campo a preencher} other {# campos a preencher}}",
     "other": "Outro",
-    "preview": "Prévia do prompt",
+    "steps": {
+      "label": "Como usar este template",
+      "prepare": "Tenha sua imagem em mãos",
+      "prepareNote": "Faça isso no gerador de imagens em que você colar o prompt. Nada é enviado para este site.",
+      "fill": "Preencha os detalhes",
+      "copy": "Copie o prompt"
+    },
+    "copiedNext": "Copiado. Cole no seu gerador de imagens.",
+    "copiedNextWithInput": "Copiado. Anexe sua imagem no gerador de imagens e depois cole o prompt.",
+    "stage": {
+      "before": "Antes",
+      "after": "Depois",
+      "compare": "Comparar antes e depois",
+      "compareValue": "{percent}% do antes",
+      "view": "Modo de comparação",
+      "viewSlider": "Controle deslizante",
+      "viewPair": "Lado a lado",
+      "examples": "Exemplos",
+      "example": "Exemplo {n} de {total}",
+      "useValues": "Usar os valores deste exemplo"
+    },
     "reset": "Restaurar",
     "resetDone": "Exemplo padrão restaurado",
     "restored": "Restauramos o que você digitou da última vez.",

@@ -14,12 +14,29 @@
   "editor": {
     "fields": "Campi",
     "other": "Altro",
-    "preview": "Anteprima del prompt",
-    "expand": "MOSTRA IL PROMPT COMPLETO",
-    "collapse": "NASCONDI IL PROMPT",
+    "steps": {
+      "label": "Come usare questo modello",
+      "prepare": "Prepara la tua immagine",
+      "prepareNote": "Fai questa operazione nel generatore di immagini in cui incolli il prompt. Su questo sito non viene caricato nulla.",
+      "fill": "Compila i campi",
+      "copy": "Copia il prompt"
+    },
+    "copiedNext": "Copiato. Incollalo nel tuo generatore di immagini.",
+    "copiedNextWithInput": "Copiato. Allega la tua immagine nel generatore di immagini, poi incolla il prompt.",
+    "stage": {
+      "before": "Prima",
+      "after": "Dopo",
+      "compare": "Confronta prima e dopo",
+      "compareValue": "{percent}% prima",
+      "view": "Vista di confronto",
+      "viewSlider": "Cursore",
+      "viewPair": "Affiancate",
+      "examples": "Esempi",
+      "example": "Esempio {n} di {total}",
+      "useValues": "Usa i valori di questo esempio"
+    },
     "reset": "Reimposta",
     "resetDone": "Esempio predefinito ripristinato",
-    "anotherSample": "Un altro esempio",
     "sampleDone": "Esempio {n} di {total}",
     "undo": "Annulla",
     "download": "Scarica .txt",

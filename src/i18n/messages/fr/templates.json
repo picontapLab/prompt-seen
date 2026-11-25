@@ -14,12 +14,29 @@
   "editor": {
     "fields": "Champs",
     "other": "Autres",
-    "preview": "Aperçu du prompt",
-    "expand": "Afficher le prompt complet",
-    "collapse": "Masquer le prompt",
+    "steps": {
+      "label": "Comment utiliser ce modèle",
+      "prepare": "Préparez votre image",
+      "prepareNote": "Faites-le dans le générateur d’images où vous collez le prompt. Rien n’est envoyé sur ce site.",
+      "fill": "Renseignez les détails",
+      "copy": "Copiez le prompt"
+    },
+    "copiedNext": "Copié. Collez-le dans votre générateur d’images.",
+    "copiedNextWithInput": "Copié. Joignez votre image dans votre générateur d’images, puis collez le prompt.",
+    "stage": {
+      "before": "Avant",
+      "after": "Après",
+      "compare": "Comparer avant et après",
+      "compareValue": "{percent} % avant",
+      "view": "Mode de comparaison",
+      "viewSlider": "Curseur",
+      "viewPair": "Côte à côte",
+      "examples": "Exemples",
+      "example": "Exemple {n} sur {total}",
+      "useValues": "Utiliser les valeurs de cet exemple"
+    },
     "reset": "Réinitialiser",
     "resetDone": "Exemple par défaut restauré",
-    "anotherSample": "Un autre exemple",
     "sampleDone": "Exemple {n} sur {total}",
     "undo": "Annuler",
     "download": "Télécharger le fichier .txt",

@@ -11,7 +11,7 @@ import styles from './Detail.module.css';
 /** Print id from the frame number: 0098-A, 0098-B… (§11.1.9 "帧号"). */
 const printId = (frame: string, index: number) => `${frame}-${String.fromCharCode(65 + index)}`;
 
-function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string }) {
+function Thumbs({ images, label, size }: { images: readonly ImageRef[]; label: string; size: 'thumbnail' | 'card' }) {
   const t = useTranslations('detail.image');
   if (images.length === 0) return null;
   return (
@@ -19,13 +19,13 @@ function Thumbs({ images, label }: { images: readonly ImageRef[]; label: string 
       <figcaption>{label}</figcaption>
       <ul>
         {images.map((img) => {
-          const p = getImage(img, 'thumbnail');
+          const p = getImage(img, size);
           const original = img.variants.original;
           const thumbnail = (
             <img
               src={p.src}
               srcSet={p.srcSet}
-              sizes="160px"
+              sizes={size === 'card' ? '240px' : '160px'}
               width={p.width}
               height={p.height}
               alt={p.alt}
@@ -70,6 +70,8 @@ export function ExampleRuns({
   templates,
   locale,
   showcaseId,
+  currentTemplateId,
+  thumbnails = 'thumbnail',
   stableIds = false,
 }: {
   runs: readonly ExampleRunView[];
@@ -81,6 +83,10 @@ export function ExampleRuns({
   /** URL prefix of the page's locale. */
   locale: string;
   showcaseId?: string;
+  /** The template whose own page this is: its runs name it without linking back to the page. */
+  currentTemplateId?: string;
+  /** The file the run images use; `card` where they are shown larger (template pages). */
+  thumbnails?: 'thumbnail' | 'card';
   /** Full pages have publicly linkable run headings. Dialog headings use scoped IDs. */
   stableIds?: boolean;
 }) {
@@ -122,7 +128,9 @@ export function ExampleRuns({
                 <div>
                   <dt>{t('template', { version: run.template.version })}</dt>
                   <dd>
-                    {template ? (
+                    {template && template.id === currentTemplateId ? (
+                      template.title
+                    ) : template ? (
                       <Link href={paths.template(locale, template.slug)} prefetch={false}>
                         {template.title}
                       </Link>
@@ -142,8 +150,8 @@ export function ExampleRuns({
               </p>
             )}
             <div className={styles.runImagesRow}>
-              <Thumbs images={run.references} label={t('references')} />
-              <Thumbs images={run.outputs} label={t('outputs')} />
+              <Thumbs images={run.references} label={t('references')} size={thumbnails} />
+              <Thumbs images={run.outputs} label={t('outputs')} size={thumbnails} />
             </div>
             {run.parameters.some((p) => p.value !== null && p.value !== '') && (
               <div className={styles.tableWrap}>

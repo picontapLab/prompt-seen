@@ -14,12 +14,29 @@
   "editor": {
     "fields": "Campos",
     "other": "Otros",
-    "preview": "Vista previa del prompt",
-    "expand": "MOSTRAR EL PROMPT COMPLETO",
-    "collapse": "OCULTAR EL PROMPT",
+    "steps": {
+      "label": "Cómo usar esta plantilla",
+      "prepare": "Ten tu imagen a mano",
+      "prepareNote": "Hazlo en el generador de imágenes donde pegues el prompt. En este sitio no se sube nada.",
+      "fill": "Completa los datos",
+      "copy": "Copia el prompt"
+    },
+    "copiedNext": "Copiado. Pégalo en tu generador de imágenes.",
+    "copiedNextWithInput": "Copiado. Adjunta tu imagen en tu generador de imágenes y luego pega el prompt.",
+    "stage": {
+      "before": "Antes",
+      "after": "Después",
+      "compare": "Comparar el antes y el después",
+      "compareValue": "{percent} % del antes",
+      "view": "Vista de comparación",
+      "viewSlider": "Deslizador",
+      "viewPair": "En paralelo",
+      "examples": "Ejemplos",
+      "example": "Ejemplo {n} de {total}",
+      "useValues": "Usar los valores de este ejemplo"
+    },
     "reset": "Restablecer",
     "resetDone": "Se ha restablecido el ejemplo predeterminado",
-    "anotherSample": "Otro ejemplo",
     "sampleDone": "Ejemplo {n} de {total}",
     "undo": "Deshacer",
     "download": "Descargar .txt",

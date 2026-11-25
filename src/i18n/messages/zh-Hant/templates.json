@@ -1,7 +1,5 @@
 {
   "editor": {
-    "anotherSample": "換個示例",
-    "collapse": "收起提示詞",
     "download": "下載 .txt",
     "downloaded": "提示詞已下載為文字檔案",
     "errors": {
@@ -15,12 +13,31 @@
       "too-short": "{label}至少需要 {limit} 個字元（目前 {actual}）。",
       "wrong-type": "這個值不能用於{label}，請重新填寫。"
     },
-    "expand": "展開完整提示詞",
     "fields": "欄位",
     "mismatch": "這個連結對應版本 {version}，已改用版本 {current} 的預設示例。",
     "missing": "{count, plural, other {還需填寫 # 項}}",
     "other": "其他",
-    "preview": "提示詞預覽",
+    "steps": {
+      "label": "如何使用這個範本",
+      "prepare": "準備好圖片",
+      "prepareNote": "請在你貼上提示詞的圖像生成工具裡完成這一步。圖片不會上傳到本站。",
+      "fill": "填寫內容",
+      "copy": "複製提示詞"
+    },
+    "copiedNext": "已複製。貼到你的圖像生成工具中即可。",
+    "copiedNextWithInput": "已複製。先在圖像生成工具中上傳圖片，再貼上提示詞。",
+    "stage": {
+      "before": "修改前",
+      "after": "修改後",
+      "compare": "對比修改前後",
+      "compareValue": "修改前佔 {percent}%",
+      "view": "對比方式",
+      "viewSlider": "滑動對比",
+      "viewPair": "並排",
+      "examples": "範例",
+      "example": "範例 {n} / {total}",
+      "useValues": "使用此範例的參數"
+    },
     "reset": "重設",
     "resetDone": "已還原預設範例",
     "restored": "已恢復上次填寫的內容。",

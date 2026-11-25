@@ -283,7 +283,7 @@
   }
   .runImages li {
     position: relative;
-    block-size: 96px;
+    block-size: var(--run-thumb, 96px);
     border-radius: var(--radius-image);
     overflow: hidden;
   }

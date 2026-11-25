@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useEffect, useState, type ReactNode } from 'react';
-import { CopyButton } from '@/ui/feedback/CopyButton';
+import { CopyButton, type CopyButtonProps } from '@/ui/feedback/CopyButton';
 import { ShareButton } from '@/ui/feedback/ShareButton';
 import styles from './MobileActionBar.module.css';
 
@@ -14,12 +14,18 @@ import styles from './MobileActionBar.module.css';
  */
 export function MobileActionBar({
   copyText,
+  copyBlocked,
+  onCopied,
   sheetCopyId,
   shareUrl,
   title,
   favorite,
 }: {
-  copyText: string;
+  /** A function is read at the moment of the press, as the sheet's own button does (§11.6.4). */
+  copyText: string | (() => string);
+  /** A template with fields still to fill: the button says so instead of copying (§11.4). */
+  copyBlocked?: CopyButtonProps['blocked'];
+  onCopied?: () => void;
   /** Id of the sheet's copy button. */
   sheetCopyId: string;
   shareUrl: string;
@@ -50,6 +56,8 @@ export function MobileActionBar({
         text={copyText}
         size="lg"
         className={styles.copy}
+        blocked={copyBlocked}
+        onResult={(state) => state === 'done' && onCopied?.()}
         labels={{
           copy: t('copy.label'),
           done: t('copy.done'),

@@ -14,12 +14,29 @@
   "editor": {
     "fields": "字段",
     "other": "其他",
-    "preview": "提示词预览",
-    "expand": "展开完整提示词",
-    "collapse": "收起提示词",
+    "steps": {
+      "label": "如何使用这个模板",
+      "prepare": "准备好图片",
+      "prepareNote": "请在你粘贴提示词的图像生成工具里完成这一步。图片不会上传到本站。",
+      "fill": "填写内容",
+      "copy": "复制提示词"
+    },
+    "copiedNext": "已复制。粘贴到你的图像生成工具中即可。",
+    "copiedNextWithInput": "已复制。先在图像生成工具中上传图片，再粘贴提示词。",
+    "stage": {
+      "before": "修改前",
+      "after": "修改后",
+      "compare": "对比修改前后",
+      "compareValue": "修改前占 {percent}%",
+      "view": "对比方式",
+      "viewSlider": "滑动对比",
+      "viewPair": "并排",
+      "examples": "示例",
+      "example": "示例 {n} / {total}",
+      "useValues": "使用此示例的参数"
+    },
     "reset": "恢复默认",
     "resetDone": "已恢复默认示例",
-    "anotherSample": "换个示例",
     "sampleDone": "示例 {n} / {total}",
     "undo": "撤销",
     "download": "下载 .txt",

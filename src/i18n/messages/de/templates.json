@@ -14,12 +14,29 @@
   "editor": {
     "fields": "Felder",
     "other": "Sonstiges",
-    "preview": "Prompt-Vorschau",
-    "expand": "VOLLSTÄNDIGEN PROMPT ANZEIGEN",
-    "collapse": "PROMPT EINKLAPPEN",
+    "steps": {
+      "label": "So verwendest du diese Vorlage",
+      "prepare": "Bild bereithalten",
+      "prepareNote": "Mach das in dem Bildgenerator, in den du den Prompt einfügst. Auf diese Website wird nichts hochgeladen.",
+      "fill": "Felder ausfüllen",
+      "copy": "Prompt kopieren"
+    },
+    "copiedNext": "Kopiert. Füge ihn in deinen Bildgenerator ein.",
+    "copiedNextWithInput": "Kopiert. Hänge dein Bild im Bildgenerator an und füge dann den Prompt ein.",
+    "stage": {
+      "before": "Vorher",
+      "after": "Nachher",
+      "compare": "Vorher und nachher vergleichen",
+      "compareValue": "{percent} % vorher",
+      "view": "Vergleichsansicht",
+      "viewSlider": "Schieberegler",
+      "viewPair": "Nebeneinander",
+      "examples": "Beispiele",
+      "example": "Beispiel {n} von {total}",
+      "useValues": "Werte dieses Beispiels übernehmen"
+    },
     "reset": "Zurücksetzen",
     "resetDone": "Standardbeispiel wiederhergestellt",
-    "anotherSample": "Anderes Beispiel",
     "sampleDone": "Beispiel {n} von {total}",
     "undo": "Rückgängig",
     "download": ".txt herunterladen",

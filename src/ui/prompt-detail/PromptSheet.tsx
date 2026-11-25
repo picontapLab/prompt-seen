@@ -31,6 +31,8 @@ export type PromptSheetProps = {
   copyBlocked?: CopyButtonProps['blocked'];
   /** Makes this sheet's copy button the one `C` presses (§11.10): the main prompt of the page. */
   copyShortcut?: CopyButtonProps['shortcut'];
+  /** Runs after each successful copy, e.g. to say what to do with the prompt next (§11.8.4). */
+  onCopied?: () => void;
   /** Folds long prompts (§11.8.3). Off for the editor preview, where every edit must stay in view. */
   fold?: boolean;
   /** The prompt text, plain or with annotated phrases or template variables. */
@@ -53,6 +55,7 @@ export function PromptSheet({
   copyButtonId,
   copyBlocked,
   copyShortcut,
+  onCopied,
   fold = true,
   children,
 }: PromptSheetProps) {
@@ -87,7 +90,11 @@ export function PromptSheet({
             failed: t('copy.failed'),
             failedHint: t('copy.failedHint'),
           }}
-          onResult={(state) => state === 'done' && setFlash((n) => n + 1)}
+          onResult={(state) => {
+            if (state !== 'done') return;
+            setFlash((n) => n + 1);
+            onCopied?.();
+          }}
         />
       </div>
       <div

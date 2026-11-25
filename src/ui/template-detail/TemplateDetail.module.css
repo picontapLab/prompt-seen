@@ -1,9 +1,23 @@
-/* Template detail (design doc §11.8.4): the editor comes first, with title and summary above it;
-   usage notes and test prints follow at reading width. */
+/* Template detail (design doc §11.8.4): title and summary with save beside them, the example
+   stage and the steps to use the template, then usage notes and test prints at reading width. */
 @layer components {
   .top {
     display: grid;
     gap: var(--space-20);
+    min-inline-size: 0;
+  }
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-12) var(--space-24);
+  }
+  .heading {
+    display: flex;
+    flex: 1 1 24rem;
+    flex-direction: column;
+    gap: var(--space-8);
     min-inline-size: 0;
   }
   .reading {
@@ -11,5 +25,11 @@
     gap: var(--space-32);
     max-inline-size: var(--container-reading);
     min-inline-size: 0;
+  }
+  /* Test prints here are the page's examples: larger than on a prompt page, where two fit a row. */
+  @media (min-width: 768px) {
+    .reading {
+      --run-thumb: 160px;
+    }
   }
 }

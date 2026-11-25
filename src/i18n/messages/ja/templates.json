@@ -14,12 +14,29 @@
   "editor": {
     "fields": "フィールド",
     "other": "その他",
-    "preview": "プロンプトのプレビュー",
-    "expand": "プロンプト全体を表示",
-    "collapse": "プロンプトを閉じる",
+    "steps": {
+      "label": "このテンプレートの使い方",
+      "prepare": "画像を用意する",
+      "prepareNote": "この操作は、プロンプトを貼り付ける画像生成ツールで行ってください。このサイトには何もアップロードされません。",
+      "fill": "内容を入力する",
+      "copy": "プロンプトをコピーする"
+    },
+    "copiedNext": "コピーしました。画像生成ツールに貼り付けてください。",
+    "copiedNextWithInput": "コピーしました。画像生成ツールに画像を添付してから、プロンプトを貼り付けてください。",
+    "stage": {
+      "before": "編集前",
+      "after": "編集後",
+      "compare": "編集前と編集後を比較",
+      "compareValue": "編集前 {percent}%",
+      "view": "比較の表示方法",
+      "viewSlider": "スライダー",
+      "viewPair": "並べて表示",
+      "examples": "例",
+      "example": "例 {n} / {total}",
+      "useValues": "この例の値を使う"
+    },
     "reset": "リセット",
     "resetDone": "デフォルト例に戻しました",
-    "anotherSample": "別の例",
     "sampleDone": "例 {n} / {total}",
     "undo": "元に戻す",
     "download": ".txt をダウンロード",

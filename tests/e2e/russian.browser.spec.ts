@@ -213,14 +213,6 @@ test.describe('Russian layout and accessible foundation pages', () => {
             await page.evaluate((theme) => document.documentElement.setAttribute('data-theme', theme), theme);
             await expect(page.locator('h1')).toHaveText(detail.title);
             await page.evaluate(() => document.fonts.ready);
-            if (width < 1024) {
-              // The collapsed sheet deliberately clips content below the viewport.
-              // Exercise its expanded, scrollable state before checking those controls.
-              const handle = page.locator('[data-static-from="lg"] > button[aria-expanded]');
-              await handle.click();
-              await expect(handle).toHaveAttribute('aria-expanded', 'true');
-              await page.locator('[data-action="sample"]').scrollIntoViewIfNeeded();
-            }
             expect(await layoutProblems(page), id).toEqual([]);
             expect(await seriousViolations(page), id).toEqual([]);
           }

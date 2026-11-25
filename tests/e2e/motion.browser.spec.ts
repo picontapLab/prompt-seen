@@ -64,26 +64,21 @@ test.describe('§12.8-6: typing while the preview changes keeps the input, the c
     await input.fill('Lantern');
     release();
     await expect(preview(page)).toContainText('Lantern');
-    // Rendering the field again (opening the docked preview) keeps it too.
-    const handle = page.locator('section:has(> [data-sheet-body]) button[aria-expanded]');
-    await handle.click();
-    await expect(handle).toHaveAttribute('aria-expanded', 'true');
+    // Rendering the editor again (the stage switching to another view of the example) keeps it too.
+    await editorReady(page);
+    await page.locator('[data-template-stage]').scrollIntoViewIfNeeded();
     await expect(input).toHaveValue('Lantern');
     await expect(preview(page)).toContainText('Lantern');
   });
 
-  test('phone: opening and closing the docked preview keeps what was typed', async ({ page }) => {
+  test('phone: looking at the example and coming back keeps what was typed', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`${BASE}${template!.path}`);
     await editorReady(page);
     const input = field(page, textField!.name);
     await input.fill('Lantern');
-    const handle = page.locator('section:has(> [data-sheet-body]) button[aria-expanded]');
-    await handle.click();
-    await expect(handle).toHaveAttribute('aria-expanded', 'true');
     await expect(preview(page)).toContainText('Lantern');
-    await page.keyboard.press('Escape');
-    await expect(handle).toHaveAttribute('aria-expanded', 'false');
+    await page.locator('[data-template-stage]').scrollIntoViewIfNeeded();
     await input.focus();
     await page.keyboard.press('End');
     await page.keyboard.type(' glow');

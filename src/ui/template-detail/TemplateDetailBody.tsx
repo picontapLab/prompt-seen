@@ -18,10 +18,11 @@ import styles from './TemplateDetail.module.css';
 
 /**
  * The template detail (design doc §6, §9.1, §11.8.4), rendered from the build's detail model:
- * title and summary, the editor, then the usage notes, test prints and work made with it. The
- * editor renders on the server with the default sample, so the initial HTML holds every field
- * with its label, help and default value, and the default prompt (§3.2, §3.3), produced by the
- * same pure function the browser uses for every edit (§6.3).
+ * title and summary, then the example stage beside the steps to use the template, then the usage
+ * notes, test prints and work made with it. The working area renders on the server with the
+ * default sample, so the initial HTML holds the example images, every field with its label, help
+ * and default value, and the default prompt (§3.2, §3.3), produced by the same pure function the
+ * browser uses for every edit (§6.3).
  */
 export function TemplateDetailBody({
   detail,
@@ -32,6 +33,8 @@ export function TemplateDetailBody({
 }) {
   const t = useTranslations('detail');
   const f = useTranslations('favorites');
+  const k = useTranslations('shortcuts');
+  const frameNumber = detail.id.replace(/^t_/, 'T');
   const prefix = locale.pathPrefix;
   const { version } = detail;
   // Only what the editor uses crosses to the browser (§3.5): not the notes, prints or related work.
@@ -43,6 +46,11 @@ export function TemplateDetailBody({
     promptLanguage: detail.promptLanguage,
     version: { id: version.id, body: version.body, fields: version.fields, samples: version.samples },
     cover: detail.cover,
+    frameNumber,
+    inputInstructions: detail.inputInstructions,
+    inputInstructionsLocale: detail.inputInstructionsLocale,
+    // A template that edits the reader's image has recorded runs with reference images (§5.5).
+    needsInput: detail.examples.some((run) => run.references.length > 0),
     examples: detail.examples.flatMap((run) =>
       run.outputs[0]
         ? [
@@ -51,6 +59,8 @@ export function TemplateDetailBody({
               prompt: run.prompt,
               promptLanguage: run.promptLanguage,
               template: run.template,
+              notes: run.notes,
+              notesLocale: run.notesLocale,
               image: run.outputs[0],
               references: run.references.map((image, index) => ({
                 ...image,
@@ -67,14 +77,15 @@ export function TemplateDetailBody({
       <LanguageLinks links={detail.languageLinks} />
       <div className={styles.top}>
         <Breadcrumb label={t('breadcrumb.label')} items={templateCrumbs(prefix, (key) => t(`breadcrumb.${key}`))} />
-        <header className={detailStyles.header}>
-          <h1 {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.title}>
-            {detail.title}
-          </h1>
-          <p {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.summary}>
-            {detail.description}
-          </p>
-          {detail.inputInstructions && <p className={detailStyles.summary}>{detail.inputInstructions}</p>}
+        <header className={styles.header}>
+          <div className={styles.heading}>
+            <h1 {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.title}>
+              {detail.title}
+            </h1>
+            <p {...languageAttributes(detail.localization.contentLocale)} className={detailStyles.summary}>
+              {detail.description}
+            </p>
+          </div>
           <div className={detailStyles.actions}>
             {/* Saving (§11.5) and `S` (§11.10). */}
             <FavoriteButton
@@ -92,6 +103,15 @@ export function TemplateDetailBody({
           model={model}
           languageName={languageName(detail.promptLanguage, locale.htmlLang)}
           showLanguageNote={detail.promptLanguage.split('-')[0] !== locale.htmlLang.split('-')[0]}
+          barFavorite={
+            <FavoriteButton
+              id={detail.id}
+              kind="template"
+              title={detail.title}
+              variant="bar"
+              labels={{ save: f('save'), saved: f('saved'), saveKey: k('withKey', { action: f('save'), key: 'S' }) }}
+            />
+          }
         />
       </div>
 
@@ -101,10 +121,12 @@ export function TemplateDetailBody({
         )}
         <ExampleRuns
           runs={detail.examples}
-          frameNumber={detail.id.replace(/^t_/, 'T')}
+          frameNumber={frameNumber}
           currentPrompt={version.defaultPrompt}
           promptLanguage={detail.promptLanguage}
           templates={[detail]}
+          currentTemplateId={detail.id}
+          thumbnails="card"
           locale={prefix}
         />
         <SourceInfo

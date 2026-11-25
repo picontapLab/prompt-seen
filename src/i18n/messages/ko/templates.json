@@ -14,12 +14,29 @@
   "editor": {
     "fields": "입력 항목",
     "other": "기타",
-    "preview": "프롬프트 미리보기",
-    "expand": "전체 프롬프트 보기",
-    "collapse": "프롬프트 숨기기",
+    "steps": {
+      "label": "이 템플릿 사용 방법",
+      "prepare": "이미지 준비하기",
+      "prepareNote": "이 작업은 프롬프트를 붙여 넣을 이미지 생성기에서 진행하세요. 이 사이트에는 아무것도 업로드되지 않습니다.",
+      "fill": "내용 입력하기",
+      "copy": "프롬프트 복사하기"
+    },
+    "copiedNext": "복사했습니다. 이미지 생성기에 붙여 넣으세요.",
+    "copiedNextWithInput": "복사했습니다. 이미지 생성기에 이미지를 첨부한 다음 프롬프트를 붙여 넣으세요.",
+    "stage": {
+      "before": "수정 전",
+      "after": "수정 후",
+      "compare": "수정 전후 비교",
+      "compareValue": "수정 전 {percent}%",
+      "view": "비교 보기 방식",
+      "viewSlider": "슬라이더",
+      "viewPair": "나란히 보기",
+      "examples": "예시",
+      "example": "전체 {total}개 중 {n}번째 예시",
+      "useValues": "이 예시의 값 사용"
+    },
     "reset": "초기화",
     "resetDone": "기본 예시로 복원했습니다",
-    "anotherSample": "다른 예시",
     "sampleDone": "전체 {total}개 중 {n}번째 예시",
     "undo": "실행 취소",
     "download": ".txt 다운로드",

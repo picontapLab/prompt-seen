@@ -28,17 +28,48 @@ test('record selection switches outputs and reference identities together', asyn
 
 test('template sample previews follow the sample and custom values remain untested', async ({ page }) => {
   await page.goto(`${BASE}/en/templates/product-brand-story-grid/`);
-  const editor = page.locator('[data-editor]');
-  const output = editor.locator('figure img').last();
-  const before = await output.getAttribute('src');
-  await editor.locator('[data-action="sample"]').click();
-  await expect(output).not.toHaveAttribute('src', before!);
-  const caption = editor.locator('figure figcaption').last();
+  const stage = page.locator('[data-editor] [data-template-stage]');
+  await expect(stage).toHaveAttribute('data-mode', 'inputs');
+  const before = await stage.getAttribute('data-run');
+  const output = stage.locator('[data-stage-picture] img');
+  const shown = await output.getAttribute('src');
+  await stage.locator('[data-sample="1"]').click();
+  await expect(stage).not.toHaveAttribute('data-run', before!);
+  await expect(output).not.toHaveAttribute('src', shown!);
+  const caption = stage.locator('figcaption');
   await expect(caption).toContainText(message('en', 'detail.template.testedImage'));
   await expect(caption).toContainText(message('en', 'detail.test.generatedWith', { model: 'GPT Image 2.5' }));
-  await editor.locator('[data-field-shell="brandPalette"] input').fill('violet and lime');
+  await page.locator('[data-editor] [data-field-shell="brandPalette"] input').fill('violet and lime');
   await expect(caption).toContainText(message('en', 'detail.template.unmatchedImage'));
   await expect(caption).toContainText(message('en', 'detail.test.generatedWith', { model: 'GPT Image 2.5' }));
+});
+
+test('an edit in the same frame is shown before and after under one divider', async ({ page }) => {
+  await page.goto(`${BASE}/en/templates/remove-a-passerby-from-a-travel-photo/`);
+  const stage = page.locator('[data-editor] [data-template-stage]');
+  await expect(stage).toHaveAttribute('data-mode', 'compare');
+  const frame = stage.locator('[data-compare]');
+  // Both pictures are in the page, each with its own description.
+  await expect(frame.locator('img')).toHaveCount(2);
+  const slider = frame.getByRole('slider', { name: message('en', 'templates.editor.stage.compare') });
+  await expect(slider).toHaveValue('50');
+  await slider.focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(slider).toHaveValue('51');
+  await expect(slider).toHaveAttribute(
+    'aria-valuetext',
+    message('en', 'templates.editor.stage.compareValue', { percent: '51' }),
+  );
+  expect(await frame.evaluate((el) => (el as HTMLElement).style.getPropertyValue('--compare-pos'))).toBe('51%');
+
+  // A press on the frame moves the divider there.
+  const box = (await frame.boundingBox())!;
+  await page.mouse.click(box.x + box.width * 0.25, box.y + box.height / 2);
+  await expect(slider).toHaveValue('25');
+
+  await stage.getByRole('radio', { name: message('en', 'templates.editor.stage.viewPair') }).click();
+  await expect(stage.locator('[data-compare]')).toHaveCount(0);
+  await expect(stage.locator('[data-stage-picture] img, [data-reference-picture] img')).toHaveCount(2);
 });
 
 test('multiple references keep their roles and source snapshots are separate from test results', async ({ page }) => {
