@@ -2,6 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import { settle } from './support/a11y';
 import { BASE, BUILD, message } from './support/artifact';
+import { samplePrompt } from './support/content';
 import { cancelledFetch } from './support/errors';
 import { layoutProblems } from './support/layout';
 
@@ -172,6 +173,45 @@ test('the language switch finds a language by its English name and keeps the pag
   await combobox.fill(englishName.slice(0, 4));
   await page.getByRole('option', { name: target!.nativeName }).click();
   await expect(page).toHaveURL(new RegExp(`${BASE}/${target!.pathPrefix}/$`));
+  await expect(page.locator('html')).toHaveAttribute('lang', target!.htmlLang);
+});
+
+test('the language list opened from a scrolled page stays open and selectable', async ({ page }) => {
+  // WebKit applied the page's scroll padding to the sticky header's own field: focusing it
+  // scrolled the page up and the list closed on that scroll before an option could be chosen.
+  const target = BUILD.locales.find((l) => l.code !== first!.code);
+  test.skip(!target, 'one locale in this build');
+  const detail = samplePrompt(first!.code);
+  const label = message(first!.code, 'shell.language.label');
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto(`${BASE}${detail.path}`);
+  const button = page.getByRole('banner').getByRole('button', { name: `${label}: ${first!.nativeName}` });
+  await page.waitForFunction(
+    (name) =>
+      [...document.querySelectorAll('header button')].some(
+        (b) => b.textContent?.includes(name) && Object.keys(b).some((key) => key.startsWith('__reactProps')),
+      ),
+    first!.nativeName,
+  );
+  const scrolled = await page.evaluate(() => {
+    scrollTo(0, Math.min(1126, document.documentElement.scrollHeight - innerHeight));
+    return scrollY;
+  });
+  expect(scrolled).toBeGreaterThan(200);
+  // Let anything that reacts to the scroll (the phone action bar's observer) settle first.
+  await page.waitForTimeout(300);
+  const before = await page.evaluate(() => scrollY);
+  // A pointer press where the button is, without Playwright first scrolling it into view.
+  const box = (await button.boundingBox())!;
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+  const combobox = page.getByRole('combobox', { name: label });
+  await expect(combobox).toBeFocused();
+  await expect(page.getByRole('listbox')).toBeVisible();
+  // Past the moment the list used to close.
+  await page.waitForTimeout(300);
+  await expect(page.getByRole('listbox')).toBeVisible();
+  expect(await page.evaluate(() => scrollY)).toBe(before);
+  await page.getByRole('option', { name: target!.nativeName }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', target!.htmlLang);
 });
 
