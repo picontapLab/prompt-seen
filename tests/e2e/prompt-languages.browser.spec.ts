@@ -169,11 +169,8 @@ test('template language changes preserve the latest input, stable options, draft
   await page.reload();
   await hydrated(page);
   await expect(preview(page)).toHaveText(expected);
+  // Reset sits below the prompt: the language switch happens from a scrolled page.
   await page.locator('[data-action="reset"]').click();
-  // Reset sits below the prompt, so the page is now scrolled down. In WebKit the page shifts by
-  // itself when the language list opens on a scrolled page, and React Aria closes the list on
-  // scroll; that happens on every page, not just this one. Switch from the top, as before.
-  await page.evaluate(() => window.scrollTo(0, 0));
   await chooseLanguage(page, 'zh-Hans', 'en');
   await expect(preview(page)).toHaveText(en.version.defaultPrompt);
 });
