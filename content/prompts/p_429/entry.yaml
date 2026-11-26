@@ -1,0 +1,80 @@
+id: p_429
+slug: single-sku-variant-photo
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: template
+  templateId: t_088
+  version: v1
+  values:
+    variant: sage green pencil case
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_748
+relatedTemplateIds:
+  - t_088
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_524
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-08
+    platform: Reddit
+    author: PhotoroomHQ
+    url: https://www.reddit.com/r/photoroom/comments/1vn94kz/why_ai_product_photos_can_look_right_and_still/
+    publishedAt: null
+    metricObjectUrl: https://www.reddit.com/r/photoroom/comments/1vn94kz/why_ai_product_photos_can_look_right_and_still/
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 品牌账号展示挂花连接差异，指出标志、文字、肩带和色彩会漂移，给出据原图局部恢复的指令示例
+      zh-Hant: 品牌賬號展示掛花連接差異，指出標誌、文字、肩帶和色彩會漂移，給出據原圖局部恢復的指令示例
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.reddit.com/r/photoroom/comments/1vn94kz/why_ai_product_photos_can_look_right_and_still/
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

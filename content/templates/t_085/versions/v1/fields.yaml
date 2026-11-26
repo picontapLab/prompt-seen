@@ -1,0 +1,35 @@
+fields:
+  - name: included
+    required: true
+    group: text
+    labels:
+      en: Included items and counts
+      zh-Hans: 内含物及件数
+      zh-Hant: 內含物及件數
+      es: Piezas y cantidades
+      pt-BR: Itens e quantidades
+      de: Teile und Stückzahlen
+      fr: Pièces et quantités
+      ru: Состав и количество
+      ja: 付属品と数量
+      ko: 구성품과 수량
+      it: Pezzi e quantità
+      ar: القطع والكميات
+    help:
+      en: English example · three measuring spoons and one storage ring
+      zh-Hans: 英文示例 · three measuring spoons and one storage ring
+      zh-Hant: 英文示例 · three measuring spoons and one storage ring
+      es: Ejemplo en inglés · three measuring spoons and one storage ring
+      pt-BR: Exemplo em inglês · three measuring spoons and one storage ring
+      de: Englisches Beispiel · three measuring spoons and one storage ring
+      fr: Exemple en anglais · three measuring spoons and one storage ring
+      ru: Пример на английском · three measuring spoons and one storage ring
+      ja: 英語の入力例 · three measuring spoons and one storage ring
+      ko: 영문 입력 예시 · three measuring spoons and one storage ring
+      it: Esempio in inglese · three measuring spoons and one storage ring
+      ar: مثال بالإنجليزية · three measuring spoons and one storage ring
+    type: string
+    default: one folding stand, one cloth pouch and one hex key
+    minLength: 1
+    maxLength: 80
+    multiline: false

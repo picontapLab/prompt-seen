@@ -51,6 +51,7 @@ async function main() {
             ? 'prepared'
             : 'not-prepared',
         fingerprint: job.fingerprint,
+        previousReviews: job.previousReviews,
         review: job.review,
         failure: job.failure ?? null,
       };
@@ -67,6 +68,7 @@ async function main() {
         key,
         z.object({ outputPath: z.string(), provider: z.string(), model: z.string().nullable() }).strict().parse(read()),
       );
+    case 'reconsider':
     case 'review':
       return reviewJob(
         jobRoot,
@@ -75,6 +77,7 @@ async function main() {
           .object({ accepted: z.boolean(), notes: z.string().min(1), reviewer: z.string().min(1) })
           .strict()
           .parse(read()),
+        positionals[0] === 'reconsider',
       );
     case 'prepare':
       return prepareContent(root, jobRoot, key, read());
@@ -84,7 +87,7 @@ async function main() {
       return applyPrepared(root, key, z.string().min(1).parse(values.hash));
     default:
       throw new Error(
-        'Usage: content:produce plan --file job.json | claim --key key | record|fail|review|prepare --key key --file input.json | apply --key key --hash sha256 | recipe-hash --file recipe.json | status [--key key]',
+        'Usage: content:produce plan --file job.json | claim --key key | record|fail|review|reconsider|prepare --key key --file input.json | apply --key key --hash sha256 | recipe-hash --file recipe.json | status [--key key]',
       );
   }
 }

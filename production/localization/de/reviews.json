@@ -28267,6 +28267,2283 @@
       "reviewer": "AI Claude (Fable 5.2) — independent AI subagent source/target and ICU review of the template example stage strings, two passes; no human review",
       "completedAt": "2026-11-24T12:59:13.495Z",
       "conclusion": "approved"
+    },
+    {
+      "key": "collection/c_019",
+      "sourceHash": "sha256:80edb707c96866f3feae3ff45727707f8cb3683bb9507c79e3990ba3eb28ffbc",
+      "targetHash": "sha256:4a114f01aa1413a27ecf9911804222945575db34730f843fbc54ae3980cb1d5c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T16:52:17.450Z",
+      "conclusion": "approved",
+      "reason": "Verified all six product groups in “Passende Fotos für dein Produkt” against the English guide, including clearance for moving parts, readable food labels and a separate photograph of each defect."
+    },
+    {
+      "key": "content/examples/x_500/run.yaml#notes",
+      "sourceHash": "sha256:2f3185a575600f69d41fad59b074b03e57b89e37daf3c273e6f0bb8804c1d5d1",
+      "targetHash": "sha256:2143b91501c76dfbcabb7509a1d901742c9b9d7ae8eaa649c2bb148bfcf767e0",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T16:52:17.451Z",
+      "conclusion": "approved",
+      "reason": "Compared x_500 with the input and the 15A detail crop. The note identifies the seam and lower rim and explains the softer surface texture."
+    },
+    {
+      "key": "content/examples/x_501/run.yaml#notes",
+      "sourceHash": "sha256:69fb09e39ea039395e6feba40472c1156e244885d0f300386f760fc71839e18c",
+      "targetHash": "sha256:981f087f81086e77305d5f67dc8814f6f9874e5b6c1f570c9c6f087f9f45064a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T16:52:17.451Z",
+      "conclusion": "approved",
+      "reason": "Compared x_501 with the input and the 15B detail crop. The note locates the front-left notch above the leg and explains the darker exposed end grain."
+    },
+    {
+      "key": "content/examples/x_502/run.yaml#notes",
+      "sourceHash": "sha256:1524f4d61ae43e298183161ded383fba67efab389ba1a01f046f25e87aae4ed1",
+      "targetHash": "sha256:8b3ae9312a2f150a6a238f38ce6f5fc1b37bb0ffe60f9fe05c1113e74bdf4aee",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_503/run.yaml#notes",
+      "sourceHash": "sha256:75b9783ccaf69d271f6b56bdf29d4cf9f8fbbe53e3b468bd3dbb5165a54ce6d3",
+      "targetHash": "sha256:13a2e2b4f6f9984ada093832bc0eb4f6116e932aa7a1747f54c083b830f83913",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_504/run.yaml#notes",
+      "sourceHash": "sha256:a22860598300ca1a229e6273e99d79dc21e7c39b067c587666768d5a7ad29eb6",
+      "targetHash": "sha256:c13b3fe76eb2d2c78ace394da3be63d852e6adfcc4f89bc0ef12e75a0f036b9c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_505/run.yaml#notes",
+      "sourceHash": "sha256:eb029a5c437b9a61798724c3ecf81674072308ecc80cec20c5cdab318a9d36a6",
+      "targetHash": "sha256:93ce7280e7f83515603f007b5d7e7f1f0d94bb2c88c72c002fefd9d3c99c20a2",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_506/run.yaml#notes",
+      "sourceHash": "sha256:37f885747f60592010e8589c4da453dd1240748f3f2548bc1a58afdc4ae4a519",
+      "targetHash": "sha256:9bf039e868625391ad58b781ce1db9f3bfe5ec0ba3aa00a72054f2c49def55eb",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_507/run.yaml#notes",
+      "sourceHash": "sha256:1faf9acca898a9cac19370f1bf1964e62bf5d656b5e812f527a86520906a2379",
+      "targetHash": "sha256:4f87bac643622409819be2ef641e8a5ae1bd191511d850a307858983bc9efd45",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_508/run.yaml#notes",
+      "sourceHash": "sha256:ddd9ef6a6cb6dc6736c28471d19c819f25952639f72a6f20c3e28d64c3ba2274",
+      "targetHash": "sha256:d8f156ed55ce7117781c8ac44215da439612374b6dcd1f542842b28701176d5c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_509/run.yaml#notes",
+      "sourceHash": "sha256:9e28a0575d6c4f5f3b3c825f4da545eab72eeb317fd75431d27e7fd5af009d7a",
+      "targetHash": "sha256:1123684ca39f7ebbd1504fa9d26a8daaa42fa1c1d4da874dac1b4fe21ee76824",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_510/run.yaml#notes",
+      "sourceHash": "sha256:19d2e6ff3c289c2801c1fdf3139f183e97622ac52954468696791b415ee4c28d",
+      "targetHash": "sha256:e75eb1414864b6308be58ba9556fa09bf1d6c5f45c3a75bc940aed78673b4f1a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_511/run.yaml#notes",
+      "sourceHash": "sha256:3ac66b402e1831fc2c27b0865012f6fd92fc0d8d707e4c138a4ec2732d01287c",
+      "targetHash": "sha256:6eea281f8332fb06277b7d0bbb1c6f291daabbf83a6eeff841289b1438aee253",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_512/run.yaml#notes",
+      "sourceHash": "sha256:bee8628af1c964731d1396217443ccdcbe7e66cd9d78e0110ea46a5e7bacf541",
+      "targetHash": "sha256:4a2d55ac4cd1186d19b4a9c734ff3b057fa3f74d51436e5553b7d1df11f9cec3",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_513/run.yaml#notes",
+      "sourceHash": "sha256:876c2bd4a3c97de7737ff556db34072ae042d72027260285f8ffd317be2f6959",
+      "targetHash": "sha256:9befd21e6080ab638e0096b94b3412275999133ed51e0373a2666386daa4d138",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_514/run.yaml#notes",
+      "sourceHash": "sha256:e61adfdbcac3b76b22a62065e3fa5d0d7ab2f9969edaa0e42a75a34efa608076",
+      "targetHash": "sha256:914647471c0a583d9d9acd15a5d66066a3b33d31e1077eb29da144f9bb99e79e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_515/run.yaml#notes",
+      "sourceHash": "sha256:d08d69ddf2c2878956bc99cbaff467d91e7608104a46e9d062cb43c203bde7b7",
+      "targetHash": "sha256:c6f658a70d0e7f4450820dfa74c3576fbd6c9a5476fe570532fdaacb9406136b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_516/run.yaml#notes",
+      "sourceHash": "sha256:f43edf7d1753ce010b1c464de6a71dcbab0d383f6645f22df57b3cbbbb950887",
+      "targetHash": "sha256:6345c6b98dbfd7588b0f525d504784455e0e06dd3db9aab1f283e86a817b0e44",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_517/run.yaml#notes",
+      "sourceHash": "sha256:b04db5b6e10befd466661a4b405c1a42266f2bd5b10665ab7f370032ee10ef17",
+      "targetHash": "sha256:2aff9afdc2bc357bf12a87813506109e283b880cfc24c592df4de615ad8c3a26",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_518/run.yaml#notes",
+      "sourceHash": "sha256:4766386aff41a271b7302146355d6892649d7bfb1ebdaeaae924aa630ff494a7",
+      "targetHash": "sha256:63d36a97e286202937f3e1225adc1cf8cc847989c7fa9bcfb0a87d0df1fda0cd",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_519/run.yaml#notes",
+      "sourceHash": "sha256:6b6dbc6d899ee7630f8a3073a3a31d332524591438cb667b99946c6b628622e3",
+      "targetHash": "sha256:f0c52f83ded6844d4d0108c22d624e49c9380a9d89aed64585281fe1e5aeb038",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_520/run.yaml#notes",
+      "sourceHash": "sha256:3e4038ffb53edc9af6790d2c17a0dc37428729aad5b43192377791384e9747a8",
+      "targetHash": "sha256:64a6cc468a41939a7b7ee7b6ecdee7873d0cd9cf8bac7ba881198d5d18331e04",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_521/run.yaml#notes",
+      "sourceHash": "sha256:d56baba2025b7ac808adcdfc73a7031e3f169be11b4cc53bba90329c1674c5a1",
+      "targetHash": "sha256:48340268bc1aeaeb0178024f7253546bfd4af6b1a829502d347dbf1c53a49ba1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_522/run.yaml#notes",
+      "sourceHash": "sha256:89c7917ae5f078fca72b11e9f40dc19a9054e9e1df1008c05aaa42f1c3876b8f",
+      "targetHash": "sha256:ade8eb016965e3c82e572f50ce5fc78cbc42803cdb3ae671daa0d709be8a35af",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_523/run.yaml#notes",
+      "sourceHash": "sha256:976753af7573e56364751fa7e10d3608a870ff8e4e25e9d8719ac173a46d2155",
+      "targetHash": "sha256:914d267616878b1632ef7dfaf361c392ecab873ea72939c4566381b4872e36ad",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_524/run.yaml#notes",
+      "sourceHash": "sha256:815df9461cd889bd0b6f6e89341abca53eafec9feaa441f2e062e30bfdcfec3c",
+      "targetHash": "sha256:674183c259eb9102a9f2f1d471390a23aaa3188176d7a2dfd5ab1f3f432cfb58",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_525/run.yaml#notes",
+      "sourceHash": "sha256:984c1a259857d18a567b46f225be8c3c9a8e23bdcffe3c1f179168f97c1a0b87",
+      "targetHash": "sha256:664d12d0bcdb572611675255080a82c75312b621ff0fed10d98ad3b436513fa3",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_526/run.yaml#notes",
+      "sourceHash": "sha256:eeccb440b9959ff26fb59716c3d886dfce441de674baae3df14c2e9c0e97546d",
+      "targetHash": "sha256:dcb35d3cebf081529ef181699dbafb5406251a178d3633ac9bc3abc86aedaaf9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_527/run.yaml#notes",
+      "sourceHash": "sha256:6b8f4ec6d2983da5e2a54e7c49583ab5c74966e0593c9f1cad8d064f55ef58e9",
+      "targetHash": "sha256:30302d304747c5fbbc10ece39f8a3e67202fb8e1eba30d9a28d407f4febfd08a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_528/run.yaml#notes",
+      "sourceHash": "sha256:b9861cfe7bb9d56c5ef7307201a010bbfa518115fd02361a2064ed97818d8b86",
+      "targetHash": "sha256:db996afc5cb9d45ab85820ab9bc4fdc147e3f11d24ecef135e9cccb926991c89",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_529/run.yaml#notes",
+      "sourceHash": "sha256:288ec8438607d57d5f180ef91ffd6710767a6a6c1472e9f8591fb0023bd8e009",
+      "targetHash": "sha256:20abfa16cc328880cbfb1d5025052874c517f76362e26d5e2071749f87242059",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_530/run.yaml#notes",
+      "sourceHash": "sha256:75646a0e21eba39734f66c0992983b272e94b7ab3d53bf6b4c9b0122846e24ac",
+      "targetHash": "sha256:9375b5b3a402b934eadde419f0c7008d6876a51f6caf729fccab6e3220073219",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/examples/x_531/run.yaml#notes",
+      "sourceHash": "sha256:fbdb05de589dbf7bc00c1385219c945f413e192c3c1c360b3b89e2f4a9f311a3",
+      "targetHash": "sha256:eff9fb96a287df5b6ef4060d6b54ec7870714e6ded07eb479db73eb685da9746",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_690.yaml#alt",
+      "sourceHash": "sha256:4481455b2641961c2a30a29633bb5c8ef61f15edad4d26eaa33d502660d085d8",
+      "targetHash": "sha256:9b79825b4a8861bf3b3da38d5cb5acccab476a2917b6ecef18a63115a65f9eab",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_691.yaml#alt",
+      "sourceHash": "sha256:21412665fc908af5a866818d58217297ede372cf3119c0c04bdbe10c35705fa9",
+      "targetHash": "sha256:ff4ad0c20030a89ca4379e18caab8ffd8a9616c95abd20d783b4dd6a8944ddae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_692.yaml#alt",
+      "sourceHash": "sha256:f407e1696571091607d6d56f766502fda64eb28dcf94751c3cc4c3d1753d0af4",
+      "targetHash": "sha256:bb6523f1f312d57fc1bd19dd4d9102308eaac13e474b7ebb021581af678fb22a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_693.yaml#alt",
+      "sourceHash": "sha256:aefbdbcc6690cf03722b79b18b82a33b7180d9cc58199747647043be630c3fe9",
+      "targetHash": "sha256:5db5e190422e016be84d2dd80c2c8d56eb0486e0d81ce25a49055e21c45e8833",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_694.yaml#alt",
+      "sourceHash": "sha256:6424db2fada072fb0c184431462220b49aa4e29e5f0cb2851f0e487ef31968f1",
+      "targetHash": "sha256:d735e61e4bb50c45a062a4a9c715fa49f3993d1ceab6f2171869b1b70a11679f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_695.yaml#alt",
+      "sourceHash": "sha256:1ba3a4fa43217c8424f78a331af71dc97d0304e91077e7141ca302adfd443175",
+      "targetHash": "sha256:c2fc046279620aac812f4714225ad3799debe9230ec558149e8bf1298c4253b8",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_696.yaml#alt",
+      "sourceHash": "sha256:820c82e4db120d1125ab03bf8a962f0968e1976569de885c55b74f4d4231e266",
+      "targetHash": "sha256:46c50abdac03d1439b253228fc7be35e47f76623e71d12693ef78863f45400d7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_697.yaml#alt",
+      "sourceHash": "sha256:eede5e4c08e37dc29d9d87207e2d9e681aa53f047cf67d55b5b625908c6ba8cb",
+      "targetHash": "sha256:e788dfbdd0a33e502a936b7636ca0cd0e9e3d60bbdb744412e4947fdc76b19c7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_698.yaml#alt",
+      "sourceHash": "sha256:f22b4f75139ae712ddda70c6438b39c7008e91dc35163e7625210bb089dc8ab3",
+      "targetHash": "sha256:31c7e66619629d781331a421d70263ef0e2f51027194039a72844f8b51994761",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_699.yaml#alt",
+      "sourceHash": "sha256:d4ebde62e52c935116ef4b69f3ea903b48056d54bf51adfbaf69fe99786af2dc",
+      "targetHash": "sha256:f9576db69ed4c904b16141a219a9c3558ddffa93cc8757b795a15074f251c4d1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_700.yaml#alt",
+      "sourceHash": "sha256:74f78ac2db1906e58d34878c9dbce4f5f15904e350a38cd14aad463fc4934d70",
+      "targetHash": "sha256:f41b51687d5432689ae59109a76ba0037703f4d226ae543156d98e3617efc108",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_701.yaml#alt",
+      "sourceHash": "sha256:a64e06059841e47de4daae29374b141732fd9e700d2e3159208b36f1abd95858",
+      "targetHash": "sha256:47a41f7174be8ee72e574cd46314e5314ab103f56807e2487b64375821922503",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_702.yaml#alt",
+      "sourceHash": "sha256:d224a4a307d5233e5ff4ce8ab4975c7701eee1e2ab113612b14db2d9589c24db",
+      "targetHash": "sha256:25e1beb0cfa68515b7b02750f27d83f8979dd17ba74fa0bb3f4df7792f220dc7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_703.yaml#alt",
+      "sourceHash": "sha256:be8f582383530676e0573b46281b4c00c3676d00ac6c657fcc3457718ae804c9",
+      "targetHash": "sha256:2187d1363b2b1404f06ee21b8970ef2e7f26f63da7a452b9056d5bd6e2c01aa5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_704.yaml#alt",
+      "sourceHash": "sha256:29f3b7e33f7f4f7e28136ac901d8dcd9f3d4d76be9337c6fc12cf5384ff3ed70",
+      "targetHash": "sha256:fb32f3ad8467036ee4e91095ede054e6f5d6f5dc39ceda8bc506029f5975caf9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_705.yaml#alt",
+      "sourceHash": "sha256:aba6c5211372969c906747585abecd64d4f4a5729c74f566e33f1e16d7f4f558",
+      "targetHash": "sha256:7e240696b4a70000d4b5a704fe50d5b1c5891cb6b7faebe56e6a8ca5dab4a769",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_706.yaml#alt",
+      "sourceHash": "sha256:e3bdbb6ff9784250672a13b5943a70bc1623b4926b51c188067f7e2e52591bad",
+      "targetHash": "sha256:df203c2b9df209e9c3f11c3c542b5c82e4eaa49d96a6cf8024420d235ca408bf",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_707.yaml#alt",
+      "sourceHash": "sha256:4ef419a8ad2d5b44c98da61be35496ac790ab7064cdfee0cbd74b53eabab94f0",
+      "targetHash": "sha256:730c19413151d8173f237fe992e7c288115080ffa83b999db762ecc8d7f71f74",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_708.yaml#alt",
+      "sourceHash": "sha256:1894e826de43a01a60b652bb6cf1debe71f1e3c07095125b961a7700d73def19",
+      "targetHash": "sha256:76dad4e4c928a7eef2266d908ebd4f5c6de1d1d478d2af0ced6b624aa42ca8e1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_709.yaml#alt",
+      "sourceHash": "sha256:2dc6b795fdee8616be18ead8ff3de9276790d75dde8b5d38123c0d8773670b0d",
+      "targetHash": "sha256:7f4f4a4f685dd38a3febb85a500f6b3de635ec24a8014cec05e7fc0dd79be888",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_710.yaml#alt",
+      "sourceHash": "sha256:22658513f6e6f1d2a7f113ff71ac47f7044ec3154a8726166ad48cece29beb75",
+      "targetHash": "sha256:0ee7bef78eeb6a0b2a4c27d88f0a30bd9cb59b3f8a6ef626eb15afd3defb8b70",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_711.yaml#alt",
+      "sourceHash": "sha256:cdb6806878e8d049a4a5f07f2bba004d0af7013dab65bc41a36b776f3347fe42",
+      "targetHash": "sha256:7be14d400b2becdfc8049b13c8fa6e2c2183400e565f6bd4bfa98a9665482c2c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_712.yaml#alt",
+      "sourceHash": "sha256:67313c24824b9421c02414ac8cb2812f30d58abb9eb77f3a5edf67b8bf335b6d",
+      "targetHash": "sha256:fa3b83e22a06bdc1dc786e82968285a9f7483779a823c4ee3cef9eae6a2a2496",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_713.yaml#alt",
+      "sourceHash": "sha256:57f6e8a3d53a5e560e63243ffb5138d27ed2ec1bd79fd8292a3bb22f3f78c436",
+      "targetHash": "sha256:bbcae217a87ca039d0098c7f284276325d86d05cad0ebfab42b42f50b8ac9791",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_714.yaml#alt",
+      "sourceHash": "sha256:ac5687c1d751f028b2d22d0f992a3ee44e20ae00801cf7902df63cd537469974",
+      "targetHash": "sha256:af92c3264f6f6a498a9e190e7a1642a1cb120f30914f3487d68b501b9989bc6f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_715.yaml#alt",
+      "sourceHash": "sha256:9da7121c3d0f6036507e8d51151cc1aba063e0d6e14c7dd0dda7b4757a3fd4ff",
+      "targetHash": "sha256:119f4f24d73fb94cbbf3c7008ad50558ac8827b50f78014768da1bd704c439d8",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_716.yaml#alt",
+      "sourceHash": "sha256:77dc82cdf31ad3caf7129d2da9c3d571578ab0b7ef2a4c2dfed97e8ac86bba79",
+      "targetHash": "sha256:1b0ee7836d98f152b65cbba4f4d8db5e7f393e5925d0fda9b9e8385d84fc4453",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_717.yaml#alt",
+      "sourceHash": "sha256:bb7324e55d99d482dcc87c6e821c3fc0c974eb2f1d610e96f56d2481d6759e4c",
+      "targetHash": "sha256:040e5cd274b06a7f3452df753fc15a723b260288b10a6fbc22f85949e7911bc4",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_718.yaml#alt",
+      "sourceHash": "sha256:89b42d9fcededa666d9a680d32c9c71aaa8c04f175da84ca9597eb845f2a506c",
+      "targetHash": "sha256:f9f05889d3090931ac7ceef83267485a3c6ab9f2a11ecd90c6327dd4a439aaef",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_719.yaml#alt",
+      "sourceHash": "sha256:b089a041a1291bd1f7d539da4ce8efd99af742442e05e84a4229b3221c975cca",
+      "targetHash": "sha256:4f2d85d892d7e07e932d554686f1418344c549e8cb9f44f7c0e4804e55764005",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_720.yaml#alt",
+      "sourceHash": "sha256:7c56495569a3ceae04e9e2e523c21c8264d0d32a9560c10ca60015d615bea45f",
+      "targetHash": "sha256:c5be623f17a5e9d9320b50f30f08f7dcb4e524cabf38ad0d3aaf35f9abf49cf7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_721.yaml#alt",
+      "sourceHash": "sha256:45186719dc012fdd44a921ce39c7adc5aec232181e16c87715bc170d49f08f7c",
+      "targetHash": "sha256:219717871c78be7caefb829fd46b972c39b8e7b0847d0d8d0241e72f85513e8e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_722.yaml#alt",
+      "sourceHash": "sha256:2d3411c0d6c47a522f27945a009bf78bae50daec1d6268eb75c17c8d93e87dea",
+      "targetHash": "sha256:37c97b628c2241bb135543f6e1587bee932fa6c02b9f3de6c9455d4d546447ea",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_723.yaml#alt",
+      "sourceHash": "sha256:8fee56937ae20df3e0a946a702989b7339132bd9de726afebcf7ebb82b2c8c03",
+      "targetHash": "sha256:3b78a1cd308bf52f3e0df53aaebe102ec11b4a9fde8d5cbfe897f5cfa29f9559",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_724.yaml#alt",
+      "sourceHash": "sha256:45ab18d9d6421ccf25b16695501e2e67820e5e39aee2d4fa2438d3851e528e3d",
+      "targetHash": "sha256:afe3bf56f82003b0849e2770d9d924bc9ccfd31cc82db7a02fe7d9f6c65f6b18",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_725.yaml#alt",
+      "sourceHash": "sha256:ed7cb95d5d7755d779a41de0485424eec08219ff9d815bf42f369a6482c818b8",
+      "targetHash": "sha256:5c9e8443238e14cc4f8e26e75a352a9cd26e219581e7fb199a71e8dbb77a7fe0",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_726.yaml#alt",
+      "sourceHash": "sha256:8fbd10015d634ea55c2bfa172c67f4690cf8971662c642d2f9396181ec775219",
+      "targetHash": "sha256:be5d11356b8e82cee2661f08172cbd77bd3333f26b816e28459631b45e1d2595",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_727.yaml#alt",
+      "sourceHash": "sha256:1b699008d864bfb413fed5e8aa690493f6e83ea1e3c0bab82e7dab8a6d879613",
+      "targetHash": "sha256:b3f04de88d28205019f5205e02c5d41b4670fda924de8312347e75a72471aa2a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_728.yaml#alt",
+      "sourceHash": "sha256:03cf388d38c70ff3bf8095f7edd4ad96ba54370c5a509b6c1889f6fc9d9e6ab6",
+      "targetHash": "sha256:e95b1869e9cac2b31e880d4a76cb89c90a270993081c8ffcc5b1218cc36595fb",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_729.yaml#alt",
+      "sourceHash": "sha256:e2dbd057e5bc3294121fe57ac3dbe98352b0cd32bc027551c7983978800e5eca",
+      "targetHash": "sha256:90265501e6951ae9fc6a014b30dbf2023e5811a5ffb404196556d5e980a25c06",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.807Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_730.yaml#alt",
+      "sourceHash": "sha256:a8cc9373dc3373d905946c829241b7676ed79081889697ec188d6f6aac5f0e14",
+      "targetHash": "sha256:3624c860485ccc6562effedd8fb4af262a54dc8e27452b579773bcd5803d22fa",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_731.yaml#alt",
+      "sourceHash": "sha256:f3a8dc32c0e8eade9a7dd7d1978a0915117f699178a1044dbe98a5d40eee27d5",
+      "targetHash": "sha256:99b8369bf27e038985b9595f26239dedb1f3ad62b1385a1b3735e652c7bb7588",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_732.yaml#alt",
+      "sourceHash": "sha256:7bf5da9f0067842deb43fba40e058ac6bba371dbe766d639d1966a8e0532351e",
+      "targetHash": "sha256:fe302ede145fdf399b86cffbafff4ca4d2a89839283d008d39afa59d61783bb3",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_733.yaml#alt",
+      "sourceHash": "sha256:041f5f1c08ca491530c3a30d45aceaa6331bdfaa6fe9370e35c06790ee9b295e",
+      "targetHash": "sha256:887366439b773d2d1b4aa4077b2451ecaebf894156f003a299dcea57007481c0",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_734.yaml#alt",
+      "sourceHash": "sha256:bb940d0a5f39e10c54f04cb10ae6317709ae52f9ac80185f09cf4a321bc747ed",
+      "targetHash": "sha256:f19d1a03433b2c6cb0ad010d3a8315576bc3056137f57e1f5df38912bc071b6a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_735.yaml#alt",
+      "sourceHash": "sha256:3f74d77925af9ae253936c1702e3159e533f4fa950a1b376e3696cbe7b24c094",
+      "targetHash": "sha256:d10673ef0de451bfe5f581a8549c85ad819b9ff26f6cdbe7e7bd37e6dd705435",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_736.yaml#alt",
+      "sourceHash": "sha256:68a1665687c597bb621a453b679ac6565c741b97d09d9bd341e3f3eb097e61d8",
+      "targetHash": "sha256:88d2a8b3511f009bd1e949b8fadf01bc316763a52b27fd1bcba09d1a2a242b2b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_737.yaml#alt",
+      "sourceHash": "sha256:abad9057e63b0c1ad5199acc406d724ba1d21ce523e56e5e986ce111c68201c4",
+      "targetHash": "sha256:8b50bb396280673d4856d5167732d19d5b31e432752742485955357bb86b2f2f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_738.yaml#alt",
+      "sourceHash": "sha256:066178f326cde43f2dff94deeedc04e530fb2e1d8d5befe5d5968b1c2c74c606",
+      "targetHash": "sha256:c37d15bb520d3d8cd83709aec3c660ad0e8124344c01ce969eebe75ad50a8629",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_739.yaml#alt",
+      "sourceHash": "sha256:fe88f35141f5b2b550fa50eb5c9ac8ed53e39d6753a3c6dda887f793888060a8",
+      "targetHash": "sha256:afc9b89cd713ef45a8b5e6273b243fa334ce56c90c7db182d18ae8cf18d58b94",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_740.yaml#alt",
+      "sourceHash": "sha256:4289faab8ad3869a1e5ac350a7e1f8bbac83c94de428d4801b466b5783ac9f75",
+      "targetHash": "sha256:37c93f1d0d0116577bef9438029540881e5212417fdb5484940a2cc74665dea6",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_741.yaml#alt",
+      "sourceHash": "sha256:c9ca9a3faeeb05a8d4365ba0f40c9cc84b06ff107703116be19787a022858d8d",
+      "targetHash": "sha256:0988cbaee801e0ca5c8a95f6b1410d2eea1b02d11edec6054c5e394b45774180",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_742.yaml#alt",
+      "sourceHash": "sha256:b91f43dc40ef023900ec9ec4d0195d27850ca3052453d665e70b5db7f67bdc80",
+      "targetHash": "sha256:706ed6b65c9021e5ca8b8f7c8e48dfd18e188cdd7a5b72de5bfc74b77966aaf0",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_743.yaml#alt",
+      "sourceHash": "sha256:13081b2a79101475aa04af9ed77d579c625e0b264d16e1a8fbb9d2a795f3a689",
+      "targetHash": "sha256:fb930153fc0757dc8ddb86be762dac911168cba9683ab188401b5bb60a39ea60",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_744.yaml#alt",
+      "sourceHash": "sha256:0f31b629aa0c4d92355909b276d9b278b9598dfba14f729fba12fc56fe82c7df",
+      "targetHash": "sha256:4e071bfaba81926ae9f5c3104edb37556247bb0f29e10682759d906f0c960887",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_745.yaml#alt",
+      "sourceHash": "sha256:6c8792852aebbb1731bd2aed2bc36b558716731ff529a658b738833dd7427da1",
+      "targetHash": "sha256:3999472b704e10cea66567df8a44a217e69e98111386e0b79a46e5baa625f181",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_746.yaml#alt",
+      "sourceHash": "sha256:b5e2be278129236dc2fd7e4509269bb81d4c49bf022d9ea0ce9877ff76e35518",
+      "targetHash": "sha256:6d9c9ee2ffbd786ec4b7d25d146f8e03f594a9b4c7aba093a52568e7b2659756",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_747.yaml#alt",
+      "sourceHash": "sha256:cad4df6712a2a48dafc15f58a64cc9919ee89a86f762fbb6db730423435af571",
+      "targetHash": "sha256:c4c6a499c833482853d33494206c816c136a53a98fe49de0a15df9390e72f68b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_748.yaml#alt",
+      "sourceHash": "sha256:2197151d28f094615fdde9d7499e57ebe352a026f075378ee00ba146e7e98e14",
+      "targetHash": "sha256:622610090c9611b7139d46cbb65c50b10cb4d07e6588bf98abc2abc515619ddc",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_749.yaml#alt",
+      "sourceHash": "sha256:12cdd539d4100f6dc286ae4d0322c4aca1bfb6e3d985c40c5a99be57f02c1841",
+      "targetHash": "sha256:92b1ad9bd5ab80e402aff0d7fa9d76fcacf6120f58f5b3b8494db549084b7bd7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_750.yaml#alt",
+      "sourceHash": "sha256:44774a069d3b609234bd5d4fd78bc9735ef201cb3552a7e4ad5f55640a1b5808",
+      "targetHash": "sha256:2a2a27b09901ec5be1ff86c7ecb3fa8ba706172bd31ab6d378f0d925880cd5d9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_751.yaml#alt",
+      "sourceHash": "sha256:36a2a4cd21f55997ce3b693359f5115e4b582b302b143f1d7f7727b48b5a1634",
+      "targetHash": "sha256:5b81ed0e5f33de67c19c84ff008155b16c4d9e881ea5a4061a756ca30fd6cf16",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_752.yaml#alt",
+      "sourceHash": "sha256:ac825b55b5a3cde1f1093fe6c8dbee0b3cc388088644d8014f697fb3e5edcc00",
+      "targetHash": "sha256:62b2068c9f0561bc55b4f879e3a292c9a84f25effc5429a3e3410a73d2346833",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_753.yaml#alt",
+      "sourceHash": "sha256:79edbb95beb71925b8921ddade68b8f5aeb0da6cb37b97c2467f0b25e15a8de3",
+      "targetHash": "sha256:5fa82d49261376136551570a5e28d4002d5710df8aab3e3ea86db29fe4a8004b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_754.yaml#alt",
+      "sourceHash": "sha256:2ed591ed81d07bd19b8b73a9b25b11ef79bec1844f3104967afe1bf5d6c95a23",
+      "targetHash": "sha256:015884ff7387ee2c3a6ce1859dfd6ce49009c11ac84118c0e9bd2078a2f544c7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_755.yaml#alt",
+      "sourceHash": "sha256:b3cd32b3282c82bf1b02447ef39c825fff9c9e86f74f57f6439731d950617ae8",
+      "targetHash": "sha256:d9ef9ca76741a03fd829dddf6dd163a87e0b875334eb3d9ea1c0c5c093b74129",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_756.yaml#alt",
+      "sourceHash": "sha256:1be369c7f6bd7498af575f0725151c767d78a5930caf7d8d4f2b682640453be1",
+      "targetHash": "sha256:7267fd80c9c2054c3bcfca502304820bfd52a26284225ef726d0a645ce66b040",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_757.yaml#alt",
+      "sourceHash": "sha256:254f719128fabbf88cb5c54f90409ac1a7b4d973063808fee0eb4543f628a7fb",
+      "targetHash": "sha256:485050fd1747c97bfa8bd8bfbdca531ae220ae55f9612b92e39e8df4bbb10fa9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_758.yaml#alt",
+      "sourceHash": "sha256:d4e9f7cfb5d198392169d731c3d946949f9c39823e73961358f4c6112421a6bc",
+      "targetHash": "sha256:c6a8bb10ead507326a4d38857b4b67b309407a704b66a1e76ec891e8703ac4ec",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_759.yaml#alt",
+      "sourceHash": "sha256:e032468da85754d930055d2da5365d30bb75a659ec14c25547f574081cf264a0",
+      "targetHash": "sha256:96a60261578fbf9e1b71f39dd205cb49518a083c7864142e55e76e7303d54828",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_760.yaml#alt",
+      "sourceHash": "sha256:42455255aa63b1332a53c9bccc4c4485fb47cc23eb44673909a05cea06d80054",
+      "targetHash": "sha256:55dca2c8b16edea8f851a842f0cd07427025492bc124885938eff9e81b6d6b9e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_761.yaml#alt",
+      "sourceHash": "sha256:4e712c8e7823b1f180311a05d70c3da65af4d47b0a8d67d7ebbb2a8844bda5ab",
+      "targetHash": "sha256:9aea496edcddcfc38415911fe7b42f3b881b18d5a715faa6db90efea451dd754",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_762.yaml#alt",
+      "sourceHash": "sha256:a532fc27187e2e4770465b46d152a84cc448d2882a52b8cfb2ef44888e7fd73c",
+      "targetHash": "sha256:e61ef3a13626a5d9e6e43e4fad77301d7d4ca0eb2a8c79705193e29913a48145",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_763.yaml#alt",
+      "sourceHash": "sha256:865ba09d550c5c591745d4abebd61b044280378c9a1e4b0398207aac439f0968",
+      "targetHash": "sha256:e84a525c79430c24cfc2864d480219c2080597ddff252e8ce91bc3c3c9047d78",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_764.yaml#alt",
+      "sourceHash": "sha256:b1a7529551ef568ed0065c343fab6c9538550a69375933a6a9b6b99fb50291b8",
+      "targetHash": "sha256:2e860fcb51675646bcd252207590a2dca5f3360e04bc5a364fdd819bc50f0223",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_765.yaml#alt",
+      "sourceHash": "sha256:367d79b3bac1b75a0950edc954fa7ff1e43a46aa5b00c2c0dbfb2edca40663c4",
+      "targetHash": "sha256:bd4557075410309b9576f2189f3af39a5f4f88f6e5397ec23d5ec7a6ee03a13f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_766.yaml#alt",
+      "sourceHash": "sha256:b37f5b15a3be3da11080760e1eb5bc9d8341dd3038cf5a66d7dd8693dc24e048",
+      "targetHash": "sha256:58aabe3b339367f625c99634db6881cf6dd397c59e55e6779477677bfa2af7b9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_767.yaml#alt",
+      "sourceHash": "sha256:e5499a93f00264c1f798001fe59f23e10f64e18088f97459fd5aec1af7979544",
+      "targetHash": "sha256:ff06eef3981d57cd95ca9178d8cc0defcb3a4c754637d36714d64bbc99f5fdec",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_768.yaml#alt",
+      "sourceHash": "sha256:76eccf0d87912c586a6072e69a984d7334c6381eb5a524bef7d097770e1b1975",
+      "targetHash": "sha256:336a55a6d811200d7a7c6f6eed0d7d80cd3df9bb252f7010fb7727b2b96bc147",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/media/a_769.yaml#alt",
+      "sourceHash": "sha256:9785513ec6cc8b9b98d5f71a09c67cc6627b51b0966540c7e8d71b60499b18c9",
+      "targetHash": "sha256:c075cc8dea83cc07cab527a904344f8c327ed67fb0cba27915a92a67e2e997c5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_414",
+      "sourceHash": "sha256:0f3d5e213954e974a6eb98637ca583af80054a08adddf2817a767a310f60a345",
+      "targetHash": "sha256:2dc166e5b0c17e8894ebecea0e58e8e17952e9284d1cf43d030da88a23e0ce71",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_417/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_417/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_417/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_417",
+      "sourceHash": "sha256:82828fe6910e5d723a7b53674a43ab1d285184e9dfa0118310b0802da05e2a50",
+      "targetHash": "sha256:18d43e88f321b58a4adb3ab39379e103ce4421c3ee7e3ce4f54aa8b48a0ce34a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T16:52:17.451Z",
+      "conclusion": "approved",
+      "reason": "Compared the localized A/B descriptions with the camera and stool crops. The instructions specify a whole-item view, a close-up of the same defect and an adjacent landmark."
+    },
+    {
+      "key": "content/prompts/p_418/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_418/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_418/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_418",
+      "sourceHash": "sha256:0b8b0073dfe6d3926d94bde2859a7c45f91ba8e16ec0b98f0c4d3573edc27d58",
+      "targetHash": "sha256:fb908d7885fd25f8eb375e973139fb4eaf1852f17ca6800b273a67dd6ca505c1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_419",
+      "sourceHash": "sha256:98180badd13fb0948edfbf9a4be95c86a82b16f3c26825d613dfd3e0132f4218",
+      "targetHash": "sha256:19b4052f5d529f7a888e49532781bfd4b24c2e6369c13cca1fddb51ee36c8c36",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:f253e84fad85f3c7c48de2d53be1b5028dde5b3dd2bd31f665d06fbe30a6b4af",
+      "targetHash": "sha256:138adc4ad9c8bdd48ab1a7538eb46ca2ed9430c40f3c6bc796677d3e8b4c1bb5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:58e53a648ddd0c3ea0c18dffca69e07e99710538af5b75a2c693865fddf079d0",
+      "targetHash": "sha256:6636f4cbf1883213eb6dbe30baf0afec7afc99d54fbb23e4e4691794bf548768",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:d535ba2cbdda65e6e8dc0ced0f7d883a8719b4c3b40d7e061e08db01fe9885df",
+      "targetHash": "sha256:bac3793648ab9cd1e009fcd3f17534ba7fa50777c04495e6388529d7e8b4ce46",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.808Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_420/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_420",
+      "sourceHash": "sha256:bdaabf204a1ee0acab60ec0c489f9fa15539c4ef9cd8d79d383b071d8bad0840",
+      "targetHash": "sha256:f9448edd5990682fa36f27351f2c47aabdb246744acb6d2a2b032f10fa94ccd5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:20bad7cc5f69edcca6e74935d5f855cede8d16cfc8a26405844c708bea6f094b",
+      "targetHash": "sha256:46dd8e5f1a5824c4e7c0d768f06cbd0b459e222df5fdde2a56bc31e4af6af142",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:ea39bf3a4bbf368cdca147f6ab59604695a935804fb645a6f9d30075f6928db2",
+      "targetHash": "sha256:b4cc237fdb2d6d8a55142874607551b19ba3504662ddf7f3b454227c9c83c326",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:4b9e33042f5b95b3adab9322ed912e22cd7d23841d44b123e0d36559b65246ca",
+      "targetHash": "sha256:1923382edabd59a71b61546f1552215c82f86e0c91924512f87ada855fe07fce",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.1.evidenceMethod",
+      "sourceHash": "sha256:9003f9910a6bc2a63f003756c0a7fb6e8b74eeff6f098b50bc46451ed350cafb",
+      "targetHash": "sha256:0e58d9315e293582f1d8a60add69813e7ab572d5e1b9207003a72ae223e3082d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.1.metricScope",
+      "sourceHash": "sha256:f698fb8eb5a9743d343668dd0d95df7e915bd8361a2bfdbc61801d1b93598c8c",
+      "targetHash": "sha256:8685208ccd4596581bd4004fa5fea05a20f4749bbea77b95b9cbf96d5c8e8af5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_421/entry.yaml#inspirationSources.1.sourcePromptStatus",
+      "sourceHash": "sha256:74ef70e13f497bda92763331815efe045e507b349f87e5c5978e0fef82cd2639",
+      "targetHash": "sha256:624950a8c32ce8390bda5806743e721c6927f3b3495d333bad410b67bcbee057",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_421",
+      "sourceHash": "sha256:661af29d2e59f11d9ed3a48e90f60a9e3f93ed2d51299ab8b5d677fb898e61f2",
+      "targetHash": "sha256:6eefb432b9550934b9fbdb682f8553125eebaffabdc70a5bb33279ae7034c49c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_422/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:ec9ad5681bd011f8071de74a1cc6a40824e60cf4cb73fe2874c1944bd3759cd9",
+      "targetHash": "sha256:1c74b908575bb02b9fd42c12e9f44e180111ea16fdd802b36f1a148cb96e11a7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_422/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:e2f3489028688044d498c8e55870be11698de081147ed7e175b011aba9c1ea6d",
+      "targetHash": "sha256:22b685d0a52e4d80cabe8dc78f6bf3f875d87b8e70768bf37920db1fa4a0905c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_422",
+      "sourceHash": "sha256:af6912bf90a46aa530b706d1aba0d6ba93ebcf00c08e64f25667e732e2281009",
+      "targetHash": "sha256:bb8f371f9bdbdd0e86b5545d6f092632175af50dcfd7bf67abafb9fcdb11261e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_423/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_423/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_423/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_423",
+      "sourceHash": "sha256:766169befd14071a920339f5e3bc94dffa1e1ab274784c61b7b0b63c081c6d62",
+      "targetHash": "sha256:8ae0ddb1d47ec24d8766805eb620d0a504dc0068f889757271262718721c7866",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.1.evidenceMethod",
+      "sourceHash": "sha256:9003f9910a6bc2a63f003756c0a7fb6e8b74eeff6f098b50bc46451ed350cafb",
+      "targetHash": "sha256:0e58d9315e293582f1d8a60add69813e7ab572d5e1b9207003a72ae223e3082d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.1.metricScope",
+      "sourceHash": "sha256:f698fb8eb5a9743d343668dd0d95df7e915bd8361a2bfdbc61801d1b93598c8c",
+      "targetHash": "sha256:8685208ccd4596581bd4004fa5fea05a20f4749bbea77b95b9cbf96d5c8e8af5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_424/entry.yaml#inspirationSources.1.sourcePromptStatus",
+      "sourceHash": "sha256:74ef70e13f497bda92763331815efe045e507b349f87e5c5978e0fef82cd2639",
+      "targetHash": "sha256:624950a8c32ce8390bda5806743e721c6927f3b3495d333bad410b67bcbee057",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_424",
+      "sourceHash": "sha256:bec2b728e1c54961d32dffcc0515d86866949147ef6bf4cf755f94f6d6f6b153",
+      "targetHash": "sha256:131790c4c0fada03a230e8d55147537c20699e07b67ab2f0ae49d1415efb970a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:41c82220dbdb29505f57964166357ed17f8c1c2af7467f917262cd6f35e554dd",
+      "targetHash": "sha256:a1b530358cb153afc302e8926ac724e4556c2956d76f727b28b9d68f154a199a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:9cbcaeca52a7677d1a68ea83b97fab7fe6ea081ca816b0772c206c7770f9cb10",
+      "targetHash": "sha256:a1d42952ac8e52699dd36b22e66b3a623920810975c4a514937e1afaf9934ca9",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:b38934e5e21ba9792c7cbac28ebaca30633d590ec5e4bdebf49496ef41f3e451",
+      "targetHash": "sha256:eefee6938e550ce6f2c5d51bfcc2a0e0725c03d85f03d29a3cf04e331dea2eb7",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inputRequirements.slots.2.labels",
+      "sourceHash": "sha256:39c7c80eb83ade3cd297a6557f06e110be56cf00babc6e643f32857413bc5b11",
+      "targetHash": "sha256:94bd29db2c84976b894585e2dcf549b6deb0f94e44421a2d9a40b6e76322147b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_425/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_425",
+      "sourceHash": "sha256:d94247d8a1e8ae5d1ac8b6a1cb3bd388599b868864546a1e45e28a6ab8ce7217",
+      "targetHash": "sha256:3411c6c3046f342e540d004e3c054f704b79824a51c1cd140378b9dbd59154de",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.1.evidenceMethod",
+      "sourceHash": "sha256:9003f9910a6bc2a63f003756c0a7fb6e8b74eeff6f098b50bc46451ed350cafb",
+      "targetHash": "sha256:0e58d9315e293582f1d8a60add69813e7ab572d5e1b9207003a72ae223e3082d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.1.metricScope",
+      "sourceHash": "sha256:f698fb8eb5a9743d343668dd0d95df7e915bd8361a2bfdbc61801d1b93598c8c",
+      "targetHash": "sha256:8685208ccd4596581bd4004fa5fea05a20f4749bbea77b95b9cbf96d5c8e8af5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_426/entry.yaml#inspirationSources.1.sourcePromptStatus",
+      "sourceHash": "sha256:74ef70e13f497bda92763331815efe045e507b349f87e5c5978e0fef82cd2639",
+      "targetHash": "sha256:624950a8c32ce8390bda5806743e721c6927f3b3495d333bad410b67bcbee057",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_426",
+      "sourceHash": "sha256:6ab825a9ec10d838cdc8b5ca84d94d9e5e74fa83555e8571a50e0b551cdc8d0b",
+      "targetHash": "sha256:8005a7b9f86b6f07d183a1f8e07dffed386f5961b887a342a07d282e0911ef6c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_427/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:c1f55f65d83935a2794ffa0f12b61a1e70e187085eb0de687942ccdd5691aae2",
+      "targetHash": "sha256:e0b2095af896379bd4f0995a43467eda45c8c4c6e79ab5de51740b33df65e1f1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_427/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:bc4595207755ff1db96e62906bb557ca186cb9ef187e59ba943387df56e93901",
+      "targetHash": "sha256:b0f876720f4e14174029002050d8886480cf5d571a1717256ae7e16bd033295a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.809Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_427/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_427/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_427/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_427",
+      "sourceHash": "sha256:8a6288f54d0c2d41ff436513d4c825323a611f3d26a9a0fd53e0306f2aa54ded",
+      "targetHash": "sha256:502a6a23cdb95d0424d5c9a9c50b2ba35c6de4abaee5081e62b3e6de57076416",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:8e3755200eb37510bdccb450903fcd423e79fd22d498d69a25e36dfa6fd509db",
+      "targetHash": "sha256:940e3a12631fb9f352ae8084926868e1adff08e7bd04c75b3e22ff52f9038315",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:ea39bf3a4bbf368cdca147f6ab59604695a935804fb645a6f9d30075f6928db2",
+      "targetHash": "sha256:b4cc237fdb2d6d8a55142874607551b19ba3504662ddf7f3b454227c9c83c326",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:89d4be544efa75ed06a6d5141ac8fba3fd3cb85abf84145fd99a311349a028ab",
+      "targetHash": "sha256:e8f1eea49011f67516acca9818575a1abb9cdc5002ec1d3c8740ef7a31ad8712",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_428/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_428",
+      "sourceHash": "sha256:e31b18f9c23d8b54593546e813ac5704b35f74e6bf4f5e2e427b4f79044b73d9",
+      "targetHash": "sha256:77b27b7986c519b23ef51f6538b5ab7241c12d230822a59cd8a2bcc88dc219ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_429/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_429/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_429/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_429",
+      "sourceHash": "sha256:b1a7a1d264768dd379756ad4e1badfbfa3033871e21de1e9e022eae07dd2a95f",
+      "targetHash": "sha256:f185cd420c241fd2be28c34f102226f684ee62570d422f74f2f5cd7edf53b78b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:ab612f34e949f028a46ab4fad19be7bab29173a252a8ad031d0be030b7fe8ffb",
+      "targetHash": "sha256:cc567faddaab46ebe00d6590872ba2269069553d25c7304ca0c466c6c57c94e4",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:f92859d37e51434ab6124eb792201535ac2d7ac9e1ab98e60ce542a6315e2ac4",
+      "targetHash": "sha256:457b641421ac6ad6b80f125319dc3a4e67185f3cab4fa5cd8ca0ce1681277388",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:4a88c15a73f2f9f23acde9104b7d589264285cf294bf18b75eca9c88dd4d200b",
+      "targetHash": "sha256:935d1a2743e043f23138d1ab1baef482ee4dff4a744671432587a713940c01a5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.1.evidenceMethod",
+      "sourceHash": "sha256:9003f9910a6bc2a63f003756c0a7fb6e8b74eeff6f098b50bc46451ed350cafb",
+      "targetHash": "sha256:0e58d9315e293582f1d8a60add69813e7ab572d5e1b9207003a72ae223e3082d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.1.metricScope",
+      "sourceHash": "sha256:f698fb8eb5a9743d343668dd0d95df7e915bd8361a2bfdbc61801d1b93598c8c",
+      "targetHash": "sha256:8685208ccd4596581bd4004fa5fea05a20f4749bbea77b95b9cbf96d5c8e8af5",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_430/entry.yaml#inspirationSources.1.sourcePromptStatus",
+      "sourceHash": "sha256:74ef70e13f497bda92763331815efe045e507b349f87e5c5978e0fef82cd2639",
+      "targetHash": "sha256:624950a8c32ce8390bda5806743e721c6927f3b3495d333bad410b67bcbee057",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_430",
+      "sourceHash": "sha256:6f8e517ea8ba915934fc87eeafc6898a2f5712319e9ad93b9f5045d8bd366202",
+      "targetHash": "sha256:3c24539c7c876eac3be739279ce8df73924baaae666d42c3583284a32d3b159e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_431",
+      "sourceHash": "sha256:7bf1cc797aa07d6e15eead2338b7d71564f4dc7a4230fe7ab9a6e639b47fd81d",
+      "targetHash": "sha256:26cdf645f4e612a86ade7323072e27ed155c6cffa946570e2fb18c3137dce57d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inputRequirements.instructions",
+      "sourceHash": "sha256:66884f1b212b72c8c6ac892ba66421f8ccf898a96c8871f5c695e2762f9da261",
+      "targetHash": "sha256:b41dd20f920ae901531294f96972980977061cacbc7c16ddfe2ab9815e9115ce",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inputRequirements.slots.0.labels",
+      "sourceHash": "sha256:3e518ed981b893e91a416d44a5bec422b595eb7d8450eb36a9f0dfb81cd10c8d",
+      "targetHash": "sha256:3c363fb226df6a4bc946c1e71ac6a50490c65da4fbf38961fb8da6423c725487",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inputRequirements.slots.1.labels",
+      "sourceHash": "sha256:8371faf9c0ce865f3dd7f98f74a891f5bbf2dd428b4c8f96fe3b0773d8cae596",
+      "targetHash": "sha256:1bc45e6453a8790d693efd6b231885e8e5f0dcec7b4ad95990adc9acd1b4ab17",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inspirationSources.0.evidenceMethod",
+      "sourceHash": "sha256:b35da5cdad27ddc94fca0c41f7ef6f25d18af014ac28b88ad3dd0de0a7ea74c7",
+      "targetHash": "sha256:a50f73d497b0957632246700ee811817129eb097c8c1ad30b4b68c535cb092ae",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inspirationSources.0.metricScope",
+      "sourceHash": "sha256:aff03d6a7845d05233faec32aab15c4d4b89793e0f14200430143eb331d895be",
+      "targetHash": "sha256:8327954ef223ebdc906d12b467f7b8bc69032ba6e331fe645c35d27ea39cb35e",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/prompts/p_432/entry.yaml#inspirationSources.0.sourcePromptStatus",
+      "sourceHash": "sha256:7ae8f61fe82f196bc72e38d2c9247ba9ee657f66cf0546718acd5a3a1242e3da",
+      "targetHash": "sha256:699bf9236250a66530ed2fbd04eb9cc4e53b81fc8e9bdfb31a290e39345e0199",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "prompt/p_432",
+      "sourceHash": "sha256:6183e3164c163cd656cf0e2a8a58c41eb4054e19e33c473cf1d9def04b01d5bb",
+      "targetHash": "sha256:b0598deb4b02406aff6d6ed302613ebc8b96750c70d72c06a61e6016643b174c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_082",
+      "sourceHash": "sha256:82828fe6910e5d723a7b53674a43ab1d285184e9dfa0118310b0802da05e2a50",
+      "targetHash": "sha256:18d43e88f321b58a4adb3ab39379e103ce4421c3ee7e3ce4f54aa8b48a0ce34a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T16:52:17.451Z",
+      "conclusion": "approved",
+      "reason": "Checked the template instructions against the two tested examples and the source page. They identify the change in surface texture in A and the darker cut wood in B, and preserve the original-photo guidance."
+    },
+    {
+      "key": "content/templates/t_082/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:442aff8421a839b1de6b8475d482d5aa9e0506ac67a71709812adcd125f72b2e",
+      "targetHash": "sha256:939c0f18a8f8c7616acee8e3596fb560cc39ab041e69915dbc509f3bf7d16e18",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_082/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:8fbd3ab50e4b9a1a1e38d265aaf9c65ecacf1ec889dd70c85bfbd09404f4c624",
+      "targetHash": "sha256:c7200f25cc3b4e3caaab0db361734c1942a9ebd26f8acbef2eccaf4df9958657",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_082/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:bd0dc13ac45ee41aae1327803453d6784ffd445176de6468a006e50e9dee3304",
+      "targetHash": "sha256:9c462fcc91ac3d5fc2bd1834b3f80fbd7fa87078930c15c52a40b07aa31c1aba",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_082/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:cb3e8aa9f1d81c81754eb4cb984409aa559c4fd7c19fc88bfdd02e498faed0c0",
+      "targetHash": "sha256:a4023aaee2c7ba255905dd6cb520cb8549833fa132697c557e38711662f49cfd",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_082/versions/v1/inputs.yaml#slots.1.labels",
+      "sourceHash": "sha256:1d75f2901eaa3e51fc2a0898f21e3e111f500bd7a8447682f5d20df02fca413d",
+      "targetHash": "sha256:7b3e7b8249280d9ae931d4f032aca9ae4b78b90de497164277ca8eac8417e390",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_083",
+      "sourceHash": "sha256:0b8b0073dfe6d3926d94bde2859a7c45f91ba8e16ec0b98f0c4d3573edc27d58",
+      "targetHash": "sha256:fb908d7885fd25f8eb375e973139fb4eaf1852f17ca6800b273a67dd6ca505c1",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_083/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:8ac15782af9ee17a65c28ea4dbbf1ffcd6077edcdd5e2158a9ba01bb87302972",
+      "targetHash": "sha256:722c817d6453ec7dd9d5ae99c320f242224b17714513aa7563066a3816fa3b88",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_083/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:73222c31594a517fc8f434928011cb2e55f0574c9a9a4dfa7feed3a63a795643",
+      "targetHash": "sha256:e2893e0add9e5e3576249da659948319adaa80d886661f6894289b18fd2708b2",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.810Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_083/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:c1f70872264dd95457977b8f075f07332f15b7a2aadbf7fc323f2b282edc3e18",
+      "targetHash": "sha256:efaff06941d640b64d1b634fb04dce543782ec221d2ba2002e24a4e3560f6566",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_083/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:cc16ba0b47a0e235f1cf5079e205b22364bbc32d1aef687748cae410c9d75348",
+      "targetHash": "sha256:bc2216f1021f11dd34e7b541802527f2095d3b28db182468cb5627f0b6192760",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_084",
+      "sourceHash": "sha256:98180badd13fb0948edfbf9a4be95c86a82b16f3c26825d613dfd3e0132f4218",
+      "targetHash": "sha256:19b4052f5d529f7a888e49532781bfd4b24c2e6369c13cca1fddb51ee36c8c36",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:868be33984b243cd6fdc25ed2a4b50d0cd6a1c8f1bcad3bce5f3cad0b2b9a4ae",
+      "targetHash": "sha256:472fff64b46e876ab23da259e64238df9de033577264da0cc22a0d99ec2e0930",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:c7ea136abf52787f04db148ea1dad16f871c9cfb0438edd230e667ec02b33ebe",
+      "targetHash": "sha256:28adbcb8af637f7e393f86e96927d4ff8d86aa4e2f910586ab7c49b8b0f6d56b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/fields.yaml#fields.1.help",
+      "sourceHash": "sha256:5df987cf24bafaaf67b553085cf6374bdc567b69b6751983757bdf6c490972d4",
+      "targetHash": "sha256:ff5f734b5acb03df6610e3478861af67f95811e5b90c3716bb80f81b8a91ad1a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/fields.yaml#fields.1.labels",
+      "sourceHash": "sha256:738e81c1a930edc27c30ed24c2ca8ce64e0bb8e2f25706842ea00e21e6b46f7f",
+      "targetHash": "sha256:fc06ffba3024ce75286f9234292f058cac05ae885756d5a834b7d13b82da7303",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:75f4632da3b1278986836e6bdb451fdab3c25bb3ad2fd9818b8702dafe7f5d60",
+      "targetHash": "sha256:584cc5a5bbd11cdbceec20eda8b7952d418d4bdaa00738264f04d49ceb3e3984",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_084/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:33f174e503dbf98af92f7c4fc4c26d5c5bcc57faaba8c95a295a514f3d561075",
+      "targetHash": "sha256:02ad202e43e0272ccc0a33e7858b766768a77607af5464cae7a09f6535579b8a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_085",
+      "sourceHash": "sha256:766169befd14071a920339f5e3bc94dffa1e1ab274784c61b7b0b63c081c6d62",
+      "targetHash": "sha256:8ae0ddb1d47ec24d8766805eb620d0a504dc0068f889757271262718721c7866",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_085/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:909d37d018a133b339c2c57635996c1df24b132b76e7b5c77d5a47e84abfefff",
+      "targetHash": "sha256:213ed2a66feedcc2aada82f4ff23be64dc89adc8417d6ed98a7355be99db133f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_085/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:6a35d89b973925ad81f400cb965bf84b0d140d4df1879bbc1026f4e8b28b3619",
+      "targetHash": "sha256:aaef4159148b75942bf0faec5eadd3f2578b80b0303bef19671de348a3ceff0b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_085/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:5a541faf58f6d837239c1c6ab39826011407f971a342d73b2b018d72d2e3b63a",
+      "targetHash": "sha256:515716e756739741459c1955bfac2013bf3a5a35b699b7f553146b1c66e8b1af",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_085/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:4e9d0ce5ccc189f87fd19612bf1524c5faf2441f1eb44ed32a1a40cd161f421b",
+      "targetHash": "sha256:414539be73ab1e202cefc78afdf1b7e3b7c77b95e9285bceaaae6a427ccba5bb",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_085/versions/v1/inputs.yaml#slots.1.labels",
+      "sourceHash": "sha256:f398c3779591957bfd04c0e4e8ef764944d279d9b9ae6a0711d1f412efe5c676",
+      "targetHash": "sha256:0026fe2f7486197f61a9aa519a8f47e445714652ce1d30101b8885505a709e61",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_086",
+      "sourceHash": "sha256:bec2b728e1c54961d32dffcc0515d86866949147ef6bf4cf755f94f6d6f6b153",
+      "targetHash": "sha256:131790c4c0fada03a230e8d55147537c20699e07b67ab2f0ae49d1415efb970a",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_086/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:abdc6b9bb94904e04e01d9d0460c1c3b5b27bc0253e688456e46a54d197e1643",
+      "targetHash": "sha256:c05a8835bb1cac6c23388677358fe801b010c0bfc1f7e57f61c5f52d80b3b44f",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_086/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:eab7dc31441b8490007dd00e8bdaa3bf4a67df83077358a56362f2cd7fc1cef7",
+      "targetHash": "sha256:ee3b6f7676cc29ec5b2238f52500838c039a940841c54db24cf7b976870b0c8b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_086/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:5a85dbf2ec8578c26171d390b37accb275a94562e3c815b5945e48a779dad9f5",
+      "targetHash": "sha256:efaff06941d640b64d1b634fb04dce543782ec221d2ba2002e24a4e3560f6566",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_086/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:cc16ba0b47a0e235f1cf5079e205b22364bbc32d1aef687748cae410c9d75348",
+      "targetHash": "sha256:bc2216f1021f11dd34e7b541802527f2095d3b28db182468cb5627f0b6192760",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_087",
+      "sourceHash": "sha256:6ab825a9ec10d838cdc8b5ca84d94d9e5e74fa83555e8571a50e0b551cdc8d0b",
+      "targetHash": "sha256:8005a7b9f86b6f07d183a1f8e07dffed386f5961b887a342a07d282e0911ef6c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_087/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:782cb8705645f6b1b0d7981e229bf1890dca0fab3c3e6646d07f55e44290b7f1",
+      "targetHash": "sha256:a56b658ce3e69b1cf16ba96b427c84bd6a45cd372aa3d589c19b49be51d0e8af",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_087/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:38c1caefa27c80b9dc49e33cf024b66adaa7496056a5867f26e79257b1aa0155",
+      "targetHash": "sha256:4e95c16d845f13f4e8542c7429b6a204b5abe24de4cd7c4b2264f839fbe04584",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_087/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:3d843b9365aed4ba4ced863aec95cb2a44103e6e1ab8ab50848f60c67a38390a",
+      "targetHash": "sha256:efaff06941d640b64d1b634fb04dce543782ec221d2ba2002e24a4e3560f6566",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_087/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:cc16ba0b47a0e235f1cf5079e205b22364bbc32d1aef687748cae410c9d75348",
+      "targetHash": "sha256:bc2216f1021f11dd34e7b541802527f2095d3b28db182468cb5627f0b6192760",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_088",
+      "sourceHash": "sha256:b1a7a1d264768dd379756ad4e1badfbfa3033871e21de1e9e022eae07dd2a95f",
+      "targetHash": "sha256:f185cd420c241fd2be28c34f102226f684ee62570d422f74f2f5cd7edf53b78b",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_088/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:03a1bba4ce4b532e4dc08c99145b65558da53754dd597f12b1a26564ab0087ae",
+      "targetHash": "sha256:56195f48f119982d6fe8e90f0efb90b9fc5c53b2bd34993a7b564da9487df8ab",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_088/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:aab6116ee12d99b2a37e368611358feb2f98ce2e2782f81f1bceffbf5ed2ac17",
+      "targetHash": "sha256:dccd4d71a1c6d97943987751cbca549a2399e3e4bbc490050dd035867599ec8c",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_088/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:e31d1d5aaee3bc6029b7b326c58243364b641ed1495222821d0a7fdf799fbc72",
+      "targetHash": "sha256:5412dea3705a50147e4bfe6c86bf478489304da97574b52b546942cbf8cf1210",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_088/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:fcff1422afbdae1640b527d26fd6fddf68fc82039c5812d30e29e6eb0c1626b3",
+      "targetHash": "sha256:2e1f6f2e8594ef7e6fb9fe114873c0ef37063f365c8939273308f82192e0144d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_088/versions/v1/inputs.yaml#slots.1.labels",
+      "sourceHash": "sha256:571517545ba0a971d815e824565dcf8ae2bbbd037b71dac090de3472fdb2ffb9",
+      "targetHash": "sha256:1578b0f613a0421e3fd98281105eba59a84e53dd7f9bd59dffb59b6d40ff3230",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "template/t_089",
+      "sourceHash": "sha256:7bf1cc797aa07d6e15eead2338b7d71564f4dc7a4230fe7ab9a6e639b47fd81d",
+      "targetHash": "sha256:26cdf645f4e612a86ade7323072e27ed155c6cffa946570e2fb18c3137dce57d",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.0.help",
+      "sourceHash": "sha256:c77ec5fb27f8af292471a7e35aa342c85b9138117bd0d4c1ed39e811b18463f1",
+      "targetHash": "sha256:65aeff220f547a85779d173259b4916c5288af0fc4243474be4221e86338a9ef",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.0.labels",
+      "sourceHash": "sha256:a7cb760d9bd78dc6bfd860924d4fbd9bd3eea9e4de68221dc767b864dce2484b",
+      "targetHash": "sha256:8ac18da132e1c13df96121e7ef2159b79d677e3f441dfc1366cd36879ccabbb8",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.1.help",
+      "sourceHash": "sha256:adc568ba0c63f099c5eeb14141e05a43eb511b81f0bdb50bfdf1dacba8fbf111",
+      "targetHash": "sha256:16eb4f60c8c0c76e49f06e51ba6ee4eccccc3e91d35ea07c1244ecd3f3cbffeb",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.1.labels",
+      "sourceHash": "sha256:52a251b887d914d2f4b78bb96f1991204ff4d845c7ffd93cf9add785f00cf43b",
+      "targetHash": "sha256:72f23cc7336282c5ffa6bac6276d2dfd69dcaa8abc82f5f41fed569aa91cc734",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.2.help",
+      "sourceHash": "sha256:33eb5a318d053edf158b5c4df63a898d5862dea03e693a58aad1ff92de1dfa20",
+      "targetHash": "sha256:ce81f6d841f52669e7e5d2f7a38eb36529230e621a813b44c623c22405c1b137",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.811Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/fields.yaml#fields.2.labels",
+      "sourceHash": "sha256:8e54231a56158c7ef916a933c6bbc5fb4835992efa8906886e78d7c2ff7b7a14",
+      "targetHash": "sha256:2977279e0245955305b3b74b0ce141b778d0018c972a5e261863a87632b26ef2",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.812Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/inputs.yaml#instructions",
+      "sourceHash": "sha256:6e1bf9090cc7c71a6704b043b49b08b2e602403f81f2293e9f75a39b2aad8bb5",
+      "targetHash": "sha256:12c877b168043f06a5f08ab0e04dd9cff6c9d8925e0a12b8f3e700f1b5db26ea",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.812Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
+    },
+    {
+      "key": "content/templates/t_089/versions/v1/inputs.yaml#slots.0.labels",
+      "sourceHash": "sha256:8cdf76ec05c1b1648b0bfe52465b36b58bffe54d6b14a02a9eb56183fb5bed39",
+      "targetHash": "sha256:fefbd3a135432de44be898ee9949368ffad230c8363385df4e4c10ee3c208272",
+      "reviewer": "Codex AI",
+      "completedAt": "2026-11-25T14:32:14.812Z",
+      "conclusion": "approved",
+      "reason": "Checked the localized listing description, reference order and product details against the accepted A/B photographs and the English source."
     }
   ]
 }

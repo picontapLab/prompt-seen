@@ -1,0 +1,35 @@
+fields:
+  - name: variant
+    required: true
+    group: text
+    labels:
+      en: Selected color variant
+      zh-Hans: 选中颜色及款式
+      zh-Hant: 選中顏色及款式
+      es: Variante de color
+      pt-BR: Variação de cor
+      de: Gewählte Farbvariante
+      fr: Coloris choisi
+      ru: Выбранный цвет
+      ja: 選択したカラー
+      ko: 선택한 색상
+      it: Colore selezionato
+      ar: اللون المختار
+    help:
+      en: English example · terracotta red ceramic mug
+      zh-Hans: 英文示例 · terracotta red ceramic mug
+      zh-Hant: 英文示例 · terracotta red ceramic mug
+      es: Ejemplo en inglés · terracotta red ceramic mug
+      pt-BR: Exemplo em inglês · terracotta red ceramic mug
+      de: Englisches Beispiel · terracotta red ceramic mug
+      fr: Exemple en anglais · terracotta red ceramic mug
+      ru: Пример на английском · terracotta red ceramic mug
+      ja: 英語の入力例 · terracotta red ceramic mug
+      ko: 영문 입력 예시 · terracotta red ceramic mug
+      it: Esempio in inglese · terracotta red ceramic mug
+      ar: مثال بالإنجليزية · terracotta red ceramic mug
+    type: string
+    default: sage green pencil case
+    minLength: 1
+    maxLength: 80
+    multiline: false

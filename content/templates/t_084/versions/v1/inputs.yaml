@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Upload a straight overhead photo, with width horizontal and depth vertical. Supply both measured outer dimensions with units.
+  zh-Hans: 上传正俯视图，宽度水平、深度纵向。填写实测的两条外部尺寸，数值须带单位。
+  zh-Hant: 上傳正俯視圖，寬度水平、深度縱向。填寫實測的兩條外部尺寸，數值須帶單位。
+  es: Orden de carga · Contorno desde arriba.
+  pt-BR: Ordem de envio · Contorno visto de cima.
+  de: Reihenfolge der Bilder · Umriss von oben.
+  fr: Ordre d’envoi · Contour vu de dessus.
+  ru: Порядок загрузки · Контур сверху.
+  ja: アップロード順 · 真上から見た輪郭.
+  ko: 업로드 순서 · 위에서 본 윤곽.
+  it: Ordine di caricamento · Contorno dall’alto.
+  ar: ترتيب رفع الصور · المحيط من الأعلى.
+slots:
+  - id: outline
+    labels:
+      en: Overhead outline
+      zh-Hans: 俯视外轮廓
+      zh-Hant: 俯視外輪廓
+      es: Contorno desde arriba
+      pt-BR: Contorno visto de cima
+      de: Umriss von oben
+      fr: Contour vu de dessus
+      ru: Контур сверху
+      ja: 真上から見た輪郭
+      ko: 위에서 본 윤곽
+      it: Contorno dall’alto
+      ar: المحيط من الأعلى
+    min: 1
+    max: 1

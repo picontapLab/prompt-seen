@@ -1,0 +1,103 @@
+fields:
+  - name: zone
+    required: true
+    group: text
+    labels:
+      en: Area to personalize
+      zh-Hans: 定制区域
+      zh-Hant: 定制區域
+      es: Zona a personalizar
+      pt-BR: Área de personalização
+      de: Fläche für die Beschriftung
+      fr: Zone à personnaliser
+      ru: Область нанесения
+      ja: 名入れの範囲
+      ko: 문구를 넣을 영역
+      it: Area da personalizzare
+      ar: منطقة التخصيص
+    help:
+      en: English example · the upper front fabric panel
+      zh-Hans: 英文示例 · the upper front fabric panel
+      zh-Hant: 英文示例 · the upper front fabric panel
+      es: Ejemplo en inglés · the upper front fabric panel
+      pt-BR: Exemplo em inglês · the upper front fabric panel
+      de: Englisches Beispiel · the upper front fabric panel
+      fr: Exemple en anglais · the upper front fabric panel
+      ru: Пример на английском · the upper front fabric panel
+      ja: 英語の入力例 · the upper front fabric panel
+      ko: 영문 입력 예시 · the upper front fabric panel
+      it: Esempio in inglese · the upper front fabric panel
+      ar: مثال بالإنجليزية · the upper front fabric panel
+    type: string
+    default: the flat area on the front
+    minLength: 1
+    maxLength: 80
+    multiline: false
+  - name: personalText
+    required: true
+    group: text
+    labels:
+      en: Exact lettering
+      zh-Hans: 准确字样
+      zh-Hant: 準確字樣
+      es: Texto exacto
+      pt-BR: Texto exato
+      de: Genauer Schriftzug
+      fr: Inscription exacte
+      ru: Точная надпись
+      ja: 刻む文字列
+      ko: 정확한 문구
+      it: Testo esatto
+      ar: النص الحرفي
+    help:
+      en: English example · Mia 7
+      zh-Hans: 英文示例 · Mia 7
+      zh-Hant: 英文示例 · Mia 7
+      es: Ejemplo en inglés · Mia 7
+      pt-BR: Exemplo em inglês · Mia 7
+      de: Englisches Beispiel · Mia 7
+      fr: Exemple en anglais · Mia 7
+      ru: Пример на английском · Mia 7
+      ja: 英語の入力例 · Mia 7
+      ko: 영문 입력 예시 · Mia 7
+      it: Esempio in inglese · Mia 7
+      ar: مثال بالإنجليزية · Mia 7
+    type: string
+    default: LIN
+    minLength: 1
+    maxLength: 12
+    multiline: false
+  - name: process
+    required: true
+    group: text
+    labels:
+      en: Marking process
+      zh-Hans: 定制工艺
+      zh-Hant: 定制工藝
+      es: Técnica de marcado
+      pt-BR: Técnica de marcação
+      de: Beschriftungsverfahren
+      fr: Technique de marquage
+      ru: Способ нанесения
+      ja: 加工方法
+      ko: 표면 가공 방식
+      it: Tecnica di marcatura
+      ar: طريقة وضع العلامة
+    help:
+      en: English example · a single-color print
+      zh-Hans: 英文示例 · a single-color print
+      zh-Hant: 英文示例 · a single-color print
+      es: Ejemplo en inglés · a single-color print
+      pt-BR: Exemplo em inglês · a single-color print
+      de: Englisches Beispiel · a single-color print
+      fr: Exemple en anglais · a single-color print
+      ru: Пример на английском · a single-color print
+      ja: 英語の入力例 · a single-color print
+      ko: 영문 입력 예시 · a single-color print
+      it: Esempio in inglese · a single-color print
+      ar: مثال بالإنجليزية · a single-color print
+    type: string
+    default: light-colored laser engraving
+    minLength: 1
+    maxLength: 80
+    multiline: false

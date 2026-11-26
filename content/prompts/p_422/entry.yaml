@@ -1,0 +1,57 @@
+id: p_422
+slug: product-size-comparison
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_714
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Photograph the product and a reference of known length together on a flat surface. Keep both endpoints visible.
+    zh-Hans: 把商品和已知长度的参照物放在同一平面拍摄，两者的端点都要完整。
+    zh-Hant: 把商品和已知長度的參照物放在同一平面拍攝，兩者的端點都要完整。
+    es: Orden de carga · Producto y referencia de escala.
+    pt-BR: Ordem de envio · Produto e referência de escala.
+    de: Reihenfolge der Bilder · Produkt mit Größenreferenz.
+    fr: Ordre d’envoi · Produit avec repère de taille.
+    ru: Порядок загрузки · Товар и масштабный ориентир.
+    ja: アップロード順 · 商品と比較対象を並べた写真.
+    ko: 업로드 순서 · 상품과 크기 비교 물체.
+    it: Ordine di caricamento · Prodotto e riferimento di scala.
+    ar: ترتيب رفع الصور · المنتج ومرجع الحجم.
+  slots:
+    - id: scalePhoto
+      labels:
+        en: Product and scale object together
+        zh-Hans: 商品与参照物同框照
+        zh-Hant: 商品與參照物同框照
+        es: Producto y referencia de escala
+        pt-BR: Produto e referência de escala
+        de: Produkt mit Größenreferenz
+        fr: Produit avec repère de taille
+        ru: Товар и масштабный ориентир
+        ja: 商品と比較対象を並べた写真
+        ko: 상품과 크기 비교 물체
+        it: Prodotto e riferimento di scala
+        ar: المنتج ومرجع الحجم
+      min: 1
+      max: 1
+showcaseExampleId: x_510
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

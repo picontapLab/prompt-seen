@@ -1,0 +1,35 @@
+fields:
+  - name: scene
+    required: true
+    group: text
+    labels:
+      en: Setting and state of use
+      zh-Hans: 场景与使用状态
+      zh-Hant: 場景與使用狀態
+      es: Entorno y estado de uso
+      pt-BR: Ambiente e estado de uso
+      de: Umgebung und Nutzung
+      fr: Décor et état d’utilisation
+      ru: Обстановка и состояние
+      ja: 設置場所と使用状態
+      ko: 주변 환경과 사용 상태
+      it: Ambiente e stato d’uso
+      ar: المكان وحالة الاستخدام
+    help:
+      en: English example · on a stone surface beside balcony plants, with the spout in clear view
+      zh-Hans: 英文示例 · on a stone surface beside balcony plants, with the spout in clear view
+      zh-Hant: 英文示例 · on a stone surface beside balcony plants, with the spout in clear view
+      es: Ejemplo en inglés · on a stone surface beside balcony plants, with the spout in clear view
+      pt-BR: Exemplo em inglês · on a stone surface beside balcony plants, with the spout in clear view
+      de: Englisches Beispiel · on a stone surface beside balcony plants, with the spout in clear view
+      fr: Exemple en anglais · on a stone surface beside balcony plants, with the spout in clear view
+      ru: Пример на английском · on a stone surface beside balcony plants, with the spout in clear view
+      ja: 英語の入力例 · on a stone surface beside balcony plants, with the spout in clear view
+      ko: 영문 입력 예시 · on a stone surface beside balcony plants, with the spout in clear view
+      it: Esempio in inglese · on a stone surface beside balcony plants, with the spout in clear view
+      ar: مثال بالإنجليزية · on a stone surface beside balcony plants, with the spout in clear view
+    type: string
+    default: on a light wood desk beside a window, with the stand empty
+    minLength: 1
+    maxLength: 80
+    multiline: false

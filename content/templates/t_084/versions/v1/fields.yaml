@@ -1,0 +1,69 @@
+fields:
+  - name: widthText
+    required: true
+    group: text
+    labels:
+      en: Measured width and unit
+      zh-Hans: 实测宽度及单位
+      zh-Hant: 實測寬度及單位
+      es: Ancho medido con unidad
+      pt-BR: Largura medida com unidade
+      de: Gemessene Breite mit Einheit
+      fr: Largeur mesurée avec unité
+      ru: Измеренная ширина с единицей
+      ja: 実測した幅と単位
+      ko: 실측 너비와 단위
+      it: Larghezza misurata con unità
+      ar: العرض المقاس ووحدته
+    help:
+      en: English example · 240 mm
+      zh-Hans: 英文示例 · 240 mm
+      zh-Hant: 英文示例 · 240 mm
+      es: Ejemplo en inglés · 240 mm
+      pt-BR: Exemplo em inglês · 240 mm
+      de: Englisches Beispiel · 240 mm
+      fr: Exemple en anglais · 240 mm
+      ru: Пример на английском · 240 mm
+      ja: 英語の入力例 · 240 mm
+      ko: 영문 입력 예시 · 240 mm
+      it: Esempio in inglese · 240 mm
+      ar: مثال بالإنجليزية · 240 mm
+    type: string
+    default: 86 mm
+    minLength: 1
+    maxLength: 16
+    multiline: false
+  - name: depthText
+    required: true
+    group: text
+    labels:
+      en: Measured depth and unit
+      zh-Hans: 实测深度及单位
+      zh-Hant: 實測深度及單位
+      es: Fondo medido con unidad
+      pt-BR: Profundidade medida com unidade
+      de: Gemessene Tiefe mit Einheit
+      fr: Profondeur mesurée avec unité
+      ru: Измеренная глубина с единицей
+      ja: 実測した奥行きと単位
+      ko: 실측 깊이와 단위
+      it: Profondità misurata con unità
+      ar: العمق المقاس ووحدته
+    help:
+      en: English example · 160 mm
+      zh-Hans: 英文示例 · 160 mm
+      zh-Hant: 英文示例 · 160 mm
+      es: Ejemplo en inglés · 160 mm
+      pt-BR: Exemplo em inglês · 160 mm
+      de: Englisches Beispiel · 160 mm
+      fr: Exemple en anglais · 160 mm
+      ru: Пример на английском · 160 mm
+      ja: 英語の入力例 · 160 mm
+      ko: 영문 입력 예시 · 160 mm
+      it: Esempio in inglese · 160 mm
+      ar: مثال بالإنجليزية · 160 mm
+    type: string
+    default: 72 mm
+    minLength: 1
+    maxLength: 16
+    multiline: false

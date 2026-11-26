@@ -1,0 +1,35 @@
+fields:
+  - name: keepDetail
+    required: true
+    group: text
+    labels:
+      en: Detail to preserve
+      zh-Hans: 需保留的细节
+      zh-Hant: 需保留的細節
+      es: Detalle que se conserva
+      pt-BR: Detalhe a preservar
+      de: Zu erhaltendes Merkmal
+      fr: Détail à conserver
+      ru: Сохраняемая деталь
+      ja: 残す特徴
+      ko: 유지할 세부 특징
+      it: Dettaglio da conservare
+      ar: التفصيل المطلوب حفظه
+    help:
+      en: English example · the two round holes in the zipper pull and the ivory fabric edge
+      zh-Hans: 英文示例 · the two round holes in the zipper pull and the ivory fabric edge
+      zh-Hant: 英文示例 · the two round holes in the zipper pull and the ivory fabric edge
+      es: Ejemplo en inglés · the two round holes in the zipper pull and the ivory fabric edge
+      pt-BR: Exemplo em inglês · the two round holes in the zipper pull and the ivory fabric edge
+      de: Englisches Beispiel · the two round holes in the zipper pull and the ivory fabric edge
+      fr: Exemple en anglais · the two round holes in the zipper pull and the ivory fabric edge
+      ru: Пример на английском · the two round holes in the zipper pull and the ivory fabric edge
+      ja: 英語の入力例 · the two round holes in the zipper pull and the ivory fabric edge
+      ko: 영문 입력 예시 · the two round holes in the zipper pull and the ivory fabric edge
+      it: Esempio in inglese · the two round holes in the zipper pull and the ivory fabric edge
+      ar: مثال بالإنجليزية · the two round holes in the zipper pull and the ivory fabric edge
+    type: string
+    default: the FOLD 02 marking on the base and both front retaining feet
+    minLength: 1
+    maxLength: 80
+    multiline: false

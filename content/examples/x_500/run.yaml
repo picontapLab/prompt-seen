@@ -1,0 +1,40 @@
+id: x_500
+promptId: p_417
+promptLanguage: en
+template:
+  id: t_082
+  version: v1
+  sample: default
+  values:
+    flawLocation: the chipped paint at the lower right of the camera body and the adjacent seam
+  contractHash: ed4453c6ce7e92bd7007cb0d3fd07554cf01e52fe1cc53248159e207f3316d14
+promptSha256: ed680b980bbf071aa79b030ec2d54bdc7516a6e2b5e7fc47a7539b108688b450
+referenceAssetIds:
+  - a_691
+  - a_692
+referenceBindings:
+  - slotId: whole
+    referenceIndex: 0
+  - slotId: flaw
+    referenceIndex: 1
+outputAssetIds:
+  - a_690
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-25
+parameters: {}
+notes:
+  en: The complete camera is on the left. The silver paint loss at its lower right rises along the same vertical seam in the detail at right. Both views retain the dark bottom lip. The fine stippling is softer in the enlarged rendering.
+  zh-Hans: "相机右下角的掉漆沿同一条竖缝延伸，两张图中都能看清底部黑边。放大后，表面的细小颗粒比原照模糊。"
+  zh-Hant: "相機右下角的掉漆沿同一條豎縫延伸，兩張圖中都能看清底部黑邊。放大後，表面的細小顆粒比原照模糊。"
+  es: "A la izquierda se ve la cámara entera. A la derecha, la zona plateada donde ha saltado la pintura sigue la misma junta vertical de la esquina inferior derecha. El reborde negro inferior se distingue en ambas vistas, aunque el grano fino pierde nitidez en la ampliación."
+  pt-BR: "À esquerda aparece a câmera inteira. À direita, a área prateada onde a tinta descascou acompanha a mesma emenda vertical no canto inferior direito. A borda preta inferior aparece nas duas vistas, mas a textura fina fica menos nítida na ampliação."
+  de: "Links ist die ganze Kamera zu sehen. Rechts verläuft die silbrig freigelegte Stelle unten rechts an derselben senkrechten Naht. Der schwarze untere Rand ist in beiden Ansichten sichtbar. Die feine Körnung wirkt in der Vergrößerung weicher."
+  fr: "À gauche, l’appareil apparaît en entier. À droite, la peinture écaillée laisse voir le métal le long de la même jonction verticale, en bas à droite. Le rebord noir reste visible dans les deux vues, mais le grain fin de la surface est moins net dans l’agrandissement."
+  ru: "Слева видна камера целиком. На крупном плане справа серебристый участок со сколотой краской тянется вдоль того же вертикального шва в правом нижнем углу корпуса. Чёрная нижняя кромка видна на обоих изображениях, но мелкая фактура поверхности на увеличении менее чёткая."
+  ja: "左はカメラ全体、右は拡大図です。ボディー右下の塗装が剥がれて銀色に見える部分は、どちらも同じ縦の継ぎ目に沿い、底の黒い縁も残っています。拡大図では表面の細かな凹凸が元の写真よりぼやけています。"
+  ko: "왼쪽은 카메라 전체 모습입니다. 오른쪽 확대 사진에서도 본체 오른쪽 아래의 은빛 도장 벗겨짐이 같은 세로 이음새를 따라 이어집니다. 두 사진 모두 아래쪽의 검은 테두리가 보이지만, 확대 결과에서는 표면의 미세한 요철이 원본보다 흐릿합니다."
+  it: "A sinistra si vede tutta la fotocamera. A destra, in basso, la zona argentata dove è saltata la vernice segue la stessa giunzione verticale. Il bordo nero inferiore resta visibile in entrambe le viste, ma la grana fine è meno nitida nell’ingrandimento."
+  ar: "تظهر الكاميرا كاملة على اليسار. وفي التكبير على اليمين تمتد البقعة الفضية التي تقشّر عنها الطلاء بمحاذاة الوصلة الرأسية نفسها أسفل يمين الهيكل. تظهر الحافة السوداء السفلية في الصورتين، لكن حبيبات السطح الدقيقة تبدو أقل وضوحًا في الصورة المكبّرة."

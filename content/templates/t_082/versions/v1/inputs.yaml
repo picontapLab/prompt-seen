@@ -1,0 +1,47 @@
+referenceImage: required
+instructions:
+  en: Upload the whole used item, then a crop or close-up of the very same damage. Name its location and an adjacent seam or grain landmark.
+  zh-Hans: 先传该件二手物品的全貌，再传同一缺陷的裁片或近照。填写位置和相邻的接缝或木纹。
+  zh-Hant: 先傳該件二手物品的全貌，再傳同一缺陷的裁片或近照。填寫位置和相鄰的接縫或木紋。
+  es: Orden de carga · Artículo completo → Detalle del daño.
+  pt-BR: Ordem de envio · Item completo → Detalhe da avaria.
+  de: Reihenfolge der Bilder · Gesamter Gegenstand → Nahaufnahme des Schadens.
+  fr: Ordre d’envoi · Article entier → Gros plan du défaut.
+  ru: Порядок загрузки · Предмет целиком → Дефект крупным планом.
+  ja: アップロード順 · 品物の全体像 → 傷の接写.
+  ko: 업로드 순서 · 물건 전체 → 손상 부위 근접 사진.
+  it: Ordine di caricamento · Articolo completo → Dettaglio del difetto.
+  ar: ترتيب رفع الصور · القطعة كاملة → صورة مقرّبة للتلف.
+slots:
+  - id: whole
+    labels:
+      en: Whole item
+      zh-Hans: 整件全貌
+      zh-Hant: 整件全貌
+      es: Artículo completo
+      pt-BR: Item completo
+      de: Gesamter Gegenstand
+      fr: Article entier
+      ru: Предмет целиком
+      ja: 品物の全体像
+      ko: 물건 전체
+      it: Articolo completo
+      ar: القطعة كاملة
+    min: 1
+    max: 1
+  - id: flaw
+    labels:
+      en: Damage close-up
+      zh-Hans: 同一瑕疵近照
+      zh-Hant: 同一瑕疵近照
+      es: Detalle del daño
+      pt-BR: Detalhe da avaria
+      de: Nahaufnahme des Schadens
+      fr: Gros plan du défaut
+      ru: Дефект крупным планом
+      ja: 傷の接写
+      ko: 손상 부위 근접 사진
+      it: Dettaglio del difetto
+      ar: صورة مقرّبة للتلف
+    min: 1
+    max: 1

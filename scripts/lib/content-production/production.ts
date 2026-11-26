@@ -20,6 +20,9 @@ const fileSchema = z.object({ path: z.string(), sha256: z.string() });
 const failureSchema = z
   .object({ provider: z.string().min(1), message: z.string().min(1), requestId: z.string().nullable() })
   .strict();
+const reviewSchema = z
+  .object({ accepted: z.boolean(), notes: z.string().min(1), reviewer: z.string().min(1), reviewedAt: z.string() })
+  .strict();
 const stateSchema = z
   .object({
     definition: definitionSchema,
@@ -36,9 +39,8 @@ const stateSchema = z
         recordedAt: z.string(),
       })
       .nullable(),
-    review: z
-      .object({ accepted: z.boolean(), notes: z.string().min(1), reviewer: z.string().min(1), reviewedAt: z.string() })
-      .nullable(),
+    review: reviewSchema.nullable(),
+    previousReviews: z.array(reviewSchema).optional(),
   })
   .strict();
 export type JobDefinition = z.infer<typeof definitionSchema>;
@@ -164,10 +166,20 @@ export function failJob(root: string, key: string, input: z.infer<typeof failure
     return job;
   });
 }
-export function reviewJob(root: string, key: string, review: { accepted: boolean; notes: string; reviewer: string }) {
+export function reviewJob(
+  root: string,
+  key: string,
+  review: { accepted: boolean; notes: string; reviewer: string },
+  reconsider = false,
+) {
   return locked(root, key, () => {
     const job = jobStatus(root, key);
-    if (job.status !== 'generated' || !job.receipt) throw new Error('Review requires a generated result');
+    if (reconsider) {
+      if (job.status !== 'needs_attention' || job.review?.accepted !== false || !job.receipt)
+        throw new Error('Reconsideration requires a rejected image');
+      job.previousReviews = [...(job.previousReviews ?? []), job.review];
+    } else if (job.status !== 'generated') throw new Error('Review requires a generated result');
+    if (!job.receipt) throw new Error('Review requires a generated result');
     verifyReferences(job);
     if (fileHash(job.receipt.output.path) !== job.receipt.output.sha256)
       throw new Error('Output changed since recording');

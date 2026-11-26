@@ -96,7 +96,15 @@ it.each([0, 1, 2])(
     call('plan', definition);
     call('claim');
     call('record', { outputPath: output, provider: 'Fixture', model: null });
-    call('review', { accepted: true, notes: 'Integration fixture', reviewer: 'test' });
+    const rejection =
+      count === 1
+        ? call('review', { accepted: false, notes: 'Background outside original tolerance', reviewer: 'test' }).review
+        : undefined;
+    const accepted = call(rejection ? 'reconsider' : 'review', {
+      accepted: true,
+      notes: 'Integration fixture',
+      reviewer: 'test',
+    }).review;
     const copy = {
       title: 'Ceramic sculpture',
       description: 'A test sculpture.',
@@ -138,7 +146,13 @@ it.each([0, 1, 2])(
     });
     const first = call('apply', undefined, ['--hash', plan.planHash]);
     expect(call('apply', undefined, ['--hash', plan.planHash])).toEqual(first);
-    expect(call('status')[0].publication).toBe('applied');
+    const status = call('status')[0];
+    const receipt = JSON.parse(fs.readFileSync(path.join(root, 'production/applied/fixture.json'), 'utf8'));
+    expect(status.publication).toBe('applied');
+    for (const record of [status, receipt]) {
+      expect(record.review).toEqual(accepted);
+      expect(record.previousReviews).toEqual(rejection ? [rejection] : undefined);
+    }
     expect(fs.readdirSync(path.join(root, 'content/prompts'))).toHaveLength(1);
     const run = YAML.parse(fs.readFileSync(path.join(root, 'content/examples', first.example, 'run.yaml'), 'utf8'));
     expect(run.referenceAssetIds).toHaveLength(count);

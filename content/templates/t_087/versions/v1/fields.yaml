@@ -1,0 +1,35 @@
+fields:
+  - name: space
+    required: true
+    group: text
+    labels:
+      en: Corner for the headline
+      zh-Hans: 标题留白的位置
+      zh-Hant: 標題留白的位置
+      es: Esquina para el título
+      pt-BR: Canto para o título
+      de: Ecke für die Überschrift
+      fr: Coin réservé au titre
+      ru: Угол для заголовка
+      ja: タイトルを置く角
+      ko: 제목을 넣을 모서리
+      it: Angolo per il titolo
+      ar: زاوية العنوان
+    help:
+      en: English example · upper right
+      zh-Hans: 英文示例 · upper right
+      zh-Hant: 英文示例 · upper right
+      es: Ejemplo en inglés · upper right
+      pt-BR: Exemplo em inglês · upper right
+      de: Englisches Beispiel · upper right
+      fr: Exemple en anglais · upper right
+      ru: Пример на английском · upper right
+      ja: 英語の入力例 · upper right
+      ko: 영문 입력 예시 · upper right
+      it: Esempio in inglese · upper right
+      ar: مثال بالإنجليزية · upper right
+    type: string
+    default: upper left
+    minLength: 1
+    maxLength: 80
+    multiline: false

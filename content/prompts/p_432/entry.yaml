@@ -1,0 +1,124 @@
+id: p_432
+slug: food-package-and-portions
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds:
+  - packaging
+coverAssetId: a_764
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the sealed package, then all the contents of that single unit. Make the short label and each portion countable.
+    zh-Hans: 先上传完整外包，再传同一包的全部内含物。短标签应清晰，每一份都可数。
+    zh-Hant: 先上傳完整外包，再傳同一包的全部內含物。短標籤應清晰，每一份都可數。
+    es: Orden de carga · Envase exterior → Contenido de una unidad.
+    pt-BR: Ordem de envio · Embalagem externa → Conteúdo de uma unidade.
+    de: Reihenfolge der Bilder · Außenverpackung → Inhalt einer Packung.
+    fr: Ordre d’envoi · Emballage extérieur → Contenu d’un emballage.
+    ru: Порядок загрузки · Внешняя упаковка → Содержимое одной упаковки.
+    ja: アップロード順 · 外装 → 一袋分の中身.
+    ko: 업로드 순서 · 외포장 → 한 포장의 내용물.
+    it: Ordine di caricamento · Confezione esterna → Contenuto di una confezione.
+    ar: ترتيب رفع الصور · الغلاف الخارجي → محتوى عبوة واحدة.
+  slots:
+    - id: package
+      labels:
+        en: Outer package
+        zh-Hans: 外包装
+        zh-Hant: 外包裝
+        es: Envase exterior
+        pt-BR: Embalagem externa
+        de: Außenverpackung
+        fr: Emballage extérieur
+        ru: Внешняя упаковка
+        ja: 外装
+        ko: 외포장
+        it: Confezione esterna
+        ar: الغلاف الخارجي
+      min: 1
+      max: 1
+    - id: contents
+      labels:
+        en: Contents of one package
+        zh-Hans: 一包的全部内含物
+        zh-Hant: 一包的全部內含物
+        es: Contenido de una unidad
+        pt-BR: Conteúdo de uma unidade
+        de: Inhalt einer Packung
+        fr: Contenu d’un emballage
+        ru: Содержимое одной упаковки
+        ja: 一袋分の中身
+        ko: 한 포장의 내용물
+        it: Contenuto di una confezione
+        ar: محتوى عبوة واحدة
+      min: 1
+      max: 1
+showcaseExampleId: x_530
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-14
+    platform: YouTube
+    author: Marketing Food Online
+    url: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    publishedAt: 2025-05-30
+    metricObjectUrl: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    metricObjectPublishedAt: 2025-05-30
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 作者用 24 块装饼干举例。章节 05:14 做主图，06:44 做特征图，08:22 做近照，10:04 修正错误图。简介可查章节，具体品牌文案与提示不作转载
+      zh-Hant: 作者用 24 塊裝餅乾舉例。章節 05:14 做主圖，06:44 做特徵圖，08:22 做近照，10:04 修正錯誤圖。簡介可查章節，具體品牌文案與提示不作轉載
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

@@ -1,0 +1,47 @@
+referenceImage: required
+instructions:
+  en: Upload all pieces in one flat lay, followed by the matching printed packing list. Enter the exact count of each piece.
+  zh-Hans: 先上传全部实物平铺照，再上传同款装箱单。按当前售价所含内容逐项写明件数。
+  zh-Hant: 先上傳全部實體商品平鋪照，再上傳同款裝箱單。按當前售價所含內容逐項寫明件數。
+  es: Orden de carga · Piezas extendidas → Lista del paquete.
+  pt-BR: Ordem de envio · Peças dispostas → Lista da embalagem.
+  de: Reihenfolge der Bilder · Alle Teile ausgelegt → Packliste.
+  fr: Ordre d’envoi · Pièces disposées à plat → Liste de colisage.
+  ru: Порядок загрузки · Все детали в раскладке → Упаковочный лист.
+  ja: アップロード順 · 全部品を並べた写真 → 梱包リスト.
+  ko: 업로드 순서 · 전체 구성품 배치 → 포장 명세서.
+  it: Ordine di caricamento · Pezzi disposti in piano → Distinta del pacco.
+  ar: ترتيب رفع الصور · جميع القطع مبسوطة → قائمة التعبئة.
+slots:
+  - id: flatLay
+    labels:
+      en: All pieces laid out
+      zh-Hans: 全部实物平铺
+      zh-Hant: 全部實體商品平鋪
+      es: Piezas extendidas
+      pt-BR: Peças dispostas
+      de: Alle Teile ausgelegt
+      fr: Pièces disposées à plat
+      ru: Все детали в раскладке
+      ja: 全部品を並べた写真
+      ko: 전체 구성품 배치
+      it: Pezzi disposti in piano
+      ar: جميع القطع مبسوطة
+    min: 1
+    max: 1
+  - id: packingList
+    labels:
+      en: Packing list
+      zh-Hans: 装箱清单
+      zh-Hant: 裝箱清單
+      es: Lista del paquete
+      pt-BR: Lista da embalagem
+      de: Packliste
+      fr: Liste de colisage
+      ru: Упаковочный лист
+      ja: 梱包リスト
+      ko: 포장 명세서
+      it: Distinta del pacco
+      ar: قائمة التعبئة
+    min: 1
+    max: 1

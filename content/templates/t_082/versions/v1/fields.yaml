@@ -1,0 +1,35 @@
+fields:
+  - name: flawLocation
+    required: true
+    group: text
+    labels:
+      en: Defect and location
+      zh-Hans: 缺陷及位置
+      zh-Hant: 缺陷及位置
+      es: Defecto y ubicación
+      pt-BR: Avaria e localização
+      de: Schaden und Position
+      fr: Défaut et emplacement
+      ru: Дефект и его место
+      ja: 傷と位置
+      ko: 흠집과 위치
+      it: Difetto e posizione
+      ar: التلف وموضعه
+    help:
+      en: English example · the notch at the front left of the stool seat and the adjacent wood grain
+      zh-Hans: 英文示例 · the notch at the front left of the stool seat and the adjacent wood grain
+      zh-Hant: 英文示例 · the notch at the front left of the stool seat and the adjacent wood grain
+      es: Ejemplo en inglés · the notch at the front left of the stool seat and the adjacent wood grain
+      pt-BR: Exemplo em inglês · the notch at the front left of the stool seat and the adjacent wood grain
+      de: Englisches Beispiel · the notch at the front left of the stool seat and the adjacent wood grain
+      fr: Exemple en anglais · the notch at the front left of the stool seat and the adjacent wood grain
+      ru: Пример на английском · the notch at the front left of the stool seat and the adjacent wood grain
+      ja: 英語の入力例 · the notch at the front left of the stool seat and the adjacent wood grain
+      ko: 영문 입력 예시 · the notch at the front left of the stool seat and the adjacent wood grain
+      it: Esempio in inglese · the notch at the front left of the stool seat and the adjacent wood grain
+      ar: مثال بالإنجليزية · the notch at the front left of the stool seat and the adjacent wood grain
+    type: string
+    default: the chipped paint at the lower right of the camera body and the adjacent seam
+    minLength: 1
+    maxLength: 80
+    multiline: false

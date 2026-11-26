@@ -1,0 +1,123 @@
+id: p_420
+slug: verified-rear-product-view
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_704
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the front for identity, then the actual rear for orientation and parts. Match the visible screws, slot or cover against the second photo.
+    zh-Hans: 先传正面确认款式，再传同一件商品的背面。按第二张核对螺钉、槽孔或盖板及左右位置。
+    zh-Hant: 先傳正面確認款式，再傳同一件商品的背面。按第二張核對螺釘、槽孔或蓋板及左右位置。
+    es: Orden de carga · Vista frontal → Vista trasera.
+    pt-BR: Ordem de envio · Vista frontal → Vista traseira.
+    de: Reihenfolge der Bilder · Vorderansicht → Rückansicht.
+    fr: Ordre d’envoi · Vue de face → Vue arrière.
+    ru: Порядок загрузки · Вид спереди → Вид сзади.
+    ja: アップロード順 · 正面の写真 → 背面の写真.
+    ko: 업로드 순서 · 상품 정면 → 상품 뒷면.
+    it: Ordine di caricamento · Vista frontale → Vista posteriore.
+    ar: ترتيب رفع الصور · منظر أمامي → منظر خلفي.
+  slots:
+    - id: front
+      labels:
+        en: Front view
+        zh-Hans: 商品正面
+        zh-Hant: 商品正面
+        es: Vista frontal
+        pt-BR: Vista frontal
+        de: Vorderansicht
+        fr: Vue de face
+        ru: Вид спереди
+        ja: 正面の写真
+        ko: 상품 정면
+        it: Vista frontale
+        ar: منظر أمامي
+      min: 1
+      max: 1
+    - id: back
+      labels:
+        en: Rear view
+        zh-Hans: 同件背面
+        zh-Hant: 同件背面
+        es: Vista trasera
+        pt-BR: Vista traseira
+        de: Rückansicht
+        fr: Vue arrière
+        ru: Вид сзади
+        ja: 背面の写真
+        ko: 상품 뒷면
+        it: Vista posteriore
+        ar: منظر خلفي
+      min: 1
+      max: 1
+showcaseExampleId: x_506
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-03
+    platform: Bilibili
+    author: 带你吃火锅儿
+    url: https://www.bilibili.com/video/BV18dtg6XEUP/
+    publishedAt: 2026-09-02
+    metricObjectUrl: https://www.bilibili.com/video/BV18dtg6XEUP/
+    metricObjectPublishedAt: 2026-09-02
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 作者说明用 SkildArt 将香薰机白底图扩为多角度和主、副、细节图。简介披露工具推广，未附完整逐步指令
+      zh-Hant: 作者說明用 SkildArt 將香薰機白底圖擴為多角度和主、副、細節圖。簡介披露工具推廣，未附完整逐步指令
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.bilibili.com/video/BV18dtg6XEUP/
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

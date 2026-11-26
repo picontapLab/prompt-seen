@@ -1,0 +1,123 @@
+id: p_428
+slug: product-ports-and-controls
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_742
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the complete device, then the actual panel. Count all openings and read their order from left to right.
+    zh-Hans: 先上传整机，再上传可辨左右方向的面板近照。逐个核对孔位、旋钮和按键。
+    zh-Hant: 先上傳整機，再上傳可辨左右方向的面板近照。逐個核對孔位、旋鈕和按鍵。
+    es: Orden de carga · Artículo completo → Detalle del panel.
+    pt-BR: Ordem de envio · Item completo → Detalhe do painel.
+    de: Reihenfolge der Bilder · Gesamter Gegenstand → Nahaufnahme des Bedienfelds.
+    fr: Ordre d’envoi · Article entier → Gros plan des commandes.
+    ru: Порядок загрузки · Предмет целиком → Панель крупным планом.
+    ja: アップロード順 · 品物の全体像 → 操作部の接写.
+    ko: 업로드 순서 · 물건 전체 → 조작판 근접 사진.
+    it: Ordine di caricamento · Articolo completo → Dettaglio del pannello.
+    ar: ترتيب رفع الصور · القطعة كاملة → صورة مقرّبة للوحة.
+  slots:
+    - id: whole
+      labels:
+        en: Whole item
+        zh-Hans: 整件全貌
+        zh-Hant: 整件全貌
+        es: Artículo completo
+        pt-BR: Item completo
+        de: Gesamter Gegenstand
+        fr: Article entier
+        ru: Предмет целиком
+        ja: 品物の全体像
+        ko: 물건 전체
+        it: Articolo completo
+        ar: القطعة كاملة
+      min: 1
+      max: 1
+    - id: panel
+      labels:
+        en: Panel close-up
+        zh-Hans: 面板近照
+        zh-Hant: 面板近照
+        es: Detalle del panel
+        pt-BR: Detalhe do painel
+        de: Nahaufnahme des Bedienfelds
+        fr: Gros plan des commandes
+        ru: Панель крупным планом
+        ja: 操作部の接写
+        ko: 조작판 근접 사진
+        it: Dettaglio del pannello
+        ar: صورة مقرّبة للوحة
+      min: 1
+      max: 1
+showcaseExampleId: x_522
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-05
+    platform: YouTube
+    author: Marketing Food Online
+    url: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    publishedAt: 2025-05-30
+    metricObjectUrl: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    metricObjectPublishedAt: 2025-05-30
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 作者用 24 块装饼干举例。章节 05:14 做主图，06:44 做特征图，08:22 做近照，10:04 修正错误图。简介可查章节，具体品牌文案与提示不作转载
+      zh-Hant: 作者用 24 塊裝餅乾舉例。章節 05:14 做主圖，06:44 做特徵圖，08:22 做近照，10:04 修正錯誤圖。簡介可查章節，具體品牌文案與提示不作轉載
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.youtube.com/watch?v=oHfbgDZJL6U
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

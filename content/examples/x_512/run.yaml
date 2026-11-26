@@ -1,0 +1,40 @@
+id: x_512
+promptId: p_423
+promptLanguage: en
+template:
+  id: t_085
+  version: v1
+  sample: default
+  values:
+    included: one folding stand, one cloth pouch and one hex key
+  contractHash: 80c0e48dab7eb18ddfeaf1af0e3337185fbf38495598138028b869b7f3012e0b
+promptSha256: c19fdd57059def946be3f79447ba34467bc1d6609b154c89119d15bc5fc96591
+referenceAssetIds:
+  - a_719
+  - a_720
+referenceBindings:
+  - slotId: flatLay
+    referenceIndex: 0
+  - slotId: packingList
+    referenceIndex: 1
+outputAssetIds:
+  - a_718
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-25
+parameters: {}
+notes:
+  en: One FOLD 02 stand, one dark drawstring pouch and one separate L-shaped key are visible. The printed packing slip does not appear in the set.
+  zh-Hans: 一件支架、一个抽绳袋和一把内六角扳手分别摆开
+  zh-Hant: 一件支架、一個抽繩袋和一把內六角扳手分別擺開
+  es: Un soporte, una bolsa y una llave hexagonal
+  pt-BR: Um suporte, uma bolsa e uma chave Allen
+  de: Ein Ständer, ein Stoffbeutel und ein Innensechskantschlüssel
+  fr: Un support, une pochette et une clé hexagonale
+  ru: Подставка, тканевый мешочек и шестигранный ключ
+  ja: スタンド一台、布袋一枚、六角レンチ一本
+  ko: 거치대 한 개, 천 주머니 한 개, 육각 렌치 한 개
+  it: Un supporto, un sacchetto e una chiave a brugola
+  ar: حامل واحد وكيس قماشي ومفتاح سداسي

@@ -1,0 +1,47 @@
+referenceImage: required
+instructions:
+  en: Upload the exact variant for sale, then a second color as a framing guide. Name the first variant.
+  zh-Hans: 先上传待售颜色的实物照片，再上传另一色的构图参考，填写第一张的款式名。
+  zh-Hant: 先上傳待售顏色的實體商品照片，再上傳另一色的構圖參考，填寫第一張的款式名。
+  es: Orden de carga · Variante elegida → Referencia de encuadre.
+  pt-BR: Ordem de envio · Variante escolhida → Referência de enquadramento.
+  de: Reihenfolge der Bilder · Gewählte Variante → Vorlage für den Bildausschnitt.
+  fr: Ordre d’envoi · Variante choisie → Référence de cadrage.
+  ru: Порядок загрузки · Выбранный вариант → Образец кадрирования.
+  ja: アップロード順 · 選択した色の商品 → 構図の参考写真.
+  ko: 업로드 순서 · 선택한 색상 상품 → 구도 참고 사진.
+  it: Ordine di caricamento · Variante scelta → Riferimento per l’inquadratura.
+  ar: ترتيب رفع الصور · الصنف المختار → مرجع التأطير.
+slots:
+  - id: selected
+    labels:
+      en: Selected variant
+      zh-Hans: 选中款式
+      zh-Hant: 選中款式
+      es: Variante elegida
+      pt-BR: Variante escolhida
+      de: Gewählte Variante
+      fr: Variante choisie
+      ru: Выбранный вариант
+      ja: 選択した色の商品
+      ko: 선택한 색상 상품
+      it: Variante scelta
+      ar: الصنف المختار
+    min: 1
+    max: 1
+  - id: layout
+    labels:
+      en: Framing reference
+      zh-Hans: 构图参照
+      zh-Hant: 構圖參照
+      es: Referencia de encuadre
+      pt-BR: Referência de enquadramento
+      de: Vorlage für den Bildausschnitt
+      fr: Référence de cadrage
+      ru: Образец кадрирования
+      ja: 構図の参考写真
+      ko: 구도 참고 사진
+      it: Riferimento per l’inquadratura
+      ar: مرجع التأطير
+    min: 1
+    max: 1

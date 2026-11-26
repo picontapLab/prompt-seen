@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Upload the full item. Choose the corner for the title, then add the headline in your layout tool after export.
+  zh-Hans: 上传完整商品，指定预留标题的角落，导出后在排版工具中加字。
+  zh-Hant: 上傳完整商品，指定預留標題的角落，導出後在排版工具中加字。
+  es: Orden de carga · Producto completo.
+  pt-BR: Ordem de envio · Produto inteiro.
+  de: Reihenfolge der Bilder · Gesamtes Produkt.
+  fr: Ordre d’envoi · Produit entier.
+  ru: Порядок загрузки · Товар целиком.
+  ja: アップロード順 · 商品全体.
+  ko: 업로드 순서 · 상품 전체.
+  it: Ordine di caricamento · Prodotto intero.
+  ar: ترتيب رفع الصور · المنتج كاملاً.
+slots:
+  - id: product
+    labels:
+      en: Whole product
+      zh-Hans: 商品全貌
+      zh-Hant: 商品全貌
+      es: Producto completo
+      pt-BR: Produto inteiro
+      de: Gesamtes Produkt
+      fr: Produit entier
+      ru: Товар целиком
+      ja: 商品全体
+      ko: 상품 전체
+      it: Prodotto intero
+      ar: المنتج كاملاً
+    min: 1
+    max: 1

@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Upload the blank product. Enter the exact string, the visible area and the process to preview.
+  zh-Hans: 上传未定制的实物图，填写准确字样、可见位置和示范工艺。
+  zh-Hant: 上傳未定制的實體商品圖，填寫準確字樣、可見位置和示範工藝。
+  es: Orden de carga · Artículo sin personalizar.
+  pt-BR: Ordem de envio · Produto sem personalização.
+  de: Reihenfolge der Bilder · Unbeschriftetes Produkt.
+  fr: Ordre d’envoi · Article vierge.
+  ru: Порядок загрузки · Товар без надписи.
+  ja: アップロード順 · 加工前の商品.
+  ko: 업로드 순서 · 가공 전 상품.
+  it: Ordine di caricamento · Prodotto da personalizzare.
+  ar: ترتيب رفع الصور · المنتج قبل التخصيص.
+slots:
+  - id: blank
+    labels:
+      en: Blank product
+      zh-Hans: 未定制的商品
+      zh-Hant: 未定制的商品
+      es: Artículo sin personalizar
+      pt-BR: Produto sem personalização
+      de: Unbeschriftetes Produkt
+      fr: Article vierge
+      ru: Товар без надписи
+      ja: 加工前の商品
+      ko: 가공 전 상품
+      it: Prodotto da personalizzare
+      ar: المنتج قبل التخصيص
+    min: 1
+    max: 1

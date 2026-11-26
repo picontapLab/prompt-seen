@@ -1,0 +1,173 @@
+id: p_430
+slug: garment-styling-preview
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_754
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload the flat garment, then an adult pose photo. Choose a pose that reveals buttons, pockets and strap direction.
+    zh-Hans: 先上传衣物平铺图，再上传成人姿态参考。选能展示扣数、口袋和肩带走向的姿态。
+    zh-Hant: 先上傳衣物平鋪圖，再上傳成人姿態參考。選能展示扣數、口袋和肩帶走向的姿態。
+    es: Orden de carga · Prenda extendida → Pose de una persona adulta.
+    pt-BR: Ordem de envio · Roupa estendida → Pose de uma pessoa adulta.
+    de: Reihenfolge der Bilder · Flach ausgelegtes Kleidungsstück → Haltung einer erwachsenen Person.
+    fr: Ordre d’envoi · Vêtement à plat → Pose d’une personne adulte.
+    ru: Порядок загрузки · Разложенная одежда → Поза взрослой модели.
+    ja: アップロード順 · 平置きした服 → 成人のポーズ参考.
+    ko: 업로드 순서 · 펼쳐 놓은 옷 → 성인 자세 참고 사진.
+    it: Ordine di caricamento · Capo steso → Posa di una persona adulta.
+    ar: ترتيب رفع الصور · الثوب مبسوطاً → مرجع لوضعية شخص بالغ.
+  slots:
+    - id: garment
+      labels:
+        en: Flat garment
+        zh-Hans: 服装平铺照
+        zh-Hant: 服裝平鋪照
+        es: Prenda extendida
+        pt-BR: Roupa estendida
+        de: Flach ausgelegtes Kleidungsstück
+        fr: Vêtement à plat
+        ru: Разложенная одежда
+        ja: 平置きした服
+        ko: 펼쳐 놓은 옷
+        it: Capo steso
+        ar: الثوب مبسوطاً
+      min: 1
+      max: 1
+    - id: pose
+      labels:
+        en: Adult pose reference
+        zh-Hans: 成人姿态参照
+        zh-Hant: 成人姿態參照
+        es: Pose de una persona adulta
+        pt-BR: Pose de uma pessoa adulta
+        de: Haltung einer erwachsenen Person
+        fr: Pose d’une personne adulte
+        ru: Поза взрослой модели
+        ja: 成人のポーズ参考
+        ko: 성인 자세 참고 사진
+        it: Posa di una persona adulta
+        ar: مرجع لوضعية شخص بالغ
+      min: 1
+      max: 1
+showcaseExampleId: x_526
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-11
+    platform: Bilibili
+    author: 图叮-AI
+    url: https://www.bilibili.com/video/BV1qYcjzZE4V/
+    publishedAt: 2026-02-13
+    metricObjectUrl: https://www.bilibili.com/video/BV1qYcjzZE4V/
+    metricObjectPublishedAt: 2026-02-13
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 作者注明左侧是单品、右侧为 AI 上身结果，具体点出抽绳、针织纹和蕾丝下摆。简介未给完整生成指令
+      zh-Hant: 作者注明左側是單品、右側為 AI 上身結果，具體點出抽繩、針織紋和蕾絲下擺。簡介未給完整生成指令
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.bilibili.com/video/BV1qYcjzZE4V/
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+  - candidateId: LISTING-11
+    platform: Reddit
+    author: u/Chemical_Anything_66
+    url: https://www.reddit.com/r/ecommerce/comments/1jox56d/tried_ai_for_product_photosheres_what_worked_and/
+    publishedAt: null
+    metricObjectUrl: https://www.reddit.com/r/ecommerce/comments/1jox56d/tried_ai_for_product_photosheres_what_worked_and/
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 作者自述从白底服装图得到模特图，部分输出仍要调整。未核实成对原文件及工具型号
+      zh-Hant: 作者自述從白底服裝圖得到模特圖，部分輸出仍要調整。未核實成對原文件及工具型號
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.reddit.com/r/ecommerce/comments/1jox56d/tried_ai_for_product_photosheres_what_worked_and/
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

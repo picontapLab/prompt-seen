@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import photoCampaign from '../../production/everyday-photo-edit-v1/campaign.json';
+import listingCampaign from '../../production/physical-product-listing-v1/campaign.json';
 import { config } from '../../src/config';
 import { catalogTranslator } from '../../src/i18n/translator';
 import { composeFeed, type ComposedFeed } from '../../src/modules/feed/compose';
@@ -279,7 +280,10 @@ describe('content:export JSON', () => {
   });
 
   it('exports the documented model and original assets for every public case', () => {
-    const familyOnlyRuns = new Set(['x_499', ...photoCampaign.cases.flatMap((item) => item.acceptedExampleIds)]);
+    const familyOnlyRuns = new Set([
+      'x_499',
+      ...[...photoCampaign.cases, ...listingCampaign.cases].flatMap((item) => item.acceptedExampleIds),
+    ]);
     for (const locale of config.builtLocales.filter((entry) => entry.enabled)) {
       const data = exportJson(sources, config.buildId, locale, ['prompt']);
       for (const record of data.prompts) {

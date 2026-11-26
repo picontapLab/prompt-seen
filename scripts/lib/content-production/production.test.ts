@@ -31,11 +31,28 @@ it('resumes a frozen job and refuses unclaimed results, changed inputs and accid
   fs.writeFileSync(output, 'output-v1');
   recordJob(root, job.key, { outputPath: output, provider: 'tool', model: null });
   expect(jobStatus(root, job.key).status).toBe('generated');
-  reviewJob(root, job.key, {
+  const rejected = reviewJob(root, job.key, { accepted: false, notes: 'Background needs review.', reviewer: 'editor' });
+  const acceptance = {
     accepted: true,
-    notes: 'Two identities and natural proportions checked.',
+    notes: 'Background variance approved for this demonstration.',
     reviewer: 'editor',
-  });
+  };
+  expect(() => reviewJob(root, job.key, acceptance)).toThrow(/generated/);
+  const reconsidered = reviewJob(root, job.key, acceptance, true);
+  expect(reconsidered.previousReviews).toEqual([rejected.review]);
+  expect(reconsidered.receipt).toEqual(rejected.receipt);
+  expect(() =>
+    reviewJob(
+      root,
+      job.key,
+      {
+        accepted: true,
+        notes: 'Two identities and natural proportions checked.',
+        reviewer: 'editor',
+      },
+      true,
+    ),
+  ).toThrow(/rejected/);
   expect(jobStatus(root, job.key).status).toBe('accepted');
   expect(() => failJob(root, job.key, { provider: 'tool', message: 'Late failure', requestId: null })).toThrow(
     /running/,

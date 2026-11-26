@@ -1,0 +1,139 @@
+id: p_425
+slug: three-step-product-instructions
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: literal
+  file: prompt.txt
+  language: en
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_727
+relatedTemplateIds: []
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+  instructions:
+    en: Upload three separate photos of the same product, one per step in order. Check all moving parts before generation.
+    zh-Hans: 按操作顺序上传同一商品的三张独立照片。先逐帧核对活动件和状态。
+    zh-Hant: 按操作順序上傳同一商品的三張獨立照片。先逐幀核對活動件和狀態。
+    es: Orden de carga · Primer estado → Segundo estado → Tercer estado.
+    pt-BR: Ordem de envio · Primeiro estado → Segundo estado → Terceiro estado.
+    de: Reihenfolge der Bilder · Erster Zustand → Zweiter Zustand → Dritter Zustand.
+    fr: Ordre d’envoi · Premier état → Deuxième état → Troisième état.
+    ru: Порядок загрузки · Первое состояние → Второе состояние → Третье состояние.
+    ja: アップロード順 · 最初の状態 → 二番目の状態 → 三番目の状態.
+    ko: 업로드 순서 · 첫 번째 상태 → 두 번째 상태 → 세 번째 상태.
+    it: Ordine di caricamento · Primo stato → Secondo stato → Terzo stato.
+    ar: ترتيب رفع الصور · الحالة الأولى → الحالة الثانية → الحالة الثالثة.
+  slots:
+    - id: stepOne
+      labels:
+        en: First state
+        zh-Hans: 第一步状态
+        zh-Hant: 第一步狀態
+        es: Primer estado
+        pt-BR: Primeiro estado
+        de: Erster Zustand
+        fr: Premier état
+        ru: Первое состояние
+        ja: 最初の状態
+        ko: 첫 번째 상태
+        it: Primo stato
+        ar: الحالة الأولى
+      min: 1
+      max: 1
+    - id: stepTwo
+      labels:
+        en: Second state
+        zh-Hans: 第二步状态
+        zh-Hant: 第二步狀態
+        es: Segundo estado
+        pt-BR: Segundo estado
+        de: Zweiter Zustand
+        fr: Deuxième état
+        ru: Второе состояние
+        ja: 二番目の状態
+        ko: 두 번째 상태
+        it: Secondo stato
+        ar: الحالة الثانية
+      min: 1
+      max: 1
+    - id: stepThree
+      labels:
+        en: Third state
+        zh-Hans: 第三步状态
+        zh-Hant: 第三步狀態
+        es: Tercer estado
+        pt-BR: Terceiro estado
+        de: Dritter Zustand
+        fr: Troisième état
+        ru: Третье состояние
+        ja: 三番目の状態
+        ko: 세 번째 상태
+        it: Terzo stato
+        ar: الحالة الثالثة
+      min: 1
+      max: 1
+showcaseExampleId: x_516
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: LISTING-12
+    platform: YouTube
+    author: ecomDazzle
+    url: https://www.youtube.com/watch?v=u8Bms5wUqME
+    publishedAt: 2026-06-17
+    metricObjectUrl: https://www.youtube.com/watch?v=u8Bms5wUqME
+    metricObjectPublishedAt: 2026-06-17
+    metricScope:
+      en: Original post
+      zh-Hans: 原帖
+      zh-Hant: 原帖
+      es: Publicación original
+      pt-BR: Publicação original
+      de: Originalbeitrag
+      fr: Publication d’origine
+      ru: Исходная публикация
+      ja: 元の投稿
+      ko: 원본 게시물
+      it: Pubblicazione originale
+      ar: المنشور الأصلي
+    observedAt: 2026-11-25
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Public post, description or chapter listing as documented in the source register.
+      zh-Hans: 02:07 准备商品参考，03:30 做主图，05:13 做六张副图，08:20 重新调整雷同版式。是服务商教程，公开说明未给可逐字核对的完整运行文本
+      zh-Hant: 02:07 準備商品參考，03:30 做主圖，05:13 做六張副圖，08:20 重新調整雷同版式。是服務商教程，公開說明未給可逐字核對的完整運行文本
+      es: Publicación o descripción y capítulos públicos del vídeo indicados en el registro de fuentes.
+      pt-BR: Publicação ou descrição e capítulos públicos do vídeo no registro de fontes.
+      de: Öffentlicher Beitrag oder Videobeschreibung mit verfügbaren Kapiteln laut Quellenverzeichnis.
+      fr: Publication ou description et chapitres publics de la vidéo mentionnés dans le registre des sources.
+      ru: Открытая публикация либо описание и главы видео, указанные в перечне источников.
+      ja: 資料一覧にある公開投稿、動画の説明欄やチャプターを参照しました。
+      ko: 출처 목록의 공개 게시물이나 영상 설명 및 공개 구간을 확인했습니다.
+      it: Post o descrizione e capitoli pubblici del video indicati nel registro delle fonti.
+      ar: المنشور العام أو وصف الفيديو وفصوله المنشورة كما وردت في سجل المصادر.
+    evidenceUrl: https://www.youtube.com/watch?v=u8Bms5wUqME
+    sourcePromptStatus:
+      en: The listing instruction was independently written for these product photos.
+      zh-Hans: 本案例的编辑指令按本站底图独立编写。
+      zh-Hant: 本案例的編輯指令按本站底圖獨立編寫。
+      es: La instrucción se redactó de forma independiente para estas fotos.
+      pt-BR: A instrução foi escrita de forma independente para estas fotos.
+      de: Die Anweisung wurde eigenständig für diese Produktbilder formuliert.
+      fr: L’instruction a été rédigée indépendamment pour ces photos.
+      ru: Инструкция независимо написана для этих фотографий.
+      ja: 編集指示はこの商品写真に合わせて独自に作成しました。
+      ko: 이 사진에 맞추어 편집 지시를 독자적으로 작성했습니다.
+      it: L’istruzione è stata scritta in modo indipendente per queste foto.
+      ar: كُتبت تعليمات التحرير بشكل مستقل لهذه الصور.
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

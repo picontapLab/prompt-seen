@@ -1,0 +1,32 @@
+id: p_431
+slug: personalized-product-preview
+createdAt: 2026-11-25
+updatedAt: 2026-11-25
+promptSource:
+  type: template
+  templateId: t_089
+  version: v1
+  values:
+    zone: the flat area on the front
+    personalText: LIN
+    process: light-colored laser engraving
+categoryId: product
+styleIds: []
+useCaseIds: []
+coverAssetId: a_760
+relatedTemplateIds:
+  - t_089
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_528
+promptProvenance: original
+inspirationSources: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []
