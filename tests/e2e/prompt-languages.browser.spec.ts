@@ -169,8 +169,11 @@ test('template language changes preserve the latest input, stable options, draft
   await page.reload();
   await hydrated(page);
   await expect(preview(page)).toHaveText(expected);
-  // Reset sits below the prompt: the language switch happens from a scrolled page.
   await page.locator('[data-action="reset"]').click();
+  // Reset sits below the prompt, so the page is scrolled. WebKit no longer closes the language
+  // list there (Shell.module.css), but CI's Firefox still loses it while the list opens on a
+  // scrolled page (not reproducible locally). Switch from the top until that is fixed.
+  await page.evaluate(() => window.scrollTo(0, 0));
   await chooseLanguage(page, 'zh-Hans', 'en');
   await expect(preview(page)).toHaveText(en.version.defaultPrompt);
 });
