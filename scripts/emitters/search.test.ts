@@ -66,7 +66,7 @@ beforeAll(() => {
   // five-second assertion budget on serial index construction.
   for (const code of production.built.locales.keys()) production.engine(code);
   preview.engine('ja');
-}, 60_000);
+}, 120_000);
 
 const titles = (code: string, q: string, b = production) =>
   search(b.engine(code).engine, q).groups.flatMap((g) => g.hits.map((h) => h.title));

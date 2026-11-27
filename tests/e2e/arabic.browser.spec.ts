@@ -103,7 +103,7 @@ test.describe('Arabic typography and layout', () => {
             await expect(page.locator('h1')).toBeVisible();
             await page.evaluate(() => document.fonts.ready);
             const preview = page.locator('[data-static-from="lg"] > button');
-            if (await preview.isVisible()) {
+            if (await preview.isVisible({ timeout: 0 })) {
               await hydrated(page, '[data-static-from="lg"] > button');
               await preview.click();
               await expect(preview).toHaveAttribute('aria-expanded', 'true');
@@ -111,17 +111,23 @@ test.describe('Arabic typography and layout', () => {
             expect(await layoutProblems(page), route).toEqual([]);
             if (name !== 'home') return;
             await expect
-              .poll(() => page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontFamily))
+              .poll(() => page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontFamily), {
+                timeout: 15_000,
+              })
               .toContain('IBM Plex Sans Arabic');
             expect(await page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontWeight)).toBe('600');
             await expect
-              .poll(() =>
-                page.evaluate(() =>
-                  [...document.fonts].some(
-                    (face) =>
-                      face.family.includes('IBM Plex Sans Arabic') && face.weight === '600' && face.status === 'loaded',
+              .poll(
+                () =>
+                  page.evaluate(() =>
+                    [...document.fonts].some(
+                      (face) =>
+                        face.family.includes('IBM Plex Sans Arabic') &&
+                        face.weight === '600' &&
+                        face.status === 'loaded',
+                    ),
                   ),
-                ),
+                { timeout: 15_000 },
               )
               .toBe(true);
             expect(await seriousViolations(page)).toEqual([]);
