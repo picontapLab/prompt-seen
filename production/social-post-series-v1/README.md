@@ -1,6 +1,6 @@
 # 社交图文套版批次报告
 
-2026-11-27 完成本地发布候选。合集 `c_020` 的简中入口为 `/zh-hans/collections/social-post-series/`，英文入口为 `/en/collections/social-post-series/`。合集按 S01 至 S12 的发布场景排序。正式部署和线上复核待执行。
+2026-11-27 完成本地发布候选。合集 `c_020` 的简中入口为 `/zh-hans/collections/social-post-series/`，英文入口为 `/en/collections/social-post-series/`。合集按 S01 至 S12 的发布场景排序。首版已于 2026-11-28 完成[正式部署与线上复核](https://github.com/picontapLab/prompt-seen/actions/runs/46129298335)。
 
 | 交付项 | 实际结果 |
 | --- | --- |
@@ -10,7 +10,7 @@
 | 成图尝试 | 73 次，当前采用 36 次，另有 S09 v1 的 3 次历史通过和 34 次退回 |
 | 实测原文 | 英文 18 页、简中 9 页、日文 3 页、西文 3 页、巴西葡文 3 页 |
 | 页面语言 | 12 个启用语言，合计 300 份合集、案例和模板页面 |
-| 工具与审核 | OpenAI GPT Image 内置工具。回执记录模型族，精确版本未知。Codex AI 审图、译审和浏览器验收 |
+| 工具与审核 | 站主标注展示版本为 GPT Image 2.6。内置工具回执记录 GPT Image，未提供精确 API 标识。[批次型号归属](../model-version-annotation-2026-11-28.json)。Codex AI 审图、译审和浏览器验收 |
 
 ## 从一个案例查到生成证据
 

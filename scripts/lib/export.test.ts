@@ -283,10 +283,11 @@ describe('content:export JSON', () => {
   it('exports the documented model and original assets for every public case', () => {
     const familyOnlyRuns = new Set([
       'x_499',
-      ...[photoCampaign, listingCampaign, seriesCampaign].flatMap((campaign) =>
+      ...[photoCampaign, listingCampaign].flatMap((campaign) =>
         campaign.cases.flatMap((item) => item.acceptedExampleIds),
       ),
     ]);
+    const socialSeriesRuns = new Set(seriesCampaign.cases.flatMap((item) => item.acceptedExampleIds));
     for (const locale of config.builtLocales.filter((entry) => entry.enabled)) {
       const data = exportJson(sources, config.buildId, locale, ['prompt']);
       for (const record of data.prompts) {
@@ -294,6 +295,8 @@ describe('content:export JSON', () => {
         const f = record.facts!;
         expect(f, `${locale.code}/${record.id}`).toBeDefined();
         if (familyOnlyRuns.has(f.exampleRunId)) expect(f.model.displayName).toBe('GPT Image');
+        else if (socialSeriesRuns.has(f.exampleRunId))
+          expect(f.model).toMatchObject({ displayName: 'GPT Image 2.6', providerModelId: null });
         else expect(f.model.displayName).toMatch(/^GPT Image 2\.[56]$/);
         expect(f.referenceAssetIds).toEqual(f.references.map(({ assetId }) => assetId));
         expect(f.outputAssetIds).toEqual(f.outputs.map(({ assetId }) => assetId));
