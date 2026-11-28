@@ -1,0 +1,151 @@
+{
+  "candidateId": "SOCIALSERIES-06",
+  "slug": "pilot-wait-time-review",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create one {{ratio}} report card based on the supplied paper and clock motif. Use navy type and a single muted green accent. {{anchor}} {{scene}} Print exactly “{{headline}}” and “{{detail}}”. These two strings are the only visible text. Keep the figures easy to check.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "The sample figures are a 12-minute baseline and an 8-minute pilot wait.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "1:1",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Enlarge the clock outline as a visual cue and give the question the main space. Show one empty clock face and paper only. Never depict either wait value, units, numbered scales or numeric labels. Inset all text 12%.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Did the wait change?",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Pilot review · Demo data",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "The sample figures are a 12-minute baseline and an 8-minute pilot wait.",
+    "ratio": "1:1",
+    "scene": "Enlarge the clock outline as a visual cue and give the question the main space. Show one empty clock face and paper only. Never depict either wait value, units, numbered scales or numeric labels. Inset all text 12%.",
+    "headline": "Did the wait change?",
+    "detail": "Pilot review · Demo data"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Paper with an unnumbered clock and green rule",
+          "zh-Hans": "无数字时钟与绿色横线纸底"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-06",
+      "platform": "Reddit",
+      "author": "u/Beginning-Willow-801",
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1p9cfn1/how_to_visualize_anything_with_gemini_a/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/GeminiAI/comments/1p9cfn1/how_to_visualize_anything_with_gemini_a/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Read the original post.",
+        "zh-Hans": "规格第 3 节核对的Reddit 原帖"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/GeminiAI/comments/1p9cfn1/how_to_visualize_anything_with_gemini_a/",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Pilot wait-time review with demo data",
+      "description": "Pilot question · Baseline and pilot · Limits of the result",
+      "body": "## Pilot wait-time review with demo data\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Pilot question (1:1) — Did the wait change?\n\n2. Baseline and pilot (1:1) — Baseline 12 min · Pilot 8 min\n\n3. Limits of the result (1:1) — 4 minutes shorter\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "等待时间试点复盘（演示数据）",
+      "description": "提出问题 · 基线与试点 · 结论范围",
+      "body": "## 等待时间试点复盘（演示数据）\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 提出问题 (1:1) — Did the wait change?\n\n2. 基线与试点 (1:1) — Baseline 12 min · Pilot 8 min\n\n3. 结论范围 (1:1) — 4 minutes shorter\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Pilot question — Did the wait change?",
+    "zh-Hans": "提出问题 — Did the wait change?"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:20:30.096Z",
+    "contentHash": "8433d9f7e64657fbf0cc9407e436d118a268942525d59b8c524e6fe7f238a37a"
+  }
+}

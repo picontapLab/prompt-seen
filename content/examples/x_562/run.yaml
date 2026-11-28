@@ -1,0 +1,41 @@
+id: x_562
+promptId: p_443
+promptLanguage: en
+template:
+  id: t_100
+  version: v1
+  sample: default
+  values:
+    anchor: The sample figures are a 12-minute baseline and an 8-minute pilot wait.
+    ratio: 1:1
+    scene: Enlarge the clock outline as a visual cue and give the question the main space. Show one empty clock face and paper only. Never depict either wait value, units, numbered scales or numeric labels. Inset all text 12%.
+    headline: Did the wait change?
+    detail: Pilot review · Demo data
+  contractHash: bf4d64841282798cf8f98596859b912800ec9ef416adfbfc53cf3151c3e59521
+promptSha256: e36402d2a30664cac7b1dc2545f9665a3897877b72fc3513a5ab55a5259baa16
+referenceAssetIds:
+  - a_812
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_811
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: The unnumbered clock accompanies only the pilot question and demo-data line. No wait values are printed on this page.
+  zh-Hans: 无数字钟面旁只有试点问题和演示数据说明。本页没有印出等待时长。
+  es: El reloj sin números solo acompaña a la pregunta del piloto y a la mención de los datos de demostración. En esta página no se imprimen tiempos de espera.
+  pt-BR: O relógio sem números acompanha apenas a pergunta sobre o piloto e a indicação de dados demonstrativos. A página não informa tempos de espera.
+  ja: 数字のない時計とともに載っているのは試行についての問いとデモデータの注記だけで、このページには待ち時間の数値はない。
+  ko: 숫자가 없는 시계와 함께 실험 질문과 예시 데이터라는 문구만 있다. 이 페이지에는 대기 시간이 숫자로 표시되지 않는다.
+  de: Neben der Uhr ohne Zahlen stehen nur die Frage zum Pilotversuch und der Hinweis auf die Beispieldaten. Wartezeiten sind auf dieser Seite nicht angegeben.
+  fr: Le cadran sans chiffres accompagne uniquement la question sur l’essai et la mention des données de démonstration. Aucun temps d’attente n’est imprimé.
+  ru: Рядом с циферблатом без цифр приведены только вопрос о пилотном проекте и пометка о демонстрационных данных. Время ожидания не указано.
+  it: Il quadrante senza numeri accompagna soltanto la domanda sulla prova pilota e l’indicazione dei dati dimostrativi. Su questa pagina non sono stampati tempi di attesa.
+  ar: لا يرافق الساعة الخالية من الأرقام سوى سؤال التجربة وسطر يوضح أن البيانات للعرض. لا تعرض هذه الصفحة أي قيم لزمن الانتظار.
+  zh-Hant: 無數字鐘面旁只有試辦期間要回答的問題和示範資料說明。這頁沒有印出等待時間。

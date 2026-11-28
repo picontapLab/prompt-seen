@@ -1,0 +1,85 @@
+id: p_438
+slug: reading-corner-layout-vote
+createdAt: 2026-11-27
+updatedAt: 2026-11-27
+promptSource:
+  type: template
+  templateId: t_095
+  version: v1
+  values:
+    anchor: 固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。
+    ratio: 3:4
+    scene: 按底图原位展示整个房间，给上方标题留出空白。
+    headline: 阅读角放哪里？
+    detail: 同一间房，两种摆法
+categoryId: architecture
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_791
+relatedTemplateIds:
+  - t_095
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_547
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: SOCIALSERIES-08
+    platform: Reddit
+    author: u/GMScreech
+    url: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
+    publishedAt: null
+    metricObjectUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original post
+      zh-Hans: 原始帖子
+      es: Publicación original
+      pt-BR: Publicação original
+      ja: 元の投稿
+      ko: 원본 게시물
+      de: Originalbeitrag
+      fr: Publication originale
+      ru: Исходная публикация
+      it: Post originale
+      ar: المنشور الأصلي
+      zh-Hant: 原始貼文
+    observedAt: 2026-11-27
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Read the original Reddit post.
+      zh-Hans: 查阅 Reddit 原帖。
+      es: Lectura de la publicación original en Reddit.
+      pt-BR: Leitura da publicação original no Reddit.
+      ja: Reddit の元の投稿を確認しました。
+      ko: Reddit 원문을 확인했습니다.
+      de: Originalbeitrag auf Reddit gelesen.
+      fr: Lecture de la publication originale sur Reddit.
+      ru: Изучена исходная публикация на Reddit.
+      it: Lettura del post originale su Reddit.
+      ar: قراءة المنشور الأصلي على Reddit.
+      zh-Hant: 查閱 Reddit 原始貼文。
+    evidenceUrl: https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/
+    sourcePromptStatus:
+      en: The site wrote its own prompts.
+      zh-Hans: 本站另拟提示词。
+      es: El sitio redactó sus propias instrucciones.
+      pt-BR: O site escreveu seus próprios prompts.
+      ja: 指示文は当サイトが執筆しました。
+      ko: 사이트가 프롬프트를 직접 작성했습니다.
+      de: Die Anweisungen stammen von der Redaktion.
+      fr: Le site a rédigé ses propres consignes.
+      ru: Авторы сайта написали собственные инструкции.
+      it: Il sito ha scritto istruzioni proprie.
+      ar: كتب الموقع تعليماته الخاصة.
+      zh-Hant: 本站自行撰寫提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

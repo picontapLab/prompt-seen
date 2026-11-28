@@ -9,7 +9,7 @@ import { verifyAssets } from './verify';
 import { claimNext, migrationStatus, readAttempt, recordResult, reviewJob } from './jobs';
 import { paths } from './files';
 import { prepareJob } from './prepare';
-import { buildStagedContent } from './content';
+import { buildStagedContent, stagedContent } from './content';
 import { animatedGif } from '../../../tests/support/gif';
 
 const roots: string[] = [];
@@ -193,6 +193,10 @@ it.each(['png', 'gif'])(
   'requires a separate hash-bound display review after preparing an accepted %s',
   async (format) => {
     const root = workspace();
+    const localePath = 'content/pages/about/locales/en.mdx';
+    const links =
+      '\n\n`media:a_018` [one](media:a_018) and [two](<media:a_018> "title")\n[  \n**three**\n  ](media:a_018)\n';
+    fs.appendFileSync(path.join(root, localePath), links);
     const manifest = await planMigration(root);
     const claim = await claimNext(root);
     if (!claim.claimToken || !claim.jobId || !claim.attemptId) throw new Error('Expected a claim');
@@ -225,6 +229,9 @@ it.each(['png', 'gif'])(
       artifacts: { [raw.file]: raw.sha256 },
     });
     const processed = await prepareJob(root, claim.jobId);
+    const stagedPage = fs.readFileSync(path.join(stagedContent(root), path.relative('content', localePath)), 'utf8');
+    expect(stagedPage).toContain('`media:a_018` [one](media:a_119) and [two](<media:a_119> "title")');
+    expect(stagedPage).toContain('[  \n**three**\n  ](media:a_119)');
     expect(processed.status).toBe('processed');
     expect(processed.artifacts).toHaveLength(5);
     if (format === 'gif') {

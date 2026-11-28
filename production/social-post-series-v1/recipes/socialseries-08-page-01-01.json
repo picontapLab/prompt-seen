@@ -1,0 +1,151 @@
+{
+  "candidateId": "SOCIALSERIES-08",
+  "slug": "reading-corner-layout-vote",
+  "categoryId": "architecture",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "根据参考图画一张 {{ratio}} 的客厅布局投票卡。{{anchor}}沿用米白背景、墨绿标题和等距模型画风。{{scene}} 只排两段字，标题是“{{headline}}”，副文是“{{detail}}”，原样保留空格与拉丁字母。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "3:4",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "按底图原位展示整个房间，给上方标题留出空白。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "阅读角放哪里？",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "同一间房，两种摆法",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。",
+    "ratio": "3:4",
+    "scene": "按底图原位展示整个房间，给上方标题留出空白。",
+    "headline": "阅读角放哪里？",
+    "detail": "同一间房，两种摆法"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Room with a green chair and brass floor lamp",
+          "zh-Hans": "配深绿阅读椅与黄铜落地灯的小客厅"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-08",
+      "platform": "Reddit",
+      "author": "u/GMScreech",
+      "url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Read the original post.",
+        "zh-Hans": "规格第 3 节核对的Reddit 原帖"
+      },
+      "evidenceUrl": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Reading corner layout poll",
+      "description": "Original room · Chair by the window · Chair by the shelves",
+      "body": "## Reading corner layout poll\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Original room (3:4) — 阅读角放哪里？\n\n2. Chair by the window (3:4) — A 靠窗\n\n3. Chair by the shelves (3:4) — B 靠书架\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "租房客厅阅读角布局投票",
+      "description": "原始布局 · 阅读椅靠窗 · 阅读椅靠书架",
+      "body": "## 租房客厅阅读角布局投票\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 原始布局 (3:4) — 阅读角放哪里？\n\n2. 阅读椅靠窗 (3:4) — A 靠窗\n\n3. 阅读椅靠书架 (3:4) — B 靠书架\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Original room — 阅读角放哪里？",
+    "zh-Hans": "原始布局 — 阅读角放哪里？"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:11:53.588Z",
+    "contentHash": "6c50fc9632c13e433f7db8ba811e6c49b262750357c87914330c9e45d0778dd3"
+  }
+}

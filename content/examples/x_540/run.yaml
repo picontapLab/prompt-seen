@@ -1,0 +1,41 @@
+id: x_540
+promptId: p_435
+promptLanguage: en
+template:
+  id: t_092
+  version: v1
+  sample: page-03
+  values:
+    anchor: Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.
+    ratio: 9:16
+    scene: Frame the center with a curved thread and place the response instruction in the open center. Group all lettering in the central half of the canvas. Leave the top and bottom fifth free of words.
+    headline: Save your seat
+    detail: Comment JOIN on the event post
+  contractHash: 619fee7d9f19cc35d3e4ac02fde6e89b6847f92947ed04f2b86d244cf20cee6f
+promptSha256: 14731349ee3d74f1a0da92035ea0e4e1e10c4fe23c469930de66af3e9a4dfabc
+referenceAssetIds:
+  - a_779
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_781
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: The invitation and capitalized JOIN are centered inside the Story safe area. The instruction explicitly directs readers to the event post.
+  zh-Hans: 邀请语和大写的「JOIN」均在 Story 安全区内居中显示。文案明确告诉读者应在活动帖下留言。
+  es: La invitación y JOIN en mayúsculas están centrados en la zona segura de la historia. Se indica expresamente que hay que comentar en la publicación del evento.
+  pt-BR: O convite e a palavra JOIN em maiúsculas estão centralizados na área segura do story. A instrução indica que o comentário deve ser feito na publicação do evento.
+  ja: 招待の文と大文字の「JOIN」はストーリーズの安全領域の中央にある。イベントの投稿にコメントするよう明記されている。
+  ko: 초대 문구와 대문자 JOIN이 스토리 안전 영역 가운데에 있다. 행사 게시물에 댓글을 달라는 안내가 분명하다.
+  de: Die Einladung und JOIN in Großbuchstaben stehen mittig im sicheren Bereich der Story. Der Text fordert ausdrücklich zu einem Kommentar unter dem Veranstaltungsbeitrag auf.
+  fr: L’invitation et le mot JOIN en majuscules sont centrés dans la zone sûre de la story. La consigne précise qu’il faut commenter la publication de l’événement.
+  ru: Приглашение и слово JOIN заглавными буквами находятся в центре безопасной зоны истории. Текст прямо указывает оставить комментарий под публикацией о мероприятии.
+  it: L’invito e la parola JOIN in maiuscolo sono centrati nella zona sicura della storia. L’istruzione chiede espressamente di commentare il post dell’evento.
+  ar: تقع الدعوة وكلمة JOIN المكتوبة بأحرف كبيرة في وسط المنطقة الآمنة للقصة. يطلب النص صراحة ترك تعليق على منشور الفعالية.
+  zh-Hant: 邀請語和大寫的「JOIN」都在限時動態的安全區內置中顯示。文字明確告訴讀者應在活動貼文下留言。

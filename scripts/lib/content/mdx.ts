@@ -1,5 +1,5 @@
 import GithubSlugger from 'github-slugger';
-import type { Nodes, PhrasingContent, RootContent } from 'mdast';
+import type { Link, Nodes, PhrasingContent, RootContent } from 'mdast';
 import remarkGfm from 'remark-gfm';
 import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
@@ -14,7 +14,7 @@ import type { Findings } from './findings';
 // - Components: <Figure asset="a_012" caption="…" /> and <Callout>…</Callout>.
 // - Links: https/mailto, #anchors, and content links that follow slug changes and the base
 //   path: prompt:p_001, template:t_001, collection:c_001, page:about, category:landscape,
-//   style:ink, use-case:portrait.
+//   style:ink, use-case:portrait. A media:a_012 link opens the original asset.
 // Anything else (raw HTML, import/export, {expressions}, images, other components) is an
 // error with its line, so the browser never compiles MDX and pages never run content code.
 
@@ -27,7 +27,7 @@ export type MdxResolvers = {
   /** Internal path of a content link in this locale, or null when it is not visible there. */
   link: (link: ContentLink) => string | null;
   siteLink?: (target: SiteLink) => string | null;
-  /** The image for <Figure asset>, with alt text in this locale. */
+  /** The image for a figure or media link, with alt text in this locale. */
   figure: (assetId: string) => ImageRef | null;
 };
 
@@ -39,10 +39,16 @@ export type CompiledMdx = {
   /** Plain text of the whole body, for search and checks. */
   text: string;
   links: (ContentLink & { line?: number })[];
-  figures: { assetId: string; line?: number }[];
+  mediaReferences: {
+    assetId: string;
+    line?: number;
+    field: 'Figure' | 'mediaLink';
+    destination?: { offset: number; raw: string };
+  }[];
 };
 
 type Ctx = {
+  source: string;
   file: string;
   lineOffset: number;
   findings: Findings | null;
@@ -108,8 +114,32 @@ function inline(ctx: Ctx, nodes: readonly PhrasingContent[]): RichInline[] {
         result.push({ t: 'br' });
         break;
       case 'link': {
-        const { url, children } = n as { url: string; children: PhrasingContent[] };
+        const linkNode = n as Link;
+        const { url, children } = linkNode;
         const c = inline(ctx, children);
+        const media = /^media:(a_\d+)$/.exec(url);
+        if (media) {
+          const assetId = media[1]!;
+          // The AST separates the label from its destination, including nested labels,
+          // code spans and optional link titles. Keep the exact token for migrations.
+          const labelEnd = children.at(-1)?.position?.end.offset ?? (linkNode.position?.start.offset ?? 0) + 1;
+          const destination = /^\s*\]\(\s*<?([^\s)>]+)/.exec(ctx.source.slice(labelEnd));
+          if (!destination) {
+            fail(ctx, linkNode, 'could not locate the media link destination');
+            break;
+          }
+          const raw = destination[1]!;
+          ctx.out.mediaReferences.push({
+            assetId,
+            field: 'mediaLink',
+            line: lineOf(ctx, linkNode),
+            destination: { offset: labelEnd + destination[0].length - raw.length, raw },
+          });
+          const original = ctx.resolve?.figure(assetId)?.variants.original;
+          if (original) result.push({ t: 'mediaLink', original, c });
+          else result.push(...c);
+          break;
+        }
         const link = linkTarget(ctx, n, url);
         if (link === null) result.push(...c);
         else result.push({ t: 'link', href: link.href, internal: link.internal, c });
@@ -194,7 +224,7 @@ function component(ctx: Ctx, el: JsxElement): RichBlock[] {
       fail(ctx, el, `<Figure asset="${attrs.asset}"> is not a media ID`, 'use the ID of a file in content/media/, e.g. a_012');
       return [];
     }
-    ctx.out.figures.push({ assetId: attrs.asset!, line: lineOf(ctx, el) });
+    ctx.out.mediaReferences.push({ field: 'Figure', assetId: attrs.asset!, line: lineOf(ctx, el) });
     const caption = attrs.caption?.trim() || null;
     if (!ctx.resolve) return [];
     const image = ctx.resolve.figure(attrs.asset!);
@@ -318,8 +348,8 @@ export function compileMdx(
   source: string,
   { file, lineOffset = 0, findings = null, resolve = null, firstSectionId }: { file: string; lineOffset?: number; findings?: Findings | null; resolve?: MdxResolvers | null; firstSectionId?: string },
 ): CompiledMdx {
-  const out: CompiledMdx = { blocks: [], toc: [], sections: [], text: '', links: [], figures: [] };
-  const ctx: Ctx = { file, lineOffset, findings, resolve, firstSectionId, slugger: new GithubSlugger(), out };
+  const out: CompiledMdx = { blocks: [], toc: [], sections: [], text: '', links: [], mediaReferences: [] };
+  const ctx: Ctx = { source, file, lineOffset, findings, resolve, firstSectionId, slugger: new GithubSlugger(), out };
   let tree;
   try {
     tree = processor.parse(source);

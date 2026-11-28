@@ -1,0 +1,41 @@
+id: x_535
+promptId: p_434
+promptLanguage: en
+template:
+  id: t_091
+  version: v1
+  sample: default
+  values:
+    anchor: Preserve the guest's face, glasses, blue apron and yellow lamp.
+    ratio: 16:9
+    scene: Place the guest on the right looking toward the short title on the left.
+    headline: Why fix this lamp?
+    detail: Bench Notes · Ep. 04
+  contractHash: 19a1622f8d3379403d93b6e48f1387bce88651a64bd93eb01f172c475ecfa9ef
+promptSha256: 003282ff066068b951d7f9d941b71f55e13d78b3132f278909fd7eb07bea428d
+referenceAssetIds:
+  - a_775
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_774
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: At thumbnail size the question reads clearly to the left of the restorer. The face, apron and yellow lamp match the reference. The episode number and question mark are legible.
+  zh-Hans: 缩成缩略图后，修复师左侧的问题仍清晰可读，包括问号和下方的集数。面容、围裙与黄灯均与底图相符。
+  es: Incluso en miniatura se leen la pregunta a la izquierda del restaurador, el signo de interrogación y el número del episodio. La cara, el delantal y la lámpara coinciden con la referencia.
+  pt-BR: Mesmo na miniatura, a pergunta à esquerda do restaurador, o ponto de interrogação e o número do episódio ficam legíveis. O rosto, o avental e a luminária correspondem à referência.
+  ja: 縮小表示でも、職人の左にある問いかけと疑問符、その下のエピソード番号が読める。顔、エプロン、黄色いランプは参考画像と一致する。
+  ko: 작은 미리보기에서도 수리공 왼쪽의 질문과 물음표, 회차 번호를 읽을 수 있다. 얼굴과 앞치마, 노란 탁상등은 참고 이미지와 일치한다.
+  de: Auch im Vorschaubild lassen sich die Frage links neben dem Restaurator, das Fragezeichen und die Folgennummer lesen. Gesicht, Schürze und gelbe Lampe entsprechen der Vorlage.
+  fr: Même en miniature, on lit à gauche la question et son point d’interrogation, ainsi que le numéro de l’épisode. Le visage, le tablier et la lampe correspondent à la référence.
+  ru: Даже в миниатюре слева от мастера читается вопрос, видны вопросительный знак и номер выпуска. Лицо, фартук и лампа соответствуют исходному снимку.
+  it: Anche in miniatura si leggono la domanda a sinistra del restauratore, il punto interrogativo e il numero della puntata. Il viso, il grembiule e la lampada gialla corrispondono al riferimento.
+  ar: حتى في الصورة المصغرة يمكن قراءة السؤال إلى يسار المصلح ورؤية علامة الاستفهام ورقم الحلقة. يطابق الوجه والمئزر والمصباح الأصفر الصورة المرجعية.
+  zh-Hant: 縮成縮圖後，修復師左側的問題仍清晰可讀，包括問號和下方的集數。面容、圍裙與黃燈都與參考圖片相符。

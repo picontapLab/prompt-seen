@@ -1,0 +1,41 @@
+id: x_548
+promptId: p_438
+promptLanguage: zh-Hans
+template:
+  id: t_095
+  version: v1
+  sample: page-02
+  values:
+    anchor: 固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。
+    ratio: 3:4
+    scene: 只把椅和灯移到高窗前，保留从房门到书架的通路。 把房间模型的前沿固定在画面高度的94%，后墙顶沿在37%，左右贴近画幅。标题和副文都排在房间上方的空白处，距四边至少一成。
+    headline: A 靠窗
+    detail: 喜欢自然光就选 A
+  contractHash: 02025848b855343890623265f91d93e87cd6258aa98e5f8ffcaefe6944944d51
+promptSha256: 30844b3903974351e183319d6b33aad6c122a9c805c9d86fd3014c4f21d3211c
+referenceAssetIds:
+  - a_792
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_793
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The chair and lamp have moved under the fixed window, with an open door-to-shelf path. The two lines above the model both identify option A."
+  zh-Hans: "绿椅和落地灯移到窗下，从门口到书架的通道保持畅通。窗的位置不变，模型上方两行文字都标明这是 A 方案。"
+  es: "El sillón verde y la lámpara están bajo la ventana, dejando libre el paso de la puerta a la estantería. La ventana sigue en su sitio y las dos líneas sobre la maqueta identifican la opción A."
+  pt-BR: "A poltrona verde e a luminária ficam sob a janela, deixando livre a passagem da porta até a estante. A janela continua no mesmo lugar e as duas linhas acima da maquete identificam a opção A."
+  ja: "緑の椅子とライトが窓の下に移り、扉から本棚までの通路が空いている。窓の位置は変わらず、模型の上の二行にはいずれも A とある。"
+  ko: "녹색 의자와 조명이 창문 아래로 옮겨져 문에서 책장까지 길이 비어 있다. 창문은 제자리에 있고 모형 위 두 줄의 문구에 모두 A가 적혀 있다."
+  de: "Der grüne Sessel und die Stehlampe stehen unter dem Fenster. Der Weg von der Tür zum Regal ist frei. Das Fenster bleibt an seinem Platz und beide Textzeilen über dem Modell nennen Variante A."
+  fr: "Le fauteuil vert et le lampadaire sont sous la fenêtre. Le passage de la porte aux étagères reste libre. La fenêtre garde sa place et les deux lignes au-dessus de la maquette indiquent l’option A."
+  ru: "Зелёное кресло и торшер перемещены под окно. От двери к полкам остаётся свободный проход. Окно осталось на месте, а обе надписи над макетом указывают на вариант A."
+  it: "La poltrona verde e la lampada sono sotto la finestra e il passaggio dalla porta allo scaffale è libero. La finestra è rimasta al suo posto ed entrambe le righe sopra il modellino indicano l’opzione A."
+  ar: "أصبح الكرسي الأخضر والمصباح تحت النافذة، وبقي الممر بين الباب والرفوف خاليا. بقيت النافذة في مكانها ويشير السطران فوق المجسم إلى الخيار A."
+  zh-Hant: "綠椅和落地燈移到窗下，門口到書架的走道保持暢通。窗戶位置不變，模型上方兩行文字都標明這是 A 方案。"

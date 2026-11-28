@@ -4,6 +4,8 @@ import YAML from 'yaml';
 import { z } from 'zod';
 import { loadConfig } from '../../../src/config/load';
 import { createUrlModule, urlConfigOf } from '../../../src/modules/url/create';
+import { splitFrontmatter } from '../content/mdx';
+import { readText } from '../content/read';
 import { loadContent } from '../content/load';
 import { exampleRunSchema, mediaSchema, promptEntrySchema } from '../content/schemas';
 import { atomicWrite, paths, readJson, within } from './files';
@@ -44,7 +46,7 @@ export function buildStagedContent(root: string, id = 'gpt-image-v1') {
       atomicWrite(entry, doc.toString({ lineWidth: 0 }));
     }
   }
-  const figureFiles = new Map<string, typeof manifest.references>();
+  const bodyFiles = new Map<string, typeof manifest.references>();
   for (const reference of manifest.references) {
     const replacement = map.get(reference.assetId);
     if (!replacement) continue;
@@ -53,11 +55,26 @@ export function buildStagedContent(root: string, id = 'gpt-image-v1') {
       const doc = YAML.parseDocument(fs.readFileSync(file, 'utf8'));
       doc.set('coverAssetId', replacement);
       atomicWrite(file, doc.toString({ lineWidth: 0 }));
-    } else figureFiles.set(file, [...(figureFiles.get(file) ?? []), reference]);
+    } else bodyFiles.set(file, [...(bodyFiles.get(file) ?? []), reference]);
   }
-  for (const [file, references] of figureFiles) {
-    const lines = fs.readFileSync(file, 'utf8').split('\n');
-    for (const reference of references) {
+  for (const [file, references] of bodyFiles) {
+    let source = readText(file);
+    const split = splitFrontmatter(source);
+    if (!split) throw new Error(`Missing frontmatter: ${file}`);
+    const bodyStart = source.length - split.body.length;
+    // Apply from the end so longer replacement IDs leave earlier offsets valid.
+    const links = references
+      .filter((ref) => ref.field === 'mediaLink')
+      .sort((a, b) => (b.destination?.offset ?? 0) - (a.destination?.offset ?? 0));
+    for (const ref of links) {
+      const token = ref.destination;
+      if (!token || !source.startsWith(token.raw, bodyStart + token.offset))
+        throw new Error(`Media link source position changed: ${file}`);
+      const start = bodyStart + token.offset;
+      source = source.slice(0, start) + `media:${map.get(ref.assetId)}` + source.slice(start + token.raw.length);
+    }
+    const lines = source.split('\n');
+    for (const reference of references.filter((ref) => ref.field === 'Figure')) {
       if (!reference.line || !lines[reference.line - 1]?.includes('<Figure'))
         throw new Error(`Figure source position changed: ${reference.file}`);
       lines[reference.line - 1] = lines[reference.line - 1]!.replace(

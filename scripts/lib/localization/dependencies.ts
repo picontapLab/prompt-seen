@@ -150,7 +150,7 @@ export function dependencyFields(
       if (term) add(term.file, term.id);
     }
   }
-  for (const file of unit.locales.values()) for (const fig of file.compiled.figures) asset(fig.assetId);
+  for (const file of unit.locales.values()) for (const ref of file.compiled.mediaReferences) asset(ref.assetId);
   for (const run of content.examples.values()) {
     if (!((prompt && run.data.promptId === unit.id) || (template && run.data.template?.id === unit.id))) continue;
     add(run.file);

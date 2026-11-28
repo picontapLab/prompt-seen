@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.
+  zh-Hans: 三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。
+  es: Usa las mismas referencias en las tres páginas. Elige un ejemplo, cambia el motivo y el texto y genera cada página por separado.
+  pt-BR: Use as mesmas referências nas três páginas. Escolha um exemplo, troque o tema e o texto e gere cada página separadamente.
+  ja: 三枚とも同じ参考画像を使います。サンプルを選び、題材と文言を入れ替えて、一枚ずつ生成してください。
+  ko: 세 장 모두 같은 참고 이미지를 사용합니다. 예시를 고르고 소재와 문구를 바꾼 뒤 한 장씩 생성하세요.
+  de: Verwende für alle drei Seiten dieselben Vorlagen. Wähle ein Beispiel, ersetze Motiv und Text und erzeuge jede Seite einzeln.
+  fr: Gardez les mêmes références pour les trois pages. Choisissez un exemple, remplacez le sujet et le texte, puis générez chaque page séparément.
+  ru: Используйте одни и те же исходные изображения для трёх карточек. Выберите пример, замените тему и текст и создайте каждую карточку отдельно.
+  it: Usa gli stessi riferimenti per tutte e tre le pagine. Scegli un esempio, cambia soggetto e testo e genera una pagina alla volta.
+  ar: استخدم الصور المرجعية نفسها للصفحات الثلاث. اختر مثالا واستبدل الموضوع والنص ثم أنشئ كل صفحة على حدة.
+  zh-Hant: 三頁都使用同一組參考圖片。選擇範例，換成自己的主體和文案，再逐頁生成。
+slots:
+  - id: visual
+    labels:
+      en: Rice, chickpeas and cucumber beside a blue lunchbox
+      zh-Hans: 蓝色餐盒旁的米饭、鹰嘴豆和黄瓜
+      es: Arroz, garbanzos y pepino junto a una fiambrera azul
+      pt-BR: Arroz, grão-de-bico e pepino ao lado de uma marmita azul
+      ja: 青い弁当箱とご飯、ひよこ豆、きゅうり
+      ko: 파란 도시락통 옆의 밥과 병아리콩, 오이
+      de: Reis, Kichererbsen und Gurke neben einer blauen Dose
+      fr: Riz, pois chiches et concombre près d’une boîte bleue
+      ru: Рис, нут и огурец рядом с синим ланчбоксом
+      it: Riso, ceci e cetriolo accanto a un portapranzo blu
+      ar: أرز وحمص وخيار بجانب علبة زرقاء
+      zh-Hant: 藍色便當盒旁的米飯、鷹嘴豆和小黃瓜
+    min: 1
+    max: 1

@@ -1,0 +1,41 @@
+id: x_550
+promptId: p_439
+promptLanguage: ja
+template:
+  id: t_096
+  version: v1
+  sample: default
+  values:
+    anchor: 赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。
+    ratio: 4:5
+    scene: 机の端の青いしおりを見つめるキツネと、閉じた本を描いてください。 見出しと小さな一文の四方に画像幅・高さの12%以上の余白を空けてください。
+    headline: あれ、しおりだ。
+    detail: 机のすみに青い一枚。
+  contractHash: b731001ca5767415e878e2369314275a9ef55cbc574ac767f49eec4ad56a6ce7
+promptSha256: 877b0d3bc92206f8c84b9840cb73312c33cdd7d204586e164e6b2597da93f9ee
+referenceAssetIds:
+  - a_796
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_795
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The white tip is on the fox’s own left ear. It looks at the bookmark on the desk. Both Japanese sentences and their stops match."
+  zh-Hans: "红色纸狐狸低头看桌上的蓝书签，旁边是合上的书；白色耳尖在狐狸自己的左侧。两句日文和句末标点都与样值一致。"
+  es: "El zorro de papel rojo mira el marcapáginas azul sobre la mesa, junto al libro cerrado. La punta blanca está en su oreja izquierda. Ambas frases japonesas y sus puntos coinciden con el original."
+  pt-BR: "A raposa de papel vermelha olha para o marcador azul na mesa, ao lado do livro fechado. A ponta branca é a da orelha esquerda da raposa. As duas frases em japonês e seus pontos finais conferem com o original."
+  ja: "赤い紙のキツネが机の青いしおりを見下ろし、横には閉じた本がある。白い耳先はキツネ自身の左側。日本語の二文と句点は指定どおり。"
+  ko: "빨간 종이 여우가 덮인 책 옆에 놓인 파란 책갈피를 내려다본다. 흰 귀 끝은 여우 자신의 왼쪽에 있다. 일본어 두 문장과 마침표가 원문과 일치한다."
+  de: "Der rote Papierfuchs blickt auf das blaue Lesezeichen neben dem geschlossenen Buch. Die weiße Spitze sitzt an seinem linken Ohr. Beide japanischen Sätze und ihre Satzpunkte entsprechen der Vorlage."
+  fr: "Le renard en papier rouge regarde le marque-page bleu sur la table à côté du livre fermé. C’est son oreille gauche qui a la pointe blanche. Les deux phrases japonaises et leurs points correspondent à l’original."
+  ru: "Красный бумажный лис смотрит на синюю закладку на столе рядом с закрытой книгой. Белый кончик у него на левом ухе. Обе японские фразы и точки в их конце совпадают с образцом."
+  it: "La volpe di carta rossa guarda il segnalibro blu sulla scrivania accanto al libro chiuso. La punta bianca è sul suo orecchio sinistro. Entrambe le frasi giapponesi e i loro punti corrispondono al testo fornito."
+  ar: "ينظر الثعلب الورقي الأحمر إلى العلامة الزرقاء على الطاولة بجوار الكتاب المغلق. الطرف الأبيض على أذنه اليسرى. تطابق الجملتان اليابانيتان ونقطتاهما النص المطلوب."
+  zh-Hant: "紅色紙狐狸低頭看著桌上的藍色書籤，旁邊是闔上的書，白色耳尖在狐狸自己的左側。兩句日文及句末標點都與範例相符。"

@@ -1,0 +1,41 @@
+id: x_545
+promptId: p_437
+promptLanguage: zh-Hans
+template:
+  id: t_094
+  version: v1
+  sample: page-02
+  values:
+    anchor: 沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。
+    ratio: 3:4
+    scene: 用两支从左向右的箭头依次连接书店、桥、市集，将站点顺序排在箭头下方。 在三栋建筑之间画两支清晰的指向右方的图形箭头；下方另排含两支文字箭头的完整副文。所有文字距四边至少一成。
+    headline: 从书店走到市集
+    detail: 旧书店 → 蓝桥 → 周末市集
+  contractHash: d8583fecf78ca8ddef52f609680ec50cd3c910dc9fd2849a4a3bbbdc8b1a7c23
+promptSha256: 393750a4600260339eadea0b5df07f3ad7c336cc6d60e8628345e0ee7aeda6af
+referenceAssetIds:
+  - a_788
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_789
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "Two orange arrows lead from the red bookshop through the blue bridge to the orange market. The separate route line matches the supplied order."
+  zh-Hans: "两支橙色箭头从红砖书店指向蓝桥，再指向橙顶市集。下方路线文字列出的三站与箭头顺序相同。"
+  es: "Dos flechas naranjas llevan de la librería de ladrillo rojo al puente azul y de allí al mercado de toldos naranjas. La ruta escrita debajo mantiene el mismo orden."
+  pt-BR: "Duas setas laranja ligam a livraria de tijolos vermelhos à ponte azul e, em seguida, à feira de toldos laranja. O percurso escrito abaixo segue a mesma ordem."
+  ja: "オレンジ色の矢印が二つ、赤れんがの書店から青い橋へ、橋からオレンジ色の屋根の市場へと続く。下のルート表記も同じ順序になっている。"
+  ko: "주황색 화살표 두 개가 붉은 벽돌 서점에서 파란 다리로, 다시 주황색 천막 시장으로 이어진다. 아래의 경로 문구에도 같은 순서로 세 곳이 나온다."
+  de: "Zwei orangefarbene Pfeile führen von der roten Backsteinbuchhandlung zur blauen Brücke und weiter zum Markt mit orangefarbenen Dächern. Die darunter ausgeschriebene Route hat dieselbe Reihenfolge."
+  fr: "Deux flèches orange mènent de la librairie en brique rouge au pont bleu, puis au marché aux auvents orange. Le parcours écrit en dessous reprend le même ordre."
+  ru: "Две оранжевые стрелки ведут от книжного магазина из красного кирпича к синему мосту, а от него к рынку под оранжевыми навесами. Подпись внизу перечисляет остановки в том же порядке."
+  it: "Due frecce arancioni conducono dalla libreria in mattoni rossi al ponte blu e poi al mercato dalle tende arancioni. Il percorso scritto sotto segue lo stesso ordine."
+  ar: "يقود سهمان برتقاليان من المكتبة المبنية بالطوب الأحمر إلى الجسر الأزرق ثم إلى السوق ذي المظلات البرتقالية. ترد المحطات بالترتيب نفسه في المسار المكتوب أسفل الصورة."
+  zh-Hant: "兩支橘色箭頭從紅磚書店指向藍橋，再指向橘色棚頂的市集。下方路線文字列出的三站與箭頭順序一致。"

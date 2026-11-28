@@ -1,0 +1,151 @@
+{
+  "candidateId": "SOCIALSERIES-09",
+  "slug": "woven-basket-detail-study",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "用参考照片制作一张 {{ratio}} 的器物观察卡。{{anchor}}{{scene}} 标题逐字写“{{headline}}”，说明逐字写“{{detail}}”。除了给定文字，不添加鉴定信息、编号或装饰字。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "整只篮子居中，上沿和篮底都在画内。 把副文末字锁定为“节”，后面留空，绝不添加句号。所有文字离四边至少一成。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "看懂一只编织篮",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "先看轮廓，再找细节",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+    "ratio": "4:5",
+    "scene": "整只篮子居中，上沿和篮底都在画内。 把副文末字锁定为“节”，后面留空，绝不添加句号。所有文字离四边至少一成。",
+    "headline": "看懂一只编织篮",
+    "detail": "先看轮廓，再找细节"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Small woven basket with a blue rim",
+          "zh-Hans": "蓝线绕口的编织小篮"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-09",
+      "platform": "X",
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2045504669401653414",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Woven basket observation cards",
+      "description": "Whole basket · Wrapped rim · Crossed weave",
+      "body": "## Woven basket observation cards\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Whole basket (4:5) — 看懂一只编织篮\n\n2. Wrapped rim (4:5) — 第一眼，看口沿\n\n3. Crossed weave (4:5) — 第二眼，看交叉\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "编织篮工艺观察卡",
+      "description": "器物全貌 · 口沿线圈 · 交叉纹理",
+      "body": "## 编织篮工艺观察卡\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 器物全貌 (4:5) — 看懂一只编织篮\n\n2. 口沿线圈 (4:5) — 第一眼，看口沿\n\n3. 交叉纹理 (4:5) — 第二眼，看交叉\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Whole basket — 看懂一只编织篮",
+    "zh-Hans": "器物全貌 — 看懂一只编织篮"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:18:43.443Z",
+    "contentHash": "43607895749b68e560a391fc6d5b73975033d2bef631077ac83bce0963965983"
+  }
+}

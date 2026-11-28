@@ -1,0 +1,111 @@
+fields:
+  - name: anchor
+    required: true
+    group: subject
+    labels:
+      en: Series details to keep
+      zh-Hans: 整套保持的特征
+      es: Rasgos comunes
+      pt-BR: Características da série
+      ja: 共通の特徴
+      ko: 공통 특징
+      de: Gemeinsame Merkmale
+      fr: Caractéristiques communes
+      ru: Общие признаки
+      it: Caratteristiche comuni
+      ar: السمات المشتركة
+      zh-Hant: 整組共用特徵
+    help: {}
+    type: string
+    default: Keep its three ingredients, blue enamel box and warm ivory surface identifiable.
+    minLength: null
+    maxLength: 320
+    multiline: false
+  - name: ratio
+    required: true
+    group: composition
+    labels:
+      en: Aspect ratio
+      zh-Hans: 画幅
+      es: Proporción
+      pt-BR: Proporção
+      ja: 縦横比
+      ko: 화면 비율
+      de: Seitenverhältnis
+      fr: Format
+      ru: Соотношение сторон
+      it: Proporzioni
+      ar: نسبة الأبعاد
+      zh-Hant: 長寬比
+    help: {}
+    type: string
+    default: 4:5
+    minLength: null
+    maxLength: null
+    multiline: false
+  - name: scene
+    required: true
+    group: composition
+    labels:
+      en: Page composition
+      zh-Hans: 本页构图
+      es: Composición
+      pt-BR: Composição da página
+      ja: ページの構図
+      ko: 페이지 구도
+      de: Bildaufbau
+      fr: Composition
+      ru: Композиция
+      it: Composizione
+      ar: تكوين الصفحة
+      zh-Hant: 本頁構圖
+    help: {}
+    type: string
+    default: Fill the box with the three ingredients and give it most of the frame. All food goes in the deep lower compartment of the box; show the empty lid. Leave the top fifth plain ivory. Center the headline at 24% height, supporting line at 32%, lunchbox in the lower half.
+    minLength: null
+    maxLength: 320
+    multiline: false
+  - name: headline
+    required: true
+    group: text
+    labels:
+      en: Headline
+      zh-Hans: 标题
+      es: Titular
+      pt-BR: Título
+      ja: 見出し
+      ko: 제목
+      de: Überschrift
+      fr: Titre
+      ru: Заголовок
+      it: Titolo
+      ar: العنوان
+      zh-Hant: 標題
+    help: {}
+    type: string
+    default: A three-part lunch
+    minLength: null
+    maxLength: 64
+    multiline: false
+  - name: detail
+    required: true
+    group: text
+    labels:
+      en: Supporting line
+      zh-Hans: 副文
+      es: Texto secundario
+      pt-BR: Linha de apoio
+      ja: 補足文
+      ko: 보조 문구
+      de: Unterzeile
+      fr: Sous-titre
+      ru: Подзаголовок
+      it: Testo di supporto
+      ar: السطر التوضيحي
+      zh-Hant: 輔助文字
+    help: {}
+    type: string
+    default: Rice, chickpeas, cucumber
+    minLength: null
+    maxLength: 128
+    multiline: false

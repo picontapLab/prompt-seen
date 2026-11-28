@@ -1,0 +1,41 @@
+id: x_564
+promptId: p_443
+promptLanguage: en
+template:
+  id: t_100
+  version: v1
+  sample: page-03
+  values:
+    anchor: The sample figures are a 12-minute baseline and an 8-minute pilot wait.
+    ratio: 1:1
+    scene: Make the difference the focal point. Use the quiet footer for the scope of the result. Set both strings in the middle third of plain paper, one directly below the other. Leave the bottom quarter empty. No charts, equations, baseline or pilot values. The only number is in the supplied headline.
+    headline: 4 minutes shorter
+    detail: This pilot only · Demo data
+  contractHash: bf4d64841282798cf8f98596859b912800ec9ef416adfbfc53cf3151c3e59521
+promptSha256: c62ada5e2667b46240d525b47ae9af453666a25fb735d7efa30e2ba960052040
+referenceAssetIds:
+  - a_812
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_814
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: The four-minute difference and the pilot-only demo label now sit together in the middle of the paper. No extra numeric labels or charts are present.
+  zh-Hans: 缩短四分钟的结论与「仅限本次试点」的演示数据说明一同位于纸面中央。画面没有多余的数字标签或图表。
+  es: La diferencia de cuatro minutos y la aclaración de que los datos de ejemplo se limitan al piloto están juntas en el centro. No hay cifras ni gráficos adicionales.
+  pt-BR: A diferença de quatro minutos e a indicação de que os dados demonstrativos se limitam ao piloto estão juntas no centro. Não aparecem outros números nem gráficos.
+  ja: 4 分短縮という結果と、この試行だけのデモデータである旨の注記が中央にまとまっている。ほかの数値ラベルやグラフはない。
+  ko: 4분 단축이라는 결과와 이번 실험에만 해당하는 예시 데이터라는 설명이 중앙에 모여 있다. 추가 수치나 그래프는 없다.
+  de: Die Verkürzung um vier Minuten und der Hinweis auf die nur für diesen Versuch geltenden Beispieldaten stehen zusammen in der Mitte. Weitere Zahlenangaben oder Diagramme fehlen.
+  fr: L’écart de quatre minutes et la mention qui limite ces données de démonstration à l’essai figurent ensemble au centre. Aucun chiffre ni graphique supplémentaire n’apparaît.
+  ru: Сокращение на четыре минуты и пояснение, что демонстрационные данные относятся только к пилотному проекту, расположены вместе в центре. Других числовых подписей и диаграмм нет.
+  it: La riduzione di quattro minuti e l’indicazione che i dati dimostrativi si riferiscono solo alla prova pilota sono riunite al centro. Non compaiono altri numeri o grafici.
+  ar: يجتمع في الوسط فرق الدقائق الأربع والتنبيه إلى أن البيانات التوضيحية تخص هذه التجربة فقط. لا توجد أرقام توضيحية أو رسوم بيانية إضافية.
+  zh-Hant: 縮短四分鐘的結論與「僅限本次試辦」的示範資料說明都位於紙面中央。畫面沒有多餘的數字標示或圖表。

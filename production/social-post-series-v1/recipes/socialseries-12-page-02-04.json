@@ -1,0 +1,164 @@
+{
+  "candidateId": "SOCIALSERIES-12",
+  "slug": "community-run-recap",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Crie um único cartão de retrospectiva em {{ratio}}. {{anchor}} Use margens de papel creme, títulos em verde-escuro e luz suave de manhã. {{scene}} Escreva exatamente “{{headline}}” como título e “{{detail}}” na linha de apoio. Use somente esse texto.",
+  "promptLanguage": "pt-BR",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Use apenas a primeira foto numa janela ampla, mantendo as três pessoas no quadro. Faça uma única fotografia dos corredores. Exclua completamente mãos, copos e mesa de apoio. Deixe 12% de margem para todo o texto.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Sábado no parque",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Um encontro para correr e conversar",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.",
+    "ratio": "4:5",
+    "scene": "Use apenas a segunda foto e aproxime o enquadramento das mãos e dos copos. Mostre só as mãos e os três copos. Use corpo pequeno e centralize as duas linhas numa coluna de 60% da largura. Título a 25% da altura, subtítulo a 75%. Nenhum corredor.",
+    "headline": "Quem fez acontecer",
+    "detail": "O cuidado da equipe de apoio"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "first",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Three runners seen from behind",
+          "zh-Hans": "三位跑者的背影"
+        }
+      },
+      {
+        "id": "second",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Hands setting out reusable cups",
+          "zh-Hans": "双手在补水桌上摆放水杯"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-12",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2008976966255337666",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2008976966255337666",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/AmirMushich/status/2008976966255337666",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Community run recap",
+      "description": "At the start · Behind the scenes · Thanking the runners",
+      "body": "## Community run recap\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. At the start (4:5) — Sábado no parque\n\n2. Behind the scenes (4:5) — Quem fez acontecer\n\n3. Thanking the runners (4:5) — Valeu, pessoal!\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "社群跑团活动回顾",
+      "description": "集合现场 · 补水幕后 · 感谢参与",
+      "body": "## 社群跑团活动回顾\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 集合现场 (4:5) — Sábado no parque\n\n2. 补水幕后 (4:5) — Quem fez acontecer\n\n3. 感谢参与 (4:5) — Valeu, pessoal!\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Behind the scenes — Quem fez acontecer",
+    "zh-Hans": "补水幕后 — Quem fez acontecer"
+  },
+  "target": {
+    "promptId": "p_444",
+    "sampleName": "page-02"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:22:41.547Z",
+    "contentHash": "be8312abe5a721a3513117734ea6168e01b5700a8c877e40fa995acf85261928"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-07",
+  "slug": "three-stop-city-walk",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "用所附街区图制作一张 {{ratio}} 散步笔记。{{anchor}}{{scene}} 大标题逐字写“{{headline}}”，副文逐字写“{{detail}}”。画面只印这两段文字，文字与建筑分开。",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "3:4",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "三处地标排成一道横向弧线，上方留出标题区。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "岸北散步三站",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "虚构街区示例",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。",
+    "ratio": "3:4",
+    "scene": "把红砖书店入口放大当主视觉，蓝桥只在远处露出一角。 所有文字距四边至少一成。红砖书店的门廊应完整，标题上方留白。",
+    "headline": "先在旧书店碰面",
+    "detail": "集合点：红砖门廊"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Brick bookshop, blue bridge and orange market stalls",
+          "zh-Hans": "红砖书店、蓝桥和橙顶市集"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-07",
+      "platform": "X",
+      "author": "宝玉 dotey",
+      "url": "https://x.com/dotey/status/1993729800922341810",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/dotey/status/1993729800922341810",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/dotey/status/1993729800922341810",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Three stops on a fictional city walk",
+      "description": "Landmarks · Walking order · Meeting point",
+      "body": "## Three stops on a fictional city walk\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Landmarks (3:4) — 岸北散步三站\n\n2. Walking order (3:4) — 从书店走到市集\n\n3. Meeting point (3:4) — 先在旧书店碰面\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "虚构街区三站散步路线",
+      "description": "辨认地标 · 步行顺序 · 集合地点",
+      "body": "## 虚构街区三站散步路线\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 辨认地标 (3:4) — 岸北散步三站\n\n2. 步行顺序 (3:4) — 从书店走到市集\n\n3. 集合地点 (3:4) — 先在旧书店碰面\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Meeting point — 先在旧书店碰面",
+    "zh-Hans": "集合地点 — 先在旧书店碰面"
+  },
+  "target": {
+    "promptId": "p_437",
+    "sampleName": "page-03"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:11:17.099Z",
+    "contentHash": "f05a39cfb3ad1be76801d35a8a4d42ceb626790944f10af0547679808dc8f41b"
+  }
+}

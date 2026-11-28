@@ -1,0 +1,864 @@
+[
+  {
+    "candidateId": "SOCIALSERIES-01",
+    "slug": "lamp-restorer-podcast-covers",
+    "title": "人物访谈的跨版位封面",
+    "categoryId": "portrait",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Make one {{ratio}} editorial image for a repair podcast from the supplied photo. {{anchor}} Use a teal background, warm side light and cream condensed type. {{scene}} Set the headline exactly to “{{headline}}” and the supporting line exactly to “{{detail}}”. Print only this copy.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Photograph a fictional adult lamp restorer with round glasses and a faded blue apron at a workbench, holding a small mustard-yellow desk lamp. Soft light from the left, teal workshop wall, waist-up, wide composition with generous space on both sides. Make one clean editorial reference photo without lettering or logos.",
+        "path": "production/social-post-series-v1/references/s01-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 横封面",
+        "sampleName": "default",
+        "values": {
+          "anchor": "Preserve the guest's face, glasses, blue apron and yellow lamp.",
+          "ratio": "16:9",
+          "scene": "Place the guest on the right looking toward the short title on the left.",
+          "headline": "Why fix this lamp?",
+          "detail": "Bench Notes · Ep. 04"
+        },
+        "key": "socialseries-01-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 信息流",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "Preserve the guest's face, glasses, blue apron and yellow lamp.",
+          "ratio": "4:5",
+          "scene": "Frame the face and lamp in a tight vertical triangle with the title below the lamp. Leave a clear margin of 12% on every edge around both lines, including below the episode line.",
+          "headline": "Meet the restorer",
+          "detail": "Bench Notes · Ep. 04"
+        },
+        "key": "socialseries-01-page-02-02",
+        "specifiedScene": "Frame the face and lamp in a tight vertical triangle with the title below the lamp."
+      },
+      {
+        "page": 3,
+        "role": "3 Story",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "Preserve the guest's face, glasses, blue apron and yellow lamp.",
+          "ratio": "9:16",
+          "scene": "Show the hands holding the lamp near the middle, with both lines clear of the top and bottom. Keep all lettering between 22% and 78% of canvas height. Leave the top and bottom fifth entirely free of text.",
+          "headline": "Hear the full story",
+          "detail": "Bench Notes · Ep. 04"
+        },
+        "key": "socialseries-01-page-03-02",
+        "specifiedScene": "Show the hands holding the lamp near the middle, with both lines clear of the top and bottom."
+      }
+    ],
+    "acceptance": "三页嘉宾和灯可辨认为同一组。横封面缩到 160 像素宽仍能读出主标题，竖版手、灯罩与人脸都在画内。",
+    "source": {
+      "author": "哩布哩布AI",
+      "url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴人物视线、头部留白和标题关系，改成同一嘉宾在横、竖、全屏三种版位中的重新构图。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-02",
+    "slug": "three-part-lunch-carousel",
+    "title": "便当教程与收藏清单",
+    "categoryId": "food",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Make one {{ratio}} recipe card from the supplied lunch photo. {{anchor}} Use a top-down food photograph, dark green sans-serif type and soft side light. Arrange this page as follows: {{scene}} Set the headline exactly to “{{headline}}” and the smaller line exactly to “{{detail}}”. Render only these two lines of copy.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Make one overhead food photograph of cooked rice, cooked chickpeas and sliced cucumber beside an open blue enamel lunchbox on a warm ivory table. Keep each ingredient clearly separate and recognizable. Soft side light, quiet editorial styling, no lettering, no packaging and no other ingredients.",
+        "path": "production/social-post-series-v1/references/s02-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 成品",
+        "sampleName": "default",
+        "values": {
+          "anchor": "Keep its three ingredients, blue enamel box and warm ivory surface identifiable.",
+          "ratio": "4:5",
+          "scene": "Fill the box with the three ingredients and give it most of the frame. All food goes in the deep lower compartment of the box; show the empty lid. Leave the top fifth plain ivory. Center the headline at 24% height, supporting line at 32%, lunchbox in the lower half.",
+          "headline": "A three-part lunch",
+          "detail": "Rice, chickpeas, cucumber"
+        },
+        "key": "socialseries-02-page-01-03",
+        "specifiedScene": "Fill the box with the three ingredients and give it most of the frame."
+      },
+      {
+        "page": 2,
+        "role": "2 步骤",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "Keep its three ingredients, blue enamel box and warm ivory surface identifiable.",
+          "ratio": "4:5",
+          "scene": "Three loose piles lead into the open box from left to right. Inset both lines by at least 12% from all four edges.",
+          "headline": "Pack in this order",
+          "detail": "Rice, chickpeas, then cucumber"
+        },
+        "key": "socialseries-02-page-02-02",
+        "specifiedScene": "Three loose piles lead into the open box from left to right."
+      },
+      {
+        "page": 3,
+        "role": "3 清单",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "Keep its three ingredients, blue enamel box and warm ivory surface identifiable.",
+          "ratio": "4:5",
+          "scene": "Place the three ingredients in a vertical row, leaving a clear block for the copy.",
+          "headline": "Save the prep list",
+          "detail": "Cook rice · Drain chickpeas · Slice cucumber"
+        },
+        "key": "socialseries-02-page-03-01"
+      }
+    ],
+    "acceptance": "两处顺序一致，装盒成品和清单中只有给定的三种食材。三个动作与食材正确配对。",
+    "source": {
+      "author": "Taaruk_",
+      "url": "https://x.com/Taaruk_/status/2017865644365255078",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/Taaruk_/status/2017865644365255078",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴可辨认的食材分层，把一张信息图拆成成品、步骤、备菜三页。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-03",
+    "slug": "tide-mug-studio-launch",
+    "title": "独立陶艺品牌上新",
+    "categoryId": "product",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Create one {{ratio}} product launch card using the pictured mug as the identity reference. {{anchor}} Use pale clay paper, daylight and restrained navy lettering. {{scene}} Reproduce only the headline “{{headline}}” and the smaller line “{{detail}}”, exactly as supplied.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Create an unlettered reference photograph of one handmade ivory mug with a squared handle and a single cobalt brushstroke directly beneath its rim. Place it on pale clay paper in soft daylight, seen from a three-quarter angle with the handle to the right. No label, writing or extra objects.",
+        "path": "production/social-post-series-v1/references/s03-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 款式",
+        "sampleName": "default",
+        "values": {
+          "anchor": "Keep the squared handle, ivory glaze and single cobalt mark in their original positions.",
+          "ratio": "4:5",
+          "scene": "Show the whole mug just below center with ample air above.",
+          "headline": "The Tide Mug",
+          "detail": "Studio release 01"
+        },
+        "key": "socialseries-03-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 工艺",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "Keep the squared handle, ivory glaze and single cobalt mark in their original positions.",
+          "ratio": "4:5",
+          "scene": "Move close enough to show the glazed edge and the single cobalt stroke.",
+          "headline": "One cobalt stroke",
+          "detail": "A closer look at the glaze"
+        },
+        "key": "socialseries-03-page-02-01"
+      },
+      {
+        "page": 3,
+        "role": "3 开售",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "Keep the squared handle, ivory glaze and single cobalt mark in their original positions.",
+          "ratio": "4:5",
+          "scene": "Place the full mug at lower right and give the release time the largest clear area.",
+          "headline": "Friday at noon",
+          "detail": "Shop the studio release"
+        },
+        "key": "socialseries-03-page-03-01"
+      }
+    ],
+    "acceptance": "特写中的蓝色笔触数量、位置和轮廓与首图相符。只使用给定的开售信息。",
+    "source": {
+      "author": "Dari_Designs",
+      "url": "https://x.com/Dari_Designs/status/2013268963266904438",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/Dari_Designs/status/2013268963266904438",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴产品身份跨画面一致，改为同一只杯子的独立上新、细节和开售卡。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-04",
+    "slug": "repair-cafe-recruitment",
+    "title": "社区修补活动招募",
+    "categoryId": "poster",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Design a single {{ratio}} community notice using the supplied sewing objects. {{anchor}} {{scene}} The complete visible copy is the headline “{{headline}}” and the supporting line “{{detail}}”. Keep every word exact and legible.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Make a clean overhead photograph of a mustard sewing kit, a spool of navy thread, a patch of indigo denim and one loose brass button on pale pink paper. Leave open space around the objects. Soft shadows, cheerful community workshop mood, no words, numbers or logos.",
+        "path": "production/social-post-series-v1/references/s04-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 邀请",
+        "sampleName": "default",
+        "values": {
+          "anchor": "Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.",
+          "ratio": "1:1",
+          "scene": "Arrange the kit around the main title, with the venue line immediately below.",
+          "headline": "Repair Café",
+          "detail": "Saturday · 2 pm · Elm Hall"
+        },
+        "key": "socialseries-04-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 准备",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.",
+          "ratio": "1:1",
+          "scene": "Crop closely around the patch and button and keep the lower half clear for the instructions.",
+          "headline": "Bring one item",
+          "detail": "A torn seam or a loose button"
+        },
+        "key": "socialseries-04-page-02-01"
+      },
+      {
+        "page": 3,
+        "role": "3 报名",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.",
+          "ratio": "9:16",
+          "scene": "Frame the center with a curved thread and place the response instruction in the open center. Group all lettering in the central half of the canvas. Leave the top and bottom fifth free of words.",
+          "headline": "Save your seat",
+          "detail": "Comment JOIN on the event post"
+        },
+        "key": "socialseries-04-page-03-02",
+        "specifiedScene": "Frame the center with a curved thread and place the response instruction in the open center."
+      }
+    ],
+    "acceptance": "“JOIN”大小写正确。报名指引明确指向活动帖，Story 不依赖画面内的假按钮。",
+    "source": {
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2026316195977146728",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/AmirMushich/status/2026316195977146728",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "把商业广告的信息层级用于公益招募，参加条件和报名动作各占一张。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-05",
+    "slug": "commuter-bag-buying-guide",
+    "title": "两款通勤包比较",
+    "categoryId": "product",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Build one {{ratio}} buying-guide card. {{anchor}} Use a gray ground, navy type and a consistent front view. {{scene}} Print exactly “{{headline}}” as the headline and “{{detail}}” as the secondary line, with no other copy.",
+    "references": [
+      {
+        "slotId": "first",
+        "prompt": "Photograph one compact slate-blue crossbody pouch with one vertical orange zipper, front view, neutral gray tabletop, diffuse side light. Keep all edges visible, with no lettering or brand mark.",
+        "path": "production/social-post-series-v1/references/s05-first-01.png"
+      },
+      {
+        "slotId": "second",
+        "prompt": "Photograph one wide olive messenger bag with a broad flap and two dark buckles, front view, neutral gray tabletop, diffuse side light. Keep all edges visible, with no lettering or brand mark.",
+        "path": "production/social-post-series-v1/references/s05-second-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 总览",
+        "sampleName": "default",
+        "values": {
+          "anchor": "The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.",
+          "ratio": "4:5",
+          "scene": "Show the blue pouch at left and the olive messenger at right in two equal photographic windows.",
+          "headline": "Pick your carry",
+          "detail": "Two bags for different loads"
+        },
+        "key": "socialseries-05-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 小包",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.",
+          "ratio": "4:5",
+          "scene": "Show only the blue pouch with keys beside it, leaving its orange zip visible. Set both lines inside the central 75% of the canvas with empty margins above and on both sides.",
+          "headline": "Light carry",
+          "detail": "Blue pouch · 2 L"
+        },
+        "key": "socialseries-05-page-02-02",
+        "specifiedScene": "Show only the blue pouch with keys beside it, leaving its orange zip visible."
+      },
+      {
+        "page": 3,
+        "role": "3 大包",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.",
+          "ratio": "4:5",
+          "scene": "Show only the olive bag with a closed notebook beside it, leaving both buckles visible. Break the headline across lines if needed. Leave at least 12% clear at each edge around all type.",
+          "headline": "Room for a notebook",
+          "detail": "Olive messenger · 5 L"
+        },
+        "key": "socialseries-05-page-03-02",
+        "specifiedScene": "Show only the olive bag with a closed notebook beside it, leaving both buckles visible."
+      }
+    ],
+    "acceptance": "蓝包始终一条橙色拉链，绿包始终两只扣。两种容量不能互换，两幅等大照片窗不作为实物等比例测量图。",
+    "source": {
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1971529965301829959",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/azed_ai/status/1971529965301829959",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴统一角度与基线，把概念草图改成两件已有物品的实拍对照。容量由测评作者提供。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-06",
+    "slug": "pilot-wait-time-review",
+    "title": "团队试点的数据复盘",
+    "categoryId": "poster",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "en",
+    "body": "Create one {{ratio}} report card based on the supplied paper and clock motif. Use navy type and a single muted green accent. {{anchor}} {{scene}} Print exactly “{{headline}}” and “{{detail}}”. These two strings are the only visible text. Keep the figures easy to check.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Create one unlettered editorial background for a service-design report: warm off-white paper, a small navy outline of a clock without numbers in the top corner, and a muted green horizontal accent low on the page. Leave the center empty. No charts, text or numerals.",
+        "path": "production/social-post-series-v1/references/s06-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 提问",
+        "sampleName": "default",
+        "values": {
+          "anchor": "The sample figures are a 12-minute baseline and an 8-minute pilot wait.",
+          "ratio": "1:1",
+          "scene": "Enlarge the clock outline as a visual cue and give the question the main space. Show one empty clock face and paper only. Never depict either wait value, units, numbered scales or numeric labels. Inset all text 12%.",
+          "headline": "Did the wait change?",
+          "detail": "Pilot review · Demo data"
+        },
+        "key": "socialseries-06-page-01-02",
+        "specifiedScene": "Enlarge the clock outline as a visual cue and give the question the main space."
+      },
+      {
+        "page": 2,
+        "role": "2 比较",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "The sample figures are a 12-minute baseline and an 8-minute pilot wait.",
+          "ratio": "1:1",
+          "scene": "Use exactly two horizontal bars from the same origin, navy above green. Their lengths are in the ratio 3 to 2. Put the two values together in the headline. Keep the two bars blank, with no text inside or beside them. The numbers appear once in the headline only. Leave a 10% text margin.",
+          "headline": "Baseline 12 min · Pilot 8 min",
+          "detail": "Average wait · Demo data"
+        },
+        "key": "socialseries-06-page-02-02",
+        "specifiedScene": "Use exactly two horizontal bars from the same origin, navy above green. Their lengths are in the ratio 3 to 2. Put the two values together in the headline."
+      },
+      {
+        "page": 3,
+        "role": "3 结论",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "The sample figures are a 12-minute baseline and an 8-minute pilot wait.",
+          "ratio": "1:1",
+          "scene": "Make the difference the focal point. Use the quiet footer for the scope of the result. Set both strings in the middle third of plain paper, one directly below the other. Leave the bottom quarter empty. No charts, equations, baseline or pilot values. The only number is in the supplied headline.",
+          "headline": "4 minutes shorter",
+          "detail": "This pilot only · Demo data"
+        },
+        "key": "socialseries-06-page-03-04",
+        "specifiedScene": "Make the difference the focal point. Use the quiet footer for the scope of the result."
+      }
+    ],
+    "acceptance": "12、8、4 以及单位逐个核对。第二页两条柱的起点相同，短柱约为长柱的三分之二，实测长短比允许偏差 5%。三张均保留演示数据标签。",
+    "source": {
+      "author": "u/Beginning-Willow-801",
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1p9cfn1/how_to_visualize_anything_with_gemini_a/",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://www.reddit.com/r/GeminiAI/comments/1p9cfn1/how_to_visualize_anything_with_gemini_a/",
+      "evidenceMethod": "规格第 3 节核对的Reddit 原帖",
+      "adaptation": "借鉴先锁数据的做法，只展示两个可复算数值，把结论限制写进最后一页。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-07",
+    "slug": "three-stop-city-walk",
+    "title": "三站城市散步收藏帖",
+    "categoryId": "illustration",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "zh-Hans",
+    "body": "用所附街区图制作一张 {{ratio}} 散步笔记。{{anchor}}{{scene}} 大标题逐字写“{{headline}}”，副文逐字写“{{detail}}”。画面只印这两段文字，文字与建筑分开。",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "画一张无字的微缩街区参考图，浅沙色地面，斜上方四十五度视角。由左至右依次是一间红砖旧书店、一座单拱蓝桥、一排橙色顶棚的市集，三处以同一条步道相连。让三种轮廓清楚可辨，周围留白，不出现招牌文字、道路编号或地图图例。",
+        "path": "production/social-post-series-v1/references/s07-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 封面",
+        "sampleName": "default",
+        "values": {
+          "anchor": "沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。",
+          "ratio": "3:4",
+          "scene": "三处地标排成一道横向弧线，上方留出标题区。",
+          "headline": "岸北散步三站",
+          "detail": "虚构街区示例"
+        },
+        "key": "socialseries-07-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 路线",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。",
+          "ratio": "3:4",
+          "scene": "用两支从左向右的箭头依次连接书店、桥、市集，将站点顺序排在箭头下方。 在三栋建筑之间画两支清晰的指向右方的图形箭头；下方另排含两支文字箭头的完整副文。所有文字距四边至少一成。",
+          "headline": "从书店走到市集",
+          "detail": "旧书店 → 蓝桥 → 周末市集"
+        },
+        "key": "socialseries-07-page-02-02",
+        "specifiedScene": "用两支从左向右的箭头依次连接书店、桥、市集，将站点顺序排在箭头下方。"
+      },
+      {
+        "page": 3,
+        "role": "3 集合",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。",
+          "ratio": "3:4",
+          "scene": "把红砖书店入口放大当主视觉，蓝桥只在远处露出一角。 所有文字距四边至少一成。红砖书店的门廊应完整，标题上方留白。",
+          "headline": "先在旧书店碰面",
+          "detail": "集合点：红砖门廊"
+        },
+        "key": "socialseries-07-page-03-02",
+        "specifiedScene": "把红砖书店入口放大当主视觉，蓝桥只在远处露出一角。"
+      }
+    ],
+    "acceptance": "第二页两支箭头方向正确。第三页的红砖门廊能在前两页找到。站内介绍把该路线标为虚构示范。",
+    "source": {
+      "author": "宝玉 dotey",
+      "url": "https://x.com/dotey/status/1993729800922341810",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/dotey/status/1993729800922341810",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "取地标辨识法，改成三个固定站点的步行示意。样例地点虚构，正式路线由作者提供。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-08",
+    "slug": "reading-corner-layout-vote",
+    "title": "租房客厅布局投票",
+    "categoryId": "architecture",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "zh-Hans",
+    "body": "根据参考图画一张 {{ratio}} 的客厅布局投票卡。{{anchor}}沿用米白背景、墨绿标题和等距模型画风。{{scene}} 只排两段字，标题是“{{headline}}”，副文是“{{detail}}”，原样保留空格与拉丁字母。",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "画一个无字的等距小客厅模型，从同一个斜上方机位看进去。后墙中央是高窗，右墙是固定矮书架，左前有房门。深绿阅读椅和黄铜落地灯放在屋子中央，浅木地板干净。完整保留门窗和家具轮廓，底色米白，不写标注或尺寸。",
+        "path": "production/social-post-series-v1/references/s08-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 提问",
+        "sampleName": "default",
+        "values": {
+          "anchor": "固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。",
+          "ratio": "3:4",
+          "scene": "按底图原位展示整个房间，给上方标题留出空白。",
+          "headline": "阅读角放哪里？",
+          "detail": "同一间房，两种摆法"
+        },
+        "key": "socialseries-08-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 方案 A",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。",
+          "ratio": "3:4",
+          "scene": "只把椅和灯移到高窗前，保留从房门到书架的通路。 把房间模型的前沿固定在画面高度的94%，后墙顶沿在37%，左右贴近画幅。标题和副文都排在房间上方的空白处，距四边至少一成。",
+          "headline": "A 靠窗",
+          "detail": "喜欢自然光就选 A"
+        },
+        "key": "socialseries-08-page-02-02",
+        "specifiedScene": "只把椅和灯移到高窗前，保留从房门到书架的通路。"
+      },
+      {
+        "page": 3,
+        "role": "3 方案 B",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。",
+          "ratio": "3:4",
+          "scene": "只把椅和灯移到右侧书架旁，窗前留空。 把房间模型的前沿固定在画面高度的94%，后墙顶沿在37%，左右贴近画幅。标题和副文都排在房间上方的空白处，距四边至少一成。",
+          "headline": "B 靠书架",
+          "detail": "想随手拿书就选 B"
+        },
+        "key": "socialseries-08-page-03-02",
+        "specifiedScene": "只把椅和灯移到右侧书架旁，窗前留空。"
+      }
+    ],
+    "acceptance": "并排看三页的门、窗和书架，应落在同一位置。第二、三页各仅有一把椅和一盏灯，字母与实际布局一致。",
+    "source": {
+      "author": "u/GMScreech",
+      "url": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://www.reddit.com/r/homeassistant/comments/1jkk5oo/new_chatgpt_model_great_for_creating_3d/",
+      "evidenceMethod": "规格第 3 节核对的Reddit 原帖",
+      "adaptation": "取自有空间作锚点，固定门窗、视角和家具，仅改变允许移动的两件物品。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-09",
+    "slug": "woven-basket-detail-study",
+    "title": "看懂一件手作的细节",
+    "categoryId": "poster",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "zh-Hans",
+    "body": "从参考照片制作单张 {{ratio}} 器物图鉴卡。{{anchor}}{{scene}} 使用一个摄影画面，两行深靛蓝字距各边至少12%。下方两行是逐字排印的全部文案，第一行为标题，第二行为副文。从每行第一个字照排到最后一个字，保留给定标点，行末留白，禁止自行补句号。\n\n{{headline}}\n{{detail}}",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "拍一张无字手作器物参考照片。一个浅褐色圆形编织小篮，口沿绕着深靛蓝色线圈，篮身正面有明显的交叉纹。略高于篮口的正面视角，淡灰背景，柔和侧光。画面清楚呈现整只篮子、口沿和正面的纹理，不加标签和展签。",
+        "path": "production/social-post-series-v1/references/s09-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 全貌",
+        "sampleName": "default",
+        "values": {
+          "anchor": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+          "ratio": "4:5",
+          "scene": "整只篮子居中，上沿和篮底都在画内。",
+          "headline": "看懂一只编织篮",
+          "detail": "先看轮廓，再找细节"
+        },
+        "key": "socialseries-09-v2-default-02",
+        "specifiedScene": "整只篮子居中，上沿和篮底都在画内。"
+      },
+      {
+        "page": 2,
+        "role": "2 口沿",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+          "ratio": "4:5",
+          "scene": "主体是篮口前沿的一张满幅微距照片，只取蓝线和正下方一小段篮身，整只篮子在画外。",
+          "headline": "第一眼，看口沿",
+          "detail": "蓝色线圈沿边缘绕行"
+        },
+        "key": "socialseries-09-v2-page-02-02",
+        "specifiedScene": "放大篮口前沿，保留一小段篮身作为方位参照。"
+      },
+      {
+        "page": 3,
+        "role": "3 纹理",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+          "ratio": "4:5",
+          "scene": "画面中央为正面一处X形交叉的微距照片。照片下方留浅灰纸底，把标题和副文居中排在高度65%和78%处；上下五分之一留空。",
+          "headline": "第二眼，看交叉",
+          "detail": "找到两条编带相遇的位置"
+        },
+        "key": "socialseries-09-v2-page-03-03",
+        "specifiedScene": "放大正面原有的交叉纹，在右下留出观察提示的位置。"
+      }
+    ],
+    "acceptance": "在全貌图中能指出两个局部各自的来源。近景若新增一套编法，退回重做。",
+    "source": {
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2045504669401653414",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴全貌与局部的对应关系，改成可逐页翻看的器物观察练习。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-10",
+    "slug": "paper-fox-bookmark-story",
+    "title": "读书社团的三页角色故事",
+    "categoryId": "illustration",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "ja",
+    "body": "参考画像を使って、読書会で投稿する {{ratio}} の物語カードを一枚作ってください。{{anchor}}{{scene}} 見出しは「{{headline}}」、小さな一文は「{{detail}}」と正確に書いてください。ほかの文字は入れず、横書きにしてください。",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "文字のないキャラクター用の見本を一枚作ってください。赤い折り紙のキツネが薄いクリーム色の机に座っています。左耳の先だけが白く、首には青い紙のスカーフ。隣に青いしおりと、文字のない閉じた本を置きます。紙の折り目が見える柔らかな切り絵風にしてください。",
+        "path": "production/social-post-series-v1/references/s10-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 发现",
+        "sampleName": "default",
+        "values": {
+          "anchor": "赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。",
+          "ratio": "4:5",
+          "scene": "机の端の青いしおりを見つめるキツネと、閉じた本を描いてください。 見出しと小さな一文の四方に画像幅・高さの12%以上の余白を空けてください。",
+          "headline": "あれ、しおりだ。",
+          "detail": "机のすみに青い一枚。"
+        },
+        "key": "socialseries-10-page-01-02",
+        "specifiedScene": "机の端の青いしおりを見つめるキツネと、閉じた本を描いてください。"
+      },
+      {
+        "page": 2,
+        "role": "2 寻找",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。",
+          "ratio": "4:5",
+          "scene": "キツネがしおりを持ち、本の真ん中をそっと開く瞬間を描いてください。 二行の文字の上下左右に12%以上の余白を残してください。白い耳先はキツネ自身の左側です。",
+          "headline": "どのページかな。",
+          "detail": "きのうのつづきを探そう。"
+        },
+        "key": "socialseries-10-page-02-02",
+        "specifiedScene": "キツネがしおりを持ち、本の真ん中をそっと開く瞬間を描いてください。"
+      },
+      {
+        "page": 3,
+        "role": "3 收束",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。",
+          "ratio": "4:5",
+          "scene": "閉じた本にしおりの先が見え、キツネが満足そうに座っている場面にしてください。 見出しの上を含めて、すべての文字と画面の端の間に12%以上の余白を取ってください。",
+          "headline": "ここで待ってる。",
+          "detail": "また明日、つづきを読もう。"
+        },
+        "key": "socialseries-10-page-03-02",
+        "specifiedScene": "閉じた本にしおりの先が見え、キツネが満足そうに座っている場面にしてください。"
+      }
+    ],
+    "acceptance": "左耳白尖始终在角色自身左侧。青色书签从桌面移到手中，最后露出书边。检查假名、小「っ」和句号。",
+    "source": {
+      "author": "Google AI",
+      "url": "https://x.com/GoogleAI/status/2027094912357761319",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/GoogleAI/status/2027094912357761319",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴跨格角色一致性，设计原创纸狐狸与跨三页的动作接续。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-11",
+    "slug": "daily-lunch-menu-and-pickup",
+    "title": "今日菜单与取餐通知",
+    "categoryId": "food",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "es",
+    "body": "Crea una sola tarjeta de menú en formato {{ratio}} a partir de la foto. {{anchor}} Combina un fondo crema con tipografía azul oscuro y luz natural. {{scene}} Escribe exactamente «{{headline}}» como titular y «{{detail}}» como segunda línea. Respeta los acentos, los espacios, las cifras y los signos.",
+    "references": [
+      {
+        "slotId": "visual",
+        "prompt": "Crea una fotografía de referencia sin texto de un cuenco blanco con sopa de tomate y un trozo de pan a su lado. Usa una mesa de madera clara y una servilleta azul a cuadros. Luz lateral de mediodía, encuadre amplio y vajilla sin marcas. No añadas otros platos, etiquetas ni letras.",
+        "path": "production/social-post-series-v1/references/s11-visual-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 菜品",
+        "sampleName": "default",
+        "values": {
+          "anchor": "Conserva el cuenco, el pan y la servilleta azul a cuadros.",
+          "ratio": "4:5",
+          "scene": "Muestra el cuenco entero con el pan a la derecha y el nombre del plato arriba.",
+          "headline": "Menú del día",
+          "detail": "Sopa de tomate con pan"
+        },
+        "key": "socialseries-11-page-01-01"
+      },
+      {
+        "page": 2,
+        "role": "2 价格",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "Conserva el cuenco, el pan y la servilleta azul a cuadros.",
+          "ratio": "9:16",
+          "scene": "Acerca el cuenco y reserva el centro despejado para el precio y lo que incluye.",
+          "headline": "8,50 €",
+          "detail": "Incluye sopa y pan"
+        },
+        "key": "socialseries-11-page-02-01"
+      },
+      {
+        "page": 3,
+        "role": "3 取餐",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "Conserva el cuenco, el pan y la servilleta azul a cuadros.",
+          "ratio": "9:16",
+          "scene": "Coloca la servilleta en la parte inferior y destaca el horario en el centro. Agrupa las dos líneas en el tercio central. Deja el 20 % superior e inferior sin letras.",
+          "headline": "Recogida en el local",
+          "detail": "De 13:00 a 15:00"
+        },
+        "key": "socialseries-11-page-03-02",
+        "specifiedScene": "Coloca la servilleta en la parte inferior y destaca el horario en el centro."
+      }
+    ],
+    "acceptance": "把第二页价格与给定字符串逐字符比对。两张 Story 连续观看时，读者看得到价格、所含菜品和取餐时间，无额外套餐或折扣。",
+    "source": {
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2048360321379701233",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/MrLarus/status/2048360321379701233",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "取同店视觉一致性，压缩成可当日更新的菜品、价格和取餐时间三张卡。",
+      "metrics": []
+    }
+  },
+  {
+    "candidateId": "SOCIALSERIES-12",
+    "slug": "community-run-recap",
+    "title": "跑团活动回顾与致谢",
+    "categoryId": "poster",
+    "useCaseIds": [
+      "social-post"
+    ],
+    "promptLanguage": "pt-BR",
+    "body": "Crie um único cartão de retrospectiva em {{ratio}}. {{anchor}} Use margens de papel creme, títulos em verde-escuro e luz suave de manhã. {{scene}} Escreva exatamente “{{headline}}” como título e “{{detail}}” na linha de apoio. Use somente esse texto.",
+    "references": [
+      {
+        "slotId": "first",
+        "prompt": "Crie uma fotografia documental fictícia, sem texto, de três adultos de costas reunidos para uma corrida comunitária num parque. Uma pessoa usa camiseta verde, outra usa azul e a terceira usa coral. Luz suave da manhã, caminho de terra e árvores. Não inclua marcas, placas nem números de corrida.",
+        "path": "production/social-post-series-v1/references/s12-first-01.png"
+      },
+      {
+        "slotId": "second",
+        "prompt": "Crie uma fotografia documental fictícia, sem texto, de duas mãos colocando copos reutilizáveis de três cores numa mesa de apoio ao ar livre. Ao fundo, árvores desfocadas e luz suave da manhã. Não mostre rostos, marcas, placas nem letras.",
+        "path": "production/social-post-series-v1/references/s12-second-01.png"
+      }
+    ],
+    "pages": [
+      {
+        "page": 1,
+        "role": "1 现场",
+        "sampleName": "default",
+        "values": {
+          "anchor": "A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.",
+          "ratio": "4:5",
+          "scene": "Use apenas a primeira foto numa janela ampla, mantendo as três pessoas no quadro. Faça uma única fotografia dos corredores. Exclua completamente mãos, copos e mesa de apoio. Deixe 12% de margem para todo o texto.",
+          "headline": "Sábado no parque",
+          "detail": "Um encontro para correr e conversar"
+        },
+        "key": "socialseries-12-page-01-02",
+        "specifiedScene": "Use apenas a primeira foto numa janela ampla, mantendo as três pessoas no quadro."
+      },
+      {
+        "page": 2,
+        "role": "2 幕后",
+        "sampleName": "page-02",
+        "values": {
+          "anchor": "A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.",
+          "ratio": "4:5",
+          "scene": "Use apenas a segunda foto e aproxime o enquadramento das mãos e dos copos. Mostre só as mãos e os três copos. Use corpo pequeno e centralize as duas linhas numa coluna de 60% da largura. Título a 25% da altura, subtítulo a 75%. Nenhum corredor.",
+          "headline": "Quem fez acontecer",
+          "detail": "O cuidado da equipe de apoio"
+        },
+        "key": "socialseries-12-page-02-04",
+        "specifiedScene": "Use apenas a segunda foto e aproxime o enquadramento das mãos e dos copos."
+      },
+      {
+        "page": 3,
+        "role": "3 致谢",
+        "sampleName": "page-03",
+        "values": {
+          "anchor": "A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.",
+          "ratio": "4:5",
+          "scene": "Coloque uma imagem de cada foto em duas janelas separadas e deixe espaço para a despedida. Mantenha as duas janelas distintas e todas as letras dentro do retângulo central de 75% da largura e da altura.",
+          "headline": "Valeu, pessoal!",
+          "detail": "Até a próxima corrida"
+        },
+        "key": "socialseries-12-page-03-02",
+        "specifiedScene": "Coloque uma imagem de cada foto em duas janelas separadas e deixe espaço para a despedida."
+      }
+    ],
+    "acceptance": "第三页两张图仍以独立画格呈现。首图是三个背影，幕后图是手与水杯。检查“Sábado”“Até”“próxima”的重音。",
+    "source": {
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2008976966255337666",
+      "observedAt": "2026-11-27",
+      "evidenceUrl": "https://x.com/AmirMushich/status/2008976966255337666",
+      "evidenceMethod": "规格第 3 节核对的平台公开接口记录",
+      "adaptation": "借鉴照片并置和留白，改成现场、幕后、致谢三张图，保留每张照片的具体出处。",
+      "metrics": []
+    }
+  }
+]

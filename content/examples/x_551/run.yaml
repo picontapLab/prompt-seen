@@ -1,0 +1,41 @@
+id: x_551
+promptId: p_439
+promptLanguage: ja
+template:
+  id: t_096
+  version: v1
+  sample: page-02
+  values:
+    anchor: 赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。
+    ratio: 4:5
+    scene: キツネがしおりを持ち、本の真ん中をそっと開く瞬間を描いてください。 二行の文字の上下左右に12%以上の余白を残してください。白い耳先はキツネ自身の左側です。
+    headline: どのページかな。
+    detail: きのうのつづきを探そう。
+  contractHash: b731001ca5767415e878e2369314275a9ef55cbc574ac767f49eec4ad56a6ce7
+promptSha256: d3eaea07786a710ef19a1b32ae69a8cf26d505f0a7918295c5a86a3fb0d74b6b
+referenceAssetIds:
+  - a_796
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_797
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The fox holds the blue marker over the open book. The small supporting sentence retains つづき and the final punctuation."
+  zh-Hans: "纸狐狸把蓝书签举在摊开的书上方。副文中的「つづき」和句末标点均保留。"
+  es: "El zorro de papel sostiene el marcapáginas azul sobre el libro abierto. La frase en letra pequeña conserva つづき y el punto final."
+  pt-BR: "A raposa de papel segura o marcador azul sobre o livro aberto. A frase menor mantém つづき e o ponto final."
+  ja: "紙のキツネが開いた本の上に青いしおりを持っている。小さな一文には「つづき」と末尾の句点が残っている。"
+  ko: "종이 여우가 펼쳐진 책 위에 파란 책갈피를 들고 있다. 작은 문구의 「つづき」와 문장 끝의 마침표가 그대로다."
+  de: "Der Papierfuchs hält das blaue Lesezeichen über das aufgeschlagene Buch. In der Unterzeile stehen つづき und der abschließende Satzpunkt wie vorgegeben."
+  fr: "Le renard en papier tient le marque-page bleu au-dessus du livre ouvert. La petite phrase conserve つづき et le point final."
+  ru: "Бумажный лис держит синюю закладку над раскрытой книгой. В мелкой подписи сохранены つづき и точка в конце."
+  it: "La volpe di carta tiene il segnalibro blu sopra il libro aperto. La frase in corpo minore conserva つづき e il punto finale."
+  ar: "يحمل الثعلب الورقي علامة القراءة الزرقاء فوق الكتاب المفتوح. احتفظ السطر الصغير بلفظ つづき وعلامة الوقف الأخيرة."
+  zh-Hant: "紙狐狸將藍色書籤舉在攤開的書上方。副標保留了「つづき」和句末標點。"

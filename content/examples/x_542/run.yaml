@@ -1,0 +1,44 @@
+id: x_542
+promptId: p_436
+promptLanguage: en
+template:
+  id: t_093
+  version: v1
+  sample: page-02
+  values:
+    anchor: The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.
+    ratio: 4:5
+    scene: Show only the blue pouch with keys beside it, leaving its orange zip visible. Set both lines inside the central 75% of the canvas with empty margins above and on both sides.
+    headline: Light carry
+    detail: Blue pouch · 2 L
+  contractHash: 00838c6b289c31669c2ec8702cd3e77fea26224597004a941a8848cfd3bd53ce
+promptSha256: dc5464edab33e8d9b5f0166d6b889bbe5f705452cf0b152fb4ea9b18056782f0
+referenceAssetIds:
+  - a_783
+  - a_784
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_785
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: The sole blue pouch has one orange zipper. The keys and the capacity label Blue pouch · 2 L are visible with clear margins.
+  zh-Hans: 画面中只有一只蓝色包，带一条橙色拉链。钥匙和「Blue pouch · 2 L」标签清楚可见，四周留有空隙。
+  es: Solo se ve un bolso azul con una cremallera naranja. Las llaves y la etiqueta «Blue pouch · 2 L» quedan visibles y con margen.
+  pt-BR: A única bolsa é azul e tem um zíper laranja. As chaves e a indicação “Blue pouch · 2 L” aparecem com margens livres.
+  ja: 青いポーチだけが写り、オレンジのファスナーは一本。鍵と「Blue pouch · 2 L」の表示の周囲に余白がある。
+  ko: 가방은 파란색 한 개뿐이며 주황색 지퍼가 하나 있다. 열쇠와 “Blue pouch · 2 L” 표기 주변으로 여백이 남는다.
+  de: Zu sehen ist nur die blaue Tasche mit einem orangefarbenen Reißverschluss. Die Schlüssel und die Angabe „Blue pouch · 2 L“ bleiben mit freiem Rand sichtbar.
+  fr: La seule pochette est bleue et porte une fermeture orange. Les clés et la mention « Blue pouch · 2 L » sont visibles, avec des marges dégagées.
+  ru: Показана только синяя сумочка с одной оранжевой молнией. Ключи и надпись «Blue pouch · 2 L» хорошо видны, вокруг есть поля.
+  it: Compare soltanto la borsa blu con una cerniera arancione. Le chiavi e la dicitura «Blue pouch · 2 L» sono visibili con margini liberi.
+  ar: لا تظهر سوى الحقيبة الزرقاء ذات السحاب البرتقالي الواحد. تظهر المفاتيح وعبارة «Blue pouch · 2 L» وبينهما وبين الحواف مساحة كافية.
+  zh-Hant: 畫面中只有一只藍色包，有一條橘色拉鍊。鑰匙和「Blue pouch · 2 L」標示清楚可見，四周留有空隙。

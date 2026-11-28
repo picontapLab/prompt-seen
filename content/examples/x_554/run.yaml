@@ -1,0 +1,41 @@
+id: x_554
+promptId: p_440
+promptLanguage: es
+template:
+  id: t_097
+  version: v1
+  sample: page-02
+  values:
+    anchor: Conserva el cuenco, el pan y la servilleta azul a cuadros.
+    ratio: 9:16
+    scene: Acerca el cuenco y reserva el centro despejado para el precio y lo que incluye.
+    headline: 8,50 €
+    detail: Incluye sopa y pan
+  contractHash: e4f7e1fc0fa8584c55a6451222d51600b92d557b88e77275bf4f52d3aad49adb
+promptSha256: 8cc01d1999c1bf6181f4f7e269b54255febf6c3a3e868b8860fa4feeb53dd1e5
+referenceAssetIds:
+  - a_800
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_801
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The price reads 8,50 € with the decimal comma and euro sign. The included soup and bread are named correctly within the Story safe area."
+  zh-Hans: "蓝色大字标出价格，下方是白碗番茄汤、面包和格纹餐巾。画面写作「8,50 €」，保留小数逗号和欧元符号；Story 安全区内的副文说明价格包含汤和面包。"
+  es: "El precio aparece en grandes caracteres azules sobre un cuenco blanco de sopa de tomate y pan en una servilleta de cuadros. «8,50 €» conserva la coma decimal y el símbolo del euro. La frase que indica que incluye sopa y pan queda en la zona segura de la historia."
+  pt-BR: "O preço em letras azuis grandes aparece acima da tigela branca de sopa de tomate e do pão sobre o guardanapo xadrez. “8,50 €” mantém a vírgula decimal e o símbolo do euro. A informação de que a refeição inclui sopa e pão está na área segura do Story."
+  ja: "青い大きな文字の価格の下に、白いボウルのトマトスープとパン、チェックのナプキンがある。価格は小数点のコンマとユーロ記号を含め「8,50 €」。スープとパンが含まれる旨はストーリーの安全領域内に収まっている。"
+  ko: "파란 큰 글씨로 표시한 가격 아래 체크무늬 냅킨에 흰 그릇의 토마토 수프와 빵이 놓여 있다. 가격 ‘8,50 €’에는 소수점 쉼표와 유로 기호가 있고, 수프와 빵이 포함된다는 문구는 스토리 안전 영역 안에 있다."
+  de: "Über der weißen Schale Tomatensuppe und dem Brot auf der karierten Serviette steht der Preis in großer blauer Schrift. „8,50 €“ enthält Dezimalkomma und Eurozeichen. Die Angabe zu Suppe und Brot liegt im sicheren Bereich der Story."
+  fr: "Le prix en grands caractères bleus surplombe un bol blanc de soupe de tomates et du pain sur une serviette à carreaux. « 8,50 € » conserve la virgule décimale et le symbole euro. La mention de la soupe et du pain compris dans le prix se trouve dans la zone sûre de la story."
+  ru: "Над белой миской томатного супа и хлебом на клетчатой салфетке крупным синим шрифтом указана цена. В «8,50 €» сохранены десятичная запятая и знак евро. В безопасной зоне истории указано, что в цену входят суп и хлеб."
+  it: "Il prezzo in grandi caratteri blu sovrasta una ciotola bianca di zuppa di pomodoro e il pane su un tovagliolo a quadri. «8,50 €» conserva la virgola decimale e il simbolo dell’euro. La scritta che conferma che zuppa e pane sono inclusi è nella zona sicura della storia."
+  ar: "يظهر السعر بأرقام زرقاء كبيرة فوق وعاء أبيض من حساء الطماطم وخبز على منديل مربعات. يحافظ السعر «8,50 €» على الفاصلة العشرية ورمز اليورو، وتوضح العبارة داخل المنطقة الآمنة للقصة أن السعر يشمل الحساء والخبز."
+  zh-Hant: "藍色大字標出價格，下方是白碗番茄湯、麵包和格紋餐巾。畫面寫作「8,50 €」，保留小數逗號和歐元符號，限時動態安全區內的副標說明價格包含湯和麵包。"

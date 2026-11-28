@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-02",
+  "slug": "three-part-lunch-carousel",
+  "categoryId": "food",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Make one {{ratio}} recipe card from the supplied lunch photo. {{anchor}} Use a top-down food photograph, dark green sans-serif type and soft side light. Arrange this page as follows: {{scene}} Set the headline exactly to “{{headline}}” and the smaller line exactly to “{{detail}}”. Render only these two lines of copy.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "Keep its three ingredients, blue enamel box and warm ivory surface identifiable.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Fill the box with the three ingredients and give it most of the frame. All food goes in the deep lower compartment of the box; show the empty lid. Leave the top fifth plain ivory. Center the headline at 24% height, supporting line at 32%, lunchbox in the lower half.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "A three-part lunch",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Rice, chickpeas, cucumber",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "Keep its three ingredients, blue enamel box and warm ivory surface identifiable.",
+    "ratio": "4:5",
+    "scene": "Three loose piles lead into the open box from left to right. Inset both lines by at least 12% from all four edges.",
+    "headline": "Pack in this order",
+    "detail": "Rice, chickpeas, then cucumber"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Rice, chickpeas and cucumber beside a blue lunchbox",
+          "zh-Hans": "蓝色餐盒旁的米饭、鹰嘴豆和黄瓜"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-02",
+      "platform": "X",
+      "author": "Taaruk_",
+      "url": "https://x.com/Taaruk_/status/2017865644365255078",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/Taaruk_/status/2017865644365255078",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/Taaruk_/status/2017865644365255078",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Three-part lunch carousel",
+      "description": "Finished lunch · Packing order · Prep checklist",
+      "body": "## Three-part lunch carousel\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Finished lunch (4:5) — A three-part lunch\n\n2. Packing order (4:5) — Pack in this order\n\n3. Prep checklist (4:5) — Save the prep list\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "便当教程与备菜清单",
+      "description": "装盒成品 · 装盒顺序 · 备菜清单",
+      "body": "## 便当教程与备菜清单\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 装盒成品 (4:5) — A three-part lunch\n\n2. 装盒顺序 (4:5) — Pack in this order\n\n3. 备菜清单 (4:5) — Save the prep list\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Packing order — Pack in this order",
+    "zh-Hans": "装盒顺序 — Pack in this order"
+  },
+  "target": {
+    "promptId": "p_441",
+    "sampleName": "page-02"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:17:32.081Z",
+    "contentHash": "afb744b8246b231f3cd65339aec7dba36ae08e220a7fe73e77b3c63070f7be93"
+  }
+}

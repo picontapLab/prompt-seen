@@ -1,0 +1,41 @@
+id: x_563
+promptId: p_443
+promptLanguage: en
+template:
+  id: t_100
+  version: v1
+  sample: page-02
+  values:
+    anchor: The sample figures are a 12-minute baseline and an 8-minute pilot wait.
+    ratio: 1:1
+    scene: Use exactly two horizontal bars from the same origin, navy above green. Their lengths are in the ratio 3 to 2. Put the two values together in the headline. Keep the two bars blank, with no text inside or beside them. The numbers appear once in the headline only. Leave a 10% text margin.
+    headline: Baseline 12 min · Pilot 8 min
+    detail: Average wait · Demo data
+  contractHash: bf4d64841282798cf8f98596859b912800ec9ef416adfbfc53cf3151c3e59521
+promptSha256: 34944b4606ca182114930352fb726a047553a04e40784de201e0bcaa300a5f39
+referenceAssetIds:
+  - a_812
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_813
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: Both values appear once in the headline, with the unit min. On scanlines y=576 and y=708 the upper bar spans 1078 px and the lower 684 px; starts differ by 1 px and the short/long ratio is 0.635 (4.8% from 2/3).
+  zh-Hans: 标题中的两个数值各出现一次，单位均为 min。在 y=576 和 y=708 的扫描线上，上条长 1078 像素，下条长 684 像素。起点相差 1 像素，短长比为 0.635，与 2/3 相差 4.8%。
+  es: Cada duración aparece una vez en el título con la unidad min. En las líneas y=576 e y=708, las barras superior e inferior miden 1078 y 684 px. Sus inicios difieren en 1 px. La razón corta/larga es de 0,635, a un 4,8 % de 2/3.
+  pt-BR: Cada valor aparece uma vez no título com a unidade min. Nas linhas y=576 e y=708, as barras superior e inferior medem 1078 e 684 px. Os pontos iniciais diferem em 1 px. A razão entre a menor e a maior é 0,635, com desvio de 4,8% em relação a 2/3.
+  ja: 二つの時間は単位 min とともに見出しに一度ずつ現れる。y=576 と y=708 の走査線で測ると、上の棒は 1078 px、下の棒は 684 px。開始位置は 1 px ずれ、短い棒と長い棒の比は 0.635 で、2/3 との差は 4.8%。
+  ko: 제목에 두 수치가 단위 min과 함께 한 번씩 나온다. y=576과 y=708에서 위쪽 막대는 1078 px, 아래쪽 막대는 684 px이다. 시작점 차이는 1 px이고 짧은 막대와 긴 막대의 길이 비는 0.635로, 2/3과의 차이는 4.8%다.
+  de: Beide Werte stehen je einmal mit der Einheit min in der Überschrift. Bei y=576 und y=708 messen die Balken oben 1078 und unten 684 Pixel. Ihre Anfangspunkte liegen 1 Pixel auseinander. Das Verhältnis kurz zu lang beträgt 0,635 und weicht um 4,8 % von 2/3 ab.
+  fr: Les deux durées figurent chacune une fois dans le titre, avec l’unité min. Aux lignes y=576 et y=708, les barres du haut et du bas mesurent 1078 et 684 px. Leurs départs diffèrent de 1 px. Le rapport courte/longue vaut 0,635, à 4,8 % de 2/3.
+  ru: Оба значения приведены в заголовке по одному разу с единицей min. На строках y=576 и y=708 верхняя полоса занимает 1078 пикселей, нижняя — 684. Начала смещены на 1 пиксель. Отношение короткой полосы к длинной равно 0,635, отклонение от 2/3 составляет 4,8 %.
+  it: Nel titolo ogni valore compare una sola volta con l’unità min. Alle righe y=576 e y=708 la barra superiore misura 1078 px e quella inferiore 684 px. I punti iniziali differiscono di 1 px. Il rapporto corta/lunga è 0,635, con uno scarto del 4,8% rispetto a 2/3.
+  ar: تظهر كل قيمة مرة واحدة في العنوان مع الوحدة min. عند خطي المسح y=576 وy=708 يبلغ طول الشريط العلوي 1078 بكسل والسفلي 684 بكسل. ويختلف موضع البداية بمقدار بكسل واحد. نسبة القصير إلى الطويل 0.635 بانحراف 4.8% عن 2/3.
+  zh-Hant: 標題中的兩個數值各出現一次，單位都是 min。在 y=576 和 y=708 的掃描線上，上方橫條長 1078 像素，下方橫條長 684 像素。起點相差 1 像素，短長比為 0.635，與 2/3 相差 4.8%。

@@ -227,7 +227,7 @@ export function publishProblems(p: PublishContext): Problem[] {
   }
 
   // The page renders figures and all historical run images, not just its cover.
-  const assets = new Set(file.compiled.figures.map((figure) => figure.assetId));
+  const assets = new Set(file.compiled.mediaReferences.map((ref) => ref.assetId));
   const owner =
     p.kind === 'prompt'
       ? [...content.prompts.values()].find((r) => r.locales.get(locale) === file)

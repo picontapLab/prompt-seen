@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-03",
+  "slug": "tide-mug-studio-launch",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Create one {{ratio}} product launch card using the pictured mug as the identity reference. {{anchor}} Use pale clay paper, daylight and restrained navy lettering. {{scene}} Reproduce only the headline “{{headline}}” and the smaller line “{{detail}}”, exactly as supplied.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "Keep the squared handle, ivory glaze and single cobalt mark in their original positions.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Show the whole mug just below center with ample air above.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "The Tide Mug",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Studio release 01",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "Keep the squared handle, ivory glaze and single cobalt mark in their original positions.",
+    "ratio": "4:5",
+    "scene": "Move close enough to show the glazed edge and the single cobalt stroke.",
+    "headline": "One cobalt stroke",
+    "detail": "A closer look at the glaze"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Ivory mug with a square handle and a cobalt brushstroke",
+          "zh-Hans": "方柄白釉杯与钴蓝笔触"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-03",
+      "platform": "X",
+      "author": "Dari_Designs",
+      "url": "https://x.com/Dari_Designs/status/2013268963266904438",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/Dari_Designs/status/2013268963266904438",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/Dari_Designs/status/2013268963266904438",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Studio pottery launch",
+      "description": "The new mug · Glaze detail · Release time",
+      "body": "## Studio pottery launch\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. The new mug (4:5) — The Tide Mug\n\n2. Glaze detail (4:5) — One cobalt stroke\n\n3. Release time (4:5) — Friday at noon\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "独立陶艺品牌上新",
+      "description": "新杯全貌 · 釉面笔触 · 开售时间",
+      "body": "## 独立陶艺品牌上新\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 新杯全貌 (4:5) — The Tide Mug\n\n2. 釉面笔触 (4:5) — One cobalt stroke\n\n3. 开售时间 (4:5) — Friday at noon\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Glaze detail — One cobalt stroke",
+    "zh-Hans": "釉面笔触 — One cobalt stroke"
+  },
+  "target": {
+    "promptId": "p_433",
+    "sampleName": "page-02"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T13:53:38.978Z",
+    "contentHash": "14bfe4090119e797870003aa117bc37e8df53f248abba8cdac56e297aa2037e8"
+  }
+}

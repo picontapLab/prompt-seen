@@ -1,0 +1,41 @@
+id: x_546
+promptId: p_437
+promptLanguage: zh-Hans
+template:
+  id: t_094
+  version: v1
+  sample: page-03
+  values:
+    anchor: 沿用红砖书店、蓝色单拱桥、橙顶市集和浅沙底色，保持同一套微缩插画笔触。
+    ratio: 3:4
+    scene: 把红砖书店入口放大当主视觉，蓝桥只在远处露出一角。 所有文字距四边至少一成。红砖书店的门廊应完整，标题上方留白。
+    headline: 先在旧书店碰面
+    detail: 集合点：红砖门廊
+  contractHash: d8583fecf78ca8ddef52f609680ec50cd3c910dc9fd2849a4a3bbbdc8b1a7c23
+promptSha256: 6b44227186366edf56ffa1e688d3dba92d3e9d68d998631417c3880375fb8b43
+referenceAssetIds:
+  - a_788
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_790
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The bookshop door is enlarged and the bridge recedes at the side. The title and meeting-point line sit clear of the edges."
+  zh-Hans: "红砖书店的入口放大在前景，蓝桥在侧面远处露出一角。标题和集合点说明与画面边缘之间留有空白。"
+  es: "La entrada de la librería de ladrillo rojo ocupa el primer plano; a un lado asoma el puente azul al fondo. El título y el punto de encuentro quedan separados de los bordes."
+  pt-BR: "A entrada da livraria de tijolos vermelhos ocupa o primeiro plano, com parte da ponte azul ao longe, na lateral. Há espaço entre as bordas e as duas linhas que indicam o título e o ponto de encontro."
+  ja: "赤れんがの書店の入口が手前に大きく描かれ、横の奥に青い橋の一部が見える。見出しと集合場所の案内は画面の端から離れている。"
+  ko: "붉은 벽돌 서점 출입구가 앞쪽에 크게 보이고 옆쪽 멀리에 파란 다리 일부가 보인다. 제목과 만나는 곳 안내는 화면 가장자리에서 떨어져 있다."
+  de: "Der Eingang der roten Backsteinbuchhandlung ist im Vordergrund vergrößert zu sehen, die blaue Brücke seitlich im Hintergrund. Überschrift und Treffpunktangabe haben Abstand zum Rand."
+  fr: "L’entrée de la librairie en brique rouge occupe le premier plan. Un bout du pont bleu apparaît sur le côté, au loin. Le titre et le lieu de rendez-vous sont espacés des bords."
+  ru: "На переднем плане крупно показан вход в книжный магазин из красного кирпича, а сбоку вдалеке виден край синего моста. Между краями изображения и заголовком с местом встречи оставлены поля."
+  it: "L’ingresso della libreria in mattoni rossi è in primo piano, con un tratto del ponte blu visibile di lato sullo sfondo. Il titolo e il luogo di ritrovo restano distanti dai bordi."
+  ar: "يحتل مدخل المكتبة المبنية بالطوب الأحمر مقدمة الصورة، ويظهر طرف الجسر الأزرق بعيدا على الجانب. تفصل هوامش واضحة بين حواف الصورة وكل من العنوان وعبارة نقطة اللقاء."
+  zh-Hant: "紅磚書店的入口放大在前景，側面遠處露出藍橋的一角。標題和集合地點說明與畫面邊緣之間留有空白。"

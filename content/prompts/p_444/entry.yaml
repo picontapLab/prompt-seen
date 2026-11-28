@@ -1,0 +1,85 @@
+id: p_444
+slug: community-run-recap
+createdAt: 2026-11-27
+updatedAt: 2026-11-27
+promptSource:
+  type: template
+  templateId: t_101
+  version: v1
+  values:
+    anchor: A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.
+    ratio: 4:5
+    scene: Use apenas a primeira foto numa janela ampla, mantendo as três pessoas no quadro. Faça uma única fotografia dos corredores. Exclua completamente mãos, copos e mesa de apoio. Deixe 12% de margem para todo o texto.
+    headline: Sábado no parque
+    detail: Um encontro para correr e conversar
+categoryId: poster
+styleIds: []
+useCaseIds:
+  - social-post
+coverAssetId: a_815
+relatedTemplateIds:
+  - t_101
+model:
+  displayName: GPT Image
+  providerModelId: null
+  verification: verified
+inputRequirements:
+  referenceImage: required
+showcaseExampleId: x_565
+promptProvenance: independent-adaptation
+inspirationSources:
+  - candidateId: SOCIALSERIES-12
+    platform: X
+    author: AmirMushich
+    url: https://x.com/AmirMushich/status/2008976966255337666
+    publishedAt: null
+    metricObjectUrl: https://x.com/AmirMushich/status/2008976966255337666
+    metricObjectPublishedAt: null
+    metricScope:
+      en: Original post
+      zh-Hans: 原始帖子
+      es: Publicación original
+      pt-BR: Publicação original
+      ja: 元の投稿
+      ko: 원본 게시물
+      de: Originalbeitrag
+      fr: Publication originale
+      ru: Исходная публикация
+      it: Post originale
+      ar: المنشور الأصلي
+      zh-Hant: 原始貼文
+    observedAt: 2026-11-27
+    cacheTimestampKnown: false
+    evidenceMethod:
+      en: Reviewed the public platform record.
+      zh-Hans: 查阅平台公开接口记录。
+      es: Consulta del registro público de la plataforma.
+      pt-BR: Consulta ao registro público da plataforma.
+      ja: プラットフォームの公開記録を確認しました。
+      ko: 플랫폼의 공개 기록을 확인했습니다.
+      de: Öffentlichen Plattformdatensatz geprüft.
+      fr: Consultation des données publiques de la plateforme.
+      ru: Проверена открытая запись платформы.
+      it: Consultazione del registro pubblico della piattaforma.
+      ar: مراجعة السجل العلني للمنصة.
+      zh-Hant: 查閱平台公開介面的紀錄。
+    evidenceUrl: https://x.com/AmirMushich/status/2008976966255337666
+    sourcePromptStatus:
+      en: The site wrote its own prompts.
+      zh-Hans: 本站另拟提示词。
+      es: El sitio redactó sus propias instrucciones.
+      pt-BR: O site escreveu seus próprios prompts.
+      ja: 指示文は当サイトが執筆しました。
+      ko: 사이트가 프롬프트를 직접 작성했습니다.
+      de: Die Anweisungen stammen von der Redaktion.
+      fr: Le site a rédigé ses propres consignes.
+      ru: Авторы сайта написали собственные инструкции.
+      it: Il sito ha scritto istruzioni proprie.
+      ar: كتب الموقع تعليماته الخاصة.
+      zh-Hant: 本站自行撰寫提示詞。
+    metrics: []
+source:
+  author: Prompt Seen
+  url: null
+  license: CC BY 4.0
+annotations: []

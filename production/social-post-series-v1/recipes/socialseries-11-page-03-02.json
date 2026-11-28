@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-11",
+  "slug": "daily-lunch-menu-and-pickup",
+  "categoryId": "food",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Crea una sola tarjeta de menú en formato {{ratio}} a partir de la foto. {{anchor}} Combina un fondo crema con tipografía azul oscuro y luz natural. {{scene}} Escribe exactamente «{{headline}}» como titular y «{{detail}}» como segunda línea. Respeta los acentos, los espacios, las cifras y los signos.",
+  "promptLanguage": "es",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "Conserva el cuenco, el pan y la servilleta azul a cuadros.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Muestra el cuenco entero con el pan a la derecha y el nombre del plato arriba.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Menú del día",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Sopa de tomate con pan",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "Conserva el cuenco, el pan y la servilleta azul a cuadros.",
+    "ratio": "9:16",
+    "scene": "Coloca la servilleta en la parte inferior y destaca el horario en el centro. Agrupa las dos líneas en el tercio central. Deja el 20 % superior e inferior sin letras.",
+    "headline": "Recogida en el local",
+    "detail": "De 13:00 a 15:00"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Tomato soup, bread and a blue checked napkin",
+          "zh-Hans": "番茄汤、面包和蓝格餐巾"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-11",
+      "platform": "X",
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2048360321379701233",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/MrLarus/status/2048360321379701233",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/MrLarus/status/2048360321379701233",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Daily lunch menu and pickup",
+      "description": "Dish of the day · Price and serving · Pickup hours",
+      "body": "## Daily lunch menu and pickup\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Dish of the day (4:5) — Menú del día\n\n2. Price and serving (9:16) — 8,50 €\n\n3. Pickup hours (9:16) — Recogida en el local\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "今日午餐菜单与取餐",
+      "description": "今日菜品 · 价格与内容 · 取餐时段",
+      "body": "## 今日午餐菜单与取餐\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 今日菜品 (4:5) — Menú del día\n\n2. 价格与内容 (9:16) — 8,50 €\n\n3. 取餐时段 (9:16) — Recogida en el local\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Pickup hours — Recogida en el local",
+    "zh-Hans": "取餐时段 — Recogida en el local"
+  },
+  "target": {
+    "promptId": "p_440",
+    "sampleName": "page-03"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:16:26.129Z",
+    "contentHash": "6e872ecb43e23bba519dd3ab806f1ca75218c98ee3b6b6c7fbbe0215e3dff50b"
+  }
+}

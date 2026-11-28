@@ -1,0 +1,41 @@
+id: x_555
+promptId: p_440
+promptLanguage: es
+template:
+  id: t_097
+  version: v1
+  sample: page-03
+  values:
+    anchor: Conserva el cuenco, el pan y la servilleta azul a cuadros.
+    ratio: 9:16
+    scene: Coloca la servilleta en la parte inferior y destaca el horario en el centro. Agrupa las dos líneas en el tercio central. Deja el 20 % superior e inferior sin letras.
+    headline: Recogida en el local
+    detail: De 13:00 a 15:00
+  contractHash: e4f7e1fc0fa8584c55a6451222d51600b92d557b88e77275bf4f52d3aad49adb
+promptSha256: 75a6af17fcf11839787c510d0b25f00e44ce71208538aebb18953a2e50fbf2d0
+referenceAssetIds:
+  - a_800
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_802
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The centered Story text reads Recogida en el local and De 13:00 a 15:00. The soup, checked napkin and bread remain recognizable below."
+  zh-Hans: "居中的取餐说明下方可见番茄汤、面包和蓝格餐巾。Story 中两行原文分别为「Recogida en el local」和「De 13:00 a 15:00」。"
+  es: "El aviso de recogida está centrado sobre la sopa, el pan y la servilleta de cuadros azules. La historia dice «Recogida en el local» y «De 13:00 a 15:00»."
+  pt-BR: "O aviso de retirada está centralizado acima da sopa, do pão e do guardanapo xadrez azul. O Story traz as frases “Recogida en el local” e “De 13:00 a 15:00”."
+  ja: "受け取り案内が中央に配置され、その下にスープ、パン、青いチェックのナプキンが見える。ストーリーには「Recogida en el local」「De 13:00 a 15:00」とある。"
+  ko: "가운데 정렬된 수령 안내 아래로 수프와 빵, 파란 체크무늬 냅킨이 보인다. 스토리에는 ‘Recogida en el local’과 ‘De 13:00 a 15:00’가 적혀 있다."
+  de: "Über Suppe, Brot und blau karierter Serviette steht mittig der Abholhinweis. Die beiden Zeilen der Story lauten „Recogida en el local“ und „De 13:00 a 15:00“."
+  fr: "Les consignes de retrait sont centrées au-dessus de la soupe, du pain et de la serviette à carreaux bleus. Les deux lignes de la story sont « Recogida en el local » et « De 13:00 a 15:00 »."
+  ru: "Информация о выдаче заказа расположена по центру над супом, хлебом и синей клетчатой салфеткой. Две строки в истории гласят «Recogida en el local» и «De 13:00 a 15:00»."
+  it: "Le indicazioni per il ritiro sono centrate sopra la zuppa, il pane e il tovagliolo a quadri blu. Le due righe della storia riportano «Recogida en el local» e «De 13:00 a 15:00»."
+  ar: "يتوسط إشعار الاستلام الصورة وتظهر تحته الشوربة والخبز والمنديل الأزرق المربعات. يظهر في القصة «Recogida en el local» ثم «De 13:00 a 15:00»."
+  zh-Hant: "置中的取餐說明下方可見番茄湯、麵包和藍格餐巾。限時動態中的兩行原文分別是「Recogida en el local」和「De 13:00 a 15:00」。"

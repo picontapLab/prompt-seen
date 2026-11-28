@@ -1,0 +1,44 @@
+id: x_567
+promptId: p_444
+promptLanguage: pt-BR
+template:
+  id: t_101
+  version: v1
+  sample: page-03
+  values:
+    anchor: A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.
+    ratio: 4:5
+    scene: Coloque uma imagem de cada foto em duas janelas separadas e deixe espaço para a despedida. Mantenha as duas janelas distintas e todas as letras dentro do retângulo central de 75% da largura e da altura.
+    headline: Valeu, pessoal!
+    detail: Até a próxima corrida
+  contractHash: 8e9ef16c8da8acda28100c083f4bcc14da08597fff67f99e54188a0f6def17db
+promptSha256: a5c2bb78057ae625a441735f84bf093cf140e227929468d97946ae7e53915208
+referenceAssetIds:
+  - a_816
+  - a_817
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_819
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "Separate windows preserve the start photo and water station. Valeu, pessoal! and Até a próxima corrida match the supplied copy."
+  zh-Hans: "两个独立画格分别展示集合时跑者的背影，以及补水点摆放水杯的双手。「Valeu, pessoal!」和「Até a próxima corrida」均与指定文案一致。"
+  es: "Dos recuadros separados muestran a los corredores de espaldas en la salida y las manos que colocan los vasos en el avituallamiento. «Valeu, pessoal!» y «Até a próxima corrida» coinciden con las frases indicadas."
+  pt-BR: "Dois quadros separados mostram os corredores de costas na largada e as mãos arrumando os copos no ponto de hidratação. “Valeu, pessoal!” e “Até a próxima corrida” conferem com o texto fornecido."
+  ja: "別々の二つの枠に、集合時のランナーの後ろ姿と給水所でカップを並べる手が写る。「Valeu, pessoal!」と「Até a próxima corrida」は指定文と一致する。"
+  ko: "두 사진 칸에 출발 지점의 주자들 뒷모습과 급수대에서 컵을 놓는 손이 각각 보인다. ‘Valeu, pessoal!’와 ‘Até a próxima corrida’가 지정한 문구와 일치한다."
+  de: "Zwei getrennte Bildfelder zeigen die Laufenden am Start von hinten und Hände beim Aufstellen der Becher an der Wasserstation. „Valeu, pessoal!“ und „Até a próxima corrida“ entsprechen dem vorgegebenen Text."
+  fr: "Deux cadres distincts montrent les coureurs de dos au départ et les mains qui disposent les gobelets au ravitaillement. « Valeu, pessoal! » et « Até a próxima corrida » correspondent au texte fourni."
+  ru: "В двух отдельных кадрах видны бегуны со спины на старте и руки, расставляющие стаканы на пункте с водой. Надписи «Valeu, pessoal!» и «Até a próxima corrida» совпадают с образцом."
+  it: "Due riquadri separati mostrano i corridori di spalle alla partenza e le mani che dispongono i bicchieri al punto di ristoro. «Valeu, pessoal!» e «Até a próxima corrida» corrispondono alle frasi richieste."
+  ar: "يظهر في إطارين منفصلين العداؤون من الخلف عند الانطلاق والأيدي التي ترتب الأكواب عند محطة المياه. تطابق عبارتا «Valeu, pessoal!» و«Até a próxima corrida» النص المطلوب."
+  zh-Hant: "兩個獨立畫框分別呈現集合時跑者的背影，以及補給站擺放水杯的雙手。「Valeu, pessoal!」和「Até a próxima corrida」都與指定文案相符。"

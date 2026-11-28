@@ -164,6 +164,9 @@ each on its own line:
 <Callout>A highlighted note.</Callout>
 ```
 
+Figures open the original image. For a text link to a registered original or publication crop, use
+`[Download 1080 × 1350](media:a_012)`. The media resolver applies the configured base path or CDN.
+
 Link to other content by ID, so links survive slug changes and the base path:
 `[the first portrait](prompt:p_001)`, `template:t_001`, `collection:c_001`, `page:about`,
 `category:landscape`, `style:ink`, `use-case:portrait`. Other sites use `https://…`.

@@ -1,0 +1,41 @@
+id: x_570
+promptId: p_442
+promptLanguage: zh-Hans
+template:
+  id: t_099
+  version: v2
+  sample: page-03
+  values:
+    anchor: 保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。
+    ratio: 4:5
+    scene: 画面中央为正面一处X形交叉的微距照片。照片下方留浅灰纸底，把标题和副文居中排在高度65%和78%处；上下五分之一留空。
+    headline: 第二眼，看交叉
+    detail: 找到两条编带相遇的位置
+  contractHash: 4cf68aeb3617ab56360fd072ff99afcdde2992ae7f2578f61ac86809b6ed56ae
+promptSha256: 8e491fda86dab48644c5ff67dc3972213595bfd7e9ac5f7fbdbf3e6ce18de668
+referenceAssetIds:
+  - a_808
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_858
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "Two diagonal strips meet in an X below the blue rim. Both Chinese lines are centered below the close-up and end at 叉 and 置 without extra punctuation."
+  zh-Hans: "蓝色篮沿下方的两条斜带交叉成 X 形，特写下方的灰纸上有两行居中的中文。两行分别以“叉”和“置”结尾，后面没有多出的标点。"
+  zh-Hant: "藍色籃緣下方的兩條斜帶交叉成 X 形，特寫下方的灰紙上有兩行置中的中文。兩行分別以「叉」和「置」結尾，後面沒有多出的標點。"
+  ja: "青い縁のすぐ下で二本の編み材が X 字に交差する。接写の下の灰色の紙には中国語の二行が中央揃えで並ぶ。末字は順に「叉」「置」で、余分な句読点はない。"
+  ko: "파란 테두리 아래 두 띠가 X자로 교차한다. 근접 사진 아래 회색 바탕에 중국어 문구 두 줄이 가운데 정렬되어 있다. 각각 ‘叉’와 ‘置’로 끝나며 끝에 문장 부호가 추가되지 않았다."
+  es: "Dos tiras diagonales forman una X bajo el borde azul. Debajo del primer plano aparecen dos líneas en chino centradas en papel gris. Terminan en 叉 y 置 respectivamente, sin puntuación añadida."
+  pt-BR: "Duas tiras diagonais formam um X abaixo da borda azul. Sob a foto em detalhe, duas linhas em chinês estão centralizadas no papel cinza. Elas terminam em 叉 e 置, respectivamente, sem pontuação adicional."
+  de: "Zwei diagonale Streifen bilden unter dem blauen Rand ein X. Unter der Nahaufnahme stehen zwei zentrierte chinesische Textzeilen auf grauem Papier. Sie enden mit 叉 bzw. 置 ohne zusätzliche Satzzeichen."
+  fr: "Deux brins diagonaux forment un X sous le bord bleu. Sous le gros plan, deux lignes en chinois sont centrées sur le papier gris. Elles se terminent respectivement par 叉 et 置 sans ponctuation ajoutée."
+  it: "Due strisce diagonali formano una X sotto il bordo blu. Sotto il primo piano, due righe in cinese sono centrate sulla carta grigia. Terminano rispettivamente con 叉 e 置 senza punteggiatura aggiunta."
+  ru: "Под синим краем две полосы пересекаются в форме X. Под крупным планом на серой бумаге по центру расположены две китайские строки. Они заканчиваются на 叉 и 置 соответственно, без добавленных знаков препинания."
+  ar: "يتقاطع شريطان بشكل X تحت الحافة الزرقاء. ويتوسط سطران بالصينية الورق الرمادي أسفل اللقطة المقربة. ينتهيان بالحرفين 叉 و置 على الترتيب من دون علامات ترقيم مضافة."

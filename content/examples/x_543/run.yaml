@@ -1,0 +1,44 @@
+id: x_543
+promptId: p_436
+promptLanguage: en
+template:
+  id: t_093
+  version: v1
+  sample: page-03
+  values:
+    anchor: The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.
+    ratio: 4:5
+    scene: Show only the olive bag with a closed notebook beside it, leaving both buckles visible. Break the headline across lines if needed. Leave at least 12% clear at each edge around all type.
+    headline: Room for a notebook
+    detail: Olive messenger · 5 L
+  contractHash: 00838c6b289c31669c2ec8702cd3e77fea26224597004a941a8848cfd3bd53ce
+promptSha256: 802ce1ea71ad037a45c9523393e5e95fb3f669b1ce6c1317ba5d40a5fca52900
+referenceAssetIds:
+  - a_783
+  - a_784
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_786
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: Only the two-buckle olive messenger and a notebook occupy the product panel. The 5 L label is below the photo.
+  zh-Hans: 商品画面里只有双扣橄榄绿邮差包和笔记本。照片下方标明 5 L。
+  es: En la foto del producto solo están la bandolera verde oliva con dos hebillas y el cuaderno. La etiqueta de 5 L aparece debajo.
+  pt-BR: A foto do produto contém apenas a bolsa verde-oliva com duas fivelas e o caderno. A indicação de 5 L aparece embaixo.
+  ja: 商品写真に写るのは二つの留め具のあるオリーブ色のバッグとノートだけ。写真の下に 5 L とある。
+  ko: 상품 사진에는 버클 두 개가 달린 올리브색 메신저백과 공책만 있다. 사진 아래에 5 L가 표시돼 있다.
+  de: Das Produktfoto zeigt nur die olivgrüne Tasche mit zwei Schnallen und das Notizbuch. Die Angabe 5 L steht unter dem Foto.
+  fr: Seuls la besace olive à deux boucles et le carnet occupent la photo du produit. La capacité de 5 L figure en dessous.
+  ru: На предметном снимке только оливковая сумка с двумя пряжками и блокнот. Под фотографией указан объём 5 L.
+  it: Nel riquadro del prodotto compaiono solo la tracolla oliva con due fibbie e il taccuino. Sotto la foto si legge 5 L.
+  ar: لا تتضمن صورة المنتج سوى الحقيبة الزيتونية ذات الإبزيمين والدفتر. ويظهر بيان السعة 5 L تحت الصورة.
+  zh-Hant: 商品畫面裡只有雙扣橄欖綠郵差包和筆記本。照片下方標明 5 L。

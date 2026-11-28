@@ -1,0 +1,41 @@
+id: x_536
+promptId: p_434
+promptLanguage: en
+template:
+  id: t_091
+  version: v1
+  sample: page-02
+  values:
+    anchor: Preserve the guest's face, glasses, blue apron and yellow lamp.
+    ratio: 4:5
+    scene: Frame the face and lamp in a tight vertical triangle with the title below the lamp. Leave a clear margin of 12% on every edge around both lines, including below the episode line.
+    headline: Meet the restorer
+    detail: Bench Notes · Ep. 04
+  contractHash: 19a1622f8d3379403d93b6e48f1387bce88651a64bd93eb01f172c475ecfa9ef
+promptSha256: 538b792bb0f077509eea6f34826ccef06d2c9fbe9df4906706df999377306dcb
+referenceAssetIds:
+  - a_775
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_776
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: The episode line now clears the bottom edge. Both hands, the lampshade and the restorer’s face remain visible above the condensed title.
+  zh-Hans: 集数行与底边留有空隙。标题上方仍能看清双手、灯罩和修复师的脸。
+  es: La línea del episodio queda separada del borde inferior. Sobre el título estrecho se ven ambas manos, la pantalla de la lámpara y el rostro.
+  pt-BR: A linha do episódio tem espaço até a borda inferior. As duas mãos, a cúpula da luminária e o rosto continuam visíveis acima do título em letras estreitas.
+  ja: エピソード番号の下に余白がある。細長い見出しの上には両手とランプシェード、職人の顔がすべて写っている。
+  ko: 회차 표기 아래에 여백이 남는다. 폭이 좁은 제목 위로 양손과 갓, 수리공의 얼굴이 모두 보인다.
+  de: Die Folgennummer hat Abstand zum unteren Rand. Beide Hände, der Lampenschirm und das Gesicht bleiben über der schmal gesetzten Überschrift sichtbar.
+  fr: La ligne de l’épisode est dégagée du bord inférieur. Les deux mains, l’abat-jour et le visage restent visibles au-dessus du titre condensé.
+  ru: Строка с номером выпуска отделена от нижнего края. Над узким заголовком видны обе руки, абажур и лицо мастера.
+  it: La riga con la puntata è staccata dal bordo inferiore. Entrambe le mani, il paralume e il volto restano visibili sopra il titolo in caratteri stretti.
+  ar: هناك مسافة بين سطر الحلقة والحافة السفلية. وتظل اليدان وغطاء المصباح ووجه المصلح ظاهرة فوق العنوان ذي الحروف الضيقة.
+  zh-Hant: 集數與底邊之間留有空隙。標題上方仍能看清雙手、燈罩和修復師的臉。

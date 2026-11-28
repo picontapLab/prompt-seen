@@ -29,6 +29,7 @@ export type RichInline =
   | { t: 'text'; v: string }
   | { t: 'strong' | 'em' | 'del'; c: RichInline[] }
   | { t: 'code'; v: string }
+  | { t: 'mediaLink'; original: ImageVariant; c: RichInline[] }
   | { t: 'link'; href: string; internal: boolean; c: RichInline[] }
   | { t: 'br' };
 

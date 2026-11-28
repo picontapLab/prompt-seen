@@ -111,6 +111,7 @@ it.each(['png', 'gif'])(
     expect(result.findings.blocking).toBe(0);
     expect(result.content.prompts.size).toBe(1);
     expect(result.content.examples.size).toBe(1);
+    expect(result.content.examples.get(plan.ids.example)?.data.notes).toEqual({ en: 'Test fixture accepted' });
     if (format === 'gif') {
       const media = result.content.media.get(plan.ids.media[0]!)!.data;
       expect(fs.readFileSync(path.join(root, 'public', media.original.key))).toEqual(fs.readFileSync(output));

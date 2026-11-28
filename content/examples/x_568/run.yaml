@@ -1,0 +1,41 @@
+id: x_568
+promptId: p_442
+promptLanguage: zh-Hans
+template:
+  id: t_099
+  version: v2
+  sample: default
+  values:
+    anchor: 保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。
+    ratio: 4:5
+    scene: 整只篮子居中，上沿和篮底都在画内。
+    headline: 看懂一只编织篮
+    detail: 先看轮廓，再找细节
+  contractHash: 4cf68aeb3617ab56360fd072ff99afcdde2992ae7f2578f61ac86809b6ed56ae
+promptSha256: d50403956305b3208d4da47617fd9303f7d139732c32c1d60456ebeeddeedc2b
+referenceAssetIds:
+  - a_808
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_856
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "A single basket sits above two centered lines. The blue rim and diagonal weave are visible, and the copy ends at 节 with no additional punctuation."
+  zh-Hans: "灰纸上，单只编织篮位于两行居中文字上方，蓝色缠边和斜向编纹清晰可见。副文以“节”结尾，没有多出的标点。"
+  zh-Hant: "灰色紙面上，一個編織籃位於兩行置中文字上方，藍色纏邊與斜向編紋清楚可見。輔助文字以原文的「节」結尾，後面沒有多出的標點。"
+  ja: "灰色の紙の上にかごが一つあり、青い糸を巻いた縁と斜めの編み目が見える。下の二行は中央揃え。補足文は「节」で終わり、余分な句読点はない。"
+  ko: "회색 바탕에 파란 실을 감은 테두리와 사선 짜임이 보이는 바구니 하나가 있고, 아래에는 두 줄의 글이 가운데 정렬되어 있다. 보조 문구는 ‘节’으로 끝나며 뒤에 문장 부호가 붙지 않았다."
+  es: "Una cesta con el borde envuelto en hilo azul y las tiras en diagonal aparece sobre dos líneas centradas en papel gris. La segunda línea termina en 节 sin puntuación añadida."
+  pt-BR: "Uma única cesta com fio azul na borda e trama diagonal aparece acima de duas linhas centralizadas em papel cinza. A linha de apoio termina em 节, sem pontuação adicional."
+  de: "Auf grauem Papier steht ein einzelner Korb mit blau umwickeltem Rand und diagonalem Geflecht über zwei zentrierten Textzeilen. Die Unterzeile endet mit 节 ohne zusätzliches Satzzeichen."
+  fr: "Sur le papier gris, un seul panier au bord entouré de fil bleu et au tressage diagonal surmonte deux lignes centrées. La seconde se termine par 节 sans ponctuation ajoutée."
+  it: "Un solo cesto, con il bordo avvolto nel filo blu e l’intreccio diagonale, è posto sopra due righe centrate su carta grigia. La seconda riga termina con 节 senza punteggiatura aggiunta."
+  ru: "На серой бумаге над двумя строками по центру показана одна корзина с синей обмоткой по краю и диагональным плетением. Последний знак нижней строки — 节, после него нет лишней пунктуации."
+  ar: "تظهر سلة واحدة على ورق رمادي فوق سطرين في الوسط، وتبدو حافتها الملفوفة بخيط أزرق وشرائطها المنسوجة قطريا. ينتهي السطر التوضيحي بالحرف 节 من دون علامة ترقيم إضافية."

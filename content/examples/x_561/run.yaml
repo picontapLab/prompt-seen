@@ -1,0 +1,41 @@
+id: x_561
+promptId: p_442
+promptLanguage: zh-Hans
+template:
+  id: t_099
+  version: v1
+  sample: page-03
+  values:
+    anchor: 保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。
+    ratio: 4:5
+    scene: 放大正面原有的交叉纹，在右下留出观察提示的位置。 把交叉纹放大为单张满幅特写，标题放在高度25%处，把给定副文当作唯一的观察提示置于高度70%处。整页只有两行，不加任何第三句，不出现其他图或文字。副文的末字为置。
+    headline: 第二眼，看交叉
+    detail: 找到两条编带相遇的位置
+  contractHash: baf7ee988edce770351242bd8474addc9d83070da90188e41069d9efab130e0c
+promptSha256: c2bb9b846cc7c3aa0d1b464c76bbb1fba2746976afdc31e3bacbee4a1abee855
+referenceAssetIds:
+  - a_808
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_810
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The enlarged front crossing matches the diagonal bands below the blue rim in the overview. Only the two required strings appear, ending at 叉 and 置."
+  zh-Hans: "特写中两条编带在蓝色篮口下方斜向交叉，能在全貌图正面找到同一处纹理。画面只有指定的标题和副文，分别以“叉”和“置”结尾。"
+  es: "El cruce de dos tiras diagonales bajo el borde azul se ve ampliado y coincide con el frente de la vista general. Solo aparecen las dos frases solicitadas y terminan en 叉 y 置."
+  pt-BR: "O cruzamento de duas tiras diagonais sob a borda azul aparece ampliado e corresponde à frente da cesta na vista geral. Só aparecem as duas frases pedidas, terminadas em 叉 e 置."
+  ja: "青い縁の下で二本の編み材が斜めに交差する箇所を拡大しており、全体像の正面と対応する。文字は指定の二行だけで、それぞれ「叉」「置」で終わる。"
+  ko: "파란 테두리 아래 두 띠가 비스듬히 교차하는 곳을 확대한 모습이 전체 사진의 앞면과 일치한다. 지정한 두 문구만 보이고 각각 ‘叉’와 ‘置’로 끝난다."
+  de: "Zwei diagonal gekreuzte Streifen unter dem blauen Korbrand sind vergrößert zu sehen. Die Stelle entspricht der Vorderseite in der Gesamtansicht. Es erscheinen nur die zwei vorgegebenen Texte mit den Endzeichen 叉 und 置."
+  fr: "Deux brins diagonaux se croisent sous le bord bleu en gros plan. On retrouve ce croisement sur le devant de la vue d’ensemble. Seuls les deux textes demandés apparaissent et se terminent par 叉 et 置."
+  ru: "Крупно показано пересечение двух диагональных полос под синей кромкой. Оно совпадает с узором на передней стороне корзины на общем плане. Видны только две заданные надписи, заканчивающиеся на 叉 и 置."
+  it: "Il dettaglio delle due strisce diagonali incrociate sotto il bordo blu corrisponde al davanti del cesto nella vista d’insieme. Compaiono solo le due frasi richieste, che terminano con 叉 e 置."
+  ar: "تظهر في اللقطة المكبرة شريحتان تتقاطعان قطريا تحت الحافة الزرقاء، ويطابق التقاطع مقدمة السلة في الصورة الكاملة. لا تظهر سوى العبارتين المطلوبتين وتنتهيان بالحرفين 叉 و置 على الترتيب."
+  zh-Hant: "特寫中兩條編帶在藍色籃口下方斜向交叉，能在全景圖正面找到同一處紋理。畫面只有指定的標題與副標，分別以「叉」和「置」結尾。"

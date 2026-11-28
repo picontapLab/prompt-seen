@@ -77,6 +77,8 @@ function inline(nodes: readonly RichInline[], ctx: MarkdownContext): string {
           return `~~${inline(n.c, ctx)}~~`;
         case 'code':
           return codeSpan(n.v);
+        case 'mediaLink':
+          return `[${inline(n.c, ctx)}](${target(ctx.absoluteImageUrl(n.original))})`;
         case 'link':
           return `[${inline(n.c, ctx)}](${target(n.internal ? ctx.absoluteUrl(n.href) : n.href)})`;
         case 'br':

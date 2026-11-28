@@ -1,0 +1,44 @@
+id: x_541
+promptId: p_436
+promptLanguage: en
+template:
+  id: t_093
+  version: v1
+  sample: default
+  values:
+    anchor: The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.
+    ratio: 4:5
+    scene: Show the blue pouch at left and the olive messenger at right in two equal photographic windows.
+    headline: Pick your carry
+    detail: Two bags for different loads
+  contractHash: 00838c6b289c31669c2ec8702cd3e77fea26224597004a941a8848cfd3bd53ce
+promptSha256: f26ceb0d6dcfb7f60cba6da31ae1c0ca8b15d3cb2f0762a1bb81916fdfef579c
+referenceAssetIds:
+  - a_783
+  - a_784
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_782
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: Blue pouch at left and olive messenger at right occupy separate panels. One orange zipper and two buckles remain visible.
+  zh-Hans: 两只包分框展示，蓝包在左、绿包在右。蓝包的一条橙色拉链和绿包的两个搭扣均可见。
+  es: Los dos bolsos aparecen en paneles separados, el azul a la izquierda y el verde oliva a la derecha. Se distinguen una cremallera naranja y dos hebillas.
+  pt-BR: As bolsas ocupam quadros separados, a azul à esquerda e a verde-oliva à direita. O único zíper laranja e as duas fivelas estão visíveis.
+  ja: 左の青いポーチと右のオリーブ色のバッグが別々の枠に収まる。オレンジのファスナー一本と留め具二つが見える。
+  ko: 왼쪽의 파란 가방과 오른쪽의 올리브색 가방이 별도 칸에 있다. 주황색 지퍼 하나와 버클 두 개가 보인다.
+  de: Die blaue Tasche links und die olivgrüne rechts haben getrennte Bildfelder. Der einzelne orangefarbene Reißverschluss und die beiden Schnallen sind sichtbar.
+  fr: Chaque sac a son cadre, la pochette bleue à gauche et la besace olive à droite. L’unique fermeture orange et les deux boucles sont visibles.
+  ru: Каждая сумка показана отдельно, синяя слева, оливковая справа. Видны одна оранжевая молния и две пряжки.
+  it: Le borse sono in riquadri separati, quella blu a sinistra e quella oliva a destra. Si distinguono l’unica cerniera arancione e le due fibbie.
+  ar: تظهر الحقيبتان في إطارين منفصلين، الزرقاء يسارا والزيتونية يمينا. ويمكن رؤية السحاب البرتقالي الوحيد والإبزيمين.
+  zh-Hant: 兩只包分框展示，藍包在左、綠包在右。藍包的一條橘色拉鍊和綠包的兩個搭扣都看得見。

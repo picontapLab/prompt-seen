@@ -390,7 +390,7 @@ export async function prepareContent(root: string, jobRoot: string, key: string,
       model: { displayName: job.receipt.model, providerModelId: null },
       recordedAt: new Date(job.receipt.recordedAt).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }),
       parameters: {},
-      notes: { en: job.review.notes, 'zh-Hans': recipe.alt['zh-Hans'] },
+      notes: { en: job.review.notes },
     });
     write(path.join(stageContent, `examples/${exampleId}/prompt.txt`), text + '\n');
     const prepared = readValidatedContent({ root, config: loadConfig(root, {}), dir: stageContent });

@@ -1,0 +1,44 @@
+id: x_565
+promptId: p_444
+promptLanguage: pt-BR
+template:
+  id: t_101
+  version: v1
+  sample: default
+  values:
+    anchor: A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.
+    ratio: 4:5
+    scene: Use apenas a primeira foto numa janela ampla, mantendo as três pessoas no quadro. Faça uma única fotografia dos corredores. Exclua completamente mãos, copos e mesa de apoio. Deixe 12% de margem para todo o texto.
+    headline: Sábado no parque
+    detail: Um encontro para correr e conversar
+  contractHash: 8e9ef16c8da8acda28100c083f4bcc14da08597fff67f99e54188a0f6def17db
+promptSha256: 6ce835f633ba3de22f651c6f09a56631a0cba6445060de802792b4dbcf47ed89
+referenceAssetIds:
+  - a_816
+  - a_817
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_815
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "Only the runners’ photograph appears. The main group has green, blue and coral shirts and Sábado retains the accent."
+  zh-Hans: "画面只用一张跑者照片，公园小路上三位跑者背对镜头，分别穿绿、蓝和珊瑚色上衣。「Sábado」保留重音符号。"
+  es: "Una única foto muestra de espaldas a tres corredores por un camino del parque, con camisetas verde, azul y coral. «Sábado» conserva la tilde."
+  pt-BR: "Uma única foto mostra três corredores de costas na trilha do parque, com camisetas verde, azul e coral. “Sábado” mantém o acento."
+  ja: "公園の道で緑、青、コーラル色のシャツを着た三人のランナーを、後ろから一枚の写真に収めている。「Sábado」のアクセント符号も残っている。"
+  ko: "공원 길에서 초록색, 파란색, 산호색 상의를 입은 세 주자의 뒷모습을 담은 사진 한 장만 보인다. ‘Sábado’의 악센트 부호가 그대로다."
+  de: "Auf dem einzigen Foto sind drei Laufende in grünen, blauen und korallfarbenen Shirts von hinten auf einem Parkweg zu sehen. Das Akzentzeichen in „Sábado“ ist erhalten."
+  fr: "Une seule photo montre de dos trois coureurs en maillots vert, bleu et corail sur une allée du parc. « Sábado » conserve son accent."
+  ru: "На единственной фотографии со спины показаны три бегуна на парковой дорожке в зелёной, синей и коралловой футболках. В слове «Sábado» сохранён знак ударения."
+  it: "Un’unica foto ritrae da dietro tre corridori sul sentiero del parco con magliette verde, blu e corallo. «Sábado» conserva l’accento."
+  ar: "تظهر في صورة واحدة على ممر الحديقة ظهور ثلاثة عدائين يرتدون قمصانا باللون الأخضر والأزرق والمرجاني. احتفظت «Sábado» بعلامة النبر."
+  zh-Hant: "畫面只有一張跑者照片，公園小徑上三位跑者背對鏡頭，分別穿著綠、藍和珊瑚色上衣。「Sábado」保留了重音符號。"

@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-04",
+  "slug": "repair-cafe-recruitment",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Design a single {{ratio}} community notice using the supplied sewing objects. {{anchor}} {{scene}} The complete visible copy is the headline “{{headline}}” and the supporting line “{{detail}}”. Keep every word exact and legible.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "1:1",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Arrange the kit around the main title, with the venue line immediately below.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Repair Café",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Saturday · 2 pm · Elm Hall",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "Keep navy ink, blush paper, mustard accents and bold friendly lettering across the series.",
+    "ratio": "1:1",
+    "scene": "Crop closely around the patch and button and keep the lower half clear for the instructions.",
+    "headline": "Bring one item",
+    "detail": "A torn seam or a loose button"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Sewing kit, patch and brass button",
+          "zh-Hans": "针线包、补丁与黄铜纽扣"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-04",
+      "platform": "X",
+      "author": "AmirMushich",
+      "url": "https://x.com/AmirMushich/status/2026316195977146728",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/AmirMushich/status/2026316195977146728",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/AmirMushich/status/2026316195977146728",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Repair Café recruitment",
+      "description": "Workshop invitation · What to bring · How to join",
+      "body": "## Repair Café recruitment\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Workshop invitation (1:1) — Repair Café\n\n2. What to bring (1:1) — Bring one item\n\n3. How to join (9:16) — Save your seat\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "社区修补活动招募",
+      "description": "活动邀请 · 携带物品 · 留言报名",
+      "body": "## 社区修补活动招募\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 活动邀请 (1:1) — Repair Café\n\n2. 携带物品 (1:1) — Bring one item\n\n3. 留言报名 (9:16) — Save your seat\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "What to bring — Bring one item",
+    "zh-Hans": "携带物品 — Bring one item"
+  },
+  "target": {
+    "promptId": "p_435",
+    "sampleName": "page-02"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:06:37.639Z",
+    "contentHash": "f6a7565b85a791916e7d4862300066796a0d96f8de1a4d5c85c43a0db1b18faf"
+  }
+}

@@ -205,14 +205,15 @@ function collectManifest(
   ];
   for (const rec of localized)
     for (const locale of rec.locales.values())
-      for (const fig of locale.compiled.figures) {
+      for (const ref of locale.compiled.mediaReferences) {
         references.push({
           file: path.relative(root, locale.file),
-          field: 'Figure',
-          assetId: fig.assetId,
-          line: fig.line,
+          field: ref.field,
+          ...(ref.destination && { destination: ref.destination }),
+          assetId: ref.assetId,
+          line: ref.line,
         });
-        const job = jobs.find((job) => job.id === fig.assetId);
+        const job = jobs.find((job) => job.id === ref.assetId);
         if (job && !job.requiredAltLocales.includes(locale.locale)) job.requiredAltLocales.push(locale.locale);
       }
   let head: string | null = null;

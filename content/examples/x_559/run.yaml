@@ -1,0 +1,41 @@
+id: x_559
+promptId: p_442
+promptLanguage: zh-Hans
+template:
+  id: t_099
+  version: v1
+  sample: default
+  values:
+    anchor: 保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。
+    ratio: 4:5
+    scene: 整只篮子居中，上沿和篮底都在画内。 把副文末字锁定为“节”，后面留空，绝不添加句号。所有文字离四边至少一成。
+    headline: 看懂一只编织篮
+    detail: 先看轮廓，再找细节
+  contractHash: baf7ee988edce770351242bd8474addc9d83070da90188e41069d9efab130e0c
+promptSha256: 86c3a3a2793ddca8f997408cf6c6d783cfe9d64a9ebfc699707dfec36eb728e2
+referenceAssetIds:
+  - a_808
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_807
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The new supporting line ends with 节. The entire basket and the blue rim are visible, with the crossing strips on the front."
+  zh-Hans: "整只编织篮都在画内，篮口缠着蓝线，正面的编带斜向交叉。副文最后一个字是“节”。"
+  es: "Se ve la cesta entera, con el borde envuelto en hilo azul y las tiras cruzadas en diagonal en el frente. La línea secundaria termina con el carácter 节."
+  pt-BR: "A cesta inteira aparece com fio azul na borda e tiras cruzadas na diagonal na frente. A linha de apoio termina com o caractere 节."
+  ja: "かご全体が収まり、青い糸を巻いた縁と正面で斜めに交差する編み材が見える。補足文の末字は指定の「节」。"
+  ko: "바구니 전체와 남색 실을 감은 테두리, 앞면에서 비스듬히 교차하는 띠가 보인다. 보조 문구는 지정된 글자 ‘节’로 끝난다."
+  de: "Der ganze Korb mit blau umwickeltem Rand und diagonal gekreuzten Streifen auf der Vorderseite ist zu sehen. Die Unterzeile endet mit dem Zeichen 节."
+  fr: "Le panier est visible en entier, avec son bord entouré de fil bleu et ses brins croisés en diagonale sur le devant. Le texte secondaire se termine par le caractère 节."
+  ru: "Корзина видна целиком. Край обмотан синей нитью, а спереди полосы пересекаются по диагонали. Последний знак подзаголовка — 节."
+  it: "Il cesto è visibile per intero, con il bordo avvolto nel filo blu e le strisce incrociate in diagonale sul davanti. Il testo secondario termina con il carattere 节."
+  ar: "تظهر السلة كاملة بحافة ملفوفة بخيط أزرق وشرائط تتقاطع قطريا في مقدمتها. ينتهي السطر التوضيحي بالحرف 节."
+  zh-Hant: "整個編織籃都在畫面中，籃口纏著藍線，正面的編帶斜向交叉。副標最後一字為原文的「节」。"

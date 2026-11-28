@@ -1,0 +1,41 @@
+id: x_547
+promptId: p_438
+promptLanguage: zh-Hans
+template:
+  id: t_095
+  version: v1
+  sample: default
+  values:
+    anchor: 固定原机位、墙体、门窗、书架和地板，保留同一把深绿椅及同一盏黄铜灯。
+    ratio: 3:4
+    scene: 按底图原位展示整个房间，给上方标题留出空白。
+    headline: 阅读角放哪里？
+    detail: 同一间房，两种摆法
+  contractHash: 02025848b855343890623265f91d93e87cd6258aa98e5f8ffcaefe6944944d51
+promptSha256: dff8cdc5f9c3f8d31786dfbadd4d9fe40dedc0696b4529c77d21a377ba81d6dd
+referenceAssetIds:
+  - a_792
+referenceBindings:
+  - slotId: visual
+    referenceIndex: 0
+outputAssetIds:
+  - a_791
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "The chair and lamp occupy the center, with the window behind, door at left and shelves at right. The question and common condition are legible."
+  zh-Hans: "在房间模型中，绿扶手椅和黄铜灯居中，后方是窗，左侧是门，右侧是书架。提问和说明两种摆法共用同一间房的副文都清楚可读。"
+  es: "El sillón verde y la lámpara de latón ocupan el centro de la maqueta, con la ventana detrás, la puerta a la izquierda y los estantes a la derecha. Se leen la pregunta y la aclaración de que ambas opciones usan la misma habitación."
+  pt-BR: "Na maquete, a poltrona verde e a luminária de latão ficam no centro, com a janela atrás, a porta à esquerda e as estantes à direita. Dá para ler a pergunta e a explicação de que as duas opções usam a mesma sala."
+  ja: "部屋の模型の中央に緑の肘掛け椅子と真鍮のライトが並び、奥に窓、左に扉、右に本棚がある。問いかけと、同じ部屋の二つの配置であることを示す補足文が読み取れる。"
+  ko: "방 모형 중앙에 녹색 안락의자와 황동 조명이 있고, 뒤에는 창문, 왼쪽에는 문, 오른쪽에는 책장이 있다. 질문과 같은 방에서 두 가지 배치를 비교한다는 문구가 잘 보인다."
+  de: "Im Zimmermodell stehen der grüne Sessel und die Messinglampe in der Mitte. Dahinter ist das Fenster, links die Tür und rechts das Regal. Die Frage und der Hinweis auf zwei Varianten desselben Zimmers sind lesbar."
+  fr: "Dans la maquette, le fauteuil vert et le lampadaire en laiton sont au centre. La fenêtre est derrière eux, la porte à gauche et les étagères à droite. On lit la question et la précision que les deux agencements concernent la même pièce."
+  ru: "В центре макета комнаты стоят зелёное кресло и латунный торшер. За ними окно, слева дверь, справа полки. Вопрос и пояснение о двух вариантах одной комнаты хорошо читаются."
+  it: "Nella stanza in miniatura la poltrona verde e la lampada in ottone sono al centro, con la finestra dietro, la porta a sinistra e gli scaffali a destra. Si leggono la domanda e la precisazione che le due disposizioni riguardano la stessa stanza."
+  ar: "يتوسط الكرسي الأخضر والمصباح النحاسي نموذج الغرفة. خلفهما نافذة وعلى اليسار باب وعلى اليمين رفوف. يظهر السؤال بوضوح وكذلك العبارة التي توضح أن الترتيبين للغرفة نفسها."
+  zh-Hant: "房間模型中央擺著綠色扶手椅和黃銅燈，後方是窗，左側是門，右側是書架。提問和說明兩種擺法共用同一房間的副標都清楚可讀。"

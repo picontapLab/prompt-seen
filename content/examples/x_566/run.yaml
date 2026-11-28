@@ -1,0 +1,44 @@
+id: x_566
+promptId: p_444
+promptLanguage: pt-BR
+template:
+  id: t_101
+  version: v1
+  sample: page-02
+  values:
+    anchor: A primeira foto mostra o encontro dos três corredores e a segunda mostra a mesa de apoio. Preserve o que aparece em cada foto utilizada.
+    ratio: 4:5
+    scene: Use apenas a segunda foto e aproxime o enquadramento das mãos e dos copos. Mostre só as mãos e os três copos. Use corpo pequeno e centralize as duas linhas numa coluna de 60% da largura. Título a 25% da altura, subtítulo a 75%. Nenhum corredor.
+    headline: Quem fez acontecer
+    detail: O cuidado da equipe de apoio
+  contractHash: 8e9ef16c8da8acda28100c083f4bcc14da08597fff67f99e54188a0f6def17db
+promptSha256: 8ecf4a1c09a512c7d077b7e00db4357da196358c9c702488174f1e09b6fcdc04
+referenceAssetIds:
+  - a_816
+  - a_817
+referenceBindings:
+  - slotId: first
+    referenceIndex: 0
+  - slotId: second
+    referenceIndex: 1
+outputAssetIds:
+  - a_818
+provider: OpenAI
+model:
+  displayName: GPT Image
+  providerModelId: null
+recordedAt: 2026-11-27
+parameters: {}
+notes:
+  en: "Only hands and reusable cups appear in one frame. The Portuguese headline and supporting line both fit within the cream margins."
+  zh-Hans: "单幅照片中只有双手在桌上摆放绿、黄、蓝三只可重复使用的水杯。葡语标题和副文都落在奶油色页边以内。"
+  es: "Una sola foto muestra únicamente dos manos colocando vasos reutilizables verdes, amarillos y azules sobre una mesa. El titular y la línea secundaria en portugués caben dentro de los márgenes crema."
+  pt-BR: "Uma única foto mostra apenas as mãos arrumando copos reutilizáveis verde, amarelo e azul sobre uma mesa. O título e a linha de apoio em português cabem dentro das margens em tom creme."
+  ja: "一枚の写真に、緑、黄、青の繰り返し使えるカップを卓上に並べる手だけが写る。ポルトガル語の見出しと補足文はクリーム色の余白に収まっている。"
+  ko: "사진 한 장에 초록색, 노란색, 파란색 다회용 컵을 탁자에 놓는 두 손만 보인다. 포르투갈어 제목과 보조 문구 모두 크림색 여백 안에 들어간다."
+  de: "Das einzelne Foto zeigt nur zwei Hände, die grüne, gelbe und blaue Mehrwegbecher auf einem Tisch aufstellen. Die portugiesische Überschrift und die Unterzeile liegen innerhalb der cremefarbenen Ränder."
+  fr: "Une seule photo montre deux mains disposant des gobelets réutilisables vert, jaune et bleu sur une table. Le titre et la ligne d’accompagnement en portugais tiennent dans les marges crème."
+  ru: "На одной фотографии видны только две руки, расставляющие на столе зелёный, жёлтый и синий многоразовые стаканы. Заголовок и подзаголовок на португальском помещаются в пределах кремовых полей."
+  it: "Un’unica foto mostra solo due mani che sistemano bicchieri riutilizzabili verde, giallo e blu su un tavolo. Il titolo e il testo di supporto in portoghese rientrano nei margini color crema."
+  ar: "تظهر في صورة واحدة يدان ترتبان على الطاولة ثلاثة أكواب قابلة لإعادة الاستخدام بالألوان الأخضر والأصفر والأزرق. يقع العنوان والسطر التوضيحي بالبرتغالية داخل الهوامش الكريمية."
+  zh-Hant: "單張照片中只有雙手在桌上擺放綠、黃、藍三個可重複使用的杯子。葡語標題與副標都落在米白色頁邊以內。"

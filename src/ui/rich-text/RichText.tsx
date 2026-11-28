@@ -2,7 +2,7 @@ import { languageAttributes } from '@/ui/prompt-detail/language';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import type { RichBlock, RichInline } from '@/modules/content/types';
-import { getImage } from '@/modules/media';
+import { getImage, imageUrl } from '@/modules/media';
 import { GifBadge } from '@/ui/media/GifBadge';
 import styles from './RichText.module.css';
 
@@ -45,6 +45,12 @@ function Inline({ nodes }: { nodes: readonly RichInline[] }) {
             );
           case 'br':
             return <br key={i} />;
+          case 'mediaLink':
+            return (
+              <a key={i} href={imageUrl(n.original)}>
+                <Inline nodes={n.c} />
+              </a>
+            );
           case 'link':
             return n.internal ? (
               <Link key={i} href={n.href} prefetch={false}>
@@ -139,20 +145,24 @@ function Block({ block }: { block: RichBlock }) {
       );
     case 'figure': {
       const img = getImage(block.image, 'card');
+      const original = block.image.variants.original;
+      const picture = (
+        <img
+          src={img.src}
+          srcSet={img.srcSet}
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          width={img.width}
+          height={img.height}
+          alt={img.alt}
+          lang={img.lang}
+          loading="lazy"
+          decoding="async"
+          style={{ background: img.placeholder }}
+        />
+      );
       return (
         <figure className={styles.figure}>
-          <img
-            src={img.src}
-            srcSet={img.srcSet}
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            width={img.width}
-            height={img.height}
-            alt={img.alt}
-            lang={img.lang}
-            loading="lazy"
-            decoding="async"
-            style={{ background: img.placeholder }}
-          />
+          {original ? <a href={imageUrl(original)}>{picture}</a> : picture}
           {(block.caption || block.image.mimeType === 'image/gif') && (
             <figcaption>
               <GifBadge image={block.image} /> {block.caption}

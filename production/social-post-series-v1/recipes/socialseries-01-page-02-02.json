@@ -1,0 +1,155 @@
+{
+  "candidateId": "SOCIALSERIES-01",
+  "slug": "lamp-restorer-podcast-covers",
+  "categoryId": "portrait",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Make one {{ratio}} editorial image for a repair podcast from the supplied photo. {{anchor}} Use a teal background, warm side light and cream condensed type. {{scene}} Set the headline exactly to “{{headline}}” and the supporting line exactly to “{{detail}}”. Print only this copy.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "Preserve the guest's face, glasses, blue apron and yellow lamp.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "16:9",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Place the guest on the right looking toward the short title on the left.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Why fix this lamp?",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Bench Notes · Ep. 04",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "Preserve the guest's face, glasses, blue apron and yellow lamp.",
+    "ratio": "4:5",
+    "scene": "Frame the face and lamp in a tight vertical triangle with the title below the lamp. Leave a clear margin of 12% on every edge around both lines, including below the episode line.",
+    "headline": "Meet the restorer",
+    "detail": "Bench Notes · Ep. 04"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Lamp restorer holding a yellow desk lamp",
+          "zh-Hans": "灯具修复师手持黄色台灯"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-01",
+      "platform": "Bilibili",
+      "author": "哩布哩布AI",
+      "url": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "publishedAt": null,
+      "metricObjectUrl": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://www.bilibili.com/video/BV16m4y1a7uC/",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Podcast video cover and episode teasers",
+      "description": "Video cover · Meet the guest · Story preview",
+      "body": "## Podcast video cover and episode teasers\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Video cover (16:9) — Why fix this lamp?\n\n2. Meet the guest (4:5) — Meet the restorer\n\n3. Story preview (9:16) — Hear the full story\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "播客视频封面与访谈预告",
+      "description": "视频横封面 · 认识嘉宾 · Story 预告",
+      "body": "## 播客视频封面与访谈预告\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 视频横封面 (16:9) — Why fix this lamp?\n\n2. 认识嘉宾 (4:5) — Meet the restorer\n\n3. Story 预告 (9:16) — Hear the full story\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Meet the guest — Meet the restorer",
+    "zh-Hans": "认识嘉宾 — Meet the restorer"
+  },
+  "target": {
+    "promptId": "p_434",
+    "sampleName": "page-02"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:04:50.016Z",
+    "contentHash": "e4e16943456980770ab7791cc70797d06b5a4edccd9af0c19e4c31a53bec9031"
+  }
+}

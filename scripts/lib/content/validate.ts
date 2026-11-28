@@ -518,9 +518,9 @@ export function validateContent(
       for (const link of file.compiled.links)
         if (!linkTargetLocales(content, link))
           findings.error(file.file, `link target ${link.kind}:${link.target} does not exist`, { line: link.line });
-      for (const fig of file.compiled.figures) {
-        assetExists(fig.assetId, file.file, 'Figure', fig.line);
-        usedAssets.add(fig.assetId);
+      for (const ref of file.compiled.mediaReferences) {
+        assetExists(ref.assetId, file.file, ref.field, ref.line);
+        usedAssets.add(ref.assetId);
       }
       if (file.fm.status !== 'published') continue;
       for (const p of publishProblems({ content, kind, locale: code, file, state, ...extra }))

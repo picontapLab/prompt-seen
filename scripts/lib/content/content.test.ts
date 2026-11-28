@@ -9,7 +9,7 @@ import type { PromptDetail, TemplateDetail } from '../../../src/modules/content/
 import { createUrlModule } from '../../../src/modules/url/create';
 import { toCard } from '../../../src/modules/feed/compose';
 import { searchDocuments } from '../../../src/modules/search/documents';
-import { promptMarkdown, templateMarkdown, type MarkdownContext } from '../../../src/modules/geo/markdown';
+import { promptMarkdown, richText, templateMarkdown, type MarkdownContext } from '../../../src/modules/geo/markdown';
 import { createIndex, loadEngine, search } from '../../../src/modules/search/engine';
 import { aspectRatioLabel, openingOf } from './build-index';
 import { builtReader, exportRecord } from '../export';
@@ -585,18 +585,34 @@ describe('restricted MDX (§3.5)', () => {
     expect(errors[0]).toMatch(/^1[0-9] /); // the line in the file, after the frontmatter
   });
 
-  it('accepts figures, callouts, tables and escaped braces', () => {
+  it('resolves original media links alongside figures, callouts and tables', () => {
     const r = load(
       setup({
         'content/prompts/p_003/locales/en.mdx': mdx(
           { ...enFm, title: 'Third' },
-          '## Tips\n\n<Figure asset="a_002" caption="Before" />\n\n<Callout>\n\nKeep \\{\\{product\\}\\} short.\n\n</Callout>\n\n| a | b |\n| - | - |\n| 1 | 2 |\n',
+          '## Tips\n\n[Original](media:a_002)\n\n<Figure asset="a_002" caption="Before" />\n\n<Callout>\n\nKeep \\{\\{product\\}\\} short.\n\n</Callout>\n\n| a | b |\n| - | - |\n| 1 | 2 |\n',
         ),
       }),
     );
     expect(blocking(r.findings.list)).toEqual([]);
     const body = detail<PromptDetail>(r, 'prompt', 'en', 'p_003')!.body;
-    expect(body.map((b) => b.t)).toEqual(['h2', 'figure', 'callout', 'table']);
+    expect(body.map((b) => b.t)).toEqual(['h2', 'p', 'figure', 'callout', 'table']);
+    for (const mediaBaseUrl of [null, 'https://cdn.example.org']) {
+      const url = createUrlModule({
+        origin: 'https://example.org',
+        basePath: '/prompt-seen',
+        urlPattern: '{basePath}/{locale}/{path}',
+        localePrefixes: ['en'],
+        mediaBaseUrl,
+      });
+      const md = richText([body[1]!], {
+        absoluteUrl: url.absoluteUrl,
+        absoluteImageUrl: (image) => url.absoluteMediaUrl(image.key),
+        t: (key) => key,
+        languageName: (locale) => locale,
+      });
+      expect(md).toBe(`[Original](${mediaBaseUrl ?? 'https://example.org/prompt-seen'}/media/a_002/x-original-aaa.jpg)`);
+    }
     expect(JSON.stringify(body)).toContain('{{product}}');
   });
 });

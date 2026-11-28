@@ -1,0 +1,31 @@
+referenceImage: required
+instructions:
+  en: Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.
+  zh-Hans: 三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。
+  es: Usa las mismas referencias en las tres páginas. Elige un ejemplo, cambia el motivo y el texto y genera cada página por separado.
+  pt-BR: Use as mesmas referências nas três páginas. Escolha um exemplo, troque o tema e o texto e gere cada página separadamente.
+  ja: 三枚とも同じ参考画像を使います。サンプルを選び、題材と文言を入れ替えて、一枚ずつ生成してください。
+  ko: 세 장 모두 같은 참고 이미지를 사용합니다. 예시를 고르고 소재와 문구를 바꾼 뒤 한 장씩 생성하세요.
+  de: Verwende für alle drei Seiten dieselben Vorlagen. Wähle ein Beispiel, ersetze Motiv und Text und erzeuge jede Seite einzeln.
+  fr: Gardez les mêmes références pour les trois pages. Choisissez un exemple, remplacez le sujet et le texte, puis générez chaque page séparément.
+  ru: Используйте одни и те же исходные изображения для трёх карточек. Выберите пример, замените тему и текст и создайте каждую карточку отдельно.
+  it: Usa gli stessi riferimenti per tutte e tre le pagine. Scegli un esempio, cambia soggetto e testo e genera una pagina alla volta.
+  ar: استخدم الصور المرجعية نفسها للصفحات الثلاث. اختر مثالا واستبدل الموضوع والنص ثم أنشئ كل صفحة على حدة.
+  zh-Hant: 三頁都使用同一組參考圖片。選擇範例，換成自己的主體和文案，再逐頁生成。
+slots:
+  - id: visual
+    labels:
+      en: Paper fox, blue bookmark and closed book
+      zh-Hans: 纸狐狸、蓝书签与合上的书
+      es: Zorro de papel, marcapáginas azul y libro cerrado
+      pt-BR: Raposa de papel, marcador azul e livro fechado
+      ja: 紙のキツネ、青いしおり、閉じた本
+      ko: 종이 여우와 파란 책갈피, 덮인 책
+      de: Papierfuchs, blaues Lesezeichen und geschlossenes Buch
+      fr: Renard en papier, marque-page bleu et livre fermé
+      ru: Бумажный лис, синяя закладка и закрытая книга
+      it: Volpe di carta, segnalibro blu e libro chiuso
+      ar: ثعلب ورقي وعلامة زرقاء وكتاب مغلق
+      zh-Hant: 紙狐狸、藍書籤與合上的書
+    min: 1
+    max: 1

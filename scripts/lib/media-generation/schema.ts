@@ -43,7 +43,8 @@ export const manifestSchema = z.object({
   references: z.array(
     z.object({
       file: z.string(),
-      field: z.enum(['coverAssetId', 'Figure']),
+      field: z.enum(['coverAssetId', 'Figure', 'mediaLink']),
+      destination: z.object({ offset: z.number().int().nonnegative(), raw: z.string().min(1) }).optional(),
       assetId: jobIdSchema,
       line: z.number().optional(),
     }),

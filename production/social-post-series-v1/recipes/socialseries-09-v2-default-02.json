@@ -1,0 +1,240 @@
+{
+  "candidateId": "SOCIALSERIES-09",
+  "slug": "woven-basket-detail-study",
+  "categoryId": "poster",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "从参考照片制作单张 {{ratio}} 器物图鉴卡。{{anchor}}{{scene}} 使用一个摄影画面，两行深靛蓝字距各边至少12%。下方两行是逐字排印的全部文案，第一行为标题，第二行为副文。从每行第一个字照排到最后一个字，保留给定标点，行末留白，禁止自行补句号。\n\n{{headline}}\n{{detail}}",
+  "promptLanguage": "zh-Hans",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "name": "anchor",
+      "required": true,
+      "group": "subject",
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征",
+        "es": "Rasgos comunes",
+        "pt-BR": "Características da série",
+        "ja": "共通の特徴",
+        "ko": "공통 특징",
+        "de": "Gemeinsame Merkmale",
+        "fr": "Caractéristiques communes",
+        "ru": "Общие признаки",
+        "it": "Caratteristiche comuni",
+        "ar": "السمات المشتركة",
+        "zh-Hant": "整套保持的特徵"
+      },
+      "help": {},
+      "type": "string",
+      "default": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+      "minLength": null,
+      "maxLength": 320,
+      "multiline": false
+    },
+    {
+      "name": "ratio",
+      "required": true,
+      "group": "composition",
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅",
+        "es": "Proporción",
+        "pt-BR": "Proporção",
+        "ja": "縦横比",
+        "ko": "화면 비율",
+        "de": "Seitenverhältnis",
+        "fr": "Format",
+        "ru": "Соотношение сторон",
+        "it": "Proporzioni",
+        "ar": "نسبة الأبعاد",
+        "zh-Hant": "畫幅"
+      },
+      "help": {},
+      "type": "string",
+      "default": "4:5",
+      "minLength": null,
+      "maxLength": null,
+      "multiline": false
+    },
+    {
+      "name": "scene",
+      "required": true,
+      "group": "composition",
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图",
+        "es": "Composición",
+        "pt-BR": "Composição da página",
+        "ja": "ページの構図",
+        "ko": "페이지 구도",
+        "de": "Bildaufbau",
+        "fr": "Composition",
+        "ru": "Композиция",
+        "it": "Composizione",
+        "ar": "تكوين الصفحة",
+        "zh-Hant": "本頁構圖"
+      },
+      "help": {},
+      "type": "string",
+      "default": "整只篮子居中，上沿和篮底都在画内。",
+      "minLength": null,
+      "maxLength": 320,
+      "multiline": false
+    },
+    {
+      "name": "headline",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题",
+        "es": "Titular",
+        "pt-BR": "Título",
+        "ja": "見出し",
+        "ko": "제목",
+        "de": "Überschrift",
+        "fr": "Titre",
+        "ru": "Заголовок",
+        "it": "Titolo",
+        "ar": "العنوان",
+        "zh-Hant": "標題"
+      },
+      "help": {},
+      "type": "string",
+      "default": "看懂一只编织篮",
+      "minLength": null,
+      "maxLength": 64,
+      "multiline": false
+    },
+    {
+      "name": "detail",
+      "required": true,
+      "group": "text",
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文",
+        "es": "Texto secundario",
+        "pt-BR": "Linha de apoio",
+        "ja": "補足文",
+        "ko": "보조 문구",
+        "de": "Unterzeile",
+        "fr": "Sous-titre",
+        "ru": "Подзаголовок",
+        "it": "Testo di supporto",
+        "ar": "السطر التوضيحي",
+        "zh-Hant": "副文"
+      },
+      "help": {},
+      "type": "string",
+      "default": "先看轮廓，再找细节",
+      "minLength": null,
+      "maxLength": 128,
+      "multiline": false
+    }
+  ],
+  "values": {
+    "anchor": "保留同一只篮子的形状、蓝线口沿和正面交叉纹，采用浅灰纸底、深靛蓝文字与克制的图鉴排版。",
+    "ratio": "4:5",
+    "scene": "整只篮子居中，上沿和篮底都在画内。",
+    "headline": "看懂一只编织篮",
+    "detail": "先看轮廓，再找细节"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。",
+      "es": "Usa las mismas referencias en las tres páginas. Elige un ejemplo, cambia el motivo y el texto y genera cada página por separado.",
+      "pt-BR": "Use as mesmas referências nas três páginas. Escolha um exemplo, troque o tema e o texto e gere cada página separadamente.",
+      "ja": "三枚とも同じ参考画像を使います。サンプルを選び、題材と文言を入れ替えて、一枚ずつ生成してください。",
+      "ko": "세 장 모두 같은 참고 이미지를 사용합니다. 예시를 고르고 소재와 문구를 바꾼 뒤 한 장씩 생성하세요.",
+      "de": "Verwende für alle drei Seiten dieselben Vorlagen. Wähle ein Beispiel, ersetze Motiv und Text und erzeuge jede Seite einzeln.",
+      "fr": "Gardez les mêmes références pour les trois pages. Choisissez un exemple, remplacez le sujet et le texte, puis générez chaque page séparément.",
+      "ru": "Используйте одни и те же исходные изображения для трёх карточек. Выберите пример, замените тему и текст и создайте каждую карточку отдельно.",
+      "it": "Usa gli stessi riferimenti per tutte e tre le pagine. Scegli un esempio, cambia soggetto e testo e genera una pagina alla volta.",
+      "ar": "استخدم الصور المرجعية نفسها للصفحات الثلاث. اختر مثالا واستبدل الموضوع والنص ثم أنشئ كل صفحة على حدة.",
+      "zh-Hant": "三頁使用同一組參考圖。選擇樣例，替換主體和文案後逐頁生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "labels": {
+          "en": "Small woven basket with a blue rim",
+          "zh-Hans": "蓝线绕口的编织小篮",
+          "es": "Cesta pequeña con borde azul",
+          "pt-BR": "Cesta pequena com borda azul",
+          "ja": "青い縁の小さな編みかご",
+          "ko": "파란 테두리가 있는 작은 바구니",
+          "de": "Kleiner Korb mit blauem Rand",
+          "fr": "Petit panier au bord bleu",
+          "ru": "Небольшая корзина с синей каймой",
+          "it": "Cestino con bordo blu",
+          "ar": "سلة صغيرة بحافة زرقاء",
+          "zh-Hant": "藍線繞口的編織小籃"
+        },
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-09",
+      "platform": "X",
+      "author": "MrLarus",
+      "url": "https://x.com/MrLarus/status/2045504669401653414",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/MrLarus/status/2045504669401653414",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Woven basket observation cards",
+      "description": "Whole basket · Wrapped rim · Crossed weave",
+      "body": "## Woven basket observation cards\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Whole basket (4:5) — 看懂一只编织篮\n\n2. Wrapped rim (4:5) — 第一眼，看口沿\n\n3. Crossed weave (4:5) — 第二眼，看交叉\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "编织篮工艺观察卡",
+      "description": "器物全貌 · 口沿线圈 · 交叉纹理",
+      "body": "## 编织篮工艺观察卡\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 器物全貌 (4:5) — 看懂一只编织篮\n\n2. 口沿线圈 (4:5) — 第一眼，看口沿\n\n3. 交叉纹理 (4:5) — 第二眼，看交叉\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Whole basket with a blue wrapped rim and crossed strips above two lines on gray paper",
+    "zh-Hans": "灰纸上完整展示蓝线绕口、斜带交叉的小篮，下方有两行字。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-28T05:51:26.986Z",
+    "contentHash": "dc1b19dad0b37ec9be4b2251a4a52cf8cb4da12cd4ae48cb84649f3600848388"
+  },
+  "target": {
+    "promptId": "p_442",
+    "sampleName": "default"
+  }
+}

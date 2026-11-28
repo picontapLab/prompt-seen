@@ -1,0 +1,160 @@
+{
+  "candidateId": "SOCIALSERIES-05",
+  "slug": "commuter-bag-buying-guide",
+  "categoryId": "product",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "Build one {{ratio}} buying-guide card. {{anchor}} Use a gray ground, navy type and a consistent front view. {{scene}} Print exactly “{{headline}}” as the headline and “{{detail}}” as the secondary line, with no other copy.",
+  "promptLanguage": "en",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "Show the blue pouch at left and the olive messenger at right in two equal photographic windows.",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "Pick your carry",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "Two bags for different loads",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "The first photo identifies the blue pouch with one orange zip. The second identifies the olive bag with two buckles. Preserve these details whenever each bag appears.",
+    "ratio": "4:5",
+    "scene": "Show the blue pouch at left and the olive messenger at right in two equal photographic windows.",
+    "headline": "Pick your carry",
+    "detail": "Two bags for different loads"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "first",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Blue pouch with an orange zipper",
+          "zh-Hans": "橙色拉链的蓝色小包"
+        }
+      },
+      {
+        "id": "second",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Olive messenger bag with two buckles",
+          "zh-Hans": "两个搭扣的橄榄绿邮差包"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-05",
+      "platform": "X",
+      "author": "azed_ai",
+      "url": "https://x.com/azed_ai/status/1971529965301829959",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/azed_ai/status/1971529965301829959",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/azed_ai/status/1971529965301829959",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Commuter bag buying guide",
+      "description": "Side-by-side overview · Small pouch capacity · Messenger bag capacity",
+      "body": "## Commuter bag buying guide\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Side-by-side overview (4:5) — Pick your carry\n\n2. Small pouch capacity (4:5) — Light carry\n\n3. Messenger bag capacity (4:5) — Room for a notebook\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "通勤包选购比较",
+      "description": "双包对照 · 窄包容量 · 宽包容量",
+      "body": "## 通勤包选购比较\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 双包对照 (4:5) — Pick your carry\n\n2. 窄包容量 (4:5) — Light carry\n\n3. 宽包容量 (4:5) — Room for a notebook\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Side-by-side overview — Pick your carry",
+    "zh-Hans": "双包对照 — Pick your carry"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:08:09.979Z",
+    "contentHash": "9e22bf75e3fc0f20e49970cc4eb53d5e1fdcdaf53420cce313111531de9b3e04"
+  }
+}

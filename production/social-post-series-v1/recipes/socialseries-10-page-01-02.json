@@ -1,0 +1,151 @@
+{
+  "candidateId": "SOCIALSERIES-10",
+  "slug": "paper-fox-bookmark-story",
+  "categoryId": "illustration",
+  "useCaseIds": [
+    "social-post"
+  ],
+  "body": "参考画像を使って、読書会で投稿する {{ratio}} の物語カードを一枚作ってください。{{anchor}}{{scene}} 見出しは「{{headline}}」、小さな一文は「{{detail}}」と正確に書いてください。ほかの文字は入れず、横書きにしてください。",
+  "promptLanguage": "ja",
+  "promptProvenance": "independent-adaptation",
+  "source": {
+    "author": "Prompt Seen",
+    "url": null,
+    "license": "CC BY 4.0"
+  },
+  "fields": [
+    {
+      "type": "string",
+      "required": true,
+      "name": "anchor",
+      "group": "subject",
+      "default": "赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Series details to keep",
+        "zh-Hans": "整套保持的特征"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "ratio",
+      "group": "composition",
+      "default": "4:5",
+      "maxLength": null,
+      "labels": {
+        "en": "Aspect ratio",
+        "zh-Hans": "画幅"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "scene",
+      "group": "composition",
+      "default": "机の端の青いしおりを見つめるキツネと、閉じた本を描いてください。 見出しと小さな一文の四方に画像幅・高さの12%以上の余白を空けてください。",
+      "maxLength": 320,
+      "labels": {
+        "en": "Page composition",
+        "zh-Hans": "本页构图"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "headline",
+      "group": "text",
+      "default": "あれ、しおりだ。",
+      "maxLength": 64,
+      "labels": {
+        "en": "Headline",
+        "zh-Hans": "标题"
+      }
+    },
+    {
+      "type": "string",
+      "required": true,
+      "name": "detail",
+      "group": "text",
+      "default": "机のすみに青い一枚。",
+      "maxLength": 128,
+      "labels": {
+        "en": "Supporting line",
+        "zh-Hans": "副文"
+      }
+    }
+  ],
+  "values": {
+    "anchor": "赤い紙のキツネ、白い左耳の先、青い紙のスカーフ、クリーム色の机をそろえ、切り絵の質感を保ってください。",
+    "ratio": "4:5",
+    "scene": "机の端の青いしおりを見つめるキツネと、閉じた本を描いてください。 見出しと小さな一文の四方に画像幅・高さの12%以上の余白を空けてください。",
+    "headline": "あれ、しおりだ。",
+    "detail": "机のすみに青い一枚。"
+  },
+  "inputRequirements": {
+    "referenceImage": "required",
+    "instructions": {
+      "en": "Use the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.",
+      "zh-Hans": "三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。"
+    },
+    "slots": [
+      {
+        "id": "visual",
+        "min": 1,
+        "max": 1,
+        "labels": {
+          "en": "Paper fox, blue bookmark and closed book",
+          "zh-Hans": "纸狐狸、蓝书签与合上的书"
+        }
+      }
+    ]
+  },
+  "inspirationSources": [
+    {
+      "candidateId": "SOCIALSERIES-10",
+      "platform": "X",
+      "author": "Google AI",
+      "url": "https://x.com/GoogleAI/status/2027094912357761319",
+      "publishedAt": null,
+      "metricObjectUrl": "https://x.com/GoogleAI/status/2027094912357761319",
+      "metricObjectPublishedAt": null,
+      "metricScope": {
+        "en": "Original post",
+        "zh-Hans": "原始帖子"
+      },
+      "observedAt": "2026-11-27",
+      "cacheTimestampKnown": false,
+      "evidenceMethod": {
+        "en": "Reviewed the public platform record.",
+        "zh-Hans": "规格第 3 节核对的平台公开接口记录"
+      },
+      "evidenceUrl": "https://x.com/GoogleAI/status/2027094912357761319",
+      "sourcePromptStatus": {
+        "en": "The site wrote its own prompts.",
+        "zh-Hans": "本站另拟提示词。"
+      },
+      "metrics": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "The paper fox and the bookmark",
+      "description": "Discovering the bookmark · Finding the page · Marking the place",
+      "body": "## The paper fox and the bookmark\n\nUse the same references for all three pages. Select a sample, replace the subject and copy, then run each page separately.\n\n1. Discovering the bookmark (4:5) — あれ、しおりだ。\n\n2. Finding the page (4:5) — どのページかな。\n\n3. Marking the place (4:5) — ここで待ってる。\n\nSynthetic demonstration by Prompt Seen using GPT Image."
+    },
+    "zh-Hans": {
+      "title": "纸狐狸与书签的三页故事",
+      "description": "发现书签 · 寻找书页 · 夹回书签",
+      "body": "## 纸狐狸与书签的三页故事\n\n三页使用同一组参考图。选择样例，替换主体和文案后逐页生成。\n\n1. 发现书签 (4:5) — あれ、しおりだ。\n\n2. 寻找书页 (4:5) — どのページかな。\n\n3. 夹回书签 (4:5) — ここで待ってる。\n\n本站使用 GPT Image 制作的合成示范。"
+    }
+  },
+  "alt": {
+    "en": "Discovering the bookmark — あれ、しおりだ。",
+    "zh-Hans": "发现书签 — あれ、しおりだ。"
+  },
+  "editorialReview": {
+    "reviewer": "Codex AI",
+    "reviewedAt": "2026-11-27T14:13:37.543Z",
+    "contentHash": "d8860b64e4eb6faddb76d554ed240308ede9d290680233de3b69271744e1672c"
+  }
+}
