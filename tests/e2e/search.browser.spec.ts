@@ -149,12 +149,13 @@ test.describe('desktop', () => {
 
   test('long groups grow as their end comes near, without a button (§11.12)', async ({ page }) => {
     await openPage(page, `/${en.pathPrefix}/search/?q=sample`);
-    const rows = page.locator('[data-group="prompt"] li');
+    const prompts = page.locator('[data-group="prompt"]');
+    const rows = prompts.locator('li');
     await expect(rows.first()).toBeVisible();
-    const total = Number(await page.locator('[data-group="prompt"] h2 span').textContent());
+    const total = Number(await prompts.locator('h2 span').textContent());
     test.skip(total <= 24, 'needs more than one step of results');
     await expect(rows).toHaveCount(24);
-    await page.locator('[data-search-more]').scrollIntoViewIfNeeded();
+    await prompts.locator('[data-search-more]').scrollIntoViewIfNeeded();
     await expect.poll(() => rows.count()).toBeGreaterThan(24);
     await expect(page.getByRole('button', { name: /more|load/i })).toHaveCount(0);
   });

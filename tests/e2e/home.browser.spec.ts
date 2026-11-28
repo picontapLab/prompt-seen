@@ -379,24 +379,29 @@ test.describe('phone', () => {
     // Scroll to the end, so lazy images in view would have loaded.
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
     await page.waitForTimeout(1000);
+    // A collection cover can use the very same thumbnail as a hidden card.
+    const visibleSources = new Set(
+      await page.locator('img:visible').evaluateAll((images) =>
+        images
+          .map((image) => (image as HTMLImageElement).currentSrc)
+          .filter((url) => /^https?:/.test(url))
+          .map((url) => new URL(url).pathname),
+      ),
+    );
     for (let i = 8; i < total; i++) {
       const link = cells.nth(i).locator('a').first();
       await expect(link).toBeHidden();
       await link.focus();
       await expect(link).not.toBeFocused();
-      const files = await cells
-        .nth(i)
-        .locator('img')
-        .evaluate((img) =>
-          [
-            img.getAttribute('src')!,
-            ...(img.getAttribute('srcset') ?? '').split(',').map((s) => s.trim().split(' ')[0]!),
-          ]
-            .filter(Boolean)
-            .map((u) => new URL(u, location.href).pathname),
-        );
+      const image = cells.nth(i).locator('img');
+      expect(await image.evaluate((img) => (img as HTMLImageElement).currentSrc)).toMatch(/^(?:$|data:image\/)/);
+      const files = await image.evaluate((img) =>
+        [img.getAttribute('src')!, ...(img.getAttribute('srcset') ?? '').split(',').map((s) => s.trim().split(' ')[0]!)]
+          .filter(Boolean)
+          .map((u) => new URL(u, location.href).pathname),
+      );
       expect(
-        files.filter((file) => requested.has(file)),
+        files.filter((file) => requested.has(file) && !visibleSources.has(file)),
         `work ${i + 1}'s image files requested`,
       ).toEqual([]);
     }

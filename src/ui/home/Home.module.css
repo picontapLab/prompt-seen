@@ -260,6 +260,11 @@
     .latest {
       --row-height: calc((100vw - 2 * var(--page-margin)) * 0.66);
     }
+    /* The last row shares space with a filler. Keep a 3:4 or wider card readable even
+       there, while allowing narrower portraits to keep their proportions. */
+    .latest > ul > li {
+      min-inline-size: min(150px, calc(200px * var(--r)), 100%);
+    }
     /* Two to a row, the twelve newest works made six rows, nearly three screens on a phone: phones
        show the first eight (PHONE_LATEST in HomeBody). The rest stay in the HTML, so the page still
        links all twelve, but are not laid out or reached by Tab, and their images select an inline

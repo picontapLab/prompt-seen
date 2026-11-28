@@ -90,6 +90,8 @@
     inline-size: 100%;
     block-size: auto;
     border-radius: var(--radius-image);
+    outline: 1px solid var(--image-hairline);
+    outline-offset: -1px;
   }
   .figure figcaption {
     margin-block-start: var(--space-8);

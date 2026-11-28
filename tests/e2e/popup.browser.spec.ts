@@ -158,8 +158,8 @@ test.describe('desktop', () => {
 
     // The same body as the full page, from the same model; the title names the dialog.
     const detail = detailOf(second.slug);
-    const heading = popup(page).getByRole('heading', { level: 2, name: detail.title });
-    await expect(heading).toBeVisible();
+    await expect(dialogTitle(page)).toBeVisible();
+    await expect(dialogTitle(page)).toHaveText(detail.title);
     await expect(popup(page)).toHaveAccessibleName(detail.title);
     await expect(popup(page).locator('[id$="-prompt"]').first()).toContainText(detail.prompt.text.split('\n')[0]!);
     await expect(page).toHaveTitle(
@@ -479,7 +479,8 @@ test.describe('desktop', () => {
     );
     fail = false;
     await alert.getByRole('button', { name: message(code, 'popup.retry') }).click();
-    await expect(popup(page).getByRole('heading', { level: 2, name: detailOf(third.slug).title })).toBeVisible();
+    await expect(dialogTitle(page)).toHaveText(detailOf(third.slug).title);
+    await expect(popup(page).locator('[data-stage-picture]').first()).toBeVisible();
   });
 
   test('previous / next replace the entry, load the next batch at the end, and Back lands on the last work (§11.3)', async ({
